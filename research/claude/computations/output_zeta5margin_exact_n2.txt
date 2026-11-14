@@ -1,0 +1,36 @@
+# s=5 K=80 N=6 h=74: Delta_K computed exactly in 12s
+#    p   K/p    | true |  out |   wf | new=max | true-new | 2*level | wf valid (p>=5, p^2>2.6K+6) | wf<=true
+     2 40.000 small |  2513|    . |    . |     .   |     .    |     .   | False | None
+     3 26.667 small |  1122|    . | 1206 |     .   |     .    |    65   | False | None
+     5 16.000 small |   387|    . |  573 |     .   |     .    |    37   | False | None
+     7 11.429 small |   113|    . |  302 |     .   |     .    |    25   | False | None
+    11  7.273 small |    53|    . |   51 |     .   |     .    |    14   | False | None
+    13  6.154 small |    -6|    . |   -6 |     .   |     .    |    11   | False | None
+    17  4.706 inner |  -106|    . | -108 |  -108   |     2    |     7   | True  | True
+    19  4.211 inner |  -128|    . | -134 |  -134   |     6    |     6   | True  | True
+    23  3.478 inner |  -188|    . | -188 |  -188   |     0    |     5   | True  | True
+    29  2.759 outer |  -242| -281 | -248 |  -248   |     6    |     2   | True  | True
+    31  2.581 outer |  -254| -269 | -254 |  -254   |     0    |     1   | True  | True
+    37  2.162 outer |  -227| -228 | -266 |  -228   |     1    |     1   | True  | True
+    41  1.951 outer |  -232| -232 | -292 |  -232   |     0    |     0   | True  | True
+    43  1.860 outer |  -238| -238 | -308 |  -238   |     0    |     0   | True  | True
+    47  1.702 outer |  -208| -208 | -318 |  -208   |     0    |    -1   | True  | True
+    53  1.509 outer |  -154| -154 | -318 |  -154   |     0    |    -1   | True  | True
+    59  1.356 outer |  -112| -112 | -326 |  -112   |     0    |    -1   | True  | True
+    61  1.311 outer |   -98|  -98 | -329 |   -98   |     0    |    -1   | True  | True
+    67  1.194 outer |   -56|  -56 | -331 |   -56   |     0    |    -2   | True  | True
+    71  1.127 outer |   -28|  -28 | -331 |   -28   |     0    |    -2   | True  | True
+    73  1.096 outer |   -14|  -14 | -331 |   -14   |     0    |    -2   | True  | True
+    79  1.013 outer |    -2|   -2 | -346 |    -2   |     0    |    -2   | True  | True
+    83  0.964 beyond|     0|    . | -358 |  -358   |   358    |    -2   | True  | True
+    89  0.899 beyond|     0|    . | -370 |  -370   |   370    |    -4   | True  | True
+    97  0.825 beyond|     0|    . | -370 |  -370   |   370    |    -4   | True  | True
+   101  0.792 beyond|     0|    . | -370 |  -370   |   370    |    -4   | True  | True
+   103  0.777 beyond|     0|    . | -370 |  -370   |   370    |    -4   | True  | True
+   107  0.748 beyond|     0|    . | -370 |  -370   |   370    |    -4   | True  | True
+   109  0.734 beyond|     0|    . | -370 |  -370   |   370    |    -4   | True  | True
+# violations of wf_p <= true_p among valid primes: 0
+# range inner : sum (true-new) log p /K^2 = 0.00365;  sum (true-out) log p/K^2 = 0.00000;  gain sum (new-out) log p/K^2 = 0.00000
+# range outer : sum (true-new) log p /K^2 = 0.00372;  sum (true-out) log p/K^2 = 0.02913;  gain sum (new-out) log p/K^2 = 0.02541
+# range beyond: sum (true-new) log p /K^2 = 1.84728;  sum (true-out) log p/K^2 = 0.00000;  gain sum (new-out) log p/K^2 = 0.00000
+# total time 30s
