@@ -1,8 +1,9 @@
 # One positive family joins logarithms to ζ(3)
 
-Status: complete proof draft from the root agent's proposal, including
-normalization, resolvent, endpoint limits, moments, Hilbert Gram identity
-and an exact integrality distinction. Independent review requested.
+Status: complete proof from the root agent's proposal, independently reviewed
+in [logarithm-zeta3-deformation-independent-review.md](logarithm-zeta3-deformation-independent-review.md),
+including the real finite-product proof, normalization, resolvent, endpoint
+limits, moments, Hilbert Gram identity and an exact integrality distinction.
 The Wilson family is classical; no historical novelty or irrationality
 theorem for arbitrary parameters is asserted.
 
@@ -50,27 +51,52 @@ At zero the two arguments coalesce:
  \boxed{S_0(a^2)=2\zeta(3,a+1/2).}                 \tag{6}
 \]
 
-Here is a derivation with explicit interchange bounds. Write
-\(h_b(y)=y/(y^2+b^2)\), with \(b\) a positive half-integer.
-The partial fractions
+Here is a fully real derivation with explicit interchange bounds.
+Let \(T_N\) be the Chebyshev polynomial. Its roots and leading coefficient give
 \[
- \tanh\pi y=\frac2\pi\sum_{b=1/2,3/2,\ldots}h_b(y)
+ \prod_{k=0}^{N-1}\left[\sinh^2(x/N)+
+        \sin^2\frac{\pi(k+1/2+\tau)}N\right]
+ =2^{1-2N}[\cosh(2x)+\cos(2\pi\tau)].              \tag{7a}
 \]
-have an elementary finite-Chebyshev-product proof in the
-[real resolvent note](half-shift-elementary-resolvent-proof.md), §§1–2.
-Their locally normally convergent meromorphic series also holds at complex
-arguments by analytic continuation. For \(0<|\tau|<1/2\), direct algebra gives
+Indeed the corresponding cosine roots solve
+\(T_N(z)+\cos(2\pi\tau)=0\). They are distinct for generic \(\tau\);
+the identity at coalescing roots follows by continuity. The leading
+coefficient of \(T_N\) is \(2^{N-1}\), fixing the factor exactly.
+Logarithmic differentiation yields
+\[
+ \frac{\sinh2x}{\cosh2x+\cos2\pi\tau}
+ =\frac{\sinh(2x/N)}{2N}\sum_{k=0}^{N-1}
+ \frac1{\sinh^2(x/N)+\sin^2(\pi(k+1/2+\tau)/N)}.
+\]
+Pair \(k\) with \(N-1-k\), and let \(b=k+1/2\).
+The two terms tend to
+\(x/[x^2+\pi^2(b+\tau)^2]\) and
+\(x/[x^2+\pi^2(b-\tau)^2]\).
+Each paired term is bounded by
+\(\sinh(2x)/[8(b\pm\tau)^2]\), using
+\(\sin\theta\ge2\theta/\pi\) on \([0,\pi/2]\) and
+\(N\sinh(2x/N)\le\sinh2x\).
+For fixed \(|\tau|<1/2\) these bounds are summable.
+If \(N\) is odd the unpaired middle term is \(O_x(N^{-2})\).
+Dominated convergence therefore proves, with \(h_b(y)=y/(y^2+b^2)\),
+\[
+ \frac{\sinh2\pi y}{\cosh2\pi y+\cos2\pi\tau}
+ =\frac1\pi\sum_{b=1/2,3/2,\ldots}
+                       [h_{b+\tau}(y)+h_{b-\tau}(y)].
+\]
+Subtract its value at \(\tau=0\). Direct real algebra gives
 \[
 \begin{aligned}
  g_\tau(y):=\frac{w_\tau(y)}y
- &=\frac{\tanh\pi(y+i\tau)+\tanh\pi(y-i\tau)-2\tanh\pi y}{\tau^2}\\
+ &=\frac2{\tau^2}\left[
+       \frac{\sinh2\pi y}{\cosh2\pi y+\cos2\pi\tau}-\tanh\pi y\right]\\
  &=\frac2{\pi\tau^2}\sum_b
        [h_{b+\tau}(y)+h_{b-\tau}(y)-2h_b(y)].
 \end{aligned}                                      \tag{7}
 \]
-The average of the two shifted tanh functions is the real expression
-\(\sinh(2\pi y)/(\cosh(2\pi y)+\cos(2\pi\tau))\).
-Splitting \(h_b\) into its two simple poles proves the shifted-kernel identity.
+This extends the undeformed finite-product proof in the
+[real resolvent note](half-shift-elementary-resolvent-proof.md).
+No analytic continuation or complex integration is used.
 
 The signed sum is absolutely integrable against \(h_a\).
 The central difference divided by \(\tau^2\) equals
@@ -272,7 +298,48 @@ This does not exclude clearing other denominators or obtaining
 irrationality proofs under other normalizations. No general adequate
 denominator-growth theorem is proved here.
 
-## 6. Classical Wilson and operator context
+## 6. Higher derivatives expose a positivity tradeoff
+
+Write \(\sigma=\tau^2\), and define
+\(\sin^2(\pi\sqrt\sigma)\) by its real power series also for negative
+\(\sigma\). On a sufficiently small real interval about zero this
+function has absolute value less than \(1/2\), and its quotient by
+\(\sigma\) has a removable singularity. Every fixed number of parameter
+derivatives of (1) is bounded by a constant times
+\(y\tanh(\pi y)\operatorname{sech}^2(\pi y)\):
+differentiate the rational expression and use
+\(\cosh^2\pi y-\sin^2(\pi\sqrt\sigma)\ge\cosh^2\pi y/2\).
+The bound remains integrable after multiplication by any polynomial.
+Ordinary differentiation under the integral therefore justifies all
+derivatives at zero.
+Define the finite signed measure
+\[
+ \nu_m=\frac1{m!}
+          \left.\partial_\sigma^m\nu_\tau\right|_{\sigma=0}.
+\]
+The convergent series (4) gives
+\[
+ \boxed{\int\frac{d\nu_m(t)}{t+a^2}
+                    =2\zeta(2m+3,a+1/2).}         \tag{19}
+\]
+The moment (11) is a polynomial of degree \(j\) in \(\sigma\). Its
+leading coefficient gives
+\[
+ \nu_m(t^j)=0\quad(j<m),\qquad
+ \nu_m(t^m)=\frac{(-1)^m}{m+1}.                    \tag{20}
+\]
+For every \(m\ge1\), this measure is nonzero but has total mass zero;
+it necessarily has both signs. The first example is
+\[
+ d\nu_1(y^2)=2\pi^4y\tanh\pi y\,\operatorname{sech}^2\pi y
+                (\operatorname{sech}^2\pi y-1/3)\,dy .
+\]
+Thus the deformation produces pure higher odd zeta resolvents while
+losing the positive ordinary Stieltjes measure used by the Padé proof.
+This does not exclude positive higher-order Stieltjes kernels or
+different constructions.
+
+## 7. Classical Wilson and operator context
 
 Gamma reflection identifies (1) with the normalized Wilson weight for
 \[
@@ -298,6 +365,8 @@ The classical source is M. E. H. Ismail and E. Koelink,
 equation (3.1) and Theorem 3.1. Their Jacobi parameters are
 \(\alpha=\beta=0,\delta=\pm\tau\). The local PDF/text and
 verified operator dictionary are recorded in the linked classification note.
+Section 3 was read directly for this comparison. The saved PDF SHA-256 is
+4363c74528b154d5feaf319bd359047ae3722d64b1320bc4587395494f8c2ce2.
 
 The differential expression on \((0,1)\) is
 \[

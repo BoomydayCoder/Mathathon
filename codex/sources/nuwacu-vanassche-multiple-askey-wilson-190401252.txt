@@ -1,0 +1,1532 @@
+                                           Multiple Askey-Wilson polynomials and related basic
+                                            hypergeometric multiple orthogonal polynomials
+                                                            Jean Paul Nuwacu and Walter Van Assche
+arXiv:1904.01252v1 [math.CA] 2 Apr 2019
+
+
+
+
+                                                          Université du Burundi and KU Leuven, Belgium
+                                                                                 April 3, 2019
+
+
+                                                                                      Abstract
+                                                    We first show how one can obtain Al-Salam–Chihara polynomials, continuous
+                                                dual q-Hahn polynomials, and Askey–Wilson polynomials from the little q-Laguerre
+                                                and the little q-Jacobi polynomials by using special transformations. This procedure
+                                                is then extended to obtain multiple Askey–Wilson, multiple continuous dual q-Hahn,
+                                                and multiple Al-Salam–Chihara polynomials from the multiple little q-Laguerre and
+                                                the multiple little q-Jacobi polynomials.
+
+
+                                          1     Introduction
+                                          In this paper we will first show in Section 2 how some families of basic hypergeometric
+                                          polynomials are related by a linear transformation. This transformation is a q-analogue
+                                          of the Fourier–Jacobi transform that maps Jacobi polynomials to Wilson polynomials
+                                          [17]. We will consider three families of basic hypergeometric polynomials: the Al-Salam–
+                                          Chihara polynomials, the continuous dual q-Hahn polynomials and the Askey–Wilson
+                                          polynomials, and show how they can be obtained by a linear transformation from the
+                                          little q-Laguerre and the little q-Jacobi polynomials. We then extend this procedure to
+                                          multiple orthogonal polynomials in Section 3. We will first recall multiple little q-Laguerre
+                                          polynomials in Section 3.1 and multiple little q-Jacobi polynomials in Section 3.2 and then
+                                          apply the linear transformations to obtain multiple Al-Salam–Chihara polynomials (Sec-
+                                          tion 3.3), multiple continuous dual q-Hahn polynomials (Section 3.4) and finally multiple
+                                          Askey-Wilson polynomials (Section 3.5).
+
+                                          1.1    Basic hypergeometric orthogonal polynomials
+                                          Al-Salam–Chihara polynomials pn (x; a, b|q) satisfy the orthogonality
+                                                     Z 1
+                                                                                                    dx
+                                                         pn (x; a, b|q)pm (x; a, b|q)w(θ; a, b|q) √       = 0,  n 6= m,
+                                                      −1                                           1 − x2
+                                          where x = cos θ and
+                                                                                            (e2iθ , e−2iθ ; q)∞
+                                                                   w(θ; a, b|q) =                                      ,               (1.1)
+                                                                                    (aeiθ , ae−iθ , beiθ , be−iθ ; q)∞
+
+                                                                                           1
+with parameters a, b satisfying |a|, |b| < 1, see [15, §14.8], [13, §15.1]. They are given by
+                                              −n iθ −iθ             
+                                               q , ae , ae
+                       pn (x; a, b|q) = 3 φ2                     q, q .                   (1.2)
+                                                    ab, 0
+
+   Continuous dual q-Hahn polynomials pn (x; a, b, c|q) satisfy the orthogonality relations
+         Z 1
+                                                                 dx
+             pn (x; a, b, c|q)pm (x; a, b, c|q)w(θ; a, b, c|q) √       = 0, n 6= m,
+          −1                                                    1 − x2
+where x = cos θ and
+                                                         (e2iθ , e−2iθ ; q)∞
+                    w(θ; a, b, c|q) =                                                        ,          (1.3)
+                                           (aeiθ , ae−iθ , beiθ , be−iθ , ceiθ , ce−iθ ; q)∞
+
+with parameters a, b, c satisfying |a|, |b|, |c| < 1. They have the basic hypergeometric
+expression                                      −n iθ −iθ        
+                                                 q , ae , ae
+                      pn (x; a, b, c|q) = 3 φ2                q, q .               (1.4)
+                                                     ab, ac
+   Askey–Wilson polynomials pn (x; a, b, c, d|q) satisfy the orthogonality relations
+     Z 1
+                                                                       dx
+          pn (x; a, b, c, d|q)pm (x; a, b, c, d|q)w(θ; a, b, c, d|q) √       = 0, n 6= m,
+       −1                                                             1 − x2
+where x = cos θ and
+                                                          (e2iθ , e−2iθ ; q)∞
+            w(θ; a, b, c, d|q) =                                                                    ,   (1.5)
+                                   (aeiθ , ae−iθ , beiθ , be−iθ , ceiθ , ce−iθ , deiθ , de−iθ ; q)∞
+
+with parameters a, b, c, d satisfying |a|, |b|, |c|, |d| < 1, [15, §14.1], [13, §15.2]. They are
+given by                                   −n                                 
+                                             q , abcdq n−1 , aeiθ , ae−iθ
+              pn (x; a, b, c, d|q) = 4 φ3                                  q, q .          (1.6)
+                                                       ab, ac, ad
+These three families are connected and are in fact all Askey–Wilson polynomials, since
+
+   • pn (x; a, b, c, 0|q) = pn (x; a, b, c|q),
+
+   • pn (x; a, b, 0, 0|q) = pn (x; a, b|q) = pn (x; a, b, 0|q).
+
+   • an Hn (x; a|q) = pn (x; a, 0, 0, 0|q).
+
+The latter polynomials Hn (x; a|q) are the continuous big q-Hermite polynomials which we
+will use in Section 2.3. We have normalized the polynomials so that pn (0; a, b, c, d|q) =
+pn (0; a, b, c|q) = pn (0; a, b|q) = 1. Observe that
+                                                               k−1
+                                                               Y
+                                      iθ       −iθ
+                       Ak (x) = (ae , ae             ; q)k =         (1 + a2 q 2j − 2aq j x)            (1.7)
+                                                               j=0
+
+
+is a polynomial of degree k, so the polynomials (1.2), (1.4), and (1.6) are expressed as a
+linear combination of these polynomials Ak (x).
+
+                                                         2
+     Two other families of basic hypergeometric orthogonal polynomials that we will en-
+counter are orthogonal with respect to a discrete measure supported on the q-lattice
+{q k , k = 0, 1, 2, . . .}. They are the little q-Laguerre polynomials qn (x; a|q) [15, §14.20] for
+which 0 < aq < 1 and
+                         ∞
+                         X                                       (aq)k
+                                  qn (q k ; a|q)qm (q k ; a|q)           = 0,   m 6= n,           (1.8)
+                         k=0
+                                                                 (q; q)k
+
+and the little q-Jacobi polynomials qn (x; a, b|q) [15, §14.12], for which 0 < aq < 1, bq < 1
+and               ∞
+                 X                                      (aq)k (bq; q)k
+                     qn (q k ; a, b|q)qm (q k ; a, b|q)                = 0, m 6= n.      (1.9)
+                 k=0
+                                                           (q; q)k
+They are given by
+                                                            Xn
+                                              q −n , 0             (q −n ; q)k
+                 qn (x; a|q) = 2 φ1                    q, qx =                    (qx)k ,        (1.10)
+                                                aq               (aq; q)k (q; q)k
+                                                                       k=0
+
+and
+                                                       Xn
+                                   q −n , abq n+1           (q −n ; q)k (abq n+1 ; q)k
+      qn (x; a, b|q) = 2 φ1                       q, qx =                              (qx)k .   (1.11)
+                                          aq                    (aq; q)k (q; q)k
+                                                                    k=0
+
+Here we used the normalization qn (0; a|q) = 1 = qn (0; a, b|q).
+
+1.2     Multiple orthogonal polynomials
+Multiple orthogonal polynomials are polynomials in one variable that have orthogonality
+conditions with respect to several measures. There are two types of multiple orthogonal
+polynomials, but in this paper we only consider type II multiple orthogonal polynomials.
+Let r ≥ 1 be a positive integer and (µ1 , . . . , µr ) positive measures on the real line for which
+all the moments exist. We will use multi-indices ~n = (n1 , n2 , . . . , nr ) ∈ Nr and denote
+their size by |~n| = n1 + n2 + · · · + nr . Type II multiple orthogonal polynomials P~n (x)
+for the multi-index ~n are monic polynomials of degree |~n| that satisfy the orthogonality
+conditions              Z
+                           P~n (x)xk dµj (x) = 0,          0 ≤ k ≤ nj − 1,
+
+for 1 ≤ j ≤ r. This gives a system of |~n| homogeneous equations for the |~n| unknown
+coefficients of P~n . If the solution exists and if it is unique, then we say that ~n is a normal
+index. See [13, Ch. 23], [24, §4.3], [1], [20] for a background on multiple orthogonal
+polynomials.
+    During the past few decades, various examples of multiple orthogonal polynomials with
+classical weights have been worked out. Often one can take the orthogonality measures
+for classical orthogonal polynomials and by allowing r different parameters one gets r
+measures with respect to which one can look for the corresponding multiple orthogonal
+polynomials, see, e.g., [2, 7, 30]. Some of these ‘classical’ multiple orthogonal polynomials
+play an important role in applications, e.g., multiple Hermite polynomials and multiple
+Laguerre polynomials are used in the analysis of random matrices [10, 11, 18] or special
+
+                                                            3
+determinantal processes [19], multiple Jacobi polynomials and multiple little q-Jacobi
+polynomials are used in irrationality proofs [26, 27, 28], multiple Charlier and multiple
+Meixner polynomials are used to describe non-Hermitian oscillator Hamiltonians [21, 22,
+23], and in general multiple orthogonal polynomials they are useful in the analysis of
+multidimensional Schrödinger equations and the multidimensional Toda lattice [3, 4].
+     Beckermann et al. [9] worked out the most general family of classical multiple orthogo-
+nal polynomials by giving the multiple Wilson polynomials. These Wilson polynomials are
+on top of the Askey table [15, p. 183] and from this family one can move to other families
+of classical multiple orthogonal polynomials by taking limits. They used a transforma-
+tion (the Fourier-Jacobi transform) that maps Jacobi polynomials to Wilson polynomials
+(Koornwinder [17]) and showed that this transform allows to generate multiple Wilson
+polynomials from certain multiple Jacobi polynomials (the Jacobi-Piñeiro polynomials).
+In this paper we will look at the q-analogue of the Askey table [15, p. 413]. Some multiple
+q-orthogonal polynomials have already been obtained, such as the multiple little q-Jacobi
+polynomials [25], multiple q-Charlier polynomials [8] and multiple q-Hahn polynomials [6].
+On top of the q-analogue of the Askey table are the Askey–Wilson polynomials and the
+q-Racah polynomials. In this paper we will obtain multiple Askey–Wilson polynomials
+(Section 3.5) by use of a linear transformation that maps little q-Jacobi polynomials to
+Askey–Wilson polynomials. We will also obtain multiple continuous dual q-Hahn polyno-
+mials (Section 3.4) and multiple Al-Salam–Chihara polynomials (Section 3.3) using the
+transform that maps little q-Laguerre polynomials to continuous dual q-Hahn polynomi-
+als and Al-Salam–Chihara polynomials. to achieve this, we first work out the multiple
+little q-Laguerre polynomials in Section 3.1 and the multiple little q-Jacobi polynomials
+in Section 3.2.
+
+
+2     A mapping between basic hypergeometric polyno-
+      mials
+The Al-Salam–Chihara polynomials and the Askey–Wilson polynomials are most natu-
+rally expressed in the basis {Ak (x); k = 0, 1, 2, . . .} of polynomials, given in (1.7). Let us
+also consider the polynomials
+                                                            k−1
+                                                            Y
+                                      iθ    −iθ
+                        Bk (x) = (be , be         ; q)k =         (1 + b2 q 2j − 2bq j x),
+                                                            j=0
+
+
+then the orthogonality of the Al-Salam–Chihara polynomials is equivalent to
+            Z π
+          1
+                pn (x; a, b|q)(beiθ , be−iθ ; q)j w(θ; a, b|q) dθ = 0, 0 ≤ j ≤ n − 1,
+         2π 0
+and the orthogonality of the Askey–Wilson polynomials is
+        Z π
+      1
+            pn (x; a, b, c, d|q)(beiθ , be−iθ ; q)j w(θ; a, b, c, d|q) dθ = 0,               0 ≤ j ≤ n − 1.
+     2π 0
+
+
+
+
+                                                      4
+We can express these polynomials, up to a multiplicative factor, as a determinant:
+                                                                     
+                                m0,0     m0,1     m0,2 · · · m0,n
+                               m1,0     m1,1     m1,2 · · · m1,n 
+                                                                     
+                               m2,0     m2,1     m2,2 · · · m2,n 
+                                                                     
+              pn (x) = Cn det  ..        ..       ..             ..  ,           (2.1)
+                               .          .        .     · · ·    .  
+                                                                     
+                              mn−1,0 mn−1,1 mn−1,2 · · · mn−1,n 
+                                A0 (x) A1 (x) A2 (x) · · · An (x)
+where the mk,j are modified moments
+                              Z 1
+                            1                                 dx
+                  mk,j =           Aj (x)Bk (x)w(θ) √
+                           2π −1                             1 − x2
+                              Z π
+                            1
+                       =          (aiθ , ae−iθ ; q)j (beiθ , be−iθ ; q)k w(θ) dθ.
+                           2π 0
+Indeed, if we integrate then
+                                                                                                
+                                              m0,0   m0,1   m0,2                    ···    m0,n
+                                             m1,0   m      m                       ···    m1,n 
+      Z 1                                             1,1    1,2                                
+    1                         dx             m2,0   m      m                       ···    m2,n 
+                                                      2,1    2,2                                
+          pn (x)Bk (x)w(θ) √       = Cn det  ..      ..     ..                             .. 
+   2π −1                     1−x 2           .        .      .                     ···      . 
+                                                                                                
+                                            mn−1,0 mn−1,1 mn−1,2                   · · · mn−1,n 
+                                              mk,0   mk,1   mk,2                    · · · mk,n
+and this is zero when 0 ≤ k ≤ n − 1. If
+                                                                        
+                                  m0,0 m0,1            m0,2   ···   m0,n
+                                 m1,0 m1,1            m1,2   ···   m1,n 
+                                                                        
+                                                             ···   m2,n 
+                       Dn = det  m2,0 m2,1            m2,2              ,                     (2.2)
+                                 ..    ..              ..           .. 
+                                 .      .               .    ···     . 
+                                 mn,0 mn,1             mn,2   · · · mn,n
+and Cn−1 = (−2a)n q n(n−1)/2 Dn−1 , then pn (x) defined in (2.1) is a monic polynomial.
+
+2.1     Al-Salam–Chihara polynomials and little q-Laguerre poly-
+        nomials
+The modified moments for Al-Salam–Chihara polynomials can be computed using the
+integral              Z π
+                   1             (e2iθ , e−2iθ ; q)∞                          1
+                              iθ    −iθ     iθ     −iθ
+                                                              dθ =                         (2.3)
+                  2π 0 (ae , ae , be , be ; q)∞                      (q; q)∞ (ab; q)∞
+(see [13, Eq. (15.1.1)]). One easily finds
+                               Z π
+                            1
+                mk,j =             (aeiθ , ae−iθ ; q)j (beiθ , be−iθ ; q)k w(θ; a, b|q) dθ
+                           2π 0
+                               Z π
+                            1
+                      =            w(θ; aq j , bq k |q) dθ
+                           2π 0
+                                     1                     (ab; q)k+j
+                      =                  k+j
+                                                     =                      ,
+                           (q; q)∞ (abq ; q)∞           (q; q)∞ (ab; q)∞
+
+                                                  5
+so that mk,j = ck+j and Dn given in (2.2) is a Hankel determinant. The sequence (cn )n∈N
+can be identified as the moments of a discrete measure. Indeed, by the q-binomial theorem
+[12, §1.3]
+                           X∞
+                               (a; q)k k (az; q)∞
+                                        z =          ,   |z| < 1,                    (2.4)
+                           k=0
+                               (q; q) k     (z; q) ∞
+
+we see that (for a = 0)
+                     ∞
+                     X             (ab)k         1         (ab; q)n
+                           q kn           =              =          = cn (q; q)∞ ,
+                     k=0
+                                  (q; q)k   (abq n ; q)∞   (ab; q)∞
+
+so that                                            Z
+                                            cn =       xn dµ(x),
+
+for the discrete measure µ on the q-lattice {q k ; k ∈ N} for which
+                        Z 1                          ∞
+                                             1 X                  (ab)k
+                            f (x) dµ(x) =               f (q k )         .
+                         0                (q; q)∞ k=0            (q; q)k
+
+This is the orthogonality measure for the little q-Laguerre polynomials, see (1.8). From
+this we have the following result:
+Theorem 2.1. Let Ta : f 7→ Ta (f ) be the linear transformation that acts on polynomials
+as
+                              Ta (xk ) = (aeiθ , ae−iθ ; q)k .
+Then the Al-Salam–Chihara polynomials pn (x; a, b|q) and little q-Laguerre polynomials
+qn (x; a|q) are connected by
+
+                                     pn (x; a, b|q) = Ta qn (x; ab/q|q).
+
+Proof. Orthogonal polynomials are given in terms of the moments cn of their orthogonality
+measure by the determinant [13, Eq. (2.1.6)]
+                                                               
+                                      c0 c1 c2 · · ·        cn
+                                     c1 c2 c3 · · · cn+1 
+                                                               
+                                     c2 c3 c4 · · · cn+2 
+                                                               
+                    pn (x) = Cn det  ..     ..   ..         ..  ,
+                                     .       .    .  ···     . 
+                                                               
+                                    cn−1 cn cn+1 · · · c2n−1 
+                                       1     x x2 · · ·    xn
+
+where Cn is a constant which fixes the normalization. If we compare this with (2.1), then
+we need to replace every xk by (aeiθ , ae−iθ ; q)k = Ak (x), see (1.7). The sequence (cn )n∈N
+contains the moments of the measure
+                                                   ∞
+                                             1 X (ab)k
+                                       µ=                    δ k.
+                                          (q; q)∞ k=0 (q; q)k q
+
+Recall that the little q-Laguerre polynomials qn (x; a|q) satisfy the orthogonality relations
+(1.8), hence the orthogonal polynomials with moments (cn )n∈N are the little q-Laguerre
+
+                                                       6
+polynomials qn (x; ab/q|q). Applying the transformation Ta to the determinantal expres-
+sion for qn (x; ab/q|q) then shows that Ta qn (x; ab/q|q) is proportional to the Al-Salam–
+Chihara polynomial pn (x; a, b|q). The little q-Laguerre polynomials are given by (1.10)
+                                               −n                
+                                                  q ,0
+                           qn (x; a|q) = 2 φ1               q, qx
+                                                    aq
+                                          X n
+                                                 (q −n ; q)k
+                                       =                        q k xk ,
+                                          k=0
+                                               (aq; q)k (q; q)k
+
+hence applying Ta to the polynomial qn (x; ab/q|q) gives
+                                         ∞
+                                         X    (q −n ; q)k
+               Ta qn (x; ab/q|q) =                             q k (aeiθ ; q)k (ae−iθ ; q)k
+                                       k=0
+                                            (ab; q) k (q; q) k
+                                             −n iθ −iθ                     
+                                              q , ae , ae
+                                     = 3 φ2                            q, q ,
+                                                      ab, 0
+and this is indeed the basic hypergeometric expression (1.2) for the Al-Salam–Chihara
+polynomial pn (x; a, b|q). Therefore the proportionality factor is 1 and the result follows.
+
+
+   The linear transformation Ta can be given explicitly and uses continuous q-Hermite
+polynomials Hn (x|q), which are given in [15, §14.26] [13, §13.1]. They satisfy the orthog-
+onality         Z 1
+              1                                             dx       δm,n
+                     Hn (x|q)Hm (x|q)(e2iθ , e−2iθ ; q)∞ √       = n+1      ,          (2.5)
+             2π −1                                         1−x 2   (q ; q)∞
+and they have the generating function [15, Eq. (14.26.11)] [13, Thm. 13.1.1]
+                     ∞
+                     X Hn (x|q)                         1
+                                      tn =                            ,       x = cos θ.      (2.6)
+                     n=0
+                           (q; q)n           (teiθ , te−iθ ; q)   ∞
+
+Theorem 2.2. The linear transformation Ta that acts on polynomials as
+                                      Ta xk = (aeiθ , ae−iθ ; q)k
+is given by
+                                                            ∞
+                                                            X                   Hn (x|q)
+                     (Ta f )(x) = (aeiθ , ae−iθ ; q)∞              f (q n )an            .    (2.7)
+                                                            n=0
+                                                                                (q; q)n
+
+Proof. Obviously the transformation given in (2.7) is linear, so we only need to check that
+it acts properly on the monomials xk . If we take f (x) = xk in (2.7) then
+                                                            ∞
+                                                            X               Hn (x|q)
+                        Ta xk = (aeiθ , ae−iθ ; q)∞               q kn an            .
+                                                            n=0
+                                                                            (q; q)n
+
+Taking t = aq k in the generating function (2.6) gives
+                                  (aeiθ , ae−iθ ; q)∞
+                      Ta xk =                               = (aeiθ , ae−iθ ; q)k ,
+                                (aq k eiθ , aq k e−iθ ; q)∞
+which is indeed what we need.
+
+                                                    7
+   The transformation Ta has an interesting isometric property, preserving certain inner
+products.
+
+Proposition 2.3. Let hf, gidis(a) be the discrete inner product
+                                                     ∞
+                                               1 X                        an
+                             hf, gidis(a) =             f (q n )g(q n )         ,
+                                            (q; q)∞ n=0                 (q; q)n
+
+and hu, vicont(a,b) be the continuous inner product
+                                                Z 1
+                                         1                                  dx
+                      hu, vicont(a,b) =              u(x)v(x)w(θ; a, b|q) √       ,
+                                        2π        −1                       1 − x2
+
+where w(θ; a, b|q) is the weight function (1.1). Then
+
+                                      hTa f, Tb gicont(a,b) = hf, gidis(ab) .
+
+Proof. By using (2.7) we find
+
+                            X ∞
+                            ∞ X
+                                                             an bm
+  hTa f, Tb gicont(a,b) =             f (q n )g(q m )
+                            n=0 m=0
+                                                        (q; q)n (q; q)m
+                            Z 1
+                     1                                                                               dx
+                  ×               (ae , ae−iθ , beiθ , be−iθ ; q)∞ w(θ; a, b|q)Hn (x|q)Hm (x|q) √
+                                  iθ
+                                                                                                           .
+                    2π       −1                                                                     1 − x2
+The integral simplifies to
+                 Z 1
+               1                                             dx          (q; q)n
+                     (e2iθ , e−2iθ ; q)∞ Hn (x|q)Hm (x|q) √       = δn,m         ,
+              2π −1                                         1−x 2        (q; q)∞
+
+which follows from the orthogonality (2.5) of the continuous q-Hermite polynomials.
+Hence the double sum becomes a single sum and the result follows.
+    As a corollary we see that the orthogonality relations of the Al-Salam–Chihara poly-
+nomials follow from the orthogonality of the little q-Laguerre polynomials. Indeed, by
+Theorem 2.1 we have Ta qn (x; ab/q|q) = pn (x; a, b|q) and by interchanging a and b we also
+have Tb qm (x; ab/q|q) = pm (x; b, a|q) and the latter is equal to pm (x; a, b|q). Proposition
+2.3 then shows that
+      Z 1
+   1
+          pn (x; a, b|q)pm (x; a, b|q)w(θ; a, b|q) dθ
+  2π −1
+                                                          ∞
+                                                    1 X           k              k           (ab)k
+                                             =               qn (q ; ab/q|q)qm (q ; ab/q|q)         ,
+                                                 (q; q)∞ k=0                                (q; q)k
+
+and the latter is 0 whenever m 6= n by the orthogonality (1.8) of the little q-Laguerre
+polynomials. Clearly the norms of pn (x; a, b|q) and qn (x; ab/q|q) are also connected.
+
+
+
+
+                                                            8
+2.2       Askey–Wilson polynomials and little q-Jacobi polynomials
+The modified moments mk,j for the Askey–Wilson weight are given by
+                       Z π
+                     1
+            mk,j =         (aeiθ , ae−iθ ; q)j (beiθ , be−iθ ; q)k w(θ; a, b, c, d|q) dθ
+                    2π 0
+                       Z π
+                     1
+                 =         w(θ; aq j , bq k , c, d|q) dθ.
+                    2π 0
+
+To evaluate this integral we use the Askey–Wilson integral [13, Eq. (15.2.1)]
+      Z π
+    1                                         (abcd; q)∞
+          w(θ; a, b, c, d|q) dθ =                                      , |a|, |b|, |c|, |d| < 1,
+   2π 0                           (q; q)∞ (ab, ac, ad, bc, bd, cd; q)∞
+                                                                                              (2.8)
+which gives
+
+                               (abcdq k+j ; q)∞
+    mk,j =
+             (q; q)∞ (abq k+j , acq j , adq j , bcq k , bdq k , cd; q)∞
+                         (abcd; q)∞                     (ab; q)k+j (ac; q)j (ad; q)j (bc; q)k (bd; q)k
+           =                                                                                           . (2.9)
+             (q; q)∞ (ab, ac, ad, bc, bd, cd; q)∞                       (abcd; q)k+j
+
+This expression contains a Hankel part ck+j depending only on k + j, with
+
+                            (ab; q)n                                    (abcd; q)∞
+                 cn = c0              ,              c0 =                                        .
+                           (abcd; q)n                       (q; q)∞ (ab, ac, ad, bc, bd, cd; q)∞
+
+The sequence (cn )n∈N can again be identified as the moments of a discrete measure on the
+q-lattice {q k : k ∈ N}. If we take z = bq n in the q-binomial theorem (2.4), then
+                          ∞
+                          X (a; q)k                   (abq n ; q)∞   (ab; q)∞ (b; q)n
+                                          bk q nk =       n
+                                                                   =                   ,
+                                (q; q)k                (bq ; q)∞      (b; q)∞ (ab; q)n
+                          k=0
+
+so that              Z 1                       Z 1                        ∞
+                                                                          X (cd; q)k
+                            n
+              cn =         x dν(x),                   f (x) dν(x) = ĉ0                   (ab)k f (q k ),
+                      0                          0                              (q; q)k
+                                                                          k=0
+
+where ĉ0 = 1/(q; ac, ad, bc, bd, cd; q)∞. This is the orthogonality measure for little q-Jacobi
+polynomials, see (1.9). We can now prove the following result.
+
+Theorem 2.4. Let Ta,c,d : f 7→ Ta,c,d (f ) be the linear transformation that acts on polyno-
+mials as
+                                             (aeiθ , ae−iθ ; q)k
+                              Ta,c,d (xk ) =                     .
+                                             (ac; q)k (ad; q)k
+Then the Askey–Wilson polynomials pn (x; a, b, c, d|q) and little q-Jacobi polynomials qn (x; a, b|q)
+are connected by
+                     pn (x; a, b, c, d|q) = Ta,c,d qn (x; ab/q, cd/q|q).
+
+
+
+
+                                                             9
+Proof. If we insert (2.9) in the determinant (2.1), then we can take out the factor
+(bc; q)k (bd; q)k in the kth row and the factor (ac; q)j (ad; q)j in the jth column, to find
+                                                                                              
+                                                              c0       c1     c2   ···     cn
+                                                             c1       c2     c3   · · · cn+1 
+                          n−1
+                          Y               Yn                                                  
+                                                                                  · · · cn+2 
+pn (x; a, b, c, d|q) = Cn     (bc, bd; q)k (ac, ad; q)j det  c2       c3     c4               ,
+                                                             ..        .
+                                                                        ..     .
+                                                                               ..           .. 
+                                                                                            .
+                          k=0             j=0                .                    ···         
+                                                                       Â0 (x) Â1 (x) Â2 (x) · · · Ân (x)
+where
+                                          (aeiθ , ae−iθ ; q)k
+                                         Âk (x) =            .
+                                          (ac; q)k (ad; q)k
+Recall that the little q-Jacobi polynomials satisfy the orthogonality (1.9)
+                 ∞
+                 X                                          (bq; q)k
+                       qn (q k ; a, b|q)qm (q k ; a, b|q)            (aq)k = 0,        m 6= n,
+                 k=0
+                                                             (q; q)k
+
+so the sequence (cn )n∈N contains the moments of the orthogonality measure for the little
+q-Jacobi polynomials qn (x; ab/q, cd/q|q). The determinant representation of the little q-
+Jacobi polynomials is therefore given by
+                                                                        
+                                                c0 c1 c2 · · · cn
+                                               c1 c2 c3 · · · cn+1 
+                                                                        
+                                        bn det 
+                 qn (x; ab/q, cd/q|q) = C      c  2 c 3 c 4 · · · c n+2
+                                                                         
+                                                                         ,
+                                                .. .. ..             .. 
+                                                . . . ···             . 
+                                                 1 x x · · · xn
+                                                           2
+
+
+where C  bn is a normalizing constant. Applying the linear transformation Ta,c,d shows that
+Tacd qn (x; ab/q, cd/q|q) is proportional to pn (x; a, b, c, d|q). The explicit expression for the
+little q-Jacobi polynomials is (1.11) hence applying the transformation Ta,c,d to it gives
+                                               n
+                                               X (q −n , q)k (abcdq n−1 ; q)k(aeiθ , ae−iθ ; q)k
+         Ta,c,d qn (x; ab/q, cd/q|q) =                                            qk
+                                            k=0
+                                                    (ab; q)k (q; q)k         (ac; q)k (ad; q)k
+                                                  −n                                 
+                                                   q , abcdq n−1 , aeiθ , ae−iθ
+                                          = 4 φ3                                  q, q ,
+                                                           ab, ac, ad
+which is indeed the basic hypergeometric expression (1.6) for the Askey–Wilson polyno-
+mial. Hence the proportionality factor is 1 and the result follows.
+    The linear transformation Ta,c,d can also be given explicitly and is in terms of the
+Al-Salam–Chihara polynomials. We will use a multiple of the polynomials pn (x; a, b|q)
+defined above and put
+                                                                  −n iθ −iθ       
+                         (ab; q)n                  (ab; q)n        q , ae , ae
+        Qn (x; a, b|q) =          pn (x; a, b|q) =          3 φ2               q, q .
+                           an                        an                ab, 0
+They have the following generating function ([15, Eq. (14.8.13)] [13, Eq. (15.1.10)]
+                    ∞
+                    X Qn (x; a, b|q)                  (at, bt; q)∞
+                                            tn =                        ,     x = cos θ.             (2.10)
+                       n=0
+                               (q; q)n              (teiθ , te−iθ ; q)∞
+
+                                                        10
+Theorem 2.5. The linear transformation Ta,c,d that acts on polynomials as
+
+                                                        (aeiθ , ae−iθ ; q)k
+                                          Ta,c,dxk =
+                                                        (ac; q)k (ad; q)k
+
+is given by
+                                                              ∞
+                                          (aeiθ , ae−iθ ; q)∞ X            Qn (x; c, d|q)
+                     (Ta,c,d f )(x) =                           f (q n )an                .                 (2.11)
+                                            (ac, ad; q)∞ n=0                  (q; q)n
+
+Proof. The transformation in (2.11) is obviously linear, so we need only to check how it
+acts on polynomials xk . Taking f (x) = xk in (2.11) gives
+                                                         ∞
+                                   k (aeiθ , ae−iθ ; q)∞ X kn n Qn (x; c, d|q)
+                          Ta,c,d x =                       q a                 ,
+                                       (ac, ad; q)∞ n=0            (q; q)n
+
+and if we put t = aq k in the generating function (2.10), then this gives
+
+                      k  (aeiθ , ae−iθ ; q)∞ (acq k , adq k ; q)∞     (aeiθ , ae−iθ ; q)k
+              Ta,c,d x =                                            =                     ,
+                           (ac, ad; q)∞ (aq k eiθ , aq k e−iθ ; q)∞     (ac, ad; q)k
+
+which is the desired result.
+     This transformation was given explicitly in [14], see e.g. their equation (4.5). Their
+formula (4.7) also gives the Askey–Wilson polynomials as the image of applying Ta,c,d to
+little q-Jacobi polynomials. When c = d = 0 the transformation Ta,c,d is equal to Ta ,
+which reflects the fact that Qn (x; 0, 0|q) = Hn (x|q). This transformation Ta,c,d also obeys
+a Plancherel type result in the following sense.
+
+Proposition 2.6. Let hf, gidis(a,b) be the discrete inner product
+                                                     ∞
+                                               1 X                        (b; q)n
+                           hf, gidis(a,b) =             f (q n )g(q n )an         ,
+                                            (q; q)∞ n=0                   (q; q)n
+
+and hu, vicont(a,b,c,d) be the continuous inner product
+                                                               Z 1
+                             (ac, ad, bc, bd, cd; q)∞                                             dx
+       hu, vicont(a,b,c,d) =                                         u(x)v(x)w(θ; a, b, c, d|q) √       ,
+                                        2π                        −1                             1 − x2
+
+where w(θ; a, b, c, d|q) is the Askey–Wilson weight function (1.5). Then
+
+                                 hTa,c,d f, Tb,c,dgicont(a,b,c,d) = hf, gidis(ab,cd) .
+
+Proof. If we use the expression (2.11) for the transformation Ta,c,d then
+                                 ∞ X
+                                 X ∞
+                                                                            an bm
+  hTa,c,d f, Tb,c,dgia,b,c,d =             f (q n )g(q m )
+                                 n=0 m=0
+                                                             (q; q)n (q; q)m (ac, ad, bc, bd; q)∞
+              Z π
+          1
+       ×            (aeiθ , ae−iθ ; q)∞ (beiθ , be−iθ ; q)∞ Qn (x; c, d|q)Qm (x; c; d|q)w(θ; a, b, c, d) dθ.
+         2π     0
+
+
+
+                                                             11
+Observe that the integral in this expression is
+    Z π
+  1                                       (e2iθ , e−2iθ ; q)∞
+        Qn (x; c, d|q)Qm (x; c, d|q) iθ −iθ iθ −iθ            dθ
+ 2π 0                               (ce , ce , de , de ; q)∞
+                                                                                          δn,m
+                                                                           =                           ,
+                                                                               (q n+1 ; q)      n
+                                                                                          ∞ (cdq ; q)∞
+
+(see [15, Eq. (14.8.2)]), so that the double sum becomes a single sum
+                                                    X∞
+                                  1                                          (cd; q)n
+                                                        f (q n )g(q n )(ab)n          ,
+                   (q; q)∞ (ac, ad, bc, bd, cd; q)∞ n=0                      (q; q)∞
+
+which is the desired expression in terms of the discrete inner product hf, gidis(ab,cd) .
+    As a corollary, the orthogonality for the Askey–Wilson polynomials now follows from
+the orthogonality of the little q-Jacobi polynomials. Indeed, if we use Theorem 2.4 then
+Ta,c,d qn (x; ab/q, cd/q|q) = pn (x; a, b, c, d|q) and Tb,c,d qm (x; ab/q, cd/q|q) = pm (x; b, a, c, d|q)
+and the latter is equal to pm (x; a, b, c, d|q). Hence by Proposition ??
+                            Z
+  (ac, ad, bc, bd, cd; q)∞ π
+                                pn (x; a, b, c, d|q)pm (x; a, b, c, d|q)w(θ; a, b, c, d|q) dθ
+               2π            0
+                                       ∞
+                                1 X                                                           (cd; q)k
+                          =                qn (q k ; ab/q, cd/q|q)qm(q k ; ab/q, cd/q|q)(ab)k          ,
+                             (q; q)∞ k=0                                                       (q; q)k
+
+and this is 0 whenever m 6= n because of the orthogonality relations (1.9) for the little
+q-Jacobi polynomials. Clearly one can also relate the norms of pn (x; a, b, c, d|q) with those
+of qn (x; ab/q, cd/q|q) by putting n = m.
+
+2.3     Continuous dual q-Hahn polynomials and little q-Laguerre
+        polynomials
+The modified moments for the continuous dual q-Hahn polynomials correspond to the
+modified moments of the Askey–Wilson weight with d = 0,
+                         Z π
+                       1
+            mk,j =            (aeiθ , ae−iθ ; q)j ((beiθ , be−iθ ; q)k w(θ|a, b, c|q) dθ
+                      2π 0
+                      (ab; q)k+j (ac; q)j (bc; q)k
+                  =                                 .                                    (2.12)
+                       (q; q)∞ (ab, ac, bc; q)∞
+The Hankel part (ab; q)k+j corresponds to the moments of the discrete measure µ that we
+used in Section 2.1, which is the orthogonality measure for the little q-Laguerre polyno-
+mials. We can then prove the following result
+Theorem 2.7. Let Ta,c : f 7→ Ta,c f be the linear transformation that acts on polynomials
+as
+                                           (aeiθ , ae−iθ ; q)k
+                                 Ta,c xk =                     .
+                                               (ac; q)k
+Then the continuous dual q-Hahn polynomials pn (x; a, b, c|q) and the little q-Laguerre poly-
+nomials qn (x; a|q) are connected by
+                                pn (x; a, b, c|q) = Ta,c qn (x; ab/q|q).
+
+                                                   12
+Proof. If we insert the modified moments (2.12) in (2.1), then we can take out the factor
+(bc; q)k in row k and the factor (ac; q)j in column j. This gives
+                                                                                  
+                                                     c0     c1    c2    ···    cn
+                          n−1
+                          Y          n
+                                     Y              c1     c2    c3    · · · cn+1 
+                                                                                  
+   pn (x; a, b, c|q) = Cn    (bc; q)k (ac; q)j det  ..      ..    ..           ..  ,
+                        k=0             j=0
+                                                    .        .     .   ···      . 
+                                                             Ã0 (x) Ã1 (x) Ã2 (x) · · · Ãn (x)
+where
+                                         (aeiθ , ae−iθ ; q)k
+                                        Ãk (x) =            ,
+                                             (ac; q)k
+and (cn )n∈N are the moments of the measure µ, which is the measure for the little q-
+Laguerre polynomials qn (x; ab/q|q). Hence applying Ta,c to qn (x; ab/q|q) gives the contin-
+uous dual q-Hahn polynomials.
+   The linear transformation Ta,c can again be given explicitly and is in term of the
+continuous big q-Hermite polynomials Hn (x; a|q), which are given in [15, §14.18]. The
+orthogonality relations are
+              Z 1
+            1                            (e2iθ , e−2iθ ; q)∞   dx      δm,n
+                   Hn (x; a|q)Hm (x; a|q) iθ −iθ             √      = n+1     ,
+           2π −1                         (ae , ae ; q)∞ 1 − x     2  (q , q)∞
+and they have a generating function
+                     ∞
+                     X Hn (x; a|q)                   (at; q)∞
+                                          tn =                          ,   x = cos θ.               (2.13)
+                     n=0
+                              (q; q)n            (te , te−iθ ; q)
+                                                    iθ
+                                                                    ∞
+
+Observe that for a = 0 they reduce to the continuous q-Hermite polynomials that we used
+in Section 2.1.
+Theorem 2.8. The linear transformation Ta,c that acts on polynomials as
+                                                    (aeiθ , ae−iθ ; q)k
+                                        Ta,c xk =
+                                                        (ac; q)k
+is given by
+                                                        ∞
+                                   (aeiθ , ae−iθ ; q)∞ X              Hn (x; c|q)
+                    (Ta,c f )(x) =                         f (q n )an             .                  (2.14)
+                                       (ac; q)∞        n=0
+                                                                       (q; q) n
+
+Proof. The linearity is obvious and the action of Ta,c on xk can easily be checked, using
+the generating function (2.13).
+Proposition 2.9. Let hf, gidis(a) be the discrete inner product
+                                                       ∞
+                                                 1 X                        an
+                           hf, gidis(a) =                 f (q n )g(q n )         ,
+                                              (q; q)∞ n=0                 (q; q)n
+and hu, vicont(a,b,c) the continuous inner product
+                                        Z
+                            (ac, bc; q)∞ 1
+                                            u(x)v(x)w(θ; a, b, c|q) dθ,
+                                 2π      −1
+
+where w(θ; a, b, c|q) is the weight function (1.3). Then
+                                hTa,c f, Tb,c gicont(a,b,c) = hf, gidis(ab) .
+
+                                                      13
+Proof. This follows from Proposition 2.6 by taking d = 0, or from the orthogonality of
+the continuous big q-Hermite polynomials in a similar way as in the proofs of Proposition
+2.3 and 2.6.
+    As a corollary one can deduce the orthogonality of the continuous dual q-Hahn poly-
+nomials from the orthogonality of the little q-Laguerre polynomials, by using Theorem
+2.7.
+
+                                         Askey–Wilson
+                                         pn (x; a, b, c, d|q)
+
+                                                                ❆❑❆
+                                                                   ❆
+                                                                       ❆
+                                                                        ❆
+                                                                            ❆
+                                   continuous dual q-Hahn                    ❆
+                                                                                 ❆
+                                         pn (x; a, b, c|q)                        ❆
+                                                                          ❆
+                                                                          ✏❆✉ Ta,c,d
+                                          ❆❑❆                       ✏  ✏✏   ❆
+                                              ❆             ✏  ✏✏             ❆
+                                                         ✏
+                                               ❆✏✏✏                             ❆
+                                         ✏✏ ❆                                    ❆
+                                                   ❆
+                   Al-Salam–Chihara                  ❆          little q-Jacobi
+                                                T     ❆
+                       pn (x; a, b|q)            a,c ❆✉            qn (x; a; b|q)
+                                                        ❆
+                                      ❨❍
+                                      ❍                   ❆
+                                        ❍❍                 ❆
+                                            ❍❍Ta             ❆
+                                                  ✉❍          ❆
+                                                       ❍
+                                                        ❍ ❆
+
+                 continuous big q-Hermite                       little q-Laguerre
+                        Hn (x; a|q)                                  qn (x; a|q)
+
+
+
+
+                                       continuous q-Hermite
+                                              Hn (x|q)
+
+
+Figure 1: Schematic presentation of the hypergeometric orthogonal polynomials and the
+transformations between them.
+
+   It is interesting to see how these various families of basic hypergeometric polynomials
+are connected, see Figure 1. Continuous q-Hermite polynomials are at the bottom of the
+q-Askey scheme of basic hypergeometric polynomials [15, p. 413], with a weight function
+w(θ|q) = (e2iθ , e−2iθ ; q)∞ . You need them for the transformation Ta that maps little q-
+Laguerre polynomials to Al-Salam–Chihara polynomials, which have a weight w(θ; a, b|q)
+
+                                                 14
+with two parameters a, b. A more general transformation Ta,c maps the same little q-
+Laguerre polynomials to continuous dual q-Hahn polynomials, which have a weight func-
+tion w(θ; a, b, c|q) with three parameters. The Al-Salam–Chihara polynomials in turn are
+needed for the transformation Ta,c,d which maps little q-Jacobi polynomials to Askey–
+Wilson polynomials which have a weight function w(θ; a, b, c, d|q) with four parameters.
+These transformations Ta , Ta,c and Ta,c,d seem to be special cases of the Askey–Wilson
+function transform given in [16, Eq. (5.9)] and [29, p. 312], since the polynomials Hn (x|q),
+Hn (x; a|q) and Qn (x; a, b|q) in our tranformations Ta , Ta,c and Ta,c,d are special cases of
+the Askey–Wilson polynomial pn (x; a, b, c, d|q), but this needs a little more inspection of
+those papers. Our Plancherel type formulas then correspond to [16, Thm. 1 and Prop. 3]
+and [29, Thm. 5.1].
+
+
+3     Multiple basic hypergeometric polynomials
+We will now use the results from the previous section to construct multiple hypergeometric
+orthogonal polynomials for Askey–Wilson weights, continuous dual q-Hahn weights and
+Al-Salam–Chihara weights from discrete multiple orthogonal polynomials on the q-lattice
+{q k , k ∈ N}. We always use r weights (w1 , . . . , wr ) obtained by changing the parameter
+a to a vector ~a = (a1 , . . . , ar ). We start by recalling some results for the multiple little
+q-Laguerre and the multiple little q-Jacobi polynomials.
+
+3.1     Little q-Laguerre polynomials
+The little q-Laguerre polynomials are given by [15, §14.20]
+                                   −n          X   n
+                                    q ,0                  (q −n ; q)k
+               qn (x; a|q) = 2 φ1         q, qx =                       q k xk .                     (3.1)
+                                     aq                (q; q)k (aq; q)k
+                                                   k=0
+
+When taking a = q α , they can be obtained by the Rodrigues formula
+
+                                             q ( 2 ) an (1 − q)n n n+α
+                                                          n
+
+                                  α
+                    (qx; q)∞ x qn (x; a|q) =                    Dp x (qx; q)∞ ,                      (3.2)
+                                                    (aq; q)n
+where p = 1/q and Dp is the p-difference operator
+                                         f (px) − f (x)    q f (px) − f (x)
+                        Dp f (x) =                      =                   .
+                                            x(p − 1)      1−q      x
+Note that these polynomials are neither monic nor orthonormal, but they are normalized
+by qn (0; a|q) = 1.
+   Multiple little q-Laguerre polynomials q~n (x; ~a|q) for the multi-index ~n = (n1 , n2 , . . . , nr )
+depend on r parameters ~a = (a1 , a2 , . . . , ar ) and satisfy multiple orthogonality relations
+                       ∞
+                       X                             (aj q)k
+                              q~n (q k ; ~a|q)q kℓ           = 0,      0 ≤ k ≤ nj − 1,               (3.3)
+                                                     (q; q)k
+                        k=0
+
+for 1 ≤ j ≤ r. They can be defined by the Rodrigues formula
+                                                          r
+                                                          Y                         
+                  (qx; q)∞ q~n (x; ~a|q) = C~n (~a)             x−αj Dpnj xnj +αj       (qx; q)∞ ,   (3.4)
+                                                          j=1
+
+
+                                                           15
+                                                                               n
+where aj = q αj and the p-difference operators x−αj Dp j xnj +αj are commuting.
+Theorem 3.1. If we take the normalizing factor in (3.4) as
+                                                                           nj
+                                                                        q ( 2 ) aj j
+                                                                      r          n
+                                                                      Y
+                                                                |~
+                                                                 n|
+                                       C~n (~a) = (1 − q)                               ,                         (3.5)
+                                                                      j=1
+                                                                          (aj q; q)nj
+
+then an explicit expression for the multiple little q-Laguerre polynomials is given by
+                   n1
+                   X            r
+                             nr Y
+                             X                               r−1
+                                                             Y                                              ~
+                                        (q −nj ; q)kj            (aj q nj +1 ; q)kj+1+···+kr          (qx)|k|
+  q~n (x; ~a|q) =      ···                                             kj +1 ; q)
+                                                                                                   Pr      Pr        .
+                                    (q; q) k   (aj q; q) k       (aj q            k     +···+k   q  j=1 nj  i=j+1 ki
+                                             j             j                        j+1        r
+                  k =0
+                    1      k =0 j=1
+                              r                              j=1
+                                                                                                                  (3.6)
+These multiple little q-Laguerre polynomials are normalized so that q~n (0; ~a|q) = 1.
+Proof. We will use induction on r. For r = 1 we have the result (3.1) for the usual little
+q-Laguerre polynomials in [15, §14.20] and
+                                                      q ( 2 ) an (1 − q)n
+                                                            n
+
+                                             Cn (a) =                     ,                                       (3.7)
+                                                             (aq; q)n
+as can be deduced from (3.2).
+                                                                          n
+    Suppose the result is true for r − 1. The difference operators x−αj Dp j xnj +αj , 1 ≤
+j ≤ r are all commuting, so the order in which we take the product of these operators is
+irrelevant. The Rodrigues formula (3.4) can then be written as
+                                                                          r
+                                                                          Y                         
+           (qx; q)∞ q~n (x; ~a|q) = C~n (~a)x−α1 Dpn1 xn1 +α1                      x−αj Dpnj xnj +αj (qx; q)∞ .
+                                                                          j=2
+                                                          Qr
+By the induction hypothesis, the product j=2 can be written as an (r − 1)-fold sum and
+we have
+                                  C~n (~a)
+  (qx; q)∞ q~n (x; ~a|q) =                         x−α1 Dpn1 xn1 +α1 (qx; q)∞ q~n−n1~e1 (x; ~a − a1~e1 |q)
+                           C~n−n1~e1 (~a − a1~e1 )
+                                                   Xn2      Xnr Y r
+                                  C~n (~a)                               (q −nj ; q)kj
+                         =                              ···
+                           C~n−n1~e1 (~a − a1~e1 ) k =0     k =0 j=2
+                                                                      (q; q)kj (aj q; q)kj
+                                                             2             r
+                                      r−2
+                                      Y        nj +1
+                                          aj q       ; q)kj+1+···+kr (qx)k2 +···+kr
+                                  ×             kj +1 ; q)
+                                                                            Pr      Pr
+                                          (aj q            k     +···+k   q  j=2 nj  i=j+1 ki
+                                      j=2                    j+1        r
+
+
+                                  × x−α1 Dpn1 xn1 +α1 +k2 +···+kr (qx; q)∞ .
+The p-difference on the last line can be worked out using the Rodrigues formula (3.2) for
+r=1
+                                                      (qx; q)∞
+         x−α1 Dpn1 xn1 +α1 +k2 +···+kr (qx; q)∞ =           k   +···+k
+                                                                           qn1 (x; a1 q k2 +···+kr |q),
+                                                  Cn1 (a1 q   2        r )
+and if we use the sum (3.1) and the expression (3.7) for Cn1 (a1 q k2 +···+kr ) then after some
+calculus we find the desired expression (3.6), provided
+                                        q ( 2 ) an1 1 (1 − q)n1
+                                           n1
+
+                             C~n (~a) =                         C~n−n1~e1 (~a − a1~e1 ).
+                                              (a1 q; q)n1
+This is achieved by taking C~n (~a) as in (3.5).
+
+                                                            16
+3.2     Little q-Jacobi polynomials
+Multiple little q-Jacobi polynomials were introduced in [25], where two kinds were given.
+Here we only deal with the multiple little q-Jacobi polynomials of the first kind and we
+will use a different normalization. Recall that the little q-Jacobi polynomials are given by
+                             −n                X   n
+                              q , abq n+1               (q −n ; q)k (abq n+1 ; q)k k k
+      qn (x; a, b|q) = 2 φ1               q, qx =                                 q x , (3.8)
+                                  aq                        (q; q)k (aq; q)k
+                                                   k=0
+
+where a = q α and b = q β . They are given by the Rodrigues formula
+                     (qx; q)∞ α                                     (qx; q)∞
+                              x qn (x; a, b|q) = Cn (a, b)Dpn xn+α n+1       ,                     (3.9)
+                    (bqx; q)∞                                     (bq x; q)∞
+where
+                                                q ( 2 ) an (1 − q)n
+                                                                    n
+
+                           Cn (a, b) = Cn (a) =                     .                             (3.10)
+                                                       (aq; q)n
+These little q-Jacobi polynomials have the orthogonality relations
+                  ∞
+                  X                                               (bq; q)k k
+                         qn (q k ; a, b|q)qm (q k ; a, b|q)q k             a = 0,    n 6= m.
+                   k=0
+                                                                   (q; q)k
+
+Observe that for b = 0 we retrieve the little q-Laguerre polynomials.
+   Multiple little q-Jacobi polynomials (of the first kind) q~n (x; ~a, b|q) are obtained by
+changing the parameter a to a vector ~a = (a1 , . . . , ar ). If ~n = (n1 , n2 , . . . , nr ) the orthog-
+onality relations then become
+                   ∞
+                   X                                    (bq; q)k k
+                          q~n (q k ; ~a, b|q)q kℓ q k           a = 0,       0 ≤ ℓ ≤ nj − 1,      (3.11)
+                    k=0
+                                                         (q; q)k j
+
+for 1 ≤ j ≤ r. One needs the condition αi − αj 6∈ Z in order that these orthogonality
+relations determine the multiple orthogonal polynomials in a unique way. In [25, Thm.
+2.2] a Rodrigues formula was given
+                                                  Yr
+          (qx; q)∞                                                       (qx; q)∞
+                   q~n (x; ~a, b|q) = C~n (~a, b)     x−αj Dpnj xnj +αj      |~
+                                                                              n|+1 x; q)
+                                                                                           ,      (3.12)
+         (bqx; q)∞                                j=1
+                                                                         (bq             ∞
+
+
+where C~n (~a, b) is a constant that determines the normalization. An expression in terms
+of a generalized basic hypergeometric function was given in [25, Eq. (2.7)]
+                                                 −|~n|                                       
+           (qx; q)∞                               q /b, a1 q n1 +1 , . . . , ar q nr +1
+                      q~n (x; ~a, b|q) = r+1 φr                                         q, bqx .
+          (bqx; q)∞                                     a1 q, a2 q, . . . , ar q
+Here we used the normalization so that q~n (0; ~a, b|q) = 1, which is different from the
+normalization in [25]. Note that the limit b → 0 gives the multiple little q-Laguerre
+polynomials q~n (x; ~a|q), so that we get the generalized hypergeometric representation
+                                                                                          
+                                              a1 q n1 +1 , . . . , ar q nr +1      −|~
+                                                                                     n|+1
+              (qx; q)∞ q~n (x; ~a|q) = r φr                                   q, q        x .
+                                                a1 q, a2 q, . . . , ar q
+   An expression for the multiple little q-Jacobi polynomials in terms of a finite r-fold
+sum is given by
+
+                                                             17
+Theorem 3.2. If we take the normalizing factor in (3.12) as C~n (~a; b) = C~n (a) as in
+(3.5), then an explicit expression for the multiple little q-Jacobi polynomials (of the first
+kind) is given by
+                                                                               Pj
+                       n1
+                       X                r
+                                     nr Y
+                                     X    (q −nj ; q)kj (aj bq                   i=1 ni +1   ; q)Pri=j ki
+  q~n (x; ~a, b|q) =           ···
+                       k1 =0         kr =0 j=1
+                                                                (q; q)kj (aj q; q)Pri=j ki
+                                                        r−1
+                                                        Y                                                                  ~
+                                                                    (aj q nj +1 ; q)kj+1 +···+kr                    (qx)|k|
+                                                    ×                    Pj                                    Pr         Pr          . (3.13)
+                                                                              i=1 ni +1                          j=1 nj    i=j+1 ki
+                                                        j=1 (aj bq                        ; q)kj+1 +···+kr q
+These multiple little q-Jacobi polynomials are normalized so that q~n (0; ~a, b|q) = 1.
+    Note that for b = 0 we get the expression (3.6) in Theorem 3.1.
+Proof. The proof is again by induction on r. For r = 1 one has the usual little q-Jacobi
+polynomials in (3.8) with Cn (a, b) given in (3.10). Observe that this normalizing factor is
+independent of b.
+    Suppose that the result holds for r − 1. Then the Rodrigues formula (3.12) gives
+                                                        Yr
+  (qx; q)∞                                −α1 n1 n1 +α1                        (qx; q)∞
+           q~n (x; ~a, b|q) = C~n (~a, b)x Dp x             x−αj Dpnj xnj +αj |~n|+1
+ (bqx; q)∞                                              j=2
+                                                                             (bq     ; q)∞
+                                 C~n (~a, b)
+                                     =              x−α1 Dpn1 xn1 +α1 q~n−n1~e1 (x; ~a − a1~e1 ; bq n1 |q),
+                           C~n−n1~e1 (~a − a1~a, b)
+                                                                                       Q
+where we used the Rodrigues formula (3.12) with r − 1 for the product rj=2. Now use
+the induction hypothesis to express q~n−n1~e1 (x; ~a − a1~e1 , bq n1 |q) as an (r − 1)-fold sum to
+find
+                                                                                                               Pj
+                           C~n (~a, b)        Xn2        r
+                                                      nr Y
+                                                      X     (q −nj ; q)kj (aj bq i=1 ni +1 ; q)Pri=j ki
+  q~n (x; ~a, b|q) =                              ···
+                     C~n−n1~e1 (~a − a1~a, b) k =0 k =0 j=2          (q; q)kj (aq; q)Pri=j ki
+                                                            2             r
+        r−1
+        Y       (aj q   nj +1
+                                ; q)Pr   i=j+1 ki               q k2 +···+kr                                                 (qx; q)∞
+    ×                Pj                                     Pr           Pr          x−α1 Dpn1 xn1 +α1 +k2 +···+kr                         .
+                        i=1 ni +1 ; q)Pr                q       j=2 nj    i=j+1 ki                                         (bq n1 +1 ; q)∞
+        j=2 (aj bq                           i=j+1 ki
+
+Now use the Rodrigues formula (3.9) for r = 1 to find
+                                  (qx; q)∞
+  Dpn1 xn1 +α1 +k2 +···+kr
+                                (bq n1 +1 ; q)∞
+                                               1                  (qx; q)∞ α1 +k2 +···+kr
+                               =            k  +···+k       n
+                                                                            x             qn1 (x; aq k2 +···+kr , b|q).
+                                   Cn1 (a1 q 2        r , bq 1 ) (bqx; q)
+                                                                          ∞
+
+Then use the sum (3.8) and (3.10) to find
+                                              C~n (~a, b)
+  q~n (x; ~a, b|q) =
+                       q ( ) an1 (1 − q)n C~n−n1~e1 (~a − a1~a, b)
+                          n1
+                           2
+                                                                                            Pj
+                               n1
+                               X               r
+                                            nr Y
+                                            X                  r
+                                                 (q −nj ; q)kj Y (aj bq                        i=1 ni +1   ; q)Pri=j ki
+                          ×           ···
+                              k1 =0         kr =0 j=1
+                                                            (q; q)kj          j=2
+                                                                                            (aj q; q)Pri=j ki
+ Yr−1
+          (aj q nj +1 ; q)Pri=j+1 ki           (a1 q k2 +···+kr +1 ; q)n1 (a1 bq k2 +···+kr +n1 +1 ; q)k1     (qx)|k|
+                                                                                                                                      ~
+×              Pj                                                                                          Pr     Pr        .
+  j=2 (aj bq
+                i=1 ni +1   ; q)Pri=j+1     ki
+                                                               (a1 q k2 +···+kr +1 ; q)k1                 q j=1 nj i=j+1 ki
+
+
+                                                                         18
+Now use
+
+                                   k2 +···+kr              (a1 q; q)n1 (a1 q n1 +1 ; q)k2+···+kr
+                           (a1 q                ; q)n1   =                                       ,
+                                                                    (a1 q; q)k2 +···+kr
+                                                           a1 q; q)k1+···+kr
+                           (a1 q k2 +···+kr ; q)k1       =                      ,
+                                                           (a1 q; q)k2+···+kr
+                                                           a1 bq n1 +1 ; q)k1 +···+kr
+                   (a1 bq k2 +···+kr +n1 +1 ; q)k1       =
+                                                           (a1 bq n1 +1 ; q)k2 +···+kr
+
+to find the r-fold sum in (3.13). The normalization q~n (0; ~a, b|q) = 1 is obtained when
+
+                                                C~n (~a, b)(a1 q; q)n1
+                                                                                      = 1,
+                                q ( ) an1 (1 − q)n C~n−n1~e1 (~a − a1~a, b)
+                                    n1
+                                     2
+
+
+
+which holds for C~n (~a, b) = C~n (~a) in (3.5). Observe that this factor does not depend
+on b.
+
+3.3     Multiple Al-Salam–Chihara polynomials
+In this section we will take r weights (w1 , w2 , . . . , wr ) on [−1, 1] with wr (θ) = w(θ; aj , b|q),
+where w(θ; a, b|q) is the Al-Salam–Chihara weight given in (1.1) and ~a = (a1 , . . . , ar ) such
+that aj = q αj and αi − αj 6∈ Z whenever i 6= j. As usual with the Al-Salam–Chihara
+weight, we take |aj | < 1 and |b| < 1. The corresponding multiple orthogonal polynomials
+can then be obtained from the little q-Laguerre polynomials by using Proposition 2.3 and
+the transformation Tb given in Theorem 2.2. In fact Theorem 2.1 can be extended to
+multiple orthogonal polynomials as follows.
+Theorem 3.3. The multiple Al-Salam–Chihara polynomials p~n (x; ~a, b|q) for the weights
+w(θ; a1 , b|q), w(θ; a2, b|q), . . . , w(θ; ar , b|q), with w(θ; a, b|q) given in (1.1), are given by
+p~n (x; ~a, b|q) = Tb q~n (x; qb ~a|q), where Tb is the linear transformation given in Theorem 2.2
+and q~n (x; qb ~a|q) are the multiple little q-Laguerre polynomials given in Section 3.1. An
+explicit expression is given by
+                    n1
+                    X            r
+                              nr Y
+                              X                             r−1
+                                                            Y
+                                          (q −nj ; q)kj         (aj bq nj ; q)kj+1+···+kr
+  p~n (x; ~a, b|q) =      ···
+                     k =0     k =0 j=1
+                                       (q; q)kj (aj b; q)kj j=1 (aj bq kj ; q)kj+1+···+kr
+                     1         r
+                                                                                           ~
+                                                                                       q |k|
+                                                                         ×       Pr        Pr             (beiθ , be−iθ ; q)|~k| .
+                                                                             q    j=1 nj       i=j+1 ki
+
+
+
+Proof. Let Tb be the linear tarnsformation that acts on polynomials like
+
+                                                Tb xk = (beiθ , be−iθ ; q)k ,
+
+then we apply this to the multiple little q-Laguerre polynomials with parameters qb ~a =
+                 
+  a1 b       ar b
+       ,...,        to find Tb q~n (x; qb ~a|q). If we use Proposition 2.3 then
+   q          q
+                                          b                                 b
+                      hTaj xℓ , Tb q~n (x; ~a|q)icont(aj ,b) = hxℓ , q~n (x; ~a|q)idis(aj b) ,
+                                          q                                 q
+
+                                                             19
+which is
+       Z 1
+   1                                         b                       dx
+           (aj eiθ , aj e−iθ ; q)ℓ Tb q~n (x; ~a|q)w(θ; aj , b|q) √
+  2π    −1                                   q                      1 − x2
+                                                                                   ∞
+                                                                             1 X kℓ               b      (aj b)k
+                                                                     =                q q~n (q k ; ~a|q)         .
+                                                                          (q; q)∞ k=0             q      (q; q)k
+
+The latter sum is 0 because of (3.3) when 0 ≤ ℓ ≤ nj − 1 for 1 ≤ j ≤ r. This shows
+that Tb q~n (x; qb ~a|q) satisfies the multiple orthogonality conditions with respect to the r Al-
+Salam–Chihara weights w(θ; a1 , b|q), w(θ; a2, b|q), . . . , w(θ; ar , b|q). The explicit expression
+as an r-fold sum is obtained by applying Tb to the sum (3.6) in Theorem 3.1 for the
+parameters baj /q.
+
+3.4     Multiple continuous dual q-Hahn polynomials
+We now take r weights (w1 , . . . , wr ) on [−1, 1] by using the continuous dual q-Hahn weight
+w(θ; aj , b, c|q) of (1.3) with r different parameters ~a = (a1 , . . . , ar ), keeping b, c fixed.
+Again we let aj = q αj and assume that αi − αj 6∈ Z whenever i 6= j. This ensures that
+the multiple orthogonality conditions
+              Z 1
+                                                              dx
+                   p~n (x; ~a, b, c|q)xℓ w(θ; aj , b, c|q) √        = 0, 0 ≤ ℓ ≤ nj − 1,
+                −1                                           1 − x2
+
+for 1 ≤ j ≤ r, give |~n| equations that determine the p~n (x; ~a, b, c|q) uniquely (up to
+a multiplicative factor). These multiple continuous dual q-Hahn polynomials can be
+obtained by using the linear transformation Tb,c given in Theorem 2.8 to the multiple
+little q-Laguerre polynomials. The extension of Theorem 2.7 to multiple continuous dual
+q-Hahn polynomials is:
+
+Theorem 3.4. The multiple continuous dual q-Hahn polynomials p~n (x; ~a, b, c|q) for the
+weights w(θ; a1, b, c|q), w(θ; a2, b, c|q), . . . , w(θ; ar , b, c|q), with w(θ; a, b, c|q) given in (1.3),
+are given by p~n (x; ~a, b, c|q) = Tb,c q~n (x; qb ~a|q), where Tb,c is the linear transformation given
+in Theorem 2.8 and q~n (x; qb ~a|q) are the multiple little q-Laguerre polynomials given in
+Section 3.1. An explicit expression is given by
+
+                       n1
+                       X            r
+                                 nr Y
+                                 X                             r−1
+                                                               Y
+                                             (q −nj ; q)kj         (aj bq nj ; q)kj+1 +···+kr
+  p~n (x; ~a, b, c|q) =      ···
+                        k =0     k =0 j=1
+                                          (q; q)kj (aj b; q)kj j=1 (aj bq kj ; q)kj+1 +···+kr
+                        1         r
+
+                                                                                   q |k|
+                                                                                        ~
+                                                                                                       (beiθ , be−iθ ; q)|~k|
+                                                                      ×       Pr        Pr                                      .
+                                                                          q    j=1 nj       i=j+1 ki        (bc; q)|~k|
+
+Proof. If we use Proposition 2.9 then
+                                             b                                   b
+                    hTaj ,c xℓ , Tb,c q~n (x; ~a|q)icont(aj ,b,c) = hxℓ , q~n (x; ~a|q)idis(aj b) ,
+                                             q                                   q
+
+
+
+
+                                                         20
+which is
+                   Z 1
+  (aj c, bc; q)∞       (aj eiθ , aj e−iθ ; q)ℓ             b                          dx
+                                               Tb,c q~n (x; ~a|q)w(θ; aj , b, c|q) √
+        2π          −1      (aj c; q)k                     q                         1 − x2
+                                                                                   ∞
+                                                                            1 X kℓ                b      (aj b)k
+                                                                   =                  q q~n (q k ; ~a|q)
+                                                                       (q; q)∞ k=0                q      (q; q)k
+
+and the latter sum is 0 whenever 0 ≤ ℓ ≤ nj −1 because of the multiple orthogonality con-
+ditions (3.3) for the multiple little q-Laguerre polynomials. This shows that Tb,c q~n (x; qb ~a|q)
+satisfies the multiple orthogonality conditions with respect to the r continuous dual q-
+Hahn weights w(θ; a1 , b, c|q), . . . , w(θ; ar , b, c|q). The r-fold sum is obtained by applying
+Tb,c to the r-fold sum (3.6) for the multiple little q-Laguerre polynomials.
+   Observe that for c = 0 one has the multiple Al-Salam–Chihara polynomials given in
+Theorem 3.3.
+
+3.5      Multiple Askey–Wilson polynomials
+Finally we will obtain the multiple Askey–Wilson polynomials by extending Theorem
+2.4. We choose the r weights (w1 , . . . , wr ) on [−1, 1] by taking the Askey–Wilson weights
+w(θ; aj , b, c, d|q) of (1.5) with r different parameters ~a = (a1 , . . . , ar ), keeping b, c, d fixed.
+Of course we could have taken r different parameters (b1 , . . . , br ), keeping a, c, d fixed or r
+different c or d parameters, but since the Askey–Wilson weight is symmetric in (a, b, c, d)
+this would not give anything new. Again we let aj = q αj and assume that αi − αj 6∈ Z
+whenever i 6= j to ensure that the multiple orthogonality conditions
+           Z 1
+                                                                  dx
+                 p~n (x; ~a, b, c, d|q)xℓ w(θ; aj , b, c, d|q) √        = 0, 0 ≤ ℓ ≤ nj − 1,
+             −1                                                  1 − x2
+
+for 1 ≤ j ≤ r, give |~n| equations that determine the p~n (x; ~a, b, c|q) uniquely (up to a
+multiplicative factor).
+
+Theorem 3.5. The multiple Askey–Wilson polynomials p~n (x; ~a, b, c, d|q) for the weights
+w(θ; a1 , b, c, d|q), w(θ; a2, b, c, d|q), . . . , w(θ; ar , b, c, d|q), with w(θ; a, b, c, d|q) given in (1.5),
+are given by p~n (x; ~a, b, c, d|q) = Tb,c,dq~n (x; qb ~a, cd
+                                                            q
+                                                              |q), where Tb,c,d is the linear transformation
+                                        b      cd
+given in Theorem 2.5 and q~n (x; q ~a, q |q) are the multiple little q-Jacobi polynomials given
+in Section 3.2. An explicit expression is given by
+                                                                               Pj
+                             n1
+                             X                r
+                                           nr Y
+                                           X    (q −nj ; q)kj (aj bcdq            i=1 ni −1   ; q)Pri=j ki
+  p~n (x; ~a, b, c, d|q) =           ···
+                             k1 =0         kr =0 j=1
+                                                                   (q; q)kj (aj b; q)Pri=j ki
+                                  r−1
+                                  Y                                                               ~
+                                               (aj bq nj ; q)kj+1 +···+kr                      q |k|            (beiθ , be−iθ ; q)k
+                              ×                    Pj                                   Pr        Pr                                .
+                                                       i=1 ni −1                         j=1 nj        i=j+1 ki (bc; q)k (bd; q)k
+                                  j=1 (aj bcdq                     ; q)kj+1 +···+kr q
+
+Proof. Proposition 2.6 gives
+                                      b cd                                    b cd
+           hTaj ,c,dxℓ , Tb,c,dq~n (x; ~a, |q)icont(aj ,b,c,d) = hxℓ , q~n (x; ~a, |q)idis(aj b,cd) ,
+                                      q q                                     q q
+
+                                                                   21
+which is
+                                   Z 1
+    (aj c, aj d, bc, bd, cd; q)∞       (aj eiθ , aj e−iθ ; q)ℓ                b cd                             dx
+                                                               Tb,c,d q~n (x; ~a, |q)w(θ; aj , b, c, d|q) √
+                  2π                −1   (aj c, aj d; q)k                     q q                             1 − x2
+                                                                          ∞
+                                                                1 X kℓ                   b cd            (cd; q)k
+                                                        =                    q q~n (q k ; ~a, |q)(aj b)k
+                                                            (q; q)∞ k=0                  q q              (q; q)k
+
+and the latter sum is 0 whenever 0 ≤ ℓ ≤ nj − 1 because of the multiple orthogo-
+nality condition (3.11) for the multiple little q-Jacobi polynomials. This shows that
+Tb,c,d q~n (x; qb ~a, cd
+                       q
+                         |q) satisfies the multiple orthogonality conditions with respect to the r
+continuous dual Askey–Wilson weights w(θ; a1 , b, c, d|q), . . . , w(θ; ar , b, c, d|q). The r-fold
+sum is obtained by applying Tb,c,d to the r-fold sum (3.13) for the multiple little q-Jacobi
+polynomials, where we first replace b by cd/q and then aj by baj /q.
+   Observe that for d = 0 one has the multiple continuous dual q-Hahn polynomials given
+in Theorem 3.4, and for c = d = 0 the multiple Al-Salam–Chihara polynomials given in
+Theorem 3.3.
+
+
+4       Concluding remarks
+We have given a number of new families of multiple orthogonal polynomials starting
+from the discrete multiple little q-Jacobi polynomials and working our way up to the
+multiple Askey–Wilson polynomials, with limiting cases the multiple continuous dual q-
+Hahn polynomials and multiple Al-Salam–Chihara polynomials. These three new families
+are multiple orthogonal polynomials for an AT-system whenever αi − αj 6∈ Z, see [13,
+§23.1.2] or [24, Ch. 4, §4] for more on AT-systems. For r = 2 we see that the ratio w2 /w1
+of the two weights for multiple Askey–Wilson polynomials is
+                                                                 ∞
+                 w(θ; a2 , b, c, d|q)   (a1 eiθ , a1 e−iθ ; q)∞ Y 1 + a21 q 2k − 2a1 q k x
+                                      =                        =                             ,
+                 w(θ; a1 , b, c, d|q)   (a2 eiθ , a2 e−iθ ; q)∞ k=0 1 + a22 q 2k − 2a2 q k x
+
+which is a meromorphic function with poles at the points xk = (1 + a22 q 2k )/2a2 q k and
+zeros at the points yk = (1 + a21 q 2k )/2a1 q k . When a1 , a2 > 0 these poles and zeros are
+in (1, ∞). The multiple Askey–Wilson polynomials therefore behave very much like a
+Nikishin system for which                         Z b
+                                     w2 (x)           dσ(t)
+                                             =              ,
+                                     w1 (x)        a x−t
+
+with σ a positive measure and [a, b] ∩ [−1, 1] = ∅, in particular with σ a discrete measure
+supported on the poles {xk , k = 0, 1, 2, . . .}, see e.g., [5]. The weights for multiple con-
+tinuous dual q-Hahn polynomials and multiple Al-Salam–Chihara polynomials have the
+same ratio, and hence the same meromorphic function. Hence these multiple orthogonal
+polynomials may give some insight into the behavior of multiple orthogonal polynomials
+for a Nikishin system. Various other properties of our new multiple orthogonal polyno-
+mials would be of interest as well, such as the nearest neighbor recurrence relations and
+the Rodrigues formula.
+
+
+                                                         22
+Acknowledgements
+J.P. Nuwacu is supported by VLIR-UOS project Belgium/Burundi CUI UB ZIUS2018AP022
+and W. Van Assche by FWO research project G.0C9819N and EOS project PRIMA
+30889451.
+
+
+References
+ [1] A.I. Aptekarev, Multiple orthogonal polynomials, J. Comput. Appl. Math. 99 (1998),
+     no. 1–2, 423–447.
+
+ [2] A.I. Aptekarev, A. Branquinho, W. Van Assche, Multiple orthogonal polynomials for
+     classical weights, Trans. Amer. Math. Soc. 355 (2003), no. 10, 3887–3914.
+
+ [3] A.I. Aptekarev, M. Derevyagin, H. Miki, W. Van Assche, Multidimensional Toda lat-
+     tices: continuous and discrete time, SIGMA Symmetry Integrability Geom. Methods
+     Appl. 12 (2016), paper no. 054, 30 pp.
+
+ [4] A.I. Aptekarev, M. Derevyagin, W. Van Assche, On 2D discrete Schrödinger oper-
+     ators associated with multiple orthogonal polynomials, J. Phys. A: Math. Theor. 48
+     (2015), no. 6, 065201, 16 pp.
+
+ [5] A.I. Aptekarev, G. López Lagomasino, A. Martı́nez-Finkelshtein, On Nikishin sys-
+     tems with discrete components and weak asymptotics of multiple orthogonal polyno-
+     mials, Uspekhi Mat. Nauk 72 (2017), no. 3(435), 3–64 (in Russian); translation in
+     Russian Math. Surveys 72 (2017), no. 3, 389–449.
+
+ [6] J. Arvesú, On some properties of q-Hahn multiple orthogonal polynomials, J. Comput.
+     Appl. Math. 233 (2010), no. 6, 1462–1469.
+
+ [7] J. Arvesú, J. Coussement, W. Van Assche, Some discrete multiple orthogonal poly-
+     nomials, J. Comput. Appl. Math. 153 (2003), no. 1–2, 19–45.
+
+ [8] J. Arvesú, A.M. Ramı́rez-Aberasturis, On the q-Charlier multiple orthogonal polyno-
+     mials, SIGMA Symmetry Integrability Geom. Methods Appl. 11 (2015), Paper 026,
+     14 pp.
+
+ [9] B. Beckermann, J. Coussement, W. Van Assche, Multiple Wilson and Jacobi-Piñeiro
+     polynomials, J. Approx. Theory 132 (2005), no. 2, 155–181.
+
+[10] P.M. Bleher, A.B.J. Kuijlaars, Random matrices with external source and multiple
+     orthogonal polynomials, Int. Math. Res. Not. 2004, no. 3, 109–129.
+
+[11] P. Bleher, A.B.J. Kuijlaars, Large n limit of Gaussian random matrices with external
+     source. I, Comm. Math. Phys. 252 (2004), no. 1–3, 43–76.
+
+[12] G. Gasper, M. Rahman, Basic Hypergeometric Series, Encyclopedia of Mathematics
+     and its Applications, vol. 96, Cambridge University Press, second edition, 2004.
+
+
+
+
+                                           23
+[13] M.E.H. Ismail, Classical and Quantum Orthogonal Polynomials in One Variable,
+     Encyclopedia of Mathematics and its Applications, vol. 98, Cambridge University
+     Press, 2005.
+
+[14] M.E.H. Ismail, E. Koelink, Spectral properties of operators using tridiagonalization,
+     Analysis and Appl. 10 (2012), no. 3, 327–343.
+
+[15] R. Koekoek, P.A. Lesky, R.F. Swarttouw, Hypergeometric Orthogonal Polynomi-
+     als and Their q-Analogues, Springer Monographs in Mathematics, Springer-Verlag,
+     Berlin, 2010.
+
+[16] E. Koelink, J.V. Stokman, The Askey–Wilson function transform, Internat. Math.
+     Res. Notices 2001, no. 22, 1203–1227.
+
+[17] T.H. Koornwinder, Special orthogonal polynomials systems mapped onto each other
+     by the Fourier–Jacobi transform, in ‘Orthogonal Polynomials and Applications’ (C.
+     Brezinski et al., eds.), Lecture Notes in Mathematics 1171, Springer, Berlin, 1985,
+     pp. 174–183.
+
+[18] A.B.J. Kuijlaars, Multiple orthogonal polynomials in random matrix theory, Proceed-
+     ings of the International Congress of Mathematicians, Volume III, Hindustan Book
+     Agency, New Delhi, 2010, pp. 1417–1432.
+
+[19] A.B.J. Kuijlaars, Multiple orthogonal polynomial ensembles, Recent trends in orthog-
+     onal polynomials and approximation theory, Contemp. Math. 507, Amer. Math. Soc.,
+     Providence, RI, 2010, pp. 155–176.
+
+[20] A. Martı́nez-Finkelshtein, W. Van Assche, What is . . . a multiple orthogonal polyno-
+     mial? Notices Amer. Math. Soc. 63 (2016), no. 9, 1029–1031.
+
+[21] H. Miki, S. Tsujimoto, L. Vinet, A. Zhedanov, An algebraic model for the multiple
+     Meixner polynomials of the first kind, J. Phys. A: Math. Theor. 45 (2012), no. 32,
+     325205, 11 pp.
+
+[22] H. Miki, L. Vinet, A. Zhedanov, Non-Hermitian oscillator Hamiltonians and multiple
+     Charlier polynomials, Phys. Lett. A 376 (2011), no. 2, 65–69.
+
+[23] F. Ndayiragije, W. Van Assche, Multiple Meixner polynomials and non-Hermitian
+     oscillator Hamiltonians, J. Phys. A: Math. Theor. 46 (2013), no. 50, 505201, 17 pp.
+
+[24] E.M. Nikishin, V.N. Sorokin, Rational Approximations and Orthogonality, Transla-
+     tions of Mathematical Monographs 92, Amer. Math. Soc., Providence RI, 1991.
+
+[25] K. Postelmans, W. Van Assche, Multiple little q-Jacobi polynomials, J. Comput. Appl.
+     Math. 178 (2005), no. 1–2, 361–375.
+
+[26] K. Postelmans, W. Van Assche, Irrationality of ζq (1) and ζq (2), J. Number Theory
+     126 (2007), no. 1, 119–154.
+
+[27] C. Smet, W. Van Assche, Irrationality proof of a q-extension of ζ(2) using little
+     q-Jacobi polynomials, Acta Arith. 138 (2009), no. 2, 165–178.
+
+
+                                           24
+[28] C. Smet, W. Van Assche, Mellin transforms for multiple Jacobi-Piñeiro polynomials
+     and a q-analogue, J. Approx. Theory 162 (2010), no. 4, 782–806.
+
+[29] J.V. Stokman, An expansion formula for the Askey–Wilson function, J. Approx.
+     Theory 114 (2002), 308–342.
+
+[30] W. Van Assche, E. Coussement, Some classical multiple orthogonal polynomials, Nu-
+     merical analysis 2000, Vol. V, Quadrature and Orthogonal Polynomials, J. Comput.
+     Appl. Math. 127 (2001), no. 1–2, 317–347.
+
+
+
+Jean Paul Nuwacu
+Département de Mathématiques
+Université du Burundi
+BP 2700 Bujumbura
+Burundi
+jean-paul.nuwacu@ub.edu.bi
+
+Walter Van Assche
+Department of Mathematics
+KU Leuven
+Celestijnenlaan 200B box 2400
+BE-3001 Leuven
+Belgium
+walter.vanassche@kuleuven.be
+
+
+
+
+                                          25
+

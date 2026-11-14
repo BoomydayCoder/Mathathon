@@ -1,4 +1,4 @@
-# Research handoff — 14 November 2026, 13:28 UTC
+# Research handoff — 14 November 2026, 13:54 UTC
 
 Continue autonomous research in `codex/` on `codex/independent-research` in the
 exact private repository `BoomydayCoder/Mathathon`. User authorizes continued
@@ -6,6 +6,41 @@ work without permission pauses, remaining credits but no automatic resets.
 Reporting target:14 November2026,08:00Los Angeles/16:00UTC. No usage-balance API
 is available; do not invent a balance or guarantee runtime. No Claude-owned
 files have been changed. Rough effort split remains80%#131/20%#137.
+
+## Newest continuation — 13:54 UTC
+
+Seventeenth checkpoint. All-real generalized Stieltjes theorem is now independently
+reviewed: for every alpha>0, 2*zeta(2alpha+1,sqrt(z)+1/2) has an explicit positive
+measure of EXACT minimal order alpha. Beta products interpolate the integer
+measures; rational alpha gives rational moments. A common tilted gamma mixture
+links these measures to Brownian exit times. The underlying hyperbolic probability
+law is exactly Pitman–Yor (2003), and generalized Stieltjes order is classical;
+priority of this complete specialized representation remains unresolved.
+
+For every odd zeta value, the Gaussian lower bounds now STRICTLY INCREASE and
+endpoint-zero Gauss–Radau upper bounds STRICTLY DECREASE. The nested rational
+interval theorem and explicit geometric radii passed independent review. No
+adequate denominator theorem follows. Pure-kernel 20-case and repaired 156-case
+arithmetic experiments are independently audited; most finite primitive errors
+exceed one. Base-measure derivative transfer is proved and reviewed, with sharper
+Apéry-rate bounds; its 110-case arithmetic investigation awaits a separate audit.
+
+The logarithm-to-zeta3 Wilson deformation is fully reviewed. A new complete
+endpoint log2 irrationality proof is also independently reviewed: an exact
+Catalan-number times beta-integral identity clears the associated numerator
+with ONE lcm. This provides an explicit common proof mechanism for logarithms
+and zeta3 while distinguishing their arithmetic costs. No novelty claim.
+
+Newton–Hilbert classification and confluent Wilson path have passed their audits.
+The maximal quarter spectral shift now has a completely elementary polynomial
+proof, using truncated central-binomial series and finite harmonic norm bounds;
+its audit passed, so no spectral theorem is needed for maximality.
+
+Active: explicit negative atoms beyond the positive Wilson parameter range;
+a two-parameter positive ladder joining log2/zeta3/zeta5 and higher targets;
+generic parameter-dependent diagonal recurrence. All-balanced constant term and
+original rank-one/adjacent-Apéry equality remain unproved. Latest pushed commit
+before this checkpoint is a3fa456. Continuing to16:00UTC/08:00LA; no usage meter.
 
 ## Newest continuation — 13:28 UTC
 

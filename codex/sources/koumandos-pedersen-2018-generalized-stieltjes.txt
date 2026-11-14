@@ -1,0 +1,858 @@
+                                                           On generalized Stieltjes functions
+arXiv:1706.00606v1 [math.CA] 2 Jun 2017
+
+
+
+
+                                                          Stamatis Koumandos and Henrik L. Pedersen∗
+
+                                                                           November 18, 2018
+
+
+
+                                                                                  Abstract
+                                                      It is shown that a function f is a generalized Stieltjes function of or-
+                                                  der λ > 0 if and only if x1−λ (xλ−1+k f (x))(k) is completely monotonic
+                                                  for all k ≥ 0, thereby complementing a result due to Sokal. Further-
+                                                  more, a characterization of those completely monotonic functions f for
+                                                  which x1−λ (xλ−1+k f (x))(k) is completely monotonic for all k ≤ n is
+                                                  obtained in terms of properties of the representing measure of f .
+
+                                          2010 Mathematics Subject Classification: Primary: 44A10, Secondary: 26A48
+                                          Keywords: Laplace transform, Generalized Stieltjes function, completely monotonic
+                                          function
+
+
+                                          1       Introduction
+                                          In this paper we investigate a real-variable characterization of generalized
+                                          Stieltjes functions obtained by Sokal, see [10].
+                                              Let λ > 0 be given. A function f : (0, ∞) → R is called a generalized
+                                          Stieltjes function of order λ if
+                                                                             Z ∞
+                                                                                  dµ(t)
+                                                                     f (x) =               + c,
+                                                                              0  (x + t)λ
+                                          where µ is a positive measure on [0, ∞) making the integral converge for
+                                          x > 0 and c ≥ 0.
+                                              The class of ordinary Stieltjes functions is the class of generalized Stielt-
+                                          jes functions of order 1.
+                                              A C ∞ -function f on (0, ∞) is completely monotonic if (−1)n f (n) (x) ≥ 0
+                                          for all n ≥ 0 and all x > 0. Bernstein’s theorem characterizes these functions
+                                              ∗
+                                              Research supported by grant DFF4181-00502 from The Danish Council for Indepen-
+                                          dent Research | Natural Sciences
+
+
+                                                                                       1
+as Laplace transforms of positive measures: f is completely monotonic if
+and only if there exists a positive measure µ on [0, ∞) such that t 7→ e−xt is
+integrable w.r.t. µ for all x > 0 and
+                                     Z ∞
+                             f (x) =     e−xt dµ(t).
+                                          0
+
+   We remark that f is a generalized Stieltjes function of order λ if and
+only if                Z        ∞
+                  f (x) =           e−xt tλ−1 ϕ(t) dt + c,   x>0           (1)
+                            0
+for some completely monotonic function ϕ, and some non-negative number
+c. See [5, Lemma 2.1].
+    Sokal (see [10]) introduced for λ > 0 the operators
+                                                      (k)
+        λ
+      Tn,k (f )(x) ≡ (−1)n x−(n+λ−1) xk+n+λ−1 f (n) (x)     , n, k ≥ 0
+
+and obtained the following characterization.
+Theorem 1.1 The following are equivalent for a C ∞ -function f defined on
+(0, ∞).
+(a) f is a generalized Stieltjes function of order λ;
+     λ (f )(x) ≥ 0 for all x > 0, and n, k ≥ 0.
+(b) Tn,k
+Sokal’s characterization is an extension of Widder’s characterization of the
+class of ordinary Stieltjes functions: f is a Stieltjes function if and only if
+the function (xk f (x))(k) is completely monotonic for all k ≥ 0. (See [11].)
+    In [6, Theorem 1.5] an analogue of Sokal’s result where the function ϕ in
+(1) is absolutely monotonic is obtained. See also [3, Theorem 2] for a result
+complementing [6, Theorem 1.1].
+
+Remark 1.2 Notice that, by Leibniz’ rule,
+                           (k) X   k  
+    −(n+λ−1)    k+n+λ−1 (n)               k Γ(n + k + λ) j (n+j)
+  x           x        f (x)     =                       x f     (x).
+                                          j Γ(n + j + λ)
+                                                  j=0
+
+   In this paper we first show that condition (b) in Sokal’s theorem above
+can be replaced by the condition that
+                      cλk (f )(x) ≡ x1−λ (xλ−1+k f (x))(k)
+                                                                       λ (f )
+is completely monotonic for all k. There is a simple relation between Tn,k
+and cλk (f ):
+
+                                              2
+Proposition 1.3 The relation
+                        λ
+                       Tn,k (f )(x) = (−1)n cλk (f )(n) (x)
+
+holds for any n, k ≥ 0 and x > 0.
+
+Corollary 1.4 The following are equivalent for a function f ∈ C ∞ ((0, ∞)).
+  (i) f is a generalized Stieltjes function of order λ;
+
+ (ii) cλk (f ) is completely monotonic for all k ≥ 0.
+       λ (f ) ≥ 0 for all n ≥ 0 and all k ≥ 0.
+(iii) Tn,k
+
+    In [5] the generalized Stieltjes functions corresponding to measures hav-
+ing moments of all orders were charaterized in terms of properties of remain-
+ders in asymptotic expansions. (A measure µ has moments of all orders in
+any polynomial is integrable w.r.t. µ.) In view of the results in the present
+paper we notice the following corollary. The proof follows by combining
+Corollary 1.4 with [5, Theorem 3.1] and [5, Lemma 3.1].
+Corollary 1.5 The following are equivalent for a function f : (0, ∞) → R.
+  (i) f is a generalized Stieltjes function corresponding to a measure µ hav-
+      ing moments of all orders;
+
+ (ii) cλk (f ) is completely monotonic for all k ≥ 0 and the function xλ−1 f (x)
+      admits for any n an asymptotic expansion
+                                               n−1
+                                               X
+                               λ−1                    αk
+                           x         f (x) =              + rn (x),
+                                                     xk+1
+                                               k=0
+
+     in which xn rn (x) → 0 as x → ∞.
+In the affirmative case, αk = (−1)k (λ)k sk (µ)/k! where sk (µ) is the k’th
+moment of µ, and rn has the representation
+                                    Z ∞
+                              n λ−1
+                 rn (x) = (−1) x        e−xt tλ−1 ξn (t) dt,
+                                               0
+
+                                                          (j)
+where ξn belongs to C ∞ ([0, ∞)), and satisfies ξn (0) = 0 for j ≤ n − 1 and
+     (n)
+0 ≤ ξn (t) ≤ sn (µ) for t ≥ 0. Furthermore,
+                                                                   
+         cλn (f )(x) = x1−λ (xn rn (x))(n) = cλn L(tλ−1 (−1)n ξn (t) (x).
+
+                                           3
+   Our aim is also to characterize, for any given positive integer N , those
+functions f for which cλ0 (f ), . . . , cλN (f ) are completely monotonic. In the
+case where λ = 1 this has been carried out in [7], but the case of general λ
+requires, as we shall see, additional insight.
+   We thus introduce the classes CN        λ as
+
+ λ
+CN = {f ∈ C ∞ ((0, ∞)) | cλk (f ) is completely monotonic for k = 0, . . . , N }.
+
+We shall use some distribution theory so we briefly describe our notation.
+The action of a distribution u on a test function ϕ (an infinitely often dif-
+ferentiable function of compact support in (0, ∞)) is denoted by hu, ϕi. The
+distribution ∂u is defined via h∂u, ϕi = −hu, ϕ′ i. A standard reference to
+distribution theory is [8].
+    Our results can be formulated as follows.
+
+Theorem 1.6 Let λ > 0 be given, and let N ≥ 1. The following properties
+of a function f : (0, ∞) → R are equivalent.
+         λ;
+(a) f ∈ CN
+
+(b) f can be represented as
+                                                  Z ∞
+                             f (x) = c +                e−xs sλ−1 dµ(s),
+                                                   0
+
+     where c ≥ 0, and µ is a positive measure on (0, ∞) for which µk ≡
+     (−1)k sk ∂ k µ, (in distributional sense) is a positive measure such that
+                       Z ∞
+                           e−xs sλ−1 dµk (s) < ∞, k = 0, . . . , N.
+                         0
+
+
+In the affirmative case,
+                                                     (k) Z ∞
+            cλk (f )(x) = x1−λ       x   λ−1+k
+                                                 f (x)    =    e−xs sλ−1 dµk (s)
+                                                               0
+
+for k = 0, . . . , N .
+
+    We notice the following corollary characterizing those non-negative func-
+tions f for which cλ1 (f ) is completely monotonic. The proof follows from
+Propostion 2.3 and Lemma 3.5.
+
+
+
+
+                                                   4
+Corollary 1.7 Let f be a non-negative C ∞ -function defined on (0, ∞).
+                    ′
+Then x1−λ xλ f (x) = λf (x) + xf ′ (x) is completely monotonic if and only
+if                            Z ∞             Z ∞
+                          β           −xs λ−1      dµ(t)
+              f (x) = α + λ +        e s                 ds,
+                         x     0               s     tλ
+for some non-negative numbers α and β and some positive measure µ on
+(0, ∞) making the integral convergent.
+                                               R∞
+Remark 1.8 It is easy to  R  see that e−xs sλ−1 s dµ(t)/tλ is integrable on
+                            ∞
+(0, ∞) if and only if sλ−1 s dµ(t)/tλ is integrable at 0, and that this is the
+                   R1                  R∞
+case if and only if 0 dµ(t) < ∞ and 1 dµ(t)/tλ < ∞.
+
+Corollary 1.7 can be reformulated as follows. Let g be a non-negative C ∞ -
+function on (0, ∞). Then x1−λ g′ (x) is completely monotonic if and only
+if                               Z ∞ Z xt
+                         λ                           dµ(t)
+               g(x) = αx + β +            e−u uλ−1 du λ .              (2)
+                                  0    0               t
+Formulated in this way the corollary is related to the class of Bernstein
+functions. A Bernstein function is by definition a non-negative function g
+on (0, ∞) for which g′ is completely monotonic. These functions admit an
+integral representation (see [9, Theorem 3.2] or [2]), which we for the reader’s
+convenience state here: g is a Bernstein function if and only if
+                                      Z ∞
+                    g(x) = αx + β +       (1 − e−xt ) dν(t),
+                                       0
+
+where α and β are non-negative numbers,R and ν, called the RLévy measure,
+                                            1                ∞
+is a positive measure on (0, ∞) satisfying 0 tdν(t) < ∞ and 1 dν(t) < ∞.
+    When λ = 1, we have
+                        Z xt
+                             e−u uλ−1 du = 1 − e−xt ,
+                          0
+
+and (2) reduces to the integral representation of a Bernstein function with
+the corresponding Lévy measure being dµ(t)/t. Corollary 1.7 contains a
+characterization of what could be called “generalized Bernstein functions of
+order λ”.
+
+
+
+
+                                       5
+2    Proofs
+Proof of Proposition 1.3: The key to the proof is the following relation
+                                                                (n)
+                               Xk            
+           λ                                 k              (j)
+         Tn,k (f )(x) = (−1)n  (λ − 1)k−j         xj f (x)  ,          (3)
+                                             j
+                                  j=0
+
+which we verify now. A standard application of Leibniz’ formula yields
+                           n+j      
+              j
+                   (j+n) X      n+j       (l) (n+j−l)
+            x f (x)      =              xj     f         (x)
+                                   l
+                           l=0
+                           Xj       
+                                 n+j      j!
+                         =                      xj−l f (n+j−l)(x)
+                                   l   (j − l)!
+                           l=0
+                           X j       
+                                 n + j j! m (n+m)
+                         =                  x f         (x).
+                           m=0
+                                 j − m m!
+Hence, the right hand side of (3) equals
+            X k             
+                            k           (j+n)
+     (−1)n      (λ − 1)k−j      xj f (x)
+                            j
+             j=0
+                  k
+                  X            X   j        
+              n                k         n + j j! m (n+m)
+       = (−1)      (λ − 1)k−j                     x f       (x)
+                               j         j − m m!
+               j=0                m=0
+                                                   
+               Xk X   k                       
+                                       k   n + j j!
+       = (−1)n            (λ − 1)k−j                  xm f (n+m) (x).
+                                      j   j − m m! 
+                  m=0       j=m
+
+The expression in the brackets can be written in another form. Indeed
+          Xk                             
+                          k    n + j j!       k Γ(n + k + λ)
+             (λ − 1)k−j                   =                    ,
+                          j    j − m m!       m Γ(n + m + λ)
+          j=m
+
+by a corollary to the Chu-Vandermonde identity (see [1, p. 70]). This gives
+us
+                                              (n)
+                X k           
+                              k           (j)
+        (−1)n  (λ − 1)k−j       xj f (x) 
+                              j
+                   j=0
+                      k  
+                      X
+                  n      k Γ(n + k + λ)
+        = (−1)                               xm f (n+m) (x) = Tn,k
+                                                               λ
+                                                                   (f )(x).
+                      m=0
+                            m Γ(n + m + λ)
+
+
+                                        6
+For n = 0 the identity reads
+          k
+          X             
+                        k          (j)
+            (λ − 1)k−j     xj f (x)        λ
+                                        = T0,k (f )(x) = cλk (f )(x),
+                        j
+          j=0
+
+and the proposition is proved.                                               
+   To prove Theorem 1.6 we need a few preliminary results.
+Lemma 2.1 For f ∈ C ∞ ((0, ∞)) we have
+
+                cλk+1 (f )(x) = (λ + k)cλk (f )(x) + xcλk (f )′ (x).
+
+Proof. This follows by computation:
+
+    cλk+1 (f )(x) = x1−λ (xxλ−1+k f (x))(k+1)
+                = x2−λ (xλ−1+k f (x))(k+1) + (k + 1)x1−λ (xλ−1+k f (x))(k)
+                = x2−λ (xλ−1 cλk (f )(x))′ + (k + 1)cλk (f )(x)
+                = xcλk (f )′ (x) + (λ + k)cλk (f )(x).
+
+                                                                             
+
+Proposition 2.2 Suppose that f ∈ CNλ , and let for k = 0, . . . , N
+
+                               Z ∞
+                   λ
+                  ck (f )(x) =     e−xs dµk (s) + bk ,
+                                      0
+
+where µk is a positive measure on (0, ∞) and bk ≥ 0. Then, in the distribu-
+tional sense,
+                       (−1)k sk ∂ k (s1−λ µ0 ) = s1−λ µk .
+
+Proof. From Lemma 2.1 it follows that (for k ≤ N − 1)
+      Z ∞                                 Z ∞
+           −xs
+          e    dµk+1 (s) + bk+1 = (λ + k)     e−xs dµk (s) + (λ + k)bk
+       0                                   0
+                                        Z ∞
+                                    −x       se−xs dµk (s).
+                                               0
+
+Letting x → ∞ yields bk+1 = (λ + k)bk so that
+              Z                             Z
+            1 ∞ −xs                        1 ∞ −xs
+                   e   dµk+1 (s) = (λ + k)       e    dµk (s)
+            x 0                            x 0
+                                       Z ∞
+                                     −      se−xs dµk (s).
+                                                   0
+
+
+                                          7
+By the uniqueness of the Laplace transform we obtain
+
+                            sµk = ((λ + k)µk − µk+1 ) ∗ m.
+
+(Here, m denotes Lebesgue measure on (0, ∞).) We get by differentiation
+(as distributions) that
+
+                            s∂µk = (λ + k − 1)µk − µk+1 .
+
+We shall obtain the assertion in the proposition by induction, using this
+recursive relation: for k = 0 the assertion is valid. Before verifying the
+induction step notice that
+
+           s∂(sk ∂ k (s1−λ µ0 )) = ksk ∂ k (s1−λ µ0 ) + sk+1 ∂ k+1 (s1−λ µ0 ).
+
+Suppose now that the assertion holds for k. Then
+
+ sk+1 ∂ k+1 (s1−λ µ0 ) = s∂(sk ∂ k (s1−λ µ0 )) − ksk ∂ k (s1−λ µ0 )
+                      = s∂((−1)k s1−λ µk ) − k(−1)k s1−λ µk
+                      = (−1)k {s(1 − λ)s−λ µk + s1−λ s∂µk − ks1−λ µk }
+                      = (−1)k s1−λ {(1 − λ)µk + (λ + k − 1)µk − µk+1 − kµk }
+                      = (−1)k+1 s1−λ µk+1 .
+
+The assertion holds also for k + 1, and the proof follows.                    
+     Proof that (a) implies (b) in Theorem 1.6. If f ∈ CN λ then the function
+
+cλk (f ) is completely monotonic for 0 ≤ k ≤ N . In particular
+                      Z ∞                     Z ∞
+f (x) = cλ0 (f )(x) =     e−xs dµ0 (s) + b0 =     e−xs sλ−1 d(s1−λ µ0 )(s) + b0 .
+                        0                           0
+
+Let µ = s1−λ µ0 and notice that by Proposition 2.2 (−1)k sk ∂ k µ (= s1−λ µk )
+is a positive measure with the property that
+                   Z ∞
+                       e−xs sλ−1 d((−1)k sk ∂ k µ)(s) < ∞.
+                       0
+
+Thus (b) follows.                                                         
+    The next result is a special case of (b) implies (a) in Theorem 1.6. We
+state and prove it separately in order to describe the method, which will be
+alluded to in the following proof.
+
+
+
+                                           8
+Proposition 2.3 Let f have the representation
+                               Z ∞
+                   f (x) = c +     e−xs sλ−1 dµ(s),
+                                         0
+
+where c ≥ 0 and µ is a positive measure on (0, ∞). If −s∂µ(s) is a positive
+measure then
+                                  Z ∞
+                 λ
+                c1 (f )(x) = λc +     e−xs sλ−1 d(−s∂µ(s))
+                                         0
+
+is completely monotonic.
+Proof. Let n ≥ 1 and take ϕn ∈ C ∞ ((0, ∞)) such that 0 ≤ ϕn (t) ≤ 1,
+                               
+                                0, t < 1/(2n)
+                      ϕn (t) =   1, 1/n ≤ t ≤ n ,
+                               
+                                 0, t > 2n
+
+|ϕ′n (t)| ≤ Const n for t ∈ (1/(2n), 1/n), and |ϕ′n (t)| ≤ Const for t ∈ (n, 2n).
+By definition of the derivative in distributional sense we have
+           Z ∞
+               e−xs sλ−1 ϕn (s) d(−s∂µ(s))
+          0
+          = h−s∂µ(s), e−xs sλ−1 ϕn (s)i
+          = hµ, (e−xs sλ ϕn (s))′ i
+                Z ∞                        Z ∞
+                      −xs λ
+          = −x       e s ϕn (s) dµ(s) +        e−xs λsλ−1 ϕn (s) dµ(s)
+                  0                         0
+              Z ∞
+            +       e−xs sλ ϕ′n (s) dµ(s).
+                0
+
+   Using dominated convergence it follows that the sum of first and second
+term on the right hand side tends to
+                  Z ∞                  Z ∞
+                        −xs λ
+               −x     e s dµ(s) + λ        e−xs sλ−1 dµ(s).
+                      0                          0
+
+The third term tends to zero, again due to dominated convergence and the
+estimate (using |sϕ′ (s)| ≤ Const for s ≤ 1/n)
+            Z ∞
+                  e−xs sλ ϕ′n (s) dµ(s) ≤
+             0
+                      Z                     Z             !
+                           1/n                       2n
+              Const              e−xs sλ−1 dµ(s) +        e−xs sλ dµ(s) .
+                          1/2n                       n
+
+
+
+                                             9
+Hence, letting n tend to infinity, we obtain that
+          cλ1 (f )(x) = λf (x) + xf ′ (x)
+                               Z ∞                       Z ∞
+                                       −xs λ−1
+                      = λc + λ      e s        dµ(s) − x     e−xs sλ dµ(s)
+                             Z ∞0                         0
+                                   −xs λ−1
+                      = λc +      e s        d(−s∂µ(s)).
+                           0
+Thus c1 (f ) is completely monotonic, and e−xs sλ−1 is integrable w.r.t. the
+      λ
+
+measure −s∂µ(s).                                                     
+   Proof that (b) implies (a) in Theorem 1.6. We suppose that f has the
+representation                   Z             ∞
+                         f (x) = c +               e−xs sλ−1 dµ(s),
+                                           0
+with c ≥ 0, and µk ≡ (−1)k sk ∂ k µ being a positive measure for k = 0, . . . , N .
+It is easy to verify that µk+1 = kµk − s∂µk for k = 0, . . . , N − 1. Proposition
+2.3 yields that cλ1 (f ) is completely monotonic and has the representation
+                                        Z ∞
+                       λ
+                      c1 (f )(x) = λc +     e−xs sλ−1 dµ1 (s).
+                                    0
+                        λ
+Let us now assume that ck (f ) is completely monotonic and has the repre-
+sentation                                  Z ∞
+                       cλk (f )(x) = b +            e−xs sλ−1 dµk (s).
+                                               0
+Then
+       cλk+1 (f )(x) = (λ + k)cλk (f )(x) + xcλk (f )′ (x)
+                               Z ∞                          Z ∞
+                                       −xs λ−1
+                     = (λ + k)        e s       dµk (s) − x     e−xs sλ dµk (s).
+                                0                                 0
+Now, taking ϕn as before it follows that
+   Z ∞
+        e−xs sλ−1 ϕn (s) dµk+1 (s)
+     0
+       Z ∞
+    =      e−xs sλ−1 ϕn (s) d(kµk − s∂µk (s))
+          0
+     = hkµk − s∂µk (s), e−xs sλ−1 ϕn (s)i
+     = hkµk , e−xs sλ−1 ϕn (s)i + hµk , (e−xs sλ ϕn (s))′ i
+          Z ∞                                     Z ∞
+                 −xs λ
+     = −x       e s ϕn (s) dµk (s) + (k + λ)            e−xs sλ−1 ϕn (s) dµk (s)
+            0                                       0
+         Z ∞
+                −xs λ ′
+       −       e s ϕn (s) dµk (s).
+              0
+
+
+                                               10
+As before, letting n tend to infinity, and applying dominated convergence
+we get that                       Z           ∞
+                        cλk+1 (f )(x) =           e−xs sλ−1 dµk+1 (s)
+                                          0
+is completely monotonic.                                                            
+
+
+3      Additional results and comments
+Suppose that cλk (f ) is completely monotonic for some k ≥ 1. What can
+be said about the functions cλ0 (f ), . . . , cλk−1 (f )? Are they also completely
+monotonic? The answer is given in Proposition 3.1.
+
+Proposition 3.1 Let k ≥ 1, f ∈ C ∞ ((0, ∞)) and suppose that the functions
+cλ0 (f ), . . . , cλk−1 (f ) are non-negative. If cλk (f ) is completely monotonic then
+cλj (f ) is also completely monotonic for j ≤ k − 1.
+
+The proof of this proposition requires some preliminary results. Define
+
+                    γkλ (f )(x) ≡ x−λ (xλ−1+k f (x))(k−1) ,       k ≥ 1.
+
+Notice that γkλ (f ) = cλ+1
+                        k−1 (f ).
+
+Lemma 3.2 For f ∈ C (k+1) ((0, ∞)) we have
+                                                          λ
+                    γkλ (f )(x) = cλk−1 (f )(x) + (k − 1)γk−1 (f )(x).
+
+Proof: This follows by a direct computation.                                        
+   The next lemma is an immediate consequence of Lemma 3.2.
+
+Lemma 3.3 If cλj (f )(x) ≥ 0 for all j = 0, . . . , k then γjλ (f )(x) ≥ 0 for all
+j = 1, . . . , k + 1
+
+Lemma 3.4 Let k ≥ 1 be given and assume that cλj (f )(x) ≥ 0 for all j =
+0, . . . , k. Then:
+
+    (i) (xλ−1+k f (x))(j) ≥ 0 for all j = 0, . . . , k;
+
+ (ii) limx→0 (xλ−1+k f (x))(j) = 0 for all j = 0, . . . , k − 2;
+
+(iii) limx→0 (xλ−1+k f (x))(k−1) ∈ [0, ∞);
+
+
+
+
+                                              11
+Proof. We use induction in k. For k = 1 (i) is clearly satisfied, (ii) needs
+not be checked, and (iii) follows by noticing that xλ f (x) is non-negative
+and increasing. For k = 2, (xλ+1 f (x))′′ = xλ−1 cλ2 (f )(x) ≥ 0, (xλ+1 f (x))′ =
+xλ cλ1 (f )(x)+λxλ cλ0 (f )(x) ≥ 0, and thus (i) is satisfied. Property (ii) is clearly
+satisfied, and (iii) follows since (xλ+1 f (x))′ is non-negative and increasing.
+     Next we assume that f satisfies cλj (f ) ≥ 0 for all j ≤ k + 1, and aim at
+verifying (i), (ii), and (iii) with k replaced by k + 1. For j = k + 1 we get
+(xλ+k f (x))(j) = xλ−1 cλk+1 (f )(x) ≥ 0. For 1 ≤ j ≤ k we use
+
+        (xλ+k f (x))(j) = x(xλ−1+k f (x))(j) + j(xλ−1+k f (x))(j−1) ≥ 0,
+
+and (i) is verified. To see (ii), notice that
+
+     (xλ+k f (x))(k−1) = x(xλ−1+k f (x))(k−1) + (k − 1)(xλ−1+k f (x))(k−2) ,
+
+The last term tends to zero by the induction hypothesis, and the first term
+equals x times a non-negative and increasing function. Hence (ii) holds for
+k + 1. Property (iii) for k + 1 follows since (xλ+k f (x))(k) is a positive and
+increasing function. This proves the lemma.                                   
+
+Lemma 3.5 Let f ∈ C ∞ ((0, ∞)) and suppose that cλ0 (f ), . . . , cλk−1 (f ) are
+non-negative functions. If cλk (f ) is completely monotonic then γkλ (f ) is also
+completely monotonic and
+                                         Z ∞
+               λ           lk      bk
+              γk (f )(x) = λ +         +     Mk (u)uλ−1 e−xu du,
+                           x        λ     0
+
+where                                   Z ∞
+                             Mk (u) =          s−λ dµk (s).
+                                         u
+
+Proof. By the complete monotonicity we may write
+                                           Z ∞
+       λ−1+k       (k) λ−1 λ           λ−1
+    (x       f (x)) = x ck (f )(x) = x         e−xs dµk (s) + bk xλ−1 ,
+                                                      0
+
+where bk ≥ 0 and µk is a positive measure on (0, ∞). The assumptions on
+non-negativity yield that the function xλ γkλ (f )(x) = (xλ−1+k f (x))(k−1) is
+non-negative and increasing. Hence
+
+                             lk ≡ lim xλ γkλ (f )(x) ≥ 0.
+                                  x→0
+
+
+
+
+                                          12
+Furthermore,
+                               Z x
+       xλ γkλ (f )(x) − lk =   (tλ−1+k f (t))(k) dt
+                                0
+                           Z x       Z ∞                     
+                                 λ−1         −ts
+                         =     t            e dµk (s) + bk dt
+                            0           0
+                                    Z ∞Z x
+                           bk λ
+                         = x +                tλ−1 e−ts dt dµk (s)
+                           λ         0
+                                       Z ∞0 Z s
+                           bk λ
+                         = x + xλ                uλ−1 e−xu du s−λ dµk (s)
+                           λ             0    0
+                                       Z ∞Z ∞
+                           bk λ      λ
+                         = x +x                   s−λ dµk (s)uλ−1 e−xu du,
+                           λ             0    u
+by Fubini’s theorem. Consequently,
+                                 Z ∞
+                        Mk (u) =     s−λ dµk (s)
+                                         u
+
+is finite and Mk (u)uλ−1 is integrable at 0.
+   The formulas above also show that
+                                   Z ∞
+              λ           lk  bk
+             γk (f )(x) = λ +    +     Mk (u)uλ−1 e−xu du
+                         x     λ     0
+is completely monotonic.                                                       
+    Proof of Proposition 3.1: From Lemma 3.5,
+                                           Z ∞
+            λ−1+k       k−1        bk λ  λ
+         (x       f (x))    = lk + x + x       Mk (u)uλ−1 e−xu du,
+                                   λ        0
+                                 R∞
+where lk , bk ≥ 0 and Mk (u) = u s−λ dµ(s). Notice that
+                               uλ Mk (u) → 0,   u → 0.                       (4)
+(To see this, rewrite as follows
+                              Z 1  λ             Z ∞
+                 λ                 u             λ     dµ(s)
+                u Mk (u) =             dµ(s) + u             ,
+                               u   s                1   sλ
+and use the dominated convergence theorem on the first term.)
+     Integrating this relation from ǫ to x, and letting ǫ tend to 0 we get, using
+(ii) of Lemma 3.4, that
+                                             bk
+           (xλ−1+k f (x))(k−2) = lk x +           xλ+1
+                                         λ(λ + 1)
+                                             Z ∞
+                                      + xλ+1     Mk−1 (u)uλ e−xu du,
+                                                0
+
+
+                                         13
+where                                    Z ∞
+                                         Mk (s)
+                            Mk−1 (u) =           ds.
+                                     u     s2
+Continuing this process (using in each step (ii) of Lemma 3.4) we get
+                                lk            bk λ+k−1
+            xλ−1+k f (x) =            xk−1 +      x
+                             (k − 1)!        (λ)
+                                         Z ∞ k
+                               + xλ+k−1       M1 (u)uλ+k−2 e−xu du,              (5)
+                                              0
+where                       Z ∞
+                                  Mj+1 (s)
+                 Mj (u) =                  ds,    j = 1, . . . , k − 1.
+                             u      s2
+Division by xλ−1+k in (5) shows that f is completely monotonic, and has
+the representation
+                                       Z ∞
+                    lk          bk
+         f (x) =           −λ
+                          x +       +      M1 (u)uλ+k−2 e−xu du
+                 (k − 1)!      (λ)k     0
+                         Z ∞                         
+                  bk                  k−1      lk
+               =       +      M1 (u)u     +             e−xu uλ−1 du. (6)
+                 (λ)k     0                 (k −  1)!
+In order to show that the functions cλ1 (f ), . . . , cλk−1 (f ) are completely mono-
+                                                                             
+tonic it suffices (Theorem 1.6) to verify that (−1)j ∂ j M1 (u)uk−1 ≥ 0 for
+j = 1, . . . , k − 1. Now,
+                                Z ∞                Z ∞
+                     k−1    k−1      M2 (s)               M2 (ut)(ut)k−2
+           M1 (u)u       =u                  ds =                          dt,
+                                 u    s2              1           tk
+                                                             
+                                       j ∂ j M (u)uk−2 ≥ 0 in order to obtain
+so it is enough to verify that
+                                  (−1)         2
+that (−1)j ∂ j M1 (u)uk−1 ≥ 0. Repeating this argument we end up having
+to verify that
+                                            
+                  (−1)j ∂ j Mk−j+1 (u)uj−1 ≥ 0, 1 ≤ j ≤ k − 1.                    (7)
+These inequalities are verified using induction. For j = 1 it reads ∂Mk (u) ≤
+which is true since Mk is a decreasing function. Next assuming that (7)
+holds for some j ≤ k − 2 we aim at verifying it for j + 1. We rewrite the
+expression (−1)j+1 ∂ j+1 Mk−j (u)uj in two ways:
+                                                               
+       (−1)j+1 ∂ j+1 Mk−j (u)uj = (−1)j+1 u∂ j+1 Mk−j (u)uj
+                                                                     
+                                     + (−1)j+1 (j + 1)∂ j Mk−j (u)uj ;
+                                                                   
+            j+1 j+1             j
+                                         j+1 j    Mk−j+1 (u) j+1
+       (−1) ∂        Mk−j (u)u = (−1) ∂ −                       u
+                                                         u2
+                                                                     
+                                     + (−1)j+1 (j + 1)∂ j Mk−j (u)uj .
+
+
+                                         14
+Comparing these two identities we infer that
+                                                          
+       (−1)j+1 u∂ j+1 Mk−j (u)uj = (−1)j ∂ j Mk−j+1 (u)uj−1 ,
+and thus (7) holds for j + 1.                                                      
+Remark 3.6 Introducing the functions Nj (u) ≡ Mj (1/u) for j = 1, . . . , k
+it follows that         Z                Z
+                                        ∞                          u
+                          Nk (u) =           s−λ dµ(s) =               tλ db
+                                                                           µ(t),
+                                       1/u                     0
+where µb denotes the image measure φ(µ), with φ(x) = 1/x. For j ≤ k − 1
+the relation between Nj and Nj+1 is
+                          Z ∞                Z u
+                               Mj+1 (s)
+                 Nj (u) =               ds =     Nj+1 (t) dt.
+                           1/u   s2           0
+                                                       (j)
+Consequently we see that the derivatives N1 (u) for j ≤ k − 1 are all non-
+negative, and take the value 0 at u = 0. In terms of these functions the
+representation (6) can be rewritten as
+                                       Z ∞
+                   bk      lk Γ(λ)
+          f (x) =      +            +       M1 (u)uk−1 e−xu uλ−1 du
+                  (λ)k   (k − 1)!xλ
+                                       Z0 ∞
+                   bk      lk Γ(λ)
+                =      +            +       N1 (s)s−k−λ e−x/s ds.
+                  (λ)k   (k − 1)!xλ     0
+
+    The next proposition shows that for any given N the classes CNλ become
+
+larger as λ increases. As remarked in [10] it is not clear how to verify this
+even for N = ∞ only considering the operators Tn,k λ .
+
+                                 λ1    λ2
+Proposition 3.7 If λ1 < λ2 then CN  ⊂ CN  for all N .
+                                                            λ1
+Proof. This follows from Leibniz’ formula. Assume f ∈ CN       and let λ2 > λ1 .
+Then
+                 Z ∞                          Z ∞
+     f (x) = c +      e−xs sλ1 −1 dµ(s) = c +     e−xs sλ2 −1 sλ1 −λ2 dµ(s),
+                      0                                    0
+
+where (−1)j sj ∂ j µ ≥ 0 for all j ≤ N . Hence, for k ≤ N ,
+       (−1)k sk ∂ k (sλ1 −λ2 µ)
+                     Xk  
+               k k         k           Γ(k − j + λ2 − λ1 ) λ1 −λ2 +j−k j
+        = (−1) s               (−1)k−j                    s           ∂ µ
+                           j               Γ(λ2 − λ1 )
+                          j=0
+                      k 
+                      X           
+             λ1 −λ2             k Γ(k − j + λ2 − λ1 )
+        =s                                            (−1)j sj ∂ j µ ≥ 0.
+                                j     Γ(λ2 − λ1 )
+                      j=0
+
+
+
+                                                15
+                                                                             
+
+
+References
+ [1] G.E. Andrews, R. Askey, R. Roy, Special Functions, Cambridge Univ.
+     Press, Cambridge (1999).
+
+ [2] C. Berg and G. Forst, Potential theory on locally compact abelian
+     groups, Ergebnisse der Mathematik und ihrer Grenzgebiete 87,
+     Springer, Berlin Heidelberg New York (1975).
+
+ [3] D.B. Karp and E.G. Prilepkina, Applications of the Stieltjes and
+     Laplace transform representations of the hypergeometric functions,
+     arxiv 1705.02493.
+
+ [4] S. Koumandos and H.L. Pedersen, Completely monotonic functions of
+     positive order and asymptotic expansions of the logarithm of Barnes
+     double gamma function and Euler’s gamma function, J. Math. Anal.
+     Appl., 355 (2009), 33–40.
+
+ [5] S. Koumandos and H.L. Pedersen, On Asymptotic Expansions of Gen-
+     eralized Stieltjes Functions, Comput. Methods Funct. Theory 15 (2015),
+     93–115 (DOI: 10.1007/s40315-014-0094-7).
+
+ [6] S. Koumandos and H.L. Pedersen, On the Laplace transform of abso-
+     lutely monotonic functions, Results Math. (2016) (DOI:10.1007/s00025-
+     016-0638-4).
+
+ [7] H.L. Pedersen, Pre Stieltjes Functions, Mediterr. J. Math. 8 (2011),
+     113–122 (DOI:10.1007/s00009-010-0043-2).
+
+ [8] W. Rudin, Functional Analysis (2nd ed.), McGraw-Hill, New York
+     (1991).
+
+ [9] R.L. Schilling, R. Song and Z. Vondraček, Bernstein functions. De
+     Gruyter Studies in Mathematics 37, De Gruyter, Berlin (2010).
+
+[10] A.D. Sokal, Real-variables characterization of generalized Stieltjes func-
+     tions, Expo. Math. 28 (2010), 179–185.
+
+[11] D.V. Widder, The Stieltjes transform. Trans. Amer. Math. Soc. 43,
+     (1938), 7–60.
+
+
+
+                                      16
+[12] D.V. Widder, The Laplace transform. Princeton University Press,
+     Princeton (1946).
+
+Stamatis Koumandos
+Department of Mathematics and Statistics
+The University of Cyprus
+P. O. Box 20537
+1678 Nicosia, Cyprus
+email: skoumand@ucy.ac.cy
+
+Henrik Laurberg Pedersen
+Department of Mathematical Sciences
+University of Copenhagen
+Universitetsparken 5
+DK-2100, Denmark
+email: henrikp@math.ku.dk
+
+
+
+
+                                  17
+

@@ -1,9 +1,16 @@
 # Pure odd zeta values as positive higher-order Stieltjes transforms
 
-Status: full proof developed from the root agent's proposed density and
-recurrence, independently checked by the integral agent. A separate proof
-audit is requested. No historical novelty is asserted. The construction gives
-convergent rational lower bounds to every fixed odd zeta value, but supplies
+Status: the core density, representation, moments, Gaussian error and convergence
+proof passed independent review; see
+[higher-order-positive-stieltjes-independent-review.md](higher-order-positive-stieltjes-independent-review.md).
+The additional minimal-order and Beta-product proofs are written below;
+their separate independent audit is pending. No historical novelty is asserted.
+The construction gives
+strictly increasing rational lower bounds to every fixed odd zeta value;
+the [Gaussian–Radau supplement](nested-higher-zeta-gauss-radau.md) supplies
+strictly decreasing rational upper bounds and exact enclosure widths.
+That strengthening has a complete proof and exact checks; further review
+is requested. These results supply
 no adequate reduced-denominator bound and no irrationality theorem.
 
 The ordinary Stieltjes obstruction in
@@ -47,6 +54,42 @@ identity is proved by real finite-product methods in
 [half-shift-elementary-resolvent-proof.md](half-shift-elementary-resolvent-proof.md).
 That proof, rather than a complex-analytic reflection formula, may be used
 as the sole base input below.
+
+### The kernel order is minimal
+
+The positive order m in (2) is forced by the decay of the target. Indeed,
+elementary integral comparison for the Hurwitz series gives
+
+\[
+ F_m(z):=2\zeta(2m+1,\sqrt z+1/2)\sim\frac1{m z^m}
+ \qquad(z\to+\infty).
+\]
+
+Suppose F_m(z)=integral (z+t)^(-alpha)d mu(t) for a nonzero positive
+locally finite measure, with its transform finite for z>0. Some compact
+interval [0,T] has mass c with 0<c<infinity. Therefore
+F_m(z)>=c(z+T)^(-alpha). For 0<alpha<m this contradicts
+z^alpha F_m(z)->0. The measure is allowed to have infinite total mass;
+only its positive compact mass is used. Representation (2) attains order m.
+Thus m is the exact smallest possible positive generalized Stieltjes order
+for this pure target. This statement concerns unsubtracted positive-measure
+representations, not arbitrary signed or rationally modified transforms.
+
+### Connection back to the signed ordinary transform
+
+Let F_m(z) denote the pure target above and r=m-1. The earlier ordinary
+transform is G_(2m+1)(z)=m z^r F_m(z). Its signed t-density is exactly
+
+\[
+ \rho_{2m+1}(t)=\frac{m(-1)^r}{r!}t^r\sigma_m^{(r)}(t).
+\]
+
+Indeed r integrations by parts use
+partial_t^r[t^r/(z+t)]=r! z^r/(z+t)^(r+1). Endpoint terms vanish by the
+explicit density bounds. This identity was independently proved in section 5
+of the linked core review. It explains how lowering the kernel order replaces
+a positive density by a derivative that can change sign. It does not identify
+G with F: the multiplying factor m z^(m-1) is essential.
 
 ## 2. Strict positivity from elementary complete monotonicity
 
@@ -166,6 +209,41 @@ The sign convention is harmless at k=0: B0(1/2)=1. These are strictly
 positive rational numbers, and (6) gives M_(m,0)=1/m. At m=2,
 M_(2,k)=(2k+3)M_(1,k)/6.
 
+### A positive Beta-product interpretation
+
+Normalize the densities to probability measures by mu_m(t)=m sigma_m(t).
+Let a=m+1/2. Recurrence (4) is equivalently
+
+\[
+ a x^{-a}\mu_{m+1}(x)
+       =-\frac d{dx}[x^{1-a}\mu_m(x)].
+\]
+
+Integrating from t to infinity, with the exponential endpoint bound, gives
+
+\[
+ \mu_m(t)=a t^{a-1}\int_t^\infty x^{-a}\mu_{m+1}(x)\,dx.
+\]
+
+The right side is exactly the density of B X, where X has density mu_(m+1)
+and B is independent with Beta(a,1) density a b^(a-1), 0<b<1. Iterating,
+the base probability measure nu=mu1 is the distribution of
+
+\[
+ X_m\prod_{j=1}^{m-1}B_j,
+ \qquad X_m\sim\mu_m,\quad B_j\sim\operatorname{Beta}(j+1/2,1),
+\]
+
+with independent factors. This is a density identity, not an inference from
+moments or an assumption of moment determinacy. Its moment ratio is
+
+\[
+ \frac{M_{1,k}}{m M_{m,k}}
+       =\prod_{j=1}^{m-1}\frac{2j+1}{2k+2j+1},
+\]
+
+which gives an additional positive explanation of the rational factors in (6).
+
 ## 5. Gaussian quadrature gives rational lower bounds to the pure target
 
 Fix m. Let p_N be the monic degree-N orthogonal polynomial for sigma_m(t)dt,
@@ -250,9 +328,21 @@ Set N=n>=1, a=n+1/2 and z=a². Then
 \]
 
 This follows directly from (2) and
-zeta(2m+1,n+1)=zeta(2m+1)-H_n^(2m+1). The lower bounds are not asserted
-to be monotone as n varies; both their measure quadrature and sample point
-change with n.
+zeta(2m+1,n+1)=zeta(2m+1)-H_n^(2m+1).
+In fact these lower bounds are **strictly increasing**.
+For a fixed measure, the associated-polynomial Wronskian gives
+\[
+ R_{n+1}(z)-R_n(z)=\frac{h_n}{Q_n(z)Q_{n+1}(z)}>0,
+\]
+where \(h_n\) is the monic squared norm. The right side is strictly
+completely monotone, so the same strict comparison holds after every
+alternating divided derivative. The exact Gaussian error in (9) is also
+strictly completely monotone. Therefore its order-\(m\) error decreases
+both when n increases and when z increases. Taking
+\(z=(n+1/2)^2\) proves \(L_{n+1,m}>L_{n,m}\), despite the changing
+sample point. The full Wronskian proof, including its normalization at
+mass \(1/m\), is in the
+[Gaussian–Radau supplement](nested-higher-zeta-gauss-radau.md).
 
 Their convergence requires no moment-determinacy theorem. The monic trial
 polynomial t^n gives H_n<=M_(m,2n), while positivity of the roots gives
@@ -288,6 +378,35 @@ n^m from the moment's odd product, and sqrt(n) from (4n)!, against n^(2m)
 in the denominator after its n^(4n) part is removed. In particular the
 upper exponential rate is at most (2/(pi e))^4<1/256, since pi>3 and
 e>8/3. This is an analytic convergence estimate, not a denominator estimate.
+
+### Strictly decreasing rational upper bounds
+
+Let \(\widetilde R_n\) be the ordinary Gaussian rational function for
+the measure \(t\sigma_m(t)\,dt\), and put
+\[
+ R_n^+(z)=\frac{1/m-\widetilde R_n(z)}z,\qquad
+ U_{n,m}=H_n^{(2m+1)}
+   +\frac{(-1)^{m-1}}{2(m-1)!}
+      (R_n^+)^{(m-1)}((n+1/2)^2).
+\]
+This is Gauss–Radau quadrature with a prescribed node at zero.
+Its positive ordinary error is \(\widetilde E_n(z)/z\), which is
+strictly completely monotone. The same Wronskian and moving-point
+argument gives
+\[
+ L_{n,m}<L_{n+1,m}<\zeta(2m+1)<U_{n+1,m}<U_{n,m}.
+\]
+In addition to a sharper norm-based bound, the supplement proves the
+explicit rational estimate
+\[
+ 0<U_{n,m}-\zeta(2m+1)
+ \le\frac12\binom{2n+m}{m-1}
+       \frac{M_{m,2n+1}}{(n+1/2)^{4n+2m+2}}.
+\]
+For fixed m it has the same \(O_m(n^{-1/2}(2/(\pi e))^{4n})\)
+rate as (13). Thus the exact rational widths \(U_{n,m}-L_{n,m}\)
+form certified nested enclosures converging to zero. This gives
+no additional reduced-denominator control.
 
 ## 7. The remaining arithmetic cost
 

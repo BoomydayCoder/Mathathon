@@ -1,11 +1,12 @@
 # Why a quadratic Newton grid and cubic recurrence arise from the Hilbert Gram matrix
 
-Status: independent verification and development of the root agent's elementary
-classification proposal. Exact checks pass. The spectral family is classical:
+Status: the elementary classification and its spectral dictionary passed the
+[independent review](newton-hilbert-classification-independent-review.md);
+exact checks pass. The spectral family is classical:
 a primary-source parameter match with Ismail–Koelink is given in section7.
 No historical novelty is asserted. The elementary classification under the
 specified Newton/Gram assumptions is proved directly, not imported from that
-spectral theorem. Independent review is requested.
+spectral theorem.
 
 The design mechanism is short: prescribe the simplest integral Gram matrix;
 require multiplication by the spectral variable to be symmetric; this forces
@@ -13,6 +14,62 @@ a quadratic Newton lattice. Legendre polynomials then make that multiplication
 tridiagonal, and the forced quadratic coefficient becomes a cubic coefficient.
 The usual Apéry binomial sums appear by evaluating this change of basis on its
 own Newton lattice.
+
+## What the design forces, and what it leaves free
+
+Start with the Legendre integral on \([0,1]\). Its monomials have Gram
+matrix \(1/(j+k+1)\), so preserving that matrix would let us transport
+Legendre orthogonality to a new polynomial family. To keep the new
+polynomials explicit, ask for Newton products: multiplication by \(t\)
+should add just one factor,
+\[
+ tQ_j=a_jQ_{j+1}-\lambda_jQ_j.
+\]
+These are the design assumptions, rather than conclusions about every
+irrationality proof.
+
+There is a crucial consistency test. If the transported inner product is to
+come from a single real moment functional, multiplication by \(t\) must be
+symmetric:
+\[
+ \langle tQ_j,Q_k\rangle
+ =L(tQ_jQ_k)=\langle Q_j,tQ_k\rangle.
+\]
+Putting the Hilbert entries into this equality turns an integral requirement
+into a relation between \(a_j\) and \(\lambda_j\). Comparing with just the
+constant and linear basis elements, \(k=0,1\), determines every later
+coefficient. Section 1 proves that the answer has to be quadratic.
+The converse matters too: these forced coefficients really do produce a
+positive moment functional, not merely a consistent-looking recurrence.
+
+The remaining choices have different roles:
+
+| Input or additional requirement | Exact consequence |
+|---|---|
+| Hilbert Gram matrix and symmetric Newton multiplication | \(a_j=a_0+cj(j+2)\), \(\lambda_j=\lambda_0+cj(j+1)\) |
+| Evaluation by the Legendre binomial product | \(a_0=c\), hence \(a_j=c(j+1)^2\) |
+| Choose unit positive scale and the zero spectral edge | \(c=1,\lambda_0=1/4\), giving the half-square grid |
+| The separately proved adjacent balance | Diagonal closure with the coefficients \(17\) and \(5\) |
+
+Why do cubes then appear? In the Legendre basis, multiplication by \(x\)
+has upper coefficient \(-(n+1)/(2(2n+1))\).
+The symmetric differential operator multiplies it by the forced quadratic
+\(a_n=(n+1)^2\). Their product is exactly
+\[
+ -\frac{(n+1)^3}{2(2n+1)}.
+\]
+Evaluation on the Newton grid gives the two-index Apéry recurrence; the
+[reviewed mixed telescopes](apery-mixed-numerator-independent-review.md)
+supply the additional adjacent balance and transfer it to the full linear
+form. This separates the origin of the cubic outer terms from the extra
+identity needed for \(17=6\cdot3-1\) and \(5=6\cdot1-1\).
+
+Here “symmetric” means the polynomial inner-product identity just displayed.
+Essential selfadjointness and the precise spectral support are stronger
+analytic assertions, attributed to Ismail–Koelink in §7. The quarter shift
+is not forced by symmetry or by the integer binomial evaluations. This
+design narrative reconstructs a mathematical route to the formulas; it
+makes no claim about their historical discovery.
 
 ## 1. Classification for the uniform Hilbert Gram matrix
 
@@ -92,9 +149,13 @@ x². Expansion gives precisely c∫x²(1−x)f′²+c∫(x−1/4)f².
 
 This selects a natural zero-edge normalization. It is **not** a consequence
 of (2), which leaves λ₀ free. Smaller λ₀ adds a positive constant to T.
-The classical spectral identification in section7 shows that c/4 is the
-maximal allowed shift for nonnegative support in this particular a₀=c>0
-family, rather than a minimal shift.
+The elementary finite-polynomial argument in
+[newton-hilbert-critical-quarter.md](newton-hilbert-critical-quarter.md),
+accepted in [its independent review](newton-critical-quarter-independent-review.md),
+proves that c/4 is the maximal allowed shift for positivity of multiplication
+on polynomial squares in this particular a₀=c>0 family. It therefore excludes
+nonnegative-support measures above that shift without using a spectral theorem.
+This is a maximal shift, rather than a minimal shift.
 
 ## 3. Integer Legendre-binomial evaluations force the remaining scale choice
 
@@ -243,6 +304,9 @@ The representing measure is precisely t dμ₃(t), the positive Wilson measure
 with all four parameters1, with the previously established normalization.
 Its mass is1/12, agreeing with (17). Thus the Legendre/all-half model and the
 Jacobi(1,1)/all-one model sit in the same elementary Gram/Newton design.
+The identification uses the exact operator and Wilson parameters in §7;
+the conventional all-one Wilson measure is twice \(t\,d\mu_3\), so its
+mass fixes the factor \(1/2\). It does not rely on the finite Gram checks alone.
 This explains the derivative companion used in the moving-pole upper bounds.
 It does not identify the separate original D₂ₕ optimized norm with that
 moving-pole norm; the unresolved bridge remains unresolved.
@@ -297,10 +361,12 @@ weight; its mass is1. More generally a₀=c>0 gives the pushforward
 
     t=cY²+c/4−λ₀.
 
-Its support has lower edge c/4−λ₀. This justifies the selected zero-edge shift
-and the maximal-shift statement in section2 using a classical spectral theorem,
-not from Gram symmetry alone. No claim that this is a new Sturm–Liouville
-spectral family is appropriate. The elementary two-anchor classification and
+Its support has lower edge c/4−λ₀, confirming the selected zero-edge shift.
+The maximal-shift statement in section2 now has an independently reviewed
+elementary polynomial proof; the classical theorem remains the source for the
+spectral realization and density, not a required input to maximality. Gram
+symmetry alone still does not select that shift. No claim that this is a new
+Sturm–Liouville spectral family is appropriate. The elementary two-anchor classification and
 its design interpretation are the independent derivation recorded here.
 
 ## Reproduction and remaining work

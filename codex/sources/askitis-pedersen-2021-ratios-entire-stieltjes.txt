@@ -1,0 +1,1095 @@
+                                           Ratios of Entire functions and generalized Stieltjes
+arXiv:2107.00905v1 [math.CA] 2 Jul 2021
+
+
+
+
+                                                                functions
+                                                            Dimitris Askitis and Henrik L. Pedersen
+
+                                                                               July 5, 2021
+
+
+                                                                                  Abstract
+                                                   Monotonicity properties of the ratio
+
+                                                                            f (x + a1 ) · · · f (x + an )
+                                                                      log                                 ,
+                                                                            f (x + b1 ) · · · f (x + bn )
+
+                                                where f is an entire function are investigated. Earlier results for Euler’s
+                                                gamma function and other entire functions of genus 1 are generalised
+                                                to entire functions of genus p with negative zeros. Derivatives of order
+                                                comparable to p of the expression above are related to generalised
+                                                Stieltjes functions of order p + 1. Our results are applied to the Barnes
+                                                multiple gamma functions. We also show how recent results on the
+                                                behaviour of Euler’s gamma function on vertical lines can be sharpened
+                                                and generalised to functions of higher genus. Finally a connection to
+                                                the so-called Prouhet-Tarry-Escott problem is described.
+
+                                          2020 Mathematics Subject Classification: Primary: 26A48, Secondary: 30E20,
+                                          44A10
+                                          Keywords: Entire function, Laplace transform, Generalized Stieltjes function, Eu-
+                                          ler’s Gamma function, Barnes G-function
+
+
+                                          1    Introduction and results
+                                          We revisit monotonicity properties of ratios of gamma functions and more
+                                          generally entire functions of finite genus with translated variables. In 1986,
+                                          Ismail and Bustoz showed that the function
+                                                                          Γ(x)Γ(x + a + b)
+                                                                   x 7→                    ,           x>0                    (1)
+                                                                          Γ(x + a)Γ(x + b)
+
+
+
+                                                                                        1
+is logarithmically completely monotonic for any a, b > 0 (see [4]). Later
+results involve ratios of the form
+                          Γ(x + a1 ) · · · Γ(x + an )
+                     x 7→                              , x>0
+                           Γ(x + b1 ) · · · Γ(x + bn )
+as well as situations where the number of factors in the numerator and
+denominator differ, and also with weighted variables (e.g. x + aj replaced by
+Aj x + aj and similarly for x + bj ). See e.g. [6], [5] and [7].
+     Recently the logarithm of the function in (1) was shown to be a so-
+called generalised Stieltjes function of order 2, and hence also logarithmically
+completely monotonic (see [2]). The purpose of this paper is to obtain similar
+results for sequences (a1 , . . . , an ) and (b1 , . . . , bn ) in the framework of entire
+functions of finite genus having only real and non-positive zeros.
+     A completely monotonic function ϕ is a C ∞ -function defined on (0, ∞)
+such that (−1)n ϕ(n) (x) > 0 for all n = 0, 1, . . . and all x > 0. These func-
+tions are characterised via Bernstein’s theorem as the Laplace transforms
+of positive measures. A logarithmically completely monotonic function is
+a positive function ϕ for which −(log ϕ)′ is completely monotonic. These
+functions are also completely monotonic and can be characterised as those
+completely monotonic functions for which any nth root is also completely
+monotonic. For background on these functions see e.g. [11] and [12]. A func-
+tion f defined on (0, ∞) is called a generalised Stieltjes function of order λ
+if it admits the representation
+                                  Z ∞
+                                           dµ(t)
+                      f (x) =                      + c, x > 0,
+                                    0    (t + x)λ
+for some positive measure µ making the integral converge and for some
+c ≥ 0. It is known, and easy to verify, that a function is a generalised
+Stieltjes function of order λ if and only if it is the Laplace transform of
+tλ−1 ϕ(t), where ϕ is completely monotonic.
+    Denote by Ep the class of real entire functions of genus p with only
+real and non-positive zeros, and with f (x) > 0 for x > 0. For a function
+f ∈ Ep we arrange its zeros {−λk } such that 0 ≤ λ1 ≤ λ2 ≤ · · · , and notice
+P∞         −p−1
+   k=r+1 λk     < ∞, where r is the order of its possible zero at the origin.
+The function admits the Hadamard representation
+                                   f (z) = eq(z) P (z),
+where q is a (real) polynomial of degree at most p, and
+                               ∞
+                               Y                                  p p   p
+                P (z) = z r           (1 + z/λk ) e−z/λk +···+(−1) z /λk .
+                              k=r+1
+
+
+                                              2
+The Laplace representation of the derivative (−1)p (log f )(p+1) can be ex-
+pressed as
+                                     Z ∞
+           (−1)p (log f )(p+1) (z) =     e−sz sp h(s)ds, ℜz > 0,        (2)
+                                             0
+where
+                                             ∞
+                                             X
+                                   h(s) =            e−λk s .                         (3)
+                                             k=1
+(See e.g. [9, Proposition 2.1].)
+   We shall study ratios of products of the form
+                                   Qn
+                                        f (x + ak )
+                          Wf (x) = Qk=1
+                                    n               ,                                 (4)
+                                    k=1 f (x + bk )
+for f ∈ Ep . The numbers a1 , . . . , an and b1 , . . . , bn are non-negative and
+(without loss of generality) we assume a1 ≤ · · · ≤ an and b1 ≤ · · · ≤ bn .
+    We shall define two functions in terms of these two sequences, namely
+                        n
+                     1 X  −sak           
+            g(s) = 2        e     − e−sbk ,                                    (5)
+                    s
+                        k=1
+                      n                                 n
+                            (t − ak )1[ak ,∞) (t) −           (t − bk )1[bk ,∞)(t).
+                      X                                 X
+             ρ(t) =                                                                   (6)
+                      k=1                               k=1
+
+Here, 1S denotes the indicator function of S. It turns out that monotonic-
+ity properties of Wf are related with properties of the functions g and ρ.
+Furthermore g is completely monotonic if and only if ρ is non-negative, and
+this holds if and only if
+                   m
+                   X            m
+                                X
+                         ak ≤         bk ,   for all m ∈ {1, . . . , n}.              (7)
+                   k=1          k=1
+
+See Lemma 2.2. We say that b is a weak supermajorisation of a and denote
+it by b ≺w a if (7) holds.
+    Our main results deal with generalised Stieltjes functions and weak su-
+permajorisation, and they are proved in Section 2. There we also describe
+how one may in some situations obtain a generalised Stieltjes function with-
+out assuming weak supermajorisation. We consider the behaviour on vertical
+lines in Section 3 and show in particular how monotonicity results for Euler’s
+gamma function on vertical lines in the complex plane can be obtained as
+corollaries of Theorems 1.1 and 1.2. In Section 4 we describe a connection
+with the so-called Prouhet-Tarry-Escott Problem.
+    To ease notation we denote by ∂z the usual derivative with respect to z.
+
+                                                 3
+Theorem 1.1. The function (−1)p−1 ∂zp log Wf (z) has the representation
+                                Z ∞
+              p−1 p
+          (−1) ∂z log Wf (z) =         e−sz sp+1 h(s)g(s)ds           (8)
+                                  0
+                                           Z ∞
+                                                   φ(t)dt
+                              = Γ(p + 2)                    ,         (9)
+                                             0   (z + t)p+2
+
+where h is defined in (3), g in (5) and
+                                      ∞
+                                      X
+                            φ(t) =          ρ(t − λm ),                     (10)
+                                      m=1
+
+ρ being defined in (6).
+    Moreover, if b ≺w a, then (−1)p−1 ∂zp log Wf (z) is a generalised Stieltjes
+function of order p + 2.
+
+Theorem 1.2. Suppose that p ≥ 1 and nk=1 ak = nk=1 bk . Then,
+                                         P             P
+
+                                    Z ∞
+                   p p−1
+              (−1) ∂z log Wf (z) =         e−sz sp h(s)g(s)ds             (11)
+                                      0
+                                               Z ∞
+                                                       φ(t)dt
+                                  = Γ(p + 1)                    ,         (12)
+                                                 0   (z + t)p+1
+where h, g and φ are as above.
+    Moreover, if b ≺w a, the function (−1)p ∂zp−1 log Wf (z) is a generalised
+Stieltjes function of order p + 1.
+
+    When p = 1 and f is the reciprocal of Euler’s gamma function we obtain
+a generalization of [2, Proposition 4.1]. We remark that the representation
+in (12) implies that ∂zp−1 log Wf (z) tends to 0 as z tends to infinity along any
+ray different from the negative real line. In the case where f is the reciprocal
+of Euler’s gamma function, log Wf (x) can, using Stirling’s series, be shown
+to tend to zero as x tends to infinity when the non-negative sequences a and
+b satisfy
+                                X n       Xn
+                                     aj =     bj .
+                                j=1          j=1
+
+For a general function f in E1 , log Wf (x) can be shown to tend to zero by
+using the representation of the so-called Pick-functions, see e.g. [2]. In case
+of higher genus there are asymptotic formulae for entire functions with non-
+positive zeros having a density (see [8]), but Stirling type series for general
+functions in Ep are not known to us. In Lemma 2.4 we show how cancellation
+
+                                        4
+between the sequences a and b allows us to obtain the limit behaviour of
+log Wf and its derivatives for general f ∈ Ep .
+    If we assume that b ≺w a, and both of the relations
+                        n
+                        X            n
+                                     X                n
+                                                      X             n
+                                                                    X
+                              ak =         bk ,             a2k =         b2k
+                        k=1          k=1              k=1           k=1
+
+hold then it turns out that a = b, see Proposition 4.2. Hence, Theorem
+1.2 does not give any infomation with these three assumptions. However, a
+primitive (up to a sign) of the function in Theorem 1.2 may also be a gener-
+alised Stieltjes function of order p+1 under the assumption of non-negativity
+of a primitive of ρ. This is the contents of the next result, extending Theo-
+rem 1.2.
+
+Theorem 1.3. Suppose that p ≥ 1 and 1 ≤ ℓ ≤ p. Let a and b satisfy
+                                     n                n
+                                           ajk =        bjk
+                                     X                X
+
+                                     k=1              k=1
+
+for all j with 0 ≤ j ≤ ℓ. Then,
+                                                      Z ∞
+             (−1)p−ℓ+1 ∂zp−ℓ log Wf (z) =               e−sz sp h(s)gℓ (s)ds          (13)
+                                                     0
+                                                             Z ∞
+                                                                    φℓ (t)dt
+                                                  = Γ(p + 2)                 ,        (14)
+                                                              0   (z + t)p+1
+
+where
+                               Pn    −sak −
+                                                      Pn     −sbk
+                                k=1 e                   k=1 e
+                    gℓ (s) =                                                    and   (15)
+                                        s1+ℓ
+                               ∞
+                               X
+                    φℓ (t) =         ρℓ (t − λm )                                     (16)
+                               m=1
+
+and where
+                     n                          n
+                       (t − ak ) 1[ak ,∞) (t) −   (t − bk )ℓ 1[bk ,∞) (t) .
+                     X                          X
+                                ℓ
+            ρℓ (t) =                                                                  (17)
+                     k=1                                    k=1
+
+Thus, if ρℓ is non-negative, (−1)p−ℓ+1 ∂zp−ℓ log Wf (z) is a generalised Stielt-
+jes function of order p + 1.
+
+
+
+                                                  5
+    Proposition 4.3 gives a sufficient condition for non-negativity of the func-
+tion ρℓ in Theorem 1.3 depending on the number of points in the sequences
+a and b.
+    Letting a = (0, 4, 5) and b = (1, 2, 6), the corresponding function ρ2 is in
+fact non-negative (see Figure 1), and so Theorem 1.3 can be applied. We
+notice that in this case ρ1 = ρ takes both positive and negative values, so
+Theorem 1.2 cannot be applied.
+
+
+
+
+                   ρ1                                     ρ2
+
+    Figure 1: ρ1 and ρ2 , corresponding to a = (0, 4, 5) and b = (1, 2, 6).
+
+
+    Our results can be applied to the Barnes multiple gamma functions ΓN
+introduced in a series of papers, see e.g. [1]. For the reader’s convenience we
+briefly describe the construction of these functions (with parameters equal
+to 1) following [10]. Hurwitz’ multiple zeta function ζN is given as
+                               X
+                ζN (s, z) =            (z + m1 + . . . + mN )−s .
+                           m1 ,...,mN ≥0
+
+This function has as a function of s a meromorphic extension to C and the
+multiple gamma function is then defined as
+                         ΓN (z) = exp ∂s ζN (s, z)s=0 .
+These functions satisfy the relations ΓN +1 (z) = ΓN (z)ΓN +1 (z + 1) and
+Γ0 (z) = 1/z. The reciprocal 1/ΓN (z) is an entire function of genus N
+having non-positive zeros located at z = −k, k ∈ {0, 1, . . .}, of multiplicity
+ k+N −1
+  N −1 , and ΓN (1) > 0.
+
+
+                                           6
+   The reciprocal of Barnes’ double gamma function Γ2 is proportional to
+the so-called G-function defined by
+                                                     ∞ 
+                                          2
+                                                     Y     z k −z+z 2 /2k
+         G(z + 1) = (2π)z/2 e−((1+γ)z +z)/2             1+     e           .
+                                                           k
+                                                     k=1
+
+(Here, γ denotes Eulers constant.) It satisfies G(1) = 1 and G(z + 1) =
+Γ(z)G(z). The zeros of G(z + 1) are at the negative integers and the multi-
+plicity of the zero at −k is k.
+Corollary 1.4.
+                                                Z ∞
+         (−1)N −1 ∂zN −1 log W1/ΓN (z) =            e−sz sN h(s)g(s)ds
+                                                 0
+                                                          Z ∞
+                                                                 φ(t)dt
+                                              = Γ(N + 1)                   ,
+                                                           0   (z + t)N +1
+where
+                                ∞        
+                                X   k+N −1
+                       h(s) =                              e−ks ,
+                                              N −1
+                                k=0
+and g and φ are as in (5) and (10).
+    The proof of this corollary follows from Theorem 1.2.
+
+
+2    Proofs
+In this section Theorems 1.1 and 1.2 are proved. The following lemma is an
+immediate consequence of the relation (2).
+Lemma 2.1. Let f ∈ Ep and assume w1 , w2 ∈ {ℜw > 0}. Then,
+                                             Z ∞
+     p p                   p p
+ (−1) ∂z log f (w2 ) − (−1) ∂z log f (w1 ) =     sp−1 h(s)(e−sw1 − e−sw2 )ds
+                                                      0
+
+where h is defined in (3).
+    The next lemma is the key to our results.
+Lemma 2.2. The function g in (5) is the Laplace transform of ρ in (6):
+                              Z ∞
+                      g(s) =       e−st ρ(t)dt.
+                                      0
+
+Moreover, g is completely monotonic if and only if ρ is non-negative which
+is the case exactly when (bk )nk=1 ≺w (ak )nk=1 .
+
+                                          7
+   We remark that in the case of n = 2 and a1 = 0, b1 = a, b2 = b
+and a2 = a + b complete monotonicity of the corresponding function g is
+immediate since
+               1                                1 − e−as 1 − e−bs
+                        −(a+b)s     −as     −bs
+        g(s) =     1 − e        +  e    −  e     =                    .
+               s2                                        s       s
+                                 Pn
+Proof of Lemma 2.2. Let dσ =         k=1 (dǫak − dǫbk ), where ǫa is the point
+mass at a, and dτ (t) = v(t)dt, with v(t) = t1[0,∞) (t). Then
+
+                             g = L(σ)L(τ ) = L(σ ∗ τ ),
+
+and
+                       n                    n
+                                                             !
+                       X                    X
+      d(σ ∗ τ )(t) =         v(t − ak ) −         v(t − bk ) dt
+                       k=1                  k=1
+                        n                            n
+                                                                            !
+                             (t − ak )1[ak ,∞) (t) −   (t − bk )1[bk ,∞) (t) dt
+                       X                             X
+                  =
+                       k=1                             k=1
+                  = ρ(t)dt .
+
+This yields the relation
+                                       Z ∞
+                              g(s) =         e−st ρ(t)dt.
+                                        0
+
+According to Bernstein’s theorem the function g is completely monotonic if
+and only if ρ is non-negative, which is the case if and only if (bk )nk=1 ≺w
+(ak )nk=1 . To see this we may, for given t, choose k0 and l0 such that ak0 ≤
+t < ak0 +1 , and bl0 ≤ t < bl0 +1 . Then we can write
+                                                k0
+                                                X            l0
+                                                             X
+                       ρ(t) = (k0 − l0 )t −           ak +         bk
+                                                k=1          k=1
+
+and considering the cases k0 < l0 and k0 > l0 separately yields the result.
+
+   Lemma 2.2 is extended to the following result, using partial integration.
+
+Lemma 2.3. Let ℓ ∈ N. The function
+                          Pn    −sak −
+                                       Pn    −sbk
+                           k=1 e        k=1 e
+                 gℓ (s) =
+                                   s1+ℓ
+
+
+                                            8
+has integral representation
+                                         Z ∞
+                                    1
+                           gℓ (s) =               e−st ρℓ (t)dt,
+                                    ℓ!    0
+
+where
+                    n                          n
+                      (t − ak ) 1[ak ,∞) (t) −   (t − bk )ℓ 1[bk ,∞) (t) .
+                    X                          X
+                               ℓ
+           ρℓ (t) =                                                           (18)
+                    k=1                              k=1
+
+Thus, gℓ is completely monotonic if and only if ρℓ is non-negative.
+
+Lemma 2.4. Let f ∈ Ep and 1 ≤ ℓ ≤ p. Suppose that a1 , . . . , an , b1 , . . . , bn
+are non-negative and that ∆m = 0 for all m with 0 ≤ m ≤ ℓ, where
+                                 n
+                                 X
+                                       am    m
+                                               
+                          ∆m =          j − bj ,           m ≥ 0.
+                                 j=1
+
+Then for x ≥ 2 max{an , bn } we have
+                             ∞                  ∞
+                             X          1       X         Cm,ℓ
+        ∂xp−ℓ log Wf (x) =                  p+1
+                                                  ∆m                ,
+                                   (x + λk )         (x + λk )m−ℓ−1
+                             k=1                    m=ℓ+1
+
+where                                     !
+                                    ℓ − p
+                                             ,           ℓ<p
+                                   
+                                   
+                                    m
+                                   
+                                   
+                       Cm,ℓ =
+                                   
+                                         m+1
+                                   
+                                    (−1)
+                                   
+                                   
+                                             ,             ℓ=p
+                                   
+                                        m
+and
+                              ∞
+                              X                Cm,l
+                                     ∆m
+                                          (x + λk )m−ℓ−1
+                             m=ℓ+1
+
+is bounded with a bound independent of x and k.
+
+Proof. First we consider the case ℓ < p. From the Hadamard representation
+
+
+
+
+                                              9
+of f (cf. [9]) it follows that
+                     n 
+                     X                                       
+∂xp−ℓ log Wf (x) =      q (p−ℓ) (x + aj ) − q (p−ℓ) (x + bj )
+                     j=1
+      
+   ∞                           n                                         
+  X                            X            1                   1
++       (−1)p−ℓ−1 (p − ℓ − 1)!                        −
+                                   (x + λk + aj )p−ℓ (x + λk + bj )p−ℓ
+  k=1                          j=1
+                                                                           
+          p                           n 
+         X   (−1)i        Γ(i)       X                                    
+      +                                   (x + aj )i−p+ℓ − (x + bj )i−p+ℓ    .
+               λik Γ(i − p + ℓ + 1)          j=1
+                                                                           
+          i=p−ℓ
+
+Next we notice that (by the binomial theorem), when 0 ≤ s ≤ ℓ,
+                           n
+                           X
+                                 ((x + aj )s − (x + bj )s ) = 0.
+                           j=1
+
+Therefore the sums over j in the first and third line of the right hand side
+in the formula above are equal to 0. Hence we have obtained
+
+   ∂xp−ℓ log Wf (x) =
+                                 n 
+                               ∞ X                                              
+        p−ℓ−1
+                               X                  1                1
+   (−1)         (p − ℓ − 1)!                               −                        .
+                                          (x + λk + aj )p−ℓ (x + λk + bj )p−ℓ
+                               k=1 j=1
+
+Let, for brevity, cn = max{an , bn }. Now, assuming that x ≥ 2cn it follows
+that
+                  1                1                  1
+                            =
+          (x + λk + aj )p−ℓ   (x + λk )p−ℓ (1 + aj /(x + λk ))p−ℓ
+                                            ∞                  m
+                                   1       X     ℓ−p          aj
+                            =                                        ,
+                              (x + λk )p−ℓ m=0     m       x + λk
+
+
+
+
+                                             10
+by the binomial series. This yields
+          (−1)p−ℓ−1 p−ℓ
+                     ∂    log Wf (x)
+         (p − ℓ − 1)! x
+             ∞ X n                                       
+            X                 1                  1
+         =                             −
+                      (x + λk + aj )p−ℓ (x + λk + bj )p−ℓ
+            k=1 j=1
+             ∞                ∞                m X n
+            X        1       X     ℓ−p       1
+                                                          am  − bm
+                                                                    
+         =               p−ℓ                                j     j
+                (x + λk )            m     x + λk
+            k=1              m=0                     j=1
+             ∞                  ∞                m
+            X        1        X      ℓ−p        1
+         =               p−ℓ
+                                                        ∆m
+                (x + λk )              m     x + λk
+            k=1              m=ℓ+1
+             ∞                  ∞                m−ℓ−1
+            X        1        X       ℓ−p       1
+         =                                                   ∆m .
+                (x + λk )p+1           m     x + λk
+               k=1              m=ℓ+1
+
+It remains to be verified that the inner sum is bounded for x ≥ 2cn with a
+bound independent of k. We get, using |∆m | ≤ 2ncm  n
+                  ∞                     m−ℓ−1
+                 X         ℓ−p       1
+                                                  ∆m
+                            m      x + λk
+                m=ℓ+1
+                             ∞                   m−ℓ−1
+                        ℓ+1
+                             X      ℓ−p        cn
+                 ≤ 2ncn
+                                     m       x + λk
+                            m=ℓ+1
+                             ∞          
+                             X      ℓ−p
+                 ≤ 2ncℓ+1
+                        n                   2−m+ℓ+1 .
+                                     m
+                            m=ℓ+1
+
+This last series converges and is independent of k.
+   In the case ℓ = p, using that all polynomial terms vanish, we get
+
+ logWf (x)
+      X ∞ Xn
+    =        (log(x + λk + aj ) − log(x + λk + bj ))
+         k=1 j=1
+          ∞ X n       ∞                       m       ∞                      m !
+                        (−1)m+1                          (−1)m+1
+                                                                
+         X            X                aj              X               bj
+     =                                             −
+                            m        x + λk                  m       x + λk
+         k=1 j=1 m=1                                   m=1
+          ∞     ∞
+                                          !
+         X     X  (−1)m+1          ∆m
+     =                                        .
+                        m       (x + λk )m
+         k=1    m=1
+
+
+
+
+                                         11
+Proof of Theorem 1.1. Notice that
+                               n
+                               X
+                log Wf (z) =         (log f (z + ak ) − log f (z + bk )) .
+                               k=1
+
+Hence for ℜz > 0, by Lemma 2.1,
+                                                          n               n
+                               Z ∞                                                      !
+                                                          X               X
+   (−1)p−1 ∂zp log Wf (z) =           e−sz sp−1 h(s)            e−sak −         e−sbk       ds
+                                 0                        k=1             k=1
+                               Z ∞
+                           =          e−sz sp+1 h(s)g(s)ds,
+                                 0
+                                              P∞
+with g as in (5). We have, with τ =                m=1 ǫλm , from Lemma 2.2,
+
+            h(s)g(s) = L(τ )(s)L(ρ)(s) = L(τ ∗ ρ)(s) = L(φ)(s).
+
+This gives us
+                                          Z ∞                 Z ∞
+           (−1)p−1 ∂zp log Wf (z) =         e s     −sz p+1
+                                                           e−st φ(t)dtds
+                                          0            0
+                                        Z ∞Z ∞
+                                      =          sp+1 e−s(z+t) dsφ(t)dt
+                                         0   0
+                                                 Z ∞
+                                                        φ(t)dt
+                                      = Γ(p + 2)                  .
+                                                  0   (z + t)p+2
+If b ≺w a then, by Lemma 2.2, ρ and hence also φ is non-negative and thus
+(−1)p−1 ∂zp log Wf (z) is a generalised Stieltjes function of order p + 2.
+
+Proof of Theorem 1.2. With the extra assumption that nk=1 ak = nk=1 bk
+                                                            P           P
+the function g is bounded for s near 0. In fact, using l’Hospital’s rule,
+                                                n
+                                          1X 2
+                                             ak − b2k .
+                                                     
+                           lim g(s) =
+                           s→0            2
+                                              k=1
+
+Therefore the function of s (for fixed x > 0) e−sx sp h(s)g(s) is integrable on
+[0, ∞) implying that
+                                Z ∞
+                       Φ(x) =        e−sx sp h(s)g(s)ds
+                                      0
+
+is defined. Furthermore,
+                    Z ∞
+            ′
+          Φ (x) = −      e−sx sp+1 h(s)g(s)ds = (−1)p ∂xp log Wf (x),
+                       0
+
+
+                                              12
+showing that
+                                          Z ∞
+               (−1)p ∂xp−1 log Wf (x) =            e−sx sp h(s)g(s)ds + c
+                                           0
+
+for a constant c. Lemma 2.4,PLebesgue’s theorem on dominated convergence
+                                     p+1
+together with the fact that ∞ m=1 1/λm < ∞ yield
+
+                      c = lim (−1)p ∂xp−1 log Wf (x) = 0.
+                          x→+∞
+
+Arguing as in the proof of Theorem 1.1 gives us
+                                               Z ∞
+                                                               φ(t)dt
+             (−1)p ∂zp−1 log Wf (z) = Γ(p + 1)                          ,
+                                                         0   (z + t)p+1
+
+and if b ≺w a, (−1)p ∂zp−1 log Wf (z) is a generalised Stieltjes function of order
+p + 1.
+
+Proof of Theorem 1.3. The proof will be done by induction on ℓ. For ℓ = 1,
+the result holds by Theorem 1.2. If the statement       holds
+                                                          P for ℓ − 1, we shall
+show that it holds for ℓ. The conditions nk=1 ajk = nk=1 bjk for all j ≤ ℓ
+                                             P
+
+implies that the gℓ (s) = g(s)/sℓ−1 is bounded for s near 0. Therefore the
+function of s (for fixed x > 0) e−sx sp−ℓ+1 h(s)g(s) is integrable on [0, ∞) so
+that                            Z ∞
+                        Φ(x) =       e−sx sp h(s)gℓ (s)ds
+                                  0
+is defined. Furthermore,
+                Z ∞
+       ′
+     Φ (x) = −      e−sx sp h(s)gℓ−1 (s)ds = (−1)p−ℓ+1 ∂xp−ℓ+1 log Wf (x),
+                  0
+
+by the induction hypothesis. This shows that
+                                     Z ∞
+               p−ℓ+1 p−ℓ
+          (−1)      ∂x log Wf (x) =       e−sx sp h(s)gℓ (s)ds + c
+                                               0
+
+for a constant c. Using Lemma 2.4, we get that c = 0 and this gives
+                                                  Z ∞
+                                                        φℓ (t)dt
+            (−1)p−ℓ+1 ∂zp−ℓ log Wf (z) = Γ(p + 1)                .
+                                                   0  (z + t)p+1
+
+If ρℓ is non-negative, so is φℓ , and thus (−1)p−ℓ+1 ∂zp−ℓ log Wf (z) is a gener-
+alised Stieltjes function of order p+1. This completes the induction step.
+
+
+                                          13
+   Let us end this section by describing a variation of Theorem 1.1 and
+Theorem 1.2. For a given finite sequence a = (a1 , . . . , an ) of non-negative
+numbers and f ∈ Ep with zeros Zf , we consider the sequence of zeros of the
+function
+                                   n
+                                   Y
+                         Ga (z) =     f (z + aj ),
+                                        j=1
+
+denoted by ZGa , which is equal to {ρ − aj | 1 ≤ j ≤ n, ρ ∈ Zf } counting
+multiplicities. We then denote by a − Zf the non-decreasing rearrangement
+(µa,k )k of −ZGa . For two sequences a and b we say that b − Zf ≺w a − Zf if
+                               m
+                               X              m
+                                              X
+                                     µa,k ≤         µb,k
+                               k=1            k=1
+
+for all m ≥ 1.
+    The key assumption is thus weak supermajorisation of these two infinite
+sequences. The result is stated as follows.
+Proposition 2.5. Suppose that p ≥ 1 and 0 ≤ ℓ ≤ p. If nk=1 ajk = nk=1 bjk
+                                                           P            P
+
+for 0 ≤ j ≤ ℓ and if b − Zf ≺w a − Zf , then (−1)p−ℓ+1 ∂zp−ℓ log Wf (z) is a
+generalised Stieltjes function of order p − ℓ + 2 with the representation
+                                      Z ∞
+         (−1)p−ℓ+1 ∂zp−ℓ log Wf (z) =      e−sz sp−ℓ+1 h(s)g(s)ds         (19)
+                                        0
+                                                   Z ∞
+                                                            φ(t)dt
+                                    = Γ(p − ℓ + 2)                    ,   (20)
+                                                     0   (z + t)p−ℓ+2
+where g and φ are as in (5) and (10).
+Proof. The proof is similar to the proof of Theorem 1.3, except we consider
+                             Z ∞
+                     Φ(z) =       e−sz sp−ℓ+1 h(s)g(s)ds
+                                 0
+                                    R ∞ φ(t)dt
+and show that it equals Γ(p − ℓ + 2) 0 (z+t)p−ℓ+2 .
+
+
+Example 2.6. We illustrate Proposition 2.5 using the Gamma function and
+the G-function of Barnes.
+ (a) Let f (z) = 1/Γ(z + 1), a = (0, 3, 3), and b = (1, 1, 4). In this case,
+
+                     a − Zf = (1, 2, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, . . .)
+                     b − Zf = (2, 2, 3, 3, 4, 4, 5, 5, 5, 6, 6, 6, . . .)
+
+
+                                         14
+    and it follows       ′                             ′
+    P m     ′
+                Pmthat′ b = b − Zf ≺w a − Z   Pfm= a′ . (InPmfact,′ we have
+          b
+      k=1 k   −      a
+                  k=1 k  = 1 for m  ≤ 3 and     k=1 kb   −  k=1 ak = 0 for
+    m ≥ 4.) The assumptionsP∞    in Proposition  2.5  thus hold for ℓ = 2.
+    The graph of φ(t) = m=1 ρ(t − m) is shown below (case (a)) and
+    − log Wf ∈ S2 . Since
+
+                                               (x + 1)(x + 4)
+                        − log Wf (x) = − log
+                                               (x + 2)(x + 3)
+
+    the assertion can also be obtained directly, noticing that − log Wf (x) =
+    θ(x + 2) − θ(x + 4), where θ(x) = log(1 + 1/x) is an ordinary Stieltjes
+    function.
+
+(b) Let f (z) = G(z + 1), a = (0, 3/2, 3/2), and b = (1/2, 1/2, 2). In this
+    case Zf = −(1, 2, 2, 3, 3, 3, . . .), and the assumptions in Proposition
+                                                                  P∞         2.5
+    are satisfied for ℓ = 2. The graph of the function φ(t) = m=1 mρ(t −
+    m) is shown below (case (b)) and − log Wf ∈ S2 . Furthermore,
+
+                                G(x + 1)G(x + 5/2)2       Γ(x + 1)Γ(x + 2)
+      − log Wf (x) = − log                2
+                                                    = log
+                                G(x + 3/2) G(x + 3)         Γ(x + 3/2)2
+
+    from which it can also be seen that it is a generalised Stieltjes function
+    of order 2.
+
+
+
+
+                φ in case (a)                       φ in case (b)
+
+     Figure 2: The functions φ from Example 2.6 are non-negative.
+
+
+
+
+                                       15
+3    Behaviour on vertical lines
+The motivation for the results in this section comes from the paper [6]
+in which inequalities for the gamma (and q-gamma) function of complex
+arguments are investigated. One of the results in that paper states that the
+                             √
+function x 7→ − log |Γ(a + i x)| (where a > 0) has a completely monotonic
+derivative on (0, ∞).
+    We investigate this type of questions for entire functions of finite genus
+with real zeros. Given such a function f , which monotonicity properties
+                                    √
+does the function x 7→ log |f (a + i x)| have?
+    Also in this section, ǫa denotes the point mass at a.
+Proposition 3.1. Suppose that f is a real entire function of genus p, and
+with only real zeros {λk }. Let
+                                             √
+                             u(x) = log |f (i x)|,
+
+and m = ⌊p/2⌋ be the integer part of p/2. Then (−1)m ∂xm+1 u(x) is a gen-
+eralized Stieltjes function of order m + 1 with the representation
+                                       m! ∞       dµ(t)
+                                          Z
+                    (−1)m ∂xm+1 u(x) =                    ,
+                                        2 0 (t + x)m+1
+where µ = ∞
+            P
+               k=1 ǫλ2 .
+                   k
+
+Proof. From the Hadamard factorization of f it easily follows that
+                          √
+                     |f (i x)|2 = κ(x), x ≥ 0,
+
+where
+                                 ∞              Pm
+                          r(z)
+                                 Y        z                    2 j
+                                                      j=1 (−z/λk ) /j
+                 κ(z) = e              1+ 2       e
+                                         λk
+                                 k=1
+is an entire function of the class Em , r being a real polynomial of degree at
+most m. The result now follows directly from [9, Proposition 2.1].
+                                 √
+    The case concerning f (a + i x) is immediate since z 7→ f (z + a) is again
+entire of genus p and with real zeros only:
+Corollary 3.2. Let f be a real entire function of genus p, with only real
+zeros {λk } and let m = ⌊p/2⌋. For a ∈ R we have
+                                       √      m! ∞ dµa (t)
+                                                Z
+                  m m+1
+             (−1) ∂x      log |f (a + i x)| =                ,
+                                              2 0 (t + x)m+1
+where µa = ∞
+             P
+               k=1 ǫ(a−λk )2 .
+
+
+                                        16
+    If p ≤ 1 this corollary extends and sharpens the result mentioned in
+the beginning of this section, showing in particular that the derivative of
+              √
+− log |Γ(a + i x)| is a generalised Stieltjes function of order 2, and hence
+completely monotonic. It is even logarithmically completely monotonic (see
+[2]).
+Corollary 3.3. Let f be a real entire function of genus p and with only
+                                                 √
+real zeros {λk }, let m = ⌊p/2⌋, u(x) = log |f (i x)| and a > 0. Then the
+function x 7→ (−1)m ∂xm (u(x + a) − u(x)) is a generalized Stieltjes function
+of order m + 1 with representation
+                                          m! ∞ d(µ ∗ ma )(t)
+                                              Z
+                  m m
+            (−1) ∂x (u(x + a) − u(x)) =                         ,
+                                           2 0     (x + t)m+1
+where µ = ∞
+           P
+             k=1 ǫλ2 and ma is Lebesgue measure on (0, a).
+                    k
+
+   The proof of this corollary follows from the relation
+  Z x+a Z ∞               Z ∞Z a                         Z ∞
+             dµ(s)                       dt                  d(µ ∗ ma )(t)
+                   λ
+                     dt =                      λ
+                                                 dµ(s) =                   .
+   x     0  (t + s)         0    0  (x + t + s)           0    (x + t)λ
+Let us finally mention a version of Theorem 1.2 for vertical lines.
+Proposition 3.4. Let f be a real entire function of genus p ≥ 2 and with
+only real zeros {λk }, and let m = ⌊p/2⌋. If b ≺w a and
+                                  n
+                                  X            n
+                                               X
+                                        ak =         bk
+                                  k=1          k=1
+
+then
+                                      √                   √
+                                  f (i x + a1 ) · · · f (i x + an )
+                (−1)m ∂xm−1 log       √                   √                   (21)
+                                  f (i x + b1 ) · · · f (i x + bn )
+                                  Z ∞
+                                1
+                             =          e−sx sm ξ(s)g(s)ds,
+                                2 0
+
+where g is as in (5) and ξ(s) = ∞           −λ2k s . In particular the function in
+                                    P
+                                       k=1 e
+(21) is a generalised Stieltjes function of order m + 1.
+Proof. We have, where κ is as in the proof of Proposition 3.1,
+                    √                   √
+                f (i x + a1 ) · · · f (i x + an )  1
+            log     √                   √         = log Wκ (x),              (22)
+                f (i x + b1 ) · · · f (i x + bn )  2
+and the result follows from Theorem 1.2.
+
+                                          17
+  Returning to the G-function of Barnes we notice the following corollary.
+Corollary 3.5. If b ≺w a and nk=1 ak = nk=1 bk then
+                                P          P
+
+               √                 √
+           G(i x + a1 ) · · · G(i x + an )   1 ∞ −sx
+                                              Z
+     − log     √                 √         =      e sξ(s)g(s)ds,
+           G(i x + b1 ) · · · G(i x + bn )   2 0
+is a generalised Stieltjes function of order 2. Here g is as in (5) and ξ(s) =
+   ∞           −k 2 s .
+P
+   k=0 (k + 1)e
+
+
+4    The density ρℓ and the Prouhet-Tarry-Escott
+     Problem
+Theorem 1.3 and Lemma 2.3 unveil an interesting relation of having suitable
+measures for representing ratios of entire functions as generalised Stieltjes
+functions and finding finite sequences of numbers which have equal sums of
+powers up to some fixed degree. The problem of finding such finite sequences
+of integers is called the Prouhet-Tarry-Escott problem, see [3].
+    The connection is described in the following lemma.
+Lemma 4.1. Let a = (ak )nk=1 , b = (bk )nk=1 and ρℓ be defined as in Lemma
+2.3. Then,
+                              n          n
+                                  j
+                                            bjk
+                            X          X
+                                 ak =
+                                   k=1          k=1
+for all j with 0 ≤ j ≤ ℓ if and only if ρℓ (t) = 0 for all t ≥ max{an , bn }.
+
+Proof. For t ≥ max{an , bn }, we have
+                                 n
+                                 X              n
+                                                X
+                      ρℓ (t) =     (t − ak )ℓ −   (t − bk )ℓ .
+                                 k=1                  k=1
+
+The result follows by expanding the above and equating to zero.
+
+   The following result justifies why no sequences a and b can be found such
+that the ratio in Proposition 2.5 is a generalised Stieltjes function of order
+p − ℓ + 2 for all entire functions of genus p and negative zeros.
+Proposition 4.2. Let a = (ak )nk=1 and b = (bk )nk=1 be finite sequences of
+non-negative numbers such that b ≺w a, and suppose that
+                                   n
+                                   X            n
+                                                X
+                                         bk =         ak
+                                   k=1          k=1
+
+
+                                           18
+and
+                                     n
+                                     X              n
+                                                    X
+                                            b2k =         a2k .
+                                     k=1            k=1
+
+Then, a = b.
+
+Proof. The function
+                       n                                   n
+                             1[ak ,∞) (t)(t − ak ) −              1[bk ,∞) (t)(t − bk )2
+                       X                                   X
+                                                    2
+           ρ2 (t) =
+                       k=1                                 k=1
+
+is C 1 (since each summand is of class C 1 ). Its derivative
+                        n                                   n
+                                                                                       !
+                              1[ak ,∞)(t)(t − ak ) −              1[bk ,∞) (t)(t − bk )
+                        X                                   X
+         ρ′2 (t) = 2
+                        k=1                                 k=1
+
+is non-negative because b ≺w a, see Lemma 2.2. Hence ρ2 is non-decreasing.
+But ρ2 (t) = 0 for t ⩽ a1 , and also, by Lemma 4.1, for t ⩾ max(an , bn ).
+Hence ρ2 ≡ 0, and thus a = b.
+
+    Let us end this paper by giving a sufficient condition for non-negativity
+of the function ρℓ in Theorem 1.3.
+
+Proposition 4.3. Let a = (ak )nk=1 and b = (bk )nk=1 such that a1 < b1 and
+                                      n             n
+                                            ajk =     bjk
+                                      X             X
+
+                                      k=1           k=1
+
+for all j with 0 ≤ j ≤ n − 1. Then ρn−1 ≥ 0.
+
+Proof. In the interval I = (a1 , max{an , bn }), the function ρ1 can have at
+most n − 1 changes of monotonicity. To see this, we put all the numbers
+ak and bk in increasing order and notice that the continuous and piecewise
+linear function ρ1 starts increasing after a1 . Each appearance of an ak makes
+its slope increase by 1 and each appearance of a bk decreases the slope by 1;
+since a slope of 0 does not change the monotonicity we are left with at most
+n − 1 changes of monotonicity.
+    It is easy to show that ρ′k = kρk−1 for k ≥ 2 and repeated applications
+of this relation yield that the function ρn−1 can have at most 1 change of
+monotonicity in I. Since ρn−1 takes the value 0 at both ends of I, it cannot
+change sign inside, and as a1 < b1 , we have that ρn−1 ≥ 0.
+
+
+                                               19
+    In relation to the Prouhet-Tarry-Escott problem, pairs of integer se-
+quences that satisfy the condition of the lemma above are called ideal solu-
+tions. We briefly note that the so called ideal symmetric solutions of length
+n correspond to symmetries on the ρ1 function, and in particular, if n is
+odd (i.e. we have an odd ideal symmetric solution), then the graph of ρ1
+is symmetric with respect to the middle point ((a1 + bn )/2, 0), and if n is
+even, then it is symmetric with respect to the middle line x = (a1 + an )/2.
+
+
+References
+ [1] E.W. Barnes, The theory of the multiple gamma function, Trans. Camb.
+     Philos. Soc. 19 (1904), 374–425.
+
+ [2] C. Berg, S. Koumandos and H.L. Pedersen, Nielsen’s beta function and
+     some infinitely divisible distributions, Math. Nach. 294 (2021), 426–
+     449.
+
+ [3] P. Borwein, Computational excursions in analysis and number theory.
+     CMS Books in Mathematics/Ouvrages de Mathématiques de la SMC,
+     10. Springer-Verlag, New York (2002).
+
+ [4] J. Bustoz and M.E.H. Ismail, On gamma function inequalities. Math.
+     Comp., 47 (1986), 659–667.
+
+ [5] A.Z. Grinshpan and M.E.H. Ismail, Completely monotonic functions
+     involving the gamma and q-gamma functions, Proc. Amer.Math. Soc.
+     134 (2006), 1153–1160.
+
+ [6] M.E.H. Ismail, Inequalities for gamma and q-gamma functions of com-
+     plex arguments, Anal. Appl., 15 (2017), 641–651.
+
+ [7] D.B. Karp and E.G. Prilepkina, Completely Monotonic Gamma Ratio
+     and Infinitely Divisible H-Function of Fox, Comput. Methods Funct.
+     Theory, 16 (2016), 135–153.
+
+ [8] B.Ya. Levin, Lectures on Entire Functions, Translations of Mathemat-
+     ical Monographs, Americal Mathematical Society, 150 (1996).
+
+ [9] H.L. Pedersen, Completely monotonic functions related to logarithmic
+     derivatives of entire functions, Anal. Appl. 9 (2011), 409–419.
+
+[10] S.N.M. Ruijsenaars, On Barnes’ multiple zeta and gamma functions,
+     Adv. Math., 156 (2000), 107–132.
+
+                                     20
+[11] R.L. Schilling, R. Song and Z. Vondracek, Bernstein Functions Theory
+     and Applications 2ND Ed. De Gruyter Studies in Mathematics, 37
+     (2012).
+
+[12] F.W. Steutel and K. Van Harn, Infinite divisibility of probability distri-
+     butions on the real line. Marcel Dekker, Inc., New York - Basel (2004).
+
+Dimitris Askitis
+Department of Psychology
+University of Copenhagen
+Øster Farimagsgade 2A
+DK-1353 Copenhagen K
+email: dimitrios.askitis@psy.ku.dk
+
+Henrik Laurberg Pedersen
+Department of Mathematical Sciences
+University of Copenhagen
+Universitetsparken 5
+DK-2100, Denmark
+email: henrikp@math.ku.dk
+
+
+
+
+                                      21
+

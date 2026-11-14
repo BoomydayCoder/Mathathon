@@ -241,3 +241,21 @@ theorem. No historical novelty assertion follows from an unsuccessful search.
 The Newton–Hilbert classification, confluent Wilson path and logarithmic deformation
 are being reviewed or completed. Function-level denominator powers must not be
 confused with reduced numerical denominators after evaluation.
+
+## Seventeenth-stage checked constructions
+
+| Claim | Proof / independent review | Scope |
+|---|---|---|
+| Fully real half-shift resolvent | half-shift-elementary-resolvent-proof.md; half-shift-elementary-independent-review.md | Finite Chebyshev products and real calculus |
+| Positive generalized Stieltjes representation for every real alpha>0 | real-order-positive-stieltjes-zeta.md; real-order-positive-stieltjes-independent-review.md | Exact minimal order alpha; rational moments do not imply rational Gaussian values for noninteger order |
+| Strictly nested rational lower/upper bounds for each odd zeta | nested-higher-zeta-gauss-radau.md; nested-higher-zeta-radau-independent-review.md | Explicit geometric errors; denominator control missing |
+| Logarithm–zeta3 positive Wilson deformation | logarithm-zeta3-wilson-deformation.md; logarithm-zeta3-deformation-independent-review.md | Classical family, exact endpoint limits and Hilbert isometry |
+| Complete endpoint log2 irrationality proof | log2-endpoint-catalan-arithmetic.md; log2-catalan-independent-review.md | n>=1; Catalan–beta identity clears numerator with one lcm |
+| Newton–Hilbert/Beta classification | newton-hilbert-selfadjoint-classification.md; newton-hilbert-classification-independent-review.md | Algebraic symmetry distinct from analytic selfadjointness |
+| Elementary maximal quarter shift | newton-hilbert-critical-quarter.md; newton-critical-quarter-independent-review.md | Explicit finite polynomial witnesses; no spectral input needed |
+| Confluent Wilson path and endpoint branch | hyperbolic-confluent-wilson-path.md; confluent-wilson-path-independent-review.md | Does not prove conjectured all-n balanced constant term |
+| Pure20 and repaired156 finite arithmetic certificates | pure-higher-kernel-experiment-independent-review.md; half-shift-zeta5-pade-independent-review.md | Finite tested forms only |
+| Base-Gauss derivative transfer | higher-zeta-base-gauss-derivative-transfer.md; base-gauss-derivative-transfer-independent-review.md | Sign-free enclosures; exact function denominator distinct from values |
+
+The two-parameter positive ladder and negative-atom continuation are new written
+or active developments awaiting their own audits. No historical novelty is claimed.

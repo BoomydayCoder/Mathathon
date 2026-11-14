@@ -10,8 +10,11 @@ an elementary exponential estimate. No historical novelty is claimed.
 
 No Apéry recurrence, general Wilson orthogonality theorem, triple integral,
 Stirling asymptotic, or prime number theorem is needed in the argument below.
-It uses a short Fourier contour calculation, polynomial identities, and
-elementary factorial estimates.
+The analytic input now has a fully real proof using finite Chebyshev
+polynomials and elementary integrals. The earlier Fourier contour
+calculation is retained below only as an optional verification.
+The remaining ingredients are polynomial identities and elementary
+factorial estimates.
 
 ## Design route: build the error before choosing the polynomials
 
@@ -136,7 +139,41 @@ exists, because the density decays exponentially in \(y\).
               =2\zeta(3,a+1/2).}                  \tag{2}
 \]
 
-Here are details fixing every normalization. The Fourier cosine transform
+**Fully real derivation.** The
+[detailed elementary supplement](half-shift-elementary-resolvent-proof.md),
+[independently audited](half-shift-elementary-independent-review.md),
+proves the partial fractions
+\[
+ \tanh(\pi y)=\frac2\pi\sum_{j\ge0}\frac{y}{y^2+(j+1/2)^2}.
+\]
+Its proof starts with the finite Chebyshev product
+\[
+ \prod_{k=1}^N\left[\sinh^2u+
+        \sin^2((k-1/2)\pi/N)\right]
+       =2^{2-2N}\cosh^2(Nu),
+\]
+then logarithmically differentiates, puts \(u=x/N\), pairs the
+equal sine terms, and passes to the limit using a uniform
+reciprocal-square majorant.
+Writing \(h_a(y)=y/(a^2+y^2)\), integration by parts gives
+\[
+ \int\frac{d\nu(t)}{t+a^2}
+ =\frac2\pi\sum_{j\ge0}\int_0^\infty h_a'(y)h_{j+1/2}'(y)\,dy.
+\]
+The interchange is absolutely justified by
+\(\int|h_a'h_b'|\le1/(ab^2)\).
+The elementary kernel integral
+\[
+ \int_0^\infty\frac{a}{a^2+y^2}\frac{b}{b^2+y^2}\,dy
+       =\frac{\pi}{2(a+b)}
+\]
+gives \(\int h_a'h_b'=\pi/(a+b)^3\) by differentiating once
+in each positive parameter. This proves (2) by real calculus.
+The supplement gives the endpoint, equal-parameter, and convergence
+details; no Fourier theorem is used in this route.
+
+**Optional independent Fourier verification.**
+The Fourier cosine transform
 \[
  H(u)=\int_0^\infty\operatorname{sech}^2(\pi y)\cos(uy)\,dy
        =\frac{u}{2\pi\sinh(u/2)}
@@ -169,14 +206,21 @@ geometric series and using Tonelli proves (2).
 
 Let \(\mathcal B(x^j)=B_j\), with \(B_1=-1/2\), and put
 \(\mathcal L(f)=\mathcal B(f')\).
-Expansion of (3), or its derivatives at zero, gives
+The real-series moment calculation in the
+[elementary supplement, §3](half-shift-elementary-resolvent-proof.md)
+gives
 \[
  \nu(t^j)=(-1)^j(2j+1)B_{2j}(1/2).
  \tag{4}
 \]
-Indeed \(u/(2\sinh(u/2))=\sum B_{2j}(1/2)u^{2j}/(2j)!\);
-compare this with the cosine transform above. Differentiation under
-the integral is justified by exponential decay. Hence for every polynomial \(g\),
+For clarity, that calculation first integrates the density by parts,
+then integrates the elementary exponential series for \(\operatorname{sech}^2u\).
+The required even-zeta values are derived within the same supplement
+by comparing coefficients of the proved tanh partial fractions with
+the defining Bernoulli generating series. They are not assumed.
+Alternatively, the optional Fourier calculation proves (4) by expanding
+\(u/(2\sinh(u/2))=\sum B_{2j}(1/2)u^{2j}/(2j)!\).
+Hence for every polynomial \(g\),
 \[
  \boxed{\nu(g(t))=
  \mathcal L_x[(x+1/2)g(-(x+1/2)^2)].}              \tag{5}

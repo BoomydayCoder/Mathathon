@@ -1,0 +1,1734 @@
+                                           Nielsen’s beta function and some infinitely divisible
+arXiv:1905.04131v2 [math.CA] 20 Sep 2019
+
+
+
+
+                                                               distributions
+                                                   Christian Berg, Stamatis Koumandos and Henrik L. Pedersen∗
+
+                                                                            September 23, 2019
+
+
+
+                                                                                  Abstract
+                                                       We show that a large collection of special functions, in particular
+                                                    Nielsen’s beta function, are generalized Stieltjes functions of order 2,
+                                                    and therefore logarithmically completely monotonic. This includes the
+                                                    Laplace transform of functions of the form xf (x), where f is itself the
+                                                    Laplace transform of a sum of dilations and translations of periodic
+                                                    functions. Our methods are also applied to ratios of Gamma functions,
+                                                    and to the remainders in asymptotic expansions of the double Gamma
+                                                    function of Barnes.
+
+                                           2010 Mathematics Subject Classification: Primary: 44A10, Secondary: 26A48
+                                           Keywords: Nielsen’s beta function, Laplace transform, Generalized Stieltjes func-
+                                           tion, completely monotonic function
+
+
+                                           1       Introduction
+                                           Nielsen’s beta function is the meromorphic function defined by
+                                                                                      ∞
+                                                                                      X (−1)n
+                                                                             β(z) =               ,
+                                                                                            z+n
+                                                                                      n=0
+
+                                           cf. [15, p. 101] and [6, p. 907]. In the right half plane it admits the integral
+                                           representation                       Z ∞ −zt
+                                                                                       e
+                                                                        β(z) =               dt,                        (1)
+                                                                                 0   1 + e−t
+                                               ∗
+                                               Research supported by grant DFF4181-00502 from The Danish Council for Indepen-
+                                           dent Research | Natural Sciences
+
+
+
+                                                                                       1
+from which it immediately follows that β is a completely monotonic function
+on (0, ∞). It is a consequence of our results that β is also a so-called logarith-
+mically completely monotonic function. For the reader’s convenience we give
+some background material on the relation between completely monotonic
+functions, logarithmically completely monotonic functions and generalized
+Stieltjes functions.
+    A completely monotonic function f is a C ∞ -function on (0, ∞) such that
+(−1)n f (n) (x) ≥ 0 for all n ≥ 0 and all x > 0. These functions are charac-
+terized in Bernstein’s theorem as Laplace transforms of positive measures:
+f is completely monotonic if and only if there exists a positive measure µ
+on [0, ∞) such that t 7→ e−xt is integrable w.r.t. µ for all x > 0 and
+                                          Z ∞
+                       f (x) = L(µ)(x) =       e−xt dµ(t),
+                                            0
+
+cf. [25, p. 161].
+     For a given λ > 0 a function f : (0, ∞) → R is called a generalized
+Stieltjes function of order λ if
+                                   Z ∞
+                                        dµ(t)
+                           f (x) =              + c,                 (2)
+                                    0  (x + t)λ
+
+where µ is a positive measure on [0, ∞) making the integral converge for
+x > 0 and c ≥ 0. The set of generalized Stieltjes functions of order λ is
+denoted Sλ . For additional information on these classes see e.g. [11].
+    The class of ordinary Stieltjes functions is the class of generalized Stielt-
+jes functions of order 1.
+    We remark that f is a generalized Stieltjes function of order λ of the
+form (2) if and only if
+                             Z ∞
+                          1
+                f (x) =           e−xt tλ−1 κ(t) dt + c, x > 0,              (3)
+                        Γ(λ) 0
+
+where
+R ∞ −tsκ is a completely monotonic function. In the affirmative case, κ(t) =
+ 0 e     dµ(s). See [11, Lemma 2.1]. This characterization shows also that
+Sλ1 ⊆ Sλ2 for λ1 < λ2 .
+    Section 2 contains the proof of Theorem 1.3 below, covering Nielsen’s
+beta function, based on a result of Kristiansen and Steutel. Some additional
+material on the relation between generalized Stieltjes functions and so-called
+logarithmically completely monotonic functions (defined below) is also given.
+    In Section 3 we describe a method in which we start with sums ϕ of cer-
+tain translations and dilations of an even, non-negative and periodic function
+
+                                        2
+and then consider the Laplace transform of the function σ(x) = xL(ϕ)(x).
+From (3) we thus obtain that L(σ) is in S2 and has the same representing
+measure in (2) as ϕ has as a completely monotonic function. As corollar-
+ies we obtain analogues of results of Kosaki (see [9]) on infinitely divisible
+functions in relation to the Fourier transform.
+     Section 4 deals with ratios of Gamma functions and contains an improve-
+ment of results of Bustoz and Ismail (see [5]). In Section 5 we improve earlier
+results for the remainders in asymptotic expansions of the double Gamma
+function of Barnes.
+     Finally we consider in Section 6 generalized Stieltjes functions related
+to in particular meromorphic functions of special type having poles at the
+non-positive integers.
+     A C ∞ -function f : (0, ∞) → (0, ∞) is said to be logarithmically com-
+pletely monotonic if −(log f (x))′ = −f ′ (x)/f (x) is completely monotonic.
+It is easy to see that a logarithmically completely monotonic function is also
+completely monotonic. The class of logarithmically completely monotonic
+functions is denoted by L and was characterized by Horn ([8]) through The-
+orem 1.1. See also [3, 4]. Because of (ii) the functions of L were called
+infinitely divisible completely monotonic functions by Horn.
+Theorem 1.1 The following conditions are equivalent for a function f :
+(0, ∞) → (0, ∞):
+  (i) f ∈ L,
+ (ii) f α is completely monotonic for all α > 0,
+(iii) f 1/n is completely monotonic for all n = 1, 2, . . .
+In [24, p. 90] it is noticed that a positive differentiable function π on (0, ∞)
+with limx→0+ π(x) = 1 is an infinitely divisible probability Laplace-Stieltjes
+transform if and only if its so-called ρ-function (which is the negative of
+its logarithmic derivative) is completely monotonic. However, the general
+concept of logarithmic complete monotonicity is not mentioned explicitly in
+[24].
+
+Definition 1.2 A measure or function on the positive half line is called
+infinitely divisible if its Laplace transform belongs to the class L.
+
+We shall first investigate functions of the form
+                                       ∞
+                                       X       (−1)n
+                             f (z) =                    ,                   (4)
+                                             (z + an )λ
+                                       n=0
+
+
+                                         3
+where 0 ≤ a0 ≤ a1 ≤ · · · → ∞, and where λ > 0. Notice that the series
+converges uniformly over compact subsets of the cut plane C \ (−∞, 0]. Our
+first main result is the following.
+Theorem 1.3 Let f be of the form (4) for λ ∈ (0, 1]. Then f is a general-
+ized Stieltjes function of order λ + 1 with c = 0 and representing measure
+                                     ∞
+                                     X
+                               µ=λ         dt|(a2n ,a2n+1 ) .
+                                     n=0
+
+In particular f is a logarithmically completely monotonic function. Further-
+more, it admits the representation
+                                   Z ∞
+                              1
+                 f (x) =                  e−xt tλ ϕ(t) dt, x > 0,
+                         Γ(λ + 1) 0
+where ϕ(t) = ∞         −a2n t − e−a2n+1 t )/t is completely monotonic.
+              P
+                 n=0 (e
+
+Nielsen’s beta function is a special case of (4). By Theorem 1.3 we then get:
+Corollary 1.4 There exists a family of measures {mc }c>0 on [0, ∞) such
+that
+             R∞
+  (a) β(z)c = 0 e−zt dmc (t), ℜz > 0,
+ (b) mc ∗ md = mc+d ,
+ (c) dm1 (t) = dt/(1 + e−t ).
+Let a > 0 and define
+                                   e−at         1 e−t(a−1/2)
+                    νa (t) =             −t
+                                            =
+                               β(a)(1 + e )   2β(a) cosh(t/2)
+It follows from Theorem 1.3 that any of these probability densities is in-
+finitely divisible. For a = 1/2, 1, 3/2 we find
+                  1                        1                         e−t
+ν1/2 (t) =               , ν1 (t) =                , ν  (t) =                   .
+             π cosh(t/2)            (log 2)(et + 1) 3/2       (4 − π) cosh(t/2)
+We could not find any reference indicating that these probability densities
+are infinitely divisible.
+    The integral representation (1) of β may be written as
+                                Z ∞
+                            x+1                 1
+                        β         =      e−xt        dt,                (5)
+                             2        0       cosh t
+and the logarithmic complete monotonicity of this function corresponds to
+the infinite divisibility of ν1/2 above.
+
+                                            4
+2     Generalized Stieltjes functions of order 2
+Proof of Theorem 1.3. For x > 0 we have
+             ∞                  ∞
+             X      (−1)n      X        1                1
+      f (x) =              λ
+                             =               λ
+                                                −
+              n=0
+                  (x + an )    n=0
+                                   (x + a2n )     (x + a2n+1 )λ
+                                 ∞ Z a2n+1                  Z ∞
+                                 X                dt               dµ(t)
+                             =λ                      λ+1
+                                                          =                ,
+                                      a2n     (x + t)        0  (x + t)λ+1
+                                     n=0
+
+where
+                                       ∞
+                                       X
+                                µ=λ           dt|(a2n ,a2n+1 ) .
+                                       n=0
+
+Therefore, f is a generalized Stieltjes function of order λ + 1, and hence
+also of order 2. Such functions are logarithmically completely monotonic
+according to Theorem 2.1 below. The representation as a Laplace transform
+follows easily from (3).                                                 
+    We note that a result similar to Theorem 1.3 holds for functions given
+by a finite sum. Indeed, considering for N ≥ 0
+                                             N
+                                             X     (−1)n
+                                fN (x) =                    ,
+                                             n=0
+                                                 (x + an )λ
+
+it follows that
+                       Z ∞                                           N
+                             dµ2N +1 (t)                             X
+        f2N +1 (x) =                     ,     with µ2N +1 = λ             dt|(a2n ,a2n+1 )
+                       0     (x + t)λ+1
+                                                                     n=0
+
+and
+             Z ∞                                        N −1
+                    dµ2N (t)                            X
+ f2N (x) =                    ,     with µ2N = λ               dt|(a2n ,a2n+1 ) + λdt|(a2N ,∞) .
+              0    (x + t)λ+1                           n=0
+
+Theorem 2.1 Any generalized Stieltjes function of order 2 is logarithmi-
+cally completely monotonic, i.e. S2 ⊂ L.
+
+This theorem is a deep result. It was conjectured by Steutel in 1970 (see
+[22, p. 43]) that all functions of the form
+
+                                       t2
+                              Z ∞
+                                             dσ(t),
+                                0   (x + t)2
+
+                                               5
+where σ is a probability measure on (0, ∞), are infinitely divisible com-
+pletely monotonic functions, or equivalently that all probability densities of
+the form xg(x), with g being completely monotonic, are infinitely divisible.
+Furthermore, Steutel (see [23]) showed in 1980 that this conjecture would be
+verified provided another conjecture about the zero distribution of certain
+rational functions in the complex plane would hold true. Kristiansen proved
+the latter conjecture in 1994 (see [13]).
+    The result by Steutel and Kristiansen is easily extended to all general-
+ized Stieltjes functions of order 2 by a limit argument: If f ∈ Sλ has the
+representation                      Z ∞
+                                          dµ(t)
+                            f (x) =               +c
+                                     0  (x + t)2
+                        R∞
+then consider fn (x) = 0 dµn (t)/(x + t)2 with µn = µ({0})ǫ1/n + µ|(0,n) +
+cn2 ǫn (ǫa denoting the point mass at a) and notice that by Steutel and
+Kristiansens result fn is in L. Since L is closed under pointwise convergence,
+f is also in L. In this way Theorem 2.1 is proved.
+
+Remark 2.2 The function f (x) = 1/ sinh(x) is logarithmically completely
+monotonic. Indeed, a direct computation shows that
+                                           ∞
+                                                 !
+                                           X
+                 −f ′ (x)/f (x) = L ǫ0 + 2    ǫ2k (x).
+                                                        k=1
+
+However, f is not in any of the classesPSλ since xλ f (x) → 0 as x → ∞.
+   Furthermore f = L(ν), with ν = 2 ∞      k=0 ǫ2k+1 . An old formula of Ham-
+burger (see [7] and [6, p. 486]), reads (in a modified form)
+
+             n
+                                  !−1
+                                            2n
+             Y                                      Z ∞
+                       2     2
+                                                          e−xt (1 − cos(tπ))n dt.
+                                 
+         x         1 + x /(kπ)          =   2n
+             k=1                                n   0
+
+
+The left-hand side is the partial product of f and the measure on the right
+hand side converges vaguely to the discrete measure ν.
+
+    The subclass of those functions g in Sλ for which limx→∞ g(x) = 0 is
+denoted by Tλ and it follows immediately that Sλ = Tλ ⊕ [0, ∞). The
+example in [24, p. 409] shows that for any r > 2 the set Sr \ L is non empty.
+The following example shows that one can even find concrete functions g in
+Tr \ L.
+
+
+
+                                            6
+Example 2.3 Let r > 2 and consider, for c > 0,
+                             c 1       1      1
+                 gc (z) =        r
+                                   +                ,          ℜz > 0.
+                            1+cz     1 + c (z + 1)r
+
+(Here, the power is defined in terms of the principal logarithm.) We claim
+that for some c > 0 the function gc is not in L. The conformal mapping
+ϕ(z) = z/(z + 1) maps the right half plane onto the open disk of radius 1/2
+centered at 1/2 and therefore z 7→ ϕ(z)r maps the right half plane onto a
+region covering a non empty interval Ir of the negative real axis (at least
+twice). Choosing now c > 0 with −c ∈ Ir there must exist zc ∈ {z | ℜz > 0}
+such that ϕ(zc )r = −c. Since ϕ(z)r = z r /(z + 1)r it therefore follows that
+gc (zc ) = 0. This gives a contradiction since a logarithmically completely
+monotonic function cannot have any zeros in the right half plane.
+
+Note that Example 2.3 shows that L is not stable under addition.
+
+Remark 2.4 The subclass Tλ is dense in RSλ w.r.t. pointwise convergence.
+                                              ∞
+Indeed, putting µn = nλ ǫn , it follows that 0 dµn (t)/(x + t)λ → 1 as n →
+∞ and this shows the denseness. As a consequence the example in [24]
+mentioned above also implies that for any r > 2 there must exist functions
+g in Tr \ L.
+
+Remark 2.5 Euler’s digamma function ψ = Γ′ /Γ is given by
+                                       ∞                        
+                                       X          1   1
+                    ψ(x) = −γ +                     −                .
+                                       n=0
+                                                 n+1 n+x
+
+We have
+                                ∞                    Z ∞
+                      ′
+                                X        1                  dµ(t)
+                    ψ (x) =                    =                    ,
+                                      (x + n)2        0    (x + t)2
+                                n=0
+            P∞                                −t −1
+where µ =    n=0 ǫn . Clearly L(µ)(t) = (1 − e ) . It follows that
+                                                
+                            ′             t
+                            ψ =L                     ∈ S2 ⊂ L.
+                                       1 − e−t
+
+The measure with density on the half line given by
+
+                                   t          tet/2
+                                        =
+                                1 − e−t   2 sinh(t/2)
+
+
+
+                                             7
+is thus infinitely divisible. For a > 0 define
+
+                                                   te−at
+                                 τa (t) =                      .
+                                             ψ ′ (a)(1 − e−t )
+
+This is an infinitely divisible probability density on the half line and for
+a = 1/2, 1, 3/2 we find
+
+                        t                  6      t                         te−t
+    τ1/2 (t) =                 , τ 1 (t) =            , τ 3/2 (t) =                     .
+                 π 2 sinh(t/2)             π 2 et − 1               (π 2 − 8) sinh(t/2)
+
+3      Infinitely divisible functions related to periodic
+       functions
+In this section we obtain a number of infinitely divisible functions by study-
+ing Laplace transforms of a class of positive and periodic functions. If
+ϕ : [0, ∞) → R is periodic with period T > 0 then it is easy to see that
+                                                     Z T
+                                       1
+                         L(ϕ)(x) =                          ϕ(t)e−xt dt.                  (6)
+                                   1 − e−xT           0
+
+We first consider the case of a periodic and piecewise constant function ϕ.
+
+Theorem 3.1 Let a1 , a2 , . . . , an be nonnegative real numbers, an = a1 , 0 <
+λ1 < λ2 < . . . < λn , α > 0 and 0 ≤ β ≤ λ1 .
+
+    (i) The Laplace transform of the function σ given by
+                                                    n−1                    λk
+                                                                      1 − e− α x
+                                         
+                                             β       X
+                    σ(x) = a1 + cosh           x         (ak − ak+1 )       λn
+                                             α                        1 − e− α x
+                                                     k=1
+
+       is a generalized Stieltjes function of order 2 and hence σ is infinitely
+       divisible.
+
+ (ii) The Laplace transform of the function τ given by
+                                                           n−1                    λk
+                                                                             1 − e− α x
+                                                
+                                                    β       X
+             τ (x) = max {aj } ± 2 sinh               x         (ak − ak+1 )       λn
+                       1≤j≤n                        α                        1 − e− α x
+                                                            k=1
+
+       is a generalized Stieltjes function of order 2 and hence τ is infinitely
+       divisible.
+
+
+                                                8
+Proof. Consider the function
+                         n
+                         X
+                ϕ(t) =         ak χ[λk−1 ,λk ) (t), for all t ∈ [0, T ),
+                         k=1
+where T = λn , λ0 = 0, and χI denotes the indicator function of I. Extend
+ϕ to [0, ∞) by T -periodicity and then to R by ϕ(t) = ϕ(−t) so that ϕ is a
+nonnegative T -periodic and even function. Denoting the Laplace transform
+of ϕ by F we see that
+                                  Z λn
+                            1
+               F (x) =                 ϕ(t)e−xt dt
+                       1 − e−λn x 0
+                                     n
+                       1      1     X
+                     =                  ak (e−λk−1 x − e−λk x )
+                       x 1 − e−λn x
+                                    k=1
+                                 n−1
+                                                            !
+                       1         X               1 − e−λk x
+                     =      an +    (ak − ak+1 )                .
+                       x                         1 − e−λn x
+                                         k=1
+Here the last equality is obtained by a summation by parts, using an = a1 .
+For α > 0 and 0 ≤ β ≤ λ1 we obtain
+         Z ∞
+                                   an an − β x 1  x  − β x
+              ϕ(α t − β)e−xt dt =     −    e α + F         e α .       (7)
+           0                       x     x        α    α
+Since an = a1 we similarly have
+          Z ∞
+                                   an an β x 1  x  β x
+               ϕ(α t + β)e−xt dt =   −   eα + F     eα .                       (8)
+            0                      x   x     α   α
+Combining these relations it follows that
+           1 ∞
+             Z
+                  (ϕ(α t + β) + ϕ(α t − β)) e−xt dt =
+           2 0
+                                          n−1                     λk    !
+                                                            1 − e− α x
+                               
+            1                      β       X
+                a1 + cosh            x         (ak − ak+1 )                .   (9)
+            x                      α                             − λαn x
+                                           k=1              1 − e
+Hence σ(x)/x is completely monotonic ensuring that L(σ) is in S2 , and
+hence in L. This completes the proof of (i).
+   To prove (ii) we let A = max1≤j≤n {aj } and obtain
+            Z ∞
+                 (A ± (ϕ(α t + β) − ϕ(α t − β))) e−xt dt =
+              0
+                                  n−1                   λk   !
+                                                   1 − e− α x
+                           
+            1                β     X
+                A ± 2 sinh     x      (ak − ak+1 )       λn
+                                                                .
+            x                α                     1 − e− α x
+                                            k=1
+
+
+                                               9
+Since A ± (ϕ(α t + β) − ϕ(α t − β)) is nonnegative, τ (x)/x is also completely
+monotonic.                                                                  
+
+Corollary 3.2 The functions
+
+                        cosh(νx)                          cosh(νx)
+         σ1 (x) = 1 −                and      σ2 (x) =             , ν ∈ [0, 1]
+                        2 cosh(x)                          cosh(x)
+
+are infinitely divisible. Their Laplace transforms belong to S2 and are given
+by
+                                                            
+                         1 1        x+1−ν             x+1+ν
+           L(σ1 )(x) = −        β               +β                 ,
+                         x 4            2                 2
+                                                       
+                         1     x+1−ν             x+1+ν
+           L(σ2 )(x) =      β              +β                 .
+                         2         2                 2
+
+Proof. An application of (i) of Theorem 3.1 with n = 3, λ1 = π/2, λ2 =
+3π/2, λ3 = 2π, a1 = a3 = 1 a2 = 0, α = π/2 and β = πν/2, corresponding
+to (the even and periodic extension of) ϕ(t) = χ[0,π/2) (t) + χ[3π/2,2π) (t) for
+t ∈ [0, 2π) and
+                                                         
+                                   1             1
+                F (x) = L(ϕ)(x) =      1−
+                                   x       2 cosh(πx/2)
+
+yields infinite divisibility of
+
+                                                  cosh(νx)
+                             σ1 (x) = 1 −                   .
+                                                  2 cosh(x)
+
+Consider next the function
+                                  π         πν     π    πν 
+                   p(t) = 2 − ϕ         t−        −ϕ    t+      .
+                                    2         2       2     2
+It is clear that p(t) ≥ 0 and by applying (9) we obtain
+                         Z ∞
+                                             cosh(νx)
+                              e−xt p(t) dt =           .                          (10)
+                           0                 x cosh(x)
+
+Therefore the function
+                                             cosh(νx)
+                                  σ2 (x) =
+                                              cosh(x)
+is infinitely divisible. The Laplace transforms are computed using (5).             
+
+
+                                             10
+Remark 3.3 When ν = 0 in the above corollary, σ2 (x) = 1/ cosh(x) and
+we revisit the density function ν1/2 mentioned right after Corollary 1.4.
+
+Corollary 3.4 The functions
+
+                                     sinh(νx)
+                       τ (x) = 1 ±              ν ∈ [0, 1]
+                                      cosh(x)
+
+are infinitely divisible. Their Laplace transforms belong to S2 and are given
+by                                                         
+                        1 1        x+1−ν             x+1+ν
+           L(τ )(x) = ±         β              −β                 .
+                        x 2             2                2
+
+Proof. Applying (ii) of Theorem 3.1 with n = 3, λ1 = π/2, λ2 = 3π/2,
+λ3 = 2π, a1 = a3 = 1 a2 = 0, α = π/2 and β = πν/2 yields the infinite
+divisibility.                                                      
+
+Remark 3.5 These corollaries are analogues of results in [9]. In that paper
+infinite divisible functions with respect to the Fourier transform are studied
+via a general result ([9, Theorem 2]) about entire functions. That result does
+not carry over to our situation.
+
+Remark 3.6 Returning to Euler’s digamma function we notice
+                                        x 
+                         1      x+1
+                 β(x) =     ψ          −ψ
+                         2        2         2
+
+and it can be seen that such a difference is in S2 .
+
+   We continue to the case where ϕ is continuous and piecewise smooth.
+The following lemma is easily obtained from (6) by partial integration.
+
+Lemma 3.7 Let ϕ be a non-negative, T -periodic function. Suppose further-
+more that ϕ is continuous and piecewise smooth on [0, T ). Then
+                                                   Z T
+                      1       1     1
+             L(ϕ)(x) = ϕ(0) +                            ϕ′ (t)e−xt dt.
+                      x       x 1 − e−T x           0
+
+The next corollary is also an analogue of a result in [9].
+
+Corollary 3.8 The function
+
+                                         1 + bx2
+                               ω(x) :=
+                                         1 + ax2
+
+                                       11
+is infinitely divisible for a ≥ b ≥ 0, its Laplace transform is in S2 and is
+given by
+                                                                    
+                 b1           b    1       x       x        x       x
+    L (ω) (x) =       + 1−        √    ci( √ ) sin √ − si( √ ) cos √     ,
+                 ax           a     a       a       a        a       a
+where
+                              Z ∞                                            Z ∞
+                                      sin t                                           cos t
+                si(x) = −                   dt    and        ci(x) = −                      dt.
+                                  x     t                                     x         t
+Proof. An application of Lemma 3.7 for
+                                        
+                                       b        t
+                       ϕ(t) = 1 − 1 −      cos √
+                                       a         a
+yields
+                                                        1 + bx2
+                                       L(ϕ)(x) =                   .
+                                                       x(1 + ax2 )
+We observe that                                 
+                                        b      b    1
+                                  ω(t) = + 1 −     2
+                                                        ,
+                                        a      a at + 1
+from which its Laplace transform can easily be calculated (cf. [6, p. 342]).
+   We have in the particular case b = 0, a = 1 the Cauchy density function
+and
+                                                          Z ∞
+                   1                                            sin t
+    F (x) := L            (x) = ci(x) sin x − si(x) cos x =           dt.
+                 1 + t2                                      0  x +t
+Notice that F ∈ S2 \ S1 .
+    We note that when ϕ is an even function on R satisfying the assumptions
+in Lemma 3.7, α > 0 and 0 ≤ β ≤ T then
+     Z ∞
+          ϕ(α t + β) e−xt dt =
+       0
+                                              βx
+                 Z β                                Z T             !
+     1                ′     − x(t−β)         eα          ′    −xt
+         ϕ(β) −      ϕ (t) e     α   dt +        Tx     ϕ (t)e α dt    (11)
+     x            0                       1 − e− α   0
+
+and
+      Z ∞
+              ϕ(α t − β) e−xt dt =
+          0
+                                                              βx
+                       Z β                                              Z T                    !
+      1                       ′        x(t−β)               e− α                  ′     −xt
+              ϕ(β) −         ϕ (t) e      α     dt +               Tx         ϕ (t)e     α    dt .   (12)
+      x                 0                               1 − e− α         0
+
+
+
+                                                       12
+The relations (11) and (12) give
+
+1 ∞
+  Z
+       (ϕ(α t + β) + ϕ(α t − β)) e−xt dt =
+2 0
+                                                                     
+                                                   β
+1
+            Z β              x             cosh  α x  Z T
+                ϕ′ (t) cosh                                 ϕ′ (t)e α dt .
+                                                                   −xt
+    ϕ(β) −                      (t − β) dt +       −T x
+x             0               α               1−e α      0
+
+
+This proves that the function
+
+    σ(x) =                                                                             (13)
+                                                               
+               Z β               x           cosh αβ x            Z T
+                      ′
+                                                                          ϕ′ (t)e α dt
+                                                                                 −xt
+    ϕ(β) −           ϕ (t) cosh   (t − β) dt +      −T x
+                0               α               1−e α                0
+
+is infinitely divisible. Similarly, letting Aϕ = max0≤t≤T {ϕ(t)} and using
+again (11) and (12), we obtain the infinite divisibility of
+
+ τ (x) =                                                                               (14)
+                                                                                    
+               Z β              x            sinh αβ x            Z T
+                      ′
+                                                                          ϕ′ (t)e α dt .
+                                                                                −xt
+ Aϕ ± 2             ϕ (t) sinh   (t − β) dt +       −T x
+                0               α               1−e α                0
+
+
+Corollary 3.9 The function
+
+                                       sinh(νx)            tanh(x)
+                          σ(x) = ν −            + cosh(νx)
+                                           x                  x
+is infinitely divisible when 0 ≤ ν ≤ 1. Its Laplace transform is in S2 and is
+given by                                                    !
+                                      Γ x−ν            x+ν
+                                                  
+                           ν               4  +  1  Γ   4
+               L(σ)(x) = + log                                 .
+                                    Γ x−ν     1      x+ν    1
+                                                
+                           x            4   + 2   Γ   4 + 2
+
+Proof. Applying (13) with ϕ(t) = |t| for −π ≤ t ≤ π and T = 2π, α =
+π/2, β = νπ/2 yields the infinite divisibility of σ. To compute its Laplace
+transform we first rewrite σ as
+                                             sinh((1 − ν)x)
+                                σ(x) = ν +                  .
+                                                x cosh(x)
+
+
+
+
+                                             13
+It follows from Corollary 3.4 (and Remark 3.6) that
+Z ∞
+           sinh((1 − ν)t)
+      e−xt                 dt
+  0            cosh(t)
+                                  
+    1       x + ν      x − ν
+ =       β          −β           +1
+    2         2              2
+                                                         
+    1        x+ν      1          x+ν        x−ν          x−ν   1
+ =       ψ         +      −ψ           −ψ        +1 +ψ       +
+    4          4      2           4          4            4    2
+       "
+                   x−ν
+                             x+ν  !#′
+                 Γ 4 +1 Γ 4
+ = − log                                .
+              Γ x−ν     1
+                           x+ν 1 
+                  4 + 2 Γ      4 + 2
+
+We certainly also have
+      Z ∞                             Z ∞                       ′
+            −xt sinh((1 − ν)t)              −xt sinh((1 − ν)t)
+           e                   dt = −      e                   dt .
+        0           cosh(t)             0          t cosh(t)
+Since the last two expressions in square brackets tend to zero as x → ∞ the
+desired result follows.                                                  
+    Of course many other examples can be obtained as applications of (13)
+and (14). Let us give the analogue of Corollary 3.4. The proof follows the
+same lines as the proof of Corollary 3.9.
+Corollary 3.10 The functions
+                                                      
+                                1       cosh((1 − ν)x)
+                    τ (x) = 1 ±      1−
+                                x          cosh(x)
+are infinitely divisible when 0 ≤ ν ≤ 1. The Laplace transforms belong to S2
+and are given by
+                                                              !
+                                    4Γ x−ν          x+ν     1
+                                               
+                           1             4  + 1  Γ       +
+               L(τ )(x) = ± log                     4 x+ν 2    .
+                          x           xΓ x−ν
+                                           4  +  1
+                                                 2 Γ    4
+
+
+4    Ratios of Gamma functions
+The Laplace transform in Corollary 3.9 involves a ratio of Gamma functions.
+Such ratios have been intensively studied. In one of the first papers [5] the
+ratio
+                             Γ(x)Γ(x + a + b)
+                             Γ(x + a)Γ(x + b)
+was shown to be (logarithmically) completely monotonic when a, b ≥ 0. In
+the next proposition we strengthen this result.
+
+                                      14
+Proposition 4.1 Let a, b > 0. The function
+
+                                      Γ(x)Γ(x + a + b)
+                                log
+                                      Γ(x + a)Γ(x + b)
+
+belongs to S2 and is thus logarithmically completely monotonic. It has the
+representation
+                                          Z ∞
+                     Γ(x)Γ(x + a + b)            g(t)
+                 log                   =               dt,
+                     Γ(x + a)Γ(x + b)      0  (t + x)2
+
+where
+                          [t]
+                          X
+                 g(t) =         χ(k,∞) (t) (χ(0,a) ∗ χ(0,b) )(t − k).
+                          k=0
+
+Remark 4.2 It follows that for 0 < a < b,
+                                 
+                                 
+                                  t,                  0 < t < a,
+                                   a,                  a < t < b,
+                                 
+           χ(0,a) ∗ χ(0,b) (t) =
+                                 
+                                  a + b − t,          b< t < a+b
+                                   0,                  t > a + b.
+                                 
+
+Proof of Proposition 4.1. The relation
+          Z ∞
+                   (1 − e−at )(1 − e−bt )          Γ(x)Γ(x + a + b)
+              e−xt              −t
+                                          dt = log                      (15)
+           0            t(1 − e )                  Γ(x + a)Γ(x + b)
+
+is implicitly contained in [5], but for the reader’s convenience we give the
+argument behind it. By using the integral representation
+                                     Z ∞ −t
+                                          e − e−xt
+                       ψ(x) = −γ +                   dt
+                                       0    1 − e−t
+
+we immediately get
+
+                                                 Γ(x)Γ(x + a + b) ′
+       Z ∞             −at )(1 − e−bt )
+                                                                 
+             −xt (1 − e
+     −      e                           dt = log                    .
+        0               1 − e−t                  Γ(x + a)Γ(x + b)
+
+The relation (15) now follows asP in the proof of Corollary 3.9. From the
+elementary relations, letting µ = ∞ k=0 ǫk ,
+
+              1 − e−at                               1
+                       = L(χ(0,a) )(t),                   = L(µ)(t),
+                 t                                1 − e−t
+
+                                           15
+we infer that the function
+                 (1 − e−at )(1 − e−bt )
+                                        = L(χ(0,a) ∗ χ(0,b) ∗ µ)(t)
+                     t2 (1 − e−t )
+
+is completely monotonic. Furthermore, a computation shows that
+                                  [t]
+                                  X
+     (χ(0,a) ∗ χ(0,b) ∗ µ)(t) =         χ(k,∞) (t) (χ(0,a) ∗ χ(0,b) )(t − k) = g(t).
+                                  k=0
+
+This completes the proof.                                                              
+
+Remark 4.3 In general the function in Proposition 4.1 does not belong to
+S1 . However, when one of the parameters is an integer, say b = n, then it
+does. In that situation
+                                                               n−1
+                   (1 − e−at )(1 − e−nt )   1 − e−at X −kt
+                                          =           e
+                        t(1 − e−t )            t
+                                                               k=0
+
+is completely monotonic and
+
+              Γ(x)Γ(x + a + n)       x+a               x+a+n−1
+        log                    = log     + · · · + log
+              Γ(x + a)Γ(x + n)        x                 x+n−1
+
+belongs to S1 . This can of course also be seen directly as it is a sum of
+Stieltjes functions.
+
+   Let us mention an extension of Proposition 4.1 to entire functions of
+genus 1 having only negative zeros.
+
+Proposition 4.4 Let f be an entire function of genus 1 having only negative
+zeros and such that f (0) > 0. The function
+
+                                    f (x + a)f (x + b)
+                              log
+                                       f (x)f (x + c)
+
+belongs to S2 when a > 0, b > 0 and c = a + b. Its representing
+                                                              Pmeasure has
+density χ(0,a) ∗ χ(0,b) ∗ µ w.r.t. Lebesgue measure, where µ = ∞n=1 ǫan .
+
+Proof. Denoting the negative zeros by {−an } with 0 < a1 ≤ a2 ≤ · · · we
+have (see [17])                    Z              ∞
+                       −(log f )′′ (x) =              e−xs sh(s) ds,
+                                              0
+
+
+                                            16
+               P∞      −an s . For α > 0 this yields
+where h(s) =      n=1 e
+                                                Z ∞
+                  ′                    ′
+                                                      e−xs (1 − e−αs )h(s) ds.
+                                        
+       − (log f ) (x + α) − (log f ) (x) =
+                                                0
+
+Therefore we obtain
+                   f (x + a)f (x + b) ′
+                                        Z ∞
+            − log                       =     e−xs r(s)h(s) ds,
+                      f (x)f (x + c)       0
+
+with
+
+           r(s) = 1 − e−as − e−bs + e−cs = (1 − e−as )(1 − e−bs ).
+
+Since r(s) ∼ abs2 as s → 0, h(s)r(s)/s is integrable at 0 and we thus get
+                                         Z ∞
+                 f (x + a)f (x + b)                     r(s)
+             log                    =κ+       e−xs sh(s) 2 ds.
+                    f (x)f (x + c)         0             s
+It is easy to show that the constant κ must be equal to 0. (See also Remark
+4.11.) Furthermore, r(s)/s2 is completely monotonic and this completes the
+proof. (The representing measure is found as in the proof of Proposition
+4.1.)                                                                    
+Remark 4.5 In the situation where a > 0, b > 0 and b ≤ c ≤ a + b the
+proof above shows that
+                  f (x + a)f (x + b) ′
+                                       Z ∞
+                                                         r(s)
+           − log                       =     e−xs s2 h(s) 2 ds,
+                     f (x)f (x + c)       0               s
+with
+
+            r(s) = (1 − e−as )(1 − e−bs ) + e−cs (1 − e−(a+b−c)s ).
+
+belongs to S3 . The function
+                                    f (x + a)f (x + b)
+                              log
+                                       f (x)f (x + c)
+does not necessarily belong to S2 .
+   When a > 0, b > 0 and 0 ≤ c ≤ b we have
+                  f (x + a)f (x + b)       f (x + a)       f (x + b)
+            log                      = log           + log
+                     f (x)f (x + c)           f (x)        f (x + c)
+is the negative of a Pick function (see Proposition 4.9). Since it tends to
+−∞ as x → ∞ it is not in any of the Stieltjes classes.
+
+                                           17
+    Let us now investigate ratios of Gamma functions, leaving out the loga-
+rithm.
+
+Proposition 4.6 For N ∈ {0, 1, . . .} and 0 < s < 1 the function
+                                    Γ(x)
+                                Γ(x + N + s)
+belongs to SN +1 .
+
+Proof. For s > 0 we have
+                                Z ∞
+                Γ(x)      1
+                       =              e−xt (1 − e−t )s−1 dt,   x > 0.      (16)
+              Γ(x + s)   Γ(s)   0
+
+Using the fact that 1/(1 − e−t ) is logarithmically completely monotonic it
+follows that (1 − e−t )s−1 is completely monotonic when 0 < s < 1. Thus
+Γ(x)/Γ(x + s) is in S1 for s ∈ (0, 1).
+    The functional equation for the Gamma function entails
+                Γ(x)       1 1          1       Γ(x + N )
+                         =      ···                        .
+            Γ(x + N + s)   xx+1     x + N − 1 Γ(x + N + s)
+Each term in this product belongs to S1 , and hence the product belongs to
+SN +1 .                                                                 
+Remark 4.7 When N = 1 the proposition states that Γ(x)/Γ(x+s+1) ∈ S2
+for 0 < s < 1. (And it does not belong to S1 .) Since
+                     ∞
+                                         !
+                    X   (1 − s)k                 (1 − e−t )s
+                 L               χ(k,k+1) (t) =
+                           k!                         t
+                     k=0
+
+it has the integral representation
+                            Z ∞        ∞
+      Γ(x)             1           1   X (1 − s)k
+                =                    2
+                                                  χ(k,k+1) (t) dt,      x > 0.
+  Γ(x + s + 1)     Γ(s + 1) 0 (x + t)       k!
+                                             k=0
+
+Remark 4.8 We cannot expect that Γ(x)/Γ(x + s) belongs to Ss for all
+s ∈ (0, 1). Indeed, if this were the case then (16) would imply that the
+function
+                                      t
+                                   1 − e−t
+would be logarithmically completely monotonic. This is however not the case.
+(It is not even decreasing!)
+
+                                        18
+We notice that there is a different way of proving Proposition 4.6 using the
+so-called Pick (or Nevanlinna) functions. A Pick function is by definition a
+holomorphic function with non-negative imaginary part in the upper half-
+plane. Any Pick function p admits an integral representation of the form
+                                 Z ∞                  
+                                           1       t
+                p(z) = αz + β +               − 2         dµ(t),
+                                  −∞ t − z      t +1
+                                       R∞
+where α ≥ 0, b ∈ R and µ satisfies −∞ dµ(t)/(1 + t2 ) < ∞. Furthermore,
+α = limy→∞ p(iy)/(iy), β = ℜp(i) and µ = 1/π limǫ→0+ ℑp(t+iǫ)dt vaguely.
+Let A ⊂ R be closed. The function p has a holomorphic extension to C \ A
+satisfying p(z) = p(z) if and only if the support of µ is contained in A. Here
+is a simple observation.
+Proposition 4.9 Let f be a real entire function of genus 1 with only neg-
+ative zeros and with f (0) > 0. For s > 0 the function
+
+            h(z) = (log f )(z) − (log f )(z + s),     z ∈ C \ (−∞, 0]
+
+is a Pick function. Its representing measure is supported on (−∞, 0] and
+limy→∞ h(iy)/(iy) = 0.
+Proof. From Hadamard’s factorization theorem it follows that
+                                 ∞                    
+                                 X             z       z
+            log f (z) = az + b +     Log 1 +        −      ,
+                                              an      an
+                                    n=1
+
+where Log on the right hand side denotes the principal logarithm, and {−an }
+are the zeros of f arranged so that 0 < a1 ≤ a2 ≤ . . .. Hence
+                       ∞                                       
+                      X               z                 z+s       s
+       h(z) = −as +        Log 1 +        − Log 1 +            +
+                                     an                  an      an
+                      n=1
+
+and this gives
+                      ∞                                      
+                      X             z                      z+s
+            ℑh(z) =         Arg 1 +              − Arg 1 +            .
+                                    an                      an
+                      n=1
+
+For ℑz > 0 each summand is positive. Therefore h is a Pick function. To
+prove the second assertion it is convenient to write the Hadamard represen-
+tation in the form
+                                  Z ∞
+             log f (z) = αz + β +     (Log(1 + z/t) − z/t) dn(t),
+                                    0
+
+
+                                        19
+where n denotes the zero counting function n(t) = #{n ≥ 1 | an ≤ t}. From
+this we obtain by partial integration
+                                            Z ∞
+                                                n(t) dt
+                   log f (z) = αz + β − z 2
+                                             0   t2 t + z
+
+so that
+                                 Z ∞
+                             2  n(t)        dt
+          h(iy) = −αs + sy        2
+                                 t (t + iy)(t + s + iy)
+                        Z ∞ 0                  Z ∞
+                           n(t)     dt       2     n(t)    dt
+                 + 2iys      2
+                                         +s           2
+                                                                  .
+                         0  t t + s + iy        0    t t + s + iy
+
+It now follows that limy→∞ h(iy)/(iy) = 0 by Lebesgue’s theorem on domi-
+nated convergence. This completes the proof.                              
+    It is evident that the derivative of a Pick function, whose representing
+measure is supported on (−∞, 0], belongs to S2 . This gives the proof of the
+next observation.
+
+Corollary 4.10 Let f be a real entire function of genus 1 with only negative
+zeros and with f (0) > 0. For s > 0 the function
+
+                  h(x) = (log f )′ (x) − (log f )′ (x + s),   x>0
+
+belongs to S2 .
+
+Remark 4.11 For a Pick function p with integral representation
+                         Z 0                 
+                                 1        t
+             p(z) = β +              − 2         dµ(t)
+                          −∞ t − z      t +1
+
+we obtain
+                                   Z 0                 
+                                        1         1
+              p(x) − p(x + s) =             −               dµ(t)
+                                 −∞ t − x     t−x−s
+                                   Z ∞
+                                             dµ(−t)
+                              = −s                        .
+                                    0  (t + x)(t + x + s)
+
+By dominated convergence it follows that limx→∞ (p(x) − p(x + s)) = 0.
+    The function in Proposition 4.4 can be written as p(x + b) − p(x), where
+p(x) = log f (x)− log f (x+ a). It is thus a difference of two Pick functions of
+the form in Proposition 4.9. Hence the constant κ in the proof of Proposition
+4.4 equals zero.
+
+                                         20
+   Let us finally state the integral representation of the Pick function in
+Proposition 4.9 in the case where f = 1/Γ is the reciprocal of the Gamma
+function, and s ∈ (0, 1). (Since f has a zero at the origin the proof of that
+proposition needs to be modified slightly.)
+                                   Z 0                 
+                                            1       t
+        log Γ(z + s) − log Γ(z) =              + 2         dτ (t) + cs
+                                    −∞ t − z      t +1
+where cs ∈ R and τ is the measure
+                                   ∞
+                                   X
+                              τ=         dt|(−k−s,−k).
+                                   k=0
+
+It now follows that for ℑz > 0, the imaginary part of log Γ(z + s) − log Γ(z)
+is less than               Z 0
+                                      y
+                                       2    2
+                                              dt,
+                            −∞ (t − x) + y
+which is less than π. This on the other hand actually shows that Γ(z +
+s)/Γ(z) is also a Pick function and from here it follows (using the complex
+characterization of Stieltjes functions) that the reciprocal Γ(z)/Γ(z + s) is
+in fact in S1 .
+
+Remark 4.12 The Pick property of the ratio of two Gamma functions is a
+special case of a result due to Krein (see e.g. [14, Section 27.2]) concerning
+meromorphic functions with interlacing zeros and poles mapping the upper
+half-plane into itself.
+
+
+5    The double Gamma function of Barnes
+The results in the previous sections have implications for the remainders in
+asymptotic expansions of the double Gamma function of Barnes.
+    Asymptotic expansions of the (Euler) Gamma function is a classical and
+much investigated area. Stirling’s formula and series is usually expressed in
+terms of log Γ. Monotonicity properties of the remainders in these expan-
+sions have also been studied. The well-known relation (see [20, p. 57])
+                                                    Z ∞
+                         1              1
+                                                           Q(t)
+        log Γ(z) − (z − 2 ) log z − z + 2 log(2π) =                dt,
+                                                      0   (z + t)2
+for z ∈ C \ (−∞, 0] and where Q(t) = 12 (t − [t] − (t − [t])2 ), can be restated as
+the fact that the remainder in the approximation of log Γ by the elementary
+function in the parentheses belongs to S2 .
+
+                                         21
+    Barnes (see [1] and [2]) introduced the so-called double gamma function
+(and multiple gamma functions) more than 100 years ago. For a modern
+introduction we refer to [21]. There, an asymptotic expansion of in particular
+the logarithm of the double gamma function was obtained. It reads
+
+                           B2,2 (w)          3
+           log Γ2 (w) = −           log w + B2,0 (0)w2 + B2,1 (0)w
+                              2              4
+                           m        k
+                           X  (−1)
+                         +            (k − 3)!B2,k (0)w2−k + R2,m (w),
+                                 k!
+                           k=3
+
+where R2,m is a certain remainder. Here, {B2.k (x)} is the sequence of double
+Bernoulli polynomials defined via
+                                                 ∞
+                              t2 ext    X           tk
+                                      =   B 2,k (x)    .
+                            (et − 1)2               k!
+                                                 k=0
+
+For n ≥ 1, the even indexed remainder R2,2n was shown (see [16, 10]) to
+have the representation
+                                  Z ∞
+                      R2,2n (w) =     e−wt t2n pn (t) dt,
+                                             0
+
+where
+                   ∞                     
+                 1 X                              4πk               8πkt
+        pn (t) = 2  (2πk)1−2n                              +                     +
+                 t                           t2 + (2πk)2       (t2 + (2πk)2 )2
+                  k=1                                                               (17)
+                                         (2n − 1)   2t
+                                                                       .
+                                           2πk t2 + (2πk)2
+
+Proposition 5.1 The function pn defined in (17) is completely monotonic
+for any n ≥ 1.
+
+Proof. It is enough to verify that
+                                                                   
+               1       4πk           8πkt         (2n − 1)   2t
+   fk,n (t) = 2                + 2              +
+              t    t2 + (2πk)2   (t + (2πk)2 )2     2πk t2 + (2πk)2
+
+is completely monotonic, and by making the substitution t = 2πkx, this
+amounts to showing that
+                           1              1      1      2n − 1   1
+          gk,n (x) =                 +                +
+                       x2 (x2 + 1)             2
+                                         πk x(x + 1)2           2
+                                                         2πk x(x + 1)
+
+
+                                                 22
+is completely monotonic. Here, the first and third term is completely mono-
+tonic, but the second is not and we thus need to combine the terms and take
+cancellation into account. Complete monotonicity of gk,n will follow from
+the complete monotonicity of
+                                      1       1     1
+                        g(x) =              +              ,
+                                 x2 (x2 + 1) πk x(x2 + 1)2
+which we now turn to verify.
+   It is easy to show that
+                                            1
+                                                                 
+                g(x) = L (1 − cos t) ∗ 1 + πk (1 − cos t) ∗ sin t (x)
+
+and that
+                       1                                    1
+    (1 − cos t) ∗ 1 + πk (1 − cos t) ∗ sin t = t − sin t + πk (1 − cos t − 12 t sin t).
+
+According to Lemma 5.3 this expression is positive for t > 0. The proof is
+complete.                                                               
+Corollary 5.2 The function
+                                           1 2       5
+                                                              log x − 34 x2 + x
+                                                          
+              R2,2 (x) = log Γ2 (x) +      2 x − x + 12
+
+belongs to S3 .
+
+Lemma 5.3 For any c ∈ [0, 1] the function
+
+                  h(t) = t − sin t + c(1 − cos t − 12 t sin t),      t>0
+
+is non-negative.
+
+Proof. Standard computation shows h is increasing on (0, π) and for t ≥ π
+we use
+              h(t) ≥ t − sin t − 21 ct sin t ≥ (1 − 12 c)t − 1 > 0,
+taking into account 0 ≤ c ≤ 1.                                                            
+
+
+6      Some generalized Stieltjes functions of special
+       type
+In this section we consider sums of the form
+                                     ∞
+                                     X        an
+                                                    ,                               (18)
+                                           (x + n)λ
+                                     n=0
+
+
+                                            23
+where certain iterated partial sums of the real numbers an are nonnegative.
+    We remark that the series in (18) is related to the so-called generalized
+Mathieu series, considered, for example, in [18] and [19], where among other
+things an integral representation was derived.
+    For a real sequence {an }n≥0 let
+                                               n
+                                               X
+                                       s(0)
+                                        n =           aj
+                                                j=0
+
+and let for k ≥ 1
+                                             n
+                                                (k−1)
+                                             X
+                                  s(k)
+                                   n =         sj     .                                  (19)
+                                             j=0
+
+                  (0)
+The sequence
+      P∞     {sn } is the sequence of partial sums of the perhaps divergent
+series n=0 an . A relation between the iterated partial sums is given in the
+next lemma.
+
+Lemma 6.1 For k ≥ 0,
+                         N              N                              k
+                                                                          (j)
+                         X              X                              X
+         (1 − x)k+1            s(k) n
+                                n x =         an xn − xN +1              sN (1 − x)j .
+                         n=0            n=0                            j=0
+
+Proof. The relations
+                        N              N
+                                                           (0)
+                        X              X
+           (1 − x)            s(0) n
+                               n x =         an xn − sN xN +1 ,
+                        n=0            n=0
+                         N              N
+                                                                 (k)
+                        X              X
+           (1 − x)            s(k) n
+                               n x =         s(k−1)
+                                              n     xn − sN xN +1 ,                k≥1
+                        n=0            n=0
+
+follow easily using (19). From the latter of these we infer (for k ≥ 1)
+                  N                            N
+                                                                             (k)
+                  X                            X
+     (1 − x)k+1          s(k) n
+                          n x = (1 − x)
+                                       k
+                                                      s(k−1)
+                                                       n     xn − sN (1 − x)k xN +1 ,
+                  n=0                          n=0
+
+and combining with the former relation this completes the proof.     
+   The proposition below gives conditions under which the expression in
+(18) defines a generalized Stieltjes functions of positive order.
+
+Proposition 6.2 Suppose that for some k ≥ 0 we have
+
+
+                                              24
+        (k)
+ (i) sn ≥ 0 for all n ≥ 0,
+        (k)
+ (ii) sn /nλ → 0 for n → ∞,
+      P∞ (k) 1+λ
+(iii)   n=1 sn /n    < ∞.
+
+Then the sum
+                                   ∞
+                                   X        an
+                         f (x) =                  ,    x>0
+                                         (x + n)λ
+                                   n=0
+converges and f belongs to Sλ+k+1 . It has the representation
+                  Z ∞                       Z ∞
+                          dµ(t)          1
+          f (x) =                   =            e−xt tλ+k κ(t) dt,
+                   0  (x + t)λ+k+1     Γ(λ) 0
+
+where
+                                   ∞
+                            (λ)k+1 X
+                  dµ(t) =            an χ(n,∞) (t)(t − n)k dt
+                              k! n=0
+is a positive measure, and
+                                            ∞
+                                          1 X
+                             κ(t) =                an e−nt
+                                      tk+1
+                                             n=0
+
+is completely monotonic.
+                                                                  (k−1)
+Remark 6.3 If condition (ii) in Proposition 6.2 holds then also sn /nλ =
+ (k)       (k)
+sn /nλ − sn−1 /nλ tends to zero as n tends to infinity. For any j with
+0 ≤ j ≤ k we thus have
+
+                          s(j) λ
+                           n /n → 0          for     n → ∞.
+
+Remark 6.4 The measure µ in Proposition 6.2 has the density given by
+                                      m
+                               1 X
+                                   aj (t − j)k ,
+                               k!
+                                    j=0
+
+for t ∈ (m, m + 1) and m = 0, 1, . . ..
+
+Proof of Proposition 6.2. The power series
+                                      ∞
+                                      X
+                                            s(k)
+                                             n z
+                                                 n
+
+                                      n=0
+
+
+                                            25
+P∞ radiusn of convergence at least 1 (because of (ii)). The power series
+has
+   n=0 an z has the same radius of convergence and we have (by Lemma
+6.1)
+                           ∞            ∞
+                    1      X
+                                    n
+                                        X
+                              a n z   =   s(k) n
+                                           n z ,  |z| < 1.         (20)
+                (1 − z)k+1
+                                n=0                   n=0
+
+Let now
+                                        ∞
+                                        X
+                             g(t) =           s(k)
+                                               n χ(n,n+1) (t).
+                                        n=0
+
+The Laplace transform of g is defined and equals
+                                                        ∞
+                                         1 − e−x X (k) −nx
+                          L(g)(x) =                  sn e  .
+                                            x    n=0
+
+This gives
+                                                            k+1 X
+                                                                 ∞
+                                                 1 − e−x
+                                             
+                              ∗k
+               L(g ∗ (χ(0,1) ) )(x) =                                 s(k)
+                                                                       n e
+                                                                           −nx
+                                                                               .      (21)
+                                                    x
+                                                                n=0
+
+The function tλ+k L(g ∗ (χ(0,1) )∗k )(t) is by (20) continuous on (0, ∞). It is
+polynomially bounded for t → ∞. Indeed,
+                                                                  ∞
+                                                                  X
+             tλ+k L(g ∗ (χ(0,1) )∗k )(t) = tλ−1 (1 − e−t )k+1            s(k)
+                                                                          n e
+                                                                              −nt
+                                                                                  ,
+                                                                  n=0
+
+and the infinite sum is a deceasing function of t. In order to show (also
+using that 1 − e−t ∼ t for t → 0) that the Laplace transform of the function
+in (21) is defined it is thus enough to show that
+                                             ∞
+                                             X
+                                       λ+k
+                                   t               sn(k) e−nt
+                                             n=0
+
+
+
+
+                                                 26
+is integrable on e.g. (0, log 2):
+    Z log 2      ∞
+                 X                Z 1              ∞
+                                                   X
+            tλ+k   s(k)
+                    n   e−nt
+                             dt =     (− log u)λ+k
+                                                     s(k)
+                                                      n u
+                                                          n−1
+                                                              du
+      0               n=1                               1/2                      n=1
+                                                    ∞
+                                                    X            Z 1
+                                                =         s(k)
+                                                           n              (− log u)λ+k un−1 du
+                                                    n=1             1/2
+                                                     ∞                              Z 1
+                                                          (2 log 2)λ+k s(k)
+                                                    X
+                                                ≤                       n                    (1 − u)λ+k un−1 du
+                                                    n=1                                1/2
+                                                                          ∞
+                                                ≤ (2 log 2)λ+k
+                                                                          X
+                                                                                s(k)
+                                                                                 n B(λ + k + 1, n).
+                                                                          n=1
+
+Since B(λ + k + 1, n) ∼ Γ(λ + k + 1)n−λ−k−1 as n tends to infinity it follows
+that the sum converges, and thus that the Laplace transform
+                     Z ∞
+                         e−xt tλ+k L(g ∗ (χ(0,1) )∗k )(t) dt
+                                   0
+
+is defined and belongs to Sλ+k+1 . Now, by monotone convergence,
+             Z ∞
+                  e−xt tλ+k L(g ∗ (χ(0,1) )∗k )(t) dt
+                      0
+                          Z ∞                                            ∞
+                                                                         X
+                      =          e−xt tλ−1 (1 − e−t )k+1                       s(k)
+                                                                                n e
+                                                                                    −nt
+                                                                                        dt
+                            0                                            n=0
+                                  Z ∞                                            N
+                                                                                 X
+                                             −xt λ−1                 −t k+1
+                      = lim                 e       t         (1 − e )                 s(k)
+                                                                                        n e
+                                                                                            −nt
+                                                                                                dt.
+                          N →∞ 0
+                                                                                 n=0
+
+Here, by Lemma 6.1,
+Z ∞                                         N
+                                            X
+          −xt λ−1               −t k+1
+      e      t       (1 − e )                     s(k)
+                                                   n e
+                                                       −nt
+                                                           dt
+ 0                                          n=0
+     N          Z ∞                               k      Z ∞
+                                                     (j)
+     X                                            X
+                       −xt λ−1 −nt
+=          an         e     t      e         dt −   sN       e−xt tλ−1 e−(N +1)t (1 − e−t )j dt
+     n=0         0                                      j=0          0
+
+            N                           k                (j)         Z ∞
+            X an      X      sN
+= Γ(λ)            λ
+                    −                                                          e−s sλ−1 (1 − e−s/(x+N +1) )j ds.
+       n=0
+           (n + x)      (x + N + 1)λ                                     0
+                                       j=0
+
+                                                                                                 (j)
+Consider now the jth term in the last sum. The factor sN /(x + N + 1)λ
+tends to 0 as N → ∞, and the integral factor remains bounded as N → ∞.
+
+                                                               27
+We conclude that
+                    ∞                     Z ∞
+                    X        an
+             Γ(λ)                  =            e−xt tλ+k L(g ∗ (χ(0,1) )∗k )(t)
+                          (n + x)λ         0
+                    n=0
+
+belongs to Sλ+k+1 . Furthermore, κ defined by κ = L(g ∗ (χ(0,1) )∗k ) satisfies
+                                                 ∞
+                                               1 X
+                                 κ(t) =                 an e−nt .
+                                           tk+1
+                                                  n=0
+
+The measure µ representing f as a generalized Stieltjes function of order
+λ + k + 1 is given by
+
+                                dµ(t) = g ∗ (χ(0,1) )∗k (t)dt.
+
+Finally, from (21) we obtain that
+                                                  N
+                                           1 X
+      L(g ∗ (χ(0,1) )∗k )(x) = lim                an L(tk ∗ ǫn )(x)
+                                      N →∞ k!
+                                              n=0
+                                            N
+                                                                               !
+                                       1    X
+                                 = lim    L   an χ(n,∞) (t)(t − n)k                (x),
+                                  N →∞ k!
+                                                      n=0
+
+so that
+                                                ∞
+                                    1 X
+                                ∗k
+                g ∗ (χ(0,1) ) (t) =     an χ(n,∞) (t)(t − n)k .
+                                    k!
+                                               n=0
+This completes the proof.                                                
+   Let us end the paper by considering two applications of Proposition 6.2.
+
+Example 6.5 Let λ > 0 and 0 < a ≤ 1 and consider the function
+                     Z ∞                                        ∞
+               1                          1        λ−1
+                                                            X       (a)n    1
+   βa,λ (x) =               e−xt
+                                               a
+                                                 t     dt =   (−1)n              .
+              Γ(λ)    0
+                                            −t
+                                      (1 + e )                       n! (x + n)λ
+                                                               n=0
+
+Since, for 0 < a ≤ 1,
+                                n
+                                X       (a)j
+                     s(0)
+                      n =         (−1)j      ≥ 0,           n = 0, 1, . . .
+                                         j!
+                                j=0
+
+       (0)
+and {sn } is also a bounded sequence, it follows that βa,λ (x) is in Sλ+1 . In
+particular, Nielsen’s beta function β(x) = β1,1 (x) is in S2 .
+
+                                                28
+Example 6.6 Prym’s function, see [15, p. 27], is given by
+                                            ∞
+                                            X    (−1)n
+                               P (x) =                    ,
+                                            n=0
+                                                n!(x + n)
+
+and for x > 0 it enters in the decomposition Γ(x) = P (x) + Q(x), with
+                        Z 1                              Z ∞
+              P (x) =         tx−1 e−t dt,      Q(x) =          tx−1 e−t dt.
+                         0                                 1
+
+(These functions are special cases of the functions Pa , Qa with a = 1, see
+[15, Kapitel II].)
+     The function P is a special case of (18) with λ = 1 and an = (−1)n /n!.
+It fits into Proposition 6.2 with k = 0 since
+                              n
+                              X (−1)j
+                    s(0)
+                     n =                      ≥ 0,   n = 0, 1, . . . ,
+                                       j!
+                              j=0
+
+        (0)
+and {sn } is also bounded. Prym’s function thus belongs to S2 , and the
+corresponding representations hold with
+                                           !
+                                   X (−1)n
+                         dµ(t) =             dt
+                                   n<t
+                                        n!
+
+and
+                                  ∞
+                          1 X (−1)n −nt 1
+                   κ(t) =          e   = exp(−e−t ).
+                          t     n!      t
+                               n=0
+
+Hence                   Z ∞                              Z 1
+              P (x) =         e−xt             −t
+                                      exp(−e ) dt =            ux−1 e−u du,
+                        0                                 0
+
+after the substitution u = e−t .
+   In particular, the probability density on (0, ∞) given by
+                                        1
+                         da (t) =           exp(−at − e−t )
+                                      P (a)
+
+is infinitely divisible. For a = 1 where P (1) = 1 − e−1 we obtain the infinite
+divisibility of the half-Gumbel density, cf. [24, p. 412].
+
+
+
+
+                                              29
+References
+ [1] E.W. Barnes, The theory of the double gamma function, Philos. Trans.
+     Roy. Soc. London 196 (1901), 265–388.
+ [2] E.W. Barnes, The theory of the multiple gamma function, Trans. Camb.
+     Philos. Soc. 19 (1904), 374–425.
+ [3] C. Berg, Integral representation of some functions related to the
+     Gamma function, Mediterr. J. Math. 1 (2004), 433–439.
+ [4] C. Berg, Stieltjes–Pick–Bernstein–Schoenberg and their connection to
+     complete monotonicity. In: Mateu, J., Porcu, E. (eds.) Positive Definite
+     Functions. From Schoenberg to Space-Time Challenges. Department of
+     Mathematics, University Jaume I, Castellon, Spain (2008).
+ [5] J. Bustoz and M.E.H. Ismail, On gamma function inequalities, Math.
+     Comp. 47 (1986), 659–667.
+ [6] I.S. Gradshteyn and I.M. Ryzhik, Table of series and products, Seventh
+     Edition, Academic Press (2007).
+ [7] H.L. Hamburger, Math. Z. 7 (1920), 302-322.
+ [8] R.A. Horn, On infinitely divisible matrices, kernels, and functions,
+     Zeitschrift für Wahrscheinlichkeitstheorie und Verwandte Gebiete 8
+     (1967), 219–230.
+ [9] H. Kosaki, On infinite divisibility of positive definite functions arising
+     from operator means, J. Funct. Anal. 254 (2008), 84–108.
+[10] S. Koumandos and H.L. Pedersen, Completely monotonic functions of
+     positive order and asymptotic expansions of the logarithm of Barnes
+     double gamma function and Euler’s gamma function, J. Math. Anal.
+     Appl., 355 (2009), 33–40
+[11] S. Koumandos and H.L. Pedersen, On Asymptotic Expansions of Gen-
+     eralized Stieltjes Functions, Comput. Methods Funct. Theory 15 (2015),
+     93–115 (DOI: 10.1007/s40315-014-0094-7).
+[12] S. Koumandos and H.L. Pedersen, On generalized Stieltjes functions,
+     Const. Approx. (2018) (DOI:10.1007/s00365-018-9440-8).
+[13] G.K. Kristiansen, A Proof of Steutel’s Conjecture, Ann. Probab. 22
+     (1994), 442–452.
+
+                                      30
+[14] B.Ya. Levin, Lectures on Entire Functions, Translations of Mathemati-
+     cal Monographs, Vol. 150, AMS (1996).
+
+[15] N. Nielsen, Handbuch Der Theorie Der Gammafunktion. Teubner,
+     Leipzig (1906).
+
+[16] H.L. Pedersen, The remainder in Ruijsenaars’ asymptotic expansion of
+     Barnes double gamma function, Mediterr. J. Math., 4 (2007), 419–433.
+
+[17] H.L. Pedersen, Completely monotonic functions related to logarithmic
+     derivatives of entire functions, Anal. Appl. (Singap.) 9 (2011), 409–419.
+
+[18] T.K. Pogány, Integral representation of Mathieu (a, λ)-series, Integral
+     Transforms and Special Functions, 16, No. 8, (2005), 685–689.
+
+[19] F. Qi, An integral expression and some inequalities of Mathieu type
+     series, Rostock. Math. Kolloq., 58 (2004), 37–46.
+
+[20] R. Remmert, Classical Topics in Complex Function Theory, Springer
+     (1998).
+
+[21] S. N. M. Ruijsenaars, On Barnes’ multiple zeta and gamma functions,
+     Adv. Math. 156 (2000), 107–132.
+
+[22] F.W. Steutel, Preservation of infinite divisibility under mixing and re-
+     lated topics. Mathematical Centre Tracts 33, Mathematisch Centrum,
+     Amsterdam (1970).
+
+[23] F.W. Steutel, Infinite Divisibility of Gamma Distributions. In: Analytic
+     Function Methods in Probability, Debrecen 1977. Colloq. Math. Soc.
+     János Bolyai 21 (1980), 345–357.
+
+[24] F.W. Steutel and K. Van Harn, Infinite divisibility of probability distri-
+     butions on the real line. Marcel Dekker, Inc., New York - Basel (2004).
+
+[25] D.V. Widder, The Laplace transform. Princeton University Press,
+     Princeton (1946).
+
+Christian Berg
+Department of Mathematical Sciences
+University of Copenhagen
+Universitetsparken 5
+DK-2100, Denmark
+email: berg@math.ku.dk
+
+                                      31
+Stamatis Koumandos
+Department of Mathematics and Statistics
+The University of Cyprus
+P. O. Box 20537
+1678 Nicosia, Cyprus
+email: skoumand@ucy.ac.cy
+
+Henrik Laurberg Pedersen
+Department of Mathematical Sciences
+University of Copenhagen
+Universitetsparken 5
+DK-2100, Denmark
+email: henrikp@math.ku.dk
+
+
+
+
+                                  32
+

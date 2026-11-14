@@ -1,0 +1,1347 @@
+                                                     Generalized Stieltjes transforms: basic aspects
+                                                                              D. Karp∗ and E. Prilepkina†
+arXiv:1111.4271v2 [math.CA] 11 Feb 2012
+
+
+
+
+                                                          Abstract. The paper surveys the basic properties of generalized Stielt-
+                                                          jes functions including some new ones. We introduce the notion of the
+                                                          exact Stieltjes order and give a criterion of exactness, simple sufficient
+                                                          conditions and some prototypical examples. The paper includes an ap-
+                                                          pendix, where we define the left sided Riemann-Liouville and the right
+                                                          sided Kober-Erdelyi fractional integrals of measures supported on half
+                                                          axis and give inversion formulas for them.
+
+
+                                              Keywords: generalized Stieltjes transform, generalized Stieltjes function, fractional inte-
+                                          gral, fractional derivative, exact Stieltjes order
+
+                                                MSC2010: 26A48, 26A33, 44A15
+
+
+                                          1. Introduction. The generalized Stieltjes transform of a non-negative measure µ sup-
+                                          ported on [0, ∞) is defined by    Z
+                                                                                   µ(du)
+                                                                                          ,
+                                                                                 (u + z)α
+                                                                                        [0,∞)
+
+                                          where α > 0 and we always choose the branch of the power function which is positive on
+                                          the positive half-axis. The measure is assumed to produce a convergent integral for each
+                                          z ∈ C\(−∞, 0] thus generating a function holomorphic in C\(−∞, −r], where r = inf{x : x ∈
+                                          supp(µ)}. Functions representable by the above integral plus a non-negative constant are
+                                          known as generalized Stieltjes functions [30, 32], [35, Section 8], [34, Chapter VIII].
+                                              The case α = 1 has been thoroughly studied by many authors beginning with the classi-
+                                          cal work of Stieltjes [31] followed by Krein (see [18] and references therein), Widder [35, 34],
+                                          Hirsch [11], Berg [3] and many others. Among the most important tools facilitating such
+                                          study are the complex inversion formula due to Stieltjes [31, 34], the complex variable charac-
+                                          terization found by Krein (see Theorem 11 below) and the real inversion formulas by Widder
+                                          [35, 34]. When the measure µ has compact support, the Stieltjes functions are also known
+                                          as Markov functions studied by Chebyshev and Markov in connection with continued frac-
+                                          tions. The deep connection of the Stieltjes and Markov functions with continued fractions
+                                          and Padé approximation is investigated in the monographs [2, 8]. See also the survey paper
+                                          [10]. Connection with Bernstein functions and various other similar classes can be found in
+                                          the carefully written recent monograph [28].
+                                            ∗
+                                                Institute of Applied Mathematics, Vladivostok, Russia, e-mail: dimkrp@gmail.com
+                                            †
+                                                Institute of Applied Mathematics, Vladivostok, Russia, e-mail: pril-elena@yandex.ru
+
+                                                                                                1
+    For general α > 0 much less is known. A complex inversion formula in this case has
+been found by Sumner [32] and later rediscovered by Schwarz [29]. It was amended by
+several other complex inversion formulas by Byrne and Love in [6]. These authors also
+found several real inversion formulas in [20, 21]. A simple real variable characterization has
+been discovered recently by Sokal [30] generalizing the corresponding result of Widder. The
+asymptotic expansion of generalized Stieltjes transforms of slowly decaying functions has
+been studied by López and Ferreira in [19], factorization as iterative Laplace transforms -
+by Yürekli [36], closely related classes on half plane have been investigated by Jerbashian
+[13]. An interesting connection to entire functions has been discovered in a recent work of
+Pedersen [23].
+    In this paper we collect a number of facts about generalized Stieltjes functions. Most
+of them are scattered in the literature, those we could not find are furnished with detailed
+proofs. Some of them may be new. In the last section we introduce the notion of the
+exact Stieltjes order, which is the ”natural” exponent defined for each generalized Stieltjes
+function. We give a criterion of exactness and its two practical corollaries. We also added
+an appendix, where we define the left sided Riemann-Liouville and the right sided Kober-
+Erdelyi fractional integrals of measures supported on [0, ∞] (the one point compactification of
+[0, ∞) - see details below) and give inversion formulas for them. Our study of the generalized
+Stieltjes transforms carried out in this paper has been largely motivated by the applications
+to the theory of hypergeometric functions presented in our forthcoming work [14].
+
+
+2. Definition and real variable properties. Define Sα , α > 0, to be the class of
+functions representable by the integral
+                                      Z
+                                         µα (du)        µ0
+                             f (z) =            α
+                                                  + µ∞ + α ,                  (1)
+                                        (u + z)         z
+                                        (0,∞)
+
+
+where 0 ≤ µ0 , µ∞ < ∞ and µα runs over the set of non-negative measures supported on
+[0, ∞) such that                 Z
+                                     µα (dt)
+                                             < ∞.                                (2)
+                                    (1 + t)α
+                                        [0,∞)
+
+This condition guarantees the finiteness of the integral (1) for all z ∈ C \ (−∞, 0]. The
+classical Stieltjes cone S corresponds to the case α = 1, i.e. S = S1 , see [3, formula (1)], [30,
+formula (2)] or [28, formula (2.1)].
+    If we define [0, ∞] to be the one point compactification of [0, ∞) formula (1) may be
+rewritten as                             Z         α
+                                               u+1
+                                 f (z) =               µ̃α (du),                               (3)
+                                               u+z
+                                          [0,∞]
+
+where
+                                         µα (du)
+                                µ̃α =            + µ0 δ0 + µ∞ δ∞ ,
+                                        (1 + u)α
+is a finite measure on the compact interval [0, ∞]. Here δa stands for the Dirac measure with
+mass 1 concentrated in a. This explains the notation µ∞ for the non-negative constant in
+
+                                                  2
+(1). The set of measures supported on [0, ∞] and satisfying (2) will be denoted by Mα . The
+majority of references on the classical and generalized Stieltjes functions use formula (1) (or
+its particular case α = 1) to define them. See, for instance, [3, 11, 6, 20, 21, 28, 30, 34, 36].
+However, the literature on Padé approximation frequently defines the Stieltjes functions by
+α = 1 case of the following formula
+                                       Z
+                                            ρα (dt)          ρ∞
+                              f (z) =                + ρ0 +     .                             (4)
+                                           (1 + tz)α         zα
+                                        (0,∞)
+
+Define the map Nα on Mα by
+                        Z          Z
+           [Nα µ](A) :=   t µ(dt) = uα µ∗ (du) for each Borel set A ⊂ (0, ∞),
+                           −α
+                                                                                             (5)
+                        1/A                A
+
+where µ∗ is the image measure of µ under the map t → 1/t and by definition [Nα µ]({∞}) =
+µ({0}), [Nα µ]({0}) = µ({∞}). If (1) and (4) represent the same function, the change of
+variable t = 1/u in (1) shows that ρα = Nα µα . By the same change of variable applied to
+(2) we see that                      Z
+                                         ρα (dt)
+                                                 < ∞,                                 (6)
+                                        (1 + t)α
+                                        [0,∞)
+
+so that Nα maps Mα into itself. Moreover, Nα is easily seen to be an involution on Mα :
+Nα Nα µ = µ for each µ ∈ Mα .
+    Definition (4) is a natural extension of the definition of Stieltjes functions used in [2,
+formula(5.1)] and [10, formula (1)]. In some situations this representation leads to simpler
+expressions for hypergeometric functions. We will work with both representations (1) and
+(4). If we define the finite measure
+                                         ρα (du)
+                                ρ̃α =            + ρ0 δ0 + ρ∞ δ∞
+                                        (1 + u)α
+on the compact interval [0, ∞], then ρ̃α and µ̃α from (3) are related by ρ̃α (A) = µ̃α (1/A) for
+each Borel set A ⊂ [0, ∞].
+    We will denote by Fµ : [0, ∞) → [0, ∞) the left-continuous distribution function of the
+measure µ ∈ Mα : Fµ (x) = µ([0, x)) normalized by Fµ (0) = 0. The distribution function Fµ
+defines the measure µ uniquely except for a possible atom at infinity which must be specified
+separately. According to [4, section 1.8] or [27, Problem 7.9(iii)] every measure µ ∈ Mα is
+generated by such non-decreasing left-continuous function satisfying
+                                      Z
+                                           dFµ (t)
+                                                    < ∞,
+                                          (1 + t)α
+                                        [0,∞)
+
+and a non-negative constant µ∞ := µ({∞}). Here the integral is understood as Lebesgue-
+Stieltjes integral [25, Section 20.3] or [4, 2.12(vi)].
+    The Stieltjes cone S possesses a number of nice stability properties which can be found in
+[3]. The majority of these properties do not carry over to Sα , α 6= 1. On the other hand, here
+we have some new effects related to transition from Sα to Sβ , β 6= α and certain stability
+properties of the class S∞ := ∪α>0 Sα . Below we list the basic facts about these classes.
+
+                                                3
+   Theorem 1 If f ∈ Sα then g(z) := z −α f (1/z) also belongs to Sα and their representing
+measures are related by µg = Nα µf .
+
+Proof. Indeed, using definition (4) we get:
+                         Z                              Z
+        −α           −α       z α ρα (dt)    −α                           ρα (dt)
+       z f (1/z) = z                      + z ρ0 + ρ∞ =                           + z −α ρ0 + ρ∞
+                              (z + t)α                                   (z + t)α
+                          (0,∞)                                 (0,∞)
+
+
+which is precisely the representation (1). Since ρα ∈ Mα is arbitrary, the claim follows. 
+   The next important result is due to Sokal [30]:
+   Theorem 2 (Sokal, [30]) A function f defined on (0, ∞) has holomorphic extension
+f ∈ Sα if and only if
+                           α
+                          Fn,k (x) := (−1)n D k (xn+k+α−1 D n f (x)) ≥ 0                            (7)
+
+for all integers n, k ≥ 0 and all x > 0. Here D = d/dx.
+Remark 1. Differentiating (1) under the integral sign or writing
+
+           (−1)n D k (xn+k+α D n (−f ′ (x)) = (−1)(n+1) D k (x(n+1)+k+α−1 D (n+1) f (x)),           (8)
+
+we see that f ∈ Sα implies −f ′ ∈ Sα+1 , so that (−1)n f (n) ∈ S∞ for all integers n ≥ 0 once
+f ∈ S∞ .
+
+   Theorem 3 If α < β then Sα ⊂ Sβ . Moreover, each f ∈ Sα defined by (1) can be
+written as                        Z
+                                      µβ (dy)
+                          f (z) =             + µ∞ ,                         (9)
+                                     (y + z)β
+                                          (0,∞)
+
+where µβ ∈ Mβ and                                      Z
+                                       Γ(β)dy                    µα (du)
+                          µβ (dy) =                                        .                       (10)
+                                    Γ(α)Γ(β − α)              (y − u)α+1−β
+                                                      [0,y)
+
+Conversely, given µβ ∈ Mβ which represents f ∈ Sα we can recover µα from
+                                                n Z
+                                  Γ(α)           d           µβ (du)
+                 Fµα (y) =                                                                         (11)
+                           Γ(β)Γ(α − β + n + 1) dy       (y − u)β−α−n
+                                                                 [0,y)
+
+
+with n = [β − α] and µα ({∞}) = µβ ({∞}).
+
+Remark 2. Formula (10) generalizes [34, Chapter VIII, Corollary 3a.1, p.330] which in our
+notation connects the measures µ1 and µ2 . The transformation µα → µβ defined in (10) is
+the left-sided Riemann-Liouville fractional integral. Its precise definition and inversion are
+investigated in the Appendix.
+   Proof. Since                                     Z
+                           1             Γ(β)             tβ−α−1 dt
+                                 =                                   ,                    (12)
+                       (u + z)α     Γ(α)Γ(β − α)        (z + u + t)β
+                                                       (0,∞)
+
+
+                                                  4
+we have
+   Z                          Z         Z
+       µα (du)       Γ(β)                                              tβ−α−1 dt
+               =                µα (du)
+      (u + z)α   Γ(α)Γ(β − α)                                        (z + u + t)β y=u+t
+ [0,∞)                                    [0,∞)            (0,∞)
+                                                    Z                 Z
+                                  Γ(β)                                       (y − u)β−α−1 dy
+                            =                             µα (du)
+                              Γ(α)Γ(β − α)                                       (z + y)β
+                                                  [0,∞)              (u,∞)
+                                           Z                    Z                                   Z
+                           Γ(β)                      dy                        β−α−1                        µβ (dy)
+                     =                                               (y − u)           µα (du) =                    , (13)
+                       Γ(α)Γ(β − α)               (z + y)β                                                 (z + y)β
+                                          (0,∞)              [0,y)                                 [0,∞)
+
+where µβ (dy) is defined by (10) and we can use Tonelli’s theorem [25, Chapter 20, Corollary 7]
+or [4, Theorem 3.4.5] to justify the interchange of integrations. Also setting z = 1 we see
+by Tonelli’s theorem and condition (2) that the measure µβ belongs to Mβ . According to
+Remark A1 in the Appendix the measure µβ has no atom at zero. This allows us to remove
+zero from the domain of integration in (9). This proves (9) and the inclusion Sα ⊂ Sβ . The
+inversion formula (11) is Theorem A1 in the Appendix. 
+   Theorem 4 Each f ∈ Sα defined by (4) can also be written as
+                                   Z
+                                         ρβ (dx)
+                          f (z) =                + ρ0 ,
+                                       (1 + xz)β
+                                                   (0,∞)
+
+where ρβ ∈ Mβ and
+                                                            Z                          
+                                      Γ(β)xα−1 dx                      u1−β ρα (du)
+                           ρβ (dx) =                                                + ρ∞ .                           (14)
+                                     Γ(α)Γ(β − α)                     (u − x)α−β+1
+                                                           (x,∞)
+
+Conversely, given ρβ ∈ Mβ which represents f ∈ Sα we can recover ρα from
+                        Γ(α)
+ Fρα (y) = ρ0 +                      ×
+                Γ(β)Γ(α − β + n + 1)
+ Z                 n       Z                            n        Z                  
+      α−1        2 d     β−α−n        ρβ (ds)       α   2 d      β−α−n        ρβ (ds)
+ α x dx −x              x                         −y −y        y
+                  dx            sα+n (s − x)β−α−n        dy             sα+n (s − y)β−α−n
+ (0,y)                               (x,∞)                                                           (y,∞)
+                                                                                                                             (15)
+with n = [β − α] and ρα ({∞}) = [Γ(β − α)Γ(α + 1)/Γ(β)] lim y −α Fρβ (y).
+                                                                                 y→∞
+
+Remark 3. The transformation ρα → ρβ defined in (14) is the right-sided Kober-Erdelyi
+fractional integral. Its precise definition and inversion are investigated in the Appendix.
+    Proof. To demonstrate (14) we employ the connection formula ρ∗β (dy) = y −β µβ (dy),
+where ρ∗β is the image of ρβ under y → y −1 . We have (A = Γ(β)/[Γ(α)Γ(β − α)] for brevity)
+                               Z
+   β ∗                                µα (du)
+  y ρβ (dy) = µβ (dy) = Ady                      + µ0 Ay β−α−1 dy
+                                  (y − u)α+1−β
+                                  (0,y)
+           Z       α+1−β                                     Z
+               t      µ∗α (dt)        β−α−1         β−α−1                           t1−β ρα (dt)
+= Ady                          +Aρ∞ y       dy = Ay       dy                                     +Aρ∞ y β−α−1 dy.
+               (yt − 1)α+1−β                                                     (t − 1/y)α+1−β
+         (1/y,∞)                                                          (1/y,∞)
+
+
+
+                                                            5
+Dividing by y β and making substitution y = 1/x, dy = −dx/x2 we arrive at (14). The
+inversion formula (15) is Theorem A2 in the Appendix. 
+   The following result is also due to Sokal [30, formulas (10a) and (10b)].
+                 T
+   Theorem 5 α>0 Sα = {non-negative constants}.
+This result suggests the following definition:
+
+                                       S0 := {non-negative constants}.
+
+   Recall that a function f : (0, ∞) → R is said to be completely monotonic if f has
+derivatives of all orders and satisfies (−1)n f (n) (x) ≥ 0, for all x > 0 and n = 0, 1, . . . We
+denote the set of completely monotonic functions by CM. The following result was pointed
+out to us by Christian Berg and is also hinted at in [30].
+   Theorem 6 S∞ = CM, where the closure is taken with respect to pointwise convergence
+on (0, ∞).
+                                                                       S
+Proof. The inclusion S∞ ⊂ CM follows from the fact that each f ∈ α>0 Sα is completely
+monotonic combined with closedness of CM under pointwise convergence [28, Corollary 1.6].
+To prove the reverse inclusion recall that according to Bernstein’s theorem (see [34, Chapter
+IV, Theorem 12b] or [28, Theorem 1.4]) each completely monotonic function is the Laplace
+transform of a nonnegative measure:
+                                                  Z
+                              f (x) = L(σ; x) :=      e−xt σ(dt).
+                                                                    [0,∞)
+
+Since f (x) is non-increasing the sequence f (1/n) is non-decreasing. Hence, two cases √   are
+possible: 1) f (1/n) is bounded by a constant or 2) limn→∞ f (1/n) = +∞. Define an := n
+in the first case and an := f (1/n) in the second. Define the following sequence of functions:
+                                                 Z                   −a2n
+                                                            xt                   t
+                                     fn (x) =             1+ 2                e− n σ(dt).
+                                                            an
+                                                [0,∞)
+
+Obviously,                                          Z
+                                                                t
+                                       fn (x) ≤           e− n σ(dt) = f (1/n),
+                                                  [0,∞)
+
+so that the integral defining fn (x) exists. Moreover,
+                                             Z
+                                                   σn (du)
+                                    fn (x) =                 ,
+                                                 (1 + xu)a2n
+                                                         [0,∞)
+
+                        −a2
+                          nu                                    S
+where σn (du) = a2n e    n     σ(du). Clearly, fn ∈                 α>0 Sα . Next, we have
+
+                                 Z                     −a2n                                !
+                                               xt                                                   t
+          fn (x) − f (x) =                   1+ 2               − e−xt + e−xt − e−(x−1/n)t       e− n σ(dt)
+                                               an
+                               [0,∞)
+
+
+                                                                6
+                          Z             −a2n       !
+                                      xt                 t
+      fn (x) − f (x) =              1+ 2       − e−xt e− n σ(dt) + f (x + 1/n) − f (x).   (16)
+                                      an
+                         [0,∞)
+
+It is verified by straightforward calculus that the maximum of
+                                                   −a2n
+                                                 xt
+                                      ψ(t) := 1 + 2       − e−xt
+                                                 an
+
+is attained at the point t∗ satisfying
+                                                −a2n −1
+                                              xt
+                                            1+ 2          = e−xt .
+                                              an
+Hence,
+                                                   xt∗ e−xt  e−1
+                                                                   ∗
+
+                                      max |ψ(t)| =          ≤ 2 .
+                                       t              a2n     an
+It follows from (16) that
+
+                                                e−1
+                     |fn (x) − f (x)| ≤             f (1/n) + |f (x + 1/n) − f (x)|.
+                                                a2n
+
+Due to the definition of an and continuity of f (x) we conclude that limn→∞ fn (x) = f (x) for
+each x > 0. 
+
+   Theorem 7 If f ∈ Sα and g ∈ Sβ then f g ∈ Sα+β .
+
+Proof. See [12, Chapter VII, paragraph 7.4].
+Remark 4. Theorems 3 and 7 show that the union S∞ is a cone with multiplication: if
+f, g ∈ S∞ then af + bg ∈ S∞ , for all a, b ≥ 0 and f g ∈ S∞ .
+
+   Theorem 8 Each                               Z
+                                                        µα (du)
+                                     f (z) =                    + µ ∞ ∈ Sα
+                                                       (u + z)α
+                                               [0,∞)
+
+can be represented in the form
+                                            1
+                                 f (z) =        L(uα−1 L(µα ; u)du; z) + µ∞ ,             (17)
+                                           Γ(α)
+where L denotes the Laplace transform.
+
+Proof. Write                                               Z
+                                      1         1
+                                           α
+                                             =                   e−(u+z)t tα−1 dt
+                                   (u + z)     Γ(α)
+                                                         [0,∞)
+
+and apply Tonelli’s theorem to show that the iterated integral in (17) exists and is equal to
+f (z). 
+Remark 5. Formula (17) has been found in [36] for absolutely continuous measures.
+
+                                                          7
+    Introduce the standard notation for the right-sided Riemann-Liouville fractional integral
+[15, section 2.2], [26, §5] and the right-sided Caputo fractional derivative [15, section 2.4],
+[24, section 2.4.1]:
+                                                Z∞
+                                            1        f (t)dt
+                                  Iλ− f :=                    ,
+                                           Γ(λ)    (t − x)1−λ
+                                                        x
+                                                        Z∞
+                  C                       (−1)n                 f (n) (t)dt
+                  Dλ− f = (Iλ− )−1 f =                                      , n = [λ] + 1.
+                                         Γ(n − λ)             (t − x)1+λ−n
+                                                         x
+
+   Theorem 9 For a fixed non-negative measure µ ∈ Mα and β > α > 0 denote
+                                     Z
+                                         µ(du)
+                            fα (z) =             + µ∞ ,                                      (18)
+                                        (u + z)α
+                                                [0,∞)
+
+and                                              Z
+                                                         µ(du)
+                                     fβ (z) =                    + µ∞ .                      (19)
+                                                        (u + z)β
+                                                [0,∞)
+
+Then for all x > 0
+                            Z∞
+                Γ(β)             (fβ (t) − µ∞ )dt         Γ(β) −
+   fα (x) =                                       + µ ∞ =     I [fβ (t) − µ∞ ](x) + µ∞       (20)
+            Γ(α)Γ(β − α)          (t − x)1+α−β            Γ(α) β−α
+                            x
+and
+                                 Z∞        (n)
+               Γ(α)(−1)n                 fα (t)dt            Γ(α) C −
+   fβ (x) =                                           + µ∞ =       D [fα (t)](x) + µ∞ ,      (21)
+            Γ(β)Γ(n − β + α)          (t − x) 1+β−α−n        Γ(β) β−α
+                                 x
+
+where n = [β − α] + 1.
+Proof. To prove (20) substitute (19) for fβ into (20) and exchange the order of integration
+which is legitimate by Tonelli’s theorem again. Conditions β > α > 0 guarantee the existence
+of the inner integral. Formula (21) is one of several inversion formulas for the Riemann-
+Liouville integral in (20) which is applicable since fα is infinitely differentiable (see, for
+instance, [15, section 2.4], [24, section 2.4.1]). To demonstrate its validity differentiate under
+integral sign (n ≥ 1)                                 Z
+                                (n)            n           µ(du)
+                               fα (t) = (−1) (α)n                   ,
+                                                         (u + t)α+n
+                                                             [0,∞)
+
+where (α)n = α(α + 1) · · · (α + n − 1) = Γ(α + n)/Γ(α), substitute into (21) and exchange
+the order of integrations. 
+Remark 6. The Riemann-Liouville fractional derivative cannot be used in (21) since, in
+general, the resulting integral would diverge.
+    Theorem 10 The class Sα , α > 1 is closed under pointwise limits: if {fn }∞
+                                                                              n=1 ⊂ Sα and
+if the limit lim fn (x) = f (x) exists for all x > 0 then f ∈ Sα .
+            n→∞
+
+Proof. A proof for α = 1 can be found in [11, Proposition 1] or by a different argument in
+[28, Theorem 2.2(iii)]. The latter carries over mutatis mutandis to all α > 0. 
+
+
+                                                        8
+3. Complex variable properties. Clearly, f is holomorphic in C \ (−∞, −r], where
+r = inf{x : x ∈ supp(µα )} and f (z) = f (z). In particular, if 0 ∈
+                                                                  / supp(µα ) (or, equivalently,
+supp(ρα ) is bounded) then the function f can be represented by the power series
+                                           ∞
+                                           X             (α)k
+                                f (z) =          (−1)k        ρk (α)z k ,
+                                           k=0
+                                                          k!
+
+convergent in the disk |z| < 1/R. Here R = sup{x : x ∈ supp(ρα )}, (α)k = Γ(α + k)/Γ(α),
+and                                 Z
+                           ρk (α) =   tk dρα (t) < ∞, k = 0, 1, . . .               (22)
+                                   [0,R]
+
+are the moments of the measure ρα which are finite due to (6).
+    For functions belonging to S1 Krein [18, Appendix, Theorem 4] found the following
+celebrated characterization.
+
+    Theorem 11 A function f holomorphic in the cut plane C \ (−∞, 0] belongs to S1 iff
+f (x) ≥ 0 for x > 0 and ℑf (z) ≤ 0 for ℑz > 0.
+
+   Because of the special role played by S1 (including a number of stability properties [3],
+connection to continued fractions [8] and Padé approximation [2]) it is interesting to relate
+the functions from Sα to S1 . One way of doing this is provided by Theorem 9 (it works if
+µ ∈ M1 ), another approach is presented in the following two theorems.
+
+   Theorem 12 Suppose f ∈ Sα , 0 < α ≤ 1. Then f 1/α ∈ S1 .
+
+Proof. For ℑz > 0 and t > 0 we have (arg(z) denotes the principal value of the argument
+of z):
+
+        −πα < arg(z + t)−α < 0 ⇒           − πα < arg(f (z)) ≤ 0 ⇒ ℑ(f (z)1/α ) ≤ 0.
+
+Since f 1/α (z) is holomorphic in C \ (−∞, 0] and non-negative for z > 0 we get the conclusion
+by Krein’s theorem 11. 
+
+   Theorem 13 Suppose f ∈ Sα , α ≥ 1. Then g(z) := f (z 1/α ) ∈ S1 .
+
+Proof. Indeed g(z) is holomorphic in C \ (−∞, 0] and non-negative for x > 0. Next for
+ℑz > 0 and t > 0 we have (arg(z) denotes the principal value of the argument of z):
+
+       0 < arg(z 1/α ) < π/α ⇒ 0 < arg(z 1/α + t) < π/α,                    ⇒ ℑ(z 1/α + t)−α < 0
+
+Integrating the last expression with respect to non-negative measure preserves the lower half
+plane, so that the proof is completed by Krein’s theorem 11. 
+Remark 7. For α > 1 the mapping Sα → S1 defined by f (z) → g(z) := f (z 1/α ) is clearly
+not surjective as can be seen immediately by taking g(z) = 1/(1+z) ∈ S1 , f (z) = g(z α ) ∈
+                                                                                          / Sα
+(since it is not holomorphic in the upper half-plane). The conditions (a) f (z) is holomorphic
+in the cut plane C \ (−∞, 0], (b) f (x) ≥ 0 for x > 0 and (c) ℑf (z) ≤ 0 for 0 < arg(z) < π/α
+
+
+                                                    9
+are necessary for f to belong to Sα . Unfortunately, these conditions are not sufficient as the
+following example shows:
+                                           1            1
+                                f (z) =         2
+                                                  −           .
+                                        (z + 1)     2(z + 2)2
+Indeed, a straightforward computation yields (z = x + iy):
+
+              y(30 + 87x + 96x2 + 50x3 + 12x4 + x5 + 12y 2 + 22xy 2 + 12x2 y 2 + 2x3 y 2 + xy 4 )
+ℑf (z) = −                                                                                        .
+                                 (1 + 2x + x2 + y 2)2 (4 + 4x + x2 + y 2 )2
+
+Hence, for {z ∈ C : ℜz > 0, ℑz > 0} we get ℑf (z) < 0 and f (x) ≥ 0 for x > 0. However,
+f∈/ S2 since the representing measure is signed. In fact, f ∈ S3 since
+                                  Z∞                             
+                                        dν(t)                      2dt, t ∈ (1, 2],
+                        f (z) =                  , where dν(t) =
+                                       (z + t) 3                   dt, t ∈ (2, ∞).
+                                  1
+
+We thank Alex Gomilko for this example. It provides a partial answer to the question asked
+by Sokal at the end of [30].
+
+   Theorem 14 Each f ∈ Sα satisfies
+                                                                 α
+                                                     z−1
+                                         |f (z)| ≤ A                 + µ∞ ,                                  (23)
+                                                     ℑ(z)
+              R
+where A =     [0,∞)
+                      µα (du)/(u + 1)α < ∞, and ℜ(z) ≤ 0.
+
+Proof. We have
+
+                  Z                           Z                           α
+                       µα (du)                        µα (du)        u+1
+  |f (z)| =                    + µ∞ =                                           + µ∞
+                      (u + z)α                       (u + 1)α        u+z
+              [0,∞)                          [0,∞)
+                                                                                    α
+                                                                        u+1
+                                                         ≤ A max                        + µ∞ = A[ψ(z)]α/2 + µ∞ ,
+                                                                 u≥0    u+z
+
+with A given above and
+                                                             2                  2
+                                                 u+1               z−1
+                                      ψ(z) = max                 =      .
+                                             u≥0 u + z             ℑ(z)
+The last equality is true for ℜ(z) ≤ 0 by standard calculus. 
+Remark 8. The estimate (23) may seem very weak because the right hand side does not
+tend to zero as |z| → ∞ while f (z) → 0. However, the decrease of f may be arbitrarily slow
+so that it is difficult to expect a better estimate valid for the whole class Sα .
+
+
+
+
+                                                        10
+4. Exact Stieltjes order. We will say that f is of exact Stieltjes order α∗ if f ∈ S∞ and
+                                    α∗ [f ] = inf{α : f ∈ Sα }.                           (24)
+    Theorem 15 If f is of exact Stieltjes order α∗ then f ∈ Sα∗ . In other words the infimum
+in (24) is always attained.
+                                                             α
+Proof. Since f ∈ S∞ it is infinitely differentiable so that Fn,k (x) in (7) is well defined and
+continuous in α for each fixed x > 0 for all α > α . Passing to the limit α → α∗ we verify
+                                                    ∗
+
+that (7) is true for α = α∗ . Hence, by Sokal’s theorem 2 f ∈ Sα∗ . 
+   Theorem 16 Suppose f ∈ Sβ . Then β > α∗ [f ] iff the function
+                                      Z
+                                          µβ (du)
+                               Φ(y) =                                                     (25)
+                                         (y − u)ε
+                                                     (0,y)
+
+is non-decreasing on (0, ∞) for some ε ∈ (0, min{β, 1}).
+   Proof. Assume Φ(y) is non-decreasing. We need to show that β is not exact. According
+to Definition 1 in the Appendix and Theorem A1
+                       +           Φ(y)dy
+                      I1−ε µβ =             + µ∞ δ∞ ∈ Mβ+1−ε = Mα+1 ,
+                                   Γ(1 − ε)
+where α = β − ε and µ∞ = µβ ({∞}). Hence,
+                                Z
+                                      Φ(y)dy
+                                               < ∞.
+                                    (1 + y)α+1
+                                     [0,∞)
+
+This implies that                       Z
+                                                 dΦ(y)
+                                                         < ∞.                             (26)
+                                                (1 + y)α
+                                      [0,∞)
+
+Indeed, for each t > 0 integration by parts,
+                                  t     Z               Z
+                          Φ(y)        1      dΦ(y)          Φ(y)dy
+                                α
+                                    =               α
+                                                      −              ,
+                        α(1 + y) 0 α        (1 + y)       (1 + y)α+1
+                                             [0,t)                   [0,t)
+
+shows that limt→∞ Φ(t)(1 + t)−α exists (finite or infinite). This limit must be zero since
+otherwise Φ(y)(1 + y)−α > C > 0 for all y > M and
+                          Z                     Z
+                                Φ(y)dy                dy
+                                      α+1
+                                          >C                = ∞.
+                              (1 + y)               1+y
+                           [0,∞)                             [M,∞)
+
+Hence, limt→∞ Φ(t)(1 + t)−α = 0 and the above integration by parts proves (26). It follows
+that the measure µα whose distribution function is equal to AΦ(y) and whose atom at infinity
+is equal to µ∞ belongs to Mα . Here A = Γ(α)/[Γ(β)Γ(α − β + 1)]. Consider the function
+                                        Z
+                                             µα (du)
+                                g(z) =                + µ∞ .
+                                            (u + z)α
+                                             [0,∞)
+
+
+                                                       11
+By Theorem 3 we have g ∈ Sβ and
+                                               Z
+                                                       µ̃β (du)
+                                     g(z) =                     + µ∞ ,
+                                                      (u + z)β
+                                              [0,∞)
+
+
+where µ̃β (du) is given by (10). But then µα and µ̃β are related by (11) which coincides with
+(25) times A (note that n = 0 in (11) because β − α = ε < 1). This proves that µ̃β = µβ so
+that f (z) = g(z) ∈ Sα , α < β.
+    Conversely, if β is not exact choose ε ∈ (0, β − α∗ ), ε < 1. We have f ∈ Sβ−ε . According
+to Theorem 3 the function AΦ(y), where Φ is defined in (25) equals the distribution function
+of the measure µβ−ε and so is non-decreasing. 
+
+   Corollary 1 Suppose f ∈ Sβ , ε ∈ (0, min{β, 1}) and the following limit exists:
+
+                                              Φ(2y)
+                                             lim    = A,
+                                         y→+∞ Φ(y)
+
+
+where Φ is defined by (25). If A < 1 then β is the exact Stieltjes order of f .
+
+Proof. Clearly, the condition A < 1 implies that Φ(y) cannot be non-decreasing so that by
+Theorem 16 β must be exact. 
+
+    Corollary 2 Suppose f ∈ Sβ and the support of the measure µβ is compact. Then β is
+the exact Stieltjes order of f .
+
+Proof. Indeed, for all y > B, B := sup{x : x ∈ supp(dµ)}, the function Φ(y) is strictly
+decreasing for each ε ∈ (0, min{β, 1}), so that by Theorem 16 β must be exact. 
+   Consider three prototypical examples.
+   Example 1. Find the exact Stieltjes order of (α > 1)
+
+                               Z1                                                   
+                                       dt        1               1          1
+                     f (z) =                α
+                                              =                   α−1
+                                                                      −                  .
+                                    (z + t)     α−1             z       (1 + z)α−1
+                               0
+
+Method I: by corollary 2 α∗ = α since supp(dµ) is compact.
+  Method II: by theorem 16 compute Φ(y). Let I(A) be the indicator function of a set A.
+We have (0 < ε < 1)
+                        Zy                   (
+                             I([0, 1])du      y 1−ε /(1 − ε),           0 < y ≤ 1,
+               Φ(y) =                    =
+                              (y − u)ε         [y 1−ε − (y − 1)1−ε ]/(1 − ε),        y > 1.
+                        0
+
+It is straightforward to check that this function is decreasing for y > 1 so that again α∗ = α.
+    Example 2. Find the exact Stieltjes order of (α > 1)
+                                                      Z∞
+                                                              dt
+                                        f (z) =                     .
+                                                           (z + t)α
+                                                      1
+
+
+                                                      12
+By theorem 16 compute
+                                 Zt                 (
+                                      I([1, ∞))du    0, 0 < t ≤ 1
+                        Φ(t) =                    =
+                                        (t − u)ε     (t − 1)1−ε /(1 − ε),      t>1
+                                 0
+
+This function is non-decreasing on [0, ∞), so that α∗ < α. To find the exact order we
+compute
+                                                     Z∞
+                                        1                  dν(t)
+                        f (z) =                α−1
+                                                   =               ,
+                                (α − 1)(1 + z)          (z + t)α−1
+                                                                  0
+
+where the measure dν(t) is concentrated at one point t = 1 with ν({1}) = (α − 1)−1 so that
+by Corollary 2 α∗ = α − 1.
+   Example 3. According to Euler’s integral representation [1, Theorem 2.2.1] the Gauss
+hypergeometric functions 2 F1 can be written as
+                                                 Z 1 b−1
+                                         Γ(c)       u (1 − u)c−b−1
+        f (z) :=2 F1 (a, b; c; −z) =                               du, c > b > 0.
+                                     Γ(b)Γ(c − b) 0    (1 + zu)a
+Assume that 0 < a ≤ b. By the above formula f ∈ Sa . Change of variable u = 1/t yields
+                                                       Z ∞
+                                               Γ(c)        µ(t)dt
+                      2 F1 (a, b; c; −z) =                         ,
+                                           Γ(b)Γ(c − b) 1 (z + t)a
+where
+                                      µ(t) = ta−c (t − 1)c−b−1,       t > 1.
+We aim to show that a is the exact Stieltjes order of f . Computation gives
+                   Zy
+                         µ(t)dt
+        Φ(y) :=                  = A(y − 1)c−b−ε 2 F1 (c − a, c − b; c − b − ε + 1; −(y − 1)),
+                        (y − t)ε
+                   1
+
+where A = Γ(c − b)Γ(1 − ε)/[Γ(c − b − ε + 1)] for any given ε ∈ (0, min{1, c − b}). Using the
+asymptotic formula [1, formula (2.3.12)] for 2 F1 as y → ∞, we get
+
+                                       Φ(y) = A(y − 1)−ε (D + o(1)) ,
+
+where D is a constant. This implies that limy→∞ [Φ(2y)/Φ(y)] = 2−ε < 1 so that by Corol-
+lary 1 the exact order is equal to a.
+    In our forthcoming paper [14] we will investigate the exact Stieltjes order of the general-
+ized hypergeometric function q+1 Fq .
+Remark 9. According to Theorem 10 the class Sα is closed under pointwise limits. It is
+then reasonable to ask whether the exact Stieltjes order is also preserved by such limits. The
+following example shows that the answer is negative in general. Consider the sequence of
+functions (α > 1)
+                   Zm
+                           dt               1                    1
+        fm (z) =                α
+                                  =                α−1
+                                                       −                   ,         m = 2, 3, . . .
+                        (z + t)     (α − 1)(z + 1)       (α − 1)(z + m)α−1
+                   1
+
+
+                                                      13
+According to Corollary 2 each fm has exact order α while pointwise
+                                         1
+                  lim fm (z) =                     for each z ∈ C\(−∞, 0].
+                 m→∞             (α − 1)(z + 1)α−1
+
+According, to Example 2 above, the limit function is of exact order α − 1.
+Remark 10. Theorem 9 shows that if α is the exact Stieltjes order of f then its fractional
+derivative of order γ will have the exact order α + γ while its fractional integral of order γ
+will have the exact order α − γ provided that α > γ and µ ∈ Mα−γ .
+
+
+
+
+                                             14
+                      APPENDIX
+    Inversion formulas for some fractional integrals of
+                  measures on half-axis
+
+    In this appendix we prove some facts about fractional integrals and derivatives of Borel
+measures supported on R+ . Fractional calculus is certainly a classical subject with a number
+of great monographs available today, including [9, 15, 16, 22, 24, 26]. Fractional integrals and
+derivatives have been studied in (weighted) spaces of integrable functions, in Hölder classes,
+in spaces of generalized functions, in the complex plane, for functions of several variables
+and in various other contexts. We could not find, however, a good reference for fractional
+integrodifferentiation of measures. One reason could be is that the definition of the fractional
+integral of a measure is fairly straightforward. The inversion problem, nonetheless, i.e. the
+definition of a fractional derivative, might not be so trivial. Here we prove two inversion
+theorems required in the study of generalized Stieltjes transforms. They might be useful in
+some other contexts as well, for instance in connection with completely monotonic functions
+of positive order, see [17].
+
+    Let us remind the reader that Mα is the positive cone comprising non-negative Borel
+measures supported on [0, ∞] and satisfying (2). Clearly, Mα ⊂ Mβ if α < β. There is a
+natural involution Nα defined on Mα by (5). For a measure µ ∈ Mα we denote by Fµ its
+left-continuous distribution function normalized by Fµ (0) = 0. The distribution function Fµ
+defines the measure µ uniquely except for a possible atom at infinity which must be specified
+separately.
+Definition A1. Let µ ∈ Mα . The measure ν := Iη+ µ is called the left-sided Riemann-
+Liouville fractional integral of µ of order η > 0 if
+                  Z        Z
+             1                   µ(du)
+  ν(B) :=              dy                 + µ(B ∩ {∞}) for each Borel set B ⊂ [0, ∞]. (27)
+            Γ(η)              (y − u)1−η
+                B\{∞}    [0,y)
+
+Remark A1. Formula (27) is certainly a straightforward generalization of the left-sided
+Riemann-Liouville fractional integral as given in [15, (2.2.1),(2.2.2)] and [26, Chapter 2(5.1),(5.3)].
+One can check that ν({0}) = 0 regardless of µ({0}) by computing the limit limy→0 Fν (y) = 0.
+                                                       −
+Definition A2. Let µ ∈ Mα . The measure τ := Kα,η        µ is called the right-sided Kober-
+Erdelyi fractional integral of µ of order η > 0 if
+                                                                               
+                                         Z         
+                                                    Z                          
+                                                                                
+                                      1      α−1            µ(du)
+           τ (B) := µ(B ∩ {0}) +            y dy                         +  µ ∞        (28)
+                                    Γ(η)           
+                                                      uη+α−1 (u − y)1−η        
+                                                                                
+                                       B\{0}          (y,∞)
+
+for each Borel set B ⊂ [0, ∞].
+Remark A2. Formula (28) is certainly a straightforward generalization of the right-sided
+Kober-Erdelyi fractional integral as given in [15, (2.6.8)] and [26, Chapter 4, (18.6)] with a
+slight change of notation. Condition (2) ensures that the right hand side of (28) exists. By
+definition the measure τ has no atom at infinity.
+
+                                               15
+   Theorem A1 If µ ∈ Mα then ν = Iη+ µ ∈ Mα+η and given ν we can recover µ from
+                                         n Z
+                                 1       d          ν(du)
+                   Fµ (y) =                                 ,                  (29)
+                            Γ(1 + n − η) dy      (y − u)η−n
+                                                                            [0,y)
+
+where n = [η] and µ({∞}) = ν({∞}).
+Proof. To show that ν ∈ Mα+η compute
+  Z                      Z             Z
+         ν(dt)       1         dt           µ(du)
+              α+η
+                  =                α+η
+      (1 + t)       Γ(η)   (1 + t)       (t − u)1−η
+ [0,∞)                          [0,∞)                      [0,t)
+                               Z                   Z                            Z
+                       1                                 dt            Γ(α)          µ(du)
+                    =               µ(du)             1−η      α+η
+                                                                   =                         <∞
+                      Γ(η)                     (t − u) (1 + t)       Γ(α + η)       (1 + u)α
+                              [0,∞)      (u,∞)                                [0,∞)
+                                          |           {z         }
+                                                          =(1+u)−α B(η,α)
+
+according to (2). Here
+                                                Γ(α)Γ(η)
+                                                       B(η, α) =
+                                                Γ(α + η)
+is Euler’s beta function. The interchange of the order of integrations is legitimate by Tonelli’s
+theorem [27, Theorem 13.8], [25, Chapter 20, Corollary 7] or [4, Theorem 3.4.5]. The proof of
+(29) is a paraphrase of the standard proof of the inversion formula for the Riemann-Liouville
+fractional integral [26, Theorem 2.4] except that we recover the distribution function of
+the measure µ so that we differentiate one time less the standard and we employ Tonelli’s
+theorem to justify the interchange of integrations. Substitute (27) into the integral on the
+right hand side of (29) (recall that n = [η]):
+   Z
+          ν(du)
+       (y − u)η−n
+ [0,y)
+                   Z                       Z                             Z                  Z
+            1                 du                  µ(dt)        1                                                      du
+         =                                                  =                   µ(dt)
+           Γ(η)           (y − u)η−n            (u − t) 1−η   Γ(η)                                 (u − t)1−η (y − u)η−n
+                  [0,y)                 [0,u)                           [0,y)            (t,yh)
+                                    Z                                                Z            Z                    Z
+             Γ(1 − η + n)                          n
+           =                               (y − t) µ(dt) = Γ(1 − η + n)                     dt1           dt2 · · ·            Fµ (tn )dtn .
+                  n!
+                                   [0,y)                                            [0,y)       [0,t1 )            [0,tn−1 )
+
+Since Fµ (tn ) is non-decreasing it is locally Lebesgue integrable which implies that the function
+on the right belongs to AC n [0, R] (the function and n − 1 its derivative are absolutely
+continuous) for any R > 0. Hence, we can recover Fµ by n-fold differentiation. 
+                                   −
+   Theorem A2 If µ ∈ Mα then τ := Kα,η (µ) ∈ Mα+η and given τ we can recover µ from
+                          1
+ Fµ (y) = τ ({0}) +              ×
+                    Γ(n + 1 − η)
+  Z                  n      Z                           n      Z                 
+        α−1        2 d      η−n       τ (ds)        α   2 d      η−n       τ (ds)
+  α x dx −x               x                      − y −y        y                        ,
+                    dx           sα+n (s − x)η−n         dy           sα+n (s − y)η−n
+   (0,y)                                   (x,∞)                                                           (y,∞)
+                                                                                                                                         (30)
+
+                                                                   16
+where n = [η] and µ∞ = αΓ(η) lim y −α Fτ (y).
+                                                    y→∞
+
+Proof. To show that τ ∈ Mα+η compute
+  Z                     Z            Z
+         τ (dt)     1       tα−1 dt                                               µ(du)
+                 =
+      (1 + t)α+η   Γ(η)   (1 + t)α+η                                         uη+α−1 (u − t)1−η
+ (0,∞)                                    [0,∞)                      (t,∞)
+                            Z                              Z                                 Z
+                 1                      1−η−α                      tα−1 dt          Γ(α)          µ(du)
+              =                     u            µ(du)             α+η      1−η
+                                                                                =                         <∞
+                Γ(η)                                        (1 + t) (u − t)       Γ(α + η)       (1 + u)α
+                        (0,∞)                         (0,u)                                (0,∞)
+                                                       |           {z         }
+                                                               =uη+α−1 (1+u)−α B(α,η)
+
+The interchange of integrations is again justified by Tonelli’s theorem. To prove formula
+(30) assume for the moment that µ∞ = 0 and substitute (28) into (30):
+   Z                 n     Z                               n      Z
+        α−1       2 d     η−n        τ (ds)         α    2 d       η−n       τ (ds)
+  α x dx −x              x       α+n        η−n
+                                                − y −y           y
+                   dx          s (s − x)                  dy            s (s − y)η−n
+                                                                         α+n
+    (0,y)                                        (x,∞)                                                     (y,∞)
+                         Z                n     Z                 Z
+                   α             α−1   2 d     η−n      sα−1 ds                                                µ(du)
+              =                 x dx −x       x
+                  Γ(η)                  dx          sα+n (s − x)η−n                                      uη+α−1 (u − s)1−η
+                        (0,y)                                          (x,∞)                     (s,∞)
+                               α
+                                      n      Z                 Z
+                          y       2 d      η−n      sα−1 ds                                               µ(du)
+                       −       −y        y
+                         Γ(η)      dy           sα+n (s − y)η−n                                   uη+α−1 (u − s)1−η
+                                                               (y,∞)                  (s,∞)
+                  Z          n           Z                   Z                                                        
+         α              α−1   d         η−n           ds                                                     µ(du)
+      =                x dx       (1/t)
+        Γ(η)                  dt              sn+1 (s − 1/t)η−n                                         uη+α−1 (u − s)1−η | t=1/x
+               (0,y)                                           (1/t,∞)                          (s,∞)
+                        α
+                                        n                   Z                            Z                      
+                     y              d                  η−n              ds                             µ(du)
+                  −                            (1/t)                                                                        , (31)
+                    Γ(η)            dt                             s (s − 1/t)η−n
+                                                                    n+1                           uη+α−1 (u − s)1−η | t=1/y
+                                                           (1/t,∞)                      (s,∞)
+
+where we have used the formula
+                               n         n        
+                            2 d             d
+                         −y        ϕ(y) =       ϕ(1/t)          .
+                             dy             dt          | t=1/y
+
+Further, exchange of the order of integrations justified by Tonelli’s theorem yields:
+    Z                    Z
+              ds                   µ(du)
+        n+1
+      s (s − 1/t)  η−n      u η+α−1 (u − s)1−η
+ (1/t,∞)                                 (s,∞)
+       Z                    Z                                               Z
+              µ(du)                       ds                          η−n        µ(du)
+=                                                       = B(η, 1−η+n)t                 (ut−1)n .
+              uη+α−1             n+1       η−n
+                                s (s − 1/t) (u − s) 1−η                          un+α
+    (1/t,∞)             (1/t,u)                                          (1/t,∞)
+                         |             {z             }
+                                =tη−n uη−n−1 (ut−1)n B(η,1−η+n)
+
+     We will show now that
+                      n Z                                                             Z
+                       d                                   µ(du)
+                                                                 (ut − 1)n = n!                  u−α µ(du).
+                       dt                                  un+α
+                                                 (1/t,∞)                             (1/t,∞)
+
+
+                                                                             17
+Denote by µ∗ the image of the measure µ under the mapping λ(u) = 1/u, so that for each
+Borel set A ⊂ (0, ∞) we have µ∗ (A) := µ(λ−1(A)). Then
+          n Z                                                   n Z                                                         n Z
+      d                  µ(du)                                d                                                             d
+                               (ut−1)n =                                        s   n+α                n ∗
+                                                                                          (t/s−1) µ (ds) =                                (t−s)n sα µ∗ (ds)
+      dt                 un+α                                 dt                                                            dt
+               (1/t,∞)                                                  (0,t)                                                         (0,t)
+                                n Z            Z                     Z                                Z                                 Z
+                            d                                                   α ∗                             α ∗
+               = n!                        dt1           dt2 · · ·           s µ (ds) = n!                     s µ (ds) = n!                      u−α µ(du)
+                            dt
+                                   (0,t)      (0,t1 )              (0,tn )                             (0,t)                          (1/t,∞)
+
+Finally, by integration by parts for Lebesgue-Stieltjes integral (see [7, Theorem 6.2.2]) we
+obtain:
+    Z                 n      Z                               n       Z
+        α−1        2 d     η−n         τ (ds)         α    2 d       η−n         τ (ds)
+  α x dx −x               x        α+n        η−n
+                                                   − y −y          y
+                    dx           s (s − x)                  dy             s (s − y)η−n
+                                                                             α+n
+  (0,y)                      (x,∞)                                     (y,∞)
+                               Z             Z                  Z               
+                                      α−1          −α          α        −α
+               = Γ(1 − η + n) α x dx              u µ(du) − y         u µ(du)
+                                                         (0,y)               (x,∞)                              (y,∞)
+                                      Z        y  Z             Z                                                                            
+                                     α    −α                   α                                                                −α
+                     = Γ(1 − η + n) x    u µ(du) +   µ(dx) − y                                                              u        µ(du)
+                                                                                      0
+                                                          (x,∞)                            (0,y)                 (y,∞)
+                            Z
+= Γ(1 − η + n)                   µ(dx) = Γ(1 − η + n)(Fµ (y) − Fµ (0+)) = Γ(1 − η + n)(Fµ (y) − µ({0})).
+                         (0,y)
+
+Since µ({0}) = τ ({0}) by (28) this proves formula (30). While integrating by parts we have
+also used the following limit:
+                Z                                         Z                                   1  Z                
+           α            −α                           α            −α                    −α         α −α−1
+    lim x           u        µ(du) = lim x                    u        dFµ (u) = lim x u Fµ (u) +α u      Fµ (u)du
+  x→0                                      x→0                                            x→0
+                                                                                                                        x
+            (x,∞)                                    (x,1)                                                                       (x,1)
+                             Z                         
+                            α     −α−1                           −x−α−1 Fµ (x)
+                    = lim αx    u      Fµ (u)du − Fµ (x) = lim                 − Fµ (0+) = 0.
+                      x→0                                  x→0 (1/α)(−α)x−α−1
+                                      (x,1)
+
+Here the first equality is dueRto (2), the second is integration by parts and the preultimate
+is L’Hôpital’s rule applied if (x,1) u−α−1 Fµ (u)du is unbounded.
+    If µ∞ 6= 0 we need to add the following term to the third line of (31):
+
+                                                                                                                                         =B(η,1−η+n)y −η
+           Z             n      Z                                  n      zZ    }|      {
+                                        α−1                α                         α−1
+  αµ∞                   d             s     ds       µ ∞ y          d              s     ds
+           xα−1 dx −x2       xη−n α+n          η−n
+                                                   −          −y 2       y η−n α+n
+  Γ(η)                 dx           s (s − x)        Γ(η)          dy            s (s − y)η−n
+     (0,y)                      (x,∞)                                        (y,∞)
+                                 |     {z        }
+                                                              =B(η,1−η+n)x−η
+            Z                n                  n           Z
+    αµ∞             α−1   2 d    −n µ∞ y α     2 d    −n αµ∞ n!            µ∞ n!y α
+=                  x dx −x      x −         −y       y =          xα−1 dx−          = 0,
+    Γ(η)                   dx       Γ(η)        dy        Γ(η)              Γ(η)
+           (0,y)                                                                                                  (0,y)
+
+
+
+                                                                                    18
+where                                  n     n 
+                                    2 d    −n   d
+                                  −x      x =      tn         = n!.
+                                     dx         dt    | t=1/x
+
+This shows that (31) is still valid for µ∞ 6= 0.
+   Finally, to recover the atom at infinity µ∞ we compute
+                                                                              Z                    Z
+          −α                                   −α       1                                                    µ(du)
+   lim x       Fτ (x) = lim [µ({0})x                ]+       lim x−α              y   α−1
+                                                                                            dy
+  x→∞                  x→∞                             Γ(η) x→∞                                         uη+α−1 (u − y)1−η
+                                                                             (0,x)             (y,∞)
+                             Z                                                            Z                  Z
+          µ∞                                     µ∞    1                                                              µ(du)
+        +       lim x−α          y   α−1
+                                           dy =      +      lim x−α                           y   α−1
+                                                                                                        dy                           .
+          Γ(η) x→∞                              αΓ(η) Γ(η) x→∞                                                   uη+α−1 (u − y)1−η
+                         (0,x)                                                         (0,x)             (y,∞)
+
+
+In order to show that the last limit is zero we interchange the order of integrations (justified
+again by Tonelli’s theorem):
+
+                                                                                          =B(α,η)uα+η−1
+   Z             Z                        Z                             }|       zZ {
+                         µ(du)
+      y α−1 dy                        =        u1−η−α µ(du)       (u − y)η−1 y α−1 dy
+                    uη+α−1 (u − y)1−η
+ (0,x)        (y,∞)                     (0,x)               (0,u)
+                      Z                  Z
+                  +      u1−η−α µ(du)         (u − y)η−1 y α−1 dy = Fµ (x) − µ({0})
+                     [x,∞)                           (0,x)
+                                                        |           {z                }
+                                                 =(1/α)xα uη−1 2 F1 (α,1−η;1+α;x/u)
+                                                                             Z
+                                                                1
+                                                               + xα                   u−α 2 F1 (α, 1 − η; 1 + α; x/u)µ(du),
+                                                                α
+                                                                            [x,∞)
+
+
+where 2 F1 is the Gauss hypergeometric function [1, Chapter 2]. Hence we need to prove
+that:
+                                   lim x−α Fµ (x) = 0
+                                                        x→∞
+
+and                                   Z
+                             lim            u−α 2 F1 (α, 1 − η; 1 + α; x/u)µ(du) = 0.
+                             x→∞
+                                [x,∞)
+
+Both equalities follow from (2): the first was proved by Widder [34, Corollary 3a.3], the
+second follows from the fact that 2 F1 (a, b; c; x) is bounded on [0, 1] if c > a + b by the Gauss
+formula [1, Theorem 2.2.2]. 
+Remark A3. The operator (−x2 Dx )n encountered in (30) can be expanded as follows
+                                                             n
+                                                             X
+                                           2        n
+                                     (−x Dx ) f =                  a(n, m)xn+m f (m) (x),
+                                                             m=1
+
+where the numbers                                                          
+                                                                 n−1 n n!
+                                               a(n, m) = (−1)
+                                                              m! m − 1
+
+
+                                                                   19
+are known as Lah numbers [33, A008297] satisfying
+                        a(n + 1, m) = (n + m)a(n, m) + a(n, m − 1).
+Applying −x2 Dx to the above expansion we see the same recurrence which given the same
+initial values furnishes a proof of the above expansion.
+Remark A4. Another way to obtain a representation for µ via τ for η > 1 is the following.
+                 −
+Denote µ̃ = Kα,1   (µ), i.e. according to (28)
+                                             Z
+                                      α−1
+               µ̃(dx) = µ({0})δ0 + x dx         u−α µ(du) = µ({0})δ0 + φµ̃ (x)dx,
+                                             (x,∞)
+
+where the last equality is the definition of φµ̃ (x). It is easy to verify that this formula is
+inverted as follows                                Z
+                       Fµ (y − 0) − Fµ (0+) = α       µ̃(dx) − yφµ̃ (y).
+                                                          (0,y)
+
+If η > 1 we have according to (28) for µ̃ ∈ Mα+1 and the semigroup property of Kober-
+Erdeliy operator [15, (2.6.24)]
+             −          −
+  τ (dx) := Kα,η (µ) = Kα+1,η−1 (µ̃)
+                                          Z
+                                   xα dx                  φµ̃ (u)du
+                  = µ({0})δ0 +                         α+η−1
+                                                                        = µ({0})δ0 + φτ (x)dx.               (32)
+                                 Γ(η − 1)            u       (u − x)2−η
+                                             (x,∞)
+
+Here we have the standard Riemann-Liouvile fractional integral of the function u1−α−η φµ̃ (u).
+We cannot, however, use the Riemann-Liouvile fractional derivative to invert the above
+formula, since, in general the integral in its definition will diverge. Instead, we can employ
+Caputo’s fractional derivative [15, section 2.4] to invert (32):
+                                                                  Z
+            1−α−η           C η−1 −α                  (−1)n           [x−α φτ (x)](n) dx
+          u       φµ̃ (u) = D− [x φτ (x)](u) =                                           ,
+                                                  Γ(n − η + 1)          (x − u)η−n
+                                                                            (u,∞)
+
+where n = [η] and
+                                                                   Z
+                                     (−1)n uα+η−1 du                      [x−α φτ (x)](n) dx
+                 µ̃(du) = µ({0})δ0 +                                                         ,
+                                      Γ(n − η + 1)                          (x − u)η−n
+                                                                  (u,∞)
+
+so that
+                                      Z                       Z
+                        (−1)n α                  α+η−1             [x−α φτ (x)](n)
+  Fµ (y) = µ({0})δ0 +                        u           du                        dx
+                      Γ(n − η + 1)                                  (x − u)η−n
+                                     (0,y)                (u,∞)
+                                                                                       Z
+                                                                     (−1)n y α+η             [x−α φτ (x)](n)
+                                                                  −                                          dx.
+                                                                    Γ(n − η + 1)              (x − y)η−n
+                                                                                     (y,∞)
+
+This formula is, however, less general then (30) since it requires that φτ (x) ∈ AC n (0, ∞)
+which is not guaranteed by µ ∈ Mα . For 0 < η < 1 both formulas take the same form.
+   The relation between Iη+ and Kα,η
+                                   −
+                                      is revealed in the following theorem.
+
+                                                     20
+   Theorem A3 Suppose µ ∈ Mα . Then Nα+η Iη+ µ = Kα,η
+                                                  −
+                                                      Nα µ.
+
+Proof. Indeed, if f is given by (1) and ν = Iη+ µ then by Theorem 3
+                   Z                             Z                               Z
+                           µ(du)     Γ(α + η)             ν(du)      Γ(α + η)              τ1 (dt)
+   f (z) − µ∞ =                    =                               =                                ,
+                          (u + z)α     Γ(α)             (u + z)α+η     Γ(α)             (1 + tz)α+η
+                  [0,∞)                         (0,∞)                           (0,∞)
+
+
+where τ1 = Nα+η ν = Nα+η Iη+ µ. On the other hand, if ρ = Nα µ then according to the
+comment after formula (5) and by Theorem 4 we have
+                           Z                             Z
+                                 ρ(dt)     µ0   Γ(α + η)      τ2 (dt)
+             f (z) − µ∞ =               α
+                                          + α =                        ,
+                               (1 + tz)    z      Γ(α)     (1 + tz)α+η
+                               (0,∞)                               (0,∞)
+
+             −         −
+where τ2 = Kα,η ρ = Kα,η Nα µ. Comparing these two formulas we conclude that τ1 = τ2 due
+to uniqueness of the representing measure. 
+
+5. Acknowledgements. We thank Christian Berg, Leonid Kovalev, José Luis López
+and Sergei Sitnik for numerous useful discussions and Alex Gomilko for counterexample
+in Remark 7. We acknowledge the financial support of the Russian Basic Research Fund
+(grant 11-01-00038-a) and the Far Eastern Branch of the Russian Academy of Sciences (grant
+12-III-A-01-007).
+
+
+References
+ [1] G.E. Andrews, R. Askey and R. Roy, Special functions, Cambridge University Press,
+     1999.
+
+ [2] G.A. Baker Jr. and P. Graves-Morris, Padé Aproximants. Encyclopedia of Mathematics
+     and its Applications, vol. 59. Cambridge University Press, Cambridge, 1996.
+
+ [3] C. Berg, Quelques remarques sur le cône de Stieltjes, in Séminaire de Théorie du Poten-
+     tiel, Paris, No.5, in: F. Hirsch, G. Mokobodzki (Eds.), Lecture Notes in Mathematics,
+     vol.814, Springer, Berlin, Heidelberg, New York, 1980, 70–79.
+
+ [4] V.I. Bogachev, Measure Theory, Volume I, Springer, 2007.
+
+ [5] R.B. Burckel, An introduction to clasical complex analysis, vol.1, Birkhaüser Verlag
+     Basel, 1979.
+
+ [6] A. Byrne and E.R. Love, Complex inversion theorems for generalized Stieltjes trans-
+     forms, J. Austral. Math. Soc, 18 (1974), 328–358.
+
+ [7] M. Carter B. van Brunt, The Lebesgue-Stieltjes integral. A practical Introduction.
+     Springer, 2000.
+
+ [8] A. Cuyt, V.B. Petersen, B. Verdonk, H. Waadeland, W.B. Jones, Handbook of Continued
+     Fractions for Special Functions, Springer, 2008.
+
+                                                  21
+ [9] K. Diethelm, The Analysis of Fractional Differential Equations, Lecture Notes in Math-
+     ematics 2004, Springer, 2010.
+
+[10] J. Gilewicz, 100 years of improvements of bounding properties of Padé approximants to
+     the Stieltjes functions: One-point, two-point and N-point Pad approximants, Applied
+     Numerical Mathematics 60 (2010), 1320-1331.
+
+[11] F. Hirsch, Intégrales de résolvantes et calcul symbolique, Annales de l’insitut Fourier,
+     tome 22, n.4 (1972), 239–264.
+
+[12] I.I. Hirschman and D.V. Widder, The convolution transform, Princton Mathematical
+     Series, no.20, M. Morse and A.W. Tucker (eds.), Princton University Press, 1955.
+
+[13] A.M. Jerbashian, Functions of α-bounded type in the half-plane, Springer, 2005.
+
+[14] D. Karp and E. Prilepkina, Hypergeometric functions as generalized Stieltjes transforms,
+     submitted, 2011.
+
+[15] A.A. Kilbas, H.M. Srivastava and J.J. Trujillo, Theory and application of fractional dif-
+     ferential equations, North-Holland Mathematical Studies, 204, 2006.
+
+[16] V.S. Kiryakova, Generalized Fractional Calculus and Applications, Pitman Research
+     Notes in. Math. Series No. 301, Longman Group UK Ltd., 1994.
+
+[17] S. Koumandos, H. L. Pedersen, Completely monotonic functions of positive order and
+     asymptotic expansions of the logarithm of Barnes double gamma function and Eulers
+     gamma function, J. Math. Anal. Appl. 355 (2009) 33–40.
+
+[18] M.G. Krein and A.A. Nudelman, The Markov moment problem and extremal problems.
+     Translations of mathematical monographs, v. 50, AMS, Providence, R.I., 1977.
+
+[19] J.L. López and C. Ferreira, Asymptotic Expansions of Generalized Stieltjes Transforms
+     of Algebraically Decaying Functions, Studies in Applied Math. 108(2002), 187-215.
+
+[20] E.R. Love and A. Byrne, Real Inversion theorems for generalized Stieltjes transform, J.
+     London Math. Soc. (2), 22 (1980), 285–306.
+
+[21] E.R. Love and A. Byrne, Real Inversion theorems for generalized Stieltjes transform. II,
+     Math. Proc. Camb. Phil. Soc. 92(1982), 275–291.
+
+[22] K.S. Miller, B. Ross, Introduction to fractional calculus, John Wiley and Sons, 1993.
+
+[23] H. Pedersen, Completely monotonic functions related to logarithmic derivatives of entire
+     functions, Analysis and Applications, Vol. 9, No. 4 (2011), 409-419.
+
+[24] I. Podlubny, Fractional differential equations, Mathematics in Science and Engineering,
+     vol.198, Academic Pres, 1999.
+
+[25] H.L. Royden, F.M. Fitzpatrick, Real Analysis, Fourth Edition, Pearson Education, 2010.
+
+[26] S.G. Samko, A.A. Kilbas, O.I. Marichev, Fractional Integrals and Derivatives: Theory
+     and Applicatons, Gordon and Breach Science Publishers, 1993.
+
+                                              22
+[27] R.L. Schilling, Measures, integrals and martingales, Cambridge University Press, 2005.
+
+[28] R.L. Schilling, R. Song Z. Vondraček, Bernstein Functions. Theory and Applications,
+     Walter de Gruyter, Studies in Mathematics, 37, 2010.
+
+[29] J.H. Schwarz, The generalized Stieltjes transform and its inverse, J. of Math. Phys. 46,
+     013501 (2005).
+
+[30] A.D. Sokal, Real-variables characterization of generalized Stieltjes functions, Expo.
+     Math. 28(2010), 179–185.
+
+[31] T.J. Stieltjes, Recherches sur les fractions continues, Ann. Fac. Sci. Toulouse 8(1894),
+     1-122; 9(1895), 5-47. (Reprinted, together with an English translation, in: T.J. Stieltjes,
+     Oeuvres Complètes/Collected Papers, vol.II, 1993, Springer, Berlin, 401-566, 609-745).
+
+[32] D.B. Sumner, An inversion formula for the generalized Stieltjes transform, Bull. Amer.
+     Math. Soc. 55, (1949), 174-183.
+
+[33] The On-Line Encyclopedia of Integer Sequences, http://oeis.org/
+
+[34] D.V. Widder, The Laplace transform. Princeton University Press, 1946.
+
+[35] D.V. Widder, The Stieltjes transform, Trans. of Amer.Math.Soc., vol.43 (1938), 7–60.
+
+[36] O. Yürekli, A theorem on the generalized Stieltjes transfrom and its applications, Jour-
+     nal of Mathematical Analysis and Its Applications, vol. 168 (1992), 63–71.
+
+
+
+
+                                              23
+

@@ -27,10 +27,12 @@ exact interpretation of the error. For the original paper's sequence of steps, u
 [40-hour research map](RESEARCH_MAP.md) selects a manageable 80/20 project
 and offers a choice of one extension.
 
-For readers comfortable with one short residue calculation, the
+The fully real
 [positive resolvent–Legendre proof](problem131/resolvent-legendre-pade-proof.md)
 is a complete alternative, now accepted in its
 [full-proof audit](problem131/resolvent-legendre-pade-independent-review.md).
+A [separately audited Chebyshev-product argument](problem131/half-shift-elementary-independent-review.md)
+now supplies its integral identity using real calculus alone.
 Its opening design narrative starts from a positive Stieltjes error, finds
 rational Bernoulli moments, transports Legendre polynomials through an exact
 Hilbert Gram isometry, and obtains \(A_n\) by evaluation on the negative
@@ -71,6 +73,19 @@ fixed odd indices, and an
 [independently reviewed elementary trial](problem131/rank-one-elementary-trial-independent-review.md)
 proves \(\limsup E_{h,s}^{1/h}<25/12544<1/500\), without assuming an exact
 optimized rate. Denominator control remains separate.
+A second [independently reviewed construction](problem131/higher-order-positive-stieltjes-independent-review.md)
+uses a positive kernel of order m for zeta(2m+1), with explicit densities and
+rational moments. It produces convergent rational lower bounds to each pure odd
+zeta value, with no lower-zeta mixture. Its
+[theorem and proof](problem131/higher-order-positive-stieltjes-zeta.md) explain why
+ordinary kernels lose positivity and how increasing the kernel order restores it.
+The [first twenty denominator experiments](problem131/pure-higher-kernel-pade-experiment.md)
+show serious arithmetic costs; analytic convergence is not an irrationality proof.
+The stronger [nested interval theorem](problem131/nested-higher-zeta-gauss-radau.md)
+has also passed its [independent review](problem131/nested-higher-zeta-radau-independent-review.md):
+explicit rational lower bounds rise and upper bounds fall to every odd zeta value.
+The [real-order extension](problem131/real-order-positive-stieltjes-zeta.md)
+connects these measures through beta products and a classical Brownian-exit law.
 For an arithmetic alternative, use the
 [cyclotomic depletion connection](problem131/cyclotomic-depletion-connection.md):
 positive density combinations acquire integral polynomial moments, at the
@@ -80,6 +95,13 @@ collect precise theorem statements, proofs, obstructions, and links. The common
 analytic budget works for every fixed odd index, but the arithmetic normalizations
 needed for all-odd irrationality remain unproved. The negative results identify
 specific constructions that fail; they are not global impossibility claims.
+
+A concrete new connection for a short presentation is the
+[log2 endpoint proof](problem131/log2-endpoint-catalan-arithmetic.md), now
+[independently reviewed](problem131/log2-catalan-independent-review.md).
+The same Wilson–Legendre family joins logarithms to zeta3; its logarithmic
+numerator factors into Catalan numbers and beta integrals, so a single lcm
+clears it. This supplies an explicit arithmetic link to the Catalan project.
 
 ## Secondary project: exact prime-power Fuss–Catalan valuations
 

@@ -19,6 +19,9 @@ def C(n,k):
     return comb(n,k)*comb(n+k,k)
 
 assert moment(0)==1 and moment(1)==half/2-sigma/2
+for j in range(10):
+    assert S.degree(moment(j),sigma)==j
+    assert S.expand(moment(j)).coeff(sigma,j)==S.Rational((-1)**j,j+1)
 for j in range(7):
     for k in range(7):
         assert S.expand(mu(S.expand(D(j)*D(k)))-den(j)*den(k)/S.Integer(j+k+1))==0
@@ -57,6 +60,13 @@ for q,F in primitives.items():
     assert S.simplify(q**3*(F.subs(v,1)-F.subs(v,0))-targets[q])==0
 
 mp.mp.dps=65
+for NN in range(1,16):
+    for tau in [mp.mpf(0),mp.mpf(1)/3,mp.mpf(".49"),mp.mpf(".5")]:
+        xx=mp.mpf(".7")
+        lhs=mp.fprod(mp.sinh(xx/NN)**2+
+                    mp.sin(mp.pi*(k+mp.mpf(".5")+tau)/NN)**2 for k in range(NN))
+        rhs=mp.mpf(2)**(1-2*NN)*(mp.cosh(2*xx)+mp.cos(2*mp.pi*tau))
+        assert abs(lhs/rhs-1)<mp.mpf("1e-58")
 def number(x):
     return mp.mpf(str(S.N(x,72)))
 def weight(y,tau):
@@ -95,5 +105,6 @@ for sig,n,P,A,b in examples:
     error_checks+=1
 print("PASS: 49 generic parameter Gram identities; 25 exact polynomial/numerator families")
 print("PASS: three logarithmic antiderivatives; exact first-two-integrality distinction")
+print("PASS: 60 finite Chebyshev products; 10 leading higher-derivative moment coefficients")
 print(f"PASS: {quad_count} deformed resolvents; 28 moments including endpoints; {error_checks} Padé errors")
 

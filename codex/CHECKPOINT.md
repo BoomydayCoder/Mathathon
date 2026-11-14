@@ -402,3 +402,21 @@ Sixteenth checkpoint, 2026-11-14 13:28 UTC (05:28 LA), continuing:
   Original rank-one adjacent-Apéry equality and balanced constant-term formula remain
   conjectural; neither is silently used by any completed proof.
 - Work remains entirely in codex/. No usage-meter claims or automatic resets.
+
+Seventeenth checkpoint, 2026-11-14 13:54 UTC (05:54 LA), continuing:
+- All-real centered-Hurwitz generalized Stieltjes theorem independently reviewed:
+  explicit Beta-product measures, rational moments at rational orders, exact minimal
+  kernel order, and common gamma/Brownian interpretation with exact prior attribution.
+- Strictly nested rational Gauss/Radau enclosures for every odd zeta value reviewed,
+  including exact rational geometric radii. Denominator problem remains separate.
+- Logarithm–zeta3 deformation fully reviewed. Endpoint log2 irrationality proof now
+  complete and independently checked: Catalan–beta numerator identity needs one lcm.
+- Newton–Hilbert classification and confluent Wilson path reviewed. Critical quarter
+  maximality now elementary via central-binomial polynomials and harmonic bounds.
+- Pure20 and repaired156 finite arithmetic experiments independently checked; no
+  asymptotic failure claim. Base-Gauss derivative transfer proof reviewed,110-case
+  arithmetic investigation saved with local forced-prime denominator lemma.
+- Active next leads: explicit negative Wilson atoms and their Jacobi eigenfunctions,
+  a two-parameter positive zeta ladder, generic deformation recurrence.
+- Original Schur/adjacent-Apery identity and balanced constant-term pattern stay
+  conjectural. Work remains in codex/; no credit balance or reset claims.

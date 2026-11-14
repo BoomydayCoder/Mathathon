@@ -1,6 +1,6 @@
 # Positive half-shift Padé bounds isolate zeta(5), but the tested arithmetic deteriorates
 
-Status: proved construction from the positive repaired measure and the already proved moving-pole Apéry upper bounds for zeta(3); bounded exact experiment through degree12. Every tested primitive-error comparison with one is certified by rational inequalities, not inferred from decimals. No irrationality, asymptotic denominator, or all-odd-zeta claim.
+Status: proved construction from the positive repaired measure and the already proved moving-pole Apéry upper bounds for zeta(3); bounded exact experiment through degree12, accepted in half-shift-zeta5-pade-independent-review.md. Every tested primitive-error comparison with one is certified by rational inequalities, not inferred from decimals. No irrationality, asymptotic denominator, or all-odd-zeta claim.
 
 The positive-measure input is established in half-shift-signed-measure-and-positive-repair.md, Section4. The integral agent confirmed the density, rational moments, mass4/3, and exact Stieltjes transform before this experiment. The pure half-shift zeta(5) measure is signed; the extra zeta(3) term below must not be discarded.
 
@@ -134,3 +134,5 @@ The positive repair thus achieves correct signs and rational moments, but the or
 Run `python codex/computations/explore_half_shift_zeta5_pade.py`. Full coefficients, exact reduced q_{n,h}, integer error certificates, Padé normalizers, rough cofactors and comparison metrics are in `codex/computations/half_shift_zeta5_pade_experiment.json`. Error diagnostics were computed at220 digits and checked at300 digits. The primitive-error inequalities themselves are rational certificates.
 
 The construction proves a positive one-sided zeta(5) approximation recipe, with an appealing first bound and a rigorously unsuccessful tested primitive-error range thereafter. It does not establish irrationality, predict all later degrees, or transfer the positivity repair to arbitrary odd targets without separate analysis.
+
+The separate Fraction-only independent audit reconstructed all12 orthogonal systems and156 variants/certificates, with no numerical zeta evaluations or source-generator imports, confirming the155>1/one<1 census and the stated normalizers/rough factors.
