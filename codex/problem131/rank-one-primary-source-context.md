@@ -149,7 +149,7 @@ The comparisons are checked by
 `python codex/computations/check_rank_one_source_dictionary.py`.
 
 
-## 7. A concrete source-guided finite-difference lead, still conditional
+## 7. The mixed numerator identity now has an elementary proof
 
 Use Π_h(y) as shorthand for Prévost's Π_(2h)(y), and define his associated
 polynomial directly, without OCR of a long binomial numerator:
@@ -161,23 +161,24 @@ polynomial directly, without OCR of a long binomial numerator:
 \]
 
 where B₁=−1/2. Put C_h(y)=H_y^(3)Π_h(y)+Θ_h(y)/2 at nonnegative integer y.
-Prévost's exact formula gives C_h(h)=B_h. Independent exact computations
-using the defining functional, through h=8, give
+Prévost's exact formula gives C_h(h)=B_h. The all-index proof in
+[apery-mixed-numerator-balance.md](apery-mixed-numerator-balance.md) now proves
 
 \[
  C_h(h-1)=\frac{B_h+B_{h-1}}6.
 \]
 
 Together with the independently proved denominator identity
-Π_h(h−1)=(A_h+A_(h−1))/6 in the Newton-balance notes, this suggests
+Π_h(h−1)=(A_h+A_(h−1))/6, this proves
 
 \[
  \frac{C_h(h)-C_h(h-1)}{\Pi_h(h)-\Pi_h(h-1)}
  =\frac{5B_h-B_{h-1}}{5A_h-A_{h-1}}.
 \]
 
-The numerator identity in this paragraph is a finite computational result,
-not an all-h theorem. Even after proving it, identifying this quotient with
-the Schur root requires a separate orthogonality or interpolation argument.
-This is a useful precise next target, not a replacement for either missing
-proof. The checker records the exact h=1,...,8 calculations.
+Identifying this quotient with the truncated Schur root still requires a
+separate orthogonality or interpolation argument. The mixed-numerator theorem
+alone does not resolve that remaining conjecture. The source-dictionary checker
+records its original finite checks; the linked proof has its own symbolic
+rational certificates and independent pole-jet checks. Independent review of
+the new proof is pending.

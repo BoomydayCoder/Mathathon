@@ -14,11 +14,18 @@ It requires no recurrence, PNT, or complex contours. The
 [discovery guide](problem131/discovery-guide.md) then derives the square from
 its constraints and explains the recurrence
 through a quadratic Newton grid and finite balance, and gives a complete elementary
-irrationality proof. A single positive Laurent polynomial now connects its
+irrationality proof. Its main transfer now uses
+[two reviewed mixed-product telescopes](problem131/apery-mixed-numerator-independent-review.md):
+one gives the two-index recurrence, the other its adjacent balance, and their
+combination explains \(17=6\cdot3-1\), \(5=6\cdot1-1\). The source at index zero
+is explicit; the older diagonal certificate remains an appendix.
+A single positive Laurent polynomial connects its
 integer coefficients to the reciprocal-power Beukers integral; one AM–GM
 minimum explains their reciprocal scales. The resistor chain gives a further
 exact interpretation of the error. For the original paper's sequence of steps, use
-[Zudilin explained](problem131/zudilin-explained.md).
+[Zudilin explained](problem131/zudilin-explained.md). The
+[40-hour research map](RESEARCH_MAP.md) selects a manageable 80/20 project
+and offers a choice of one extension.
 
 **Follow the zeta-five simplification without the prime number theorem.**
 Start with the [PNT-free guide](problem131/pnt-free-zeta5-guide.md).
@@ -42,7 +49,19 @@ uses that extra lemma pointwise, keeping the PNT-free proof. It has fewer factor
 but less pleasant coefficients and needs the stronger analytic certificate;
 the 25-term route remains the primary exposition.
 
-**Explore results and promising boundaries.** The [research results](problem131/research-results.md)
+**Choose an extension: positive approximation or cyclotomic arithmetic.**
+The [rank-one construction](problem131/rank-one-zeta-subspace-approximants.md)
+gives strictly monotone rational bounds for every fixed odd zeta value.
+Its optimized errors share their lower and upper exponential rates across
+fixed odd indices, and an
+[independently reviewed elementary trial](problem131/rank-one-elementary-trial-independent-review.md)
+proves \(\limsup E_{h,s}^{1/h}<25/12544<1/500\), without assuming an exact
+optimized rate. Denominator control remains separate.
+For an arithmetic alternative, use the
+[cyclotomic depletion connection](problem131/cyclotomic-depletion-connection.md):
+positive density combinations acquire integral polynomial moments, at the
+cost of slower decay. The
+[research results](problem131/research-results.md)
 collect precise theorem statements, proofs, obstructions, and links. The common
 analytic budget works for every fixed odd index, but the arithmetic normalizations
 needed for all-odd irrationality remain unproved. The negative results identify
@@ -65,12 +84,12 @@ extensions remain unresolved.
 
 | Question | Read |
 |---|---|
-| Why precisely this square and this recurrence? | [Design classification](problem131/zudilin-design-classification.md); [Newton grid and finite diagonal balance](problem131/newton-symmetric-square-review.md) |
+| Why precisely this square and this recurrence? | [Design classification](problem131/zudilin-design-classification.md); [two mixed telescopes and their adjacent balance](problem131/apery-mixed-numerator-balance.md) |
 | Why does a growing integer solution create a small positive error? | [The same Laurent polynomial in positive and inverse powers](problem131/apery-laurent-reciprocal.md), with [independent review](problem131/apery-laurent-independent-review.md); [resistor chain](problem131/discrete-green-motivation.md) |
 | Can advanced machinery make the structure clearer? | [Elliptic periods and modular branch cancellation](problem131/apery-modular-elliptic.md); [completed independent review](problem131/apery-modular-review.md) |
 | How can the same moments control real size and prime denominators? | [Bernoulli local/global dictionary](problem131/bernoulli-local-global-dictionary.md); [local arithmetic reconstruction](problem131/fauzan-local-arithmetic-review.md) |
 | Why do prime-allocation floors suggest a factorial product? | [Centered indicators, Brownian-bridge covariance, and superfactorials](problem131/floor-covariance-barnes-design.md); [PNT-free assembly](problem131/pnt-free-zeta5-guide.md) |
-| What do positive matrices reveal—and where do they fail? | [Real-rooted zeta pencils](problem131/real-rooted-zeta-pencils.md); [Wilson-polynomial one-pole solution and exact denominator obstruction](problem131/one-pole-schur-structure.md) |
+| What do positive matrices reveal—and where do they fail? | [All-odd monotone rank-one bounds](problem131/rank-one-zeta-independent-review.md); [moving-pole Wilson–Apéry identity](problem131/rank-one-apery-bridge-independent-review.md) |
 | What connects this to prime-adic Fuss–Catalan questions? | [Carry cancellation and digit factorization](problem131/apery-digit-arithmetic.md); [elementary character rule](problem131/apery-cm-character.md), now [independently reviewed](problem131/apery-cm-independent-review.md) |
 | What transfers to other irrationality proofs? | [Shared exponential, pi-squared, and zeta coefficients](problem131/shared-coefficients-exp-pi-zeta.md); [zeta-two/zeta-three balance](problem131/zeta2-zeta3-balance-unification.md); [powers of pi](problem131/pi-powers.md) |
 
@@ -87,6 +106,35 @@ an inhomogeneous equation. The Laurent critical values alone are not a derivatio
 of the full recurrence. The [reviewed geometric divergence proof](problem131/geometric-divergence-proof.md)
 now supplies the full exact-form certificate and computes that boundary directly;
 its large rational primitives remain a presentation challenge.
+
+The [reciprocal-region bridge](problem131/reciprocal-region-beukers.md)
+offers a shorter geometric picture: an explicit birational involution sends
+the positive octant to a bounded Beukers region, and a rational cube
+parametrization recovers the integral and its exact Jacobian. The Laurent
+minimum becomes the Beukers-kernel maximum. The core Laurent polynomial,
+Beukers relative period, and inhomogeneous period equation are **published**
+in Golyshev–Kerr–Sasaki, *Apéry extensions*, §5.4; the
+[Fano dictionary](problem131/fano-v12-apery-gamma-dictionary.md) records the
+exact match and correction of a printed birational-map coordinate. Their
+reconstruction here is not a new mirror-model construction.
+
+For higher odd indices, the
+[reviewed Euler-operator hierarchy](problem131/odd-hierarchy-independent-review.md)
+expresses all polynomial moment functionals through \(\mu_3\), with fixed-order
+operators that preserve integer coefficients after the stated scalar clearing.
+This does not preserve pointwise positivity or bound the denominators of a
+solved moment system. The new
+[balanced hyperbolic normality proof](problem131/hyperbolic-balanced-normality.md)
+has now passed its [full independent audit](problem131/hyperbolic-balanced-normality-independent-review.md):
+every rectangular balanced index has a unique monic polynomial with simple
+positive roots. This gives no denominator-growth or error-rate theorem.
+Its Bernoulli construction's factorial constant-term formula remains finite
+evidence, not a theorem.
+
+One nearby distinction is already settled: the moving-pole Wilson bounds equal
+the adjacent-Apéry quotients for every index and inherit Apéry's arithmetic.
+Equality with the original \(D_{2h}\) rank-one determinant roots is still an
+unproved norm identity, despite finite exact agreement.
 
 Detailed higher-derivative, truncation, and prime-band investigations are indexed
 in [research results](problem131/research-results.md); their distinctions between
@@ -151,6 +199,14 @@ Konvalinka is now recorded in [the comparison note](problem137/konvalinka-compar
 Most scripts use Python 3 with SymPy and mpmath; their headers state dependencies.
 The [Newton closure check](computations/check_newton_diagonal_closure.py) and
 [modular review check](computations/check_apery_modular_review.py) use exact identities.
+The [mixed-product check](computations/check_apery_mixed_numerator_balance.py)
+verifies the two telescopes symbolically; its
+[independent product check](computations/check_apery_mixed_independent.py)
+also tests every small boundary case. The
+[reciprocal-region check](computations/check_reciprocal_region.py) verifies both
+inverse maps and their Jacobians. The
+[elementary rank-one trial certificate](computations/check_rank_one_elementary_trial.py)
+uses exact rational bounds, with no floating-point acceptance test.
 The [independent Laurent check](computations/check_apery_laurent_independent_review.py)
 verifies the reciprocal measure and covariance separately from the main derivation.
 The sparse superfactorial certificate, its independent normalizer checks, and

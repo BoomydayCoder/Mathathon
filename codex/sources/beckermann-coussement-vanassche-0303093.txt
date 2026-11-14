@@ -1,0 +1,1491 @@
+                                                          Multiple Wilson and Jacobi-Piñeiro polynomials 1
+
+
+                                                                                         B. Beckermann
+                                                               Laboratoire de Mathématiques Appliquées F.R.E. 2222 (ANO)
+                                                                      UFR Mathématiques - M3, Université de Lille 1
+                                                                             59655 Villeneuve d’Ascq CEDEX
+arXiv:math/0303093v1 [math.CA] 7 Mar 2003
+
+
+
+
+                                                                                bbecker@ano.univ-lille1.fr
+
+                                                                                         J. Coussement2
+                                                                Department of Mathematics, Katholieke Universiteit Leuven,
+                                                                       Celestijnenlaan 200 B, 3001 Leuven, Belgium
+                                                                         jonathan.coussement@wis.kuleuven.ac.be
+
+                                                                                         W. Van Assche
+                                                                Department of Mathematics, Katholieke Universiteit Leuven,
+                                                                       Celestijnenlaan 200 B, 3001 Leuven, Belgium
+                                                                                 walter@wis.kuleuven.ac.be
+
+
+
+
+                                                                                             Abstract
+                                                    We introduce multiple Wilson polynomials, which give a new example of multiple orthogonal
+                                                    polynomials (Hermite-Padé polynomials) of type II. These polynomials can be written as
+                                                    a Jacobi-Piñeiro transform, which is a generalization of the Jacobi transform for Wilson
+                                                    polynomials, found by T.H. Koornwinder. Here we need to introduce Jacobi and Jacobi-
+                                                    Piñeiro polynomials with complex parameters. Some explicit formulas are provided for both
+                                                    Jacobi-Piñeiro and multiple Wilson polynomials, one of them in terms of Kampé de Fériet
+                                                    series. Finally we look at some limiting relations and construct a part of a multiple AT-Askey
+                                                    table.
+
+
+                                            1       Introduction
+                                            Multiple orthogonal polynomials are a generalization of orthogonal polynomials in the sense that
+                                            they satisfy orthogonality conditions with respect to m ∈ N measures µ1 , . . . , µm [22, 3, 14]. In
+                                            this paper m will always represent the number of weights. Multiple orthogonal polynomials arise
+                                            naturally in the theory of simultaneous rational approximation, in particular in Hermite-Padé
+                                            approximation of a system of m (Markov) functions [20, 7, 8].
+                                                There are two types of multiple orthogonal polynomials. In the present paper we only con-
+                                            sider multiple orthogonal polynomials of type II. Let ~n = (n1 , n2 , . . . , nm ) be a vector of m
+                                            nonnegative integers, which is called a multi-index with length |~n| := n1 + n2 + · · · + nm . Fur-
+                                            thermore let Γ1 , . . . , Γm be the supports of the m measures. A multiple orthogonal polynomial
+                                            p~n of type II with respect to the multi-index ~n, is a (nontrivial) polynomial of degree ≤ |~n|
+                                            which satisfies the orthogonality conditions
+                                                   Z
+                                                      p~n (t) tk dµj (t) = 0,    k = 0, . . . , nj − 1, j = 1, . . . , m.                  (1.1)
+                                                     Γj
+                                                1
+                                                This work was supported by INTAS project 00-272, FWO research project G.0184.02, Tournesol project
+                                            T2002.02, and in part by the Ministry of Science and Technology (MCYT) of Spain and the European Regional
+                                            Development Fund (ERDF) through the grant BFM2001-3878-C02-02.
+                                              2
+                                                Research Assistant of the Fund for Scientific Research – Flanders (Belgium)
+
+
+                                                                                                  1
+Notice that the measures in (1.1) are not necessarily supposed to be positive. In case of a complex
+orthogonality relation, one usually refers to p~n as a formal multiple orthogonal polynomial.
+    Equation (1.1) leads to a system of |~n| homogeneous linear relations for the |~n| + 1 unknown
+coefficients of p~n . A basic requirement in the study of such multiple orthogonal polynomials
+is that there is (up to a scalar multiplicative constant) a unique solution of system (1.1). We
+call ~n a normal index for µ1 , . . . , µm if any solution of (1.1) has exact degree |~n| (which implies
+                      (j)    R
+uniqueness). Let mk = Γj tk dµj be the kth moment of the measure µj . Further set
+                              
+                     D1 (n1 )
+       D~n = 
+                       ..     
+                         .     ,                                                                  (1.2)
+                     Dr (nr )
+where
+                     (j)   (j)         (j)
+                                                
+                   m0     m1    ...  m|~n|−1
+                 
+      Dj (nj ) =    ..    ..            ..     
+                                                
+                     .     .             .     
+                    (j)     (j)      (j)
+                   mnj −1 mnj . . . m|~n|+nj −2
+
+ is an nj × (|~n|) matrix of moments of the measure µj . Then D~n is the matrix of the linear
+ system (1.1) without the last column. It is known and easily verified that the multi-index
+~n = (n1 , . . . , nr ) is normal if and only if this matrix has rank |~n|. When every multi-index
+ is normal we call the system of measures a perfect system. For perfect systems, the multiple
+ orthogonal polynomials of type II satisfy a recurrence relation of order m+1. The proof is similar
+ as in the case of orthogonal polynomials, see for instance [3]. Because of this recurrence relation,
+ formal multiple orthogonal polynomials are a useful tool in the spectral theory of non-symmetric
+ linear difference operators.
+      In the literature one can find some examples of multiple orthogonal polynomials with respect
+ to positive measures on the real line which have the same flavor as the classical orthogonal
+ polynomials. Two classes of measures have been analyzed in more detail and are known to form
+ a perfect system, see for instance the monograph [22] or the survey given in [14]. The first
+ class consists of Angelesco systems where the supports of the measures are disjoint intervals.
+ In the second class of so-called AT systems, the supports of the m measures coincide, and the
+ functions dµj (x)/dµ1 (x) for j = 1, . . . , m form an algebraic Chebyshev system [22, Section IV.4]
+ on the convex hull of the support. In the continuous case (where the measures can be written as
+ dµj (x) = wj (x)dx, with wj the weight function of the measure µj ) there are multiple Hermite,
+ multiple Laguerre I and II, Jacobi-Piñeiro, multiple Bessel, Jacobi-Angeleso, Jacobi-Laguerre
+ and Laguerre-Hermite polynomials, see [22, 14, 4] and the references therein. Some classical
+ discrete examples are multiple Charlier, multiple Kravchuk, multiple Meixner I and II and
+ multiple Hahn [5]. For all these examples there exists a first-order raising operator, based on the
+ differential operator D or the difference operators ∆ and ∇, and a Rodrigues formula so that they
+ can be called classical. Moreover, there exist differential or difference equations of order m + 1
+ (with polynomial coefficients)[4]. The recurrence relations of order m + 1 are known explicitly
+ for these examples in the case m ≤ 2. Finally we mention that there also exist some examples
+ of multiple orthogonal polynomials associated with modified Bessel functions [12, 13, 26] which
+ can be called classical.
+      In Subsection 3.1 we recall the definition of one of these examples, namely Jacobi-Piñeiro
+                    (~
+                     α,β)
+ polynomials P~n          , which are orthogonal with respect to the weights wj (x) = xαj (1 − x)β on
+ [0, 1], αj , β ≥ −1. These polynomials reduce to the classical Jacobi polynomials (shifted to the
+ interval [0, 1]) for m = 1. We show in Subsection 2.1 that Jacobi polynomials remain formal
+ orthogonal polynomials for complex parameters α1 , β, the corresponding complex orthogonality
+ relation being obtained via an analytic extension of the Beta function in both variables. As we
+
+                                                   2
+show in Subsection 3.1, also Jacobi-Piñeiro polynomials with complex parameters are formal
+multiple orthogonal polynomials of type II.
+     In Subsection 3.2 we then introduce the formal multiple Wilson polynomials p~n (·; a, ~b, c, d),
+which give a new example of formal multiple orthogonal polynomials of type II. They are an
+extension of the formal Wilson polynomials pn (·; a, b, c, d) [27, 28] for which we recall the defini-
+tion in Subsection 2.2. We also mention that, with some conditions on the complex parameters
+a, b, c, d, we find the Wilson and Racah polynomials on the top of the Askey scheme which have
+real orthogonality conditions.
+     The formal multiple Wilson polynomials satisfy a complex orthogonality conditions with
+respect to m Wilson weights
+
+                             Γ(a + t)Γ(a − t)Γ(bj + t)Γ(bj − t)Γ(c + t)Γ(c − t)Γ(d + t)Γ(d − t)
+      w(t; a, bj , c, d) =                                                                      , (1.3)
+                                                       Γ(2t)Γ(−2t)
+
+j = 1, . . . , m, where we integrate over the imaginary axis deformed so as to separate the increas-
+ing sequences of poles of these weight functions from the decreasing ones. Note that there are
+some additional conditions on the complex parameters in order to have that these Wilson weights
+have only simple poles. We prove in Theorem 3.3 that the weight functions (1.3) form a perfect
+system if bl − bk ∈   / Z whenever l 6= k. In the same Theorem we show that, for ℜ(c + d) > 0 and
+0 < |ℜ(t)| < ℜ(a), the formal multiple Wilson polynomials can be written as the Jacobi-Piñeiro
+transform
+                                 Z 1
+              2   ~                    (~
+                                        α,β)
+      p~n (t ; a, b, c, d) = k~n     P~n     (u)w(a−1,β) (u)K(u, t; a, 0, c, d) du,            (1.4)
+                                 0
+
+where α  ~ = (a + b1 − 1, ..., a + bm − 1) and β = c + d − 1. Here k~n is a normalizing constant,
+w (α,β) (u) = uα (1 − u)β the Jacobi weight and
+                                                                                
+                                         u−b−t                  c − t, d − t
+       K(u, t; a, b, c, d) =                             2 F1                1−u            (1.5)
+                                Γ(a − t)Γ(a + t)Γ(c + d)           c+d
+some kernel function, independent of n. In the scalar case (m = 1) this formula reduces to a
+Jacobi transform for the Wilson polynomials which was already found by T.H. Koornwinder [18,
+(3.3)]. We recall this Jacobi transform in Subsection 2.3 and give a short proof. Note that the
+parameters a, b1 , . . . , bm , c, d can take complex values.
+    The Jacobi-Piñeiro transform (1.4) is the key formula of this paper. In Subsection 3.1
+we obtain two new hypergeometric representations for the Jacobi-Piñeiro polynomials starting
+from the Rodrigues formula. Applying the Jacobi-Piñeiro transform (1.4) we then also find two
+explicit formulas for the formal multiple Wilson polynomials (see Subsection 3.2). One of them
+is in terms of Kampé de Fériet series [24].
+    In Section 4 we only consider the cases where we obtain real orthogonality conditions, namely
+multiple Wilson and multiple Racah. By some limit relations we then recover hypergeometric
+representations for the examples of multiple orthogonal polynomials of type II, mentioned above.
+We also introduce some new examples like multiple dual Hahn, multiple continuous dual Hahn,
+and multiple Meixner-Pollaczek. As a result, we finally construct a (still incomplete) multiple
+AT-Askey table similar to the well known Askey scheme for classical orthogonal polynomials.
+
+
+2     Jacobi and Wilson polynomials
+2.1   Formal (shifted) Jacobi polynomials
+                                          (α,β)
+The (shifted) Jacobi polynomials Pn    are a classical example of continuous orthogonal poly-
+nomials. Suppose α, β > −1, then these polynomials are orthogonal with respect to the Jacobi
+
+                                                     3
+weight function w(α,β) (x) = xα (1−x)β on the interval [0, 1]. These polynomials have the explicit
+expressions [9]
+                                                          
+        (α,β)        (α + 1)n         −n, α + β + n + 1
+     Pn       (x) =            2 F1                      x ,                                (2.1)
+                         n!                 α+1
+                                                                    
+                     (α + 1)n          −β       α + 1 + n, −β − n
+                  =            (1 − x) 2 F1                         x ,                     (2.2)
+                         n!                           α+1
+where the second expression is obtained by Euler’s formula [1, 15.3.3],[15]. We claim that the
+                               (α,β)
+(shifted) Jacobi polynomials Pn      are still formal orthogonal polynomials if we allow complex
+parameters α, β, α + β + 1 ∈ C \ {−1, −2, . . .} in formula (2.1). This was already mentioned in
+[19, Theorem 2.1], but we give a different proof.
+    In order to prove this claim, we require an integral representation for the meromorphic
+continuation in both variables of the beta function. Recall, e.g., from [15, § 1.1] that Γ is
+meromorphic in C, with simple poles at 0, −1, −2, ..., and hence the beta function [15, § 1.5]
+
+                 Γ(z)Γ(w)
+     B(z, w) =
+                 Γ(z + w)
+
+is meromorphic both in z and w, with simple poles at z, w = 0, −1, −2, .... From [15, § 1.5] we
+have the integral representation
+                Z 1
+     B(z, w) =      tz−1 (1 − t)w−1 dt, ℜ(z) > 0, ℜ(w) > 0.                               (2.3)
+                  0
+
+In order to obtain a representation valid for general z, w ∈ C \Z (compare with the Pochhammer
+formula [15, 1.6.(7)]), we follow [16, § 3.4] and consider three sheets S1, S2 and S3 of the
+appropriate Riemann surface for the function tz−1 (1 − t)w−1 (in the variable t) so that
+      
+       −π < arg(t) < π, −π < arg(1 − t) < π,                 for t ∈ S1 \ {(−∞, 0] ∪ [1, +∞)} ,
+           0 < arg(t) < 2π,    π < arg(1 − t) < 3π,           for t ∈ S2 \ {[0, +∞) ∪ [1, +∞)} ,
+      
+           π < arg(t) < 3π,    0 < arg(1 − t) < 2π,           for t ∈ S3 \ {(−∞, 0] ∪ (−∞, 1]} .
+
+Furthermore we choose a closed contour Σ as in Figure 1 where σ1 , σ2 , σ3 are the transition
+points between the three sheets. Note that the function tz−1 (1 − t)w−1 is analytic on Σ. For the
+beta function we then have
+                                          Z
+                      2πiz −1     2πiw −1
+      B(z, w) = (1 − e    ) (1 − e     )     tz−1 (1 − t)w−1 dt, z, w ∈ C \ Z.              (2.4)
+                                             Σ
+
+Indeed, if ℜ(z) > 0, ℜ(w) > 0 then the path of integration in (2.4) can be shrinked in order to
+approach the interval [0, 1], leading to formula (2.3). In particular, if z and/or w is a strictly
+positive integer, we can obtain B(z, w) by taking limits in (2.4).
+   Now we prove our claim that (shifted) Jacobi polynomials with complex parameters are
+formal orthogonal polynomials.
+
+Theorem 2.1 Let α, β, α + β + 1 ∈ C \ {−1, −2, . . .}, and consider the (complex) measure µ(α,β)
+defined by
+      Z                                                        Z
+                 (α,β)                 2πiz −1         2πiw −1
+         h(x) dµ       (x) = lim (1 − e    ) (1 − e        )     h(t)tz (1 − t)w dt.
+                            z→α,w→β                             Σ
+
+Then µ(α,β) forms a perfect system, with the corresponding nth formal orthogonal polynomial
+                                          (α,β)
+given by the (shifted) Jacobi polynomial Pn     .
+
+
+                                                 4
+                                                 s3         0             1
+                                                                                s1
+
+
+                                 S1
+
+
+
+
+                                                                          1
+                                             S              0
+                                                                     s2
+                                                                                 s1
+
+
+
+                                 S2
+
+
+
+
+                                                            0   s2        1
+                                                 s3
+
+                                 S3
+
+
+
+
+Figure 1: The contour Σ on the appropriate Riemann surface for the function tz−1 (1 − t)w−1 .
+
+
+Proof.    From (2.4) we obtain for the kth moment
+    Z
+         xk dµ(α,β) (x) = B(α + 1 + k, β + 1).
+
+The restrictions on the parameters α and β guarantee that the determinant of the moment
+matrix,
+                                                    n
+                                                      Y Γ(α + i)Γ(β + i)                Y
+      det B(α + r + s − 1, β + 1)               =                                           (s − r),
+                                      1≤r,s≤n               Γ(α + β + n + i)
+                                                      i=1                             1≤r<s≤n
+
+is different from zero. A proof for this formula uses Theorem 1 and 2 in [10, 11] (the moment
+matrix in the non-shifted case can be found in [25, 6.71.5]). Thus µ(α,β) forms a perfect system.
+Moreover, for 0 ≤ j ≤ n − 1 we have according to (2.1) and (2.4)
+       Z
+         (1 − x)j Pn(α,β) (x) dµ(α,β) (x)
+                        n
+             (α + 1)n X (−n)k (α + β + n + 1)k
+         =                                     B(α + k + 1, β + j + 1)
+                n!            (α + 1)k k!
+                     k=0
+                 n                         n                       n
+             (−1) Γ(α + n + 1)Γ(β + j + 1) X             (−1)n−k Y
+         =                                                           (α + β + k + ℓ).
+                    Γ(α + β + n + 1)                    k!(n − k)!
+                                                  k=0                         ℓ=j+2
+
+The sum on the right hand side is the divided difference gj,n [0, 1, ..., n] of the polynomial gj,n (x) =
+Q n
+  l=j+2 (α + β + x + l) of degree n − j − 1. Since n − j − 1 < n, this is equal to 0, which proves
+that the Jacobi polynomial is a formal orthogonal polynomial with respect to µ(α,β) .                   ✷
+
+2.2    Formal Wilson polynomials
+In [27] J.A. Wilson introduced the (formal) Wilson polynomials
+                                                                                           
+      2                                            −n, a + b + c + d + n − 1, a − t, a + t
+ pn (t ; a, b, c, d) = (a+b)n (a+c)n (a+d)n 4 F3                                           1 . (2.5)
+                                                             a + b, a + c, a + d
+
+Due to Whipple’s identities [2, Theorem 3.3.3], one can show that these formal Wilson polyno-
+mials are symmetric in all four complex parameters a, b, c, d. Furthermore, with some conditions
+
+
+
+                                                        5
+on these four parameters, the polynomials satisfy a complex orthogonality with respect to the
+Wilson weight function
+                            Γ(a + t)Γ(a − t)Γ(b + t)Γ(b − t)Γ(c + t)Γ(c − t)Γ(d + t)Γ(d − t)
+       w(t; a, b, c, d) =                                                                    .
+                                                     Γ(2t)Γ(−2t)
+Suppose that
+
+       2a, a + b, a + c, a + d, 2b, b + c, b + d, 2c, c + d, 2d ∈
+                                                                / {0, −1, −2, . . .},                  (2.6)
+
+so that the Wilson weight has only simple poles, and that
+
+       a+b+c+d ∈
+               / {0, −1, −2, . . .}.                                                                   (2.7)
+
+Furthermore denote by the contour C the imaginary axis deformed so as to separate the increasing
+sequences of poles ({a + k}∞                 ∞             ∞           ∞
+                                k=0 , {b + k}k=0 , {c + k}k=0 , {d + k}k=0 ) from the decreasing ones
+({−a − k}k=0 , {−b − k}k=0 , {−c − k}k=0 , {−d − k}k=0 ), and define the Wilson measure µ(a,b,c,d)
+         ∞                  ∞             ∞              ∞
+
+by
+     Z                         Z
+                (a,b,c,d)
+        h(t) dµ           (t) = h(t2 )w(t; a, b, c, d) dt.                                       (2.8)
+                                  C
+
+Wilson [27] shows the complex orthogonality relations
+     Z
+        pm (t; a, b, c, d)pn (t; a, b, c, d) dµ(a,b,c,d) (t) = δmn 2iMn ,
+
+where
+       Mn = 2πn! (a + b + c + d + n − 1)n
+                Γ(a + b + n)Γ(a + c + n)Γ(a + d + n)Γ(b + c + n)Γ(b + d + n)Γ(c + d + n)
+              ×                                                                          .
+                                          Γ(a + b + c + d + 2n)
+The perfectness of the singleton system µ(a,b,c,d) follows from Lemma 3.4 below.
+    In some cases we obtain real orthogonality conditions with respect to positive measures on the
+real line [27]. If ℜ(a), ℜ(b), ℜ(c), ℜ(d) > 0 and a, b, c and d are real except possibly for conjugate
+pairs, then C can be taken to be the imaginary axis and we obtain the real orthogonality
+
+                                                    Γ(a + ix)Γ(b + ix)Γ(c + ix)Γ(d + ix) 2
+   Z ∞
+         pm (−x2 ; a, b, c, d)pn (−x2 ; a, b, c, d)                                        dx = δmn Mn .
+     0                                                             Γ(2ix)
+Another case is when a < 0 and a + b, a + c, a + d are positive or a pair of complex conjugates
+occurs with positive real parts. We then get the same positive continuous weight function
+where some positive point masses are added. In these cases we obtain the Wilson polynomials
+Wn (x2 ; a, b, c, d) := pn (−x2 ; a, b, c, d) (see, e.g., [17]), which are real for real x2 .
+    Finally in the case that one of a + b, a + c, a + d is equal to −N + ǫ, with N a nonnegative
+integer, we obtain a purely discrete orthogonality after dividing by Γ(−N + ǫ) and letting ǫ → 0.
+If we take the substitution t → x + a and the change of variables α = a + b − 1, β = c + d − 1, γ =
+a + d − 1, δ = a − d we then obtain the Racah polynomials
+                                                                                     
+                                          −n, n + α + β + 1, −x, x + γ + δ + 1
+      Rn (λ(x); α, β, γ, δ) = 4 F3                                                  1 ,
+                                                  α + 1, β + δ + 1, γ + 1
+where λ(x) = x(x + γ + δ + 1) and α + 1 = −N or β + δ + 1 = −N or γ + 1 = −N . They satisfy
+the discrete orthogonality
+ N
+ X (α + 1)x (γ + 1)x (β + δ + 1)x (γ + δ + 1)x ((γ + δ + 3)/2)x
+                                                                            Rn (λ(x); α, β, γ, δ)(λ(x))k = 0,
+       (−α + γ + δ + 1)x (−β + γ + 1)x ((γ + δ + 1)/2)x (δ + 1)x x!
+ x=0
+
+
+                                                        6
+k = 0, . . . , n − 1. Necessary and sufficient conditions for the positivity of the weights are quite
+messy. An example of sufficient conditions is given in [27, (3.5)].
+   The formal Wilson polynomials contain as limiting cases several families of orthogonal poly-
+nomials [27, Section 4][17, Chapter 2] like Hahn, dual Hahn, Meixner, Krawtchouk, Charlier,
+continuous Hahn, continuous dual Hahn, Meixner-Pollaczek, Jacobi, Laguerre and Hermite poly-
+nomials. Together they form the Askey scheme of hypergeometric orthogonal polynomials.
+Moreover, there exist q-analogues [17] for all these polynomials. The results of this paper should
+probably extend to this more general case.
+
+2.3   Formal Wilson polynomials as a Jacobi transform
+We now recall an integral relation between the Jacobi and the formal Wilson polynomials. We
+also give a short proof which will help us to find explicit expressions for the formal multiple
+Wilson polynomials in the next section.
+
+Theorem 2.2 (T.H. Koornwinder) Suppose that the conditions (2.6) and (2.7) hold, and
+that ℜ(c + d) > 0, 0 < |ℜ(t)| < ℜ(a). Then we have
+                               Z 1
+           2
+      pn (t ; a, b, c, d) = kn     Pn(α,β) (u)w(α,β) (u)K(u, t; a, b, c, d) du, (2.9)
+                               0
+
+with α = a + b − 1 and β = c + d − 1, the Jacobi weight function w(α,β) (u) = uα (1 − u)β , the
+constant kn = n! Γ(a + c + n)Γ(a + d + n) and the kernel (1.5).
+
+Remark 2.3 T.H. Koornwinder already mentioned this Jacobi transform for the Wilson poly-
+nomials in [18, (3.3)]. In order to see that these formulas coincide, one has to make some
+parameter changes and substitute 1 − th2 s → u. Notice also that (2.9) is a particular case of a
+formula due to Meijer [21, p.103].
+
+Proof. By comparing the explicit formulas (2.1) and (2.5) we see that it is sufficient to prove
+that, for ℓ ∈ N,
+      Z 1
+                                                          (a − t)ℓ (a + t)ℓ
+          uℓ w(a−1,c+d−1) (u)K(u, t; a, 0, c, d) du =                          .         (2.10)
+        0                                             Γ(a + c + ℓ)Γ(a + d + ℓ)
+
+By definition of the kernel (1.5) we have
+
+      K(u, t; a, 0, c, d) = (a − t)ℓ (a + t)ℓ K(u, t; a + ℓ, 0, c, d),
+
+and uℓ w(a−1,c+d−1) (u) = w(a+ℓ−1,c+d−1) (u). Furthermore, Euler’s formula gives the symmetry
+K(u, −t; a + ℓ, 0, c, d) = K(u, t; a + ℓ, 0, c, d). By replacing a + ℓ by a and possibly t by −t, we
+see that it remains to prove that, for 0 < ℜ(t) < ℜ(a) and ℜ(c + d) > 0,
+      Z 1
+                                                            1
+          w(a−1,c+d−1) (u)K(u, t; a, 0, c, d) du =                    .                       (2.11)
+       0                                             Γ(a + c)Γ(a + d)
+
+Denoting the left hand side of (2.11) by J, we have by definition of the kernel
+                                    Z 1                                             
+                     1                    (a−t−1,c+d−1)            c − t, d − t
+     J=                                 w               (u) 2 F1                1 − u du.
+          Γ(a − t)Γ(a + t)Γ(c + d) 0                                  c+d
+
+In order to exchange the order of summation and integration, we notice that, if ℜ(C −A−B) > 0,
+                                                
+                         A, B               A, B
+       lim max 2 F1             yv − 2 F1         v = 0,
+      y→1− v∈[0,1]         C                 C
+
+                                                      7
+which follows by observing that Γ(A+k)Γ(B+k)
+                                  Γ(C+k)Γ(1+k) = k
+                                                      A+B−C−1 (1 + O(k −1 )),
+                                                                                  k→∞ , by Stirling’s
+formula. Consequently, using the assumptions ℜ(2t) > 0, ℜ(a − t) > 0, ℜ(c + d) > 0 together
+with (2.3) we obtain by uniform convergence
+                                            Z 1                                                
+                        1                                                  c − t, d − t
+     J =                               lim       w(a−t−1,c+d−1) (u) 2 F1                y(1 − u) du
+            Γ(a − t)Γ(a + t)Γ(c + d) y→1− 0                                   c+d
+                  ∞                                    Z  1
+                 X         (c − t)k (d − t)k y k
+         = lim                                              w(a−t−1,c+d+k−1) (u) du
+            y→1−     Γ(a − t)Γ(a + t)Γ(c + d + k)k! 0
+                 k=0
+                                                                  
+                             1                      c − t, d − t
+         = lim                              2 F1                  y .
+            y→1− Γ(a + t)Γ(a + c + d − t)          a+c+d−t
+By assumption on the parameters, ℜ(a + c + d − t − (c − t + d − t)) > 0, and hence we get from
+the Gauss formula [2, Theorem 2.2.2],[1, 15.1.20]
+                                                        
+                     1                     c − t, d − t              1
+     J=                            2 F1                 1 =                   ,
+          Γ(a + t)Γ(a + c + d − t)        a+c+d−t            Γ(a + d)Γ(a + c)
+
+as claimed in (2.11).                                                                                  ✷
+
+
+3     Multiple Wilson as a Jacobi-Piñeiro transform
+3.1    Jacobi-Piñeiro with complex parameters
+The Jacobi-Piñeiro polynomials are defined by a Rodrigues formula
+                                m                      
+        (~
+         α,β)       1           Y         dnj
+      P~n     (t) = (1 − t)−β         t−αj nj tnj +αj       (1 − t)|~n|+β ,                        (3.1)
+                   ~n!                    dt
+                                j=1
+             Q
+where ~n! = m  j=1 nj !. It is well known [23] that, provided that αj > −1, β > −1 and αℓ − αk 6∈ Z
+for ℓ 6= k, the Jacobi-Piñeiro polynomials are orthogonal with respect to the (positive) Jacobi
+weights w(αj ,β) , j = 1, . . . , m, on the interval [0, 1]. Notice that these weights form an AT system,
+and hence we obtain a perfect system of measures. Similar to Theorem 2.1, we show below that
+for complex parameters we keep formal multiple orthogonal polynomials of type II. Here we use
+the measures µ(αj ,β) of Theorem 2.1 which have as support the contour Σ, but can be reduced
+to complex Jacobi weights w(αj ,β) on the interval [0, 1] in the case ℜ(αj ) > −1, ℜ(β) > −1.
+
+Theorem 3.1 Let αj , β, αj + β ∈ C \ {−1, −2, ...}. Then the measures µ(αj ,β) , j = 1, ..., m, of
+Theorem 2.1 form a perfect system. The corresponding formal multiple orthogonal polynomial
+of type II with respect to the multi-index ~n is given by (3.1).
+
+Proof. From Theorem 1 and 2 in [10, 11] we obtain for the determinant of the matrix of
+moments (1.2) the expression
+                                                       
+                  |~
+                   n|           m Y nj
+                 Y              Y          Γ(αj + i)
+    D~nα~ ,β =  Γ(β + i)                               
+                                       Γ(αj + β + ~n + i)
+                 i=1           j=1 i=1
+                                                                           
+                         m                             ni Ynj
+                         Y    Y                 Y Y
+                      ×          (s − r)                   (αj − αi + r − s .
+                           j=1 1≤r<s≤nj                1≤i<j≤m s=1 r=1
+
+For our choice of parameters, this expression is different from zero, and hence every multi-index
+is normal.
+
+
+                                                   8
+   Our claim on the (formal) orthogonality of Jacobi-Piñeiro polynomials will be shown by
+induction on m. For m = 1, equation (3.1) reduces to (2.1), and the claim follows from Theo-
+rem 2.1. For m > 1, we observe first that, by the Rodrigues formula (3.1),
+
+        (~
+         α,β)           t−α1 (1 − t)−β dn1  α1 +n1        β+n1 ((α2 ,...,αm ),β+n1 )
+                                                                                         
+      P~n       (t) =                       t       (1 − t)    P(n2 ,...,nm)          (t)  .                           (3.2)
+                              n1 !     dtn1
+                              2       m   ((α ,...,α ),β+n1 )
+By induction hypothesis, P(n2 ,...,n m)
+                                                                   is a polynomial of degree |~n| − n1 , and thus there
+exist scalars cj with
+                                          |~
+                                           n|−n1
+       ((α2 ,...,αm ),β+n1 )
+                                            X           (α +n1 ,β+n1 )
+      P(n2 ,...,n m)
+                             (t) =                 cj Pj 1                 (t).
+                                            j=0
+
+From the Rodrigues formula for m = 1 and (3.2) we conclude that
+                        |~
+                         n|−n1
+        (~
+         α,β)
+                         X             (α ,β)
+                                       1
+      P~n     (t) =              cj Pj+n 1
+                                           (t),
+                         j=0
+
+                    (~
+                     α,β)                                    R     (~
+                                                                    α,β)
+implying that P~n         is a polynomial of degree |~n| with tk P~n     (t) dµ(α1 ,β) = 0 for k =
+0, 1, ..., n1 − 1 by Theorem 2.1. The other orthogonality conditions are obtained by observing
+that (3.1) remains invariant if one changes the order in the product in (3.1).                   ✷
+
+    With help of the Leibniz rule applied to the Rodrigues formula, the authors in [14] derive
+for m = 2 an explicit expression in terms of m = 2 sums. We now give a generalization of this
+formula for m ≥ 2, using the notation
+                                       !
+              f~; ~g1 : · · · : ~gr
+      Mp;r
+         q,~
+           n  ~ ψ ~1 : · · · : ψ ~r ~x                                                   (3.3)
+             φ;
+                                      p
+                                      Q               r
+                                                      Q
+                n1            nm          (fℓ )|~k|         (gi,1 )|~k|−k1 · · · (gi,m−1 )km Y
+                                                                                             m               k
+                X             X       ℓ=1             i=1                                                   xj j
+         :=             ···            q               r                                         (−nj )kj          ,
+                                      Q               Q                                                     kj !
+                k1 =0           (φ )
+                              km =0        (ψ )                            · · · (ψi,m−1 )km j=1
+                |     {z   } ℓ=1 ℓ |~k| i=1 i,1 |~k|−k1
+                    m sums
+where ~k = (k1 , . . . , km ), ~n ∈ (N ∪ {0})m , f~ ∈ Cp , φ
+                                                           ~ ∈ Cq and ~g1 , . . . , ~gr , ψ
+                                                                                          ~1 , . . . , ψ
+                                                                                                       ~r ∈ Cm−1 .
+We also give in (3.5) another new explicit expression for the formal Jacobi-Piñeiro polynomials
+which reduces to (2.2) if m = 1.
+
+Theorem 3.2 Let ~e = (1, . . . , 1) be a multi-index of length m and s(~n) = (n1 , n1 + n2 , . . . , |~n|).
+Denote by ~v (j) the vector ~v without the jth component. For the Jacobi-Piñeiro polynomials we
+have the hypergeometric representations
+                                                                                                                   !
+     (~
+      α,β)       (~
+                  α + ~e)~n 1;2                                    α + ~n + ~e)(m) : (~
+                                               (α1 + β + n1 + 1); (~                  α + s(~n) + (β + 1)~e)(1)
+   P~n     (t) =           M1,~n                                                                                t~e
+                    ~n!                                         α + ~e)(1) : (~
+                                                     (α1 + 1); (~             α + s(~n) + (β + 1)~e)(m)
+                                                                                                                       (3.4)
+
+and
+                                                                                              
+        (~
+         α,β)       (~
+                     α + ~e)~n                     −β                  α
+                                                                       ~ + ~n + ~e, −β − |~n|
+      P~n     (t) =                    (1 − t)          m+1 Fm                                t ,                      (3.5)
+                       ~n!                                                    α
+                                                                              ~ + ~e
+              Qm                                        Qm
+where ~n! =         j=1 nj ! and (~
+                                  α + ~e)~n =                j=1 (αj + 1)nj .
+
+
+                                                                       9
+Proof. We prove (3.4) and (3.5) by induction on m. For m = 1, equations (3.4) and (3.5)
+reduce to (2.1) and (2.2), respectively.
+   In case m ≥ 2, we use formula (3.2), where the induction hypothesis enables us to express
+                                     α(1) ,β+n )
+                                    (~   1
+the right hand polynomial P~n(1)           as a hypergeometric sum. After exchanging the order of
+summation and differentiation (for |t| < 1 in case of formula (3.5)), we apply the formulas
+                    dn1           ~ (1)
+                                                       
+      t−α1 (1 − t)−β n1 tα1 +n1 +|k | (1 − t)β+n1                                           (3.6)
+                    dt
+                       n1 (α + β + n + 1)               (α1 + n1 + 1)|~k|−k1 (−n1 )k t|~k|
+                       X     1             1     |~k|                                1
+        = (α1 + 1)n1
+                                 (α1 + 1)|~k|         (α1 + β + n1 + 1)|~k|−k1  k1 !
+                            k1 =0
+
+and
+             dn1 α1 +n1 +i (α1 + 1)n1 (α1 + n1 + 1)i i
+      t−α1        t       =                          t,                                                (3.7)
+             dtn1                 (α1 + 1)i
+
+and obtain the right-hand expressions of (3.4), and (3.5), respectively. It remains to prove the
+claims (3.6) and (3.7), the second one being obvious. We observe that the left-hand side of (3.6)
+can be transformed using the Rodrigues formula for m = 1 and (2.1), leading to the expression
+                                                                           !
+       |~k (1) |        ~ (1)           −n1 , α1 + |~k(1) | + β + n1 + 1
+     t           (α1 + |k | + 1)n1 2 F1                                  t
+                                                α1 + |~k(1) | + 1
+                                      n1                                         ~
+                                      X  (−n1 )k (α1 + |~k(1) | + β + n1 + 1)k t|k|
+        = (α1 + |~k(1) | + 1)n1                    1                                  1
+
+                                     k1 =0             (α1 + |~k(1) | + 1)k1              k1 !
+                            n1 (α + β + n + 1)                 (α1 + n1 + 1)|~k|−k1              ~
+                            X    1       1    |~k|                                  (−n1 )k1 t|k|
+        = (α1 + 1)n1                                                                              ,
+                                        (α1 + 1)|~k|       (α1 + β + n1 + 1)|~k|−k1    k1 !
+                            k1 =0
+
+as claimed in (3.6).                                                                                      ✷
+
+In the above proof we have shown implicitly that the right hand side of (3.5) is a polynomial of
+degree ≤ |~n| in t.
+    With the explicit formula (3.4) it is possible to compute the recurrence coefficients by com-
+paring the highest coefficients in the recurrence relation of order m + 1, see [14] for m = 2. The
+resulting formulas are quite complicated, and thus we omit further details.
+
+3.2   Formal multiple Wilson polynomials
+We now consider m Wilson weights
+
+      w(·; a, bj , c, d),   j = 1, . . . , m,   bℓ − bk 6∈ Z, ℓ 6= k,                                  (3.8)
+
+defined as in (1.3), that is, we change only one parameter (recall the symmetry of the Wilson
+weights in all four parameters). Similar as in the scalar case (Wilson polynomials) we suppose
+that for j = 1, . . . , m
+
+      2a, a + bj , a + c, a + d, 2bj , bj + c, bj + d, 2c, c + d, 2d ∈
+                                                                     / {0, −1, −2, . . .},             (3.9)
+
+so that the m Wilson weights have only simple poles, and that
+
+      a + bj + c + d ∈
+                     / {0, −1, −2, . . .}.                                                            (3.10)
+
+As in the scalar case, we write µ(a,bj ,c,d) for the resulting measures, where it is possible to choose
+a joint contour C which is the imaginary axis deformed so as to separate the increasing sequences
+
+                                                          10
+of poles ({a + k}∞              ∞                     ∞            ∞                ∞
+                  k=0 , {b1 + k}k=0 , . . . , {bm + k}k=0 , {c + k}k=0 , {d + k}k=0 ) from the decreasing
+ones ({−a − k}k=0 , {−b1 − k}k=0 , . . . , {−bm − k}k=0 , {−c − k}k=0 , {−d − k}∞
+                 ∞              ∞                       ∞               ∞
+                                                                                          k=0 ).
+    Let us show that the (possibly complex) Wilson measures µ             (a,bj ,c,d) form a perfect system.
+The corresponding multiple orthogonal polynomials will then be referred to as formal multiple
+Wilson polynomials. A basic observation in what follows is that, under some additional con-
+ditions, the formal multiple Wilson polynomials can be written as a Jacobi-Piñeiro transform,
+similar to (2.9).
+Theorem 3.3 Suppose that (3.9) and (3.10) hold and that bℓ − bk 6∈ Z, ℓ 6= k. Then the Wilson
+measures µ(a,bj ,c,d) for j = 1, . . . , m form a perfect system.
+   If ℜ(a) > 0 and ℜ(c + d) > 0, the formal multiple Wilson polynomial with multi-index ~n can
+be written as
+                                   Z 1
+                                         (~
+                                          α,β)
+      p~n (t2 ; a, ~b, c, d) = k~n     P~n     (u)w(a−1,β) (u)K(u, t; a, 0, c, d) du,   (3.11)
+                                    0
+
+                             ~ = (a + b1 − 1, . . . , a + bm − 1) = (a − 1)~e + ~b and β = c + d − 1.
+for 0 < |ℜ(t)| < ℜ(a), where α
+The normalizing constant k~n = ~n! Γ(a + c + |~n|)Γ(a + d + |~n|) is chosen so that it corresponds
+with (2.9) in the case m = 1 and the kernel K(u, t; a, b, c, d) is defined as in (1.5).
+Before we prove this theorem we need some technical lemmas.
+ Lemma 3.4 The system of m measures µ1 , . . . , µm is perfect if and only if, for every multi-index
+~n, there exists a polynomial p~n of exactly degree |~n| so that
+       Z
+          p~n (z)z k dµj (z) = 0,  k = 0, . . . , nj − 1, j = 1, . . . , m,                   (3.12)
+
+and
+      Z
+          p~n (z)z nj dµj (z) 6= 0,      j = 1, . . . , m.                                           (3.13)
+
+In this case, p~n is the (up to normalization unique) multiple orthogonal polynomial of type II
+with respect to ~n.
+
+Proof. Suppose first that µ1 , ..., µm is perfect, and take as p~n the multiple orthogonal polyno-
+mial of type
+           R       II with respect to ~n. Then it only remains to verify (3.13). Suppose the contrary,
+that is, p~n (z)z nj dµj (z) = 0 for some j. Then p~n is also a multiple orthogonal polynomial of
+type II with respect to ~ν = (n1 , ..., nj−1 , nj + 1, nj+1 , ..., nm ), in contrast to the normality of the
+multi-index ~ν .
+      We will prove the other implication of this lemma by showing by induction on the length
+|~n| that ~n is normal. The multi-index ~0 is always normal, suppose therefore that ~n is of length
+≥ 1, with its jth component strictly greater than 0. Let q~n be a multiple orthogonal polynomial
+for ~n. If q~n would have degree strictly less than |~n|, then it would be a multiple orthogonal
+polynomial for the multi-index ~ν = (n1 , ..., nj−1 , nj − 1, nj+1 , ..., nm ) with length |~n| − 1. By
+normality
+R               of ~ν we then have that there exists a nonzero constant c so that q~n = cp~ν . Thus
+   q~n (z)z n j −1 dµj (z) 6= 0 by (3.13), in contradiction to the orthogonality relation (3.12) for q~n .
+As a consequence, q~n has the precise degree |~n|, and thus ~n is normal.                                 ✷
+Lemma 3.5 Suppose that the singleton systems µj form a perfect system for j = 1, ..., m, with
+                                           (j)
+corresponding orthogonal polynomials {pn }n . Then the system of m measures µ1 , . . . , µm is
+                                                                                              (j)
+perfect if and only if, for every multi-index ~n, there exists a polynomial p~n and scalars c~n,k so
+that
+                  |~
+                   n|
+                  X       (j) (j)         (j)                 (j)
+      p~n (x) =          c~n,ℓ pℓ (x),   c~n,nj 6= 0,        c~n,|~n| 6= 0,   j = 1, . . . , m.      (3.14)
+                  ℓ=nj
+
+
+                                                         11
+In this case, p~n is the (up to normalization unique) multiple orthogonal polynomial of type II
+with respect to ~n.
+
+Proof. If ~n is normal and p~n is the corresponding multiple orthogonal polynomial, then (3.14)
+follows by taking
+                R          (j)
+        (j)       p~n (x)pℓ (x)dµj (x)
+      c~n,ℓ =    R  (j) 2            ,                                                                                       (3.15)
+                     pℓ (x) dµj (x)
+
+where we observe that the denominator is nontrivial according to (3.12),(3.13) for the singleton
+                             (j)                           (j)                        (j)
+system µj . In addition, c~n,ℓ = 0 for ℓ < nj by (3.12), c~n,nj 6= 0 by (3.13), and c~n,|~n| 6= 0.
+    Conversely, (3.14) plus the perfectness of the singleton system µj implies (3.12),(3.13), and
+hence the system µ1 , . . . , µm is perfect by Lemma 3.4.                                          ✷
+
+We now prove Theorem 3.3 by showing that (the analytic extension of) the integral expression
+(3.11) is a possible candidate for a formal multiple Wilson polynomial.
+
+Proof of Theorem 3.3. According to the assumptions (3.9) and (3.10) of Theorem 3.3, we
+find that αj , β, αj + β + 1 ∈ C \ {−1, −2, . . .}, j = 1, . . . , m, and αℓ − αk 6∈ Z whenever ℓ 6= k. It
+follows from Theorem 3.1 that the Jacobi-Piñeiro system µ(αj ,β) , j = 1, ..., m, is perfect. From
+                                                                 (j)
+Lemma 3.5 we may conclude that there exists scalars c~n,k so that
+
+                        |~
+                         n|
+        (~
+         α,β)
+                        X       (j)    (α ,β)                       (j)                (j)
+      P~n       (t) =          c~n,ℓ Pℓ j        (t),              c~n,nj 6= 0,       c~n,|~n| 6= 0, j = 1, . . . , m.
+                        ℓ=nj
+
+From, e.g., (3.4) we see that Jacobi-Piñeiro polynomials are rational functions in each of the
+parameters αj or β. Taking into account (2.4) and (3.15), we may conclude that any of the
+               (j)
+coefficients c~n,ℓ is a meromorphic function in each of the parameters αj or β. We now introduce
+                                         Z 1
+                                                       (~
+                                                        α,β)
+      q~n (t ; a, ~b, c, d) = k~n
+            2
+                                                  P~n          (u)w(a−1,β) (u)K(u, t; a, 0, c, d) du.
+                                             0
+
+This function is well defined for 0 < |ℜ(t)| < ℜ(a) if ℜ(a) > 0 and ℜ(c + d) > 0. However, using
+(2.9), we obtain for every j = 1, . . . , m that
+                                         |~
+                                          n|                 Z 1
+                                         X             (j)           (α ,β)
+      q~n (t2 ; a, ~b, c, d) = k~n                 c~n,ℓ           Pℓ j       (x)w(αj ,β) (u)K(u, t; a, bj , c, d) du,
+                                         ℓ=nj                 0
+
+                                      |~
+                                       n|
+                                      X   ~n! Γ(a + c + |~n|)Γ(a + d + |~n|)                     (j)
+                               =                                                               c~n,ℓ pℓ (t2 ; a, bj , c, d),
+                                             ℓ!        Γ(a + c + ℓ)Γ(a + d + ℓ)
+                                      ℓ=nj
+
+and thus
+                                      |~
+                                       n|
+                                      X   ~n!                                                          (j)
+      q~n (t2 ; a, ~b, c, d) =                    (a + c + ℓ)|~n|−ℓ (a + d + ℓ)|~n|−ℓ c~n,ℓ pℓ (t2 ; a, bj , c, d)
+                                             ℓ!
+                                      ℓ=nj
+                                      |~
+                                       n|
+                                      X          (j)
+                               =             d~n,ℓ pℓ (t2 ; a, bj , c, d).                                                     (3.16)
+                                      ℓ=nj
+
+Observing that the expressions on the right-hand side of (3.16) are polynomials in t and mero-
+morphic in any of the parameters a, ~b, c, d, we see that the right hand expression of (3.16) is well
+
+                                                                           12
+defined and independent of j for any choice of t and of the parameters a, ~b, c, d, as long as (3.9)
+                                                                                   (j)          (j)
+and (3.10) hold and bℓ − bk 6∈ Z, ℓ 6= k. Moreover, the new coefficients d~n,nj and for d~n,|~n| are
+different from zero.
+    Thus, q~n (t2 ; a, ~b, c, d) defined by (3.16) is a suitable candidate for a formal multiple Wilson
+polynomial, and the system of Wilson measures is perfect by Lemma 3.5.                                ✷
+   We now want to deduce explicit expressions for the formal multiple Wilson polynomials
+based on the explicit expressions (3.4) and (3.5) for the Jacobi-Piñeiro polynomials. Here we
+use the Kampé de Fériet series [24]
+                                                     p
+                                                     Q                p1
+                                                                      Q                p2
+                                                                                       Q
+                                      !        ∞           (fℓ )k X
+                                                                  k         (gℓ )k−j        (hℓ )j
+        p:p1 ;p2    f~ : ~g; ~h                X     ℓ=1              ℓ=1              ℓ=1              xk−j y j
+       Fq:q 1 ;q2   ~ : ψ;~ ξ~ x, y       :=          q                q1               q2                        ,       (3.17)
+                    φ                                Q                 Q                Q             (k − j)! j!
+                                               k=0       (φℓ )k j=0        (ψℓ )k−j          (ξℓ )j
+                                                     ℓ=1              ℓ=1              ℓ=1
+
+which are a generalization of the 4 Appell series in 2 variables. Notice that, for p = q = 0, the
+Kampé de Fériet series is a product of two hypergeometric series. Also, in the case m = 2, our
+functions Mp;r     n defined in (3.3) are (finite) Kampé de Fériet series
+                 q,~
+                                                 !                                                    !
+                     f~; g1 : · · · : gr
+                                                             ~ : (−n1 ); (−n2 , g1 , ..., gr )
+                                                             f
+  Mp;r
+     q,(n1 ,n2 )
+                                                     p:1;r+1
+                     ~ ψ1 : · · · : ψr (x1 , x2 ) = Fq:0;r        ~ : (); (ψ1 , ..., ψr )      x1 , x2 . (3.18)
+                     φ;                                           φ
+
+In what follows the parameters in the Kampé de Fériet series will always be chosen so that the
+sum in (3.17) is finite, and hence we are not concerned with convergence problems.
+Corollary 3.6 Let ~e = (1, . . . , 1) be a multi-index of length m, s(~n) = (n1 , n1 + n2 , . . . , |~n|) and
+σj = a + bj + c + d − 1, j = 1, . . . , m. Denote by ~v (j) the vector ~v without the jth component.
+For the multiple Wilson polynomials we have the hypergeometric representations
+            p~n (t2 ; a, ~b, c, d) = (a~e + ~b)~n (a + c)|~n| (a + d)|~n|                                                 (3.19)
+                                                                                                                      !
+                                      (a − t, a + t, σ1 + n1 ); (a~e + ~b + ~n)(m) : (~σ + s(~n))(1)
+                        × M3;2                                                                       ~e
+                           3,~
+                             n
+                                         (a + c, a + d, a + b1 ); (a~e + ~b)(1) : (~σ + s(~n))(m)
+and
+            p~n (t2 ; a, ~b, c, d) = (a~e + ~b)~n (a + c)|~n| (a + d)|~n|                                                 (3.20)
+                                                                                                                            !
+                           2:1;m+1         (a − t, a + t) : (c + d − 1); (a~e + ~b + ~n, 1 − c − d − |~n|)
+                        × F2:0;m                                                                           1, 1
+                                                           (a + c, a + d) : (); (a~e + ~b)
+                       Qm
+where (a~e + ~b)~n =      j=1 (a + bj )nj .
+                                       P          xℓ
+Proof. First note that (1 − x)−β = ∞     ℓ=0 (β)l ℓ! , which converges in the unit disk, so that the
+expression (3.5) can then be written as
+                                                                           
+       (~
+        α,β)       (~
+                    α + ~e)~n 0:1;m+1 − : (β); (~
+                                                α + ~n + ~e, −β − |~n|)
+     P~n     (t) =           F0:0;m                                     t, t .                (3.21)
+                      ~n!                      − : −; (~α + ~e)
+Then start from the Jacobi-Piñeiro transform (3.11) and replace the Jacobi-Piñeiro polynomial
+  (~
+   α,β)
+P~n     by its explicit expressions (3.4) and (3.21), respectively. Since the sums are finite, we can
+interchange the integral with the sums. Applying (2.10) then completes the proof.                   ✷
+
+For m = 2, we may apply (3.18) to (3.19), leading to a representation as a Kampé de Fériet
+                3:1;3
+series of type F3:0;2 . It seems to be non-trivial to derive from this formula the representation
+                                               2:1;3
+(3.20) as a Kampé de Fériet series of type F2:0;2  .
+
+                                                                13
+4      Limit relations
+In this section we consider some cases in which the orthogonality conditions of the formal multiple
+Wilson polynomials reduce to orthogonality conditions with respect to a positive measure on the
+real line. We then recover the multiple Wilson and multiple Racah polynomials. Next we use the
+limit relations between the orthogonal polynomials in the Askey table [17] to obtain some new
+examples of multiple orthogonal polynomials and some known examples. In particular we look
+at what happens with the explicit expressions (3.19) and (3.20) applying these limit relations.
+Most of these examples are known to be AT systems (which implies that every multi-index is
+normal).
+
+4.1     Multiple Wilson
+With some restrictions on the parameters the orthogonality conditions of the formal multiple
+Wilson polynomials reduce to real orthogonality conditions with respect to positive measures
+on the real line. Let bj > 0, j = 1, . . . , m, bℓ − bk 6∈ Z whenever ℓ 6= k, ℜ(a), ℜ(c), ℜ(d) > 0 and
+a, c, d be real except for a conjugate pair. In that case the imaginary axis can be taken as the
+contour C. The multiple Wilson polynomials
+
+       W~n (x2 ; a, ~b, c, d) := p~n (−x2 ; a, ~b, c, d)                                                  (4.1)
+
+then satisfy the real orthogonality relations
+
+                                        Γ(a + ix)Γ(bj + ix)Γ(c + ix)Γ(d + ix) 2
+      Z ∞
+          (x2 )k W~n (x2 ; a, ~b, c, d)                                         dx = 0,
+       0                                               Γ(2ix)
+k = 0, . . . , nj − 1, j = 1, . . . , m. If a < 0, a + bj > 0, j = 1, . . . , m, and a + c, a + d are positive
+or a pair of complex conjugates with positive real parts, then we obtain the same orthogonality
+conditions but with some extra positive point masses.
+
+4.2     Multiple Racah
+As in the scalar case it is also possible to obtain a purely discrete orthogonality. The multiple
+Racah polynomials R~n (·; α~ , β, γ, δ) (where we only change the parameter α with αℓ − αk 6∈ Z
+whenever ℓ 6= k) satisfy the discrete orthogonality
+N
+X (αj + 1)x (γ + 1)x (β + δ + 1)x (γ + δ + 1)x ((γ + δ + 3)/2)x
+                                                                                        ~ , β, γ, δ)(λ(x))k = 0,
+                                                                             R~n (λ(x); α
+      (−αj + γ + δ + 1)x (−β + γ + 1)x ((γ + δ + 1)/2)x (δ + 1)x x!
+x=0
+
+k = 0, . . . , n − 1, j = 1, . . . , m, where
+
+       λ(x) = x(x + γ + δ + 1)               and           β + δ + 1 = −N or γ + 1 = −N.
+
+They can be found from the polynomials p~n (t2 ; a, ~b, c, d)/((a~e + ~b)~n (a + c)|~n| (a + d)|~n| ) by the
+substitution t → x + a and the change of variables αj = a + bj − 1, β = c + d − 1, γ =
+a + d − 1, δ = a − d. For the multiple Racah polynomials we then have the expressions
+      R~n (λ(x); α
+                 ~ , β, γ, δ)
+                                                                                                        !
+                (−x, x + γ + δ + 1, α1 + β + n1 + 1); (~ α + ~n + ~e)(m) : (~
+                                                                            α + s(~n) + (β + 1)~e)(1)
+      = M3;2
+         3,~
+           n                                                                                          ~e
+                       (β + δ + 1, γ + 1, α1 + 1); (~α + ~e)(1) : (~
+                                                                   α + s(~n) + (β + 1)~e)(m)
+                                                                           
+         2:1;m+1   (−x, x + γ + δ + 1) : (β); (~
+                                               α + ~n + ~e, −β − |~n|)
+      = F2:0;m                                                          1, 1 .
+                           (β + δ + 1, γ + 1) : (); (~
+                                                     α + ~e)
+In this case, necessary and sufficient conditions on the parameters to have positive weights are
+quite messy.
+
+                                                              14
+Remark 4.1 Remember that the Wilson weight is symmetric in the four parameters so that
+we can switch these parameters in the change of variables. We then obtain multiple Racah
+polynomials (of type II) where we change other parameters. However, all these cases are related
+to each other. For example we have multiple Racah polynomials R~n (·; α, β,  ~ γ, δ) where we only
+change the parameter β in the weights (βℓ − βk 6∈ Z whenever ℓ 6= k). In that case we have that
+α + 1 = −N or γ + 1 = −N . As a second example it is possible to change the parameters β, γ
+and δ in such a way that δj + γj and δj + βj don’t change and γℓ − γk 6∈ Z whenever ℓ 6= k.
+Here we assume that α + 1 = −N or βj + δj + 1 = −N . We then denote these multiple Racah
+                         ~ ~γ , ~δ). However, we don’t find another family of polynomials because
+polynomials by Rn (·; α, β,
+                      ~ γ, δ) = R~n (λ(x); β~ + δ~e, α − δ, γ, δ)
+        R~n (λ(x); α, β,                                                                                   (4.2)
+
+and
+                      ~ ~γ , ~δ) = R~n (λ(x); ~γ , α + βj − γj , α, γj + δj − α).
+        R~n (λ(x); α, β,                                                                                   (4.3)
+
+These relations will help us in some of the examples of the subsections below to find explicit
+expressions for the polynomials.
+
+4.3     Some new examples
+4.3.1        Multiple continuous dual Hahn
+Let bℓ − bk 6∈ Z whenever ℓ 6= k. The multiple continuous dual Hahn polynomials satisfy
+the orthogonality conditions of the multiple Wilson polynomials where we let d → +∞ (after
+dividing by Γ(d)2 ). Similarly we obtain real orthogonality conditions with respect to a positive
+measure if bj > 0 and a, c are positive or a pair of complex conjugates with positive real parts.
+We then denote the ~nth multiple continuous dual Hahn polynomial by S~n (·; a, ~b, c). These
+polynomials satisfy the orthogonality conditions
+        Z ∞                                                               2
+                                      Γ(a + ix)Γ(bj + ix)Γ(c + ix)
+              (x ) S~n (x ; a, ~b, c)
+                2 k       2
+                                                                              dx = 0,
+         0                                      Γ(2ix)
+
+k = 0, . . . , nj − 1, j = 1, . . . , m. It is clear that
+
+                                  W~n (x2 ; a, ~b, c, d)
+        S~n (x2 ; a, ~b, c) = lim                                                                          (4.4)
+                             d→+∞     (a + d)|~n|
+
+so that the multiple continuous dual Hahn polynomials have the explicit expressions
+                                                                                                   !
+                                                           (a − ix, a + ix); (a~e +  ~b + ~n)(m)
+                                                      2;1
+      p~n (x2 ; a, ~b, c) = (a~e + ~b)~n (a + c)|~n| M2,~n                                       ~e ,
+                                                              (a + c, a + b1 ); (a~e + ~b)(1)
+                                                                                                            !
+                                                      2:0;m     (a − ix, a + ix) : (); (a~e + ~b + ~n)
+                          = (a~e + ~b)~n (a + c)|~n| F1:0;m                                            1, −1 .
+                                                                      (a + c) : (); (a~e + ~b)
+
+4.3.2        Multiple dual Hahn
+Consider γj , δj , j = 1, . . . , m, so that γj , δj > −1 or γj , δj < −N for each j and that γj + δj
+is independent of j. Suppose also that γℓ − γk 6∈ Z whenever ℓ 6= k. The multiple dual Hahn
+polynomials, denoted by R~n (·; ~γ , ~δ, N ), satisfy the system of discrete orthogonality conditions
+        N
+        X (2x + γj + δj + 1)(γj + 1)x (−N )x N !
+                                                            R~n (λ(x); ~γ , ~δ, N ) (λ(x))k = 0,
+              (−1)x (x + γj + δj + 1)N +1 (δj + 1)x x!
+        x=0
+
+
+                                                           15
+k = 0, . . . , n−1, j = 1, . . . , m, where λ(x) = x(x+γ+δ+1). The multiple dual Hahn polynomials
+are related to the multiple Racah polynomials like
+
+        R~n (λ(x); ~γ , ~δ, N ) =       lim R~n (λ(x); α, −~δ − (N + 1)~e, ~γ , ~δ)
+                                      α→+∞
+                               =        lim R~n (λ(x); ~γ , α − γj − δj − N − 1, α, γj + δj − α),              (4.5)
+                                      α→+∞
+
+where we use (4.3). They then have the explicit expressions
+                                                                                             !
+                                               (−x, x + γj + δj + 1); (~γ + ~n + ~e)(m)
+        R~n (λ(x); ~γ , ~δ, N ) =      M2;1
+                                        2,~
+                                          n                                               ~e
+                                                      (−N, γ1 + 1); (~γ + ~e)(1)
+                                                                                                 
+                                        2:0;m   (−x, x + γj + δj + 1) : (); (~γ + ~n + ~e)
+                               =       F1:0;m                                                1, −1 .
+                                                         (−N ) : (); (~γ + ~e)
+
+4.3.3        Multiple Meixner-Pollaczek
+                                                            (λ)
+                                                           ~ are multiple orthogonal polynomials (of
+The multiple Meixner-Pollaczek polynomials P~n (·; φ)
+type II) associated with the system of weights e(2φj −π)x |Γ(λ + ix)|2 , λ > 0, 0 < φj < π,
+j = 1, . . . , m, where the φ1 , . . . , φm are different. These weights form an AT system on the
+positive real axis [22, p.141]. The multiple Meixner-Pollaczek polynomials satisfy the conditions
+      Z ∞
+                  (λ)   ~ (2φj −π)x |Γ(λ + ix)|2 dx = 0,
+             xk P~n (x; φ)e
+         0
+
+k = 0, . . . , nj − 1, j = 1, . . . , m. Similar as [17, (2.3.1)] it is easy to check that
+
+          (λ)
+                                                           ~ λ − it)
+                             S~n ((x − t)2 ; λ + it, t cot φ,
+                ~ = lim
+        P~n (x; φ)                                                   ,                                         (4.6)
+                        t→+∞                     ~ ~n ~n!
+                                          (t csc φ)
+
+            ~ = (t cot φ1 , . . . , t cot φm ) and t csc φ
+where t cot φ                                            ~ = (t csc φ1 , . . . , t csc φm ). The multiple Meixner-
+Pollaczek polynomials then have the explicit expression
+                              Q
+                    (2λ)|~n| m           inj φj                                      
+        (λ)   ~                    j=1 e         1;0    (λ + ix); −            −2iφ ~
+      P~n (x; φ) =                              M1,~n                ~e − e             ,
+                                 ~n!                      (2λ); −
+                ~
+where e−2iφ = (e−2iφ1 , . . . , e−2iφm ). Here we do not have a Kampé de Fériét representation such
+as in (3.20).
+
+4.3.4        Formal multiple continuous Hahn
+Similar as in [17, (2.1.2)] we can use the limit relation
+
+                                 p~n ((t + y)2 ; a − y, ~b + y~e, c − y, d + y)
+        P~n (t; a, ~b, c, d) = lim                                                                             (4.7)
+                             y→∞             (a + c − 2y)|~n| ~n!
+
+in order to find the formal continuous Hahn polynomials. They have the explicit expressions
+                                                                                                                     !
+                                                           (a + t, σ1 + n1 ); (a~e + ~b + ~n)(m) : (~σ + s(~n))(1)
+P~n (t; a, ~b, c, d) = (a~e + ~b)~n (a + d)|~n| M2;2                                                               ~e
+                                                 2,~
+                                                   n
+                                                              (a + d, a + b1 ); (a~e + ~b)(1) : (~σ + s(~n))(m)
+                    = (a~e + ~b)~n (a + d)|~n|
+                                                                                                                !
+                                        1:1;m+1    (a + t) : (c + d − 1); (a~e + ~b + ~n, 1 − c − d − |~n|)
+                                     × F1:0;m                                                               1, 1 ,
+                                                                   (a + d) : (); (a~e + ~b)
+
+
+                                                           16
+where σj = a + bj + c + d − 1, j = 1, . . . , m. If the parameters satisfy (3.9) and (3.10) and
+bℓ − bk 6∈ Z whenever ℓ 6= k, then these polynomials satisfy the orthogonality conditions
+      Z
+          P~n (t; a, ~b, c, d)Γ(a + t)Γ(bj − t)Γ(c + t)Γ(d − t)tk dt = 0,                  (4.8)
+        C
+
+k = 0, 1, . . . , nj −1, j = 1, . . . , m, where C is a contour which is the imaginary axis deformed so as
+to separate the increasing sequences of poles ({b1 + k}∞                              ∞            ∞
+                                                                k=0 , . . . , {bm + k}k=0 , {d + k}k=0 ) from the
+decreasing ones ({−a−k}∞                       ∞
+                               k=0 , {−c−k}k=0 ). In the scalar case (m = 1) it is possible to obtain real
+orthogonality relations with respect to a positive measure if we suppose ℜ(a), ℜ(b), ℜ(c), ℜ(d) >
+0 and a = b̄, c = d.     ¯ This is not possible in the multiple case. Therefore it would be nice if
+we could find another family of multiple Wilson polynomials in the sense that we change two
+parameters forming a pair of complex conjugates.
+
+4.4    Some classical discrete multiple orthogonal polynomials
+In this section we obtain hypergeometric formulas for the classical discrete examples of multiple
+orthogonal polynomials of type II, introduced in [5], which are all examples of AT systems. In
+particular we use the limit relations between these polynomials and the Racah polynomials [17].
+Their Mp;r  n representation is already known in the cases m = 1, 2. The explicit expression in
+          q,~
+terms of a Kampé de Fériét series is new (if it exists).
+
+    • Multiple Hahn: These multiple orthogonal polynomials (of type II) satisfy orthogonality
+      conditions with respect to m hypergeometric distributions
+                       N
+                       X (αj + 1)k (β + 1)N −k
+              µj =                                    δk ,   αj > −1, β > −1,
+                               k!          (N − k)!
+                       k=0
+
+      αl − αk ∈
+              / {0, 1, . . . , N − 1}, ℓ 6= k, on the integers 0, . . . , N . They can be found from the
+      multiple Racah polynomials taking γ + 1 = −N and δ → +∞, so that
+                                                                                                               !
+                                     (−x, α1 + β + n1 + 1); (~ α + ~n + ~e)(m) : (~α + s(~n) + (β + 1)~e)(1)
+      Q~nα~ ;β;N (x)   =     M2;2
+                              2,~
+                                n                                                                            ~e
+                                           (−N, α1 + 1); (~  α + ~e)(1) : (~
+                                                                           α + s(~n) + (β + 1)~e)(m)
+                                                                                  
+                              1:1;m+1   (−x) : (β); (~
+                                                     α + ~n + ~e, −β − |~n|)
+                       =     F1:0;m                                           1, 1 .
+                                                (−N ) : (); (~
+                                                             α + ~e)
+
+      Changing only the parameter β does not give another family of polynomials because of
+           ~              ~
+      Q~nα;β;N (x) = C Q~nβ;α;N (N − x) with C some constant (depending on ~n, α and β).   ~ However,
+      we will need an explicit formula in powers of x for these polynomials to reach multiple
+      Meixner I and multiple Laguerre II. Using (4.2) and the limits we mentioned above, we
+      find that
+                                                                                              !
+                  ~
+                α;β;N             2;2   (−x, α + β1 + n1 + 1); (β~ + s(~n) + (α + 1)~e)(1)
+              Q~n     (x) = M2,~n                                                           ~e .
+                                            (−N, α + 1); (β~ + s(~n) + (α + 1)~e)(m)
+
+      Applying these limits to the Kampé de Fériét representation does not work.
+
+    • Multiple Meixner I: In this case we consider m negative binomial distributions
+                       ∞
+                       X (β)k ckj
+              µj =                  δk ,      0 < cj < 1, β > 0,
+                              k!
+                       k=0
+
+
+
+                                                             17
+  with all the cj , j = 1 . . . , m, different. We get these polynomials from the multiple Hahn
+                         ~                                                1−cj
+  polynomials Q~nα;β;N replacing α = β − 1, βj = N                         cj    and letting N → +∞. We then
+  obtain
+                                                         
+           β;~c                   1;0    (−x); () ~c − ~e
+        M~n (x) = M1,~n                                     ,
+                                          (β); ()    ~c
+                                         
+                    c1 −1
+  where ~c−~
+          ~c
+             e
+                =    c1   , . . . , cm −1
+                                      cm    .
+
+• Multiple Meixner II: In the case of multiple Meixner II polynomials we only change
+  the parameter β in the negative binomial distributions, so that
+                ∞
+                X (βj )k ck
+        µj =                          δk ,          0 < c < 1, βj > 0,
+                             k!
+                k=0
+
+  with βℓ − βk 6∈ Z whenever ℓ 6= k. Taking αj = βj − 1, β = N 1−cc and letting N → +∞ in
+                                                            ~ ;β;N
+                                                            α
+  the explicit formulas for the multiple Hahn polynomials Q~n      , we obtain
+                                                                             !
+           ~                                      (−x); (β~ + ~n)(m) c − 1
+        M~nβ;c (x)      =         M1;1
+                                   1,~
+                                     n                      ~ (1)          ~e
+                                                    (β1 ); (β)         c
+                                                                                     !
+                                   1:0;m          (−x) : (); (β~ + ~n) c − 1 1 − c
+                        =         F0:0;m                       ~            ,            .
+                                                     () : (); (β)        c     c
+
+• Multiple Kravchuk: These polynomials satisfy the orthogonality conditions (1.1) with
+  the m binomial distributions
+            N  
+            X    N k
+       µj =          p (1 − pj )N −k δk , 0 < pj < 1,
+                  k j
+                k=0
+
+  where all the pj , j = 1 . . . , m, are different. These polynomials are related to the multiple
+                                                           p
+  Hahn polynomials Q~nα~ ;β;N replacing β = t, αj → 1−pj j t and letting t → +∞. We then get
+                                                                
+                                                  (−x); () 1
+        K~n~p;N (x) =               M1;0
+                                     1,~
+                                       n                             ,
+                                                  (−N ); () p~
+                                     
+  where 1p~ =       1             1
+                    p1 , . . . , pm       .
+
+• Multiple Charlier: In the case of multiple Charlier we consider m Poisson distributions
+                ∞
+                X akj
+        µj =                 δk ,             aj > 0,
+                       k!
+                k=0
+
+  with all the aj , j = 1 . . . , m, different. The corresponding multiple orthogonal polynomials
+                                                                                          aj
+  (of type II) can be found from the multiple Meixner I polynomials taking cj = aj +β        and
+  letting β → +∞. The multiple Charlier polynomials then have the explicit expression
+                                                 
+           ~a                1;0   (−x); ()     1
+        C~n (x) = M0,~n                      −      ,
+                                    (); ()     ~a
+                               
+  where ~a1 = a11 , . . . , a1m .
+
+
+                                                                 18
+4.5   Some classical continuous multiple orthogonal polynomials
+In this section we recall some classical continuous examples of multiple orthogonal polynomials of
+type II where the measures (or weight functions) form an AT system and obtain hypergeometric
+formulas for these polynomials. Their Mp;r     n representation is already known in the cases m =
+                                             q,~
+1, 2. The explicit expression in terms of a Kampé de Fériét series is new (if it exists). For an
+overview of these polynomials and their properties we recommend [14, 4].
+
+   • Jacobi-Piñeiro: In Subsection 3.1 we recalled the Jacobi-Piñeiro polynomials P~nα~ ,β ,
+     which, in the case αj , β > −1, are the multiple orthogonal polynomials (of type II) with
+     respect to the Jacobi weights wαj ,β (x) = xαj (1 − x)β , j = 1, . . . , m, on the interval [0, 1].
+     Here αℓ − αk 6∈ Z whenever ℓ 6= k. Similar as in the multiple Hahn case we have that
+          ~
+       (α,β)                     ~
+                                (β,α)
+      P~n   (x) = (−1)|~n| P~n (1 − x). So, changing only the parameter β does not give another
+      family of polynomials. For these polynomials we have
+
+                  ~
+               (α,β)                 (α + 1)|~n| α;β:N~
+           P~n         (x) =      lim             Q~n   (N x)
+                              N →+∞       ~n!
+                                                                                                     !
+                              (α + 1)|~n|     1;1  (α + β1 + n1 + 1); (β~ + s(~n) + (α + 1)~e)(1)
+                            =             M1,~n                                                   x~e .
+                                 ~n!                    (α + 1); (β~ + s(~n) + (α + 1)~e)(m)
+
+
+   • Multiple Laguerre I: The multiple Laguerre I polynomials L~nα~ are orthogonal on [0, ∞)
+     with respect to the m weights wj (x) = xαj e−x , where αj > −1, j = 1, . . . , m, and αℓ −
+      αk 6∈ Z whenever ℓ 6= k. They can be found from the Jacobi-Piñeiro polynomials P~nα~ ,β
+      substituting x → βx and letting β → ∞. We then obtain the hypergeometric expressions
+                                                                         !
+                            (~
+                             α + ~e)~n              α + ~n + ~e)(m)
+                                               (); (~
+           L~αn~ (x)    =              M0;1
+                                        1,~
+                                          n                           x~e
+                               ~n!            (α1 + 1); (~ α + ~e)(1)
+                                                                  
+                            (~
+                             α + ~e)~n x         α
+                                                 ~ + ~n + ~e
+                        =              e m Fm                 −x .
+                               ~n!                  α
+                                                    ~ + ~e
+
+                                                                           (α,~c)
+   • Multiple Laguerre II: In this case the polynomials L~n            have the orthogonality condi-
+     tions (1.1) with respect to the weight functions wj (x) = x e−cj x , where α > −1, cj > 0,
+                                                                     α
+
+     j = 1, . . . , m, and all the cj different. They can be obtained from the Jacobi-Piñeiro poly-
+                     ~
+                  (α,β)
+      nomials P~n         by the substitutions x → xt , taking βj = cj t and letting t → ∞. We then
+      get
+                                                                     
+             (α,~c)             (α + 1)|~n|               (); ()
+           L~n (x)          =               M0;0
+                                             1,~
+                                               n                   x~c .
+                                   ~n!                 (α + 1); ()
+
+   • Multiple Hermite: In the multiple Hermite case we consider the multiple orthogonal
+                                                                            2
+     polynomials (of type II) H~n~c with respect to the weights wj (x) = e−x +cj x , j = 1, . . . , m, on
+     (−∞, +∞). Here the cj are different real numbers. These polynomials can be found from             √
+                                                                 √
+     the Jacobi-Piñeiro polynomials P~nα~ ,β taking αj = β + cj β, the substitution x → x+           √ β
+                                                                                                     2 β
+     and letting β → +∞ after multiplying with some constant depending on ~n and β. It seems
+     that we can’t find explicit expressions for the multiple Hermite polynomials in terms of a
+     Mp;r n series or a Kampé de Fériét series using such arguments.
+        q,~
+
+
+
+
+                                                         19
+         3;2                     Multiple                                               Multiple
+      M3,n                        Wilson                                                 Racah
+
+
+
+                                  Multiple
+         2;1/2                                                              Multiple                 Multiple
+      M2,n                       continuous
+                                 dual Hahn                                   Hahn                   dual Hahn
+
+
+
+
+         1;0/1/2   Multiple                                     Multiple               Multiple                 Multiple
+      M1,n         Meixner-
+                   Pollaczek
+                                               Jacobi-
+                                               Piñeiro          Meixner I              Meixner II               Kravchuk
+
+
+
+         0;0/1
+      M1,n          Multiple                  Multiple                                  Multiple
+       1;0         Laguerre II                Laguerre I                                Charlier
+      M0,n
+
+                       Figure 2: The (incomplete) multiple AT-Askey scheme
+
+
+5     Conclusion
+In Figure 2 all these and some extra limit relations are combined. This scheme is a generalization
+of the Askey scheme in the scalar case. In each of the examples of this scheme the measures
+have the same support. Although for multiple Wilson, multiple Racah, multiple continuous dual
+Hahn and multiple dual Hahn it is still an open question, we believe that they are all examples
+of AT systems which is the reason we call it the multiple AT-Askey scheme.
+    This scheme doesn’t contain all the possible examples of multiple orthogonal polynomials
+which reduce to the orthogonal polynomials of the Askey scheme. In [14] the authors also
+mentioned some examples of Angelesco systems (with their hypergeometric expression). It
+is also possible to change more than one parameter in the Wilson weight (maybe with some
+correlation) in order to find other examples of multiple Wilson polynomials. Then it is for
+example possible to obtain multiple continuous Hahn polynomials (with positive measures on
+the real line) using some limit relations.
+
+
+References
+    [1] M. Abramowitz, I. A. Stegun, Handbook of Mathematical Functions, National Bureau of
+        Standards, Washington, 1964; Dover, New York, 1972.
+
+    [2] E. Andrews, R. Askey, R. Roy, Special Functions, Encyclopedia of Mathematics and its
+        Applications 71, Cambridge University Press, Cambridge, 1999.
+
+    [3] A. I. Aptekarev, Multiple orthogonal polynomials, J. Comput. Appl. Math. 99 (1998),
+        423-447.
+
+    [4] A. I. Aptekarev, A. Branquinho, W. Van Assche, Multiple orthogonal polynomials for
+        classical weights, Trans. Amer. Math. Soc. (to appear).
+
+    [5] J. Arvesú, J. Coussement, W. Van Assche, Some discrete multiple orthogonal polynomials,
+        to appear in J. Comput. Appl. Math. [on line: DOI 10.1016/S0377-0427(02)00597-6]
+
+
+
+                                                           20
+ [6] P. Borwein, T. Erdélyi, Polynomials and Polynomials Inequalities, Springer-Verlag, New
+     York, Inc., 1995.
+
+ [7] M. G. de Bruin, Simultaneous Padé approximation and orthogonality, in ’Polynomes Or-
+     thogonaux et Applications’ (C. Brezinski et al., eds.), Lecture Notes in Mathematics 1171,
+     Springer-Verlag, Berlin, 1985, 74-83.
+
+ [8] M. G. de Bruin, Some aspects of simultaneous rational approximation, in ’Numerical Anal-
+     ysis and Mathematical Modeling’, Banach Center Publications 24, PWN-Polish Scientific
+     Publishers, Warsaw, 1990, 51-84.
+
+ [9] T. S. Chihara, An Introduction to Orthogonal Polynomials, Gordon and Breach, New York,
+     1978.
+
+[10] J.G. van der Corput, Over eenige determinanten, Proc. Kon. Akad. Wetensch. Amsterdam
+     14 (1930), 1-44.
+
+[11] J.G. van der Corput, H.J. Duparc, Determinants and quadratic forms (first communica-
+     tion), Nederl. Akad. Wetensch. Proc. 49 (1946), 995-1002.
+
+[12] E. Coussement, W. Van Assche, Some properties of multiple orthogonal polynomails asso-
+     ciated with Macdonald functions, J. Comput. Appl. Math. 133 (2001), no. 1-2, 253-261.
+
+[13] E. Coussement, W. Van Assche, Multiple orthogonal polynomials associated with the mod-
+     ified Bessel functions of the first kind, Constr. Approx. 19 (2003), 237-263.
+
+[14] E. Coussement, W. Van Assche, Some classical multiple orthogonal polynomials, J. Com-
+     put. Appl. Math. 127 (2001), 317-347.
+
+[15] A. Erdélyi, Higher Transcendental Functions I, II, McGraw-Hill, 1953.
+
+[16] H. Hochstadt, The Functions of Mathematical Physics, Dover Publications, Inc. 1986.
+
+[17] R. Koekoek, R. Swarttouw, The Askey-scheme of hypergeometric orthogonal polynomials
+     and its q-analogue, Reports of the faculty of Technical Mathematics and Informatics 98-
+     17, 1998. (math.CA/9602214 at arXiv.org)
+
+[18] T. H. Koornwinder, Special orthogonal polynomial systems mapped onto each other by the
+     Fourier-Jacobi transform, in ’Polynomes Orthogonaux et Applications’ (C. Brezinski et
+     al., eds.), Lecture Notes in Mathematics 1171, Springer-Verlag, Berlin, 1985, 174-183.
+
+[19] A.B.J. Kuijlaars, A. Martinez-Finkelshtein, R. Orive, Orthogonality of Jacobi polynomials
+     with general parameters, arXiv:math.CA/0301037v1, to appear in Electronic Transactions
+     on Numerical Analysis.
+
+[20] K. Mahler, Perfect systems, Compositio Math. 19 (1968), 95-166.
+
+[21] C. S. Meijer, Zur Theorie der hypergeometrischen Funktionen, Indagationes Mathematicae,
+     1(1939) 100-114.
+
+[22] A.F. Nikishin, V.N. Sorokin, Rational Approximants and Orthogonality, Translations of
+     Mathematical Monographs, 92, Amer. Math. Soc., Providence, RI (1991).
+
+[23] L. R. Piñeiro, On simultaneous Padé approximants for a collection of Markov functions,
+     Vestnik Mosl. Univ., Ser. I (2) (1987), 67-70 (in Russian); translated in Moscow Univ.
+     Math. Bull. 42 (2) (1987), 52-55.
+
+
+                                             21
+[24] H. M. Srivastava, Per W. Karlsson, Multiple Gaussian Hypergeometric Series, Ellis Hor-
+     wood Series in Mathematics and its Applications, Horwood Chichester, New York, 1984.
+
+[25] G. Szegő, Orthogonal Polynomials, Amer. Math. Soc., Providence, RI, 1939, 4th edition
+     1975.
+
+[26] W. Van Assche, S.B. Yakubovich, Multiple orthogonal polynomials associated with Mac-
+     donald Functions, Integral Transform. Spec. Funct. 9 (2000), no. 3, 229-244.
+
+[27] J. A. Wilson, Some hypergeometric orthogonal polynomials, SIAM J. Math. Anal. 11
+     (1980), 690–701.
+
+[28] J. A. Wilson, Asymptotics for the 4 F3 polynomials, J. Approx. Theory 66 (1991), 58–71.
+
+
+
+
+                                            22
+

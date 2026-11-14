@@ -346,3 +346,39 @@ Fourteenth checkpoint, 2026-11-14 12:07 UTC (04:07 LA), continuing:
   all odd rank-one families, and check the Fano/Gamma-class primary-source bridge.
 - New reviewed notes and reproducible computations are being checkpointed to the
   same codex branch. Work continues toward 16:00 UTC; no balance API or resets.
+
+Fifteenth checkpoint, 2026-11-14 12:37 UTC (04:37 LA), continuing:
+- Main recurrence proof is materially shorter and independently reviewed:
+  two mixed-product rational telescopes derive Apéry's recurrence, including
+  17=6*3-1, 5=6*1-1 and the indispensable n=0 source. Discovery guide updated;
+  older diagonal certificate preserved as an appendix.
+- Exact primary match: our Laurent model is the published V12 mirror in
+  Golyshev–Kerr–Sasaki. Source dictionary and quantum-matrix/Gamma-class
+  calculations reviewed. A localized sign typo in the retrieved arXiv map
+  was independently confirmed; corrected involution and Jacobian proved.
+- Reciprocal involution maps the positive octant to an explicit bounded region;
+  a cube parametrization recovers Beukers' integral and explains exponent -n-1.
+- Shifted-Jacobi extension reviewed for all fixed real a>=0: mixed/diagonal
+  recurrence, positive weighted cube, Hurwitz3 linear forms, explicit integer
+  and rational-shift normalizers, reciprocal asymptotic constants. No general
+  rational-Hurwitz irrationality claim.
+- Rank-one all-odd bounds: universal exponential rate comparison is reviewed.
+  Elementary shifted trial proves common optimized limsup root<25/12544<1/500,
+  independently of the remaining adjacent-Apéry identity conjecture.
+- Moving-pole Wilson family DOES equal the adjacent-Apéry quotient, now proved
+  and independently reviewed with its arithmetic. Equality with the original
+  D_(2h) Schur family remains a separate checked conjecture.
+- Euler differential hierarchy from mu3 to every odd measure reviewed; exact
+  least normalizer (s-1)(s-2)/2 and Hasse derivative arithmetic proved. Pole
+  order increases to s-2, which explains the higher-zeta information required.
+- Positive hyperbolic decomposition and explicit cotangent-root polynomial
+  independently reviewed. Major new construction: ALL balanced multiple
+  orthogonal polynomials exist uniquely, have rational coefficients and all
+  roots simple positive. Full Stieltjes-jump/Möbius induction independently
+  reviewed. Historical priority unresolved; no denominator theorem follows.
+- Bernoulli antidifference reduction for this growing family proved in draft;
+  compact constant-term formula still conjectural. First18 pure-linear-form
+  experiments have primitive errors>1; these are diagnostics, not an asymptotic
+  failure theorem. New positive Stieltjes/Bernoulli-polynomial connection active.
+- Latest pushed commit bafa595; next checkpoint push includes the above notes.
+  Continuing toward16:00UTC without usage-balance claims or resets.

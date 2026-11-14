@@ -47,9 +47,12 @@ that the reconstructed story really proves the original assertions.
    \[
    A_n+A_{n-1}=6\sum_k\phi_k(n)\phi_k(n-1).
    \]
-   This is where \(17=6\cdot3-1\) and \(5=6\cdot1-1\) come from. Present the
-   finite balance, rather than asking the audience to accept a guessed
-   recurrence or a long certificate.
+   This is where \(17=6\cdot3-1\) and \(5=6\cdot1-1\) come from. The
+   [two reviewed mixed telescopes](problem131/apery-mixed-numerator-independent-review.md)
+   transfer the same balance to the full linear form: separate the square
+   into \(P_nP_m\), prove its two-index recurrence and adjacent identity,
+   then close the diagonal. Keep the nonzero source at index zero.
+   The long diagonal certificate can stay in the appendix.
 4. **Explain the reciprocal scales with one object.** For
    \(C=(1+x)(1+y)\), the positive Laurent polynomial
    \[
@@ -59,6 +62,11 @@ that the reconstructed story really proves the original assertions.
    error as an integral of \(\Lambda^{-n-1}\). Its elementary minimum is
    \(17+12\sqrt2\). The same object explains growth and decay. The minimum
    alone is not a derivation of the recurrence; the Newton step supplies that.
+   The [reciprocal-region bridge](problem131/reciprocal-region-beukers.md)
+   makes this literal: a rational involution sends the positive octant to a
+   bounded region, then a rational cube parametrization recovers Beukers'
+   integral with its correct Jacobian. Draw the domains rather than reproduce
+   the long geometric divergence certificate.
 5. **Make nonvanishing transparent.** In the normalization
    \(A_0=1,A_1=5,B_0=0,B_1=6\), the Casoratian gives
    \[
@@ -78,9 +86,45 @@ The elementary route can be presented without a saddle-point theorem. The
 integral/Laurent representation is an explanatory supplement and an independent
 view of positivity. Do not prove every equivalent representation in the talk.
 
+Attribute the Laurent model precisely: it is \(\phi(-x,-y,-z)\) in
+Golyshev–Kerr–Sasaki, *Apéry extensions*, §5.4, which also gives the Beukers
+relative period and its inhomogeneous differential equation. The
+[Fano dictionary](problem131/fano-v12-apery-gamma-dictionary.md) records the
+exact published match and a correction to a printed coordinate map.
+The local elementary reconstructions do not make that geometric core new.
+
 ## Choose a small extension package
 
-**Recommended new-to-the-team theorem: cyclotomic moment integrality.**
+Choose **one** of the next two packages. The first emphasizes approximation
+and positivity; the second emphasizes integer arithmetic. Both have complete
+reviewed inputs, while neither proves irrationality of all odd zeta values.
+
+**Option A: all-odd rational bounds from a positive minimum.**
+The [rank-one construction and review](problem131/rank-one-zeta-independent-review.md)
+turn a Hankel matrix with only one zeta-dependent entry into
+\[
+ E_{h,s}=(-1)^{(s-1)/2}(\zeta(s)-q_{h,s})
+ =\min_{\substack{p\text{ monic}\\\deg p=h-1}}
+ \int_0^\infty\frac{p(y^2)^2w_s(y)}
+ {D_{2h+(s-3)/2}(y^2)}\,dy>0.
+\]
+Here \(D_K(t)=\prod_{j=1}^K(t+j^2)\), and \(w_s\) is the explicit positive
+odd-zeta density in the linked proof.
+The rational bounds are strictly monotone. Comparing the positive measures
+shows that every fixed odd \(s\) shares the same lower and upper exponential
+rates as \(s=3\), without assuming the rate has a limit. A
+[reviewed repeated-root trial](problem131/rank-one-elementary-trial-independent-review.md)
+proves \(\limsup E_{h,s}^{1/h}<25/12544<1/500\).
+
+**Deliverable:** derive the constrained minimum and monotonicity on two pages,
+then choose either the measure comparison or the one-variable trial potential
+for a worked extension. Report denominator control as the missing arithmetic
+step. A different, moving-pole Wilson family is already proved to equal
+adjacent-Apéry quotients and inherits their arithmetic; identifying the
+original \(D_{2h}\) determinant roots with that family remains conjectural.
+Do not use the finite agreement to import an exact rate.
+
+**Option B: cyclotomic moment integrality.**
 The [cyclotomic depletion connection](problem131/cyclotomic-depletion-connection.md)
 has a written proof and independent exact review/checks recorded in the linked
 integer-depletion audit. Starting from the positive odd-zeta density \(w_s\),
@@ -106,6 +150,22 @@ moments do not settle pole denominators or determinant normalization. The
 broader Möbius/cyclotomic classification is a separate developing extension;
 its review status should be checked before adding it to the submission.
 
+**A common structural connection, if time permits.** The
+[reviewed Euler-operator hierarchy](problem131/odd-hierarchy-independent-review.md)
+expresses every \(\mu_s\) through the base functional \(\mu_3\):
+\[
+ \mu_s(g)=\frac1{(s-1)(s-2)/2}\,
+ \mu_3\!\left[\binom{2\Theta+s}{s-3}g\right],
+ \qquad \Theta=t\,\frac d{dt}.
+\]
+The cleared operator preserves integer polynomial coefficients, but need not
+preserve pointwise positivity. This is a useful one-slide connection between
+analysis and arithmetic. The subsequent hyperbolic multiple-orthogonality
+construction now has a complete independently reviewed theorem for every
+balanced index, with simple positive roots; its factorial constant-term
+formula remains a finite-data conjecture. Neither normality nor the operator
+identity supplies approximation denominators.
+
 **Keep one honest barrier beside the success.**
 The [reviewed monic-normalization obstruction](problem131/original-wide-monic-independent-review.md)
 concerns the specified original, undepleted determinant with \(K=40n\),
@@ -130,7 +190,7 @@ development makes the Laurent geometry and the contributing integration cycles
 explicit. The central component is positive, but the full pure form can be
 dominated by a complex conjugate pair.
 
-Choose this **instead of expanding the cyclotomic extension**, not as a second
+Choose this **instead of either extension package**, not as a second
 full analytic project. A good deliverable is the \(m=2\) diagram and a worked
 parameter dictionary into the primary theorem. The finite \(m=2,3,4,5\) saddle
 certificates have separate completed reviews, but reproducing all of them is
@@ -180,9 +240,9 @@ gap in the official prompt; historical novelty of its refinement is unresolved.
 |---|---|---|
 | 0–2 | Read the exact prompts; fix conventions and the irrationality criterion | One notation sheet and a proof dependency sketch |
 | 2–9 | Auxiliary square, residues, denominator control | Team-written proof of the arithmetic lemmas |
-| 9–16 | Newton grid and finite balance | Derive the recurrence coefficients on a board without guessing |
+| 9–16 | Newton grid, finite balance, and two mixed telescopes | Derive the recurrence and its source on a board without guessing |
 | 16–22 | Laurent/integral bridge and Casoratian | One diagram connecting integers, positive error, and reciprocal scales |
-| 22–27 | Cyclotomic extension, or the focused Rodrigues alternative; include the barrier comparison | One extension theorem and one precisely scoped limitation |
+| 22–27 | Choose rank-one variational bounds or cyclotomic integrality; contours are an alternative | One extension theorem and one precisely scoped limitation |
 | 27–32 | Assemble and cross-check #131 | An 8–12-page main exposition and a rehearsed proof story |
 | 32–40 | #137 action, bijection, exactness, one excess example | A 4–6-page combinatorial supplement with drawings and an exact check |
 
@@ -197,14 +257,14 @@ successful computational checks.
 For a 25-minute talk, spend about 20 minutes on #131 and 5 on #137. Lead with
 the positive-integer contradiction; explain the forced square; derive the
 finite balance; show the reciprocal Laurent picture; close the proof. Use
-one cyclotomic slide, or one complex-cycle slide, to show what transfers and
+one variational, cyclotomic, or complex-cycle slide to show what transfers and
 what breaks. Finish with the tree action turning a base-\(p\) carry into an
 orbit-size contribution.
 
 Use four labels in the manuscript:
 
 - **Classical input:** cite the primary theorem and the exact specialization.
-  Apéry, Zudilin, Beukers, Nesterenko, Jacobi–Piñeiro, and the earlier tree
+  Apéry, Zudilin, Beukers, Golyshev–Kerr–Sasaki, Nesterenko, Jacobi–Piñeiro, and the earlier tree
   results belong here where applicable.
 - **Independently developed and checked here:** a complete written derivation
   with its review scope. This label records verification, not historical priority.

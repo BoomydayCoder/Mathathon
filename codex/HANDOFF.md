@@ -1,4 +1,4 @@
-# Research handoff — 14 November 2026, 12:07 UTC
+# Research handoff — 14 November 2026, 12:37 UTC
 
 Continue autonomous research in `codex/` on `codex/independent-research` in the
 exact private repository `BoomydayCoder/Mathathon`. User authorizes continued
@@ -6,6 +6,30 @@ work without permission pauses, remaining credits but no automatic resets.
 Reporting target:14 November2026,08:00Los Angeles/16:00UTC. No usage-balance API
 is available; do not invent a balance or guarantee runtime. No Claude-owned
 files have been changed. Rough effort split remains80%#131/20%#137.
+
+## Newest continuation — 12:37 UTC
+
+The fifteenth checkpoint supersedes older active/gap labels. Main discovery guide
+now derives the full recurrence with two short mixed-product telescopes; complete
+independent review passed. The reciprocal birational involution gives an explicit
+bounded region and a direct Beukers cube parametrization. The exact Laurent core
+is published in Golyshev–Kerr–Sasaki, not historically new. Its retrieved map has
+a localized sign typo, independently verified and corrected in our dictionary.
+
+Reviewed new results: shifted-Jacobi parameter family; universal rank-one error
+rates and elementary bound<1/500; Euler differential hierarchy with sharp fixed
+normalizer; positive hyperbolic decomposition; all-balanced multiple orthogonal
+polynomials with rational coefficients and positive simple roots, proved by a
+self-reproducing Stieltjes jump. Read individual proof/review files for scope.
+
+The moving-pole Wilson bounds are proved equal to the adjacent-Apéry quotient.
+Their equality to the original D_(2h) Schur bounds is STILL unproved. Balanced
+multiple polynomials have a useful Bernoulli-antidifference reduction; their
+constant-term formula remains conjectural. Primitive errors in the initial
+18 p^2/D_K tests exceed1; this is finite evidence, not an asymptotic obstruction.
+Active construction: Bernoulli polynomials transform powers of the inverse
+hyperbolic Stieltjes function into positive measures; exact positivity cone and
+Euler-zeta2 tail identities are being developed. No all-odd irrationality claim.
 
 ## Newest continuation — 12:07 UTC
 

@@ -4,9 +4,15 @@ Status: direct identities and proofs below, independently reviewed in
 [apery-laurent-independent-review.md](apery-laurent-independent-review.md).
 Both the main exact script and the independent covariance/measure checks pass.
 The exact Laurent model was proposed by the parent agent and derived here from
-the binomial sum. The construction is presented as an explanatory connection,
-not a claim of historical novelty. No existing note in `codex/problem131/`
-contained this three-variable model when this investigation began.
+the binomial sum. A subsequent primary-source check identifies it exactly,
+after changing the signs of all three variables, with the published V12
+Landau–Ginzburg mirror in Golyshev–Kerr–Sasaki, *Apéry extensions*, §5.4,
+formula (5.4). Their same section identifies its reciprocal real period with
+the Beukers integral and proves its inhomogeneous equation. Thus the core
+construction is published mathematics, independently rediscovered here;
+it is not historically new. See the
+[exact Fano/Gamma-class dictionary](fano-v12-apery-gamma-dictionary.md)
+for normalization, primary citations and source hashes.
 
 Define
 \[

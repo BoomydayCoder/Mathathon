@@ -29,8 +29,12 @@ now identifies the rational Rodrigues family, pure derivative forms, finite
 Barnes decomposition, and positive central period as exact specializations of
 Nesterenko's 2003 results. The polynomial is also a classical confluent
 Jacobi–Piñeiro specialization. These constructions are not historically new.
-The specific Laurent geometry and certified asymptotic constants remain
-historically unattributed, not established as novel.
+For the higher-Rodrigues family, the specific Laurent geometry and certified
+asymptotic constants remain historically unattributed, not established as
+novel. The base Apéry three-variable Laurent polynomial and its reciprocal
+Beukers period are an exact published V12 mirror model: see the
+[primary-source dictionary](problem131/fano-v12-apery-gamma-dictionary.md)
+to Golyshev–Kerr–Sasaki, *Apéry extensions*, §5.4.
 
 ## Earlier established results and stage snapshots
 
@@ -162,12 +166,12 @@ from this ledger.
 
 | Claim | Proof | Review | Scope |
 |---|---|---|---|
-| One Laurent polynomial gives Apéry constant terms and reciprocal Beukers periods | apery-laurent-reciprocal.md | apery-laurent-independent-review.md | Exact common kernel/measure, bounds and asymptotics; no historical novelty claim |
+| One Laurent polynomial gives Apéry constant terms and reciprocal Beukers periods | apery-laurent-reciprocal.md; fano-v12-apery-gamma-dictionary.md | apery-laurent-independent-review.md; exact primary-source match | Core model and relative period already published in Golyshev–Kerr–Sasaki §5.4; independently derived here, not new |
 | Bernoulli numbers are logarithmic derivatives of a positive period tower | bernoulli-period-tower.md; laurent-deformation-arithmetic.md | bernoulli-period-independent-review.md | Higher odd constants appear as multiple integration constants |
 | Rational Euler projection isolates the top constant and gives a positive Bose tail | bernoulli-period-projectors.md | exact operator checks and parent derivation | Preserves Taylor denominators, not rational-q evaluated arithmetic |
 | Multiplicity lift restores exponentially small single-ζ5 forms | multiplicity-lifted-zeta-family.md | multiplicity-lifted-independent-review.md | Infinitely often nonzero, but actual new-prime denominators obstruct the old normalization |
 | Actual ζ7 inner-kernel cancellation improves a sufficient budget by1/25200 | inner-leading-block-cancellation.md | inner-leading-block-independent-review.md; inner-leading-block-adversarial-review.md | Small gain, not an irrationality proof or exact normalizer asymptotic |
-| Laurent one-variable periods are Legendre P/Q with a boundary correction | laurent-legendre-relative-periods.md | exact symbolic checks; parent inspection | Full two-variable exact-form reduction remains unresolved; real series satisfies L F=-12t |
+| Laurent one-variable periods are Legendre P/Q with a boundary correction | laurent-legendre-relative-periods.md | exact symbolic checks; parent inspection | Full reduction subsequently completed and reviewed in geometric-divergence-proof.md; real series satisfies L F=-12t |
 
 The general Laurent-deformation geometry and higher-pole constructions retain
 their individual review labels. The local Lean build was still active at this
@@ -197,3 +201,26 @@ certificate. The second replay completed at 10:28:40 UTC on 14 November 2026,
 exit status 0, covering exactly 71 project modules against imported environments.
 Its durable record supports the current verification statement above; it is
 not a fresh replay of all Mathlib constants.
+
+## Fifteenth-stage checked constructions
+
+All paths below are under problem131/. “Checked” records proof review, not
+historical priority. Earlier stage-specific open labels are superseded here.
+
+| Claim | Proof and independent review | Scope |
+|---|---|---|
+| Full Apéry recurrence from two short mixed telescopes | apery-mixed-numerator-balance.md; apery-mixed-numerator-independent-review.md | Includes n=0 forcing and associated numerator; no large diagonal certificate needed |
+| Exact V12 mirror dictionary and corrected reciprocal involution | fano-v12-apery-gamma-dictionary.md; fano-apery-independent-review.md | Core mirror/period construction published; localized source-map correction verified |
+| Bounded reciprocal region gives Beukers cube | reciprocal-region-beukers.md; check_reciprocal_region.py | Correct real domain and orientation; not a torus-cycle identification |
+| Shifted-Jacobi mixed recurrence and positive Hurwitz3 forms | shifted-jacobi-mixed-apery-family.md; shifted-jacobi-independent-review.md | Real shifts a>=0; rational normalizers; no all-Hurwitz irrationality result |
+| Rational monotone one-sided bounds for all odd zeta values | rank-one-zeta-subspace-approximants.md; rank-one-zeta-independent-review.md | Arithmetic control remains open |
+| Universal optimized exponential rates and elementary bound below1/500 | rank-one-universal-error-rate.md; rank-one-elementary-trial-rate.md; their independent reviews | No adjacent-Apéry conjecture used; no exact optimized rate asserted |
+| Moving-pole Wilson bounds equal adjacent-Apéry quotient | rank-one-apery-bridge-draft.md; rank-one-apery-bridge-independent-review.md | Original D_(2h) Schur equality still conjectural |
+| Euler hierarchy with sharp normalizer and exact higher pole order | odd-measure-differential-hierarchy.md; odd-hierarchy-independent-review.md | Coefficient transfer only; target moments require higher zeta jets |
+| Positive hyperbolic decomposition and explicit cotangent-root polynomial | odd-zeta-positive-hyperbolic-decomposition.md; hyperbolic-multiple-orthogonality.md; independent reviews | Individual component moments need not be rational |
+| All balanced multiple-orthogonal polynomials are normal and rational with positive simple roots | hyperbolic-balanced-normality.md; hyperbolic-balanced-normality-independent-review.md | No unbalanced theorem, general coefficient formula, denominator rate or irrationality claim |
+
+The balanced-polynomial constant-term formula is a conjecture. Its Bernoulli
+antidifference reduction has a written proof awaiting separate full review.
+The initial pure-linear-form experiments do not establish an asymptotic failure
+theorem. No historical novelty assertion follows from an unsuccessful search.

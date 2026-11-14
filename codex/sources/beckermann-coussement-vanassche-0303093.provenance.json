@@ -1,0 +1,10 @@
+{
+  "url": "https://arxiv.org/pdf/math/0303093",
+  "sha256": "f9ebafffe0dd52647be43b300c7ba6b09cd0dd6db210832e1cfb735b285b6bd3",
+  "bytes": 236141,
+  "inspected_sections": [
+    "Theorem3.3",
+    "Section4.1"
+  ],
+  "retrieved": "2026-11-14 UTC"
+}

@@ -2,7 +2,7 @@
 
 *A living mathematical exposition for the Mathathon team.*
 
-The goal is to explain why the ingredients of Apéry’s proof fit together, then give a complete elementary proof. The integer residues lead to a quadratic Newton grid and a finite balance law that derive the recurrence’s coefficients. A rough bound identifies the zeta-valued limit; the recurrence then supplies positive, exponentially small error. No saddle-point theorem is needed.
+The goal is to explain why the ingredients of Apéry’s proof fit together, then give a complete elementary proof. The integer residues lead to a quadratic Newton grid and a finite balance law that derive the recurrence’s coefficients. Two short rational identities transfer that balance to the entire linear form. A rough bound identifies the zeta-valued limit; the recurrence then supplies positive, exponentially small error. No saddle-point theorem is needed.
 
 A second exact bridge explains the reciprocal scales: the same positive Laurent polynomial produces the integer \(A_n\) as the constant term of its \(n\)-th power and the Beukers error integral as a real integral of its \((-n-1)\)-st power. One elementary minimization controls both. We introduce that polynomial with the integer sequence, then return to it when the integral representation is available.
 
@@ -291,87 +291,101 @@ Apply the two-variable recurrence at \((n,n)\), and replace its two adjacent-dia
 
 Thus the Apéry recurrence for \(A_n\) follows directly from its integer residues. The constants are \(17=6\cdot3-1\) and \(5=6\cdot1-1\): the coefficient six comes from finite balance, and the subtraction comes from removing the diagonal contributions in a difference operator. The [Newton-basis derivation](newton-bispectral-motivation.md) and [independent review](newton-symmetric-square-review.md) give further details and a Legendre-polynomial connection.
 
-### Match poles to transfer the recurrence to the entire linear form
+### Two mixed products transfer the recurrence to the entire linear form
 
-Knowing the recurrence for \(A_n\) does not prove it for \(B_n\) or identify their limiting ratio. The following short rational certificate supplies that missing connection.
-
-The three adjacent functions \(R_{n-1},R_n,R_{n+1}\) differ by only a few factors. We look for a relation whose right side is a difference in \(t\), because summing such a difference leaves only endpoints:
+The recurrence for \(A_n\) alone does not prove it for \(B_n\). To transfer the same mechanism, temporarily separate the two equal factors in \(R_n=P_n^2\):
 
 \[
-uR_{n+1}(t)+vR_n(t)+wR_{n-1}(t)
- =q(t+1)R_n(t+1)-q(t)R_n(t).
+P_n(t)=\frac{\prod_{j=1}^n(t-j)}{\prod_{j=0}^n(t+j)},\qquad
+S_{n,m}(t)=(-1)^{n+m}P_n(t)P_m(t),\qquad
+\mathcal E_{n,m}=-\frac12\sum_{t=1}^{\infty}S_{n,m}'(t).
+\]
+
+The sign makes the sum of double-pole coefficients of \(S_{n,m}\) equal to \(K(n,m)\). The mixed forms are symmetric in \(n,m\), and our original normalization is \(F_n=2\mathcal E_{n,n}\). Their sums converge absolutely because \(S_{n,m}'(t)=O(t^{-3})\).
+
+The product ratios now have simple poles instead of double poles. Put \(Q_{n,m}(t)=(t-m-1)(t+m)S_{n,m}(t)\). The first identity is
+
+\[
+\begin{aligned}
+ &(n+1)^3S_{n+1,m}
+ -(2n+1)[n(n+1)+2m(m+1)+1]S_{n,m}
+ +n^3S_{n-1,m}\\
+ &\hspace{2em}=-2(2n+1)\bigl[Q_{n,m}(t+1)-Q_{n,m}(t)\bigr].
+\end{aligned}
 \tag{11}
 \]
 
-Try \(q(t)=at^2+bt+c\). A quadratic is the largest polynomial degree for which \((qR_n)'\) tends to zero at infinity; this fits the differentiated sum in (6). It is a motivated finite search space, not a theorem excluding every other kind of certificate.
-
-The product formula gives
+It holds for \(n,m\ge0\), omitting the backward term at \(n=0\). Here is its entire algebraic check. Write \(N=n(n+1)\), \(M=m(m+1)\), divide by \(S_{n,m}\), and multiply by \((t-n)(t+n+1)\). The right side becomes \(-2(2n+1)\) times
 
 \[
-\frac{R_{n+1}}{R_n}=\left(\frac{t-n-1}{t+n+1}\right)^2,
-\quad
-\frac{R_{n-1}}{R_n}=\left(\frac{t+n}{t-n}\right)^2,
-\quad
-\frac{R_n(t+1)}{R_n(t)}
- =\frac{t^4}{(t-n)^2(t+n+1)^2}.
+t^4-(t^2+t-N)(t^2-t-M)
+=(N+M+1)t^2+(M-N)t-NM.
 \]
 
-After division by \(R_n\), only two possible poles remain: \(t=n\) and \(t=-n-1\). Match the double-pole coefficients and then the simple-pole coefficients. At the first pole this gives
+The left side becomes
 
 \[
-w=\frac{n^2q(n+1)}{4(2n+1)^2},
-\qquad
-n(2n+1)q'(n+1)+(4n+3)q(n+1)=0.
+\begin{aligned}
+&-(n+1)^3(t-n-1)(t-n)\\
+&\quad -(2n+1)(N+2M+1)(t-n)(t+n+1)
+-n^3(t+n)(t+n+1),
+\end{aligned}
 \]
 
-At the second it gives
+whose three coefficients are exactly the same. These rational identities remain valid at zeros of the ratios after cancellation.
+
+For \(n\ge1\), differentiating (11) and summing makes its right side vanish. At infinity \(Q'=O(t^{-2})\). At \(1\), either \(m\ge1\) and the product has a double zero, or \(m=0\) and the factor \(t-1\) in \(Q\) supplies the second zero. Thus \(\mathcal E_{n,m}\) obeys the same mixed recurrence as \(K(n,m)\).
+
+To close its diagonal, we need the counterpart of the coefficient six. It is another short rational identity:
 
 \[
-u=\frac{(n+1)^2q(-n)}{4(2n+1)^2},
-\qquad
-(n+1)(2n+1)q'(-n)-(4n+1)q(-n)=0.
-\]
-
-The two homogeneous conditions on \(a,b,c\) have rank two: the determinant of their \(a,c\) columns is \(-3(2n+1)^3\). Substitution therefore proves that every solution is a multiple of
-
-\[
-q(t)=\lambda\bigl[-2t^2+t+(2n+1)^2\bigr].
-\]
-
-Taking \(\lambda=4(2n+1)\) makes \(u=(n+1)^3\), \(w=n^3\). Finally, comparison at infinity gives
-
-\[
-v=-4(2n+1)^3-(n+1)^3-n^3
-  =-(2n+1)(17n^2+17n+5).
-\]
-
-These checks prove the rational identity: its difference has no finite poles and tends to zero at infinity. The familiar recurrence coefficients have been derived from pole positions, multiplicities, and normalization.
-
-Set
-
-\[
-\beta_n=(2n+1)(17n^2+17n+5),\qquad
-S_n(t)=4(2n+1)\bigl[-2t^2+t+(2n+1)^2\bigr]R_n(t).
-\]
-
-Our certificate is
-
-\[
-(n+1)^3R_{n+1}-\beta_nR_n+n^3R_{n-1}
- =S_n(t+1)-S_n(t).
+\boxed{
+P_n(t)^2+P_{n-1}(t)^2+6P_n(t)P_{n-1}(t)
+=T_n(t+1)-T_n(t),\quad
+T_n(t)=\frac4{n^2}(t+n)^2P_n(t)^2.
+}
 \tag{12}
 \]
 
-Differentiating and summing proves
+For a direct check, set \(r(t)=P_n(t)^2/(t-n)^2\). The left side is \(4(2t^2-n^2)r(t)\). The right side is
+\(4[t^4-(t^2-n^2)^2]r(t)/n^2\), the same expression. This identity requires \(n\ge1\). Both derivative endpoints vanish, including at \(n=1\), where \(T_1(t)=4(t-1)^2/t^2\). Since \(S_{n,n-1}=-P_nP_{n-1}\), differentiation and summation give
 
 \[
-(n+1)^3F_{n+1}-\beta_nF_n+n^3F_{n-1}=0.
+\mathcal E_{n,n}+\mathcal E_{n-1,n-1}=6\mathcal E_{n,n-1}.
+\]
+
+Now set \(m=n\) in the mixed recurrence, use symmetry, and replace both off-diagonal terms by these adjacent averages. If \(e_n=\mathcal E_{n,n}\), the result is
+
+\[
+(n+1)^3\frac{e_{n+1}+e_n}{6}
+-(2n+1)[3n(n+1)+1]e_n
++n^3\frac{e_n+e_{n-1}}6=0.
+\]
+
+The same calculation as for \(A_n\) therefore proves
+
+\[
+\boxed{
+(n+1)^3F_{n+1}-\beta_nF_n+n^3F_{n-1}=0,\qquad n\ge1,
+\quad \beta_n=(2n+1)(17n^2+17n+5).
+}
 \tag{13}
 \]
 
-The upper endpoint vanishes because \(S_n'=O(t^{-2})\). The lower one vanishes because \(R_n\), and hence \(S_n\), has a double zero at \(t=1\).
+There is a boundary source at zero, and it must be kept. Direct evaluation gives \(Q_{0,m}'(1)=1\) for every \(m\ge0\): for \(m=0\), \(Q=(t-1)/t\); for \(m\ge1\), use \(P_m'(1)=(-1)^{m-1}/[m(m+1)]\). Thus
 
-A logical point matters here: we cannot yet equate the rational and \(\zeta(3)\) coefficients of (13). That would assume the irrationality we are trying to prove. The Newton argument above already proves the recurrence for \(A_n\) independently. There is also a direct certificate check: take the double-pole coefficient of (12) at each integer pole and sum. If the double-pole coefficients of \(S_n\) are \(d_k\), those of \(S_n(t+1)-S_n(t)\) are \(d_{k-1}-d_k\), whose sum is zero. Thus \(A_n\) satisfies (13) separately. Equation (7) then shows that \(B_n\) does too.
+\[
+\mathcal E_{1,m}-[2m(m+1)+1]\mathcal E_{0,m}=-1.
+\]
+
+Starting from \(\mathcal E_{0,0}=\zeta(3)\), this gives
+\(\mathcal E_{0,1}=\zeta(3)-1\) and
+\(\mathcal E_{1,1}=5\zeta(3)-6\).
+In our normalization, \(F_0=2\zeta(3)\) and \(F_1=10\zeta(3)-12\).
+
+A logical point matters: we cannot yet equate rational and \(\zeta(3)\) coefficients in (13). The Newton argument independently proves the recurrence for \(A_n\); equation (7) then proves it for \(B_n\). There is also a fully rational shortcut to the denominator argument: summing double-pole coefficients in (11) gives the mixed recurrence for \(K\), and doing the same in (12) gives \(A_n+A_{n-1}=6K(n,n-1)\). Translation preserves these sums, so no irrationality assumption enters.
+
+This is why the same six governs denominator and numerator: one finite difference yields both balances under two different linear operations. The [full mixed-product proof](apery-mixed-numerator-balance.md), with [independent review](apery-mixed-numerator-independent-review.md), also identifies its associated numerator through an elementary Bernoulli functional. [Appendix A](#appendix-a-the-direct-diagonal-certificate-by-pole-matching) preserves the alternative direct diagonal certificate, useful for testing higher derivatives.
 
 ## 5. A rough estimate is enough to identify the limit
 
@@ -612,7 +626,7 @@ No saddle-point theorem, prime number theorem, or special-function identity was 
 flowchart TD
   A[Integer residues and double zeros] --> B[Arithmetic linear form]
   A --> N[Newton grid and finite balance explain the recurrence]
-  N --> C[Short certificate from pole matching]
+  N --> C[Two mixed-product telescopes and their boundary source]
   C --> D[Recurrences for A, B and F]
   D --> E[Growth of A]
   B --> F[Bounded F identifies the limit]
@@ -786,7 +800,9 @@ The already proved recurrence and initial values give
 \boxed{\mathscr D\mathscr F=-12t.}
 \]
 
-Indeed \(F_1-5F_0=-12\). The real integration domain is not a closed compact cycle; calling it a “period” does not erase that boundary term. [The one-variable Legendre reduction](laurent-legendre-relative-periods.md) makes this visible through the polynomial and logarithmic Legendre solutions. A full geometric exact-form derivation of the Apéry operator from the remaining two integrations is still a separate task. The elementary recurrence proof above has no such gap.
+Indeed \(F_1-5F_0=-12\). The real integration domain is not a closed compact cycle; calling it a “period” does not erase that boundary term. [The one-variable Legendre reduction](laurent-legendre-relative-periods.md) makes this visible through the polynomial and logarithmic Legendre solutions. The previously missing geometric exact-form calculation is now supplied by the [geometric divergence proof](geometric-divergence-proof.md), with its [completed independent review](geometric-divergence-independent-review.md): the source comes from the boundary flux. This longer geometric verification is optional for the elementary recurrence proof above.
+
+The three-variable Laurent polynomial itself, its Beukers integral, and the inhomogeneous differential equation are published in Golyshev–Kerr–Sasaki, *Apéry extensions*, §5.4: their \(\phi(-x,-y,-z)\) is exactly our \(\Lambda\). See the [primary-source dictionary](fano-v12-apery-gamma-dictionary.md). Their independent reconstruction in this session should not be mistaken for a new Laurent model.
 
 The resulting picture is coherent: integer residues lead to a finite-balance recurrence; the recurrence converts growth into a positive tail error; and the Laurent model shows that the same integer sequence and integral error are positive and reciprocal powers of a single function.
 
@@ -805,7 +821,7 @@ L_{n,m}=A_n\zeta(2m+1)-B_{n,m},
 \qquad 2mD_n^{2m+1}B_{n,m}\in\mathbb Z.
 \]
 
-So isolating \(\zeta(5)\) is not itself the obstacle. Differentiate the same certificate more times, however, and the lower endpoint survives:
+So isolating \(\zeta(5)\) is not itself the obstacle. Differentiate the direct diagonal certificate (A2) in Appendix A more times, however, and the lower endpoint survives:
 
 \[
 (n+1)^3L_{n+1,m}-\beta_nL_{n,m}+n^3L_{n-1,m}
@@ -865,10 +881,92 @@ The lesson is more specific than “choose small denominators.” The zeros, pol
 
 ## 11. What to retain for a presentation
 
-The proof can be told as a sequence of necessities. Start with the integer contradiction. Choose poles where sums become zeta values. Choose zeros where the sum should disappear. Use the saturated double-zero constraints to force the square. Differentiate once to reach cubic poles. Transpose multiplication on the quadratic Newton grid to discover the cubic operator; a finite balance identity gives the constants 17 and 5. Match the few poles in adjacent rational-function ratios to certify that the full linear form obeys the same recurrence. Identify the limit with a deliberately rough bound. Use the Casoratian to convert growth into positive reciprocal error. Finally compare that growth with a proved denominator estimate.
+The proof can be told as a sequence of necessities. Start with the integer contradiction. Choose poles where sums become zeta values. Choose zeros where the sum should disappear. Use the saturated double-zero constraints to force the square. Differentiate once to reach cubic poles. Transpose multiplication on the quadratic Newton grid to discover the cubic operator; a finite balance identity gives the constants 17 and 5. Separate the square into mixed products, then use two rational telescopes to make the same balance govern the whole linear form. Keep the source term at zero. Identify the limit with a deliberately rough bound. Use the Casoratian to convert growth into positive reciprocal error. Finally compare that growth with a proved denominator estimate.
 
 The strongest connections are exact: polynomial orthogonality becomes zeros of a Mellin transform; its coefficients become residues; a discrete Wronskian is the constant current of a resistor chain; and the same Laurent polynomial produces both the integers and the small integral through powers and reciprocal powers. The Newton grid explains the recurrence coefficients, while the Laurent minimum explains the reciprocal exponential scales. A factorial valuation table pays the arithmetic cost. The derivative and dilation tests identify precisely which cancellations can break.
 
 For a different advanced explanation, [the modular and elliptic construction](apery-modular-elliptic.md), with [its completed review](apery-modular-review.md), realizes the generating series as the square of an elliptic period and uses Fricke symmetry to remove its nearest branch singularity. Standard modular-form and covering theorems are explicit inputs; the elementary argument above does not require them.
 
 The [claim ledger](../CLAIM_LEDGER.md) records proof and review status. The separate [zeta-five guide](fauzan-equilibrium-guide.md) now links an [end-to-end reviewed computer-assisted derivation](fauzan-simplified-proof-audit.md) retaining Fauzan’s determinant and local arithmetic construction while simplifying its quantitative estimates. This is not a claim of a newly invented construction, an elementary zeta-five proof, formal verification, or external mathematical consensus. No proof for all odd zeta values has resulted. No historical novelty is asserted for the reorganizations or derived lemmas here.
+
+## Appendix A. The direct diagonal certificate by pole matching
+
+This earlier alternative derives the same recurrence directly from \(R_n=P_n^2\), for \(n\ge1\). The mixed-product route in §4 needs less pole algebra; the direct certificate remains useful for the higher-derivative and dilation tests in §10.
+
+The three adjacent functions \(R_{n-1},R_n,R_{n+1}\) differ by only a few factors. We look for a relation whose right side is a difference in \(t\), because summing such a difference leaves only endpoints:
+
+\[
+uR_{n+1}(t)+vR_n(t)+wR_{n-1}(t)
+ =q(t+1)R_n(t+1)-q(t)R_n(t).
+\tag{A1}
+\]
+
+Try \(q(t)=at^2+bt+c\). A quadratic is the largest polynomial degree for which \((qR_n)'\) tends to zero at infinity; this fits the differentiated sum in (6). It is a motivated finite search space, not a theorem excluding every other kind of certificate.
+
+The product formula gives
+
+\[
+\frac{R_{n+1}}{R_n}=\left(\frac{t-n-1}{t+n+1}\right)^2,
+\quad
+\frac{R_{n-1}}{R_n}=\left(\frac{t+n}{t-n}\right)^2,
+\quad
+\frac{R_n(t+1)}{R_n(t)}
+ =\frac{t^4}{(t-n)^2(t+n+1)^2}.
+\]
+
+After division by \(R_n\), only two possible poles remain: \(t=n\) and \(t=-n-1\). Match the double-pole coefficients and then the simple-pole coefficients. At the first pole this gives
+
+\[
+w=\frac{n^2q(n+1)}{4(2n+1)^2},
+\qquad
+n(2n+1)q'(n+1)+(4n+3)q(n+1)=0.
+\]
+
+At the second it gives
+
+\[
+u=\frac{(n+1)^2q(-n)}{4(2n+1)^2},
+\qquad
+(n+1)(2n+1)q'(-n)-(4n+1)q(-n)=0.
+\]
+
+The two homogeneous conditions on \(a,b,c\) have rank two: the determinant of their \(a,c\) columns is \(-3(2n+1)^3\). Substitution therefore proves that every solution is a multiple of
+
+\[
+q(t)=\lambda\bigl[-2t^2+t+(2n+1)^2\bigr].
+\]
+
+Taking \(\lambda=4(2n+1)\) makes \(u=(n+1)^3\), \(w=n^3\). Finally, comparison at infinity gives
+
+\[
+v=-4(2n+1)^3-(n+1)^3-n^3
+  =-(2n+1)(17n^2+17n+5).
+\]
+
+These checks prove the rational identity: its difference has no finite poles and tends to zero at infinity. The familiar recurrence coefficients have been derived from pole positions, multiplicities, and normalization.
+
+Set
+
+\[
+\beta_n=(2n+1)(17n^2+17n+5),\qquad
+S_n(t)=4(2n+1)\bigl[-2t^2+t+(2n+1)^2\bigr]R_n(t).
+\]
+
+Our certificate is
+
+\[
+(n+1)^3R_{n+1}-\beta_nR_n+n^3R_{n-1}
+ =S_n(t+1)-S_n(t).
+\tag{A2}
+\]
+
+Differentiating and summing proves
+
+\[
+(n+1)^3F_{n+1}-\beta_nF_n+n^3F_{n-1}=0.
+\tag{A3}
+\]
+
+The upper endpoint vanishes because \(S_n'=O(t^{-2})\). The lower one vanishes because \(R_n\), and hence \(S_n\), has a double zero at \(t=1\).
+
+A logical point matters here: we cannot yet equate the rational and \(\zeta(3)\) coefficients of (A3). That would assume the irrationality we are trying to prove. The Newton argument above already proves the recurrence for \(A_n\) independently. There is also a direct certificate check: take the double-pole coefficient of (A2) at each integer pole and sum. If the double-pole coefficients of \(S_n\) are \(d_k\), those of \(S_n(t+1)-S_n(t)\) are \(d_{k-1}-d_k\), whose sum is zero. Thus \(A_n\) satisfies (A3) separately. Equation (7) then shows that \(B_n\) does too.

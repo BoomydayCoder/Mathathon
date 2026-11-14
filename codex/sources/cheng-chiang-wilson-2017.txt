@@ -1,0 +1,2288 @@
+Annales Academiæ Scientiarum Fennicæ
+Mathematica
+Volumen 42, 2017, 175–209
+
+
+             NEVANLINNA THEORY OF THE WILSON
+               DIVIDED-DIFFERENCE OPERATOR
+                      Kam Hang Cheng and Yik-Man Chiang
+       The Hong Kong University of Science and Technology, Department of Mathematics
+             Clear Water Bay, Kowloon, Hong Kong; henry.cheng@family.ust.hk
+       The Hong Kong University of Science and Technology, Department of Mathematics
+                 Clear Water Bay, Kowloon, Hong Kong; machiang@ust.hk
+
+                         To the fond memories of Rauno Aulaskari
+
+     Abstract. Sitting at the top level of the Askey-scheme, Wilson polynomials are regarded as
+the most general hypergeometric orthogonal polynomials. Instead of a differential equation, they
+satisfy a second order Sturm–Liouville type difference equation in terms of the Wilson divided-
+difference operator. This suggests that in order to better understand the distinctive properties of
+Wilson polynomials and related topics, one should use a function theory that is more natural with
+respect to the Wilson operator. Inspired by the recent work of Halburd and Korhonen, we establish
+a full-fledged Nevanlinna theory of the Wilson operator for meromorphic functions of finite order.
+In particular, we prove a Wilson analogue of the lemma on logarithmic derivatives, which helps
+us to derive Wilson operator versions of Nevanlinna’s Second Fundamental Theorem, some defect
+relations and Picard’s Theorem. These allow us to gain new insights on the distributions of zeros and
+poles of functions related to the Wilson operator, which is different from the classical viewpoint.
+We have also obtained a relevant five-value theorem and Clunie type theorem as applications of
+our theory, as well as a pointwise estimate of the logarithmic Wilson difference, which yields new
+estimates to the growth of meromorphic solutions to some Wilson difference equations and Wilson
+interpolation equations.
+
+
+                                       1. Introduction
+    The Wilson divided-difference operator DW was first considered by Wilson to
+study Wilson polynomials Wn (x; a, b, c, d) [2, p. 34], defined by
+                    Wn (x; a, b, c, d)
+               (a + b)n (a + c)n (a + d)n
+                                                          √      √     
+                         −n, n + a + b + c + d − 1, a + i x, a − i x
+               := 4 F3                                               ; 1 ,
+                                       a + b, a + c, a + d
+which are hypergeometric orthogonal polynomials located at the top level of the
+Askey scheme [22]. They are the most general hypergeometric orthogonal polyno-
+mials that contain all the known classical hypergeometric orthogonal polynomials
+[1] as special cases. The Wilson operator acts on Wilson polynomials in a similar
+
+    https://doi.org/10.5186/aasfm.2017.4211
+    2010 Mathematics Subject Classification: Primary 30D35; Secondary 30D30, 33C45, 39A05.
+    Key words: Wilson divided-difference operator, complex function theory, Poisson–Jensen for-
+mula, Nevanlinna theory.
+    Both authors were partially supported by GRF no. 16306315 from Hong Kong Research Grant
+Council. The second author was also partially supported by GRF no. 600609.
+176                         Kam Hang Cheng and Yik-Man Chiang
+
+manner as the usual differential operator acts on monomials, except with a shift in
+the parameters a, b, c and d:
+                                                      1      1     1      1
+             (DW Wn )(x; a, b, c, d) = Cn Wn−1 x; a + , b + , c + , d +       ,
+                                                       2      2     2      2
+where Cn = −n(n+a+b+c+d−1). Instead of a differential equation, it is known that
+Wilson polynomials satisfy a second order Sturm–Liouville type difference equation
+in terms of the Wilson operator (see §6).
+     Wilson polynomials are intimately related to other classical orthogonal polyno-
+mials on which active research have been done. Wilson identified himself in [34] that
+an orthogonality relation for the 6-j symbols in the coupling of angular momenta in
+quantum mechanics follow from that of Wilson polynomials as a special case. Koorn-
+winder [23] discovered that Wilson polynomials and Jacobi polynomials are mapped
+to each other via the Jacobi–Fourier transform, and studied Wilson polynomials
+from a group theoretic viewpoint [24]. Groenevelt [12] used Wilson functions, which
+is a family of transcendental solutions of the aforementioned second-order Sturm–
+Liouville Wilson difference equation linearly independent to Wilson polynomials, as
+the kernel of a new integral transform called the Wilson function transform. Wilson
+polynomials have also been extended to a multiple-parameter version [4] using essen-
+tially the same tool of Jacobi transform that was used in [12]. Wilson polynomials
+also have applications in various aspects from theoretical physics to birth and death
+processes, see for examples [5], [19], [21], [28] and [29].
+     It is clear that in a majority of the research works cited, the subject of investi-
+gation was either Wilson polynomials or Wilson functions. In this paper we would
+therefore like to look into the Wilson operator in a broader function theoretic con-
+text, and establish some results about its interaction with meromorphic functions. It
+turns out that Halburd and Korhonen have recently established a Nevanlinna theory
+in [15] with respect to the ordinary difference operator (∆f )(x) = f (x + η) − f (x)
+for each fixed non-zero η. In particular, a new difference type little Picard theo-
+rem has been proved. See also [16]. This suggests that the function theory with
+respect to ∆ is somewhat different from the classical function theory with respect
+    d
+to dx  , despite all the functions considered in both cases are meromorphic. Indeed,
+Nörlund spent a large part of his 1926 memoir [31], which has not been mentioned
+by most of the recent researchers on orthogonal polynomials, on investigating how to
+expand entire functions into a Stirling interpolation series. Stirling series converge
+faster than Newton series, and the interpolating polynomials in Stirling series are
+obtained by slightly modifying the Wilson polynomials. Thus it is natural to de-
+velop a function theory using Wilson polynomials {Wn } (or simply {τn (·; a)} where
+              Qn−1
+τn (x; a) := k=0    [(a + ki)2 − x]) as a basis, instead of the usual {(x − a)n }. In fact,
+following the classical idea as in [31], one can show that every entire function f
+satisfying the growth condition
+                                    ln M(r, f )
+                               lim sup  √         < 2 ln 2
+                              r→∞          r
+admits, for each a ∈ C, a Wilson series expansion
+                                   ∞
+                                   X
+                                       ak τk (x; a)
+                                      k=0
+
+which converges uniformly to f on any compact subset of C. As a result of this
+series expansion, the appropriate way of counting zeros (and poles) with respect to
+                   Nevanlinna theory of the Wilson divided-difference operator       177
+
+                                                     d
+DW is different compared to that with respect to dx    . This is reflected in the way we
+define the Wilson counting functions in §5 (see Definition 5.1). The second author
+and Feng have also established a full-fledged Nevanlinna theory with respect to the
+Askey–Wilson divided-difference operator Dq earlier in [11]. Parallel to what has been
+obtained in the MPhil thesis of the first author in 2013, we demonstrate in this paper
+that the Wilson operator DW has its own version of Nevanlinna theory, and establish
+a number of key results in this version, including defect relations and a Wilson version
+of little Picard theorem. A Wilson exceptional value of a meromorphic function is a
+value in Ĉ whose preimage lies on a certain special sequence (see Definition 5.5). A
+transcendental meromorphic function f ∈    / ker DW of finite order can possess at most
+two Wilson exceptional values, because such values a have defect ΘW (a, f ) = 1 (see
+Remark 5.7) while our defect relations (Corollary 3.3) assert that
+                                   X
+                                       ΘW (a, f ) ≤ 2.
+                                     a∈Ĉ
+
+As an example (Example 5.9 (i)), the entire function
+                                   Y∞                 
+                                                 x
+                          f (x) :=      1−
+                                   k=0
+                                             (b + ki)2
+has simple zeros only at the points
+                         xk = (b + ki)2          for k = 0, 1, 2, . . . ,
+so by Definition 5.5, 0 is a Wilson exceptional value of f and ΘW (0, f ) = 1, which
+means that the value 0 is missed with respect to the Wilson operator. Note that the
+value ∞ is also missed in the classical sense as f is entire, and so we clearly have
+ΘW (∞, f ) = 1 as well. As another example (Example 5.9 (ii)), the entire function
+                          √         √                  √        √       
+                      a + i x, 21 + i x             a − i x, 21 − i x
+       ϕ(x) = 2 F1                      ; −1 2 F1                     ; −1
+                             a + 21                        a − 21
+which is a special case of the generating function ϕ(x; t) of Wilson polynomials, has
+double zeros only at the points
+                     xk = −(a − 1 + 2k)2             for k = 1, 2, 3, . . . ,
+so 0 is a “2i-shift” Wilson exceptional value of ϕ, and ΘW,2i (0, ϕ) = 1. Since ϕ is
+entire, we similarly have ΘW (∞, f ) = 1. The corresponding residue calculus with
+respect to DW and the relation between this operator and interpolation theory will
+be discussed in a subsequent paper.
+     This paper is organized as follows. In §2, we will first give the definition and
+some basic properties of DW . In the subsequent sections, we will then follow the
+classical approach on the Nevanlinna theory of the differential operator. We will
+state in §3 our main results, which include a Wilson operator version of Nevanlinna’s
+Second Fundamental Theorem and some corollaries about defect relations. Before
+proving all these in §5, we will introduce a Wilson operator analogue of the lemma
+on logarithmic derivative in §4. Some results from Halburd and Korhonen [15] and
+from the second author and Feng’s work on the Nevanlinna theories of the ordinary
+difference operator [9] and of the Askey–Wilson operator [11] will be useful to our
+proofs. In §7, we will give a pointwise estimate for the logarithmic Wilson difference,
+as opposed to the overall estimate given in §4. These estimates will be applied to give
+estimates on the growth of meromorphic solutions to some specific types of Wilson
+difference equations and interpolation equations in §6 and §7.
+178                           Kam Hang Cheng and Yik-Man Chiang
+
+        In this paper, we adopt the following notations:
+        (i) N denotes the set of all natural numbers excluding 0, and N0 := N ∪ {0}.
+       (ii) For every positive real number r and every complex number a, D(a; r) denotes
+            the open disk of radius r centered at a in the complex plane.
+      (iii) For every positive real number r, ln r denotes the natural logarithm of r, while
+            ln+ r denotes the non-negative number max {ln r, 0}.
+      (iv) A complex function always means a function in one complex variable, and
+            a meromorphic function always means a meromorphic function from C to
+            Ĉ := C ∪ {∞}, unless otherwise specified.
+                                                P
+       (v) A summation notation of the form |aν |<r denotes a sum running over all the
+            ν’s such that the term aν of the sequence {aν }ν has modulus smaller than r.
+      (vi) For any two functions f, g : [0, ∞) → R, we write
+               • g(r) = O(f (r)) as r → ∞ if and only if there exist C > 0 and M > 0
+                 such that |g(r)| ≤ C|f (r)| whenever r > M;
+               • g(r) = o(f (r)) as r → ∞ if and only if for every C > 0, there exists
+                 M > 0 such that |g(r)| ≤ C|f (r)| whenever r > M;
+               • f (r) ∼ g(r) as r → ∞ if and only if for every ε > 0, there exists M > 0
+                              (r)
+                 such that fg(r)  − 1 < ε whenever r > M.
+
+                                 2. The Wilson operator
+   In this section, we give the definition of the Wilson operator and a few of its
+properties.
+                         √
+   Definition 2.1. Let · be a branch of the complex square-root with the imagi-
+nary axis as the branch cut. For each x ∈ C we denote
+                                  2                       2
+                    +
+                          √      i             −
+                                                     √     i
+                   x :=      x+         and x :=       x−       .
+                                 2                         2
+We also adopt the notations x±(0) := x, x±(m) := (x±(m−1) )± and x±(−m) := x∓(m) for
+every positive integer m. Then we define the Wilson operator DW , which acts on all
+complex functions, as follows:
+                                                 √                  √
+                         f (x+ ) − f (x− )   f (( x + 2i )2 ) − f (( x − 2i )2 )
+(2.1)      (DW f )(x) :=                   =                  √                  .
+                             x+ − x−                       2i x
+To simplify notations, we also define the Wilson averaging operator AW by
+                                                   √                   √
+                           f (x+ ) + f (x− )   f (( x + 2i )2 ) + f (( x − 2i )2 )
+(2.2)       (AW f )(x) :=                    =                                     .
+                                    2                           2
+                                         √
+    Although there√ are two choices of x for each x 6= 0, DW and AW are independent
+of the choice of · and are thus always well-defined. Moreover, the value of DW f at
+0 should be defined as
+                                                             
+                                                          ′      1
+                        (DW f )(0) := lim (DW f )(x) = f −           ,
+                                        x→0                      4
+                                                                   √
+in case f is differentiable at − 14 . We sometimes write z := x.
+    We consider branches of square-root with the imaginary axis as the branch cut
+because of the shift of 2i in the definition of DW . One can consider Wilson operators
+of other shifts 2c where c ∈ C \ {0}, and accordingly choose branches with the line
+joining c and 0 as the branch cut, without affecting the later results.
+                      Nevanlinna theory of the Wilson divided-difference operator               179
+
+    DW is a √ linear operator, whose kernel contains precisely all those functions of
+the form g ◦ · such that g is even, meromorphic and periodic with period i, where
+√
+  · denotes a particular branch of the square-root function. Equivalently, this means
+that
+                                                                               
+                 √ g ∈ M(C), g ni + z = g ni − z for all z ∈ C and n ∈ Z,
+ ker DW = g ◦ · :               √    2            2                                 .
+                            and · is a branch of the square-root function
+                                                                  √              √
+Examples of elements in this kernel include the functions cosh(2π x) and ℘(ωi x),
+where ℘ is the Weierstrass’ P-function and ω is one of its periods.√It also worths
+noting that the evenness and meromorphicity of g ensures that g ◦ · is also mero-
+morphic.
+    The Wilson operator clearly has the following product rule and quotient rule.
+    Proposition 2.2. (Wilson product and quotient rules) For every pair of complex
+functions f0 and f1 , we have
+          (DW (f0 f1 ))(x) = (AW f0 )(x)(DW f1 )(x) + (AW f1 )(x)(DW f0 )(x).
+If we assume, in addition, that f0 6≡ 0, then we also have
+               
+                 f1          (AW f0 )(x)(DW f1 )(x) − (AW f1 )(x)(DW f0 )(x)
+           DW          (x) =                                                 .
+                 f0                           f0 (x+ )f0 (x− )
+    We can easily check from the definition of the Wilson operator DW that it sends
+polynomials to polynomials. In fact, we have the following.
+    Proposition 2.3. Let f be a complex function. Then
+    (i) if f is entire, then DW f and AW f are also entire;
+   (ii) if f is meromorphic, then DW f is also meromorphic; and
+  (iii) if f is rational, then DW f is also rational.
+    Proof. We first prove (i). If f is entire, then it has a Maclaurin series expansion
+        ∞
+        X                                 1
+f (x) =    ak xk satisfying lim sup |ak | k = 0. Now
+                                  k→∞
+       k=0
+                                          "∞               2k X   ∞         2k #
+                 f (x+ ) − f (x− )     1 X                i                  i
+    (DW f )(x) =                   =            ak z +         −      ak z −
+                        2iz           2iz k=0             2       k=0
+                                                                             2
+                      ∞
+                          "     k−1                 2k−2l−1  #
+                  1 X           X       2k      2l+1   i
+               =            2ak               z
+                 2iz k=1        l=0
+                                      2l + 1           2
+                  ∞
+                     "   ∞                          #       ∞
+                 X      X        2k     (−1)k−l−1ak l X l
+               =                                        x =      bl x
+                 l=0 k=l+1
+                               2l + 1     22k−2l−1           l=0
+                                            ∞ 
+                                            X         
+                                                 2k     (−1)k−l−1 ak
+is a Maclaurin series expansion where bl :=                          satisfies
+                                               2l + 1     22k−2l−1
+                                                     k=l+1
+
+                                  ∞                  ! 1l           ∞
+                                                                                     ! 1l
+                      1
+                                 X      2k    |ak |                   X
+               |bl | l ≤ 4 ·                                  ≤4·            |ak |          ,
+                                k=l+1
+                                      2l + 1 4k                      k=l+1
+                  1
+so lim supl→∞ |bl | l = 0. This means that the Maclaurin series expansion of DW f has
+infinite radius of convergence, so DW f is entire. By a similar computation, one can
+easily show that AW f is also entire.
+180                         Kam Hang Cheng and Yik-Man Chiang
+
+    Next we prove (ii). If f is meromorphic, then we can write f = ff01 , where f0 and
+f1 are entire functions without common zeros and f0 6≡ 0. According to the proven
+statement (i) and the quotient rule in Proposition 2.2, it suffices to check that the
+product f0 (x+ )f0 (x− ) is entire whenever f0 (x) is entire.               P
+    Now if f0 is entire, then it has a Maclaurin series expansion f0 (x) = ∞  k=0 ck x
+                                                                                      k
+                             1
+satisfying lim supk→∞ |ck | k = 0. So we have
+                                    X∞ X ∞              2k       2j
+                       +       −                       i          i
+                  f0 (x )f0 (x ) =          ck cj z +          z−       .
+                                    k=0 j=0
+                                                       2          2
+
+To put this series into a Maclaurin series in x, it suffices to show that each symmetric
+term (z + 2i )2k (z − 2i )2j + (z + 2i )2j (z − 2i )2k is a polynomial in x. Without loss of
+generality, we may assume that j ≥ k and write n := j − k ≥ 0. Then binomial
+expansion gives
+                           2k         2j              2j      2k
+                          i            i                 i         i
+                    z+            z−          + z+              z−
+                          2            2                2          2
+                              2k          2k "          2n         2n #
+                             i             i               i            i
+                  = z+               z−              z+          + z−
+                             2             2               2            2
+                                2k Xn                  
+                               1          (−1)n−l 2n l
+                  =2 x+                                     x,
+                               4     l=0
+                                            22n−2l 2l
+
+which is a polynomial in x. The Maclaurin series of f0 (x+ )f0 (x− ) thus obtained has
+infinite radius of convergence by a similar argument as that in (i).
+     Finally, to prove (iii), it just suffices to repeat the proof of (ii) verbatim, with the
+holomorphic functions f0 and f1 replaced by polynomials, and the infinite Maclaurin
+series expansion of f0 replaced by a finite sum.                                           
+
+                                    3. Main results
+    We first recall some basic notions in the classical Nevanlinna theory, which can
+be found in many texts, for instance [7], [8], [17] and [36]. Given a meromorphic
+function f 6≡ 0 with sequence of poles {bµ }µ repeated according to multiplicity,
+the proximity function m(r, f ), the integrated counting function N(r, f ) and the
+Nevanlinna characteristic function T (r, f ) for f are defined, for every r > 0, as
+                                     ˆ 2π
+                                  1
+                    m(r, f ) :=             ln+ f (reiθ ) dθ,
+                                 2π 0
+                                 ˆ r
+                                     n(t, f ) − n(0, f )
+                   N(r, f ) :=                            dt + n(0, f ) ln r,
+                                  0             t
+                    T (r, f ) := m(r, f ) + N(r, f ),
+                                   P
+respectively, where n(r, f ) :=       |bµ |≤r 1 for every r ≥ 0. Nevanlinna’s First Fun-
+damental Theorem then states that for every meromorphic function f and every
+complex number a, we have
+                                                          
+                   1                    1                   1
+(3.1)     m r,             + N r,               ≡ T r,           = T (r, f ) + O(1)
+                f −a                 f −a                 f −a
+as r → ∞.
+                    Nevanlinna theory of the Wilson divided-difference operator            181
+
+    The order of a meromorphic function f is defined by
+                                                  ln+ T (r, f )
+                                  σ := lim sup                  ,
+                                          r→∞         ln r
+which is either a non-negative real number or +∞. The following is a fundamental
+inequality leading to our main result.
+     Theorem 3.1. (The Fundamental inequality) Let f be a meromorphic function
+of finite order σ such that f ∈
+                              / ker DW , q be a positive integer, and y1 , y2, . . . , yq be q
+complex numbers. Then for every ε > 0, we have
+                      Xq             
+                                 1                                     1
+(3.2)      m(r, f ) +     m r,          ≤ 2T (r, f ) − NW (r) + O(r σ− 2 +ε ) + O(1)
+                      n=1
+                               f − yn
+
+as r → ∞, where the Wilson ramification term NW (r) is defined as
+                                    
+                                  1
+(3.3)          NW (r) := N r,          + 2N(r, f ) − N(r, DW f ).
+                               DW f
+   To better interpret the Wilson ramification term NW (r) in Theorem 3.1, we
+need to introduce new counting functions nW (r, f ), NW (r, f ), nf             g
+                                                                  W (r, f ) and NW (r, f ),
+which are more suitable for the Wilson operator. While the precise definitions of these
+Wilson counting functions shall be given in §5 (Definition 5.1), our main result in this
+paper is the following Wilson operator version of Nevanlinna’s Second Fundamental
+Theorem, which is stated in terms of these new counting functions.
+     Theorem 3.2. (NSFT for the Wilson operator) Let f be a meromorphic function
+of finite order σ such that f ∈/ ker DW , q be a positive integer, and y1 , y2, . . . , yq be q
+complex numbers. Then for every ε > 0, we have
+                                          Xq              
+                             g                g        1               1
+(3.4)     (q − 1)T (r, f ) ≤ NW (r, f ) +     NW r,           + O(r σ− 2 +ε ) + O(ln r)
+                                          n=1
+                                                    f − yn
+as r → ∞.
+     Note that while the classical version of Nevanlinna’s Second Fundamental Theo-
+rem imposes no restriction on the order of the meromorphic function f , our Wilson
+version works essentially just for meromorphic functions whose order is finite. In
+Halburd and Korhonen’s ordinary difference operator version [15], the meromorphic
+function is also required to have finite order; and in the second author and Feng’s
+Askey–Wilson operator version [11], the meromorphic function is required to have
+finite logarithmic order.
+     After we have introduced in §5 (Definition 5.4) the Wilson analogues ϑW (a, f )
+and ΘW (a, f ) of the ramification index ϑ(a, f ) of f at a and the quantity Θ(a, f ) in
+the classical Nevanlinna theory, the following corollary is an immediate consequence
+of Theorem 3.2. This is also analogous to Halburd and Korhonen’s defect relation
+[15, Corollary 2.6] with respect to the ordinary difference operator.
+    Corollary 3.3. (Wilson deficient values) Let f be a transcendental meromorphic
+function of finite order such that f ∈ / ker DW . Then ΘW (a, f ) = 0 except for at most
+countably many a ∈ Ĉ, and
+                      X                             X
+                          [δ(a, f ) + ϑW (a, f )] ≤   ΘW (a, f ) ≤ 2.
+                      a∈Ĉ                            a∈Ĉ
+182                           Kam Hang Cheng and Yik-Man Chiang
+
+    A Wilson generalization of Picard’s Theorem can be obtained from the defect
+relation given in Corollary 3.3. It gives a sufficient condition for a transcendental
+meromorphic function of finite order to become a function in ker DW .
+    Theorem 3.4. (Picard’s Theorem for the Wilson operator) Let f be a mero-
+morphic function of finite order. If f has three distinct Wilson exceptional values,
+then either f ∈ ker DW or f is rational.
+    The notion of Wilson exceptional values will be defined precisely in §5 (Defini-
+tion 5.5).
+
+
+                    4. Lemma on logarithmic Wilson difference
+    The classical Nevanlinna theory starts from the Poisson–Jensen formula, which
+states a relationship between the modulus of a function and the distribution of its
+poles and zeros. From this formula, we can   obtain the lemma on logarithmic deriva-
+                                          ′
+tive, which is about the growth of m r, ff , i.e. the effect of the differential operator
+on the proximity function.
+    Now we aim to analyze the effect of the Wilson operator on the proximity func-
+tion, so we start from the Poisson–Jensen Formula and develop a Wilson operator
+analogue of the lemma on logarithmic derivative. The following is our desired result,
+which will be a crucial step to the proof of our main results mentioned in §3. This
+estimate can be compared with that for the usual difference operator ∆ and mero-
+morphic functions of finite order obtained by the second author and Feng [9] and
+independently by Halburd and Korhonen [14], as well as that for the Askey–Wilson
+operator Dq and meromorphic functions of finite logarithmic order also obtained by
+the second author and Feng [11].
+   Theorem 4.1. (Lemma on logarithmic Wilson difference) If f 6≡ 0 is a mero-
+morphic function of finite order σ, then for every ε > 0,
+                                        
+                                    DW f             1
+                             m r,           = O(r σ− 2 +ε )
+                                      f
+as r → ∞.
+                                                                            √
+    For the simple example f (x) := ex we have σ = 1 and m r, DW   f
+                                                                     f
+                                                                         ∼ π2 r as
+r → ∞, which shows that the number 12 on the right-hand side of Theorem 4.1 is the
+best possible.
+    We need the following lemmas in the course of the proof of Theorem 4.1.
+                                                    √
+    Lemma 4.2. Suppose that R > 14 and 0 ≤ r < ( R − 12 )2 . Then the followings
+                        √
+hold for every z ∈ ∂D(0; r):
+      (i) For every φ ∈ [0, 2π],
+                                                               √
+                         Reiφ (2iz − 21 )                    R(2 r + 12 )
+              R                                       ≤              √            .
+                  (Reiφ − z 2 )(Reiφ − (z + 2i )2 )     (R − r)(R − ( r + 12 )2 )
+
+      (ii) For every w ∈ D(0; r),
+                                                       √
+                              R2 − w(z + 2i )2        2 r + 12
+                           ln                     ≤      √          .
+                                 R2 − wz 2          R − ( r + 12 )2
+                   Nevanlinna theory of the Wilson divided-difference operator          183
+
+  (iii) For each 0 < α ≤ 1, there exists a constant Cα > 0 such that
+                                           α                               
+             (z + 2i )2 − w        √      1           1              1
+         ln                 ≤ Cα     r+                    +
+                z2 − w                    4      |z 2 − w|α |(z + 2i )2 − w|α
+       for every w ∈ D(0; r), and in particular we can take C1 = 1.
+    Proof. Part (i) is easy. Parts (ii) and (iii) are consequences of [9, Lemma 3.2],
+which says that for every 0 < α ≤ 1, there exists Cα > 0 such that
+                                                α            α
+                          z1            z1 − z2       z2 − z1
+(4.1)                  ln     ≤ Cα                 +
+                          z2               z2            z1
+for every z1 , z2 ∈ C, and in particular we can take C1 = 1.                             
+    Lemma 4.3. Let 0 < α < 1 be fixed. Then the following inequalities hold:
+    (i) For every r > 0 and w ∈ C,
+                             ˆ 2π
+                           1         dθ         1
+                                   i2θ  α
+                                          ≤            .
+                          2π 0 |re − w|     (1 − α)r α
+   (ii) For every ε > 0, there exists M > 0 depending only on ε, such that for every
+        w ∈ C,
+                          ˆ 2π
+                       1               dθ             1+ε
+                                √ iθ i 2          ≤
+                      2π 0 |( re + 2 ) − w|     α   (1 − α)r α
+        whenever r > M.
+    Proof. The proof of (i) is similar to [18, p. 62], [20, p. 66] or [9, Lemma 3.3]. To
+prove (ii), we write w = ρeiη , where ρ ≥ 0 and 0 ≤ η < 2π. Then
+     ˆ 2π                               ˆ 2π
+  1                dθ               1                        dθ
+            √ iθ i 2            =     α                                       α
+ 2π 0 |( re + 2 ) − w|       α    2πr 0       (ei2θ + √ir eiθ − 41 )e−iη − ρr
+                                        ˆ 2π
+                                    1                               dθ
+                                ≤                               1                 1
+                                  2πr α 0 | sin(2θ − η) + √r cos(θ − η) + 4r        sin η|α
+                                        ˆ 7π
+                                    1      4                    dθ
+                                =                                                     ,
+                                  2πr α − π4 | sin 2θ + √r cos(θ − η2 ) + 4r1 sin η|α
+                                                          1
+
+
+where in the last step we have changed the interval of integration from [0, 2π] to
+I := [− π4 , 7π
+              4
+                ] so as to cope with the locations of zeros of the denominator of the
+integrand. We note that when r is sufficiently large, the denominator of the last
+integrand has exactly four zeros in I, which we call θj (r) ∈ Ij for j ∈ {1, 2, 3, 4},
+where
+             I1 := (− π4 , π4 ), I2 := ( π4 , 3π
+                                               4
+                                                 ), I3 := ( 3π
+                                                             4
+                                                               , 5π
+                                                                  4
+                                                                    ), I4 := ( 5π4
+                                                                                   , 7π
+                                                                                      4
+                                                                                        ).
+    Now given any ε > 0, we claim that there exists M > 0 depending only on ε,
+such that whenever r > M, we have
+                               1            η     1            | sin 2[θ − θj (r)]|
+(4.2)             sin 2θ + √ cos θ −              +    sin η ≥                1
+                                r            2      4r                (1 + ε) α
+for every j ∈ {1, 2, 3, 4} and θ ∈ I, with each of the four equalities holding only at the
+point θ = θj (r). Since both sin 2θ + √1r cos θ + 4r1
+                                                      sin η and sin 2[θ − θj (r)] converge
+pointwise to the function sin 2θ as r → ∞, to show (4.2) it suffices to consider their
+behaviour around the only (moving) zero θ = θj (r).
+184                           Kam Hang Cheng and Yik-Man Chiang
+
+    Since θj (r) is the zero of sin 2θ+ √1r cos(θ− η2 )+ 4r
+                                                         1
+                                                            sin η such that limr→∞ θj (r) = 0,
+                                      1
+                                         
+we can easily obtain θj (r) = O √r as r → ∞. Thus around θ = θj (r), we have the
+Taylor expansions
+                                                                   
+                  1            η       1               sin η2
+      sin 2θ + √ cos θ −           +       sin η = 2 + √ + · · · [θ − θj (r)] + · · ·
+                   r           2       4r                   r
+and
+                           sin 2[θ − θj (r)] = 2[θ − θj (r)] + · · · ,
+from which we see that (4.2) holds for every θ ∈ I whenever r is larger than a positive
+number Mj which depends only on ε. The proof of the claim is finished by taking
+M := max {M1 , M2 , M3 , M4 }.
+    Now (4.2) implies that whenever r > M, we have
+       ˆ 7π                                             X 4 ˆ
+           4                    dθ                                         1+ε
+                        1           η       1         ≤                                   α
+                                                                                            dθ
+        − π4 | sin 2θ + √r cos(θ − 2 ) + 4r sin η|
+                                                   α
+                                                        j=1   I j
+                                                                  | sin  2[θ −   θj (r)]|
+                                                                    ˆ π
+                                                                        4    dθ
+                                                      = 8(1 + ε)               α    ,
+                                                                      0 sin 2θ
+and so
+                ˆ 2π                                  "           ˆ π              #
+             1                 dθ                1                    4    dθ
+                       √ iθ i 2              ≤     α
+                                                       8(1 + ε)              α
+            2π 0 |( re + 2 ) − w|         α    2πr                  0 sin 2θ
+                                                         ˆ π
+                                               4(1 + ε) 4 dθ                   1+ε
+                                             ≤       α           4θ
+                                                                        =                 .    
+                                                 πr        0 (π)
+                                                                     α     (1 − α)r α
+     Proof of Theorem 4.1. Given any meromorphic function f , DW f is meromorphic
+by Proposition 2.3 (ii), so it makes sense to look for m r, DW f
+                                                                 f
+                                                                   . Now the Poisson–
+Jensen formula asserts that for every x ∈ D(0; R) which is neither a zero nor a pole
+of f , we have
+                               ˆ 2π                 iφ      
+                             1               iφ     Re + x
+               ln |f (x)| =          ln f (Re ) R              dφ
+                            2π 0                    Reiφ − x
+(4.3)                          X                     X
+                                        R2 − aν x             R2 − bµ x
+                            −       ln             +      ln            ,
+                                        R(x − aν )           R(x − bµ )
+                                |aν |<R                    |bµ |<R
+
+where {aν }ν and {bµ }µ are respectively the sequences of zeros and poles of f , repeated
+according to their multiplicities. Substituting x+ = (z + 2i )2 and x = z 2 into (4.3)
+and subtracting, we obtain
+                                                                                   
+                                                         Reiφ (2iz − 21 )
+                           ˆ 2π
+             f (x+ )     1               iφ
+         ln          =          ln f (Re ) R                                          dφ
+              f (x)     2π 0                      (Reiφ − z 2 )(Reiφ − (z + 2i )2 )
+                              X           R2 − aν (z + 2i )2   X    R2 − bµ (z + 2i )2
+(4.4)                    −             ln                    +   ln
+                                             R2 − aν z 2               R2 − bµ z 2
+                             |aν |<R                           |bµ |<R
+                              X             (z + 2i )2 − aν   X    (z + 2i )2 − bµ
+                         +             ln                   −   ln                 ,
+                                               z 2 − aν               z 2 − bµ
+                             |aν |<R                        |bµ |<R
+
+which holds if neither x nor x+ is a√zero or a pole of f , and if both x and x+ are in
+D(0; R), i.e. if R > 14 and 0 ≤ r < ( R − 12 )2 , where r = |x|.
+                   Nevanlinna theory of the Wilson divided-difference operator        185
+
+    Next we estimate each term on the right-hand side of (4.4) using Lemma 4.2.
+For any given 0 < α < 1, the inequality
+                                  √                                    
+             f (x+ )          R(2 r + 12 )                             1
+          ln         ≤                √             m(R, f ) + m R,
+              f (x)     (R − r)(R − ( r + 12 )2 )                      f
+                              √                               
+                             2 r + 12                         1
+                       +        √     1 2 n(R, f ) + n R,
+                          R − ( r + 2)                        f
+(4.5)                                 α X                                       
+                               √     1                  1                1
+                       + Cα      r+                           +
+                                     4            |z 2 − aν |α |(z + 2i )2 − aν |α
+                                          |aν |<R
+                                      α X                                       
+                               √     1                 1                1
+                       + Cα      r+                           +
+                                     4            |z 2 − bµ |α |(z + 2i )2 − bµ |α
+                                          |b |<R  µ
+
+
+holds for some constant Cα > 0. Noting that
+
+                                                             1
+                                 |ln |w|| = ln+ |w| + ln+
+                                                             w
+
+for every non-zero complex
+                      √          number w, and integrating both sides of (4.5) along the
+circle {z ∈ C : |z| = r}, we get
+                                         
+              f (x+ )                f (x)
+       2m r,            + 2m r,
+               f (x)                f (x+ )
+                     √                                   
+                 R(2 r + 12 )                            1
+        ≤                 √              m(R, f ) + m R,
+          (R − r)(R − ( r + 12 )2 )                      f
+                 √                                 
+                2 r + 12                           1
+          +        √      1 2 n(R, f ) + n R,
+(4.6)       R − ( r + 2)                           f
+                         α X  ˆ 2π                        ˆ 2π                     
+                 √      1             1           dθ       1              dθ
+          + Cα r +                                      +         √
+                        4            2π 0 |rei2θ − aν |α 2π 0 |( reiθ + 2i )2 − aν |α
+                            |aν |<R
+                         α X  ˆ 2π                        ˆ 2π                     
+                 √      1             1           dθ       1             dθ
+          + Cα r +                                      +         √                     .
+                        4            2π 0 |rei2θ − bµ |α 2π 0 |( reiθ + 2i )2 − bµ |α
+                            |b |<R
+                             µ
+
+
+Note that on the left-hand side we have equivalently integrated along the circle
+{x ∈ C : |x| = r} for two complete revolutions. We emphasize here that the argument
+r in the proximity functions in (4.6) refers to the modulus of x, or of z 2 .
+    We next give upper bounds to the integrals on the right-hand side of (4.6).
+Applying Lemma 4.3 (i) and Lemma 4.3 (ii) with ε = 1, we see that there exists
+M > 0 such that
+                                                 
+                         f (x+ )             f (x)
+                 2m r,             + 2m r,
+                          f (x)             f (x+ )
+                                √                                
+                           R(2 r + 12 )                          1
+                  ≤                 √            m(R, f ) + m R,
+                    (R − r)(R − ( r + 12 )2 )                    f
+                            √                              
+                          2 r + 12                         1
+                    +        √      1 2 n(R, f ) + n R,
+                       R − ( r + 2)                       f
+186                           Kam Hang Cheng and Yik-Man Chiang
+
+
+                                                                    
+                                 α       X                     X
+                     √        1                 1+2                     1+2 
+(4.7)        + Cα        r+                                +
+                              4              (1 − α)r    α            (1 − α)r α
+                                    |aν |<R                   |bµ |<R
+                          √                                           
+                     R(2 r + 12 )                                     1
+          =                    √               m(R, f ) + m R,
+              (R − r)(R − ( r + 12 )2 )                               f
+                "       √                       √         α
+                                                             #                      
+                      2 r + 12         3Cα         r + 14                           1
+             +           √         +                             n(R, f ) + n R,
+                  R − ( r + 12 )2           (1 − α)r α                             f
+                                √
+whenever r > M and r < ( R − 12 )2 . Note that there is no exceptional set for r
+in (4.7),
+      √ as Lemma 4.3 holds for every w ∈ C without exception. Now the number
+R > ( r + 12 )2 was arbitrary in the beginning, so taking R = 2r in (4.7) we get
+                                              
+                   f (x+ )                f (x)
+           m r,               + m r,
+                    f (x)                f (x+ )
+                                                   
+                      1                              1
+            ≤O √             m(2r, f ) + m 2r,
+                       r                             f
+(4.8)                                                              
+                          1             1                                1
+               + O √           +O        α        n(2r, f ) + n 2r,
+                           r           r2                               f
+                                                                    
+                      1                         1                          1
+            ≤ O √ T (2r, f ) + O                 α   T (4r, f ) ≤ O         α T (4r, f )
+                       r                       r2                        r2
+as r → ∞, where the second inequality in (4.8) follows from that
+                                    
+                                   1                         1
+(4.9)            m(R, f ) + m R,       ≤ 2T (R, f ) + ln+
+                                   f                      |f (0)|
+and that                           
+                                  1       2R
+               n(R, f ) + n R,        ≤         N(2R, f ) ≤ 2T (2R, f ).
+                                  f     2R − R
+Following essentially the same argument, it can also be shown that
+                                                  
+                        f (x− )           f (x)          1
+(4.10)          m r,              + m r,     −
+                                                  =O      α  T (4r, f )
+                         f (x)           f (x )         r2
+as r → ∞.
+    Now if f 6≡ 0 is a meromorphic function of finite order σ, then for every small
+0 < ε < 1, we have
+                                                           ε
+(4.11)                                 T (4r, f ) = O(r σ+ 2 )
+as r → ∞. Choosing α = 1 − ε, (4.8), (4.10) and (4.11) imply that
+                                                                     
+                 DW f            f (x+ )             f (x− )              1
+           m r,         ≤ m r,             + m r,                + 2m r,
+                  f               f (x)                f (x)             iz
+                                     +
+                                                                            
+                                 f (x )                f (x)            f (x− )
+                        ≤ m r,             + m r,                + m r,
+                                  f (x)              f (x+ )             f (x)
+(4.12)                                    
+                                     f (x)           1
+                          + m r,        −
+                                              + ln+
+                                    f (x )           r
+                                   
+                                1                           1
+                        =O      1−ε    T (4r, f ) = O(r σ− 2 +ε )
+                               r 2
+                   Nevanlinna theory of the Wilson divided-difference operator          187
+
+as r → ∞, where in the first step we have used the inequalities
+                                                 p+q
+               ln+ pq ≤ ln+ p + ln+ q and ln+          ≤ ln+ p + ln+ q,
+                                                   2
+which hold for every pair of positive real numbers p and q. Of course (4.12) holds for
+ε ≥ 1 as well. This finishes the proof of Theorem 4.1.                              
+    Note added in proof. After this paper has been completed, we learnt of Korho-
+nen’s paper [25] suggested by the anonymous referee, in which there is an analogue of
+the lemma on logarithmic derivative for meromorphic functions composed with poly-
+nomials. While the setting is more general in that analogue, our Theorem 4.1 yields a
+                         1                                                    1
+sharp estimate of O(r σ− 2 +ε ) without exceptional set, compared with O(r σ− 4 +ε ) with
+some exceptional set which would have been given by that analogue. The difference
+between them mainly comes from our more detailed analysis gearing toward the Wil-
+son operator in Lemma 4.3 (ii). [25, Lemma 2.3] was used to obtain the mentioned
+analogue, but since it only accounts for the case 0 < α < 21 of our Lemma 4.3 (ii),
+                                                                            1
+it does not yield our Theorem 4.1. The sharpness of the estimate O(r σ− 2 +ε ) in our
+Theorem 4.1 is illustrated by the simple example following it, and the estimate also
+agrees with that for N(r, f (x+ )) in Lemma 5.2 in the next section.
+
+                              5. Proofs of main results
+    5.1. Proof of Theorem 3.1. We first prove the fundamental inequality (Theo-
+rem 3.1) by making use of the lemma on logarithmic Wilson difference (Theorem 4.1).
+The proof is quite standard and is based on Halburd and Korhonen’s modification
+[15] of Nevanlinna’s original argument.
+    Proof of Theorem 3.1. First let P (f ) be the polynomial
+                                               q
+                                               Y
+                                   P (f ) :=         (f − yn ).
+                                               n=1
+
+We have degf P = q > 0. Since f ∈        / ker DW , we have P (f ) 6≡ 0, and so there exist
+complex numbers a1 , a2 , . . . , aq such that
+                                           q
+                                   DW f    X    DW f
+                                         =   an      .
+                                   P (f ) n=1 f − yn
+Thus for every ε > 0, we have
+                       X q             
+                DW f                DW f                    1
+          m r,          ≤     m r,          + O(1) = O(r σ− 2 +ε ) + O(1)
+                P (f )    n=1
+                                   f − yn
+as r → ∞ by Theorem 4.1, which implies that
+                                                 
+              1             DW f 1                1              1
+(5.1)  m r,          = m r,               ≤ m r,        + O(r σ− 2 +ε ) + O(1)
+            P (f )          P (f ) DW f          DW f
+as r → ∞, since f ∈
+                  / ker DW . Besides this inequality (5.1), we also have the trivial
+equality
+                                    X q               
+                               1                    1
+(5.2)                  N r,          =     N r,
+                             P (f )    n=1
+                                                  f − yn
+188                           Kam Hang Cheng and Yik-Man Chiang
+
+and Mohon’ko’s equality [30] [26, Theorem 2.2.5] [9, Lemma 3.5]
+(5.3)                           T (r, P (f )) = qT (r, f ) + O(1)
+as r → ∞.
+            1
+    Since P (f )
+                 is clearly meromorphic and DW f is meromorphic by Proposition 2.3,
+we can apply Nevanlinna’s First Fundamental Theorem (3.1) and the above three
+results (5.1), (5.2) and (5.3) to get, for every ε > 0,
+                                              
+                            1                 1
+  T (r, DW f ) = m r,             + N r,           + O(1)
+                         DW f              DW f
+                                              
+                            1                 1             1
+               ≥ m r,             + N r,           + O(r σ− 2 +ε ) + O(1)
+                         P (f )            DW f
+                                                            
+                                          1               1                 1
+               = T (r, P (f )) − N r,            + N r,            + O(r σ− 2 +ε ) + O(1)
+                                        P (f )          DW f
+                               Xq                               
+                                            1                  1                1
+               = qT (r, f ) −      N r,            + N r,            + O(r σ− 2 +ε ) + O(1)
+                               n=1
+                                         f − yn             DW f
+                  X q                              
+                                 1                 1               1
+               =       m r,            + N r,           + O(r σ− 2 +ε ) + O(1)
+                  n=1
+                              f − yn             DW f
+as r → ∞. This implies that
+                Xq             
+                           1
+     m(r, f ) +     m r,
+                n=1
+                         f − yn
+                                
+                              1                        1
+     ≤ T (r, DW f ) − N r,         + m(r, f ) + O(r σ− 2 +ε ) + O(1)
+                           DW f
+                                              
+                                           1                          1
+     = m(r, DW f ) + N(r, DW f ) − N r,          + m(r, f ) + O(r σ− 2 +ε ) + O(1)
+                                         DW f
+                                            
+                                        1                1
+     ≤ 2m(r, f ) + N(r, DW f ) − N r,          + O(r σ− 2 +ε ) + O(1)
+                                      DW f
+                                       1
+        ≤ 2T (r, f ) − NW (r) + O(r σ− 2 +ε ) + O(1)
+as r → ∞, where the second last inequality follows from Theorem 4.1 again.               
+     5.2. Wilson counting functions and two lemmas. Now we introduce the
+following new counting functions which are more suitable for DW .
+     Definition 5.1. Let f be a meromorphic function such that f ∈             / ker DW . We
+define the following Wilson counting functions for f : For each r ≥ 0, we define
+                        P
+     (i) nW (r, f ) := x∈Sr order of zero of DW ( f1 ) at x+ , and
+                        P            
+    (ii) nf
+          W (r, f ) :=    x∈Sr max 0, order of pole of f at x − order of zero of
+         DW ( f1 ) at x+ ,
+                
+where Sr := x ∈ D(0; r) : f1 (x) = 0 ; and for each r > 0, we define
+                        ˆ r
+                             nW (t, f ) − nW (0, f )
+   (iii) NW (r, f ) :=                               dt + nW (0, f ) ln r, and
+                        ˆ0 r            t
+         g                   nf
+                              W (t, f ) − n
+                                          fW (0, f )
+   (iv) N  W (r, f ) :=                              dt + nf
+                                                           W (0, f ) ln r.
+                         0              t
+                      Nevanlinna theory of the Wilson divided-difference operator                                   189
+
+     Here nf             g
+           W (r, f ) and NW (r, f ) are respectively the Wilson analogues of the distinct
+pole counting functions n(r, f ) and N (r, f ). Note that we have defined nf   W (r, f ) in a
+different way from Halburd and Korhonen’s difference operator analogue in [15], so
+that this quantity is always non-negative as one should expect, even when there are
+poles x and x++ of f with the same order and the same initial Laurent coefficients.
+This rationale has also been adopted in defining the Askey–Wilson analogue of the
+same quantity in [11]. Also note that if we have used x− instead of x+ in defining
+both nW (r, f ) and of nfW (r, f ), then it just amounts to the choice of the other branch
+of the square-root function with the same branch cut in the beginning.
+     Next we state the following useful lemma.
+    Lemma 5.2. Let f be a meromorphic function of finite order σ. Then for every
+ε > 0, we have
+                                                1
+                N r, f (x+ ) = N(r, f ) + O(r σ− 2 +ε ) + O(ln r)
+as r → ∞.
+    Proof. It is easy to see that for every x ∈ C with |x| > 41 , we have x+− = x−+ = x.
+So by the definition of the integrated counting function, we have
+                           ˆ r
+                    +            n(t, f (x+ )) − n(0, f (x+ ))
+          N(r, f (x )) =                                       dt + n(0, f (x+ )) ln r
+                                               t
+                           ˆ0 r
+                                 n(t, f (x )) − n(1, f (x+ ))
+                                           +
+                        =                                      dt + O(ln r)
+                             1                 t
+                              X            r
+                        =            ln − + O(ln r)
+                                −
+                                         |bµ |
+                                  1≤|bµ |<r
+
+as r → ∞, where {bµ }µ is the sequence of poles of f . This gives, as r → ∞,
+
+                                                          X               r         X                r
+            |N(r, f (x+ )) − N(r, f )| =                           ln         −               ln        + O(ln r)
+                                                                        |bµ |                      |b−
+                                                                                                     µ|
+                                                    1≤|bµ |<r                     1≤|b−
+                                                                                      µ |<r
+(5.4)              X                            X                      X
+                                  bµ                             r            r
+            ≤                ln         +                 ln         +   ln       + O(ln r).
+                                  b−
+                                   µ
+                                                                 −
+                                                               |bµ |        |bµ |
+                 1≤|bµ |<r                     |bµ |≥r                   1≤|bµ |<r
+                 1≤|b−
+                     µ |<r                    1≤|b−
+                                                  µ |<r                   |b−
+                                                                            µ |≥r
+
+
+    Next, by applying (4.1) with α = 1, we see that if 1 ≤ |bµ | < r and 1 ≤ |b−
+                                                                               µ | < r,
+then
+                 bµ     bµ − b−µ     bµ − b−
+                                           µ      i      1       i      1
+            ln         ≤         +            = p +         + p −+ −
+                 b−
+                  µ        bµ            −
+                                        bµ         bµ 4bµ        bµ   4bµ
+(5.5)                                                                       
+                          1       1        1       1     5    1        1 
+                       ≤p      +       +q       +   −
+                                                        ≤ p        +q         .
+                          |bµ | 4|bµ |     |b− | 4|bµ |  4    |bµ |    |b− |
+                                                               µ                                            µ
+
+Moreover, if |bµ | ≥ r and 1 ≤ |b−
+                                 µ | < r, then we have
+                                                              2
+                                               2
+                r        |bµ |             i             1          1
+(5.6)      ln − ≤ ln − = ln 1 + p − ≤ ln 1 + q                   <q       .
+              |bµ |      |bµ |          2 bµ           2 |b− |       |b− |                     µ                µ
+190                                 Kam Hang Cheng and Yik-Man Chiang
+
+Similarly, if 1 ≤ |bµ | < r and |b−
+                                  µ | ≥ r, then we have
+
+                                                     r      1
+(5.7)                                          ln         <p       .
+                                                    |bµ |    |bµ |
+
+Thus by putting (5.5), (5.6) and (5.7) into (5.4), we obtain
+
+           |N(r, f (x+ )) − N(r, f )|
+                                          
+              5    X                          X                X
+            ≤              p1 + q 1  +             q
+                                                       1
+                                                            +          p
+                                                                        1
+                                                                              + O(ln r)
+              4              |bµ |    |b−|            |b −|             |bµ |
+                1≤|bµ |<r               µ    |bµ |≥r     µ   1≤|bµ |<r
+(5.8)             1≤|b−                                     1≤|b−                |b−
+                      µ |<r                                     µ |<r              µ |≥r
+                                                                 
+                5 X         1                 X            1      + O(ln r)
+           ≤                p       +                  q
+                4             |b  |                        |b−
+                                                             µ|
+                  1≤|bµ |<r     µ
+                                          1≤|b−
+                                              µ |<r
+
+
+
+as r → ∞. Now in the second summand on the right-hand side of (5.8), we have
+                               s
+               1         1       bµ    1           i        3
+            q       =p              = p      1 +  p    ≤  p
+               |b−       |bµ |   b−    |bµ |     2 b−    2 |bµ |
+                 µ|
+                                  µ                  µ
+
+
+since 1 ≤ |b−
+            µ | < r, thus
+
+                                                       25          X           1
+(5.9)            |N(r, f (x+ )) − N(r, f )| ≤                                 p      + O(ln r)
+                                                        8             √     1  |bµ |
+                                                            1≤|bµ |<r+ r+ 4
+
+as r → ∞.
+     Finally, to estimate the series on the right-hand side of (5.9), we consider the
+following two cases separately:
+      (i) If σ < 21 , then the exponent of convergence of the sequence {bµ }µ is also less
+          than 21 , so
+                                     X          1
+                                              p       = O(1)
+                                         √ 1    |bµ |
+                                      1≤|bµ |<r+ r+ 4
+
+           as r → ∞.
+      (ii) In case σ ≥ 21 , Hölder’s inequality implies that for every ε > 0,
+                X          1
+                          p
+                   √    1   |bµ |
+         1≤|bµ |<r+ r+ 4
+                                             !2σ+2ε  2σ+2ε
+                                                         1                                         2σ−1+2ε
+                                                                                                      2σ+2ε
+                      X              1                                  X                  2σ+2ε
+         ≤                         p                                               (1) 2σ−1+2ε 
+                         √            |bµ |                                  √
+               1≤|bµ |<r+ r+ 41                                    1≤|bµ |<r+ r+ 14
+                                          2σ+2ε
+                                              1                               2σ−1+2ε
+                                                                                 2σ+2ε
+                      X             1                            X
+         =                                                                1
+                          √   1
+                                |bµ |σ+ε                           √
+                1≤|bµ |<r+ r+ 4                          1≤|bµ |<r+ r+ 41
+                    Nevanlinna theory of the Wilson divided-difference operator                 191
+
+
+
+                                     2σ−1+2ε
+                               √  1       2σ+2ε
+               ≤ O(1) · n r + r + , f
+                                  4
+                                    (σ+ε)( 2σ−1+2ε  !
+                                √             2σ+2ε )
+                                   1                             1
+               ≤ O(1) · O    r+ r+                      = O(r σ− 2 +ε )
+                                   4
+        as r → ∞.
+Therefore in both cases, (5.9) gives
+                                                             1
+                    |N(r, f (x+ )) − N(r, f )| = O(r σ− 2 +ε ) + O(ln r)
+
+as r → ∞.                                                                                       
+    Note that the very first sentence in the proof of Lemma 5.2 depends on the fact
+that we have chosen the branch cut of the square-root function to be the imaginary
+axis in defining x+ .
+    Using the Wilson counting function NW (r, f ) we have defined, we can interpret
+the Wilson ramification term NW (r) as in the first part of the following lemma.
+    Lemma 5.3. Let f be a meromorphic function of finite order σ such that f ∈
+                                                                             /
+ker DW . Then the following inequalities hold:
+     (i) For every r > 0, we have
+                                                      g
+                              N(r, f ) − NW (r, f ) ≤ NW (r, f ).
+
+     (ii) For every ε > 0, we have
+                          X                  
+                                         1                             1
+             NW (r, f ) +   NW r,                 ≤ NW (r) + O(r σ− 2 +ε ) + O(ln r)
+                        a∈C
+                                       f −a
+
+        as r → ∞, where NW (r) is the Wilson ramification term defined in (3.3).
+    Proof. The first inequality follows immediately from the definitions of the count-
+ing functions given in Definition 5.1. To prove the second inequality, we recall that
+nW (r, f ) counts all those zeros of (DW ( f1 ))(x+ ) in D(0; r) which satisfy f1 (x) = 0,
+                                     1
+while for each a ∈ C, nW (r, f −a      ) counts all those zeros of (DW f )(x+ ) in D(0; r)
+which satisfy f (x) = a. So we have
+                      X                   
+                                       1
+         nW (r, f ) +      nW r,
+                      a∈C
+                                     f −a
+                                     !                     
+                           1                        1
+          ≤ n r,                       + n r,
+                    (DW ( f1 ))(x+ )           (DW f )(x+ )
+                                                            
+                                  ++                 1
+          ≤ n(r, f ) + n(r, f (x )) + n r,                     − n(r, (DW f )(x+ ))
+                                                (DW f )(x+ )
+as
+           
+            1           −(DW f )(x+ )                                      f (x++ ) − f (x)
+        DW      (x+ ) =                           and (DW f )(x+ ) =                        .
+            f           f (x)f (x++ )                                          x++ − x
+192                        Kam Hang Cheng and Yik-Man Chiang
+
+Therefore for every ε > 0,
+                    X                     
+                                      1
+       NW (r, f ) +    NW r,
+                    a∈C
+                                    f −a
+                                                                    
+                                ++                        1
+        ≤ N(r, f ) + N(r, f (x )) + N              r,    − N(r, (DW f )(x+ ))
+                                                      (DW f )(x+ )
+                                 
+                              1                            1
+        = 2N(r, f ) + N r,          − N(r, DW f ) + O(r σ− 2 +ε ) + O(ln r)
+                             DW f
+                            1
+        = NW (r) + O(r σ− 2 +ε ) + O(ln r)
+as r → ∞, where the second step follows from Lemma 5.2, as the order σ of f is
+                                       1
+greater than or equal to the order of DW f
+                                           .                                
+    5.3. Proof of Theorem 3.2. Proof. From Lemma 5.3 (i), we see that
+        1
+N(r, f −y   )−N g          1                   1
+                  W (r, f −yn ) ≤ NW (r, f −yn ) for each 1 ≤ n ≤ q and that N(r, f ) −
+          n
+g
+N W (r, f ) ≤ NW (r, f ), so together with Lemma 5.3 (ii) we get, for every ε > 0,
+                                           q                                  
+                                          X              1                   1
+             [N(r, f ) − Ng  W (r, f )] +       N r,              g
+                                                                 −N  W r,
+                                          n=1
+                                                      f −  y n             f − yn
+                               X q                                   X               
+(5.10)                                           1                                   1
+              ≤ NW (r, f ) +        NW r,               ≤ NW (r, f ) +     NW r,
+                                n=1
+                                              f − yn                   a∈C
+                                                                                   f −a
+                                1
+            ≤ NW (r) + O(r σ− 2 +ε ) + O(ln r)
+as r → ∞. Now, applying Nevanlinna’s First Fundamental Theorem (3.1) and this
+inequality (5.10) to the result (3.2) from Theorem 3.1, we have
+                                 X q              
+                                              1                          1
+   (q − 1)T (r, f ) ≤ N(r, f ) +       N r,          − NW (r) + O(r σ− 2 +ε ) + O(ln r)
+                                 n=1
+                                            f − yn
+                                   X q               
+                      g                 g        1               1
+                    ≤ NW (r, f ) +      NW r,           + O(r σ− 2 +ε ) + O(ln r)
+                                    n=1
+                                               f − yn
+as r → ∞.                                                                              
+     5.4. Defect relations under the Wilson operator, proofs of Corollary 3.3
+and Theorem 3.4. We can apply Theorem 3.2 to give a Wilson analogue of Nevan-
+linna’s Theorem on deficient values. We first recall that given a meromorphic function
+f , the Nevanlinna defect δ(a, f ) of f at a ∈ Ĉ is defined as
+                                         m(r, a)                 N(r, a)
+                   δ(a, f ) := lim inf             = 1 − lim sup         ,
+                                r→∞      T (r, f )         r→∞ T (r, f )
+
+where we have used the short-hand notations
+                                                            
+                               1                            1
+            m(r, a) := m r,           and N(r, a) := N r,
+                             f −a                         f −a
+for every a ∈ C, and
+                   m(r, ∞) := m(r, f ) and N(r, ∞) := N(r, f ),
+and where the equality after the definition follows from Nevanlinna’s First Funda-
+mental Theorem (3.1). Now we make the following natural definitions, which are the
+                    Nevanlinna theory of the Wilson divided-difference operator                           193
+
+Wilson analogues of the ramification index ϑ(a, f ) of f at a and the quantity Θ(a, f )
+in the classical Nevanlinna theory.
+    Definition 5.4. Let f be a meromorphic function such that f ∈    / ker DW and let
+a ∈ Ĉ. The Wilson ramification index ϑW (a, f ) of f at a is defined as
+                                                        NW (r, a)
+                               ϑW (a, f ) := lim inf              ,
+                                                r→∞     T (r, f )
+and the quantity ΘW (a, f ) of f at a is defined as
+                                                           g
+                                                           NW (r, a)
+                            ΘW (a, f ) := 1 − lim sup                .
+                                                    r→∞    T (r, f )
+    It is easy to see that we always have 0 ≤ ΘW (a, f ) ≤ 1. Now we prove Corol-
+lary 3.3.
+    Proof of Corollary 3.3. The first inequality follows readily from the first part of
+Lemma 5.3. Now from Theorem 3.2, dividing both sides of (3.4) by T (r, f ), we see
+that for any positive integer q, any finite sequence of points {y1 , y2 , . . . , yq } in C and
+any ε > 0,
+                                  q
+                                                                  !                 
+                  g
+                  N W (r, f  )   X   g
+                                     NW  (r, y n )    r σ− 21 +ε
+                                                                           ln r
+          q−1≤                 +                   +O               +O
+                   T (r, f )     n=1
+                                      T (r, f )       T  (r,  f )        T (r, f )
+
+as r → ∞. Rearranging the terms, we then obtain
+     "                #    q
+                              "                 #                            !                       
+         g
+         N W (r, f  )     X       g
+                                  NW  (r, y n )
+                                                                        1
+                                                                 r σ− 2 +ε                  ln r
+      1−                +      1−                 ≤2+O                           +O
+          T (r, f )       n=1
+                                   T (r, f )                     T (r, f )                T (r, f )
+
+as r → ∞. Taking limit inferior on both sides as r → ∞ and noting that f is
+transcendental, we have
+                                              q
+                                              X
+                             ΘW (∞, f ) +           ΘW (yn , f ) ≤ 2.
+                                              n=1
+
+The rest of the corollary follows since {y1 , y2, . . . , yq } is an arbitrary sequence of
+points in C.                                                                            
+    As a Wilson analogue of the Nevanlinna exceptional value, we make the following
+definition.
+   Definition 5.5. Let f be a meromorphic function and a be an extended complex
+number.
+    (i) We say that f has a Wilson a-sequence starting at x0 ∈ C if for every non-
+                                                                               +(2p)
+        negative integer p, f has an a-point of multiplicity mp > 0 at x0            , where
+                                   ∞
+          • The sequence {mp }p=0 is monotonically increasing, i.e. 0 < m0 ≤ m1 ≤
+            m2 ≤ · · · ; and
+          • In case x−−0                  / [− 41 , 0]), we also have either f (x−−
+                           6= x0 (i.e. x0 ∈                                      0 ) 6= a or
+                −−
+            f (x0 ) = a with multiplicity m−1 > m0 .
+                                                    +(2p) ∞
+        This Wilson a-sequence is given by {x0           }p=0 .
+   (ii) We say that a is a Wilson exceptional value of f if all but at most finitely
+        many a-points of f are in its Wilson a-sequences.
+194                         Kam Hang Cheng and Yik-Man Chiang
+
+   We should note that the Wilson exceptional values of a function is a global
+property of the function. Moreover, if f is a rational function, i.e. f has finitely
+many poles, then ∞ is automatically a Wilson exceptional value of f .
+    Example 5.6. Here is an example that illustrates Definition 5.5. Let f be a
+meromorphic function having poles at the points as shown in the following figure,
+with multiplicities indicated in boxes. The dots indicate that the subsequent poles
+have increasing multiplicities.
+                                                        I
+                                  ..                                   ..        ..
+                                       .                                    .     .
+                             ..
+                                  .
+                                                 +(6)
+                                                x1                              2 x+(6)
+                                                                                    2
+
+                                           4
+
+
+
+                                                                                       5 x+(4)
+                                                                                          2
+
+                                                             ++
+                                                       x0 3 x1
+                 +(6)                  +(4)
+        ···     x0                    x0           x++
+                                                    0
+        ···                                                                                      R
+                  3                    2            1       1
+                                                                1 x1
+                                                                                       5 x++
+                                                                                          2
+
+
+
+
+                                                                                1 x2
+
+     From this figure, we see that f has Wilson pole sequences starting at the points
+      +(6)      +(6)
+x0 , x1 and x2 . (Note that x−−   0  = x0 .) Since all but five poles of f are contained
+in these Wilson pole sequences, it follows that ∞ is a Wilson exceptional value of f .
+     Remark 5.7. In fact, for any Wilson exceptional value a of a transcendental
+meromorphic function f , we have ΘW (a, f ) = 1. This is because each a-point x0 of
+f in a Wilson a-sequence has the same multiplicity as that of the zero of DW f at
+x+
+ 0 , which means that each Wilson a-sequence of f gives no contribution to nfW (r, a).
+Now f has only finitely many a-points outside its Wilson a-sequences, so nfW (r, a) is
+                    g
+bounded. Therefore NW (r, a) = O(ln r) = o(T (r, f )) as r → ∞, and so ΘW (a, f ) = 1.
+     The following is the proof of Theorem 3.4.
+     Proof of Theorem 3.4. Let f be a meromorphic function and a1 , a2 , a3 ∈ Ĉ be
+three distinct Wilson exceptional values of f . If f is rational, then we are done. If f
+is transcendental, then
+                        ΘW (a1 , f ) = ΘW (a2 , f ) = ΘW (a3 , f ) = 1
+as in the above remark. This implies that
+                                       3
+                                       X
+                                               ΘW (ai , f ) = 3 > 2,
+                                       i=1
+                   Nevanlinna theory of the Wilson divided-difference operator          195
+
+which contradicts the result of Corollary 3.3, so f ∈ ker DW .                          
+    Theorem 3.4 readily implies the following corollary, which is a Wilson analogue
+of Liouville’s theorem in classical complex function theory.
+    Corollary 5.8. Let f be a meromorphic function of finite order. If for every
+a ∈ Ĉ outside a sufficiently large disk, the set
+ {x ∈ f −1 ({a}) : a-point multiplicity of f at x++ < a-point multiplicity of f at x}
+is finite, then either f ∈ ker DW or f is rational.
+    We conclude this section by giving some examples.
+    Example 5.9. Here are examples on different values of ΘW (a, f ).
+    (i) Let b ∈ C \ (iN0 ), and f : C → C be the infinite product
+                      Y∞                 
+                                   x                   [Γ(−ib)]2
+             f (x) :=      1−           2
+                                            =           √            √ .
+                      k=0
+                               (b + ki)       Γ(−ib + i   x)Γ(−ib − i x)
+
+       Since f has a simple zero at (b+ki)2 for every k ∈ N0 , 0 is a Wilson exceptional
+       value of f , and so
+                         PΘW (0, f ) = 1. Since f is entire, we also have ΘW (∞, f ) = 1,
+       so the equality     ΘW = 2 is attained. Note that by Gauss’ formula [3, §1.3]
+       we have                           √        √        
+                                           i x, −i x
+                            f (x) = 2 F1                ; 1
+                                              −ib
+        if Ib > 0. Replacing i by any c ∈ C \ {0}, we see that the function f : C → C
+        defined by
+           Y∞                                                     1√      1√
+                                                                                      
+                        x                  [Γ( cb )]2                   x, −    x
+ f (x) :=       1−           2
+                                 = b 1√             b   1√
+                                                              = 2 F1 c     b
+                                                                             c    ; 1
+           k=0
+                    (b + ck)      Γ( c
+                                       + c
+                                            x)Γ(    c
+                                                      − c
+                                                           x)              c
+
+        satisfies that ΘW,2 (∞, f ) = ΘW,2 (0, f ) = 1. Here ΘW,c (a, f ) is the analogous
+        quantity of f at a associated to the c-shift Wilson operator D√   W,c to be defined
+                                                                        π
+        in §7. In particular, this is true for the function f (x) = cos 2 x, to which we
+        have substituted b = 1 and c = 2.
+   (ii) Consider the generating function ϕ(x; t) of Wilson polynomials Wn (x) ≡
+        Wn (x; a, b, c, d) [35] [22] given by
+                                  √        √                √         √       
+                             a + i x, b + i x             c − i x, d − i x
+          ϕ(x; t) := 2 F1                      ; t 2 F1                       ; t
+                                    a+b                         c+d
+       When a = c ∈  / { 21 − k : k ∈ N} and b = d = 21 , we can evaluate ϕ(x; t) at
+       t = −1 using Kummer’s formula [3, §2.3] to obtain
+                        √          √                    √         √       
+                    a + i x, 12 + i x                 a − i x, 12 − i x
+      ϕ(x) = 2 F1                        ; −1 2 F1                      ; −1
+                           a + 12                           a + 21
+                                                      √               √
+                     Γ(a + 12 )Γ(a + 12 )Γ(1 + a2 + 2i x)Γ(1 + a2 − 2i x)
+           =               √                √               √              √ .
+             Γ(1 + a + i x)Γ(1 + a − i x)Γ( 12 + a2 + 2i x)Γ( 21 + a2 − 2i x)
+        This function ϕ has double zeros at {−(a − 1 + 2k)2 : k ∈ N} and has no
+        other zeros or poles. We have ΘW,2i (0, ϕ) = ΘW,2i (∞, ϕ) = 1.
+     The next two examples make use of the infinite product construction as in the
+first example.
+196                           Kam Hang Cheng and Yik-Man Chiang
+
+      (iii) Let g : C → C be the infinite product
+                                Y∞             2                   
+                                            x                 x
+                        g(x) :=      1−              1−                 .
+                                         (2ki)2          ((2k − 1)i)2
+                                k=1
+                                     √                     1√
+            Then we have n(r, 0) ∼ 23 r and nf  W (r, 0) ∼ 2 r as r → ∞, so
+                                                     √
+                                       g
+                                       N W (r, 0) ∼    r
+          as r → ∞. On the other hand, it is easy to see that for every θ ∈ (−π, π),
+                                               3π √        θ
+                               ln |g(reiθ )| =       r cos
+                                                2          2
+          as r → ∞, so by Lebesgue Dominated Convergence Theorem we have
+                                                    ˆ π
+                                          1 3π √             θ     √
+                   T (r, g) = m(r, g) ∼           r      cos dθ = 3 r
+                                         2π 2        −π      2
+          as n → ∞. Therefore ΘW (0, g) = 32 .
+             More generally, given any rational number s ∈ [0, 1], there exist non-
+                                                     2q
+          negative integers p ≥ q such that s = p+q     . If we let g : C → C be the
+          infinite product
+                              Y∞            p                  q
+                                        x                  x
+                      g(x) :=      1−             1−                 ,
+                              k=1
+                                      (2ki)2         ((2k − 1)i)2
+           then we have ΘW (0, g) = s.
+      (iv) Given any s ∈ [0, 1], there exists a sequence {ak }∞  k=0 of integers such that
+           a0 = 0, ak+1 − ak ∈ {0, 1} for every k ∈ N0 , and limk→∞ akk = 1 − s. If we let
+           h : C → C be the infinite product
+                                       Y∞                    
+                                                     x
+                              h(x) :=       1−                 ,
+                                                ((k + ak )i)2
+                                       k=1
+
+          then by a similar argument we obtain ΘW (0, h) = s.
+    5.5. Unicity theorem. As in the classical Nevanlinna theory, Theorem 3.2
+also gives us a Wilson analogue to Nevanlinna’s five-value theorem. To state this
+theorem we first need to define what it means by two functions “sharing” a value in
+the Wilson sense.
+     Definition 5.10. Let f and g be meromorphic functions of finite order such that
+     / ker DW and let a ∈ Ĉ. We say that f and g share the value a in the Wilson
+f, g ∈
+sense if, as r → ∞,
+                         nfW (r, f, a) − n
+                                         fW (r, g, a) = O(1),
+or equivalently,
+                        g
+                        N               g
+                          W (r, f, a) − NW (r, g, a) = O(ln r).
+
+    Theorem 5.11. (Nevanlinna’s five-value theorem for the Wilson operator) Let
+f and g be meromorphic functions of finite order such that f, g ∈       / ker DW . If f and g
+share five distinct values a1 , a2 , a3 , a4 , a5 ∈ Ĉ in the Wilson sense, then either f ≡ g
+or f and g are both rational.
+   Proof. The proof is similar to the classical one in Hayman [17]. From the as-
+sumption, we have
+                            g
+                  Nj (r) := N                g
+                             W (r, f, aj ) = NW (r, g, aj ) + O(ln r)
+                    Nevanlinna theory of the Wilson divided-difference operator                       197
+
+as r → ∞ for each j = 1, 2, 3, 4, 5. If one of f and g is rational, then so is the other
+because ΘW (aj , f ) = ΘW (aj , g) for j = 1, 2, 3, 4, 5. If f and g are both transcendental,
+then by Theorem 3.2, no matter ∞ is one of the aj ’s or not, we have for every ε > 0,
+                                 5
+                                 X
+                                       g                    σf − 21 +ε
+                  3T (r, f ) ≤         NW (r, f, aj ) + O(r            ) + O(ln r)
+                                 j=1
+                                 5
+                                 X
+                                       g                    σg − 21 +ε
+                  3T (r, g) ≤          NW (r, g, aj ) + O(r            ) + O(ln r)
+                                 j=1
+
+as r → ∞. As a result, there exists a sequence of positive real numbers {rn }∞
+                                                                             n=1
+strictly increasing to infinity such that
+                                 5
+                                 X                                                   5
+                                                                                     X
+       (3 + o(1))T (rn , f ) ≤         Nj (rn ) and (3 + o(1))T (rn , g) ≤                 Nj (rn )
+                                 j=1                                                 j=1
+
+as n → ∞. Now if we suppose on the contrary that f 6≡ g, then we obtain
+                                                                           X5
+         1                                                           2
+T rn ,        = T (rn , f −g)+O(1) ≤ T (rn , f )+T (rn , g)+O(1) ≤     + o(1)      Nj (rn )
+       f −g                                                          3         j=1
+
+as n → ∞. On the other hand, we also have
+            X5                                         
+                           g         1                1
+                Nj (rn ) ≤ NW rn ,         ≤ T rn ,         + O(1)
+            j=1
+                                   f − g            f − g
+
+as n → ∞. These inequalities imply that
+                                        5
+                                        X
+                                               Nj (rn ) = O(1)
+                                         j=1
+
+as n → ∞, which is impossible since f and g are transcendental and f, g ∈
+                                                                        / ker DW .
+                                                                               
+
+                 6. Applications in Wilson difference equations
+                      and Wilson interpolation equations
+     In addition to the Wilson analogue of Nevanlinna’s Second Fundamental Theo-
+rem and defect relations, we can also derive from the lemma on logarithmic Wilson
+difference some useful results about Wilson difference equations and Wilson interpo-
+lation equations. An (ordinary) Wilson difference equation is an equation involving
+an unknown complex function and its Wilson differences, i.e. an equation of the form
+                                            2     3
+                            F (x, y, DW y, DW y, DW y, . . .) = 0.
+    An (ordinary) Wilson interpolation equation is, on the other hand, an equation
+involving an unknown complex function and its Wilson shifts, i.e. an equation of the
+form
+                 F (x, y(x), y(x+ ), y(x− ), y(x++ ), y(x−− ), . . .) = 0.
+    6.1. Wilson–Sturm–Liouville operator. It is well-known [22] that the Wil-
+son polynomial y(z) = Wn (z 2 ; a, b, c, d) of degree n (in the variable z 2 ) satisfies the
+198                          Kam Hang Cheng and Yik-Man Chiang
+
+second order difference equation
+                                 (a − iz)(b − iz)(c − iz)(d − iz)
+ n(n + a + b + c + d − 1)y(z) =                                   [y(z + i) − y(z)]
+                                          (2iz)(2iz − 1)
+                                   (a + iz)(b + iz)(c + iz)(d + iz)
+                                −                                   [y(z) − y(z − i)],
+                                            (2iz)(2iz + 1)
+which can be written into the form
+                                                            
+                                1      1      1      1
+               DW µ x; a + , b + , c + , d +             DW Wn (x)
+(6.1)                           2      2      2      2
+                + n(n + a + b + c + d − 1)µ(x; a, b, c, d)Wn (x) = 0,
+where
+                             Γ(a − iz) · · · Γ(d − iz)Γ(a + iz) · · · Γ(d + iz)
+            µ(x; a, b, c, d) :=
+                                               Γ(2iz)Γ(−2iz)
+is a weight function for the orthogonality of Wilson polynomials Wn (x) = Wn (z 2 ),
+provided that the sum of any two (not necessarily distinct) elements in {a, b, c, d} is
+not a non-positive integer [34]. In fact, Wilson polynomials Wn are at the highest
+level in the Askey scheme of hypergeometric orthogonal polynomials [22], and many
+hypergeometric orthogonal polynomials which occur in physics can be obtained from
+Wn by taking limits of the parameters a, b, c, d.
+    Wilson polynomials themselves also occur naturally in physics. In investigating
+the Lorentz transformation properties of the parity operator P, Bender, Meisinger
+and Wang arrived at an equation [5, (24)], which can be shown to reduce to a (second-
+order) Wilson difference equation
+                                                  
+                       1     1     1       1
+        DW,1 µ1 x; a+ , b+ , c+ , d+ DW,1 g (x) + (1−l12 )µ1 (x; a, b, c, d)g(x)
+(6.2)                  2     2     2       2
+         = 0,
+where a, b, c, d are complex constants (in fact a = 21 , b ∈ R and c = d), DW,1 is the
+1-shift Wilson operator to be defined in §7, and
+                                     Γ(a − z) · · · Γ(d − z)Γ(a + z) · · · Γ(d + z)
+              µ1 (x; a, b, c, d) :=
+                                                      Γ(2z)Γ(−2z)
+is also a weight function for the orthogonality of Wilson polynomials, provided that
+the sum of any two (not necessarily distinct) elements in {a, b, c, d} is not a non-
+positive integer [34]. This Wilson difference equation (6.2) has eigenvalues l1 (n) =
+2n + 1, where n ∈ N0 , and the corresponding eigensolutions are g0 (x) = 1 and
+                                                                
+                              1 (n + 1)!                  1 1 3 3
+           gn (x) = x −                    Wn−1 −x; , , ,             , for n ∈ N.
+                              4     (2n)!                 2 2 2 2
+
+      The operator
+                                                                  
+                        1                     1     1     1      1
+            LW :=                  DW µ x; a + , b + , c + , d +     DW
+                  µ(x; a, b, c, d)            2     2     2      2
+is a Wilson analogue of the Sturm–Liouville operator. Using this notation, (6.1)
+becomes
+                     LW Wn = −n(n + a + b + c + d − 1)Wn ,
+so Wn is an eigenfunction of LW corresponding to the eigenvalue λn = −n(n + a +
+b + c + d − 1).
+                      Nevanlinna theory of the Wilson divided-difference operator                    199
+
+    To investigate Wilson difference equations of the form LW y = φy, we first obtain
+the following using the lemma on logarithmic Wilson difference.
+    Lemma 6.1. If f 6≡ 0 is a meromorphic function of finite order σ, then for every
+ε > 0,                             
+                               LW f                  1
+                        m r,          = O(r max{0,σ− 2 }+ε )
+                                f
+as r → ∞.
+    Proof. If f 6≡ 0 is a meromorphic function, then we have
+                                                                              
+               LW f             DW µ(x; a + 12 , b + 12 , c + 12 , d + 21 )DW f
+       m r,            ≤ m r,
+                 f               µ(x; a + 12 , b + 12 , c + 12 , d + 12 )DW f
+(6.3)                                                                                       
+                                 DW f                 µ(x; a + 12 , b + 12 , c + 12 , d + 21 )
+                          + m r,         + m r,                                                  .
+                                   f                              µ(x; a, b, c, d)
+Now for any fixed φ ∈ (−π, π) and any α, β ∈ C, we have
+                                                              
+          Γ(ρeiφ + α)       iφ α−β      (α − β)(α − β − 1)     1
+                       = (ρe )       1+                    +O
+                iφ
+          Γ(ρe + β)                           2ρe iφ           ρ2
+as ρ → ∞ [33], so given any a ∈ C and any fixed θ ∈ (−π, π), by taking α = a + 21 ,
+β = a and φ = θ+π
+                2
+                    , θ−π
+                        2
+                          , we have
+                      1     √ iθ       1    √ iθ
+          + Γ(a + 2 + i re )Γ(a + 2 − i re )
+                                 2               2
+        ln                  √ iθ        √ iθ
+                  Γ(a + i re 2 )Γ(a − i re 2 )
+                                  1     !              1        !
+                  1          a −         1     1     a −           1
+        = ln+ r 4 1 + √ 4 θ + O               r4 1 − √ 4 θ + O
+                            2i re  i2    r                i
+                                                    2i re 2        r
+                               
+                √               1      1
+        = ln+ r 1 + O                 ∼ ln r
+                                r      2
+as r → ∞. Lebesgue dominated convergence theorem then gives
+                   ˆ π                    1     √ iθ                1      √ iθ
+                 1       1    + Γ(a + 2 + i re )Γ(a + 2 − i re )                            1
+                                                        2                        2
+          lim               ln                  √      θ             √      θ         dθ =
+         r→∞ 2π −π ln r              Γ(a + i rei 2 )Γ(a − i rei 2 )                         2
+                                                                              
+                                                      Γ(a+ 12 +iz)Γ(a+ 12 −iz)
+for any a ∈ C. This implies that m |x| = r, Γ(a+iz)Γ(a−iz)                       ∼ 21 ln r, and replac-
+ing a by b, c, d successively, we obtain
+                                                                    
+                            µ(x; a + 21 , b + 12 , c + 12 , d + 12 )
+                     m r,                                               ∼ 2 ln r
+                                    µ(x; a, b, c, d)
+as r → ∞. On the other hand, since f is of finite order σ(f ) = σ, the order of
+µ(x; a + 21 , b + 12 , c + 12 , d + 21 )DW f is at most
+                                                              
+                                    1       1      1    1
+                 σ µ x; a + , b + , c + , d +               DW f
+                                    2       2      2    2
+                                                                            
+                                              1      1    1      1
+                ≤ max σ µ x; a + , b + , c + , d +                    , σ(DW f )
+                                              2      2    2      2
+                                       
+                              1
+                ≤ max           , σ(f ) .
+                              2
+200                             Kam Hang Cheng and Yik-Man Chiang
+
+Thus applying Theorem 4.1 to (6.3), we have for every ε > 0,
+               
+           LW f                  1     1     1     1          1                   1
+    m r,          ≤ O(r σ(µ(x;a+ 2 ,b+ 2 ,c+ 2 ,d+ 2 )DW f )− 2 +ε ) + O(r σ(f )− 2 +ε ) + 2 ln r
+            f
+                                    1     1                  1                             1
+                       ≤ O(r max{ 2 ,σ}− 2 +ε ) + O(r σ− 2 +ε ) + 2 ln r = O(r max{0,σ− 2 }+ε )
+as r → ∞.                                                                                           
+    From the above lemma, we deduce the following theorem about meromorphic
+solutions to equations of the form LW (y) = φy.
+   Theorem 6.2. Let φ be an entire function of order σφ > 0. Then any non-trivial
+meromorphic solution f to the equation LW (y) = φy must have order σ ≥ σφ + 12 .
+    Proof. Suppose that f is a meromorphic solution to the equation LW (y) = φy
+having order σ < σφ + 12 . Then we take ε := σφ − max{0, σ − 21 } > 0. Since φ is
+entire, we have
+                                        
+                                    LW f                  1    ε              ε
+          T (r, φ) = m(r, φ) = m r,        = O(r max{0,σ− 2 }+ 2 ) = O(r σφ − 2 )
+                                     f
+as r → ∞, which is a contradiction.                                                                 
+     6.2. Wilson analogue of Clunie’s lemma. We can derive from Theorem 4.1 a
+Wilson analogue of Clunie’s Lemma, which is a result about some non-linear Wilson
+difference equations. Before stating the result we need a definition.
+    Definition 6.3. Let f be a complex function. A Wilson difference polynomial
+in f is a finite sum of finite products of the form
+                                       X Y
+                                                   l
+                              P (f ) =    Pj     (DW f )dl,j ,
+                                              j          l
+
+where dl,j are non-negative integers and the coefficients Pj are polynomials in one
+variable. The degree of P over f is the non-negative integer
+                                             X
+                               degf P := max     dl,j .
+                                                     j
+                                                             l
+
+    Theorem 6.4. (Clunie’s Lemma for the Wilson operator) Let n be a positive
+integer and f 6≡ 0 be a meromorphic solution of finite order σ of the Wilson difference
+equation
+(6.4)                                     y n P (y) = Q(y),
+where P (y) and Q(y) are Wilson difference polynomials in y and degf Q ≤ n. Then
+for every ε > 0, we have
+                                                         1
+(6.5)                            m(r, P ) = O(r σ− 2 +ε ) + O(ln r)
+as r → ∞.
+    The proof of Theorem 6.4 is a standard application of Theorem 4.1, and is there-
+fore omitted. We note that the analogues of Clunie’s lemma for the usual difference
+operator ∆ and the Askey–Wilson divided-difference operator Dq are given in [14],
+[27] and [11] respectively.
+    6.3. Wilson interpolation equations. Next we look at the growth of mero-
+morphic solutions to some Wilson interpolation equations, which can be deduced
+using Theorem 4.1.
+                     Nevanlinna theory of the Wilson divided-difference operator              201
+
+    Theorem 6.5. Let n be a positive integer, A0 , A1 , . . . , An be entire functions
+with orders σ0 , σ1 , . . . , σn respectively, such that σl > maxk∈{0,1,...,n}\{l} σk for some l ∈
+{0, 1, . . . , n}, and f be a non-trivial meromorphic solution to the Wilson interpolation
+equation
+(6.6)    An (x)y(x+(n) ) + An−1 (x)y(x+(n−1) ) + · · · + A1 (x)y(x+ ) + A0 (x)y(x) = 0.
+Then f has order σ ≥ σl + 21 .
+    Proof. We suppose the contrary that f is a non-trivial meromorphic solution to
+(6.6) having order σ < σl + 12 . Now f 6≡ 0, so we may substitute f into (6.6) and
+divide both sides by f (x+(l) ) to get
+                f (x+(n) )                                       f (x+ )             f (x)
+(6.7)    An (x)     +(l)
+                            + · · · + Al (x)  +  · · · + A1 (x)      +(l)
+                                                                          + A0 (x)            = 0.
+                f (x )                                          f (x )             f (x+(l) )
+Since σl > maxk∈{0,1,...,n}\{l} σk , we may take maxk∈{0,1,...,n}\{l} σk < s < σl and take
+ε > 0 such that we simultaneously have
+                                            1
+                         σ + 2ε < σl +                and       s + 2ε < σl .
+                                            2
+                          ε
+Then T (r, f ) = O(r σ+ 2 ) as r → ∞. Thus by choosing α = 1 − ε in (4.8) and (4.10),
+it is easy to see that for each k ∈ {0, 1, . . . , n} \ {l}, we have
+                                                    
+                                         f (x+(k) )                1
+                                 m r,         +(l)
+                                                        = O(r σ− 2 +ε )
+                                         f (x )
+as r → ∞. Applying this to (6.7), we obtain
+                          X                                    
+                                          f (x+(k) )
+          m(r, Al ) ≤              m r,                + m(r, Ak ) + ln n
+                                          f (x+(l) )
+                           k∈{0,1,...,n}\{l}
+                                   1
+                        = O(r σ− 2 +ε ) + o(r s+ε ) = o(r σl −ε )
+as r → ∞, which is an obvious contradiction.                                                   
+    It is clear that the signs of the shifts are not important, and Theorem 6.5 still
+holds even if we include terms of the form A−l (x)y(x−(l) ) in (6.6). To illustrate that
+the equality in σ ≥ σl + 21 can actually be achieved, we consider the following example
+taken from Ruijsenaars’ work in [32].
+    Example 6.6. In this example, we consider the Wilson interpolation equation
+                                           √
+(6.8)                     y(x+ ) = 2 cosh(π x)y(x− ).
+According to Ruijsenaars’ article [32], a solution to the difference equation
+                                                         
+                               ia             πz         ia
+(6.9)                 y z+          = 2 cosh      y z−         ,
+                                2              b          2
+where a, b > 0, is given by the hyperbolic gamma function
+                           Ghyp (a, b; z) := ei 0 ( 2 sinh at sinh bt − abt ) t
+                                                            sin 2tz      z   dt
+                                                   ´∞
+
+
+for every z ∈ C satisfying |I2z| < a + b, which can be extended to a meromorphic
+function on the whole complex plane. Noting that the solution set of the difference
+equation (6.9) forms a vector space, and that
+                                                    1
+                            Ghyp (a, b; −z) =
+                                              Ghyp (a, b; z)
+202                             Kam Hang Cheng and Yik-Man Chiang
+
+for every z ∈ C, we can observe that a meromorphic solution to the Wilson interpo-
+lation equation (6.8) is given by
+                       √                  √         ˆ ∞        √    √  
+            Ghyp (1, 1; x) + Ghyp (1, 1; − x)              sin 2t x     x dt
+    f (x) =                                   = cos              2  −         .
+                             2                        0    2 sinh t    t   t
+Now since Ghyp (1, 1; x) is of order 2, we see that the order of this solution f is at
+most 1. f has poles at −k 2 of order k for √ each k ∈ N.1 On the other hand, it is
+obvious that the entire function 2 cosh(π x) has order 2 . Therefore f must be of
+order exactly 1, and the equality in the conclusion of Theorem 6.5 is achieved.
+    In addition to Theorem 6.4 and Theorem 6.5, more results about Wilson differ-
+ence equations and Wilson interpolation equations will be established after we give
+a pointwise estimate of the logarithmic Wilson difference in the next section.
+
+           7. Pointwise estimate of the logarithmic Wilson difference
+    The lemma on logarithmic Wilson
+                                        difference we have obtained in §4 is about
+                            DW f
+the proximity function m r, f , which is a measure on the overall growth of the
+logarithmic Wilson difference DWf
+                                  f
+                                    . In this section, we will look at the pointwise
+          DW f
+growth of f , which will play a very crucial role in Wilson difference equations.
+    7.1. The pointwise estimate. Our pointwise estimate of the growth of DW   f
+                                                                                f
+
+depends on the following deep and important result by Cartan, which can be found
+in his paper [6] published in 1928.
+    Lemma 7.1. (Cartan’s Lemma) Given any p complex numbers x1 , x2 , . . . , xp
+and any real number B > 0, there exist finitely many closed disks D1 , D2 , . . . , Dq in
+the complex plane, with radii r1 , r2 , . . . , rq respectively, such that
+       (i) r1 + r2 + · · · + rq = 2B, and
+      (ii) for every complex number x outside all of the disks Dj , there exists a permu-
+           tation of the p given points, say x̂1 , x̂2 , . . . , x̂p (which may depend on x), that
+           satisfies
+                                             λ
+                               |x − x̂λ | > B , for λ = 1, 2, . . . , p.
+                                             p
+       In what follows, we will denote by
+                                                                     
+                                                                    1
+                                    n(r) := n(r, f ) + n r,
+                                                                   f
+the unintegrated counting function for both zeros and poles of f . Our main result in
+this section starts from the following lemma.
+    Lemma 7.2. Let f 6≡ 0 be a meromorphic function. Then for every γ > 1, there
+exist a subset E ⊂ (1, ∞) of finite logarithmic measure and a constant Aγ depending
+only on γ, such that for every complex number x with modulus r ∈     / E ∪ [0, 1], we
+have
+                                                                  
+                   f (x+ )          T (γr, f ) n(γr) γ     +
+(7.1)           ln         ≤ Aγ        √      + √ ln r ln [n(γr)] .
+                    f (x)                r        r
+In particular, if f has finite order σ, then for every ε > 0, there exists a subset
+E ⊂ (1, ∞) of finite logarithmic measure such that for every complex number x with
+                          Nevanlinna theory of the Wilson divided-difference operator             203
+
+modulus r ∈
+          / E ∪ [0, 1], we have
+                                             1 +ε
+                                          σ− 2          f (x+ )     σ− 1 +ε
+                                    e−r             ≤           ≤ er 2 .
+                                                         f (x)
+     Proof. For every complex number√      x, we write |x| = r and let R be a positive
+                         1
+number such that R > 4 and r < ( R− 12 )2 . Then we use the Poisson–Jensen formula
+                                                                       √
+as in §4 to obtain (4.4). Next we let α > 1 be arbitrary and let R = ( αr + 12 )2 . For
+                                                        √      √          √
+sufficiently large r, namely for r > 4(α−1√α)2 , we have αr < αr + 21 < α2 r. Thus
+applying Lemma 4.2 and (4.9) to (4.4), we have
+             f (x+ )
+        ln
+              f (x)
+                  √             √                  "                 2 !                       #
+                2( αr + 12 )2 (2 r + 12 )                 √         1                       1
+      ≤ √                 √              √            T      αr +        , f + ln+
+        [( αr+ 12 )2 −r][( αr+ 12 )2 −( r+ 12 )2 ]                  2                    |f (0)|
+                     √                               2 !               X
+                   2 r + 12                √        1           √      1                    1
+(7.2)   + √         1 2   √      1 2 n       αr +          + r+                           2
+          ( αr + 2 ) − ( r + 2 )                    2                  4               |z − cλ |
+                                                                            |cλ |<α2 r
+                     √                                            
+               α2 (4 r + 1)                 2           +     1
+      ≤                     √           T (α r, f ) + ln
+        (α − 1)[(α − 1)r − r − 14 ]                        |f (0)|
+                √                                    
+               2 r + 21                     √       1    X           1
+                                   2
+        +              √    1  n(α   r) +     r +                          ,
+          (α − 1)r − r − 4                          4         2
+                                                                |x − cλ |
+                                                                    |cλ |<α r
+
+where the sequence {cλ }λ is the union of the four sequences {aν }ν , {bµ }µ , {a−
+                                                                                 ν }ν and
+  −
+{bµ }µ , and is ordered by increasing modulus.
+    Next, we rename the arbitrary number α2 > 1 by the arbitrary number β > 1,
+and estimate the series on the right-hand side of (7.2) as in [13, (7.6)–(7.9)]. We only
+need to consider those complex numbers x with modulus r > 1, so we let
+(7.3)                                           β p ≤ r ≤ β p+1,
+where p is a positive integer sufficiently large so that
+                                                                1
+(7.4)                                          n(β p+2) ≥ e β−1 .
+                                                                                              p
+Then applying Lemma 7.1 to the points c1 , c2 , . . . , cn(β p+2 ) with B = lnββ(β p ) , we deduce
+that there exist finitely many closed disks D1 , D2 , . . . , Dq with sum of radii 2B, such
+that for every x outside all of these disks, there is a permutation of the points, say
+d1 , d2 , . . . , dn(β p+2 ) , that satisfies the inequality
+                                                 B                 βp
+(7.5)                         |x − dλ | > λ             = λ
+                                               n(β p+2)     n(β p+2 ) lnβ (β p )
+for every λ = 1, 2, . . . , n(β p+2). (7.3), (7.4) and (7.5) imply that for every x with
+modulus β p ≤ r ≤ β p+1 and is located outside all of the disks Dj , we have
+                                             p+2                                        p+2
+                X            1         X)
+                                      n(β
+                                               1
+                                                                            n(β
+                                                        n(β p+2 ) lnβ (β p ) X 1
+                                                                                  )
+
+                                    ≤                 <
+                          |x − cλ |     λ=1
+                                            |x − dλ |          βp             λ=1
+                                                                                    λ
+               |cλ |<βr
+
+                                     ≤ βr −1 n(β p+2) lnβ r{1 + ln+ [n(β p+2)]}
+204                                Kam Hang Cheng and Yik-Man Chiang
+
+
+                                                                        2
+                                                +                  2 n(β r)
+                  −1    2      β
+          ≤ βr n(β r) ln r{1 + ln [n(β r)]} ≤ β      2
+                                                                              lnβ r ln+ [n(β 2 r)].
+                                                        r
+Therefore for every such x, we have
+                              √                                           
+    f (x+ )              β(4 r + 1)                              +    1
+ ln         ≤ √            √           √         T (βr, f ) + ln
+     f (x)     ( β − 1)[( β − 1)r − r − 41 ]                       |f (0)|
+                        √       1                                  2
+                       2 r+2                     √       1     2 n(β r)
+               +  √            √     1 n(βr) +      r+       β           lnβ r ln+ [n(β 2 r)]
+                 ( β − 1)r − r − 4                       4          r
+                                  2
+                                                          
+                    T (βr, f ) n(β r) β
+            ≤ Aβ       √      + √ ln r ln+ [n(β 2 r)] ,
+                         r         r
+where the constant Aβ depends on β only. Since the functions T (r, f ) and ln r are
+increasing, we can actually write
+                                                                    
+                 f (x+ )          T (β 2 r, f ) n(β 2 r) β 2   +   2
+              ln         ≤ Aβ        √          + √ ln r ln [n(β r)]
+                  f (x)                  r          r
+                                                                  
+                                  T (γr, f ) n(γr) γ         +
+                         = Aγ        √         + √ ln r ln [n(γr)]
+                                       r          r
+by renaming β 2 > 1 as γ > 1, where Aγ is a constant depending on γ only.
+    It now remains to show that the exceptional set E ⊂ (1, ∞) is of finite logarithmic
+measure. For every positive integer p sufficiently large so that (7.4) holds, say p ≥
+                                                                            p
+p0 ≥ 1, the sum of the diameters of the exceptional disks is 2 · 2B = lnβ4β(β p ) . Now we
+can write the exceptional set as
+                                                     ∞
+                                                     [
+                                                E=          Ep ,
+                                                     p=p0
+
+where Ep is the intersection of the closed interval [β p , β p+1] and the finite union of
+all the annuli generated by revolving the disks Dj about the origin. Since Ep has
+                               p
+Lebesgue measure at most lnβ4β(β p ) , it follows that
+
+                      X∞ ˆ          X∞ ˆ
+                 dr           dr                                dr
+           ˆ
+                    =             ≤
+               E r             r                                 r
+                                                             
+                                                          p
+                      p=p0 Ep       p=p0    β p ,β p + β4β p
+                                                      ln (β )
+
+                      X∞                                      X ∞
+                                 p     4β p                  p              4
+                    =      ln β + β                 − ln(β ) ≤            β
+                                                                                  < ∞,
+                                     ln (β )p                           ln (β p )
+                      p=p0                                         p=p0
+
+and so E has finite logarithmic measure.
+    Finally, we suppose in particular that f has finite order σ. (7.1) implies that for
+every γ > 1 and ε > 0, there exists an exceptional set E of finite logarithmic measure
+such that
+                                                               
+               f (x+ )        T (γr, f ) n(γr) γ       +
+           ln          =O        √      + √ ln r ln [n(γr)]
+                f (x)              r        r
+                                        1   ε            1                                  1   ε
+                            = O(r σ− 2 + 2 + (γr)σ− 2 lnγ r ln+ (γr)σ ) = O(r σ− 2 + 2 )
+as r → ∞ outside E, where the second equality follows from the fact that the
+exponents of convergence of zeros and poles of f are lower than or equal to σ. This
+                     Nevanlinna theory of the Wilson divided-difference operator      205
+
+              +           1
+gives ln ff(x(x))   ≤ r σ− 2 +ε for every x with modulus r ∈
+                                                           / E ∪ [0, 1], and so we have
+                                         1 +ε
+                                      σ− 2            f (x+ )     σ− 1 +ε
+                                e−r               ≤           ≤ er 2
+                                                       f (x)
+for every x with modulus r ∈
+                           / E ∪ [0, 1].                                                  
+     An exceptional set of radii r of finite logarithmic measure can sometimes be of
+infinite Lebesgue measure, but it becomes sparser and sparser as r → ∞.
+     In the above lemma, we generated an annular exceptional set by revolving the
+exceptional disks Dj about the origin. In fact, the exceptional set can also be gener-
+ated in a radial manner. This gives us the following lemma, in which the exceptional
+set has zero Lebesgue measure instead of finite logarithmic measure.
+    Lemma 7.3. Let f 6≡ 0 be a meromorphic function. Then for every γ > 1, there
+exists a constant Bγ depending only on γ, such that for almost every θ ∈ [−π, π), we
+have                                                                   
+                  f ((reiθ )+ )        T (γr, f ) n(γr) γ       +
+              ln                ≤ Bγ      √      + √ ln r ln [n(γr)]
+                    f (reiθ )               r        r
+for every sufficiently large r. In particular, if f has finite order σ, then for every
+ε > 0 and almost every θ ∈ [−π, π), we have
+                                       1 +ε
+                                    σ− 2          f ((reiθ )+ )     σ− 1 +ε
+                              e−r             ≤          iθ
+                                                                ≤ er 2
+                                                    f (re )
+for every sufficiently large r.
+    Let us put Lemma 7.2 into a more useful form.
+    Theorem 7.4. (Pointwise estimate of the logarithmic Wilson difference, radial
+version) Let f 6≡ 0 be a meromorphic function. Then for every γ > 1, there exist a
+subset E1 ⊂ (1, ∞) of finite logarithmic measure and a constant Aγ depending only
+on γ, such that for every complex number x with modulus r ∈ / E1 ∪ [0, 1], we have
+                        (DW f )(x)
+                                                      n                       o
+                                          T (γr,f )  n(γr)
+                                       A     √      + √r lnγ r ln+ [n(γr)]
+(7.6)                              ≤ 2e γ      r
+                                                                           .
+                          f (x)
+In particular, if f is of finite order σ, then for every positive integer k and every
+ε > 0, there exists a subset E ⊂ (1, ∞) of finite logarithmic measure such that for
+every complex number x with modulus r ∈     / E ∪ [0, 1], we have
+                                          k
+                                        (DW f )(x)      σ− 1 +ε
+                                                   ≤ ekr 2 .
+                                          f (x)
+    Proof. Lemma 7.2 implies that (7.6) holds for every x with modulus r outside
+the union of two exceptional sets of finite logarithmic measure, which is still of finite
+logarithmic measure. If f is of finite order σ. Then (7.6) implies that for every ε > 0,
+                                                          σ− 1 + ε
+                              (DW f )(x)  er 2 2     σ− 1 +ε
+(7.7)                                    ≤ √     ≤ er 2 ,
+                                f (x)        r
+which holds for every x with modulus r outside an exceptional set of finite logarithmic
+                                           l
+measure. Since Lemma 5.2 implies that DW     f has order at most σ for every positive
+integer l, applying (7.7) k times, we have
+                                          k
+                                        (DW f )(x)      σ− 1 +ε
+                                                   ≤ ekr 2
+                                          f (x)
+206                         Kam Hang Cheng and Yik-Man Chiang
+
+for every x with modulus r outside the union of k exceptional sets of finite logarithmic
+measure, which is still of finite logarithmic measure.                                
+      Similarly, Lemma 7.3 gives the following theorem.
+    Theorem 7.5. (Pointwise estimate of the logarithmic Wilson difference, angular
+version) Let f 6≡ 0 be a meromorphic function. Then for every γ > 1, there exists a
+constant Bγ depending only on γ, such that for almost every θ ∈ [−π, π), we have
+                     (DW f )(reiθ )
+                                              n                               o
+                                           T (γr,f )  n(γr)
+                                        B     √      + √r lnγ r ln+ [n(γr)]
+                            iθ
+                                    ≤ 2e γ      r
+                       f (re )
+for every sufficiently large r. In particular, if f is of finite order σ, then for every
+positive integer k, every ε > 0 and almost every θ ∈ [−π, π), we have
+                                    k
+                                  (DW f )(reiθ )          1
+                                                    kr σ− 2 +ε
+                                                 ≤ e
+                                    f (reiθ )
+for every sufficiently large r.
+    7.2. Applications of the pointwise estimate in Wilson difference equa-
+tions and Wilson interpolation equations. The pointwise estimate of the loga-
+rithmic Wilson difference plays a crucial role in Wilson difference equations. A typical
+application as in [10] yields the following result about the growth of meromorphic
+solutions to a linear Wilson difference equation with polynomial coefficients.
+    Theorem 7.6. Let n be a positive integer, p0 , p1 , . . . , pn be polynomials such
+that deg p0 > deg pk for each k ∈ {1, 2, . . . , n}, and f be a non-trivial meromorphic
+solution to the Wilson difference equation
+                         n           n−1
+(7.8)               pn D W y + pn−1 DW   y + · · · + p1 DW y + p0 y = 0.
+Then f has order σ ≥ 21 .
+    Proof. We suppose the contrary that f is a non-trivial meromorphic solution to
+(7.8) having order σ < 12 . Now p0 f 6≡ 0, so we may substitute f into (7.8) and divide
+both sides by p0 f to get
+                          n           n−1
+                     pn D W f   pn−1 DW   f       p1 D W f
+(7.9)                         +             +···+          = −1.
+                     p0 f        p0    f          p0 f
+Now for each k ∈ {1, 2, . . . , n}, writing |x| = r, we have
+                                        pk (x)
+                                               = o(1)
+                                        p0 (x)
+as r → ∞, and we have
+                                  k
+                               (DW  f )(x)
+                                           = O(1)
+                                  f (x)
+as r → ∞ outside an exceptional set Ek ⊂ (1, ∞) of finite logarithmic measure,
+by applying Theorem 7.4 to f . Therefore the value taken by the left-hand side of
+                                                                        ∞
+(7.9) tends to zero as j →
+                         Sn∞ on every strictly increasing sequence {rj }j=1 outside
+the exceptional set E = k=1 Ek ⊂ (1, ∞) of finite logarithmic measure, which is a
+contradiction.                                                                   
+    Here is a result about the growth of meromorphic solutions to some Wilson
+interpolation equations with polynomial coefficients, which can be deduced directly
+using Lemma 7.2.
+                    Nevanlinna theory of the Wilson divided-difference operator               207
+
+    Theorem 7.7. Let n be a positive integer, p0 , p1 , . . . , pn be polynomials such that
+for some l ∈ {0, 1, . . . , n} we have deg pl > deg pk for every k ∈ {0, 1, . . . , n} \ {l},
+and f be a non-trivial meromorphic solution to the Wilson interpolation equation
+(7.10)     pn (x)y(x+(n) ) + pn−1 (x)y(x+(n−1) ) + · · · + p1 (x)y(x+ ) + p0 (x)y(x) = 0.
+Then f has order σ ≥ 12 .
+    Proof. We suppose on the contrary that f is a non-trivial meromorphic solution
+to (7.10) having order σ < 21 . Now we have pl 6≡ 0 and f 6≡ 0, so we may substitute
+f into (7.10) and divide both sides by pl (x)f (x+(l) ) to get
+          pn (x) f (x+(n) )           pl (x)           p1 (x) f (x+ )    p0 (x) f (x)
+(7.11)               +(l)
+                            + · · · +        + · · · +                 +               = 0.
+          pl (x) f (x )               pl (x)           pl (x) f (x ) pl (x) f (x+(l) )
+                                                                  +(l)
+
+Since σ < 12 , we take ε > 0 such that ε < 12 − σ. If we write |x| = r, then Lemma 7.2
+implies that for each k ∈ {0, 1, . . . , n} \ {l}, we have
+                                 f (x+(k) )         1
+                                               r σ− 2 +ε
+                                            ≤ e          = O(1)
+                                 f (x+(l) )
+as r → ∞ outside an exceptional set Ek ⊂ (1, ∞) of finite logarithmic measure.
+Applying this to (7.11), we have
+              pl (x)           X            pk (x) f (x+(k) )             X            pk (x)
+     1=                ≤                               +(l)
+                                                              ≤ O(1)
+              pl (x)                        pl (x) f (x )                              pl (x)
+                          k∈{0,1,...,n}\{l}                          k∈{0,1,...,n}\{l}
+                                                       S
+as r → ∞ outside the exceptional set E = nk=1 Ek ⊂ (1, ∞) of finite logarithmic
+measure, which is a contradiction to the assumption that deg pl > deg pk for every
+k ∈ {0, 1, . . . , n} \ {l}.                                                                  
+
+                                         8. Discussion
+    The Wilson operator DW introduced in the previous sections acts on f (x) by
+shifting the square roots of the complex variable x by 2i . As a final remark, we note
+that this operator can actually be generalized to take other non-zero square-root
+shifts.
+                                                          √
+    Definition 8.1. Given each c ∈ C \ {0}, we let · be a branch of the complex
+square-root with the line joining c and 0 as the branch cut. Then for each x ∈ C we
+denote                      √       c 2               √          c 2
+                     x+ :=      x+           and x− :=        x−         ,
+                                     2                             2
+and define the c-shift Wilson operator DW,c by
+                                                    √                  √
+                            f (x+ ) − f (x− )   f (( x + 2c )2 ) − f (( x − 2c )2 )
+           (DW,c f )(x) :=                    =                  √                  .
+                                x+ − x−                       2c x
+    All the results for DW ≡ DW,i in this paper still hold for DW,c .
+    It is known that the Askey–Wilson operator Dq is defined for every q ∈ D(0; 1) \
+                                                             d
+{0}, and reduces to the ordinary differential operator dx        as q → 1 from the interior
+of D(0; 1). In fact, the c-shift Wilson operator DW,c behaves in a similar way. It can
+be easily shown that DW,c reduces to the usual differential operator as c → 0.
+    Proposition 8.2. Let x ∈ C and f be a function holomorphic at x. Then
+                                   lim (DW,c f )(x) = f ′ (x).
+                                   c→0
+208                           Kam Hang Cheng and Yik-Man Chiang
+
+    In this paper, we have developed a full-fledged Nevanlinna’s value distribution
+theory of the Wilson divided-difference operator for finite order meromorphic func-
+tions. Key concepts and results including a lemma on logarithmic Wilson difference
+have been established for meromorphic functions of finite order. The finite-order
+restriction is generally the best possible. We have established a second fundamental
+theorem with respect to the Wilson operator, from which a new difference type little
+Picard theorem for meromorphic functions of finite order is derived. The Wilson-
+type Nevanlinna defect relations that follow from the analogous classical Nevanlinna
+formalism require a different way of counting zeros, poles and their multiplicities of
+meromorphic functions, which is natural with respect to the Wilson operator. This
+new way of counting is the key to the new Wilson Nevanlinna theory. Halburd and
+Korhonen [15] were the first to observe new counting functions for the usual differ-
+ence operator. The Nevanlinna theories for the Askey–Wilson operator [11] as well as
+the Wilson operator established in this paper indicate that there are corresponding
+versions of residue calculus for these divided-difference operators, which may provide
+natural ways to better understand the corresponding special functions. These issues,
+as well as other function theoretic and interpolation-related investigations, will be
+discussed in subsequent papers.
+    Acknowledgements. We would like to thank the anonymous referee for his/her
+helpful and constructive comments and bringing Korhonen’s work [25] to our at-
+tention. We would also like to thank Dr. T. K. Lam for many valuable discussions
+throughout this research.
+                                          References
+ [1] Andrews, G. E., and R. Askey: Classical orthogonal polynomials. - In: Orthogonal poly-
+     nomials and applications (Bar-le-Duc, 1984), Lecture Notes in Math. 1171, Springer, Berlin,
+     1985, 36–62.
+ [2] Askey, R., and J. A. Wilson: Some basic hypergeometric orthogonal polynomials that gen-
+     eralize Jacobi polynomials. - Mem. Amer. Math. Soc. 54:319, 1985.
+ [3] Bailey, W. N.: Generalized hypergeometric series. - Cambridge Univ. Press, 1935.
+ [4] Beckermann, B., J. Coussement, and W. Van Assche: Multiple Wilson and Jacobi-
+     Piñeiro polynomials. - J. Approx. Theory 132, 2005, 155–181.
+ [5] Bender, C. M., P. N. Meisinger, and Q. Wang: Wilson polynomials and the Lorentz
+     transformation properties of the parity operator. - J. Math. Phys. 46, 052302, 2005.
+ [6] Cartan, H.: Sur les systèmes de fonctions holomorphes à variétés linéaires lacunaires et leurs
+     applications. - Ann. Sci. Éc. Norm. Supér. 45:3, 1928, 255–346.
+ [7] Chen, Z.-X.: Complex differences and difference equations. - Math. Monogr. Ser. 29, Science
+     Press, Beijing, 2014.
+ [8] Cherry, W., and Z. Ye: Nevanlinna’s theory of value distribution. - Springer-Verlag, Berlin,
+     Heidelberg, 2001.
+ [9] Chiang, Y. M., and S. J. Feng: On the growth of f (z + η) and difference equations in the
+     complex plane. - Ramanujan J. 16, 2008, 105–129.
+[10] Chiang, Y. M., and S. J. Feng: On the growth of logarithmic differences, difference quotients
+     and logarithmic derivatives of meromorphic functions. - Trans. Amer. Math. Soc. 361:7, 2009,
+     3767–3791.
+[11] Chiang, Y. M., and S. J. Feng: Nevanlinna theory based on Askey–Wilson divided difference
+     operator. - arXiv:1502.02238v1, 2015.
+[12] Groenevelt, W.: The Wilson function transform. - Int. Math. Res. Not. IMRN 52, 2003,
+     2779–2817.
+                     Nevanlinna theory of the Wilson divided-difference operator                 209
+
+[13] Gundersen, G. G.: Estimates for the logarithmic derivative of meromorphic functions, plus
+     similar estimates. - J. Lond. Math. Soc. 37, 1988, 88–104.
+[14] Halburd, R. G., and R. J. Korhonen: Difference analogue of the lemma on the logarithmic
+     derivative with applications to difference equations. - J. Math. Anal. Appl. 314, 2006, 477–487.
+[15] Halburd, R. G., and R. J. Korhonen: Nevanlinna theory for the difference operator. - Ann.
+     Acad. Sci. Fenn. Math. 31, 2006, 463–478.
+[16] Halburd, R. G., and R. J. Korhonen: Value distribution and linear operators. - Proc.
+     Edinb. Math. Soc. (2) 57, 2014, 493–504.
+[17] Hayman, W. K.: Meromorphic functions. - Clarendon Press, Oxford, 1964.
+[18] He, Y., and X. Xiao: Algebroid functions and ordinary differential equations. - Science Press,
+     Beijing, 1988 (in Chinese).
+[19] Ismail, M. E. H., J. Letessier, G. Valent, and J. Wimp: Two families of associated Wilson
+     polynomials. - Canad. J. Math. 42:4, 1990, 659–695.
+[20] Jank, G., and L. Volkmann: Einführung in die Theorie der ganzen und meromorphen
+     Funktionen mit Anwendungen auf Differentialgleichungen. - Birkhäuser, Basel, 1985.
+[21] Kalnins, E. G., W. Miller Jr., and S. Post: Wilson polynomials and the generic superin-
+     tegrable system on the 2-sphere. - J. Phys. A 40, 2007, 11525–11538.
+[22] Koekoek, R., P. A. Lesky, and R. F. Swarttouw: Hypergeometric orthogonal polynomials
+     and their q-analogues. - Springer Monogr. Math., 2010.
+[23] Koornwinder, T. H.: Special orthogonal polynomial systems mapped onto each other by the
+     Fourier–Jacobi transform. - In: Orthogonal polynomials and applications (Bar-le-Duc, 1984),
+     Lecture Notes in Math. 1171, Springer, Berlin, 1985, 174–183.
+[24] Koornwinder, T. H.: A group theoretic interpretation of Wilson polynomials. - In: Complex
+     analysis and applications ’85 (Varna, 1985), Publishing House of the Bulgarian Academy of
+     Sciences, Sofia, 1986, 335–355.
+[25] Korhonen, R.: An extension of Picard’s theorem for meromorphic functions of small hyper-
+     order. - J. Math. Anal. Appl. 357, 2009, 244–253.
+[26] Laine, I.: Nevanlinna theory and complex differential equations. - Walter de Gruyter, 1993.
+[27] Laine, I., and C. C. Yang: Clunie theorems for difference and q-difference polynomials. - J.
+     Lond. Math. Soc. (2) 76:3, 2007, 556–566.
+[28] Masson, D. R.: Wilson polynomials and some continued fractions of Ramanujan. - Rocky
+     Mountain J. Math. 21:1, 1991, 489–499.
+[29] Mimachi, K.: Integral representations of the Wilson polynomials and continuous dual Hahn
+     polynomials. - Adv. Appl. Math. 23, 1999, 340–359.
+[30] Mohon’ko, A. Z.: On the Nevanlinna characteristics of certain meromorphic functions. -
+     Teorija Funkciı̆, Funkcional’nyı̆ Analiz i ih Priloženija 14, 1971, 83–87 (in Russian).
+[31] Nörlund, N. E.: Leçons sur les séries d’interpolation. - Gauthier-Villars, Paris, 1926.
+[32] Ruijsenaars, S. N. M.: First order analytic difference equations and integrable quantum
+     systems. - J. Math. Phys. 40, 1997, 1069–1146.
+[33] Tricomi, F. G., and A. Erdélyi: The asymptotic expansion of a ratio of gamma functions.
+     - Pacific J. Math. 1-1, 1951, 133–142.
+[34] Wilson, J. A.: Some hypergeometric orthogonal polynomials. - SIAM J. Math. Anal. 11,
+     1980, 690–701.
+[35] Wilson, J. A.: Asymptotics for the 4 F3 polynomials. - J. Approx. Theory 66, 1991, 58–71.
+[36] Yang, L.: Value distribution theory. - Springer-Verlag, Berlin, Heidelberg, New York and
+     Science Press, Beijing, 1993.
+
+
+Received 14 October 2015 • Accepted 3 June 2016
+
