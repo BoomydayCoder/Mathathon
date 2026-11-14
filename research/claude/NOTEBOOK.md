@@ -24,7 +24,7 @@
 - `hankel-zeta3.md`: Hankel-determinant proof of zeta(3) irrationality. Complete draft. Passes: frontier subagent (construction, L1-L8, sketch of (d)); orchestrator (L1-L7 re-derived by hand); referee subagent (L8 and (d) re-proved from scratch, uniform argument for (d)); orchestrator (checked the referee's proofs line by line). Computer-assisted step: inequality (H) on [1,60]. External: Hermite's formula; a Chebyshev-type bound with kappa < 1.2155 (period-6 bound suffices). Exact checks: K<=100. NOT human-refereed.
 
 ## Conjectures
-- log Delta_K(zeta(3)) = -(9/2 log 2 + o(1)) K^2 (equilibrium problem; support [0,b], 3b+1-sqrt(1+b^2)=2 lambda).
+- log Delta_K(zeta(3)) = -(9/2 log 2 + o(1)) K^2. The equilibrium problem itself is now SOLVED exactly (E* = 9/2 log 2, explicit density; `computations/equilibrium_s3.py`); what remains conjectural is only the standard link between the determinant and the energy (upper bound not written).
 - True arithmetic cost of Delta_K (s=3, W=1) is (9/4+o(1))K^2; for s>=5 it is s(s+4)/(2(s+2)) K^2.
 - lcm(1..K)^{3K} Delta_K in Z[X].
 - omega_K is (1/4pi) x Wilson weight with parameters (1,1,1,-K) (identity checked by the orchestrator by hand); are there closed forms for the orthogonal polynomials or for Delta_K?

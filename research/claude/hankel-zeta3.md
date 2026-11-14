@@ -242,11 +242,26 @@ Numerical confirmation of Proposition 3 (referee): for $K\le160$ and all $n<K$ t
 $\|p_n\|^2K!^2/(\vartheta^{4n}n!^4)$ stays bounded for $\vartheta\in\{0.40,0.42,0.45\}$ and grows like
 $e^{0.27K}$ for $\vartheta=0.38$.
 
-Conjecturally (numerics + a derivation from the equilibrium problem, not proved):
-$\log\Delta_K(\zeta(3))=-(\frac92\log2+o(1))K^2$, and the true cost is $(\frac94+o(1))K^2$ under PNT, so the
-primitive polynomial has $|P_K(\zeta(3))|\approx\exp(-\frac94(2\log2-1)K^2)=\exp(-0.869K^2)$. Curiously,
-with the conjectured exact decay the proof would close for every $\kappa<\log4$, i.e. for any
-improvement whatsoever on the trivial bound $\theta(u)<u\log4$.
+**The exact decay constant (equilibrium problem solved; link to $\Delta_K$ not written).**
+On the $K^2$ scale, $-\log\Delta_K(\zeta(3))/K^2$ should converge to
+$E^*=\min_\rho\bigl[\int V\,d\rho-\iint\log|x^2-y^2|\,d\rho\,d\rho\bigr]$ over probability measures on $[0,\infty)$,
+$V(x)=2\pi x+\int_0^1\log(x^2+u^2)\,du$. This minimisation problem is now solved exactly (Opus
+subagent; script `computations/equilibrium_s3.py`, 39 checks; the support equation was derived
+independently by the orchestrator, the rest was not re-derived by the orchestrator):
+
+* support $[0,\frac34]$; symmetrised density on $[-\frac34,\frac34]$ (mass 2):
+  $\sigma(x)=\frac1\pi\bigl[3\operatorname{artanh}\frac{s}{b}-\operatorname{artanh}\frac{s}{c}\bigr]$, $s=\sqrt{b^2-x^2}$, $b=\frac34$, $c=\frac54$
+  (positive, logarithmic singularity at $0$, square-root vanishing at $\pm b$);
+* Euler–Lagrange equality on the support and strict inequality off it (proved);
+* $\ell=2+6\log2$, $\int V\,d\sigma=6\log2-4$, and $E^*=\frac14\int V\,d\sigma+\frac\ell2=\frac92\log2=3.1191\ldots$
+  (proved symbolically via a virial identity; numerically confirmed to 40 digits).
+
+What is **not** written: the standard upper bound $\log\Delta_K(\zeta(3))\le-E^*K^2+o(K^2)$ from Andréief's
+formula and the energy inequality (as in Fauzan §6). With it, (d) would hold with $\frac92\log2$ in place of
+$1-2\log\vartheta$, the computer-assisted inequality (H) would disappear, and the proof would close for
+every $\kappa<\log4$, i.e. for *any* improvement on the trivial bound $\theta(u)<u\log4$. Numerically,
+$\log\Delta_K(\zeta(3))/K^2=-3.04$ at $K=100$. Also conjectural: the true cost is $(\frac94+o(1))K^2$ under
+PNT, so that $|P_K(\zeta(3))|\approx\exp(-\frac94(2\log2-1)K^2)=\exp(-0.869K^2)$ for the primitive polynomial.
 
 ## 6. Evidence (exact computations; `computations/output_hankel_*.txt`)
 
