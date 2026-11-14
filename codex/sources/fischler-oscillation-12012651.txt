@@ -1,0 +1,454 @@
+arXiv:1201.2651v1 [math.NT] 12 Jan 2012
+
+
+
+
+                                          Nesterenko’s criterion when the small linear
+                                          forms oscillate
+                                          Stéphane Fischler
+
+                                               Mathematics Subject Classification (2010). 11J72 (Primary); 11J82, 11J71
+                                               (Secondary).
+                                               Keywords. Irrationality; Linear independence over a field; Measures of
+                                               irrationality and of transcendence; Distribution modulo one.
+
+
+                                               Abstract. In this paper we generalize Nesterenko’s criterion to the case
+                                               where the small linear forms have an oscillating behaviour (for instance
+                                               given by the saddle point method). This criterion provides both a lower
+                                               bound for the dimension of the vector space spanned over the rationals
+                                               by a family of real numbers, and a measure of simultaneous approxi-
+                                               mation to these numbers (namely, an upper bound for the irrationality
+                                               exponent if 1 and only one other number are involved). As an appli-
+                                               cation, we prove an explicit measure of simultaneous approximation to
+                                               ζ(5), ζ(7), ζ(9), and ζ(11), using Zudilin’s proof that at least one of
+                                               these numbers is irrational.
+
+
+                                          1. Introduction
+                                          To investigate on Diophantine properties of real numbers ξ1 , . . . , ξr , a strat-
+                                          egy is to construct small linear forms in 1, ξ1 , . . . , ξr with integer coefficients.
+                                          This is the only known way to study this problemPif ξ1 , . . . , ξr are, for in-
+                                                                                                       ∞     1
+                                          stance, values of Riemann zeta function ζ(s) =               n=1 ns at odd integers
+                                          s ≥ 3.
+                                                In more precise terms, linear forms ℓ0,n + ℓ1,n ξ1 + . . . + ℓr,n ξr are con-
+                                          structed, with absolute value ≤ αn+o(n) as n → ∞ and coefficients ℓj,n ∈ Z
+                                          such that |ℓj,n | ≤ β n+o(n) (where 0 < α < 1 < β). Then:
+                                             • If ℓ0,n + ℓ1,n ξ1 + . . . + ℓr,n ξr 6= 0 for infinitely many n, the subgroup
+                                                Z + Zξ1 + . . . + Zξr of R is not discrete so that at least one number
+                                                among ξ1 ,. . . , ξr is irrational.
+                                             • If αβ < 1 and ℓ0,n + ℓ1,n ξ1 + . . . + ℓr,n ξr 6= 0 for infinitely many n, the
+                                                subspace spanned over Q by 1, ξ1 ,. . . , ξr has dimension at least 3, so that
+                                                1, ξi and ξj are Q-linearly independent for some i, j with 1 ≤ i < j ≤ r.
+2                                   Stéphane Fischler
+
+       An elementary proof of this result can be found in [10] (Proposition 1,
+       §2.2).
+     • If the linear forms are not too small, namely ≥ αn+o(n) , a result of
+       Nesterenko [12] implies the following two properties (see the remark
+       after Theorem 1 below for a precise formulation):
+         (i) A lower bound 1 − log       α
+                                     log β on the dimension of the vector space
+             spanned over the rationals by 1, ξ1 , . . . , ξr . This linear indepen-
+             dence criterion is one of the main tools in the proof ([13], [3]) that
+             ζ(s) 6∈ Q for infinitely many odd integers s ≥ 3.
+        (ii) A measure of simultaneous approximation to ξ1 , . . . , ξr ; if r = 1,
+                                                   log β
+             this is an upper bound µ(ξ1 ) ≤ 1 − log   α on the irrationality expo-
+             nent of ξ1 . For instance, Apéry proved at the same time [2] that
+             ζ(3) 6∈ Q and µ(ζ(3)) ≤ 13.41 . . ..
+       The assumption that the linear forms are not too small is very important
+       here, and it cannot be omitted. It can be weakened: Nesterenko proves
+                                                                          n+o(n)
+       such results for linear forms with absolute values between α1             and
+         n+o(n)
+       α        , where 0 < α1 < α < 1, but the conclusion is then weaker too.
+
+      In this paper we generalize Nesterenko’s results (i) and (ii) (without
+weakening the conclusion) to the case where the linear forms behave essen-
+tially like αn+o(n) cos(nω + ϕ) with ω, ϕ ∈ R. This is an interesting situation
+because the saddle point method is often applied to obtain asymptotic esti-
+mates for the linear forms, and it typically produces this kind of behaviour.
+Our main result is the following.
+Theorem 1. Let r ≥ 1, ξ1 , . . . , ξr ∈ R, α, β, ω, ϕ ∈ R. Assume that 0 < α < 1,
+β > 1, and either ω 6≡ 0 mod π or ϕ 6≡ π2 mod π. For any n ≥ 1, let
+ℓ0,n , . . . , ℓr,n ∈ Z be such that, as n → ∞:
+                                  max |ℓi,n | ≤ β n+o(n)
+                                  0≤i≤r
+
+and
+                                                                            
+          |ℓ0,n + ℓ1,n ξ1 + . . . + ℓr,n ξr | = αn+o(n) | cos(nω + ϕ)| + o(1) .   (1)
+
+Then:
+    (i) We have dimQ SpanQ (1, ξ1 , . . . , ξr ) ≥ 1 − log α
+                                                       log β .
+                       log β
+(ii) For any κ > 1 − log   α and any q, p1 , . . . , pr ∈ Z with q > 0 sufficiently
+     large in terms of κ, we have
+                               p1                 pr      1
+                   max ξ1 −        , . . . , ξr −        ≥ κ.
+                                q                   q      q
+      When (ω, ϕ) = (0, 0) these are exactly Nesterenko’s above-mentioned
+results [12]. If eiω and eiϕ are algebraic numbers, a very concise remark of
+Sorokin [15] (which we expand in §2.2) provides another proof of Theorem 1,
+based upon lower bounds for linear forms in logarithms.
+         Nesterenko’s criterion when the small linear forms oscillate             3
+
+      As the proof shows, the cosine may be replaced in Theorem 1 (and
+also in Proposition 1 below) with any continuous periodic function, which
+vanishes only at finitely many points within each period.
+
+      Theorem 1 can be used in the following situation (see §3.1 for other
+possible applications). Zudilin has proved [17] that among ζ(5), ζ(7), ζ(9),
+and ζ(11), at least one is irrational (refining upon Rivoal’s result [14]). He
+proceeds by constructing small linear forms in 1 and these numbers. He ap-
+plies the saddle point method to prove the estimate (1) (see §2.3 below), and
+deduce that the linear form is non-zero for infinitely many n, thereby proving
+the irrationality of at least one number among ζ(5), ζ(7), ζ(9), and ζ(11).
+Using Theorem 1 we obtain a quantitative version of this result:
+Theorem 2. For any q, p5 , p7 , p9 , p11 ∈ Z with q > 0 sufficiently large we
+have:
+              p5              p7            p9           p11      1
+    max ζ(5) −    , ζ(7) −          , ζ(9) −    , ζ(11) −       ≥ 438.23 .
+                q               q            q             q      q
+     In particular, in the (very unlikely) case where ζ(5), ζ(7) and ζ(9) would
+be rational numbers, this implies µ(ζ(11)) ≤ 438.23.
+
+      The proof of Theorem 1 (see §2.2) relies on applying Nesterenko’s results
+to a subsequence ℓ0,ψ(n) + ℓ1,ψ(n) ξ1 + . . . + ℓr,ψ(n) ξr , where ψ is given by the
+following proposition (with N = 1).
+Proposition 1. Let N ≥ 1, ω1 , . . . , ωN , ϕ1 , . . . , ϕN ∈ R. Assume there exist
+infinitely many integers n such that, for any i ∈ {1, . . . , N }, nωi + ϕi 6≡
+π
+ 2 mod π. Then there exist ε, λ > 0 and an increasing function ψ : N → N
+such that limn→∞ ψ(n) n   = λ and, for any n ∈ N and any i ∈ {1, . . . , N },
+| cos(ψ(n)ωi + ϕi )| ≥ ε.
+     This proposition is a consequence of Kronecker-Weyl’s equidistribution
+theorem (see §2.1). The assumption that for infinitely many n, nωi + ϕi 6≡
+π
+2 mod π for any i is of course necessary because if ψ exists, all n ∈ ψ(N) have
+this property. If N = 1, it is equivalent to (ω1 , ϕ1 ) 6≡ (0 mod π, π2 mod π).
+For N = 2, it is equivalent to:
+          (ω1 , ϕ1 ) 6≡ (0 mod π, π2 mod π)
+        
+        
+          (ω2 , ϕ2 ) 6≡ (0 mod π, π2 mod π)
+        
+        
+                                                                            (2)
+         (ω1 , ω2 , ϕ1 , ϕ2 ) 6≡ ( π2 mod π, π2 mod π, π2 mod π, 0 mod π)
+                                    π         π                  π
+        
+          (ω1 , ω2 , ϕ1 , ϕ2 ) 6≡ ( 2 mod π, 2 mod π, 0 mod π, 2 mod π)
+        
+
+In all Diophantine applications we have in view (see §3.2), N is fixed (and
+even N = 1 for the above-mentioned results), so that this assumption is
+not too difficult to check. It should be pointed out that in Proposition 1, no
+Diophantine condition is assumed on ωi or ϕi : for instance, we don’t assume
+π, ω1 , . . . , ωN to be Q-linearly independent. This is very useful because
+such a condition could be very difficult to check (whereas approximate values
+of these numbers are often easily computed, making it very easy to check
+conditions such as (2)).
+4                                   Stéphane Fischler
+
+Acknowledgements: I am very thankful to Francesco Amoroso and Michel
+Waldschmidt for reading carefully a preliminary version of this paper, and
+making helpful remarks; in this respect my gratitude goes to the referee too.
+I would like also to thank warmly Tanguy Rivoal for his advice, and Wadim
+Zudilin for pointing out Sorokin’s paper to me.
+
+
+2. Proofs
+2.1. Proof of Proposition 1
+Let p : R → R/Z, x 7→ x mod Z denote the canonical surjection. For x, y ∈ R
+with x < y, we denote by [x, y] ⊂ R/Z the image under p of the segment
+between x and y, that is the set of all p(z) with x ≤ z ≤ y. Its normalized
+Haar measure is min(y − x, 1).
+      Let s be a positive
+                       Qs         integer. For x1 , . . . , xs , y1 , . . . , ys ∈ R such that
+xi < yi , let K = i=1 [xi , yi ] ⊂ (R/Z)s . Given ϑ1 , . . . , ϑs ∈ R, we denote
+by N the set of all n ∈ N such that (nϑ1 mod Z, . . . , nϑs mod Z) ∈ K.
+Then Kronecker-Weyl’s equidistribution theorem (see [11], Chapter 1.6) as-
+serts that, if 1, ϑ1 , . . . , ϑs are Q-linearly independent:
+                                           s
+                       |{n ∈ N , n ≤ k}| Y
+                    lim                 =     min(yi − xi , 1).
+                   k→∞        k           i=1
+
+Denoting by ψ0 (n) the n-th element of N in increasing order (so that ψ0 :
+N → N is an increasing bijection), this implies
+                                     s
+                            ψ0 (n) Y
+                          lim     =     max((yi − xi )−1 , 1)                             (3)
+                        n→∞   n     i=1
+
+by letting k = ψ0 (n) and taking reciprocals. Equation (3) will be the main
+tool in the proof of Proposition 1.
+
+      To illustrate the ideas in a simpler case, let us prove Proposition 1
+first when N = 1. If ω1 /π is a rational number c/d, then it is enough to
+choose ψ(n) = nd + a for a suitable a ∈ {1, . . . , d}. If ω1 /π is irrational, let
+K = [− ϕπ1 − 14 , − ϕπ1 + 14 ] ⊂ R/Z and N be the set of all n ∈ N such that
+nω1
+  π mod Z ∈ K. Denoting by ψ0 (n) the n-th element of N , Eq. (3) yields
+limn→∞ ψ0n(n) = 2. Moreover for any n we have
+                                                                    √
+                                               ω1      ϕ1         2
+            cos(ψ0 (n)ω1 + ϕ1 ) = cos π ψ0 (n)        +          ≥      .
+                                                   π      π          2
+This concludes the proof when N = 1.
+
+     Let us come now to the proof of Proposition 1 for any N , starting
+with a special case: we assume that ωπ1 , . . . , ωπN are irrational numbers. Let
+E denote the Q-subspace of R spanned by 1, ωπ1 , . . . , ωπN . Since ωπ1 6∈ Q, we
+have dimQ E ≥ 2; let (1, ϑ1 , . . . , ϑs ) denote a basis of E, with s ≥ 1. For any
+          Nesterenko’s criterion when the small linear forms oscillate                      5
+
+                                  Ps
+i ∈ {1, . . . , N }, we have ωπi = j=0 ri,j ϑj with ri,j ∈ Q, where we let ϑ0 = 1.
+Let D be a positive integer such that Dri,j ∈ Z for any i, j. Then we have
+                                                s
+                                           X                 ϕi 
+                   cos(Dnωi + ϕi ) = cos π         Dri,j nϑj +                 (4)
+                                               j=1
+                                                               π
+because Dri,0 nϑ0 ∈ Z.
+       For any   Pis ∈ {1, . . . , N }, ϕlet  ∆i ⊂ (R/Z)s be the set of all (σ1 , . . . , σs )
+such that ( j=1 Dri,j σj ) + π − 21 ∈ Z. Since (Dri,1 , . . . , Dri,s ) ∈ Zs \
+                                          i
+
+
+{(0, . . . , 0)} because ωπi 6∈ Q, ∆i is a finite union of translated tori of di-
+mension s − 1, and a proper compact subset of (R/Z)s . There exists a
+point Q  (z1 , . . . , zs ) ∈ Rs and a (small) positive real number η such that
+             s
+K = i=1 [zi − η, zi + η] ⊂ (R/Z)s is disjoint from ∆1 ∪ . . . ∪ ∆N . Let
+N be the set of all n ∈ N such that (nϑ1 mod Z, . . . , nϑs mod Z) ∈ K, and
+ψ0 (n) denote the n-th element of N (in increasing order). Since 1, ϑ1 , . . . , ϑs
+are Q-linearly independent, Kronecker-Weyl’s equidistribution theorem (3)
+yields
+                                          ψ0 (n)
+                                    lim          = (2η)−s > 0.
+                                   n→∞       n
+                                                                                     ′
+Moreover, since K, ∆1 , . . . , ∆N are compact subsets          Psthere exists η > 0
+such that, for any n ∈ N and any i ∈ {1, . . . , N }, k( j=1 Dri,j ψ0 (n)ϑj ) +
+ϕi      1             ′
+ π − 2 kZ ≥ η (where kxkZ is the distance of x ∈ R to Z). Using Eq. (4),
+this provides ε > 0 such that | cos(Dψ0 (n)ωi + ϕi )| ≥ ε, and by letting
+ψ(n) = Dψ0 (n) this concludes the proof of Proposition 1 if ωπ1 , . . . , ωπN 6∈ Q.
+
+      Let us deduce the general case from this special case. Reordering the
+pairs (ωi , ϕi ) if necessary, we may assume that for some N ′ ∈ {0, . . . , N }
+                                     ω ′
+we have ωπ1 , . . . , ωπN ′ 6∈ Q and Nπ+1 , . . . , ωπN ∈ Q. Let d ≥ 1 be a common
+                     ωN ′ +1     ωN
+denominator of π , . . . , π and for any i, let Ei be the set of all k ∈ N such
+that kωi + ϕi ≡ π2 mod π. Then Ei has at most one element for i ≤ N ′ , and Ei
+is a union of residue classes mod d for i > N ′ . By assumption N\(E1 ∪. . .∪EN )
+is infinite, so that there exists a ∈ N such that for any k sufficiently large
+with k ≡ a mod d, we have k 6∈ E1 ∪ . . . ∪ EN . For any i > N ′ , the number
+| cos((nd + a)ωi + ϕi )| is positive and independent from n (since dωi ∈ πZ).
+If N ′ = 0 this concludes the proof by letting ψ(n) = nd + a. Otherwise we
+apply the special case of Proposition 1 proved above to cos((nd + a)ωi +
+ϕi ) = cos(ndωi + aωi + ϕi ) for 1 ≤ i ≤ N ′ , that is with ω1′ = dω1 , . . . ,
+  ′                ′                     ′
+ωN  ′ = dωN ′ , ϕ1 = aω1 + ϕ1 ,. . . , ϕN ′ = aωN ′ + ϕN ′ . We obtain in this way
+
+an increasing function ψ0 , and letting ψ(n) = ψ0 (n)d + a concludes the proof
+of Proposition 1.
+Remark. If ωπ1 , . . . , ωπN are irrational numbers, applying Kronecker-Weyl’s
+theorem with more general subsets K enables one to obtain ψ0 such that
+limn→∞ ψ0n(n) is arbitrarily close to 1 (because this is the inverse of the mea-
+sure of K). This leads to a control upon λ = limn→∞ ψ(n)     n   in terms of the
+common denominator D in this case. If 1, ωπ1 , . . . , ωπN are Q-linearly inde-
+pendent then we can take D = 1, so that λ can be chosen arbitrarily close
+6                               Stéphane Fischler
+
+to 1. However we did not try to go any further in this direction (nor to get a
+lower bound for ε) because this is completely useless for the applications we
+have in view.
+2.2. Proof of Theorem 1
+Since ω 6≡ 0 mod π or ϕ 6≡ π2 mod π, there are infinitely many integers n such
+that nω + ϕ 6≡ π2 mod π. Applying Proposition 1 (with N = 1) yields ε, λ > 0
+and an increasing function ψ : N → N such that ψ(n) = λn + o(n) as n → ∞
+and | cos(ψ(n)ω + ϕ)| ≥ ε for any n. Therefore Eq. (1) yields
+       |ℓ0,ψ(n) + ℓ1,ψ(n) ξ1 + . . . + ℓr,ψ(n) ξr | = αψ(n)(1+o(1)) = αλn+o(n)
+and we have also max0≤i≤r |ℓi,ψ(n) | ≤ β λn+o(n) . Therefore Nesterenko’s re-
+sults [12] (that is, the special case of Theorem 1 where ω = ϕ = 0) apply
+to the sequence ℓ0,ψ(n) + ℓ1,ψ(n) ξ1 + . . . + ℓr,ψ(n) ξr , with αλ and β λ instead
+of α and β. This provides exactly the same conclusions (i) and (ii) because
+log αλ    log α
+log β λ = log β .
+
+Remark. Another proof of Theorem 1 under the additional assumption that
+eiω and eiϕ are algebraic numbers is provided by the following remark of
+Sorokin (p. 823 of [15]):
+                            lim | cos(nω + ϕ)|1/n = 1
+                            n→∞
+                            n∈S
+
+in this case, if ω 6≡ 0 mod π or ϕ 6≡ π2 mod π, where S is the set of all n
+such that cos(nω + ϕ) 6= 0. Indeed, it follows from Gel’fond’s lower bound for
+linear forms in logarithms (see Theorem 4.1 of [5], p. 179) that for any ε > 0
+and any k, n sufficiently large in terms of ε, we have
+                                    π
+                        |nω + ϕ − − kπ| ≥ (1 − ε)n
+                                    2
+provided the left hand-side is non-zero.
+2.3. Simultaneous approximation to zeta values
+This subsection is devoted to a proof of Theorem 2. We use Zudilin’s linear
+forms ([17]; see also [19] for further details), which can be written as
+        Q10                   ∞
+      1 j=1 ((13 + 2j)n)! X d2                   (t − 27n)327n (t + 37n + 1)327n 
+Sn =                                  (37n+2t)     10                                    ,
+      2       (27n)!6            dt2
+                                                 Q
+                                                   j=1 (t + (12 − j)n)(13+2j)n+1
+                                                                                    |t=k
+                             k=1
+                                                                                (5)
+where the second derivative is taken at t = k and (α)p = α(α+1) . . . (α+p−1)
+is Pochhammer’s symbol. This sum can be written as a linear form
+            Sn = ℓ0,n + ℓ5,n ζ(5) + ℓ7,n ζ(7) + ℓ9,n ζ(9) + ℓ11,n ζ(11)
+with rational coefficients ℓi,n . Zudilin deduces from the saddle point method
+that
+                    Sn = e−C0 n+o(n) | cos(nω + ϕ) + o(1)|,                 (6)
+                 with ω 6≡ 0 mod π and C0 = 227.58019641 . . .,
+         Nesterenko’s criterion when the small linear forms oscillate                  7
+
+and constructs a common denominator Dn of the rational numbers ℓ0,n , ℓ5,n ,
+ℓ7,n , ℓ9,n , and ℓ11,n , such that
+
+                    Dn = eC1 n+o(n) with C1 = 226.24944266 . . .
+
+Then Dn Sn is a linear form in 1, ζ(5), . . . , ζ(11), with integer coefficients; as
+n → ∞, it tends to 0 because α = eC1 −C0 < 1, and is non-zero for infinitely
+many n thanks to (6). This proves that among the four numbers ζ(5), . . . ,
+ζ(11), at least one is irrational.
+      To prove Theorem 2, we also need the following upper bound on the
+coefficients ℓj,n , which can be proved along the same lines as Lemma 4 of [3]:
+                                                                  10
+                                                                  X
+    max          |ℓj,n | ≤ 2513n+o(n) , since 3(27 + 37 + 27) +         (13 + 2j) = 513.
+j∈{0,5,7,9,11}
+                                                                  j=1
+
+                                                                  log β
+This allows us to apply Theorem 1 with β = eC1 2513 , so that 1 − log α =
+438.22134 . . .. This concludes the proof of Theorem 2.
+
+
+
+3. Other possible applications
+3.1. Applications of the linear independence criterion
+For any s ≥ 2, let is denote the least odd integer i ≥ 3 such that
+
+                       dimQ SpanQ (1, ζ(3), ζ(5), . . . , ζ(i)) ≥ s.
+
+Since ζ(3), ζ(5), . . . span an infinite-dimensional Q-vector space ([3], [13]), is
+exists for any s. Apéry’s result that ζ(3) 6∈ Q means i2 = 3; conjecturally,
+is = 2s − 1 for any s. Ball-Rivoal’s construction yields an upper bound on is ,
+which has been improved for small values of s, namely i3 ≤ 139 and i4 ≤ 1961
+([10], refining upon previous bounds due to Zudilin [18]).
+      Now let js denote the least odd integer j ≥ 5 such that
+
+                       dimQ SpanQ (1, ζ(5), ζ(7), . . . , ζ(j)) ≥ s.
+
+The trivial remark that js ≤ is+1 yields j2 ≤ 139 and j3 ≤ 1961. Now
+Zudilin’s result [17] is an important improvement of the former bound, namely
+j2 ≤ 11. The linear forms in 1, ζ(5), ζ(7), . . . , ζ(j) he constructs (in the style
+of (5) above: see also [18]) have the asymptotics (1), with ω 6≡ 0 mod π in
+general. Theorem 1 enables one to deduce from it an upper bound on js ,
+which should be better (for a fixed value of s) than the one derived from
+the trivial bound js ≤ is+1 . In particular the bound j3 ≤ 1961 can probably
+be improved in this way (note however that for proving that at least three
+numbers in a family are Q-linearly independent, Theorem 1 can be replaced
+with Proposition 1 of [10], as explained at the beginning of the introduction:
+a lower bound for the linear forms is not necessary in this case).
+8                               Stéphane Fischler
+
+3.2. Further generalizations of Nesterenko’s criterion
+Nesterenko’s results (i) and (ii) (with ω = ϕ = 0 in Eq. (1)) have been
+generalized in several directions, namely:
+    • In the setting of algebraic number fields ([4], [16]).
+    • If the coefficients ℓi,n are known to have divisors δi,n such that δi,n
+      divides δi,n+1 , then (under suitable assumptions on δi,n ) both (i) and
+      (ii) can be improved (see [10] for (i), and [6] for a detailed study of (ii)
+      with only one number, namely r = 1).
+    • If the linear forms ℓ0,n X0 + ℓ1,n X1 + . . . + ℓr,n Xr are small at several
+                  (i)         (i)
+      points (ξ0 , . . . , ξr ): see [7].
+    • A lower bound can be obtained [12] for the distance of the point
+      (1 : ξ1 : . . . : ξr ) ∈ Pr (R) to any rational subspace of dimension less than
+      1− log  α
+          log β . This bound, proved by induction on the dimension, is Nesterenko’s
+      original approach to deduce (i) from (ii) (see [9] for a proof of this de-
+      duction based on Dirichlet’s pigeonhole principle).
+      In all these generalizations, Proposition 1 enables one to replace the
+asymptotic behaviour αn+o(n) with the more general oscillating formula (1).
+The proof is the same as for Theorem 1 (see §2.2), namely one applies the
+result to a subsequence given by Proposition 1. In the case [7] where the
+linear forms ℓ0,n X0 + ℓ1,n X1 + . . . + ℓr,n Xr are small at several points, the
+full generality of Proposition 1 is needed (and not only the case N = 1).
+
+      At last, it would be interesting to apply Proposition 1 to other results
+in Diophantine approximation. For instance, an analogous question about
+oscillating linear forms was asked in [8] (§6), and answered by Adamczewski
+[1] using ideas similar to the ones used here (but without Kronecker-Weyl’s
+theorem); see however [9] for a complete answer to all questions asked in [8].
+
+
+References
+ [1] B. Adamczewski, Sur l’exposant de densité des nombres algébriques, Inter-
+     national Math. Research Notices (2007), article ID 024, 6 pages.
+ [2] R. Apéry, Irrationalité de ζ(2) et ζ(3), in: Journées Arithmétiques (Luminy,
+     1978), number 61 in Astérisque, pp. 11–13, 1979.
+ [3] K. Ball and T. Rivoal, Irrationalité d’une infinité de valeurs de la fonction
+     zêta aux entiers impairs, Invent. Math., 146, 193–207 (2001).
+ [4] E. Bedulev, On the linear independence of numbers over number fields, Mat.
+     Zametki [Math. Notes], 64, 506–517 [440–449] (1998).
+ [5] N. Fel’dman and Y. Nesterenko, Number Theory IV, Transcendental Num-
+     bers, number 44 in Encyclopaedia of Mathematical Sciences, Springer, 1998,
+     A.N. Parshin and I.R. Shafarevich, eds.
+ [6] S. Fischler, Restricted rational approximation and Apéry-type constructions,
+     Indagationes Mathem., 20, 201–215 (2009).
+ [7] S. Fischler, Nesterenko’s linear independence criterion for vectors (2011),
+     preprint.
+         Nesterenko’s criterion when the small linear forms oscillate                 9
+
+ [8] S. Fischler and T. Rivoal, Un exposant de densité en approximation ra-
+     tionnelle, International Math. Research Notices (2006), article ID 95418, 48
+     pages.
+ [9] S. Fischler and T. Rivoal, Irrationality exponent and rational approxima-
+     tions with prescribed growth, Proc. Amer. Math. Soc., 138, 799–808 (2010).
+[10] S. Fischler and W. Zudilin, A refinement of Nesterenko’s linear indepen-
+     dence criterion with applications to zeta values, Math. Ann., 347, 739–763
+     (2010).
+[11] L. Kuipers and H. Niederreiter, Uniform distribution of sequences, Pure
+     and Applied Mathematics, Wiley, 1974.
+[12] Y. Nesterenko, On the linear independence of numbers, Vestnik Moskov.
+     Univ. Ser. I Mat. Mekh. [Moscow Univ. Math. Bull.], 40, 46–49 [69–74] (1985).
+[13] T. Rivoal, La fonction zêta de Riemann prend une infinité de valeurs ir-
+     rationnelles aux entiers impairs, C. R. Acad. Sci. Paris, Ser. I, 331, 267–270
+     (2000).
+[14] T. Rivoal, Irrationalité d’au moins un des neuf nombres ζ(5), ζ(7), . . . , ζ(21),
+     Acta Arith., 103, 157–167 (2002).
+[15] V. Sorokin, On the Zudilin-Rivoal Theorem, Mat. Zametki [Math. Notes], 81,
+     912–923 [817–826] (2007).
+[16] T. Töpfer, Über lineare Unabhängigkeit in algebraischen Zahlkörpern, Re-
+     sults Math., 25, 139–152 (1994).
+[17] W. Zudilin, One of the numbers ζ(5), ζ(7), ζ(9), ζ(11) is irrational, Uspekhi
+     Mat. Nauk [Russian Math. Surveys], 56, 149–150 [774–776] (2001).
+[18] W. Zudilin, Irrationality of values of the Riemann zeta function, Izvestiya
+     Ross. Akad. Nauk Ser. Mat. [Izv. Math.], 66, 49–102 [489–542] (2002).
+[19] W. Zudilin, Arithmetic of linear forms involving odd zeta values, J. Théor.
+     Nombres Bordeaux, 16, 251–291 (2004).
+
+Stéphane Fischler
+Equipe d’Arithmétique et de Géométrie Algébrique, Université Paris-Sud, Bâtiment
+425, 91405 Orsay Cedex, France
+

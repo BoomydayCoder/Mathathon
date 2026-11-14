@@ -730,6 +730,15 @@ The power of two is uniformly sharp. Euler/Genocchi identities remove every odd 
 
 The [completed Euler review](euler-depletion-independent-review.md) checks these identities, sharpness, exact divided-difference obstructions, and determinant scaling in [the construction](euler-depleted-positive-moments.md), with 1,686 exact checks. The polynomial Euler distribution law still has factor \(p^{1-s}\): losing the Bernoulli averaging factor costs one additional derivative. Extending this law to rational poles remains a separate task. Moreover, explicit paired poles have genuine coefficientwise losses, and the real weight decays at rate \(\pi\) rather than \(2\pi\). The finite determinant experiments do not establish an improved asymptotic normalizer.
 
+The general integer-depletion construction now has its own [completed review](integer-depletion-independent-review.md). For odd \(s\ge3\) and integer \(\ell\ge2\), the positive density \(\ell w_s(y/\ell)-w_s(y)\) has the **least uniform polynomial denominator**
+
+\[
+C_{s,\ell}=\prod_{p\mid\ell}p^{1+v_p(s-1)}.
+\]
+
+The [cumulant derivation](integer-depletion-cumulants.md) identifies
+\((\ell^k-1)B_k/k\) with the \(k\)-th cumulant of a discrete uniform variable on \(\{0,\ldots,\ell-1\}\). An integer-coefficient cumulant recurrence puts it in \(\mathbb Z[1/\ell]\); explicit no-carry witnesses establish sharpness at every prime dividing \(\ell\). Restoring the original real decay by the specified rescaling creates genuinely growing moment denominators along explicit subsequences. This is a result about those moments and that rescaling, not a lower bound for arbitrary determinant normalizers.
+
 ## 25. Higher Laurent geometry: distinguish the construction from the contour theorem
 
 For \(m\ge1\), write \(C=\prod_{i=1}^{2m}(1+x_i)\), \(P=\prod_i x_i\). The higher-Rodrigues construction introduces
@@ -742,8 +751,8 @@ For \(m\ge1\), write \(C=\prod_{i=1}^{2m}(1+x_i)\), \(P=\prod_i x_i\). The highe
 
 Its nonzero critical points reduce to
 \((m-x)(1+x)^m=\pm x^{m+1}\), with value
-\([m(1+x)/(m-x)]^{2m}\). The [geometry note](higher-rodrigues-laurent-geometry.md) contains the exact construction and a full sharp \(\zeta(5)\) contour-asymptotic draft. The latter predicts and derives an oscillating conjugate-pair contribution of modulus \(\lambda^{-1/2}\), rather than the reciprocal real minimum \(\lambda^{-1}\).
+\([m(1+x)/(m-x)]^{2m}\). The [geometry note](higher-rodrigues-laurent-geometry.md) and [completed independent \(m=2\) review](higher-rodrigues-asymptotic-independent-review.md) establish the sharp \(\zeta(5)\) contour asymptotic. If \(\lambda\) is the positive minimum of \(\Lambda_2\), the selected conjugate pair has modulus \(\lambda^{-1/2}\), rather than the reciprocal real minimum \(\lambda^{-1}\). The full form has sharp limsup rate \(\lambda^{-1/2}\) and infinitely many positive and negative terms. Saddle selection follows from the contour proof, not merely from listing algebraic critical values.
 
-The [Eulerian decomposition](eulerian-rodrigues-period-decomposition.md) expresses every multiplicity's pure form as a finite sum of geometric contour components. It gives a conditional component saddle theorem and an unconditional central-component asymptotic; the other components are not thereby controlled. In particular a numerical candidate outside the allowed contour strip at \(m=6\) is not a theorem that the full form grows.
+The [Eulerian decomposition](eulerian-rodrigues-period-decomposition.md) now has a [completed independent core review](eulerian-periods-independent-review.md). For every fixed \(m\), it expresses the pure form as a finite sum of contour components and proves a conditional component saddle theorem and an unconditional central-component asymptotic. A positive Mellin convolution additionally proves the central component positive at every index. The other components are not thereby controlled, and no uniform estimate as \(m\) grows is asserted.
 
-**Review boundary at this documentation update:** the higher-Rodrigues sharp contour proof and the all-\(m\) Eulerian decomposition are under independent review; no completed review files have yet been incorporated here. The separate [integer-depletion cumulant derivation](integer-depletion-cumulants.md) is also awaiting its completed independent audit. Exact or high-precision experiments are not being substituted for those reviews. Even a proved sharper decay rate would not make the available sufficient denominator bound an actual primitive-denominator lower bound or yield an all-odd irrationality theorem.
+**Review boundary:** the core all-\(m\) audit does not cover the newly developing finite saddle certificates for \(m=3,4,5\). A numerical candidate outside the permitted contour strip at \(m=6\) is not a theorem that the full form grows. The sharper proved decay for \(m=2\) still leaves insufficient arithmetic estimates; a sufficient denominator bound is not an actual primitive-denominator lower bound. No all-odd irrationality theorem follows.

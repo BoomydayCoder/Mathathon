@@ -39,3 +39,9 @@ Next useful work is exposition, a bounded specialist novelty check, or a careful
 ## Bounded second-digit refinement
 
 next-digit-orbits.md proposes a complete odd-prime refinement modulo p² of the normalized count: ((p-1)!)^D/(product d_j!) times [1-p sum_j d_(j+1) H_(d_j)]. It classifies next-size p^(D+1) orbits by a single uncarry, subtracts uniquely forbidden identical-leaf stars, and gives their exact count. check_next_digit_orbits.py passed4,509 arithmetic/profile cases plusindependent exactnext-orbit histograms for p3/5,e1/2 atsmall sizes. Independent manuscript-agent audit is requested; do not describe that review as completed until its report arrives. Historical novelty unresolved. Oddp/perfect-tree sizes givecount1modp²; p2requiresdifferentcorrections and is explicitly excluded.
+
+The odd-prime mod-p² theorem subsequently passed independent manuscript-agent proof review and actual plane-tree enumeration (16,145 trees), recorded in next-digit-independent-review.md/check_next_digit_independent.py. Its previous pending-review note is superseded.
+
+## Bounded excess-two refinement (new proof draft)
+
+excess-two-orbits.md classifies exact p^(D+2) orbits for p>=5 by two-uncarry digit profiles and visible-star inclusion–exclusion, yielding the normalized count modulo p³ as M0+pM1+p²M2. No closed harmonic p³ simplification or novelty claim. check_excess_two_orbits.py passed1,809 direct arithmetic/profile cases, independent small Sylow histograms, and1,085 actual raw labeled skeletons including nested perfect mergers. The p3,n7 extra repeated-nonperfect orbit precisely explains the prime restriction. Independent new-refinement review was requested; the reviewed p² theorem remains separate and intact.

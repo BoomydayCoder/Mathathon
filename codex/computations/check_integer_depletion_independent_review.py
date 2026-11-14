@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Independent exact checks of integer depletion; no symbolic packages required."""
 from fractions import Fraction as Q
-from math import comb, prod, factorial
+from math import comb, prod, factorial, gcd
 
 
 def primes(n):
@@ -77,10 +77,55 @@ def rational_derivative_identity(s):
     assert num==expected
 
 
+def cyclotomic_quotient(a,b):
+    numerator=[0]*(a*b+2)
+    for index,value in ((a*b+1,1),(a*b,-1),(1,-1),(0,1)):
+        numerator[index]+=value
+    denominator=[0]*(a+b+1)
+    for index,value in ((a+b,1),(a,-1),(b,-1),(0,1)):
+        denominator[index]+=value
+    answer=[0]*(len(numerator)-len(denominator)+1)
+    for i in range(len(answer)-1,-1,-1):
+        coeff=numerator[i+len(denominator)-1]
+        answer[i]=coeff
+        for j,value in enumerate(denominator):
+            numerator[i+j]-=coeff*value
+    assert not any(numerator) and sum(answer)==1
+    return answer
+
+
+def double_depletion_checks(bernoulli):
+    checked=0
+    for a in range(2,13):
+        for b in range(a+1,13):
+            if gcd(a,b)!=1:
+                continue
+            coefficients=cyclotomic_quotient(a,b)
+            raw=[sum(value*j**k for j,value in enumerate(coefficients))
+                 for k in range(31)]
+            cumulants=[0]
+            for k in range(1,31):
+                cumulants.append(raw[k]-sum(comb(k-1,j-1)*cumulants[j]*raw[k-j]
+                                           for j in range(1,k)))
+            for k in range(2,31,2):
+                assert cumulants[k]==Q((a**k-1)*(b**k-1),k)*bernoulli[k]
+                for s in range(3,22,2):
+                    value=moment(s,a,k,bernoulli)*(b**k-1)
+                    assert value.denominator==1
+                    assert value==(-1)**((k-2)//2)*cumulants[k]*comb(k+s-2,s-1)
+                    checked+=1
+            for n in range(1,3*a*b):
+                frequency=1-int(n%a==0)-int(n%b==0)+int(n%(a*b)==0)
+                assert frequency==int(n%a!=0 and n%b!=0)
+    assert cyclotomic_quotient(2,3)==[1,-1,1]
+    return checked
+
+
 def main():
     for s in range(3,32,2):
         rational_derivative_identity(s)
     b=bernoullis(200)
+    double_count=double_depletion_checks(b)
     number_moments=number_witnesses=number_actual=0
     for ell in range(2,31):
         cumulants=raw_cumulants(ell,62)
@@ -119,7 +164,7 @@ def main():
                 assert kk%2==0 and kk%(p-1)==0 and no_carries(kk,s-2,p)
     print(f'PASS {number_moments} moments, {number_witnesses} Lucas witnesses, '
           f'{number_actual} actual sharp rational valuations, rescaling subsequences, '
-          'and 15 exact Hermite derivative identities')
+          f'15 exact Hermite derivative identities, and {double_count} cyclotomic double-depletion moments')
 
 if __name__=='__main__':
     main()

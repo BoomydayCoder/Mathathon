@@ -7,6 +7,30 @@ Reporting target:14 November2026,08:00Los Angeles/16:00UTC. No usage-balance API
 is available; do not invent a balance or guarantee runtime. No Claude-owned
 files have been changed. Rough effort split remains80%#131/20%#137.
 
+## Newest continuation — 11:15 UTC
+
+The twelfth checkpoint supersedes older active-task labels below. Pure Rodrigues
+forms and their Fourier/central-integral construction have an EXACT primary-source
+match in Nesterenko2003; read rodrigues-primary-source-comparison.md before making
+any attribution claim. The explicit geometry and rate certificates remain useful,
+but their historical priority is unresolved. Finite ζ7/9/11 saddle reviews passed.
+
+New reviewed obstruction: coprime-depletion-primitive-obstruction.md proves that
+the specified positive depleted determinant's actual primitive values grow, using
+monic normalization and a Jensen LOWER bound. The all-aspect-ratio extension has
+an independent76-cell rational certificate. General coprime(a,b) extension is
+being audited. This usesPNT; the main PNT-freeζ5 proof is unchanged.
+
+Optional eleven-factor Barnes normalizer now has an exact409-breakpoint certificate,
+patchedcost<1.3846<1.3855, and is being independently reviewed. It requires the
+extra outerHermite lemma and has less pleasant coefficients; do not automatically
+replace the stable25-term main route. Its q3545916 is only bookkeeping.
+
+Active discovery: originalundepleted-family monic valuation obstruction; general
+cyclotomic positive integer-moment classification (m4 may give tangent numbers);
+#137excess-two audit and allsmall-excess inclusion–exclusion. Allnewdrafts retain
+individual status labels. Currentpushedcommit a70ae89; root continuescheckpointing.
+
 ## Read first
 
 1. [Discovery guide](problem131/discovery-guide.md): complete elementary zeta-three

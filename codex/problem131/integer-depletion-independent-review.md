@@ -125,3 +125,57 @@ This holds for real \(j>0\). Statements about half-integer or integer Hurwitz ar
 - 15 exact rational-function derivative identities underlying the Hermite pole formula.
 
 All checks pass. The unbounded claims above rest on the proofs, not the finite tests.
+
+## 7. Coprime double depletion: the parent's extension is correct
+
+Let \(a,b\ge2\) be coprime integers. The density
+\[
+ w_{s;a,b}(y)=ab\,w_s(y/(ab))-a\,w_s(y/a)-b\,w_s(y/b)+w_s(y)
+\]
+is strictly positive. At the common frequency scale \(ab\), the coefficient of the \(n\)-th exponential is
+\[
+ 1-\mathbf1_{a\mid n}-\mathbf1_{b\mid n}+\mathbf1_{ab\mid n}
+ =\mathbf1_{a\nmid n,\ b\nmid n}.
+\]
+Coprimality is used precisely in identifying the intersection of the two divisibility conditions with \(ab\mid n\). Thus no signed-density argument is hidden in the positivity assertion.
+
+The \(e\)-th moment is
+\[
+ (a^k-1)(b^k-1)\mu_s(t^e),\qquad k=2e+2.
+\]
+It belongs to \(\mathbb Z[1/a]\) by applying the single-depletion cumulant result to \(a\), and to \(\mathbb Z[1/b]\) by applying it to \(b\). The intersection is \(\mathbb Z\) because \(\gcd(a,b)=1\). This proves integral polynomial moments for all odd \(s\ge3\).
+
+This is a structural simplification, not automatically an asymptotic arithmetic improvement: multiplying the single-depletion functional by its fixed integer \(C_{s,\ell}\) already made all polynomial moments integral. The double depletion changes the density and its decay scale to \(2\pi/(ab)\), so the real and pole costs remain separate questions.
+
+## 8. An additional exact connection: cyclotomic logarithmic derivatives
+
+The preceding integrality has a finite-polynomial explanation. Put
+\[
+ R_{a,b}(q)=\frac{(q^{ab}-1)(q-1)}{(q^a-1)(q^b-1)}.
+\]
+Coprimality and cyclotomic factorization give
+\[
+ R_{a,b}(q)=
+ \prod_{\substack{d\mid ab\\d\nmid a,\ d\nmid b}}\Phi_d(q)
+ \in\mathbb Z[q],\qquad R_{a,b}(1)=1.
+\]
+Its degree is \((a-1)(b-1)\). Also
+\[
+ R_{a,b}(e^z)=\frac{M_a(bz)}{M_a(z)},
+\]
+where \(M_a\) is the uniform-distribution generating function. Therefore, for even \(k\ge2\),
+\[
+ \left.\frac{d^k}{dz^k}\log R_{a,b}(e^z)\right|_{z=0}
+ =\frac{(a^k-1)(b^k-1)B_k}{k}\in\mathbb Z.
+\]
+The last integrality can be proved without Bernoulli denominators at all: every derivative of \(R_{a,b}(e^z)\) at zero is an integer, its value at zero is 1, and the integer-binomial log-derivative recursion preserves integrality. Its polynomial coefficients may have negative signs; this argument does not misidentify it as a probability distribution. Positivity of the original density comes from the separate frequency argument.
+
+The smallest coprime pair gives a particularly elementary identity:
+\[
+ R_{2,3}(q)=q^2-q+1=\Phi_6(q),\qquad
+ \log R_{2,3}(e^z)=z+\log(2\cosh z-1)
+\]
+near zero. Its first even logarithmic derivatives are \(2,-10,182\). Multiplying these derivatives by
+\((-1)^e\binom{k+s-2}{s-1}\) gives exactly the positive double-depleted moments. This connects the moment integrality to one small cyclotomic polynomial, rather than to an accidental Bernoulli cancellation.
+
+The independent checker additionally verifies 5,100 such moments for coprime pairs up to 12, computes the cyclotomic quotient by exact integer polynomial division, checks its logarithmic derivatives via an independent recurrence, and verifies the frequency inclusion-exclusion coefficients. All checks pass. The identities and unbounded integrality follow from the proofs above.

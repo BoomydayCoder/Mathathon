@@ -1,7 +1,7 @@
 # Frequency depletion, discrete-uniform cumulants, and exact denominator support
 
-Status: new parent proof draft, independent review requested. This generalizes
-the separately reviewed ell=2 Euler model. No new irrationality theorem or
+Status: independently reviewed; see integer-depletion-independent-review.md.
+This generalizes the separately reviewed ell=2 Euler model. No new irrationality theorem or
 historical novelty is claimed.
 
 ## 1. A positive construction for every integer ell>=2

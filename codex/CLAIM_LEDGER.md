@@ -4,6 +4,26 @@ All 'proved' labels refer to arguments written and checked in this workspace,
 not historical novelty. Standard external inputs are identified in each note.
 Finite computation is supplementary evidence only.
 
+## Current status — 14 November 2026
+
+This section supersedes pending-review or verification-status wording in the
+earlier stage snapshots below. Those snapshots preserve the development history;
+they are not a list of currently running tasks. No historical novelty or
+all-odd irrationality theorem is claimed.
+
+| Current result | Proof / completed review | Exact scope |
+|---|---|---|
+| PNT-free zeta-five normalization keeps degree \(h=37K/40\) | [Guide](problem131/pnt-free-zeta5-guide.md); [normalizer review](problem131/pnt-free-normalizer-independent-review.md); [floor-rounding and primitive-part review](problem131/prime-exponent-rounding-independent-review.md) | Rational majorant denominator \(40000\) is auxiliary only. Primitive parts remove the final determinant power; explicit floor rounding adds no upper cost. Both prime repairs and source local lemmas remain necessary. |
+| Pinned existing Lean project builds and all 71 project modules replay successfully | [Verification report](problem131/lean-local-verification.md); [compiled axiom check](verification/romik-lean/independent-check.log); [durable replay result](verification/romik-lean/kernel-replay-result.json) | Explicit PNT axiom, plus standard Lean axioms. Replay is against imported environments, not a fresh replay of all Mathlib declarations. This verifies the pinned source formalization, not our new PNT-free proof or Python certificates. |
+| Adaptive adjacent-Legendre boundary repair has sharp positive asymptotic \(\pi n^{-3}\log n\,16^{-n}\) | [Construction](problem131/adaptive-boundary-cancellation.md); [completed independent review](problem131/adaptive-boundary-independent-review.md) | Eventually defined rational tuning cancels the total boundary sum. Sufficient denominators are proved; finite primitive-arithmetic samples do not prove an asymptotic obstruction. |
+| Signed single-\(\zeta(7)\) model, finite-window determinant nonvanishing, and total-variation obstruction | [Construction](problem131/signed-single-zeta7-model.md); [independent review](problem131/signed-zeta7-independent-review.md) | Applies the primary general nonvanishing proposition after checking its hypotheses, not its large-\(s\) theorem at \(s=7\). The positive lower bound concerns the specified total-variation majorant and multiplier, not the signed determinant or all primitive normalizations. |
+| Euler-depleted positive functional has sharp polynomial denominator \(2^{1+v_2(s-1)}\) | [Construction](problem131/euler-depleted-positive-moments.md); [completed review](problem131/euler-depletion-independent-review.md) | Odd \(s\ge3\); pole identities, local divided-difference losses and determinant scaling reviewed. The polynomial distribution exponent is still \(p^{1-s}\); no improved determinant normalizer follows. Numerical determinant tables remain diagnostics. |
+| Integer depletion has least uniform polynomial denominator \(\prod_{p\mid\ell}p^{1+v_p(s-1)}\) | [Cumulant construction](problem131/integer-depletion-cumulants.md); [completed independent review](problem131/integer-depletion-independent-review.md) | Odd \(s\ge3\), integer \(\ell\ge2\). Discrete-uniform cumulants explain prime support; Lucas witnesses prove sharpness. Restoring the real decay by the stated rescaling creates actual growing moment denominators along explicit subsequences, not a general determinant obstruction. |
+| Higher-Rodrigues \(\zeta(5)\) contour has sharp rate \(\lambda^{-1/2}\) and infinitely many terms of each sign | [Laurent construction](problem131/higher-rodrigues-laurent-geometry.md); [completed \(m=2\) review](problem131/higher-rodrigues-asymptotic-independent-review.md) | Saddle selection and oscillating asymptotic proved; quadratures only corroborate. The available sufficient denominator estimate does not close irrationality and is not an actual primitive-denominator lower bound. |
+| All-\(m\) Eulerian contour decomposition and central-component theorem | [Construction](problem131/eulerian-rodrigues-period-decomposition.md); [completed independent core review](problem131/eulerian-periods-independent-review.md) | Each fixed \(m\): exact decomposition, conditional component saddle theorem, unconditional central asymptotic and positive central Mellin convolution. Newly developing finite \(m=3,4,5\) saddle certificates are outside this audit; no all-odd decay theorem is claimed. |
+
+## Earlier established results and stage snapshots
+
 | Claim | Proof | Independent review / checks | Limits |
 |---|---|---|---|
 | Zudilin's seven lemmas and arithmetic | zudilin-explained.md | independent-review.md; exact generic certificates | Reconstruction of published mathematics |
@@ -23,13 +43,15 @@ Finite computation is supplementary evidence only.
 | Positive weighted rational family can cancel zeta3 | orthogonality-design.md | corrected residue formula independently checked | Tuning positivity checked finitely, asymptotic arithmetic unresolved |
 | Explicit classical proofs for pi powers and exp(r) | pi-powers.md | pi-powers-review.md | Exposes transcendence machinery, not low-prerequisite new proof |
 
-## Current-source claims, not independently established here
+## Source-verification status
 
-Fauzan's September2026 preprint states irrationality of zeta5; inspected formal
-repositories report completed proofs. We have not built Lean or audited all
-31 pages. Exact versions and inspected assumptions are in
-sources/odd-zeta-provenance.md. Current-source reporting must not be confused
-with our independent mathematical results above.
+Fauzan's 2026 preprint states irrationality of zeta5. The pinned Romik
+formalization has now passed a local 8995-job build, two statement checks,
+the compiled axiom report, and replay of all 71 project modules. Its explicit
+mathematical axiom is the PNT. Exact versions, logs and replay limits are in
+[the verification report](problem131/lean-local-verification.md) and
+[source provenance](sources/odd-zeta-provenance.md). This separate formal check
+does not formalize the new constructions in this research branch.
 
 ## Fifth-stage independently checked components
 
@@ -68,9 +90,10 @@ with our independent mathematical results above.
 | Prime-power arity group valuation and leading unit | problem137/prime-power-sylow-audit.md | problem137/prime-power-orbit-review.md | Uses multivariable Lagrange inversion; arbitraryarityoutside theorem |
 
 
-## Current status and corrections — eighth checkpoint
+## Eighth-checkpoint snapshot and corrections
 
-This addendum supersedes conflicting access or pending-review labels above.
+This historical addendum superseded earlier access and pending-review labels;
+the current summary at the top of this ledger now takes precedence.
 Earlier entries are retained as a record of what had been checked at that time,
 not as the current verdict. All proof paths below are relative to `codex/`.
 
@@ -82,8 +105,9 @@ not as the current verdict. All proof paths below are relative to `codex/`.
   pending. [The end-to-end audit](problem131/fauzan-simplified-proof-audit.md)
   found no unresolved bridge in the alternative derivation. It retains
   Fauzan's determinant/local construction and named standard inputs; this is
-  not external acceptance, historical novelty, a local Lean build, or formal
-  verification of every claim in the original preprint.
+  not external acceptance, historical novelty, or formal verification of our
+  alternative proof. The separate source formalization's local verification
+  is recorded in the current summary above.
 - The plain-rank route uses a **new normalizer** \(\widetilde m\), with outer
   lower exponent \(v_p(S_K)+2\sum w_i-r_p\). The earlier source normalizer with
   the refined zero-weight correction is not interchangeable with it.
@@ -108,7 +132,7 @@ not as the current verdict. All proof paths below are relative to `codex/`.
 | The typed skeleton count is \(\prod_i(pk_i)!/[\prod_i k_i!\prod_jd_j!]\), including zero internal-type cases | [Explicit forward/inverse bijection](problem137/cyclic-type-cycle-splicing.md); [independent algebraic check](problem137/typed-count-matrix-tree-audit.md) | Fixed missing-parent name in arbitrary assignments corresponds to a variable root name in trees. Exact checks cover 24,242 assignments and surjectivity; a separate depth-profile computation covers 234 cases, 28 with zero internal types. These checks supplement the universal proof. |
 | The #137 proof addresses the exactness step distinguished in Konvalinka's primary paper | [Primary-source comparison](problem137/konvalinka-comparison.md); [official statement](sources/problem137-official.md) | Proposition 2 gives arithmetic exactness; Proposition 7 gives tree-action divisibility. Deutsch–Sagan owns the established binary orbit argument. This comparison does not establish historical novelty of the prime-power refinement. |
 
-### Active questions, not established results
+### Questions recorded at the eighth checkpoint
 
 - **Actual local nullvectors:** odd-zeta agent is deriving leading local-block
   nullvectors to test determinant-specific valuation gains. A failure of a
@@ -135,17 +159,17 @@ from this ledger.
 | Actual ζ7 inner-kernel cancellation improves a sufficient budget by1/25200 | inner-leading-block-cancellation.md | inner-leading-block-independent-review.md; inner-leading-block-adversarial-review.md | Small gain, not an irrationality proof or exact normalizer asymptotic |
 | Laurent one-variable periods are Legendre P/Q with a boundary correction | laurent-legendre-relative-periods.md | exact symbolic checks; parent inspection | Full two-variable exact-form reduction remains unresolved; real series satisfies L F=-12t |
 
-The general Laurent-deformation geometry and newly developing higher-pole
-positive-period constructions retain their individual review labels. The local
-Lean build of the pinned existing formalization is active; it is not yet a
-successful verification and does not formalize our simplified proof.
+The general Laurent-deformation geometry and higher-pole constructions retain
+their individual review labels. The local Lean build was still active at this
+stage; it and the project replay have since completed successfully. Neither
+formalizes our simplified proof.
 
 | Further checked claim | Proof / evidence | Limit |
 |---|---|---|
 | Actual ζ5 outer correction kernel gains K+3N-3p+1 | outer-polynomial-correction-kernel.md; outer-correction-adversarial-review.md | Specified outer band; original source dependencies remain |
 | New normalizer budget2190247/1600000, eventual exp(-26n²) | outer-gain-budget-update.md and completed assembly dependencies | Stronger margin, optional extra lemma, no novelty claim |
 | Higher positive Laurent amplitudes mix lower zeta values | positive-period-amplitude-mixing.md; positive-period-amplitude-review.md | Precisely the displayed family; not a general impossibility theorem |
-| Existing pinned Lean theorem compiles with ordinary-series target | verification/romik-lean/build.log; independent-check.log; repository-check.log | Explicit PNT axiom; separate kernel replay ongoing; not our new proof formalized |
+| Existing pinned Lean theorem compiles with ordinary-series target | verification/romik-lean/build.log; independent-check.log; repository-check.log | Explicit PNT axiom; project replay subsequently completed for all 71 modules; not our new proof formalized |
 
 ## Tenth-stage proof status
 
@@ -156,8 +180,10 @@ successful verification and does not formalize our simplified proof.
 | Complete PNT-free ζ5 alternative route | pnt-free-zeta5-guide.md plus completed component reviews | Not formally verified; computer-assisted; not historical novelty |
 | Explicit Hermite ideal is the entire selected outer kernel | outer-correction-Hermite-ideal.md; independent review | Optimal only within selected C row space, not exact determinant valuation |
 | Odd-prime next normalized Fuss–Catalan digit | problem137/next-digit-orbits.md; next-digit-independent-review.md | p odd and arityp^e; no modulo-p³ or novelty claim |
-| Adaptive adjacent-Legendre pureζ5 repair | adaptive-boundary-cancellation.md | Draft analytic proof awaiting independent review; arithmetic samples not a failure theorem |
+| Adaptive adjacent-Legendre pureζ5 repair | adaptive-boundary-cancellation.md; adaptive-boundary-independent-review.md | Independent analytic review completed; arithmetic samples not a failure theorem |
 
-The source formalization's successful local build and axiom checks are unchanged.
-An optional separate replay had incomplete result capture and is being rerun;
-no stronger formal-verification claim is inferred from it.
+The first optional replay had incomplete result capture and is not used as a
+certificate. The second replay completed at 10:28:40 UTC on 14 November 2026,
+exit status 0, covering exactly 71 project modules against imported environments.
+Its durable record supports the current verification statement above; it is
+not a fresh replay of all Mathlib constants.

@@ -16,6 +16,14 @@ For ζ(3) the relevant small critical value is real. Here the leading small
 values are a complex conjugate pair, and a contour argument actually selects
 them. Their presence alone would not have proved this selection.
 
+**Primary-source context.** The underlying rational forms, finite Fourier/Barnes
+decomposition and positive central integral are exact specializations of
+Nesterenko’s published general constructions; the logarithmic polynomials
+are confluent Jacobi–Piñeiro polynomials. See the explicit parameter dictionaries
+in [rodrigues-primary-source-comparison.md](rodrigues-primary-source-comparison.md).
+The specific geometric analysis and rate certificates here were independently
+developed, but their historical priority remains unresolved.
+
 ## 1. An exact constant-term construction for every multiplicity
 
 For a positive integer m put d=2m+1, introduce x₁,…,x₂ₘ,z, and set
@@ -389,6 +397,13 @@ least three points (η is not real); the real parts of C times that orbit sum
 to zero and are not all zero, so both signs occur. Along corresponding
 subsequences the main term stays a fixed fraction of |Cηⁿ| and dominates
 the error in (16). This also proves the limsup assertion.
+
+The independent review gives an optional algebraic strengthening: the positive
+and negative terms each have natural density one half, and zeros have density
+zero. Its Section8 proves arg η/π irrational using the S₃ splitting field of
+2x³−3x−2 (the shifted polynomial is Eisenstein at3 and the only quadratic
+subfield is Q(√−6)), then applies irrational-rotation equidistribution to (16).
+The simpler infinite-sign argument above does not require this extra machinery.
 
 The difference from the Apéry case is now precise. The integer coefficient
 grows like λⁿ, the positive inverse real period decays like λ⁻ⁿ, but the pure

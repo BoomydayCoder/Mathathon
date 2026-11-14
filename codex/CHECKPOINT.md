@@ -266,3 +266,32 @@ Eleventh checkpoint,2026-11-14 10:50UTC (02:50LA), continuing:
 - Smaller25-term/q100 and17-term/q10 arithmetic certificates pass exact checks;
   original25-term/q40000 remains main due its stronger margin and fewer dependencies.
 - Work continues toward16:00UTC/08:00LA. No balance API or resets.
+
+Twelfth checkpoint,2026-11-14 11:15UTC (03:15LA), continuing:
+- Sharp pure Rodrigues forms forζ5,ζ7,ζ9,ζ11 and their Eulerian Barnes
+  decomposition now independently reviewed, including rational-only finite
+  saddle certificates. Arithmetic remains insufficient for irrationality.
+- IMPORTANT primary-source match: the forms, Fourier decomposition and central
+  positive cycle specialize Nesterenko2003; confluentpolynomials match published
+  Jacobi–Piñeiro theory. Exact dictionaries andPDFhashes saved. No new-family
+  historicalclaim. ParticularLaurent/ratepriority remains unresolved.
+- New positive frequency depletion has exact uniform denominators via uniform
+  cumulants; coprime double depletion has integer polynomial moments via
+  cyclotomic logarithmic derivatives. Independent review complete.
+- Strong ACTUAL no-go: atK40n,N3n,power6, normalized(2,3)-depleted primitive
+  values grow beyondexp(K²/3) for everyfixedodds>=3. Exactbadprime valuations,
+  monic denominator argument and Jensen lower bound are independently reviewed.
+  UsesPNT for this obstruction, not for the main positivePNT-freeζ5result.
+- Allfixedrationalaspectratiosα<1 extension independently certified with76
+  rationalintervals; primitivevalues>exp((1−α)K²/5). Generalcoprimea,b band
+  theorem proved; its combined audit ongoing. Othernumeratorpowers excluded.
+- Root found optional11-term Barnes certificate, withreviewedouterHermite gain.
+  Standard-librarychecker409breakpoints, C113,M1e7, patchedexponent<1.3846
+  versusanalyticmagnitude>1.3855. Independentaudit underway;25termroute stable.
+- Originalundepletedfamily now has an actualouter-band denominator theorem
+  draft implying failureforfixedodds>=29; underdevelopment, notyetreviewed.
+- #137excess-two combinatorialmodp³ draft forp>=5 passes1809arithmeticchecks
+  and1085rawskeletoncases; independentreviewactive. Generalexcessk<p−1
+  inclusion–exclusion beingdeveloped toorganizeallfirstdigits.
+- Currentlatestpushedcommit a70ae89; newerworkawaitsnextcheckpointpush.
+  Work continues toward16:00UTC, no usage-meter access and no resets.

@@ -7,11 +7,23 @@ component has an unconditional asymptotic for every m. The entire higher-odd-zet
 claimed to decay for every m. In fact the simplest vertical-contour argument
 encounters a concrete obstruction already at m=6. This extends
 [higher-rodrigues-laurent-geometry.md](higher-rodrigues-laurent-geometry.md).
-No novelty claim is made.
+No novelty claim is made. The all-m decomposition and component theorem have
+passed independent review in [eulerian-periods-independent-review.md](eulerian-periods-independent-review.md).
+The finite certificate and full-form corollary also passed independent review
+in [finite-rodrigues-saddles-independent-review.md](finite-rodrigues-saddles-independent-review.md),
+using a separate rational-arithmetic implementation with no root solver.
+
+**Primary-source context.** The underlying rational forms, finite Fourier/Barnes
+decomposition and positive central integral are exact specializations of
+Nesterenko’s published general constructions; the logarithmic polynomials
+are confluent Jacobi–Piñeiro polynomials. See the explicit parameter dictionaries
+in [rodrigues-primary-source-comparison.md](rodrigues-primary-source-comparison.md).
+The specific geometric analysis and rate certificates here were independently
+developed, but their historical priority remains unresolved.
 
 ## 1. The exact decomposition
 
-Retain the minimal Mellin-zero polynomials Jₙ,ₘ and their pure forms
+For integers n≥1,m≥1, retain the minimal Mellin-zero polynomials Jₙ,ₘ and their pure forms
 
 \[
  \mathscr L_{n,m}=2m\left(\sum_{k=0}^{mn}\binom{mn}{k}^2
@@ -128,7 +140,11 @@ integer |j|≤m−1 the real action
 Re(ψₘ(a+iy)+2πij(a+iy)) has exactly one global maximum on that vertical line,
 where Im ψₘ′=−2πj, and has linear negative tails away from the maximum.
 This is a global statement about a vertical line, not a claim that its maximum
-is a complete complex saddle.
+is a complete complex saddle. The independent review also observes that
+Re ψₘ″>0 throughout the convex strip implies injectivity of ψₘ′ there:
+its divided difference between any two points is the segment average of
+ψₘ″ and has positive real part. Thus each Fourier index j has at most one
+full saddle inside this strip.
 
 **Conditional component theorem.** If tⱼ satisfies 0<Re tⱼ<1 and
 ψₘ′(tⱼ)+2πij=0 with the stated principal logs, then
@@ -187,6 +203,13 @@ logarithmic derivative is (m+1)/t+m/(1−t)−1/(t+m)>0. The saddle equation
 then holds with real logarithms. Its value is strictly between zero and one,
 since 0<m(1−t₀)/(t₀+m)<1. Therefore the central component always decays
 exponentially, with a positive real leading coefficient given by (7).
+In fact the independent review strengthens eventual central positivity to
+Tₙ,ₘ,₀>0 for every index. The exact factorization
+κₙ,ₘ²Hₙ,ₘ(z)=B(z,n+1−z)^(2m)B(z,mn+1)² realizes Tₙ,ₘ,₀ as the value at
+one of a convolution of positive Mellin densities. See that review for the
+convergence and inversion proof, and [central-period-dual-laurent.md](central-period-dual-laurent.md)
+for the resulting positive Laurent model and its explicit lower-zeta terms.
+
 It does not follow that the entire positive-weight sum (3) is controlled by
 this component: the other T components are complex and may decay much more
 slowly.
@@ -198,7 +221,9 @@ the single positive real point gives a saddle in 0<Re t<1. There is one for
 each j=1−m,…,m−1. The largest component modulus is attained exactly at the
 outer conjugate pair j=±(m−1), and that modulus is strictly less than one.
 
-These finite assertions are proved by the exact-rational certificate
+These finite assertions have now passed the independent audit linked above;
+its separate implementation checks the saved rational centers without floating
+arithmetic or root finding. They are proved by the exact-rational certificate
 `../computations/certify_rodrigues_finite_saddles.py`, with output retained in
 `../computations/rodrigues_finite_saddles_certificate.json`. Here is the proof
 method, including why numerical root finding is not the certificate:

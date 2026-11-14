@@ -286,3 +286,67 @@ The available denominator bound still does not yield an irrationality
 criterion. This sharper analytic theorem supplies a rigorously selected
 oscillating cycle; it does not establish the actual growth of primitive
 denominators.
+
+## 8. Optional algebraic strengthening: each sign has density one half
+
+The main proof above deliberately does not require irrationality of the
+angle. Nevertheless that property can be proved, giving a stronger
+corollary. The following argument was independently checked by the author
+of the contour note after this reviewer proposed it.
+
+Let \(K\) be the splitting field of \(f(x)=2x^3-3x-2\).
+The polynomial
+
+\[
+f(x+1)=2x^3+6x^2+3x-3
+\]
+
+is Eisenstein at three, so \(f\) is irreducible. Its discriminant is
+\(-216\), a nonsquare. Hence \(\operatorname{Gal}(K/\mathbb Q)=S_3\),
+and its unique quadratic subfield is \(\mathbb Q(\sqrt{-6})\).
+
+Every root of unity in \(K\) generates an abelian Galois extension of
+\(\mathbb Q\). The corresponding quotient of \(S_3\) is abelian, so it
+has order at most two. The quadratic cyclotomic fields are
+\(\mathbb Q(i)\) and \(\mathbb Q(\sqrt{-3})\), neither equal to
+\(\mathbb Q(\sqrt{-6})\). Thus the only roots of unity in \(K\) are
+\(1,-1\).
+
+The values \(\eta,\overline\eta\) are rational functions of roots of
+\(f\), so their ratio belongs to \(K\). It is not one because the values
+are nonreal. It is not minus one either: that would make the pair purely
+imaginary, whose contribution to the second elementary symmetric sum of
+\(\lambda,\eta,\overline\eta\) would be
+\(\eta\overline\eta>0\). But their value polynomial gives that symmetric
+sum as \(-17376/256<0\). Therefore
+
+\[
+\boxed{\eta/\overline\eta\text{ is not a root of unity},
+\qquad \arg\eta/\pi\notin\mathbb Q.}
+\]
+
+Write \(\theta=\arg\eta\), \(\phi=\arg\mathcal C(t_\star)\).
+The proved asymptotic becomes
+
+\[
+\frac{3n^{5/2}\mathscr L_n}
+ {|\mathcal C(t_\star)|\,|\eta|^n}
+=\cos(n\theta+\phi)+O(1/n).
+\]
+
+Irrational rotations are equidistributed. For every fixed
+\(0<\epsilon<1\), all sufficiently large \(n\) with
+\(\cos(n\theta+\phi)>\epsilon\) have positive \(\mathscr L_n\), and
+positive \(\mathscr L_n\) requires
+\(\cos(n\theta+\phi)>-\epsilon\). The corresponding limiting frequencies
+are \(\arccos(\epsilon)/\pi\) and
+\(\arccos(-\epsilon)/\pi\). Letting \(\epsilon\) decrease to zero gives
+natural density one half for positive terms, and likewise for negative
+terms. Zero terms are confined eventually to
+\(|\cos(n\theta+\phi)|\le\epsilon\), whose density tends to zero with
+\(\epsilon\).
+
+Thus the positive and negative subsequences each have natural density
+\(1/2\), and the zero subsequence has density zero. This uses a standard
+equidistribution theorem and a small Galois argument; the earlier
+infinitely-many-signs conclusion needs neither strengthening.

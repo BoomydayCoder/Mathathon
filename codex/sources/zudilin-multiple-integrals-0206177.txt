@@ -1,0 +1,410 @@
+                                                              MULTIPLE-INTEGRAL REPRESENTATIONS
+
+                                                      OF VERY-WELL-POISED HYPERGEOMETRIC SERIES1
+arXiv:math/0206177v1 [math.CA] 18 Jun 2002
+
+
+
+
+                                                                                    Wadim Zudilin (Moscow)
+
+                                                                                     E-print math.CA/0206177
+                                                                                             17 March 2002
+
+
+
+                                                The aim of this note is to connect two objects: very-well-poised hypergeometric
+                                             series
+                                                                                                      Qk
+                                                                                          Γ(1 + h0 ) j=1 Γ(hj )
+                                                  Fk (h) = Fk (h0 ; h1 , . . . , hk ) := Qk
+                                                                                              j=1 Γ(1 + h0 − hj )
+                                                                                 h0 , 1 + 12 h0 ,    h1 ,    ...,        hk
+                                                                                                                                                       
+                                                                                                                                                  k+1
+                                                             × k+2Fk+1                  1
+                                                                                                                                           (−1)
+                                                                                        2 h0 , 1 + h0 − h1 , . . . , 1 + h0 − hk
+                                                            ∞                         Q k
+                                                                                        j=0 Γ(hj + µ)
+                                                           X
+                                                         =     (h0 + 2µ) Qk                                 (−1)(k+1)µ ,                                    (1)
+                                                           µ=0                    j=0 Γ(1 + h0 − hj + µ)
+
+
+                                             and multiple integrals
+
+                                                                                  a0 , a1 , . . . , ak
+                                                                                                        
+                                                           Jk (a, b) = Jk
+                                                                                      b1 , . . . , bk
+                                                                                    Z Qk           aj −1
+                                                                                          j=1 xj         (1 − xj )bj −aj −1
+                                                                          Z
+                                                                     :=       ···                                             dx1 dx2 · · · dxk             (2)
+                                                                                             Qk (x1 , x2 , . . . , xk )a0
+                                                                          [0,1]k
+
+
+                                             with Q0 := 1 and
+
+
+                                                      Qk = Qk (x1 , x2 , . . . , xk ) := 1 − (1 − (· · · (1 − (1 − xk )xk−1 ) · · · )x2 )x1
+                                                          = 1 − x1 Qk−1 (x2 , . . . , xk ) = Qk−1 (x1 , . . . , xk−1 ) + (−1)k x1 x2 · · · xk               (3)
+
+                                             for k ⩾ 1.
+                                                1 An extract from my contribution “Well-poised hypergeometric service for diophantine problems
+
+                                             of zeta values” to Actes des 12èmes rencontres arithmétiques de Caen.
+                                                                                              1
+2                                                W. ZUDILIN
+
+Theorem. For each k ⩾ 1, there holds the identity
+
+              Qk+1
+                j=1 Γ(1 + h0 − hj − hj+1 )
+                                               · Fk+2 (h0 ; h1 , . . . , hk+2 )
+                     Γ(h1 ) Γ(hk+2 )
+                           h1 ,     h2 ,           h3 ,      ...,          hk+1
+                                                                                 
+                    = Jk                                                           ,             (4)
+                                1 + h0 − h3 , 1 + h0 − h4 , . . . , 1 + h0 − hk+2
+
+provided that
+
+                                                          k+2
+                                                     2    X
+                                       1 + Re h0 >      ·     Re hj ,                            (5)
+                                                   k + 1 j=1
+                Re(1 + h0 − hj+1 ) > Re hj > 0                   for   j = 2, . . . , k + 1,     (6)
+
+                                         h1 , hk+2 6= 0, −1, −2, . . . .                         (7)
+
+
+Remark. Condition (5) is required for the absolute convergence of the series (1) in
+the unit circle (and, in particular, at the point (−1)k+1 ), while condition (6) ensures
+the convergence of the corresponding multiple integral (2). The restriction (7) can
+be removed by the theory of analytic continuation if we write Γ(hj + µ)/Γ(hj ) for
+j = 1, k + 2 as Pochhammer’s symbol (hj )µ when summing in (1).
+    In the case of integral parameters h, the quantities (1) are known to be Q-linear
+forms in even/odd zeta values depending on evenness/oddness of k ⩾ 4. Therefore, if
+positive integral parameters a and b satisfy the additional condition
+
+                                    b1 + a2 = b2 + a3 = · · · = bk−1 + ak ,                      (8)
+
+then the quantities (2) are Q-linear forms in even/odd zeta values. Specialization
+aj = n + 1 and bj = 2n + 2 gives one the coincidence of multiple integrals and
+well-poised hypergeometric series conjectured by us in [Zu2, Section 9]. Denoting the
+corresponding integrals by Jk,n and using our arithmetic results [Zu1, Lemmas 4.2–
+4.4] we then conclude that
+
+           Dnk+1 Φ−1
+                  n Jk,n ∈ Zζ(k) + Zζ(k − 2) + · · · + Zζ(3) + Z                    for k odd,
+
+where
+                  Y                          log Φn            2 1
+      Φn :=                    p,         lim       = ψ(1) − ψ    − = 0.24101875 . . .
+                 p<n
+                                         n→∞    n               3  2
+              {n/p}∈[ 32 ,1)
+               HYPERGEOMETRIC SERIES AND MULTIPLE INTEGRALS                                  3
+
+({ · } denotes the fractional part of a number), that is closed enough to Vasilyev’s
+conjectural inclusions [V]. The choice aj = rn + 1 and bj = (r + 1)n + 2 in (2) (or,
+equivalently, h0 = (2r + 1)n + 2 and hj = rn + 1 for j = 1, . . . , k + 2 in (1)) with
+the integer r ⩾ 1 depending on a given odd integer k presents almost the same linear
+forms in odd zeta values as considered by T. Rivoal in [R] for proving his remarkable
+result on infiniteness of irrational numbers in the set ζ(3), ζ(5), ζ(7), . . . .
+   In addition, we have to mention, under hypothesis (8), the obvious stability of the
+quantity
+   Fk+2 (h0 ; h1 , . . . , hk+2 )                   Jk (a, b)
+         Qk+2                     = Qk+1          Qk+1
+          j=1 Γ(hj )                 j=2 Γ(hj ) ·  j=1 Γ(1 + h0 − hj − hj+1 )
+                                                         Jk (a, b)
+                              = Qk                                        Qk
+                                   j=1 Γ(aj ) · Γ(b1 + a2 − a0 − a1 ) ·    j=1 Γ(bj − aj )
+
+under the action of the (h-trivial) group G of order (k + 2)! containing all per-
+mutations of the parameters h1 , . . . , hk+2 . This fact can be applied for number-
+theoretical applications. In the cases k = 2 and k = 3 the change of variables
+(xk−1 , xk ) 7→ (1 − xk , 1 − xk−1 ) in (2) produces an additional transformation c of
+both (2) and (1); for k ⩾ 4 this transformation is not yet available since condition (8)
+is broken. The groups hG, ci of orders 120 and 1920 for k = 2 and k = 3 respectively
+are known [RV1], [RV2]; G. Rhin and C. Viola make a use of these groups to discover
+nice estimates for the irrationality measures of ζ(2) and ζ(3). Finally, we want to
+note that the group G can be easily interpretated as the permutation group of the
+parameters
+      e0l = hl − 1,    1 ⩽ l ⩽ k + 2,       ejl = h0 − hj − hl ,     1⩽j <l ⩽ k+2
+(see [Zu2, Section 9] for details).
+Lemma 1. Theorem is true if k = 1.
+Proof. Thanks to a limiting case of Dougall’s theorem,
+                                    Γ(h1 ) Γ(h2 ) Γ(h3 ) Γ(1 + h0 − h1 − h2 − h3 )
+  F3 (h0 ; h1 , h2 , h3 ) =
+                            Γ(1 + h0 − h1 − h2 ) Γ(1 + h0 − h1 − h3 ) Γ(1 + h0 − h2 − h3 )
+                                                                                         (9)
+(see, e.g., [B, Section 4.4, formula (1)]), provided that 1 + Re h0 > Re(h1 + h2 + h3 )
+and hj is not a non-positive integer for j = 1, 2, 3. On the other hand, the integral
+on the right of (4) has Euler type, that is
+                                      Z 1 h2 −1
+                    h1 ,     h2                   (1 − x)h0 −h2 −h3
+                 
+                                            x
+              J1                      =                             dx
+                         1 + h0 − h3     0         (1 − x)h1
+                                        Γ(h2 ) Γ(1 + h0 − h1 − h2 − h3 )
+                                      =                                  ,
+                                              Γ(1 + h0 − h1 − h3 )
+4                                                W. ZUDILIN
+
+provided that 1 + Re h0 > Re(h1 + h2 + h3 ) and Re h2 > 0. Therefore, multiplying
+equality (9) by the required product of gamma-functions we deduce identity (4) if
+k = 1.
+
+Remark. If we arrange about J0 (a0 ) to be 1, the claim of Theorem remains valid
+if k = 0 thanks to another consequence of Dougall’s theorem [B, Section 4.4, for-
+mula (3)].
+
+Lemma 2 [N, Section 3.2]. Let a0 , a, b ∈ C and t0 ∈ R be numbers satisfying the
+conditions
+
+               Re a0 > t0 > 0,           Re a > t0 > 0,            and     Re b > Re a0 + Re a.
+
+Then for any non-zero z ∈ C \ (1, +∞) the following identity holds:
+             Z 1
+                   xa−1 (1 − x)b−a−1
+                                     dx
+              0       (1 − zx)a0
+                                     Z −t0 +i∞
+                      Γ(b − a) 1               Γ(a0 + t) Γ(a + t) Γ(−t)
+                    =           ·                                       (−z)t dt,                           (10)
+                        Γ(a0 )    2πi −t0 −i∞          Γ(b + t)
+
+where (−z)t = |z|t eit arg(−z) , −π < arg(−z) < π for z ∈ C\[0, +∞) and arg(−z) = ±π
+for z ∈ (0, 1]. The integral on the right-hand side of (10) converges absolutely. In ad-
+dition, if |z| ⩽ 1, both integrals in (10) can be identified with the absolutely convergent
+Gauss hypergeometric series
+                                                                      ∞
+                                      a0 , a
+                                                    
+          Γ(a) Γ(b − a)                                      Γ(b − a) X Γ(a0 + ν) Γ(a + ν) ν
+                        · 2F1                   z        =                                z .
+              Γ(b)                         b                  Γ(a0 ) ν=0   ν! Γ(b + ν)
+
+    Set εk = 0 for k even and εk = 1 or −1 for k odd.
+
+Lemma 3. For each integer k ⩾ 2, there holds the relation
+                                                         Z −t0 +i∞
+      a0 , a1 , . . . , ak−1 , ak
+                                 
+                                      Γ(bk − ak ) 1                 Γ(a0 + t) Γ(ak + t) Γ(−t)
+ Jk                                 =               ·
+           b1 , . . . , bk−1 , bk       Γ(a0 )        2πi −t0 −i∞              Γ(bk + t)
+                                                           a0 + t, a1 + t, . . . , ak−1 + t
+                                                                                           
+                                           εk πit
+                                       ×e         · Jk−1                                      dt,
+                                                                   b1 + t, . . . , bk−1 + t
+
+provided that Re a0 > t0 > 0, Re ak > t0 > 0, Re bk > Re a0 + Re ak , and the integral
+on the left converges.
+
+Proof. We start with mentioning that the first recursion in (3) and inductive argu-
+ments yield the inequality
+
+    0 < Qk (x1 , x2 , . . . , xk ) < 1         for       (x1 , x2 , . . . , xk ) ∈ (0, 1)k   and   k ⩾ 1.   (11)
+               HYPERGEOMETRIC SERIES AND MULTIPLE INTEGRALS                                           5
+
+By the second recursion in (3), Qk = Qk−1 · (1 − zxk ) for k ⩾ 2, where
+
+                                         (−1)k+1 x1 · · · xk−1
+                                    z=                             .
+                                         Qk−1 (x1 , . . . , xk−1 )
+
+For each (x1 , . . . , xk−1 ) ∈ (0, 1)k−1 , the number z is real with the property z < 0 for
+k even and 0 < z < 1 for k odd, since in the last case we have
+                   x1 · · · xk−1                             x1 · · · xk−1
+       z=                                    =                                           <1
+            Qk−1 (x1 , . . . , xk−2 , xk−1 )   Qk−2 (x1 , . . . , xk−2 ) + x1 · · · xk−1
+
+by (11). Therefore, splitting the integral (2) over [0, 1]k = [0, 1]k−1 ×[0, 1] and applying
+Lemma 2 to the integral
+
+                                    xkak −1 (1 − xk )bk −ak −1
+                              Z 1
+                                                               dxk
+                                0         (1 − zxk )a0
+
+we arrive at the desired relation.
+
+Proof of Theorem. The case k = 1 is considered in Lemma 1. Therefore we will
+assume that k ⩾ 2, identity (4) holds for k − 1, and, in addition, that
+                                    k+1
+                                 2 X
+                      1 + Re h0 > ·     Re hj ,                Re hk+2 < 1.                       (12)
+                                 k j=1
+
+The restrictions (12) can be easily removed from the final result by the theory of
+analytic continuation.
+  By the inductive hypothesis, for t ∈ C with Re t < 0, we deduce that
+
+             h1 + t,      h2 + t,         h3 + t,      ...,          hk + t
+                                                                                 
+     Jk−1
+                     1 + h0 − h3 + t, 1 + h0 − h4 + t, . . . , 1 + h0 − hk+1 + t
+              Qk
+                j=1 Γ(1 + h0 − hj − hj+1 )
+           =                                · Fk+1 (h0 + 2t; h1 + t, . . . , hk+1 + t)
+                 Γ(h1 + t) Γ(hk+1 + t)
+              Qk                                   Z −s0 +i∞
+                j=1 Γ(1 + h0 − hj − hj+1 )      1
+           =                                ·                   (h0 + 2t + 2s)
+                 Γ(h1 + t) Γ(hk+1 + t)        2πi −s0 −i∞
+                                Qk+1
+                Γ(h0 + 2t + s) j=1 Γ(hj + t + s) Γ(−s) ε πis
+             ×         Qk+1                                     e k−1 ds,                         (13)
+                         j=1 Γ(1  + h0 − hj +  t + s)
+
+where the real number s0 > 0 satisfies the conditions
+
+Re(h0 + 2t) > s0 ,    Re(1 + 12 h0 + t) > s0 ,           Re(hj + t) > s0      for j = 1, . . . , k + 1,
+
+and the absolute convergence of the last Barnes-type integral follows from [N, Lem-
+ma 3]. Shifting the variable t + s 7→ s in (13) (with a help of the equality eεk πit ·
+6                                         W. ZUDILIN
+
+eεk−1 πis = eεk−1 πi(t+s) · eε1 πit ), applying Lemma 3, and interchanging double integra-
+tion (thanks to the absolute convergence of the integrals) we conclude that
+              h1 ,      h2 ,          h3 ,      ...,         hk ,          hk+1
+                                                                                     
+         Jk
+                   1 + h0 − h3 , 1 + h0 − h4 , . . . , 1 + h0 − hk+1 , 1 + h0 − hk+2
+                   Qk+1
+                     j=1 Γ(1 + h0 − hj − hj+1 )
+              =
+                              Γ(h1 )
+                         Z −s1 +i∞                     Qk+1
+                      1                                  j=1 Γ(hj + s)
+                 ×                  (h0 + 2s) Qk+1                          eεk−1 πis
+                     2πi −s1 −i∞                  j=1 Γ(1 + h0 − hj + s)
+                         Z −t0 +i∞
+                      1              Γ(−s + t) Γ(h0 + s + t) Γ(−t) ε1 πit
+                 ×                                                       e    dt ds,    (14)
+                     2πi −t0 −i∞           Γ(1 + h0 − hk+2 + t)
+where s1 = s0 + t0 . Since Re hk+2 < 1 and hk+2 6= 0, −1, −2, . . . , the last Barnes-type
+integral has the following closed form by Lemma 2:
+                     Z −t0 +i∞
+                 1              Γ(−s + t) Γ(h0 + s + t) Γ(−t) ±πit
+                                                                     e    dt
+               2πi −t0 −i∞           Γ(1 + h0 − hk+2 + t)
+                                             Z 1 h0 +s−1
+                              Γ(−s)               x         (1 − x)−hk+2 −s
+                      =                                                      dx
+                        Γ(1 − hk+2 − s) 0                  (1 − x)−s
+                              Γ(−s)             Γ(h0 + s) Γ(1 − hk+2 )
+                      =                      ·
+                        Γ(1 − hk+2 − s) Γ(1 + h0 − hk+2 + s)
+                         Γ(h0 + s) Γ(hk+2 + s) Γ(−s) sin π(hk+2 + s)
+                      =                                       ·
+                        Γ(hk+2 ) Γ(1 + h0 − hk+2 + s)              sin πhk+2
+                         Γ(h0 + s) Γ(hk+2 + s) Γ(−s)
+                      =
+                        Γ(hk+2 ) Γ(1 + h0 − hk+2 + s)
+                                                                                 
+                              πis 1 − i cot πhk+2           −πis 1 + i cot πhk+2
+                        × e ·                          +e        ·                  .
+                                            2                             2
+Substituting this final expression in (14) we obtain
+       h1 ,      h2 ,           h3 ,     ...,         hk ,             hk+1
+                                                                               
+  Jk
+            1 + h0 − h3 , 1 + h0 − h4 , . . . , 1 + h0 − hk+1 , 1 + h0 − hk+2
+        Qk+1
+           j=1 Γ(1 + h0 − hj − hj+1 )
+     =
+                 Γ(h1 ) Γ(hk+2 )
+                                                      Qk+2
+           1 − i cot πhk+2 −s1 +i∞                       j=0 Γ(hj + s) Γ(−s)
+                            Z
+      ×                                 (h0 + 2s) Qk+2                          e(εk−1 +1)πis ds
+                  4πi          −s1 −i∞                 j=1 Γ(1 + h0 − hj + s)
+                                                       k+2
+         1 + i cot πhk+2 −s1 +i∞
+                                                     Q
+                                                       j=0 Γ(hj + s) Γ(−s)
+                            Z                                                                  
+                                                                                (εk−1 −1)πis
+      +                                (h0 + 2s) Qk+2                          e             ds .
+                4πi          −s1 −i∞                  j=1 Γ(1 + h0 − hj + s)
+If k is even, we take εk−1 = −1 in the first integral and εk−1 = 1 in the second one.
+Therefore the both integrals are equal to
+ Z −s1 +i∞            Qk+2
+                       j=0 Γ(hj + s) Γ(−s)
+           (h0 + 2s) Qk+2                    eεk πis ds = 2πi · Fk+2 (h0 ; h1 , . . . , hk+2 )
+  −s1 −i∞             j=1 Γ(1 + h0 − hj + s)
+                   HYPERGEOMETRIC SERIES AND MULTIPLE INTEGRALS                                       7
+
+that gives the desired identity (4). The proof of Theorem is complete.
+
+      Another family of multiple integrals
+
+                                    Z Qk      aj −1
+                                       j=1 xj       (1 − xj )bj −aj −1
+                            Z
+                  S(z) :=       ···   Q  m                           ci
+                                                                        dx1 dx2 · · · dxk ,        (15)
+                                         i=1 (1 − zx1 x2 · · · xri )
+                            [0,1]k
+                                       1 ⩽ r1 < r2 < · · · < rm = k,
+
+is known due to works of V. Sorokin [S1], [S2]. Recently, S. Zlobin [Zl1], [Zl2] has
+proved (in more general settings) that the integrals (2) can be reduced to the form (15)
+with z = 1. Therefore, Theorem gives one a way to reduce the integrals S(1) to the
+very-well-poised hypergeometric series (1) under certain conditions on the parameters
+aj , bj , ci , and ri in (15). In addition, Zlobin [Zl1] shows that, for integral parameters
+in (15) satisfying natural restrictions of convergence, the integral S(z) is a Q[z −1 ]-
+linear combination of modified multiple polylogarithms
+                   X                   z n1
+                                                        with   sj ⩾ 1, sj ∈ Z, j = 1, . . . , l,
+                                ns11 ns22 · · · nsl l
+            n1 ⩾n2 ⩾···⩾nl ⩾1
+
+
+where 0 ⩽ s1 + s2 + · · · + sl ⩽ k and 0 ⩽ l ⩽ m.
+
+                                                   References
+[B]      W. N. Bailey, Generalized hypergeometric series, Cambridge Math. Tracts, vol. 32, Cambridge
+         Univ. Press, Cambridge, 1935; 2nd reprinted edition, Stechert-Hafner, New York–London,
+         1964.
+[N]      Yu. V. Nesterenko, Integral identities and constructions of approximations to zeta values,
+         Actes des 12èmes rencontres arithmétiques de Caen (June 29–30, 2001), J. Théorie Nombres
+         Bordeaux (2003) (to appear).
+[RV1] G. Rhin and C. Viola, On a permutation group related to ζ(2), Acta Arith. 77 (1996), no. 1,
+         23–56.
+[RV2] G. Rhin and C. Viola, The group structure for ζ(3), Acta Arith. 97 (2001), no. 3, 269–293.
+[R]      T. Rivoal, La fonction zêta de Riemann prend une infinité de valeurs irrationnelles aux
+         entiers impairs, C. R. Acad. Sci. Paris Sér. I Math. 331 (2000), no. 4, 267–270; E-print
+         math.NT/0008051.
+[S1]     V. N. Sorokin, A transcendence measure of π 2 , Mat. Sb. [Russian Acad. Sci. Sb. Math.] 187
+         (1996), no. 12, 87–120.
+[S2]     V. N. Sorokin, Apéry’s theorem, Vestnik Moskov. Univ. Ser. I Mat. Mekh. [Moscow Univ.
+         Math. Bull.] (1998), no. 3, 48–52.
+[V]      D. V. Vasilyev, On small linear forms for the values of the Riemann zeta-function at odd
+         points, Preprint no. 1 (558), Nat. Acad. Sci. Belarus, Institute Math., Minsk, 2001.
+[Zl1]    S. A. Zlobin, Integrals expressible as linear forms in generalized polylogarithms, Mat. Zametki
+         [Math. Notes] 71 (2002), no. 5, 782–787.
+8                                          W. ZUDILIN
+
+[Zl2]   S. A. Zlobin, Some integral identities, Uspekhi Mat. Nauk [Russian Math. Surveys] 57 (2002),
+        no. 3, 153–154.
+[Zu1] W. Zudilin, Irrationality of values of the Riemann zeta function, Izv. Ross. Akad. Nauk Ser.
+      Mat. [Russian Acad. Sci. Izv. Math.] 66 (2002), no. 3, 49–102.
+[Zu2] W. Zudilin, Arithmetic of linear forms involving odd zeta values, Preprint (August 2001),
+        E-print math.NT/0206176.
+
+    Moscow Lomonosov State University
+    Department of Mechanics and Mathematics
+    Vorobiovy Gory, GSP-2
+    119992 Moscow, RUSSIA
+    URL: http://wain.mi.ras.ru/index.html
+    E-mail address: wadim@ips.ras.ru
+

@@ -1,0 +1,2345 @@
+                                                                    Arithmetic of linear forms
+                                                                     involving odd zeta values∗
+arXiv:math/0206176v2 [math.NT] 21 Jun 2002
+
+
+
+
+                                                                                 Wadim Zudilin†
+
+                                                                          E-print math.NT/0206176
+                                                                                  August 2001
+
+
+
+                                                                                     Abstract
+
+                                                       A general hypergeometric construction of linear forms in (odd) zeta val-
+                                                    ues is presented. The construction allows to recover the records of Rhin and
+                                                    Viola for the irrationality measures of ζ(2) and ζ(3), as well as to explain
+                                                    Rivoal’s recent result (math.NT/0008051) on infiniteness of irrational num-
+                                                    bers in the set of odd zeta values, and to prove that at least one of the four
+                                                    numbers ζ(5), ζ(7), ζ(9), and ζ(11) is irrational.
+
+
+
+                                             1      Introduction
+                                             The story exposed in this paper starts in 1978, when R. Apéry [Ap] gave a surpris-
+                                             ing sequence of exercises demonstrating the irrationality of ζ(2) and ζ(3). (For a
+                                             nice explanation of Apéry’s discovery we refer to the review [Po].) Although the
+                                             irrationality of the even zeta values ζ(2), ζ(4), . . . for that moment was a classical
+                                             result (due to L. Euler and F. Lindemann), Apéry’s proof allows one to obtain a
+                                             quantitative version of his result, that is, to evaluate irrationality exponents:
+
+                                                              µ(ζ(2)) ≤ 11.85078 . . . ,      µ(ζ(3)) ≤ 13.41782 . . . .             (1.1)
+
+                                             As usual, a value µ = µ(α) is said to be the irrationality exponent of an irrational
+                                             number α if µ is the least possible exponent such that for any ε > 0 the inequality
+
+                                                                                           p    1
+                                                                                   α−        ≤ µ+ε
+                                                                                           q  q
+                                                 ∗ AMS 2000 Mathematics Subject Classification. Primary 11J72, 11J82; Secondary 33C60
+                                                 † Moscow Lomonosov State University, Department of Mechanics and Mathematics, Vorobiovy
+
+                                             Gory, GSP-2, 119992 Moscow, Russia. e-mail: wadim@ips.ras.ru
+2                                                                          W. Zudilin
+
+
+has only finitely many solutions in integers p and q with q > 0. The estimates (1.1)
+‘immediately’ follow from the asymptotics of Apéry’s rational approximations
+to ζ(2) and ζ(3), and the original method of evaluating the asymptotics is based
+on second order difference equations with polynomial coefficients, with Apéry’s
+approximants as their solutions.
+    A few months later, F. Beukers [Be] interpretated Apéry’s sequence of ratio-
+nal approximations to ζ(2) and ζ(3) in terms of multiple integrals and Legendre
+polynomials. This approach was continued in later works [DV, Ru], [Ha1]–[Ha5],
+[HMV], [RV1]–[RV3] and yielded some new evaluations of the irrationality expo-
+nents for ζ(2), ζ(3), and other mathematical constants. Improvements of irra-
+tionality measures (i.e., upper bounds for irrationality exponents) for mathemat-
+ical constants are closely related to another arithmetic approach, of eliminating
+extra prime numbers in binomials, introduced after G. V. Chudnovsky [Ch] by
+E. A. Rukhadze [Ru] and studied in detail by M. Hata [Ha1]. For example, the
+best known estimate for the irrationality exponent of log 2 (this constant sometimes
+is regarded as a convergent analogue of ζ(1) ) stated by Rukhadze [Ru] in 1987 is
+
+                              µ(log 2) ≤ 3.891399 . . . ;                        (1.2)
+
+see also [Ha1] for the explicit value of the constant on the right-hand side of (1.2).
+A further generalization of both the multiple integral approach and the arithmetic
+approach brings one to the group structures of G. Rhin and C. Viola [RV2, RV3];
+their method yields the best known estimates for the irrationality exponents of
+ζ(2) and ζ(3):
+
+               µ(ζ(2)) ≤ 5.441242 . . . ,     µ(ζ(3)) ≤ 5.513890 . . . ,         (1.3)
+
+and gives another interpretation [Vi] of Rukhadze’s estimate (1.2).
+    On the other hand, Apéry’s phenomenon was interpretated by L. A. Gut-
+nik [Gu] in terms of complex contour integrals, i.e., Meijer’s G-functions. This
+approach allowed the author of [Gu] to prove several partial results on the irra-
+tionality of certain quantities involving ζ(2) and ζ(3). By the way of a study
+of Gutnik’s approach, Yu. V. Nesterenko [Ne1] proposed a new proof of Apéry’s
+theorem and discovered a new continuous fraction expansion for ζ(3). In [FN],
+p. 126, a problem of finding an ‘elementary’ proof of the irrationality of ζ(3) is
+stated since evaluating asymptotics of multiple integrals via the Laplace method
+in [Be] or complex contour integrals via the saddle-point method in [Ne1] is far
+from being simple. Trying to solve this problem, K. Ball puts forward a well-
+poised hypergeometric series, which produces linear forms in 1 and ζ(3) only and
+can be evaluated by elementary means; however, its ‘obvious’ arithmetic does not
+allow one to prove the irrationality of ζ(3). T. Rivoal [Ri1] has realized how to
+Arithmetic of linear forms involving odd zeta values                                     3
+
+
+generalize Ball’s linear form in the spirit of Nikishin’s work [Ni] and to use well-
+poised hypergeometric series in the study of the irrationality of odd zeta values
+ζ(3), ζ(5), . . . ; in particular, he is able to prove [Ri1] that there are infinitely many
+irrational numbers in the set of the odd zeta values. A further generalization of the
+method in the spirit of [Gu, Ne1] via the use of well-poised Meijer’s G-functions
+allows Rivoal [Ri4] to demonstrate the irrationality of at least one of the nine
+numbers ζ(5), ζ(7), . . . , ζ(21). Finally, this author [Zu1]–[Zu4] refines the results
+of Rivoal [Ri1]–[Ri4] by an application of the arithmetic approach.
+   Thus, one can recognise (at least) two different languages used for an expla-
+nation why ζ(3) is irrational, namely, multiple integrals and complex contour in-
+tegrals (or series of hypergeometric type). Both languages lead us to quantitative
+and qualitative results on the irrationality of zeta values and other mathematical
+constants, and it would be nice to form a dictionary for translating terms from one
+language into another. An approach to such a translation has been recently pro-
+posed by Nesterenko [Ne2, Ne3]. He has proved a general theorem that expresses
+contour integrals in terms of multiple integrals, and vice versa. He also suggests a
+method of constructing linear forms in values of polylogarithms (and, as a conse-
+quence, linear forms in zeta values) that generalizes the language of [Ni, Gu, Ne1]
+and, on the other hand, of [Be], [Ha1]–[Ha5], [RV1]–[RV3] and takes into account
+both arithmetic and analytic evaluations of the corresponding linear forms.
+    The aim of this paper is to explain the group structures used for evaluating the
+irrationality exponents (1.2), (1.3) via Nesterenko’s method, as well as to present
+a new result on the irrationality of the odd zeta values inspired by Rivoal’s con-
+struction and possible generalizations of the Rhin–Viola approach. This paper is
+organized as follows. In Sections 2–5 we explain in details the group structure of
+Rhin and Viola for ζ(3); we do not use Beukers’ type integrals as in [RV3] for this,
+but with the use of Nesterenko’s theorem we explain all stages of our construc-
+tion in terms of their doubles from [RV3]. Section 6 gives a brief overview of the
+group structure for ζ(2) from [RV2]. Section 7 is devoted to a study of the arith-
+metic of rational functions appearing naturally as ‘bricks’ of general Nesterenko’s
+construction [Ne3]. In Section 8 we explain the well-poised hypergeometric ori-
+gin of Rivoal’s construction and improve the previous result from [Ri4, Zu4] on
+the irrationality of ζ(5), ζ(7), . . . ; namely, we state that at least one of the four
+numbers
+                              ζ(5), ζ(7), ζ(9), and ζ(11)
+
+is irrational. Although the success of our new result from Section 8 is due to the
+arithmetic approach, in Section 9 we present possible group structures for linear
+forms in 1 and odd zeta values; these groups may become useful, provided that
+some arithmetic condition (which we indicate explicitly) holds.
+4                                                                                      W. Zudilin
+
+
+   This work would be not possible without a permanent attention of Professor
+Yu. V. Nesterenko. I would like to express my deep gratitude to him. I am thankful
+to T. Rivoal for giving me the possibility to look through his Ph. D. thesis [Ri3],
+which contains a lot of fruitful ideas exploited in this work.
+   This research was carried out with the partial support of the INTAS–RFBR
+grant no. IR-97-1904.
+
+
+2      Analytic construction
+       of linear forms in 1 and ζ(3)
+Fix a set of integral parameters
+                                                                    
+                                                 a1 , a2 , a3 , a4
+                                 (a, b) =                                                     (2.1)
+                                                 b1 , b2 , b3 , b4
+
+satisfying the conditions
+
+                           {b1 , b2 } ≤ {a1 , a2 , a3 , a4 } < {b3 , b4 },                    (2.2)
+                       a1 + a2 + a3 + a4 ≤ b1 + b2 + b3 + b4 − 2,                             (2.3)
+
+and consider the rational function
+                                    (b3 − a3 − 1)! (b4 − a4 − 1)!
+            R(t) = R(a, b; t) :=
+                                        (a1 − b1 )! (a2 − b2 )!
+                                         Γ(t + a1 ) Γ(t + a2 ) Γ(t + a3 ) Γ(t + a4 )
+                                      ×                                                       (2.4)
+                                         Γ(t + b1 ) Γ(t + b2 ) Γ(t + b3 ) Γ(t + b4 )
+                                    4
+                                    Y
+                                =         Rj (t),
+                                    j=1
+
+where
+             
+             
+              (t + bj )(t + bj + 1) · · · (t + aj − 1)
+                                                              if aj ≥ bj (i.e., j = 1, 2),
+                             (aj − bj )!
+    Rj (t) =                                                                                  (2.5)
+             
+                          (bj − aj − 1)!
+                                                              if aj < bj (i.e., j = 3, 4).
+               (t + aj )(t + aj + 1) · · · (t + bj − 1)
+
+By condition (2.3) we obtain
+
+                              R(t) = O(t−2 )            as t → ∞;                             (2.6)
+
+moreover, the function R(t) has zeros of the second order at the integral points t
+in the interval
+                        − min{a1 , a2 , a3 , a4 } < t ≤ − max{b1 , b2 }.
+Arithmetic of linear forms involving odd zeta values                                                  5
+
+                                            P∞      ′
+Therefore, the numerical series               t=t0 R (t) with t0 = 1 − max{b1 , b2 } converges
+absolutely, and the quantity
+                                                                   ∞
+                                                                   X
+                                                          b1 +b2
+                               G(a, b) := −(−1)                           R′ (t)                   (2.7)
+                                                                   t=t0
+
+is well-defined; moreover, we can start the summation on the right-hand side
+of (2.7) from any integer t0 in the interval
+
+                     1 − min{a1 , a2 , a3 , a4 } ≤ t0 ≤ 1 − max{b1 , b2 }.                         (2.8)
+
+The number (2.7) is a linear form in 1 and ζ(3) (see Lemma 4 below), and we
+devote the rest of this section to a study of the arithmetic (i.e., the denominators
+of the coefficients) of this linear form.
+    To the data (2.1) we assign the ordered set (a∗ , b∗ ); namely,
+             {b∗1 , b∗2 } = {b1 , b2 },     {a∗1 , a∗2 , a∗3 , a∗4 } = {a1 , a2 , a3 , a4 },
+                                                                                                   (2.9)
+       {b∗3 , b∗4 } = {b3 , b4 },         b∗1 ≤ b∗2 ≤ a∗1 ≤ a∗2 ≤ a∗3 ≤ a∗4 < b∗3 ≤ b∗4 ,
+hence the interval (2.8) for t0 can be written as follows:
+
+                                          1 − a∗1 ≤ t0 ≤ 1 − b∗2 .
+
+By DN we denote the least common multiple of numbers 1, 2, . . . , N .
+Lemma 1. For j = 1, 2 there hold the inclusions
+
+                Rj (t) t=−k ∈ Z,            Daj −bj · Rj′ (t) t=−k ∈ Z,               k ∈ Z.      (2.10)
+
+Proof. The inclusions (2.10) immediately follow from the well-known properties
+of the integral-valued polynomials (see, e.g., [Zu5], Lemma 7), which are R1 (t)
+and R2 (t).
+
+   The analogue of Lemma 1 for rational functions R3 (t), R4 (t) from (2.5) is based
+on the following assertion combining the arithmetic schemes of Nikishin [Ni] and
+Rivoal [Ri1].
+Lemma 2 ([Zu3], Lemma 1.2). Assume that for some polynomial P (t) of degree
+not greater than n the rational function
+                                                   P (t)
+                          Q(t) =
+                                     (t + s)(t + s + 1) · · · (t + s + n)
+(in a not necesarily uncancellable presentation) satisfies the conditions
+
+                   Q(t)(t + k) t=−k ∈ Z,                  k = s, s + 1, . . . , s + n.
+
+Then for all non-negative integers l there hold the inclusions
+             Dnl               (j)
+                 · Q(t)(t + k)      t=−k
+                                         ∈ Z,                      k = s, s + 1, . . . , s + n.
+             l!
+6                                                                                                     W. Zudilin
+
+
+Lemma 3. For j = 3, 4 there hold the inclusions
+                                               
+                             Rj (t)(t + k)         t=−k
+                                                               ∈ Z,           k ∈ Z,                      (2.11)
+                                                                         ′
+                       Db∗4 −min{aj ,a∗3 }−1 · Rj (t)(t + k)                    t=−k
+                                                                                       ∈ Z,
+                                                                                                          (2.12)
+                             k ∈ Z,        k = a∗3 , a∗3 + 1, . . . , b∗4 − 1.
+
+Proof. The inclusions (2.11) can be verified by direct calculations:
+                                             
+                                                           (bj − aj − 1)!
+                                             
+                                              (−1)k−aj
+                                                      (k − a )! (b − k − 1)!
+                                                                            j      j
+               Rj (t)(t + k)       t=−k
+                                        =                  if k = aj , aj + 1, . . . , bj − 1,
+                                             
+                                             
+                                             
+                                             
+                                                 0 otherwise.
+
+To prove the inclusions (2.12) we apply Lemma 2 with l = 1 to the function Rj (t)
+multiplying its numerator and denominator if necesary by the factor (t + a∗3 ) · · ·
+(t + aj − 1) if aj > a∗3 and by (t + bj ) · · · (t + b∗4 − 1) if bj < b∗4 .
+
+
+Lemma 4. The quantity (2.7) is a linear form in 1 and ζ(3) with rational coeffi-
+cients:
+
+                                     G(a, b) = 2Aζ(3) − B;                                                (2.13)
+
+in addition,
+
+    A ∈ Z,      Db2∗4 −a∗1 −1 · Dmax{a1 −b1 ,a2 −b2 ,b∗4 −a3 −1,b∗4 −a4 −1,b∗3 −a∗1 −1} · B ∈ Z. (2.14)
+
+Proof. The rational function (2.4) has poles at the points t = −k, where k =
+a∗3 , a∗3 + 1, . . . , b∗4 − 1; moreover, the points t = −k, where k = a∗4 , a∗4 + 1, . . . , b∗3 − 1,
+are poles of the second order. Hence the expansion of the rational function (2.4)
+in a sum of partial fractions has the form
+                                      b∗
+                                       3 −1                         b∗ −1
+                                       X          Ak       X
+                                                           4
+                                                                Bk
+                             R(t) =                    2
+                                                         +         ,                                      (2.15)
+                                               (t + k)         t+k
+                                      k=a4   ∗               ∗      k=a3
+
+
+where the coefficients Ak and Bk in (2.15) can be calculated by the formulae
+                                       
+               Ak = R(t)(t + k)2            t=−k
+                                                   ,            k = a∗4 , a∗4 + 1, . . . , b∗3 − 1,
+                                       ′
+               Bk = R(t)(t + k)2            t=−k
+                                                       ,        k = a∗3 , a∗3 + 1, . . . , b∗4 − 1.
+
+Expressing the function R(t)(t + k)2 as
+
+                          R1 (t) · R2 (t) · R3 (t)(t + k) · R4 (t)(t + k)
+Arithmetic of linear forms involving odd zeta values                                                                        7
+
+
+for each k and applying the Leibniz rule for differentiating a product, by Lemmas 1
+and 3 we obtain
+
+                                                              Ak ∈ Z,              k = a∗4 , a∗4 + 1, . . . , b∗3 − 1,
+    Dmax{a1 −b1 ,a2 −b2 ,b∗4 −a3 −1,b∗4 −a4 −1} · Bk ∈ Z,                          k = a∗3 , a∗3 + 1, . . . , b∗4 − 1
+                                                                                                                        (2.16)
+
+(where we use the fact that min{aj , a∗3 } ≤ aj for at least one j ∈ {3, 4}).
+   By (2.6) there holds
+
+                     b∗
+                      4 −1          b∗
+                                     4 −1
+                     X               X
+                             Bk =           Rest=−k R(t) = − Rest=∞ R(t) = 0.
+                     k=a∗
+                        3           k=a∗
+                                       3
+
+
+
+Hence, setting t0 = 1 − a∗1 in (2.7) and using the expansion (2.15) we obtain
+
+                                   ∞  bX                                                     
+                                                ∗
+                                        3 −1                               b∗ −1
+                                   X                    2Ak       X
+                                                                  4
+                                                                         Bk
+          b1 +b2
+   (−1)            G(a, b) =                                  3
+                                                                +
+                                                      (t + k)         (t + k)2
+                               t=1−a∗
+                                    1       k=a4    ∗               ∗      k=a3
+                                   b∗
+                                   X3 −1
+                                                X
+                                                 ∞            X1
+                                                              k−a∗
+                                                                 1               b∗
+                                                                                  4 −1
+                                                                                   X          X
+                                                                                               ∞          k−a∗
+                                                                                                          X  1
+                                                                                                               
+                                                                                                                   1
+                             =2            Ak             −                3
+                                                                             +           Bk         −
+                                                                       l                                           l2
+                                   k=a∗
+                                      4             l=1       l=1                k=a∗
+                                                                                    3         l=1         l=1
+                                   b∗
+                                   X3 −1
+                                                      X     X 1    Xb∗
+                                                                      3 −1 X1 1 
+                                                                          k−a∗     k−a∗
+                                                                                      1           b∗
+                                                                                                   4 −1
+
+                             =2           Ak · ζ(3) − 2   Ak      +    Bk
+                                                               l3              l2
+                                   k=a4 ∗               ∗           k=a4
+                                                                     ∗             l=1            k=a3          l=1
+
+                             = 2Aζ(3) − B.
+
+The inclusions (2.14) now follow from (2.16) and the definition of the least common
+multiple:
+
+                                            1
+                            Db2∗4 −a∗1 −1 · 2 ∈ Z                for        l = 1, 2, . . . , b∗4 − a∗1 − 1,
+                                            l
+                                            1
+            Db2∗4 −a∗1 −1 · Db∗3 −a∗1 −1 · 3 ∈ Z                 for        l = 1, 2, . . . , b∗3 − a∗1 − 1.
+                                            l
+The proof is complete.
+
+   Taking a1 = a2 = a3 = a4 = 1 + n, b1 = b2 = 1, and b3 = b4 = 2 + 2n we
+obtain the original Apéry’s sequence
+                             ∞
+                             X                               2
+                               d (t − 1)(t − 2) · · · (t − n)
+ 2An ζ(3) − Bn = −                                                                       ,     n = 1, 2, . . . , (2.17)
+                             t=1
+                                   dt           t(t + 1) · · · (t + n)
+
+of rational approximations to ζ(3) (cf. [Gu, Ne1]); Lemma 4 implies that An ∈ Z
+and Dn3 · Bn ∈ Z in Apéry’s case.
+8                                                                                      W. Zudilin
+
+
+3     Integral presentations
+The aim of this section is to prove two presentations of the linear form (2.7), (2.13):
+as a complex contour integral (in the spirit of [Gu, Ne1]) and as a real multiple
+integral (in the spirit of [Be, Ha5, RV3]).
+    Consider another normalization of the rational function (2.4); namely,
+
+            e = R(a,
+                 e            Γ(t + a1 ) Γ(t + a2 ) Γ(t + a3 ) Γ(t + a4 )
+            R(t)     b; t) :=                                                               (3.1)
+                              Γ(t + b1 ) Γ(t + b2 ) Γ(t + b3 ) Γ(t + b4 )
+and the corresponding sum
+                              ∞
+                              X
+    e                                e′ (t) =       (a1 − b1 )! (a2 − b2 )!
+    G(a, b) := −(−1)b1 +b2           R                                        G(a, b).      (3.2)
+                              t=t0
+                                                (b3 − a3 − 1)! (b4 − a4 − 1)!
+
+Note that the function (3.1) and the quantity (3.2) do not depend on the order of
+numbers in the sets {a1 , a2 , a3 , a4 }, {b1 , b2 }, and {b3 , b4 }, i.e.,
+
+                 e b; t) ≡ R(a
+                 R(a,      e ∗ , b∗ ; t),              e
+                                                       G(a,      e ∗ , b∗ ).
+                                                            b) ≡ G(a
+
+Lemma 5. There holds the formula
+
+                             Γ(t + a1 ) Γ(t + a2 ) Γ(t + a3 ) Γ(t + a4 )
+                      Z
+                 1                           ×Γ(1 − t − b1 ) Γ(1 − t − b2 )
+      e
+      G(a, b) =                                                                   dt
+                2πi     L                  Γ(t + b3 ) Γ(t + b4 )
+                                                                
+                               1 − a1 , 1 − a2 , 1 − a3 , 1 − a4
+              =: G2,4
+                  4,4    1                                        ,                         (3.3)
+                               1 − b1 , 1 − b2 , 1 − b3 , 1 − b4
+
+where L is a vertical line Re t = t1 , 1 − a∗1 < t1 < 1 − b∗2 , oriented from the bottom
+to the top, and G2,4
+                  4,4 is Meijer’s G-function (see [Lu], Section 5.3).
+
+Proof. The standard arguments (see, e.g., [Gu], [Ne1], Lemma 2, or [Zu3], Lemma
+2.4) show that the quantity (3.2) presents the sum of the residues at the poles
+t = −b∗2 + 1, −b∗2 + 2, . . . of the function
+                               2
+               b1 +b2      π        e
+        − (−1)                     R(t)
+                        sin πt
+                                       2
+                        b1 +b2     π       Γ(t + a1 ) Γ(t + a2 ) Γ(t + a3 ) Γ(t + a4 )
+            = −(−1)                                                                    .
+                                 sin πt    Γ(t + b1 ) Γ(t + b2 ) Γ(t + b3 ) Γ(t + b4 )
+It remains to observe that
+                                                          π
+                Γ(t + bj )Γ(1 − t − bj ) = (−1)bj              ,      j = 1, 2,             (3.4)
+                                                        sin πt
+and to identify the integral in (3.3) with Meijer’s G-function. This establishes
+formula (3.3).
+Arithmetic of linear forms involving odd zeta values                                          9
+
+
+   The next assertion allows one to express the complex integral (3.3) as a real
+multiple integral.
+Proposition 1 (Nesterenko’s theorem [Ne3]). Suppose that m ≥ 1 and r ≥ 0 are
+integers, r ≤ m, and that complex parameters a0 , a1 , . . . , am , b1 , . . . , bm and a real
+number t1 < 0 satisfy the conditions
+                          Re bk > Re ak > 0,           k = 1, . . . , m,
+                     − min Re ak < t1 < min Re(bk − ak − a0 ).
+                       0≤k≤m                     1≤k≤r
+
+Then for any z ∈ C \ (−∞, 0] there holds the identity
+   Z      Z              Qm      ak −1
+                           k=1 xk        (1 − xk )bk −ak −1
+      ···                                                           a0 dx1 dx2 · · · dxm
+               (1 − x1 )(1 − x2 ) · · · (1 − xr ) + zx1 x2 · · · xm
+    [0,1]m
+            Qm
+               k=r+1 Γ(bk − ak )
+      =           Qr
+          Γ(a0 ) · k=1 Γ(bk − a0 )
+                 Z t1 +i∞ Qm                    Qr
+             1              k=0 Γ(ak +Q     t) · k=1 Γ(bk − ak − a0 − t)
+         ×                                   m                                Γ(−t) z t dt,
+            2πi t1 −i∞                       k=r+1   Γ(b k +  t)
+where both integrals converge. Here z t = et log z and the logarithm takes real values
+for real z ∈ (0, +∞).
+   We now recall that the family of linear forms in 1 and ζ(3) considered in
+paper [RV3] has the form
+                             ZZZ h
+                                 x (1 − x)l y k (1 − y)s z j (1 − z)q    dx dy dz
+ I(h, j, k, l, m, q, r, s) =                           q+h−r
+                                                                                    (3.5)
+                                     (1 − (1 − xy)z)                  1 − (1 − xy)z
+                              [0,1]3
+
+and depends on eight non-negative integral parameters connected by the additional
+conditions
+
+                              h + m = k + r,         j + q = l + s,                      (3.6)
+
+where the first condition in (3.6) determines the parameter m (which does not
+appear on the right-hand side of (3.5) explicitly), while the second condition en-
+ables one to apply a complicated integral transform ϑ, which rearranges all eight
+parameters.
+Lemma 6. The quantity (2.7) has the integral presentation
+
+                               G(a, b) = I(h, j, k, l, m, q, r, s),                      (3.7)
+
+where the multiple integral on the right-hand side of (3.7) is given by formula (3.5)
+and
+             h = a 3 − b1 ,     j = a 2 − b1 ,   k = a 4 − b1 ,   l = b3 − a3 − 1,
+                                                                                         (3.8)
+            m = a 4 − b2 ,      q = a 1 − b2 ,   r = a 3 − b2 ,   s = b4 − a4 − 1.
+10                                                                                W. Zudilin
+
+
+Proof. By the change of variables t 7→ t − b1 + 1 in the complex integral (3.3) and
+the application of Proposition 1 with m = 3, r = 1, and z = 1 we obtain
+
+  e                (a1 − b1 )! (a2 − b2 )!
+  G(a, b) =
+               (b3 − a3 − 1)! (b4 − a4 − 1)!
+                        xa3 −b1 (1 − x)b3 −a3 −1 y a4 −b1 (1 − y)b4 −a4 −1
+                    ZZZ
+                                                      ×z a2 −b1 (1 − z)a1 −b2
+                ×                                                               dx dy dz,
+                                       (1 − (1 − xy)z)a1 −b1 +1
+                    [0,1]3
+
+which yields the desired presentation (3.7). In addition, we mention that the
+second condition in (3.6) for the parameters (3.8) is equivalent to the condition
+
+                         a 1 + a 2 + a 3 + a 4 = b1 + b2 + b3 + b4 − 2                  (3.9)
+
+for the parameters (2.1).
+
+    The inverse transformation of Rhin–Viola’s parameters to (2.1) is defined up
+to addition of the same integer to each of the parameters (2.1). Normalizing the
+set (2.1) by the condition b1 = 1 we obtain the formulae
+
+     a1 = 1 + h + q − r, a2 = 1 + j,            a3 = 1 + h,       a4 = 1 + k,
+                                                                                       (3.10)
+     b1 = 1,                 b2 = 1 + h − r,    b3 = 2 + h + l,    b4 = 2 + k + s.
+
+Relations (3.8) and (3.10) enable us to describe the action of the generators
+ϕ, χ, ϑ, σ of the hypergeometric permutation group Φ from [RV3] in terms of the
+parameters (2.1):
+                                                     
+          a1 , a2 , a3 , a4           a3 , a2 , a1 , a4
+   ϕ:                          7→                         ,
+           1, b2 , b3 , b4             1, b2 , b3 , b4
+                                                     
+          a1 , a2 , a3 , a4           a2 , a1 , a3 , a4
+   χ:                         7→                          ,
+           1, b2 , b3 , b4             1, b2 , b3 , b4
+                                                                                   (3.11)
+          a1 , a2 , a3 , a4           b3 − a 1 ,       a4 ,       a2 ,    b3 − a 3
+   ϑ:                           7→                                                   ,
+           1, b2 , b3 , b4            1, b2 + b3 − a1 − a3 , b3 + b4 − a1 − a3 , b3
+                                                     
+          a1 , a2 , a3 , a4           a1 , a2 , a4 , a3
+   σ:                            7→                       .
+           1, b2 , b3 , b4             1, b2 , b4 , b3
+
+Thus, ϕ, χ, σ permute the parameters a1 , a2 , a3 , a4 and b3 , b4 (hence they do not
+change the quantity (3.2) ), while the action of the permutation ϑ on the param-
+eters (2.1) is ‘non-trivial’. In the next section we deduce the group structure of
+Rhin and Viola using a classical identity that expresses Meijer’s G2,4  4,4 -function in
+terms of a well-poised hypergeometric 7F6 -function. This identity allows us to do
+without the integral transform corresponding to ϑ and to produce another set of
+generators and another realization of the same hypergeometric group.
+Arithmetic of linear forms involving odd zeta values                                                   11
+
+
+4     Bailey’s identity and the group structure for ζ(3)
+Proposition 2 (Bailey’s identity [Ba1], formula (3.4), and [Sl], formula (4.7.1.3)).
+There holds the identity
+                                                                                          
+              a, 1 + 21 a,        b,         c,               d,     e,           f
+    7F6               1
+                                                                                       1
+                      2 a, 1 + a − b, 1 + a − c, 1 + a − d, 1 + a − e, 1 + a − f
+                  Γ(1 + a − b) Γ(1 + a − c) Γ(1 + a − d) Γ(1 + a − e) Γ(1 + a − f )
+              =
+                  Γ(1 + a) Γ(b) Γ(c) Γ(d) Γ(1 + a − b − c) Γ(1 + a − b − d)                        (4.1)
+                                               ×Γ(1 + a − c − d) Γ(1 + a − e − f )
+                                                                        
+                     2,4     e + f − a,              1 − b, 1 − c, 1 − d
+                  × G4,4 1                                                ,
+                                      0, 1 + a − b − c − d, e − a, f − a
+
+provided that the series on the left-hand side converges.
+
+    We now set
+                                                             Q5
+                                                 Γ(1 + h0 ) · j=1 Γ(hj )
+    Fe (h) = Fe (h0 ; h1 , h2 , h3 , h4 , h5 ) := Q5
+                                                    j=1 Γ(1 + h0 − hj )
+                                  1                                                               
+                       h0 , 1 + 2 h0 ,             h1 ,          h2 , . . . ,          h5
+             × 7F6                 1
+                                                                                               1
+                                   2 h0 , 1 + h0 − h1 , 1 + h0 − h2 , . . . , 1 + h0 − h5
+                                                                                                   (4.2)
+
+for the normalized well-poised hypergeometric 7F6 -series.
+    In the case of integral parameters h satisfying 1+h0 > 2hj for each j = 1, . . . , 5,
+it can be shown that Fe (h) is a linear form in 1 and ζ(3) (see, e.g., Section 8 for the
+general situation). Ball’s sequence of rational approximations to ζ(3) mentioned
+in Introduction corresponds to the choice h0 = 3n + 2, h1 = h2 = h3 = h4 = h5 =
+n + 1:
+                           X∞        
+      ′          ′       2          n (t − 1) · · · (t − n) · (t + n + 1) · · · (t + 2n)
+    An ζ(3) + Bn = 2n!          t+                    4 (t + 1)4 · · · (t + n)4
+                                                                                         ,
+                           t=1
+                                    2               t
+                                            n = 1, 2, . . .
+                                                                                                   (4.3)
+
+(see [Ri3], Section 1.2). Using arguments of Section 2 (see also Section 7 below)
+one can show that Dn · A′n ∈ Z and Dn4 · Bn′ ∈ Z, which is far from proving the
+irrationality of ζ(3) since multiplication of (4.3) by Dn4 leads us to linear forms
+with integral coefficients that do not tend to 0 as n → ∞. Rivoal [Ri3], Section 5.1,
+has discovered the coincidence of Ball’s (4.3) and Apéry’s (2.17) sequences with
+the use of Zeilberger’s Ekhad program; the same result immediately follows from
+Bailey’s identity. Therefore, one can multiply (4.3) by Dn3 only to obtain linear
+12                                                                                W. Zudilin
+
+
+forms with integral coefficients! The advantage of the presentation (4.3) of the
+original Apéry’s sequence consists in the possibility of an ‘elementary’ evaluation
+of the series on the right-hand side of (4.3) as n → ∞ (see [Ri3], Section 5.1,
+and [BR] for details).
+
+Lemma 7. If condition (3.9) holds, then
+                         e
+                         G(a,   b)
+            Q4                  Q4
+              j=1 (aj − b1 )! ·  j=1 (aj − b2 )!
+
+                                               Fe(h)
+                  = Q5                                                            ,      (4.4)
+                       j=1 (hj − 1)! · (1 + 2h0 − h1 − h2 − h3 − h4 − h5 )!
+
+where
+                 h0 = b3 + b4 − b1 − a1 = 2 − 2b1 − b2 + a2 + a3 + a4 ,
+             h1 = 1 − b1 + a2 ,     h2 = 1 − b1 + a3 ,       h3 = 1 − b1 + a4 ,          (4.5)
+                             h4 = b4 − a1 ,        h5 = b3 − a1 .
+Proof. Making as before the change of variables t 7→ t − b1 + 1 in the contour
+integral (3.3), by Lemma 5 we obtain
+                                                                             
+               e          2,4   b 1 − a 1 , b 1 − a 2 , b 1 − a 3 , b 1 − a 4
+               G(a, b) = G4,4 1                                                .
+                                       0, b1 − b2 , b1 − b3 , b1 − b4
+
+Therefore, the choice of parameters h0 , h1 , h2 , h3 , h4 , h5 in accordance with (4.5)
+enables us to write down the identity from Proposition 2 in the required form (4.4).
+
+
+   The inverse transformation of the hypergeometric parameters to (2.1) requires
+a normalization of the parameters (2.1) as in Rhin–Viola’s case. Setting b1 = 1
+we obtain
+            a1 = 1 + h0 − h4 − h5 ,     a2 = h1 ,      a3 = h2 ,    a4 = h3 ,
+                                                                                         (4.6)
+  b1 = 1,    b2 = h1 + h2 + h3 − h0 ,     b3 = 1 + h0 − h4 ,        b4 = 1 + h0 − h5 .
+    We now mention that the permutations ajk of the parameters aj , ak , 1 ≤ j <
+k ≤ 4, as well as the permutations b12 , b34 of the parameters b1 , b2 and b3 , b4 re-
+spectively do not change the quantity on the left-hand side of (4.4). In a similar
+way, the permutations hjk of the parameters hj , hk , 1 ≤ j < k ≤ 5, do not change
+the quantity on the right-hand side of (4.4). On the other hand, the permuta-
+tions a1k , k = 2, 3, 4, affect nontrivial transformations of the parameters h and
+the permutations hjk with j = 1, 2, 3 and k = 4, 5 affect nontrivial transformations
+of the parameters a, b. Our nearest goal is to describe the group G of transfor-
+mations of the parameters (2.1) and (4.5) that is generated by all (second order)
+permutations cited above.
+Arithmetic of linear forms involving odd zeta values                                  13
+
+
+Lemma 8. The group G can be identified with a subgroup of order 1920 of the
+group A16 of even permutations of a 16-element set; namely, the group G permutes
+the parameters
+                     
+                     a − b         if aj ≥ bk ,
+                       j    k
+               cjk =                                j, k = 1, 2, 3, 4,      (4.7)
+                     bk − aj − 1 if aj < bk ,
+
+and is generated by following permutations:
+
+ (a) the permutations aj := aj4 , j = 1, 2, 3, of the jth and the fourth lines of the
+     (4 × 4)-matrix
+                                                     
+                                      c11 c12 c13 c14
+                                    c c c c 
+                                     21 22 23 24 
+                               c=                    ;                        (4.8)
+                                    c31 c32 c33 c34 
+                                          c41 c42 c43 c44
+
+ (b) the permutation b := b34 of the third and the fourth columns of the ma-
+     trix (4.8);
+
+ (c) the permutation h := h35 that has the expression
+
+                           h = (c11 c33 )(c13 c31 )(c22 c44 )(c24 c42 )            (4.9)
+
+      in terms of the parameters c.
+
+All these generators have order 2.
+
+Proof. The fact that the permutation h = h35 acts on the parameters (4.7) in ac-
+cordance with (4.9) can be easily verified with the help of formulae (4.5) and (4.6):
+                                                                            
+        a1 , a2 , a3 , a4        b3 − a 3 ,   a2 ,      b3 − a 1 ,     a4
+   h:                       7→                                                   . (4.10)
+         1, b2 , b3 , b4         1, b2 + b3 − a1 − a3 , b3 , b3 + b4 − a1 − a3
+
+As said before, the permutations ajk , 1 ≤ j < k ≤ 4, and hjk , 1 ≤ j < k ≤ 5,
+belong to the group ha1 , a2 , a3 , b, hi; in addition,
+
+                         b12 = h a1 a2 a1 a3 h b h a3 a1 a2 a1 h.
+
+Therefore, the group G is generated by the elements in the list (a)–(c). Obviuosly,
+these generators have order 2 and belong to A16 .
+   We have used a C++ computer program to find all elements of the group
+
+                                 G = ha1 , a2 , a3 , b, hi.                       (4.11)
+
+These calculations show that G contains exactly 1920 permutations. This com-
+pletes the proof of the lemma.
+14                                                                             W. Zudilin
+
+
+Remark. By Lemma 8 and relations (4.10) it can be easily verified that the quan-
+tity b3 + b4 − b1 − b2 is stable under the action of G.
+    Further, a set of parameters c, collected in (4 × 4)-matrix, is said to be admis-
+sible if there exist parameters (a, b) such that the elements of the matrix c can be
+obtained from them in accordance with (4.7) and, moreover,
+
+                          cjk > 0       for all j, k = 1, 2, 3, 4.                   (4.12)
+
+    Comparing the action (3.11) of the generators of the hypergeometric group from
+[RV3] on the parameters (2.1) with the action of the generators of the group (4.11),
+it is easy to see that these two groups are isomorphic; by (4.10) the action of ϑ
+on (2.1) coincides up to permutations a1 , a2 , a3 , b with the action of h. The set of
+parameters (4.7) is exactly the set (5.1), (4.7) from [RV3], and
+
+                        h = c31 ,   j = c21 , k = c41 ,      l = c33 ,
+                        m = c42 ,   q = c12 ,    r = c32 , s = c44
+
+by (3.8).
+    On the other hand the hypergeometric group of Rhin and Viola is embedded
+into the group A10 of even permutations of a 10-element set. We can explain
+this (not so natural, from our point of view) embedding by pointing out that the
+following 10-element set is stable under G:
+
+       h0 − h1 = b3 + b4 − 1 − a1 − a2 ,          g + h1 = b3 + b4 − 1 − a3 − a4 ,
+       h0 − h2 = b3 + b4 − 1 − a1 − a3 ,          g + h2 = b3 + b4 − 1 − a2 − a4 ,
+       h0 − h3 = b3 + b4 − 1 − a1 − a4 ,          g + h3 = b3 + b4 − 1 − a2 − a3 ,
+       h0 − h4 = b3 − b1 ,                        g + h4 = b4 − b2 ,
+       h0 − h5 = b4 − b1 ,                        g + h5 = b3 − b2 ,
+
+where g = 1 + 2h0 − h1 − h2 − h3 − h4 − h5 . The matrix c in (4.8) in terms of the
+parameters h is expressed as
+                                                                    
+           h0 − h4 − h5        g            h5 − 1        h4 − 1
+          h −1          h0 − h2 − h3 h0 − h1 − h4 h0 − h1 − h5 
+               1                                                    
+                                                                    .
+          h2 − 1        h0 − h1 − h3 h0 − h2 − h4 h0 − h2 − h5 
+               h3 − 1        h0 − h1 − h2       h0 − h3 − h4    h0 − h3 − h5
+
+    The only generator of G in the list (a)–(c) that acts nontrivially on the param-
+eters h is the permutation a1 . Its action is
+
+        (h0 ; h1 , h2 , h3 , h4 , h5 ) 7→ (1 + 2h0 − h3 − h4 − h5 ;
+             h1 , h2 , 1 + h0 − h4 − h5 , 1 + h0 − h3 − h5 , 1 + h0 − h3 − h4 ),
+Arithmetic of linear forms involving odd zeta values                                              15
+
+
+and we have discovered the corresponding hypergeometric 7F6 -identity in [Ba2],
+formula (2.2).
+     The subgroup G1 of G generated by the permutations ajk , 1 ≤ j < k ≤ 4, and
+                                                  e
+b12 , b34 , has order 4!·2!·2! = 96. The quantity G(a, b) is stable under the action of
+this group, hence we can present the group action on the parameters by indicating
+1920/96 = 20 representatives of left cosets G/G1 = {qj G1 , j = 1, . . . , 20}; namely,
+
+     q1 = id,          q2 = a1 a2 a3 h,             q3 = a1 h,                  q4 = a2 a1 h,
+     q5 = h,           q6 = h a1 a2 a3 h,           q7 = a2 a3 h,               q8 = a3 h,
+     q9 = h a3 b h, q10 = a1 a2 h a1 a2 b h, q11 = a2 h a3 a2 b h, q12 = b h,
+     q13 = a2 a3 b h, q14 = a3 b h,                q15 = a1 a2 a3 b h,         q16 = a1 b h,
+     q17 = a2 a1 b h, q18 = a2 h a1 a2 b h,        q19 = a3 h a1 b h,          q20 = h a1 b h;
+
+we choose the representatives with the shortest presentation in terms of the gen-
+erators from the list (a)–(c). The images of any set of parameters (a, b) under
+the action of these representatives can be normalized by the condition b1 = 1 and
+ordered in accordance with (2.9). We also point out that the group G1 contains
+the subgroup G0 = ha12 b12 , a34 b34 i of order 4, which does not change the quantity
+G(a, b). This fact shows us that for fixed data (a, b) only the 480 elements qj a,
+where j = 1, . . . , 20 and a ∈ S4 is an arbitrary permutation of the parameters
+a1 , a2 , a3 , a4 , produce ‘perceptable’ actions on the quantity (2.7). Hence we will
+restrict ourselves to the consideration of only these 480 permutations from G/G0 .
+     In the same way one can consider the subgroup G′1 ⊂ G of order 5! = 120
+generated by the permutations hjk , 1 ≤ j < k ≤ 5. This group acts trivially on
+the quantity Fe(h). The corresponding 1920/120 = 16 representatives of left cosets
+G/G′1 can be chosen so that for the images of the set of parameters h we have
+
+                            1 ≤ h1 ≤ h2 ≤ h3 ≤ h4 ≤ h5 ;
+
+of course h0 > 2h5 .
+    For an admissible set of parameters (4.7) consider the quantity
+
+                                                  c33 ! c44 ! e
+                         H(c) := G(a, b) =                    G(a, b).                         (4.13)
+                                                  c11 ! c22 !
+Since the group G does not change (4.4), we arrive at the following statement.
+
+Lemma 9 (cf. [RV3], Section 4). The quantity
+
+        H(c)
+             ,      where    Π(c) = c21 ! c31 ! c41 ! c12 ! c32 ! c42 ! c33 ! c44 ! ,          (4.14)
+        Π(c)
+
+is stable under the action of G.
+16                                                                                W. Zudilin
+
+
+5    Irrationality measure of Rhin and Viola for ζ(3)
+Throught this section the set of parameters (2.1) will depend on a positive integer n
+in the following way:
+
+          a1 = α1 n + 1, a2 = α2 n + 1,          a3 = α3 n + 1, a4 = α4 n + 1,
+                                                                                       (5.1)
+          b1 = β1 n + 1,     b2 = β2 n + 1,      b3 = β3 n + 2,      b4 = β4 n + 2,
+
+where the new integral parameters (‘directions’) (α, β) satisfy by (2.2), (3.9),
+and (4.12) the following conditions:
+
+                       {β1 , β2 } < {α1 , α2 , α3 , α4 } < {β3 , β4 },                 (5.2)
+                      α1 + α2 + α3 + α4 = β1 + β2 + β3 + β4 .                          (5.3)
+
+The version of the set (α, β) ordered as in (2.9) is denoted by (α∗ , β∗ ).
+   To the parameters (α, β) we assign the admissible (4 × 4)-matrix c with ele-
+ments
+                       
+                       α − β if α > β ,
+                          j    k      j     k
+                cjk =                               j, k = 1, 2, 3, 4,      (5.4)
+                       βk − αj if αj < βk ,
+
+hence the set of parameters c·n corresponds to (5.1). With any admissible matrix c
+we relate the following characteristics:
+
+         m0 = m0 (c) := max {cjk } > 0,
+                           1≤j,k≤4
+
+         m1 = m1 (c) := β4∗ − α∗1 = max {cj3 , cj4 },
+                                         1≤j≤4
+
+         m2 = m2 (c) := max{α1 − β1 , α2 − β2 , β4∗ − α3 , β4∗ − α4 , β3∗ − α∗1 }
+
+                      = max{c11 , c1k , c22 , c2k , c34 , c44 , c33 , c43 },
+                              
+                              3 if β = β ∗ (i.e., c ≤ c ),
+                                          4        4           13       14
+                    where k =
+                              4 if β3 = β (i.e., c13 ≥ c14 ),
+                                                   ∗
+                                                     4
+
+
+and write the claim of Lemma 4 for the quantity (4.13) as
+
+                       2
+                      Dm 1 (c)n
+                                · Dm2 (c)n · H(cn) ∈ 2Zζ(3) + Z.                       (5.5)
+
+    Fix now a set of directions (α, β) satisfying conditions (5.2), (5.3), and the
+corresponding set of parameters (5.4). In view of the results of Section 4, we
+will consider the set M0 = M0 (α, β) = M0 (c) of 20 ordered collections (α′ , β ′ )
+corresponding to qj (α, β), j = 1, . . . , 20, and the set M = M(α, β) = M(c) :=
+{aM0 } of 480 such collections, where a ∈ S4 is an arbitrary permutation of the
+Arithmetic of linear forms involving odd zeta values                                    17
+
+
+parameters α1 , α2 , α3 , α4 (equivalently, of the lines of the matrix c). To each prime
+number p we assign the exponent
+                                                      Π(cn)
+                                  νp = max ordp
+                                       ′  c ∈M        Π(c′ n)
+and consider the quantity
+                                                      Y
+                            Φn = Φn (c) :=                      pνp ,                 (5.6)
+                                                 √
+                                                  m0 n<p≤m3 n
+
+where m3 = m3 (c) := min{m1 (c), m2 (c)}.
+Lemma 10. For any positive integer n there holds the inclusion
+                        2
+                       Dm 1n
+                             · Dm2 n · Φ−1
+                                        n · H(cn) ∈ 2Zζ(3) + Z.
+
+Proof. The inclusions
+                       2
+                      Dm 1n
+                            · Dm2 n · Φ−1
+                                       n · H(cn) ∈ 2Zp ζ(3) + Zp                      (5.7)
+        √
+for p ≤ m0 n and p > m3 n follow from (5.5) since ordp Φ−1  n = 0.
+    Using the stability of the quantity (4.14) under the action of any permutation
+from the group G, by (5.5) we deduce that
+           2                          Π(c′ n)
+          Dm 1 (c )n
+                 ′   · Dm2 (c′ )n ·           · H(cn)
+                                      Π(cn)
+                   2
+                = Dm 1 (c )n
+                         ′   · Dm2 (c′ )n · H(c′ n) ∈ 2Zζ(3) + Z,      c′ ∈ M,
+                                                                       √
+which yields the inclusions (5.7) for the primes p in the interval m0 n < p ≤ m3 n
+since
+            2
+                                                  3
+                                                            
+     ordp Dm    (c′ )n · Dm2 (c′ )n   ≤ 3 = ordp Dm    (c)n
+              1                                      3
+
+                                                   2
+                                                                    
+                                          = ordp Dm1 (c)n · Dm2 (c)n ,    c′ ∈ M(c)
+
+in this case. The proof is complete.
+
+   The asymptotics of the numbers Dm1 n , Dm2 n in (5.7) is determined from the
+prime number theorem:
+                           log Dmj n
+                            lim      = mj ,     j = 1, 2.
+                       n→∞     n
+For the study of the asymptotic behaviour of (5.6) as n → ∞ we introduce the
+function
+
+              ϕ(x) = max ⌊c21 x⌋ + ⌊c31 x⌋ + ⌊c41 x⌋ + ⌊c12 x⌋
+                     ′  c ∈M
+                                      + ⌊c32 x⌋ + ⌊c42 x⌋ + ⌊c33 x⌋ + ⌊c44 x⌋
+                                      − ⌊c′21 x⌋ − ⌊c′31 x⌋ − ⌊c′41 x⌋ − ⌊c′12 x⌋
+                                                                                 
+                                      − ⌊c′32 x⌋ − ⌊c′42 x⌋ − ⌊c′33 x⌋ − ⌊c′44 x⌋ ,
+18                                                                               W. Zudilin
+
+
+where ⌊ · ⌋ is the integral part of a number. Then νp = ϕ(n/p) since ordp N ! =
+                                             √
+⌊N/p⌋ for any integer N and any prime p > N .
+     Note that the function ϕ(x) is periodic (with period 1) since
+
+        c21 + c31 + c41 + c12 + c32 + c42 + c33 + c44 = 2(β3 + β4 − β1 − β2 )
+              = c′21 + c′31 + c′41 + c′12 + c′32 + c′42 + c′33 + c′44
+
+(see Remark to Lemma 8); moreover, the function ϕ(x) takes only non-negative
+integral values.
+
+Lemma 11. The number (5.6) satisfies the limit relation
+                                     Z 1                  Z 1/m3
+                       log Φn                                             dx
+                   lim        =            ϕ(x) dψ(x) −            ϕ(x)      ,        (5.8)
+                  n→∞     n           0                    0              x2
+
+where ψ(x) is the logarithmic derivative of the gamma function.
+
+Proof. This result follows from the arithmetic scheme of Chudnovsky–Rukhadze–
+Hata and is based on the above-cited properties of the function ϕ(x) (see [Zu3],
+Lemma 4.4). Subtraction on the right-hand side of (5.8) ‘removes’ the primes
+p > m3 n that do not enter the product Φn in (5.6).
+
+
+     The asymptotic behaviour of linear forms
+
+                             Hn := H(cn) = 2An ζ(3) − Bn
+
+and their coefficients An , Bn can be deduced from Lemma 6 and [RV3], the argu-
+ments before Theorem 5.1; another ‘elementary’ way is based on the presentation
+
+                (h0 − h1 − h2 )! (h0 − h1 − h3 )! (h0 − h2 − h4 )! (h0 − h3 − h5 )!
+       H(c) =
+                                       (h4 − 1)! (h5 − 1)!
+                  × Fe(h)                                                           (5.9)
+
+and the arguments of Ball (see [BR] or [Ri3], Section 5.1). But the same asymptotic
+problem can be solved directly on the basis of Lemma 5 with the use of the
+asymptotics of the gamma function and the saddle-point method. We refer the
+reader to [Ne1] and [Zu3], Sections 2 and 3, for details of this approach; here we
+only state the final result.
+
+Lemma 12. Let τ0 < τ1 be the (real) zeros of the quadratic polynomial
+
+       (τ − α1 )(τ − α2 )(τ − α3 )(τ − α4 ) − (τ − β1 )(τ − β2 )(τ − β3 )(τ − β4 )
+Arithmetic of linear forms involving odd zeta values                                          19
+
+
+(it can be easily verified that β2∗ < τ0 < α∗1 and τ1 > α∗4 ); the function f0 (τ ) in the
+cut τ -plane C \ (−∞, β2∗ ] ∪ [α∗1 , +∞) is given by the formula
+
+    f0 (τ ) = α1 log(α1 − τ ) + α2 log(α2 − τ ) + α3 log(α3 − τ ) + α4 log(α4 − τ )
+               − β1 log(τ − β1 ) − β2 log(τ − β2 ) − β3 log(β3 − τ ) − β4 log(β4 − τ )
+               − (α1 − β1 ) log(α1 − β1 ) − (α2 − β2 ) log(α2 − β2 )
+               + (β3 − α3 ) log(β3 − α3 ) + (β4 − α4 ) log(β4 − α4 ),
+
+where the logarithms take real values for real τ ∈ (β2∗ , α∗1 ). Then
+
+            log |Hn |                                log max{|An |, |Bn|}
+        lim           = f0 (τ0 ),          lim sup                        ≤ Re f0 (τ1 ).
+        n→∞     n                           n→∞              n
+
+   Combining results of Lemmas 11 and 12, as in [RV3], Theorem 5.1, we deduce
+the following statement.
+
+Proposition 3. In the above notation let
+
+                         C0 = −f0 (τ0 ),     C1 = Re f0 (τ1 ),
+                                 Z 1                Z 1/m3           
+                                                                   dx
+                 C2 = 2m1 + m2 −        ϕ(x) dψ(x) −           ϕ(x) 2 .
+                                    0                 0            x
+If C0 > C2 , then
+                                                    C0 + C1
+                                        µ(ζ(3)) ≤           .
+                                                    C0 − C2
+   Looking over all integral directions (α, β) satisfying the relation
+
+                      α1 + α2 + α3 + α4 = β1 + β2 + β3 + β4 ≤ 200                          (5.10)
+
+by means of a program for the calculator GP-PARI we have discovered that the
+best estimate for µ(ζ(3)) is given by Rhin and Viola in [RV3].
+
+Theorem 1 ([RV3]). The irrationality exponent of ζ(3) satisfies the estimate
+
+                                   µ(ζ(3)) ≤ 5.51389062 . . . .                            (5.11)
+
+Proof. The optimal set of directions (α, β) (up to the action of G) is as follows:
+
+                         α1 = 18, α2 = 17, α3 = 16, α4 = 19,
+                                                                                           (5.12)
+                         β1 = 0,        β2 = 7,      β3 = 31,   β4 = 32.
+
+Then,
+
+              τ0 = 8.44961969 . . . ,        C0 = −f0 (τ0 ) = 47.15472079 . . . ,
+              τ1 = 27.38620119 . . . ,       C1 = Re f0 (τ0 ) = 48.46940964 . . . .
+20                                                                              W. Zudilin
+
+
+     The set M0 in this case consists of the following elements:
+                                                                        
+       16, 17, 18, 19     12, 14, 16, 18     12, 15, 17, 18     14, 15, 18, 19
+                       ,                  ,                  ,                  ,
+        0, 7, 31, 32       0, 2, 27, 31       0, 3, 28, 31       0, 5, 30, 31
+                                                                        
+       13, 15, 17, 19     13, 14, 15, 16     13, 14, 16, 19     12, 13, 16, 17
+                       ,                  ,                  ,                  ,
+        0, 4, 29, 31       0, 1, 25, 32       0, 3, 28, 31       0, 1, 26, 31
+                                                                        
+       11, 14, 15, 18     11, 15, 16, 18     12, 13, 14, 19     14, 16, 17, 19
+                       ,                  ,                  ,                  ,
+        0, 1, 27, 30       0, 2, 28, 30       0, 1, 28, 29       0, 5, 29, 32
+                                                                        
+       14, 15, 16, 19     13, 14, 16, 17     13, 15, 16, 18     13, 16, 17, 18
+                       ,                  ,                  ,                  ,
+        0, 4, 28, 32       0, 2, 26, 32       0, 3, 27, 32       0, 4, 28, 32
+                                                                        
+       15, 16, 18, 19     12, 15, 16, 19     12, 14, 15, 19     10, 15, 16, 17
+                       ,                  ,                  ,                  ;
+        0, 6, 30, 32       0, 3, 29, 30       0, 2, 28, 30       0, 1, 28, 29
+
+an easy verification shows that m1 = m3 = 16 and m2 = 18. The function ϕ(x)
+for x ∈ [0, 1) is defined by the formula
+                                    
+                                    
+                                    0 if x ∈ [0, 1) \ ΩE ,
+                                    
+                            ϕ(x) = 1 if x ∈ ΩE \ ΩE    ′
+                                                         ,
+                                    
+                                    
+                                               ′
+                                     2 if x ∈ ΩE  ,
+                       ′
+where the sets ΩE and ΩE are indicated in [RV3], p. 292. Hence
+                           Z 1               Z 1/m3         
+                                                          dx
+           C2 = 2m1 + m2 −       ϕ(x) dψ(x) −         ϕ(x) 2
+                               0                0          x
+                = 2 · 16 + 18 − (24.18768530 . . . − 4) = 29.81231469 . . . ,
+
+and by Proposition 3 we obtain the required estimate (5.11).
+
+   Note that the choice (5.12) gives us the function ϕ(x) ranging in the set {0, 1, 2};
+any other element of M produces the same estimate of the irrationality expo-
+nent (5.11) with ϕ(x) ranging in {0, 1, 2, 3}.
+   The previous record
+
+                               µ(ζ(3)) ≤ 7.37795637 . . .                           (5.13)
+
+due to Hata [Ha5] can be achieved by the choice of the parameters
+
+                       α1 = 8, α2 = 7, α3 = 8,          α4 = 9,
+                                                                                    (5.14)
+                       β1 = 0,    β2 = 1,    β3 = 15,   β4 = 16,
+
+and the action of the group G1 /G0 of order just 4! = 24 (we can regard this as a
+(a, b)-trivial action). For directions (α, β) satisfying the relation
+
+                   α1 + α2 + α3 + α4 ≤ β1 + β2 + β3 + β4 ≤ 200
+Arithmetic of linear forms involving odd zeta values                               21
+
+
+(instead of (5.10) ) we have verified that the choice (5.14) corresponding to Hata’s
+case produces the best estimate of the irrationality exponent for ζ(3) in the class
+of (a, b)-trivial actions. In that case we are able to use the inequality
+
+                          α1 + α2 + α3 + α4 ≤ β1 + β2 + β3 + β4
+
+instead of (5.3) since we do not use Bailey’s identity. The mysterious thing is that
+the action of the full group G does not produce a better result than (5.13) for the
+parameters (5.14).
+
+
+6    Overview of the group structure for ζ(2)
+To a set of integral parameters
+                                                                 
+                                                   a1 , a2 , a3
+                                  (a, b) =                                       (6.1)
+                                                   b1 , b2 , b3
+
+satisfying the conditions
+
+                              {b1 } ≤ {a1 , a2 , a3 } < {b2 , b3 },
+                             a1 + a2 + a3 ≤ b1 + b2 + b3 − 2,                    (6.2)
+
+we assign the rational function
+                                         (b2 − a2 − 1)! (b3 − a3 − 1)!
+              R(t) = R(a, b; t) :=
+                                                   (a1 − b1 )!
+                                              Γ(t + a1 ) Γ(t + a2 ) Γ(t + a3 )
+                                           ×
+                                              Γ(t + b1 ) Γ(t + b2 ) Γ(t + b3 )
+                                         3
+                                         Y
+                                     =         Rj (t),
+                                         j=1
+
+where the functions R1 (t), R2 (t), and R3 (t) are defined in (2.5). Condition (6.2)
+yields (2.6), hence the (hypergeometric) series
+                   ∞
+                   X
+      G(a, b) :=          R(t)      with 1 − min{a1 , a2 , a3 } ≤ t0 ≤ 1 − b1    (6.3)
+                   t=t0
+
+is well-defined. Expanding the rational function R(t) in a sum of partial fractions
+and applying Lemmas 1 and 3 we arrive at the following assertion.
+
+Lemma 13 (cf. Lemma 4). The quantity (6.3) is a rational form in 1 and ζ(2)
+with rational coefficients:
+
+                                   G(a, b) = Aζ(2) − B;                          (6.4)
+22                                                                                                W. Zudilin
+
+
+in addition,
+
+        A ∈ Z,        Db∗3 −a∗1 −1 · Dmax{a1 −b1 ,b∗3 −a2 −1,b∗3 −a3 −1,b∗2 −a∗1 −1} · B ∈ Z,
+
+where (a∗ , b∗ ) is the ordered version of the set (6.1):
+
+        {b∗1 } = {b1 },     {a∗1 , a∗2 , a∗3 } = {a1 , a2 , a3 },    {b∗2 , b∗3 } = {b2 , b3 },
+                                                                                                       (6.5)
+                               b∗1 ≤ a∗1 ≤ a∗2 ≤ a∗3 < b∗2 ≤ b∗3 .
+
+     By Proposition 1 the series (6.3) can be written as the double real integral
+                       ZZ
+                               xa2 −b1 (1 − x)b2 −a2 −1 y a3 −b1 (1 − y)b3 −a3 −1
+          G(a, b) =                                                               dx dy,
+                                             (1 − xy)a1 −b1 +1
+                      [0,1]2
+
+
+hence we can identify the quantity (6.3) with the corresponding integral I(h, i, j, k, l)
+from [RV2] by setting
+
+                   h = a 2 − b1 ,       i = b2 − a2 − 1,            j = b3 − a3 − 1,
+                 k = a 3 − b1 ,      l = (b1 + b2 + b3 − 2) − (a1 + a2 + a3 );
+
+the inverse transformation (after the normalization b1 = 1) is as follows:
+
+                 a1 = 1 + i + j − l, a2 = 1 + h,                      a3 = 1 + k,
+                 b1 = 1,                      b2 = 2 + h + i,          b3 = 2 + j + k.
+
+In the further discussion we keep the normalization b1 = 1.
+    The series
+                                                                                        
+                 e          Γ(a1 )Γ(a2 )Γ(a3 )         a1 , a2 , a3
+                 G(a, b) :=                    · 3F2                                 1
+                            Γ(b1 )Γ(b2 )Γ(b3 )              b2 , b3
+
+and
+                                                                Q4
+                                                  Γ(1 + h0 ) · j=1 Γ(hj )
+          Fe (h) = Fe(h0 ; h1 , h2 , h3 , h4 ) := Q4
+                                                      j=1 Γ(1 + h0 − hj )
+                                                                                                 
+                            h0 , 1 + 21 h0 ,            h1 , . . . ,          h4
+                   × 6F5                1
+                                                                                             −1
+                                        2 h0 , 1 + h0 − h1 , . . . , 1 + h0 − h4
+
+play the same role as (3.2) and (4.2) played before since one has
+
+                                           e
+                                           G(a, b)
+                    Γ(a1 ) Γ(a2 ) Γ(a3 ) Γ((b2 + b3 ) − (a1 + a2 + a3 ))
+                                        Fe(h)
+                         =                                                                             (6.6)
+                            Γ(h1 ) Γ(h2 ) Γ(h3 ) Γ(h4 )
+Arithmetic of linear forms involving odd zeta values                                       23
+
+
+where
+                      h0 = b2 + b3 − 1 − a1 ,        h1 = a2 ,      h2 = a3 ,
+                                 h3 = b3 − a1 ,     h4 = b2 − a1 ,
+and
+           a1 = 1 + h0 − h3 − h4 , a2 = h1 ,                        a3 = h2 ,
+           b1 = 1,                        b2 = 1 + h0 − h3 ,        b3 = 1 + h0 − h4 ,
+by Whipple’s identity [Ba3], Section 4.4, formula (2). The permutations ajk ,
+1 ≤ j < k ≤ 3, of the parameters aj , ak , the permutation b23 of b2 , b3 , and the
+permutations hjk , 1 ≤ j < k ≤ 4, of the parameters hj , hk do not change the quan-
+tity (6.6). Hence we can consider the group G generated by these permutations
+and naturally embed it into the group S10 of permutations of the 10-element set
+
+                 c00 = (b2 + b3 ) − (a1 + a2 + a3 ) − 1,
+                       
+                       a − b           if aj ≥ bk ,
+                           j    k
+                 cjk =                                   j, k = 1, 2, 3.
+                       bk − aj − 1 if aj < bk ,
+
+The group G is generated by the permutations a1 := a13 , a2 := a23 , b := b23 ,
+which can be regarded as permutations of lines and columns of the ‘(4 × 4)-matrix’
+                                                     
+                                      c00
+                                         c11 c12 c13 
+                                                     
+                                   c=                ,                                 (6.7)
+                                         c21 c22 c23 
+                                               c31 c32 c33
+
+and the (a, b)-nontrivial permutation h := h23 ,
+
+                                h = (c00 c22 )(c11 c33 )(c13 c31 );
+
+these four generators have order 2. It can be easily verified that the group G =
+ha1 , a2 , b, hi has order 120; in fact, we require only the 60 representatives of G/G0 ,
+where the group G0 = {id, a23 b23 } acts trivially on the quantity
+
+                                                    c22 ! c33 ! e
+                              H(c) := G(a, b) =                G(a, b).
+                                                      c11 !
+Thus, we can summarize the above as follows.
+
+Lemma 14 (cf. [RV2], Section 3). The quantity
+
+                     H(c)
+                          ,       where     Π(c) = c00 ! c21 ! c31 ! c22 ! c33 ! ,
+                     Π(c)
+
+is stable under the action of G = ha1 , a2 , b, hi.
+24                                                                              W. Zudilin
+
+
+   If one shifts indices of cjk by one then the group G for ζ(2) can be naturally
+regarded as a subgroup of the group G for ζ(3) (compare the generators of both
+groups). The group G for ζ(2) coincides with the group Φ of Rhin and Viola
+from [RV2] since permutations ϕ, σ ∈ Φ are (a, b)-trivial in our terms and for
+τ ∈ Φ we have
+                                τ = a2 a1 b h a2 a1 b h.
+
+    We now fix an arbitrary positive integer n and integral directions (α, β) satis-
+fying the conditions
+
+                        {β1 = 0} < {α1 , α2 , α3 } < {β2 , β3 },
+                           α1 + α2 + α3 ≤ β1 + β2 + β3 ,
+
+so that the parameters (6.1) are expressed as follows:
+
+                  a1 = α1 n + 1, a2 = α2 n + 1, a3 = α3 n + 1,
+                                                                                      (6.8)
+                  b1 = β1 n + 1,    b2 = β2 n + 2,     b3 = β3 n + 2,
+
+and consider, as in Section 5, the corresponding set of parameters
+
+                  c00 = (β1 + β2 + β3 ) − (α1 + α2 + α3 ),
+                        
+                        α − β if α > β ,
+                            j    k      j     k
+                  cjk =                             j, k = 1, 2, 3;
+                        βk − αj if αj < βk ,
+
+hence the set c · n corresponds to (6.8). Set
+
+            m1 = m1 (c) := β3∗ − α∗1 ,
+            m2 = m2 (c) := max{α1 − β1 , β3∗ − α2 , β3∗ − α3 , β2∗ − α∗1 },
+            m3 = m3 (c) := min{m1 (c), m2 (c)},
+
+where asterisks mean ordering in accordance with (6.5). To the 60-element set
+M = M(c) = {q c : q ∈ G/G0 } we assign the function
+
+        ϕ(x) = max ⌊c00 x⌋ + ⌊c21 x⌋ + ⌊c31 x⌋ + ⌊c22 x⌋ + ⌊c33 x⌋
+               ′c ∈M                                                             
+                           − ⌊c′00 x⌋ − ⌊c′21 x⌋ − ⌊c′31 x⌋ − ⌊c′22 x⌋ − ⌊c′33 x⌋ ,
+
+which is 1-periodic and takes only non-negative integral values. Further, let τ0
+and τ1 , τ0 < τ1 , be the (real) zeros of the quadratic polynomial
+
+               (τ − α1 )(τ − α2 )(τ − α3 ) − (τ − β1 )(τ − β2 )(τ − β3 )
+Arithmetic of linear forms involving odd zeta values                               25
+
+
+(in particular, τ0 < β1 and τ1 > α∗3 ) and let
+
+           f0 (τ ) = α1 log(α1 − τ ) + α2 log(α2 − τ ) + α3 log(α3 − τ )
+                      − β1 log(τ − β1 ) − β2 log(β2 − τ ) − β3 log(β3 − τ )
+                      − (α1 − β1 ) log(α1 − β1 ) + (β2 − α2 ) log(β2 − α2 )
+                      + (β3 − α3 ) log(β3 − α3 )
+
+be a function in the cut τ -plane C \ (−∞, β1 ] ∪ [α∗1 , +∞). Then the final result is
+as follows.
+
+Proposition 4. In the above notation let
+
+                    C0 = − Re f0 (τ0 ),   C1 = Re f0 (τ1 ),
+                             Z 1               Z 1/m3         
+                                                            dx
+              C2 = m1 + m2 −       ϕ(x) dψ(x) −         ϕ(x) 2 .
+                                0                0          x
+
+If C0 > C2 , then
+                                              C0 + C1
+                                  µ(ζ(2)) ≤           .
+                                              C0 − C2
+   In accordance with [RV2] we now take
+
+                           α1 = 13, α2 = 12, α3 = 14,
+                                                                                 (6.9)
+                           β1 = 0,      β2 = 24,    β3 = 28
+
+and obtain the following result.
+
+Theorem 2 ([RV2]). The irrationality exponent of ζ(2) satisfies the estimate
+
+                               µ(ζ(2)) ≤ 5.44124250 . . . .                    (6.10)
+
+Observation. In addition to the fact that the group for ζ(2) can be naturally
+embedded into the group for ζ(3), we can make the following surprising observation
+relating the best known estimates of the irrationality exponents for these constants.
+The choice of the directions (5.1) with
+
+                     α1 = 16, α2 = 17, α3 = 18, α4 = 19,
+                     β1 = 0,      β2 = 7,     β3 = 31,    β4 = 32
+
+for ζ(3) (cf. (5.12) ) and the choice of the directions (6.8) with
+
+                           α1 = 10, α2 = 11, α3 = 12,
+                           β1 = 0,      β2 = 24,    β3 = 25
+26                                                                                     W. Zudilin
+
+
+for ζ(2) (which is G-equivalent to (6.9) ) lead to the following matrices (4.8)
+and (6.7):
+                                                               
+                     16 9 15 16                          16
+                    17 10 14 15                        10 14 15
+                                                               
+                                           and                 .                       (6.11)
+                    18 11 13 14                        11 13 14
+                       19 12 12 13                           12 12 13
+
+The first set of the parameters in (6.11) produces the estimate (5.11), while the
+second set the estimate (6.10).
+    Finally, we point out that the known group structure for log 2 (and for some
+other values of the Gauss hypergeometric function) is quite simple since no identity
+like (4.1) is known; the corresponding group consists of just two permutations
+(see [Vi] for an explanation in terms of ‘multiple’ integrals).
+
+
+7      Arithmetic of special rational functions
+In our study of arithmetic properties of linear forms in 1 and ζ(3) we have used
+the information coming mostly from G-presentations (4.13). If we denote by F (h)
+the right-hand side of (5.9) and apply Lemma 7, then one could think that the
+expansion
+                                               ∞
+                                               X
+                                     F (h) =         R(t),                                  (7.1)
+                                               t=0
+
+where we now set
+                                                                        6
+                                                                        Y
+                R(t) = R(h0 ; h1 , h2 , h3 , h4 , h5 ; t) = (h0 + 2t)         Rj (t)
+                                                                        j=1
+
+
+with
+                                                   Γ(h1 + t)
+                  R1 (t) = (h0 − h1 − h2 )! ·                     ,
+                                               Γ(1 + h0 − h2 + t)
+                                                   Γ(h2 + t)
+                   R2 (t) = (h0 − h2 − h4 )! ·                    ,
+                                               Γ(1 + h0 − h4 + t)
+                                                   Γ(h3 + t)
+                   R3 (t) = (h0 − h1 − h3 )! ·                    ,                         (7.2)
+                                               Γ(1 + h0 − h1 + t)
+                                                   Γ(h5 + t)
+                   R4 (t) = (h0 − h3 − h5 )! ·                    ,
+                                               Γ(1 + h0 − h3 + t)
+                  1       Γ(h4 + t)                  1           Γ(h0 + t)
+     R5 (t) =           ·           , R6 (t) =            ·                   ,
+              (h4 − 1)! Γ(1 + t)                 (h5 − 1)! Γ(1 + h0 − h5 + t)
+Arithmetic of linear forms involving odd zeta values                                27
+
+
+brings with it some extra arithmetic for linear forms H(c) since the functions (7.2)
+are of the same type as (2.5). Unfortunately, we have discovered that (quite compli-
+cated from the computational point of view) arithmetic of the presentations (7.1)
+brings nothing new.
+    For our future aims we now study the arithmetic properties of elementary
+‘bricks’—rational functions
+                            
+                            
+                             (t + b)(t + b + 1) · · · (t + a − 1)
+                                                                  if a ≥ b,
+       R(t) = R(a, b; t) :=                (a − b)!                            (7.3)
+                            
+                                        (b − a − 1)!
+                                                                  if a < b,
+                              (t + a)(t + a + 1) · · · (t + b − 1)
+which are introduced by Nesterenko [Ne2, Ne3] and appear in (2.5) and (7.2).
+   The next claim exploits well-known properties of integral-valued polynomials.
+Lemma 15 (cf. Lemma 1). Suppose that a ≥ b. Then for any non-negative inte-
+ger j there hold the inclusions
+                          j       1 (j)
+                         Da−b ·      R (−k) ∈ Z,      k ∈ Z.
+                                  j!
+   The next claim immediately follows from Lemma 2 in the same way as Lemma 3.
+Lemma 16. Let a, b, a0, b0 be integers, a0 ≤ a < b ≤ b0 . Then for any non-
+negative integer j there hold the inclusions
+                    1              (j)
+      Dbj0 −a0 −1 ·    R(t)(t + k)      t=−k
+                                             ∈ Z, k = a0 , a0 + 1, . . . , b0 − 1.
+                    j!
+    Lemmas 15 and 16 give a particular (but quite important) information on the
+                                                       (j)
+p-adic valuation of the values R(j) (−k) and R(t)(t+k)      t=−k
+                                                                 respectively, with
+a help of the formula ordp DN = 1 for any integer N and any prime p in the interval
+√
+  N < p ≤ N . Two next statements are devoted to the ‘most precise’ estimates
+for the p-adic order of these quantities.
+Lemma 17. Let a, b, a0 , b0 be integers, b0 ≤ b < a ≤ a0 , and let R(t) = R(a, b; t) be
+                                                                        √
+defined by (7.3). Then for any integer k, b0 ≤ k < a0 , any prime p > a0 − b0 − 1,
+and any non-negative integer j there hold the estimates
+                                                                     
+                  (j)               a−1−k          b−1−k             a−b
+           ordp R (−k) ≥ −j +                   −               −
+                                        p               p             p
+                                                            
+                                    k−b        k−a          a−b
+                          = −j +            −          −           .            (7.4)
+                                      p          p           p
+                                     √
+Proof. Fix an arbitrary prime p > a0 − b0 − 1. First, we note that by the defi-
+nition of the integral part of a number
+                                                       
+                                                       0 if x ∈ Z,
+                ⌊−x⌋ = −⌊x⌋ − δx ,       where δx =
+                                                       1 if x ∈ / Z,
+28                                                                                      W. Zudilin
+
+
+which yields                          
+                             s       s−1
+                           −     =−        −1                for       s ∈ Z.
+                             p        p
+Therefore,
+                                                                        
+       k−b       b−1−k                                 a−1−k               k−a
+             =−          − 1,                                          =−        −1            (7.5)
+         p         p                                     p                  p
+for any integer k.
+    Direct calculations show that
+                          
+                               (a − 1 − k)!
+                          
+                                                                      if k < b,
+                          
+                           (b − 1 − k)! (a − b)!
+                R(−k) = 0                                              if b ≤ k < a,
+                          
+                          
+                          
+                                        (k − b)!
+                          (−1)a−b                                     if k ≥ a;
+                                    (k − a)! (a − b)!
+thus,
+                                              
+                       a−1−k        b−1−k      a−b
+        ordp R(−k) ≥            −           −                                      if k < a,
+                          p           p         p
+                                        
+                       k−b      k−a      a−b
+        ordp R(−k) ≥         −        −                                            if k ≥ b,
+                        p         p       p
+which yields the estimates (7.4) for j = 0 with the help of (7.5).
+   If k < b or k ≥ a, consider the function
+                                                       a−1
+                                            R′ (t) X 1
+                                  r(t) =          =     ,
+                                            R(t)    t+l
+                                                       l=b
+
+hence for any integer j ≥ 1 there hold the inclusions
+                                           j−1
+                           r (j−1) (−k) · Dmax{a−b0 −1,a0 −b−1}
+                                                                ∈ Z.
+
+Induction on j and the identity
+                                                 j−1 
+                                                 X         
+               (j)
+                                      (j−1)           j−1
+           R         (t) = R(t)r(t)            =            R(m) (t)r (j−1−m) (t)              (7.6)
+                                                 m=0
+                                                        m
+
+specified at t = −k lead us to the required estimates (7.4).
+   If b ≤ k < a, consider the functions
+                                                                   X 1 a−1
+                                R(t)                     Rk′ (t)
+                       Rk (t) =      ,          rk (t) =         =      ;
+                                t+k                      Rk (t)     t+l
+                                                                        l=b
+                                                                        l6=k
+
+obviously, for any integer j ≥ 1 there hold the inclusions
+                                   (j−1)           j−1
+                                  rk       (−k) · Da−b−1 ∈ Z.
+Arithmetic of linear forms involving odd zeta values                                29
+
+
+Then
+                                              (j−1)
+                              R(j) (−k) = jRk         (−k)
+since
+                                           (k − b)! (a − 1 − k)!
+                      Rk (−k) = (−1)k−b                          ,
+                                                 (a − b)!
+and induction on j in combination with identity (7.6) (where we substitute Rk (t),
+rk (t) for R(t), r(t), respectively) show that
+                                  (j−1)
+         ordp R(j) (−k) ≥ ordp Rk     (−k)
+                                                         
+                                        k−b     a−1−k     a−b
+                         ≥ −(j − 1) +        +         −
+                                         p        p        p
+for integer j ≥ 1. Thus, applying (7.5) we obtain the required estimates (7.4)
+again. The proof is complete.
+
+Lemma 18. Let a, b, a0 , b0 be integers, a0 ≤ a < b ≤ b0 , and let R(t) = R(a, b; t) be
+                                                                       √
+defined by (7.3). Then for any integer k, a0 ≤ k < b0 , any prime p > b0 − a0 − 1,
+and any non-negative integer j there hold the estimates
+                                                                       
+                    (j)               b−a−1           k−a         b−1−k
+  ordp R(t)(t + k)       t=−k
+                              ≥ −j +               −           −             . (7.7)
+                                           p             p             p
+                                    √
+Proof. Fix an arbitrary prime p > b0 − a0 − 1. We have
+                             
+                             
+                             (−1)k−a      (b − a − 1)!
+                                                             if a ≤ k < b,
+      R(t)(t + k) t=−k =              (k − a)! (b − 1 − k)!
+                             
+                             0                               if k < a or k ≥ b,
+
+which yields the estimates (7.7) for j = 0.
+   Considering in the case a ≤ k < b the functions
+                                                             b−1
+                                                           X 1
+                                                  R′ (t)
+               Rk (t) = R(t)(t + k),      rk (t) = k     =      ,
+                                                  Rk (t)    t+l
+                                                             l=a
+                                                             l6=k
+
+and carrying out induction on j ≥ 0, with the help of identity (7.6) (where we
+take Rk (t), rk (t) for R(t), r(t) again) we deduce the estimates (7.7).
+   If k < a or k ≥ b note that
+                                       (j)
+                          R(t)(t + k)       t=−k
+                                                 = jR(j−1) (−k).
+
+Since                   
+                        
+                          (b − a − 1)! (a − 1 − k)!
+                                                          if k < a,
+               R(−k) =            (b −  1 − k)!
+                        
+                                    (b − a − 1)! (k − b)!
+                        (−1)b−a                           if k ≥ b,
+                                           (k − a)!
+induction on j and equalities (7.5) yield the required estimates (7.7) again. The
+proof is complete.
+30                                                                                    W. Zudilin
+
+
+8    Linear forms in 1 and odd zeta values
+Since generalizations of G-presentations (2.13), (6.4) lead us to forms involving
+both odd and even zeta values, it is natural to follow Rivoal dealing with F -
+presentations.
+   Consider positive odd integers q and r, where q ≥ r + 4. To a set of integral
+positive parameters
+                               h = (h0 ; h1 , . . . , hq )
+satisfying the condition
+                                                             q−r
+                             h1 + h2 + · · · + hq ≤ h0 ·                                       (8.1)
+                                                              2
+we assign the rational function
+
+     e
+     R(t)   e
+          = R(h; t)
+                                  Γ(h0 + t)r Γ(h1 + t) · · · Γ(hq + t)
+          := (h0 + 2t)                                                         .               (8.2)
+                         Γ(1 + t)r Γ(1 + h0 − h1 + t) · · · Γ(1 + h0 − hq + t)
+
+By (8.1) we obtain
+                                                       
+                                      e =O           1
+                                      R(t)               ,                                     (8.3)
+                                                     t2
+hence the quantity
+                                                  X∞
+                                            1
+                             Fe (h) :=                e (r−1) (t)
+                                                      R                                        (8.4)
+                                         (r − 1)! t=0
+
+is well-defined. If r = 1, the quantity (8.4) can be written as a well-poised hyper-
+geometric series with a special form of the second parameter; namely,
+               h0 ! (h1 − 1)! · · · (hq − 1)!
+      Fe (h) =
+               (h0 − h1 )! · · · (h0 − hq )!
+                                                                                          
+                                 h0 , 1 + 12 h0 ,          h1 , . . . ,          hq
+                 × q+2Fq+1                 1
+                                                                                       1
+                                           2 h0 , 1 + h0 − h1 , . . . , 1 + h0 − hq
+
+(cf. (4.2) ), while in the case r > 1 we obtain a linear combination of well-poised
+Meijer’s G-functions taken at the points eπik , where k = ±1, ±3, . . . , ±(r − 2).
+    Applying the symmetry of the rational function (8.2) under the substitution
+t 7→ −t − h0 :
+
+                      e
+                      R(−t                        e = −R(t),
+                           − h0 ) = −(−1)h0 (q+r) R(t) e                                       (8.5)
+
+where we use the identity (3.4), and following the arguments of the proof of
+Lemma 4 we are now able to state that the quantity (8.4) is a linear form in 1
+Arithmetic of linear forms involving odd zeta values                               31
+
+
+and odd zeta values with rational coefficients. To present this result explicitly we
+require the ordering
+                                                    1
+                             h1 ≤ h2 ≤ · · · ≤ hq < h0
+                                                    2
+and the following arithmetic normalization of (8.4):
+                Qq                                      ∞
+                  j=r+1 (h0 − 2hj )! e            1     X
+       F (h) := Qr                2
+                                    · F (h)  =               R(r−1) (t),        (8.6)
+                    j=1 (hj − 1)!              (r − 1)!
+                                                              t=1−h1
+
+where the rational function
+              Yr                       r
+                      1     Γ(hj + t) Y      1         Γ(h0 + t)
+     R(t) :=                         ·
+              j=1
+                  (hj − 1)! Γ(1 + t) j=1 (hj − 1)! Γ(1 + h0 − hj + t)
+                    q                                                            (8.7)
+                    Y                    Γ(hj + t)
+                ×       (h0 − 2hj )!
+                  j=r+1
+                                     Γ(1 + h0 − hj + t)
+
+is the product of elementary bricks (7.3). Set m0 = max{hr − 1, h0 − 2hr+1 } and
+mj = max{m0 , h0 −h1 −hr+j } for j = 1, . . . , q −r, and define the integral quantity
+                                              Y
+                          Φ = Φ(h) :=                  pνp ,                     (8.8)
+                                             √
+                                                 h0 <p≤mq−r
+
+where
+
+                              νp :=         min          {νk,p }                 (8.9)
+                                      hr+1 ≤k≤h0 −hr+1
+
+and
+                 r 
+                 X                          
+                      k−1         h0 − k − 1
+         νk,p :=               +
+                 j=1
+                          p            p
+                                                         
+                       k − hj      h0 − hj − k         hj − 1
+                   −           −                  −2
+                         p               p                p
+                        q                                       
+                      X       h0 − 2hj       k − hj       h0 − hj − k
+                   +                     −            −                  .
+                     j=r+1
+                                 p              p              p
+
+In this notation the result reads as follows.
+Lemma 19. The quantity (8.6) is a linear form in 1, ζ(r + 2), ζ(r + 4), . . . ,
+ζ(q − 4), ζ(q − 2) with rational coefficients; moreover,
+  r
+ Dm 1
+      Dm2 · · · Dmq−r · Φ−1 · F (h) ∈ Zζ(q − 2) + Zζ(q − 4) + · · · + Zζ(r + 2) + Z.
+
+Proof. Applying the Leibniz rule for differentiating a product, Lemmas 15, 16 and
+Lemmas 17, 18 to the rational function (8.7) we see that the numbers
+                               1                      (q−j)
+                   Bjk =             · R(t)(t + k)q−r        t=−k
+                                                                  ,
+                            (q − j)!
+                    j = r + 1, . . . , q,   k = hr+1 , . . . , h0 − hr+1 ,
+32                                                                                             W. Zudilin
+
+
+satisfy the relations
+                                           q−j
+                                          Dm 0
+                                               · Bjk ∈ Z                                            (8.10)
+
+and
+
+                                  ordp Bjk ≥ −(q − j) + νk,p ,                                      (8.11)
+                                                                                    √
+respectively, for any k = hr+1 , . . . , h0 −hr+1 and any prime p >                      h0 . Furthermore,
+the expansion
+                                          q   h0 −hj
+                                         X     X         Bjk
+                           R(t) =
+                                       j=r+1
+                                                     (t + k)j−r
+                                                   k=hj
+
+leads us to the series
+                              q
+                              X      h0 −hj                    X
+                                                                  ∞          X1 
+                                                                            k−h
+                                  j−2 X                                              1
+                  F (h) =                                  Bjk          −
+                             j=r+1
+                                      r−1                                           lj−1
+                                                   k=hj           l=1       l=1
+                              q
+                              X
+                         =           Aj−1 ζ(j − 1) − A0 ,
+                             j=r+1
+
+where
+                                        hX
+                                           0 −hj
+                                  j−2
+                   Aj−1 =                          Bjk ,         j = r + 1, . . . , q,              (8.12)
+                                  r−1
+                                          k=hj
+                               q
+                               X              hX
+                                                 0 −hj           k−h
+                                                                  X1
+                                        j−2                                 1
+                      A0 =                                 Bjk                  .
+                              j=r+1
+                                        r−1                              lj−1
+                                                   k=hj           l=1
+
+By (8.10) and the inclusions
+                                                           k−h
+                                                            X1
+                              r                                    1
+                             Dm   Dm2 · · · Dmj−r ·                      ∈Z
+                                1
+                                                                  lj−1
+                                                           l=1
+
+for any k = hj , . . . , h0 − hj , j = r + 1, . . . , q, we obtain the ‘fairly rough’ inclusions
+                    q−j−1
+                   Dm 0
+                          · Aj ∈ Z            for     j = r, r + 1, . . . , q − 1,
+                                 r
+                                Dm 1
+                                     Dm2 · · · Dmq−r · A0 ∈ Z,
+
+which are (in a sense) refined by the estimates (8.11):
+
+        ordp Aj ≥ −(q − j − 1) + νp                for j = 0 and j = r, r + 1, . . . , q − 1
+
+with exponents νp defined in (8.9). To complete the proof we must show that
+
+            Ar = 0        and         Ar+1 = Ar+3 = · · · = Aq−3 = Aq−1 = 0.
+Arithmetic of linear forms involving odd zeta values                                                  33
+
+
+The first equality follows from (8.3); by (8.5) we obtain
+
+                     Bjk = (−1)j Bj,h0 −k               for j = r + 1, . . . , q,
+
+which yields Aj−1 = 0 for odd j according to (8.12). The proof is complete.
+
+    To evaluate the growth of the linear forms (8.6) so constructed we define the set
+of integral directions η = (η0 ; η1 , . . . , ηq ) and the increasing integral parameter n
+related with the parameters h by the formulae
+
+              h0 = η0 n + 2          and        hj = ηj n + 1 for j = 1, . . . , q.               (8.13)
+
+   Consider the auxiliary function
+                                     q
+                                     X                                                            
+     f0 (τ ) = rη0 log(η0 − τ ) +           ηj log(τ − ηj ) − (η0 − ηj ) log(τ − η0 + ηj )
+                                     j=1
+                     r                      q
+                     X                      X
+                −2         ηj log ηj +             (η0 − 2ηj ) log(η0 − 2ηj )
+                     j=1                   j=r+1
+
+defined in the cut τ -plane C \ (−∞, η0 − η1 ] ∪ [η0 , +∞). The next assertion is
+deduced by an application of the saddle-point method and the use of the asymtotics
+of the gamma factors in (8.7) (see, e.g., [Zu3], Section 2, or [Ri4]). We underline
+that no approach in terms of real multiple integrals is known in the case r ≥ 3.
+
+Lemma 20. Let r = 3 and let τ0 be a zero of the polynomial
+
+          (τ − η0 )r (τ − η1 ) · · · (τ − ηq ) − τ r (τ − η0 + η1 ) · · · (τ − η0 + ηq )
+
+with Im τ0 > 0 and the maximum possible value of Re τ0 . Suppose that Re τ0 < η0
+and Im f0 (τ0 ) ∈
+                / πZ. Then
+                                           log |F (h)|
+                                 lim sup               = Re f0 (τ0 ).
+                                  n→∞           n
+   We now take
+
+        mj = max{ηr , η0 − 2ηr+1 , η0 − η1 − ηr+j }                  for   j = 1, . . . , q − r
+
+(hence we scale down with factor n the old parameters). The asymptotics of the
+quantity (8.8) as n → ∞ can be calculated with the use of the integral-valued
+function
+                   r
+                   X                                                                
+    ϕ0 (x, y) :=         ⌊y⌋ + ⌊η0 x − y⌋ − ⌊y − ηj x⌋ − ⌊(η0 − ηj )x − y⌋ − 2⌊ηj x⌋
+                   j=1
+                         q
+                         X                                                      
+                    +            ⌊(η0 − 2ηj )x⌋ − ⌊y − ηj x⌋ − ⌊(η0 − ηj )x − y⌋ ,
+                         j=r+1
+34                                                                                   W. Zudilin
+
+
+which is 1-periodic with respect to each variable x and y. Then by (8.9) and (8.13)
+we obtain                                                  
+                                                n k−1         n
+                 νp =         min          ϕ0     ,     ≥ϕ       ,
+                       η4 n≤k−1≤(η0 −η4 )n      p   p         p
+where
+                           ϕ(x) := min ϕ0 (x, y) = min ϕ0 (x, y).
+                                     y∈R               0≤y<1
+
+Therefore, the final result is as follows.
+
+Proposition 5. In the above notation let r = 3 and
+
+                                 C0 = − Re f0 (τ0 ),
+                                      Z 1              Z 1/mq−r        
+                                                                     dx
+       C2 = rm1 + m2 + · · · + mq−r −      ϕ(x) dψ(x) −          ϕ(x) 2 .
+                                        0                0           x
+If C0 > C2 , then at least one of the numbers
+
+                           ζ(5), ζ(7), . . . , ζ(q − 4), and ζ(q − 2)
+
+is irrational.
+
+     We are now ready to state the following new result.
+
+Theorem 3. At least one of the four numbers
+
+                                  ζ(5), ζ(7), ζ(9), and ζ(11)
+
+is irrational.
+
+Proof. Taking r = 3, q = 13,
+
+        η0 = 91,         η1 = η2 = η3 = 27,       ηj = 25 + j      for j = 4, 5, . . . , 13,
+
+we obtain τ0 = 87.47900541 . . . + i 3.32820690 . . . ,
+
+           C0 = − Re f0 (τ0 ) = 227.58019641 . . . ,
+                                       Z 1              Z 1/33        
+                                                                    dx
+           C2 = 3 · 35 + 34 + 8 · 33 −      ϕ(x) dψ(x) −        ϕ(x) 2
+                                         0                0         x
+                 = 226.24944266 . . .
+
+since in this case
+
+                       ϕ(x) = ν   if x ∈ Ων \ Ων+1 ,       ν = 0, 1, . . . , 9,
+
+for x ∈ [0, 1), where Ω0 = [0, 1),
+                  2   36
+                            90 
+     Ω1 = Ω2 =     91 37 ∪ 91 , 1 ,
+                     ,
+Arithmetic of linear forms involving odd zeta values                            35
+
+         2    1
+                   5 3   28 13   14 35   18 27   88 36   90 
+  Ω3 =  91 20 ∪ 91 , 4 ∪ 37 , 14 ∪ 15 , 37 ∪ 19 , 28 ∪ 91 , 37 ∪ 91 , 1 ,
+           ,
+        1 1   5 3   2 1   4 4   5 7   4 12   30 1 
+  Ω4 = 38 , 22 ∪ 91 , 26 ∪ 17 , 8 ∪ 31 , 27 ∪ 33 , 30 ∪ 17 , 37 ∪ 91 , 3
+                  14 11   13 9   7 13   8 1   19 9   20 2 
+      ∪ 31     3
+          91 , 8 ∪ 37 , 28 ∪ 33 , 22 ∪ 17 , 28 ∪ 17 , 2 ∪ 37 , 14 ∪ 31 , 3
+         21 3   25 11   26 23   14 23   31 25   85 35   20 26 
+      ∪ 31   , 4 ∪ 33 , 14 ∪ 33 , 28 ∪ 17 , 27 ∪ 36 , 27 ∪ 91 , 37 ∪ 21 , 27
+         32 34 
+      ∪ 33 , 35 ,
+        1 1   1 1   5 1   2 2   3 1   8 3   2 1
+  Ω5 = 37  , 27 ∪ 25 , 24 ∪ 91 , 18 ∪ 35 , 27 ∪ 38 , 12 ∪ 91 , 34 ∪ 21 , 9
+         4 1  5 4   3 1  5 5   4 5   6 2  5 7 
+      ∪ 33 , 8 ∪ 38 , 27 ∪ 19 , 6 ∪ 29 , 27 ∪ 21 , 26 ∪ 29 , 9 ∪ 21 , 27
+         4 10   2 3   7 4   6 12   30 1   10 7   13 5 
+      ∪ 15   , 37 ∪ 7 , 10 ∪ 23 , 13 ∪ 19 , 37 ∪ 91 , 3 ∪ 29 , 20 ∪ 37 , 14
+         33 3   8 5   13 11   12 5   8 11   14 13   40 4 
+      ∪ 91 , 8 ∪ 21 , 13 ∪ 33 , 27 ∪ 29 , 12 ∪ 19 , 26 ∪ 33 , 30 ∪ 91 , 9
+         5 11   17 6   17 13   16 1   16 14   8 19   17 5 
+      ∪ 11   , 24 ∪ 37 , 13 ∪ 36 , 27 ∪ 33 , 2 ∪ 31 , 27 ∪ 15 , 35 ∪ 31 , 9
+         19 15   18 16   20 17   19 17   11 2   17 15   20 19 
+      ∪ 33 , 26 ∪ 31 , 27 ∪ 33 , 28 ∪ 31 , 27 ∪ 17 , 3 ∪ 25 , 22 ∪ 29 , 27
+         12 17   21 20   23 3   69 7   15 19   4 22   14 23 
+      ∪ 17   , 24 ∪ 29 , 27 ∪ 31 , 4 ∪ 91 , 9 ∪ 19 , 24 ∪ 5 , 27 ∪ 17 , 27
+         25 19   27 7   29 8   26 9   28 25   31 35   87 26 
+      ∪ 29 , 22 ∪ 31 , 8 ∪ 33 , 9 ∪ 29 , 10 ∪ 31 , 27 ∪ 33 , 37 ∪ 91 , 27
+         32 33 
+      ∪ 33   , 34 ,
+        1 1   1 2   9 4   10 1   12 4   16 5   19 8 
+  Ω6 = 36 , 27 ∪ 17 , 27 ∪ 91 , 37 ∪ 91 , 9 ∪ 91 , 27 ∪ 91 , 27 ∪ 91 , 37
+         5 2   7 9   23 7   2 8   29 12   30 1   33 10 
+      ∪ 23   , 9 ∪ 29 , 37 ∪ 91 , 27 ∪ 7 , 27 ∪ 91 , 37 ∪ 91 , 3 ∪ 91 , 27
+         15 11   3 16   40 4   9 13   47 14   7 20   50 5 
+      ∪ 38 , 27 ∪ 7 , 37 ∪ 91 , 9 ∪ 19 , 27 ∪ 91 , 27 ∪ 13 , 37 ∪ 91 , 9
+         53 16   8 23   57 17   59 24   15 17   23 2   9 26 
+      ∪ 91   , 27 ∪ 13 , 37 ∪ 91 , 27 ∪ 91 , 37 ∪ 23 , 26 ∪ 35 , 3 ∪ 13 , 37
+         64 19   66 19   67 20   13 7   4 22   76 31   16 23 
+      ∪ 91 , 27 ∪ 91 , 26 ∪ 91 , 27 ∪ 17 , 9 ∪ 5 , 27 ∪ 91 , 37 ∪ 19 , 27
+         29 8   31 34   23 25   31 33   87 26 
+      ∪ 33   , 9 ∪ 34 , 37 ∪ 25 , 27 ∪ 33 , 35 ∪ 91 , 27 ,
+        1 1   1 2   9 4   10 1   12 5   1 4   16 5 
+  Ω7 = 33 , 27 ∪ 17 , 27 ∪ 91 , 37 ∪ 91 , 9 ∪ 91 , 37 ∪ 7 , 27 ∪ 91 , 27
+                          22 9   9 7   2 8   29 9   10 11 
+      ∪ 19   , 8 ∪ 20
+          91 37
+                        , 2 ∪ 91
+                      91 9
+                                 , 37 ∪ 35 , 27 ∪ 7 , 27 ∪ 91 , 28 ∪ 31 , 34
+         33 10   36 15   37 11   3 16   40 4   10 13   47 14 
+      ∪ 91 , 27 ∪ 91 , 37 ∪ 91 , 27 ∪ 7 , 37 ∪ 91 , 9 ∪ 21 , 27 ∪ 91 , 27
+         7 20   50 5   53 16   8 23   57 17   59 24   9 26 
+      ∪ 13   , 37 ∪ 91 , 9 ∪ 91 , 27 ∪ 13 , 37 ∪ 91 , 27 ∪ 91 , 37 ∪ 13 , 37
+         64 19   66 27   67 20   10 7   73 30   74 22   11 23 
+      ∪ 91 , 27 ∪ 91 , 37 ∪ 91 , 27 ∪ 13 , 9 ∪ 91 , 37 ∪ 91 , 27 ∪ 13 , 27
+         80 8   83 34   12 25   87 26 
+      ∪ 91   , 9 ∪ 91 , 37 ∪ 13 , 27 ∪ 91 , 27 ,
+        1 1   6 2   9 1   3 4   10 1   2 5   1 4 
+  Ω8 = 31 , 27 ∪ 91 , 27 ∪ 91 , 10 ∪ 29 , 37 ∪ 91 , 9 ∪ 15 , 37 ∪ 7 , 27
+         3 5   7 5   7 8   20 2   8 9   9 7   5 8 
+      ∪ 17   , 28 ∪ 38 , 27 ∪ 33 , 37 ∪ 91 , 9 ∪ 33 , 37 ∪ 31 , 24 ∪ 17 , 27
+         4 10   37 11   11 13   7 20   16 5   53 7   17 16 
+      ∪ 11 , 27 ∪ 91 , 27 ∪ 23 , 27 ∪ 13 , 37 ∪ 29 , 9 ∪ 91 , 12 ∪ 29 , 27
+         13 23   23 7   64 19   14 20   10 27   25 30   74 22 
+      ∪ 21   , 37 ∪ 33 , 10 ∪ 91 , 27 ∪ 19 , 27 ∪ 13 , 35 ∪ 31 , 37 ∪ 91 , 27
+         11 23   80 31   83 11   12 25   22 26 
+      ∪ 13 , 27 ∪ 91 , 35 ∪ 91 , 12 ∪ 13 , 27 ∪ 23 , 27 ,
+        1 1   2 1   7 10   12 13   17 20   15 23   24 25 
+  Ω9 = 29  , 28 ∪ 29 , 14 ∪ 19 , 27 ∪ 25 , 27 ∪ 23 , 27 ∪ 17 , 26 ∪ 25 , 26 ,
+and Ω10 = ∅.
+36                                                                           W. Zudilin
+
+
+     The application of Proposition 5 completes the proof.
+
+Remark. In [Zu4] we consider a particular case of the above construction and arrive
+at the irrationality of at least one of the eight odd zeta values starting from ζ(5);
+namely, we take r = 3, q = 21, η0 = 20, and η1 = · · · = η21 = 7 to achieve this
+result.
+    Looking over all integral directions η = (η0 ; η1 , . . . , ηq ) with q = 7, 9, and 11
+satisfying the conditions
+                                              1
+                   η1 ≤ η2 ≤ · · · ≤ ηq <       η0    and     η0 ≤ 120
+                                              2
+we have discovered that no set η yields the irrationality of at least one of the
+numbers ζ(5), ζ(7), and ζ(9) via Proposition 5. Thus, we can think about natural
+bounds of the ‘pure’ arithmetic approach achieved in Theorem 3.
+    In a similar way our previous results [Zu4] on the irrationality of at least one
+of the numbers in each of the two sets
+
+                         ζ(7), ζ(9), ζ(11), . . . , ζ(33), ζ(35),
+                         ζ(9), ζ(11), ζ(13), . . . , ζ(49), ζ(51)
+
+can be improved. We are not able to demonstrate the general case of Lemma 20,
+although this lemma (after removing the hypothesis Re τ0 < η0 ) remains true for
+odd r > 3 and for any suitable choice of directions η (cf. [Zu3], Section 2).
+
+
+9      One arithmetic conjecture and
+       group structures for odd zeta values
+To expose the arithmetic of linear forms produced by the quantities (8.4) in the
+general case we require a certain normalization by factorials similar to (7.1), (7.2),
+or (8.6). To this end we introduce a contiguous set of parameters e:
+
+     e0k = hk − 1, 1 ≤ k ≤ q,       and   ejk = h0 − hj − hk , 1 ≤ j < k ≤ q,       (9.1)
+
+which plays the same role as the set c in Sections 4–6, and fix a normalization
+                                              Π1 (e) e
+                                    F (h) =          F (h),
+                                              Π2 (e)
+
+where Π1 (e) is a product of some q − r factorials of ejk and Π2 (e) is a product of
+2r factorials of e0k′ with indices satisfying the condition
+                   [          [
+                      {j, k} ∪ {k ′ } = {1, 2, . . . , q} ∪ {1, 2, . . . , q}.
+                   j,k         k′
+Arithmetic of linear forms involving odd zeta values                                  37
+
+
+For simplicity we can present a concrete normalization; denoting
+                       
+                       h for j = 1, . . . , q,
+                          j
+                 aj =
+                       h0 for j = q + 1, . . . , q + r,
+                       
+                       1                for j = 1, . . . , r,
+                  bj =
+                       1 + h0 − hj−r for j = r + 1, . . . , r + q,
+
+we define the rational function
+                                                   q+r
+                                                    Y
+                     R(t) = R(h; t) := (h0 + 2t)         R(aj , bj ; t)
+                                                   j=1
+
+(where the bricks R(aj , bj ; t) are defined in (7.3) ) and the corresponding quantity
+                        ∞                        Qq
+                 1     X                           j=r+1 ej−r,j !
+    F (h) :=                R  (r−1)
+                                     (t) = Qr            Qq+r             · Fe (h). (9.2)
+              (r − 1)! t=0                   j=1 e0j ! ·  j=q+1 e 0,j−r !
+
+    Nesterenko’s theorem in [Ne3] (which is not the same as Proposition 1 in Sec-
+tion 3) and our results in Section 7 yield the inclusion
+  r
+ Dm 1
+      Dm2 · · · Dmq−r · F (h) ∈ Zζ(q − 2) + Zζ(q − 4) + · · · + Zζ(r + 2) + Z, (9.3)
+
+where m1 , m2 , . . . , mq−r are the successive maxima of the set e, and Lemmas 17, 18
+allow us to exclude extra primes appearing in coefficients of linear forms (9.3).
+    In spite of the natural arithmetic (9.3) of the linear forms (9.2), Ball’s exam-
+ple (4.3) supplemented with direct calculations for small values of h0 , h1 , . . . , hq
+and Rivoal’s conjecture [Ri3], Section 5.1, enables us to suggest the following.
+
+Conjecture. There holds the inclusion
+    r
+   Dm 1
+        Dm2 · · · Dmq−r−1 · F (h) ∈ Zζ(q − 2) + Zζ(q − 4) + · · · + Zζ(r + 2) + Z,
+
+where m1 , m2 , . . . , mq−r−1 are the successive maxima of the set (9.1).
+
+   We underline that a similar conjecture does not hold for the quantities
+                                     X∞
+                               1
+                F (h; z) :=              R(r−1) (t)z t       with z 6= ±1
+                            (r − 1)! t=0
+
+producing linear forms in polylogarithms; the case z = ±1 is exceptional.
+   If this conjecture is true, cancellation of extra primes with the help of Lem-
+mas 17, 18 becomes almost useless, while the action of the h-trivial group (i.e., the
+group of all permutations of the parameters h1 , . . . , hq ) comes into play. Indeed,
+the quantity
+                                        Π2 (e)
+                               Fe(h) =         · F (h)
+                                        Π1 (e)
+38                                                                                        W. Zudilin
+
+
+is stable under any permutation of h1 , . . . , hq , hence we can apply arguments
+similar to the ones considered in Section 5 to cancell extra primes.
+    Finally, we mention that an analytic evaluation of linear forms F (h) and their
+coefficients after a choice of directions and an increasing parameter n can be carried
+out by the saddle-point method, as in [Zu3], Sections 2 and 3 (see also [He, Ri4,
+Ne3]).
+    The particular case r = 1 of the above construction can be regarded as a natural
+generalization of both the Rhin–Viola approach for ζ(3) and Rivoal’s construction
+[Ri1]. In this case we deal with usual well-poised hypergeometric series, and the
+group structure considered above, provided that Conjecture holds, as well as the
+approach of Section 8 will bring new estimates for the dimensions of the spaces
+spanned over Q by 1 and ζ(3), ζ(5), ζ(7), . . . . If we set r = 1, q = k+2, h0 = 3n+2,
+and h1 = · · · = hq = n + 1 in formula (9.2), where n, k are positive integers and
+k ≥ 3 is odd, and consider the corresponding sequence
+                      X∞         
+                 k−1           n (t − 1) · · · (t − n) · (t + n + 1) · · · (t + 2n)
+     Fk,n = 2n!            t+
+                      t=1
+                                2         tk+1 (t + 1)k+1 · · · (t + n)k+1          (9.4)
+             ∈ Qζ(k) + Qζ(k − 2) + · · · + Qζ(3) + Q,                   n = 1, 2, . . .
+
+(cf. (4.3) ), then it is easy to verify that
+                                           log |F5,n |
+                                     lim               = −6.38364071 . . . .                   (9.5)
+                                 n→∞            n
+The mysterious thing here is the coincidence of the asymptotics (9.5) of the linear
+forms F5,n with the asymptotics of Vasilyev’s multiple integrals
+                  Z     Z
+                              xn1 (1 − x1 )n · · · xn5 (1 − x5 )n dx1 · · · dx5
+         Jn (5) = · · ·                                                         ,
+                          (1 − (1 − (1 − (1 − (1 − x1 )x2 )x3 )x4 )x5 )n+1
+                            [0,1]5
+
+for which the inclusions
+
+                     Dn5 · Jn (5) ∈ Zζ(5) + Zζ(3) + Z,                n = 1, 2, . . . ,
+
+are proved in [Va]. Moreover, we have checked that, numerically,
+
+       F5,1 = 18ζ(5) + 66ζ(3) − 98,               F7,1 = 26ζ(7) + 220ζ(5) + 612ζ(3) − 990,
+                 F9,1 = 34ζ(9) + 494ζ(7) + 2618ζ(5) + 6578ζ(3) − 11154,
+
+hence these linear forms are the same forms as listed in [Va], Section 5. Therefore,
+it is natural to conjecture1 the coincidence of Vasilyev’s integrals
+               Z     Z n
+                       x1 (1 − x1 )n xn2 (1 − x2 )n · · · xnk (1 − xk )n dx1 dx2 · · · dxk
+      Jn (k) = · · ·                                                                       ,
+                           (1 − (1 − (· · · (1 − (1 − x1 )x2 ) · · · )xk−1 )xk )n+1
+                   [0,1]k
+     1 This conjecture is recently proved in [Zu6], [Zu7].
+Arithmetic of linear forms involving odd zeta values                              39
+
+
+for odd k with the corresponding hypergeometric series (9.4); we recall that in the
+case k = 3 this coincidence follows from Propositions 1 and 2. A similar conjecture
+can be put forward in the case of even k in view of Whipple’s identity (6.6).
+
+   We hope that the methods of this work will find a continuation in the form of
+new qualitative and quantitative results on the linear independence of values of
+the Riemann zeta function at positive integers.
+
+
+References
+[Ap]    R. Apéry, Irrationalité de ζ(2) et ζ(3), Astérisque 61, 11–13 (1979)
+
+[Ba1]   W. N. Bailey, Some transformations of generalized hypergeometric series,
+        and contour integrals of Barnes’s type, Quart. J. Math. Oxford 3, no. 11,
+        168–182 (1932)
+
+[Ba2]   W. N. Bailey, Transformations of well-poised hypergeometric series, Proc.
+        London Math. Soc. II Ser. 36, no. 4, 235–240 (1934)
+
+[Ba3]   W. N. Bailey, Generalized hypergeometric series, Cambridge Math. Tracts
+        32 (Cambridge University Press, Cambridge 1935); 2nd reprinted edition
+        (Stechert-Hafner, New York 1964)
+
+[BR]    K. Ball, T. Rivoal, Irrationalité d’une infinité de valeurs de la fonction
+        zêta aux entiers impairs, Invent. Math. 146, no. 1, 193–207 (2001)
+
+[Be]    F. Beukers, A note on the irrationality of ζ(2) and ζ(3), Bull. London
+        Math. Soc. 11, no. 3, 268–272 (1979)
+
+[Ch]    G. V. Chudnovsky, On the method of Thue–Siegel, Ann. of Math. II Ser.
+        117, no. 2, 325–382 (1983)
+
+[DV]    R. Dvornicich, C. Viola, Some remarks on Beukers’ integrals, Colloq.
+        Math. Soc. János Bolyai 51, 637–657 (North-Holland, Amsterdam 1987)
+
+[FN]    N. I. Fel′dman, Yu. V. Nesterenko, Transcendental numbers (Number the-
+        ory IV ), Encyclopaedia Math. Sci. 44 (Springer-Verlag, Berlin 1998)
+
+[Gu]    L. A. Gutnik, On the irrationality of certain quantities involving ζ(3),
+        Uspekhi Mat. Nauk [Russian Math. Surveys] 34, no. 3, 190 (1979); Acta
+        Arith. 42, no. 3, 255–264 (1983)
+
+[Ha1]   M. Hata, Legendre type polynomials and irrationality measures, J. Reine
+        Angew. Math. 407, no. 1, 99–125 (1990)
+40                                                                     W. Zudilin
+
+
+[Ha2]   M. Hata, Irrationality measures of the values of hypergeometric functions,
+        Acta Arith. 60, no. 4, 335–347 (1992)
+
+[Ha3]   M. Hata, Rational approximations to the dilogarithm, Trans. Amer. Math.
+        Soc. 336, no. 1, 363–387 (1993)
+
+[Ha4]   M. Hata, A note on Beukers’ integral, J. Austral. Math. Soc. Ser. A 58,
+        no. 2, 143–153 (1995)
+
+[Ha5]   M. Hata, A new irrationality measure for ζ(3), Acta Arith. 92, no. 1,
+        47–57 (2000)
+
+[HMV] A. Heimonen, T. Matala-Aho, K. Väänänen, On irrationality measures
+      of the values of Gauss hypergeometric function, Manuscripta Math. 81,
+      no. 1/2, 183–202 (1993)
+
+[He]    T. G. Hessami Pilerhood, Arithmetic properties of values of hypergeomet-
+        ric functions, Ph. D. thesis (Moscow University, Moscow 1999); Linear in-
+        dependence of vectors with polylogarithmic coordinates, Vestnik Moskov.
+        Univ. Ser. I Mat. Mekh. [Moscow Univ. Math. Bull.] no. 6, 54–56 (1999)
+
+[Lu]    Yu. L. Luke, Mathematical functions and their approximations (Academic
+        Press, New York 1975)
+
+[Ne1]   Yu. V. Nesterenko, A few remarks on ζ(3), Mat. Zametki [Math. Notes]
+        59, no. 6, 865–880 (1996)
+
+[Ne2]   Yu. V. Nesterenko, Integral identities and constructions of approximations
+        to zeta values, Actes des 12èmes rencontres arithmétiques de Caen (June
+        29–30, 2001), J. Théorie Nombres Bordeaux, to appear (2003)
+
+[Ne3]   Yu. V. Nesterenko, Arithmetic properties of values of the Riemann zeta
+        function and generalized hypergeometric functions, in preparation (2001)
+
+[Ni]    E. M. Nikishin, On irrationality of values of functions F (x, s), Mat. Sb.
+        [Russian Acad. Sci. Sb. Math.] 109, no. 3, 410–417 (1979)
+
+[Po]    A. van der Poorten, A proof that Euler missed... Apéry’s proof of the
+        irrationality of ζ(3) (An informal report), Math. Intelligencer 1, no. 4,
+        195–203 (1978/79)
+
+[RV1]   G. Rhin, C. Viola, On the irrationality measure of ζ(2), Ann. Inst. Fourier
+        (Grenoble) 43, no. 1, 85–109 (1993)
+
+[RV2]   G. Rhin, C. Viola, On a permutation group related to ζ(2), Acta Arith.
+        77, no. 1, 23–56 (1996)
+Arithmetic of linear forms involving odd zeta values                               41
+
+
+[RV3]   G. Rhin, C. Viola, The group structure for ζ(3), Acta Arith. 97, no. 3,
+        269–293 (2001)
+
+[Ri1]   T. Rivoal, La fonction zêta de Riemann prend une infinité de valeurs
+        irrationnelles aux entiers impairs, C. R. Acad. Sci. Paris Sér. I Math.
+        331, no. 4, 267–270 (2000); E-print math.NT/0008051
+
+[Ri2]   T. Rivoal, Irrationnalité d’une infinité de valeurs de la fonction zêta aux
+        entiers impairs, Rapport de recherche SDAD no. 2000-9 (Université de
+        Caen, Caen 2000)
+
+[Ri3]   T. Rivoal, Propriétés diophantiennes des valeurs de la fonction zêta de
+        Riemann aux entiers impairs, Thèse de doctorat (Université de Caen,
+        Caen 2001)
+
+[Ri4]   T. Rivoal, Irrationalité d’au moins un des neuf nombres ζ(5), ζ(7), . . . ,
+        ζ(21), Acta Arith. 103, 157–167 (2001); E-print math.NT/0104221
+
+[Ru]    E. A. Rukhadze, A lower bound for the approximation of ln 2 by rational
+        numbers, Vestnik Moskov. Univ. Ser. I Mat. Mekh. [Moscow Univ. Math.
+        Bull.] no. 6, 25–29 (1987)
+
+[Sl]    L. J. Slater, Generalized hypergeometric functions, 2nd edition (Cambridge
+        University Press, Cambridge 1966)
+
+[Va]    D. V. Vasilyev, On small linear forms for the values of the Riemann zeta-
+        function at odd points, Preprint no. 1 (558) (Nat. Acad. Sci. Belarus,
+        Institute Math., Minsk 2001)
+
+[Vi]    C. Viola, Hypergeometric functions and irrationality measures, Analytic
+        Number Theory (ed. Y. Motohashi), London Math. Soc. Lecture Note Ser.
+        247, 353–360 (Cambridge University Press, Cambridge 1997)
+
+[Zu1]   W. V. Zudilin, Irrationality of values of zeta function at odd integers,
+        Uspekhi Mat. Nauk [Russian Math. Surveys] 56, no. 2, 215–216 (2001)
+
+[Zu2]   W. Zudilin, Irrationality of values of zeta-function, Contemporary re-
+        search in mathematics and mechanics, Proceedings of the 23rd Confer-
+        ence of Young Scientists of the Department of Mechanics and Mathemat-
+        ics (Moscow State University, April 9–14, 2001), part 2, 127–135 (Publ.
+        Dept. Mech. Math. MSU, Moscow 2001); E-print math.NT/0104249
+
+[Zu3]   W. V. Zudilin, Irrationality of values of the Riemann zeta function, Izv.
+        Ross. Akad. Nauk Ser. Mat. [Russian Acad. Sci. Izv. Math.] 66, no. 3,
+        49–102 (2002)
+42                                                                         W. Zudilin
+
+
+[Zu4]   W. V. Zudilin, One of the eight numbers ζ(5), ζ(7), . . . , ζ(17), ζ(19) is ir-
+        rational, Mat. Zametki [Math. Notes] 70, no. 3, 472–476 (2001)
+
+[Zu5]   W. V. Zudilin, Cancellation of factorials, Mat. Sb. [Russian Acad. Sci. Sb.
+        Math.] 192, no. 8, 95–122 (2001); E-print math.NT/0008017
+
+[Zu6]   W. Zudilin, Well-poised hypergeometric service for diophantine problems
+        of zeta values, Integral identities and constructions of approximations to
+        zeta values, Actes des 12èmes rencontres arithmétiques de Caen (June
+        29–30, 2001), J. Théorie Nombres Bordeaux, submitted for publication
+        (2002)
+
+[Zu7]   W. V. Zudilin, Very-well-poised hypergeometric series and multiple in-
+        tegrals, Uspekhi Mat. Nauk [Russian Math. Surveys] 57, no. 4 (2002);
+        E-print math.CA/0206177
+

@@ -1,0 +1,718 @@
+J OURNAL DE T HÉORIE DES N OMBRES DE B ORDEAUX
+
+
+
+
+ Y URI V. N ESTERENKO
+ Integral identities and constructions of
+ approximations to zeta-values
+ Journal de Théorie des Nombres de Bordeaux, tome 15, no 2 (2003),
+ p. 535-550
+ <http://www.numdam.org/item?id=JTNB_2003__15_2_535_0>
+
+
+
+
+     © Université Bordeaux 1, 2003, tous droits réservés.
+     L’accès aux archives de la revue « Journal de Théorie des Nombres
+     de Bordeaux » (http://jtnb.cedram.org/) implique l’accord avec les condi-
+     tions générales d’utilisation (http://www.numdam.org/conditions). Toute uti-
+     lisation commerciale ou impression systématique est constitutive d’une
+     infraction pénale. Toute copie ou impression de ce fichier doit conte-
+     nir la présente mention de copyright.
+
+
+
+
+                       Article numérisé dans le cadre du programme
+                     Numérisation de documents anciens mathématiques
+                                  http://www.numdam.org/
+                             535-
+
+
+
+
+           Integral identities and constructions
+             of approximations to zeta-values
+
+                        par YURI V. NESTERENKO
+
+
+       RÉSUMÉ. Nous présentons une construction générale de combi-
+       naisons linéaires à coefficients rationnels en les valeurs de la fonc-
+       tion zêta de Riemann aux entiers. Ces formes linéaires sont ex-
+       primées en termes d’intégrales complexes, dites de Barnes, ce qui
+       permet de les estimer. Nous montrons quelques identités reliant
+       ces intégrales à des intgrales multiples sur le cube unité réel.
+
+
+       ABSTRACT. Some general construction of linear forms with ra-
+       tional coefficients in values of Riemann zeta-function at integer
+       points is presented. These linear forms are expressed in terms of
+       complex integrals of Barnes type that allows to estimate them.
+       Some identity connecting these integrals and multiple integrals on
+       the real unit cube is proved.
+
+
+
+                                 1. Introduction
+
+   Apery’s proof of irrationality of ((3) uses an elementary and rather com-
+plicated construction of rational approximations un/vn E Q to this number
+based on a recurrence relation. In [1] the following integral interpretation
+of these sequences un, vn was proposed
+
+
+
+
+Another presentation for the same sequences can be found in [4]
+
+
+
+Here r(s) is Euler gamma-function and the contour C is the vertical straight
+line that begins at -1/2 - ioo and ends at -1/2 + ioo.
+   In particular the aim of this article is to prove the coincidence of the
+integrals ( 1 ) and (2). Besides we prove a more general integral identity
+  Manuscrit recu le 5 juin 2002.
+  This research was partially supported by INTAS-RFBR grant No 97-1904.
+536
+
+
+
+(Theorem 2) connected to the construction of functional linear forms in
+polylogarithmic functions
+
+
+In this way since we have the equality Lk(1) _ «(k) one can construct small
+linear forms in zeta-values at integer points, which are more general than
+right-hand sides of (1) and (2).
+                2. General construction of linear forms in
+                                          polylogarithms.
+      Let      1, b~ &#x3E; 1, j   =
+                                       1,..., m, be integers. Define
+
+
+
+where q is a rational number that will be defined later.
+      Denote
+
+
+
+
+and
+
+
+Then
+
+
+
+
+The last equality defines the constant -y =   b) &#x3E; 0.
+  In what follows an important role belongs to the function
+
+
+
+
+The parameter (5)
+
+
+is useful for a description of the convergence domain of (5). We will assume
+that 8 &#x3E; 1.     2, then the series (5) converges in the circle lzl 1. In
+the case 6 = 1, this series diverges at the point z 1.         =
+
+
+   In the sequel the notation Aj will be used for special segments of the
+real line. Define
+                                                 and
+                                                                         537
+
+
+For the length of Aj we will use notation
+  For any integer i define
+
+
+and denote
+
+The rational function R(s) can be presented as a sum of simple fractions
+
+
+
+
+where P is the union of sets       E S2. Note that the equality d(1) = 0 is
+possible. For coefficients     we have the   expression
+
+
+where d = d( i). Farther denote q maXtEp d(e).
+                                  =
+
+
+  Due to (7) one can find the following equalities
+
+
+
+
+This confirms that the sum (5) is a linear form in 1 and polylogarithms
+with polynomial in 1/z coefficients. It is clear that analogous result can
+be proved if we put as coefficients of the series any derivative of R(s) and
+shift the lower limit of summation on any admissible integer number. The
+following Proposition defines our general construction.
+Proposition 1. Let a, p be integers satisfying inequalities a aj, j E S2,
+and p &#x3E; 1. Then for any z from the convergence domain of the series
+
+
+the following identity holds
+
+
+
+
+Here
+538
+
+
+
+
+Proof. By (7) one can find
+
+
+
+and
+
+
+
+
+This proves Proposition 1.
+      Note that in the case 6 &#x3E; 2 we have A1 (1) = 0, since
+
+
+
+Another reason for this equality is the divergence of L1 (z) and the converge-
+nce of Lk (z), k &#x3E; 2, at the point z = 1.
+   Consider some more interesting partial choices of parameters ai, b~. The
+following Proposition describes a construction of simultaneous Pade ap-
+proximations for polylogarithms at neighbourhood of infinity.
+Proposition 2. Let r be integers, 1          r   m, and parameters aj, bj
+following conditions
+
+For any ~, 1        ~    r, define a function          by the equality
+
+
+
+These fqcnctions have the representation
+
+
+
+
+where
+                                                                           539
+
+
+
+
+In particular
+
+
+and
+
+
+   Note that polynomials           do not depend on the index 0. In the
+case r =  1 and J = 1 the above construction gives the Pade approximation
+of the first kind and for r = m - 1 and J  = 1 it gives the approximations
+of the second kind.
+
+Proof. In the conditions we have
+
+This is a reason why the equalities (13)-(15) follow from (10) and (11).
+  The inequalities (16) follow from (14).
+-
+  The inequalities (17) are valid, since due to (12) we have     -1)(v)=    0
+
+
+Proposition 3. Assume that the parameters aj, bj satisfy the conditions
+
+for some c. Then for polynomials Ak(x), defined in Proposition 1 the fol-
+lowing equalities hold
+
+   The condition (18) in this context was proposed by K. Ball and used in
+first by T. Rivoal [6].
+
+Proof. Since all parameters are integers and due to identity                =
+
+
+
+
+7r , we find
+
+
+Therefore the function R(s) has the property
+
+
+The representation (7) implies
+540
+
+
+Since (18) we derive that for I E P the inclusion c - I E P and equality
+d(c - 1) = d(l) hold. Moreover when I runs through the set P, also the
+number c - I runs through this set. Hence (19) implies that
+
+
+
+
+                                                              ’
+
+
+
+
+Compared together the last equality and (7), we find
+
+
+Hence
+
+
+
+
+Then                            and this proves Proposition 3.               0
+
+    In particular the last Proposition implies that in case under consideration
+with 8 &#x3E; 2 and even It+ 6 the number G(1) is a linear combination of 1 and
+values of Riemann zeta-function at odd points with rational coefficients.
+But for odd it + 6 the number G(1) is a polynomial in ’1f2 with rational
+coefficients.
+
+                       3.   Integral representations.
+   For applications of above construction of linear forms one need upper
+bounds for the absolute value of these forms. Here we will find analytic
+representations for functions       see (9), which allow in some cases to
+find estimates and even asymptotics for their values.
+
+3.1. Hypergeometric functions. The generalized hypergeometric func-
+tion with parameters al, ... , a"a, b2, ... , bum E ~ is given by the series
+
+
+
+
+where the symbol (a)o = 1, (a)" = a(a + 1) ... (a + v - 1), v &#x3E; 1. Here
+one assumes that ai, b~ are distinct from negative integers. The series (20)
+absolutely converges for any Izl 1 and for izl = 1 if an additional condition
+
+is satisfied, see (3~.
+   In this subsection we consider a partial case of the construction (9),
+corresponding to the choice = 1, a = al.
+                                                                                 541
+
+
+    Lemma 1. Let bl         1 al .... a"1, b2,...,bm be positive integers with
+                              =
+
+
+    a =al :5 aj, j E S2, and  R(s), Gl (z) be functions defined by (3) and (9).
+    Then the following identity holds
+
+
+
+
+    Proof. Since R(x)         0, 1 -    x   -1, we derive
+                                                                                       "
+
+
+
+
+                          =
+
+
+
+
+    Due to r(v+a)    =
+                         r(a).          0, the above equalities prove the identity.
+                                                                                  0
+      In particular for
+
+
+    Lemma 1 implies
+
+
+
+       The generalized hypergeometric function has several integral represen-
+    tations, see [3], [7], and in this way it has analytic continuation in the whole
+    complex plain with some cuttings. Although some of the formulae in this
+    subsection are classical, we have included their proofs for the convenience
+    of the reader. In two following lemmas we assume that the parameters
+    aj, bj are complex numbers.
+       The first one is a multidimentional generalization of Euler representation
+    for Gaussian hypergeometric function.
+    Lemma 2. Let bl - 1 and                      b2, ..., b,.,,,, be complex numbers
+    satisfying
+
+.
+    The integral J1 (z) is defined by
+
+
+
+
+    In these conditions the following assertions hold.
+      l. The integral Jl (z) absolutely converges for any z E C, arg(1 - z) I
+    x,.
+542
+
+
+      2. For any z, lzl    1, we have
+
+
+
+      3. If 5 &#x3E; 1, see (21), we have (23) for any complex z, lzl   1.
+
+Proof. 1. The first assertion is trivial, since in the conditions the function
+1 - zx2 ~ ~ ~ x"1 is distinct from 0 on the cube [0;
+  2. To prove the second one, see [7], subsection 4.1, we apply the identity
+
+
+
+
+to the function (1 - ~2’’’                 Since I z     1, the corresponding series
+uniformelly converges on the cube [0;                  Hence
+
+
+
+
+and this proves the identity.
+  3. Primarily let us prove for any real a, 0            a rrz - 1, the following
+identity
+
+
+
+
+where both the series and the integral converge.
+  Convergence of the series is the consequence of 2(m -1) - (m - 1) - a           =
+
+
+m - a - 1 &#x3E; 0, see (7~, subsection 2.2.
+  Let us prove that the integral in (24) converges. Let .~ be real number
+such that 0 À 1. Then we derive
+
+
+
+
+The first equality is obtained by the transformation of variables ~Z = Àt2,
+xj = t~, j &#x3E; 3, and the second one is a consequence of (23).
+                                                                               543
+
+
+   Since the convergence of the series (24) one can compute the limit for
+a -3 1. This proves that the integral in (24) converges and the equality
+(24) itself.
+   Since 1 - xj 1 - x2 ~ ~ ~ x", on the cube [0,1]~"~, we obtain
+
+
+
+
+This proves the convergence of the integral Jl(1).
+   For any z, lzl  1, we have 11 - zx2 ~ ~ ~    1- ~2 ~ - ~ Xm. Therefore the
+integral Jl(z) uniformely converges on the set lzl 1, and is continuous
+function on this set. The sum of (20) is continuous function too. Hence
+the equality (23) is valid for every z with lzl 1.                         0
+   Lemma 2 demonstrates that the function            from Lemma 1 can be
+expressed by   Euler’s multiple integral only in the  case when the set Si
+consists of one element. Following representation of generalized hypergeo-
+metric function as a Mellin-Barnes type integral is valid in less restrictive
+conditions on parameters, see [3], subsection 5.3.1.
+Lemma 3. Let bl        =  1 and al, ... , a;",, b2, ... , bm be complex numbers,
+a~ ~ 0, -1, -2, ... , and  let the integral I(z) be defined by the equality
+
+
+
+
+there the path of integration L is coming from -ioo to ioo and separates
+the poles of r(s +     1 j m from the poles of r(-s). Besides
+
+Under these conditions the following assertions hold.
+  1. For any.z E C such that              I 7r, z 0 0, the integral I(z)
+absolutely converges.
+   2. Suppose z is a positive real number arg(-z)       =   ±7r and 6 &#x3E; 1, see
+(21); then the integrnl I(z) converges absolutely.
+   3. For any z, ~ arg(-z))I    7r such that both the integral I(z) and the
+
+series (20) converge the following equality holds
+
+
+
+
+Proof. By ~Y(~) denote the function under the integral (25). Then we obtain
+544
+
+
+Due to
+
+
+
+
+and
+
+
+
+
+see   [81, we find
+
+
+
+where ci here and later are positive constants depending only on z,.aj, bj
+and the path L. Since
+
+
+
+then
+
+
+
+This inequality implies the absolute convergence of the integral from (32)
+for 1 arg( -z)1 ~ and for 1 arg( -z)1 = x, if we additionaly postulate J &#x3E; 1.
+   To prove the last assertion we suppose Izl     1 and 1 arg( -z)1   7r. Due
+to uniqueness theorem the identity will be true for other points of converge
+at lzl    1.
+   Denote T N+1/2, where N is sufficiently large integer number. Since
+               =
+
+
+the inequality (28) is satisfied on the contour C composed of segments
+                                                                    fc
+connecting the points iT, T + iT, T - iT, -iT, the integral BII (s )ds tends
+to zero when N - +00. Then the integral 1(z) can be evaluated as the
+sum of the residues of ~(~) at points ( = 0,1, 2, ... taken with the sign
+minus
+
+
+
+
+Since r(a -E- n)     =
+                         r(a) . (a)n the last identity proves the assertion.    0
+
+Corollary 1. Let bl          =   1 and al, ... ,    b2, ..., bm be complex numbers
+satisfying
+                                                                             545
+
+
+Then for any z E C under condition I arg(-z) I     1r the following identity
+holds                                      .
+
+
+
+
+where the path of integration L is the same as in Lemma 3.
+  Suppose that J &#x3E; 1 and z is a real number 0 z 1, arg(-z)        =
+                                                                           :l:1r;
+then the above identity is satisfied.
+
+Proof. For Izi 1 the identity is a consequence of Lemmas 2 and 3. For
+remaining z it is valid due to uniqueness of the analytic continuation. 0
+3.2. Hypergeometric integrals. Here we will find integral representa-
+tions for sums             defined in Proposition 1. These representations are
+useful in applications for computation of asimptotics for constructed linear
+forms.
+   Let r &#x3E; 2 be integer and be complex number. Denote
+
+
+
+
+where L is a path in complex plane the same as in Lemma 3. It is easy
+to check with the inequalities like (28), that the integral (29) converges for
+l3lul r. The following assertion express the function              in terms of
+integrals (29) and is analogous in this respect to Lemma 3.
+Theorem 1. In conditions of Proposition 1 there exist constants      de-
+pending only   on r, such that for any z e1riu, l3lul 2,
+                                               =           the following
+inequalities hold
+
+
+
+
+All the integralls are evaluated on stright line Rs = 1/2-a comming bottom-
+up.
+
+   Relations of this kind were used at first by L. A. Gutnik, [2] in opposite
+direction, and T. Hessami-Pilerhood, [5].
+   The proof of following Lemma gives the way to compute all coefficients.
+546
+
+
+Lemma 4. For any integer r &#x3E; 2 there exist rational numbers da such that
+the following asymptotic equality holds
+
+
+
+
+Proof. We prove this assertion by induction on r. For r           =    2 it is true with
+do    =   1. Assume that this assertion is true for some r &#x3E; 1.
+     Differentiate (30) and apply formulas
+
+
+
+
+we derive
+
+
+
+
+Last equality proves the assertion needed.                                            0
+
+      Another proof of Lemma 4 one can find in [9, Lemma 2.2.].
+
+Proof of Theorem 1. With the coefficients da introduced in Lemma 4 we
+find
+
+
+
+
+where
+
+
+
+
+Lemma 4 implies that the function U(s) has 1 as period, besides in a
+neighbourhood af every integer point v the assymptotic equality holds
+                                                                           547
+
+
+The integral in right-hand side of (31) equals to the sum of the residues at
+integer points v &#x3E; 1/2 - a. Therefore
+
+
+
+
+The last equality implies
+                                                   i
+                                                .._1
+
+
+
+
+This allows to enforce the inductive argument on r.                            0
+  The following Theorem connects multiple integrals of special kind and
+complex integrals (29).
+Theorem 2. Let m, r, 1        r   m, be zntegers, c be negate real number
+and al, ... am b2, ...,       complex numbers satisfying
+
+
+Then for any complex number z, ~ arg zi       ~ the following identity holds
+
+
+
+
+where both integrals converge. Here
+
+
+and the path of integration L is the stright line RC   =
+                                                           c, coming from -ioo
+to ioo.
+
+Proof. Obviously, the integral on the left-hand side of (32) converges.
+   Let us prove the absolute convergence of the integral in right-hand side
+for largzl 7rr.
+   Denote the function under the right integral of (32) as ~(~). Then we
+have                      -   -       -   _
+548
+
+
+where
+
+
+
+      Using (26), (27) we obtain
+
+
+
+Since on the path of integration
+
+
+
+we    get
+
+
+This inequality implies absolute convergence of the integral in right-hand
+side of (32) for I arg zi rx.
+   According to Lemma 2 the left-hand side of (32) can be expressed in the
+form
+
+
+
+
+  Apply to the inner integral of the right-hand side of (34) Corollary 1
+with the path L given in conditions of the Proposition. Then we derive
+
+
+
+
+and
+                                                                         549
+
+
+Now one can change the order of integration and to make the external
+integration on (:
+
+
+
+
+On the path L the following equalities hold
+
+
+
+Therefore
+
+
+
+
+and we obtain (32).
+  For any (6L we have
+
+
+
+
+This implies that the integral converges and does not depend on the variable
+(. In addition the integral
+
+
+
+
+absolutely converges due to Lemma 3.       This grounds the possibility to
+change the order of integration in (35).                                0
+
+   Note that for integer parameters aj,bj the integral in right-hand side
+of (32) owing to the relation             x) 4 can be written in the
+                                              =
+
+
+form (29). And conversely   the integral (29) can be expressed as multiple
+integral. Namely the integral         for z = e1riu concides up to the sign
+550
+
+
+with
+
+
+
+
+in the case of convergence.
+
+                                          References
+[1] F. BEUKERS, A note on the irrationality of 03B6(2) and 03B6(3). Bull. London Math. Soc. 11 (1979),
+      268-272.
+[2] L. A. GUTNIK, The irrationality of certain quantities involving 03B6(3). Acta Arith. 42 (1983),
+      255-264.
+[3] YU. L. LUKE, Mathematical functions and their approximations. Academic Press, New York,
+      1975.
+[4] YU. NESTERENKO, A few remarks on 03B6(3). Math. Notes 59 (1996), 625-636.
+[5] T. HESSAMI- PILERHOOD, Linear independence of vectors with polylogarithmic coordinates.
+    Vestnik Moscow University Ser.1 (1999), no6, 54-56.
+[6] T. RIVOAL, La fonction Zêta de Riemann prend une infinité de valeurs irrationnelles aux
+    entiers impairs. C. R. Acad. Sci. Paris 331 (2000), 267-270.
+[7] L. J. SLATER, Generalized hypergeometric functions. Cambridge Univ. Press, 1966.
+[8] E. T. WHITTAKER, G. N. WATSON, A course of modern analysis. Cambdidge University
+      Press, 1927.
+[9] V. V. ZUDILIN, On irrationality of values of Riemann zeta function. Izvestia of Russian Acad.
+      Sci. 66, 2002, 1-55.
+
+Yuri V. NESTERENKO
+Moscow State University
+Faculty of Mechanics and Mathematics
+Vorob’evy gory
+119899 Moscow
+Russia
+E-rrtail : nestQtraas . math.msu. su
+

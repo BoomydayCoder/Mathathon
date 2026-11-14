@@ -1,0 +1,112 @@
+{
+  "retrieved_or_inspected_utc": "2026-11-14T11:11:02.895139+00:00",
+  "comparison_note": "../problem131/rodrigues-primary-source-comparison.md",
+  "scope": "Bounded primary-source comparison, not an exhaustive novelty search. Exact theorem specializations distinguished from proof that an author separately studied the specialization.",
+  "sources": [
+    {
+      "authors": "Yuri V. Nesterenko",
+      "title": "Integral identities and constructions of approximations to zeta-values",
+      "version": "JTNB15(2)(2003),535–550",
+      "source_url": "https://jtnb.centre-mersenne.org/item/10.5802/jtnb.412.pdf",
+      "pdf_path": "nesterenko-barnes-2003.pdf",
+      "pdf_sha256": "cd622c1dc78f529f989178edf6f75ae458db9fcd282cb0643f2807101409d287",
+      "pdf_bytes": 1073617,
+      "text_path": "nesterenko-barnes-2003.txt",
+      "text_sha256": "b3d578041f91d1b98f22ba418b6a3908b1b845867cd5715d40116b435a5b8de1",
+      "inspected_locations": "pp536–538 Eqs3–10,Prop1;pp545–547 Eq29,Theorem1,Lemma4;pp547–550 Theorem2"
+    },
+    {
+      "authors": "Wadim Zudilin",
+      "title": "Irrationality of values of zeta-function",
+      "version": "arXiv math/0104249v1,2001",
+      "source_url": "https://arxiv.org/pdf/math/0104249",
+      "pdf_path": "zudilin-values-0104249.pdf",
+      "pdf_sha256": "c2fcdefc73b8df24e16105e9621b47e498b83aa01288e5d9853c0af99e36feaa",
+      "pdf_bytes": 231476,
+      "text_path": "zudilin-values-0104249.txt",
+      "text_sha256": "ff3569ad90f4078db46b2d18d37242fd1fe38869125bfeaa847d806c94c59302",
+      "inspected_locations": "§3 Eq3–5;§4 Lemmas2–3,Eq11–18"
+    },
+    {
+      "authors": "Wadim Zudilin",
+      "title": "Arithmetic of linear forms involving odd zeta values",
+      "version": "arXiv math/0206176v2,2002;JTNB16(1)(2004),251–291",
+      "source_url": "https://arxiv.org/pdf/math/0206176",
+      "pdf_path": "zudilin-arithmetic-0206176.pdf",
+      "pdf_sha256": "c0f6ef1973e580ce6e3d9176f89798d7c8dd52fcf6354d4f6eddbdc940499e0a",
+      "pdf_bytes": 404309,
+      "text_path": "zudilin-arithmetic-0206176.txt",
+      "text_sha256": "710fef2043b7b73da03974ad98ca87a986a714d0bae36e87c6a3aa21d917e89a",
+      "inspected_locations": "p9 Proposition1;§9 derivative constructions"
+    },
+    {
+      "authors": "Wadim Zudilin",
+      "title": "Multiple-integral representations of very-well-poised hypergeometric series",
+      "version": "arXiv math/0206177v1,2002",
+      "source_url": "https://arxiv.org/pdf/math/0206177",
+      "pdf_path": "zudilin-multiple-integrals-0206177.pdf",
+      "pdf_sha256": "0292321e68430d56a1e1d73bb7e431936e4e8f500054542843e2500a38f71990",
+      "pdf_bytes": 123275,
+      "text_path": "zudilin-multiple-integrals-0206177.txt",
+      "text_sha256": "34871178d099df6130f0c60eda355fdc22037b46da86bc36ed4f1ab55bbe3212",
+      "inspected_locations": "Theorem Eq4 and remarks pp2–3"
+    },
+    {
+      "authors": "Stéphane Fischler",
+      "title": "Nesterenko’s criterion when the small linear forms oscillate",
+      "version": "arXiv1201.2651v1,2012",
+      "source_url": "https://arxiv.org/pdf/1201.2651",
+      "pdf_path": "fischler-oscillation-12012651.pdf",
+      "pdf_sha256": "c08cdd8c9d68a447dbea1a8d047cef048129577e56046641203db39ae16b02fa",
+      "pdf_bytes": 161426,
+      "text_path": "fischler-oscillation-12012651.txt",
+      "text_sha256": "206136778f0cc350eb9ea1e63607761405bf6363e1e914dcc8785b537bb00b19",
+      "inspected_locations": "Theorem1,Proposition1,§2.2"
+    },
+    {
+      "authors": "Tanguy Rivoal",
+      "title": "La fonction Zêta de Riemann prend une infinité de valeurs irrationnelles aux entiers impairs",
+      "version": "arXiv math/0008051v1,2000",
+      "source_url": "https://arxiv.org/pdf/math/0008051",
+      "pdf_path": "rivoal-0008051.pdf",
+      "pdf_sha256": "f9921534f4a2fc32b4579ed01e9791db3b8b2b8545f669385efd4957eaf927c6",
+      "pdf_bytes": 91857,
+      "text_path": "rivoal-0008051.txt",
+      "text_sha256": "666395596080eb366561e7e1a7297d820a8be8ee69d63904c4e1e7b9c8c0eb88",
+      "inspected_locations": "pp1–3 construction and Lemmas1–3"
+    },
+    {
+      "authors": "Walter Van Assche and Els Coussement",
+      "title": "Some classical multiple orthogonal polynomials",
+      "version": "JCAM127(2001),317–347;arXiv math/0103131",
+      "source_url": "https://arxiv.org/pdf/math/0103131",
+      "pdf_path": "van-assche-coussement-classical-multiple-0103131.pdf",
+      "pdf_sha256": "2614ef7cd0ee50707d40445417f6d1dd7229e967152e04ef173df67e6a6ccdbd",
+      "pdf_bytes": 264285,
+      "text_path": "van-assche-coussement-classical-multiple-0103131.txt",
+      "text_sha256": "a16e08772f441321fe5a20aa338e2fd59770f24c98786d386d830f0dad20cf62",
+      "inspected_locations": "§3.1 Eq3.20–3.24"
+    },
+    {
+      "authors": "Christophe Smet and Walter Van Assche",
+      "title": "Mellin transforms for multiple Jacobi–Piñeiro polynomials and a q-analogue",
+      "version": "JAT162(4)(2010),782–806; inspected author preprint dated2008-08-06 with shorter title",
+      "source_url": "https://wis.kuleuven.be/analyse/members/walter/mellin.pdf",
+      "access": "Primary PDF inspected via web-tool cached extraction. Two direct download attempts returned HTTP503; no local PDF retained.",
+      "pdf_sha256": null,
+      "inspected_locations": "Theorems2.2,2.4,2.8;§§2.1,4–5"
+    }
+  ],
+  "visual_pdf_check": "Nesterenko PDF physical pages3,4,12,13,14 were rendered locally to inspect formulas absent from text extraction.",
+  "queries": [
+    "Zudilin Rivoal rational function derivatives zeta odd multiple orthogonal polynomials Rodrigues (mn)",
+    "Nesterenko rational functions zeta5 gamma Barnes oscillating asymptotic",
+    "Vasilyev integrals Eulerian polynomials Barnes zeta",
+    "zeta Eulerian cotangent irrationality",
+    "zeta binom{mn}",
+    "zeta binom{2n}{k} binom{n+k}{k}",
+    "Jacobi-Piñeiro zeta logarithm",
+    "2036001 zeta",
+    "Smet Van Assche Mellin transforms multiple Jacobi Pineiro"
+  ]
+}
