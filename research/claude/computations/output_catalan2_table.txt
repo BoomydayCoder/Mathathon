@@ -1,0 +1,80 @@
+== T1 baseline
+T1 baseline (I) K=16                         h= 16 deg= 16 sign=+1 gamma= 2.2996 delta= 2.1278 total= +0.1718 | v2(lc)=   66 (0.1787) 0s
+T1 baseline (I) K=32                         h= 32 deg= 32 sign=+1 gamma= 2.4951 delta= 2.1633 total= +0.3318 | v2(lc)=  226 (0.1530) 0s
+T1 baseline (I) K=48                         h= 48 deg= 48 sign=+1 gamma= 2.5732 delta= 2.1748 total= +0.3983 | v2(lc)=  481 (0.1447) 2s
+T1 baseline (I) K=64                         h= 64 deg= 64 sign=+1 gamma= 2.6350 delta= 2.1805 total= +0.4545 | v2(lc)=  810 (0.1371) 7s
+
+== T2 C1
+bose G:bothx32 pi:intx0                      h= 16 deg= 16 sign=+1 gamma= 7.6343 delta= 2.1220 total= +5.5123 | v2(lc)=  374 (1.0126) 0s
+bose G:bothx64 pi:intx0                      h= 32 deg= 32 sign=+1 gamma= 7.9744 delta= 2.0834 total= +5.8910 | v2(lc)= 1563 (1.0580) 2s
+bose G:bothx96 pi:intx0                      h= 48 deg= 48 sign=+1 gamma= 8.0685 delta= 2.0643 total= +6.0042 | v2(lc)= 3635 (1.0936) 25s
+bose G:bothx128 pi:intx0                     h= 64 deg= 64 sign=+1 gamma= 8.1447 delta= 2.0528 total= +6.0919 | v2(lc)= 6398 (1.0827) 112s
+
+== T3 C1, more nodes (h=24)
+bose G:bothx48 pi:intx0                      h= 24 deg= 24 sign=+1 gamma= 7.6477 delta= 2.0989 total= +5.5488 | v2(lc)=  898 (1.0806) 1s
+bose G:bothx54 pi:intx0                      h= 24 deg= 24 sign=+1 gamma= 9.1355 delta= 2.2414 total= +6.8942 | v2(lc)=  910 (1.0951) 1s
+bose G:bothx60 pi:intx0                      h= 24 deg= 24 sign=+1 gamma=10.0985 delta= 2.3658 total= +7.7327 | v2(lc)=  893 (1.0746) 1s
+bose G:bothx72 pi:intx0                      h= 24 deg= 24 sign=+1 gamma=12.4042 delta= 2.5756 total= +9.8285 | v2(lc)=  922 (1.1095) 2s
+bose G:bothx96 pi:intx0                      h= 24 deg= 24 sign=+1 gamma=17.1444 delta= 2.8961 total=+14.2483 | v2(lc)=  882 (1.0614) 3s
+
+== T4 bose, mixed classes
+bose G:14x1 pi:intx47                        h= 24 deg=  1 sign=-1 gamma= 8.3064 delta= 0.0082 total= +8.2983 | v2(lc)=   13 (0.0156) 1s
+bose G:14x1 pi:halfx47                       h= 24 deg=  1 sign=+1 gamma= 8.6215 delta= 0.0099 total= +8.6116 | v2(lc)=    5 (0.0060) 1s
+bose G:14x12 pi:intx36                       h= 24 deg= 12 sign=+1 gamma= 8.2778 delta= 0.9294 total= +7.3484 | v2(lc)=  148 (0.1781) 1s
+bose G:14x12 pi:halfx36                      h= 24 deg= 12 sign=+1 gamma= 7.8251 delta= 0.9286 total= +6.8965 | v2(lc)=  162 (0.1949) 2s
+bose G:14x24 pi:intx24                       h= 24 deg= 24 sign=+1 gamma= 8.0097 delta= 2.0022 total= +6.0074 | v2(lc)=  264 (0.3177) 1s
+bose G:14x24 pi:halfx24                      h= 24 deg= 24 sign=+1 gamma= 7.6127 delta= 1.9795 total= +5.6331 | v2(lc)=  554 (0.6667) 1s
+bose G:14x36 pi:intx12                       h= 24 deg= 12 sign=+1 gamma= 6.8949 delta= 1.0140 total= +5.8809 | v2(lc)=  132 (0.1588) 2s
+bose G:14x36 pi:halfx12                      h= 24 deg= 12 sign=+1 gamma= 8.2911 delta= 0.9591 total= +7.3320 | v2(lc)=   12 (0.0144) 2s
+bose G:bothx1 pi:intx47                      h= 24 deg=  1 sign=-1 gamma= 8.3064 delta= 0.0082 total= +8.2983 | v2(lc)=   13 (0.0156) 1s
+bose G:bothx1 pi:halfx47                     h= 24 deg=  1 sign=+1 gamma= 8.6215 delta= 0.0099 total= +8.6116 | v2(lc)=    5 (0.0060) 2s
+bose G:bothx12 pi:intx36                     h= 24 deg= 12 sign=+1 gamma= 8.5629 delta= 0.4659 total= +8.0970 | v2(lc)=  426 (0.5126) 1s
+bose G:bothx12 pi:halfx36                    h= 24 deg= 12 sign=-1 gamma= 8.6344 delta= 0.4802 total= +8.1542 | v2(lc)=  372 (0.4477) 1s
+bose G:bothx24 pi:intx24                     h= 24 deg= 24 sign=+1 gamma= 8.5303 delta= 1.0246 total= +7.5057 | v2(lc)= 1524 (1.8340) 1s
+bose G:bothx24 pi:halfx24                    h= 24 deg= 24 sign=-1 gamma= 7.9599 delta= 1.0235 total= +6.9364 | v2(lc)= 1402 (1.6871) 1s
+bose G:bothx36 pi:intx12                     h= 24 deg= 24 sign=+1 gamma= 9.1228 delta= 1.2143 total= +7.9085 | v2(lc)=  922 (1.1095) 1s
+bose G:bothx36 pi:halfx12                    h= 24 deg= 24 sign=-1 gamma= 8.9265 delta= 1.1922 total= +7.7343 | v2(lc)=  922 (1.1095) 1s
+bose G:14x1 pi:intx79                        h= 40 deg=  1 sign=-1 gamma= 8.5430 delta= 0.0029 total= +8.5401 | v2(lc)=   15 (0.0065) 21s
+bose G:14x1 pi:halfx79                       h= 40 deg=  1 sign=+1 gamma= 8.8750 delta= 0.0033 total= +8.8717 | v2(lc)=    5 (0.0022) 16s
+bose G:14x20 pi:intx60                       h= 40 deg= 20 sign=+1 gamma= 8.6750 delta= 0.9433 total= +7.7318 | v2(lc)=  260 (0.1126) 16s
+bose G:14x20 pi:halfx60                      h= 40 deg= 20 sign=+1 gamma= 8.0887 delta= 0.9419 total= +7.1468 | v2(lc)=  410 (0.1776) 14s
+bose G:14x40 pi:intx40                       h= 40 deg= 40 sign=+1 gamma= 8.6813 delta= 2.0066 total= +6.6746 | v2(lc)=  518 (0.2244) 11s
+bose G:14x40 pi:halfx40                      h= 40 deg= 40 sign=+1 gamma= 7.9866 delta= 1.9869 total= +5.9997 | v2(lc)= 1594 (0.6905) 10s
+bose G:14x60 pi:intx20                       h= 40 deg= 20 sign=+1 gamma= 7.2921 delta= 0.9944 total= +6.2976 | v2(lc)=  255 (0.1105) 23s
+bose G:14x60 pi:halfx20                      h= 40 deg= 20 sign=+1 gamma= 8.5502 delta= 0.9594 total= +7.5908 | v2(lc)=   20 (0.0087) 25s
+bose G:bothx1 pi:intx79                      h= 40 deg=  1 sign=-1 gamma= 8.5430 delta= 0.0029 total= +8.5401 | v2(lc)=   15 (0.0065) 12s
+bose G:bothx1 pi:halfx79                     h= 40 deg=  1 sign=+1 gamma= 8.8750 delta= 0.0033 total= +8.8717 | v2(lc)=    5 (0.0022) 14s
+bose G:bothx20 pi:intx60                     h= 40 deg= 20 sign=+1 gamma= 8.7373 delta= 0.4675 total= +8.2698 | v2(lc)= 1136 (0.4921) 14s
+bose G:bothx20 pi:halfx60                    h= 40 deg= 20 sign=-1 gamma= 8.9936 delta= 0.4704 total= +8.5231 | v2(lc)= 1006 (0.4358) 15s
+bose G:bothx40 pi:intx40                     h= 40 deg= 40 sign=+1 gamma= 8.8336 delta= 1.0060 total= +7.8276 | v2(lc)= 4186 (1.8134) 10s
+bose G:bothx40 pi:halfx40                    h= 40 deg= 40 sign=-1 gamma= 8.2590 delta= 0.9931 total= +7.2659 | v2(lc)= 3962 (1.7164) 10s
+bose G:bothx60 pi:intx20                     h= 40 deg= 40 sign=+1 gamma= 9.6049 delta= 1.1850 total= +8.4199 | v2(lc)= 2537 (1.0991) 8s
+bose G:bothx60 pi:halfx20                    h= 40 deg= 40 sign=-1 gamma= 9.4109 delta= 1.1599 total= +8.2511 | v2(lc)= 2537 (1.0991) 8s
+
+== T5 sinh, mixed
+sinh sum K1=16 K2=32 lam=1                   h= 16 deg= 16 sign=+1 gamma= 5.9372 delta= 1.0892 total= +4.8480 | v2(lc)=   66 (0.1787) 0s
+sinh sum K1=16 K2=32 lam=-1                  h= 16 deg= 16 sign=+1 gamma= 5.9412 delta= 1.0988 total= +4.8424 | v2(lc)=   66 (0.1787) 0s
+sinh prod K1=16 K2=32 lam=0                  h= 16 deg= 16 sign=+1 gamma= 6.1318 delta= 2.1481 total= +3.9837 | v2(lc)=   83 (0.2247) 0s
+sinh prod K1=8 K2=32 lam=0                   h= 16 deg=  8 sign=+1 gamma= 4.5460 delta= 0.7851 total= +3.7610 | v2(lc)=    8 (0.0217) 0s
+sinh prod K1=32 K2=32 lam=0                  h= 16 deg= 16 sign=-1 gamma=10.5464 delta= 3.3419 total= +7.2045 | v2(lc)=   17 (0.0460) 0s
+sinh sum K1=32 K2=64 lam=1                   h= 32 deg= 32 sign=+1 gamma= 5.8591 delta= 1.0654 total= +4.7937 | v2(lc)=  226 (0.1530) 4s
+sinh sum K1=32 K2=64 lam=-1                  h= 32 deg= 32 sign=+1 gamma= 5.8599 delta= 1.0681 total= +4.7918 | v2(lc)=  226 (0.1530) 4s
+sinh prod K1=32 K2=64 lam=0                  h= 32 deg= 32 sign=+1 gamma= 6.5236 delta= 2.1732 total= +4.3504 | v2(lc)=  258 (0.1746) 7s
+sinh prod K1=16 K2=64 lam=0                  h= 32 deg= 16 sign=+1 gamma= 4.6882 delta= 0.8051 total= +3.8831 | v2(lc)=   16 (0.0108) 4s
+sinh prod K1=64 K2=64 lam=0                  h= 32 deg= 32 sign=-1 gamma=11.1368 delta= 3.3127 total= +7.8241 | v2(lc)=   33 (0.0223) 12s
+sinh sum K1=48 K2=96 lam=1                   h= 48 deg= 48 sign=+1 gamma= 5.7981 delta= 1.0518 total= +4.7463 | v2(lc)=  481 (0.1447) 40s
+sinh sum K1=48 K2=96 lam=-1                  h= 48 deg= 48 sign=+1 gamma= 5.8069 delta= 1.0531 total= +4.7538 | v2(lc)=  481 (0.1447) 41s
+sinh prod K1=48 K2=96 lam=0                  h= 48 deg= 48 sign=+1 gamma= 6.6381 delta= 2.1814 total= +4.4567 | v2(lc)=  544 (0.1637) 89s
+sinh prod K1=24 K2=96 lam=0                  h= 48 deg= 24 sign=+1 gamma= 4.6154 delta= 0.8116 total= +3.8038 | v2(lc)=   24 (0.0072) 46s
+sinh prod K1=96 K2=96 lam=0                  h= 48 deg= 48 sign=+1 gamma=11.3079 delta= 3.3069 total= +8.0010 | v2(lc)=   50 (0.0150) 128s
+
+content fully explained by primes <= 16h+50: True
+v_p(lc(P*)) for T1 baseline (I) K=32 h=32:  (gamma_odd = 2.3422)
+     {2: 226, 3: 177, 5: 121, 7: 87, 11: 63, 13: 64, 17: 64, 19: 61, 23: 62, 29: 53, 31: 50, 37: 41, 41: 35, 43: 32, 47: 26, 53: 17, 59: 8, 61: 5}
+     negative entries (none expected): {}
+v_p(lc(P*)) for bose G:bothx64 pi:intx0 h=32:  (gamma_odd = 6.9164)
+     {2: 1563, 3: 246, 5: 155, 7: 137, 11: 98, 13: 64, 17: 64, 19: 66, 23: 64, 29: 64, 31: 64, 37: 64, 41: 64, 43: 64, 47: 70, 53: 78, 59: 87, 61: 91, 67: 63, 71: 61, 73: 59, 79: 57, 83: 55, 89: 51, 97: 47, 101: 45, 103: 45, 107: 43, 109: 41, 113: 39, 127: 33}
+     negative entries (none expected): {}
+v_p(lc(P*)) for bose G:bothx96 pi:intx0 h=48:  (gamma_odd = 6.9749)
+     {2: 3635, 3: 385, 5: 273, 7: 192, 11: 179, 13: 156, 17: 96, 19: 104, 23: 96, 29: 101, 31: 108, 37: 96, 41: 96, 43: 96, 47: 96, 53: 96, 59: 96, 61: 96, 67: 100, 71: 106, 73: 107, 79: 117, 83: 124, 89: 133, 97: 94, 101: 93, 103: 93, 107: 91, 109: 89, 113: 87, 127: 81, 131: 79, 137: 75, 139: 75, 149: 69, 151: 69, 157: 65, 163: 63, 167: 61, 173: 57, 179: 55, 181: 53, 191: 49}
+     negative entries (none expected): {}

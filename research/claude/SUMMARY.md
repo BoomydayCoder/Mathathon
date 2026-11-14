@@ -164,3 +164,11 @@ finite computations.
 | ζ(5) | margin of Fauzan's proof doubled (Theorem W, `zeta5-margin.md`); no simpler proof |
 | ζ(7) | fails in every construction tried; claimed Zenodo proof refuted (`anand-referee.md`) |
 | Catalan | simple functional found; method fails by about $0.5K^2$ |
+
+## Addendum (15:35 UTC, container clock): a proved no-go for large odd $s$
+
+`zeta7-status.md` §5. For every odd $s\ge15$, the plain Hankel determinant family ($W=1$) provably cannot work:
+$\log|P_K(\zeta(s))|\ge(\frac s2(\frac M{M+1})^2-\frac92\log2-o(1))K^2>0$. The analytic half (exact decay rate
+$\frac92\log2$, lower bound by Jensen) was re-derived by the orchestrator; the arithmetic half (roots of valuation
+$-s$ via a Schur-complement argument) was not, but is verified on exact Newton polygons. For $s=7$–$13$ the
+theorem is not yet proved, though the exact data say it holds. Numerator families are not covered.

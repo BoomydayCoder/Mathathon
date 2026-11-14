@@ -1,0 +1,6 @@
+A. max |quadrature - closed form| over 20 pole values and 8 monomial moments: 5.61e-26
+B1. K=8: pi^2-coefficients of mu(t^e Psi), e=0..K-1: ['0', '0', '0', '0', '0', '0', '0', '1']
+    max relative |quadrature - (c0 + cG G)| for e <= K-2: 1.03e-25
+B2. max relative error of the integral representation of Psi at 4 points: 1.61e-16 ; min Psi on a grid of (0,10^4): 1.72e-8
+B3. sum r_a a = 0 ; c = sum r_a = 0.00017199966 ; int_0^inf (y^2 Psi(y^2) - c) dy = -1.71e-40  [integrand evaluated in the cancellation-free form -sum r_a a^2/(y^2+a^2); pointwise check at y=3: 1.26e-35 ]
+    signs of r_a: +-+-+-+- ; G-coefficient of mu(Psi) = 512/99225 > 0

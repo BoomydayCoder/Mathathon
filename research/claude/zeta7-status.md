@@ -63,3 +63,41 @@ i.e. a functional whose singular part at a node is $p^{-5}$-like while still pro
 analytic gain of about 20%. No mechanism for either is known to us. The one construction with
 unexplored headroom is the one-sided double-pole derivative series (decay up to $5.1n^2$), which
 would need a 30% reduction in cost.
+
+## 5. A proved no-go for the unmodified family, odd $s\ge15$ (second frontier run)
+
+Source: frontier subagent (`computations/nogo_*.py`, outputs `output_nogo_*.txt`). The orchestrator
+re-derived Theorem B (it is a short Jensen argument); Theorem A was **not** re-derived by the
+orchestrator (the step most in need of an independent referee is its Schur-complement argument with
+Gauss valuations). AI-checked only.
+
+Setting: $W=1$, $h=K$, $\Delta_K=\det[\mu^{(s)}_X(t^{i+j}/D_K)]$, $F=\Delta_K/\operatorname{lead}$ (monic), $P_K$ the primitive
+integer polynomial, $E^*=\frac92\log2$.
+
+**Theorem B (analytic lower bound; all odd $s\ge3$).** $\log F(\zeta(s))\ge-E^*K^2-3K\log K-O_s(K)$.
+*Proof idea.* Andréief; restrict the $K$-fold integral to $(0,\frac34)^K$ and apply Jensen's inequality with
+the product of the explicit equilibrium density $\rho$ of `equilibrium_s3.py`. Only two numbers about
+$\rho$ are needed, $\iint\log|x^2-y^2|d\rho\,d\rho=-2-\frac32\log2$ and $\int V\,d\rho=3\log2-2$; not that $\rho$ is the
+minimiser. Together with `hankel-energy-bound.md` this shows
+$\log\Delta_K(\zeta(3))=-\frac92\log2\cdot K^2+O(K\log K)$: **the conjectured exact decay rate is now a theorem**
+(given the cited negativity lemma for the upper bound). Checked against exact values in seven cases.
+
+**Theorem A (arithmetic lower bound).** Let $s\ge5$ be odd, $p$ prime, $m=\lfloor K/p\rfloor\ge1$, $n_p=K-p+1$, with
+(H1) $p>s$, $p^2>2K$; (H2) $(s-1)(p-1)>2K-2$; (H3) $m=1$ or $s-2m-1>m(2m-3)$; (H4) $p\nmid\operatorname{num}H_d^{(s)}$ for
+$d\le m$. Then $F$ has at least $n_p-m$ roots of $p$-adic valuation $\le-s$, hence $p^{s(n_p-m)}\mid\operatorname{lc}(P_K)$.
+Verified on full Newton polygons for $s\in\{5,7,9,15,17\}$, $K\in\{40,80\}$ and two cases at $K=120$: zero
+violations where the hypotheses hold. (H4) is necessary: at $s=7$, $K=120$, $p=43\mid\operatorname{num}H_2^{(7)}=129$ only
+44 roots have valuation $\le-7$ instead of 78.
+
+**Theorem N.** With $M(s)=\max\{m:2m^2-m+1<s\}$ and the prime number theorem,
+$$\log|P_K(\zeta(s))|\ge\Bigl[\tfrac s2\bigl(\tfrac M{M+1}\bigr)^2-\tfrac92\log2-o(1)\Bigr]K^2 .$$
+The bracket is $+0.214$ at $s=15$ and grows for larger $s$. **So for every odd $s\ge15$ no integer
+normalisation of the plain Hankel determinant can be small at $\zeta(s)$: the unmodified family provably
+cannot prove irrationality of $\zeta(s)$.** For $s=7,9,11,13$ the proved arithmetic bound is too small
+($0.875,2.0,2.44,2.89$ against $3.119$); the gap is the treatment of primes $p\le K/(M+1)$, where Bernoulli
+denominators enter the polynomial part. The exact data say the true constant is $\frac{s(s+4)}{2(s+2)}$
+($=4.28$ at $s=7$), so the statement should hold for all $s\ge7$.
+
+Imports: the positive integral representation for general odd $s$ (Hermite); the two integrals of $\rho$
+(reconfirmed numerically to 25 digits); the prime number theorem. Numerator families $W=D_N^a$ are not
+covered.

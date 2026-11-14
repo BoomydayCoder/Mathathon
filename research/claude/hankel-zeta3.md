@@ -273,6 +273,8 @@ the orchestrator re-derived only the support equation), and (I4) the classical n
 
 Route (d) (Hadamard + (H)) and route (d′) (energy) are independent; either one completes the proof.
 
+**Matching lower bound.** `zeta7-status.md` §5 (Theorem B) gives $\log\Delta_K(\zeta(3))\ge-\frac92\log2\cdot K^2-O(K\log K)$ after dividing out the leading coefficient $K!^2$, by Jensen's inequality with the explicit equilibrium density. So the decay rate $\frac92\log2$ is exact.
+
 What was **not** written before that file: the standard upper bound $\log\Delta_K(\zeta(3))\le-E^*K^2+o(K^2)$ from Andréief's
 formula and the energy inequality (as in Fauzan §6). With it, (d) would hold with $\frac92\log2$ in place of
 $1-2\log\vartheta$, the computer-assisted inequality (H) would disappear, and the proof would close for

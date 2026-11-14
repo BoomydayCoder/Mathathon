@@ -1,0 +1,54 @@
+s=7 K=40 p=23 m=1  (H2: True, H3: True)
+   [ok] moments mu(t^e), e<=K-2, p-integral
+   [ok] P p-integral
+   [ok] v(delta_j)=[(K-j)/p]+[(K+j)/p]-s <= 2m+1-s (p∤j), =2m-3 (p|j)
+   [ok] h_j p-integral; h_j = H_[j/p] (p∤j), H_d-1/(2d^s) (j=dp) mod p
+   [ok] theta=1 >= s-2m-1=4 (m=1: >=1)
+   #(j in R: h_j != 0 mod p) = 18;  n_p - m = 17 (n_p=18)   all checks: True
+s=7 K=40 p=17 m=2  (H2: True, H3: False)
+   [ok] moments mu(t^e), e<=K-2, p-integral
+   [ok] P p-integral
+   [ok] v(delta_j)=[(K-j)/p]+[(K+j)/p]-s <= 2m+1-s (p∤j), =2m-3 (p|j)
+   [ok] h_j p-integral; h_j = H_[j/p] (p∤j), H_d-1/(2d^s) (j=dp) mod p
+   [ok] theta=3 >= s-2m-1=2
+   [ok] v_G(omega)=1 <= m(2m-3)=2 ; needed < theta: True
+   #(j in R: h_j != 0 mod p) = 22;  n_p - m = 22 (n_p=24)   all checks: True
+s=9 K=40 p=17 m=2  (H2: True, H3: True)
+   [ok] moments mu(t^e), e<=K-2, p-integral
+   [ok] P p-integral
+   [ok] v(delta_j)=[(K-j)/p]+[(K+j)/p]-s <= 2m+1-s (p∤j), =2m-3 (p|j)
+   [ok] h_j p-integral; h_j = H_[j/p] (p∤j), H_d-1/(2d^s) (j=dp) mod p
+   [ok] theta=5 >= s-2m-1=4
+   [ok] v_G(omega)=1 <= m(2m-3)=2 ; needed < theta: True
+   #(j in R: h_j != 0 mod p) = 22;  n_p - m = 22 (n_p=24)   all checks: True
+s=15 K=40 p=19 m=2  (H2: True, H3: True)
+   [ok] moments mu(t^e), e<=K-2, p-integral
+   [ok] P p-integral
+   [ok] v(delta_j)=[(K-j)/p]+[(K+j)/p]-s <= 2m+1-s (p∤j), =2m-3 (p|j)
+   [ok] h_j p-integral; h_j = H_[j/p] (p∤j), H_d-1/(2d^s) (j=dp) mod p
+   [ok] theta=11 >= s-2m-1=10
+   [ok] v_G(omega)=1 <= m(2m-3)=2 ; needed < theta: True
+   #(j in R: h_j != 0 mod p) = 20;  n_p - m = 20 (n_p=22)   all checks: True
+s=17 K=40 p=13 m=3  (H2: True, H3: True)
+   [FAIL] moments mu(t^e), e<=K-2, p-integral
+   [ok] P p-integral
+   [ok] v(delta_j)=[(K-j)/p]+[(K+j)/p]-s <= 2m+1-s (p∤j), =2m-3 (p|j)
+   [ok] h_j p-integral; h_j = H_[j/p] (p∤j), H_d-1/(2d^s) (j=dp) mod p
+   [ok] theta=11 >= s-2m-1=10
+   [ok] v_G(omega)=7 <= m(2m-3)=9 ; needed < theta: True
+   #(j in R: h_j != 0 mod p) = 25;  n_p - m = 25 (n_p=28)   all checks: False
+s=15 K=60 p=23 m=2  (H2: True, H3: True)
+   [ok] moments mu(t^e), e<=K-2, p-integral
+   [ok] P p-integral
+   [ok] v(delta_j)=[(K-j)/p]+[(K+j)/p]-s <= 2m+1-s (p∤j), =2m-3 (p|j)
+   [ok] h_j p-integral; h_j = H_[j/p] (p∤j), H_d-1/(2d^s) (j=dp) mod p
+   [ok] theta=10 >= s-2m-1=10
+   [ok] v_G(omega)=1 <= m(2m-3)=2 ; needed < theta: True
+   #(j in R: h_j != 0 mod p) = 36;  n_p - m = 36 (n_p=38)   all checks: True
+s=7 K=60 p=43 m=1  (H2: True, H3: True)
+   [ok] moments mu(t^e), e<=K-2, p-integral
+   [ok] P p-integral
+   [ok] v(delta_j)=[(K-j)/p]+[(K+j)/p]-s <= 2m+1-s (p∤j), =2m-3 (p|j)
+   [ok] h_j p-integral; h_j = H_[j/p] (p∤j), H_d-1/(2d^s) (j=dp) mod p
+   [ok] theta=1 >= s-2m-1=4 (m=1: >=1)
+   #(j in R: h_j != 0 mod p) = 18;  n_p - m = 17 (n_p=18)   all checks: True
