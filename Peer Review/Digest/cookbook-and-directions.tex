@@ -18,6 +18,7 @@
 \newcommand{\cA}{\mathcal A}
 \newcommand{\cB}{\mathcal B}
 \newcommand{\st}[1]{\textsf{[#1]}}
+\newcommand{\codexnote}[2]{\href{https://github.com/BoomydayCoder/Mathathon/blob/03cc75d694220d0fba888c637e573a29799e6d5b/codex/problem131/#1.md}{#2}}
 \DeclareMathOperator{\lcm}{lcm}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
@@ -37,7 +38,8 @@
 
 \title{A cookbook of irrationality proofs,\\ and where to push next}
 \author{Mathathon peer-review digest\\
-{\normalsize (drafted by Claude from the Claude and Codex submissions)}}
+{\normalsize drafted by Claude from the Claude and Codex submissions}\\
+{\small revised by Codex to incorporate the final research handoff}}
 \date{14 November 2026}
 
 \begin{document}
@@ -48,16 +50,22 @@ Part~I gives one recipe for proving that a number is irrational and runs it, wit
 on $\log 2$, $e^r$, $\pi^2$ and $\zeta(2)$; the proofs for $\zeta(3)$ are in the companion digest
 \path{zeta3-proofs.pdf} (``the companion''). Part~II records why the obvious extensions to
 $\zeta(5)$, $\zeta(7)$, Catalan's constant and Euler's constant fail, separating what is proved from
-what is only computed. Part~III lists directions to develop, each with a first concrete problem.
+what is only computed. Part~III distinguishes developed connections from directions still open, each with a concrete next problem.
+This revision also records later source results on truncation, balanced polynomial arithmetic,
+Schur--Pell bounds, odd-zeta correlations, and the final PNT-free determinant adaptation.
 
 \smallskip\noindent\textbf{Status labels.} Every statement carries one of:
 \st{P} proved in this document;
 \st{C} classical (the references are listed in the last section; none was retrieved);
-\st{R} reported by one of the submissions, not verified by us;
+\st{R} reported by a submission, not independently verified by the original digest team;
+\st{S} proved in a linked source with a separate internal AI review, but not proved in full here;
 \st{N} verified numerically or by exact finite computation only;
 \st{Q} question.
 All checking so far, ours included, was done by AI agents. No human has refereed anything here, and
-we make no claim that any statement is new.
+we make no claim that any statement is historically new.
+An \st{S} label records a source proof and its review; it does not mean human peer review or formal verification.
+The first-person checking reports below describe Claude's original digest work unless explicitly marked
+as this Codex revision. New source links pin the final research snapshot rather than a moving branch.
 
 \smallskip\noindent\textbf{Notation.} $D_n=\lcm(1,\dots,n)$, $D_0=1$.
 $H_n^{(s)}=\sum_{m=1}^n m^{-s}$ and $H_n=H_n^{(1)}$.
@@ -140,7 +148,7 @@ less than $n$, which vanishes at $0$ and at $1$. For the norm take $f=P_n$: by \
 $P_n^{(n)}=(-1)^n\binom{2n}n n!$, and $\int_0^1x^n(1-x)^n\dd x=\frac{n!^2}{(2n+1)!}$.
 \end{proof}
 
-\subsection{$\log 2$, and $\log\frac{m+1}{m}$ for every integer $m\ge1$}
+\subsection{\texorpdfstring{$\log 2$, and $\log\frac{m+1}{m}$ for every integer $m\ge1$}{log 2, and log((m+1)/m) for every integer m >= 1}}
 \emph{Motivation.} We have $\log\frac{m+1}m=\int_0^1\frac{dx}{m+x}$. Integrating a polynomial
 $p\in\Z[x]$ against $\frac1{m+x}$ gives a linear form in $1$ and the logarithm, because
 $p(x)=p(-m)+(x+m)\,s(x)$ with $s\in\Z[x]$. The coefficient of the logarithm is the integer
@@ -173,7 +181,7 @@ $3\kappa_1=0.514719<1$. Contradiction.
 In the notation of the recipe: $\delta=1$ by the prime number theorem (and $\delta\le\log3$ along a
 subsequence by elementary means), $\rho=-\log\kappa_1=1.762747$.
 
-\subsection{The Pad\'e identity and $e^r$}
+\subsection{\texorpdfstring{The Pad\'e identity and $e^r$}{The Pade identity and exp(r)}}
 \emph{Motivation.} Since $e^x$ is its own derivative, integration by parts never stops:
 for a polynomial $f$, $\int_0^zf(x)e^x\dd x=\bigl[e^x(f-f'+f''-\cdots)\bigr]_0^z$. So \emph{every}
 polynomial $f$ produces an expression (polynomial)$\cdot e^z-$(polynomial). To make it small we want
@@ -189,9 +197,12 @@ U_n(z)=\sum_{j=0}^n\frac{(2n-j)!}{j!\,(n-j)!}\,z^j,\qquad V_n(z)=U_n(-z).
 These have integer coefficients, since $\frac{(2n-j)!}{j!(n-j)!}=\binom nj\frac{(2n-j)!}{n!}$. For
 every $z\in\C$,
 \begin{equation}\label{eq:pade}
-V_n(z)e^z-U_n(z)=\tfrac{(-1)^n}{n!}\!\int_0^z\!x^n(z-x)^ne^x\dd x
-=\tfrac{(-1)^nz^{2n+1}}{n!}\!\int_0^1\!u^n(1-u)^ne^{zu}\dd u
-=z^{n+1}\!\!\int_0^1\!P_n(u)e^{zu}\dd u .
+\begin{aligned}
+V_n(z)e^z-U_n(z)
+ &=\frac{(-1)^n}{n!}\int_0^z x^n(z-x)^ne^x\dd x\\
+ &=\frac{(-1)^nz^{2n+1}}{n!}\int_0^1u^n(1-u)^ne^{zu}\dd u
+ =z^{n+1}\int_0^1P_n(u)e^{zu}\dd u .
+\end{aligned}
 \end{equation}
 \end{proposition}
 \begin{proof}
@@ -227,7 +238,7 @@ exponential scale, which is why this proof is easy and Ap\'ery's is not.
 Consequently $\log q$ is irrational for every positive rational $q\ne1$; Theorem~\ref{thm:log} is
 kept because it is the model for $\zeta(2)$ and $\zeta(3)$.
 
-\subsection{$\pi^2$ and $\pi$}
+\subsection{\texorpdfstring{$\pi^2$ and $\pi$}{pi squared and pi}}
 \emph{Motivation.} $e^{i\pi}=-1$ is rational, so the Pad\'e identity at $z=i\pi$ must fail to be an
 integer squeeze only because $z$ is not rational. The even part of the identity involves only
 $z^2=-\pi^2$. Define
@@ -255,7 +266,19 @@ integer, at most $\pi(m^{1/2}\pi^2/4)^n/n!\to0$. Contradiction.
 As far as we recall (Niven 1947, not retrieved), this is Niven's argument with the auxiliary sum of derivatives identified: it is the $e^z$ Pad\'e
 approximant at $z=i\pi$. Irrationality of $\pi$ alone would not give that of $\pi^2$.
 
-\subsection{$\zeta(2)$}
+\paragraph{The requested scope: $\pi^r$ for nonzero rational $r$.}
+The $\pi^2$ argument above does not imply irrationality of $\pi^4$, or of every rational power.
+The stronger classical statement is that $\pi^r$ is transcendental, hence irrational, for
+$r\in\Q\setminus\{0\}$ \st{C; uses transcendence of $\pi$}. Indeed, write $r=p/q$ with integers
+$p\ne0$, $q>0$. If $\pi^{p/q}$ were algebraic, so would its $q$th power $\pi^p$ and its reciprocal
+when needed. Then $\pi$ would satisfy a polynomial over the algebraic numbers and would be algebraic,
+a contradiction. This is an algebraic reduction, not an elementary substitute for the transcendence theorem.
+Codex's \codexnote{pi-powers}{pi-power exposition} gives an explicit classical
+Hermite--Lindemann-type construction for all positive integer powers, then the rational-power
+reduction, with an \codexnote{pi-powers-review}{internal review} \st{S}. The statement is not for arbitrary
+real exponents: $r=\log2/\log\pi$ gives $\pi^r=2$.
+
+\subsection{\texorpdfstring{$\zeta(2)$}{zeta(2)}}
 \emph{Motivation.} Expanding the geometric series (all terms are non-negative, so sum and integral
 may be exchanged),
 \begin{equation}\label{eq:z2mom}
@@ -296,7 +319,7 @@ $9g^5=0.811529<1$.
 \end{proof}
 Rates: $\delta=2$ against $\rho=-5\log g=2.406059$.
 
-\subsection{$\zeta(3)$: summary only}
+\subsection{\texorpdfstring{$\zeta(3)$: summary only}{zeta(3): summary only}}
 Replace $\frac1{1-xy}$ by the kernel $\frac{-\log(xy)}{1-xy}$, whose moments are
 $2(\zeta(3)-H_k^{(3)})$ on the diagonal and $\frac{H_k^{(2)}-H_l^{(2)}}{k-l}$ off it, and use
 $P_n$ in both variables. Then \st{C; proved in the companion, Sections 3--6}
@@ -354,9 +377,11 @@ thresholds $\frac13\log\Lambda=1.1752$ and $-\frac52\log g=1.2030$ needed for $\
 $\zeta(2)$; $c_6$ is below the $\zeta(3)$ threshold by only $0.0046$. Such bounds are needed when the non-vanishing argument works only
 for some $n$ (for instance when a Casoratian shows that one of two consecutive forms is non-zero).
 
-\smallskip\noindent\textbf{The prime number theorem} \st{C}: $\log D_n\sim n$. It is needed only when
-the margin $\rho-\delta$ is small, as in the determinant proof for $\zeta(5)$
-(Section~\ref{sec:hankel}), and even there a subsequence argument may replace it (direction D4).
+\smallskip\noindent\textbf{The prime number theorem} \st{C}: $\log D_n\sim n$.
+It gives sharp prime-distribution estimates and is used in the original determinant argument
+reported in Section~\ref{sec:hankel}. A narrow margin does not by itself make it necessary.
+Direction D4 distinguishes an earlier subsequence approach from Codex's final explicit
+superfactorial normalizer, which avoids asymptotic prime counting.
 
 \section{Which ingredient does what}
 Table~\ref{tab:main} lists, for each proof, which ingredient supplies each obligation of the
@@ -482,11 +507,54 @@ $4.89326\cdot10^{-4}$, $3.81758\cdot10^{-5}$; for comparison $I_n=2.2\cdot10^{-1
 $4.1\cdot10^{-33}$, $3.5\cdot10^{-64}$. Since $D_n^5\ge n^5$, the quantity $D_n^5J_n^{[3]}$ tends to
 infinity. So this extension fails for a reason proved in the source (Codex, Appendix~A; not fully checked by us) and confirmed numerically for $n\le40$: decay $n^{-4}$ instead of exponential.
 
-\emph{Repairs tried} \st{R, numerical only; Codex \S16.4 and \S17}. Removing the first $M$ terms of the
-series replaces $P_n$ by $x^MP_n$ and the budget by $D_{n+M}^{k+2}$; polynomials with fourth-order
-Mellin zeros have degree $2n$ and budget $D_{2n}^5$, and lose positivity. In the cases computed with $n\ge2$ the
-resulting integer forms are far larger than $1$ (for example $8.8\cdot10^{20}$ at $n=10$ in the
-second family). These are finite experiments.
+\paragraph{What truncation actually achieved.}
+There were finite experiments with shifted polynomials and higher-order Mellin zeros \st{N}.
+The final archive also contains all-index proofs, which should not be described as numerical trials.
+To state them in this document's normalization, put
+\[
+E_{n,k}=-\frac1{24}\sum_{t=k+1}^{\infty}R_n^{(3)}(t),\qquad 0\le k\le n.
+\]
+Each $E_{n,k}$ is a rational linear form in $1,\zeta(5)$ with coefficient $a_n$ of $\zeta(5)$.
+The source \codexnote{truncated-derivative}{truncation proof}, with its
+\codexnote{truncation-review}{review}, proves \st{S}
+\[
+ E_{n,n}\sim\frac\pi2\frac{\log n}{n^3}\,16^{-n}.
+\]
+Thus removing the initial zeros repairs exponential decay and gives eventual positivity.
+But if $E_{n,n}=a_n\zeta(5)-\widetilde b_n$, then for every odd prime $p\ne17$ and
+$n=(p+1)/2$, the proof gives $v_p(\widetilde b_n)=-3$. Since $p>n$, no fixed constant
+multiple of the original $D_n^5$ clears all these coefficients. This is an actual
+new-prime obstruction, not a conclusion drawn from large numerical denominators.
+
+The \codexnote{partial-truncation-analysis}{partial-truncation theorem}, audited in the
+\codexnote{odd-zeta-independent-review}{odd-zeta review}, goes further \st{S}:
+for every integer sequence $k_n=n/\sqrt2+O(1)$,
+\[
+ \frac{E_{n,k_n}}{I_n}=-\zeta(2)+O(n^{-1/2}),\qquad
+ \lim_{n\to\infty}|E_{n,k_n}|^{1/n}=\Lambda^{-1}.
+\]
+The full Ap\'ery exponential rate is recovered, with eventual negative sign.
+The remaining issue is arithmetic: this limit alone gives no adequate bound for the reduced
+rational denominator. The prime obstruction just stated is for $k=n$; it must not be silently
+transferred to every partial cut.
+
+\paragraph{Balanced polynomial constructions: arithmetic progress and its limit.}
+A second line developed \codexnote{balanced-generalized-wilson-rodrigues}{balanced Rodrigues polynomials}
+for higher odd zeta values, with all-index formulas rather than fitted examples \st{S}.
+A finite Andrews transformation gives a positive multiple sum and a proved integer-grid
+divisibility theorem; the \codexnote{balanced-andrews-grid-arithmetic}{arithmetic note} and
+\codexnote{balanced-andrews-independent-review}{review} specify the polynomial normalization and
+its lcm cost. Related constructions have positive remainders and exact exponential rates.
+These are successful analytic and arithmetic lemmas, although they do not close an irrationality proof.
+
+The \codexnote{balanced-diagonal-positive-rate}{uniform single-pole analysis} and
+\codexnote{balanced-diagonal-independent-review}{review} prove, for each fixed $s=2m+1\ge5$
+and even polynomial indices $n$, that the specified multiplier
+$D_{\max(n,a)}^s$ defeats decay for every allowed integer pole $a>n/2$ \st{S}.
+This comparison does not assert that this multiplier always clears the numerator,
+or that every smaller multiplier fails. A consecutive-pole family has a separate positive
+remainder and arithmetic analysis. The open task is to prove sufficient cancellation in the
+\emph{primitive} coefficients, or rigorously rule it out for a precisely specified family.
 
 \section{The determinant method}\label{sec:hankel}
 
@@ -913,24 +981,63 @@ the columns; a term using $k$ columns of $A$ carries $p^{-k}$ and vanishes when 
 denominators entry by entry would cost $p^h$. The valuation bounds of Section~\ref{sec:hankel} are
 refined versions of this remark.
 
-\emph{Removing the prime number theorem} \st{R: Codex exposition, Appendix~D; we read the proof and
-rechecked the final arithmetic}. The subsequence idea of Lemma~\ref{lem:lcmsub} extends to weighted
-sums over primes: for $g$ piecewise $C^1$ with compact support in $(0,\infty)$ and
-$T_g(x)=\frac1x\sum_p(\log p)\,g(p/x)$, one has $\liminf_{n\to\infty}T_g(qn)\le\int_0^\infty g$ for
-every fixed integer $q\ge1$. The proof uses only $\sum_{p\le x}\frac{\log p}p=\log x+O(1)$. Applied to
-the combined prime cost of the $\zeta(5)$ construction with cutoff $M=1000$, and taking the
-preprint's local and real estimates as given, it yields infinitely many $K$ with
-$0<Q_K(\zeta(5))<e^{-3K^2/100}$ (the bound evaluates to $-0.031925$; we recomputed this number from
-the stated rational constants). An earlier check in the Claude notes (\path{SUMMARY.md}, \S7) of a
-version of this normaliser found a cost of $1.3786$, above $-U$; we have not reconciled the two. This suffices for irrationality by Lemma~\ref{lem:poly}, not for an
-irrationality measure.
+\paragraph{Two different PNT-free routes must be kept separate.}
+The original digest reported a weighted-prime subsequence argument from the uploaded Codex
+exposition, Appendix D \st{R}. It uses the elementary estimate
+$\sum_{p\le x}(\log p)/p=\log x+O(1)$ to control a weighted prime cost along a subsequence.
+That is a different construction from the final normalizer below. Its previously quoted
+$-0.031925$ total and the $1.3786$ arithmetic cost of the later construction must not be
+combined with a real estimate from another normalization. No conclusion here depends on
+reconciling those older numerical summaries.
+
+\emph{The final archived construction} \st{S; not a new independent elementary proof} is assembled in
+\codexnote{pnt-free-zeta5-guide}{the PNT-free zeta-five guide}, with the
+\codexnote{pnt-free-normalizer-independent-review}{normalizer audit} and
+\codexnote{prime-exponent-rounding-independent-review}{primitive-part audit}.
+It retains Fauzan's determinant, positive functional and local arithmetic inputs.
+Its two replacements are an explicit equilibrium measure with exact energy certificates,
+and an explicit product of superfactorials $\mathcal B(m)=\prod_{j=0}^{m-1}j!$.
+A finite rational majorant of the primewise valuation profile, with separate small-prime and
+large-prime repairs, proves integrality; Stirling's formula prices the product without a
+prime-density theorem. The key question is no longer how primes are distributed, but whether
+one explicit valuation profile dominates another at every scale.
+
+For $40\mid K$, $h=37K/40$, the guide uses one consistently normalized determinant
+$F_K=S_K\Delta_K$. Its proved analytic estimate is
+\[
+ \limsup_{K\to\infty,\ 40\mid K}\frac{\log F_K(\zeta(5))}{K^2}
+ \le-\frac{69}{50}=-1.38.
+\]
+On that same normalization, the finite certificate bounds the repaired arithmetic cost by
+$6893/5000=1.3786<1.379$. Thus the convenient margin is at least
+$1.38-1.379=0.001$. An auxiliary power $Q=40000$ clears rational certificate exponents;
+Gauss's lemma removes that power from the final polynomial degree. The resulting source theorem is
+\[
+ P_K\in\Z[X],\qquad \deg P_K\le h,\qquad
+ 0<P_K(\zeta(5))<e^{-K^2/2000}
+\]
+for all sufficiently large admissible $K$. The polynomial squeeze then applies.
+This is the precise internally reviewed assembly claim, with its retained dependencies;
+it is not a claim of external acceptance or a proof reproduced in this digest.
+Comparing the cost $1.3786$ instead with the original $1.3669955$ analytic decay would fail.
+The improved real estimate is essential to this particular pairing of constants.
+
+\paragraph{What the Lean check did and did not establish.}
+The original digest team did not rebuild the cited formalizations. Separately, the Codex session
+recorded a successful local build, final-statement/axiom checks and project kernel replay of
+Dan Romik's existing project at commit
+\href{https://github.com/danromik/zeta5-irrationality/tree/fc2fefa77076e22e7e80b4c101ded5a98d53e14d}{\texttt{fc2fefa}}
+(\codexnote{lean-local-verification}{verification record}). It retained the explicit axiom
+$\vartheta(x)/x\to1$ for the Chebyshev prime sum. This checks that pinned formalization with
+its stated axiom; it does not formalize the equilibrium or superfactorial changes above.
+The build was not rerun for this editorial revision.
 
 \begin{problem}
 In increasing order of difficulty. (a) Write the determinant proofs for $\log2$, $\zeta(2)$ and
 $\pi$ along the lines of the $s=3$ proof; the notes report numerical totals $-0.71$, $-0.83$,
-$-0.38$ per $K^2$, so there is room. (b) Referee Theorem~W by hand and combine it with the
-weighted-prime lemma to obtain a statement for $\zeta(5)$ with an explicit margin and no prime
-number theorem. (c) Prove the cost formula $\frac{s(s+4)}{2(s+2)}K^2$ for the plain family, which
+$-0.38$ per $K^2$, so there is room. (b) Human-review the final normalizer and its matching analytic estimate first.
+Then investigate whether Theorem~W can simplify that construction or improve its margin;
+recompute the complete valuation profile and cost before combining the results. (c) Prove the cost formula $\frac{s(s+4)}{2(s+2)}K^2$ for the plain family, which
 would settle $s=7,\dots,13$ negatively for that family.
 \end{problem}
 
@@ -966,10 +1073,105 @@ $5I_h-I_{h-1}=-12\sum_{t\ge1}\frac d{dt}\bigl[\frac{t\,r_h(t)r_{h-1}(t)}{t+h}\bi
 and explain the denominator growth at $s=5$, where
 only the arithmetic fails.
 
+\paragraph{Rank two: why a Pell equation appears.}
+The final Schur analysis goes beyond the upper quotient $q_h$ \st{S}.
+The \codexnote{zeta3-rank-q-heun-reduction}{finite Heun reduction} and
+\codexnote{zeta3-rank-q-independent-review}{review} show that the rank-two pencil, for $h\ge2$,
+has two roots bracketing $\zeta(3)$ in the exact field
+\[
+ \Q\!\left(\sqrt{8h^2-12h+5}\right).
+\]
+Their center and nonzero coefficient of the square root are rational. Both endpoints are
+therefore rational precisely when $8h^2-12h+5=v^2$ for an integer $v$, equivalently
+\[
+ (4h-3)^2-2v^2=-1.
+\]
+The Pell equation selects the rational cases of an extremal approximation problem.
+The source proves explicit formulas in Ap\'ery endpoints and transfers the classical cubic-lcm
+arithmetic at these indices. It does not improve the irrationality status of another odd zeta value.
+For general rank $q$, a finite $q$-dimensional quotient controls the algebraic fields; the
+\codexnote{zeta3-all-rank-apery-endpoint-basis}{all-rank endpoint basis} gives a further explicit
+Ap\'ery description, with its own analytic dependencies and review.
+
+\section*{D6. Orthogonal projection, a random process, and every odd zeta value}
+
+\emph{Idea.} The reciprocal cube splits as a squared coefficient $1/k^2$ times an orthogonal
+mode norm proportional to $1/k$. Two uniform integrations contribute a further $1/k^2$.
+This produces all odd zeta values without changing the observable.
+
+Use the weighted inner product
+$\langle f,g\rangle_w=\int_0^1(1-x)f(x)g(x)\dd x$ and put
+\[
+ K(x)=\frac{-\log x}{1-x},\qquad
+ Q_k(x)=\frac{P_k(x)+P_{k-1}(x)}{1-x}\quad(k\ge1).
+\]
+The numerator vanishes at $x=1$, so $Q_k$ is a polynomial of degree $k-1$.
+The \codexnote{legendre-christoffel-cubic-tail}{finite projection construction}, with its
+\codexnote{legendre-christoffel-independent-review}{review}, proves \st{S}
+\[
+ \langle Q_j,Q_k\rangle_w=\frac2k\,\delta_{jk},\qquad
+ K=\sum_{k=1}^n\frac{Q_k}{k}+G_n,\qquad
+ \|G_n\|_w^2=2\sum_{k>n}k^{-3}.
+\]
+Thus the displayed finite expansions converge in the weighted square norm.
+
+Starting at $x\in(0,1)$, choose $T$ uniformly in $(x,1)$, then the next point $Y$ uniformly
+in $(0,T)$. Its transition density and detailed balance identity are
+\[
+ p(x,y)=\frac{-\log\max(x,y)}{1-x},\qquad
+ 2(1-x)p(x,y)=-2\log\max(x,y)=2(1-y)p(y,x).
+\]
+Hence the stationary density is $2(1-x)$ and the transition operator $\mathsf P$ is symmetric
+for $\langle\cdot,\cdot\rangle_w$. Direct conditional integration gives
+\[
+ \mathsf P(x^j)=\frac{1+x+\cdots+x^j}{(j+1)^2}.
+\]
+It preserves each polynomial degree; symmetry and orthogonality therefore force
+$\mathsf P Q_k=Q_k/k^2$. Jensen's inequality and stationarity make $\mathsf P$ a contraction.
+Applying it to the finite expansions and passing to the square-norm limit proves
+\st{P given the projection identities above}
+\[
+ \boxed{\ \mathbb E[K(X_0)K(X_r)]=2\langle K,\mathsf P^rK\rangle_w
+       =4\sum_{k\ge1}k^{-2r-3}=4\zeta(2r+3)\ },\qquad r\ge0.
+\]
+Also $\mathbb E[K(X_0)]=2$, so the covariance is $4(\zeta(2r+3)-1)$.
+The \codexnote{uniform-gibbs-zeta-correlations}{sampler note} and
+\codexnote{uniform-gibbs-zeta-independent-review}{review} include the endpoint and convergence details
+and primary comparisons with classical Gibbs-sampling/orthogonal-polynomial work.
+No historical novelty is asserted.
+
+\emph{Why this is not an irrationality proof.} The finite-mode error is the positive tail
+$4\sum_{k>n}k^{-2r-3}$, which decays only polynomially. If $s=2r+3$, multiplying by $D_n^s$
+cannot make it small: $D_n\ge n$ and
+$\sum_{k>n}k^{-s}\ge(n+1)^{1-s}/(s-1)$, so the cleared tail even tends to infinity.
+A positive representation and exact spectrum have been obtained; a successful arithmetic budget
+has not. This is a particularly accessible companion to the main $\zeta(3)$ proof.
+
+\begin{problem}
+Derive the finite projection identity directly from Rodrigues integration by parts, then explain
+which extra cancellation the second Legendre factor supplies in the successful Ap\'ery form.
+For the algebraic alternative, derive the first rational rank-two brackets at Pell indices.
+For a higher-zeta research project, choose one balanced family and study its primitive primewise
+coefficient cancellation; do not infer a global impossibility theorem from a failed chosen multiplier.
+\end{problem}
+
 \section*{Status and sources}
+\begingroup\sloppy
 \footnotesize
 
-\noindent\textbf{Sources.} Paths are relative to \texttt{Peer Review/} unless a branch is named.
+\noindent\textbf{Codex revision and source status.}
+This revision incorporates the final source snapshot \texttt{03cc75d} and its
+\href{https://github.com/BoomydayCoder/Mathathon/blob/03cc75d694220d0fba888c637e573a29799e6d5b/codex/START_HERE.md}{reading guide}.
+The added \st{S} statements were compared with their written proofs and internal review records;
+this editorial pass is not a new complete audit of those proofs. The sampler derivation on the page
+uses the explicitly cited projection identities. The $\pi^r$ scope, truncation results, balanced
+arithmetic, final determinant normalization, Lean record, and Schur--Pell extension distinguish
+completed source work from proposed directions. Claude's matrix-exponential and polylogarithm
+sections remain attributed to the digest drafting, not to Codex's earlier session.
+No independent elementary proof of $\zeta(5)$ or theorem proving every odd zeta value irrational
+was obtained. The advanced $\zeta(5)$ adaptation retains the stated Fauzan inputs.
+
+\noindent\textbf{Original digest sources.} Paths are relative to \texttt{Peer Review/} unless a branch is named.
 Sections 1--2, M1--M4: the Codex cookbook folder (its framework, shared-coefficients,
 boundary-pairings and pi-powers notes); proofs rewritten and rechecked here.
 Section 3: Codex exposition PDF \S6; \path{main-explanation.tex} (package 03) and
@@ -984,7 +1186,7 @@ and the boundary-pairings note; Instance~2 was worked out here; Instance~3 and t
 paragraph of M4 follow the reports on Codex packages 04 and 01 in \path{Referee-reports/}. D5:
 package 05, its status file and its referee report.
 
-\noindent\textbf{What we verified ourselves} (mpmath at 40--400 digits, sympy, exact rational
+\noindent\textbf{What the original digest team verified} (mpmath at 40--400 digits, sympy, exact rational
 arithmetic). Every numerical constant in Part~I; identity \eqref{eq:pade} in its three forms (real
 and complex $z$, $n\le5$) and at $z=i\pi$; the integrals, linear forms and denominators for
 $\log\frac{m+1}m$ and $\zeta(2)$; the Mellin formula of M1; the Casoratians, the bound
@@ -996,11 +1198,12 @@ factorisation and its limit at $1$; the simultaneous Pad\'e problem for $n\le5$;
 of Lemma~\ref{lem:energy} (the third for small indices only); the statements about $q_h$ for
 $h\le120$; and the arithmetic of the constants quoted in Sections~7 and D4. Proofs marked \st{P} were checked line by line by the drafting agent.
 
-\noindent\textbf{What we did not verify.} Everything labelled \st{R}: the preprints on $\zeta(5)$
+\noindent\textbf{What the original digest team did not verify.} Everything labelled \st{R}: the preprints on $\zeta(5)$
 (A.~Fauzan, \path{doi:10.5281/zenodo.22826419}) and $\zeta(7)$ (P.~Anand, Zenodo record 22920911), the Lean
 projects, Theorem~W, the $s=3$ determinant proof, the no-go theorem, everything about Catalan's
 constant, the full proof of Codex's Proposition~16.1, the Chebyshev-type bounds. Literature pointers
 and the classical references named in the text (Beukers 1979, Niven 1947, Sondow, Pr\'evost 1996,
 Zudilin arXiv:math/0202159 and arXiv:1507.05697) were not retrieved by the drafting agent.
 
+\endgroup
 \end{document}

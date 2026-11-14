@@ -1,15 +1,16 @@
 # Digest: two PDFs for the team
 
-Outcome of the peer-review process described in `../PEER_REVIEW_PROMPT.md`. Both PDFs were written by
-Claude after reading the Claude and Codex submissions. Codex has not yet reviewed them; its comments,
-if any, go in `codex-comments-on-<pdf>.md` in this folder.
+Outcome of the peer-review process described in `../PEER_REVIEW_PROMPT.md`. Both PDFs were initially written by
+Claude after reading the Claude and Codex submissions. Codex subsequently compared them with the final
+research archive and, at the user's request, revised the cookbook. See
+[cookbook revision notes](codex-comments-on-cookbook-and-directions.md) for scope and validation.
 
 **Nothing here has been read by a human.** Every check listed below was done by an AI agent.
 
 | file | pages | content |
 |---|---|---|
 | `zeta3-proofs.pdf` | 10 | Three complete proofs that ζ(3) is irrational: Beukers' integral; Zudilin's proof reduced to one polynomial identity and a Casoratian; an energy inequality (from the Codex submission). One common section for the arithmetic and for the lcm estimate. A derivation of the numbers 17 and 5 in Apéry's recurrence. |
-| `cookbook-and-directions.pdf` | 15 | Part I: one recipe, with complete proofs for log 2, eʳ, π², ζ(2). Part II: why the extensions to ζ(5), ζ(7), Catalan's constant and Euler's constant fail. Part III: directions to develop, each with a first problem (the Apéry differential operator, matrix exponentials, polylogarithms, the energy method, determinants). |
+| `cookbook-and-directions.pdf` | 18 | Part I: one recipe, with complete proofs for log 2, eʳ, π², ζ(2). Part II: higher-constant obstructions, proved truncation repairs and balanced arithmetic. Part III: developed connections and next problems, including the final PNT-free determinant adaptation, Schur–Pell bounds and a random process realizing all odd-zeta correlations. Also specifies the scope of πʳ. |
 
 Suggested reading order: `zeta3-proofs.pdf` Sections 1–4 (40 minutes), then Sections 5–7; then the
 cookbook Part I quickly, Part III slowly.
@@ -27,7 +28,7 @@ cookbook Part I quickly, Part III slowly.
 3. **`cookbook-and-directions.pdf`.** Drafted by a subagent from a detailed brief, read by Claude, then
    checked the same way by a different reader. Result: no proof marked "proved here" is wrong and all
    recomputed constants are correct; 39 points (one small proof gap, one wrong heuristic count, label
-   and source-wording problems, notation clashes), applied in the final version.
+   and source-wording problems, notation clashes), applied in Claude's reviewed version. The later Codex additions have the separate source-proof and editorial-check status described in the revision notes.
 
 ## What is and is not established
 
@@ -35,16 +36,12 @@ cookbook Part I quickly, Part III slowly.
 - The matrix-exponential theorem (for rational M, e^M is rational only if M is nilpotent) is proved on
   the page. It is a special case of the Lindemann–Weierstrass theorem; only the elementary proof is of
   interest. We did not search the literature for this formulation.
-- Everything about ζ(5), ζ(7) and Catalan's constant in Part II is **reported from our research notes
-  and from preprints, not re-verified** for the digest. Labels in the PDF say so statement by statement.
-- No original paper other than Zudilin's (arXiv:math/0202159) and Fauzan's ζ(5) preprint was retrieved
-  and read in this project. Attributions to Apéry, Beukers, Niven, Prévost and others are as given in
-  those sources or in the submissions.
+- Results labelled **S** have written source proofs and separate internal AI review records; those proofs are not reproduced in full here. **R** labels retain the original digest team's reported-only status. Neither label means human peer review. The revised ζ(5) account retains Fauzan's stated inputs and does not claim an independent elementary proof.
+- The original digest's source-retrieval statements describe its drafting team. The broader Codex archive contains additional primary-source comparisons; the revision links the relevant records. Source retrieval, an internal review, a formal build and human peer review are separate forms of evidence.
 
 ## Not included
 
-The Codex packages on Schur approximants and Legendre–Padé approximation appear only as paragraphs in
-the cookbook's directions. The ζ(5) margin theorem, the ζ(7) no-go theorem and the referee report on a
+The full Schur and Legendre–Padé proofs remain in their packages. The cookbook now includes the rank-two Pell consequence and the projection/sampler connection, but does not reproduce the entire research archive. The ζ(5) margin theorem, the ζ(7) no-go theorem and the referee report on a
 claimed ζ(7) proof are summarised in Part II; the full texts are on branch `research-claude`.
 
 ## Build
