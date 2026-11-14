@@ -14,7 +14,8 @@ Part 1: family W=1, h=K, s = 3,5,7,9:  cost/K^2, log det/K^2, total/K^2, and the
         Asymptotic prediction (PNT): cost -> s(s+4)/(2(s+2)) (s>=5), 9/4 (s=3); real -> (9/2) log 2.
 Part 2: Fauzan's parameters (K,N,h) = (40n,3n,37n), W = D_N^6, s = 3,5,7, n = 1,2.
 Part 3: scan over (a, N, h) at fixed K for s = 5, 7: best total/K^2.
-Usage: python3 hankel_sdependence.py part1|part2|part3 [K]
+Part 4: W=1, s=5, h = lam*K for lam in 1.0..1.4, K = 20,30,40,50 (is h != K better for zeta(5)?).
+Usage: python3 hankel_sdependence.py part1|part2|part3|part4 [K]
 """
 import sys, math
 sys.path.insert(0, '/home/user/Mathathon/research/claude/computations')
@@ -97,6 +98,23 @@ def part3(K=30):
         print(f"  overall best for s={s}: {m[0]:+.4f} at (a,N)={m[1][:2]}, h={best[m[1]][1]}")
 
 
+def _one4(args):
+    s, K, h = args
+    r = analyse_F1(s, K, 0, 0, h, pmax=2)
+    return (s, K, h, r['deg'], r['logprim'] / K ** 2)
+
+
+def part4():
+    from multiprocessing import Pool
+    lams = (1.0, 1.1, 1.2, 1.3, 1.4)
+    jobs = [(5, K, int(round(lam * K))) for lam in lams for K in (20, 30, 40, 50)]
+    with Pool(4) as pool:
+        res = pool.map(_one4, jobs, chunksize=1)
+    print("Part 4: s=5, W=1: log|prim(zeta(5))|/K^2 for h = lam*K   (list of (K, value))")
+    for lam in lams:
+        print(f"  lam={lam}: ", [(K, round(v, 4)) for (s, K, h, d, v) in res if h == int(round(lam * K))])
+
+
 if __name__ == '__main__':
     what = sys.argv[1] if len(sys.argv) > 1 else 'part1'
     if what == 'part1':
@@ -105,3 +123,5 @@ if __name__ == '__main__':
         part2()
     elif what == 'part3':
         part3(int(sys.argv[2]) if len(sys.argv) > 2 else 30)
+    elif what == 'part4':
+        part4()

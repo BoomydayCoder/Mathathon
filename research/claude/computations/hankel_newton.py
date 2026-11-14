@@ -25,6 +25,44 @@ This script
   (3) compares  true v_p(det G_K)  with  the tropical determinant of the valuation matrix
       and with the closed bounds  -3K + 2 floor(K/p)  and  -6(K-p+1).
 Usage:  python3 hankel_newton.py [s] [K1,K2,...]
+
+-----------------------------------------------------------------------------------------------
+WHY THE BOUNDS HOLD (s = 3; proof notes for the statements this script tests numerically).
+Notation: m_j = j^2 (X - H_j) - 1/2 + 1/(2j), H_j = sum_{v<=j} v^-3; R(A,B) = mu_X(1/prod_{j=A+1}^{B}(t+j^2))
+= sum_{j in W} rho_j m_j, W = [A+1,B], rho_j = 1/prod_{m in W, m != j} (m^2-j^2); v_p = Gauss valuation.
+tau(Q) = L(Q')/2, L(x^k) = B_k (B_1 = -1/2); mu(P) = tau(x^3 P(-x^2)).
+
+(L1) reflection congruence: for an odd prime p and 0<a<p:  m_a == m_{p-a} (mod p).
+     [ (p-a)^2 == a^2;  H_{p-a} == H_{p-1} + H_{a-1} == H_a - a^-3 (mod p) as H_{p-1} == 0;  1/(2(p-a)) == -1/(2a). ]
+(L2) windows below p: B <= p-1  =>  R(A,B) in Z_(p)[X].
+     [ p | m^2-j^2 (m != j in W) iff m = p-j, exactly once; unpaired terms are integral; a pair {a,p-a}
+       contributes (m_a/Pi' - m_{p-a}/Pi'')/((p-a)^2-a^2) with Pi' == Pi'' units, numerator == 0 by (L1). ]
+(L3) = (B1) for pole entries: p^2-p > 2K, N = #{multiples of p in [A+2,B-1]}  =>  v_p(R(A,B)) >= -3-2N.
+     [ For m != j in W, v_p(m^2-j^2) = [p|m-j] + [p|m+j].  A class {m == +-j} (p not| j) has l <= 2N+2 elements
+       (2 per full period between interior multiples, <= 2 in each end piece); v_p(m_j) >= -3; so the term
+       has v_p >= -3-(l-1) >= -3-2N unless l = 2N+2.  In that case write j = |a+pq|; the index set Q is stable
+       under q -> -1-q, m^2-j^2 = p(q'-q)(2a+p(q+q')), p^3 m_j == -a^2 H_{d(q)} (mod p) with d(q) = floor(j/p)
+       = q (q>=0), -q-1 (q<0), and the leading term of the class sum is a unit times the divided difference
+       sum_q H_{d(q)} / prod_{q' != q}(q'-q), which vanishes because the function is invariant and the
+       node set is symmetric with an EVEN number of nodes.  Multiples of p: v_p(m_j) >= -1 and
+       v_p(rho_j) >= -2(N+1). ]
+(L4) = (B1) for polynomial entries: p > sqrt(2K)+3, P = prod_{j=B+1}^{A}(t+j^2), n = #{multiples of p in [B,A+1]}
+     =>  v_p(mu(P)) >= 2n-3.
+     [ n <= 1: von Staudt (v_p(mu(t^e)) >= -1).  n >= 2: Raabe's multiplication theorem gives
+       tau(Q) = p^-2 sum_{a mod p} tau(Q(a+px)), Q = x^3 P(-x^2).  Q(a+px) = +- p^{l_a} T_a(x) U_a(x),
+       T_a = prod (x - q_r) over the roots r == a, U_a in Z[px] with unit constant term, l_a >= 2(n-1);
+       tau(x^m) = m B_{m-1}/2 is p-integral for m <= 2p-2 and has v_p >= -1 always, so v_p(tau(Q(a+px))) >= l_a;
+       if l_a = 2(n-1) the roots q_r are symmetric under q -> -1-q, T_a(-1-x) = T_a(x), and
+       tau(g(-1-x)) = -tau(g(x)) forces tau(T_a) = 0, which gains one more p.  a = 0 gains p^3 from x^3. ]
+(L5) weights: v_p(c_{i,i'}) >= u_i + u'_i' for all i,i'  =>  v_p(det) >= sum u_i + sum u'_i'.
+     With u_i = 2 floor((i+1)/p), u'_i' = -3 - 2 floor((K-i'-1)/p):  v_p(det G_K) >= -3K + 2 floor(K/p).
+(L6) K/2 < p <= K: columns i' <= K-p get weight -5 [(L3) with N <= 1], rows i >= p-1 weight -1
+     [mu(t^e) is p-integral for e <= p-3], all other entries are p-integral [(L2)]:  v_p(det G_K) >= -6(K-p+1).
+(L7) p > K: every entry is p-integral, v_p(det G_K) >= 0.
+(L8) = (B2), all p (crude): termwise for pole entries; for polynomial entries tau(binom(x,k)) = (-1)^{k-1} H_k^{(1)}/(k+1)
+     and p^M | Q(x) for all integers x with M >= 2 sum_k n_{p^k} - 4 floor(log_p K).  =>  v_p(det G_K) >= -7K floor(log_p 3K).
+Consequently  Phi_K det G_K in Z[X]  with  log Phi_K = 6 int_{K/2}^{K} theta(u) du + O(K^{3/2})   (theta = Chebyshev).
+-----------------------------------------------------------------------------------------------
 """
 import sys, math
 sys.path.insert(0, '/home/user/Mathathon/research/claude/computations')

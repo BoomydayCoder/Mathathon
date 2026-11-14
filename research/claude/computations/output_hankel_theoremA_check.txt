@@ -1,8 +1,8 @@
-  K | Phi_K det in Z[X] | other primes in denominators | true cost/K^2 | M_K | log Phi_K/K^2 | log det(zeta3)/K^2 | log|prim(zeta3)|/K^2
-   10 | True | none | 1.6195 | 1.3706 | 7.8632 | -2.7226 | -1.1031
-   20 | True | none | 1.8833 | 1.5668 | 5.7811 | -2.8656 | -0.9822
-   30 | True | none | 1.9663 | 1.6612 | 4.8413 | -2.9268 | -0.9605
-   41 | True | none | 2.0145 | 1.6969 | 4.6621 | -2.9648 | -0.9503
-   60 | True | none | 2.0908 | 1.7946 | 4.5604 | -3.0020 | -0.9113
-   80 | True | none | 2.1219 | 1.8701 | 3.9455 | -3.0246 | -0.9027
-  100 | True | none | 2.1302 | 1.9022 | 3.9926 | -3.0393 | -0.9091
+  K | Phi_K det in Z[X] | other primes in denominators | true cost/K^2 | M_K | log Phi_K/K^2 | log det(zeta3)/K^2 | log|prim(zeta3)|/K^2 | d_K^{3K} det in Z[X]
+   10 | True | none | 1.6195 | 1.3706 | 7.8632 | -2.7226 | -1.1031 | True
+   20 | True | none | 1.8833 | 1.5668 | 5.7811 | -2.8656 | -0.9822 | True
+   30 | True | none | 1.9663 | 1.6612 | 4.8413 | -2.9268 | -0.9605 | True
+   41 | True | none | 2.0145 | 1.6969 | 4.6621 | -2.9648 | -0.9503 | True
+   60 | True | none | 2.0908 | 1.7946 | 4.5604 | -3.0020 | -0.9113 | True
+   80 | True | none | 2.1219 | 1.8701 | 3.9455 | -3.0246 | -0.9027 | True
+  100 | True | none | 2.1302 | 1.9022 | 3.9926 | -3.0393 | -0.9091 | True
