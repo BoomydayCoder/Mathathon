@@ -1,0 +1,40 @@
+s=5 K=40 N=3 h=37: det(Newton tail basis) == det(monomial): True  (0s)
+   p | true v_p(Delta_K) | tropical det (Newton tail basis)
+     2 |    324 |     48
+     3 |     87 |      2
+     5 |    -31 |    -80
+     7 |     -2 |     -5
+    11 |    -83 |   -143
+    13 |    -93 |   -147
+    17 |   -123 |   -143
+    19 |   -113 |   -133
+    23 |   -110 |   -110
+    29 |    -60 |    -60
+    31 |    -46 |    -46
+    37 |     -4 |     -4
+   sum v_p log p / K^2:  true -0.9823   tropical bound -1.4619   (difference 0.4796)
+s=5 K=80 N=6 h=74: det(Newton tail basis) == det(monomial): True  (6s)
+   p | true v_p(Delta_K) | tropical det (Newton tail basis)
+     2 |   2513 |   2047
+     3 |   1122 |    892
+     5 |    387 |    164
+     7 |    113 |   -124
+    11 |     53 |      5
+    13 |     -6 |     -6
+    17 |   -106 |   -262
+    19 |   -128 |   -270
+    23 |   -188 |   -292
+    29 |   -242 |   -318
+    31 |   -254 |   -306
+    37 |   -227 |   -270
+    41 |   -232 |   -252
+    43 |   -238 |   -242
+    47 |   -208 |   -208
+    53 |   -154 |   -154
+    59 |   -112 |   -112
+    61 |    -98 |    -98
+    67 |    -56 |    -56
+    71 |    -28 |    -28
+    73 |    -14 |    -14
+    79 |     -2 |     -2
+   sum v_p log p / K^2:  true -0.6714   tropical bound -1.1989   (difference 0.5275)

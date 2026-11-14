@@ -1,0 +1,44 @@
+s=3 K=12: det(Newton)==det(monomial): True;  violations of (B1),(B2),(B3),(B4): {'B1': 0, 'B2': 0, 'B3': 0, 'B4': 0};  min slack (B1),(B2): {'B1': 0, 'B2': 4}
+   p | true v_p(det) | tropical det | -sK+2[K/p] (p>sqrt(2K)+3) | -(s+3)(K-p+1) (p>K/2)
+     2 |    -88 |    -89 |   None |   None
+     3 |    -48 |    -48 |   None |   None
+     5 |    -32 |    -32 |   None |   None
+     7 |    -32 |    -32 |   None |    -36
+    11 |     -8 |     -8 |    -34 |    -12
+s=3 K=20: det(Newton)==det(monomial): True;  violations of (B1),(B2),(B3),(B4): {'B1': 0, 'B2': 0, 'B3': 0, 'B4': 0};  min slack (B1),(B2): {'B1': 0, 'B2': 4}
+   p | true v_p(det) | tropical det | -sK+2[K/p] (p>sqrt(2K)+3) | -(s+3)(K-p+1) (p>K/2)
+     2 |   -188 |   -188 |   None |   None
+     3 |   -104 |   -104 |   None |   None
+     5 |    -45 |    -52 |   None |   None
+     7 |    -56 |    -56 |   None |   None
+    11 |    -56 |    -56 |    -58 |    -60
+    13 |    -44 |    -44 |    -58 |    -48
+    17 |    -20 |    -20 |    -58 |    -24
+    19 |     -8 |     -8 |    -58 |    -12
+s=3 K=30: det(Newton)==det(monomial): True;  violations of (B1),(B2),(B3),(B4): {'B1': 0, 'B2': 0, 'B3': 0, 'B4': 0};  min slack (B1),(B2): {'B1': 0, 'B2': 4}
+   p | true v_p(det) | tropical det | -sK+2[K/p] (p>sqrt(2K)+3) | -(s+3)(K-p+1) (p>K/2)
+     2 |   -333 |   -335 |   None |   None
+     3 |   -173 |   -174 |   None |   None
+     5 |   -106 |   -110 |   None |   None
+     7 |    -82 |    -82 |   None |   None
+    11 |    -86 |    -86 |    -86 |   None
+    13 |    -86 |    -86 |    -86 |   None
+    17 |    -80 |    -80 |    -88 |    -84
+    19 |    -68 |    -68 |    -88 |    -72
+    23 |    -44 |    -44 |    -88 |    -48
+    29 |     -8 |     -8 |    -88 |    -12
+s=3 K=41: det(Newton)==det(monomial): True;  violations of (B1),(B2),(B3),(B4): {'B1': 0, 'B2': 0, 'B3': 0, 'B4': 0};  min slack (B1),(B2): {'B1': 0, 'B2': 4}
+   p | true v_p(det) | tropical det | -sK+2[K/p] (p>sqrt(2K)+3) | -(s+3)(K-p+1) (p>K/2)
+     2 |   -506 |   -506 |   None |   None
+     3 |   -283 |   -293 |   None |   None
+     5 |   -204 |   -204 |   None |   None
+     7 |   -113 |   -113 |   None |   None
+    11 |   -117 |   -117 |   None |   None
+    13 |   -117 |   -117 |   -117 |   None
+    17 |   -119 |   -119 |   -119 |   None
+    19 |   -119 |   -119 |   -119 |   None
+    23 |   -110 |   -110 |   -121 |   -114
+    29 |    -74 |    -74 |   -121 |    -78
+    31 |    -62 |    -62 |   -121 |    -66
+    37 |    -26 |    -26 |   -121 |    -30
+    41 |     -2 |     -2 |   -121 |     -6
