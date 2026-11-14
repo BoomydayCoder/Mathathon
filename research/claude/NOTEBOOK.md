@@ -21,10 +21,13 @@
 - Fauzan's functional for every odd s: mu_X(R) = tau_X(x^s R(-x^2)), and mu_{zeta(s)}(R) = -(1/(s-1)!) sum'_{x>=1} g^{(s-1)}(x) + boundary term, g = x^s R(-x^2). `fauzan_functional.py` 34/34 PASS (exact for s=3,5,7 on 23 test functions). The all-s moment/pole formulas were found first by the other agent (codex/problem131/odd-moment-generalization.md); we confirmed them independently.
 
 ## Proof drafts
-(none yet; a Hankel-determinant proof of zeta(3) irrationality is being attempted by the frontier subagent)
+- `hankel-zeta3.md`: Hankel-determinant proof of zeta(3) irrationality. Complete draft. Passes: frontier subagent (construction, L1-L8, sketch of (d)); orchestrator (L1-L7 re-derived by hand); referee subagent (L8 and (d) re-proved from scratch, uniform argument for (d)); orchestrator (checked the referee's proofs line by line). Computer-assisted step: inequality (H) on [1,60]. External: Hermite's formula; a Chebyshev-type bound with kappa < 1.2155 (period-6 bound suffices). Exact checks: K<=100. NOT human-refereed.
 
 ## Conjectures
-(none yet)
+- log Delta_K(zeta(3)) = -(9/2 log 2 + o(1)) K^2 (equilibrium problem; support [0,b], 3b+1-sqrt(1+b^2)=2 lambda).
+- True arithmetic cost of Delta_K (s=3, W=1) is (9/4+o(1))K^2; for s>=5 it is s(s+4)/(2(s+2)) K^2.
+- lcm(1..K)^{3K} Delta_K in Z[X].
+- omega_K is (1/4pi) x Wilson weight with parameters (1,1,1,-K) (identity checked by the orchestrator by hand); are there closed forms for the orthogonal polynomials or for Delta_K?
 
 ## Unresolved gaps
 - CLOSED: elementary lcm bound. The other agent's period-6 argument (codex/problem131/denominator-design.md §1) gives log D_n <= 1.17053 n + O(log^2 n); we checked the proof by hand. Sufficient for zeta(3) (threshold 1.17516).

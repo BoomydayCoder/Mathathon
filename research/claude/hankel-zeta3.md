@@ -1,18 +1,23 @@
 # A Hankel-determinant proof of Apéry's theorem (proof draft)
 
-**Status: proof draft with unverified steps** (INSTRUCTIONS, "Standards for claims").
+**Status: complete proof draft, internally refereed, not yet seen by a human referee.** In the
+terms of INSTRUCTIONS ("Standards for claims") it must still be reported as a proof draft: every step
+is written out below and has been checked by at least two independent passes inside this session
+(frontier subagent → orchestrator by hand → for L8 and (d) an independent referee subagent that
+re-proved them from scratch, whose proofs the orchestrator then checked line by line), but all of
+these are AI passes.
 
 | part | status |
 |---|---|
 | (a) degree, (b) positivity | proved here, given Hermite's formula for the Hurwitz zeta function (classical; cited, not re-proved) |
-| (c) arithmetic, primes $p>\sqrt{2K}+3$ (Lemmas L1–L7) | proved here; every lemma re-derived by hand by the orchestrator; conclusions checked exactly for $K\le100$ |
-| (c) arithmetic, small primes (Lemma L8) | **sketch only**; conclusion checked exactly for $K\le100$; independent refereeing in progress |
-| (d) analytic bound | **sketch only**, one inequality certified by interval arithmetic; checked numerically for $K\le60$; independent refereeing in progress |
+| (c) arithmetic (Lemmas L1–L8) | proved here; conclusions also checked exactly for $K\le100$ |
+| (d) analytic bound | proved here **modulo one explicit one-variable inequality (H) on $[1,60]$, certified by interval arithmetic** (two independent implementations); numerically checked for $K\le160$ |
+| prime input | any bound $\theta(u)\le\kappa u+o(u)$ with $\kappa<1.2155$; the elementary period-6 bound ($\kappa=1.17053$) suffices |
 | novelty | not investigated. The method is Fauzan's (ζ(5), 2026) specialised to $s=3$ with a different, simpler arithmetic; FLSZ (arXiv:2611.16156) use the same idea in another setting. We do not know whether an $s=3$ version exists in the literature. |
 
 Origin: construction, lemmas and experiments by the frontier subagent of this session (scripts
 `computations/hankel_*.py`); proofs below re-derived and written by the orchestrator. Kind of
-contribution: a **genuinely different proof** of Apéry's theorem if the two sketched parts hold: no
+contribution: a **genuinely different proof** of Apéry's theorem: no
 linear forms, no recurrence, no hypergeometric identity; instead integer **polynomials** $Q_K$ of
 degree $K$ with $0<Q_K(\zeta(3))<e^{-cK^2}$.
 
@@ -35,15 +40,17 @@ $$G_K(X)=\Bigl[\mu_X\Bigl(\frac{t^{i+j}}{D_K(t)}\Bigr)\Bigr]_{0\le i,j<K},\qquad
 > $e_p=7K\lfloor\log_p3K\rfloor$ for $p\le P_0$; $e_p=3K-2\lfloor K/p\rfloor$ for $P_0<p\le K/2$;
 > $e_p=6(K-p+1)$ for $\max(P_0,K/2)<p\le K$; $e_p=0$ for $p>K$. Consequently
 > $\log\Phi_K=6\int_{K/2}^K\theta(u)\,du+O(K^{3/2})$, $\theta(u)=\sum_{p\le u}\log p$.
-> (d) $\log\Delta_K(\zeta(3))\le-(1+2\log\frac52)K^2+O(K\log K)$, and $1+2\log\frac52=2.8326\ldots$
+> (d) For $\vartheta\in\{\frac25,\frac{21}{50}\}$: $\log\Delta_K(\zeta(3))\le-(1-2\log\vartheta)K^2+O(K\log K)$;
+> $1-2\log\frac25=2.8326\ldots$, $1-2\log\frac{21}{50}=2.7350\ldots$
 >
-> **Corollary.** If $\theta(u)\le\kappa u+o(u)$ with $\kappa<\frac{4}{9}(1+2\log\frac52)=1.2589\ldots$, then
-> $Q_K:=\Phi_K\Delta_K\in\mathbb Z[X]$ has degree $K$ and $0<Q_K(\zeta(3))\le\exp(-(2.8326-2.25\kappa+o(1))K^2)$;
+> **Corollary.** If $\theta(u)\le\kappa u+o(u)$ with $\frac94\kappa<1-2\log\vartheta$, then
+> $Q_K:=\Phi_K\Delta_K\in\mathbb Z[X]$ has degree $K$ and $0<Q_K(\zeta(3))\le\exp(-(1-2\log\vartheta-\frac94\kappa+o(1))K^2)$;
 > hence $\zeta(3)\notin\mathbb Q$ (if $\zeta(3)=a/b$, then $b^KQ_K(a/b)$ is a positive integer $\le b^Ke^{-cK^2}\to0$).
 
-Admissible $\kappa$: $1$ (prime number theorem; exponent $-0.58K^2$), $1.1056$ (Chebyshev), or the
-elementary period-6 bound $\kappa=1.17053$ of `short-proof.md` Step 7 (exponent $-0.199K^2$). The
-trivial $\theta(u)<u\log4$ is not enough ($2.25\log4=3.119>2.833$).
+Admissible $\kappa$: $1$ (prime number theorem), $1.1056$ (Chebyshev), or the elementary period-6
+bound $\kappa=1.17053$ of `short-proof.md` Step 7. With $\vartheta=\frac{21}{50}$ (slack $0.035$ in
+(H)) and $\kappa=1.17053$ the exponent is $-(2.7350-2.6337)K^2=-0.101K^2$; with $\vartheta=\frac25$ (thin
+margin in (H)) it is $-0.199K^2$. The trivial $\theta(u)<u\log4$ is not enough.
 
 ## 2. (b) Positivity
 
@@ -151,30 +158,95 @@ $v_p(\Delta_K)\ge-6(K-p+1)$.
 
 **L7 ($p>K$).** All entries are $p$-integral (L2 and the degree remark), so $v_p(\Delta_K)\ge0$.
 
-**L8 (small primes, sketch).** For every prime $p$: $v_p(\Delta_K)\ge-7K\lfloor\log_p3K\rfloor$. Idea:
-termwise bounds for pole entries; for polynomial entries, expand $Q$ in the binomial basis and use
-that $Q$ is divisible by a high power of $p$ at all integers; then L5 with weights
-$2\sum_k\lfloor(i+1)/p^k\rfloor$ etc. *Not written out; under independent review.* Only a bound of the
-shape $-cK\log_pK$ is needed.
+**L8 (all primes, crude).** For every prime $p$ and $K\ge2$:
+$v_p(\Delta_K)\ge-K\bigl(6\lfloor\log_p2K\rfloor+[p=2]\bigr)\ge-7K\lfloor\log_p3K\rfloor$.
+*Proof* (referee subagent; checked by the orchestrator). Write $\mathsf l_x=\lfloor\log_px\rfloor$ and
+$N_q(i,i')=\lfloor\frac{K-i'-1}q\rfloor-\lfloor\frac{i+1}q\rfloor$ for prime powers $q=p^k$. We show
+$v_p(c_{ii'})\ge-2\sum_{k\ge1}N_{p^k}(i,i')-6\,\mathsf l_{2K}-[p=2]$; then L5 with
+$u_i=2\sum_k\lfloor\frac{i+1}{p^k}\rfloor-6\mathsf l_{2K}-[p=2]$, $u'_{i'}=-2\sum_k\lfloor\frac{K-1-i'}{p^k}\rfloor$ gives
+the claim, because $\sum_i\lfloor\frac{i+1}q\rfloor-\sum_{i'}\lfloor\frac{K-1-i'}q\rfloor=\lfloor K/q\rfloor\ge0$.
+
+*Pole entries* (window of length $\ell=B-A$). $v_p(m_j)\ge-3\mathsf l_K-[p=2]$ (terms $j^2/v^3$, $\frac12$,
+$\frac1{2j}$). $v_p(\rho_j)=-\sum_k(a_k+b_k)$ with $a_k=\#\{m\ne j:p^k\mid m-j\}\le\lfloor\frac{\ell-1}{p^k}\rfloor$
+($=0$ if $p^k>K$) and $b_k=\#\{m\ne j:p^k\mid m+j\}\le\lfloor\frac{\ell-1}{p^k}\rfloor+1$ ($=0$ if $p^k>2K$). Since
+$[A+2,B-1]$ has $\ell-2$ integers, $\lfloor\frac{\ell-1}q\rfloor\le N_q+1$; and $N_q=0$ for $q>K$. So
+$v_p(R(A,B))\ge-2\sum_kN_{p^k}-5\mathsf l_K-\mathsf l_{2K}-[p=2]$.
+
+*Polynomial entries* ($d=A-B$). $Q(x)=x^3\prod_{j=B+1}^A(j-x)(j+x)=(d!)^2S(x)$ with $S$ integer-valued
+(each product of $d$ consecutive integers is $d!$ times a binomial coefficient), so
+$S=\sum_{k\le2d+3}s_k\binom xk$ with $s_k\in\mathbb Z$. From $\mathsf L((1+z)^x)=\frac{\log(1+z)}z$,
+differentiating in $x$: $\tau\bigl(\binom xk\bigr)=[z^k]\frac{\log^2(1+z)}{2z}=\frac{(-1)^{k-1}H^{(1)}_k}{k+1}$,
+which has $v_p\ge-2\mathsf l_{2K}$. The number $n_q=-N_q$ of multiples of $q$ in $[B,A+1]$ is
+$\le\lfloor d/q\rfloor+2$ and is $0$ for $q>K$, so $2v_p(d!)\ge-2\sum_kN_{p^k}-4\mathsf l_K$. Hence
+$v_p(\mu(P))\ge-2\sum_kN_{p^k}-4\mathsf l_K-2\mathsf l_{2K}$. $\square$
+
+(Exact check: zero violations for $K\in\{8,12,20,30,45,64\}$, all primes, all entries:
+`computations/hankel_referee_checks.py`.)
 
 **Size of $\Phi_K$.** Primes $p\le P_0$ contribute $\le7K\log(3K)\,\pi(P_0)=O(K^{3/2})$. For the rest,
 by partial summation,
 $\sum_{p\le K/2}3K\log p+\sum_{K/2<p\le K}6(K-p+1)\log p=6\int_{K/2}^K\theta(u)\,du+O(K\log K)\le\frac94\kappa K^2+o(K^2)$.
 
-## 5. (d) Analytic bound (sketch)
+## 5. (d) Analytic bound
 
-Hadamard for Gram determinants: $\Delta_K(\zeta(3))\le\prod_{n<K}\|p_n\|^2$ for any monic $p_n$ of degree
-$n$, $\|p\|^2=\int_0^\infty p(y^2)^2\omega_K(y)dy$. Take $p_n(t)=\prod_{j\le n}(t-(\vartheta j)^2)$,
-$\vartheta=\frac25$. Claim: $\|p_n\|^2\le Cn^7\vartheta^{4n}n!^4/K!^2$ (the value of the integrand
-at $y=0$, up to a polynomial factor). Then
-$\sum_{n<K}\bigl(4n\log\vartheta+4\log n!-2\log K!\bigr)=(2\log\vartheta-1)K^2+O(K\log K)$.
-The claim reduces, via elementary factorial bounds, to a one-variable inequality certified by
-interval arithmetic (`hankel_Htheta_interval.py`). *Bookkeeping not yet refereed.* Numerically
-(`hankel_hadamard.py`): at $K=60$, $\sum_n\log\|p_n\|^2/K^2=-2.809$, true $\log\Delta_K(\zeta(3))/K^2=-3.002$.
+Proof due to the referee subagent (it replaces the frontier subagent's two-case sketch by a uniform
+argument); checked line by line by the orchestrator.
+
+**Hadamard.** $\Delta_K(\zeta(3))$ is the Gram determinant of any monic $p_0,\dots,p_{K-1}$ with
+$\deg p_n=n$ (unitriangular change of basis), hence $\Delta_K(\zeta(3))\le\prod_{n<K}\|p_n\|^2$, where
+$\|p\|^2=\int_0^\infty p(y^2)^2\omega_K(y)\,dy$. Take $p_n(t)=\prod_{j\le n}(t-(\vartheta j)^2)$.
+
+**Proposition 3.** Suppose that for some $\delta>0$
+$$2\varphi(r)+\delta\vartheta r\le2\pi\vartheta r+\log(1+\vartheta^2r^2)+2\vartheta r\arctan\frac1{\vartheta r}\qquad(r>0),\tag{H}$$
+where $\varphi(r)=(1+r)\log(1+r)+(1-r)\log|1-r|$. Then for $1\le n<K$:
+$\ \|p_n\|^2\le C_\delta\,n^2\,\vartheta^{4n}\,n!^4/K!^2$, with
+$C_\delta=\frac{4e^4}\pi\int_0^\infty(1+2\pi y)^3(1+y^2)e^{-\delta y}dy$; and $\|p_0\|^2=\mu(1/D_K)\le\frac1{4K!^2}$.
+
+*Proof.* Put $z=y/\vartheta$, $r=z/n$, $F_n(z)=\prod_{j\le n}|1-z^2/j^2|$, $E_K(y)=\prod_{j\le K}(1+y^2/j^2)$. Then
+$p_n(y^2)^2\omega_K(y)=\frac{\vartheta^{4n}n!^4}{K!^2}\cdot\frac{F_n(z)^2w(y)}{E_K(y)}$.
+
+(i) *$F_n$ from above.* $h(u)=\log|1-z^2/u^2|$ decreases on $(0,z)$ and increases on $(z,\infty)$, and
+$\int_0^nh=n\varphi(z/n)$. If $z\ge n$: $h(j)\le\int_{j-1}^jh$ for $j\le n$, so $\log F_n\le n\varphi(r)$. If
+$z<n$, with $m=\lfloor z\rfloor$: $h(j)\le\int_{j-1}^jh$ for $j\le m$, $h(j)\le\int_j^{j+1}h$ for $j>m$, and
+$\int_n^{n+1}h<0$; so $\log F_n\le n\varphi(r)-\int_m^{m+1}h$, and
+$-\int_m^{m+1}h=-\int\log|u-z|-\int\log(u+z)+2\int\log u\le(1+\log2)+\log n$. In all cases
+$\log F_n(z)\le n\varphi(r)+1+\log2+\log n$.
+
+(ii) *$E_K$ from below.* $g(u)=\log(1+y^2/u^2)$ is decreasing, so
+$\log E_K\ge\int_1^Kg\ge\int_0^ng-\int_0^1g$ (as $K>n$), with
+$\int_0^ng=n\log(1+\frac{y^2}{n^2})+2y\arctan\frac ny$ and $\int_0^1g\le\log(1+y^2)+2$. This is uniform in
+$y$ and $K$.
+
+(iii) *$w$ from above.* $w=4\pi^2y^3\frac{q(1+q)}{(1-q)^3}$ with $q=e^{-2\pi y}$, and $1-q\ge\frac{2\pi y}{1+2\pi y}$,
+so $w(y)\le\frac1\pi(1+2\pi y)^3e^{-2\pi y}$.
+
+(iv) Multiply (H) by $n$ and use $y=\vartheta rn$: $2n\varphi(r)+\delta y\le2\pi y+\int_0^ng$. Combining,
+$\log\frac{F_n^2w}{E_K}\le4+2\log2-\log\pi+2\log n+3\log(1+2\pi y)+\log(1+y^2)-\delta y$. Integrate. $\square$
+
+**Consequence.** $\sum_{n<K}\bigl(4n\log\vartheta+4\log n!-2\log K!\bigr)=(2\log\vartheta-1)K^2+O(K\log K)$,
+which is (d).
+
+**The inequality (H).**
+* On $0<r\le1$ it is elementary: $\varphi(r)=\sum_{k\ge1}\frac{r^{2k}}{k(2k-1)}\le2\log2\cdot r^2$, and the right side
+  is $\ge\vartheta r(2\pi+2\arctan\frac1\vartheta)$; so it suffices that
+  $\vartheta(2\pi+2\arctan\frac1\vartheta-\delta)\ge4\log2$ (true for $(\vartheta,\delta)=(\frac25,\frac1{20})$ with margin
+  $0.67$, and for $(\frac{21}{50},\frac25)$).
+* For $r\ge60$: $\varphi(r)\le2+2\log(r+1)$ and the right side is $\ge2\pi\vartheta r$.
+* On $[1,60]$: **certified by interval (ball) arithmetic**, independently in
+  `hankel_Htheta_interval.py` (both parameter pairs) and, for $(\frac25,\frac1{20})$, again in
+  `hankel_referee_checks.py`. For $(\frac25,\frac1{20})$ the minimal slack is $0.0077$ at $r\approx1.47$ (thin);
+  for $(\frac{21}{50},\frac25)$ a dense grid gives minimal slack $0.035$ (also at $r\approx1.47$). (H) fails for
+  $\vartheta\le0.39$. This is the only computer-assisted step.
+
+Numerical confirmation of Proposition 3 (referee): for $K\le160$ and all $n<K$ the ratio
+$\|p_n\|^2K!^2/(\vartheta^{4n}n!^4)$ stays bounded for $\vartheta\in\{0.40,0.42,0.45\}$ and grows like
+$e^{0.27K}$ for $\vartheta=0.38$.
 
 Conjecturally (numerics + a derivation from the equilibrium problem, not proved):
 $\log\Delta_K(\zeta(3))=-(\frac92\log2+o(1))K^2$, and the true cost is $(\frac94+o(1))K^2$ under PNT, so the
-primitive polynomial has $|P_K(\zeta(3))|\approx\exp(-\frac94(2\log2-1)K^2)=\exp(-0.869K^2)$.
+primitive polynomial has $|P_K(\zeta(3))|\approx\exp(-\frac94(2\log2-1)K^2)=\exp(-0.869K^2)$. Curiously,
+with the conjectured exact decay the proof would close for every $\kappa<\log4$, i.e. for any
+improvement whatsoever on the trivial bound $\theta(u)<u\log4$.
 
 ## 6. Evidence (exact computations; `computations/output_hankel_*.txt`)
 

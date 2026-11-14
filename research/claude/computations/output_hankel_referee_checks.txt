@@ -1,0 +1,55 @@
+=== (I.1) certification of (H_{theta,delta}) on (0,inf) ===
+[PASS] (H) theta=2/5 delta=1/20 (0,1]: const 0.6729>0 True; [1,1.001]: 0.8041>0 True; [1.001,60]: True (257 boxes, min certified lower bound 0.00011 near r=1.426); r>=60: True; float min slack 0.007650 at r=1.4681
+[PASS] (H) theta=21/50 delta=2/5 (0,1]: const 0.6838>0 True; [1,1.001]: 0.8289>0 True; [1.001,60]: True (133 boxes, min certified lower bound 0.00092 near r=1.289); r>=60: True; float min slack 0.035284 at r=1.4677
+[PASS] (H) theta=9/20 delta=9/10 (0,1]: const 0.6830>0 True; [1,1.001]: 0.8498>0 True; [1.001,60]: True (111 boxes, min certified lower bound 0.00027 near r=1.620); r>=60: True; float min slack 0.052350 at r=1.4726
+[PASS] (H) FAILS for theta=0.38, delta=0 (expected negative) min RHS-LHS on r>=1: -0.21190 at r=1.5106
+[PASS] (H) FAILS for theta=0.39, delta=0 (expected negative) min RHS-LHS on r>=1: -0.08640 at r=1.4855
+=== (I.2) bound (c) for w ===
+[PASS] w(y) <= (1+2 pi y)^3 e^{-2 pi y}/pi on grid max(log lhs - log rhs) = -1.257e-05
+=== (I.3) integrand ratio p_n^2 omega_K / (theta^{4n} n!^4/K!^2): max over n<K ===
+  theta=0.4:   K | max_n log sup_y ratio | max_n log int ratio | /log K | max_n,y (log ratio - referee bound)
+           5 |    1.627 |    1.861 |   1.156 |   -5.399
+          10 |    2.862 |    3.427 |   1.488 |   -5.399
+          20 |    3.894 |    4.803 |   1.603 |   -5.399
+          40 |    4.549 |    5.803 |   1.573 |   -5.399
+          80 |    4.461 |    6.061 |   1.383 |   -5.399
+         160 |    2.893 |    4.840 |   0.954 |   -5.399
+  theta=0.42:   K | max_n log sup_y ratio | max_n log int ratio | /log K | max_n,y (log ratio - referee bound)
+           5 |    0.672 |    0.914 |   0.568 |   -5.399
+          10 |    0.702 |    1.273 |   0.553 |   -5.399
+          20 |   -0.265 |    0.272 |   0.091 |   -5.399
+          40 |   -0.376 |   -0.272 |  -0.074 |   -5.399
+          80 |   -0.428 |   -0.359 |  -0.082 |   -5.399
+         160 |   -0.454 |   -0.396 |  -0.078 |   -5.399
+  theta=0.45:   K | max_n log sup_y ratio | max_n log int ratio | /log K | max_n,y (log ratio - referee bound)
+           5 |   -0.709 |   -0.398 |  -0.247 |   -5.400
+          10 |   -0.989 |   -0.921 |  -0.400 |   -5.400
+          20 |   -1.101 |   -1.033 |  -0.345 |   -5.400
+          40 |   -1.128 |   -1.088 |  -0.295 |   -5.400
+          80 |   -1.139 |   -1.116 |  -0.255 |   -5.400
+         160 |   -1.145 |   -1.130 |  -0.223 |   -5.400
+  theta=0.38:   K | max_n log sup_y ratio | max_n log int ratio | /log K | max_n,y (log ratio - referee bound)
+           5 |    2.615 |    2.851 |   1.772 |   -5.398
+          10 |    5.094 |    5.668 |   2.461 |   -5.398
+          20 |    8.616 |    9.533 |   3.182 |   -5.398
+          40 |   14.248 |   15.511 |   4.205 |   -5.398
+          80 |   24.114 |   25.724 |   5.870 |   -5.398
+         160 |   42.455 |   44.411 |   8.751 |    4.549
+=== (I.4) quadrature vs exact norms (draft's exact moments), K=20, theta=2/5 ===
+[PASS] quadrature == exact mu_{zeta(3)}(p_n^2/D_K) max log-difference 3.11e-15
+=== (II.1) tau(binom(x,k)) = (-1)^{k-1} H_k/(k+1), k <= 40 ===
+[PASS] tau(binom(x,k)) formula, k=1..40 
+[PASS] mu(t^e) = tau(x^3 (-x^2)^e), e<30 
+=== (II.2) entrywise bounds, all primes p <= 3K+5 ===
+[PASS] K=8: (B2) / variant / pole-intermediate / poly-intermediate True True True True; min slack (B2) 0, variant 0
+[PASS] K=12: (B2) / variant / pole-intermediate / poly-intermediate True True True True; min slack (B2) 0, variant 0
+[PASS] K=20: (B2) / variant / pole-intermediate / poly-intermediate True True True True; min slack (B2) 0, variant 0
+[PASS] K=30: (B2) / variant / pole-intermediate / poly-intermediate True True True True; min slack (B2) 4, variant 0
+[PASS] K=45: (B2) / variant / pole-intermediate / poly-intermediate True True True True; min slack (B2) 0, variant 0
+[PASS] K=64: (B2) / variant / pole-intermediate / poly-intermediate True True True True; min slack (B2) 0, variant 0
+=== (II.3) det(Newton) == det(G_K) and v_p(det) >= -K(6 floor(log_p 2K) + [p=2]) ===
+[PASS] K=8: det equality, determinant bound True True; (p, v_p(det), referee bound, draft L8 bound): [(2, -46, -200, -224), (3, -20, -96, -112), (5, -20, -48, -56), (7, -8, -48, -56)]
+[PASS] K=12: det equality, determinant bound True True; (p, v_p(det), referee bound, draft L8 bound): [(2, -88, -300, -420), (3, -48, -144, -252), (5, -32, -72, -168), (7, -32, -72, -84)]
+[PASS] K=16: det equality, determinant bound True True; (p, v_p(det), referee bound, draft L8 bound): [(2, -134, -496, -560), (3, -80, -288, -336), (5, -41, -192, -224), (7, -44, -96, -112)]
+time 6.2s
+ALL PASS
