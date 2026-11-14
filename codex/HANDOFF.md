@@ -1,4 +1,4 @@
-# Research handoff — 14 November 2026, 12:37 UTC
+# Research handoff — 14 November 2026, 13:28 UTC
 
 Continue autonomous research in `codex/` on `codex/independent-research` in the
 exact private repository `BoomydayCoder/Mathathon`. User authorizes continued
@@ -6,6 +6,37 @@ work without permission pauses, remaining credits but no automatic resets.
 Reporting target:14 November2026,08:00Los Angeles/16:00UTC. No usage-balance API
 is available; do not invent a balance or guarantee runtime. No Claude-owned
 files have been changed. Rough effort split remains80%#131/20%#137.
+
+## Newest continuation — 13:28 UTC
+
+Sixteenth checkpoint. The complete Legendre–Padé proof is independently reviewed:
+Hilbert Gram isometry transports elementary Legendre orthogonality to the rational
+half-shift measure; a short arithmetic lemma and elementary lcm estimate complete
+irrationality. See resolvent-legendre-pade-proof.md and its independent review.
+This is a motivated reconstruction of the classical Prévost/Wilson route, not a
+historical novelty claim. A real Chebyshev-product proof now replaces the analytic
+transform lemma; its separate audit is in progress.
+
+Reviewed developments: Bernoulli–Wilson positive Stieltjes cone; balanced Bernoulli
+antidifference reduction; prime-band paired-residue cancellation; exact finite
+certification that all 18 balanced trial primitive errors exceed one. The original
+rank-one adjacent-Apéry equality and balanced constant-term formula remain open.
+The Loewner quadratic-lattice identity is a new precise reformulation, not a proof
+of the missing identity.
+
+Current strongest new construction: positive generalized Stieltjes representations
+for EVERY odd zeta value, using kernel order m for zeta(2m+1). Explicit positive
+densities have rational moments. Gaussian quadrature gives convergent rational
+lower bounds to the PURE target, with an explicit geometric error bound. Full
+proof is written in higher-order-positive-stieltjes-zeta.md; separate audit and
+primitive-denominator experiments are active. No new irrationality conclusion.
+This escapes the proved ordinary-Stieltjes sign obstruction by changing the kernel.
+
+Other active audits: Newton–Hilbert selfadjoint classification and its classical
+Ismail–Koelink match; confluent Wilson parameter path. A positive Wilson deformation
+joining log2/log3 to zeta3 is being completed. Finite repaired zeta5 tests are valid
+lower bounds but have large denominators. Individual status labels control claims.
+Continue to 16:00 UTC / 08:00 LA; no usage balance is available and no resets used.
 
 ## Newest continuation — 12:37 UTC
 

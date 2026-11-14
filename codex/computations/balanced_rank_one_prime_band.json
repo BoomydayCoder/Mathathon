@@ -1,0 +1,182 @@
+[
+  {
+    "m": 1,
+    "n": 1,
+    "K": 4,
+    "band": "35",
+    "refined_normalizer": "17915904",
+    "refined_digits": 8,
+    "primitive_digits": 5,
+    "fixed_divisor_factorial_ratio": "1"
+  },
+  {
+    "m": 1,
+    "n": 2,
+    "K": 6,
+    "band": "77",
+    "refined_normalizer": "8398080000000",
+    "refined_digits": 13,
+    "primitive_digits": 10,
+    "fixed_divisor_factorial_ratio": "1/2"
+  },
+  {
+    "m": 1,
+    "n": 3,
+    "K": 8,
+    "band": "143",
+    "refined_normalizer": "81969540710400000000",
+    "refined_digits": 20,
+    "primitive_digits": 14,
+    "fixed_divisor_factorial_ratio": "1"
+  },
+  {
+    "m": 1,
+    "n": 4,
+    "K": 10,
+    "band": "46189",
+    "refined_normalizer": "40335161745070080000000",
+    "refined_digits": 23,
+    "primitive_digits": 19,
+    "fixed_divisor_factorial_ratio": "1/2"
+  },
+  {
+    "m": 1,
+    "n": 5,
+    "K": 12,
+    "band": "96577",
+    "refined_normalizer": "140854460407599958825107456000",
+    "refined_digits": 30,
+    "primitive_digits": 24,
+    "fixed_divisor_factorial_ratio": "1/6"
+  },
+  {
+    "m": 1,
+    "n": 6,
+    "K": 14,
+    "band": "7429",
+    "refined_normalizer": "21043829770028840346515607689625600000",
+    "refined_digits": 38,
+    "primitive_digits": 29,
+    "fixed_divisor_factorial_ratio": "1/12"
+  },
+  {
+    "m": 2,
+    "n": 1,
+    "K": 7,
+    "band": "143",
+    "refined_normalizer": "398371967852544000000000",
+    "refined_digits": 24,
+    "primitive_digits": 15,
+    "fixed_divisor_factorial_ratio": "1"
+  },
+  {
+    "m": 2,
+    "n": 2,
+    "K": 11,
+    "band": "4199",
+    "refined_normalizer": "429351439378762933691021946519552000000000",
+    "refined_digits": 42,
+    "primitive_digits": 28,
+    "fixed_divisor_factorial_ratio": "1/2"
+  },
+  {
+    "m": 2,
+    "n": 3,
+    "K": 15,
+    "band": "215441",
+    "refined_normalizer": "242550676877437933141770577856040114585600000000000000",
+    "refined_digits": 54,
+    "primitive_digits": 44,
+    "fixed_divisor_factorial_ratio": "2"
+  },
+  {
+    "m": 2,
+    "n": 4,
+    "K": 19,
+    "band": "765049",
+    "refined_normalizer": "44111305278111709365642848062757721238421427556200975574081826979840000000000000",
+    "refined_digits": 80,
+    "primitive_digits": 56,
+    "fixed_divisor_factorial_ratio": "1/3"
+  },
+  {
+    "m": 2,
+    "n": 5,
+    "K": 23,
+    "band": "58642669",
+    "refined_normalizer": "294158400017686000134622100127827983603099460072116248016137651993259063386040172544000000000",
+    "refined_digits": 93,
+    "primitive_digits": 69,
+    "fixed_divisor_factorial_ratio": "3/2"
+  },
+  {
+    "m": 2,
+    "n": 6,
+    "K": 27,
+    "band": "146078888479",
+    "refined_normalizer": "12654108880406970370002713259280636196984128757030951296737517360923441400847054854422528000000000000000000",
+    "refined_digits": 107,
+    "primitive_digits": 84,
+    "fixed_divisor_factorial_ratio": "1/4"
+  },
+  {
+    "m": 3,
+    "n": 1,
+    "K": 10,
+    "band": "46189",
+    "refined_normalizer": "4996975007357580705846106521600000000000",
+    "refined_digits": 40,
+    "primitive_digits": 34,
+    "fixed_divisor_factorial_ratio": "1"
+  },
+  {
+    "m": 3,
+    "n": 2,
+    "K": 16,
+    "band": "6678671",
+    "refined_normalizer": "2257222472745398794707130399368540141324360863537336156160000000000000000",
+    "refined_digits": 73,
+    "primitive_digits": 59,
+    "fixed_divisor_factorial_ratio": "1/4"
+  },
+  {
+    "m": 3,
+    "n": 3,
+    "K": 22,
+    "band": "1348781387",
+    "refined_normalizer": "136691194316443717599672045021298112758918862982903462976852196480576691111307486691328000000000000000000",
+    "refined_digits": 105,
+    "primitive_digits": 89,
+    "fixed_divisor_factorial_ratio": "4/9"
+  },
+  {
+    "m": 3,
+    "n": 4,
+    "K": 28,
+    "band": "146078888479",
+    "refined_normalizer": "869806216083549647678767405064940805748684928011495401358132214513132135776079662934317855296160908469921120256000000000000000000000000000",
+    "refined_digits": 138,
+    "primitive_digits": 114,
+    "fixed_divisor_factorial_ratio": "1/18"
+  },
+  {
+    "m": 3,
+    "n": 5,
+    "K": 34,
+    "band": "39181802686993",
+    "refined_normalizer": "126290086415069139148910120435703393270871257525973129752078062835293940221659039823515828326288767292135294760721780126581688859878279626274921408102400000000000000000000000",
+    "refined_digits": 174,
+    "primitive_digits": 151,
+    "fixed_divisor_factorial_ratio": "36/5"
+  },
+  {
+    "m": 3,
+    "n": 6,
+    "K": 40,
+    "band": "433601713048867373",
+    "refined_normalizer": "1866843923128981997517426037345472070277611930383492232915986548080236522524315064529149106993256330435030539847053606657477184242599595813333800503449280119732055135852953600000000000000000000000000000",
+    "refined_digits": 202,
+    "primitive_digits": 171,
+    "fixed_divisor_factorial_ratio": "1/10"
+  }
+]

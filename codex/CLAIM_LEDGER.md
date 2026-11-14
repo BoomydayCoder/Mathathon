@@ -224,3 +224,20 @@ The balanced-polynomial constant-term formula is a conjecture. Its Bernoulli
 antidifference reduction has a written proof awaiting separate full review.
 The initial pure-linear-form experiments do not establish an asymptotic failure
 theorem. No historical novelty assertion follows from an unsuccessful search.
+
+## Sixteenth-stage proof status
+
+| Claim | Proof / review | Scope |
+|---|---|---|
+| Complete Legendre–Padé proof of zeta3 irrationality | resolvent-legendre-pade-proof.md; resolvent-legendre-pade-independent-review.md | Classical Prévost/Wilson route, elementary lcm bound; no novelty claim |
+| Real Chebyshev-product resolvent proof | half-shift-elementary-resolvent-proof.md | Written; separate audit active |
+| Bernoulli–Wilson Stieltjes positivity cone | bernoulli-wilson-stieltjes.md; bernoulli-wilson-independent-review.md | Exact cone; rational moments of the induced half-shift measure |
+| Balanced Bernoulli antidifference reduction | hyperbolic-balanced-bernoulli-construction.md; balanced-bernoulli-independent-review.md | Removes first constraint in every weight, not a complete coefficient formula |
+| Prime-band cancellation for proper rational trial forms | rank-one-prime-band-cancellation.md; rank-one-prime-band-independent-review.md | Properness essential; inherited coefficient primes remain possible |
+| Finite balanced arithmetic failure certificates | balanced-finite-arithmetic-certificates.md | Exactly 18 tested forms, no asymptotic no-go |
+| Higher odd ordinary-Stieltjes obstruction and positive mixed repairs | half-shift-signed-measure-and-positive-repair.md; half-shift-independent-review.md | Kernel order one; does not exclude higher-order positive kernels |
+| Positive pure generalized Stieltjes transforms for all odd zeta | higher-order-positive-stieltjes-zeta.md | Full proof written, separate audit active; denominator control missing |
+
+The Newton–Hilbert classification, confluent Wilson path and logarithmic deformation
+are being reviewed or completed. Function-level denominator powers must not be
+confused with reduced numerical denominators after evaluation.

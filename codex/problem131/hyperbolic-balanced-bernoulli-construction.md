@@ -1,6 +1,8 @@
 # A Bernoulli antidifference construction for growing balanced orthogonality
 
-Status: the parameterization and reductions below are proved. The displayed
+Status: the parameterization and reductions below are proved and independently
+reviewed in [balanced-bernoulli-independent-review.md](balanced-bernoulli-independent-review.md).
+The displayed
 constant-term formula is a conjecture supported by exact computations, not a
 theorem. This develops the growing balanced family proposed in
 [hyperbolic-multiple-orthogonality.md](hyperbolic-multiple-orthogonality.md).

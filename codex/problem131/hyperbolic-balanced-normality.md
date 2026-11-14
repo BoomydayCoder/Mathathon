@@ -3,7 +3,9 @@
 Status: full proof written from the root agent's discovery; the integral
 agent independently checked the analytic and algebraic argument, and the
 exposition agent independently checked the triangular jump/Möbius step.
-A separate full-proof audit is requested. No historical novelty is asserted.
+The separate full-proof audit passed; see
+[hyperbolic-balanced-normality-independent-review.md](hyperbolic-balanced-normality-independent-review.md).
+No historical novelty is asserted.
 No approximation-rate, denominator-growth, or irrationality conclusion is
 claimed from normality alone.
 
@@ -299,8 +301,8 @@ assert an AT theorem for arbitrary unbalanced multi-indices.
 The root agent proposed the all-n jump induction. The integral agent supplied
 the detailed representation, endpoint, multiplicity and escaping-root proof;
 the exposition agent independently audited the jump polynomial and degree
-preservation. A separate audit is being performed before stronger status
-labels are used in summary documents.
+preservation. The separate full-proof audit has passed, including the analytic endpoint
+steps and the escaping-root argument; the linked review records its scope.
 
 
 ## 7. Reproduction

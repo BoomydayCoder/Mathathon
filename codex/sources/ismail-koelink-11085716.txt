@@ -1,0 +1,753 @@
+                                                               SPECTRAL PROPERTIES OF OPERATORS
+                                                                   USING TRIDIAGONALISATION
+
+                                                                       MOURAD E.H. ISMAIL AND ERIK KOELINK
+
+                                                 Abstract. A general scheme for tridiagonalising differential, difference or q-difference op-
+arXiv:1108.5716v2 [math.CA] 14 Nov 2011
+
+
+
+
+                                                 erators using orthogonal polynomials is described. From the tridiagonal form the spectral
+                                                 decomposition can be described in terms of the orthogonality measure of generally different
+                                                 orthogonal polynomials. Three examples are worked out: (1) related to Jacobi and Wilson
+                                                 polynomials for a second order differential operator, (2) related to little q-Jacobi polynomials
+                                                 and Askey-Wilson polynomials for a bounded second order q-difference operator, (3) related
+                                                 to little q-Jacobi polynomials for an unbounded second order q-difference operator. In case
+                                                 (1) a link with the Jacobi function transform is established, for which we give a q-analogue
+                                                 using example (2).
+
+
+
+
+                                                                                     1. Introduction
+                                             Bochner’s 1929 theorem classifies polynomials which are eigenfunctions to a second order
+                                          differential operator, see e.g. [12] where also a historical discussion and extensions to other op-
+                                          erators can be found. Instead of looking for differential operators diagonalised by polynomials,
+                                          we can also look for differential operators which are tridiagonalised by polynomials. Naturally,
+                                          there is no need to restrict to differential operators, and we can also consider difference and
+                                          q-difference operators. Neither is there a need to restrict to a differential or difference oper-
+                                          ator of second-order. In [13] we have discussed a general framework as well as the examples
+                                          of the Schrödinger operator with Morse potential and the Lamé equation. In this paper we
+                                          give a general approach for finding self-adjoint differential (or difference) operators which are
+                                          tridiagonal in a suitable basis of orthogonal polynomials. Since the spectral decomposition of
+                                          tridiagonal operators can be expressed completely in terms of, in general different, orthogonal
+                                          polynomials, we obtain the spectral decomposition of the differential or difference operator
+                                          involved.
+                                             In Section 2 we sketch the general framework, and we specialise to the case where the
+                                          basis in which the operator is tridiagonal is given by orthogonal polynomials. Since we start
+                                          with orthogonal polynomials which are eigenfunctions to an explicit differential or difference
+                                          operator, it is natural to start from the families in the (q-)Askey scheme. In Section 3 we
+                                          work out the case of the Jacobi polynomials, which yields an operator which is, after a change
+                                          of variable, for a special choice the differential operator for the Jacobi functions. Its spectrum
+                                          can be given explicitly since the tridiagonal operator corresponds to Wilson polynomials. In
+                                          Section 4 we discuss a q-analogue of this situation involving the little q-Jacobi polynomials.
+                                          However, due to lack of symmetry in the q-case we have to consider two cases. It turns
+                                          out that one case can be solved within the q-Askey scheme using Askey-Wilson polynomials,
+                                            Date: August 24, 2018.
+                                                                                                1
+2                           MOURAD E.H. ISMAIL AND ERIK KOELINK
+
+whereas the other case leads to orthogonal polynomials not in the q-Askey scheme. In Section
+3 we link to a result [17, (3.3)] by Koornwinder which states that Jacobi polynomials can be
+mapped to Wilson polynomials by the Jacobi function transform, and we give a q-analogue of
+this result in Section 4.1. Koornwinder’s result is predated by a result by Broad [5], which the
+limit case of the Whittaker transform mapping Laguerre polynomials to Meixner-Pollaczek
+polynomials, and is hugely extended by Groenevelt [10] to the top of the Askey-scheme by
+showing that the Wilson transform maps Wilson polynomials to Wilson polynomials.
+   Starting within the Askey-scheme and requiring that the tridiagonalisation can be solved
+within the Askey-scheme leaves only the cases of the Jacobi and Laguerre polynomials. As
+stated, the first case is discussed in Section 3, whereas the second is a similar calculation which
+can also be obtained using limit transitions from the results in Section 3. The other cases in
+the Askey-scheme to which this procedure can be applied are the Meixner, continuous Hahn,
+continuous dual Hahn and Wilson polynomials. The orthogonal polynomials associated to the
+tridiagonalisation are no longer in the Askey-scheme, but these are orthogonal polynomials
+associated to birth and death processes which is a general phenomenon. A further study of
+these examples is desirable, and may lead to a better understanding of this procedure. A
+similar remark applies to the orthogonal polynomials in the q-Askey scheme, see also Section
+5.
+   The tridiagonalisation method is also known as the J-matrix method. Tridiagonalisation for
+different operators in all kinds of bases is a much employed method in many physical problems,
+see e.g. [2], [11], [21], and references in [13]. We hope that the more general approach given
+here widens the class of operators to which the tridiagonalisation method applies. In Section
+5 we discuss briefly the possible extension of this method to an even larger class of operators.
+
+
+                                  2. General framework
+   In this section we introduce the general set-up for tridiagonalising certain differential or
+difference operators. In Section 2.1 we give the general framework which is specialised to the
+case of orthogonal polynomials in Section 2.2.
+
+2.1. General framework. Let µ and ν be positive Borel measures on the real line R so that
+                                                      dν
+ν is absolutely continuous with respect to µ. Let δ = dµ be the Radon-Nikodym derivative,
+so δ ≥ 0. Let D be a function space that is dense in both L2 (µ) and L2 (ν) with respect to
+the respective topologies.
+   We assume that we have an operator L : D → D operator such that (L, D) is symmetric
+in L2 (µ). Moreover, we assume the existence of an orthonormal basis (Φn )n∈N of L2 (µ) of
+eigenfunctions of L, so Φn ∈ D for all n ∈ N and LΦn = Λn Φn , Λn ∈ R. Then (L, D) is
+essentially self-adjoint.
+                                                                  2
+   Next we assume that there is an orthonormal basis (φn )∞
+                                                          n=0 of L (ν) such that φn ∈ D for
+all n ∈ N and that
+                           φn = An Φn + Bn Φn−1 ,          An , Bn ∈ R                       (2.1)
+(with the convention B0 = 0). Finally we assume that multiplication by the reciprocal of the
+Radon-Nikodym derivative preserves the space D, so M : D → D, Mf = δ −1 f .
+                                       SPECTRAL PROPERTIES                                           3
+
+  The object of study is the operator T = ML : D → D as an operator on L2 (ν). Note
+   hT φn , φm iL2 (ν) = hAn MLΦn + Bn MLΦn−1 , Am Φm + Bm Φm−1 iL2 (ν)
+                    = hAn Λn Φn + Bn Λn−1 Φn−1 , Am Φm + Bm Φm−1 iL2 (µ)                         (2.2)
+                    = Λn An Bn+1 δn+1,m + (A2n Λn + Bn2 Λn−1)δn,m + Λn−1 An−1 Bn δn,m+1
+In particular, (T, D) is a Jacobi operator on the Hilbert space L2 (ν);
+                            T φn = an φn+1 + bn φn + an−1 φn−1 ,
+                                                                                                 (2.3)
+                         an = Λn An Bn+1 ,        bn = Λn A2n + Λn−1 Bn2 ,
+where the convention B0 = 0 gives a−1 = 0. Since an , bn ∈ R and (φn )∞     n=0 is an orthonormal
+basis of L2 (ν) it follows that T with domain D(T ) finite linear combinations of the orthonor-
+mal basis (φn )∞n=0 is a symmetric densely defined operator to which standard techniques of
+tridiagonal (or Jacobi) operators can be applied, see e.g. [1], [4], [7], [13], [14], [19] and refer-
+ences given there. We assume D(T ) = D so that we can obtain the spectral decomposition of
+suitable self-adjoint extensions of (T, D). We assume that (T, D) is essentially self-adjoint. In
+general the spectral decomposition of the closure of (T, D) depends on the possible vanishing
+of the coefficients an and on the growth behaviour of the sequences (an )∞               ∞
+                                                                              n=0 , (bn )n=0 , see e.g.
+[13, Thm. 2.7].
+Remark 2.1. Note that we can trivially change L by adding a suitable real constant, say
+Lγ = L + γ, and we change Λn to Λγn = Λn + γ. The operator in general changes by adding
+a multiplication operator T γ = T + γM. By comparing the coefficients aγn = an + γAn Bn+1 ,
+bγn = bn + γ(A2n + Bn2 ) we find the three-term recurrence
+                     M φn = An Bn+1 φn+1 + (A2n + Bn2 )φn + An−1 Bn φn−1 .
+The additional freedom is useful, see Sections 3 and 4.
+2.2. Specialising to orthogonal polynomials. The examples we consider are based on
+orthogonal polynomials. Let µ and ν be orthogonality measures for orthogonal polynomials;
+            Z                                  Z
+               Pn (x)Pm (x) dµ(x) = Hn δn,m ,      pn (x)pm (x) dν(x) = hn δn,m .   (2.4)
+               R                                        R
+
+We assume that both µ and ν correspond to a determinate moment problem,       R so that the
+                                       2          2
+space
+R      P of polynomials is dense in L (µ) and L (ν). We also assume that R f (x) dµ(x) =
+ R
+   f (x)r(x) dν(x), where r is a polynomial of degree 1, so that the Radon-Nikodym derivative
+dν
+dµ
+   = δ = 1/r. Then we obtain, using lc(p) for the leading coefficient of a polynomial p,
+                                  lc(pn )             hn lc(Pn−1 )
+                           pn =           Pn + lc(r)               Pn−1                          (2.5)
+                                  lc(Pn )            Hn−1 lc(pn )
+and by taking φn , respectively Φn , the corresponding orthonormal polynomials to pn , respec-
+tively Pn , we see that (2.1) specialises to
+                                                   r                s
+                                            lc(pn ) Hn                 hn lc(Pn−1 )
+     φn = An Φn + Bn Φn−1 ,         An =               , Bn = lc(r)                 .    (2.6)
+                                            lc(Pn ) hn                Hn−1 lc(pn )
+4                             MOURAD E.H. ISMAIL AND ERIK KOELINK
+
+We assume the existence of a symmetric self-adjoint operator L with domain D = P on L2 (µ)
+with LPn = Λn Pn , and so LΦn = Λn Φn , for eigenvalues Λn ∈ R. Then (L, P) is an essentially
+self-adjoint operator, since P is dense in L2 (µ), as assumed in Section 2.1. By convention
+Λ−1 = 0. So this means that (Pn )n satisfies a bispectrality property, and we can take the
+family (Pn )n from the Askey scheme or its q-analogue.
+   Considering the operator T = rL with domain D = P on L2 (ν) shows that the coefficients
+in (2.3) are given by
+                           r                           2                               2
+                  lc(pn )    hn+1           Hn lc(pn )                  2 hn    lc(Pn−1)
+   an = Λn lc(r)                  , bn = Λn                + Λn−1 lc(r)
+                 lc(pn+1 )    hn            hn lc(Pn )                   Hn−1     lc(pn )
+  By switching from L and T to Lγ and T γ , see Remark 2.1, for a suitable constant γ we can
+assume that Λγn 6= 0 for all n ∈ N.
+                                T γ φn = aγn φn + bγn φn + aγn−1 φn−1 ,                            (2.7)
+        6 0 for n ≥ 0, and aγ−1 = 0.
+and aγn =                                   So we need to solve for the orthonormal polynomials
+rn (λ) satisfying
+                            λrn (λ) = aγn rn (λ) + bγn rn (λ) + aγn−1 rn−1 (λ),                    (2.8)
+We assume that the corresponding Jacobi operator is essentially self-adjoint (or equivalently
+that the orthogonal polynomials {rn } correspond to a determinate moment problem). Thus
+we have a positive Borel measure ρ so that
+                                Z
+                                   rn (λ)rm (λ) dρ(λ) = δn,m .                          (2.9)
+                                      R
+In particular, this implies that we assume T with domain P essentially self-adjoint.
+Remark 2.2. Polynomials associated to a birth and death process with birth-rate λn and
+death-rate µn are generated by
+−xFn (x) = λn Fn+1 (x) − (λn + µn )Fn (x) + µn Fn−1 (x),         F0 (x) = 1, F1 (x) = (λ0 + µ0 − x)/λ0 .
+with λn > 0 for all n and µn > 0 for n ≥ 1, µ0 ≥ 0, see [12, Ch. 5]. Apart from sign issues the
+                                                                                                      2
+                                                                                               lc(pn )
+recursion (2.7) corresponds to a birth and death process with birth-rate λn = |Λγn | H     n
+                                                                                          hn   lc(Pn )
+                                                        2
+and death-rate µn = |Λγn−1|(lc(r))2 Hhn−1n     lc(Pn−1 )
+                                                 lc(pn )
+                                                            for n > 0, µ0 = 0. Assuming that the signs
+     γ       γ
+of an and Λn are independent of n ∈ N, this allows us to draw conclusions on the support of
+the spectrum of T¯γ , i.e. the orthogonality measure of the polynomials rn , see [12, Ch. 5, 7]. In
+this case, let ε = sgn(aγn ), η = sgn(Λγn ). In particular, the spectrum of T̄ is contained in [0, ∞)
+if (ε, η) = (−1, 1) or (1, 1) and the spectrum of T̄ is contained in (−∞, 0]) if (ε, η) = (1, −1)
+or (−1, −1). In the examples Λγn is bounded from above or from below, so that it is possible
+to find a γ ∈ R so that all eigenvalues Λγn have the same sign. In the examples we see that
+the condition on aγn is also valid.
+  Defining U : L2 (ν) → L2 (ρ), U : φn 7→ rn , gives a unitary operator satisfying UT = U ∗ M,
+where M is the multiplication (by λ) operator on L2 (ρ). It follows that the spectrum of T
+equals σ(T ) = supp(ρ), and the spectrum is simple.
+                                         SPECTRAL PROPERTIES                                               5
+
+  It follows that
+                                         ∞                      ∞
+                                         X                      X         pn (x)
+                            F (x; λ) =         rn (λ)φn (x) =       rn (λ) √                          (2.10)
+                                         n=0                    n=0
+                                                                             hn
+
+is a formal eigenvector for the eigenvalue λ for T . The series in (2.10) converges in L2 (ν) for
+λ a discrete mass point of ρ and diverges for λ in the continuous part of ρ. In that case the
+series, which is a non-symmetric Poisson kernel,
+                                                  ∞
+                                                  X            pn+1 (x)
+                                  Ft (x; λ) =         tn rn (λ) p                                     (2.11)
+                                                  n=0
+                                                                 hn+1
+
+converges for |t| < 1.
+
+
+
+                                    3. Jacobi polynomials
+   We work out the programme of Section 2.2 for the case of the Jacobi polynomials and the
+related hypergeometric differential operator.
+                                 (α,β)
+   For the Jacobi polynomials Pn (x), we follow the standard notation [3], [12], [15]. We
+take the measures µ and ν to be the orthogonality measures for the Jacobi polynomials for
+parameters (α + 1, β), and (α, β) respectively. We assume α, β > −1. So we set Pn (x) =
+  (α+1,β)                (α,β)
+Pn        (x), pn (x) = Pn (x). This gives
+
+                              2α+β+1     Γ(n + α + 1)Γ(n + β + 1)
+          hn = Nn (α) =                                           ,                Hn = Nn (α + 1),
+                          2n + α + β + 1    Γ(n + α + β + 1) n!
+                         (n + α + β + 1)n
+      lc(pn ) = ln (α) =                  , lc(Pn ) = ln (α + 1).
+                               2n n!
+Moreover, r(x) = 1 − x. Note that we could have also shifted in β, but due to the symmetry
+  (α,β)             (β,α)
+Pn (x) = (−1)n Pn (−x) of the Jacobi polynomials in α and β it suffices to consider the
+shift in α only.
+   The Jacobi polynomials are eigenfunctions of
+
+                 Lf (x) = (1 − x2 ) f ′′ (x) + β − α − 1 − (α + β + 3)x f ′ (x),
+                                                                       
+
+                    LPn(α+1,β) = −n(n + α + β + 2) Pn(α+1,β)
+
+so that Λn = −n(n + α + β + 2). We set γ = −(α + δ + 1)(β − δ + 1), so that Λγn =
+−(n + α + δ + 1)(n + β − δ + 1). Hence, we study on L2 ([−1, 1], (1 − x)α (1 + x)β dx) the
+operator (1 − x)(L + γ) which is
+
+                          d2                       d
+ T γ = (1−x)(1−x2 )          +(1−x) β−α−1−(α+β+3)x    −(1−x)(α+δ+1)(β−δ+1). (3.1)
+                         dx2                       dx
+6                             MOURAD E.H. ISMAIL AND ERIK KOELINK
+
+    Applying the results of Section 2.2 gives the explicit expression for the recursion coefficients
+                                            s
+          2(n + α + δ +  1)(n + β −  δ + 1)    (n + 1) (n + α + 1) (n + β + 1) (n + α + β + 1)
+    aγn =
+                  2n + α + β + 2                     (2n + α + β + 1) (2n + α + β + 3)
+              2(n + α + δ + 1)(n + β − δ + 1)(n + α + 1)(n + α + β + 1)
+    bγn = −
+                          (2n + α + β + 1) (2n + α + β + 2)
+                 2n(n + β)(n + α + δ + 1)(n + β − δ)
+              −                                      .
+                    (2n + α + β) (2n + α + β + 1)
+Then the recursion relation (2.7) for 21 T γ is solved by the orthonormal version of the Wilson
+polynomials
+                          1        1                1                1
+                  Wn (µ2 ; (1 + α), (1 + α) + δ, (1 − α) + β − δ, (1 + α)),
+                          2        2                2                2
+                                                                                           2
+see [15], where the relation between the eigenvalue λ of T and µ is given by λ = −2 α+1
+                                                                   2
+                                                                                         2
+                                                                                              −
+   2
+2µ .
+Theorem 3.1. Let α > −1, β > −1, and assume γ = −(α + δ + 1)(β − δ + 1) ∈ R. The
+unbounded operator (T γ , P) defined by (3.1) on L2 ([−1, 1], (1 − x)α (1 + x)β dx) with domain
+the polynomials P is essentially self-adjoint. The spectrum of the closure T¯γ is simple and
+given by
+           1                1              1                             1
+ (−∞, − (α + 1)2 ) ∪ {− (α + 1)2 + 2( (1 + α) + δ + k)2 : k ∈ N, (1 + α) + δ + k < 0}
+           2                2              2                             2
+             1               1                                1
+        ∪ {− (α + 1)2 + 2( (1 − α) + β − δ + l)2 : l ∈ N, (1 − α) + β − δ + l < 0}
+             2               2                                2
+where the first set gives the absolutely continuous spectrum and the other sets correspond to
+the discrete spectrum of the closure of T γ . The discrete spectrum is either empty or at most
+one of these sets is non-empty.
+Remark 3.2. Note that in Theorem 3.1 δ ∈ R or ℜδ = 21 (β − α). In the second case there is
+no discrete spectrum.
+   The eigenvalue equation T γ fλ = λfλ is a second-order differential operator with regular
+singularities at −1, 1, ∞. In the Riemann-Papperitz notation it is
+                                                                
+                              −1          1            ∞        
+                          P     0 − 21 (1 + α) + iλ̃ α + δ + 1 x
+                               −β − 21 (1 + α) + iλ̃ β − δ + 1
+                                                                
+
+with the reparametrisation λ = − 21 (α + 1)2 − 2λ̃2 of the spectral parameter. In case γ = 0,
+i.e. δ = −α − 1 or δ = 1 + β, We set δ = 1 + β, and we put T = T 0 , a0n = an , b0n = 0. Note
+that we have degenerate case, since a0 = 0 as well as b0 = 0 and an 6= 0 for n ≥ 1. It follows
+that T φ0 = b0 φ0 = 0, and we have to study the recurrence relation (2.7) on (Cφ0 )⊥ , i.e. we
+start at n = 1 instead of at n = 0. The recurrence relation (2.7) starting from n = 1 can also
+be solved similarly in terms of Wilson polynomials, namely by the orthonormal version of
+                             1        1         1              1
+                     Wn (µ2 ; (1 + α), (1 − α), (3 + α), β + (3 + α)),
+                             2        2         2              2
+                                      SPECTRAL PROPERTIES                                            7
+
+                                                                                     α+1 2
+where the relation between the eigenvalue λ of T and µ2 is given by λ = −2                 − 2µ2 as
+                                                                                        
+                                                                                      2
+in the derivation of Theorem 3.1.
+Proposition 3.3. The operator (T, P) defined by (3.1) with γ = 0 with domain the polynomi-
+als P ⊂ L2 ([−1, 1], (1 − x)α (1 + x)β dx) is essentially self-adjoint. The spectrum of the closure
+T̄ is simple and given by
+           1                 1                1                         1
+   (−∞, − (α + 1)2 ) ∪ {− (α + 1)2 + 2( (1 − α) + k)2 : k ∈ N, (1 − α) + k < 0} ∪ {0}
+           2                 2                2                         2
+where the first set gives the absolutely continuous spectrum and the other sets correspond to
+the discrete spectrum of the closure of T .
+Remark 3.4. Note that putting δ = 1 + β (or δ = −1 − α) in the result of Theorem 3.1
+precisely gives back the statement of Proposition 3.3. The spectral decomposition U is now
+defined on (Cφ0 )⊥ by φn+1 7→ rn , where the rn are the orthonormal Wilson polynomials with
+parameters 12 (1 + α), 12 (1 − α), 21 (3 + α), β + 12 (3 + α)).
+   The eigenvalue equation T fλ = λfλ is a second-order differential operator with regular
+singularities at −1, 1 and ∞, hence can be solved in terms of hypergeometric functions.
+Changing variables x = 1 − 2 cosh−2 t transforms 2T in the second-order differential operator
+                         d2                                                   d
+                             +    (2β  + 1) coth  t −  (2α  + 2β  +  3) tanh t
+                         dt2                                                   dt
+     2          α+β+2           2β+1          −2α−2β−3
+on L ((0, ∞), 2        (sinh t)      (cosh t)           dt). This is the Jacobi differential operator
+as in [16], where (α, β) of [16] correspond to (β, −α − β − 2). Proposition 3.3 provides an
+alternative proof of the simplicity and location of the spectrum of the Jacobi differential
+operator, see [16, Thms. 2.3, 2.4], but it does not give the Jacobi functions as eigenfunctions.
+   Having established the link of T to the Jacobi differential operator, we know that the Jacobi
+function transform gives the spectral decomposition. In particular, applying the integral
+transformation
+                           Z ∞
+                                   (β,−α−β−2)
+                  fˆ(λ) =        φλ           f (t)(2 sinh t)2β+1 (2 cosh t)−2α−2β−3 dt
+                            0
+for f ∈ L ((0, ∞), (2 sinh t)2β+1 (2 cosh t)−2α−2β−3 dt) see [16], [17] for details, to (2.7) starting
+          2
+
+from n = 1 shows that the Jacobi function transform of t 7→ φn+1 (1 − cosh−2 t) satisfies the
+same recurrence relation as the orthonormal Wilson polynomials corresponding to Remark
+3.4. Since the solution to the recurrence relation is completely determined by its starting
+value we obtain
+         Z ∞
+               (β,−α−β−2)       (α,β)
+              φλ           (t)Pn+1 (1 − 2 cosh−2 t) (2 sinh t)2β+1 (2 cosh t)−2α−2β−3 dt =
+          0
+                 r
+                    hn+1 S0      λ2 1          1          1               1
+                            Wn ( ; (1 + α), (1 − α), (3 + α), β + (3 + α))
+                     h1 Sn        4 2          2          2               2
+            Z ∞
+                  (β,−α−β−2)       (α,β)
+         ×       φλ           (t)P1 (1 − 2 cosh−2 t) (2 sinh t)2β+1 (2 cosh t)−2α−2β−3 dt,
+              0
+where Sn is the squared norm of the Wilson polynomials. However, this is a special case of a
+result by Koornwinder [16, §9], [17, (3.3)] mapping Jacobi polynomials to Wilson polynomials.
+8                                  MOURAD E.H. ISMAIL AND ERIK KOELINK
+
+In our case there is a drop in the degree of the polynomial, which does not occur in [17, (3.3)].
+Applying [17, (3.3)] to the integral on the left hand side gives a Wilson polynomial of degree
+n+1 with parameters ( 12 (α +1), 12 (α +1), − 21 (α +1), β + 12 (α +3)). Since two of the parameters
+add up to zero the first term of the hypergeometric series vanishes and the polynomial can be
+written as a linear term times a Wilson polynomial of degree n. This can also be viewed as
+a special case of the so-called ‘Diophantine’ properties introduced by Calogero et al., see [6,
+(3.10)] and references given there.
+Remark 3.5. The Whittaker (confluent hypergeometric) differential operator can be obtained
+as a limit case of the Jacobi differential operator, see [17]. The operator arises from this
+approach if we start with Laguerre polynomials instead of Jacobi polynomials.
+
+                                    4. Little q-Jacobi polynomials
+  Next we work out the programme of Section 2.2 for the case of the little q-Jacobi polynomials
+as a q-analogue of Section 3.
+  We follow the notation of [15]. For 0 < a < q −1 , b < q −1 we define the little q-Jacobi
+polynomials by
+                                                             q , abq n+1
+                                                            −n                     
+                                 pn (x; a, b; q) = 2 ϕ1                      ; q, qx .
+                                                                  aq
+The little q-Jacobi polynomials are orthogonal with respect to a discrete measure on q N ;
+     X ∞
+          wk (a, b; q)pn (q k ; a, b; q)pm (q k ; a, b; q) = δn,m hn (a, b; q),
+      k=0                                                                                                 (4.1)
+                                                                 2                         n
+                     (qb; q)k                               (abq   ; q) ∞ (1  −  abq) (aq)   (q, qb; q) n
+     wk (a, b; q) =             (aq)k , hn (a, b; q) =
+                      (q; q)k                                (aq; q)∞ (1 − abq 2n+1 ) (qa, qab; q)n
+The leading coefficient is given by
+                                                                                    n+1
+                                                               n − 21 n(n−1) (abq   ; q)n
+                              lc (pn (·; a, b; q)) = (−1) q                               .
+                                                                              (aq; q)n
+    Defining the second-order q-difference operator
+                                      B(x)                    D(x)
+                    (L(a,b) f )(x) =                               f (q −1 x) − f (x) ,
+                                                                                     
+                                           (f (qx) − f (x)) +
+                                       x                       x
+                                    B(x) = a(bqx − 1),      D(x) = x − 1
+we have
+      L(a,b) pn (·; a, b; q) = Λn (a, b; q) pn (·; a, b; q),        Λn (a, b; q) = q −n (1 − q n )(1 − abq n+1 ).
+4.1. Case one: shift in a. In the notation of Section 2.2 we take Pn (x) = pn (x; aq, b; q),
+Hn = hn (aq, b; q), pn (x) = pn (x; a, b; q), hn = hn (a, b; q). We assume 0 < a < q −1 and b < q −1 .
+Then µ and ν are discrete measures and µ({q k }) = wk (aq, b; q) = q k wk (a, b; q) = q k ν({q k }), so
+that r(x) = x. Also L = L(aq,b) , Λn = Λn (aq, b; q) and T γ is given as a second order difference
+operator on L2 (ν) by
+      (T γ f )(x) = aq(bqx − 1) (f (qx) − f (x)) + (x − 1) f (q −1 x) − f (x) + γxf (x).
+                                                                              
+                                                                                                  (4.2)
+                                        SPECTRAL PROPERTIES                                        9
+
+In particular, T γ is a bounded operator on L2 (ν).
+  We now replace γ = (1 + abq 2 ) − (acq + bq/c), so that
+                                Λγn = q −n (1 − acq n+1 )(1 − bq n+1 /c),
+and we assume c choosen so that γ ∈ R and Λγn > 0 for all n ∈ N. This is the case when e.g.
+bq < c < 1/aq, and by the conditions on a, b this is always possible. A calculation gives the
+values
+         √            n+1           n+1
+                                            s
+           aq(1 − acq     )(1 −  bq     /c)   (1 − q n+1 )(1 − aq n+1 )(1 − bq n+1 )(1 − abq n+1 )
+ aγn = −                                                                                           ,
+                 (1 − abq 2n+2 )                         (1 − abq 2n+1 )(1 − abq 2n+3 )
+                  n+1
+       (1 − acq   )(1 − aq n+1 )(1 − abq n+1 )(1 − bq n+1 /c)                                 (4.3)
+ bγn =
+                  (1 − abq 2n+1 )(1 − abq 2n+2 )
+                aq(1 − q n )(1 − acq n )(1 − bq n )(1 − bq n /c)
+              +                                                  .
+                        (1 − abq 2n )(1 − abq 2n+1 )
+   The corresponding recurrence relation (2.8) for √−1   aq
+                                                            T γ corresponds exactly to the orthonor-
+                                                       √       √      p √
+mal Askey-Wilson polynomials with parameters ( aq, c aq, cb aq , aq). Explicitly,
+                                                            r
+                                               √    √     b q √
+                             rn (λ) = C pn (x; aq, c aq,         , aq|q)
+                                                          c a
+                                                 s
+                                            bq      (1 − abq)(q, aq, bq; q)n
+                                 C = (acq, ; q)n
+                                             c           (1 − abq 2n+1
+                         √
+where λ = 1 + aq − 2 aqx and using the standard notation for the Askey-Wilson polynomials
+                                                                               √             √
+[3], [9], [12], [15]. So the continuous spectrum of T is the interval [1+aq−2 aq, 1+aq+2 aq] =
+       √ 2             √ 2
+[(1 − aq) , (1 + aq) ]. Discrete spectrum in the orthogonality measure can only occur if
+  √
+|c aq| > 1 or | cb aq | > 1, see [9], [15]. Using the explicit form of the discrete mass points
+                      p
+in the orthogonality measure for the Askey-Wilson polynomials then leads to the following
+theorem.
+Theorem 4.1. Consider the operator T γ defined by (4.2) with γ = (1+abq 2 )−(acq+bq/c) ∈ R
+and with the assumption Λγn > 0 for all n ∈ N. Then T γ acting on L2 (ν) with ν the discrete
+orthogonality measure (4.1) for the little q-Jacobi polynomials with 0 < qa < 1, b < q −1 is a
+bounded self-adjoint operator with simple spectrum at
+              √           √                                            √
+       [(1 − aq)2 , (1 + aq)2 ] ∪ {(1 − q −k /c)(1 − acq 1+k ) : |q k c aq| > 1, k ∈ N}
+                                                                          r
+                                            l+1           −l           lb   q
+                                 ∪ {(1 − bq /c)(1 − acq /b) : |q              | > 1, l ∈ N}
+                                                                        c a
+Remark 4.2. Theorem 4.1 is a q-analogue of Theorem 3.1. However in Theorem 4.1 we can
+have that the discrete spectrum can be empty, consist of one of these sets or consists of both
+sets. The degenerate case γ = 0 or c = 1/aq can be considered as a q-analogue of the Jacobi
+differential operator, cf. Proposition 3.3.
+10                            MOURAD E.H. ISMAIL AND ERIK KOELINK
+
+   We can also obtain the spectral decomposition of T acting on L2 (ν) in a direct way. Suppose
+yλ : q N → C satisfies T γ yλ = λyλ. Put yλ (q k ) = √ pk (λ) , then being an eigenfunction of T is
+                                                      wk (a,b;q)
+equivalent to
+                                     
+                         aq + 1 − λ          p
+                            √       pk (λ) = (1 − q k+1 )(1 − bq k+1 )pk+1(λ)
+                              aq
+                                         r
+                             k √        b q          p
+                           +q (c aq +       )pk (λ) + (1 − q k )(1 − bq k )pk−1(λ).
+                                        c a
+                                                                                             √
+This corresponds to the orthonormal Al-Salam–Chihara polynomials with (c aq, bc aq ) as
+                                                                                               p
+parameters, so                                                             r
+                                                 1                √      b q
+                             pk (λ) = p                   Qk (x; c aq,        |q)                (4.4)
+                                           (q, bq; q; )k                 c a
+                           √
+where 2x = (aq +1−λ)/ aq. Here we use the notation for the Al-Salam–Chihara polynomials
+[9], [12], [15]. The spectrum equals the support             of the orthogonality measure σ of the Al-
+                                           √       b
+                                                     pq
+Salam–Chihara polynomials Qk (x; c aq, c a |q), and we obtain another proof of Theorem
+4.1.
+   So the spectral decomposition of T γ on L2 (ν) is given by the unitary map V : L2 (ν) → L2 (σ)
+                                               ∞                   √
+                                                          Qk (x; c aq, bc aq |q) p
+                                                                           p
+                                             X
+                                                       k
+               (V f )(x) = hf, yλ iL2 (ν) =        f (q )      p                  wk (a, b; q)
+                                              k=0
+                                                                  (q, bq; q)k
+                            ∞            √ k                        r                            (4.5)
+                                    k ( aq)                √      b q
+                           X
+                         =      f (q )             Qk (x; c aq,         |q)
+                           k=0
+                                         (q; q) k                 c   a
+                         √
+where λ = aq + 1 − 2 aqx, x = cos θ. The unitarity of f can also be checked directly using
+the orthogonality relations for the Al-Salam–Chihara polynomials. So V T γ = MV , where V
+                                         √
+is the multiplication by aq + 1 − 2 aq x.
+   Applying V to the three-term recurrence for T γ gives
+                      √     
+           aq + 1 − 2 aq x (V φn )(x) = an (V φn+1 )(x) + bn (V φn )(x) + an−1 (V φn−1)(x),
+so that V φn is a constant
+                    p √ multiple of the orthonormal Askey-Wilson polynomials with param-
+      √     √
+eters aq, c aq, bc aq , aq. The constant is V φ0 . Explicitly,
+                                           ∞
+                                                                (aq)k/2
+                                                                                      r
+                                         X
+                                                   k                            √    b q
+                (V pn (·; a, b; q))(x) =      pn (q ; a, b; q))         Qk (x; c aq,     |q)
+                                                                (q; q)k              c a
+                                         k=0
+                                                                                              (4.6)
+                 (aq)n/2 (acq n+1 , bq n+1 /c; q)∞
+                                                                           r
+                                                            √       √    b q √
+             =             √         √               pn (x; aq, c aq,           , aq|q)
+                (aq; q)n ( aqeiθ , aqe−iθ ; q)∞                          c a
+                                                                                          
+where x = cos θ. Since V is unitary hn δn,m = hV pn (·; a, b; q) , V pm (·; a, b; q) iL2 (σ) estab-
+                                                  √       √       p √
+lishes the Askey-Wilson polynomials pn (x; aq, c aq, cb aq , aq|q) as orthogonal polynomials
+with respect to
+                                                      dσ
+                                  √ iθ √ −iθ √ iθ √ −iθ
+                                 ( aqe , aqe , aqe , aqe ; q)∞
+which is well-known [3], [9], [12], [15].
+                                                 SPECTRAL PROPERTIES                                             11
+
+   It is straightforward to prove (4.6) from the explicit expression for the little q-Jacobi polyno-
+mials and the generating function [9], [12, (15.1.10)], [15, (3.8.13)] for the Al-Salam–Chihara
+polynomials, this leads to the slightly more general result
+      ∞
+              tk                                                             q , abq n+1 , teiθ , te−iθ
+                                                                             −n                               
+     X
+                         k                            (tc, td; q)∞
+                   pn (q ; a, b; q)Qk (x; c, d|q) =                    4 ϕ3                             ; q, q
+     k=0
+          (q; q)k                                   (teiθ , teiθ ; q)∞             aq, tc, td
+                                                                                                               (4.7)
+for |t| < 1 and x = cos θ.
+   In order to get the full four-parameter Askey-Wilson polynomials as orthogonal poly-
+nomials from this interpretation we observe that fn : q k 7→ αk pn (q k ; a, b; q) and gn : q k 7→
+                           √                 √
+α−k pn (q k ; a, b; q) for aq < α < 1/ aq are biorthogonal funtions in L2 (ν). By (4.7) we find
+                      αn (aq)n/2 (αacq n+1, αbq n+1 /c; q)∞
+                                                                                      r
+                                                                        √    √     b q √
+      V fn (x) =                   √           √                pn (x; α aq, c aq,          , aq/α|q)          (4.8)
+                       (aq; q)n (α aqeiθ , α aqe−iθ ; q)∞                           c a
+and a similar expression for V gn . Now hn δnm = hV fn , V gm iL2 (σ) gives the full four-parameter
+                                             √     √       p √
+family of Askey-Wilson polynomials pn (x; α aq, c aq, bc aq , aq/α|q) as orthogonal polyno-
+mials with respect to
+                                                         dσ
+                                √               √ −iθ −1√ iθ −1√ −iθ          .
+                           (α       aqeiθ , α    aqe , α    aqe , α aqe ; q)∞
+So we have given yet another proof of the well-known orthogonality relations of the Askey-
+Wilson polynomials, see [3], [9], [12], [15].
+Remark 4.3. By the results of Section 3 we may consider (4.8) as a q-analogue of [16, §9],
+[17, (3.3)] mapping the (bi-)orthogonal little q-Jacobi polynomials to the full four-parameter
+family of Askey-Wilson polynomials, cf. Remark 4.2. To see the formal limit transition of the
+Al-Salam–Chihara polynomials (with c = 1/aq corresponding to γ = 0) of (4.4) to the Jacobi
+             (β,−α−β−2)                    1
+functions φµ            we replace eiθ = q 2 iµ , µ ∈ [0, 2π/ ln q]. Substituting as well a = q α ,
+b = q β , we can write the Al-Salam–Chihara polynomial of (4.4) as
+                               1 1              1       1                1
+                         Qk ( (q 2 iµ + q − 2 iµ ); q − 2 (1+α) , q β+1+ 2 (1+α) |q) =
+                               2
+                      ∞     1
+                              (−1−α−iµ)      1
+                     X   (q 2            , q 2 (−1−α+iµ) ; q)l l  −1                  −→
+                                          β+1
+                                                               q    (z   ; q) l |z=q k q ↑ 1
+                     l=0
+                                    (q, q ; q)l
+            1                  1
+                                                               
+               (−1 − α −  iµ),    (−1 −    α  +   iµ)        1
+       2 F1
+             2                  2                     ;1 −         = φµ(β,−α−β−2) (t),       z = cosh−2 t
+                           β+1                               z
+This is only a formal limit transition, and we refer to [18] for another limit transitions of
+orthogonal polynomials from the q-Askey scheme to Jacobi functions. Koornwinder [18] gives
+a rigorous limit transition from the continuous q-ultraspherical polynomials to Jacobi functions
+with α = β, where the degree of the polynomials is related to the argument of the Jacobi
+function as in the formal limit described in this remark. The Jacobi function transform is
+related to the spherical Fourier transform on rank one symmetric spaces, see [16], and for the
+case a = b = 1, and c = 1/aq this corresponds to the occurrence of the Al-Salam–Chihara
+12                                MOURAD E.H. ISMAIL AND ERIK KOELINK
+
+polynomials in the spectral decomposition of the Laplace-Beltrami operator on the quantum
+disc, see Vaksman [20, §1.5.4].
+4.2. Case two: shift in b. In the notation of Section 2.2 we take Pn (x) = pn (x; a, bq; q), Hn =
+hn (a, bq; q), pn (x) = pn (x; a, b; q), hn = hn (a, b; q). We assume 0 < a < q −1 and b < q −1 . Then
+                                                                        k+1 )
+µ and ν are discrete measures and µ({q k }) = wk (a, bq; q) = (1−bq (1−bq)
+                                                                              wk (a, b; q) = r(q k )ν({q k }),
+where r(x) = 1−bqx1−bq
+                       . Also L = L(a,bq) , Λn = Λn (a, bq; q) we take γ = (1 + abq 2 ) − (acq + bq/c)
+as in Section 4.1. Again we assume Λγn > 0 for all n ∈ N. Then T γ is given as a second order
+difference operator on L2 (ν) by
+                  a(bq 2 x − 1)(1 − bqx)
+ (T γ f )(x) =                            (f (qx) − f (x)) +
+                         x (1 − bq)
+                  (x − 1)(1 − bqx)                                                      (1 − bqx)
+                                      f (q −1 x) − f (x) + (1 + abq 2 ) − (acq + bq/c)
+                                                        
+                                                                                                   f (x)
+                     x (1 − bq)                                                           (1 − bq)
+                                                                                                     (4.9)
+Note that T is unbounded as an operator on L2 (ν).
+  Then we can calculate
+            √             n+1          n+1
+                                               s
+         bq   aq (1 − acq     )(1 − bq     /c)   (1 − q n+1 )(1 − aq n+1 )(1 − bq n+1 )(1 − abq n+1 )
+   aγn =
+         1 − bq        (1 − abq 2n+2 )                      (1 − abq 2n+1 )(1 − abq 2n+3 )
+                  (1 − acq n+1 )(1 − bq n+1 /c)(1 − abq n+1 )(1 − bq n+1 )
+     bγn = q −n
+                         (1 − bq)(1 − abq 2n+1 )(1 − abq 2n+1 )
+                                   (1 − acq n+1 )(1 − bq n+1 /c)(1 − q n )(1 − aq n )
+                       + ab2 q n+2
+                                         (1 − bq)(1 − abq 2n )(1 − abq 2n+1 )
+                                                                                                       (4.10)
+Note that (aγn )n is a bounded sequence, even though T γ is an unbounded operator. Since the
+sequence (bγn )n is a sum of a bounded sequence and unbounded sequence tending to infinity,
+it follows that [4, Thm. VII1.4] gives that T γ is essentially self-adjoint. However, these
+polynomials do not fit in the q-Askey-scheme. This proves the first statement of the following
+proposition. The statement on the location of the spectrum follows, since we are dealing with
+birth and death processes, see Remark 2.2 since we assume Λγn > 0.
+Proposition 4.4. The unbounded operator T defined by (4.9) on L2 (ν) with ν the discrete
+orthogonality measure (4.1) for the little q-Jacobi polynomials with 0 < qa < 1, b < q −1 is an
+unbounded self-adjoint operator with simple spectrum located in [0, ∞).
+   As in Sectionp4.1 we can try to solve the eigenvalue equation T yλ = λyλ directly. Putting
+     k
+yλ (q ) = pk (λ)/ wk (a, b; q) leads to the recurrence
+                         (1 − bq)λ pk (λ) = ak pk+1 (λ) + bk pk (λ) + ak−1 pk−1 (λ),
+                                 √        1            p
+                         ak = − aq −k− 2 (1 − bq k+2 ) 1 − bq k+1 )(1 − q k+1 ),                       (4.11)
+                         bk = q −k (1 − bq k+1 ) a(1 − cq k+1 ) + (1 − bq k+1 /c) .
+                                                                                 
+                                          SPECTRAL PROPERTIES                                                13
+
+Using [4, Thm. VII1.4] we see that the polynomials correspond to a determinate moment
+problem. It is remarkable that the support of the orthogonality measure of (4.11) and the one
+arising from Proposition 4.4 coincide.
+
+                                       5. Concluding remarks
+   We comment on several possible extensions of the results described, which are outside the
+scope of this paper.
+   In the context of Section 2 we can also obtain tridiagonalisations of higher order differential
+or difference operators by looking at the operator p(L)Mp(L) for p a real-valued function,
+such as a polynomial of degree d and M a multiplication by a linear function. Then T is again
+a symmetric differential or (q-)difference operator on L2 (µ) if L is self-adjoint on L2 (µ) and
+diagonal with a suitable basis of eigenfunctions. Note that the degree of T is 2d on L2 (µ). A
+possible link to Krall-type polynomials needs to be investigated, see e.g. [8].
+   Secondly, we can extend the relation (2.1) to allow for more terms. This leads to higher-order
+recurrences for T , which may be solved by matrix-valued orthogonal polynomials. Conversely,
+for known operators T we can obtain spectral information on matrix-valued orthogonal poly-
+nomials that occur in this way. A similar remark is valid if we look for tridiagonalisation on
+Z instead of N.
+  Acknowledgement. The research of Mourad E.H. Ismail is supported by a Research Grants
+Council of Hong Kong under contract # 101410 and a grant from King Saud University, Saudi
+Arabia.
+  This work was partially supported by a grant from the ‘Collaboration Hong Kong - Joint
+Research Scheme’ sponsored by the Netherlands Organisation of Scientific Research and the
+Research Grants Council fo Hong Kong (Reference number: 600.649.000.10N007).
+
+                                               References
+ [1] N.I. Akhiezer, The Classical Moment Problem and Some Related Questions in Analysis, Oliver and Boyd,
+     1965.
+ [2] A.D. Alhaidari, H. Bahlouli, M.S. Abdelmonem, F. Al-Ameen, T. Al-Abdulaal, Regularization in the
+     J-matrix method of scattering revisited, Phys. Lett. A 364 (2007) 372–377.
+ [3] G.E. Andrews, R.A. Askey, R. Roy, Special Functions, Cambridge Univ. Press, 1999.
+ [4] J.M. Berezanskiı̆, Expansions in Eigenfunctions of Selfadjoint Operators, Transl. Math. Monographs 17,
+     AMS, 1968.
+ [5] J.T. Broad, Extraction of continuum properties from L2 basis set matrix representations of the Schrödinger
+     equation: the Sturm sequence polynomials and Gauss quadrature, in: Numerical Integration of Differential
+     Equations and Large Linear Systems, (ed. J. Hinze), LNM 968, Springer, 1982, pp. 53–70.
+ [6] Y. Chen, M.E.H. Ismail, Hypergeometric origins of Diophantine properties associated with the Askey
+     scheme, Proc. Amer. Math. Soc. 138, 943–951.
+ [7] N. Dunford and J.T. Schwartz, Linear Operators II: Spectral Theory, Interscience, 1963.
+ [8] W.N. Everitt, L.L. Littlejohn, Orthogonal polynomials and spectral theory: a survey, in: Orthogonal
+     Polynomials and Their Applications (Erice, 1990), (eds. C. Brezinski, L. Gori, A. Ronveaux), IMACS
+     Ann. Comput. Appl. Math. 9, Baltzer, 1991, pp. 21–55
+ [9] G. Gasper and M. Rahman, Basic Hypergeometric Series, 2nd ed., Cambridge Univ. Press, 2004.
+[10] W. Groenevelt, The Wilson function transform, Int. Math. Res. Not. 2003, 2779–2817.
+[11] R. Haydock, The recursion method and the Schrödinger equation, in: P. Nevai (Ed.), Orthogonal Poly-
+     nomials, NATO Adv. Sci. Inst. Ser. C Math. Phys. Sci. 294, Kluwer, 1990, pp. 217–228
+14                             MOURAD E.H. ISMAIL AND ERIK KOELINK
+
+[12] M.E.H. Ismail, Classical and Quantum Orthogonal Polynomials in One Variable, paperback ed., Cam-
+     bridge Univ. Press, 2009.
+[13] M.E.H. Ismail, E. Koelink, The J-matrix method, Adv. Appl. Math. 46 (2011), 379-395.
+[14] E. Koelink, Spectral theory and special functions, in: Laredo Lectures on Orthogonal Polynomials and
+     Special Functions, (eds. R. Álvarez-Nodarse, F. Marcellán, W. Van Assche), Nova Sci. Publ., 2004, pp.
+     45–84.
+[15] R. Koekoek, R.F. Swarttouw, The Askey-scheme of hypergeometric orthogonal polynomials and its q-
+     analogue, online at http://aw.twi.tudelft.nl/~koekoek/askey.html, Report 98-17, Technical Uni-
+     versity Delft, 1998.
+[16] T.H. Koornwinder, Jacobi functions and analysis on noncompact semisimple Lie groups, in: Special Func-
+     tions: Group Theoretical Aspects and Applications, (eds. R.A. Askey, T.H. Koornwinder, W. Schempp),
+     Math. Appl., Reidel, 1984, pp. 1–85.
+[17] T.H. Koornwinder, Special orthogonal polynomial systems mapped onto each other by the Fourier-Jacobi
+     transform, in: Orthogonal Polynomials and Applications, (eds. C. Brezinski, A. Draux, A.P. Magnus,
+     P. Maroni, A. Ronveaux), LNM 1171, Springer, 1985, pp. 174–183.
+[18] T.H. Koornwinder, Jacobi functions as limit cases of qq-ultraspherical polynomials, J. Math. Anal. Appl.
+     148 (1990), 44–54.
+[19] B. Simon, The classical moment problem as a self-adjoint finite difference operator, Adv. Math. 137
+     (1998), 82–203.
+[20] L.L. Vaksman, Quantum Bouned Symmetric Domains, Transl. Math. Monographs 238, Amer. Math. Soc.,
+     2010.
+[21] H.A. Yamani, W.P. Reinhardt, L2 discretizations of the continuum: radial kinetic energy, Coulomb
+     Hamiltonian, Phys. Rev. A 11 (1975) 1144–1156.
+
+  City University of Hong Kong, Department of Mathematics, 83 Tat Chee Avenue, Kowloon,
+Hong Kong and King Saud University, Riyadh, Saudi Arabia.
+  E-mail address: meismail@cityu.edu.hk
+
+  Radboud Universiteit Nijmegen, IMAPP, FNWI, Heyendaalseweg 135, 6525 AJ Nijmegen,
+the Netherlands
+  E-mail address: e.koelink@math.ru.nl
+

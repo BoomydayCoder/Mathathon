@@ -27,6 +27,20 @@ exact interpretation of the error. For the original paper's sequence of steps, u
 [40-hour research map](RESEARCH_MAP.md) selects a manageable 80/20 project
 and offers a choice of one extension.
 
+For readers comfortable with one short residue calculation, the
+[positive resolvent–Legendre proof](problem131/resolvent-legendre-pade-proof.md)
+is a complete alternative, now accepted in its
+[full-proof audit](problem131/resolvent-legendre-pade-independent-review.md).
+Its opening design narrative starts from a positive Stieltjes error, finds
+rational Bernoulli moments, transports Legendre polynomials through an exact
+Hilbert Gram isometry, and obtains \(A_n\) by evaluation on the negative
+half-square grid. Direct arithmetic and Delannoy growth finish the proof.
+The underlying Wilson–Padé irrationality argument is explicitly attributed
+to Prévost (1996); the reconstruction supplies elementary versions of its
+norm, denominator, and growth steps. Use the mixed telescopes above for the
+official recurrence-motivation question, which this alternative proof does
+not need to solve.
+
 **Follow the zeta-five simplification without the prime number theorem.**
 Start with the [PNT-free guide](problem131/pnt-free-zeta5-guide.md).
 It connects residue-class covariance to Bernoulli polynomials and superfactorials,
@@ -156,6 +170,10 @@ Their available arithmetic estimates still do not yield irrationality proofs.
 The elementary zeta-three guide is a complete written proof. The advanced modular
 route now includes a reviewed direct global covering argument, with standard
 modular-form and covering-theory inputs stated explicitly.
+The resolvent–Legendre alternative also has a completed full-proof review;
+its positive error, cubic-lcm numerator arithmetic, and growth estimates are
+all proved, with the short Fourier contour calculation stated as an input
+derived in the text.
 
 For the zeta-five alternative, the [completed assembly audit](problem131/fauzan-simplified-proof-audit.md)
 checks the shared positive moments, local arithmetic, real determinant transfer,
@@ -207,6 +225,9 @@ also tests every small boundary case. The
 inverse maps and their Jacobians. The
 [elementary rank-one trial certificate](computations/check_rank_one_elementary_trial.py)
 uses exact rational bounds, with no floating-point acceptance test.
+The [independent resolvent–Padé checker](computations/check_resolvent_pade_independent.py)
+uses standard-library rational arithmetic to check the polynomial isometry,
+associated numerator, and even-integer denominator lemma.
 The [independent Laurent check](computations/check_apery_laurent_independent_review.py)
 verifies the reciprocal measure and covariance separately from the main derivation.
 The sparse superfactorial certificate, its independent normalizer checks, and

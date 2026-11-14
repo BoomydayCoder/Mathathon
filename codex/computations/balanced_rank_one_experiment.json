@@ -75,7 +75,28 @@
       "summation_cancellation_factor": "5",
       "residue_denominator_lcm": "1620",
       "residue_naive_normalizer": "362880",
-      "residue_factorial_cancellation_factor": "224"
+      "residue_factorial_cancellation_factor": "224",
+      "negative_square_fixed_divisor": "1",
+      "negative_square_newton_coefficients": [
+        "-1",
+        "-3",
+        "-6"
+      ],
+      "fixed_divisor_normalizer": "627056640",
+      "fixed_divisor_normalizer_digits": 9,
+      "fixed_divisor_normalizer_reduction": "8960",
+      "upper_prime_band_product": "35",
+      "prime_band_refined_normalizer": "17915904",
+      "prime_band_refined_normalizer_digits": 8,
+      "prime_band_normalizer_reduction": "256",
+      "primitive_denominator_factorization": {
+        "2": 5,
+        "3": 7
+      },
+      "coefficient_denominator_factorization": {
+        "3": 1
+      },
+      "fixed_divisor_factorization": {}
     },
     "seconds": 0.004
   },
@@ -171,9 +192,35 @@
       "summation_cancellation_factor": "231",
       "residue_denominator_lcm": "41580000",
       "residue_naive_normalizer": "11975040000",
-      "residue_factorial_cancellation_factor": "288"
+      "residue_factorial_cancellation_factor": "288",
+      "negative_square_fixed_divisor": "2",
+      "negative_square_newton_coefficients": [
+        "2",
+        "16",
+        "92",
+        "180",
+        "120"
+      ],
+      "fixed_divisor_normalizer": "646652160000000",
+      "fixed_divisor_normalizer_digits": 15,
+      "fixed_divisor_normalizer_reduction": "149688",
+      "upper_prime_band_product": "77",
+      "prime_band_refined_normalizer": "8398080000000",
+      "prime_band_refined_normalizer_digits": 13,
+      "prime_band_normalizer_reduction": "1944",
+      "primitive_denominator_factorization": {
+        "2": 11,
+        "3": 3,
+        "5": 7
+      },
+      "coefficient_denominator_factorization": {
+        "5": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 1
+      }
     },
-    "seconds": 0.005
+    "seconds": 0.004
   },
   {
     "m": 1,
@@ -283,7 +330,38 @@
       "summation_cancellation_factor": "32175",
       "residue_denominator_lcm": "154504350000",
       "residue_naive_normalizer": "25630417612800000",
-      "residue_factorial_cancellation_factor": "165888"
+      "residue_factorial_cancellation_factor": "165888",
+      "negative_square_fixed_divisor": "36",
+      "negative_square_newton_coefficients": [
+        "-36",
+        "-540",
+        "-5940",
+        "-27180",
+        "-60120",
+        "-63000",
+        "-25200"
+      ],
+      "fixed_divisor_normalizer": "11721644321587200000000",
+      "fixed_divisor_normalizer_digits": 23,
+      "fixed_divisor_normalizer_reduction": "131788800",
+      "upper_prime_band_product": "143",
+      "prime_band_refined_normalizer": "81969540710400000000",
+      "prime_band_refined_normalizer_digits": 20,
+      "prime_band_normalizer_reduction": "921600",
+      "primitive_denominator_factorization": {
+        "2": 8,
+        "3": 3,
+        "5": 6,
+        "7": 7
+      },
+      "coefficient_denominator_factorization": {
+        "5": 1,
+        "7": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 2,
+        "3": 2
+      }
     },
     "seconds": 0.003
   },
@@ -411,9 +489,42 @@
       "summation_cancellation_factor": "230945",
       "residue_denominator_lcm": "582090812503200",
       "residue_naive_normalizer": "9656188070453084160000",
-      "residue_factorial_cancellation_factor": "16588800"
+      "residue_factorial_cancellation_factor": "16588800",
+      "negative_square_fixed_divisor": "288",
+      "negative_square_newton_coefficients": [
+        "288",
+        "6912",
+        "122688",
+        "971712",
+        "4068288",
+        "9576000",
+        "12720960",
+        "8890560",
+        "2540160"
+      ],
+      "fixed_divisor_normalizer": "1863040785843041925120000000",
+      "fixed_divisor_normalizer_digits": 28,
+      "fixed_divisor_normalizer_reduction": "1154725000",
+      "upper_prime_band_product": "46189",
+      "prime_band_refined_normalizer": "40335161745070080000000",
+      "prime_band_refined_normalizer_digits": 23,
+      "prime_band_normalizer_reduction": "25000",
+      "primitive_denominator_factorization": {
+        "2": 14,
+        "3": 14,
+        "5": 2,
+        "7": 7
+      },
+      "coefficient_denominator_factorization": {
+        "3": 2,
+        "7": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 5,
+        "3": 2
+      }
     },
-    "seconds": 0.005
+    "seconds": 0.004
   },
   {
     "m": 1,
@@ -555,7 +666,44 @@
       "summation_cancellation_factor": "4732273",
       "residue_denominator_lcm": "2217543507593301888",
       "residue_naive_normalizer": "3678638573876376635965440000",
-      "residue_factorial_cancellation_factor": "1658880000"
+      "residue_factorial_cancellation_factor": "1658880000",
+      "negative_square_fixed_divisor": "2400",
+      "negative_square_newton_coefficients": [
+        "-2400",
+        "-84000",
+        "-2184000",
+        "-26208000",
+        "-172872000",
+        "-681508800",
+        "-1672372800",
+        "-2573323200",
+        "-2411740800",
+        "-1257379200",
+        "-279417600"
+      ],
+      "fixed_divisor_normalizer": "13603301222784781223452402778112000",
+      "fixed_divisor_normalizer_digits": 35,
+      "fixed_divisor_normalizer_reduction": "49064206464",
+      "upper_prime_band_product": "96577",
+      "prime_band_refined_normalizer": "140854460407599958825107456000",
+      "prime_band_refined_normalizer_digits": 30,
+      "prime_band_normalizer_reduction": "508032",
+      "primitive_denominator_factorization": {
+        "2": 14,
+        "3": 10,
+        "5": 3,
+        "7": 6,
+        "11": 7
+      },
+      "coefficient_denominator_factorization": {
+        "7": 1,
+        "11": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 5,
+        "3": 1,
+        "5": 2
+      }
     },
     "seconds": 0.007
   },
@@ -715,7 +863,47 @@
       "summation_cancellation_factor": "180524700",
       "residue_denominator_lcm": "8522349421893558451200",
       "residue_naive_normalizer": "6234661758964936733395255296000000",
-      "residue_factorial_cancellation_factor": "731566080000"
+      "residue_factorial_cancellation_factor": "731566080000",
+      "negative_square_fixed_divisor": "43200",
+      "negative_square_newton_coefficients": [
+        "43200",
+        "2073600",
+        "74131200",
+        "1246752000",
+        "11771568000",
+        "68472086400",
+        "258878332800",
+        "654256310400",
+        "1113798470400",
+        "1260253209600",
+        "907947532800",
+        "376734758400",
+        "68497228800"
+      ],
+      "fixed_divisor_normalizer": "156334611361544254934264449526228582400000",
+      "fixed_divisor_normalizer_digits": 42,
+      "fixed_divisor_normalizer_reduction": "3467518437600",
+      "upper_prime_band_product": "7429",
+      "prime_band_refined_normalizer": "21043829770028840346515607689625600000",
+      "prime_band_refined_normalizer_digits": 38,
+      "prime_band_normalizer_reduction": "466754400",
+      "primitive_denominator_factorization": {
+        "2": 17,
+        "3": 8,
+        "5": 3,
+        "7": 3,
+        "11": 7,
+        "13": 7
+      },
+      "coefficient_denominator_factorization": {
+        "11": 1,
+        "13": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 6,
+        "3": 3,
+        "5": 2
+      }
     },
     "seconds": 0.007
   },
@@ -818,7 +1006,32 @@
       "summation_cancellation_factor": "6435",
       "residue_denominator_lcm": "19459440000",
       "residue_naive_normalizer": "2179457280000",
-      "residue_factorial_cancellation_factor": "112"
+      "residue_factorial_cancellation_factor": "112",
+      "negative_square_fixed_divisor": "1",
+      "negative_square_newton_coefficients": [
+        "1",
+        "15",
+        "90",
+        "180",
+        "120"
+      ],
+      "fixed_divisor_normalizer": "56967191402913792000000000",
+      "fixed_divisor_normalizer_digits": 26,
+      "fixed_divisor_normalizer_reduction": "387620513280",
+      "upper_prime_band_product": "143",
+      "prime_band_refined_normalizer": "398371967852544000000000",
+      "prime_band_refined_normalizer_digits": 24,
+      "prime_band_normalizer_reduction": "2710632960",
+      "primitive_denominator_factorization": {
+        "2": 13,
+        "3": 8,
+        "5": 8,
+        "7": 1
+      },
+      "coefficient_denominator_factorization": {
+        "5": 1
+      },
+      "fixed_divisor_factorization": {}
     },
     "seconds": 0.002
   },
@@ -953,7 +1166,40 @@
       "summation_cancellation_factor": "1410864",
       "residue_denominator_lcm": "3863358281502720000",
       "residue_naive_normalizer": "881216570577644421120000",
-      "residue_factorial_cancellation_factor": "228096"
+      "residue_factorial_cancellation_factor": "228096",
+      "negative_square_fixed_divisor": "4",
+      "negative_square_newton_coefficients": [
+        "16",
+        "1280",
+        "34684",
+        "340812",
+        "1606488",
+        "4044600",
+        "5569200",
+        "3951360",
+        "1128960"
+      ],
+      "fixed_divisor_normalizer": "1802846693951425558568601153435598848000000000",
+      "fixed_divisor_normalizer_digits": 46,
+      "fixed_divisor_normalizer_reduction": "1049521342818364416",
+      "upper_prime_band_product": "4199",
+      "prime_band_refined_normalizer": "429351439378762933691021946519552000000000",
+      "prime_band_refined_normalizer_digits": 42,
+      "prime_band_normalizer_reduction": "249945544848384",
+      "primitive_denominator_factorization": {
+        "2": 25,
+        "3": 10,
+        "5": 9,
+        "7": 9,
+        "11": 1
+      },
+      "coefficient_denominator_factorization": {
+        "2": 2,
+        "7": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 2
+      }
     },
     "seconds": 0.003
   },
@@ -1120,7 +1366,46 @@
       "summation_cancellation_factor": "113106525",
       "residue_denominator_lcm": "746440984252388224800000000",
       "residue_naive_normalizer": "802389900931877952374833152000000000",
-      "residue_factorial_cancellation_factor": "1074954240"
+      "residue_factorial_cancellation_factor": "1074954240",
+      "negative_square_fixed_divisor": "432",
+      "negative_square_newton_coefficients": [
+        "432",
+        "110160",
+        "8412336",
+        "218729808",
+        "2715597792",
+        "18939074400",
+        "80996112000",
+        "222640367040",
+        "400981069440",
+        "470374128000",
+        "346024224000",
+        "144897984000",
+        "26345088000"
+      ],
+      "fixed_divisor_normalizer": "52255360377152105753996195063883138326436249600000000000000",
+      "fixed_divisor_normalizer_digits": 59,
+      "fixed_divisor_normalizer_reduction": "1000694145024000",
+      "upper_prime_band_product": "215441",
+      "prime_band_refined_normalizer": "242550676877437933141770577856040114585600000000000000",
+      "prime_band_refined_normalizer_digits": 54,
+      "prime_band_normalizer_reduction": "4644864000",
+      "primitive_denominator_factorization": {
+        "2": 18,
+        "3": 14,
+        "5": 11,
+        "7": 8,
+        "11": 9,
+        "13": 7
+      },
+      "coefficient_denominator_factorization": {
+        "5": 1,
+        "11": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 4,
+        "3": 3
+      }
     },
     "seconds": 0.004
   },
@@ -1319,9 +1604,55 @@
       "summation_cancellation_factor": "2286131662584",
       "residue_denominator_lcm": "3006950896716606025615926274377600000",
       "residue_naive_normalizer": "524069185724151780584638998555498539856691200000000",
-      "residue_factorial_cancellation_factor": "174285914112000"
+      "residue_factorial_cancellation_factor": "174285914112000",
+      "negative_square_fixed_divisor": "4608",
+      "negative_square_newton_coefficients": [
+        "331776",
+        "207028224",
+        "35562571776",
+        "1954517428224",
+        "49679720971776",
+        "704132195904000",
+        "6199187730117120",
+        "36246378568619520",
+        "146861345142328320",
+        "423280174939776000",
+        "879742696339584000",
+        "1321760395354291200",
+        "1421769863837030400",
+        "1067194359399168000",
+        "530698719462912000",
+        "157077845084160000",
+        "20943712677888000"
+      ],
+      "fixed_divisor_normalizer": "33747309991714085138475695267564731875733074730444000161975727649099612160000000000000",
+      "fixed_divisor_normalizer_digits": 86,
+      "fixed_divisor_normalizer_reduction": "871179933000898033682400000000",
+      "upper_prime_band_product": "765049",
+      "prime_band_refined_normalizer": "44111305278111709365642848062757721238421427556200975574081826979840000000000000",
+      "prime_band_refined_normalizer_digits": 80,
+      "prime_band_normalizer_reduction": "1138724360140197600000000",
+      "primitive_denominator_factorization": {
+        "2": 27,
+        "3": 17,
+        "5": 5,
+        "7": 9,
+        "11": 8,
+        "13": 9,
+        "17": 7,
+        "19": 1
+      },
+      "coefficient_denominator_factorization": {
+        "7": 1,
+        "11": 1,
+        "13": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 9,
+        "3": 2
+      }
     },
-    "seconds": 0.007
+    "seconds": 0.008
   },
   {
     "m": 2,
@@ -1550,7 +1881,59 @@
       "summation_cancellation_factor": "134479368550800",
       "residue_denominator_lcm": "328789161461726174797755819073154111412633600",
       "residue_naive_normalizer": "13168924876461729583582299604953629212129861630049648640000000000",
-      "residue_factorial_cancellation_factor": "40052794982400000000"
+      "residue_factorial_cancellation_factor": "40052794982400000000",
+      "negative_square_fixed_divisor": "2592000",
+      "negative_square_newton_coefficients": [
+        "51840000",
+        "67132800000",
+        "22544697600000",
+        "2302364736000000",
+        "105183021420000000",
+        "2631127073019552000",
+        "40620403147219488000",
+        "417913661584413792000",
+        "3017450376389469888000",
+        "15847283557138162752000",
+        "62059201504550478144000",
+        "184249661986031818176000",
+        "418860287464773458304000",
+        "731974549921958318976000",
+        "981177164440168760064000",
+        "999634152802538373120000",
+        "759947107895522426880000",
+        "417349694072850739200000",
+        "156365397098074644480000",
+        "35755144363167989760000",
+        "3763699406649262080000"
+      ],
+      "fixed_divisor_normalizer": "17250233685806754251828599257881074131373989011087829261932266984277881485397573059200679936000000000",
+      "fixed_divisor_normalizer_digits": 101,
+      "fixed_divisor_normalizer_reduction": "26749931076947196579252879360000",
+      "upper_prime_band_product": "58642669",
+      "prime_band_refined_normalizer": "294158400017686000134622100127827983603099460072116248016137651993259063386040172544000000000",
+      "prime_band_refined_normalizer_digits": 93,
+      "prime_band_normalizer_reduction": "456151323483370045440000",
+      "primitive_denominator_factorization": {
+        "2": 30,
+        "3": 13,
+        "5": 5,
+        "7": 11,
+        "11": 9,
+        "13": 9,
+        "17": 9,
+        "19": 7,
+        "23": 1
+      },
+      "coefficient_denominator_factorization": {
+        "7": 1,
+        "13": 1,
+        "17": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 8,
+        "3": 4,
+        "5": 3
+      }
     },
     "seconds": 0.016
   },
@@ -1813,9 +2196,66 @@
       "summation_cancellation_factor": "675866114903558880",
       "residue_denominator_lcm": "222223977932294084987995726319978829909700902912000000",
       "residue_naive_normalizer": "2408369209970571398327296375137758450683736936321215069039047475200000000000000",
-      "residue_factorial_cancellation_factor": "10837575820482969600000000"
+      "residue_factorial_cancellation_factor": "10837575820482969600000000",
+      "negative_square_fixed_divisor": "93312000",
+      "negative_square_newton_coefficients": [
+        "22394880000",
+        "53747712000000",
+        "32006678515200000",
+        "5566223190873600000",
+        "420294619598774400000",
+        "17035864092072514944000",
+        "421183038197820375936000",
+        "6903048356039902276224000",
+        "79427975060370307988736000",
+        "668427979404772114585344000",
+        "4239169469967295812711168000",
+        "20712642828366322861961472000",
+        "79238378218546107204069888000",
+        "240080269851039335519273472000",
+        "580426453591356796633617408000",
+        "1124061018301953375199395840000",
+        "1744318752335354430194319360000",
+        "2161429519437104421593088000000",
+        "2121628337762944823884431360000",
+        "1627088371765735970885713920000",
+        "953542926357041144735170560000",
+        "412139620145687338237132800000",
+        "123755430630225021788160000000",
+        "23046555882381178975027200000",
+        "2004048337598363389132800000"
+      ],
+      "fixed_divisor_normalizer": "1848498159942093372813883717129870666783415220831301221627400235101661788851228462214784047657254912000000000000000000",
+      "fixed_divisor_normalizer_digits": 118,
+      "fixed_divisor_normalizer_reduction": "5889758748102783036661864476672000",
+      "upper_prime_band_product": "146078888479",
+      "prime_band_refined_normalizer": "12654108880406970370002713259280636196984128757030951296737517360923441400847054854422528000000000000000000",
+      "prime_band_refined_normalizer_digits": 107,
+      "prime_band_normalizer_reduction": "40319027680372051968000",
+      "primitive_denominator_factorization": {
+        "2": 38,
+        "3": 14,
+        "5": 15,
+        "7": 4,
+        "11": 9,
+        "13": 9,
+        "17": 9,
+        "19": 9,
+        "23": 7
+      },
+      "coefficient_denominator_factorization": {
+        "2": 1,
+        "5": 1,
+        "17": 1,
+        "19": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 10,
+        "3": 6,
+        "5": 3
+      }
     },
-    "seconds": 0.039
+    "seconds": 0.043
   },
   {
     "m": 3,
@@ -1939,7 +2379,34 @@
       "summation_cancellation_factor": "8083075",
       "residue_denominator_lcm": "2980304960016384000",
       "residue_naive_normalizer": "119212198400655360000",
-      "residue_factorial_cancellation_factor": "40"
+      "residue_factorial_cancellation_factor": "40",
+      "negative_square_fixed_divisor": "1",
+      "negative_square_newton_coefficients": [
+        "-1",
+        "-63",
+        "-966",
+        "-5040",
+        "-11760",
+        "-12600",
+        "-5040"
+      ],
+      "fixed_divisor_normalizer": "230805278614839295222325814126182400000000000",
+      "fixed_divisor_normalizer_digits": 45,
+      "fixed_divisor_normalizer_reduction": "62078016000",
+      "upper_prime_band_product": "46189",
+      "prime_band_refined_normalizer": "4996975007357580705846106521600000000000",
+      "prime_band_refined_normalizer_digits": 40,
+      "prime_band_normalizer_reduction": "1344000",
+      "primitive_denominator_factorization": {
+        "2": 30,
+        "3": 22,
+        "5": 8,
+        "7": 10
+      },
+      "coefficient_denominator_factorization": {
+        "7": 1
+      },
+      "fixed_divisor_factorization": {}
     },
     "seconds": 0.003
   },
@@ -2113,7 +2580,45 @@
       "summation_cancellation_factor": "25245376380",
       "residue_denominator_lcm": "43184178695986487020173312000000000",
       "residue_naive_normalizer": "795970781724422928755834486784000000000",
-      "residue_factorial_cancellation_factor": "18432"
+      "residue_factorial_cancellation_factor": "18432",
+      "negative_square_fixed_divisor": "4",
+      "negative_square_newton_coefficients": [
+        "64",
+        "46592",
+        "5280940",
+        "166335228",
+        "2296924152",
+        "17081947800",
+        "76089939120",
+        "214743009600",
+        "393390345600",
+        "466373376000",
+        "345135168000",
+        "144897984000",
+        "26345088000"
+      ],
+      "fixed_divisor_normalizer": "15075246269272985313645465291481087354198910492841764403397263360000000000000000",
+      "fixed_divisor_normalizer_digits": 80,
+      "fixed_divisor_normalizer_reduction": "521042388097475543040",
+      "upper_prime_band_product": "6678671",
+      "prime_band_refined_normalizer": "2257222472745398794707130399368540141324360863537336156160000000000000000",
+      "prime_band_refined_normalizer_digits": 73,
+      "prime_band_normalizer_reduction": "78015878922240",
+      "primitive_denominator_factorization": {
+        "2": 33,
+        "3": 17,
+        "5": 15,
+        "7": 10,
+        "11": 11,
+        "13": 9
+      },
+      "coefficient_denominator_factorization": {
+        "5": 1,
+        "11": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 2
+      }
     },
     "seconds": 0.004
   },
@@ -2335,7 +2840,55 @@
       "summation_cancellation_factor": "159122484131325",
       "residue_denominator_lcm": "261795396335323806214790631339704732467200000000000",
       "residue_naive_normalizer": "550328672770578606204231633525300854693423166259200000000000",
-      "residue_factorial_cancellation_factor": "2102132736"
+      "residue_factorial_cancellation_factor": "2102132736",
+      "negative_square_fixed_divisor": "576",
+      "negative_square_newton_coefficients": [
+        "-46656",
+        "-191056320",
+        "-92926854720",
+        "-10372586904000",
+        "-454838508051840",
+        "-10178858719036800",
+        "-134567783268238080",
+        "-1149312826301230080",
+        "-6718475350061153280",
+        "-27923713965189504000",
+        "-84571873202226009600",
+        "-189342411789440448000",
+        "-315067335195421670400",
+        "-388319982824969395200",
+        "-349554919934200780800",
+        "-223250457276887040000",
+        "-95796541788659712000",
+        "-24761180306903040000",
+        "-2913080036106240000"
+      ],
+      "fixed_divisor_normalizer": "184366538660819474331521971628952913067456980634543490081021854463068747996979883283013420711936000000000000000000",
+      "fixed_divisor_normalizer_digits": 114,
+      "fixed_divisor_normalizer_reduction": "9031407739004667749990400",
+      "upper_prime_band_product": "1348781387",
+      "prime_band_refined_normalizer": "136691194316443717599672045021298112758918862982903462976852196480576691111307486691328000000000000000000",
+      "prime_band_refined_normalizer_digits": 105,
+      "prime_band_normalizer_reduction": "6695975957299200",
+      "primitive_denominator_factorization": {
+        "2": 39,
+        "3": 20,
+        "5": 16,
+        "7": 15,
+        "11": 8,
+        "13": 11,
+        "17": 9,
+        "19": 9
+      },
+      "coefficient_denominator_factorization": {
+        "5": 1,
+        "7": 1,
+        "13": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 6,
+        "3": 2
+      }
     },
     "seconds": 0.009
   },
@@ -2605,9 +3158,64 @@
       "summation_cancellation_factor": "374785839437261560",
       "residue_denominator_lcm": "173283940052798323386655816171822351405461016339257360384000000000",
       "residue_naive_normalizer": "667599945003842391616326555188186642529531878748240817137623960125440000000000000",
-      "residue_factorial_cancellation_factor": "3852635996160000"
+      "residue_factorial_cancellation_factor": "3852635996160000",
+      "negative_square_fixed_divisor": "18432",
+      "negative_square_newton_coefficients": [
+        "47775744",
+        "746448224256",
+        "1164627119775744",
+        "362257326672224256",
+        "40131853368527775744",
+        "2127080328013142784000",
+        "63960132209827496417280",
+        "1214697266049427097978880",
+        "15655441781063917056430080",
+        "143985133881462099082752000",
+        "979753718530066485745152000",
+        "5064277287900323133456076800",
+        "20271001816775403315436953600",
+        "63701460489278537520731136000",
+        "158608989670029661315897344000",
+        "314527035994802443935682560000",
+        "497417581051825175266516992000",
+        "625677285927664865947852800000",
+        "621379515837703885449707520000",
+        "480801247013486759626506240000",
+        "283617505617634499166535680000",
+        "123139598499480764983541760000",
+        "37078792280093655442391040000",
+        "6913966764714353692508160000",
+        "601214501279509016739840000"
+      ],
+      "fixed_divisor_normalizer": "127060325237609825129726404980661707715698547699899379965015940903601134543025027197602127885746348865216933851802971930624000000000000000000000000000",
+      "fixed_divisor_normalizer_digits": 150,
+      "fixed_divisor_normalizer_reduction": "206553470974021339993440000000000000",
+      "upper_prime_band_product": "146078888479",
+      "prime_band_refined_normalizer": "869806216083549647678767405064940805748684928011495401358132214513132135776079662934317855296160908469921120256000000000000000000000000000",
+      "prime_band_refined_normalizer_digits": 138,
+      "prime_band_normalizer_reduction": "1413985779360000000000000",
+      "primitive_denominator_factorization": {
+        "2": 42,
+        "3": 37,
+        "5": 14,
+        "7": 12,
+        "11": 11,
+        "13": 11,
+        "17": 11,
+        "19": 11,
+        "23": 9
+      },
+      "coefficient_denominator_factorization": {
+        "3": 1,
+        "17": 1,
+        "19": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 11,
+        "3": 2
+      }
     },
-    "seconds": 0.037
+    "seconds": 0.041
   },
   {
     "m": 3,
@@ -2923,9 +3531,74 @@
       "summation_cancellation_factor": "1330179688967496962595",
       "residue_denominator_lcm": "64325899445455656567857879807573707221534237804969768926857051703655530496000000",
       "residue_naive_normalizer": "2808033141588957660354169926176111500902310773257861296310133488388679664677358685961322496000000000000000",
-      "residue_factorial_cancellation_factor": "43653227794661376000000000"
+      "residue_factorial_cancellation_factor": "43653227794661376000000000",
+      "negative_square_fixed_divisor": "1492992000",
+      "negative_square_newton_coefficients": [
+        "-2985984000000",
+        "-139311083520000000",
+        "-575935250227200000000",
+        "-427927068238970880000000",
+        "-104543258794784766720000000",
+        "-11521562351533488933414912000",
+        "-690558664340359427853846528000",
+        "-25376057144908630122870577152000",
+        "-620304434690696709898952060928000",
+        "-10689067907824759221553187622912000",
+        "-135507361189614007178329065345024000",
+        "-1305119441935735505476949529686016000",
+        "-9788754713680201225927531929329664000",
+        "-58279067285932211806001309924745216000",
+        "-279561107386095742347736159468929024000",
+        "-1093007000648316080089242073475481600000",
+        "-3513529111548038520577523724721520640000",
+        "-9345262804794388678269751139058647040000",
+        "-20653133727605387118647240421257379840000",
+        "-38006968474759903174348705040538009600000",
+        "-58247405569698734540648143000888934400000",
+        "-74189109709972414378152386801624678400000",
+        "-78181429692200734840030435276259328000000",
+        "-67659507698889338804483356800260505600000",
+        "-47545930018550382668116929107420774400000",
+        "-26683941294524373047985199295692800000000",
+        "-11670462302427461642175385453854720000000",
+        "-3831244658501385203871471611412480000000",
+        "-887754292764247116392742125568000000000",
+        "-129419655457396045514770588631040000000",
+        "-8925493479820416932053144043520000000"
+      ],
+      "fixed_divisor_normalizer": "4948273247238534162990637966035094454352591233209346848807090074325410398971970484573320874823247324226620384852140719559796564234090671331696923471316515441292083200000000000000000000000",
+      "fixed_divisor_normalizer_digits": 187,
+      "fixed_divisor_normalizer_reduction": "911549964093651202356993116160000000",
+      "upper_prime_band_product": "39181802686993",
+      "prime_band_refined_normalizer": "126290086415069139148910120435703393270871257525973129752078062835293940221659039823515828326288767292135294760721780126581688859878279626274921408102400000000000000000000000",
+      "prime_band_refined_normalizer_digits": 174,
+      "prime_band_normalizer_reduction": "23264625453189120000000",
+      "primitive_denominator_factorization": {
+        "2": 56,
+        "3": 31,
+        "5": 16,
+        "7": 17,
+        "11": 14,
+        "13": 11,
+        "17": 9,
+        "19": 11,
+        "23": 11,
+        "29": 9,
+        "31": 9
+      },
+      "coefficient_denominator_factorization": {
+        "7": 1,
+        "11": 1,
+        "19": 1,
+        "23": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 14,
+        "3": 6,
+        "5": 3
+      }
     },
-    "seconds": 0.101
+    "seconds": 0.107
   },
   {
     "m": 3,
@@ -3289,8 +3962,81 @@
       "summation_cancellation_factor": "75389430124251993743711025",
       "residue_denominator_lcm": "219752547192819096934132616114779137674600515596894226809035950972260256835359860043284480000000000000",
       "residue_naive_normalizer": "1567763311727027222049543213112876459702234703859662579321963220961827370325811272257111439478046148895178752000000000000000000000",
-      "residue_factorial_cancellation_factor": "7134221340112217702400000000"
+      "residue_factorial_cancellation_factor": "7134221340112217702400000000",
+      "negative_square_fixed_divisor": "26873856000",
+      "negative_square_newton_coefficients": [
+        "69657034752000000",
+        "8195010824503296000000",
+        "78306555033403564032000000",
+        "124326529263399602626560000000",
+        "60854073013664166638845440000000",
+        "12773269669610231981893584359424000",
+        "1402256751568886443648879508115456000",
+        "91614517874003630244768966848507904000",
+        "3893444205262540513278382442795360256000",
+        "114734939747724306574892817108025319424000",
+        "2458571505921196760710258728669704429568000",
+        "39723131181569621431794285523407164301312000",
+        "497794229213333038009936051584750410907648000",
+        "4947897511255413177447215526393320289779712000",
+        "39714071588606355624543453291634208894189568000",
+        "261163057880544558908546566973673289043804160000",
+        "1423712376263136727527655655987793489128325120000",
+        "6495384248030818849059330331173777121538211840000",
+        "24990645148608293008585808760198593953567211520000",
+        "81576032414816016514120333554490231582412636160000",
+        "226970208278842630583503231982890164949191229440000",
+        "540064922173102508874721170812042531356217180160000",
+        "1101327280651427473977254546500817483330829680640000",
+        "1926575343469240369951952542419965559759631810560000",
+        "2890234104890111775850476081494497966621395517440000",
+        "3712554761726037204678872998658098199258726400000000",
+        "4070923136978903813546079269264829478527565824000000",
+        "3792687124603709502232078164698650234530299904000000",
+        "2981893155535622692206698745479590342087409664000000",
+        "1959903991367828248356554378876529785446072320000000",
+        "1062995717248762589813265625733499439845212160000000",
+        "467228243451025181773042607403239816665497600000000",
+        "162185091211443972603875611748040168387379200000000",
+        "42775111514766685886499086883459616997376000000000",
+        "8052237507105934187513489897902533771264000000000",
+        "963495265801938269598647020662376366080000000000",
+        "55056872331539329691351258323564363776000000000"
+      ],
+      "fixed_divisor_normalizer": "809466723063594672394044967526767794632902032082857254865866900321055809919725448205963197052561223108779642868977091506607642893534013119142001077355291471242307966108719395449808756722892800000000000000000000000000000",
+      "fixed_divisor_normalizer_digits": 219,
+      "fixed_divisor_normalizer_reduction": "2452697910100210409821671977484421346304000000000",
+      "upper_prime_band_product": "433601713048867373",
+      "prime_band_refined_normalizer": "1866843923128981997517426037345472070277611930383492232915986548080236522524315064529149106993256330435030539847053606657477184242599595813333800503449280119732055135852953600000000000000000000000000000",
+      "prime_band_refined_normalizer_digits": 202,
+      "prime_band_normalizer_reduction": "5656568773342896718848000000000",
+      "primitive_denominator_factorization": {
+        "2": 64,
+        "3": 36,
+        "5": 20,
+        "7": 8,
+        "11": 14,
+        "13": 15,
+        "17": 10,
+        "19": 11,
+        "23": 11,
+        "29": 9,
+        "31": 9,
+        "37": 9
+      },
+      "coefficient_denominator_factorization": {
+        "3": 2,
+        "5": 1,
+        "11": 1,
+        "13": 1,
+        "23": 1
+      },
+      "fixed_divisor_factorization": {
+        "2": 15,
+        "3": 8,
+        "5": 3
+      }
     },
-    "seconds": 0.202
+    "seconds": 0.208
   }
 ]

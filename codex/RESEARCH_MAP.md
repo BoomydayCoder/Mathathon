@@ -22,6 +22,18 @@ AM–GM and an elementary lcm bound. It gives a complete proof without using the
 recurrence, so the team can first see exactly what must be achieved. Then use
 the recurrence narrative below to address the official motivation question.
 
+**Optional replacement for the integral supplement:** if the team knows basic
+complex integration, use the
+[reviewed resolvent–Legendre proof](problem131/resolvent-legendre-pade-proof.md).
+One short residue calculation gives a positive measure whose resolvent is a
+zeta tail. An exact Hilbert Gram isometry transports Legendre polynomials to
+the required orthogonal family; evaluation on a negative half-square gives
+Apéry's integer binomial sum. Its design section explains each choice, and
+direct arithmetic and Delannoy growth complete the proof. This reconstructs
+Prévost's classical Wilson–Padé argument, rather than claiming a new
+underlying proof. Keep the mixed-telescope recurrence derivation in the main
+project whichever positivity route is selected.
+
 Use the [Apéry discovery guide](problem131/discovery-guide.md) as the spine.
 Return to [Zudilin's seven lemmas](problem131/zudilin-explained.md) when checking
 that the reconstructed story really proves the original assertions.
@@ -241,7 +253,7 @@ gap in the official prompt; historical novelty of its refinement is unresolved.
 | 0–2 | Read the exact prompts; fix conventions and the irrationality criterion | One notation sheet and a proof dependency sketch |
 | 2–9 | Auxiliary square, residues, denominator control | Team-written proof of the arithmetic lemmas |
 | 9–16 | Newton grid, finite balance, and two mixed telescopes | Derive the recurrence and its source on a board without guessing |
-| 16–22 | Laurent/integral bridge and Casoratian | One diagram connecting integers, positive error, and reciprocal scales |
+| 16–22 | Selected positivity bridge and its error mechanism | One diagram connecting integers, positive error, and growth; choose the integral or resolvent–Legendre explanation |
 | 22–27 | Choose rank-one variational bounds or cyclotomic integrality; contours are an alternative | One extension theorem and one precisely scoped limitation |
 | 27–32 | Assemble and cross-check #131 | An 8–12-page main exposition and a rehearsed proof story |
 | 32–40 | #137 action, bijection, exactness, one excess example | A 4–6-page combinatorial supplement with drawings and an exact check |
@@ -264,7 +276,7 @@ orbit-size contribution.
 Use four labels in the manuscript:
 
 - **Classical input:** cite the primary theorem and the exact specialization.
-  Apéry, Zudilin, Beukers, Golyshev–Kerr–Sasaki, Nesterenko, Jacobi–Piñeiro, and the earlier tree
+  Apéry, Zudilin, Beukers, Prévost, Golyshev–Kerr–Sasaki, Nesterenko, Jacobi–Piñeiro, and the earlier tree
   results belong here where applicable.
 - **Independently developed and checked here:** a complete written derivation
   with its review scope. This label records verification, not historical priority.

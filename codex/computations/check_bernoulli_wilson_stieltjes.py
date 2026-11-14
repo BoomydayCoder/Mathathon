@@ -4,6 +4,7 @@ Run: python codex/computations/check_bernoulli_wilson_stieltjes.py
 import sympy as S
 import mpmath as mp
 from math import comb, factorial
+from fractions import Fraction
 
 t, x, u, p = S.symbols("t x u p")
 half = S.Rational(1,2)
@@ -59,6 +60,46 @@ for k in range(1,7):
 example=R(3)/3-R(2)+R(1)
 assert S.expand(DW(example)-(x*x-1)**2)==0
 assert S.expand(example-(t**3/3-7*t*t/12+31*t/48))==0
+Qpoly=S.expand((t*t-2)**2+t*(1-t)**2)
+primitive=sum(S.Poly(Qpoly,t).coeff_monomial(t**j)*R(j+1)/(j+1)
+              for j in range(5))
+assert S.expand(DW(primitive)-Qpoly.subs(t,x*x))==0
+
+# Exact rational convolution, using a separate Fraction implementation.
+a=[Fraction(4**m,(m+1)*(2*m+1)*comb(2*m,m)) for m in range(101)]
+harmonic=Fraction(0)
+for m in range(1,101):
+    harmonic += Fraction(1,m*m)
+    convolution=sum((a[i]*a[m-1-i] for i in range(m)),Fraction(0))
+    assert convolution==3*a[m]*harmonic
+
+# Classical Wilson bridge: exact moments, norms and negative-grid values.
+def moment(j):
+    return (2*j+1)*abs(S.bernoulli(2*j,half))
+def integrate_poly(poly):
+    return S.expand(sum(c*moment(e[0]) for e,c in S.Poly(poly,t).terms()))
+def wilson(n):
+    product=S.Integer(1)
+    total=0
+    for k in range(n+1):
+        if k:
+            product=S.expand(product*(t+(k-half)**2))
+        total+=S.rf(-n,k)*S.rf(n+1,k)*product/S.factorial(k)**4
+    return S.expand(S.factorial(n)**3*total)
+for n in range(9):
+    W=wilson(n)
+    for j in range(n):
+        assert integrate_poly(t**j*W)==0
+    assert integrate_poly(W*W)==S.factorial(n)**6/S.Integer(2*n+1)
+    for m in range(13):
+        kernel=sum(comb(n,k)*comb(n+k,k)*comb(m,k)*comb(m+k,k)
+                   for k in range(min(n,m)+1))
+        assert W.subs(t,-(S.Integer(m)+half)**2)==S.factorial(n)**3*kernel
+for N in range(1,7):
+    gram=S.Matrix([[moment(i+j) for j in range(N)] for i in range(N)])
+    norm_product=S.prod(S.factorial(j)**8/(S.Integer(2*j+1)*S.factorial(2*j)**2)
+                        for j in range(N))
+    assert gram.det()==norm_product
 
 # Direct quadrature checks the analytic formula and pi normalization.
 mp.mp.dps=60
@@ -73,6 +114,15 @@ for k in range(1,5):
             [0,1,4,12,mp.inf])
         assert abs(left-right)<mp.mpf("1e-50")
         checks+=1
+for j in range(6):
+    # t=(r/pi)^2 turns the probability density into
+    # 2r sech(r)^2 tanh(r) dr.
+    moment=mp.quad(lambda r:2*r**(2*j+1)*mp.sech(r)**2*mp.tanh(r),
+                   [0,1,4,12,mp.inf])/mp.pi**(2*j)
+    expected=mp.mpf(str(S.N((2*j+1)*abs(S.bernoulli(2*j,half)),65)))
+    assert abs(moment-expected)<mp.mpf("1e-50")
 print("PASS: 12 Bernoulli/Wilson identities and positivity; 8 generating coefficients")
 print("PASS: 54 exact moments via independent sech recurrence; explicit positive-cone example")
+print("PASS: rational square-cone primitive; 100 exact Euler-tail convolutions; 6 rational-density moments")
+print("PASS: 117 Wilson-grid identities; orthogonality and norms through degree 8; 6 Hankel products")
 print(f"PASS: {checks} direct Stieltjes quadratures (60 digits, tolerance 1e-50)")

@@ -180,5 +180,5 @@ Identifying this quotient with the truncated Schur root still requires a
 separate orthogonality or interpolation argument. The mixed-numerator theorem
 alone does not resolve that remaining conjecture. The source-dictionary checker
 records its original finite checks; the linked proof has its own symbolic
-rational certificates and independent pole-jet checks. Independent review of
-the new proof is pending.
+rational certificates and independent pole-jet checks. The all-index proof has now been independently reviewed; see
+[apery-mixed-numerator-independent-review.md](apery-mixed-numerator-independent-review.md).

@@ -382,3 +382,23 @@ Fifteenth checkpoint, 2026-11-14 12:37 UTC (04:37 LA), continuing:
   failure theorem. New positive Stieltjes/Bernoulli-polynomial connection active.
 - Latest pushed commit bafa595; next checkpoint push includes the above notes.
   Continuing toward16:00UTC without usage-balance claims or resets.
+
+Sixteenth checkpoint, 2026-11-14 13:28 UTC (05:28 LA), continuing:
+- Complete recurrence-free Legendre–Padé irrationality proof independently audited.
+  Hilbert isometry motivates Wilson polynomials, denominator and numerator arithmetic
+  are explicit, and the final lcm bound is elementary. Classical Prévost route credited.
+- Fully real Chebyshev-product derivation of the half-shift resolvent written;
+  separate audit active. It removes Fourier/complex-analysis inputs from that route.
+- Bernoulli–Wilson positivity cone and balanced antidifference reduction reviewed.
+  Prime-band cancellation reviewed; all 18 balanced trial arithmetic failures now
+  certified by exact rational lower bounds (finite evidence only).
+- Ordinary-Stieltjes obstruction for pure higher odd targets and positive mixed
+  repairs reviewed. The 156 repaired zeta5 approximants have finite certificates;
+  they do not supply a successful irrationality sequence.
+- New construction: explicit positive generalized Stieltjes measure for each odd
+  zeta value, with rational moments and a pure-target Gaussian quadrature sequence.
+  Full all-m proof written; independent audit and reduced denominator tests active.
+- Newton–Hilbert classification and confluent Wilson parameter family under audit.
+  Original rank-one adjacent-Apéry equality and balanced constant-term formula remain
+  conjectural; neither is silently used by any completed proof.
+- Work remains entirely in codex/. No usage-meter claims or automatic resets.

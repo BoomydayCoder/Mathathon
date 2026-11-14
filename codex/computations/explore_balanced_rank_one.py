@@ -75,7 +75,27 @@ def trial_from_coefficients(m,co):
     assert termden%q.denominator==0
     baseline=T*T*factorial(2*K)
     assert baseline%resden==0
-    return K,q,T,P,dict(pole_values=values,term_denominator_lcm=str(termden),summation_cancellation_factor=str(termden//q.denominator),residue_denominator_lcm=str(resden),residue_naive_normalizer=str(baseline),residue_factorial_cancellation_factor=str(baseline//resden))
+    grid_values=[evaluate(P,-j*j).numerator for j in range(2*d+1)]
+    G=gcd(*grid_values)
+    diff=grid_values[:];newton=[]
+    while diff:
+        newton.append(diff[0]);diff=[diff[j+1]-diff[j] for j in range(len(diff)-1)]
+    assert gcd(*newton)==G and newton[-1]==(-1)**d*T*factorial(2*d)
+    assert T*T*factorial(2*K)%(G*G)==0
+    grid_normalizer=T*T*m*factorial(2*K)*lcm(*range(1,K+1))**s//(G*G)
+    assert grid_normalizer%q.denominator==0
+    assert factorial(2*d)%G==0
+    band=int(S.prod(list(S.primerange(K+1,2*K+1))))
+    assert grid_normalizer%band==0
+    band_normalizer=grid_normalizer//band
+    assert band_normalizer%q.denominator==0
+    if m==1:
+        for j in range(2*d+1):
+            wilson_grid=1+sum(comb(d,k)*comb(d+k+1,k)*comb(j,k)*comb(j+k-1,k)
+                              for k in range(1,min(d,j)+1))
+            assert evaluate(co,-j*j)/co[0]==wilson_grid
+        assert G==abs(P[0]) # For these n, polynomial identity proves all-integer-grid result.
+    return K,q,T,P,dict(pole_values=values,term_denominator_lcm=str(termden),summation_cancellation_factor=str(termden//q.denominator),residue_denominator_lcm=str(resden),residue_naive_normalizer=str(baseline),residue_factorial_cancellation_factor=str(baseline//resden),negative_square_fixed_divisor=str(G),negative_square_newton_coefficients=list(map(str,newton)),fixed_divisor_normalizer=str(grid_normalizer),fixed_divisor_normalizer_digits=len(str(grid_normalizer)),fixed_divisor_normalizer_reduction=str(grid_normalizer//q.denominator),upper_prime_band_product=str(band),prime_band_refined_normalizer=str(band_normalizer),prime_band_refined_normalizer_digits=len(str(band_normalizer)),prime_band_normalizer_reduction=str(band_normalizer//q.denominator),primitive_denominator_factorization={str(k):v for k,v in S.factorint(q.denominator).items()},coefficient_denominator_factorization={str(k):v for k,v in S.factorint(T).items()},fixed_divisor_factorization={str(k):v for k,v in S.factorint(G).items()})
 
 
 def metric(q,m):
@@ -109,6 +129,7 @@ def main():
             error=mp.mpf(bal['error']);opte=mp.mpf(opt['error'])
             assert error>opte
             value0=co[0];minus1=evaluate(co,-1)
+            assert value0==F((-1)**d*factorial(n)**(2*m),comb((m+1)*n+m,n)) # finite pattern
             ratio=minus1/value0
             expected=(n+1)**(2*m)
             assert ratio==expected # Finite pattern only; no general theorem asserted.
