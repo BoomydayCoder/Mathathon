@@ -128,3 +128,34 @@ $I_{\rm out}^{\rm new}=\frac{2139737}{1632000}$ confirmed exactly; the $O(1)$ te
 $-\gamma^{\rm wf}_p=K\,C_{\rm wf}(p/K)+O(1)$ is between $-12$ and $-8$ up to $K=64000$. It found two omissions in the
 table of §3 (now added) and a rounding of $U$ in §4 (now corrected; the margin ratio is $2.127$). It did not
 review the proof of Theorem W.
+
+## 7. Further quantitative push (added 17:10 UTC; subagent's work, NOT re-derived by the orchestrator)
+
+Source: `computations/zeta5opt_*.py` and outputs. Statuses as reported by the subagent.
+
+* **Theorem W generalises** to $W=D_N^a$, $N=\alpha K$ (any $h$): same proof, with $a\,\ell_N(c)$ in place of $6\ell_N(c)$.
+  The outer bound also generalises (needs $h=K-N$). Exact verification: 13 runs, 491 + 160 prime tests,
+  zero violations ($a\in\{3,\dots,8\}$).
+* **The cutoff $M$ is unnecessary**: an elementary lemma bounds the cost of primes in $(C\sqrt K,K/M]$ by
+  $8\lambda K^2/M$, so $M\to\infty$ is allowed.
+* **Exact equilibrium measure for Fauzan's field**: one interval $[A,B]$ with $A>0$, density in closed form
+  up to one quadrature; given a solution of two endpoint equations, positivity and the Euler–Lagrange
+  conditions are proved. The endpoint solution and the energy are **numerical (40 digits, not
+  interval-certified)**: $U=-1.38550978\ldots$ against Fauzan's proved $-1.3669955$.
+
+| setting | cost $A$ | real $U$ | total | status |
+|---|---|---|---|---|
+| Fauzan, $M=200$ | 1.349588 | −1.366996 | −0.017408 | proved (paper) |
+| + Theorem W, $M=200$ | 1.329961 | −1.366996 | −0.037034 | proved, confirmed independently |
+| + no cutoff | 1.293828 | −1.366996 | −0.073168 | proved except a numerically evaluated tail integral (−0.0691 with Fauzan's proved tail bound) |
+| + exact energy | 1.293828 | −1.385510 | **−0.091682** | structure proved; energy value numerical |
+| new parameters $a=5$, $\alpha=\frac19$ ($K=9n$, $N=n$, $h=8n$) | 1.072836 | −1.182731 | **−0.109895** | same status |
+
+* **Irrationality exponent of ζ(5) (conditional** on Fauzan's Appendix C / Giraudin's argument carrying over
+  unchanged, and on the statuses above): $260$ (Fauzan) / $171$ (Giraudin) $\to122$ (Theorem W only)
+  $\to92$ (with exact energy) $\to73$ (new parameters).
+* **Known defect**: the exact integrator for the outer range can miss kinks for some $\alpha$ (wrong at
+  $\alpha=\frac3{25}$, off by $4\cdot10^{-6}$ at $\frac9{80}$); it agrees with independent evaluation at $\alpha=\frac3{40}$ and
+  $\frac19$, the two rows used above.
+* Gaps: no interval certificate for the energy; tail integral numerical for $a\ne6$; the uniform $O(1)$
+  terms not written out; $a\le3$ and $h\ne K-N$ not treated; nothing formalised.

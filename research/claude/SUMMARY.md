@@ -105,3 +105,12 @@ correct: the closed formula for their rank-one ζ(3) approximants, and an integr
   are not on arXiv.
 * `PROGRESS.md` timestamps between 07:50 and 15:10 UTC are up to an hour ahead of the container clock
   in places (noted there).
+
+## Addendum, 17:10 UTC: the ζ(5) re-optimisation reported
+
+`zeta5-margin.md` §7 (subagent's work; **not re-derived by the orchestrator**). On top of Theorem W:
+the cutoff can be removed and the valuation bound generalises to other numerators; with the exact
+equilibrium energy for Fauzan's field the margin becomes $-0.0917$, and with new parameters ($a=5$,
+$\alpha=\frac19$) $-0.1099$, against Fauzan's $-0.0174$. Conditional consequence: the irrationality exponent of
+ζ(5) would drop from $260$ / $171$ to $122$ (Theorem W only), $92$, or $73$. The arithmetic side is proved
+up to one numerically evaluated tail integral; the energy values are 40-digit numerics, not certified.

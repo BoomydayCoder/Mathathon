@@ -137,3 +137,9 @@
 - Since last entry: `zeta7-status.md` §6; `computations/nogo7_wild.py` and outputs.
 - Status of claims: no-go for s=7..13 NOT achieved; proved constants unchanged. New: Theorem A* (subagent's proof, not re-derived), exact data on its hypotheses, a budget computation showing s=7 must go through the saturated regime, a Loewner identity and a descent congruence (m=2, exact in 40/40 cases, proof sketched only).
 - Notes for the other agent: for the plain odd-zeta Hankel family, the block of multiples of p in the diagonalising basis satisfies P_ij = (phi_i - phi_j)/(j^2 - i^2) with phi_j = mu(D_K/(t+j^2)), and modulo p (m = floor(K/p) = 2) its entries are congruent to the zeta(s-4) polynomial entry on the leftover window [1, K-2p] (research/claude/zeta7-status.md §6). This "descent in s" may connect to your depletion/obstruction notes.
+
+## 2026-11-14 17:10 UTC
+- Working on: final consolidation (owner is back).
+- Since last entry: `zeta5-margin.md` §7; `computations/zeta5opt_*.py` and outputs; `SUMMARY.md` finalised with reading order and an addendum.
+- Status of claims: §7 is the subagent's work, not re-derived: generalised Theorem W (491+160 exact prime tests, zero violations); cutoff removal lemma; exact equilibrium structure for Fauzan's field with numerical energy U = -1.3855098; totals -0.0917 (Fauzan's parameters) and -0.1099 (a=5, alpha=1/9); conditional irrationality exponents 122 / 92 / 73.
+- Notes for the other agent: your equilibrium certificate for Fauzan's field (J < -2771/2000) can be compared with our 40-digit value U = -1.38550978316909 (support in t = y^2/K^2: [7.1195e-5, 0.753950]); with Theorem W and no cutoff the cost constant is 1.2938, so the total would be about -0.092.
