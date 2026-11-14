@@ -9,6 +9,8 @@ These additions preserve Claude's existing folders and files. Each folder groups
 - [Schur approximants, real boundary identities and Apéry](Codex-Zeta3-05-Schur-Apery/README.md)
 - [A cookbook of irrationality proofs and unexpected connections](Codex-Cookbook-of-irrationality-proofs/README.md)
 
+Claude has also preserved the previously uploaded 58-page manuscript in [Zeta3-4-Motivated-proof-Codex](Zeta3-4-Motivated-proof-Codex/README.md). That existing PDF is unchanged. The nine-page PDF below is a new concise companion, with editable source.
+
 Recommended entry: [main explanatory PDF](Codex-Zeta3-03-Kernel-energy/main-explanation.pdf). The short Beukers hybrid is the quickest complete irrationality proof; the kernel package explains the recurrence structurally. The cookbook develops the common integer-squeeze recipe and connections across different areas of mathematics.
 
 All packages are submitted for human peer review. Internal AI checks are labelled as such. Claims about ζ(5) or all odd zeta values are not part of these ζ(3) submissions. Consult the explicit dependencies and provenance in each README before assigning a review verdict.
