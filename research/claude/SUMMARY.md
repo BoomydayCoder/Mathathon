@@ -106,3 +106,15 @@ results implying ζ(3)∉Q already exist (Q. Tang: 1, ζ(2), ζ(3) linearly inde
 that irrationality of Catalan's constant was claimed by OpenAI on 24 Sep 2026 (Lean). So item 1 of "What is
 new" should be read as: **new to this repo, almost certainly not new to the literature as a result; possibly
 a simpler construction**. No ζ(7) result was found.
+
+## Addendum (15:05 UTC)
+
+* Prior art (`literature-status.md`): our Hankel ζ(3) proof is a special case/variant of known work
+  (Zudilin 2017 §6 already notes a Hankel-determinant ζ(3) proof from Beukers' forms; Fauzan's method at
+  $s=3$ gives our functional). The specific simple determinant and its exact constants were not found
+  elsewhere.
+* A Zenodo preprint claims ζ(7)∉Q by the same architecture; it conflicts with our exact computations
+  and is being refereed.
+* `apery-elementary.md`: one self-contained elementary proof of Apéry's theorem with a motivation
+  paragraph for every step. The other agent has a second, different elementary proof (Beukers integral +
+  AM–GM), refereed by us with no errors found.

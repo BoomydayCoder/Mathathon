@@ -34,3 +34,28 @@ search (prior Hankel proofs for ζ(3)) is still running; this file will be updat
 ## Not retrieved
 
 github.com pages and Lean repositories of the follow-ups; the Kilani, Liu, Tang items; Beukers 1979.
+
+## Update 15:05 UTC: prior-art search for the Hankel ζ(3) construction, and a claimed ζ(7) proof
+
+**Assessment of `hankel-zeta3.md`: "special case/variant of known work".**
+
+* Zudilin, *A determinantal approach to irrationality*, arXiv:1507.05697 (Constr. Approx. 2017): Hankel
+  determinants of linear forms $r_n=\int z(x)^n\omega$ with a positive measure; Heine's identity gives
+  positivity; §6 remarks that the criterion applies to Beukers' ζ(2), ζ(3) integrals
+  ($(\sqrt2-1)^4e^{9/2}/4=0.66<1$). So **a Hankel-determinant proof of ζ(3)∉Q via a positive measure is
+  already on record** (with Beukers' forms as moments, a different matrix from ours).
+* Fauzan's framework at $s=3$ gives exactly our functional and weight; Fauzan himself says nothing
+  about $s=3$. Our matrix has no numerator and full size, and our constants ($\frac92\log2$, $\frac94$)
+  were not found in anything retrieved.
+* Q. Tang's Lean formalization (1, ζ(2), ζ(3) independent, via Fauzan's method; not retrieved) implies
+  ζ(3)∉Q by determinants.
+* Also retrieved: Haynes–Zudilin 1510.01901; Monien 0901.1883; Coons–Sutherland 1404.2699; Ferguson
+  2003.10616; Calegari–Dimitrov–Tang 2408.15403 (Remark 1.2.5); Brown 2604.20741. None writes out our
+  specific determinant.
+
+**A claimed proof for ζ(7) exists and conflicts with our computations.** P. Anand, "ζ(7) is irrational",
+Zenodo 22920911 (Sept 2026; PDF retrieved): same architecture as Fauzan with $D_N^8$, claiming degree-$37n$
+integer polynomials with $0<Q_n(\zeta(7))<\exp(-19000n^2)$. Our exact computations for this family give
+(cost + log det)/$K^2\ge+0.7$ for $s=7$ at $K\le80$, which would make such polynomials impossible, not
+merely unproved. A dedicated referee subagent is checking the preprint against exact computations;
+until it reports, **we neither endorse nor refute the claim**.
