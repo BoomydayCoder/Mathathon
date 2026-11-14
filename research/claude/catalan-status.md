@@ -68,3 +68,27 @@ is necessary.
    vanishing of the $\pi^2$ part by divided-difference conditions. Untested.
 2. $L(2,\chi_{-3})$ needs only about $0.1K^2$: compute the exact asymptotic cost and try numerators.
 3. Write the easy Hankel proofs for $\zeta(2)$, $\log2$, $\pi$ along `hankel-zeta3.md`.
+
+## 6. Mixed nodes and π²-cancellation with positive weights: negative, with a structural reason
+
+Second frontier run (`computations/catalan2_*.py`, outputs `output_catalan2_*.txt`). Not re-derived by the
+orchestrator; determinants exact, lemmas by the subagent.
+
+* **Cancellation lemma.** If poles at some nodes carry $\pi^2$, the $\pi^2$-part of $\mu(t^e\Psi)$ vanishes for
+  $e=0,\dots,E$ iff the residues there are $q(-a^2)/D_S'(-a^2)$ with $\deg q\le|S|-E-2$. A Hankel matrix of size
+  $h$ needs $E=2h-2$, hence **at least $2h$ extra $\pi^2$-carrying nodes**, each bringing the usual
+  denominators.
+* **Obstruction lemma.** A non-negative $\pi^2$-free test function $\Psi$ must satisfy $t\Psi(t)\to c>0$: it
+  decays exactly like $1/t$ and cannot have the $1/D_K$ shape that produces the decay. So cancellation is
+  paid in nodes (cost) and buys nothing analytically.
+* **Numbers** (per $h^2$; baseline single-class Hankel: $+0.45$ at $h=64$): two quarter-classes with
+  alternating residues, positive: $+5.5\to+6.1$; half-integer plus $2h$ integer nodes: $+4.0\to+4.5$; pole
+  rows plus polynomial rows (best $\pi^2$-cancelling family): $+2.3\to+2.6$, increasing. Polynomials in two
+  unknowns $(G,\pi^2)$ are dead by logic.
+* **What the OpenAI construction has that this class lacks** (as read by the subagent; unverified): a
+  Cauchy kernel $1/(1-ts)$ in which cancellation of $\zeta(2)$ is per row and costs no nodes ("Taylor
+  contact"), and a Frobenius self-similarity of the moment array that keeps the cost near $1.94n^2$ with a
+  small 2-adic part; its determinants are signed and non-vanishing is proved separately.
+
+**Conclusion for this line:** positive-weight Hankel determinants with simple poles, with or without
+mixed nodes, do not reach $G$. Item 5.1 above is closed negatively.
