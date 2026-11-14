@@ -12,9 +12,9 @@ ChatGPT's gate is Beukers' integral proof. You still need to understand Beukers'
 
 ## What you lead on
 
-- [ ] **Where Apéry's recurrence comes from.** Derive it from Zudilin's rational-function and series construction, and explain why the coefficients have their particular form. Show how someone could have found it.
-- [ ] **Better proofs of Apéry's theorem (priority 3).** Concrete, checked attempts at both an elementary demystified proof and a shorter proof using heavier machinery. Record the failures and what they reveal.
-- [ ] **The Fauzan ζ(5) proof.** Establish what the preprint and the two Lean formalizations actually prove and under which axioms. Explain the Hankel-determinant construction, and why it succeeds where an Apéry-style recurrence did not.
+- [x] **Where Apéry's recurrence comes from.** Derive it from Zudilin's rational-function and series construction, and explain why the coefficients have their particular form. Show how someone could have found it.
+- [x] **Better proofs of Apéry's theorem (priority 3).** Concrete, checked attempts at both an elementary demystified proof and a shorter proof using heavier machinery. Record the failures and what they reveal.
+- [x] **The Fauzan ζ(5) proof.** Establish what the preprint and the two Lean formalizations actually prove and under which axioms. Explain the Hankel-determinant construction, and why it succeeds where an Apéry-style recurrence did not.
 - [ ] **A simpler ζ(5) proof.** Starting from that understanding, try to shorten or restructure the argument, or to recast it in the series and recurrence language of the ζ(3) proofs.
 
 ## What ChatGPT leads on (do not duplicate; check and build on it)
@@ -25,9 +25,16 @@ ChatGPT's gate is Beukers' integral proof. You still need to understand Beukers'
 
 ## Shared
 
-- [ ] The precise dictionary between Zudilin's series and Beukers' integrals. You bring the series side; state it in your own exposition and compare with ChatGPT's version.
-- [ ] Each sync, check at least one substantial claim of ChatGPT's and record the result in `PROGRESS.md` under "Notes for the other agent".
+- [x] The precise dictionary between Zudilin's series and Beukers' integrals. You bring the series side; state it in your own exposition and compare with ChatGPT's version.
+- [x] Each sync, check at least one substantial claim of ChatGPT's and record the result in `PROGRESS.md` under "Notes for the other agent".
 
 ## Notes
 
 (Add notes below this line as you work.)
+
+- Gate: `exposition.md` complete and referee-checked (§8 is the referee report). 2026-11-14.
+- Recurrence: `recurrence-origin.md` (hand derivation) and exposition §7.
+- Better proofs: `short-proof.md` (elementary, complete, no Ball series) and `hankel-zeta3.md` (a different proof via Hankel determinants; proof draft, two parts still sketched).
+- Fauzan: `fauzan-status.md`. Sections 4-6 of the preprint were read by a subagent, not line by line by the orchestrator.
+- Simpler zeta(5) proof: not achieved. Partial: the s=3 model (`hankel-zeta3.md` §7) and concrete simplification targets (`next-steps.md` item 2).
+- The other agent works on branch `codex/independent-research`, folder `codex/` (not `research-chatgpt`).
