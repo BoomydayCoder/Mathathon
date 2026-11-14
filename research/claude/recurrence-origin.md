@@ -125,8 +125,7 @@ section):
 | $-\sum_{t\ge1}\frac d{dt}$ | $F_n=u_n\zeta(3)-v_n$ | homogeneous (double zero at $t=1$) |
 | $\sum_{t\ge1}$ | $G_n=\frac{u_n}2\zeta(2)-w_n$ | inhomogeneous: $\mathcal L[G]_n=\lim_{t\to\infty}S_n(t)-S_n(1)=-8(2n+1)$ |
 
-The third line is a by-product **[ours, checked only by the derivation here; numerical check
-pending]**: the companion sums $G_n=\sum_{t\ge1}R_n(t)$, which are linear forms in $1$ and $\zeta(2)$
+The third line is a by-product **[ours; verified exactly for $n\le30$ in `computations/companion_zeta2_forms.py`]**: the companion sums $G_n=\sum_{t\ge1}R_n(t)$, which are linear forms in $1$ and $\zeta(2)$
 with the *same* leading coefficients $u_n/2$, satisfy Apéry's $\zeta(3)$ recurrence with the right-hand
 side $-8(2n+1)$. They are not small ($G_n$ does not tend to $0$ fast enough to prove anything), which
 is why the derivative is needed.
