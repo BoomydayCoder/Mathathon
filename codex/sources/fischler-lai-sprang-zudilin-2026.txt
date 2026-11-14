@@ -1,0 +1,1076 @@
+                                                                     Many more odd zeta values are irrational
+                                                               Stéphane Fischler, Li Lai, Johannes Sprang, and Wadim Zudilin
+
+
+                                                                                                  Abstract
+                                                     We prove that for any sufficiently large odd integer s, there exist at least
+arXiv:2611.16156v1 [math.NT] 12 Nov 2026
+
+
+
+
+                                                                                                  s
+                                                                                                    s log log s
+                                                                                             2.78
+                                                                                                       log s
+
+                                                 irrational values among ζ(3), ζ(5), . . . , ζ(s), where ζ is√the Riemann zeta function. This improves on
+                                                 the best known estimate by a constant factor times log log s. The proof combines the elimination
+                                                 technique and an arithmetic lemma of Fischler–Sprang–Zudilin, the hypergeometric constructions of
+                                                 Lai–Yu, and the Hankel determinant method that appeared in the proof that ζ(5) is irrational posted
+                                                 by Fauzan on September 17, 2026.
+
+
+                                           1    Introduction
+                                           Understanding the arithmetic nature of the values at integers s ⩾ 2 of the Riemann zeta function
+                                                                                                        ∞
+                                                                                                        X 1
+                                                                                               ζ(s) =
+                                                                                                              ns
+                                                                                                        n=1
+
+                                           is a longstanding problem. When s is even, the zeta value ζ(s) is a non-zero rational multiple of π s : it is
+                                           transcendental, hence also irrational.
+                                               For odd values of s ⩾ 3, no such formula is known (or even conjectured to exist). It was only in
+                                           1978 when Apéry came up with the proof [2] of the irrationality of ζ(3). The next breakthrough in this
+                                           direction was taken by Ball and Rivoal [3, 14]; they proved that
+                                                                                                                       1 − o(1)
+                                                                         dimQ SpanQ {1, ζ(3), ζ(5), . . . , ζ(s)} ⩾              log s                      (1.1)
+                                                                                                                       1 + log 2
+                                           as s → ∞ with s odd. In particular,
+                                                                                                   1 − o(1)
+                                                                                           Ns ⩾              log s,                                         (1.2)
+                                                                                                   1 + log 2
+                                           where                                        
+                                                                                 Ns := # i ∈ {3, 5, 7, . . . , s} : ζ(i) ∈
+                                                                                                                         /Q
+                                           counts the amount of irrational numbers among the first zeta values. The dimension lower bound (1.1)
+                                           was significantly improved by the first author [8]; this is however another story. In this paper, we focus
+                                           on the improvements of the asymptotic bound (1.2). It was refined by the first, third and fourth authors
+                                           [9, 10] using an elimination procedure of irrational zeta values (built upon earlier ideas from [20] and [16]):
+
+                                                                                       Ns ⩾ 2(1−o(1))(log s)/(log log s) .
+                                               2020 Mathematics subject classification: Primary 11J72; Secondary 11M06, 33C20.
+                                               Key words and phrases: Odd zeta values, irrationality, hypergeometric series, Hankel determinants.
+
+
+                                                                                                       1
+The same approach, combined with a more efficient construction, enabled the second author and Yu to
+obtain the following improvement [13]:             r
+                                                       s
+                                       Ns ⩾ 1.19                                               (1.3)
+                                                     log s
+for all sufficiently large odd integers s. The numerical constant 1.19 was later replaced with 1.28 by the
+second author [11].
+    Apart from Apéry’s theorem, the results mentioned above are asymptotic, namely valid only for
+sufficiently large s. Adapting the proof of (1.2), Rivoal showed [15] that, among the nine numbers ζ(5),
+ζ(7), . . . , ζ(21), at least one is irrational. This was refined by the fourth author [17]: at least one of ζ(5),
+ζ(7), ζ(9), ζ(11) is irrational. But the irrationality of ζ(5) itself was still very open.
+    On September 17, 2026, a few weeks after powerful AI tools became available, Fauzan posted online
+a proof that ζ(5) is irrational [7]. The principal idea was a new use of Hankel determinants.
+    In the present paper, we combine such a Hankel determinant with the proof [13] of (1.3) to obtain the
+following improvement.
+
+Theorem 1.1. For any ε > 0 and all sufficiently large odd integers s ⩾ s0 (ε), we have
+                                   s                  s
+                                       4ζ(2)ζ(3)            s log log s
+                            Ns ⩾                   −ε ·                 .
+                                          ζ(6)                 log s
+             p                    p
+   Note that 4ζ(2)ζ(3)/ζ(6)√= 3 70ζ(3)/π 2 = 2.788258 . . . . Up to numerical constants, Theorem 1.1
+improves on (1.3) by a factor log log s.
+    The overall strategy is as follows. Assuming that Ns is smaller than the bound of Theorem 1.1,
+we construct (following [13]), for any positive even integer n, a linear map Ln that sends polynomials
+P (t) ∈ Q[t] of bounded degree to rational numbers. The argument in [13] is to construct such a polynomial
+Pn in such a way that Ln (Pn ) ∈ Z \ {0} for any n sufficiently large, and Ln (Pn ) tends to 0 as n → ∞;
+this provides a contradiction. In the present paper, instead of choosing a polynomial Pn we deal with
+                                                   i+j
+                                                       
+the Hankel determinant ∆n,m := det0⩽i,j<m Ln t           ∈ Q, where m is not too large in terms of n; the
+details of this construction are given in §2.
+    The contradiction comes from combining three arguments:
+
+   • An upper bound on the denominator of ∆n,m , obtained in §3 by considering a basis consisting of
+     Pochhammer symbols and using standard arithmetic properties. No sophisticated p-adic estimates
+     are in use.
+
+   • An upper bound on the absolute value of ∆n,m , obtained in §4 also using Pochhammer symbols and
+     elementary estimations.
+
+   • A non-vanishing result that asserts that ∆n,m is nonzero for at least one value of m in a given range;
+     this is the subject of §5.
+
+These results are finally combined in §6 to complete the proof.
+   The principal novelties here lie in the non-vanishing part, and our exposition in §5 is executed generally
+enough to serve for future use in related contexts. It covers Hankel matrices associated with signed
+measures on discrete closed subsets of the reals. At the same time our design of the linear functional Ln
+deviates significantly from its prototype from [7]. While using Hankel determinants in [7] gives one access
+to better arithmetic than by traditional techniques, the improvement in Theorem 1.1 over the previous
+bound (1.3) comes entirely from the analytic estimates of the determinants.
+
+
+                                                        2
+Declaration of generative AI use. The initial proof was completely produced by ChatGPT (GPT-6
+Astra, OpenAI). The authors have verified and simplified the argument, rewritten the exposition, and
+take full responsibility for the mathematical content of this paper.
+Declaration from natural intelligence. The exposition humanly presented in the present note is
+entirely based on elementary arguments, so that the reader with good knowledge of basics of mathematics
+can follow them. We also wish to stress that all the ingredients for the methodology in use here have been
+created before advancements of AI tools. For example, the potentials of Hankel determinant constructions
+are discussed in [19] and of their multivariate generalisations in [4]; the deep connection and a different
+perspective of the methodology are offered in the framework of holonomicity criteria in [5]. Several other
+generalisations and ingredients are available in related works of these authors and their colleagues. The-
+orem 1.1 has the potential to be generalised to a bound on dimensions of the Q-linear spaces generated
+by odd zeta values rather than the count of irrational numbers among them by implementing a different
+strategy from [8], at least this is something that AI tools suggest; related proofs are expected to be less
+elementary and more technical though. We see a lot of room for further developments in Diophantine
+questions about zeta values and, more generally, values of L-functions and of polylogarithms. Under-
+standing the beautiful structures behind those methods and proofs seems to us a more exciting task than
+targeting particular numbers that still await their irrationality status.
+
+
+2    Construction
+Most of the notation, conventions and notions in this section are borrowed from [13]; the new ingredi-
+ents required for implementation of the Hankel determinant method are the linear functional (2.9) and
+determinant (2.10) itself.
+    Let s > 100 be an odd integer, and take a positive real number B > 1 satisfying B 2 < s/100. This
+number B will be chosen in terms of s in §6. We will assume that B is larger than some absolute constant
+so that the estimates in (2.4) and (2.6) hold.
+    As in [13], define the two sets
+
+                                          ΨB := {b ∈ Z>0 : φ(b) ⩽ B},
+                              na                                         o
+                      ZB :=        : b ∈ ΨB , 1 ⩽ a < b and gcd(a, b) = 1 ⊂ Q ∩ (0, 1),
+                               b
+where φ( · ) is Euler’s totient function, and the integers
+                                    Y                       Y           Y
+                         A1 (B) :=      bφ(b) and A2 (B) :=                     pφ(b)/(p−1) .
+                                   b∈ΨB                        b∈ΨB     p|b
+                                                                      p prime
+
+    The following rational function is essentially the one from [13, Definition 2.3] (in which the parameter
+r is taken to be 0): for a positive even integer n, define
+                                                              Q
+                                          n       n s−|ZB |    θ∈ZB (t + θ)n
+                         Rn (t) := A1 (B) A2 (B) n!         ·                ∈ Q(t),                    (2.1)
+                                                                 (t)sn+1
+
+where (t)m := Γ(t + m)/Γ(t) = m−1
+                             Q
+                               j=0 (t + j) denotes the Pochhammer symbol.
+   The lemmas below are special cases of results proved in [13], with r = 0 and FB = ZB ∪ {1} in the
+notation there.
+
+
+
+
+                                                      3
+Lemma 2.1 ([13, Proposition 2.2]). We have the following properties of the sets ΨB and ZB :
+                                                     
+                                       ζ(2)ζ(3)
+                            |ΨB | =             + o(1) B as B → ∞,                                      (2.2)
+                                         ζ(6)
+                          na              o
+                              : 1 ⩽ a ⩽ b ⊂ ZB ∪ {1} for any b ∈ ΨB ,                                   (2.3)
+                            b
+                           |ZB | ⩽ B 2 − 1 for any sufficiently large B.                                (2.4)
+
+Lemma 2.2 ([13, Lemma 2.4]). For the quantities A1 (B) and A2 (B), we have the estimates
+                                                           
+                                    ζ(2)ζ(3)            2
+                   A1 (B) = exp               + o(1) B log B       as B → ∞,                            (2.5)
+                                      2ζ(6)
+                  A2 (B) ⩽ exp 10B 2 (log log B)2
+                                                  
+                                                    for any sufficiently large B.                       (2.6)
+
+   Our goal is — until the end of this paper — to prove that Ns ⩾ |ΨB |. Suppose, for a contradiction,
+that Ns < |ΨB | holds. Then, we may choose a subset
+
+                                   I ⊂ {3, 5, . . . , s}     with     |I| = |ΨB | − 1,
+
+containing every odd integer i ∈ {3, 5, . . . , s} for which ζ(i) ∈
+                                                                  / Q. In other words, ζ(i) ∈ Q for all
+i ∈ {3, 5, . . . , s} \ I. Let A0 ∈ Z>0 be a common denominator of these rational numbers:
+
+                                   A0 ζ(i) ∈ Z         for all i ∈ {3, 5, . . . , s} \ I.               (2.7)
+
+Furthermore, choose and fix integral ‘weights’ wb , where b ∈ ΨB , not all zero, such that
+                                       X
+                                           wb bi = 0 for all i ∈ I.                                     (2.8)
+                                             b∈ΨB
+
+This is clearly possible as the conditions in (2.8) correspond to a system of homogeneous linear equations
+in indeterminates wb with integer coefficients, in which the number of unknowns exceeds the number of
+equations.
+    With the choices above, to a polynomial P (t) ∈ Q[t] assign the number
+                                               ∞
+                                             b X
+                                 X           X                    n       n 
+                 Ln (P ) := A0          wb             Rn (t) P t +    +P −t−              .            (2.9)
+                                                                    2         2    t=ν+j/b
+                                 b∈ΨB        j=1 ν=0
+
+This quantity is well defined when deg P ⩽ (n + 1)s − n|ZB | − 2, which ensures that the rational function
+under summation is O(t−2 ) as t → ∞, hence the series on the right-hand side of (2.9) converges absolutely.
+In what follows, we will call polynomials that meet the constraint on their degree n-admissible. Finally,
+for m ∈ Z>0 with 2m ⩽ (n + 1)s − n|ZB |, define the Hankel determinant
+
+                                       ∆n,m := det Ln (ti+j ) .
+                                                                 
+                                                                                                    (2.10)
+                                                         0⩽i,j<m
+
+    As highlighted in §1, the linear functional (2.9) shows up in [10, 13] but in a somewhat different light:
+one makes a choice of appropriate polynomial Pn (t) ∈ Q[t] (namely, see [13, Eq. (2.4) and the beginning
+of §5]) to demonstrate that Ln (Pn ) is a Z-linear combination of 1 and the integers A0 ζ(i) in (2.7), hence
+an integer, while at the same time it satisfies 0 < |Ln (Pn )| < 1 when n is large. In a certain sense, the
+determinant (2.10) gives us access to many such polynomials at once.
+
+
+                                                              4
+3    Arithmetic estimates
+Denote dn := lcm[1, 2, . . . , n]. The following lemma follows from the arguments of [10, Lemma 2].
+Lemma 3.1. Let n ∈ 2Z>0 . Assume that an n-admissible polynomial U (t) ∈ Q[t] satisfies
+                                      dλn (λ)
+                                         U (−k) ∈ Z                for any λ ∈ Z⩾0 and k ∈ Z.
+                                      λ!
+Then dsn Ln (U ) ∈ Z.
+             en (t) = Rn (t)(U (t + n/2) + U (−t − n/2)) ∈ Q(t). The admissibility of U (t) implies that
+Proof. Write R
+deg Rn ⩽ −2, so that the partial-fraction decomposition of R
+    e                                                      en (t) takes the form
+                                                     s X
+                                                       n
+                                                     X               ai,k
+                                       R
+                                       en (t) =                            ,     where ai,k ∈ Q.                   (3.1)
+                                                                  (t + k)i
+                                                     i=1 k=0
+
+Since s is odd, n is even, and ZB is stable under the reflection θ 7→ 1 − θ, we have the symmetry
+en (−t − n) = −R
+R               en (t), which in particular means that ai,n−k = (−1)i+1 ai,k for all i, k. Therefore, for any
+b ∈ ΨB and j = 1, 2, . . . , b, the same argument as in [10, Lemma 1] implies that
+                                        ∞
+                                              en ν + j = ρ0,j/b +
+                                        X                       X      j
+                                              R                     ρi ζ i, ,
+                                                     b                     b
+                                        ν=0                                     3⩽i⩽s
+                                                                                 i odd
+
+where ζ(i, j/b) is the Hurwitz zeta value, its coefficient
+                                                     n
+                                                     X
+                                              ρi =         ai,k     for 3 ⩽ i ⩽ s, i odd,                          (3.2)
+                                                     k=0
+
+does not depend on j, and
+                                                              n X
+                                                                k−1 X
+                                                                    s
+                                                              X                     ai,k
+                                                ρ0,j/b = −                                  .                      (3.3)
+                                                                                 (ℓ + j/b)i
+                                                              k=1 ℓ=0 i=1
+                       Pb                 i
+Using the identity       j=1 ζ(i, j/b) = b ζ(i) and Eq. (2.8) we obtain
+
+                                                         ∞
+                                                       b X
+                                                                   en ν + j
+                                           X           X                   
+                         Ln (U ) = A0             wb               R
+                                                                          b
+                                           b∈ΨB        j=1 ν=0
+
+                                           X           b
+                                                       X                     X           X         
+                                                                                                   i
+                                    = A0          wb         ρ0,j/b +                           wb b ρi A0 ζ(i).   (3.4)
+                                           b∈ΨB        j=1                   3⩽i⩽s       b∈ΨB
+                                                                           i odd, i∈I
+                                                                                   /
+
+    Furthermore, for any i, k in (3.1), we have
+                                                      1              en (t) (s−i)
+                                                            (t + k)s R
+                                                                           
+                                         ai,k =                                   t=−k
+                                                                                       .                           (3.5)
+                                                   (s − i)!
+
+The rational function (t+k)s R  en (t) is equal to the product of an integer and the following ‘building blocks’:
+s copies of n!(t + k)/(t)n+1 ; the products
+                        Y                       (t + a/b)n
+                bn ·             p⌊n/(p−1)⌋ ·              ,         where b ∈ ΨB , 1 ⩽ a < b, gcd(a, b) = 1;
+                                                    n!
+                         p|b
+                       p prime
+
+
+                                                                       5
+and the polynomial U (t + n/2) + U (−t − n/2). By [18, Lemma 16], [12, Lemma 4.2], and the condition
+on U (t), each building block F (t) listed above has the property
+
+                            dλn (λ)
+                               F (−k) ∈ Z           for any λ ∈ Z⩾0 and k ∈ {0, 1, . . . , n}.
+                            λ!
+Applying the Leibniz rule to (3.5) and using the property of the building blocks we obtain
+
+                           ds−i
+                            n ai,k ∈ Z        for all i ∈ {1, 2, . . . , s} and k ∈ {0, 1, . . . , n}.    (3.6)
+
+Substituting (3.6) into (3.2) and (3.3) (for j = b) implies that
+
+                                     ds−i
+                                      n ρi ∈ Z           for any odd i with 3 ⩽ i ⩽ s                     (3.7)
+
+and
+                                                           dsn ρ0,1 ∈ Z.                                  (3.8)
+   Now, we claim that
+
+                            dsn ρ0,j/b ∈ Z      for any b ∈ ΨB and j ∈ {1, 2, . . . , b − 1}.             (3.9)
+
+Indeed, by (3.3), it suffices to prove that
+                                                         s
+                                                         X         ai,k0
+                                                   dsn                     ∈Z                            (3.10)
+                                                               (ℓ0 + j/b)i
+                                                         i=1
+
+for any pair (k0 , ℓ0 ) with 0 ⩽ ℓ0 < k0 ⩽ n. By (2.3) we know that j/b ∈ ZB . Thus, by (2.1), t =
+−k0 + ℓ0 + j/b is a root of Rn (t). It follows, after substituting t = −k0 + ℓ0 + j/b into (3.1), that
+                               s                                      s
+                               X       dsn ai,k0     X X        dsn ai,k
+                                                 = −                          .
+                                     (ℓ0 + j/b)i         (ℓ0 − k0 + k + j/b)i
+                               i=1                         0⩽k⩽n i=1
+                                                            k̸=k0
+
+From this, using the same argument by contradiction as in the part of the proof of [10, Lemma 2] on page
+944, we obtain (3.10) and hence (3.9).
+     Finally, multiplying (3.4) by dsn , and using (3.7)–(3.9) and (2.7), we obtain the desired integrality of
+dsn Ln (U ).
+
+   We can now provide an explicit denominator for the Hankel determinant ∆n,m .
+
+Proposition 3.2. For any n ∈ 2Z>0 and m ∈ Z>0 with 2m ⩽ (n + 1)s − n|ZB |, we have
+
+                                                         dsm
+                                                          n
+                                     Qm−1                             2 · ∆n,m ∈ Z.
+                                        i=0    n!⌊i/n⌋ · (i − n⌊i/n⌋)!
+
+Proof. Take
+                                                    (t)i
+                             Ui (t) =      ⌊i/n⌋
+                                                                          for i = 0, 1, . . . , m − 1.
+                                        n!       · (i − n⌊i/n⌋)!
+The polynomial Ui (t) in the collection can be written as the product of the building blocks,
+
+                         (t)n (t + n)n (t + 2n)n     (t + (⌊i/n⌋ − 1)n)n (t + n⌊i/n⌋)i−n⌊i/n⌋
+              Ui (t) =       ·        ·          ···                    ·                     .
+                          n!     n!        n!                 n!             (i − n⌊i/n⌋)!
+
+                                                                  6
+By [18, Lemma 15], each such a building block F (t) in the product has the property
+
+                                  dλn (λ)
+                                     F (−k) ∈ Z            for any λ ∈ Z⩾0 and k ∈ Z,
+                                  λ!
+so that by the Leibniz rule the polynomials Ui (t)Uj (t) share this property as well. Thus, Lemma 3.1
+implies that
+                                dsn Ln (Ui Uj ) ∈ Z for all 0 ⩽ i, j < m.
+   The change-of-basis matrix from 1, t, . . . , tm−1 to U0 (t), U1 (t), . . . , Um−1 (t) is triangular with diagonal
+entries 1/ n!⌊i/n⌋ · (i − n⌊i/n⌋)! . Therefore,
+                                                                         ∆n,m
+                                 det  Ln (Ui Uj ) = Qm−1                                 2 ,
+                              0⩽i,j<m
+                                                            i=0   n!⌊i/n⌋ · (i − n⌊i/n⌋)!
+
+hence
+                                       dsm
+                                        n                               s
+                                                                                   
+                     Qm−1                            2 · ∆n,m = det dn Ln (Ui Uj ) ∈ Z.
+                        i=0   n!⌊i/n⌋ · (i − n⌊i/n⌋)!           0⩽i,j<m
+
+
+
+4    Analytic behaviour
+The following proposition gives an upper bound for the absolute value of the Hankel determinant ∆n,m
+with the normalisation factor from Proposition 3.2.
+
+Proposition 4.1. For any n ∈ 2Z>0 and m ∈ Z>0 such that
+
+                                                  2m ⩽ (s − B 2 − 10)n,                                                    (4.1)
+
+we have
+
+                 dsm
+                  n
+    Qm−1                          2 · |∆n,m |
+     i=0   n!⌊i/n⌋ · (i − n⌊i/n⌋)!
+                                                                                                       (s−B 2 )mn−2m2
+                                                                                             10B 2 n
+                                                                                         
+                                                                      2          2
+                               ⩽ (C0 m)m A1 (B)mn A2 (B)mn em +(2s+10B )mn ·                                             , (4.2)
+                                                                                               m
+
+where the constant C0 is independent of m and n.
+
+Proof. We will use a crude form dn ⩽ e2n of Chebyshev’s bound for Chebyshev’s ψ function and the
+elementary inequality
+                                 N
+                                 X               Z N
+                     log N ! =         log j ⩾         log x dx ⩾ N log N − N        for all N ∈ Z>0 ,                     (4.3)
+                                 j=1              1
+
+
+which remains true for N = 0 with the convention 0 log 0 = 0. For any i = 0, 1, . . . , m − 1, from the last
+inequality and x log x ⩾ −e−1 ⩾ −1 for x ∈ [0, 1] we obtain
+
+             log n!⌊i/n⌋ · (i − n⌊i/n⌋)! = ⌊i/n⌋ log n! + log(n{i/n})!
+                                        
+
+                                                 ⩾ ⌊i/n⌋(n log n − n) + n{i/n} log(n{i/n}) − n{i/n}
+                                                 = i log n − i + n{i/n} log{i/n}
+                                                 ⩾ i log n − i − n.
+
+
+                                                              7
+Therefore,
+                                                                         m−1
+                                 dsm                                       X                    
+                                  n                        2smn
+               Qm−1                             2 ⩽ e             · exp 2   (−i log n + i + n)
+                  i=0    n!⌊i/n⌋ · (i − n⌊i/n⌋)!                             i=0
+                                                                                                       2
+                                                                                        2         em +2(s+1)mn
+                                                       ⩽ e2smn−m(m−1) log n+m +2mn =                           .   (4.4)
+                                                                                                    nm(m−1)
+    Now, for any i = 0, 1, . . . , m − 1, consider the polynomial
+                                                                     Y                             n 2 
+                  Vi (t) = ti−(2|ZB |+2)⌊i/(2|ZB |+2)⌋ ·                                t2 − ν + θ +        ,      (4.5)
+                                                                                                     2
+                                                               θ∈ZB ∪{1}
+                                                           0⩽ν⩽⌊i/(2|ZB |+2)⌋−1
+
+where the empty product is understood as 1. Note that Vi is a monic polynomial of degree i. Therefore,
+the change-of-basis matrix from 1, t, . . . , tm−1 to V0 (t), V1 (t), . . . , Vm−1 (t) is unitriangular; in particular,
+                                                                            
+                                          ∆n,m = det Ln (Vi Vj ) .                                                 (4.6)
+                                                          0⩽i,j<m
+
+Furthermore, Ln (Vi2 ) ⩽ Si for i = 0, 1, . . . , m − 1, where
+                                         ∞
+                                       b X
+                        X              X               j      j n 2          j n  2
+             Si := A0          |wb |             Rn ν +     Vi ν + +     + Vi − ν − −       ;                      (4.7)
+                                                        b         b  2             b  2
+                        b∈ΨB           j=1 ν=0
+
+the series on the right-hand side converges absolutely because (4.1) and (2.4) imply
+
+                       deg Rn + 2 deg Vi ⩽ n|ZB | − (n + 1)s + 2(m − 1) < −2.
+                                                                  p
+By (2.9) and the Cauchy–Schwarz inequality we have |Ln (Vi Vj )| ⩽ Si Sj , in turn implying that
+
+                                           X m−1
+                                             Y                               m−1
+                                                                             Y                  m−1
+                                                                                                Y
+                                                                                            m
+                           |∆n,m | ⩽                 |Ln (Vi Vσ(i) )| ⩽ m!         Si ⩽ m             Si .         (4.8)
+                                          σ∈Sm i=0                           i=0                i=0
+
+    To estimate the individual terms in Si , consider b, j, ν in the summation range of (4.7) and i =
+0, 1, . . . , m − 1. By (2.3) and (4.5), we have
+                                                    
+                         j n                 j n
+                  Vi ν + +        = Vi −ν − −          =0              if ν < ⌊i/(2|ZB | + 2)⌋,  (4.9)
+                          b    2               b   2
+                        j n                   j n       j n i
+                 Vi ν + +         = Vi − ν − −         ⩽ ν+ +
+                         b    2                  b  2        b   2
+                                                            j    i
+                                                       ⩽ ν+ +n         if ν ⩾ ⌊i/(2|ZB | + 2)⌋. (4.10)
+                                                             b
+For any real number t of the form t = ν + j/b, we have t ⩾ 1/(B0 − 1), where B0 = 1 + maxb∈ΨB b ∈ Z>1 .
+Therefore,
+                               n 
+                                                         t n
+                                                         
+                              Y      t
+            (t)n+1 = n! · t ·     1+     ⩾ n! · t · 1 +
+                                     k                   n
+                              k=1
+                                                        n+1
+                                                                               t n+1 1
+                                                                               
+                                                      t          1
+                                         = n! · 1 +          · 1 1 ⩾ n! · 1 +         ·    .
+                                                      n        t + n
+                                                                               n        B0
+
+
+                                                               8
+Obviously, (t + θ)n ⩽ (t + n)n for all θ ∈ ZB ⊂ (0, 1). Substituting these two estimates into (2.1) with
+t = ν + j/b and using (4.3) we obtain
+                        j                          n(n+1)s             1
+                  Rn ν +    ⩽ B0s · A1 (B)n A2 (B)n · |Z | ·
+                         b                           n! B    (ν + j/b + n)(n+1)s−n|ZB |
+                                                                                   n(n+1)s−n|ZB |
+                                  ⩽ B0s · A1 (B)n A2 (B)n e|ZB |n ·                                        .         (4.11)
+                                                                           (ν + j/b + n)(n+1)s−n|ZB |
+
+    Now, substituting (4.9), (4.10) and (4.11) into (4.7) we deduce that
+
+                      Si ⩽ 2A0 · B0s · A1 (B)n A2 (B)n e|ZB |n · n2i
+                                                 b         ∞
+                                  X              X         X                  n(n+1)s−n|ZB |−2i
+                              ×          |wb |                                                        .              (4.12)
+                                  b∈ΨB           j=1 ν=⌊i/(2|ZB |+2)⌋
+                                                                        (ν + j/b + n)(n+1)s−n|ZB |−2i
+
+For brevity, write νi = ⌊i/ (2|ZB | + 2)⌋ and ei = (n + 1)s − n|ZB | − 2i for i = 0, 1, . . . , m − 1. Then
+               ∞                                             Z ∞
+               X         nei             nei                            nei
+                                   ⩽            +                              dx
+               ν=ν
+                   (ν + j/b + n)ei   (νi + n)ei                νi    (x + n)ei
+                  i
+                                                                                       
+                                                  1                    1         n                     2
+                                         =                                   +              ⩽                    ,   (4.13)
+                                           (1 + νi /n)ei −1         1 + νi /n ei − 1            (1 + νi /n)ei −1
+
+where the last step used ei − 1 > 10n by (4.1). With the bound (2.4) on |ZB |, we have
+                                                         
+                                      νi        1   i          i+1
+                                  1+     >1+           −1 >           .
+                                      n         n 2B 2         2B 2 n
+
+Combining this with ei − 1 > (n + 1)s − n|ZB | − 2m > (s − B 2 )n − 2m and (4.13) continues the estimate
+(4.12) as follows:
+                                                            2 (s−B 2 )n−2m
+                                       n       n B2n   2i    2B n
+                       Si ⩽ C0 · A1 (B) A2 (B) e     ·n ·                      ,                   (4.14)
+                                                             i+1
+where C0 = 4A0 · B0s b∈ΨB b|wb | is independent of m and n. Substituting (4.14) into (4.8), and using
+                    P
+(4.3), we obtain
+                                                                                     2
+                                                                      (2B 2 n)m (s−B )n−2m
+                                                                                   
+                                  m          mn           mn B 2 mn       m(m−1)
+              |∆n,m | ⩽ (C0 m) A1 (B) A2 (B) e          ·n        ·
+                                                                         m!
+                                                                                  2       2
+                                                                      2eB 2 n (s−B )mn−2m
+                                                                            
+                                                    2
+                      ⩽ (C0 m)m A1 (B)mn A2 (B)mn eB mn · nm(m−1) ·                         .                        (4.15)
+                                                                        m
+
+Finally, putting (4.4) and (4.15) together, the desired estimate (4.2) follows.
+
+
+5    Non-vanishing
+In this section we prove a non-vanishing result for the Hankel determinants ∆n,m . The argument works
+more generally for a wider class of moment matrices of signed measures supported on discrete closed
+subsets X ⊆ R. We first give a general non-vanishing result for such Hankel matrices of moments and
+then apply it to the determinants ∆n,m .
+
+
+                                                                9
+5.1   Hankel determinants of moments of discrete measures
+Let X ⊆ R be a closed discrete subset and µ a signed measure on X . We write (ax )x∈X for the sequence
+of weights of µ:                                 X
+                                            µ=       ax δx ,
+                                                     x∈X
+where δx denotes the delta distribution at x. We assume that the sequence satisfies a growth condition
+of the form                            X
+                                           |ax |(1 + |x|)D−1 < +∞                                (GD )
+                                         x∈X
+for some positive integer D. This growth condition implies that the Cauchy–Stieltjes transform of µ is
+defined as the meromorphic function
+                                             Z
+                                                dµ(t)   X ax
+                                    f (z) :=          =          .                               (5.1)
+                                              X z−t         z−x
+                                                             x∈X
+
+Indeed, the growth condition guarantees that the right hand side converges absolutely and uniformly on
+every compact subset of C \ X . By definition, f has (at most) simple poles at x ∈ X with residues
+
+                                               Res f (z) = ax .
+                                               z=x
+
+In the following, it is convenient to extend the weights by zero to all real numbers, i.e., we define
+                                                  (
+                                                   at t ∈ X ,
+                                          a(t) :=
+                                                   0 t ∈ R \ X.
+
+The following lemma shows that the Cauchy–Stieltjes transform f of µ satisfies a functional equation
+with polynomial coefficients if the weight function satisfies an identity of the form A(t)a(t + 1) = B(t)a(t)
+with polynomials A, B ∈ C[t], compare [6, Theorem 11]:
+Lemma 5.1. Let µ be a signed measure and D ⩾ 1 be a positive integer such that the weights of µ satisfy
+the growth condition (GD ). Suppose there exist polynomials A(z), B(z) ∈ C[z] of degree ⩽ D such that
+A(t)a(t + 1) = B(t)a(t) for all t ∈ R. Then the Cauchy–Stieltjes transform f of µ satisfies the functional
+equation
+                                     A(z)f (z + 1) − B(z)f (z) = C(z),                               (5.2)
+where C(z) ∈ C[z] is the polynomial of degree ⩽ max(deg(A), deg(B)) − 1 (with the convention C = 0 if
+deg A = deg B = 0) given by
+                                 X  A(z) − A(x − 1) B(z) − B(x) 
+                          C(z) =     ax                  −                .                     (5.3)
+                                             z − (x − 1)        z−x
+                                   x∈X
+
+Proof. First, note that each of the terms
+                                  A(z) − A(x − 1)             B(z) − B(x)
+                                                       and
+                                    z − (x − 1)                  z−x
+in the definition of C(z) is a polynomial of degree ⩽ max(deg(A), deg(B)) − 1 (with the convention C = 0
+if deg A = deg B = 0). The growth condition (GD ) guarantees that the coefficients in the formula defining
+C(z) converge absolutely. Using
+                                 A(z)       A(z) − A(x − 1)    A(x − 1)
+                                          =                 +             ,
+                              z − (x − 1)     z − (x − 1)     z − (x − 1)
+
+                                                      10
+and the corresponding identity for B(z), we obtain
+                                                X ax A(x − 1)           X ax B(x)
+           A(z)f (z + 1) − B(z)f (z) − C(z) =                       −
+                                                      z − (x − 1)             z−x
+                                                x∈X                     x∈X
+                                                    X         A(t)a(t + 1) − B(t)a(t)
+                                            =                                         = 0.
+                                                                       z−t
+                                                t∈X ∪(X −1)
+
+   The following lemma says that any sufficiently good rational approximation of a Cauchy–Stieltjes
+function f with a functional equation of the form (5.2) satisfies the same functional equation:
+
+Lemma 5.2. Let f be the Cauchy–Stieltjes transform of a signed measure µ on X , satisfying a functional
+equation of the form
+                               A(z)f (z + 1) − B(z)f (z) = C(z),
+with A(z), B(z), C(z) ∈ C[z]. Write d := max(deg A(z), deg B(z)). Suppose there exist polynomials
+Q(z), P (z) ∈ C[z] with Q ̸= 0 such that
+                                                   
+                Q(z)f (z) − P (z) = o y −d−deg Q(z)   as z = iy or z = 1 + iy and y → ∞.    (5.4)
+
+Then the rational function r(z) := P (z)/Q(z) satisfies the same functional equation as f (z):
+
+                                    A(z)r(z + 1) − B(z)r(z) = C(z).
+
+Proof. Consider the polynomial
+
+              W (z) = A(z)P (z + 1)Q(z) − B(z)P (z)Q(z + 1) − C(z)Q(z)Q(z + 1) ∈ C[z].            (5.5)
+
+Using the functional equation of f (z) we can rewrite this as
+                                                                                        
+          W (z) = A(z)Q(z) P (z + 1) − Q(z + 1)f (z + 1) − B(z)Q(z + 1) P (z) − Q(z)f (z) .
+
+The assumption (5.4) gives
+                                     W (z) = o(1)     as z = iy → i∞.
+Thus, the polynomial W (z) vanishes identically. Dividing (5.5) by Q(z)Q(z + 1) then gives
+
+                                    A(z)r(z + 1) − B(z)r(z) = C(z).
+
+   The following is a classical result about Hankel matrices in the framework of Kronecker’s theory of
+recurrent sequences.
+
+Lemma 5.3. Let M, N ∈ Z>0 with M ⩽ N , and let µ0 , . . . , µ2N −2 belong to a field. If
+
+                                         rank(µi+j ) 0⩽i<N = M,
+                                                      0⩽j<M
+
+then det0⩽i,j<m (µi+j ) ̸= 0 for some M ⩽ m ⩽ N .
+
+Proof. In the square Hankel matrix (µi+j )0⩽i,j<N , let m be the largest integer such that its first m
+columns are linearly independent. Then m ⩾ M by the condition. If m = N , the conclusion is immediate.
+Otherwise, its first m + 1 columns are dependent, and [1, Lemma 2.3] gives det0⩽i,j<m (µi+j ) ̸= 0.
+
+
+
+                                                      11
+     Suppose that µ satisfies the growth condition (GD ), then for any 0 ⩽ k < D, we define its k-th moment
+by                                                 Z                 X
+                                          k
+                                       L(t ) :=         tk dµ(t) =         ax xk .
+                                                    X                x∈X
+
+In particular, the Hankel determinant
+
+                                              ∆m :=      det (L(ti+j ))
+                                                        0⩽i,j<m
+
+of the moment sequence is defined for 2m − 2 < D. The following proposition gives a non-vanishing
+criterion for these Hankel determinants.
+
+Proposition 5.4. Let µ be a signed measure on X satisfying the growth condition (GD ) for some positive
+integer D. Assume, in addition, that the extension by zero a(t) of weights satisfies
+
+                                              A(t)a(t + 1) = B(t)a(t)
+
+for some polynomials A(z), B(z) ∈ C[z] with 1 ⩽ d := max(deg A(z), deg B(z)) ⩽ D and that the equation
+
+                                       A(z)r(z + 1) − B(z)r(z) = C(z)
+
+has no solution in rational functions r(z) ∈ C(z), where
+                                    X  A(z) − A(x − 1) B(z) − B(x) 
+                            C(z) =      ax                −
+                                              z − (x − 1)   z−x
+                                    x∈X
+
+is defined as in (5.3). Then for any integer M ⩾ 1 such that 2(M + d − 1) − 2 < D there exists a positive
+integer m such that
+                                  M ⩽ m ⩽ M + d − 1 and ∆m ̸= 0,
+where ∆m is the m-th Hankel determinant of moments of µ.
+
+Proof. Put N = M + d − 1. Since 2N − 2 < D, the Hankel determinants ∆m are defined for all m ⩽ N .
+Let us write f (z) for the Cauchy–Stieltjes transform of µ. According to Lemma 5.1, f (z) satisfies the
+functional equation
+                                   A(z)f (z + 1) − B(z)f (z) = C(z)
+with A(z), B(z), C(z) as in the statement of the proposition. By Lemma 5.3, it suffices to prove that
+
+                                       rank L(ti+j ) 0⩽i<N = M.
+                                                    
+                                                                                                    (5.6)
+                                                             0⩽j<M
+
+We argue by contradiction. More precisely, we will see that failure of (5.6) implies the existence of
+a good rational approximation which will automatically satisfy the same functional equation as f (z),
+contradicting the assumptions of the proposition. Let us now start the proof by contradiction. Suppose
+(5.6) fails. Then, there exists a column vector (c0 , c1 , . . . , cM −1 )⊤ ∈ MatM ×1 (C) \ {0} such that
+
+                                   L(ti+j ) 0⩽i<N · (c0 , c1 , . . . , cM −1 )⊤ = 0.
+                                           
+                                                                                                          (5.7)
+                                              0⩽j<M
+
+Write
+                                       M
+                                       X −1
+                              Q(t) =          cj tj ∈ C[t] \ {0},     deg Q ⩽ M − 1.
+                                       j=0
+
+
+                                                           12
+Then (5.7) implies that        X
+                                     ax Q(x)xi = 0      for all i = 0, 1, . . . , N − 1.               (5.8)
+                               x∈X
+
+Define
+                                                   X          Q(z) − Q(x)
+                                         P (z) =         ax               .
+                                                                 z−x
+                                                   x∈X
+
+The growth condition (GD ) ensures that P (z) ∈ C[z] with deg P ⩽ M − 2 (if M = 1, then P = 0). Then
+                                                 X          1
+                          Q(z)f (z) − P (z) =          ax Q(x)   by (5.1)
+                                                          z−x
+                                               x∈X
+                                                                        N −1
+                                                               xN             xi
+                                               X                       X          
+                                             =     ax Q(x) N          +
+                                                            z (z − x)        z i+1
+                                                 x∈X                              i=0
+                                                 X                 xN
+                                             =   ax Q(x) N           by (5.8)
+                                                         z (z − x)
+                                                 x∈X
+                                               1 X                 x
+                                             = N     ax Q(x)xN −1      .
+                                              z                   z−x
+                                                       x∈X
+
+The growth condition (GD ) ensures x∈X |ax Q(x)xN −1 | < ∞, since deg Q + N − 1 ⩽ 2N − 2 < D. For
+                                       P
+z = iy or z = 1 + iy with y ⩾ 1, the quotient x/(z − x) has absolute value ⩽ 2 and tends to 0 as y → ∞.
+Therefore, the dominated convergence theorem implies
+
+                    Q(z)f (z) − P (z) = o(y −N )        as z = iy or z = 1 + iy and y → ∞.             (5.9)
+
+Since N = M + d − 1 ⩾ max(deg A(z), deg B(z)) + deg Q(z), Lemma 5.2 shows that the rational function
+r(z) = P (z)/Q(z) satisfies the same functional equation as f (z), i.e.
+
+                                            P (z + 1)        P (z)
+                                     A(z)             − B(z)       = C(z),
+                                            Q(z + 1)         Q(z)
+
+contradicting the assumption in the proposition.
+
+5.2      Application
+For convenience, when n ∈ 2Z>0 , define the shift of the rational function (2.1),
+
+                                      bn (t) := Rn t − n ∈ Q(t).
+                                                         
+                                      R
+                                                        2
+Since n is even, s is odd, and ZB is stable under the reflection θ 7→ 1−θ, we can rephrase the (well-poised)
+property Rn (−t − n) = −Rn (t) as
+                                             Rbn (−t) = −R bn (t).                                    (5.10)
+Define the set                               
+                       XB := Z + (ZB ∪ {1}) = ν + θ : ν ∈ Z, θ ∈ ZB ∪ {1} ⊂ Q
+and the weights                                  X
+                                       w
+                                       bx :=           wb ∈ Z     for x ∈ XB ,
+                                               b∈ΨB
+                                               bx∈Z
+
+
+
+                                                             13
+so that
+                                           w
+                                           bx+1 = w
+                                                  bx = w
+                                                       b−x    for x ∈ XB .
+We want to apply the theory in §5.1 to prove the non-vanishing of the determinants ∆n,m introduced in
+(2.10). For this, we introduce the discrete measure
+                                             X              X
+                                  µn := A0      a(x)δx = A0    a(x)δx
+                                                x∈XB              x∈R
+
+assigned to                       (
+                                   sgn(x)w  bn (x) for x ∈ XB and |x| > n/2,
+                                         bx R
+                          a(x) :=
+                                   0               otherwise.
+With the help of (2.1), we get
+
+                               Rn (t − n2 + 1)      (t − n2 )s θ∈ZB (t + θ + n2 )
+                                                               Q
+                  R
+                  bn (t + 1)                                                          Bn (t)
+                             =            n    =             n s
+                                                                 Q               n  =               (5.11)
+                    R
+                    bn (t)      Rn (t − 2 )      (t + 1 + 2 )     θ∈ZB (t + θ − 2 )   An (t)
+
+with
+                                            n s+1     n Y       n
+                           An (z) := z + 1 +          z−        z+θ−    ,
+                                             2           2           2
+                                                           θ∈ZB
+                                        n s+1         n Y       n
+                           Bn (z) := z −          z+1+          z+θ+    .
+                                         2               2           2
+                                                                 θ∈ZB
+
+In particular, the extension a(x) by zero satisfies
+
+                                   An (t)a(t + 1) = Bn (t)a(t)   for all t ∈ R,
+
+with polynomials An , Bn of degree d = s + |ZB | + 2. Since deg R
+                                                                bn = n|ZB | − (n + 1)s, we have
+                                  X
+                            A0             w  bn (x) (1 + |x|)(n+1)s−n|ZB |−2 < +∞,
+                                           bx R
+                                  x∈XB
+                                 |x|>n/2
+
+hence µn satisfies the growth condition (GD ) with D = (n + 1)s − n|ZB | − 1. From (5.10) and the notation
+above, the number Ln (tk ) for k < D defined in (2.9) is simply the k-th moment of the measure µn :
+                                                 X
+                                  Ln (tk ) = A0       sgn(x)w   bn (x)xk .
+                                                             bx R
+                                                    x∈XB
+                                                   |x|>n/2
+
+We can now apply Proposition 5.4 to the signed measure µn to get
+
+Proposition 5.5. For any n ∈ 2Z>0 and M ∈ Z>0 with
+
+                                   2(M + s + |ZB | + 1) ⩽ (n + 1)s − n|ZB |,
+
+there exists m ∈ Z>0 satisfying
+
+                              M ⩽ m ⩽ M + s + |ZB | + 1          and    ∆n,m ̸= 0.
+
+
+
+                                                        14
+Proof. By Proposition 5.4, it suffices to show that there is no rational function r(z) ∈ C(z) satisfying the
+functional equation
+                                    An (z)r(z + 1) − Bn (z)r(z) = Cn (z),                             (5.12)
+with                                                                                                
+                               X                             An (z) − An (x − 1) Bn (z) − Bn (x)
+              Cn (z) := A0             sgn(x)w
+                                             bx R
+                                                bn (x)                          −                        .
+                                                                 z − (x − 1)          z−x
+                              x∈XB
+                             |x|>n/2
+
+Suppose this is not true and there is a rational solution r(z) of (5.12). By Lemma 5.1, the Cauchy–Stieltjes
+transform
+                               X sgn(x)w     bx R
+                                                bn (x)                                    
+                 fn (z) := A0                          , where z ∈ C \ XB \ [−n/2, n/2] ,
+                                           z−x
+                                x∈XB
+                               |x|>n/2
+
+of µn satisfies the same functional equation
+
+                                       An (z)fn (z + 1) − Bn (z)fn (z) = Cn (z).                             (5.13)
+
+Subtracting (5.12) from (5.13) and using (5.11), we find that the meromorphic function
+                                                             fn (z) − r(z)
+                                                  gn (z) =
+                                                                 R
+                                                                 bn (z)
+
+satisfies
+                                                   gn (z + 1) = gn (z).                                      (5.14)
+Now, take b∗ = max{b ∈ ΨB : wb ̸= 0}. Then, for any T ∈ Z>0 , we have
+                                                     X
+                             w
+                             bT +1/b∗ = w
+                                        b−T +1/b∗ =      wb = wb∗ ̸= 0.
+                                                                  b∈ΨB
+                                                                   b∗ |b
+
+           bn (z) is a rational function of z, there is a choice of integer T > n for which neither T + 1/b∗
+Since r(z)/R
+nor −T + 1/b∗ is a pole of this rational function. Then
+                                                    1
+                         Res       gn (z) =                  ·   Res     fn (z) = ±A0 wb∗ .
+                      z=±T +1/b∗              Rn (±T + 1/b∗ ) z=±T +1/b∗
+                                              b
+
+But (5.14) implies
+                                            Res      gn (z) =      Res       gn (z).
+                                         z=T +1/b∗              z=−T +1/b∗
+
+which contradicts A0 wb∗ ̸= 0. Therefore, equation (5.12) does not have any rational solutions.
+
+
+6      Proof of the main theorem
+Fix any ε ∈ (0, 1) and take
+                                s                       s
+                                        4ζ(6)    ε          s log log s                    s
+                         B=                    −         ·              ,        C=              .
+                                       ζ(2)ζ(3) 10             log s                   log log s
+
+By (2.2), (2.4), (2.5), and (2.6), for any odd integer s ⩾ s′0 (ε) we have
+
+                       s > 10B 2 > 100,        10 < 2C < s − B 2 − 10,            |ZB | ⩽ B 2 − 1,
+
+                                                             15
+and
+                                           s              s
+                                              4ζ(2)ζ(3)        s log log s
+                                   |ΨB | ⩾              −ε ·               ,                                 (6.1)
+                                                 ζ(6)              log s
+                                                          ε 
+                                  log(A1 (B)A2 (B)) ⩽ 1 −      · s log log s.                                (6.2)
+                                                          100
+By applying Proposition 5.5 with M = ⌈Cn⌉, for any sufficiently large even integer n, there exists an
+integer m = m(n) satisfying
+                               Cn ⩽ m ⩽ Cn + 2s and ∆n,m ̸= 0;                                  (6.3)
+in particular, m(n)/n → C as n → ∞. By Proposition 3.2 and Eq. (6.3), the number
+
+                                                        dsm
+                                                          n
+                                  Jn = Qm−1                                · ∆n,m
+                                               (n! ⌊i/n⌋ · (i − n⌊i/n⌋)!)2
+                                           i=0
+
+is a nonzero integer, so that |Jn | ⩾ 1. On the other hand, by Proposition 4.1 and Eq. (6.2),
+
+                 log |Jn |                             2             2             2         2
+                                                                                                     C
+       lim sup             ⩽ C log(A 1 (B)A 2 (B)) + C   + (2s + 10B   )C − (s − B   )C − 2C     log
+        n→∞        n2                                                                                10B 2
+                                                              C
+                           = C log(A1 (B)A2 (B)) − sC log       2
+                                                                  + o(s2 )
+                                                            10B
+                                  ε         
+                           ⩽ −        + o(1) s2 as s → ∞.
+                                 100
+This means that log |Jn | < 0 for infinitely many n, whenever s ⩾ s0 (ε) ⩾ s′0 (ε) is sufficiently large, a
+contradiction. The source of the contradiction is our assumption (2.7), hence it cannot hold and our goal
+Ns ⩾ |ΨB | is achieved. Therefore, by (6.1) we deduce that
+                                            s               s
+                                               4ζ(2)ζ(3)          s log log s
+                             Ns ⩾ |ΨB | ⩾                 −ε ·
+                                                  ζ(6)               log s
+
+for any odd integer s ⩾ s0 (ε).
+
+
+References
+ [1] F. Adiceam, E. Nesharim and F. Lunnon, On the t-adic Littlewood conjecture, Duke Math. J. 170
+     (2021), no. 10, 2371–2419.
+
+ [2] R. Apéry, Irrationalité de ζ(2) et ζ(3), Astérisque 61 (1979), 11–13.
+
+ [3] K. Ball and T. Rivoal, Irrationalité d’une infinité de valeurs de la fonction zêta aux entiers impairs,
+     Invent. Math. 146 (2001), no. 1, 193–207.
+
+ [4] F. Brown, Mellin transforms, transfinite diameter and rational approximations of integrals, Exp.
+     Math. (2026), advance online publication, doi:10.1080/10586458.2026.2695605.
+
+ [5] F. Calegari, V. Dimitrov and Y. Tang, The linear independence of 1, ζ(2), and L(2, χ−3 ), Preprint
+     (2024) arXiv:2408.15403.
+
+ [6] D. Dominici and F. Marcellán, Discrete semiclassical orthogonal polynomials of class one, Pacific J.
+     Math. 268 (2014), no. 2, 389–411.
+
+                                                        16
+ [7] A. Fauzan, ζ(5) is irrational, Preprint (2026) zenodo:22826419.
+
+ [8] S. Fischler, Linear independence of odd zeta values using Siegel’s lemma, J. London Math. Soc. (2)
+     113 (2026), no. 4, e70535, 42 pp.
+
+ [9] S. Fischler, J. Sprang and W. Zudilin, Many values of the Riemann zeta function at odd integers are
+     irrational, C. R. Math. Acad. Sci. Paris 356 (2018), no. 7, 707–711.
+
+[10] S. Fischler, J. Sprang and W. Zudilin, Many odd zeta values are irrational, Compos. Math. 155
+     (2019), no. 5, 938–952.
+
+[11] L. Lai, A note on the number of irrational odd zeta values II, J. Théor. Nombres Bordeaux 38 (2026),
+     no. 2, 469–487.
+
+[12] L. Lai, Small improvements to the Ball–Rivoal theorem and its p-adic variant, Front. Comb. Number
+     Theory 4 (2026), 1–44.
+
+[13] L. Lai and P. Yu, A note on the number of irrational odd zeta values, Compos. Math. 156 (2020),
+     no. 8, 1699–1717.
+
+[14] T. Rivoal, La fonction zêta de Riemann prend une infinité de valeurs irrationnelles aux entiers
+     impairs, C. R. Acad. Sci. Paris Sér. I Math. 331 (2000), no. 4, 267–270.
+
+[15] T. Rivoal, Irrationalité d’au moins un des neuf nombres ζ(5), ζ(7), . . . , ζ(21), Acta Arith. 103 (2002),
+     no. 2, 157–167.
+
+[16] J. Sprang, Infinitely many odd zeta values are irrational. By elementary means, Preprint (2018)
+     arXiv:1802.09410.
+
+[17] W. Zudilin, One of the numbers ζ(5), ζ(7), ζ(9), ζ(11) is irrational, Russian Math. Surveys 56
+     (2001), no. 4, 774–776.
+
+[18] W. Zudilin, Arithmetic of linear forms involving odd zeta values, J. Théor. Nombres Bordeaux 16
+     (2004), no. 1, 251–291.
+
+[19] W. Zudilin, A determinantal approach to irrationality, Constr. Approx. 45 (2017), no. 2, 301–310.
+
+[20] W. Zudilin, One of the odd zeta values from ζ(5) to ζ(25) is irrational. By elementary means, SIGMA
+     14 (2018), 028, 8 pp.
+
+
+
+
+                                                      17
+

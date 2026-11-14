@@ -1,0 +1,1299 @@
+Mathematical Assoc. of America        American Mathematical Monthly 121:1       February 10, 2015   2:47 p.m.     31415v12.tex     page 1
+
+
+
+
+ I Prefer Pi: A Brief History and Anthology of Articles
+        in the American Mathematical Monthly
+                              Jonathan M. Borwein and Scott T. Chapman
+
+
+     Abstract. In celebration of both a special ‘big’ π Day (3/14/15) and the 2015 centennial of the Mathematical
+     Association of America, we review the illustrious history of the constant π in the pages of the American Mathe-
+     matical Monthly.
+
+1. INTRODUCTION. Once in a century Pi Day is accurate not just to three digits, but to five. The
+year the MAA was founded (1915) was such a year, and so is the MAA’s centennial year (2015). To
+arrive at this auspicious conclusion, we consider the date to be given as month-day-two digit year.1
+This year Pi Day turns 26. For a more detailed discussion of Pi and its history, we refer to last year’s
+article [46]. We do note that “I prefer pi” is a succinct palindrome.2
+    In honour of this happy coincidence, we have gone back and selected roughly seventy five represen-
+tative papers relating to Pi (the constant not the symbol) published in this journal since its inception
+in 1894 (which predates that of the MAA itself). Those 75 papers listed in three periods (before 1945,
+1945–1989, and 1990 on) form the core bibliography of this article. The first author and three under-
+graduate research students3 ran a seminar in which they looked at the 75 papers. Here is what they
+discovered.
+
+Common themes In each of the three periods one observes both the commonality of topics and the
+changing stye of presentation. We shall say more about this as we proceed.
+ • We see authors of varying notoriety. Many are top-tier research mathematicians whose names remain
+   known. Others once famous are unknown. Articles come from small colleges, big ten universities,
+   ivy league schools and everywhere else. In earlier days, articles came from people at big industrial
+   labs, but nowadays, those labs no longer support research as they used to.
+ • These papers cover relatively few topics.
+
+     ◦ Every few years a ‘simple proof’ of the irrationality of π is published. Such proofs can be found
+       in [? 58, 26, 29, 31, 39, 52, 59, 62, 76].
+                                                  2 2
+                                     P
+     ◦ Many proofs of ζ(2) :=
+                                        n≥1 1/n = π /6 appear, each trying to be a bit more slick or ele-
+       mentary than the last. Of course, whether you prefer your proofs concise and high tech, or more
+       leisurely and lower tech, is a matter of taste and context. See [? 38, ? 58, 20, 28, 34, 42, 57, 68, 69].
+     ◦ Articles on mathematics outside the European tradition have appeared since the Monthly’s earliest
+
+       days. See the papers [3, 9, 11, 15].
+ •   In the past thirty years, computer algebra begins to enter the discussions – sometimes in a funda-
+     mental way.
+     1 For advocates of τ = 2π , your big day 6/28/31 will come in 2031.
+    2 Given by the Professor in Yöko Ozawa, The Housekeeper and the Professor, Picador Books, 2003. Kindle location 1095, as is
+
+“a nut for a jar of tuna?”
+    3 The students are Elliot Catt from Newcastle, and Ghislain McKay & Corey Sinnamon from Waterloo.
+
+
+
+
+January 2014]                                         PI IN THE MONTHLY                                                       1
+Mathematical Assoc. of America   American Mathematical Monthly 121:1   February 10, 2015   2:47 p.m.     31415v12.tex   page 2
+
+
+
+
+ •    Of course the compositing style of the M ONTHLY has changed several times.
+ •    The process of constructing this selection highlights how much our scholarly life has changed over
+      the past 30 years. Much more can be found and studied easily, but there is even more to find than
+      in previous periods. The ease of finding papers in Google Scholar has the perverse consequence –
+      like Gresham’s law in economics – of making less easily accessible material even more likely to be
+      ignored.
+    While our list is not completely exhaustive, almost every paper listed in the bibliography has been
+cited in the literature. In fact, several have been highly cited. Some highly used research, such as Ivan
+Niven’s proof of the irrationality of π [14], is rarely cited as it has been fully absorbed into the literature.
+Indeed, a quick look at the AMS’s Mathematical Reviews reveals only 15 citations of Niven’s paper.
+    We deem as pi-star (or π ? ) papers from our M ONTHLY bibliography that have been cited in the
+literature more than 30 times. The existence of JSTOR means that most readers can access all these
+papers easily, but we have arranged for the π ? s to be available free for the next year on our website
+(http://www.shsu.edu/ bks006/Monthly.html). Here are the π ? s with citation numbers accord-
+ing to Google Scholar (as of 1/7/2015). These papers are marked with a ? in the regular bibliography.
+      1. 133 citations: J. M. Borwein, P. B. Borwein, D. H. Bailey, Ramanujan, modular equations, and
+         approximations to pi or how to compute one billion digits of pi, 96(1989) 201–219.
+      2. 119 citations: G. Almkvist, B. Berndt, Gauss, Landen, Ramanujan, the arithmetic-geometric
+         mean, ellipses, π , and the ladies diary, 95(1988) 585–608.
+      3. 73 citations: A Kufner, L Maligrand, The prehistory of the Hardy inequality, 113(2006) 715–732.
+      4. 63 citations: J.M. Borwein, P.B. Borwein, K. Dilcher, Pi, Euler numbers, and asymptotic expan-
+         sions, 96(1989) 681–687.
+      5. 56 citations: N.D. Baruah, B.C. Berndt, H.H. Chan, Ramanujan’s series for 1/π : a survey,
+         116(2009) 567–587.
+      6. 40 citations: J. Sondow, Double integrals for Euler’s constant and ln π/4 and an analog of Had-
+         jicostas’s formula, 112(2005) 61–65.
+      7. 39 citations: D. H. Lehmer, On arccotangent relations for π , 45(1938) 657–664.
+                                                                       P∞
+      8. 39 citations: I. Papadimitriou, A simple proof of the formula k=1 1/k 2 = π 2 /6, 80(1973) 424–
+         425.
+      9. 36 citations: V. Adamchik, S. Wagon, A simple formula for π , 104(1997) 852–855.
+     10. 35 citations: D. Huylebrouck, Similarities in irrationality proofs for π , ln 2, ζ(2), and ξ(3),
+         108(2001) 222–231.
+     11. 35 citations: L. J. Lange, An elegant continued fraction for π , 106(1999) 456–458.
+     12. 33 citations: S. Rabinowitz, S. Wagon, A spigot algorithm for the digits of π , 102(1995) 195–203.
+     13. 32 citations: W. S. Brown, Rational exponential expressions and a conjecture concerning π and
+         e, 76(1969) 28–34.
+
+The remainder of this article. We begin with a very brief history of Pi, both mathematical and al-
+gorithmic, which can be followed in more detail in [80] and [46]. We then turn to our three periods,
+and make a very few extra comments about some of the articles. For the most part the title of each
+article is a pretty good abstract. We then make a few summatory remarks and list a handful of refer-
+ences from outside the M ONTHLY, such as David Blattner’s Joy of Pi [79] and Arndt and Haenel’s Pi
+Unleashed [78].
+
+2                            c THE MATHEMATICAL ASSOCIATION OF AMERICA                                 [Monthly 121
+Mathematical Assoc. of America       American Mathematical Monthly 121:1          February 10, 2015     2:47 p.m.     31415v12.tex      page 3
+
+
+
+
+2. PI: A BRIEF HISTORY. Pi is arguably the most resilient of mathematical objects. It has been
+studied seriously over many millennia and by every major culture, remaining as intensely examined
+today as in the Syracuse of Archimedes’ time. Its role in popular culture was described in last year’s Pi
+Day article [46]. We also recall the recent movies Life of Pi ((2012, PG) directed by Ang Lee) and Pi
+((1998, R) directed by Darren Aronofsky)4 .
+   From both an analytic and computational viewpoint, it makes sense to begin with Archimedes.
+Around 250 BCE, Archimedes of Syracuse (287–212 BCE) is thought to have been the first (in Mea-
+surement of the Circle) to show that the “two possible Pi’s” are the same. For a circle of radius r
+and diameter d, Area= π1 r2 while Perimeter = π2 d, but that π1 = π2 is not obvious, and is often
+overlooked; see [55].
+
+
+
+
+                               Figure 1. Archimedes’ method of computing π with 6- and 12-gons
+
+
+
+Archimedes’ Method The first rigorous mathematical calculation of π was also due to Archimedes,
+who used a brilliant scheme based on doubling inscribed and circumscribed polygons,
+                                               6 7→ 12 7→ 24 7→ 48 7→ 96
+                                                        10
+and computing the perimeters to obtain the bounds 3 71     < π < 3 10
+                                                                    70
+                                                                       = . . . .5 The case of 6-gons and 12-
+gons is shown in Figure 1; for n = 48 one already ‘sees’ near-circles. No computational mathematics
+approached this level of rigour again until the 19th century. Phillips in [41] or [80, pp. 15-19] calls
+Archimedes the ‘first numerical analyst’.
+   Archimedes’ scheme constitutes the first true algorithm for π , in that it can produce an arbitrarily
+accurate value for π . It also represents the birth of numerical and error analysis – all without positional
+notation or modern trigonometry. As discovered in the 19th century, this scheme can be stated as a
+simple, numerically stable, recursion, as follows [82].
+                                                                             √
+Archimedean Mean Iteration (Pfaff-Borchardt-Schwab). Set a0 = 2 3 and b0 = 3, which are the
+values for circumscribed and inscribed 6-gons. If
+                                 2an bn                                              p
+                    an+1 =                       (H)          and         bn+1 =         an+1 bn        (G),                      (1)
+                                an + bn
+   4 Imagine, an R–rated movie involving Pi!
+   5 All rules are meant to be broken. Writing 10/70 without cancellation makes it easier to see that 1/7 is larger than 10/71.
+
+
+
+
+January 2014]                                        PI IN THE MONTHLY                                                             3
+Mathematical Assoc. of America        American Mathematical Monthly 121:1   February 10, 2015   2:47 p.m.     31415v12.tex   page 4
+
+
+
+
+then an and bn converge to π , with the error decreasing by a factor of four with each iteration. In this
+case the error is easy to estimate – look at a2n+1 − b2n+1 – and the limit is somewhat less accessible, but
+still reasonably easy to determine [82].
+    Variations of Archimedes’ geometrical scheme were the basis for all high-accuracy calculations of
+π over the next 1800 years – far after its ‘best before’ date. For example, in fifth century China, Tsu
+Chung-Chih used a variant of this method to obtain π correct to seven digits. A millennium later,
+al-Kāshī in Samarkand “who could calculate as eagles can fly” obtained 2π in sexadecimal:
+
+                                16   59  28  01  34  51  46  14  50
+                 2π ≈ 6 +         1
+                                    + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9,
+                                60   60  60  60  60  60  60  60  60
+good to 16 decimal places (using 3 · 228 -gons). This is a personal favourite; reentering it in a computer
+centuries later and getting the predicted answer gives the authors horripilation (‘goose-bumps’).
+   Pi’s centrality is emphasised by the many ways it turns up early in new subjects from irrationality
+theory to probability and harmonic analysis. For instance, Francois Viéta’s (1540–1603) formula
+
+                                     √ p        √
+                                                    q       p      √
+                                2       2 2+ 2 2+ 2+ 2
+                                  =                                     ···                            (2)
+                                π      2      2              2
+and John Wallis’ (1616–1703) infinite product [67, 74, 75]
+
+                                             π   2·2·4·4·6·6·8·8
+                                               =                 ···                                                  (3)
+                                             2   1·3·3·5·5·7·7·9
+are accounted among the first infinitary objects in mathematics. The latter leads to the Gamma function,
+Stirling’s formula, and much more [64] including the first infinite continued fraction6 for 2/π by Lord
+Brouncker (1620–1684), first President of the Royal Society of London:
+
+                                              2   1   9   25  49
+                                                =                   .                                                 (4)
+                                              π   1 + 2 + 2 + 2 ···
+Here we use the modern concise notation for a continued fraction.
+
+Arctangents and Machin formulas With the development of calculus, it became possible to extend
+calculations of π dramatically as shown in Figure 4. Almost all calculations between 1700 and 1980
+reduce to exploiting the series for the arctangent (or another inverse trig function) and using identities
+to require computation only near the centre of the interval of convergence. Thus, one starts with
+
+                                                   x3 x5 x7
+                          arctan(x) = x −            +   −   + ···          for − 1 ≤ x ≤ 1                           (5)
+                                                   3   5   7
+and arctan(1) = π/4. Substituting x = 1 proves the Gregory-Leibniz formula (1671–74)
+
+                                        π    1 1 1 1  1
+                                          =1− + − + −   + ··· .                                                       (6)
+                                        4    3 5 7 9 11
+    6 This was discovered without proof as was (3) .
+
+
+
+
+4                               c THE MATHEMATICAL ASSOCIATION OF AMERICA                                   [Monthly 121
+Mathematical Assoc. of America     American Mathematical Monthly 121:1        February 10, 2015   2:47 p.m.   31415v12.tex   page 5
+
+
+
+
+James Gregory (1638–75) was the greatest of a large Scottish mathematical family. The point x = 1,
+however, is on the boundary of the interval of convergence of the series. Justifying substitution requires
+a careful error estimate for the remainder or Lebesgue’s monotone convergence theorem, but most
+introductory calculus texts ignore the issue. The arctan integral and series were known centuries earlier
+to the Kerala school, which was identified with Madhava (c. 1350 – c. 1425) of Sangamagrama near
+Kerala, India. Madhava may well have computed 13 digits of π .
+   To make (5) computationally feasible, we can use one of many formulas such as:
+                                                                
+                                                   1               1
+                        arctan(1) = 2 arctan          + arctan           (Hutton)                      (7)
+                                                   3               7
+
+                                                             
+                                       1            1            1
+                   arctan(1) = arctan     + arctan     + arctan     (Euler)                                           (8)
+                                       2            5            8
+
+                                                              
+                                               1              1
+                         arctan(1) = 4 arctan     − arctan         (Machin).                                          (9)
+                                               5             239
+All of this, including the efficiency of different Machin formulas as they are now called, is lucidly
+described by the early and distinguished computational number theorist D.H. Lehmer [? 13]. See also
+[2,5,49] and [19] by Wrench, who in 1961 with Dan Shanks performed extended computer computation
+of π using these formulas; see Figure 5.
+   In [? 13] Lehmer gives what he considered to be a best possible self-checking pair of arctan relations
+for computing π . The pair was:
+                                                                                 
+                                            1                1                     1
+                 arctan (1) = 8 arctan          − arctan           − 4 arctan                        (10)
+                                           10               239                  515
+
+                                                                                            
+                                        1                            1                        1
+                 arctan (1) = 12 arctan                   + 8 arctan              − 5 arctan       .                 (11)
+                                        18                           57                      239
+In [2], Ballantine shows that this pair makes a good choice since the series for arctan(1/18) and
+arctan(1/57) have terms that differ by a constant factor of ‘0,’ a decimal shift. This observation was
+implemented in both the 1961 and 1973 computations listed in Figure 4.
+
+Mathematical landmarks in the life of Pi. The irrationality of π was first shown by Lambert in 1761
+using continued fractions [? 63]. This is a good idea since a number α has an eventually repeating
+non-terminating simple continued fraction if and only if α2 is rational, as made rigorous in 1794 by
+Legendre. Legendre conjectured that π is non algebraic7 , that is, that π is transcendental. Unfortunately
+all the pretty continued fractions for π are not simple [? 63, 70, 83]. In [? 63] Lange examines various
+proofs of
+
+                                                    12  32  52  72
+                                       π =3+                          .                                              (12)
+                                                    2 + 2 + 2 + 2 ···
+   7 It can be argued that he was anticipated by Maimonides (the Rambam, 1135–1204) [81].
+
+
+
+
+January 2014]                                       PI IN THE MONTHLY                                                   5
+Mathematical Assoc. of America           American Mathematical Monthly 121:1        February 10, 2015   2:47 p.m.     31415v12.tex   page 6
+
+
+
+
+   Legendre was validated when in 1882 Lindemann proved π transcendental. He did this by extending
+Hermite’s 1873 proof of the transcendence of e. There followed a spate of simplifications by Weierstrass
+in 1885, Hilbert in 1893, and many others. Oswald Veblen’s article [18], written only ten years later, is
+a lucid description of the topic by one of the leaders of the early 20th century American mathematical
+community.8 A 1939 proof of the transcendence of π by Ivan Niven [14] is reproduced exactly in
+Appendix A since it remains entirely appropriate for a class today.
+   We next reproduce our personal favorite M ONTHLY proof of the irrationality of π . All such proofs
+eventually arrive at a putative integer that must lie strictly between zero and one.
+Theorem 1 (Breusch [26]). π is irrational.
+Proof. Assume π = a/b with a and b integers. Then, with N = 2a, sin N = 0, cos N = 1, and
+cos(N/2) = ±1. If m is zero or a positive integer, then
+                              ∞
+                              X                               x2k+1
+                  Am (x) ≡              (−1)k (2k + 1)m               = Pm (x) cos x + Qm (x) sin x
+                                  k=0
+                                                            (2k + 1)!
+
+where Pm (x) and Qm (x) are polynomials in x with integral coefficients. (The proof follows by in-
+duction on m : Am+1 = xdAm /dx, and A0 = sin x.) Thus Am (N ) is an integer for every positive
+integer m.
+   If t is any positive integer, then
+                            ∞
+                            X             (2k + 1 − t − 1)(2k + 1 − t − 2) · · · (2k + 1 − 2t) 2k+1
+               Bt (N ) ≡          (−1)k                                                       N
+                            k=0
+                                                              (2k + 1)!
+                            ∞
+                            X             (2k + 1)t − b1 (2k + 1)t−1 + · · · ± bt 2k+1
+                        =         (−1)k                                          N
+                            k=0
+                                                       (2k + 1)!
+                        = At (N ) − b1 At−1 (N ) + · · · ± bt A0 (N ).
+
+Since all the bi are integers, Bt (N ) must be an integer too. Break the sum for Bt (N ) into the three
+pieces
+                                                [(t−1)/2]      t−1                ∞
+                                                  X            X                  X
+                                                        ,                 , and         .
+                                                  k=0       k=[(t+1)/2]           k=t
+
+
+In the first sum, the numerator of each fraction is a product of t consecutive integers, therefore it is
+divisible by t!, and hence by (2k + 1)! since 2k + 1 ≤ t. Thus each term of the first sum is an integer.
+Each term of the second sum is zero. Thus the third sum must be an integer, for every positive integer
+t.
+   This third sum is
+         ∞
+         X                  (2k − t)!
+               (−1)k                       N 2k+1
+         k=t
+                       (2k + 1)!(2k − 2t)!
+    8 He was also nephew of Thorstein Veblen, one of the founders of sociology and originator of the term ‘conspicuous consump-
+
+tion.’
+
+
+6                                 c THE MATHEMATICAL ASSOCIATION OF AMERICA                                         [Monthly 121
+Mathematical Assoc. of America       American Mathematical Monthly 121:1   February 10, 2015   2:47 p.m.       31415v12.tex   page 7
+
+
+
+
+                                                    (t + 1)(t + 2) N 2
+                                              
+                                 t!
+                                 t       2k+1
+                      = (−1)           N        1−
+                             (2t + 1)!             (2t + 2)(2t + 3) 2!
+                                                  (t + 1)(t + 2)(t + 3)(t + 4) N 4
+                                                                                                       
+                                              +                                     − ···                  .
+                                                (2t + 2)(2t + 3)(2t + 4)(2t + 5) 4!
+
+   Let S(t) stand for the sum in the parenthesis. Certainly
+
+                                                               N2
+                                        |S(t)| < 1 + N +          + · · · = eN .
+                                                               2!
+Thus the whole expression is absolutely less than
+
+                                     t!               N 2t+1
+                                           N 2t+1 eN < t+1 eN < (N 2 /t)t+1 eN ,
+                                 (2t + 1)!             t
+which is less than 1 for t > t0 .
+  Therefore S(t) = 0 for every integer t > t0 . But this is impossible, because
+
+                                             1 N2    1 N4
+                      lim S(t) = 1 −           ·   +   ·   − · · · = cos(N/2) = ±1.
+                     t→∞                     22 2!   24 4!
+   A similar argument shows that the natural logarithm of a rational number must be irrational. From
+log(a/b) = c/d would follow that ec = ad /bd = A/B . Then
+                                       ∞
+                                       X (k − t − 1)(k − t − 2) · · · (k − 2t)
+                                  B·                                                 ck
+                                       k=0
+                                                               k!
+
+would have to be an integer for every positive integer t, which leads to a contradiction.
+   Irrationality measures, denoted µ(α), as described in [83] seem not to have seen much attention in
+the M ONTHLY. The irrationality measure of a real number is the infimum over µ > 0 such that the
+inequality
+
+                                                           p   1
+                                                      α−     ≤ µ
+                                                           q  q
+has at most finitely many solutions in p ∈ Z and q ∈ N . Currently, the best irrationality measure
+known for π is 7.6063. For π 2 it is 5.095412, and for log 2 it is 3.57455391. For every rational num-
+ber the irrationality measure is 1 and the Thue-Siegel-Roth theorem states that if α is a real algebraic
+irrational then µ(α) = 2. Indeed, almost all real numbers have an irrationality measure of 2 and tran-
+scendental numbers have irrationality measure 2P    or greater. For example, the transcendental number e
+has µ(e) = 2 while Liouville numbers such as n≥0 1/10n! are precisely those numbers having in-
+finite irrationality measure. The fact that µ(π) < ∞ (equivalently π is not a Louisville number) was
+first proved by Mahler [85] in 1953.9 This fact does figure in the solution of many M ONTHLY problems
+over the years; for instance, it lets one estimate how far sin(n) is from zero.
+   9 He showed µ(π) ≤ 42. Douglas Adams would be pleased. The entire Mahler Archive is on line at http://carma.
+
+newcastle.edu.au/mahler/.
+
+
+January 2014]                                      PI IN THE MONTHLY                                                     7
+Mathematical Assoc. of America       American Mathematical Monthly 121:1          February 10, 2015    2:47 p.m.     31415v12.tex     page 8
+
+
+
+
+   The Riemann zeta function10 is defined for s > 1 by ζ(s) = n≥1 1/ns . The Basel problem, first
+                                                              P
+
+posed by Pietro Mengoli in 1644, which asked for the evaluation of ζ(2) = n≥1 1/n2 , was pop-
+                                                                            P
+ularized by the Bernoullis, who came from Basel in Switzerland, and hence the name. In 1735, all
+even values of ζ were evaluated by Euler. He argued that sin(πx) could be thought of as an infinite
+polynomial and so
+                                                          ∞ 
+                                                               x2
+                                                                  
+                                              sin(πx)    Y
+                                                      =π     1− 2 ,                                                          (13)
+                                                 x       n=1
+                                                               n
+
+since both sides have the same zeros and value at zero. Comparing the coefficients of the Taylor series
+of both sides of (13) establishes that ζ(2) = π 2 /6 and then one recursively can determine a closed
+form (involving Bernoulli polynomials). In particular, ζ(4) = π 4 /90, ζ(6) = π 6 /945, and ζ(8) =
+π 8 /9450 and so on. By contrast, ζ(3) was only proven irrational in the late 1970s and the status of
+ζ(5) is unsettled – although every one who has thought about this knows it is irrational. It is a nice
+exercise to confirm the values of ζ(4), ζ(6) from (13). A large number of the papers in this collection
+centre on the Basel problem and its extensions; see [? 58, ? 73, 50, 72]. An especially nice accounting is
+in [43]. As is discussed in [? 24, 46], it is striking how little more is known about the number–theoretic
+structure of π .
+
+Algorithmic high spots in the life of Pi. In the large, only three methods have been used to make
+significant computations of π : before 1700 by Archimedes’ method, between 1700 and 1980 using
+calculus methods (usually based on the arctangent’s Maclaurin series and Machin formulas), and since
+1980 using spectacular series or iterations both based on elliptic integrals and the arithmetic-geometric
+mean. The progress of this multi-century project is shown in Figures 2, 4, and 5. If plotted on a log
+linear scale, the records line up well, especially in Figure 5, which neatly tracks Moore’s law.
+
+                            Name                                              Year            Digits
+                            Babylonians                                    2000? BCE            1
+                            Egyptians                                      2000? BCE            1
+                            Hebrews (1 Kings 7:23)                          550? BCE            1
+                            Archimedes                                      250? BCE            3
+                            Ptolemy                                            150              3
+                            Liu Hui                                            263              5
+                            Tsu Ch’ung Chi                                    480?              7
+                            Al-Kashi                                          1429             14
+                            Romanus                                           1593             15
+                            van Ceulen (Ludolph’s number)                     1615             35
+
+                                              Figure 2. Pre-calculus π calculations
+
+
+   The ‘post-calculus’ era was made possible by the simultaneous discovery by Eugene Salamin and
+Richard Brent in 1976 of identities – actually known to Gauss but not recognised for their value [? 24,
+37, 82] – that lead to the following two illustrative reduced complexity algorithms.
+  10 As expressed in Stigler’s law of eponymy, discoveries are often named after later researchers, but in Euler’s case he needs no
+
+more glory.
+
+
+8                              c THE MATHEMATICAL ASSOCIATION OF AMERICA                                           [Monthly 121
+Mathematical Assoc. of America      American Mathematical Monthly 121:1         February 10, 2015     2:47 p.m.   31415v12.tex   page 9
+
+
+
+
+                                                        √
+Quadratic Algorithm (Salamin-Brent). Set a0 = 1, b0 = 1/ 2, and s0 = 1/2. Calculate
+
+                      ak−1 + bk−1                                          p
+              ak =                           (Arithmetic),         bk =        ak−1 bk−1        (Geometric),             (14)
+                           2
+                                                                                             2a2k
+              ck = a2k − b2k ,         sk = sk−1 − 2k ck          and compute pk =                .                      (15)
+                                                                                              sk
+Then pk converges quadratically to π . Note the similarity between the arithmetic-geometric mean
+iteration (14) (which for general initial values converges quickly to a non-elementary limit), and the out-
+of-kilter harmonic-geometric mean iteration (1) (which in general converges slowly to an elementary
+limit), and which is an arithmetic-geometric iteration in the reciprocals (see [82]).
+   Each iteration of the Brent-Salamin algorithm doubles the correct digits. Successive iterations pro-
+duce 1, 4, 9, 20, 42, 85, 173, 347, and 697 good decimal digits of π , and take log N operations to
+compute N digits. Twenty-five iterations compute π to over 45 million decimal digit accuracy. A dis-
+advantage is that each of these iterations must be performed to the precision of the final result. Likewise,
+we have the following.
+                                                √          √
+Quartic Algorithm (The Borweins). Set a0 = 6 − 4 2 and y0 = 2 − 1. Iterate
+
+             1 − (1 − yk4 )1/4
+   yk+1 =                                and       ak+1 = ak (1 + yk+1 )4 − 22k+3 yk+1 (1 + yk+1 + yk+1
+                                                                                                    2
+                                                                                                        ).
+             1 + (1 − yk4 )1/4
+
+Then 1/ak converges quartically11 to π . Note that only the power of 2 used in ak depends on k .
+Twenty five iterations yield an algebraic number that agrees with π to in excess of a quadrillion digits.
+This iteration is nicely derived in [56].
+  As charmingly detailed in [? 21], see also [? 47, 82], Ramanujan discovered that
+                                        √ ∞
+                                 1     2 2 X (4k)! (1103 + 26390k)
+                                   =                                    .                           (16)
+                                π     9801 k=0         (k!)4 3964k
+
+Each term of this series produces an additional eight correct digits in the result. When Gosper used this
+formula to compute 17 million digits of π in 1985, and it agreed to many millions of places with the
+prior estimates, this concluded the first proof of (16). As described in [? 24], this computation can be
+shown to be exact enough to constitute a bona fide proof! Actually, Gosper first computed the simple
+continued fraction for π , hoping to discover some new things in its expansion, but found none. At the
+time of this writing, 500 million terms of the continued fraction for π have been computed by Neil
+Bickford (then a teenager) without shedding light on whether the sequence is unbounded (see [77]).
+   G.N. Watson, on looking at various of Ramanujan’s formulas such as (16), reports the following
+sensations [86]:
+
+   ...a thrill which is indistinguishable from the thrill I feel when I enter the Sagrestia Nuovo of the Capella Medici
+   and see before me the austere beauty of the four statues representing ‘Day’, ‘Night’, ‘Evening’, and ‘Dawn’ which
+   Michelangelo has set over the tomb of Guiliano de‘Medici and Lorenzo de‘Medici. – G. N. Watson, 1886–1965.
+  11 A fourth-order iteration might be a compound of two second-order ones; this one cannot be so decomposed.
+
+
+
+
+January 2014]                                      PI IN THE MONTHLY                                                        9
+Mathematical Assoc. of America          American Mathematical Monthly 121:1   February 10, 2015   2:47 p.m.     31415v12.tex   page 10
+
+
+
+
+   Soon after Gosper did his computation, David and Gregory Chudnovsky found the following    √ even
+more rapidly convergent variation of Ramanujan’s formula. It is a consequence of the fact that −163
+corresponds to an imaginary quadratic field with class number one:
+                                         ∞
+                                 1      X   (−1)k (6k)! (13591409 + 545140134k)
+                                   = 12                                         .                                      (17)
+                                 π      k=0
+                                                   (3k)! (k!)3 6403203k+3/2
+
+Each term of this series produces an extraordinary additional 14 correct digits. Note that in both (16)
+and (17) one computes a rational series and has a single multiplication by a surd to compute at the end.
+
+Some less familiar themes While most of the articles in our collection fit into one of the big themes
+(irrationality [57] , transcendence, arctangent formulas, Euler’s product for sin x, evaluation of ζ(2), π
+in other cultures) there are of course some lovely sporadic examples. These include the following.
+ • Spigot Algorithms, which drip off one more digit at a time for π and use only integer arithmetic
+   [? 71, 54]. As described in [? 44], the first spigot algorithm was discovered for e. While the ideas are
+   simple, the specifics for π need some care; we refer to Rabinowitz and Wagon [? 71] for the carefully
+   explained details.
+ • Series for π · e and π/e [35]. Melzack, then at Bell Labs, proved12 that
+
+
+                                                        2N                    n+1
+                                                                2 (−1)               n
+                                                                  
+                                                π       Y
+                                                  = lim      1+                                                        (18)
+                                                2e N →∞ n=1     n
+                                                     2N  +1                     n
+                                                                 2 (−1) n
+                                                                   
+                                         6            Y
+                                            = lim            1+             .                           (19)
+                                        πe N →∞ n=2              n
+                                                                    p
+      Melzak begins by showing that limn→∞ V (Cn )/V (Sn ) = 2/(πe), where Sn is the n-sphere and
+      Cn is the inscribed n-dimensional cylinder of greatest volume. He then proves (18) and (19), saying
+      that it closely follows the derivation of Wallis’ formula, and he conjectures that (18) can be used to
+      prove that e/π is irrational. We remind the reader that the transcendentality of eπ follows from the
+      Gelfond-Schneider theorem (1934) [82] since eπ/2 = i−i , but the statuses of e + π, e/π, e · π , and
+      π e are unsettled.
+          Both (18) and (19) are very slowly convergent. To check (19), one may take logs and expand
+      the series for log, then exchange the order of summation to arrive at the more rapidly convergent
+      ‘zeta’-series
+                                      ∞        n
+                                     X   (−2)                             π e
+                                                 (α (n − 1) − 1) = log
+                                     n=2
+                                           n                                6
+
+      where α(s) := k≥0 (−1)k /(k + 1)s is the alternating zeta function, which is well defined for
+                        P
+      Re s > 0.
+          If we consider the partial products for (18), then we obtain
+
+                                                                            2N + 1 2N
+                                                                                
+                             2 2 4 4 6 6 8 8                    2N
+                               · · · · · · · ···                        ·                .
+                             1 3 3 5 5 7 7 9                  2N + 1        2N + 2
+     12 We correct errors in Melzak’s original formulas.
+
+
+
+
+10                                c THE MATHEMATICAL ASSOCIATION OF AMERICA                                   [Monthly 121
+Mathematical Assoc. of America   American Mathematical Monthly 121:1   February 10, 2015   2:47 p.m.   31415v12.tex   page 11
+
+
+
+
+   As N → ∞ the left factor yields Wallis’s product for π/2 and the right factor tends to 1/e, which
+   confirms (18). A similar partial product can be obtained from (19).
+ • A curious predictability in the error in the Gregory-Liebnitz series (6) for π/4 [? 25, 45]. In
+
+   1988, it was observed that the series
+                           ∞
+                               (−1)k+1
+                                                                                
+                          X                           1 1 1 1          1
+                   π=4                    = 4 1− + − + −                   + ··· ,              (20)
+                          k=1
+                                2k − 1                3 5 7 9 11
+
+   when truncated to 5,000,000 terms, differs strangely from the true value of π :
+   3.14159245358979323846464338327950278419716939938730582097494182230781640...
+   3.14159265358979323846264338327950288419716939937510582097494459230781640...
+           2            -2            10          -122          2770.
+   Values differ as expected from truncating an alternating series: in the seventh place a “4” that
+   should be a “6.” But the next 13 digits are correct, and after another blip, for 12 digits. Of the
+   first 46 digits, only four differ from the corresponding digits of π . Further, the “error” digits seem-
+   ingly occur with a period of 14. Such anomalous behavior begs for explanation. A great place
+   to start is by using Neil Sloane’s internet-based integer sequence recognition tool, available at
+   www.oeis.org. This tool has no difficulty recognizing the   P∞sequence of errors as twice the Euler
+   numbers. Even Euler numbers are generated by sec x = k=0 (−1)k E2k x2k /(2k)!. The first few
+   are 1, −1, 5, −61, 1385, −50521, 2702765. This discovery led to the following asymptotic expan-
+   sion:
+                                           N/2            ∞
+                                      π    X   (−1)k+1   X    E2m
+                                        −2             ≈            .                                         (21)
+                                      2    k=1
+                                                2k − 1   m=0
+                                                             N 2m+1
+
+      Now the genesis of the anomaly is clear: by chance the series had been truncated at 5,000,000
+   terms – exactly one-half of a fairly large power of ten. Indeed, setting N = 10, 000, 000 in equation
+   (21) shows that the first hundred or so digits of the truncated series value are small perturbations of
+   the correct decimal expansion for π .
+      On a hexadecimal computer with N = 167 the corresponding strings and hex errors are:
+   3.243F6A8885A308D313198A2E03707344A4093822299F31D0082EFA98EC4E6C89452821E...
+   3.243F6A6885A308D31319AA2E03707344A3693822299F31D7A82EFA98EC4DBF69452821E...
+           2            -2             A           -7A          2AD2
+   with the first being the correct value of π . (In hexadecimal or hex one uses ‘A,B, . . ., F’ to write
+   10 through 15 as single ‘hex-digits’.) Similar phenomena occur for other constants; see [80]. Also,
+   knowing the errors means we can correct them and use (21) to make Gregory’s formula computa-
+   tionally tractable.
+ • Hilbert’s inequality [? 61, 48] In its simplest incarnation, Hilbert’s inequality is
+
+                                      v
+                    ∞                 u∞          ∞
+                   X     an bm        uX X
+                                 ≤ πt        a2n     b2n    (for an , bm ∈ R, an , bm > 0)           (22)
+                  m,n=1
+                         n + m           n=1     n=1
+
+   with the assertion that the constant π is best possible. Actually 2π was the best constant that Hilbert
+   could obtain. Hardy’s inequality, which originated in his successful attempt to prove (22) early in
+
+January 2014]                                  PI IN THE MONTHLY                                                11
+Mathematical Assoc. of America     American Mathematical Monthly 121:1        February 10, 2015    2:47 p.m.     31415v12.tex   page 12
+
+
+
+
+   the development of the modern theory of inequalities, is well described in [? 61]. One could write a
+   nice book on the places in which π or ζ(2) arise as the best possible constant in an inequality.
+ • The distribution of the digits of π [46]. Single digit distribution of the first trillion digits base ten
+
+   and sixteen is shown in Figure 3. All the counts in these figures are consistent with π being random.
+
+                                                                             Hex Digit             Occurrences
+
+                                                                                  0               62499881108
+           Decimal Digit            Occurrences                                   1               62500212206
+                                                                                  2               62499924780
+                   0               99999485134                                    3               62500188844
+                   1               99999945664                                    4               62499807368
+                   2              100000480057                                    5               62500007205
+                   3               99999787805                                    6               62499925426
+                   4              100000357857                                    7               62499878794
+                   5               99999671008                                    8               62500216752
+                   6               99999807503                                    9               62500120671
+                   7               99999818723                                    A               62500266095
+                   8              100000791469                                    B               62499955595
+                   9               99999854780                                    C               62500188610
+                                                                                  D               62499613666
+                Total            1000000000000                                    E               62499875079
+                                                                                  F               62499937801
+
+                                                                                 Total       1000000000000
+                        Figure 3. Seemingly random behaviour of single digits of π in base 10 and 16
+
+
+
+
+                             Name                                  Year     Correct Digits
+                             Sharp (and Halley)                    1699                71
+                             Machin                                1706               100
+                             Strassnitzky and Dase                 1844               200
+                             Rutherford                            1853               440
+                             Shanks                                1874         (707) 527
+                             Ferguson (Calculator)                 1947               808
+                             Reitwiesner et al. (ENIAC)            1949             2,037
+                             Genuys                                1958            10,000
+                             Shanks and Wrench                     1961           100,265
+                             Guilloud and Bouyer                   1973         1,001,250
+                                             Figure 4. Calculus π calculations
+
+
+
+
+12                           c THE MATHEMATICAL ASSOCIATION OF AMERICA                                         [Monthly 121
+Mathematical Assoc. of America       American Mathematical Monthly 121:1         February 10, 2015    2:47 p.m.     31415v12.tex     page 13
+
+
+
+
+3. PI IN THIS MONTHLY: 1894-1944. This period yielded twenty papers for our selection. The
+July 1894 issue of this M ONTHLY contained the most embarrassing article on Pi [10] ever to grace the
+pages of the M ONTHLY. Flagged only by “published by the request of the author”, who indicated it
+was copyrighted in 1889, it is the origin of the famous usually garbled story of the attempt by Indiana
+in 1897 to legislate the value of π ; see [81] and [80, D. Singmaster, The legal values of Pi]. It contains
+a nonsensical geometric construction of π . So π and the M ONTHLY got off on a bad footing.
+   Luckily the future was brighter. While most early articles would meet today’s criteria for publication,
+this is not true of all. For example, [20] offers a carefully organised list of 68 consequences of Euler’s
+product for sin given in (13) with almost no English. By contrast, [6] is perhaps the first discussion of
+the efficiency of calculation in the M ONTHLY.
+
+REFERENCES FROM 1894 TO 1944
+
+  1. R. C. Archibald, Historical notes on the relation e−(π/2) = ii , Amer. Math. Monthly 28(1921) 116–121. MR1519723
+  2. J. P. Ballantine, The best (?) formula for computing π to a thousand places, Amer. Math. Monthly 46(1939), 499–501.
+     MR3168990
+  3. J. M. Barbour, A sixteenth century Chinese approximation for π , Amer. Math. Monthly 40(1933) 69–73. MR1522708
+  4. A. A. Bennett, Discussions: Pi and the factors of x2 + 1, Amer. Math. Monthly 32(1925) 375–377. MR1520736
+  5. A. A. Bennett, Two new arctangent relations for π , Amer. Math. Monthly 32(1925) 253–255. MR1520682
+  6. C. C. Camp, Discussions: A new calculation of π , Amer. Math. Monthly 33(1926) 472–473. MR1521028
+  7. J. S. Frame, A series useful in the computation of π , Amer. Math. Monthly 42(1935) 499–501. MR1523462
+  8. M. G. Gaba, A simple approximation for π , Amer. Math. Monthly 45(1938) 373–375. MR1524313
+  9. S. Ganguli, The elder Aryabhata’s value of π , Amer. Math. Monthly 37(1930) 16–22. MR1521892
+10. Edward J. Goodwin, Quadrature of the circle, Amer. Math. Monthly 1(1894) 246–248.
+11. G.B. Halsted, Pi in Asia, Amer. Math. Monthly 15(1908) 84. MR1517012
+12. W. E. Heal, Quadrature of the circle, Amer. Math. Monthly 3(1896) 41–45. MR1514010
+? 13. D. H. Lehmer, On arccotangent relations for π , Amer. Math. Monthly 45(1938) 657–664. MR1524440
+
+14. I. Niven, The transcendence of π , Amer. Math. Monthly 46(1939) 469–471. MR0000415
+15. C. Schoy, Discussions: Al-Biruni’s computation of the value of π , Amer. Math. Monthly 33(1926) 323–325. MR1520959
+16. D. E. Smith, Historical survey of the attempts at the computation and construction of π , Amer. Math. Monthly 2(1895) 348–351.
+     MR1513968
+17. R. S. Underwood, Discussions: Some results involving π , Amer. Math. Monthly 31(1924) 392–394. MR1520517
+18. O. Veblen, The transcendence of π and e, Amer. Math. Monthly 11(1904) 219–223. MR1516235
+19. J. W. Wrench, On the derivation of arctangent equalities, Amer. Math. Monthly 45(1938) 108-109. MR1524198
+20. G. B. Zerr, Summation of series, Amer. Math. Monthly 5(1898) 128–135. MR1514571
+
+
+
+4. PI IN THIS MONTHLY: 1945-1989. This second period collects 22 papers. It saw the birth and
+evolution of the digital computer with many consequences for the computation of π . Even old topics
+are new when new ideas and tools arise. A charming example is as follows.
+
+Why π is not 22/7. Did you know that
+                                              Z 1
+                                                    (1 − x)4 x4      22
+                                        0<                 2
+                                                                dx =    − π?                                                (23)
+                                                0     1+x             7
+
+
+
+
+January 2014]                                        PI IN THE MONTHLY                                                        13
+Mathematical Assoc. of America       American Mathematical Monthly 121:1           February 10, 2015   2:47 p.m.     31415v12.tex     page 14
+
+
+
+
+                          Name                                    Year             Correct Digits
+                          Miyoshi and Kanada                      1981               2,000,036
+                          Kanada-Yoshino-Tamura                   1982              16,777,206
+                          Gosper                                  1985              17,526,200
+                          Bailey                                Jan. 1986           29,360,111
+                          Kanada and Tamura                    Sep. 1986            33,554,414
+                          Kanada and Tamura                    Oct. 1986            67,108,839
+                          Kanada et. al                         Jan. 1987           134,217,700
+                          Kanada and Tamura                     Jan. 1988           201,326,551
+                          Chudnovskys                          May 1989             480,000,000
+                          Kanada and Tamura                     Jul. 1989           536,870,898
+                          Kanada and Tamura                    Nov. 1989          1,073,741,799
+                          Chudnovskys                          Aug. 1991          2,260,000,000
+                          Chudnovskys                          May 1994           4,044,000,000
+                          Kanada and Takahashi                 Oct. 1995          6,442,450,938
+                          Kanada and Takahashi                  Jul. 1997         51,539,600,000
+                          Kanada and Takahashi                 Sep. 1999         206,158,430,000
+                          Kanada-Ushiro-Kuroda                 Dec. 2002        1,241,100,000,000
+                          Takahashi                             Jan. 2009       1,649,000,000,000
+                          Takahashi                            April. 2009      2,576,980,377,524
+                          Bellard                              Dec. 2009        2,699,999,990,000
+                          Kondo and Yee                        Aug. 2010        5,000,000,000,000
+                          Kondo and Yee                        Oct. 2011        10,000,000,000,000
+                          Kondo and Yee                        Dec. 2013        12,200,000,000,000
+                                                Figure 5. Post-calculus π calculations
+
+
+
+The integrand is strictly positive on (0, 1), so the integral in (23) is strictly positive – despite claims
+that π is 22/7 which rage over the millennia.13 Why is this identity true? We have
+                    Z t                4
+                        x4 (1 − x)     1    2         4
+                                 2
+                                   dx = t7 − t6 + t5 − t3 + 4 t − 4 arctan (t) ,
+                      0   1 +  x       7    3         3
+as differentiation easily confirms, and so the Newtonian Fundamental Theorem of Calculus proves (23).
+   One can take the idea in (23) a bit further. Note that
+                                       Z 1
+                                                      4       1
+                                            x4 (1 − x) dx =      ,                               (24)
+                                         0                   630
+and we observe that
+                          Z 1                           Z 1                         Z 1
+                      1                     4                 (1 − x)4 x4                              4
+                                x4 (1 − x) dx <                           dx <               x4 (1 − x) dx.                  (25)
+                      2    0                             0      1 + x2                   0
+   13 One may still find adverts in newspapers offering such proofs for sale. A recent and otherwise very nice children’s book “Sir
+
+Cumference and the the Dragon of Pi (A Math Adventure)” published in (1999) repeats the error, and email often arrives in our
+in-boxes offering to show why things like this are true.
+
+
+14                              c THE MATHEMATICAL ASSOCIATION OF AMERICA                                          [Monthly 121
+Mathematical Assoc. of America       American Mathematical Monthly 121:1          February 10, 2015    2:47 p.m.     31415v12.tex     page 15
+
+
+
+
+Combine this with (23) and (24) to derive
+                                   223   22    1      22    1    22
+                                       <    −     <π<    −      < ,
+                                    71   7    630     7    1260   7
+and so we re-obtain Archimedes’ famous computation
+
+                                                         10     10
+                                                     3      <π<3 .                                                           (26)
+                                                         71     70
+This derivation was popularized in Eureka, a Cambridge University student journal, in 1971.14 A recent
+study of related approximations is made by Lucas [65]. It seems largely happenstance that 22/7 is an
+early continued fraction approximate to π .
+   Another less standard offering is in [33] where Y. V. Matiyasevich shows that
+                                            s
+                                              6 log fcm(F1 , . . . , Fm )
+                                π = lim                                   .                       (27)
+                                      m→∞      log lcm(u1 , . . . , um )
+
+Here ‘lcm’ is the least common multiple, ‘fcm ’is the formal common multiple (the product), and Fn is
+the n-th Fibonacci number with F0 = 0, F1 = 1, Fn = Fn−1 + Fn−2 , n ≥ 2 (without the square root
+we obtain a formula for ζ(2)).
+
+REFERENCES FROM 1945 TO 1989
+? 21. G. Almkvist, B. Berndt, Gauss, Landen, Ramanujan, the arithmetic-geometric mean, ellipses, π , and the ladies diary, Amer.
+     Math. Monthly 95(1988) 585–608. MR0966232
+22. B.H. Arnold, H. Eves, A simple proof that, for odd p > 1, arccos 1/p and π are incommensurable, Amer. Math. Monthly
+     56(1949) 20. MR0028343    √
+23. L. Baxter, Are π , e, and 2 equally difficult to compute?, Amer. Math. Monthly 88(1981) 50–51. MR1539586
+? 24. J. M. Borwein, P. B. Borwein, D. H. Bailey, Ramanujan, modular equations, and approximations to pi or how to compute one
+
+     billion digits of pi, Amer. Math. Monthly 96(1989) 201–219. MR099186
+? 25. J.M. Borwein, P.B. Borwein, K. Dilcher, Pi, Euler numbers, and asymptotic expansions, Amer. Math. Monthly 96(1989)
+
+     681–687. MR1019148
+26. R. Breusch, A proof of the irrationality of π , Amer. Math. Monthly 61(1954) 631-632. MR0064087
+? 27. W. S. Brown, Rational exponential expressions and a conjecture concerning π and e, Amer. Math. Monthly 76(1969) 28–34.
+
+     MR0234933
+28. B.R. Choe, An elementary proof of ∞               2       2
+                                          P
+                                             n=1 1/n = π /6, Amer. Math. Monthly 94(1987) 662–663. MR0935853
+29. J. D. Dixon, π is not algebraic of degree one or two, Amer. Math. Monthly 69(1962) 636. MR1531775
+30. J. Gurland, On Wallis’ formula, Amer. Math. Monthly 63(1956) 643–645. MR0082117
+31. J. Hancl, A simple proof of the irrationality of π 4 , Amer. Math. Monthly 93(1986) 374–375. MR0841114
+32. D. K. Kazarinoff, A simple derivation of the Leibnitz-Gregory series for π /4, Amer. Math. Monthly 62(1955) 726–727.
+     MR1529178
+33. Y. V. Matiyasevich, A new formula for π , Amer. Math.
+                                                        P Monthly      93(1986) 631–635. MR1712797
+34. Y. Matsuoka, An elementary proof of the formula ∞              2     2
+                                                            k=1 1/k = π /6, Amer. Math. Monthly 68(1961) 485–487. MR0123858
+35. Z. A. Melzak, Infinite products for π · e, and π/e, Amer. Math. Monthly 68(1961) 39–41. MR0122920
+36. K. Menger, Methods of presenting e and π , Amer. Math. Monthly 52(1945) 28–33. MR0011319
+37. G. Miel, An algorithm for the calculation of π , Amer.
+                                                        P∞Math. Monthly     86(1979) 694–697. MR0546184
+? 38. I. Papadimitriou, A simple proof of the formula              2     2
+                                                            k=1 1/k = π /6, Amer. Math. Monthly 80(1973) 424-425. MR0313666
+39. A. E. Parks, π , e, and other irrational numbers, Amer. Math. Monthly 93(1986) 722– 723. MR0863976
+   14 Equation (23) was on a Sydney University examination paper in the early sixties and the earliest source we know of dates from
+
+the 1940’s [65] in an article by Dalzell, who lamentably did not cite himself in [84].
+
+
+January 2014]                                        PI IN THE MONTHLY                                                         15
+Mathematical Assoc. of America       American Mathematical Monthly 121:1         February 10, 2015   2:47 p.m.     31415v12.tex     page 16
+
+
+
+
+40.   L. L. Pennisi, Expansions for π and π 2 , Amer. Math. Monthly 62(1955), 653-654. MR1529151
+41.   G. M. Phillips, Archimedes the numericalP  analyst, Amer. Math. Monthly 88(1981) 165–169. MR0619562
+42.   E.L. Stark, Another proof of the formula ∞           2     2
+                                                  k=1 1/k = π /6, Amer. Math. Monthly 76(1969) 552–553. MR1535429
+43.   K. Venkatachaliengar, Elementary proofs of the infinite product for sin z and allied formulae, Amer. Math. Monthly 69(1962)
+      541–545. MR1531736
+
+5. PI IN THIS MONTHLY: 1990-2015. In the final period we have collected 32 papers, and see no
+sign that interest in π is lessening. A new topic [? 44, 46, 51, 81] is that of BBP formulas, which can
+compute individual digits of certain constants such as π in base 2 or π 2 in bases 2 and 3 without using
+the earlier digits. The phenomenon is based on the formula
+                               ∞                                               
+                              X    1      4          2           1          1
+                         π=                   −           −           −           .                 (28)
+                              i=0
+                                  16i 8i + 1 8i + 4 8i + 5 8i + 6
+
+On August 27, 2012, Ed Karrel used (28) to extract 25 hex digits of π starting after the 1015 position.
+They are 353CB3F7F0C9ACCFA9AA215F2.15 In 1990 a billion digits had not yet been computed, see
+[80], and even now it is inconceivable to compute the full first quadrillion digits in any base.
+   Over this period the use of the computer has become more routine even in pure mathematics, and
+concrete mathematics is back in fashion. In this spirit, we record the following evaluation of ζ(2),
+which to our knowledge first appeared as an exercise in [82].
+Theorem 2 (Sophomore’s Dream). One may square term-wise to obtain
+                             ∞
+                                       !2      ∞
+                            X   (−1)n         X         1
+                                          =                   .                                                            (29)
+                           n=−∞
+                                2n + 1       n=−∞
+                                                   (2n + 1)2
+
+In particular ζ(2) = π 2 /6.
+Proof. Let
+                                    N       N                   N
+                                    X       X   (−1)m+n        X       1
+                          δN :=                              −               ,
+                                   n=−N m=−N
+                                             (2m + 1)(2n + 1) k=−N (2k + 1)2
+                     PN       (−1)n PN            (−1)m
+and note that δN = n=−N (2n+1)         n6=m=−N m−n . We leave it to the reader to show that for large
+N the inner sum N (n) is of order 1/(N − n + 1), which goes to zero.
+                        by evaluating the left side of (29) to π 2 /4 using Gregory’s formula (6) and then
+   The proof is finishedP
+                         ∞
+noting that this means n=0 1/(2n + 1)2 = π 2 /8.
+  Another potent and concrete way to establish an identity is to obtain an appropriate differential
+equation. For example, consider
+                         Z x         2               Z 1
+                                −s2                         exp(−x2 (1 + t2 ))
+                f (x) :=       e    ds   and g(x) :=                           dt.
+                            0                            0        1 + t2
+The derivative of f + g is zero: in Maple,
+  15 All processing was done on four NVIDIA GTX 690 graphics cards (GPUs) installed in CUDA; the computation took 37 days.
+
+CUDA is a parallel computing platform and programming mode developed by NVIDIA for use in their graphics processing units
+(GPUs).
+
+
+16                             c THE MATHEMATICAL ASSOCIATION OF AMERICA                                         [Monthly 121
+Mathematical Assoc. of America      American Mathematical Monthly 121:1        February 10, 2015    2:47 p.m.    31415v12.tex     page 17
+
+
+
+
+    f:=x->Int(exp(-s^2),s=0..x)^2;
+    g:=x->Int(exp(-x^2*(1+t^2))/(1+t^2),t=0..1);
+    with(student):d:=changevar(s=x*t,diff(f(x),x),t)+diff(g(x),x);
+    d:=expand(d);
+
+shows this. Hence, f (x) + g(x) is constant for 0 ≤ x ≤ ∞ and so, after justifying taking the limit at
+∞,
+                  Z ∞               2
+                                2                                               π
+                         exp(−t ) dt = f (∞) = g(0) = arctan(1) = .
+                      0                                                         4
+Thus, we have evaluated the Gaussian integral using only elementary calculus and Gregory’s formula
+                              2
+           √ of variables t = x shows that this evaluation of the normal distribution agrees with
+(6). The change
+Γ(1/2) = π .
+   In similar fashion, we may evaluate
+                                         Z ∞
+                                F (y) :=     exp(−x2 ) cos(2xy) dx
+                                                     0
+
+by checking that it satisfies the differential equation F 0 (y) + 2y F (y) = 0. We obtain
+                                                   √
+                                                      π
+                                          F (y) =       exp(−y 2 ),
+                                                     2
+                                         √
+since we have just evaluated F (0) = π/2.
+
+REFERENCES FROM 1990 TO PRESENT
+? 44. V. Adamchik, S. Wagon, A simple formula for π , Amer. Math. Monthly 104(1997) 852–855. MR1479991
+45. G. Almkvist, Many correct digits of π , revisited, Amer. Math. Monthly 104(1997) 351–353. MR1450668
+46. D.H. Bailey, J.M. Borwein, Pi day is upon us again and we still do not know if Pi is normal, Amer. Math. Monthly 121(2014)
+     191–206. MR3168990
+? 47. N.D. Baruah, B.C. Berndt, H.H. Chan, Ramanujan’s series for 1/π : a survey, Amer. Math. Monthly 116(2009) 567–587.
+
+     MR2549375
+48. J. M. Borwein, Hilbert’s inequality and Witten’s zeta-function, Amer. Math. Monthly 115(2008) 125–137. MR2384265
+49. J.S. Calcut, Gaussian integers and arctangent identities for π , Amer. Math. Monthly 116(2009) 515–530. MR2519490
+50. S.D. Casey, B.M. Sadler, Pi, the primes, periodicities, and probability, Amer. Math. Monthly 120(2013) 594–608. MR3096466
+51. H. Chan, More formulas for π , Amer. Math. Monthly 113(2006) 452–455. MR2225478
+52. D. Desbrow, On the irrationality of π 2 , Amer. Math. Monthly 97(1990) 903–906. MR1079978
+53. F. J. Dyson, N. E. Frankel, M. L. Glasser, Lehmer’s interesting series, Amer. Math. Monthly 120(2013) 116–130. MR3029937
+54. J, Gibbons, Unbounded spigot algorithms for the digits of Pi, Amer. Math. Monthly 113(2006) 318–328. MR2211758
+55. L. Gillman, π and the limit of sin α/α, Amer. Math. Monthly 98(1991) 346–349. MR1541886
+56. J. Guillera, Easy proofs of some Borwein algorithms for π , Amer. Math. Monthly 115(2008) 850–854. MR2463297
+57. J. Hofbauer, A simple proof of 1 + 1/22 + 1/32 + · · · = π 2 /6 and related identities, Amer. Math. Monthly 109(2002) 196–
+     200. MR1903157
+? 58. D. Huylebrouck, Similarities in irrationality proofs for π , ln 2, ζ(2), and ξ(3), Amer. Math. Monthly 108(2001) 222–231.
+
+     MR1834702
+59. T. W. Jones, Discovering and proving that π is irrational, Amer. Math. Monthly 117(2010) 553–557. MR2662709
+60. J. B. Keller, R. Vakil, πp , the value of π in `p , Amer. Math. Monthly 116(2009) 931–935. MR2589224
+? 61. A Kufner, L Maligrand, The prehistory of the Hardy inequality, Amer. Math. Monthly 113(2006) 715–732. MR2256532
+
+62. M. Laczkovich, On Lambert’s proof of the irrationality of π , Amer. Math. Monthly 104(1997) 439–443. MR1447977
+? 63. L. J. Lange, An elegant continued fraction for π , Amer. Math. Monthly 106(1999) 456–458. MR1699266
+
+
+
+
+January 2014]                                      PI IN THE MONTHLY                                                       17
+Mathematical Assoc. of America      American Mathematical Monthly 121:1        February 10, 2015    2:47 p.m.     31415v12.tex    page 18
+
+
+
+
+64. P. Levrie and W. Daems, Evaluating the probability integral using Wallis’s product formula for π , Amer. Math. Monthly
+     116(2009) 538–541. MR2519493
+65. S. Lucas, Approximations to π derived from integrals with nonnegative integrands, Amer. Math. Monthly 116(2009) 166–172.
+     MR2478060
+66. D. Manna, V.H. Moll, A simple example of a new class of Landen transformations, Amer. Math. Monthly 114(2007) 232–241.
+     MR2290287
+67. S. Miller, A probabilistic proof of Wallis’s formula for π , Amer. Math. Monthly 115(2008) 740–745. MR2456095
+68. H.B. Muzaffar, A new proof of a classical formula, Amer. Math. Monthly 120(2013) 355–358. MR3035128
+69. L. Pace, Probabilistically proving that ζ(2) = π 2 /6, Amer. Math. Monthly 118(2011), pp. 641-643. MR2826455
+70. T. J. Pickett and A. Coleman, Another continued fraction for π , Amer. Math. Monthly 115(2008) 930–933. MR2468553
+? 71. S. Rabinowitz, S. Wagon, A spigot algorithm for the digits of π , Amer. Math. Monthly 102(1995) 195–203. MR1317842
+
+72. J. Sondow, A faster product for and a new integral for ln π/2, Amer. Math. Monthly 112(2005) 729–734. MR216777
+? 73. J. Sondow, Double integrals for Euler’s constant and ln π/4 and an analog of Hadjicostas’s formula, Amer. Math. Monthly
+
+     112(2005) 61–65. MR2110113                                              p      √
+74. J. Sondow, New Wallis-and Catalan-type infinite products for π , e, and 2 + 2, Amer. Math. Monthly 117(2010) 912–917.
+     MR2759364
+75. J. Wästlund, An elementary proof of the Wallis product formula for π , Amer. Math. Monthly 114(2007) 914–917. MR23057
+76. L. Zhou, L. Markov, Recurrent proofs of the irrationality of certain trigonometric values, Amer. Math. Monthly 117(2010)
+     360–362. MR2647819
+
+6. CONCLUDING REMARKS.
+
+     It’s generally the way with progress that it looks much greater than it really is. – Ludwig Wittgenstein16
+
+It is a great strength of mathematics that ‘old’ and ‘inferior’ are not synonyms. As we have seen in this
+selection, many seeming novelties are actually rediscoveries. That is not at all a bad thing, but it does
+behoove authors to write “I have not seen this before” or “this is to my knowledge new” rather than
+unnecessarily claiming ontological or epistemological primacy.
+
+ACKNOWLEDGMENT. The authors thank Ivars Peterson for his help in assembling our bibliography. They also thank three
+undergraduate research students, Elliot Catt from Newcastle, Ghislain McKay and Corey Sinnamon from Waterloo. Last but not
+least, they thank two former M ONTHLY editors, Roger Horn and Dan Velleman, for extensive comments on an earlier draft of this
+paper.
+
+
+OTHER REFERENCES
+
+77. F. Aragon, D. H. Bailey, J.M. Borwein and P.B. Borwein, “Walking on real numbers.” Mathematical Intelligencer. 35 (1)
+    (2013) 42–60. DOI: http://link.springer.com/article/10.1007\%2Fs00283-012-9340-x.
+78. Jörg Arndt and Christoph Haenel, Pi Unleashed, Springer Science & Business Media, 2001.
+79. David Blatner, The Joy of Pi, Walker/Bloomsbury, US, 1997. See also http://www.joyofpi.com/thebook.html.
+80. L. Berggren, J. M. Borwein and P. B. Borwein, Pi: a Source Book, Springer-Verlag, (1997), ISBN: 0-387-94924-0. Second
+    Edition, (2000), ISBN: 0-387-94946-3. Third Edition, incorporating ”A Pamphlet on Pi”, 2004.
+81. J.M. Borwein, “The Life of Pi.” Extended and updated version of “La vita di pi greco,” volume 2 of Mathematics and Culture,
+    La matematica: Problemi e teoremi, Guilio Einaudi Editori, Turino, Italian, 2008. Pages 532–561 of From Alexandria, Through
+    Baghdad: Surveys and Studies in the Ancient Greek and Medieval Islamic Mathematical Sciences in Honor of J.L. Berggren,
+    Sidoli, Nathan; Van Brummelen, Glen (Eds.) Springer-Verlag, 2014.
+82. J.M. Borwein and P.B. Borwein, Pi and the AGM, John Wiley and Sons, 1987.
+83. J. M. Borwein, Alf van der Poorten, Jeff Shallit, and Wadim Zudilin, Neverending Fractions, Australia Mathematical Society
+    Lecture Series, Cambridge University Press. 2014.
+84. D. Dalzell, On 22/7, J. London Math. Soc. 19(1944) 133–134.
+  16 From “The Wittgenstein Controversy,” by Evelyn Toynton in the Atlantic Monthly, June 1997, pp. 28–41.
+
+
+
+
+18                             c THE MATHEMATICAL ASSOCIATION OF AMERICA                                        [Monthly 121
+Mathematical Assoc. of America       American Mathematical Monthly 121:1          February 10, 2015     2:47 p.m.     31415v12.tex     page 19
+
+
+
+
+85. K. Mahler, “On the approximation of π , Nederl. Akad. Wetensch. Proc. Ser. A. 56 = Indagationes Math. 15(1953) 30–42.
+86. G.N. Watson, “The final problem: and account of the mock theta functions.” J. London Math. Soc. 11 (1936) 55–80.
+
+
+JONATHAN M. BORWEIN is Laureate Professor in the School of Mathematical and Physical Sciences and Director of the Pri-
+ority Research Centre in Computer Assisted Research Mathematics and its Applications at the University of Newcastle. An ISI
+highly cited scientist and former Chauvenet prize winner, he has published widely in various fields of mathematics. His most re-
+cent books are Convex Functions (with John Vanderwerff, vol 109, Encyclopedia of Mathematics, Cambridge University Press,
+2010), Modern Mathematical Computation with Maple (with Matt Skerritt, Springer Undergraduate Mathematics and Technology,
+2011), Lattice Sums Then and Now (with Glasser, McPhedran, Wan and Zucker, vol 150, Encyclopedia of Mathematics, Cambridge
+University Press, 2013), and Neverending Fractions with the late Alf van der Poorten, Jeff Shallit, and Wadim Zudilin (Australian
+Mathematical Society Lecture Series, Cambridge University Press, 2014).
+Division of Mathematics, School of Mathematical and Physical Sciences, University of Newcastle, NSW 2308, Australia.
+jonathan.borwein@newcastle.edu.au
+
+
+SCOTT T. CHAPMAN received a Bachelors degree in Mathematics and Political Science from Wake Forest University, a Masters
+degree in Mathematics from the University of North Carolina at Chapel Hill, and a Ph.D. in Mathematics from the University of
+North Texas. Since 2008, he has held the titles of Professor and Scholar in Residence at Sam Houston State University in Huntsville,
+Texas. In 2012 he became Editor of the American Mathematical Monthly, and his term runs through 2016.
+Sam Houston State University, Department of Mathematics and Statistics, Box 2206, Huntsville, TX 77341-2206, USA.
+scott.chapman@shsu.edu
+
+
+
+
+A. APPENDIX: I. NIVEN - THE TRANSCENDENCE OF π [14]
+
+Among the proofs of the transcendence of e, which are in general variations and simplifications of the
+original proof of Hermite, perhaps the simplest is that of A. Hurwitz.17 His solution of the problem
+contains an ingenious device, which we now employ to prove the transcendence of π .
+   We assume that π is an algebraic number, and show that this leads to a contradiction. Since the
+product of two algebraic numbers is an algebraic number, the quantity iπ is a root of an algebraic
+equation with integral coefficients
+
+
+                                                          θ1 (x) = 0,                                                         (30)
+
+whose roots are α1 = iπ, α2 , α3 , . . . , αn . Using Euler’s relation eiπ + 1 = 0, we have
+
+                                        (eα1 + 1) (eα2 + 1) · · · (eαn + 1) = 0.                                              (31)
+
+We now construct an algebraic equation with integral coefficients whose roots are the exponents in the
+expansion of (2). First consider the exponents
+
+                                  α1 + α2 , α1 + α3 , α2 + α3 , . . . , αn−1 + αn .                                           (32)
+ 17 A. Hurwitz, Beweis der Transendenz der Zahl e, Mathematische Annalen, vol. 43, 1893, pp. 220-221 (also in his Mathematische
+
+Werke, vol. 2, pp. 134-135).
+
+
+
+
+January 2014]                                        PI IN THE MONTHLY                                                          19
+Mathematical Assoc. of America   American Mathematical Monthly 121:1       February 10, 2015   2:47 p.m.     31415v12.tex   page 20
+
+
+
+
+By equation (30), the elementary symmetric functions of α1 , α2 , . . . , αn are rational numbers. Hence
+the elementary symmetric functions of the quantities (32) are rational numbers. It follows that the
+quantities (32) are roots of
+
+                                                   θ2 (x) = 0,                                                      (33)
+
+an algebraic equation with integral coefficients. Similarily, the sums of the α’s taken three at a time are
+the n C3 roots of
+
+                                                   θ3 (x) = 0.                                                      (34)
+
+Proceeding in the same way, we obtain
+
+                                   θ4 (x) = 0, θ5 (x) = 0, . . . , θn (x) = 0,                                      (35)
+
+algebraic equations with integral coefficients, whose roots are the sums of the α’s taken 4, 5, · · · , n
+at a time respectively. The product equation
+
+                                          θ1 (x)θ2 (x) · · · θn (x) = 0,                                            (36)
+
+has roots that are precisely the exponents in the expansion of (31).
+
+     The deletion of zero roots (if any) from equation (36) gives
+
+                                    θ(x) = cxr + c1 xr−1 + · · · + cr = 0,                                          (37)
+
+whose roots β1 , β2 , . . . , βr are the non-vanishing exponents in the expansion of (31), and whose
+coefficients are integers. Hence (31) may be written in the form
+
+                                       eβ1 + eβ2 + · · · + eβr + k = 0,                                             (38)
+
+where k is a positive integer.
+
+     We define
+                                                                       p
+                                                     cs xp−1 {θ(x)}
+                                           f (x) =                  ,                                               (39)
+                                                         (p − 1)!
+where s = rp − 1, and p is a prime to be specified. Also, we define
+
+                          F (x) = f (x) + f (1) (x) + f (2) (x) + · · · + f (s+p+1) (x),                            (40)
+
+noting, with thanks to Hurwitz, that the derivative of e−x F (x) is −e−x f (x). Hence we may write
+                                                        Z x
+                              e−x F (x) − e0 F (0) =        −e−ξ f (ξ)dξ.
+                                                              0
+
+
+
+
+20                           c THE MATHEMATICAL ASSOCIATION OF AMERICA                                     [Monthly 121
+Mathematical Assoc. of America     American Mathematical Monthly 121:1                  February 10, 2015    2:47 p.m.   31415v12.tex   page 21
+
+
+
+
+The substitution ξ = τ x produces
+                                                                   Z 1
+                                                 x
+                                  F (x) − e F (0) = −x                     e(1−τ )x f (τ x)dτ.
+                                                                      0
+
+Let x range over the values β1 , β2 , . . . , βr and add the resulting equations. Using (38) we obtain
+                          r
+                          X                                     r
+                                                                X          Z 1
+                                 F (βj ) + kF (0) = −                 βj         e(1−τ )βj f (τ βj )dτ.                         (41)
+                           j=1                                  j=1         0
+
+
+This result gives the contradiction we desire. For we shall choose the prime p to make the left side a
+non-zero integer, and make the right side as small as we please.
+
+   By (39), we have
+                                          r
+                                          X
+                                                 f (t) = 0,      for 0 ≤ t < p.
+                                           j=1
+
+
+Also by (39) the polynomial obtained by multiplying f (x) by (p − 1)! has integral coefficients. Since
+the product of p consecutive positive integers is divisible by p!, the pth and higher derivatives of
+(p − 1)!f (x) are polynomials in x with integral coefficients divisible by p!. Hence the pth and higher
+derivatives of f (x) are polynomials with integral coefficients, each of which is divisible by p. That each
+of these coefficients is also divisible by cs is obvious from the definition (39). Thus we have shown that,
+for t ≥ p, the quantity f (t) (βj ) is a polynomial in βj of degree at most s, each of whose coefficients
+is divisible by pcs . By (37), a symmetric function of β1 , β2 , . . . , βr with integral coefficients and of
+degree at most s is an integer, provided that each coefficient is divisible by cs (by the fundamental
+theorem on symmetric functions). Hence
+                                 r
+                                 X
+                                       f (1) (βj ) = pkt ,                                          (t = p, p + 1, · · · , p + s)
+                                 j=1
+
+
+where the kt are integers. It follows that
+                                                     r
+                                                     X                    n+s
+                                                                          X
+                                                           F (βj ) = p           kt .
+                                                     j=1                   t=p
+
+
+
+
+  In order to complete the proof that the left side of (41) is a non-zero integer, we now show that
+kF (0) is an integer that is prime to p. From (39) it is clear that
+
+                            f (t) (0) = 0,                                                                  (t = 0, 1, · · · , p − 2)
+                         f (p−1) (0) = cs cpr ,
+                            f (t) (0) = pKt ,                                                       (t = p, p + 1, · · · , p + s)
+
+January 2014]                                         PI IN THE MONTHLY                                                           21
+Mathematical Assoc. of America   American Mathematical Monthly 121:1    February 10, 2015   2:47 p.m.     31415v12.tex   page 22
+
+
+
+
+where the Kt are integers. If p is chosen greater than each of k, c, cr (possible since the number of
+primes is infinite), the desired result follows from (40).
+
+     Finally, the right side of (41) equals
+                                      r                     p
+                                        1 1 {cr βj θ(τ βj )}
+                                      X  Z
+                                  −                                 e(1−r)βj dτ.
+                                      j=1
+                                          c   0      (p − 1)!
+
+This is a finite sum, each term of which may be made as small as we wish by choosing p very large,
+because
+                                                                p
+                                               {cr βj θ(τ βj )}
+                                           lim                  = 0.
+                                          p→∞      (p − 1)!
+
+
+
+
+22                           c THE MATHEMATICAL ASSOCIATION OF AMERICA                                  [Monthly 121
+

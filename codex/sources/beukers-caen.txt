@@ -1,0 +1,283 @@
+                   Consequences of Apéry’s work on ζ(3)
+
+                                        Frits Beukers
+
+                                           May 9, 2003
+
+
+1    Introduction
+At the end of the 1970’s it seemed that my fate as a young beginning research mathematician
+was closely linked with work of Roger Apéry. My first acquaintance with his work was not
+through ζ(3), but through the diophantine equation x2 + D = pn in the unknown integers
+x, n, where D, p are given integers with p prime. This happened to be my thesis subject and
+the papers [A1,A2] turned out to be two very short but relevant papers on the subject. It
+was therefore a nice surprise for me to see Apéry ”live” during the Journées Arithmetiques in
+1978 in Luminy. This surprise became excitement with Apéry’s announcement of his proof of
+ζ(3) 6∈ Q and ended in utter confusion after hearing his famous lecture.
+The ensuing history has been told in several other places in a much better way than I would
+be able to do. See [P],[MF]. Let me only say that it has been my good fortune to find a very
+simple version of the proof a few months after Apéry’s announcement, see [B1]. As is well
+known, many people, including myself, have tried to generalise this simplified proof to obtain
+irrationality of ζ(5) or some other numbers of interest, like Catalan’s constant. Ironically
+all generalisations tried so far did not give any new interesting results. Only through a
+combination of miracles such generalisations seem to work, which in practice means that we
+fall back to ζ(2) or ζ(3) again. In the early 1980’s several papers of mine have dealt with such
+                                                       P      ¡ ¢2 ¡n¢2
+generalisations and with properties of the numbers nk=0 n+k     k    k   which occur in Apéry’s
+proof. I would like to take the opportunity to give a short overview of these results in this
+paper.
+
+
+2    Irrationality
+Let us recall the plan of Apéry’s irrationality proof. Consider the recurrence relation
+
+                    (n + 1)3 un+1 = (34n3 + 51n2 + 27n + 5)un − n3 un−1
+
+The solution with starting values u0 = 1, u1 = 5 has the peculiar property that it has integral
+terms, despite the fact that at every recursion step we divide by (n + 1)3 . The n-th term is
+given by
+                                     Xn µ       ¶ µ ¶
+                                          n+k 2 n 2
+                                                        .
+                                             k      k
+                                     k=0
+
+
+
+                                                1
+We call these the Apéry numbers and denote them by an . The terms of the solution with
+starting values 0, 6 are denoted by cn . We can show that ln3 cn ∈ Z, where ln denotes the
+lowest common multiple of 1, 2, 3, . . . , n. Using the prime number theorem we can show that
+ln = O² (e(1+²)n ) for any ² > 0. Genaral theory of recurrences tells us that limn→∞ cn /an exists
+and Apéry showed that the limit is ζ(3). In fact, a more detailed analysis shows that
+                                                       √
+                                  0 < cn − an ζ(3) < ( 2 − 1)4n .
+
+Suppose ζ(3) were rational.
+                         √ Then4nwe would    have cn −an ζ(3) >> ln−3 . However, this contradicts
+the upper bound since ( 2 − 1) < e−3 . Hence ζ(3) is irrational. P
+Now consider the generating function of the Apéry numbers A(t) = ∞              n
+                                                                         n=0 an t . Because of the
+recurrence relation for the an , the function A(t) satisfies the third order differential equation
+
+        (t4 − 34t3 + t2 )y 000 + (6t3 − 153t2 + 3t)y 00 + (7t2 − 112t + 1)y 0 + (t − 5)y = 0.
+
+This differential equation turns out to be the symmetric square of a second order differential
+equation with coefficients in C(t). This basically means that the solution space of the third
+order equation is spanned, over the constants, by the squares of the second order equation.
+According to B.Dwork this observation had already been made by Apéry and the second order
+equation reads
+                                                                 1
+                      (t3 − 34t2 + t)y 00 + (2t2 − 51t + 1)y 0 + (t − 10)y = 0
+                                                                 4
+                           p
+In
+p particular,
+           P function        (A(t) is a solution of the second order equation. Let us write
+   (A(t) = ∞ n=0 nv t n . Then it is not hard to see that 4n v ∈ Z for all n and
+                                                                n
+
+                    (n + 1)2 vn+1 = (34n2 + 17n + 5/2)vn − (n − 1/2)2 vn−1
+
+for n ≥ 1. Denote the solution of the recurrence with starting values 0, 1 by wn . General
+theory of recurrences tells us that limn→∞ wn /vn exists.√Call it α. For people who are into
+the business of irrationality proving the observation that ( 2−1)4 < 1/4e2 suffices to recognize
+that our recurrence actually gives us an irrationality proof for α along the lines sketched above.
+However, this time it is not so clear what α is. We can compute it numerically up to arbitrary
+precision and the first thing I did was to compare its value with the values of ”interesting”
+numbers like Euler’s constant or Catalan’s constant. But to no avail. Later, in [B2], I was
+able to give some sort of series expansion for α. Consider the infinite product
+                                  ∞
+                                  Y                              (1 + q 3n )9/2
+                              q       (1 − q n )3 (1 − q 3n )3
+                                  n=1
+                                                                 (1 + q n )3/2
+                                        P                              P
+Denote its power series expansion by n≥1 αn q n . Then we have α = ≥1 αn /n2 . Let me be
+the first to admit that this is not an interesting number!
+Let us √ return to our second order differential equation. It has the four singularities t =
+0, (1 ± 2)4 , ∞. It is a Fuchsian equation with the following table of local exponents.
+                                        point             exponents
+                                        0    √                   0, 0
+                                        (1 ± 2)4              0, 1/2
+                                        ∞                   1/2, 1/2
+
+                                                      2
+Consider
+    √ the rational function
+                       √     x(1 − 9x)/(1 − x). It has degree 2 and ramifies above the points
+(1 ± 2)4 at x = (3 ± 2 2)/3.
+                          √ Replace t in our second order equation by x(1 − 9x)/(1 − x).
+Then the points x = (3 ± 2 2)/3 will become regular points of the new differential equation
+and the values of x above t = 0, ∞ give us four singular points of the new equation. It has
+Riemann scheme,
+                                      point    exponents
+                                      0               0, 0
+                                      1          1/2, 1/2
+                                      1/9             0, 0
+                                      ∞          1/2, 1/2
+
+Replacing y by (1 − x)1/2 y gives us a second order equation with Riemann scheme
+
+                                      point    exponents
+                                      0              0, 0
+                                      1              0, 0
+                                      1/9            0, 0
+                                      ∞              1, 1
+which reads
+
+                x(x − 1)(9x − 1)y 00 + (27x2 − 20x + 1)y 0 + (9x + .......)y = 0.
+
+This is precisely the Picard-Fuchs equation of the modular family of elliptic curves accociated
+to Γ1 (6). It is at this point that the relation of Apéry’s irrationality proof with modular
+forms becomes clear. By rephrasing everything in terms of modular forms one obtains a new
+principle where one derives irrationality results for periods of modular forms. This is the
+subject matter of the article [B2]. Unfortunately it turns out that in only a few cases all
+requirements are met to indeed produce irrationality results.
+We can also reverse the above procedure. Start with the recurrence relation
+
+                        (n + 1)2 un+1 = (11n2 + 11n + 3)un + n2 un−1
+
+which Apéry used to prove irrationality of ζ(2). In particular this recurrence has the solution
+       P     ¡ ¢2 ¡ ¢                                     P∞
+bn = nk=0 nk n+k    k . Its generating function B(x) =
+                                                                    n
+                                                            n=0 bn t satisfies the second order
+differential equation
+
+                    x(x2 + 11x − 1)y 00 + (3x2 + 22x − 1)y 0 + (x + 3)y = 0.
+
+In [B3] it is shown that this is the Picard-Fuchs equation
+                                                        √      of the modular family of elliptic
+curves corresponding to Γ1 (5). Let λ = −11/2 − 5 5. Then (1 − x/λ)B(x)2 is solution of
+a 3rd order differential equation. Then use the independent variable t = x(λx + 1)/(x − λ)
+instead of x to obtain the equation
+                             √                                  √
+          t2 (t2 − 2(124 + 55 5)t + 1)y 000 + (6t3 − (1116 + 495 5)t2 + 3t)y 00 +
+                                                 √                        √
+                            +(7t2 − (812 + 360 5)t + 1)y 0 + (t − 34 − 15 5)y = 0
+
+
+                                               3
+There is also a corresponding recurrence relation which√we prefer not √   to write down. How-
+ever,
+P     it can
+       ¡n¢ s be  used (see [B2]) to prove that 8ζ(3) − 5  5L(3, χ) 6 ∈ Q(   5), where L(s, χ) =
+   n≥1 5   /n  .
+Finally, without giving any details, the Chudnovsky’s [C] point out that there several other
+recurrences which may lead to an irrationality proof, the problem being the exact meaning of
+the irrational number. Such recurrences arise from Gauss-Manin systems of Shimura families
+of abelian surfaces having multiplication by a quaternion algebra over Q.
+
+
+3    Congruences
+Another subject, which kept me busy for some time, is that of congruences for the Apéry
+numbers an , bn defined in the previous section. Very soon after Apéry’s irrationality proof it
+was realised by several authors, in particular Chowla, Cowles and Gessel, that the numbers
+an , bn satisfy some interesting congruences. For example, for any prime p ≥ 5 we have ap−1 ≡ 1
+(mod p3 ), bp−1 ≡ 1 (mod p3 ). Later these congruences were generalised in [B4] to
+
+                        ∀ m, r ∈ N : ampr −1 ≡ ampr−1 −1        (mod p3r )
+                                     bmpr −1 ≡ bmpr−1 −1        (mod p3r )
+
+The proof of these congruences is extremely tedious and it would be nice to have a more
+conceptual proof.
+In [SB] the numbers bn are related to the zeta function of certain K3-surfaces. As a result the
+following congruences were found,
+For any m, r ∈ N with m odd and any odd prime we have
+
+                  b(mpr −1)/2 − βp b(mpr−1 −1)/2 + p2 b(mpr−2 −1)/2 ≡ 0 (mod pr )
+                                                                Q                P
+where βp is obtained from the Taylor series expansion of q ∞                4n 6
+                                                                  n=1 (1 − q ) =
+                                                                                          n
+                                                                                  n≥1 βn q . This
+is a q-series expansion of a modular of weight 3. Moreover, the modular form is a theta series
+corresponding to the quadratic form x2 + y 2 and we have βp = 0 if p ≡ 3 (mod 4) and
+βp = 4a2 − 2p if p = a2 + b2 , a odd. Numerical evidence suggests that the congruences hold
+modulo p2r instead of pr .
+The phenomenon that some congruences are true modulo higher powers than expected from
+general theory occurs at several places. For example, consider an elliptic curve E over Q given
+in its Weierstrass normal form. Let z = x/y be the local parameter at the origin of E and
+consider the series expansion of the holomorphic differential form,
+                                            ∞
+                                            X
+                                       ω=         fn z n−1 dz
+                                            n=1
+
+Then we have the so-called Atkin Swinnerton-Dyer congruences. Let p be any prime for which
+E has good reduction.
+
+                      ∀m, r : fmpr − tp fmpr−1 + pfmpr−2 ≡ 0 (mod pr )
+
+
+
+                                                  4
+                                       1 (E). In case E has ordinary reduction at p these
+where tp is the trace of Frobenius on Het
+congruences can be rephrased as
+
+                              ∀m, r : fmpr ≡ τp fmpr−1     (mod pr )
+
+where τp is the unit eigenvalue of the Frobenius map. It was shown by M.Coster and L.van
+Hamme that the congruences hold modulo p2r instead of pr if E has complex multiplication,
+see [CH] and [C] where one finds also several other references.
+Motivated by the congruences for bn I wondered if something similar holds for Apéry’s numbers
+an . After a few trials the right guess was found and using the modular interpretation of the
+an it did not take long to prove the following statement (see [B5]).
+Let
+                                ∞
+                                Y                              X
+                              q    (1 − q 2n )4 (1 − q 4n )4 =   αn q n
+                               n=1                          n≥1
+
+Then, for any m, r ∈ N, m odd we have
+
+                 a(mpr −1)/2 − αp a(mpr−1 −1)/2 + p3 a(mpr−2 −1)/2 ≡ 0   (mod pr )
+
+Numeric experiment again seems to suggest that these congruences hold modulo p2r .
+Finally let me end with a statement of which I have absolutely no idea how to prove. Write
+n is base 5. Count the total number of 1’s and 3’s in this representation. Call it q. Then 5q
+divides an . Similarly, write n in base 11. Count the total number of 5’s in this representation.
+Then 11q divides an . I would be very interested in having a proof of these statements.
+
+
+4    References
+     A1,A2 - R.Apéry, Sur une équation diophantienne, C.R.Acad. Paris, Sér A 251(1960),
+     1263-1264 and 1451-1452.
+
+     B1 - F.Beukers, A note on the irrationality of ζ(2) and ζ(3), Bull.London Math.Soc.11(1979),
+     268-272.
+
+     B2 - F.Beukers, Irrationality proofs using modular forms, Journées Arithmétiques de
+     Besan con 1985, Astérisque 147-148 (1987), 271-284
+
+     B3 - F.Beukers, Irrationality of π 2 , periods of an elliptic curve and Γ1 (5), in Proceedings
+     ”Approximations diophantiennes...”, Luminy 1982 (D.Bertrand, M.Waldschmidt eds.),
+     Progress in Mathematics, Birkhäuser (1983)
+
+     B4 - F.Beukers, Some congruences for Apéry numbers, J.Number Theory 21(1985),141-
+     155.
+
+     B5 - F.Beukers, Another congruence for the Apéry numbers, J.Number Theory 25(1987),
+     201-210.
+
+     C - M.Coster, Generalisation of a congruence of Gauss, J.Number Theory 29(1988),
+     300-310.
+
+                                                 5
+CH - M.Coster, L.van Hamme, Supercongruences for Legendre polynomials, J.Number
+Theory 38(1991), 265-286.
+
+P - A.J.van der Poorten,
+
+MF - M.Mendes-France,
+
+SB - J.Stienstra, F.Beukers, On the Picard-Fuchs equation and the formal Brauer group
+of certain elliptic K3-surfaces, Math.Ann.271(1985), 269-304.
+
+
+
+
+                                       6
+

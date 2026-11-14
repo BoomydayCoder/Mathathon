@@ -56,3 +56,13 @@ Primary reference read: R. Apéry, “Irrationalité de ζ2 et ζ3”, Astérisq
 Page 13 explicitly states the ζ3 recurrence and initial values. The rational
 function derivation above was developed independently in this session; it is
 not attributed to that short paper and its historical provenance is unresolved.
+
+## Update after reading Zudilin's original paper
+
+The arithmetic gap above is now resolved in zudilin-explained.md: write the
+unsquared function as a sum of integer residues c_k/(t+k). Squaring gives
+b_k=2c_k sum_(l!=k)c_l/(l-k), so D_n b_k is integral. Consequently
+2D_n³ B_n is integral in this note's half-normalization. The recurrence
+certificate and positive integral/decay are proved in companion notes. The
+original gap paragraph is retained as a dated record of the independent start,
+not as the current best result.
