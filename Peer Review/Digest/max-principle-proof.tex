@@ -1,61 +1,235 @@
 \documentclass[11pt]{article}
 \usepackage[a4paper,margin=24mm]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype,enumitem}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype,enumitem,booktabs}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
-\hypersetup{pdftitle={zeta(3) is irrational: a proof by a maximum principle},pdfauthor={Mathathon peer-review digest}}
+\hypersetup{pdftitle={zeta(3) is irrational: the maximum-principle proof, with a reason for every step},pdfauthor={Mathathon peer-review digest}}
 \newcommand{\Z}{\mathbb Z}
 \DeclareMathOperator{\lcm}{lcm}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
+\newtheorem{proposition}[lemma]{Proposition}
+\newcommand{\q}[1]{\medskip\noindent\textbf{#1}}
 \setlist{itemsep=1pt,topsep=3pt}
-\title{$\zeta(3)$ is irrational: a proof by a maximum principle}
+\title{$\zeta(3)$ is irrational: the maximum-principle proof,\\ with a reason for every step}
 \author{Mathathon peer-review digest (Claude)}
 \date{14 November 2026}
 \begin{document}
 \maketitle
 
-\noindent This is a complete proof in five lemmas, using only sums of rational functions. Nothing is
-integrated and no asymptotic estimate is made. The first two lemmas are classical. The way sign and
-size are obtained (Lemma~\ref{lem:max}) is the point of the note; its relation to the literature is
-stated at the end. Checked by AI agents only; no human has read it.
+\noindent This note proves that $\zeta(3)=\sum_{t\ge1}t^{-3}=1.2020569\ldots$ is irrational, using only
+sums of rational functions. It replaces the three-page version of the same proof, which was correct
+but announced its objects without saying where they come from. Three things are different.
+\begin{itemize}
+\item Each object is introduced by the difficulty that calls for it (Sections 1 to 3).
+\item The recurrence is derived, not verified. Its three coefficients $(n+1)^3$, $n^3$ and
+$4(2n+1)^3$ each come out of a short computation (Section 4).
+\item The lemma on which the proof turns has a shorter proof, with no distinction of cases, and it
+now gives a bound on both sides (Section 5).
+\end{itemize}
+Sections 1 to 6 are the proof. Section 7 says what the three terms of the recurrence mean.
+Section 8 answers three questions about them: do they have a meaning, can they be constructed, are
+they special? Section 9 gives the status of every statement and the relation to the literature.
+Checked by AI agents only; no human has read it.
 
-\paragraph{Plan.} Suppose $\zeta(3)=P/Q$. We build numbers $I_n$ such that (i) $\frac12Q\,D_n^3I_n$
-is an integer, where $D_n=\lcm(1,\dots,n)$; (ii) $0<I_n\le2\zeta(3)\,33^{-n}$; (iii) $D_n<3^n$ for
-infinitely many $n$. Then a positive integer is smaller than $Q\zeta(3)(27/33)^n$, which is absurd
-for large $n$.
+\section{What has to be shown}
 
-\paragraph{The numbers.} For $n\ge0$ let
+Suppose $\zeta(3)=P/Q$ with positive integers $P,Q$. We shall contradict the fact that no integer
+lies strictly between $0$ and $1$. Write $D_n=\lcm(1,2,\dots,n)$. We build numbers
+$I_0,I_1,I_2,\dots$ with three properties.
+\begin{enumerate}[label=(\roman*)]
+\item \emph{Arithmetic.} $I_n=2\bigl(a_n\zeta(3)-b_n\bigr)$, where $a_n$ is an integer and $b_n$ is a
+rational number such that $D_n^3b_n$ is an integer.
+\item \emph{Sign and size.} $0<I_n\le2\zeta(3)\cdot33^{-n}$.
+\item \emph{Price.} $D_n<3^n$ for infinitely many $n$.
+\end{enumerate}
+Then $\frac12Q\,D_n^3I_n=D_n^3a_n\,P-D_n^3b_n\,Q$ is an integer by (i), it is positive by (ii), and
+for the $n$ of (iii) it is smaller than $Q\,\zeta(3)\,(27/33)^n$. For large $n$ it lies strictly
+between $0$ and $1$.
+
+\emph{The numbers to keep in mind.} Multiplying by $D_n^3$ is the price of clearing denominators.
+Its true size is about $e^{3n}\approx20^n$; what we can prove with little effort is $27^n$,
+infinitely often. So $I_n$ must shrink by a factor of more than $27$ at each step, and it must not
+be zero. All the difficulty is in (ii).
+
+\section{Choosing the numbers}
+
+\q{First attempt: partial sums.} Let $s_n=\sum_{k=1}^nk^{-3}$. Its denominator divides $D_n^3$, and
+$\zeta(3)-s_n$ is positive. But $\zeta(3)-s_n\approx\frac1{2n^2}$, so $D_n^3(\zeta(3)-s_n)$ is
+$3541$ for $n=5$ and $7\cdot10^7$ for $n=10$. The denominators are right and the size is hopeless.
+
+\q{What freedom is there?} Behind the partial sums is the identity
+$\sum_{t\ge1}\frac1{(t+k)^3}=\zeta(3)-s_k$. So if
 \[
-r_n(t)=\frac{(t-1)(t-2)\cdots(t-n)}{t(t+1)\cdots(t+n)},\qquad R_n(t)=r_n(t)^2,\qquad
-I_n=-\sum_{t=1}^{\infty}R_n'(t).
+F(t)=\sum_{k=0}^n\frac{A_k}{(t+k)^3}\quad\text{with integers }A_k,\qquad\text{then}\qquad
+\sum_{t\ge1}F(t)=\Bigl(\sum_kA_k\Bigr)\zeta(3)-\sum_kA_ks_k ,
 \]
-\emph{Why this function.} Its terms $\frac1{(t+k)^2}$ become $\frac1{(t+k)^3}$ after one
-differentiation, which is what $\zeta(3)=\sum t^{-3}$ needs; and its double zeros at $t=1,\dots,n$
-make the first $n$ terms of the series vanish. (The main document derives $r_n$ from an orthogonal
-polynomial; here we simply use it.) The series converges absolutely since $R_n'(t)=O(t^{-3})$.
-We write $H_k^{(j)}=\sum_{l=1}^kl^{-j}$.
+and the denominator of the last sum divides $D_n^3$ \emph{however large the $A_k$ are}. That is
+$n+1$ free integers at a fixed price. The partial sum uses them badly: $A_n=1$ and all others $0$,
+so that every term $F(t)=(t+n)^{-3}$ is positive and of size $t^{-3}$. The task is to choose the
+$A_k$ so that the terms $F(1),F(2),F(3),\dots$ are small.
+
+\q{How does a function with poles at $0,-1,\dots,-n$ become small at $1,2,3,\dots$?} By having
+zeros there. The simplest function with simple poles at $0,-1,\dots,-n$ and zeros at $1,\dots,n$ is
+\[
+r_n(t)=\frac{(1-t)(2-t)\cdots(n-t)}{t\,(t+1)\cdots(t+n)}\qquad(n\ge0;\ r_0(t)=\tfrac1t).
+\]
+(The factors are written $j-t$, not $t-j$. This changes $r_n$ by the sign $(-1)^n$ compared with the
+main document; it saves signs below and disappears on squaring.) For an integer $t>n$ every factor
+$\frac{|j-t|}{t+j}$ is less than $1$, so $0<|r_n(t)|<\frac1t$.
+
+\q{But $r_n$ has simple poles, and we need third powers.} Square it, which gives poles of order two,
+and differentiate, which gives order three:
+\[
+R_n(t)=r_n(t)^2,\qquad I_n=-\sum_{t=1}^\infty R_n'(t).
+\]
+The series converges absolutely because $R_n'(t)=O(t^{-3})$. Each of the two operations also does a
+second job.
+\begin{itemize}
+\item \emph{The derivative keeps $\zeta(2)$ out.} A general function with poles of order three also
+has terms $\frac{B_k}{(t+k)^2}$, and its sum then contains a multiple of a second unknown constant,
+$\zeta(2)=\sum t^{-2}$. For example $\sum_{t\ge1}r_1(t)^3=38-7\zeta(3)-18\zeta(2)$. For the
+derivative of a product of two $r$'s this cannot happen; the proof of Lemma~\ref{lem:arith} shows
+why.
+\item \emph{The square pays for the derivative.} Differentiating destroys a simple zero but not a
+double one. So $R_n'$ still vanishes at $t=1,\dots,n$, and the first $n$ terms of the series are
+zero. The square also makes the coefficient of $\zeta(3)$ a sum of squares, hence positive.
+\end{itemize}
+The first values are $I_0=\sum2t^{-3}=2\zeta(3)=2.404$, then $I_1=10\zeta(3)-12=0.0206$ and
+$I_2=146\zeta(3)-\frac{351}2=0.00031$.
 
 \begin{lemma}[Arithmetic]\label{lem:arith}
-$I_n=2(a_n\zeta(3)-b_n)$ with $a_n=\sum_{k=0}^n\binom nk^2\binom{n+k}k^2\in\Z$ and
-$D_n^3b_n\in\Z$. In particular $I_0=2\zeta(3)$.
+$I_n=2(a_n\zeta(3)-b_n)$, where $a_n=\sum_{k=0}^n\binom nk^2\binom{n+k}k^2$ is a positive integer
+and $D_n^3b_n$ is an integer. In particular $I_0=2\zeta(3)$.
 \end{lemma}
 \begin{proof}
-Partial fractions: $r_n(t)=\sum_{k=0}^n\frac{c_k}{t+k}$ with
-$c_k=\bigl[(t+k)r_n(t)\bigr]_{t=-k}=(-1)^{n-k}\binom nk\binom{n+k}k\in\Z$. Squaring, and using
-$\frac1{(t+k)(t+j)}=\frac1{j-k}\bigl(\frac1{t+k}-\frac1{t+j}\bigr)$ for $j\ne k$,
+Partial fractions: $r_n(t)=\sum_{k=0}^n\frac{c_k}{t+k}$, where
 \[
-R_n(t)=\sum_{k=0}^n\Bigl[\frac{c_k^2}{(t+k)^2}+\frac{e_k}{t+k}\Bigr],\qquad
-e_k=2c_k\sum_{j\ne k}\frac{c_j}{j-k}.
+c_k=\bigl[(t+k)\,r_n(t)\bigr]_{t=-k}=\frac{(k+1)(k+2)\cdots(k+n)}{(-1)^k\,k!\,(n-k)!}
+=(-1)^k\binom nk\binom{n+k}k\in\Z .
 \]
-Here $D_ne_k\in\Z$, and $\sum_ke_k=0$ because the terms $(j,k)$ and $(k,j)$ cancel. Differentiating
-and summing over $t\ge1$, with $\sum_{t\ge1}(t+k)^{-j}=\zeta(j)-H_k^{(j)}$:
+So $R_n=\sum_{k,j}\frac{c_kc_j}{(t+k)(t+j)}$ and $I_n=\sum_{k,j}c_kc_j\,\kappa(k,j)$, where
+$\kappa(k,j)=-\sum_{t\ge1}\frac{d}{dt}\frac1{(t+k)(t+j)}$. There are two kinds of terms. For $j=k$,
 \[
-I_n=2\Bigl(\sum_kc_k^2\Bigr)\zeta(3)+\Bigl(\sum_ke_k\Bigr)\zeta(2)-\sum_k\bigl[2c_k^2H_k^{(3)}+e_kH_k^{(2)}\bigr].
+\kappa(k,k)=\sum_{t\ge1}\frac2{(t+k)^3}=2\bigl(\zeta(3)-s_k\bigr).
 \]
-The middle term vanishes; $a_n=\sum c_k^2$; and $b_n=\sum_k[c_k^2H_k^{(3)}+\frac12e_kH_k^{(2)}]$
-has denominator dividing $D_n^3$.
+For $k<j$ we have $\frac1{(t+k)(t+j)}=\frac1{j-k}\bigl(\frac1{t+k}-\frac1{t+j}\bigr)$, and the
+series telescopes:
+\[
+\kappa(k,j)=\frac1{j-k}\sum_{t\ge1}\Bigl[\frac1{(t+k)^2}-\frac1{(t+j)^2}\Bigr]
+=\frac1{j-k}\sum_{l=k+1}^{j}\frac1{l^2}.
+\]
+This is a rational number, and $D_n^3\kappa(k,j)$ is an integer because $j-k\le n$ and every
+$l\le n$. Hence $I_n=2a_n\zeta(3)-2b_n$ with $a_n=\sum_kc_k^2$ and
+$b_n=\sum_kc_k^2s_k-\sum_{k<j}c_kc_j\,\kappa(k,j)$, and $D_n^3b_n\in\Z$.
 \end{proof}
+\noindent Note that $\zeta(2)$ never appeared: the mixed terms telescope to finite sums. The same
+proof applies to any product $r_nr_m$, which we shall need in Section~4.
+
+\section{The obstacle}
+
+Is $I_n$ small? Is it even different from zero? The series does not say. For $n=5$ the terms
+$-R_5'(t)$ vanish for $t\le5$, are negative for $6\le t\le30$ and positive afterwards:
+\[
+\underbrace{-1.4874139\cdot10^{-4}}_{6\le t\le30}\;+\;\underbrace{1.4874398\cdot10^{-4}}_{t>30}
+\;=\;I_5=2.59\cdot10^{-9}.
+\]
+Five leading digits cancel. There is a reason to expect cancellation: the corresponding integral,
+$-\int_1^\infty R_n'(t)\,dt=R_n(1)$, is exactly $0$ for $n\ge1$, so $I_n$ is the error made when an
+integral is replaced by a sum. But that gives neither a number nor a sign. What the series gives
+easily is only a crude bound ($|I_n|<2$, Lemma~\ref{lem:bdd}). We need a way of learning about
+$I_n$ that does not look inside the sum.
+
+\section{A recurrence, derived}
+
+\q{The idea.} Compare $I_n$ with its neighbours $I_{n\pm1}$. This is promising because $r_n$ changes
+by a simple factor when $n$ or $t$ moves by one step. Both factors are read off the definition:
+\[
+\text{(A)}\quad r_{n+1}(t)=\frac{n+1-t}{n+1+t}\;r_n(t),\qquad\qquad
+\text{(B)}\quad r_n(t+1)=\frac{t^2}{(t-n)(t+n+1)}\;r_n(t).
+\]
+(For (B): replacing $t$ by $t+1$ turns the numerator factors $1-t,\dots,n-t$ into
+$-t,1-t,\dots,n-1-t$, and the denominator factors $t,\dots,t+n$ into $t+1,\dots,t+n+1$.)
+And one kind of expression disappears on summation.
+
+\emph{Telescoping principle.} Let $g$ be a rational function with a double zero at $t=1$ and a
+finite limit as $t\to\infty$. Then $-\sum_{t\ge1}\frac d{dt}\bigl[g(t+1)-g(t)\bigr]=0$. Indeed the
+sum up to $T$ is $g'(1)-g'(T+1)$; here $g'(1)=0$, and $g'(t)=O(t^{-2})$.
+
+So we look for combinations of neighbours that have the form $g(t+1)-g(t)$.
+
+\q{Why two indices.} $I_n$ is made from the product $r_n\cdot r_n$. Changing $n$ in one factor
+produces $r_{n\pm1}\cdot r_n$. So we must allow the two factors to carry different indices:
+\[
+I_{n,m}=-\sum_{t\ge1}(r_nr_m)'(t),\qquad I_{n,n}=I_n,\qquad I_{n,m}=I_{m,n}.
+\]
+This is a table of numbers, and the $I_n$ are its diagonal. For instance
+$I_{1,0}=2\zeta(3)-2=0.4041$ and $I_{2,1}=26\zeta(3)-\frac{125}4=0.00348$.
+
+\q{Step 1: moving along a row of the table.} Try $g=(\text{polynomial})\cdot r_nr_m$. By (B), used
+for both factors, the shift $t\to t+1$ creates the denominators $(t-n)(t+n+1)$ and $(t-m)(t+m+1)$.
+The second one can be cancelled in advance, by including the factor that turns into it:
+\[
+G(t)=(t-m-1)(t+m)\;r_n(t)\,r_m(t).
+\]
+Then $G(t+1)=(t-m)(t+m+1)\,r_n(t+1)\,r_m(t+1)=t^2\,r_n(t+1)\,r_m(t)$ by (B). Since
+$(t-m-1)(t+m)=t(t-1)-m(m+1)$,
+\begin{equation}\label{G1}
+G(t+1)-G(t)=\bigl[\,t^2r_n(t+1)-t(t-1)\,r_n(t)\bigr]\,r_m(t)\;+\;m(m+1)\,r_n(t)\,r_m(t).
+\end{equation}
+The last term is a multiple of the product itself. The bracket involves $r_n$ alone, and by (B) it
+equals $t\,r_n(t)\bigl[\frac{t^3}{(t-n)(t+n+1)}-(t-1)\bigr]$. Now $t-1$ is exactly the polynomial
+part of this fraction, because $(t-1)(t-n)(t+n+1)=t^3-(n^2+n+1)t+n(n+1)$. What is left are its two
+simple poles, and the numerators are the values of $t^3$ at the poles, $n^3$ and $(-n-1)^3$, each
+divided by the distance $\pm(2n+1)$ to the other pole:
+\begin{equation}\label{pf}
+\frac{t^3}{(t-n)(t+n+1)}-(t-1)=\frac1{2n+1}\Bigl[\frac{n^3}{t-n}+\frac{(n+1)^3}{t+n+1}\Bigr].
+\end{equation}
+\emph{This is where the two cubes come from.} Finally, these two simple fractions are precisely the
+neighbours of $r_n$: by (A), $r_n-r_{n-1}=\frac{2t}{t-n}\,r_n$ and
+$r_{n+1}-r_n=-\frac{2t}{t+n+1}\,r_n$. So the bracket in \eqref{G1} is
+$\frac1{2(2n+1)}\bigl[n^3(r_n-r_{n-1})-(n+1)^3(r_{n+1}-r_n)\bigr]$, and \eqref{G1} becomes
+\begin{equation}\label{rowid}
+(n+1)^3(r_{n+1}-r_n)\,r_m-n^3(r_n-r_{n-1})\,r_m-2(2n+1)\,m(m+1)\,r_nr_m=-2(2n+1)\bigl[G(t+1)-G(t)\bigr].
+\end{equation}
+For $n\ge1$ the function $G$ has a double zero at $t=1$ (there $r_n$ vanishes, and so does either
+$r_m$ or, if $m=0$, the factor $t-m-1$), and it has a finite limit at infinity. By the telescoping
+principle, for $n\ge1$ and $m\ge0$,
+\begin{equation}\label{R}
+(n+1)^3\bigl(I_{n+1,m}-I_{n,m}\bigr)-n^3\bigl(I_{n,m}-I_{n-1,m}\bigr)=2(2n+1)\,m(m+1)\,I_{n,m}.
+\end{equation}
+
+\q{Step 2: getting back to the diagonal.} For $m=n$, equation \eqref{R} contains $I_{n+1,n}$ and
+$I_{n-1,n}$, which are next to the diagonal, not on it. So we need a relation between $r_n^2$,
+$r_{n-1}^2$ and $r_nr_{n-1}$. By (A), $r_n=(n-t)\,v$ and $r_{n-1}=(n+t)\,v$ with the same function
+$v$. Use the same device: in $g=(t+n)^2r_n^2$ the factor $(t+n)^2$ cancels in advance the poles
+which the shift would create at $t=-n-1$. By (B),
+\[
+g(t)=(n^2-t^2)^2v^2,\qquad g(t+1)=(t+n+1)^2\,r_n(t+1)^2=\frac{t^4}{(t-n)^2}\,r_n(t)^2=t^4v^2 ,
+\]
+so $g(t+1)-g(t)=n^2(2t^2-n^2)\,v^2$. On the other hand $(r_n-r_{n-1})^2=4t^2v^2$ and
+$(r_n+r_{n-1})^2=4n^2v^2$. Therefore
+\begin{equation}\label{six}
+g(t+1)-g(t)=\frac{n^2}4\Bigl[2(r_n-r_{n-1})^2-(r_n+r_{n-1})^2\Bigr]
+=\frac{n^2}4\Bigl[r_n^2+r_{n-1}^2-6\,r_nr_{n-1}\Bigr].
+\end{equation}
+For $n\ge1$, $g$ has a double zero at $t=1$ and tends to $1$ at infinity. By the telescoping
+principle,
+\begin{equation}\label{D}
+I_n+I_{n-1}=6\,I_{n,n-1}\qquad(n\ge1).
+\end{equation}
+(Check: $I_1+I_0=0.0206+2.4041=6\times0.4041$.)
+
+\q{Step 3: the binomial theorem.} Put $m=n$ in \eqref{R}, replace $I_{n+1,n}$ by
+$\frac16(I_{n+1}+I_n)$ and $I_{n-1,n}$ by $\frac16(I_n+I_{n-1})$, and multiply by $6$:
+\[
+(n+1)^3(I_{n+1}-5I_n)-n^3(5I_n-I_{n-1})=12\,(2n+1)\,n(n+1)\,I_n .
+\]
+Moving $4(n+1)^3I_n$ and $4n^3I_n$ to the right, the factor of $I_n$ there becomes
+\[
+4\bigl[(n+1)^3+n^3+3\,(n+1)\,n\,\bigl((n+1)+n\bigr)\bigr]=4\bigl((n+1)+n\bigr)^3=4(2n+1)^3 ,
+\]
+by $(p+r)^3=p^3+r^3+3pr(p+r)$. We have proved:
 
 \begin{lemma}[Recurrence]\label{lem:rec}
 For $n\ge1$,
@@ -63,82 +237,106 @@ For $n\ge1$,
 (n+1)^3\bigl(I_{n+1}-I_n\bigr)-n^3\bigl(I_n-I_{n-1}\bigr)=4(2n+1)^3\,I_n .
 \end{equation}
 \end{lemma}
-\begin{proof}
-Let $\sigma_n(t)=4(2n+1)\bigl(-2t^2+t+(2n+1)^2\bigr)$ and $\beta_n=(n+1)^3+n^3+4(2n+1)^3$. We claim
-\begin{equation}\label{cert}
-(n+1)^3R_{n+1}(t)-\beta_nR_n(t)+n^3R_{n-1}(t)=\sigma_n(t+1)R_n(t+1)-\sigma_n(t)R_n(t).
-\end{equation}
-Given \eqref{cert}, differentiate and sum over $t=1,\dots,T$: the right side telescopes to
-$(\sigma_nR_n)'(T+1)-(\sigma_nR_n)'(1)$. The last term is $0$ because $R_n$ has a double zero at
-$t=1$; the other tends to $0$ because $\sigma_nR_n$ is a rational function with a finite limit at
-infinity. So $(n+1)^3I_{n+1}-\beta_nI_n+n^3I_{n-1}=0$, which is \eqref{star}.
+\noindent Collecting the terms in $I_n$, this is
+$(n+1)^3I_{n+1}-\beta_nI_n+n^3I_{n-1}=0$ with
+\[
+\beta_n=(n+1)^3+n^3+4(2n+1)^3=(2n+1)(17n^2+17n+5),
+\]
+which is Ap\'ery's recurrence. (The earlier version of this note verified one identity containing a
+polynomial $\sigma_n$ found by solving linear equations. That identity is the combination of
+\eqref{rowid} and \eqref{six} used in Step~3.)
 
-To prove \eqref{cert}, divide by $R_n(t)$, using
-$\frac{R_{n+1}(t)}{R_n(t)}=\bigl(\frac{t-n-1}{t+n+1}\bigr)^2$,
-$\frac{R_{n-1}(t)}{R_n(t)}=\bigl(\frac{t+n}{t-n}\bigr)^2$,
-$\frac{R_n(t+1)}{R_n(t)}=\frac{t^4}{(t-n)^2(t+n+1)^2}$, and multiply by $(t-n)^2(t+n+1)^2$:
-\begin{multline*}
-(n+1)^3(t-n-1)^2(t-n)^2-\beta_n(t-n)^2(t+n+1)^2+n^3(t+n)^2(t+n+1)^2\\
-=\sigma_n(t+1)\,t^4-\sigma_n(t)\,(t-n)^2(t+n+1)^2 .
-\end{multline*}
-Both sides are polynomials in $t$ of degree at most $4$ (on the right the terms in $t^6$ and $t^5$
-cancel). So it suffices to check five zeros of the difference, counted with multiplicity. Put
-$\mu=2n+1$ and $u(t)=-2t^2+t+\mu^2$, so $\sigma_n=4\mu u$; then $u(n+1)=n\mu$, $u(-n)=(n+1)\mu$,
-$u'(n+1)=-(4n+3)$, $u'(-n)=4n+1$, and $\beta_n=\mu(17n^2+17n+5)$.
-\begin{itemize}
-\item $t=n$: both sides equal $4n^5\mu^2$. \quad $t=-n-1$: both sides equal $4(n+1)^5\mu^2$.
-\item $t=0$: left $n^2(n+1)^2[(n+1)^3+n^3-\beta_n]=-4\mu^3n^2(n+1)^2$, which is the right side.
-\item derivative at $t=n$: both sides equal $4n^4\mu(4n+1)$.
-\quad derivative at $t=-n-1$: both sides equal $-4(n+1)^4\mu(4n+3)$.\qedhere
-\end{itemize}
-\end{proof}
-\noindent\emph{Where \eqref{cert} comes from.} One asks for constants $A,B,C$ and a quadratic
-$\sigma$ with $AR_{n+1}+BR_n+CR_{n-1}=\sigma(t+1)R_n(t+1)-\sigma(t)R_n(t)$. That is five linear
-equations in six unknowns, so a solution must exist; it is unique up to scale and is the one above.
-The main document (Section~10) explains this. The only new remark is that the middle coefficient,
-usually written $(2n+1)(17n^2+17n+5)$, equals $(n+1)^3+n^3+4(2n+1)^3$.
+\section{What the recurrence says}
+
+\q{Without the right-hand side} the recurrence would read $(n+1)^3(X_{n+1}-X_n)=n^3(X_n-X_{n-1})$:
+the quantity $n^3(X_n-X_{n-1})$ does not depend on $n$. Its solutions are $X_n=\alpha+\beta s_n$,
+and the one that tends to $0$ is $\zeta(3)-s_n$. \emph{That is the first attempt, which failed.}
+(It sits in the table: for $m=0$ equation \eqref{R} has no right-hand side, and with
+$I_{0,0}=2\zeta(3)$, $I_{1,0}=2\zeta(3)-2$ it gives $I_{n,0}=2(\zeta(3)-s_n)$.) So the whole
+difference between decay like $n^{-2}$ and decay like $34^{-n}$ lies in the one term
+$4(2n+1)^3I_n$.
+
+\q{What that term does.} Solve \eqref{star} for the middle value:
+\[
+X_n=p_nX_{n+1}+q_nX_{n-1},\qquad p_n=\frac{(n+1)^3}{\beta_n},\quad q_n=\frac{n^3}{\beta_n}.
+\]
+Without the extra term we would have $p_n+q_n=1$: each $X_n$ would be a weighted average of its two
+neighbours. With it,
+\[
+p_n+q_n=\frac{n^2+n+1}{17n^2+17n+5}\le\frac1{13}\qquad(n\ge1),
+\]
+so $X_n$ is at most a thirteenth of an average of its neighbours. A sequence with this property
+cannot stay level. Take $X_0=1$. With $X_1=0.008$ the recurrence gives
+$X_2,\dots,X_6=-0.008,\ -0.16,\ -3.7,\ -91,\ -2390$. With $X_1=0.009$ it gives
+$0.0066,\ 0.13,\ 2.9,\ 73,\ 1910$. Between the two there is exactly one value,
+$X_1=5-6/\zeta(3)=0.0085558$, for which the sequence does not explode, and then it collapses:
+$1.3\cdot10^{-4},\ 2.4\cdot10^{-6},\ 4.9\cdot10^{-8},\dots$
+
+So the solutions of \eqref{star} form a plane ($X_0$ and $X_1$ are free), and all of them except
+one line explode. If we know that $I_n$ does not explode, we know which solution it is, and its
+sign and size can be read off the recurrence. ``Does not explode'' is a very weak statement, and
+it can be proved crudely.
 
 \begin{lemma}[Boundedness]\label{lem:bdd}
 $|I_n|<2$ for $n\ge1$.
 \end{lemma}
 \begin{proof}
-For integers $t>n$: $0<r_n(t)<\frac1t$, since each factor $\frac{t-j}{t+j}$ is less than $1$. And
-$R_n'=2R_n\varphi_n$ with $\varphi_n(t)=\sum_{j=1}^n\frac1{t-j}-\sum_{j=0}^n\frac1{t+j}$, a difference
-of two positive numbers each at most $n$. As $R_n'(t)=0$ for $t\le n$,
-$|I_n|\le2n\sum_{t>n}t^{-2}<2$.
+$R_n'=2R_n\varphi_n$ with $\varphi_n(t)=\sum_{j=1}^n\frac1{t-j}-\sum_{j=0}^n\frac1{t+j}$. For an
+integer $t>n$ this is a difference of two positive numbers, each at most $n$, and $R_n(t)<t^{-2}$.
+As $R_n'(t)=0$ for $t\le n$, we get $|I_n|\le2n\sum_{t>n}t^{-2}<2$.
 \end{proof}
-
-\paragraph{The idea of the next lemma.} Read $I_{n+1}-I_n$ as a derivative. Then \eqref{star} is the
-discrete form of $(p\,u')'=q\,u$ with $p,q>0$. A solution of such an equation cannot have a positive
-maximum inside its domain: there $u'=0$ and $u''\le0$, so the left side is $\le0$ while the right
-side is positive. So a positive solution that ever turns upward keeps rising for ever. A solution
-that stays bounded has no choice: it is positive and decreasing all the way down.
 
 \begin{lemma}[Maximum principle]\label{lem:max}
-Let $(X_n)_{n\ge0}$ be a bounded real sequence with $X_0>0$ that satisfies \eqref{star}, that is,
-$(n+1)^3(X_{n+1}-X_n)-n^3(X_n-X_{n-1})=4(2n+1)^3X_n$ for $n\ge1$. Then
-$X_0>X_1>X_2>\dots>0$, and $X_n<X_{n-1}/33$ for all $n\ge1$.
+Let $(X_n)_{n\ge0}$ be a bounded real sequence that satisfies \eqref{star} for all $n\ge1$, with
+$X_0\ne0$. Then all $X_n$ have the sign of $X_0$, and for every $n\ge1$
+\[
+1+4\Bigl(2+\frac1n\Bigr)^3\;<\;\frac{X_{n-1}}{X_n}\;<\;1+\Bigl(1+\frac1n\Bigr)^3+4\Bigl(2+\frac1n\Bigr)^3 .
+\]
+In particular $|X_n|<|X_{n-1}|/33$.
 \end{lemma}
 \begin{proof}
-Put $d_n=X_{n+1}-X_n$. The equation reads $(n+1)^3d_n=n^3d_{n-1}+4(2n+1)^3X_n$ for $n\ge1$.
+Write the equation as $\beta_nX_n=(n+1)^3X_{n+1}+n^3X_{n-1}$.
 
-\emph{(a) Once up, always up.} Suppose $X_m>0$ and $d_m\ge0$ for some $m\ge0$. Then $X_{m+1}>0$, and
-the equation at $n=m+1$ gives $d_{m+1}>0$. Repeating, $d_n>0$ and $X_n\ge X_{m+1}=:c>0$ for all
-$n>m$. Then, as $n^3d_{n-1}\ge0$, we get $(n+1)^3d_n\ge4(2n+1)^3X_n\ge4(2n+1)^3c>4(n+1)^3c$, so
-$d_n>4c$ for all $n>m$: the sequence is unbounded, a contradiction.
+\emph{(1) $|X_n|<|X_{n-1}|$ for all $n\ge1$.} Suppose $|X_n|\ge|X_{n-1}|$ for some $n\ge1$. Then
+\[
+\beta_n|X_n|\le(n+1)^3|X_{n+1}|+n^3|X_{n-1}|\le(n+1)^3|X_{n+1}|+n^3|X_n| ,
+\]
+so $|X_{n+1}|\ge\frac{\beta_n-n^3}{(n+1)^3}|X_n|=\bigl[1+4\bigl(\frac{2n+1}{n+1}\bigr)^3\bigr]|X_n|\ge14\,|X_n|$.
+In particular $|X_{n+1}|\ge|X_n|$, so the same argument applies at $n+1$, then at $n+2$, and so on:
+$|X_{n+j}|\ge14^j|X_n|$ for all $j$. Since the sequence is bounded, $X_n=0$; then $X_{n-1}=0$; and
+then the equation, used at $n-1,n-2,\dots,1$, gives $X_{n-2}=\dots=X_0=0$, which is excluded.
+In particular no $X_n$ is zero, since $X_n=0$ would force $|X_{n+1}|<0$.
 
-\emph{(b) Once non-positive, always down.} Suppose $X_m>0\ge X_{m+1}$ for some $m\ge0$. Then $d_m<0$,
-and the equation at $n=m+1$ gives $(m+2)^3d_{m+1}=(m+1)^3d_m+4(2m+3)^3X_{m+1}<0$, so
-$X_{m+2}<X_{m+1}\le0$. Repeating, $d_n<0$ and $X_n\le X_{m+2}=:-c<0$ for $n\ge m+2$, and then
-$(n+1)^3d_n<-4(2n+1)^3c$ gives $d_n<-4c$: unbounded again, a contradiction.
-
-\emph{(c)} If $X_m>0$ then $X_{m+1}<X_m$ by (a) and $X_{m+1}>0$ by (b). Starting from $X_0>0$, all
-$X_n$ are positive and the sequence is decreasing.
-
-\emph{(d)} Write the equation as $n^3(X_{n-1}-X_n)=(n+1)^3(X_n-X_{n+1})+4(2n+1)^3X_n$. By (c) both
-terms on the right are positive, and $(2n+1)^3>8n^3$. Hence $n^3(X_{n-1}-X_n)>32n^3X_n$, that is,
-$X_{n-1}>33X_n$.
+\emph{(2) Sign and size.} $n^3X_{n-1}=\beta_nX_n-(n+1)^3X_{n+1}$, and by (1) the last term is smaller
+in absolute value than $(n+1)^3|X_n|<\beta_n|X_n|$. So $X_{n-1}$ has the sign of $X_n$: all signs
+are equal. Replacing $X$ by $-X$ if necessary, all $X_n$ are positive and $0<X_{n+1}<X_n$, whence
+\[
+\bigl(\beta_n-(n+1)^3\bigr)X_n\;<\;n^3X_{n-1}\;<\;\beta_nX_n .
+\]
+Divide by $n^3X_n$; note $\beta_n-(n+1)^3=n^3+4(2n+1)^3$.
 \end{proof}
+\noindent\emph{Why ``maximum principle''.} A sequence in which every term is at most the average of
+its neighbours has no interior maximum. Here $|X_n|$ is far less than that average, and the
+conclusion is stronger: $|X_n|$ cannot even stop decreasing without exploding. The proof used only
+that the middle coefficient $\beta_n$ exceeds the sum of the outer ones by a definite factor; it
+did not use the signs of the outer coefficients.
+
+\begin{center}
+\begin{tabular}{@{}rccc@{}}
+\toprule
+$n$ & guaranteed lower bound & true $I_{n-1}/I_n$ & guaranteed upper bound\\
+\midrule
+$1$ & $109$ & $116.88$ & $117$\\
+$2$ & $63.5$ & $66.81$ & $66.88$\\
+$3$ & $51.81$ & $54.14$ & $54.19$\\
+$10$ & $38.04$ & $39.34$ & $39.38$\\
+$n\to\infty$ & $33$ & $17+12\sqrt2=33.97$ & $34$\\
+\bottomrule
+\end{tabular}
+\end{center}
+(The limit $17+12\sqrt2$ of the true ratio is the classical value; it is not proved or used here.)
+
+\section{The price, and the end}
 
 \begin{lemma}[Denominators]\label{lem:lcm}
 $N!=\prod_{k=1}^{N}D_{\lfloor N/k\rfloor}$ for every $N\ge1$. Consequently $D_n<3^n$ for infinitely
@@ -147,53 +345,250 @@ many $n$.
 \begin{proof}
 A prime $p$ divides $D_m$ exactly once for each power $p^a\le m$. So it divides the product once for
 each pair $(k,a)$ with $p^a\le N/k$, that is, $\sum_a\lfloor N/p^a\rfloor$ times: as often as it
-divides $N!$. Now suppose $D_m\ge3^m$ for all $m\ge M$. For $N$ large let $L=\lfloor N/M\rfloor$; the
-factors with $k\le L$ have index at least $M$, so
+divides $N!$.
+
+Now suppose $D_m\ge3^m$ for all $m\ge M$. Then $D_m\ge3^{m-M}$ for every $m\ge1$, because for $m<M$
+the right side is less than $1$. Taking logarithms in the identity,
 \[
-N\log N\ge\log N!\ge\log3\sum_{k\le L}\Bigl\lfloor\frac Nk\Bigr\rfloor\ge
-\log3\,\Bigl(N\sum_{k\le L}\frac1k-L\Bigr)\ge\log3\cdot N\,\bigl(\log N-\log M-\tfrac1M\bigr),
+N\log N\ge\log N!\ge\log3\sum_{k=1}^N\Bigl(\Bigl\lfloor\frac Nk\Bigr\rfloor-M\Bigr)
+\ge\log3\cdot N\,\bigl(\log N-1-M\bigr),
 \]
-using $\sum_{k\le L}\frac1k\ge\log(L+1)>\log N-\log M$. Since $\log3>1$ this is false for large $N$.
+using $\lfloor N/k\rfloor>N/k-1$ and $\sum_{k\le N}\frac1k>\log N$. Since $\log3>1$, this is false
+for large $N$.
 \end{proof}
 
 \begin{theorem}
 $0<I_n\le2\zeta(3)\,33^{-n}$ for all $n\ge0$, and $\zeta(3)$ is irrational.
 \end{theorem}
 \begin{proof}
-By Lemmas \ref{lem:arith}, \ref{lem:rec} and \ref{lem:bdd}, the sequence $I_n$ is bounded, starts at
-$I_0=2\zeta(3)>0$ and satisfies \eqref{star}. Lemma~\ref{lem:max} gives $0<I_n<I_{n-1}/33$. If
-$\zeta(3)=P/Q$ with positive integers $P,Q$, then by Lemma~\ref{lem:arith} the number
-$\frac12Q\,D_n^3I_n=D_n^3a_nP-D_n^3b_nQ$ is an integer; it is positive; and for the infinitely many
-$n$ of Lemma~\ref{lem:lcm} it is less than $Q\zeta(3)\,(27/33)^n$. For large such $n$ this is less
-than $1$.
+By Lemmas \ref{lem:arith}, \ref{lem:rec} and \ref{lem:bdd}, the sequence $I_n$ is bounded, starts
+at $I_0=2\zeta(3)>0$ and satisfies \eqref{star}. Lemma~\ref{lem:max} gives $0<I_n<I_{n-1}/33$. This
+is property (ii) of Section~1; Lemma~\ref{lem:arith} is (i) and Lemma~\ref{lem:lcm} is (iii).
 \end{proof}
 
-\paragraph{Remarks.}
+\noindent\emph{How much room there is.} The price is below $27$ per step (truly about $20.1$) and
+the gain is above $33$ (truly $33.97$): $20.1<27<33<33.97$. Both estimates are crude and they still
+fit.
+
+\section{What the three terms mean}
+
+The recurrence splits the number $\beta_n=(2n+1)(17n^2+17n+5)$ into three positive parts,
+\[
+\beta_n=\underbrace{(n+1)^3}_{\text{up}}+\underbrace{n^3}_{\text{down}}+\underbrace{4(2n+1)^3}_{\text{lost}} .
+\]
+
+\q{A walker.} A walker lives on the sites $0,1,2,\dots$ At a site $n\ge1$ it steps up to $n+1$,
+steps down to $n-1$, or vanishes, with probabilities in the ratio $(n+1)^3:n^3:4(2n+1)^3$; that is,
+with probabilities $p_n$, $q_n$ and $1-p_n-q_n$. (At $n=1$ these are $\frac8{117}$, $\frac1{117}$,
+$\frac{108}{117}$; at every site the walker vanishes with probability at least $\frac{12}{13}$.)
+At $0$ it is home and stops. Let $h(n)$ be the probability that a walker starting at $n$ gets home,
+so $h(0)=1$. Looking at the first step, $h(n)=p_nh(n+1)+q_nh(n-1)$: \emph{$h$ is a bounded solution
+of \eqref{star}.}
+
+\begin{proposition}\label{prop:walker}
+Every bounded solution of \eqref{star} is $X_n=X_0\,h(n)$. In particular
+\[
+I_n=2\zeta(3)\,h(n),
+\]
+and $I_n/I_{n-1}$ is the probability $g_n$ that a walker starting at $n$ ever reaches $n-1$.
+\end{proposition}
+\begin{proof}
+All probabilities here are sums, over finite paths, of products of the numbers $p_m,q_m$. Fix
+$n\ge1$ and let $|X_m|\le M$ for all $m$. For $k\ge0$ let $\pi_k$ be the probability that the walker
+from $n$ is home within $k$ steps, and for $m\ge1$ let $w_k(m)$ be the probability that after $k$
+steps it stands at $m$ without having been home. Then
+\[
+X_n=X_0\,\pi_k+\sum_{m\ge1}w_k(m)\,X_m\qquad(k=0,1,2,\dots).
+\]
+For $k=0$ this says $X_n=X_n$. To pass from $k$ to $k+1$, replace each $X_m$ in the sum by
+$p_mX_{m+1}+q_mX_{m-1}$; this lets the walker take one more step, and the terms with $m-1=0$ join the
+first term. Each step is survived with probability at most $\frac1{13}$, so
+$\sum_mw_k(m)\le13^{-k}$ and $|X_n-X_0\pi_k|\le M\,13^{-k}$. Letting $k\to\infty$, $\pi_k\to h(n)$
+and $X_n=X_0h(n)$. Finally the walker moves one site at a time, so every path from $n$ to $0$ passes
+through $n-1$; cutting it at the first visit there gives $h(n)=g_n\,h(n-1)$.
+\end{proof}
+
+\q{Lemma~\ref{lem:max} read in this picture.} $I_n$ is positive because it is a probability, up to
+the factor $2\zeta(3)$. It decreases because the way home from $n$ leads through $n-1$. For the
+size, look at what can happen at site $n$: the walker steps down at once; or it steps up, and then
+it has to come back to $n$ (probability $g_{n+1}$) and try again; or it vanishes. So
+$g_n=q_n+p_n\,g_{n+1}\,g_n$, that is,
+\[
+g_n=\frac{n^3}{\beta_n-(n+1)^3\,g_{n+1}},\qquad\text{and since }0<g_{n+1}<1:\qquad
+\frac{n^3}{\beta_n}<g_n<\frac{n^3}{n^3+4(2n+1)^3}<\frac1{33} .
+\]
+These are the two bounds of Lemma~\ref{lem:max}. The upper bound for $g_n$ pretends that a walker
+who steps up always comes back; then only one thing matters, whether a step down comes before the
+walker vanishes, a race at odds $n^3:4(2n+1)^3$, which is less than $1:32$. The lower bound
+pretends that it never comes back, and this is nearly true, which is why the true ratios in the
+table are close to the upper bounds. For large $n$ the three probabilities tend to
+$\frac1{34},\frac1{34},\frac{32}{34}$ and the formula becomes $g=\frac1{34-g}$, whose root is
+$g=17-12\sqrt2=1/33.97$. Our $33$ is $34-1$: we replaced the chance $g$ of coming back by $1$.
+
+Two classical formulas drop out. First, $g_1=I_1/I_0=5-6/\zeta(3)$, so $\zeta(3)=\frac6{5-g_1}$, and
+unfolding $g_n$ by the displayed formula gives Ap\'ery's continued fraction
+\[
+\zeta(3)=\cfrac{6}{5-\cfrac{1}{117-\cfrac{64}{535-\cfrac{729}{1463-\cdots}}}}\,.
+\]
+Second, cutting the fraction off, that is, putting $g_N=0$, means ignoring the walkers that climb
+as high as site $N$. For $N=1,2,3$ this gives $\frac65$, $\frac{351}{292}$, $\frac{62531}{52020}$,
+which are Ap\'ery's approximations $b_N/a_N$ to $\zeta(3)$.
+
+\q{Resistors.} Join node $n-1$ to node $n$ by a resistor of resistance $1/n^3$, for
+$n=1,2,\dots$ If a current $J$ enters at node $0$, it passes through every resistor, the voltage
+falls by $J/n^3$ across the $n$th one, and the voltages are $V_0-Js_n$: these are the solutions of
+the recurrence without right-hand side, and the chain has total resistance $\sum n^{-3}=\zeta(3)$.
+Now connect every node $n\ge0$ to earth through a conductance $4(2n+1)^3$. Kirchhoff's law at node
+$n\ge1$ says that the current arriving from the left, $n^3(V_{n-1}-V_n)$, equals the current leaving
+to the right, $(n+1)^3(V_n-V_{n+1})$, plus the current leaking to earth, $4(2n+1)^3V_n$. This is
+\eqref{star}. At node $0$ the current fed in is $(V_0-V_1)+4V_0$; for $V_n=I_n$ this is
+$5I_0-I_1=12$. So for a unit current the voltages are $I_n/12$, and the resistance of the leaky
+chain, seen from node $0$, is $I_0/12=\zeta(3)/6$:
+\begin{center}
+\emph{the chain of resistors $1/n^3$ has resistance $\zeta(3)$; Ap\'ery's leaks divide it by exactly $6$.}
+\end{center}
+(We use that the bounded solution is the one realised when nothing is attached at the far end; this
+paragraph is an interpretation and no part of the proof.) The walker and the network are the same
+picture: the voltage at $n$, as a fraction of the voltage at $0$, is the chance of getting home
+from $n$.
+
+\section{Three questions about the decomposition}
+
+\q{1. Does $\beta_n=(n+1)^3+n^3+4(2n+1)^3$ have a meaning?} Yes; Section~7 gives it. It is the
+split of a total rate into up, down and lost, or of the current at a node into right, left and
+earth. It is also not a matter of taste. Any three-term recurrence can be scaled, equation by
+equation, so that its outer coefficients are one sequence $c_n$ at two consecutive places; the
+scaling is unique up to a constant factor. The recurrence then reads
+$c_n(X_{n+1}-X_n)-c_{n-1}(X_n-X_{n-1})=\ell_nX_n$, where $\ell_n$ is the middle coefficient minus
+$c_n+c_{n-1}$; it measures by how much the constant sequence fails to be a solution. Ap\'ery's
+recurrence comes in this form already, with $c_n=(n+1)^3$, and $\ell_n=4(2n+1)^3$ is positive and
+large. That $\ell_n>0$ is all the walker needs, and $\ell_n>32\,n^3$ is the number $33$. (The split
+does depend on which unknowns are used. For $I_n/a_n$ in place of $I_n$ the leak disappears
+altogether; that is Ap\'ery's own route, and it needs the integers $a_n$.)
+
+\q{2. Can it be constructed by itself?} Yes. Section~4 is such a construction, and each piece has a
+visible origin.
+\begin{center}
+\begin{tabular}{@{}lp{0.72\textwidth}@{}}
+\toprule
+piece & where it comes from\\
+\midrule
+$(n+1)^3$ and $n^3$ & the values of $t^3$ at the two poles $t=-n-1$ and $t=n$ of the shift
+factor (B); see \eqref{pf}\\[2pt]
+$2(2n+1)\,m(m+1)$ & the constant in $(t-m-1)(t+m)=t(t-1)-m(m+1)$; this is the leak along row $m$
+of the table, \eqref{R}\\[2pt]
+$6$ & $2(r_n-r_{n-1})^2-(r_n+r_{n-1})^2=r_n^2+r_{n-1}^2-6\,r_nr_{n-1}$; see \eqref{six}\\[2pt]
+$4(2n+1)^3$ & $6$ times the row leak $2(2n+1)n(n+1)$, plus $4$ times the two cubes; a cube by
+the binomial theorem\\
+\bottomrule
+\end{tabular}
+\end{center}
+Three remarks.
+\begin{itemize}
+\item \emph{The exponent of $t$ decides which constant is approximated.} With $t$ in place of $t^3$, formula
+\eqref{pf} has numerators $n$ and $n+1$ and no polynomial part. It gives
+$(n+1)(r_{n+1}-r_n)-n(r_n-r_{n-1})=-2(2n+1)\,r_n(t+1)$, which is the recurrence for $\log2$
+(Section~9). With $t^2$ the numerators are $n^2$ and $-(n+1)^2$, of opposite signs; this is the
+case of $\zeta(2)$, where the small solution alternates in sign.
+\item \emph{The leak is a pure cube only because the constant is $6$.} If \eqref{D} had a constant
+$s$ in place of $6$, Step~3 would give the leak $(6s-4)x^3+(\frac s2-3)x$ with $x=n+\frac12$. The
+term in $x$ disappears exactly for $s=6$, and then the leak is $32x^3=4(2n+1)^3$.
+\item \emph{The $6$ is forced by symmetry.} A table that satisfies \eqref{R} in both directions (in
+$n$ for each $m$, and in $m$ for each $n$) is automatically symmetric and satisfies
+$X_{0,0}+X_{1,1}=6X_{1,0}$: the joint solutions form a plane, spanned by the table of the
+coefficients of $\zeta(3)$ in the $I_{n,m}$ and the table of their rational parts. (Exact linear algebra on the boxes $0\le n,m\le N$ for $N=3,4,5$; a computation, not
+a proof for all $N$.)
+\end{itemize}
+The same $6$ appears everywhere: $17=3\cdot6-1$ and $5=6-1$ in Step~3; $\zeta(3)=6/(5-\cdots)$; the
+resistance $\zeta(3)/6$; and the rate. For the rate, go down the staircase
+$(n-1,n-1)\to(n,n-1)\to(n,n)\to(n+1,n)\to\cdots$ in the table. At the points next to the diagonal,
+\eqref{D} says $u_{k-1}-6u_k+u_{k+1}=0$ exactly, and at the diagonal points \eqref{R} with $m=n$
+says the same up to terms of order $1/n$. The roots of $\lambda^2-6\lambda+1$ are $3\pm2\sqrt2$, and
+two stairs make one step of the diagonal: $(3+2\sqrt2)^2=17+12\sqrt2$. (A heuristic for the origin
+of $33.97$, not a proof.)
+
+\emph{What this construction does not explain:} why the solution is integral with denominators
+$D_n^3$ (Lemma~\ref{lem:arith} uses the explicit function $r_n$), and why one should go to the
+diagonal at all. The answer to the second is in the numbers: along a row the entries decay only
+like a power of $n$ (row $0$ like $n^{-2}$), along the diagonal geometrically.
+
+\q{3. Is it special?} In the following sense, yes, by computer experiment (exact arithmetic,
+integrality tested for $n\le30$; these are searches in the stated ranges, not theorems).
+\begin{itemize}
+\item \emph{Keep the cubes and the shape of the leak, change its size.} For
+$(n+1)^3(u_{n+1}-u_n)-n^3(u_n-u_{n-1})=\kappa\,(n+\frac12)^3u_n$ ($n\ge0$, $u_0=1$), the solution
+consists of integers only for $\kappa=0$ ($u_n=1$) and $\kappa=32$ (Ap\'ery's $a_n$), among all
+rational $\kappa=p/q$ with $|p|\le4000$, $q\le32$ and all $\kappa=32k$ with $|k|\le20000$.
+\item \emph{Keep the cubes, allow any symmetric middle coefficient.} For
+$(n+1)^3u_{n+1}=(2n+1)(a\,n(n+1)+b)\,u_n-n^3u_{n-1}$ with integers $|a|,|b|\le400$, integer solutions
+occur only for $a=1$, $b=1+2m(m+1)$, which are the rows \eqref{R}; for $(a,b)=(17,5)$, which is
+Ap\'ery; and for the negatives of these pairs, which only change $u_n$ to $(-1)^nu_n$. So in this
+family the leak is either linear in $n$ (rows) or a pure cube (diagonal), and nothing else occurs.
+\item \emph{It is not the only recurrence that produces $\zeta(3)$.} If $n^3$ is replaced by
+$c\,n^3$, further cases appear, for instance $(a,b,c)=(12,4,16)$ and $(10,4,64)$, whose solutions
+have denominators dividing $D_n^3$ (tested for $n\le120$) and whose ratios converge to
+$\frac7{32}\zeta(3)$ and $\frac7{24}\zeta(3)$ (numerically, 30 digits). They are useless for
+irrationality. The two growth rates of a recurrence multiply to the ratio of its outer
+coefficients, here $c$; only for $c=1$ does the small solution decay as fast as the large one
+grows. For $(12,4,16)$ the rates are $23.3$ and $0.69$, and $0.69\times20>1$.
+\end{itemize}
+So what singles out Ap\'ery's recurrence is the combination: cubes on both sides \emph{with ratio
+$1$}, an integer solution, and a leak that is large. From memory, not retrieved for this note:
+searches of this kind are due to Zagier (for the $\zeta(2)$ shape) and to Almkvist and Zudilin
+(for the $\zeta(3)$ shape), who found short lists of ``sporadic'' cases; no proof that the lists
+are complete is known to us.
+
+\section{Notes}
+
 \begin{enumerate}
-\item \emph{How sharp is $33$?} The proof gives $I_{n-1}/I_n>1+4(2+\frac1n)^3$, that is $109$,
-$63.5$, $51.8$ for $n=1,2,3$. The true ratios are $116.9$, $66.8$, $54.1$, decreasing to
-$17+12\sqrt2=33.97$.
-\item \emph{What is not used:} integrals; the recurrence or the growth of the integers $a_n$; the
-identity $a_nb_{n+1}-a_{n+1}b_n=6/(n+1)^3$ of Ap\'ery's proof; a second series; the prime number
-theorem.
-\item \emph{Other constants.} The same lemma, with the corresponding recurrence, gives
-$0<y_n<y_{n-1}/5$ for the classical combinations of $1$ and $\log2$ (and $5>3$ suffices). For
-$\zeta(2)$ the small solution of the recurrence alternates in sign; the analogous argument applied
-to $(-1)^n$ times it gives a factor $11$ per step (and $11>9$ suffices). These two statements
-were found by one of the agents and checked numerically for $n\le40$; they are not proved here.
-\item \emph{Relation to the literature} (from a short search on 14 November 2026; passages read in
-the first two items). The condition that makes Lemma~\ref{lem:max} work, namely that the middle
-coefficient of Ap\'ery's recurrence exceeds the sum of the outer ones, was observed by
-A.~Mingarelli (arXiv:math/0608577), who calls the recurrence \emph{disconjugate} and identifies
-$a_n\zeta(3)-b_n$ as its recessive solution; he states that this is a restatement of Ap\'ery's proof
-and takes the growth of $a_n$ from elsewhere. The formal proof of Mahboubi and Sibut-Pinote
-(arXiv:1912.06611) contains the bound $33^n=O(a_n)$ for the integers $a_n$ and the comparison
-$27<33$. K.~Rajkumar (arXiv:1212.5881) obtains the rate from the recurrence for the combinations
-alone, using the Poincar\'e--Perron theorem. What we did not find is the elementary argument above,
-applied directly to $I_n$: it replaces the Poincar\'e--Perron step by six lines and needs nothing
-about $a_n$. The idea is therefore known; at most the packaging is new, and our search was brief.
-\item \emph{Checks.} Lemma~\ref{lem:max} was proved independently by two AI agents and read line by
-line by a third; identity \eqref{cert} was verified with $n$ symbolic; the conclusions $I_n>0$ and
-$I_n<I_{n-1}/33$ were confirmed with exact $a_n$, $b_n$ and 150-digit arithmetic for $n\le40$.
+\item \emph{The same proof for $\log2$.} Let $y_n=\sum_{t\ge1}(-1)^{t-1}r_n(t)$, so
+$y_0=\log2$. As in Lemma~\ref{lem:arith}, $y_n=A_n\log2-B_n$ with
+$A_n=\sum_k\binom nk\binom{n+k}k$ and $D_nB_n\in\Z$. The relation for $r_n$ quoted in Section~8,
+summed with the signs $(-1)^{t-1}$ (and $r_n(1)=0$), gives
+$(n+1)(y_{n+1}-y_n)-n(y_n-y_{n-1})=2(2n+1)\,y_n$ for $n\ge1$. The sequence is bounded: by (B),
+$|r_n(t)|$ increases for $n<t\le n(n+1)$ and decreases afterwards, so the alternating sum is at
+most $2\max|r_n|<2$. The proof of Lemma~\ref{lem:max} then gives $0<y_n<y_{n-1}/5$, the fates of
+the walker being in the ratio $n+1:n:2(2n+1)$. Since $D_n<3^n$ infinitely often and $3<5$, $\log2$
+is irrational. (Checked numerically for $n<60$; written here as a sketch.)
+\item \emph{$\zeta(2)$.} The classical recurrence is $(n+1)^2u_{n+1}=(11n^2+11n+3)u_n+n^2u_{n-1}$.
+Its outer coefficients have opposite signs, so there is no walker, and the small solution
+alternates. But part (1) of the proof of Lemma~\ref{lem:max} uses only absolute values, and
+$11n^2+11n+3>(n+1)^2+n^2$: a bounded solution satisfies $|X_{n-1}|>(10+\frac9n+\frac2{n^2})|X_n|$,
+and $10>9$ is what is needed against $D_n^2$. We have not written out the boundedness of the
+classical linear forms, so this is a statement about the recurrence only.
+\item \emph{What is not used:} integrals; the recurrence for the integers $a_n$ or their growth;
+the identity $a_nb_{n+1}-a_{n+1}b_n=6/(n+1)^3$ of Ap\'ery's proof; a second series; the
+Poincar\'e--Perron theorem; the prime number theorem.
+\item \emph{Relation to the literature} (from a short search on 14 November 2026). The idea is
+known; at most the packaging is ours.
+\begin{itemize}
+\item That Ap\'ery's linear forms are the smallest (``recessive'') solution of a recurrence whose
+middle coefficient exceeds the sum of the outer ones (``disconjugate'') was observed by
+A.~Mingarelli (arXiv:math/0608577; passage read). He calls this a restatement of Ap\'ery's proof
+and takes the growth of $a_n$ from elsewhere.
+\item The constant $33$, for the growth of $a_n$, and the comparison $27<33$ are in the formal
+proof of Mahboubi and Sibut-Pinote (arXiv:1912.06611; passage read).
+\item The row equation \eqref{R} is the recurrence of Ramanujan's continued fraction for
+$\sum_{k>x}k^{-3}$ at $x=m$ (Berndt, \emph{Ramanujan's Notebooks II}, Entry 32(iii)), as quoted by
+K.~Rajkumar (arXiv:1212.5881; paper read), who builds the table by a two-dimensional recurrence
+and obtains the rate from Poincar\'e's theorem. Tables of this kind go back to Ap\'ery himself.
+\item From memory, not retrieved: relations between neighbouring sums like \eqref{rowid} and
+\eqref{six} are classical (contiguous relations; Askey and Wilson, 1984); and that hitting
+probabilities are smallest solutions of such recurrences and equal voltages in a network is
+textbook material (Doyle and Snell).
+\end{itemize}
+We did not find the derivation of Section~4, the proof of Lemma~\ref{lem:max}, or
+Proposition~\ref{prop:walker} in what we read, but we did not search for them specifically.
+\item \emph{Status of the statements.} Proved here: Lemmas 1 to 5, the Theorem,
+Proposition~\ref{prop:walker} and identities \eqref{pf}, \eqref{rowid}, \eqref{six}. Computed
+exactly in a finite range: the symmetry statement and the searches of Section~8. Numerical: the
+limits $\frac7{32}\zeta(3)$, $\frac7{24}\zeta(3)$; the table of ratios. Heuristic: the staircase
+argument for $17+12\sqrt2$. Not proved here: that the true ratio tends to $17+12\sqrt2$.
+\item \emph{Checks.} Identities \eqref{pf}, \eqref{rowid}, \eqref{six} were verified with $n,m,t$
+symbolic. Equations \eqref{R}, \eqref{D} and \eqref{star} were verified exactly for $n,m\le14$ from
+the formula in the proof of Lemma~\ref{lem:arith}, treating $\zeta(3)$ as a symbol; that formula
+was compared with direct summation of the series. The bounds of Lemma~\ref{lem:max} and the
+statements of Section~7 were checked with 150-digit arithmetic for $n\le44$. The earlier three-page
+version is in the git history (commit \texttt{da189f3}).
 \end{enumerate}
 \end{document}
