@@ -10,7 +10,8 @@ and, for comparison, 'bose' s=3 (zeta(3)) and s=5.
 Output per parameter set: degree in X, cost = -log(content), logdet = log|det(X0)|, total = log|primitive poly at X0|,
 all divided by K^2.  total < 0 (growing like K^2) is what an irrationality proof needs.
 EXACT computations for finite K: evidence only.
-Usage: python3 catalan_scan.py [K]
+Usage: python3 catalan_scan.py full K [kernel]        full (N,a,h,j0) scan at this K; kernel in {cosh, chi3}
+       python3 catalan_scan.py lam kernel K1 K2 ..    only W=1, j0=0, h = lam*K for lam in 0.4..1.3
 """
 import sys, math, time
 sys.path.insert(0, '/home/user/Mathathon/research/claude/computations')
@@ -57,7 +58,7 @@ def moments_W(s, kernel, K, j0, N, a, h):
 
 
 def X0(s, kernel, prec):
-    return X0_arb(s, kernel, fmpq(1), prec)
+    return X0_arb(s, kernel, fmpq(1), prec)          # cosh: Catalan;  chi3: L(2,chi_-3)
 
 
 def one(args):
@@ -69,7 +70,7 @@ def one(args):
         return args, None
     deg = max(nz)
     cont = content(cs)
-    prec = 4000 + 120 * (K + j0 + a * N) ** 2
+    prec = 2000 + 20 * (K + j0 + a * N) ** 2
     while True:
         old = ctx.prec
         ctx.prec = prec
@@ -85,22 +86,30 @@ def one(args):
     return args, (deg, cost / K ** 2, ld / K ** 2, (ld + cost) / K ** 2)
 
 
-if __name__ == '__main__':
-    K = int(sys.argv[1]) if len(sys.argv) > 1 else 30
+def lam_scan(kernel, Ks):
+    lams = (0.4, 0.55, 0.7, 0.8, 0.9, 1.0, 1.1, 1.3)
+    jobs = [(2, kernel, K, 0, 0, 0, int(round(l * K))) for K in Ks for l in lams]
+    with Pool(4) as pool:
+        out = pool.map(one, jobs, chunksize=1)
+    print(f"# kernel {kernel}, W=1, j0=0, h = lam*K:  K h | deg cost/K^2 logdet/K^2 total/K^2")
+    for args, r in out:
+        print(f"  K={args[2]:3d} h={args[6]:3d} | deg={r[0]:3d} cost={r[1]:.4f} logdet={r[2]:.4f} total={r[3]:+.4f}")
+
+
+def full_scan(kernel, K):
     jobs = []
-    for (s, kernel) in ((2, 'cosh'),):
-        for (a, Nf) in [(0, 0)] + [(a, f) for a in (2, 4, 6, 10) for f in (0.05, 0.1, 0.2, 0.3)]:
-            N = int(round(Nf * K))
-            for lam in (0.7, 0.85, 1.0, 1.15, 1.3):
-                jobs.append((s, kernel, K, 0, N, a, int(round(lam * K))))
-        for j0f in (0.25, 0.5, 1.0):
-            for lam in (0.85, 1.0, 1.15):
-                jobs.append((s, kernel, K, int(round(j0f * K)), 0, 0, int(round(lam * K))))
+    for (a, Nf) in [(0, 0)] + [(a, f) for a in (2, 4, 6, 10) for f in (0.05, 0.1, 0.2, 0.3)]:
+        N = int(round(Nf * K))
+        for lam in (0.7, 0.85, 1.0, 1.15, 1.3):
+            jobs.append((2, kernel, K, 0, N, a, int(round(lam * K))))
+    for j0f in (0.25, 0.5, 1.0):
+        for lam in (0.85, 1.0, 1.15):
+            jobs.append((2, kernel, K, int(round(j0f * K)), 0, 0, int(round(lam * K))))
     jobs = sorted(set(jobs))
     t = time.time()
     with Pool(4) as pool:
         out = pool.map(one, jobs, chunksize=1)
-    print(f"# K={K}  functional II (cosh) for Catalan; columns: j0 N a h | deg cost/K^2 logdet/K^2 total/K^2   ({time.time() - t:.0f}s)")
+    print(f"# K={K}  kernel {kernel}; columns: j0 N a h | deg cost/K^2 logdet/K^2 total/K^2   ({time.time() - t:.0f}s)")
     best = None
     for args, r in out:
         s, kernel, K, j0, N, a, h = args
@@ -111,3 +120,11 @@ if __name__ == '__main__':
         if best is None or r[3] < best[1][3]:
             best = (args, r)
     print("# best total/K^2:", best)
+
+
+if __name__ == '__main__':
+    # usage: catalan_scan.py full K [kernel]   |   catalan_scan.py lam kernel K1 K2 ...
+    if sys.argv[1] == 'lam':
+        lam_scan(sys.argv[2], [int(x) for x in sys.argv[3:]])
+    else:
+        full_scan(sys.argv[3] if len(sys.argv) > 3 else 'cosh', int(sys.argv[2]))

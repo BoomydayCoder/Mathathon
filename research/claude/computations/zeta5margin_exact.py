@@ -12,6 +12,8 @@ determinant at ALL primes, in particular in the outer range p > K/3.
              = optimum of the class model (4.2)-(4.3) over allocations ("water filling")
   new_p    = max(out_p, wf_p)
 Claim tested: wf_p <= true_p for every prime p >= 5 with p^2 > 2.6 K + 6   (Theorem W of the report).
+Note: for p > K ('beyond') the applicable bound is 0 (Prop. 4.3); the wf column there is informational only
+(still a valid lower bound, but useless).  'small' = primes where Theorem W is not applicable.
 Nothing is claimed by this file; it only computes.     Usage: python3 zeta5margin_exact.py n
 """
 import sys, time, math

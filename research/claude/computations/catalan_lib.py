@@ -22,6 +22,11 @@ Two kernels f, any integer s >= 1 (s >= 2 for 'bose'), any rational shift alpha 
       mu_X(1/(t+n^2))     = (-1)^n (X - sum_{k<2n} chi_4(k)/k^2),  n = 1,2,...;   X0 = G (Catalan).
       [Abel-Plana for sum chi_4(n) g(n) = int_0^inf Re g(iy) / (2 cosh(pi y/2)) dy, one integration by parts]
 
+  kernel 'chi3' (s=2, alpha=1 only; L(2,chi_{-3})):
+      weight w(y) = -(2/(3 sqrt3)) y d/dy [ sinh(pi y)/sinh(3 pi y) ] > 0    (sinh(pi y)/sinh(3 pi y) = 1/(3+4 sinh^2(pi y)))
+      mu(t^e)             = (2/(3 sqrt3)) (2e+1) 3^-(2e+1) (d/dtheta)^(2e)[tan(theta/2)/2]_{theta=pi/3}   (rational)
+      mu_X(1/(t+n^2))     = X - sum_{k<3n} chi_{-3}(k)/k^2,  n = 1,2,...;   X0 = L(2,chi_{-3}).
+
 In all cases mu_{X0}(R) = int_0^infty R(y^2) w(y) dy for R with simple poles at t = -a^2 (a in alpha+N).
 (Derivation in the report; numerical verification in catalan_functional_check.py.)
 
@@ -47,7 +52,27 @@ def mu_monomial(e, s, kernel):
     if kernel == 'cosh':
         assert s == 2
         return fmpq(2 * e + 1) * fmpq(abs(int(fmpz.euler_number(2 * e))), 2 ** (2 * e + 3))
+    if kernel == 'chi3':
+        assert s == 2
+        # (2/(3 sqrt3)) (2e+1) 3^-(2e+1) * (d/dtheta)^(2e) [tan(theta/2)/2] at theta = pi/3
+        return fmpq(2 * (2 * e + 1), 3 ** (2 * e + 2)) * _tan_derivs(2 * e)
     raise ValueError(kernel)
+
+
+_TD = {}
+
+
+def _tan_derivs(k):
+    """(d/dtheta)^k [tan(theta/2)/2] at theta=pi/3, divided by sqrt(3) (k even): a rational number.
+    With u = tan(theta/2): du/dtheta = (1+u^2)/2; P_0 = u/2, P_{k+1} = P_k'(u)(1+u^2)/2; u = 1/sqrt3."""
+    if not _TD:
+        _TD['polys'] = [fmpq_poly([0, fmpq(1, 2)])]
+    P = _TD['polys']
+    while len(P) <= k:
+        P.append(P[-1].derivative() * fmpq_poly([fmpq(1, 2), 0, fmpq(1, 2)]))
+    cs = P[k].coeffs()          # odd polynomial: sum c_{2m+1} u^{2m+1}, u = 3^{-1/2}
+    # value = sum c_{2m+1} 3^{-m} / sqrt3 ; divided by sqrt3 -> sum c_{2m+1} 3^{-m-1}
+    return sum((cs[i] * fmpq(1, 3 ** ((i - 1) // 2 + 1)) for i in range(1, len(cs), 2)), fmpq(0))
 
 
 def pole_values(s, kernel, alpha, J):
@@ -57,7 +82,13 @@ def pole_values(s, kernel, alpha, J):
     S = fmpq(0)  # partial sum
     for j in range(J):
         a = alpha + j
-        if kernel == 'cosh':
+        if kernel == 'chi3':
+            assert s == 2 and alpha == 1
+            n = j + 1
+            Sd = sum((fmpq((1 if k % 3 == 1 else -1), k * k) for k in range(1, 3 * n) if k % 3), fmpq(0))
+            cX = fmpq(1)
+            c0 = -Sd
+        elif kernel == 'cosh':
             assert s == 2 and alpha == 1
             n = j + 1          # node t = -n^2;  S = sum_{k<2n} chi_4(k)/k^2
             Sd = sum((fmpq((1 if k % 4 == 1 else -1), k * k) for k in range(1, 2 * n, 2)), fmpq(0))
@@ -120,20 +151,39 @@ def hankel(mom, h):
 
 
 def X0_arb(s, kernel, alpha, prec):
-    """the constant X0 as an arb at binary precision prec."""
+    """the constant X0 as an arb at binary precision prec (fast closed forms where available)."""
     old = ctx.prec
     ctx.prec = prec
     alpha = fmpq(alpha)
     try:
         from flint import acb
         a = acb(arb(alpha.p) / arb(alpha.q))
-        if kernel == 'cosh':
+        half = (alpha == fmpq(1, 2))
+        one = (alpha == 1)
+        if kernel == 'chi3':        # L(2,chi_-3) = (zeta(2,1/3) - zeta(2,2/3))/9
+            val = (acb(2).zeta(acb(arb(1) / 3)).real - acb(2).zeta(acb(arb(2) / 3)).real) / 9
+        elif kernel == 'cosh':
             val = arb.const_catalan()
         elif kernel == 'bose':
-            val = acb(s).zeta(a).real
+            if one:
+                val = arb(s).zeta()
+            elif half:
+                val = (arb(2) ** s - 1) * arb(s).zeta()
+            else:
+                val = acb(s).zeta(a).real
         else:
-            # eta(s,alpha) = 2^-s (zeta(s,alpha/2) - zeta(s,(alpha+1)/2)); for s=1 use digamma
-            if s == 1:
+            # eta(s,alpha) = sum (-1)^n (n+alpha)^-s
+            if one and s == 1:
+                val = arb(2).log()
+            elif one:
+                val = (1 - arb(2) ** (1 - s)) * arb(s).zeta()
+            elif half and s == 1:
+                val = arb.pi() / 2
+            elif half and s == 2:
+                val = 4 * arb.const_catalan()
+            elif half and s == 3:
+                val = arb.pi() ** 3 / 4
+            elif s == 1:
                 val = ((a + 1) / 2).digamma().real / 2 - (a / 2).digamma().real / 2
             else:
                 val = (acb(s).zeta(a / 2).real - acb(s).zeta((a + 1) / 2).real) / arb(2) ** s
@@ -157,7 +207,7 @@ def analyse(s, kernel, alpha, K, h=None, j0=0, tscale=1, want_vals=False):
     cs = det_poly_affine(A, B)
     deg = max(k for k, c in enumerate(cs) if c != 0)
     cont = content(cs)
-    prec = 4000 + 80 * K * K
+    prec = 2000 + 14 * K * K      # doubled below until the value is certified nonzero to 20 digits
     while True:
         old = ctx.prec
         ctx.prec = prec

@@ -1,0 +1,69 @@
+## group: anand
+s=5: W=D_N^6/D_K, (K,N,h)=(40,3,37)                        K= 40 h= 37 deg= 37 sign=+1 | cost/K^2=  0.9823 logdet/K^2= -1.1480 total/K^2= -0.1657 | total/deg^2= -0.1937
+s=7: W=D_N^6/D_K, (K,N,h)=(40,3,37)                        K= 40 h= 37 deg= 37 sign=+1 | cost/K^2=  1.8034 logdet/K^2= -1.0364 total/K^2= +0.7669 | total/deg^2= +0.8964
+s=5: W=D_N^8/D_K, (K,N,h)=(40,3,37)                        K= 40 h= 37 deg= 37 sign=+1 | cost/K^2=  0.4057 logdet/K^2= -0.4809 total/K^2= -0.0752 | total/deg^2= -0.0879
+s=7: W=D_N^8/D_K, (K,N,h)=(40,3,37)                        K= 40 h= 37 deg= 37 sign=+1 | cost/K^2=  1.1584 logdet/K^2= -0.3619 total/K^2= +0.7965 | total/deg^2= +0.9309
+s=5: W=D_N^6/D_K, (K,N,h)=(80,6,74)                        K= 80 h= 74 deg= 74 sign=+1 | cost/K^2=  0.6714 logdet/K^2= -0.8016 total/K^2= -0.1302 | total/deg^2= -0.1522
+s=7: W=D_N^6/D_K, (K,N,h)=(80,6,74)                        K= 80 h= 74 deg= 74 sign=+1 | cost/K^2=  1.5765 logdet/K^2= -0.7305 total/K^2= +0.8460 | total/deg^2= +0.9887
+s=5: W=D_N^8/D_K, (K,N,h)=(80,6,74)                        K= 80 h= 74 deg= 74 sign=+1 | cost/K^2= -0.0905 logdet/K^2=  0.0500 total/K^2= -0.0406 | total/deg^2= -0.0474
+s=7: W=D_N^8/D_K, (K,N,h)=(80,6,74)                        K= 80 h= 74 deg= 74 sign=+1 | cost/K^2=  0.7464 logdet/K^2=  0.1248 total/K^2= +0.8712 | total/deg^2= +1.0182
+
+## group: nodes40
+integers 1..K (kernel e^{-2pi y})                          K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=  3.7109 logdet/K^2= -2.7411 total/K^2= +0.9698 | total/deg^2= +0.9698
+half-integers j-1/2, j<=K (lambda(7) version)              K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=  6.7321 logdet/K^2= -2.6935 total/K^2= +4.0386 | total/deg^2= +4.0386
+all j/2, j<=K  (= integer nodes 1..K, kernel e^{-pi y}); scale K K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=  3.1277 logdet/K^2= -1.8361 total/K^2= +1.2916 | total/deg^2= +1.2916
+even integers 2j<=2K (= nodes 1..K, kernel e^{-4pi y}); scale K K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=  7.5819 logdet/K^2= -3.8062 total/K^2= +3.7756 | total/deg^2= +3.7756
+multiples of 3 up to 3K (kernel e^{-6pi y}); scale K       K= 40 h= 40 deg= 40 sign=+1 | cost/K^2= 10.9304 logdet/K^2= -4.4924 total/K^2= +6.4380 | total/deg^2= +6.4380
+odd integers 2j-1<=2K; scale K                             K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=  7.4715 logdet/K^2= -3.7462 total/K^2= +3.7252 | total/deg^2= +3.7252
+top nodes (N,K], N=10, W=1, h=K-N                          K= 40 h= 30 deg= 30 sign=+1 | cost/K^2=  3.0179 logdet/K^2= -2.0151 total/K^2= +1.0028 | total/deg^2= +1.7828
+top nodes (N,K], N=20, W=1, h=K-N                          K= 40 h= 20 deg= 20 sign=+1 | cost/K^2=  2.3315 logdet/K^2= -1.1272 total/K^2= +1.2043 | total/deg^2= +4.8171
+squares j^2<=K^2/4 (20 nodes)                              K= 40 h= 20 deg= 20 sign=+1 | cost/K^2= 12.4133 logdet/K^2= -1.5928 total/K^2=+10.8205 | total/deg^2=+43.2819
+
+## group: shape40
+S=[1,K], W=1, h=0.25K (h=K/2: Cauchy-Loewner)              K= 40 h= 10 deg=  0 sign=+1 | cost/K^2=  1.3371 logdet/K^2= -1.3371 total/K^2= +0.0000 | total/deg^2= +0.0000
+S=[1,K], W=1, h=0.5K (h=K/2: Cauchy-Loewner)               K= 40 h= 20 deg=  3 sign=+1 | cost/K^2=  3.7478 logdet/K^2= -2.3459 total/K^2= +1.4019 | total/deg^2=+249.2213
+S=[1,K], W=1, h=0.75K (h=K/2: Cauchy-Loewner)              K= 40 h= 30 deg= 23 sign=+1 | cost/K^2=  3.9961 logdet/K^2= -2.8489 total/K^2= +1.1473 | total/deg^2= +3.4700
+S=[1,K], W=1, h=1.0K (h=K/2: Cauchy-Loewner)               K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=  3.7109 logdet/K^2= -2.7411 total/K^2= +0.9698 | total/deg^2= +0.9698
+S=[1,K], W=1, h=1.25K (h=K/2: Cauchy-Loewner)              K= 40 h= 50 deg= 40 sign=+1 | cost/K^2=  2.9982 logdet/K^2= -1.9462 total/K^2= +1.0521 | total/deg^2= +1.0521
+S=[1,K], W=1, h=1.5K (h=K/2: Cauchy-Loewner)               K= 40 h= 60 deg= 40 sign=+1 | cost/K^2=  1.7550 logdet/K^2= -0.4035 total/K^2= +1.3515 | total/deg^2= +1.3515
+S=[1,K], W=1, h=2.0K (h=K/2: Cauchy-Loewner)               K= 40 h= 80 deg= 40 sign=+1 | cost/K^2= -2.4535 logdet/K^2=  5.1188 total/K^2= +2.6653 | total/deg^2= +2.6653
+
+## group: numer40
+S=(N,K], W=D_N^2, N=4, h=K-N                               K= 40 h= 36 deg= 36 sign=+1 | cost/K^2=  2.5457 logdet/K^2= -1.7168 total/K^2= +0.8289 | total/deg^2= +1.0233
+S=(N,K], W=D_N^5, N=4, h=K-N                               K= 40 h= 36 deg= 36 sign=+1 | cost/K^2=  1.2110 logdet/K^2= -0.4454 total/K^2= +0.7656 | total/deg^2= +0.9452
+S=(N,K], W=D_N^8, N=4, h=K-N                               K= 40 h= 36 deg= 36 sign=+1 | cost/K^2= -0.0682 logdet/K^2=  0.9545 total/K^2= +0.8862 | total/deg^2= +1.0941
+S=(N,K], W=D_N^2, N=10, h=K-N                              K= 40 h= 30 deg= 30 sign=+1 | cost/K^2=  1.0848 logdet/K^2= -0.2190 total/K^2= +0.8659 | total/deg^2= +1.5393
+S=(N,K], W=D_N^5, N=10, h=K-N                              K= 40 h= 30 deg= 30 sign=+1 | cost/K^2= -1.8407 logdet/K^2=  2.8641 total/K^2= +1.0234 | total/deg^2= +1.8194
+S=(N,K], W=D_N^8, N=10, h=K-N                              K= 40 h= 30 deg= 30 sign=+1 | cost/K^2= -4.7483 logdet/K^2=  6.4033 total/K^2= +1.6550 | total/deg^2= +2.9421
+S=(N,K], W=D_N^2, N=20, h=K-N                              K= 40 h= 20 deg= 20 sign=+1 | cost/K^2= -0.4299 logdet/K^2=  1.4980 total/K^2= +1.0681 | total/deg^2= +4.2723
+S=(N,K], W=D_N^5, N=20, h=K-N                              K= 40 h= 20 deg= 20 sign=+1 | cost/K^2= -4.4607 logdet/K^2=  6.2103 total/K^2= +1.7497 | total/deg^2= +6.9987
+S=(N,K], W=D_N^8, N=20, h=K-N                              K= 40 h= 20 deg= 20 sign=+1 | cost/K^2= -8.5751 logdet/K^2= 11.7762 total/K^2= +3.2010 | total/deg^2=+12.8040
+S=evens<=K, W=D_odds^1, h=K/2                              K= 40 h= 20 deg= 20 sign=+1 | cost/K^2=  0.8896 logdet/K^2=  0.5668 total/K^2= +1.4564 | total/deg^2= +5.8257
+S=odds<=K, W=D_evens^1, h=K/2                              K= 40 h= 20 deg= 20 sign=+1 | cost/K^2=  0.8880 logdet/K^2=  0.6195 total/K^2= +1.5074 | total/deg^2= +6.0297
+S=evens<=K, W=D_odds^2, h=K/2                              K= 40 h= 20 deg= 20 sign=+1 | cost/K^2=  0.0098 logdet/K^2=  2.0578 total/K^2= +2.0676 | total/deg^2= +8.2704
+S=odds<=K, W=D_evens^2, h=K/2                              K= 40 h= 20 deg= 20 sign=+1 | cost/K^2=  0.0052 logdet/K^2=  2.1294 total/K^2= +2.1346 | total/deg^2= +8.5384
+S=evens<=K, W=D_odds^4, h=K/2                              K= 40 h= 20 deg= 20 sign=+1 | cost/K^2= -1.8508 logdet/K^2=  5.1547 total/K^2= +3.3039 | total/deg^2=+13.2157
+S=odds<=K, W=D_evens^4, h=K/2                              K= 40 h= 20 deg= 20 sign=+1 | cost/K^2= -1.8523 logdet/K^2=  5.2424 total/K^2= +3.3902 | total/deg^2=+13.5606
+S=evens<=K, W=D_odds^7, h=K/2                              K= 40 h= 20 deg= 20 sign=+1 | cost/K^2= -4.8705 logdet/K^2= 10.2826 total/K^2= +5.4120 | total/deg^2=+21.6482
+S=odds<=K, W=D_evens^7, h=K/2                              K= 40 h= 20 deg= 20 sign=+1 | cost/K^2= -4.8548 logdet/K^2= 10.3392 total/K^2= +5.4845 | total/deg^2=+21.9379
+S=[1,K], W=t^10 (zero of order m at t=0), h=K              K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=  3.1619 logdet/K^2= -1.7191 total/K^2= +1.4429 | total/deg^2= +1.4429
+S=[1,K], W=t^20 (zero of order m at t=0), h=K              K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=  2.8701 logdet/K^2= -0.5447 total/K^2= +2.3254 | total/deg^2= +2.3254
+S=[1,K], W=t^40 (zero of order m at t=0), h=K              K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=  2.5575 logdet/K^2=  2.1160 total/K^2= +4.6735 | total/deg^2= +4.6735
+S=[1,K], W=t^80 (zero of order m at t=0), h=K              K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=  2.3629 logdet/K^2=  8.3070 total/K^2=+10.6699 | total/deg^2=+10.6699
+
+## group: minor40
+minor: rows 0..h-1, cols h..2h-1 (shifted)                 K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=  2.5575 logdet/K^2=  2.1160 total/K^2= +4.6735 | total/deg^2= +4.6735
+minor: rows=cols={0,2,4,..} (h=K/2)                        K= 40 h= 20 deg= 20 sign=+1 | cost/K^2=  3.2616 logdet/K^2= -1.2565 total/K^2= +2.0051 | total/deg^2= +8.0206
+minor: rows 0..h-1, cols {0,2,4,..2h-2} (h=K/2)            K= 40 h= 20 deg= 11 sign=+1 | cost/K^2=  3.5089 logdet/K^2= -1.8395 total/K^2= +1.6694 | total/deg^2=+22.0741
+minor: rows=cols={0..h/2-1} u {h..3h/2-1}                  K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=  3.7733 logdet/K^2=  0.2785 total/K^2= +4.0518 | total/deg^2= +4.0518
+
+## group: outer40
+S=[1,K], W=D_(K,K+20]^1, h=K                               K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=  1.3490 logdet/K^2=  1.2055 total/K^2= +2.5545 | total/deg^2= +2.5545
+S=[1,K], W=D_(K,K+20]^2, h=K                               K= 40 h= 40 deg= 40 sign=+1 | cost/K^2= -1.1128 logdet/K^2=  5.1541 total/K^2= +4.0413 | total/deg^2= +4.0413
+S=[1,K], W=D_(K,K+20]^4, h=K                               K= 40 h= 40 deg= 40 sign=+1 | cost/K^2= -6.1939 logdet/K^2= 13.0590 total/K^2= +6.8652 | total/deg^2= +6.8652
+S=[1,K], W=D_(K,K+40]^1, h=K                               K= 40 h= 40 deg= 40 sign=+1 | cost/K^2= -1.1445 logdet/K^2=  5.4750 total/K^2= +4.3304 | total/deg^2= +4.3304
+S=[1,K], W=D_(K,K+40]^2, h=K                               K= 40 h= 40 deg= 40 sign=+1 | cost/K^2= -6.3458 logdet/K^2= 13.6964 total/K^2= +7.3507 | total/deg^2= +7.3507
+S=[1,K], W=D_(K,K+40]^4, h=K                               K= 40 h= 40 deg= 40 sign=+1 | cost/K^2=-17.8794 logdet/K^2= 30.1641 total/K^2=+12.2846 | total/deg^2=+12.2846
+S=(N,K], W=D_N^5 * D_(K,K+20]^1, N=3, h=K-N                K= 40 h= 37 deg= 37 sign=+1 | cost/K^2= -0.4408 logdet/K^2=  2.6294 total/K^2= +2.1886 | total/deg^2= +2.5579
+S=(N,K], W=D_N^5 * D_(K,K+20]^2, N=3, h=K-N                K= 40 h= 37 deg= 37 sign=+1 | cost/K^2= -2.7260 logdet/K^2=  6.2984 total/K^2= +3.5724 | total/deg^2= +4.1752
+

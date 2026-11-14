@@ -1,0 +1,32 @@
+baseline s=7 K=40 h= 40 deg= 40 sign=+1 | cost/K^2=  3.7109 logdet/K^2= -2.7411 total/K^2= +0.9698 | total/deg^2= +0.9698
+   monic cost gamma = log lc(P*)/K^2 = 4.1246; monic decay delta = -log|F(zeta)|/K^2 = 3.1548; s*sum_p n_p log p /K^2 = 2.6908
+   (p, n_p=#nodes>=p, #roots with v=-s, #roots with v<-s, sum of -v over roots with v<0):
+    [(13, 28, 29, 1, 253.0), (17, 24, 22, 1, 212.0), (19, 22, 21, 1, 195.0), (23, 18, 18, 0, 160.0), (29, 12, 12, 0, 106.0), (31, 10, 10, 0, 88.0), (37, 4, 4, 0, 34.0)]
+baseline s=5 K=40 h= 40 deg= 40 sign=+1 | cost/K^2=  2.8317 logdet/K^2= -2.8416 total/K^2= -0.0100 | total/deg^2= -0.0100
+   monic cost gamma = log lc(P*)/K^2 = 3.1075; monic decay delta = -log|F(zeta)|/K^2 = 3.1174; s*sum_p n_p log p /K^2 = 1.9220
+   (p, n_p=#nodes>=p, #roots with v=-s, #roots with v<-s, sum of -v over roots with v<0):
+    [(13, 28, 40, 0, 200.0), (17, 24, 31, 0, 173.0), (19, 22, 25, 0, 155.0), (23, 18, 18, 0, 124.0), (29, 12, 12, 0, 82.0), (31, 10, 10, 0, 68.0), (37, 4, 4, 0, 26.0)]
+Fauzan shape s=7 D_N^6/D_K K=40 h= 37 deg= 37 sign=+1 | cost/K^2=  1.8034 logdet/K^2= -1.0364 total/K^2= +0.7669 | total/deg^2= +0.8964
+   monic cost gamma = log lc(P*)/K^2 = 4.2324; monic decay delta = -log|F(zeta)|/K^2 = 3.4654; s*sum_p n_p log p /K^2 = 2.6799
+   (p, n_p=#nodes>=p, #roots with v=-s, #roots with v<-s, sum of -v over roots with v<0):
+    [(13, 28, 34, 3, 264.0), (17, 24, 22, 4, 222.0), (19, 22, 21, 4, 202.0), (23, 18, 18, 0, 172.0), (29, 12, 12, 0, 118.0), (31, 10, 10, 0, 100.0), (37, 4, 4, 0, 46.0)]
+Anand shape s=7 D_N^8/D_K K=40 h= 37 deg= 37 sign=+1 | cost/K^2=  1.1584 logdet/K^2= -0.3619 total/K^2= +0.7965 | total/deg^2= +0.9309
+   monic cost gamma = log lc(P*)/K^2 = 4.3962; monic decay delta = -log|F(zeta)|/K^2 = 3.5997; s*sum_p n_p log p /K^2 = 2.6799
+   (p, n_p=#nodes>=p, #roots with v=-s, #roots with v<-s, sum of -v over roots with v<0):
+    [(13, 28, 31, 6, 274.0), (17, 24, 13, 10, 234.0), (19, 22, 17, 6, 212.0), (23, 18, 18, 3, 178.0), (29, 12, 12, 3, 124.0), (31, 10, 10, 3, 106.0), (37, 4, 4, 3, 52.0)]
+baseline s=7 K=80 h= 80 deg= 80 sign=+1 | cost/K^2=  3.9485 logdet/K^2= -2.8835 total/K^2= +1.0650 | total/deg^2= +1.0650
+   monic cost gamma = log lc(P*)/K^2 = 4.2050; monic decay delta = -log|F(zeta)|/K^2 = 3.1400; s*sum_p n_p log p /K^2 = 2.8990
+   (p, n_p=#nodes>=p, #roots with v=-s, #roots with v<-s, sum of -v over roots with v<0):
+    [(17, 64, 76, 1, 558.0), (19, 62, 74, 1, 556.0), (23, 58, 69, 1, 533.0), (29, 52, 51, 1, 465.0), (31, 50, 49, 1, 447.0), (37, 44, 43, 1, 393.0), (41, 40, 40, 0, 358.0), (43, 38, 38, 0, 340.0), (47, 34, 34, 0, 304.0), (53, 28, 28, 0, 250.0), (59, 22, 22, 0, 196.0), (61, 20, 20, 0, 178.0), (67, 14, 14, 0, 124.0), (71, 10, 10, 0, 88.0), (73, 8, 8, 0, 70.0), (79, 2, 2, 0, 16.0)]
+baseline s=5 K=80 h= 80 deg= 80 sign=+1 | cost/K^2=  3.0172 logdet/K^2= -2.9488 total/K^2= +0.0684 | total/deg^2= +0.0684
+   monic cost gamma = log lc(P*)/K^2 = 3.1882; monic decay delta = -log|F(zeta)|/K^2 = 3.1198; s*sum_p n_p log p /K^2 = 2.0707
+   (p, n_p=#nodes>=p, #roots with v=-s, #roots with v<-s, sum of -v over roots with v<0):
+    [(17, 64, 80, 0, 400.0), (19, 62, 80, 0, 400.0), (23, 58, 80, 0, 400.0), (29, 52, 75, 0, 384.0), (31, 50, 69, 0, 367.0), (37, 44, 51, 0, 313.0), (41, 40, 40, 0, 278.0), (43, 38, 38, 0, 264.0), (47, 34, 34, 0, 236.0), (53, 28, 28, 0, 194.0), (59, 22, 22, 0, 152.0), (61, 20, 20, 0, 138.0), (67, 14, 14, 0, 96.0), (71, 10, 10, 0, 68.0), (73, 8, 8, 0, 54.0), (79, 2, 2, 0, 12.0)]
+Fauzan shape s=7 D_N^6/D_K K=80 h= 74 deg= 74 sign=+1 | cost/K^2=  1.5765 logdet/K^2= -0.7305 total/K^2= +0.8460 | total/deg^2= +0.9887
+   monic cost gamma = log lc(P*)/K^2 = 4.3193; monic decay delta = -log|F(zeta)|/K^2 = 3.4733; s*sum_p n_p log p /K^2 = 2.8868
+   (p, n_p=#nodes>=p, #roots with v=-s, #roots with v<-s, sum of -v over roots with v<0):
+    [(17, 64, 72, 2, 520.0), (19, 62, 67, 6, 528.0), (23, 58, 69, 5, 528.0), (29, 52, 65, 0, 497.0), (31, 50, 51, 6, 473.0), (37, 44, 43, 7, 405.0), (41, 40, 45, 0, 377.0), (43, 38, 39, 0, 363.0), (47, 34, 34, 0, 328.0), (53, 28, 28, 0, 274.0), (59, 22, 22, 0, 220.0), (61, 20, 20, 0, 202.0), (67, 14, 14, 0, 148.0), (71, 10, 10, 0, 112.0), (73, 8, 8, 0, 94.0), (79, 2, 2, 0, 45.0)]
+Anand shape s=7 D_N^8/D_K K=80 h= 74 deg= 74 sign=+1 | cost/K^2=  0.7464 logdet/K^2=  0.1248 total/K^2= +0.8712 | total/deg^2= +1.0182
+   monic cost gamma = log lc(P*)/K^2 = 4.4861; monic decay delta = -log|F(zeta)|/K^2 = 3.6149; s*sum_p n_p log p /K^2 = 2.8868
+   (p, n_p=#nodes>=p, #roots with v=-s, #roots with v<-s, sum of -v over roots with v<0):
+    [(17, 64, 70, 4, 526.0), (19, 62, 62, 12, 540.0), (23, 58, 68, 6, 540.0), (29, 52, 65, 6, 524.0), (31, 50, 57, 6, 503.0), (37, 44, 37, 13, 431.0), (41, 40, 40, 6, 389.0), (43, 38, 37, 6, 375.0), (47, 34, 34, 6, 340.0), (53, 28, 28, 6, 286.0), (59, 22, 22, 6, 232.0), (61, 20, 20, 6, 214.0), (67, 14, 14, 6, 160.0), (71, 10, 10, 6, 124.0), (73, 8, 8, 6, 106.0), (79, 2, 7, 1, 57.0)]

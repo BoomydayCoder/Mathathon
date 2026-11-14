@@ -1,3 +1,49 @@
 # s=5 K=160 N=12 h=148: Delta_K computed exactly in 164s
 #    p   K/p    | true |  out |   wf | new=max | true-new | 2*level | wf valid (p>=5, p^2>2.6K+6) | wf<=true
      2 80.000 small | 13183|    . |    . |     .   |     .    |     .   | False | None
+     3 53.333 small |  6119|    . | 5376 |     .   |     .    |   135   | False | None
+     5 32.000 small |  2752|    . | 2930 |     .   |     .    |    78   | False | None
+     7 22.857 small |  1498|    . | 1874 |     .   |     .    |    54   | False | None
+    11 14.545 small |   720|    . |  920 |     .   |     .    |    33   | False | None
+    13 12.308 small |   668|    . |  666 |     .   |     .    |    27   | False | None
+    17  9.412 small |   320|    . |  319 |     .   |     .    |    19   | False | None
+    19  8.421 small |   209|    . |  207 |     .   |     .    |    17   | False | None
+    23  6.957 inner |    69|    . |   51 |    51   |    18    |    14   | True  | True
+    29  5.517 inner |  -121|    . | -123 |  -123   |     2    |     9   | True  | True
+    31  5.161 inner |  -166|    . | -166 |  -166   |     0    |     8   | True  | True
+    37  4.324 inner |  -268|    . | -268 |  -268   |     0    |     6   | True  | True
+    41  3.902 inner |  -328|    . | -339 |  -339   |    11    |     6   | True  | True
+    43  3.721 inner |  -363|    . | -373 |  -373   |    10    |     5   | True  | True
+    47  3.404 inner |  -392|    . | -395 |  -395   |     3    |     4   | True  | True
+    53  3.019 inner |  -424|    . | -450 |  -450   |    26    |     2   | True  | True
+    59  2.712 outer |  -500| -559 | -508 |  -508   |     8    |     2   | True  | True
+    61  2.623 outer |  -512| -547 | -514 |  -514   |     2    |     2   | True  | True
+    67  2.388 outer |  -510| -511 | -523 |  -511   |     1    |     1   | True  | True
+    71  2.254 outer |  -483| -484 | -533 |  -484   |     1    |     1   | True  | True
+    73  2.192 outer |  -465| -466 | -538 |  -466   |     1    |     1   | True  | True
+    79  2.025 outer |  -461| -462 | -571 |  -462   |     1    |     0   | True  | True
+    83  1.928 outer |  -470| -470 | -600 |  -470   |     0    |     0   | True  | True
+    89  1.798 outer |  -458| -458 | -633 |  -458   |     0    |     0   | True  | True
+    97  1.649 outer |  -386| -386 | -640 |  -386   |     0    |    -1   | True  | True
+   101  1.584 outer |  -350| -350 | -640 |  -350   |     0    |    -1   | True  | True
+   103  1.553 outer |  -332| -332 | -640 |  -332   |     0    |    -1   | True  | True
+   107  1.495 outer |  -300| -300 | -640 |  -300   |     0    |    -1   | True  | True
+   109  1.468 outer |  -286| -286 | -643 |  -286   |     0    |    -1   | True  | True
+   113  1.416 outer |  -258| -258 | -649 |  -258   |     0    |    -1   | True  | True
+   127  1.260 outer |  -160| -160 | -665 |  -160   |     0    |    -2   | True  | True
+   131  1.221 outer |  -132| -132 | -665 |  -132   |     0    |    -2   | True  | True
+   137  1.168 outer |   -90|  -90 | -665 |   -90   |     0    |    -2   | True  | True
+   139  1.151 outer |   -76|  -76 | -665 |   -76   |     0    |    -2   | True  | True
+   149  1.074 outer |   -12|  -12 | -668 |   -12   |     0    |    -2   | True  | True
+   151  1.060 outer |   -10|  -10 | -674 |   -10   |     0    |    -2   | True  | True
+   157  1.019 outer |    -4|   -4 | -692 |    -4   |     0    |    -2   | True  | True
+   163  0.982 beyond|     0|    . | -710 |  -710   |   710    |    -2   | True  | True
+   167  0.958 beyond|     0|    . | -722 |  -722   |   722    |    -2   | True  | True
+   173  0.925 beyond|     0|    . | -740 |  -740   |   740    |    -4   | True  | True
+   179  0.894 beyond|     0|    . | -740 |  -740   |   740    |    -4   | True  | True
+   181  0.884 beyond|     0|    . | -740 |  -740   |   740    |    -4   | True  | True
+# violations of wf_p <= true_p among valid primes: 0
+# range inner : sum (true-new) log p /K^2 = 0.01002;  sum (true-out) log p/K^2 = 0.00000;  gain sum (new-out) log p/K^2 = 0.00000
+# range outer : sum (true-new) log p /K^2 = 0.00226;  sum (true-out) log p/K^2 = 0.01569;  gain sum (new-out) log p/K^2 = 0.01342
+# range beyond: sum (true-new) log p /K^2 = 0.73479;  sum (true-out) log p/K^2 = 0.00000;  gain sum (new-out) log p/K^2 = 0.00000
+# total time 398s

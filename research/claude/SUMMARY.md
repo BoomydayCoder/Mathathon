@@ -118,3 +118,13 @@ a simpler construction**. No ζ(7) result was found.
 * `apery-elementary.md`: one self-contained elementary proof of Apéry's theorem with a motivation
   paragraph for every step. The other agent has a second, different elementary proof (Beukers integral +
   AM–GM), refereed by us with no errors found.
+
+## Addendum (15:25 UTC): the ζ(5) margin theorem
+
+`zeta5-margin.md`. **Theorem W**: Fauzan's inner-range ("class-adapted basis") valuation bound holds for all
+primes $p\ge5$ with $p^2>104n+6$, not only for $p\le K/3$; for $K/3<p<\frac{69}{170}K$ it beats his outer bound
+(4.14). Consequence (exact rationals): the arithmetic constant drops by $g=\frac{3203}{163200}$ and the margin
+of the ζ(5) proof at $M=200$ goes from $-0.0174$ to $-0.0370$ (×2.13). Proof re-derived by the orchestrator;
+exact verification $K\le200$ with zero violations; the underlying statement is already a proved Lean theorem
+in mo271's repo (it is just not used in that range). Also: a model-level no-go for ζ(7) in this family
+(best total $+0.87K^2$; exact data within $0.015K^2$ of the model).

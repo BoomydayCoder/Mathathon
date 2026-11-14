@@ -89,4 +89,20 @@ for (kernel, s, alpha) in cases:
     grid_ok = all(w(kernel, s, mp.mpf(k) / 50) > 0 for k in range(1, 400))
     fails += (not grid_ok)
     print(f"{'PASS' if grid_ok else 'FAIL'} (W) w>0 on grid (0,8]")
+# ---- functional II for Catalan ('cosh') and the chi_{-3} functional ('chi3'): explicit weights ----
+w_cosh = lambda u: mp.pi * u / 4 * mp.sinh(mp.pi * u) / mp.cosh(mp.pi * u) ** 2
+kap3 = lambda u: 1 / (3 + 4 * mp.sinh(mp.pi * u) ** 2)
+w_chi3 = lambda u: -2 / (3 * mp.sqrt(3)) * u * mp.diff(kap3, u)
+L3 = (mp.zeta(2, mp.mpf(1) / 3) - mp.zeta(2, mp.mpf(2) / 3)) / 9
+for (kernel, wf, x0) in (('cosh', w_cosh, mp.catalan), ('chi3', w_chi3, L3)):
+    print(f"--- kernel={kernel} s=2 nodes n=1,2,... ---")
+    brk = [0, mp.mpf(1) / 4, 1, 3, 8, 20, 60]
+    for e in (0, 1, 2, 5):
+        report(f"(M) e={e}", mp.quad(lambda y: y ** (2 * e) * wf(y), brk), q2m(mu_monomial(e, 2, kernel)))
+    pv = pole_values(2, kernel, fmpq(1), 6)
+    for j in (0, 1, 2, 5):
+        report(f"(P) n={j + 1}", mp.quad(lambda y: wf(y) / (y * y + (j + 1) ** 2), brk), q2m(pv[j][0]) + q2m(pv[j][1]) * x0)
+    grid_ok = all(wf(mp.mpf(k) / 50) > 0 for k in range(1, 400))
+    fails += (not grid_ok)
+    print(f"{'PASS' if grid_ok else 'FAIL'} (W) w>0 on grid (0,8]")
 print("ALL PASS" if fails == 0 else f"{fails} FAILURES")

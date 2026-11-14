@@ -1,0 +1,8 @@
+Z=zeta(7)+zeta(5): K=20 N=0 W=D_N^0 h=20 deg=20 sign=+1 ok=True | cost/K^2=3.3858 logdet/K^2=-2.6002 total/K^2=+0.7856
+Z=zeta(7)-zeta(5): K=20 N=0 W=D_N^0 h=20 deg=20 sign=+1 ok=True | cost/K^2=3.3918 logdet/K^2=-2.5107 total/K^2=+0.8811
+Z=zeta(7)+zeta(5): K=40 N=0 W=D_N^0 h=40 deg=40 sign=+1 ok=True | cost/K^2=3.7519 logdet/K^2=-2.7744 total/K^2=+0.9775
+Z=zeta(7)-zeta(5): K=40 N=0 W=D_N^0 h=40 deg=40 sign=+1 ok=True | cost/K^2=3.7501 logdet/K^2=-2.7277 total/K^2=+1.0224
+Z=zeta(7)+zeta(5): K=60 N=0 W=D_N^0 h=60 deg=60 sign=+1 ok=True | cost/K^2=3.8829 logdet/K^2=-2.8538 total/K^2=+1.0292
+Z=zeta(7)-zeta(5): K=60 N=0 W=D_N^0 h=60 deg=60 sign=+1 ok=True | cost/K^2=3.8808 logdet/K^2=-2.8221 total/K^2=+1.0587
+Z=zeta(7)+zeta(5): K=40 N=3 W=D_N^5 h=37 deg=37 sign=+1 ok=True | cost/K^2=1.8682 logdet/K^2=-1.0691 total/K^2=+0.7990
+Z=zeta(7)+zeta(5): K=80 N=6 W=D_N^5 h=74 deg=74 sign=+1 ok=True | cost/K^2=1.6367 logdet/K^2=-0.7470 total/K^2=+0.8897

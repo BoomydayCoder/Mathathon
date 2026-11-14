@@ -1,0 +1,12 @@
+A=1.5 gamma/pi=0.5 b=2.4 mass-2=-1.97e-31 EL-equality defect=7.89e-31 min(V-2U-ell) off support=0.0026019 density>0:True
+     E* = 1.430221985639785036716865   closed form: none claimed   PASS
+A=2.0 gamma/pi=1.0 b=1.3333333 mass-2=-1.97e-31 EL-equality defect=7.89e-31 min(V-2U-ell) off support=0.0030066 density>0:True
+     E* = 2.19722457733621938279049   closed form: 2.19722457733621938279049   PASS
+A=2.5 gamma/pi=1.5 b=0.95238095 mass-2=0.0 EL-equality defect=0.0 min(V-2U-ell) off support=0.0032404 density>0:True
+     E* = 2.717350402087536894803768   closed form: none claimed   PASS
+A=3.0 gamma/pi=2.0 b=0.75 mass-2=0.0 EL-equality defect=7.89e-31 min(V-2U-ell) off support=0.0033835 density>0:True
+     E* = 3.119162312519753892377545   closed form: 3.119162312519753892377545   PASS
+A=4.0 gamma/pi=3.0 b=0.53333333 mass-2=0.0 EL-equality defect=1.58e-30 min(V-2U-ell) off support=0.0035391 density>0:True
+     E* = 3.729701448634191432407033   closed form: none claimed   PASS
+2 log 3 = 2.19722457733621938279049   (9/2) log 2 = 3.119162312519753892377545
+ALL PASS
