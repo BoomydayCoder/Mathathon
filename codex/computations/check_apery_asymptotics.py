@@ -8,8 +8,9 @@ m,n=S.symbols('m n')
 b=34*n**3+51*n*n+27*n+5
 assert S.expand(5*(b-n**3/S.Integer(5)-30*(n+1)**3).subs(n,m+12))==19*m**3+489*m*m+3213*m+847
 assert S.expand(5*b-n**3-25*(n+1)**3)==144*n**3+180*n*n+60*n
-Q=F(135,4); delta=34-Q-1/Q
-assert delta==F(119,540) and delta-F(102,1001)>F(1,10)
+Q=F(135,4)
+assert S.cancel(b/(n+1)**3-(34-51/(n+1)+(27*n+22)/(n+1)**3))==0
+assert F(169,5)-F(51,1020)==Q
 assert Q**4/F(2**6*3**9)==F(16875,16384)>1
 h=[j-j//2-2*(j//3)+j//6 for j in range(6)]
 assert h==[0,1,1,0,0,1]
@@ -31,3 +32,12 @@ for j in (10,30,100,300,1000):
     assert mp.mpf(a)>=mp.exp(-3)*lam**j/(4*(j+1)**4)
     print(j,mp.nstr(value,18),mp.nstr(value/CA,15))
 print('Predicted constant:',mp.nstr(CA,20))
+print('Perturbation experiment: b, first nonintegral index through 12')
+for parameter in range(1,21):
+    U=[F(1),F(parameter)]
+    first=None
+    for j in range(1,12):
+        U.append(((2*j+1)*(17*j*j+17*j+parameter)*U[-1]-j**3*U[-2])/(j+1)**3)
+        if U[-1].denominator!=1 and first is None:
+            first=j+1
+    print(parameter,first)

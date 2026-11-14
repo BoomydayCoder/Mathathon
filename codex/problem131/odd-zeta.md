@@ -140,3 +140,7 @@ For the team's next stage:
 3. Find a smaller illustrative determinant whose moment entries involve one constant and whose arithmetic can be checked by hand. It need not prove ζ(5) irrational to teach the mechanism faithfully.
 4. Study stronger root multiplicities in the derivative-isolation family; keep a ledger of all extra zeta coefficients and actual denominator exponents.
 5. Treat a proof for every odd value as a research ambition. No such proof, and no simplification of Fauzan sufficient to replace his estimates, is supplied here.
+
+## Follow-up: full obstruction now proved
+
+`forced-recurrence-obstruction.md` strengthens Section 4: it derives the exact inhomogeneous Apéry recurrence for the derivative-isolation family and proves that its ζ(5) forms cannot decay geometrically. That argument controls the full sum, not merely the first surviving term. Its normalization uses -1/(2m)! instead of this note's -1/(2m-1)!, so its L is this note's L divided by 2m. The obstruction is unchanged by this constant factor.

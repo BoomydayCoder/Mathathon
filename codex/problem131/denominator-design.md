@@ -182,7 +182,11 @@ so
     -R_n'''(1)/6
       =2[H_(n-1)+H_(n+1)]/[n²(n+1)²].
 
-This is of order (log n)/n^4, not exponentially small. It is a concrete defect in the original initial-term removal mechanism. It does not alone prove that the entire signed series has that order: cancellation with other terms would have to be analyzed before claiming such an asymptotic. Numerical evidence for the full series is consistent with polynomial decay, but a rigorous global estimate is not asserted here.
+This is of order (log n)/n^4, not exponentially small. It is a concrete defect in the original initial-term removal mechanism. The single-term calculation does not alone control cancellation in the signed sum. A stronger result is now proved in [forced-recurrence-obstruction.md](forced-recurrence-obstruction.md), and independently audited here: in the normalization L_n=-sum R_n'''/24, the Apéry operator gives exactly
+
+    (T L)_n=-(2n+1)[3+8n(n+1)(H_(n-1)+H_(n+1))]/[n²(n+1)²].
+
+This has a polynomial lower bound in absolute value. If the full L_n decayed exponentially, its recurrence combination would also decay exponentially up to a cubic factor, a contradiction. Thus this particular unmodified ζ(5) construction provably fails the exponential-decay requirement, even allowing arbitrary cancellation between its summands. This does not rule out corrected or otherwise modified constructions.
 
 More generally, raising P to the mth power and differentiating r times preserves all prescribed zeros only when m>r. For m=2,r=1 the arithmetic isolates ζ(3) and the zero mechanism works simultaneously. With m=2,r=3 one isolates ζ(5), but loses those zero terms. Increasing m repairs the zero multiplicity but introduces more zeta coefficients. Additional symmetries or transformations are then needed to eliminate them.
 

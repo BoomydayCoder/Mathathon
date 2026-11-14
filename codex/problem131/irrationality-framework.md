@@ -271,3 +271,28 @@ For higher odd zeta values, the primary obstacle is often that a construction yi
 - I. Niven, A simple proof that pi is irrational, Bull. Amer. Math. Soc. 53 (1947), 509, DOI 10.1090/S0002-9904-1947-08821-2: bibliographic reference, original not successfully retrieved in this session (AMS returned 403; attempted Project Euclid PDF URL returned HTML). The proof in section 3 is fully written and checked independently, not quoted from an unseen PDF.
 - Lindemann's transcendence theorem is invoked as an established theorem, not proved or independently audited here. No claim is made that the elementary integral arguments prove transcendence.
 - Primary-source provenance of the exact hybrid Mellin presentation has not been surveyed. Its ingredients are classical; independent derivation is not historical novelty.
+
+## 9. What changes between irrationality and transcendence, and why odd zeta is harder
+
+The companion [pi-powers.md](pi-powers.md) now gives explicit classical proofs for every positive power of pi and for transcendence of exp(r), r nonzero rational; both were independently audited in pi-powers-review.md. These expand the underlying machinery rather than invoke transcendence as a black box.
+
+The change in the auxiliary polynomial is revealing. For irrationality of exp(r), two endpoints and positivity suffice. A hypothetical polynomial relation among powers of exp(r) introduces finitely many endpoints jr. Give each nonzero endpoint a zero of order p, give zero a zero of order p-1, and divide by (p-1)!. All but one boundary contribution disappear modulo p; the remaining one is nonzero. Thus an elementary congruence replaces positivity when the signs of several coefficients are uncontrolled.
+
+The exponential multiplication law is essential:
+
+    exp(alpha)exp(beta)=exp(alpha+beta).
+
+It converts products of hypothetical algebraic-conjugate relations into another finite sum of the same kind. This makes polynomial symmetry compatible with the analytic family being approximated.
+
+Zeta values do not have this multiplication law. Instead, for integers a,b>1, absolute convergence and splitting a double sum into n>m, n<m, and n=m give
+
+    zeta(a)zeta(b)=zeta(a,b)+zeta(b,a)+zeta(a+b),
+    zeta(a,b)=sum_(n>m>=1) n^(-a)m^(-b).
+
+This is a rigorous and unexpected link to multiple zeta values: multiplication introduces a second summation depth. For example,
+
+    zeta(2)zeta(3)=zeta(2,3)+zeta(3,2)+zeta(5).
+
+The identity is not an irrationality proof for zeta(5), because it introduces other constants whose required rational relations are not supplied. It explains why blindly copying the finite exponential symmetrization does not automatically isolate an odd zeta value. This is a limitation of that proposed transfer, not a theorem that no useful transfer can exist.
+
+A concrete research direction is to search for finite families of iterated-integral or multiple-zeta relations whose unwanted coefficients cancel while preserving the denominator/decay inequality. Every cancellation needs an exact identity. A relation that merely replaces zeta(5) by new multiple zeta values has not crossed the arithmetic gate.

@@ -93,3 +93,47 @@ This also clarifies why a determinant method is a substantial change of
 viewpoint: it need not preserve this second-order recurrence or its boundary
 conditions. See odd-moment-generalization.md for the analytic construction and
 odd-arithmetic-barrier.md for remaining arithmetic questions.
+
+## Extension: the obstruction holds for every higher odd derivative
+
+**Theorem.** Fix m>=2 and put k=2m-3. The forcing term above satisfies
+
+    S_n^(2m-1)(1)/(2m)!
+       ~ -[16*4^(2m-3)/(m*(2m-3)!)] * (log n)^(2m-3)/n.
+
+Consequently, for every fixed m>=2, the unmodified linear forms L_(n,m)
+cannot be O(theta^n) for any theta in (0,1).
+
+**Proof.** Around t=1 write
+
+    R_n(1+x)=C_n*x²*exp(sum_(j>=1) ell_(n,j)*x^j),
+    ell_(n,j)=(2/j)*[(-1)^j H_(n+1)^(j)-H_(n-1)^(j)].
+
+This follows by expanding the logarithms of the numerator factors 1-x/l
+and denominator factors 1+x/l after removing (t-1)². For each fixed degree,
+these are convergent Taylor expansions near zero. We have
+
+    ell_(n,1)=-4log n+O(1),
+    ell_(n,j)=O(1) for every fixed j>=2.
+
+Therefore the coefficient of x^k in the exponential is
+
+    ell_(n,1)^k/k!+O((1+log n)^(k-1))
+      ~ (-4log n)^k/k!.
+
+For k=1 this is immediate. In general expand the product of exp(ell_j*x^j):
+the contribution using only j=1 is displayed; every other partition of k
+uses at most k-2 copies of ell_1, with bounded remaining factors. Expanding
+ell_1=-4log n+O(1) gives the stated error bound.
+
+Now s_n(1+x)=s_0+s_1*x+s_2*x² with
+s_0=16n(n+1)(2n+1), s_1=-12(2n+1), s_2=-8(2n+1).
+Since C_n*s_0~32/n while C_n*s_1 and C_n*s_2 are O(n^-3), only the first
+term contributes at leading order to coefficient x^(2m-1) in S_n(1+x).
+Dividing that coefficient by 2m gives the stated negative leading constant,
+as k is odd. The recurrence contradiction is exactly as before: its left side
+would be O(n³ theta^n) under exponential decay, incompatible with this nonzero
+asymptotic. QED.
+
+This theorem diagnoses the whole naive derivative family, not just zeta(5).
+It does not rule out truncation, modified roots/poles, or determinant methods.

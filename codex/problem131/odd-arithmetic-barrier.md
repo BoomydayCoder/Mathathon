@@ -133,3 +133,7 @@ The promising question is not merely whether the integral stays positive: that i
 A focused next lemma should partition primes by the residue classes of j and by the integer q=(2e+2)/(p-1). For polynomial terms the cancellation rule is exact. For pole terms the valuation bound in Section 2 supplies a testable target. One then asks whether a basis with zeros at selected pole classes forces cancellation between quotient and pole contributions before taking the determinant. Merely normalizing residues individually forfeits that possibility.
 
 No conclusion about ζ(7) or all odd values follows from these estimates. They do isolate an explicit arithmetic contest and show that the polynomial quotient becomes better behaved at large primes as s increases, contrary to the naive expectation that every denominator cost must get worse.
+
+## Exact computational check
+
+`python codex/computations/check_odd_arithmetic.py` checks the exact Bernoulli cancellation rule for s=3,5,7,9 and several primes across q both below and above p; it also verifies the full normalization factor for all 33 previously saved Hankel determinants. All checks passed. A concrete switch is p=11,m=40: the moment has valuation -1 for s=3 and s=5, but valuation 0 for s=7 because m+4=44 supplies the canceled factor. These finite checks supplement the proofs; they do not replace the all-parameter arguments.

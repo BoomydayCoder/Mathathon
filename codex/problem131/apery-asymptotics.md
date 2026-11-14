@@ -103,27 +103,25 @@ Here 3c<log30. Consequently (3) implies D_n³(A_n zeta(3)-B_n)->0. If zeta(3)=p/
 
 This proof uses the one short certificate, elementary partial fractions, and elementary factorial estimates. It needs neither the saddle-point estimate nor any integral representation.
 
-### Option B: slightly more recurrence work, a shorter period-6 lcm lemma
+### Option B: a coarse ratio bound with a shorter period-6 lcm lemma
 
-This variant was proposed by the parent researcher and independently verified here. Set Q=135/4=33.75 and delta=34-Q-1/Q=119/540.
+This variant was proposed by the parent researcher and independently verified here. Set Q=135/4=33.75. The exact decomposition
 
-For all n>=1,
+    b_n/(n+1)³=34-51/(n+1)+(27n+22)/(n+1)³
 
-    b_n/(n+1)³>=34-102/(n+1),     n³/(n+1)³<=1,
+and r_n>=5 immediately give
 
-so
+    r_(n+1)>34-1/5-51/(n+1)=169/5-51/(n+1).
 
-    r_{n+1}>=34-1/r_n-102/(n+1).                         (4)
+Since 169/5-Q=1/20, we obtain
 
-For 5<=r<=Q, the function 34-r-1/r is decreasing and is at least delta. For n>=1000,
+    r_(n+1)>=Q  whenever n>=1019.
 
-    delta-102/(n+1)>1/10.
+Therefore, with C=A_1019/Q^1019>0,
 
-Thus while 5<=r_n<=Q, (4) gives r_{n+1}>r_n+1/10. Once r_n>=Q, monotonicity of 34-1/r makes r_{n+1}>Q. Hence after at most 288 further steps beyond index 1000, r_n>=Q forever. In particular there is C>0 such that
+    A_n>=C Q^n for every n>=1019.                       (5)
 
-    A_n>=C Q^n for every n>=1300.                       (5)
-
-The large cutoff is deliberately convenient, not optimized.
+The large cutoff is deliberately convenient, not optimized. No convergence theorem or ratio-iteration argument is needed.
 
 Now put
 
@@ -145,7 +143,7 @@ The key inequality exp(3c6)<Q has an exact integer verification:
 
     Q^4/[exp(3c6)]^4 =16875/16384>1.
 
-Combining (3), (5), and (6) again proves irrationality. This trades an elementary recurrence iteration for a much smaller floor-function table. It avoids both saddle points and numerical logarithm comparisons.
+Combining (3), (5), and (6) again proves irrationality. This combines a coarse uniform recurrence bound with a much smaller floor-function table. It avoids both saddle points and numerical logarithm comparisons.
 
 ### What is genuinely improved in presentation?
 
@@ -252,3 +250,73 @@ Thus the small error and the large integer coefficient are complementary solutio
 Run `python codex/computations/check_apery_asymptotics.py`. It checks exact recurrence identities, the ratio-30 polynomial, the period-6 table, the exact Q inequality, and high-precision convergence to C_A. Finite convergence checks illustrate (7); the proof is the Laplace argument, not the numerical output.
 
 The proofs above do not establish historical novelty, and they do not extend automatically to zeta(5). For a new constant, identifying the limit and producing denominator control are substantial obstacles even when a recurrence and its asymptotics are known.
+
+## 6. How one could discover the recurrence-only simplification
+
+The following is a plausible reconstruction for a learner, not a claim about what Apéry or Zudilin historically thought.
+
+1. **Treat the recurrence as a two-dimensional space of solutions.** A_n and B_n are two solutions. Linear combinations are also solutions. Numerically, both grow rapidly and their ratio stabilizes. This suggests that most solutions share a dominant component.
+2. **Cancel the dominant component.** If B_n/A_n tends to L, then A_nL-B_n should isolate the complementary, smaller solution. The limiting quadratic has roots lambda and 1/lambda, so reciprocal decay is a reasonable expectation. This is motivation; the Casoratian makes it a proof without relying on a heuristic limiting recurrence.
+3. **Ask for the discrete Wronskian.** For differential equations, a Wronskian obeys a first-order equation. The nearest discrete analogue is A_nB_{n+1}-A_{n+1}B_n. Substituting the recurrence cancels its middle coefficient immediately. That cancellation reveals why this determinant, rather than a more complicated expression, is the useful object.
+4. **Divide by A_nA_{n+1}.** The determinant becomes the change in B_n/A_n. Summation produces an exact positive tail formula. Positivity and smallness are now consequences of coefficient growth, not properties that must be read directly from an integral or signed derivative sum.
+5. **Separate identification from estimation.** At this stage the only unknown is L. The rational-function sum already equals 2(A_n zeta(3)-B_n). To identify L we need only F_n/A_n->0, not the sharp smallness bound needed for irrationality. A uniform O(1) estimate is enough because A_n grows exponentially. This observation is what allows the difficult Ball estimate to disappear.
+6. **Prove only the growth needed for the arithmetic threshold.** The exact base 17+12sqrt2 is illuminating but unnecessary for the contradiction. A crude recurrence bound exceeding the denominator-growth rate is sufficient. Choosing 30 or 135/4 is a deliberate threshold decision, not a search for an optimal asymptotic constant.
+
+This viewpoint links linear algebra (two-dimensional solution spaces), differential equations (Wronskians and reduction of order), discrete dynamics (ratio iteration), and Diophantine approximation (positive small integers). Each link performs a specific task in the proof.
+
+## 7. A reusable theorem and the obstruction under perturbation
+
+### Uniform reduction-of-order theorem
+
+Let A_n,B_n satisfy
+
+    u_{n+1}=p_n u_n-q_n u_{n-1}, n>=1,
+
+with A_n>0, q_n>0, and W_0=A_0B_1-A_1B_0>0. Suppose that for all n>=N,
+
+    A_{n+1}>=r A_n,     q_{n+1}<=Q,
+    r>1,               Q<r².
+
+Then B_n/A_n has a finite limit L and, for n>=N,
+
+    0<A_nL-B_n
+       <= W_n/[r A_n(1-Q/r²)],
+    W_n=W_0 product_{j=1}^n q_j.                      (12)
+
+**Proof.** The recurrence gives W_n=q_nW_{n-1}. For k>=0, W_{n+k}<=Q^kW_n and A_{n+k}A_{n+k+1}>=r^(2k+1)A_n². Thus the positive ratio increments form an absolutely convergent geometric-majorized series. Its sum is L-B_n/A_n and gives (12). QED.
+
+If an independently constructed expression A_n xi-B_n satisfies o(A_n), then L=xi. This identification hypothesis can be much weaker than the final error estimate. If W_n<=C Q^n, (12) gives an error bounded by a constant times (Q/r)^n.
+
+For irrationality, add a separate arithmetic hypothesis: there are positive integers d_n such that d_nA_n,d_nB_n are integers and
+
+    d_n W_n/A_n ->0.
+
+Then d_n(A_nL-B_n) tends to zero through positive quantities, and rational L is impossible by multiplying by its fixed denominator. This theorem is a sufficient criterion, not a classification of all irrationality proofs.
+
+### Asymptotically constant recurrences
+
+If p_n->p and q_n->q>0 with p>2sqrt(q), the limiting ratio map is r↦p-q/r. Its two fixed points are
+
+    lambda_±=(p±sqrt(p²-4q))/2.
+
+On every compact interval strictly between lambda_- and lambda_+, the map exceeds the diagonal by a positive amount. If the actual ratios are eventually bounded below by some r0 in that interval, uniform convergence of the coefficients makes the same drift argument valid for large n. Every fixed target r<lambda_+ is eventually reached and then preserved. This gives a general explanation for robustness of growth bounds under small coefficient perturbations, although the concrete bound in Option B needs no iteration.
+
+The lower-ratio assumption must be checked: a solution lying exactly in the subdominant direction does not grow like lambda_+. The limiting characteristic polynomial alone cannot justify dominant growth for an arbitrary solution.
+
+### A concrete perturbation experiment: analysis survives, arithmetic fails
+
+Keep the Apéry leading coefficients but replace 5 by an integer b:
+
+    (n+1)³ U_{n+1}=(2n+1)(17n²+17n+b)U_n-n³U_{n-1},
+    U_0=1, U_1=b.
+
+Every such recurrence has the same limiting characteristic roots. Nevertheless its arithmetic changes immediately. Exact computations for b=1,...,20 find that only b=5 retains integral U_n through n=12. Examples:
+
+    b=1: first noninteger term at n=3;
+    b=9: first noninteger term at n=3;
+    b=13 or 17: first noninteger term at n=5;
+    every other b in 1,...,20 except 5: first failure at n=2.
+
+This is a finite observation, not a classification theorem and not proof that b=5 is the only possible integral parameter globally. It demonstrates the distinction between robust analytic growth and fragile arithmetic cancellation.
+
+For any integer b, multiplying U_n by (n!)³ gives an integer recurrence, so a generic denominator bound is at best factorial in this simple argument. Its logarithm is O(n log n), much larger than the O(n) decay budget. The useful lcm bound for the actual Apéry coefficients comes from their additional partial-fraction/binomial structure. A recurrence with the right characteristic roots is therefore not, by itself, an irrationality proof.

@@ -1,6 +1,6 @@
 # Powers of pi: elementary integral proofs versus explicit transcendence machinery
 
-Status: independently derived proof drafts, with all logical steps displayed. The proof for arbitrary positive integral powers is a classical Hermite–Lindemann-type construction, not a historical novelty claim. It is more substantial algebraically than the short Niven integral proof. Independent review is requested before promotion to a checked result.
+Status: independently derived arguments, with all logical steps displayed; sections 3 and 5 independently audited with no gap found (see [pi-powers-review.md](pi-powers-review.md)). This is mathematical review, not formal verification. The proof for arbitrary positive integral powers is a classical Hermite–Lindemann-type construction, not a historical novelty claim. It is more substantial algebraically than the short Niven integral proof.
 
 ## 1. Audit of the comparison proofs
 
@@ -158,11 +158,11 @@ For a single low power, the zeta(2) integral proof plus Euler's identity is much
 
 ## 4. Reference status
 
-- Ivan Niven, “The Transcendence of π”, American Mathematical Monthly 46 (1939), pp. 469–471. Publisher DOI 10.1080/00029890.1939.11998903; JSTOR DOI 10.2307/2302515. These metadata were retrieved from Crossref in this session. The publisher PDF returned HTTP 403, and the attempted JSTOR PDF returned HTML; the primary article has not yet been read. The proof above is an independently reconstructed classical argument and is not asserted to reproduce Niven's exact normalization.
+- Ivan Niven, “The Transcendence of π”, American Mathematical Monthly 46 (1939), pp. 469–471. Publisher DOI 10.1080/00029890.1939.11998903; JSTOR DOI 10.2307/2302515. These metadata were retrieved from Crossref in this session. The publisher PDF returned HTTP 403 and the attempted JSTOR PDF returned HTML. Subsequently, Niven's primary text was retrieved and read as Appendix A (PDF pages 19–22) of Jonathan M. Borwein and Scott T. Chapman, *I Prefer Pi: A Brief History and Anthology of Articles in the American Mathematical Monthly*, https://www.carmamaths.org/resources/jon/31415.pdf . The authors state that the appendix reproduces Niven's proof exactly. The local source is codex/sources/pi-monthly-anthology.pdf, with text extraction alongside it. The independently reconstructed proof above matches Niven's subset-sum symmetrization, exceptional p-1 endpoint multiplicity, and prime-divisibility argument. Our prefactor c^(mp) is one extra harmless factor c compared with his c^(mp-1); our algebraic-integer explanation expands his symmetric-polynomial denominator argument.
 - Ivan Niven, “A simple proof that pi is irrational”, Bull. Amer. Math. Soc. 53 (1947), 509: see retrieval limitations in irrationality-framework.md.
 - The elementary lcm estimate used for zeta(2) is fully proved in zudilin-explained.md section 10; its applicability here was separately checked by the exact inequality 3^18 5^135<2^347.
 
-Open pedagogical task: compare the above explicit finite-root construction against a successfully retrieved primary account of the classical transcendence proof, and identify which algebraic-integer prerequisites need their own short appendix for olympiad readers.
+The primary-source comparison is now complete at the structural level. A further pedagogical simplification removes algebraic integers entirely: if g(X)/c is monic rational, its elementary symmetric root functions have denominators dividing c. Every symmetric integer polynomial of total degree <=s can be expressed, by the fundamental theorem of symmetric polynomials, as an integer polynomial in those elementary symmetric functions, each monomial using at most s factors. Multiplication by c^s therefore clears all denominators. Apply this with s=mp-1 to the sum over beta_j of each derivative polynomial after dividing by p. This is Niven's direct route and uses only polynomial symmetry. The algebraic-integer route above is often conceptually cleaner for readers who already know the definition.
 
 ## 5. A further connection: the same endpoint multiplicities prove exp(r) transcendental
 

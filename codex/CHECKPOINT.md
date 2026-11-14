@@ -28,3 +28,19 @@ Second checkpoint, 2026-11-13 late evening LA:
   simpler denominator bounds, pi-power argument audit, odd-moment arithmetic.
 User expanded authorization to all remaining credits, no automatic resets.
 No balance/meter API available; spending and wall-clock persistence not guaranteed.
+
+Third checkpoint:
+- Complete recurrence-only simplification now removes Ball series, its large
+  certificate and saddle estimate; boundedness identifies the limit, Casoratian
+  supplies positivity and decay. Uniform ratio bound simplifies final proof.
+- Full higher-derivative forms have proved polynomial asymptotic, with independent
+  uniform tail review. Fixed harmonic-polynomial repairs ruled out.
+- Truncation repairs exponential decay: E_n~(pi/2)16^-n log(n)/n^3, independently
+  reproduced by two agents. New-prime denominator obstruction proved.
+- CLAIМ_LEDGER.md (actual filename CLAIM_LEDGER.md) organizes proof/review status.
+- Active investigations: prime-band arithmetic, higher truncated derivatives,
+  generalized recurrence recipe, weighted-family reduced denominators, and
+  compactifying the positive moment construction.
+- Remote now also has main and research-claude branches. Read-only tree search
+  found no published HANDOFF.md on research-claude at e364df8; no Claude draft
+  contents read and no Claude files changed.
