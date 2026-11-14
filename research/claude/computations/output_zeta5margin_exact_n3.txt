@@ -5,3 +5,38 @@
      5 24.000 small |  1389|    . | 1526 |     .   |     .    |    58   | False | None
      7 17.143 small |   554|    . |  931 |     .   |     .    |    40   | False | None
     11 10.909 small |   389|    . |  385 |     .   |     .    |    24   | False | None
+    13  9.231 small |   231|    . |  228 |     .   |     .    |    19   | False | None
+    17  7.059 small |    53|    . |   51 |     .   |     .    |    14   | False | None
+    19  6.316 inner |    -6|    . |   -6 |    -6   |     0    |    11   | True  | True
+    23  5.217 inner |  -112|    . | -113 |  -113   |     1    |     9   | True  | True
+    29  4.138 inner |  -217|    . | -218 |  -218   |     1    |     6   | True  | True
+    31  3.871 inner |  -246|    . | -255 |  -255   |     9    |     5   | True  | True
+    37  3.243 inner |  -291|    . | -300 |  -300   |     9    |     3   | True  | True
+    41  2.927 outer |  -332| -410 | -348 |  -348   |    16    |     2   | True  | True
+    43  2.791 outer |  -362| -422 | -372 |  -372   |    10    |     2   | True  | True
+    47  2.553 outer |  -385| -402 | -385 |  -385   |     0    |     1   | True  | True
+    53  2.264 outer |  -364| -365 | -397 |  -365   |     1    |     1   | True  | True
+    59  2.034 outer |  -345| -346 | -425 |  -346   |     1    |     0   | True  | True
+    61  1.967 outer |  -348| -348 | -438 |  -348   |     0    |     0   | True  | True
+    67  1.791 outer |  -342| -342 | -474 |  -342   |     0    |     0   | True  | True
+    71  1.690 outer |  -306| -306 | -479 |  -306   |     0    |    -1   | True  | True
+    73  1.644 outer |  -288| -288 | -479 |  -288   |     0    |    -1   | True  | True
+    79  1.519 outer |  -234| -234 | -479 |  -234   |     0    |    -1   | True  | True
+    83  1.446 outer |  -206| -206 | -483 |  -206   |     0    |    -1   | True  | True
+    89  1.348 outer |  -164| -164 | -492 |  -164   |     0    |    -1   | True  | True
+    97  1.237 outer |  -108| -108 | -498 |  -108   |     0    |    -2   | True  | True
+   101  1.188 outer |   -80|  -80 | -498 |   -80   |     0    |    -2   | True  | True
+   103  1.165 outer |   -66|  -66 | -498 |   -66   |     0    |    -2   | True  | True
+   107  1.121 outer |   -38|  -38 | -498 |   -38   |     0    |    -2   | True  | True
+   109  1.101 outer |   -24|  -24 | -498 |   -24   |     0    |    -2   | True  | True
+   113  1.062 outer |    -8|   -8 | -504 |    -8   |     0    |    -2   | True  | True
+   127  0.945 beyond|     0|    . | -546 |  -546   |   546    |    -2   | True  | True
+   131  0.916 beyond|     0|    . | -555 |  -555   |   555    |    -4   | True  | True
+   137  0.876 beyond|     0|    . | -555 |  -555   |   555    |    -4   | True  | True
+   139  0.863 beyond|     0|    . | -555 |  -555   |   555    |    -4   | True  | True
+   149  0.805 beyond|     0|    . | -555 |  -555   |   555    |    -4   | True  | True
+# violations of wf_p <= true_p among valid primes: 0
+# range inner : sum (true-new) log p /K^2 = 0.00485;  sum (true-out) log p/K^2 = 0.00000;  gain sum (new-out) log p/K^2 = 0.00000
+# range outer : sum (true-new) log p /K^2 = 0.00730;  sum (true-out) log p/K^2 = 0.04089;  gain sum (new-out) log p/K^2 = 0.03359
+# range beyond: sum (true-new) log p /K^2 = 0.94424;  sum (true-out) log p/K^2 = 0.00000;  gain sum (new-out) log p/K^2 = 0.00000
+# total time 136s

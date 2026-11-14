@@ -16,7 +16,13 @@ Two kernels f, any integer s >= 1 (s >= 2 for 'bose'), any rational shift alpha 
       X0 = eta(s, alpha) = sum_{n>=0} (-1)^n (n+alpha)^(-s).   [Abel-Plana for alternating series]
       eta(s,1/2) = 2^s beta(s)  (s=2: 4*Catalan; s=1: pi/2);  eta(s,1) = (1-2^(1-s)) zeta(s)  (s=1: log 2).
 
-In both cases mu_{X0}(R) = int_0^infty R(y^2) w(y) dy for R with simple poles at t = -a^2 (a in alpha+N).
+  kernel 'cosh' (s=2, alpha=1 only; "functional II" for Catalan):
+      weight w(y) = (pi y/4) sinh(pi y)/cosh(pi y)^2 > 0   [= -(y/2) d/dy (1/(2 cosh(pi y)))]
+      mu(t^e)             = (2e+1) |E_{2e}| / 2^(2e+3)            (Euler numbers)
+      mu_X(1/(t+n^2))     = (-1)^n (X - sum_{k<2n} chi_4(k)/k^2),  n = 1,2,...;   X0 = G (Catalan).
+      [Abel-Plana for sum chi_4(n) g(n) = int_0^inf Re g(iy) / (2 cosh(pi y/2)) dy, one integration by parts]
+
+In all cases mu_{X0}(R) = int_0^infty R(y^2) w(y) dy for R with simple poles at t = -a^2 (a in alpha+N).
 (Derivation in the report; numerical verification in catalan_functional_check.py.)
 
 Hankel family:  nodes a_j = alpha + j, j = j0..j0+K-1,  D(t) = prod (t + a_j^2),
@@ -38,6 +44,9 @@ def mu_monomial(e, s, kernel):
         return fmpq((-1) ** e) * B * c
     if kernel == 'sinh':
         return fmpq(2 ** (2 * e + 2) - 1) * abs(B) * c
+    if kernel == 'cosh':
+        assert s == 2
+        return fmpq(2 * e + 1) * fmpq(abs(int(fmpz.euler_number(2 * e))), 2 ** (2 * e + 3))
     raise ValueError(kernel)
 
 
@@ -48,7 +57,13 @@ def pole_values(s, kernel, alpha, J):
     S = fmpq(0)  # partial sum
     for j in range(J):
         a = alpha + j
-        if kernel == 'bose':
+        if kernel == 'cosh':
+            assert s == 2 and alpha == 1
+            n = j + 1          # node t = -n^2;  S = sum_{k<2n} chi_4(k)/k^2
+            Sd = sum((fmpq((1 if k % 4 == 1 else -1), k * k) for k in range(1, 2 * n, 2)), fmpq(0))
+            cX = fmpq((-1) ** n)
+            c0 = -cX * Sd
+        elif kernel == 'bose':
             cX = a ** (s - 1)
             c0 = -cX * S - 1 / (2 * a) - fmpq(1, s - 1)
             S += 1 / a ** s
@@ -112,7 +127,9 @@ def X0_arb(s, kernel, alpha, prec):
     try:
         from flint import acb
         a = acb(arb(alpha.p) / arb(alpha.q))
-        if kernel == 'bose':
+        if kernel == 'cosh':
+            val = arb.const_catalan()
+        elif kernel == 'bose':
             val = acb(s).zeta(a).real
         else:
             # eta(s,alpha) = 2^-s (zeta(s,alpha/2) - zeta(s,(alpha+1)/2)); for s=1 use digamma

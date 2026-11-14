@@ -26,11 +26,53 @@ We construct numbers $F_n=u_n\zeta(3)-v_n$ with
 If $\zeta(3)=p/q$, then $qD_n^3F_n=(D_n^3u_n)p-(D_n^3v_n)q$ is a positive integer, but it is at most
 $\frac{12qC}{c\,n^2}(33.6/33.9)^n\to0$. Contradiction (§6).
 
+### How one is led to this plan
+
+*What must be found.* A rational number $p/q$ cannot be approximated too well by other fractions:
+if $u\cdot\frac pq-v\ne0$ with integers $u,v$, then $|u\frac pq-v|\ge\frac1q$. So to prove $\xi$ irrational
+it is enough to find integers $U_n,V_n$ with $0<|U_n\xi-V_n|\to0$. Everything below is a search for
+such "linear forms". There are three separate demands, and each later section answers one:
+
+| demand | why it is needed | where |
+|---|---|---|
+| **arithmetic**: the coefficients become integers after multiplying by a *known* number $\Delta_n$ | otherwise there is no integer to contradict | §1 |
+| **non-vanishing and size**: $0<|F_n|\le\varepsilon_n$ | a form equal to $0$ proves nothing; a form that is not small proves nothing | §2–§4 |
+| **balance**: $\Delta_n\varepsilon_n\to0$ | smallness must beat the price of clearing denominators | §5–§6 |
+
+*Why this is hard for $\zeta(3)$.* The obvious forms, the partial sums $\zeta(3)-\sum_{m\le n}m^{-3}$,
+have size about $n^{-2}$ and denominators $D_n^3\approx e^{3n}$: hopeless. One needs forms that are
+*exponentially* small, with exponent larger than $3$. The numbers to keep in mind are
+$e^3=20.1$ (the price) and $(\sqrt2+1)^4=33.97$ (what the construction below achieves).
+
 ## 1. The linear forms
 
 Let
 $$r_n(t)=\frac{(t-1)(t-2)\cdots(t-n)}{t(t+1)\cdots(t+n)},\qquad R_n(t)=r_n(t)^2,\qquad F_n=-\sum_{t=1}^\infty R_n'(t).$$
 $R_n(t)=t^{-2}+O(t^{-3})$, so $R_n'(t)=O(t^{-3})$ and the series converges absolutely.
+
+**Motivation: why sum a rational function, and why this one.**
+A single term $\frac{A}{(t+k)^j}$ summed over $t=1,2,\dots$ gives $A\bigl(\zeta(j)-H_k^{(j)}\bigr)$: a zeta value
+times $A$, minus a rational number whose denominator we control ($D_n^j$ if $k\le n$). So *any* rational
+function with poles at $0,-1,\dots,-n$ produces a linear form in zeta values with explicit coefficients.
+The whole proof is the art of choosing that function. Each feature of $R_n$ answers one need:
+
+* *Poles of order 2 and a derivative.* We want $\zeta(3)$ and nothing else. Summing $R$ itself would
+  give $\zeta(2)$. Differentiating raises each pole order by one: order 2 gives $\zeta(3)$, order 1 gives
+  $\zeta(2)$. And the coefficient of that unwanted $\zeta(2)$ is the sum of the residues of $R$, which is
+  automatically $0$ as soon as $R(t)=O(t^{-2})$. So "double poles + one derivative + decay at infinity"
+  is the cheapest way to isolate $\zeta(3)$.
+* *A perfect square.* If $R=r^2$ with $r$ having simple poles and *integer* residues $a_k$, then the top
+  coefficients $a_k^2$ are integers with no denominators at all, and the lower ones only involve
+  differences $l-k$ of pole positions, hence $D_n$. This is what keeps the total price at $D_n^3$.
+* *Zeros at $t=1,\dots,n$.* Something must make the sum small. A sum over $t\ge1$ of a function that
+  vanishes (to second order, so that $R'$ vanishes too) at the first $n$ points starts only at $t=n+1$.
+  With numerator degree at most $2n$ (forced by $R=O(t^{-2})$), double zeros at $1,\dots,n$ use up all
+  the freedom: $R_n$ is the *unique* function meeting these requirements. Nothing is chosen cleverly;
+  it is forced.
+
+The same function arises from Legendre polynomials: $(-1)^nr_n(t)=\int_0^1x^{t-1}P_n(x)dx$, and the zeros
+at $1,\dots,n$ are the orthogonality of $P_n$ to $1,x,\dots,x^{n-1}$ (`exposition.md` §9). That is the
+bridge to Beukers' proof.
 
 **Lemma 1.** $F_n=u_n\zeta(3)-v_n$ with $u_n=2\sum_{k=0}^n\binom nk^2\binom{n+k}k^2\in\mathbb Z$ and $D_n^3v_n\in\mathbb Z$.
 Moreover $F_0=2\zeta(3)$, $F_1=10\zeta(3)-12$.
@@ -57,11 +99,38 @@ the $\zeta(2)$ term vanishing by (iii).
 (vi) $R_0=t^{-2}$ gives $F_0=2\zeta(3)$. $R_1=\frac1{t^2}+\frac4{(t+1)^2}-\frac4t+\frac4{t+1}$ gives
 $u_1=10$, $v_1=2\cdot4\cdot1+4\cdot1=12$. $\square$
 
+**What Lemma 1 does not give.** It settles the arithmetic completely, but says nothing about the
+size or even the sign of $F_n$. This is not laziness: the terms $R_n'(t)$ for $t>n$ are *not* small
+($R_n$ climbs from $0$ at $t=n$ to a maximum and then decays like $t^{-2}$), they change sign, and the
+tiny value of $F_n$ is what survives their cancellation. No term-by-term estimate can see it. So a
+second idea is needed, and that is the recurrence.
+
 Why this works: a term $\frac{A}{(t+k)^j}$ summed over $t\ge1$ gives $A\zeta(j)$ minus a rational with
 denominator dividing $D_n^j$. Differentiating a function with *double* poles produces $\zeta(3)$ and
 $\zeta(2)$; the coefficient of $\zeta(2)$ is the sum of the residues, which is $0$.
 
 ## 2. One identity
+
+**Motivation: why look for a recurrence, and why a telescoping identity.**
+We have a whole family $F_0,F_1,F_2,\dots$ and can compute the first two exactly. If consecutive
+members are linked by a linear relation, then information about $F_n$ can be transported from
+$n=0,1$ to all $n$, and two different sequences obeying the same relation ($F_n$ and $u_n$) can be
+compared with each other. That comparison (§4) is where sign and size will come from.
+
+How does one prove a relation between *sums*? By proving a relation between the *summands* up to
+a difference $S(t+1)-S(t)$, which disappears on summation ("creative telescoping"). So we look for
+numbers $\alpha,\beta,\gamma$ not depending on $t$, and a function $S$, with
+$\alpha R_{n+1}+\beta R_n+\gamma R_{n-1}=S(t+1)-S(t)$. Since all the ratios $R_{n\pm1}/R_n$ and
+$R_n(t+1)/R_n(t)$ are simple rational functions, the natural guess is $S=s(t)R_n(t)$ with $s$ a polynomial.
+
+*Why three terms and why $s$ is quadratic.* After dividing by $R_n$ and clearing denominators (this
+is $(\star)$ in §3) the left side is a polynomial of degree 4 in $t$. If $s$ has degree $d$, the right
+side has degree $d+3$ unless $d=2$, when the top terms cancel by themselves. With $d=2$ there are
+$3+3=6$ unknowns ($\alpha,\beta,\gamma$ and the coefficients of $s$) and $5$ equations (the coefficients
+of $t^4,\dots,t^0$): a non-zero solution *must* exist. With only two terms ($\gamma=0$) there are 5
+unknowns for 5 equations and in fact no solution. So the order 2 of Apéry's recurrence, which looked
+miraculous in 1978, is a dimension count. Solving the system gives $(n+1)^3$, $-(2n+1)(17n^2+17n+5)$,
+$n^3$ and the $s_n$ below (`recurrence-origin.md` does this by hand).
 
 Let $s_n(t)=4(2n+1)\bigl(-2t^2+t+(2n+1)^2\bigr)$.
 
@@ -69,6 +138,14 @@ Let $s_n(t)=4(2n+1)\bigl(-2t^2+t+(2n+1)^2\bigr)$.
 $$(n+1)^3R_{n+1}(t)-\beta_nR_n(t)+n^3R_{n-1}(t)=s_n(t+1)R_n(t+1)-s_n(t)R_n(t).\tag{I}$$
 
 The proof is a hand computation, given in §3. First its two consequences.
+
+**Motivation for Lemma 3: one identity, read twice.** Identity (I) is a statement about the
+function $R_n$, not about a particular sum. Any linear operation that turns "$S(t+1)-S(t)$" into
+boundary terms converts (I) into a recurrence. We use two such operations: "differentiate and sum
+over $t\ge1$" (this gives $F_n$), and "take the coefficient of the double pole at $t=-k$ and sum over
+$k$" (this gives $u_n$). The boundary terms vanish for a reason, not by luck: the double zero of $R_n$
+at $t=1$, i.e. at the *start of the summation range*. So the zeros that were introduced to make the
+sum small are also what makes the recurrence homogeneous.
 
 **Lemma 3.** For $n\ge1$:
 $$(n+1)^3F_{n+1}-\beta_nF_n+n^3F_{n-1}=0,\qquad(n+1)^3u_{n+1}-\beta_nu_n+n^3u_{n-1}=0.$$
@@ -86,6 +163,12 @@ Summing over all integers $k$ (finitely many non-zero terms) the right side is $
 is half the claimed relation. $\square$
 
 ## 3. Proof of Lemma 2 by hand
+
+**Why bother doing this by hand.** Zudilin's paper says "verify numerically". For a proof one wants
+to *see* it. The computation becomes short in the variables $m=2n+1$ and $\nu=n(n+1)$: these are the
+quantities fixed (up to sign) by the reflection $n\mapsto-1-n$, which swaps $R_{n+1}/R_n$ with
+$R_{n-1}/R_n$. Working in them is what makes the coefficients recognisable:
+$17n^2+17n+5=4m^2+\nu+1$.
 
 Divide (I) by $R_n(t)$. From the definition,
 $$\frac{R_{n+1}(t)}{R_n(t)}=\frac{(t-n-1)^2}{(t+n+1)^2},\qquad\frac{R_{n-1}(t)}{R_n(t)}=\frac{(t+n)^2}{(t-n)^2},\qquad
@@ -135,6 +218,20 @@ $\alpha,\beta,\gamma,\sigma_2,\sigma_1,\sigma_0$ is 5 homogeneous linear equatio
 
 ## 4. Positivity and size of $F_n$
 
+**Motivation: how a recurrence yields sign and size.** A relation
+$(n+1)^3X_{n+1}-\beta_nX_n+n^3X_{n-1}=0$ has a two-dimensional space of solutions. For large $n$ it looks
+like $X_{n+1}-34X_n+X_{n-1}=0$, whose solutions behave like $(17\pm12\sqrt2)^n=(\sqrt2\pm1)^{4n}$: one
+kind explodes like $33.97^n$, and a single direction decays like $33.97^{-n}$. The integers $u_n$
+obviously explode. If $F_n$ is the decaying solution, we are done, because $33.97>e^3$.
+
+To show that $F_n$ is the decaying one without any asymptotic theory, use the standard device for
+two solutions of a second-order recurrence: their "Wronskian" $u_nF_{n-1}-u_{n-1}F_n$ satisfies a
+*first*-order recurrence, so it can be computed exactly. It turns out to be $24/n^3$. Dividing by
+$u_{n-1}u_n$ says that the ratio $F_n/u_n$ decreases by a positive, explicitly tiny amount at each
+step. If the ratio tends to $0$, it is therefore positive and equal to the tail of a rapidly
+converging series. That it tends to $0$ needs only a crude bound, $|F_n|\le2$ (Lemma 5).
+This is Apéry's own mechanism; here it is fed by Lemmas 1–3 instead of by his formulas.
+
 **Lemma 4 (Casoratian).** For $n\ge1$: $\displaystyle\frac{F_{n-1}}{u_{n-1}}-\frac{F_n}{u_n}=\frac{24}{n^3u_{n-1}u_n}$.
 
 *Proof.* Let $\Omega_n=u_nF_{n-1}-u_{n-1}F_n$. By Lemma 3,
@@ -149,6 +246,11 @@ factor $\frac{t-j}{t+j}<1$), so $0<R_n(t)<t^{-2}$; and $R_n'=2R_n\varphi$ with
 $\varphi(t)=\sum_{j=1}^n\frac1{t-j}-\sum_{j=0}^n\frac1{t+j}$, where both sums are positive, the first
 is $\le H_n$ and the second is $\le\frac{n+1}t\le1\le H_n$; so $|\varphi|\le H_n$. Hence
 $|F_n|\le2H_n\sum_{t>n}t^{-2}<\frac{2H_n}n\le2$. $\square$
+
+**Why Lemma 6 is needed and why it is easy.** Proposition 7 will bound $F_n$ by about $1/u_{n+1}$,
+so we need to know how fast $u_n$ grows, with a constant above $e^{3c}=33.5$ (see §5). The recurrence
+gives this by bootstrapping: knowing only $u_{n-1}\le u_n$ yields ratio $\ge33-o(1)$; feeding that back
+yields ratio $\ge34-\frac1{30}-o(1)$. (The truth is $33.97$.)
 
 **Lemma 6.** $u_n$ is positive and increasing, and for every $\rho<34-\frac1{30}$ there is $c_\rho>0$ with
 $u_n\ge c_\rho\rho^n$ for all $n$.
@@ -166,6 +268,21 @@ $\frac{F_n}{u_n}=\sum_{m>n}\frac{24}{m^3u_{m-1}u_m}>0$. As $u_{m-1}\ge u_n$ and 
 $F_n\le\frac{24}{u_{n+1}}\sum_{m>n}m^{-3}<\frac{12}{n^2u_{n+1}}$. $\square$
 
 ## 5. A Chebyshev-type bound for $D_n$
+
+**Motivation: what must be shown about primes, and how to find a proof.**
+$\log D_n=\sum_{p^a\le n}\log p$ counts prime powers up to $n$. We need $D_n^3$ to grow more slowly than
+$u_n$, i.e. $\log D_n\le cn$ with $3c<\log33.97=3.5255$, so $c<1.1752$. The prime number theorem gives
+$c=1+o(1)$, but it is a deep theorem. Chebyshev's idea (1852) is elementary: a quotient of factorials
+is a product of prime powers whose exponents are explicit sums of floor functions, and its size is
+known from Stirling. If the exponent function $h$ is $\ge0$ everywhere and $=1$ on an initial interval
+$[1,B)$, the quotient is divisible by every prime power in $(x/B,x]$, which bounds $\psi(x)-\psi(x/B)$.
+
+The simplest choice, $\binom{2m}m$ (i.e. $h(y)=\lfloor y\rfloor-2\lfloor y/2\rfloor$), gives only $c=\log4=1.386$:
+not enough. One searches for a short combination of $\lfloor y/d\rfloor$ with $\sum\pm\frac1d=0$ (so that the
+size is exponential, not factorial) that stays in $\{0,1\}$. The combination below, with periods
+$1,2,3,6$, gives $c=1.1705$: just under the threshold $1.1752$. That it only just suffices is not a
+defect of the proof of Apéry's theorem; it measures how close $e^{3}$ and $33.97$ would be if we knew
+less about primes.
 
 **Lemma 8.** $\log D_n\le c\,n+O(\log^2n)$ with $c=\frac12\log2+\frac34\log3=1.17053\ldots$; hence
 $D_n^3\le C\,\rho_0^{\,n}$ for any $\rho_0>e^{3c}=2^{3/2}3^{9/4}=33.50\ldots$
@@ -186,6 +303,10 @@ $L(x)=x\bigl(\frac12\log2+\frac23\log3-\frac16\log6\bigr)+O(\log x)=a\,x+O(\log 
 $\psi(x)\le a\,x(1+\frac13+\frac19+\dots)+O(\log^2x)=\frac32a\,x+O(\log^2x)$, and $\frac32a=c$. $\square$
 
 ## 6. Conclusion
+
+**The three demands meet.** Arithmetic (§1) says $D_n^3F_n$ is an integer combination of $1$ and
+$\zeta(3)$. Size (§4) says $0<F_n<12/(n^2u_{n+1})$ with $u_n\gtrsim33.9^n$. Balance (§5) says
+$D_n^3\lesssim33.6^n$.
 
 Suppose $\zeta(3)=p/q$ with positive integers $p,q$. By Lemma 1,
 $N_n:=qD_n^3F_n=(D_n^3u_n)p-(D_n^3v_n)q$ is an integer. Fix $\rho_0=33.6$ and $\rho=33.9$
