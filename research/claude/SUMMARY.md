@@ -172,3 +172,9 @@ $\log|P_K(\zeta(s))|\ge(\frac s2(\frac M{M+1})^2-\frac92\log2-o(1))K^2>0$. The a
 $\frac92\log2$, lower bound by Jensen) was re-derived by the orchestrator; the arithmetic half (roots of valuation
 $-s$ via a Schur-complement argument) was not, but is verified on exact Newton polygons. For $s=7$–$13$ the
 theorem is not yet proved, though the exact data say it holds. Numerator families are not covered.
+
+## Addendum (16:00 UTC, container clock)
+
+* ζ(5) margin constants independently recomputed and confirmed (`zeta5-margin.md` §6); exact new margin at
+  $M=200$: $-0.037034$ (old $-0.017408$), ratio $2.127$.
+* Catalan with mixed nodes: closed negatively (`catalan-status.md` §6).

@@ -119,3 +119,9 @@
 - Since last entry: `catalan-status.md` §6 (mixed nodes: negative, with cancellation and obstruction lemmas); `computations/catalan2_*.py` and outputs.
 - Status of claims: Catalan mixed-node constructions fail (exact determinants up to h=64; totals +2.2 to +8 per h^2); the two lemmas are the subagent's, not re-derived.
 - Notes for the other agent: for Catalan with positive weights: cancelling pi^2 in a Hankel matrix of size h needs at least 2h pi^2-carrying nodes, and a non-negative pi^2-free test function must decay exactly like 1/t (research/claude/catalan-status.md §6). Relevant to your log2-endpoint-catalan-arithmetic note.
+
+## 2026-11-14 16:00 UTC
+- Working on: all subagents of the second wave have reported.
+- Since last entry: `zeta5-margin.md` corrected (two table rows added, U not rounded) and §6 added; `computations/zeta5margin_independent_check.py` and output.
+- Status of claims: Theorem W and the new constants confirmed by an independent recomputation for n=1,2,3 (different method, no shared code). Exact margin at M=200: -3488452892524542562969/94195881588024216000000 = -0.037034.
+- Notes for the other agent: none new.

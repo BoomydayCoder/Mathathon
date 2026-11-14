@@ -1,0 +1,111 @@
+PASS I_out recomputed from (5.8)-(5.10) = 127751/96000 (paper 127751/96000)
+PASS C_out = R0 - d equals 6y+57/40 on (1/3,43/120), -6y+229/40 on (43/120,69/170)
+PASS C_wf meets C_out at 69/170 and is below it on the interval
+PASS C_wf continuous at its breakpoints
+PASS g = int (C_out - C_wf) dy = 3203/163200 = 0.019626 (claimed 3203/163200)
+PASS I_out^new = 2139737/1632000 = 1.311113 (claimed 2139737/1632000)
+  K=  4000 p=  1361 y=0.3402  -gamma_wf=  11920  K*C_wf=  11932.00  diff= -12.00  -gamma_out(4.14)=13859  K*C_out= 13866.00
+  K=  4000 p=  1481 y=0.3703  -gamma_wf=  12934  K*C_wf=  12943.00  diff=  -9.00  -gamma_out(4.14)=14011  K*C_out= 14014.00
+  K=  4000 p=  1567 y=0.3917  -gamma_wf=  13092  K*C_wf=  13100.00  diff=  -8.00  -gamma_out(4.14)=13495  K*C_out= 13498.00
+  K=  4000 p=  1613 y=0.4032  -gamma_wf=  13124  K*C_wf=  13132.50  diff=  -8.50  -gamma_out(4.14)=13219  K*C_out= 13222.00
+  K= 16000 p=  5441 y=0.3401  -gamma_wf=  47680  K*C_wf=  47692.00  diff= -12.00  -gamma_out(4.14)=55439  K*C_out= 55446.00
+  K= 16000 p=  5923 y=0.3702  -gamma_wf=  51760  K*C_wf=  51769.00  diff=  -9.00  -gamma_out(4.14)=56059  K*C_out= 56062.00
+  K= 16000 p=  6247 y=0.3904  -gamma_wf=  52392  K*C_wf=  52400.00  diff=  -8.00  -gamma_out(4.14)=54115  K*C_out= 54118.00
+  K= 16000 p=  6449 y=0.4031  -gamma_wf=  52514  K*C_wf=  52522.50  diff=  -8.50  -gamma_out(4.14)=52903  K*C_out= 52906.00
+  K= 64000 p= 21467 y=0.3354  -gamma_wf= 187192  K*C_wf= 187204.00  diff= -12.00  -gamma_out(4.14)=219995  K*C_out=220002.00
+  K= 64000 p= 21767 y=0.3401  -gamma_wf= 190792  K*C_wf= 190804.00  diff= -12.00  -gamma_out(4.14)=221795  K*C_out=221802.00
+  K= 64000 p= 22409 y=0.3501  -gamma_wf= 198496  K*C_wf= 198508.00  diff= -12.00  -gamma_out(4.14)=225647  K*C_out=225654.00
+  K= 64000 p= 22853 y=0.3571  -gamma_wf= 203824  K*C_wf= 203836.00  diff= -12.00  -gamma_out(4.14)=228311  K*C_out=228318.00
+  K= 64000 p= 23041 y=0.3600  -gamma_wf= 205114  K*C_wf= 205123.00  diff=  -9.00  -gamma_out(4.14)=228151  K*C_out=228154.00
+  K= 64000 p= 23687 y=0.3701  -gamma_wf= 207052  K*C_wf= 207061.00  diff=  -9.00  -gamma_out(4.14)=224275  K*C_out=224278.00
+  K= 64000 p= 24329 y=0.3801  -gamma_wf= 208978  K*C_wf= 208987.00  diff=  -9.00  -gamma_out(4.14)=220423  K*C_out=220426.00
+  K= 64000 p= 24659 y=0.3853  -gamma_wf= 209592  K*C_wf= 209600.00  diff=  -8.00  -gamma_out(4.14)=218443  K*C_out=218446.00
+  K= 64000 p= 24967 y=0.3901  -gamma_wf= 209592  K*C_wf= 209600.00  diff=  -8.00  -gamma_out(4.14)=216595  K*C_out=216598.00
+  K= 64000 p= 25601 y=0.4000  -gamma_wf= 209594  K*C_wf= 209602.50  diff=  -8.50  -gamma_out(4.14)=212791  K*C_out=212794.00
+  K= 64000 p= 25793 y=0.4030  -gamma_wf= 210074  K*C_wf= 210082.50  diff=  -8.50  -gamma_out(4.14)=211639  K*C_out=211642.00
+  K= 64000 p= 25931 y=0.4052  -gamma_wf= 210419  K*C_wf= 210427.50  diff=  -8.50  -gamma_out(4.14)=210811  K*C_out=210814.00
+PASS |-gamma_wf - K*C_wf(p/K)| <= 12.00 at all sampled primes (K=4000,16000,64000)
+PASS A_200 consistent with the paper's App. B.3 margin identity
+  A_200 = 1.349588, A_200^new = 125276893356837414600059/94195881588024216000000 = 1.329961
+  A_200 + U = -0.017408
+  A_200^new + U = -3488452892524542562969/94195881588024216000000 = -0.037034
+PASS A_200^new + U negative and = -0.037039 to within 1e-5 (claimed value)
+  NOTE: exact A_200^new+U = -0.0370340; the claimed -0.037039 (and old -0.017412) come from rounding U to -1.36700; with exact U the 6-decimal values are -0.037034 / -0.017408
+PASS n=1: deg Delta_K = h=37 (leading coeff nonzero); time 1.4s
+  n=1 K=40 h=37:   p | true vG_p | gamma_wf | (4.14) | note
+     11 |    -83 |    -85 |   None | 
+     13 |    -93 |   -100 |   None | 
+     17 |   -123 |   -125 |   -124 | 
+     19 |   -113 |   -133 |   -114 | 
+     23 |   -110 |   -156 |   -110 | 
+     29 |    -60 |   -160 |    -60 | 
+     31 |    -46 |   -163 |    -46 | 
+     37 |     -4 |   -164 |     -4 | 
+     41 |      0 |   -176 |      0 | 
+     43 |      0 |   -182 |      0 | 
+     47 |      0 |   -185 |      0 | 
+     53 |      0 |   -185 |      0 | 
+     59 |      0 |   -185 |      0 | 
+     61 |      0 |   -185 |      0 | 
+     67 |      0 |   -185 |      0 | 
+PASS n=1: no violation of gamma_wf <= v_p^G(Delta_K) (nor of (4.14))
+PASS n=2: deg Delta_K = h=74 (leading coeff nonzero); time 106.8s
+  n=2 K=80 h=74:   p | true vG_p | gamma_wf | (4.14) | note
+     17 |   -106 |   -108 |   None | 
+     19 |   -128 |   -134 |   None | 
+     23 |   -188 |   -188 |   None | 
+     29 |   -242 |   -248 |   -281 | wf beats (4.14)
+     31 |   -254 |   -254 |   -269 | wf beats (4.14)
+     37 |   -227 |   -266 |   -228 | 
+     41 |   -232 |   -292 |   -232 | 
+     43 |   -238 |   -308 |   -238 | 
+     47 |   -208 |   -318 |   -208 | 
+     53 |   -154 |   -318 |   -154 | 
+     59 |   -112 |   -326 |   -112 | 
+     61 |    -98 |   -329 |    -98 | 
+     67 |    -56 |   -331 |    -56 | 
+     71 |    -28 |   -331 |    -28 | 
+     73 |    -14 |   -331 |    -14 | 
+     79 |     -2 |   -346 |     -2 | 
+     83 |      0 |   -358 |      0 | 
+     89 |      0 |   -370 |      0 | 
+     97 |      0 |   -370 |      0 | 
+    101 |      0 |   -370 |      0 | 
+    103 |      0 |   -370 |      0 | 
+    107 |      0 |   -370 |      0 | 
+    109 |      0 |   -370 |      0 | 
+PASS n=2: no violation of gamma_wf <= v_p^G(Delta_K) (nor of (4.14))
+OVERALL: PASS
+
+=== n=3 section (same code, run separately: 'python3 zeta5margin_independent_check.py 3', 1367 s) ===
+PASS n=3: deg Delta_K = h=111 (leading coeff nonzero); time 1367.0s
+  n=3 K=120 h=111:   p | true vG_p | gamma_wf | (4.14) | note
+     19 |     -6 |     -6 |   None | 
+     23 |   -112 |   -113 |   None | 
+     29 |   -217 |   -218 |   None | 
+     31 |   -246 |   -255 |   None | 
+     37 |   -291 |   -300 |   None | 
+     41 |   -332 |   -348 |   -410 | wf beats (4.14)
+     43 |   -362 |   -372 |   -422 | wf beats (4.14)
+     47 |   -385 |   -385 |   -402 | wf beats (4.14)
+     53 |   -364 |   -397 |   -365 | 
+     59 |   -345 |   -425 |   -346 | 
+     61 |   -348 |   -438 |   -348 | 
+     67 |   -342 |   -474 |   -342 | 
+     71 |   -306 |   -479 |   -306 | 
+     73 |   -288 |   -479 |   -288 | 
+     79 |   -234 |   -479 |   -234 | 
+     83 |   -206 |   -483 |   -206 | 
+     89 |   -164 |   -492 |   -164 | 
+     97 |   -108 |   -498 |   -108 | 
+    101 |    -80 |   -498 |    -80 | 
+    103 |    -66 |   -498 |    -66 | 
+    107 |    -38 |   -498 |    -38 | 
+    109 |    -24 |   -498 |    -24 | 
+    113 |     -8 |   -504 |     -8 | 
+    127 |      0 |   -546 |      0 | 
+    131 |      0 |   -555 |      0 | 
+    137 |      0 |   -555 |      0 | 
+    139 |      0 |   -555 |      0 | 
+    149 |      0 |   -555 |      0 | 
+PASS n=3: no violation of gamma_wf <= v_p^G(Delta_K) (nor of (4.14))

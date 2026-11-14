@@ -62,8 +62,10 @@ primes where the theorem applies. Primes where water filling beats (4.14):
 | $K$ | $p$ | true $v_p$ | (4.14) | $\gamma^{\rm wf}$ |
 |---|---|---|---|---|
 | 80 | 29 | −242 | −281 | −248 |
+| 80 | 31 | −254 | −269 | −254 |
 | 120 | 41 | −332 | −410 | −348 |
 | 120 | 43 | −362 | −422 | −372 |
+| 120 | 47 | −385 | −402 | −385 |
 | 160 | 59 | −500 | −559 | −508 |
 | 200 | 67 | −542 | −680 | −572 |
 | 200 | 71 | −602 | −704 | −620 |
@@ -76,13 +78,14 @@ $[\frac{23}{60},\frac25]$, $[\frac25,\frac{69}{170}]$: $C_{\rm wf}=12y-\frac{11}
 $C_{\rm out}=6y+\frac{57}{40}$ on the first and $-6y+\frac{229}{40}$ on the others. The gain is
 $$g=\tfrac{3203}{163200}=0.019626,\qquad I_{\rm out}^{\rm new}=\tfrac{2139737}{1632000}=1.311113\ \ (\text{old }\tfrac{127751}{96000}=1.330740).$$
 
-| | old | new | new $+U$ ($U=-1.36700$) |
+| | old | new | new $+U$ ($U=-\frac{2733991}{2000000}=-1.3669955$) |
 |---|---|---|---|
-| $A_{200}$ | 1.349588 | 1.329961 | **−0.037039** (old −0.017412) |
-| $A^*$ ($M\to\infty$) | 1.317507 | 1.297881 | −0.069119 (old −0.049493) |
+| $A_{200}$ | 1.349588 | 1.329961 | **−0.037034** (old −0.017408) |
+| $A^*$ ($M\to\infty$) | 1.317507 | 1.297881 | −0.069114 (old −0.049489) |
 
 So **the margin of the ζ(5) proof at $M=200$ becomes $2.13$ times larger**, and the exponent in
-Theorem 2.1 improves from $-27.86n^2$ to $-59.26n^2$. (The code reproduces Fauzan's (5.10) and (5.18)
+Theorem 2.1 improves from $-27.85n^2$ to $-59.25n^2$. Exactly:
+$A_{200}^{\rm new}+U=-\frac{3488452892524542562969}{94195881588024216000000}$. (The code reproduces Fauzan's (5.10) and (5.18)
 exactly before computing the new values.)
 
 Not written out: the uniform $O(1)$ in $\gamma^{\rm wf}_p=K\,C_{\rm wf}(p/K)+O(1)$ on the outer range (numerically
@@ -113,3 +116,15 @@ $s\ne5$).
 
 A by-product for ζ(5): the model prefers $a=5$, $\alpha\approx0.11$ (total −0.110) to Fauzan's
 $a=6$, $\alpha=0.075$ (−0.092).
+
+## 6. Independent recomputation (added 16:00 UTC)
+
+A separate subagent, forbidden to read the scripts above, rebuilt $\Delta_K$ exactly for $n=1,2,3$ by a
+different method (exact integer determinants at $h+1$ points and interpolation), recomputed
+$\gamma^{\rm wf}_p$ from the definition and (4.14) from the paper, and re-derived the constants
+(`computations/zeta5margin_independent_check.py`). Results: no violation of Theorem W or of (4.14) at any
+prime; Fauzan's $I_{\rm out}=\frac{127751}{96000}$ reproduced from his formulas; $g=\frac{3203}{163200}$ and
+$I_{\rm out}^{\rm new}=\frac{2139737}{1632000}$ confirmed exactly; the $O(1)$ term in
+$-\gamma^{\rm wf}_p=K\,C_{\rm wf}(p/K)+O(1)$ is between $-12$ and $-8$ up to $K=64000$. It found two omissions in the
+table of §3 (now added) and a rounding of $U$ in §4 (now corrected; the margin ratio is $2.127$). It did not
+review the proof of Theorem W.
