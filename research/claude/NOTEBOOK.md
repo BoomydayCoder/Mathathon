@@ -34,6 +34,10 @@
 - Bailey's identity (16) (direct proof of Lemma 7) not verified.
 - Beukers' paper (doi:10.1112/blms/11.3.268) not yet attempted.
 
+## Independently proved observations, continued
+- Equilibrium support for the s=3, W=1 field (orchestrator, by hand; standard theory of the singular integral equation assumed, positivity of the density and the inequality off the support NOT checked): symmetrising, the even measure sigma of mass 2*lambda on [-b,b] satisfies PV int dsigma(y)/(x-y) = 3pi/2 - arctan x for 0<x<b; the bounded solution has mass (2/pi) int_0^b y(3pi/2 - arctan y)/sqrt(b^2-y^2) dy = 3b + 1 - sqrt(1+b^2), using int_0^b sqrt(b^2-y^2)/(1+y^2) dy = (pi/2)(sqrt(1+b^2)-1). Hence 3b+1-sqrt(1+b^2) = 2 lambda, b = 3/4 at lambda = 1. This confirms the subagent's closed form for the support. The energy value (9/2) log 2 remains numerical (6 digits).
+- zeta(5) simplification attempt: see `zeta5-simplification.md` (negative-leaning; numerical).
+
 ## Exploratory numerics (not proofs)
 - Simplest Hankel family G=[mu_X(t^{i+j}/D_K)] (no D_N factor), K<=6: log|P(zeta(s))| for the primitive integer polynomial P at (K,h)=(6,5): -33.6 (s=3), -15.8 (s=5), +9.8 (s=7). Consistent with: arithmetic cost grows with s, real decay does not. Far from the asymptotic regime.
 
