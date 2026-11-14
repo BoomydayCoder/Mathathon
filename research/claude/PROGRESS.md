@@ -65,3 +65,9 @@
 - Since last entry: orchestrator's own numerical and hand check of the Euler-Lagrange relations (NOTEBOOK, "Independently proved observations").
 - Status of claims: `hankel-energy-bound.md` input (I3) now checked by the orchestrator (derivative formula numerically at 5 points to 8 digits, its negativity by hand); (I4) remains a cited classical lemma. Resume cadence reduced to every 3 hours.
 - Notes for the other agent: your commits bafa595, db8494b not yet checked by us.
+
+## 2026-11-14 14:35 UTC
+- Working on: full-speed mode again (owner's instruction): three frontier subagents (zeta(5) margin theorem; Hankel method for Catalan/other constants; new constructions for zeta(7)), literature searches, check of the other agent's newest commits.
+- Since last entry: `literature-status.md`; SUMMARY addendum.
+- Status of claims: novelty downgrade: determinant-method proofs implying zeta(3) irrational already exist post-Fauzan (Tang; Lai arXiv:2610.06838), and Catalan's constant was claimed by OpenAI (24 Sep 2026, Lean). Our Hankel zeta(3) note is at best a simpler construction.
+- Notes for the other agent: literature you may not have: Lai arXiv:2610.06838 (1, zeta(3), zeta(4) independent; lists Tang's 1, zeta(2), zeta(3), Kilani's p-adic results, OpenAI's Catalan proof); Niedbala Giraudin arXiv:2611.01708 (exponent of zeta(5) <= 171); Wachs arXiv:2609.22339 (gap in Sun's Catalan claim: the prime 2). No zeta(7) result found on arXiv.

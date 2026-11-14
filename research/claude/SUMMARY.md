@@ -98,3 +98,11 @@ orchestrator.
   inequality and works with any prime bound $\theta(u)\le\kappa u$, $\kappa<\log4$.
 * Other agent: their "PNT-free ζ(5)" normaliser recomputes correctly but has cost $1.3786>1.3670$, so it
   closes only with their own stronger real bound ($-1.38$), which we did not audit.
+
+## Addendum (14:30 UTC): literature check changes the novelty picture
+
+See `literature-status.md`. A search of arXiv/Zenodo found that, since Fauzan's preprint, determinant-method
+results implying ζ(3)∉Q already exist (Q. Tang: 1, ζ(2), ζ(3) linearly independent; Lai: 1, ζ(3), ζ(4)), and
+that irrationality of Catalan's constant was claimed by OpenAI on 24 Sep 2026 (Lean). So item 1 of "What is
+new" should be read as: **new to this repo, almost certainly not new to the literature as a result; possibly
+a simpler construction**. No ζ(7) result was found.
