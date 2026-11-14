@@ -295,3 +295,54 @@ Twelfth checkpoint,2026-11-14 11:15UTC (03:15LA), continuing:
   inclusion–exclusion beingdeveloped toorganizeallfirstdigits.
 - Currentlatestpushedcommit a70ae89; newerworkawaitsnextcheckpointpush.
   Work continues toward16:00UTC, no usage-meter access and no resets.
+
+Thirteenth checkpoint,2026-11-14 11:50UTC (03:50LA), continuing:
+- Core131short-elementary-hybrid-proof.md iscompleteandindependentlyreviewed:
+  orthogonality→Mellinsquare→rationalarithmetic, twoIBPs→positivecube, oneAM–GM
+  minimumandperiod6lcmestimate. No recurrence,PNT,orcomplexcontours needed
+  forirrationality. Classicalconstruction,presentationnotnoveltyclaim.
+- Geometricdivergencederivation nowcompleteandreviewed: all8Apéryoperator
+  coefficients recoveredasunknowns in1180exactequations; rational3varlift and
+  noncompactboundarycorner giveLF=−12t. Rootcaughtfalsea−b>=λbound; repaired
+  toa−b>1 andD>=t²(1−2/t)p²r² beforeaudit. Largecertificates remainan
+  expositioncost, notashortconceptualproof oforder3.
+- All-n qdeformation liesin4polylogcomponents; directpositiveintegral↔weighted
+  Zudilinderivativeseries. q1uniquelycancelstheGcomponentbyone-crossingsign
+  balance. Mellinversionreviewed; newelementaryall-qreplacementauditfinishing.
+- Optional11factorPNTfreeBarnescertificate independentlypassed409knotsand
+  816interiorchecks, patchedcost<1.3846. Main25factorrouteunchanged.
+- Originalundepletedcanonicalfamily hasreviewedactualprimitivegrowthforfixed
+  odds>=13. Generalfixed(r,α)familyeventuallyfailsatlargeodds, withreviewed
+  explicitthreshold andnecessarylinear r-growthwhenαstaysawayfrom1. These
+  areactualcoefficientdenominators, notfailureofsufficientbounds.
+- EveryfixedsingleintegerdepletionL>=2failscanonicalfamilyatodds>=7; independent
+  auditpassedincludingfulls7exceptionalblocks. Allcoprimepair/allfixedα
+  obstructionreviewalsopassed. No globalirrationalityno-go.
+- CyclotomicMöbiusmomentclassification reviewed: integralallmomentsiffmodulus
+  composite; m4gives tangentnumbersandη/βpoleparity. Logcyclotomicidentity
+  preciselycreditedtoHerrera-Poyatos–Moree/Lehmer. Sharpfirstgcd-oneprefix
+  theorem hasseparatecross-auditvia10,730carrychecks.
+- #137generalvisible-starIE forall0<=excess<p−1 independentlyreviewed, gives
+  normalizedmodp^(p−1); boundarymechanismexplicit. Team40hourRESEARCH_MAPsaved.
+- Activepositivelead: degree-drop/rank1subspace determinants, producingrational
+  one-sidedapproximants forALLoddζvalues. Schurvariationalformulaandtrial
+  D_(h−1) suggestexplicitfactorialerrorbound; proof/checksdeveloping. Notyet
+  anirrationalityresult; fullpoleobstructionsdonotapplyto thissubspace.
+- Currentpushedcommit17a2f78; newreviewedworkwillbepushedatnextcheckpoint.
+  Continuingto16:00UTC/08:00LA withoutresetorusage-meterclaims.
+
+Fourteenth checkpoint, 2026-11-14 12:07 UTC (04:07 LA), continuing:
+- Rank-one subspace construction is now proved and independently reviewed for
+  every fixed odd s: rational one-sided bounds, strict monotonicity, explicit
+  factorial error, and rational-sample multipoint Padé interpretation.
+- The exact adjacent-Apéry identity matches h=1,...,12 but is still conjectural.
+  Primary-source comparisons supply a concrete Wilson/associated-numerator lead;
+  two independent investigations are pursuing the missing general proof.
+- All-q elementary deformed-period proof has completed its independent audit.
+- Geometric certificate compression found all 30 freedoms as explicit curl gauges
+  and a short positive radial representative of the boundary class with integral
+  12. No shorter complete closure certificate was found; original tables retained.
+- Next conceptual targets: explain the Apéry match, compare analytic rates across
+  all odd rank-one families, and check the Fano/Gamma-class primary-source bridge.
+- New reviewed notes and reproducible computations are being checkpointed to the
+  same codex branch. Work continues toward 16:00 UTC; no balance API or resets.

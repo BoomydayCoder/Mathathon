@@ -1,6 +1,6 @@
 # Actual denominator costs for the original odd-zeta determinant
 
-**Status: proved local coefficient theorem and an actual scalar-normalization obstruction for fixed odd s>=29.** This concerns the original, undepleted Hermite functional, numerator power six, and K=40n,N=3n,h=37n. It is not inferred from a sufficient normalizer. The s=7,9,...,27 cases are not ruled out by the bound proved here. No general irrationality obstruction or novelty claim is asserted.
+**Status: proved and independently reviewed local coefficient theorem and actual scalar-normalization obstruction for fixed odd s>=13.** See `original-wide-monic-independent-review.md` and its separate ideal-repair checker. This concerns the original, undepleted Hermite functional, numerator power six, and K=40n,N=3n,h=37n. It is not inferred from a sufficient normalizer. The s=7,9,11 cases are not ruled out by the bound proved here. Sections 1–6 first establish the simpler s>=29 result; Section 7 strengthens it to s>=13. No general irrationality obstruction or novelty claim is asserted.
 
 ## 1. A rational basis change makes the monic arithmetic visible
 
@@ -160,4 +160,140 @@ It is far too small, by itself, to prove primitive growth. Determining whether t
 
 `codex/computations/check_original_outer_monic.py` independently constructs exact Bernoulli moments, the integer basis leading factors, and the finite-field residual matrix. At K=40,N=3, it verifies (6) for s=7,9,11 and p=23,29,31,37. At K=80,N=6,s=7, the residual blocks for p=41 and p=43 have sizes 15 and 3 and are nonsingular modulo their primes. They force denominator exponents at least 315 and 273, respectively; the clean band case p=47 forces exponent at least 238. These residual nonsingularity observations are finite checks, not an all-prime theorem.
 
-The proof of (8)-(9) uses the prime number theorem and the separately certified Jensen lower bound explicitly. No general s>=7 failure theorem is claimed, and no inference is drawn from a sufficient normalizer alone.
+The proof of (8)-(9) uses the prime number theorem and the separately certified Jensen lower bound explicitly. No general s>=7 failure theorem is claimed, and no inference is drawn from a sufficient normalizer alone. Section 7 below strengthens the threshold to 13.
+
+## 7. A bounded zero-class repair improves the threshold to s>=13
+
+The parent proposed extending the argument to p>K/4; an independent derivation gives the same result. The only exceptional rows are the at most three zero-class nodes. Their finite p-adic cost can be removed without losing a linear number of forced coefficient denominators.
+
+### 7.1 All local hypotheses in the wider band
+
+Fix odd s>=13, K=40n, N=3n, and a prime
+\[
+ K/4<p\le K.
+\]
+For all sufficiently large K (depending on fixed s), p>s-1, p^2>2K, 2N<p, and
+\[
+ p>1+(2E+2)/(s-1),\qquad E=K+4N-2.
+\]
+Indeed the last right side is at most 13K/60+5/6<K/4 for K>=40. Thus the entire polynomial-part matrix P is p-integral.
+
+Put q=floor(K/p), so 1<=q<=3. An ordinary squared-residue class has at most 2q+2<=8 nodes. At most one was removed, so (2) now gives
+\[
+ v_p(C_j)\le 2q+5\le11<s\quad(p\nmid j).             \tag{12}
+\]
+At a zero-class node j=ap, 1<=a<=q, the other q-1 zero nodes each contribute exactly two to v_p(D'(-j^2)). All other factors are units. For sufficiently large p, the factors a^2-b^2 are units since a,b<=3; therefore
+\[
+ v_p(C_{ap})=s-1+2(q-1)=s+2q-3.                     \tag{13}
+\]
+In A=p^sC^(-1)B the ordinary rows are integral, with reduction diagonal. Their diagonal residues are
+\[
+ \epsilon_j=-H_{\lfloor j/p\rfloor}^{(s)}\pmod p,
+ \qquad p\nmid j.                                 \tag{14}
+\]
+The off-diagonal entries vanish modulo p by (12). For the zero rows, the pole contribution is integral too:
+\[
+ p^s c_{ap}/(ap)^{s-1}
+ \equiv-H_a^{(s)}+\frac1{2a^s}\pmod p.
+\]
+Only their polynomial-part entries can have negative valuation, bounded below by -(2q-3). Multiply each zero row by p^d, where
+\[
+ d=(2q-3)_+,\qquad E_0=qd\le9.
+\]
+The resulting polynomial matrix with variable Z is integral. Its determinant is
+\[
+ \mathcal Q(Z)=p^{E_0}\det(ZI+A)
+ =p^{E_0+sh}F(Z/p^s)\in\mathbb Z_p[Z].              \tag{15}
+\]
+Its leading coefficient is p^(E_0), so its Gauss valuation v satisfies
+\[
+ 0\le v\le E_0.                                    \tag{16}
+\]
+No Schur-complement invertibility or residual-minor nonvanishing has been assumed.
+
+### 7.2 A polynomial-ideal lemma controls every cancellation
+
+For a lift epsilon in Z_p of a nonzero residue, let n_epsilon be the number of ordinary rows having residue epsilon in (14). Every entry in each of these rows of the repaired matrix belongs to
+\[
+ I_\epsilon=(p,Z+\epsilon)\subset\mathbb Z_p[Z]:
+\]
+the diagonal entry is Z+epsilon modulo p, and every off-diagonal entry is zero modulo p. Multilinearity of the determinant implies
+\[
+ \mathcal Q\in I_\epsilon^{n_\epsilon}.              \tag{17}
+\]
+
+**Elementary lemma.** If Q in Z_p[Z] belongs to (p,Z+epsilon)^n and v=v_p^G(Q), then the reduction of p^(-v)Q is divisible by
+\((Z+\overline\epsilon)^{(n-v)_+}\).
+
+**Proof.** Set Y=Z+epsilon. Membership in (p,Y)^n means that the coefficient of Y^j has valuation at least n-j for j<n. Translation by an integral constant preserves Gauss valuation: substitution in either direction has integral binomial coefficients. Thus after division by p^v and reduction, every Y^j coefficient with j<n-v vanishes. QED.
+
+Applying the lemma and (16), the nonzero polynomial
+\(\overline{p^{-v}\mathcal Q}\) is divisible by
+\[
+ \prod_{\epsilon\ne0}(Z+\epsilon)^{(n_\epsilon-E_0)_+}.       \tag{18}
+\]
+For fixed s, the rational numbers H_1^(s),H_2^(s),H_3^(s) are positive and distinct. Apart from finitely many primes dividing their numerators, denominators or pairwise differences, their reductions are nonzero and distinct. All these fixed exceptions are eventually outside p>K/4. Consequently there are at most q distinct nonzero groups, containing in total
+\[
+ b_{\rm ord}=K-p+1-q
+\]
+ordinary nodes. Formula (18) therefore forces at least
+\[
+ R=\max(0,b_{\rm ord}-qE_0)                         \tag{19}
+\]
+nonzero roots, counted with multiplicity, in the primitive reduced polynomial.
+
+This argument handles all bottom-row dependence on Z, all couplings, and arbitrary cancellation inside their determinant. It needs no assumption that a particular finite-field minor is nonzero.
+
+### 7.3 Convert the retained roots into an actual coefficient denominator
+
+Write F(X)=sum_(r=0)^h a_r X^(h-r), a_0=1. The coefficient of Z^(h-r) in (15) is
+\[
+ p^{E_0+sr}a_r.
+\]
+A polynomial of degree at most h having R nonzero roots counted with multiplicity has some nonzero coefficient with r>=R: its zero-root multiplicity is at most h-R. Hence some such r survives in \(\overline{p^{-v}\mathcal Q}\), and
+\[
+ v_p(a_r)=v-E_0-sr\le-sR.
+\]
+Thus the **actual** monic coefficient denominator satisfies
+\[
+ \boxed{v_p(M_K)\ge
+ s\max(0,K-p+1-q-q^2(2q-3)_+),\quad K/4<p\le K.}   \tag{20}
+\]
+The loss is bounded by 30, independently of K and p. Even primes close to K, where the displayed lower bound can be zero, affect only the same lower-order error.
+
+The prime number theorem and partial summation now give
+\[
+ \boxed{\liminf\frac{\log M_K}{K^2}
+ \ge s\int_{1/4}^1(1-u)\,du=\frac{9s}{32}.}         \tag{21}
+\]
+The constant loss per prime contributes O_s(K), not a quadratic term. This use of the prime number theorem is explicit; the finite local theorem does not require it.
+
+Combining with the same independently certified Jensen bound as Section 4 yields
+\[
+ \liminf\frac1{K^2}\log|M_KF(\zeta(s))|
+ \ge\frac{9s}{32}-\frac{1789}{500}.
+\]
+For s=13 the right side is
+\[
+ \frac{117}{32}-\frac{1789}{500}
+ =\frac{313}{4000}=0.07825>0.
+\]
+Therefore for **every fixed odd s>=13**, all sufficiently large K=40n satisfy
+\[
+ \boxed{|M_KF(\zeta(s))|>\exp(K^2/20).}              \tag{22}
+\]
+As before, every rational scalar producing an integral polynomial gives an integer multiple of this primitive representative. This proves an actual obstruction for the original undepleted determinant family at these indices, not merely for a proposed normalizing formula. The remaining fixed odd cases s=7,9,11 require additional ideas; the present argument does not decide them.
+
+### 7.4 Full characteristic-polynomial checks
+
+The separate standard-library checker `codex/computations/check_original_wide_monic.py` constructs the full rational moment matrix modulo a sufficiently high power of p. It computes its complete characteristic polynomial using Newton identities, explicitly increasing precision to account for divisions by characteristic indices divisible by p. It then reverses the auxiliary uniform scaling, extracts the exact Gauss content through the guaranteed bound E_0, and verifies the retained-root multiplicities of the primitive reduction. Thus it checks the nontrivial cancellations in the zero block, rather than merely the easy diagonal reductions.
+
+All three cases pass:
+
+| K,N,s,p | Repair E_0 | Actual Gauss content of Q | One forced coefficient denominator exponent | General bound (20) |
+|---|---:|---:|---:|---:|
+| 40,3,13,13 | 9 | 6 | 367 | 0 |
+| 40,3,13,17 | 2 | 1 | 313 | 234 |
+| 80,6,13,23 | 9 | 6 | 757 | 364 |
+
+The exponents in the fourth column are exact valuations of particular detected coefficients, not a claim to have found the least denominator of the entire polynomial. The finite examples support the all-parameter proof above; the general theorem does not infer valuations or root multiplicities from the samples.

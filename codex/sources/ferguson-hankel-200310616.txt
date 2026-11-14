@@ -1,0 +1,491 @@
+                                                RATIONAL APPROXIMATIONS VIA HANKEL DETERMINANTS
+
+                                                                                         TIMOTHY FERGUSON
+
+                                                   Abstract. Define the monomials en (x) := xn and let L be a linear functional. In this pa-
+arXiv:2003.10616v1 [math.NT] 24 Mar 2020
+
+
+
+
+                                                   per we describe a method which, under specified conditions, produces approximations for the
+                                                   value L(e0 ) in terms of Hankel determinants constructed from the values L(e1 ), L(e2 ), . . . .
+                                                   Many constants of mathematical interest can be expressed as the values of integrals. Ex-
+                                                   amples include the Euler-Mascheroni constant γ, the Euler-Gompertz constant δ, and the
+                                                   Riemann-zeta constants ζ(k) for k ≥ 2. In many cases we can use the integral representation
+                                                   for the constant to construct a linear functional for which L(e0 ) equals the given constant
+                                                   and L(e1 ), L(e2 ), . . . are rational numbers. In this case, under the specified conditions, we
+                                                   obtain rational approximations for our constant. In particular, we execute this procedure
+                                                   for the previously mentioned constants γ, δ, and ζ(k). We note that our approximations
+                                                   are not strong enough to study the arithmetic properties of these constants.
+
+
+
+                                           Keywords. Diophantine approximation, Hankel determinants
+
+                                           AMS subject classifications. 11J17, 11C20, 15B05
+
+
+
+
+                                                                               1. Introduction and Main Theorem
+                                              Approximation of a given constant by a sequence of rational numbers is an important problem in number
+                                           theory. If these approximations are “good enough” then they can be used to study the arithmetic properties
+                                           of the constant and obtain transcendence/irrationality results. In the case that the constant appears in a
+                                           sequence of integrals, Zeilberger and Zudilin [8] have obtained methods to automate irrationality proofs.
+                                           They do not construct the approximations but rather provide a context in which the strength of the already
+                                           specified approximations can be proved. In our case, we will use Hankel determinants to construct approxi-
+                                           mations. Hankel determinants have many applications to approximation. Bugeaud, Han, Wen, and Yao [1]
+                                           used Hankel determinants to prove that a large class of numbers have irrationality exponent two. In addi-
+                                           tion, Krattenthaler, Rochev, Väänänen, and Zudilin [6] used Hankel determinants when showing that certain
+                                           q-exponential functions have non-quadratic values. Furthermore, Zudilin [9] used Hankel determinants to
+                                           obtain a new irrationality criterion. Finally, we note that although evaluating Hankel determinants can be
+                                           difficult, there are many methods for doing so (see [2–5]).
+                                              Now we describe the setup for our method. Suppose that L is a linear functional whose domain contains
+                                           all polynomials. We show that if L satisfies certain conditions, then we can construct approximations for
+                                           L(e0 ) from L(e1 ), L(e2 ), . . . where {en }∞                                           n
+                                                                                        n=0 are the monomials defined by en (x) := x . In particular, we will
+                                                                                                   ∞            ∞
+                                           define two sequences of Hankel determinants {Pn }n=0 and {Qn }n=0 such that
+
+                                               (1) limn→∞ Pn /Qn = L(e0 ),
+                                               (2) Pn , Qn ∈ Z[L(e1 ), . . . , L(e2n+2 )] for all n ≥ 0.
+
+                                           As a special case, we obtain rational approximations for L(e0 ) if L(en ) ∈ Q for all n ≥ 1. We will use this
+                                           observation to construct rational approximations for the Euler-Mascheroni constant γ, the Euler-Gompertz
+                                                                                                      1
+2                                            TIMOTHY FERGUSON
+
+
+constant δ, and the Riemann-zeta constants ζ(k) where
+                                            n
+                                            X                  Z 1                 
+                                              1                         1     1
+                               γ := lim            − log n =               +             dx,               (1.1)
+                                      n→∞
+                                         i=1
+                                               i               0      1 − x log x
+                                      Z ∞ −x
+                                            e
+                               δ :=             dx,                                                        (1.2)
+                                      0     1+x
+                                      ∞
+                                      X                    Z ∞
+                                           1       1                xk−1
+                            ζ(k) :=         k
+                                              =                           dx,   k ≥ 2.                     (1.3)
+                                      n=1
+                                          n     (k − 1)!   0       ex − 1
+We again note that our rational approximations are not strong enough to study the arithmetic nature of any
+these constants.
+   We now state our main theorem.
+Theorem 1. Let L : H → R be a linear functional where H is a real vector space containing {en }∞
+                                                                                               n=0 .
+Define the sequences of Hankel determinants {Pn }∞
+                                                 n=0 and {Q  } ∞
+                                                            n n=0 by
+                                                                         (
+                           n+1                          n                  L(en ) if n ≥ 1,
+         Pn := − det(ai+j )i,j=0 and Qn := det(ai+j+2 )i,j=0 where an :=
+                                                                           0      if n = 0,
+Suppose that L((e1 f )2 ) > 0 for all non-zero real polynomials f . Then Qn > 0 and
+                         L(e1 )2 /L(e2 ) = P0 /Q0 ≤ · · · ≤ Pn /Qn ≤ Pn+1 /Qn+1 ≤ . . .                    (1.4)
+In addition, suppose that H is a Hilbert space with inner product hf, gi := L(f g) and that {en }∞
+                                                                                                 n=1 is complete
+in H i.e. if f ∈ H satisfies hf, en i = 0 for all n ≥ 1, then f = 0. Then Pn /Qn < L(e0 ) and
+                                               lim Pn /Qn = L(e0 ).                                        (1.5)
+                                              n→∞
+
+  Our main theorem and its applications are exercises in Hilbert space theory (see [7] for relevant results).
+We defer the proof of Theorem 1 to the appendix. In Section 2 we apply Theorem 1 to construct rational
+approximations for the constants γ, δ, and ζ(k) in (1.1), (1.2), and (1.3).
+
+                                                   2. Examples
+  In this section we apply Theorem 1 to the constants γ, δ, and ζ(k) for k ≥ 2. In each case we require
+Lemma 2 to check the hypothesis of Theorem 1. We defer the proof of Lemma 2 to the appendix.
+Lemma 2. Let Ω be an interval of the form [a, b] or [a, ∞) and let K : Ω → R be a function satisfying the
+following properties:
+     (1) K is Lebesgue integrable and positive almost everywhere,
+     (2) If Ω = [a, ∞), then there exists an ǫ > 0 such that K(y) = O(e−ǫy ) as y → ∞.
+                                                                            R
+Let H be the set of Lebesgue measurable functions f : Ω → R such that Ω f (y)2 K(y)dy < ∞. Then H
+satisfies the following properties:
+                                                           R
+     (1) H is a Hilbert space with inner product hf, gi := Ω f (y)g(y)K(y)dy,
+     (2) H contains {e0 }∞ n=0 ,
+     (3) {en }∞n=m  is complete  in H for every m ≥ 0.
+    Now we begin our examples.
+Example (Euler-Mascheroni constant γ). Define the linear functional
+                                    Z 1               
+                                         1       1
+                         Lγ (f ) :=        +              f (−x log(1 − x))dx.
+                                     0   x log(1 − x)
+Then Lγ (e0 ) = γ and
+                   Z 1                                                       Xn  
+                                                                                 n       n − 2i − 1
+  Lγ (en ) = (−1)n     xn−1 (log(1 − x))n + xn (log(1 − x))n−1 dx = (n − 1)!       (−1)i            ∈Q
+                    0                                                        i=0
+                                                                                 i       (i + 1)n+1
+for all n ≥ 1. Therefore Pn , Qn ∈ Q.
+                     RATIONAL APPROXIMATIONS VIA HANKEL DETERMINANTS                                      3
+
+
+   We note that the function σ(x) := −x log(1 − x) is smooth and strictly increasing on the interval [0, 1)
+since σ ′ (x) = − log(1 − x) + x/(1 − x) is the sum of positive terms. Therefore we can make the change of
+variables y = σ(x) and conclude that
+           Z ∞                                                            
+                                                     1             1                    1 − σ −1 (y)
+Lγ (f ) =      f (y)Kγ (y)dy where Kγ (y) :=             +                                                  .
+            0                                      σ (y) log(1 − σ (y)) σ (y) − (1 − σ −1 (y)) log σ −1 (y)
+                                                    −1               −1        −1
+
+Since 1/x + 1/ log(1 − x) is integrable and positive on [0, 1] we see that Kγ is integrable and positive on
+Ωγ := [0, ∞).
+   Therefore we can apply Lemma 2 as soon as we check the asymptotics of K(y) as y → ∞. Since
+limy→∞ σ −1 (y) = 1 we see that
+              lim 1/σ −1 (y) + 1/ log(1 − σ −1 (y)) = lim σ −1 (y) − (1 − σ −1 (y)) log σ −1 (y) = 1.
+             y→∞                                           y→∞
+
+Therefore Kγ (y) has the same asymptotics as 1 − σ −1 (y). To determine the asymptotics of σ −1 (y) we set
+x = σ −1 (y) = 1 − e−y R(y) and note that 0 ≤ e−y R(y) ≤ 1. Now plugging this ansatz into the equation
+y = σ(x) = −x log(1 − x) we get the inequality
+                                                             ye−y R(y)
+                                             log R(y) = −                ≤0
+                                                            1 − e−y R(y)
+from which we conclude that 0 ≤ R(y) ≤ 1. Therefore 1 − σ −1 (y) = O(e−y ) hence Kγ (y) = O(e−y ) as
+y → ∞. Therefore we can apply Lemma 2 and make the corresponding definition of Hγ .
+   Therefore by Theorem 1 we conclude that 0 < Pn /Qn < γ and
+                                  0 < P0 /Q0 ≤ · · · ≤ Pn /Qn ↑ γ         as n → ∞.
+We display data for our approximations Pn /Qn in Table 1.
+Example (Euler-Gompertz constant δ). Define the linear functional
+                                              Z ∞
+                                                            e−x
+                                   Lδ (f ) :=     f (x + 1)     dx.
+                                               0            x+1
+Then Lδ (e0 ) = δ and
+                                             Z ∞                         n−1
+                                                                         X   (n − 1)!
+                               Lδ (en ) =          (x + 1)n−1 e−x dx =                ∈Z
+                                               0                         i=0
+                                                                                i!
+
+for all n ≥ 1. Therefore Pn , Qn ∈ Z.
+   With the change of variables y = x + 1 we get that
+                                      Z ∞
+                                                                        e−y+1
+                            Lδ (f ) =     f (y)Kδ (y)dy where Kδ (y) :=       .
+                                       1                                  y
+Clearly Kδ satisfies the hypothesis of Lemma 2 with Ωδ = [1, ∞), and we can define Hδ as in Lemma 2.
+Therefore by Theorem 1 we conclude that 0 < Pn /Qn < δ and
+                                  0 < P0 /Q0 ≤ · · · ≤ Pn /Qn ↑ δ         as    n → ∞.
+We display data for our approximations Pn /Qn in Table 1.
+Example (Riemann-zeta constants ζ(k)). For k ≥ 2 define the linear functional
+                                                 Z ∞ k−1
+                                            1         x
+                            Lζ,k (f ) :=                   f (1 − e−x )dx.
+                                         (k − 1)! 0 ex − 1
+Then Lζ,k (e0 ) = ζ(k) and
+
+                                 1
+                                         Z ∞                                   X
+                                                                               n−1        
+                                                                                     n − 1 (−1)i
+               Lζ,k (en ) =                    xk−1 (1 − e−x )n−1 e−x dx =                           ∈Q
+                              (k − 1)!   0                                     i=0
+                                                                                       i    (i + 1)k
+4                                                TIMOTHY FERGUSON
+
+
+for all n ≥ 1. Therefore Pn , Qn ∈ Q. We also note that
+                                            Z 1 Z 1
+                                                      (1 − x1 . . . xk )n
+                               Lζ,k (en ) =     ···                       dx1 . . . dxk
+                                                        1 − x1 . . . xk
+                                            | 0 {z 0}
+                                                 k times
+
+for all n ≥ 0.
+   With the change of variable y = 1 − e−x we get that
+                Z 1                              Z 1
+                          (− log(1 − y))k−1                                                        (− log(1 − y))k−1
+    Lζ,k (f ) =     f (y)                   dy =     f (y)Kζ,k (y)dy           where Kζ,k (y) :=                     .
+                 0            (k − 1)!y           0                                                    (k − 1)!y
+Clearly Kζ,k satisfies the hypothesis of Lemma 2 with Ωζ,k := [0, 1], and we can define Hζ,k as in Lemma 2.
+Therefore by Theorem 1 we conclude that 0 < Pn /Qn < ζ(k) and
+                                   0 < P0 /Q0 ≤ · · · ≤ Pn /Qn ↑ ζ(k)         as n → ∞.
+We display data for our approximations Pn /Qn in Table 2.
+
+
+                    n             Pn /Qn for γ                              Pn /Qn for δ
+                              9                                        1
+                    0        41        0.2195121951                    2                   0.5000000000
+                         627726506                                     4
+                    1    2084484569    0.3011423137                    7                   0.5714285714
+                                                                      10
+                    2         -        0.3457225856                   17                   0.5882352941
+                                                                      124
+                    3         -        0.3745360864                   209                  0.5933014354
+                                                                      460
+                    4         -        0.3950172588                   773                  0.5950840880
+                                                                      7940
+                    5         -        0.4104941483                  13327                 0.5957829969
+                                                                     39020
+                    6         -        0.4226993663                  65461                 0.5960801088
+                                                                     859580
+                    7         -        0.4326321010                 1441729                0.5962146839
+                                                                     748420
+                    8         -        0.4409129928                 1255151                0.5962788541
+                                                                   139931620
+                    9         -        0.4479499436                234662231               0.5963107885
+                                                                  1015353820
+                    10        -        0.4540232182               1702678841               0.5963272671
+                                                                  31805257340
+                    11        -        0.4593324215               53334454417              0.5963360400
+                                                                 267257395340
+                    12        -        0.4640239850              448162154317              0.5963408395
+                                                                 9591325648580
+                    13        -        0.4682080352             16083557845279             0.5963435293
+                                                                 8317039567460
+                    14        -        0.4719691667             13946689584823             0.5963450693
+                                                                75451991521660
+                    15        -        0.4753735569             126523856174033            0.5963459683
+                                                              160957871380291180
+                    17        -        0.4813123036           269906478537389909           0.5963468245
+                                                             60588676286095139260
+                    19        -        0.4863363761          101599675414361566913         0.5963471442
+                                                            714785218276618032951940
+                    21        -        0.4906573284        1198605668577020653881647       0.5963472700
+                    23        -        0.4944242261                    -                   0.5963473218
+                    25        -        0.4977454856                    -                   0.5963473439
+
+         Table 1. Approximants Pn /Qn for the Euler-Mascheroni constant γ =
+         0.5772156649... and the Euler-Gompertz constant δ = 0.5963473623....
+                       RATIONAL APPROXIMATIONS VIA HANKEL DETERMINANTS                                        5
+
+
+                  n                  Pn /Qn for ζ(2)                       Pn /Qn for ζ(3)
+                                     4                                     8
+                  0                  3              1.333333333            7            1.142857143
+                                    135                                  4887
+                  1                  89             1.516853933          4105           1.190499391
+                                 505319                               13305034871
+                  2              320733             1.575512966       11102509809       1.198380826
+                               1337517425                         2196507603137550625
+                  3            835187004            1.601458618   1829598054203124216   1.200541069
+                            26920197674520019
+                  4         16667096529827700       1.615170202            -            1.201321520
+                       4108034695656989506227
+                  5    2530690380879633004100       1.623286170            -            1.201657975
+                  6                  -              1.628483935            -            1.201822087
+                  7                  -              1.632011765            -            1.201909799
+                  8                  -              1.634515372            -            1.201960105
+                  9                  -              1.636356043            -            1.201990623
+                 10                  -              1.637748743            -            1.202010004
+                 11                  -              1.638827873            -            1.202022790
+                 12                  -              1.639680964            -            1.202031499
+                 13                  -              1.640367005            -            1.202037598
+                 14                  -              1.640926928            -            1.202041971
+                 15                  -              1.641389854            -            1.202045173
+                 17                  -              1.642103939            -            1.202049371
+                 19                  -              1.642622098            -            1.202051847
+                 21                  -              1.643009963            -            1.202053385
+                 23                  -              1.643307821            -            1.202054380
+                 25                  -              1.643541511            -            1.202055046
+
+        Table 2.        Approximants for the Riemann-zeta constants ζ(2)                                  =
+        1.644934067... and ζ(3) = 1.202056903....
+
+   We finish this section with an example which only satisfies the first assumption of Theorem 1 but not the
+second set of assumptions. We then verify that the conclusions after the first assumption hold but not the
+conclusions after the second set of assumptions. Define the linear functional
+                                                   Z ∞
+                                     e γ (f ) := −             d
+                                     L                 (log x) (f (x)e−x )dx.
+                                                    0         dx
+                  R∞
+Then Le γ (e0 ) =            −x
+                     (log x)e dx = −γ and
+                   0
+                         Z ∞                                          ∞   Z ∞
+             e                       d n −x                      n −x
+            Lγ (en ) = −     (log x) (x e )dx = −(log x)x e             +     xn−1 e−x dx = (n − 1)!
+                           0        dx                                0    0
+
+for all n ≥ 1. Similarly,
+                                    Z ∞
+              e γ ((e1 f )2 ) = −             d 2
+              L                                 (x f (x)2 e−x )dx
+                                          (log x)
+                                  0          dx
+                                                     ∞     Z ∞                   Z ∞
+                             = −(log x)x2 f (x)2 e−x +          xf (x)2 e−x dx =     xf (x)2 e−x dx > 0
+                                                       0    0                       0
+6                                           TIMOTHY FERGUSON
+
+
+for all non-zero real polynomials f .
+   Therefore the first assumption of Theorem 1 holds. Now using the formula for L     e γ (en ) for n ≥ 1 we check
+                                              Pn+1
+via computer that Pn , Qn > 0 and Pn /Qn = i=1        1/i  for 0 ≤ n ≤ 50. (We  conjecture  that this identity and
+inequalities hold for all n ≥ 0 but do not prove it.) This numerically verifies that the conclusions following
+the first assumption in Theorem 1 hold.
+   But the second set of assumptions of Theorem 1 fail. This is because he0 , e0 i = L e γ (e2 ) = −γ < 0 so that
+                                                                                              0
+          e
+hf, gi = Lγ (f g) cannot define an inner product on any vector space H containing {en }∞    n=0 . Based off of our
+conjecture we clearly deduce that Pn /Qn ≥ L e γ (e0 ) for all n ≥ 0 and that limn→∞ Pn /Qn doesn’t even exist
+since the harmonic series diverges. This numerically verifies that the conclusions following the second set of
+assumptions in Theorem 1 fail.
+
+                                                3. Conclusion
+   We described a method by which the values L(e1 ), L(e2 ), . . . of a linear functional can be used to ap-
+proximate L(e0 ) under specified conditions. In particular, we use the values L(e1 ), L(e2 ), . . . to construct
+two sequences of Hankel determinants Pn and Qn for which limn→∞ Pn /Qn = L(e0 ). We then applied
+our method to construct rational approximations for the Euler-Mascheroni constant γ, the Euler-Gompertz
+constant δ, and the Riemann-zeta constants ζ(k) for k ≥ 2.
+
+                                           4. Acknowledgements
+    The author gratefully acknowledges support as a postdoctoral associate at Arizona State University.
+
+                                                 5. Appendix
+   In this section we prove Theorem 1 and Lemma 2. But before we prove Theorem 1 we first need Lemma
+3 which we now state and prove.
+Lemma 3. Let An = (ai,j )ni,j=0 be a matrix such that ai,j = 0 if i 6= j and i, j > 0. Then
+                                             n
+                                                     !         n
+                                                                            !
+                                            Y                 X   ai,0 a0,i
+                               det(An ) =       ai,i   a0,0 −                 .
+                                            i=1               i=1
+                                                                     ai,i
+
+Proof of Lemma 3. The result trivially holds for n = 0 so suppose that it holds for some n ≥ 0. Then
+expanding by cofactors along the last row and then the last column of An+1 we get that
+                                                          n         n+1
+                                                                             !        n+1
+                                                                                                  !
+                                                         Y          Y                 X ai,0 a0,i
+          det(An+1 ) = an+1,n+1 det(An ) − an+1,0 a0,n+1     ai,i =     ai,i   a0,0 −
+                                                         i=0        i=1               i=1
+                                                                                          ai,i
+
+by the inductive hypothesis.                                                                                    
+
+Proof of Theorem 1. Define the modified Hankel determinants
+             Pen := − det(L(ei+j ))n+1
+                                   i,j=0 = Pn − L(e0 )Qn
+                                                                e n := det(L(ei+j+2 ))n
+                                                            and Q                     i,j=0 = Qn .
+
+Now since L(e2 f 2 ) > 0 for all non-zero real polynomial f we know that the matrix (L(ei+j+2 ))ni,j=0 is positive
+definite. Therefore Q e n = Qn > 0 for all n ≥ 0. It is well-known that this guarantees the existence of a
+sequence of polynomials {qn }∞   n=0 where qn is a monic polynomial of degree n and
+                                                          (
+                                                            > 0 if i = j,
+                                             L(e2 qi qj )
+                                                            = 0 if i 6= j.
+Now define the new sequence of polynomials {pn }∞
+                                                n=0 by
+                                             (
+                                               e1 qn−1 if n ≥ 1,
+                                      pn :=
+                                               e0      if n = 0.
+                      RATIONAL APPROXIMATIONS VIA HANKEL DETERMINANTS                                              7
+
+
+Note again that pn is a monic polynomial of degree n and that L(pi pj ) = 0 if i 6= j and i, j > 0. Therefore
+                                                                          n
+                                                                          Y                    n+1
+                                                                                               Y
+                  e n = det(L(ei+j+2 ))n
+                  Q                                             n
+                                                                                L(e2 qi2 ) =         L(p2i )
+                                       i,j=0 = det(L(e2 qi qj ))i,j=0 =
+                                                                          i=0                  i=1
+and by Lemma 3
+                                                                                           n+1
+                                                                                                               !
+                                                                                           X  L(pi )2
+               Pen = − det(L(ei+j ))n+1                     n+1      e
+                                    i,j=0 = − det(L(pi pj ))i,j=0 = −Qn          L(e0 ) −
+                                                                                          i=1
+                                                                                              L(p2i )
+from which we conclude that
+                                                          n+1
+                                                          X L(pi )2
+                                      Pn   Pen
+                                         =     + L(e0 ) =             ≥0
+                                      Qn   Qen
+                                                          i=1
+                                                              L(p2i )
+is monotonically increasing. This completes p the first part of the proof.
+   For the second part, we note that {pn / L(p2n )}∞                                                  ∞
+                                                         n=1 is an orthonormal basis for H since {en }n=1 is
+complete. Therefore
+                                               X∞                2 X   ∞
+                                                            pi              L(pi )2
+                            L(e0 ) = ke0 k2 =        e0 , p           =
+                                               i=1
+                                                               2
+                                                           L(pi )       i=1
+                                                                            L(p2i )
+by Parseval’s identity. Now suppose that Pn /Qn = L(e0 ) for some n ≥ 0. Then L(pi ) = 0 for i > n + 1 and
+                             X∞                         X∞               n+1
+                                                                           X L(pi )
+                                        pi        pi          L(pi )
+                        e0 =     e0 , p         p       =        2   p i =             pi
+                             i=1
+                                           2
+                                       L(pi )        2
+                                                 L(pi )   i=1
+                                                              L(pi )       i=1
+                                                                               L(p2i )
+which is a contradiction since each pi is divisible by e1 for i ≥ 1.                                               
+Proof of Lemma 2. We only prove (3) since (1) and (2) follow by standard arguments. To demonstrate that
+{en }∞
+     n=m is dense in H we show that f = 0 is the only f ∈ H such that hf, en i = 0 for all n ≥ m. Now for
+any z (we require |z| < ǫ/2 if Ω is unbounded) and k ≥ 0 we have that
+              Z                          2 Z                   Z                   
+                   |f (y)|y k e|z|y K(y)dy ≤     |f (y)|2 K(y)dy      y 2k e2|z|y K(y)dy < ∞
+                  Ω                               Ω                        Ω
+by the Cauchy-Schwarz inequality. Therefore by the dominated convergence theorem we have that
+                         Z                         X∞        Z
+                                                       (−z)n
+                 F (z) =    f (y)y m e−zy K(y)dy =              f (y)y n+m K(y)dy = 0.
+                          Ω                        n=0
+                                                         n!   Ω
+
+If Ω is bounded, then F (z) = 0 for all z. If Ω is unbounded, then another application of the dominated
+convergence theorem shows that F (z) is analytic for Re z > 0 so that F (z) = 0 for Re z > 0 by analytic
+continuation. Define fe : [0, ∞) → R by
+                                     (
+                                       f (y + a)(y + a)m e−ay K(y + a) if y + a ∈ Ω,
+                            fe(y) :=
+                                       0                               if y + a ∈
+                                                                                / Ω.
+                                                                           R∞
+Then fe is an integrable function whose Laplace transform Fe (z) := 0 fe(y)e−zy dy = 0 for Re z > 0.
+Therefore fe and hence f is zero almost everywhere.                                                   
+
+                                                  References
+[1] Yann Bugeaud, Guo-Niu Han, Zhi-Ying Wen, and Jia-Yan Yao. Hankel determinants, Padé approxima-
+    tions, and irrationality exponents. Int. Math. Res. Not. IMRN, (5):1467–1496, 2016.
+[2] Xiang-Ke Chang, Xing-Biao Hu, and Ying-Nan Zhang. A direct method for evaluating some nice Hankel
+    determinants and proofs of several conjectures. Linear Algebra Appl., 438(5):2523–2541, 2013.
+[3] Ömer Eğecioğlu, Timothy Redmond, and Charles Ryavec. Almost product evaluation of Hankel deter-
+    minants. Electron. J. Combin., 15(1):Research Paper 6, 58, 2008.
+[4] C. Krattenthaler. Advanced determinant calculus. volume 42, pages Art. B42q, 67. 1999. The Andrews
+    Festschrift (Maratea, 1998).
+8                                        TIMOTHY FERGUSON
+
+
+[5] C. Krattenthaler. Advanced determinant calculus: a complement. Linear Algebra Appl., 411:68–166,
+    2005.
+[6] Christian Krattenthaler, Igor Rochev, Keijo Väänänen, and Wadim Zudilin. On the non-quadraticity of
+    values of the q-exponential function and related q-series. Acta Arith., 136(3):243–269, 2009.
+[7] Nicholas Young. An introduction to Hilbert space. Cambridge Mathematical Textbooks. Cambridge Uni-
+    versity Press, Cambridge, 1988.
+[8] Doron Zeilberger and Wadim Zudilin. Automatic Discovery of Irrationality Proofs and Irrationality Mea-
+    sures. arXiv e-prints, page arXiv:1912.10381, Dec 2019.
+[9] Wadim Zudilin. A determinantal approach to irrationality. Constr. Approx., 45(2):301–310, 2017.
+

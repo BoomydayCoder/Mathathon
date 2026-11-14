@@ -1,0 +1,23 @@
+[
+  {
+    "file": "golyshev-zagier-gamma-2016.pdf",
+    "url": "https://people.mpim-bonn.mpg.de/zagier/files/tex/GammaConjecture/IZV_80_1_24.pdf",
+    "bytes": 490158,
+    "sha256": "66cccf3ef6de398a582c6d343664cd390c66af8ae7ce0cbf8cb0d1ddceb6e470",
+    "retrieved_utc": "2026-11-14T12:04:16.773528+00:00"
+  },
+  {
+    "file": "golyshev-kerr-sasaki-apery-extensions.pdf",
+    "url": "https://arxiv.org/pdf/2009.14762",
+    "bytes": 628060,
+    "sha256": "d2d981d989a9e8fdfedd03017f9d10aeb285f7a33d9b34f037244c7a69a0d8b6",
+    "retrieved_utc": "2026-11-14T12:04:17.846765+00:00"
+  },
+  {
+    "file": "galkin-golyshev-iritani-gamma-2014.pdf",
+    "url": "https://arxiv.org/pdf/1404.6407",
+    "bytes": 1230913,
+    "sha256": "1da84b21c82ceb89b2c4e5a02dc99943513f63f85ec75ea54d5d4678741ac014",
+    "retrieved_utc": "2026-11-14T12:04:19.577701+00:00"
+  }
+]

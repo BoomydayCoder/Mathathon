@@ -1,0 +1,1259 @@
+                                                            A determinant identity for moments of orthogonal
+                                                            polynomials that implies Uvarov’s formula for the
+                                                          orthogonal polynomials of rationally related densities
+arXiv:2103.03969v1 [math.CA] 5 Mar 2021
+
+
+
+
+                                                                                 C. Krattenthaler
+
+                                                                  Fakultät für Mathematik, Universität Wien,
+                                                               Oskar-Morgenstern-Platz 1, A-1090 Vienna, Austria.
+                                                                WWW: http://www.mat.univie.ac.at/~kratt
+
+                                                Abstract. Let pn (x), n = 0, 1, . . . , be the orthogonal polynomials with respect to a given
+                                                density dµ(x). Furthermore, let dν(x) be a density which arises from dµ(x) by multiplication
+                                                by a rational function in x. We prove a formula that expresses the Hankel determinants of
+                                                moments of dν(x) in terms of aR determinant involving the orthogonal polynomials pn (x) and
+                                                associated functions qn (x) = pn (u) dµ(u)/(x − u). Uvarov’s formula for the orthogonal
+                                                polynomials with respect to dν(x) is a corollary of our theorem. Our result generalises a
+                                                Hankel determinant formula for the case where the rational function is a polynomial that
+                                                existed somehow hidden in the folklore of the theory of orthogonal polynomials but has
+                                                been stated explicitly only relatively recently (see [arχiv:2101.04225]). Our theorem can be
+                                                interpreted in a two-fold way: analytically or in the sense of formal series. We apply our
+                                                theorem to derive several curious Hankel determinant evaluations.
+
+
+
+
+                                             1. Introduction. Recently, in [5] this author discovered a formula that expresses the
+                                          Hankel determinant of linear combinations of moments of orthogonal polynomials in terms
+                                          of a determinant involving these orthogonal polynomials. A literature search revealed
+                                          that this formula existed in a hidden form behind a theorem (cf. [7, Theorem 2.5] or
+                                          [3, Theorem 2.7.1]) that is commonly attributed to Christoffel [1] (although he had only
+                                          proved it in a very special case); only recently it had been stated explicitly, by Lascoux
+                                          in [6, Prop. 8.4.1] (although incorrectly) and by Elouafi [2, Theorem 1] (however with an
+                                          incomplete proof). Three fundamentally different proofs are given in [5]: one due to this
+                                          author, one following Lascoux’s arguments, and one completing Elouafi’s arguments.
+                                             The purpose of this article is to present and prove a generalisation of the aforementioned
+                                          formula that is inspired by Uvarov’s formula [8, 9] for the orthogonal polynomials with
+
+                                              2010 Mathematics Subject Classification. Primary 33C45; Secondary 05A10 05A19 11C20 15A15
+                                          42C05.
+                                              Key words and phrases. Hankel determinants, moments of orthogonal polynomials, Dodgson conden-
+                                          sation, Chebyshev polynomials, Catalan numbers.
+                                              Research partially supported by the Austrian Science Foundation FWF (grant S50-N15) in the frame-
+                                          work of the Special Research Program “Algorithmic and Enumerative Combinatorics”.
+
+                                                                                             1
+respect to a density that is related to another given density by the multiplication by a
+rational function, see Theorem 1 below.
+              
+   Let pn (x) n≥0 be a sequence of monic polynomials over a field K of characteristic
+zero1 with deg pn (x) = n, and assume that they are orthogonal with respect to the linear
+functional L, i.e., they satisfy L(pm (x)pn (x)) = ωn δm,n with ωn 6= 0 for all n, where
+δm,n is the Kronecker delta. Furthermore, we write µn for the n-th moment L(xn ) of the
+functional L. For
+               R convenience (and in order to keep the usual analytic meaning in mind),
+we shall write f (u) dµ(u) instead of L(f (x)). This can be either read in a purely formal
+way, or the analyst may think of it as a concrete integral with respect to the measure given
+by the density dµ(u).
+   For the statement of our theorem, we need the “functions”
+
+                                                       pn (u)
+                                                   Z
+                                        qn (y) =              dµ(u).                                        (1.1)
+                                                       y−u
+
+These can be understood in the “ordinary” analytic sense if µ(u) is a concrete measure,
+or, alternatively, these can be understood in the sense of formal power series in 1/y, see
+Lemma 6, Equation (2.7).
+   Here is the main result of this article.
+     Theorem 1. Let k, m and n be non-negative integers and x1 , x2 , . . . , xm and y1 , y2 ,
+. . . , yk be variables. Then, with the above notations, for n ≥ k we have
+                         Qm                        !
+                              (u − xℓ )
+                Z
+      det           ui+j Qℓ=1
+                          k
+                                         dµ(u)
+   0≤i,j≤n−1                  (u − y   )
+                          ℓ=1        ℓ
+                     det    (µi+j )
+                0≤i,j≤n−k−1
+                                                       det Mk,m,n (x1 , . . . , xm , y1 , . . . , yk )
+                          = (−1)n(m−k)+km                                                           ,   (1.2)
+                                                        Q                          Q
+                                                             (xj − xi )                    (yi − yj )
+                                                   1≤i<j≤m                      1≤i<j≤k
+
+
+where
+
+                                                   pn−k (x1 ) pn−k+1 (x1 ) . . . pn+m−1 (x1 )
+                                                                                              
+                                                  ........................................... 
+                                                  pn−k (xm ) pn−k+1 (xm ) . . . pn+m−1 (xm ) 
+                                                                                              
+   Mk,m,n (x1 , . . . , xm , y1 , . . . , yk ) =                                              .
+                                                  qn−k (y1 ) qn−k+1 (y1 ) . . . qn+m−1 (y1 ) 
+                                                   ...........................................
+                                                                                              
+                                                   qn−k (yk ) qn−k+1 (yk ) . . . qn+m−1 (yk )
+
+   1 For the analyst, (usually) this field is the field of real numbers, and a further restriction is that the
+
+linear functional L is defined by a measure with non-negative density. However, the formulae in this paper
+do not need these restrictions and are valid in this wider context of “formal orthogonality”.
+
+                                                       2
+If n < k, then
+                            Qm                          !
+                                 (u − xℓ )
+                  Z
+      det              ui+j Qℓ=1
+                             k
+                                           dµ(u)
+  0≤i,j≤n−1
+                             ℓ=1 (u − yℓ )
+                                                            det Nk,m,n (x1 , . . . , xm , y1 , . . . , yk )
+                              = (−1)n(m−k)+km                                                            ,   (1.3)
+                                                             Q                          Q
+                                                                  (xj − xi )                     (yi − yj )
+                                                         1≤i<j≤m                     1≤i<j≤k
+
+
+where
+
+  Nk,m,n (x1 , . . . , xm , y1 , . . . , yk )
+                             0           ...
+                                         0 0 0 p0 (x1 ) p1 (x1 ) . . . pn+m−1 (x1 ) 
+                         .............................................................. 
+                              0    . . . 0 0 0 p0 (xm ) p1 (xm ) . . . pn+m−1 (xm ) 
+                                                                                        
+                      =  k−n−1                                                          .
+                        
+                         y1       . . . y12 y1 1 q0 (y1 ) q1 (y1 ) . . . qn+m−1 (y1 ) 
+                          ..............................................................
+                                                                                        
+                          ykk−n−1 . . . yk2 yk 1 q0 (yk ) q1 (yk ) . . . qn+m−1 (yk )
+
+Here, determinants of empty matrices and empty products are understood to equal 1.
+   Remarks. (1) The numerator determinant on the left-hand sides of (1.2) and (1.3) is
+the Hankel determinant det0≤i,j≤n−1 (ρi+j ), where the ρs ’s are the moments of the linear
+functional                               Qm
+                                                 (u − xℓ )
+                                 Z
+                         p(x) 7→ p(u) Qℓ=1   k
+                                                            dµ(u).
+                                             ℓ=1 (u − y ℓ )
+
+   (2) The theory of orthogonal polynomials guarantees that in our setting (namely due
+to the condition ωn 6= 0 in the orthogonality) the Hankel determinant of moments in the
+denominator on the left-hand side of (1.2) is non-zero.
+   (3) The main theorem in [5] is equivalent to the special case of Theorem 1 where k = 0.
+It is worth stating this special case separately.
+  Corollary 2. Let m and n be non-negative integers and x1 , x2 , . . . , xm be variables.
+Then we have
+                                        m
+                             Z                                  !
+                                        Y
+                 det             ui+j         (u − xℓ ) dµ(u)                  det   pn+j−1 (xi )
+                                                                                                  
+            0≤i,j≤n−1
+                                        ℓ=1                                  1≤i,j≤m
+                                                                    = (−1)nm                        .            (1.4)
+                                 det      (µi+j )
+                                                                                  Q
+                            0≤i,j≤n−1
+                                                                                      (xj − xi )
+                                                                                1≤i<j≤m
+
+
+
+  (4) Similarly, it is worth stating the special case of Theorem 1 where m = 0 separately.
+
+                                                            3
+  Corollary 3. Let k and n be non-negative integers and y1 , y2 , . . . , yk be variables.
+Then, for n ≥ k we have
+                                            !
+                            ui+j dµ(u)
+                        Z
+                det        Qk                            det qn−k+j−1 (yi )
+                                                                            
+             0≤i,j≤n−1           (u − y   )
+                             ℓ=1        ℓ              1≤i,j≤k
+                                              = (−1)nk                        .      (1.5)
+                       det    (µi+j )                        Q
+                                                               (yi − yj )
+                              0≤i,j≤n−k−1
+                                                                                                1≤i<j≤k
+
+If n < k, then
+                                                                       !
+                                                ui+j dµ(u)                                  det Nk,n (y1 , . . . , yk )
+                                          Z
+                           det                 Qk                          = (−1)nk                                     ,                        (1.6)
+                      0≤i,j≤n−1
+                                                 ℓ=1 (u − yℓ )
+                                                                                                Q
+                                                                                                      (yi − yj )
+                                                                                               1≤i<j≤k
+
+where
+                              k−n−1
+                                                 . . . y12 y1 1 q0 (y1 ) q1 (y1 ) . . . qn−1 (y1 )
+                                                                                                                                                 
+                               y1
+   Nk,n (y1 , . . . , yk ) =  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  .
+                               ykk−n−1 . . . yk2 yk 1 q0 (yk ) q1 (yk ) . . . qn−1 (yk )
+
+   (5) Let dµ(u) be a given density. We will explain in Section 6 how Theorem 1 is
+related to Uvarov’s formula [8, 9] for the orthogonal polynomials with respect to the linear
+functional defined by the density
+                                     Qm
+                                       ℓ=2 (u − xℓ )
+                                     Qk              dµ(u).
+                                       ℓ=1 (u − yℓ )
+
+
+   (6) In [5], three proofs of the special case of Theorem 1 where k = 0 — that is, of
+Corollary 2 — are given, one using the method of condensation, one using classical results
+from the theory of orthogonal polynomials, and one using a vanishing argument. It is
+interesting to note that neither the second nor the third proof seem to extend to a proof
+of Theorem 1, only the condensation argument does. This is indeed the argument that we
+apply here in Section 4.
+   The rest of this article is organised as follows. In the next section, we review some
+classical facts from the theory of orthogonal polynomials that will be relevant for the
+proof of Theorem 1. Furthermore, in Lemma 6, we provide some information on the
+“functions” qn (y) that are so central in Theorem 1. Our proof of Theorem 1 requires
+several determinant identities. These are presented in Section 3, among which Jacobi’s
+condensation formula (see Lemma 8). The actual proof of Theorem 1 is then the subject
+of Section 4. In Proposition 13 in Section 5 it is explained how to “read” Theorem 1 in
+cases where two (or more) of the xi ’s or the yi ’s are equal. We come back to the title of this
+article in Section 6 by outlining how Theorem 1 relates to Uvarov’s
+                                                                 √     formula [8, 9]. Finally,
+by considering the special case of Theorem 1 where dµ(u) = 1 − u2 du — corresponding
+to Chebyshev polynomials of the second kind —, we derive evaluations of several curious
+Hankel determinants in Section 7.
+
+                                                                          4
+   2. Preliminaries on orthogonal polynomials. In this section we survey classical
+facts about orthogonal polynomials that we shall need in the sequel. We also prove some
+properties of the “functions” qn (y).
+                                      
+   As in the introduction, let pn (x) n≥0 be a sequence of monic polynomials over a field K
+of characteristic zero that is orthogonal with respect to the linear function L given by
+                                              Z
+                                   L : p(x) 7→ p(u) dµ(u),
+
+where this may be read formally, or — when we want to interpret this analytically — where
+dµ(u) is some given density. Such a sequence of orthogonal polynomials
+                                                                 R s     exists if and only
+if all Hankel determinants det0≤i,j≤n−1 (µi+j ) of moments µs = u dµ(u) do not vanish.
+For explicit formulae for the orthogonal polynomials pn (x) in terms of the moments see
+Lemmas 4 and 5 below.                                                      
+    By Favard’s theorem (see e.g. [4, Theorems 11–13]), the sequence pn (x) n≥0 is orthog-
+onal if and only if it satisfies a three-term recurrence
+                    pn (x) = (x − sn−1 )pn−1 (x) − tn−2 pn−2 (x),        for n ≥ 1,                (2.1)
+with initial values p−1 (x) = 0 and p0 (x) = 1, for some sequences (sn )n≥0 and (tn )n≥0 of
+elements of K with tn 6= 0 for all n.
+   The tn ’s are connected with the Hankel determinants of moments by the formula (see
+e.g. [10, Ch. IV, Cor. 6])
+                                                   n−1
+                                                   Y
+                                  det    (µi+j ) =     tn−i−1
+                                                        i     .                       (2.2)
+                                  0≤i,j≤n−1
+                                                         i=0
+Conversely, we may use this formula to express tn−1 in terms of the Hankel determinants
+of moments. For convenience, we introduce the abbreviation
+                                     H(n) :=       det     (µi+j ) .                               (2.3)
+                                               0≤i,j≤n−1
+
+Then, from (2.2) we infer
+                                       H(n + 1)/H(n)
+                                      tn−1 =             .                            (2.4)
+                                       H(n)/H(n − 1)
+   Next we quote two formulae that express orthogonal polynomials in terms of their
+associated moments. The first can be found in [7, p. 27, Eq. (2.2.6)], and the second in [7,
+p. 27, Eq. (2.2.9)]).
+    Lemma 4. Let M be a linear functional on polynomials in x with moments νn , n =
+0, 1, . . . , such that all Hankel determinants det0≤i,j≤n (νi+j ), n = 0, 1, . . . , are non-zero.
+Then the determinants
+                                                ν0         ν1          ν2         ...           νn
+                                                                                                       
+
+                             1               ν1           ν2          ν3         . . . νn+1 
+                                        det  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+                                                                                                       
+                         det    (νi+j )
+                                              νn−1 νn νn+1 . . . ν2n−1
+                                                                                                       
+                      0≤i,j≤n−1
+                                                 1          x          x2         ...           xn
+are a sequence of monic orthogonal polynomials with respect to M .
+
+
+                                                   5
+    Lemma 5. Let M be a linear functional on polynomials in x with moments νn , n =
+0, 1, . . . , such that all Hankel determinants det0≤i,j≤n (νi+j ), n = 0, 1, . . . , are non-zero.
+Then the determinants
+                                       det   (νi+j+1 − νi+j x)                                (2.5)
+                                     0≤i,j≤n−1
+
+are a sequence of orthogonal polynomials with respect to M .
+   We now turn to the “functions” qn (y) defined in (1.1). They satisfy the same three-term
+recurrence relation as the original orthogonal polynomials pn (x). Moreover, it follows from
+Lemma 4 that qn (y) can be seen as (formal) power series in 1/y of degree −n − 1.2
+   Lemma 6. We have
+
+                   qn (y) = (y − sn−1 )qn−1 (y) − tn−2 qn−2 (y), for n ≥ 2,              (2.6)
+
+with initial values q0 (y) = dµ(u)   and q1 (y) = (y − s0 ) dµ(u)
+                             R                               R
+                                y−u                             y−u
+                                                                    − µ0 , with the sequences
+(sn )n≥0 and (tn )n≥0 of elements of K that feature in the three-term recurrence (2.1) for
+the underlying orthogonal polynomials pn (x).
+    Moreover, for all non-negative integers n, as a formal power series in 1/y the “function”
+qn (y) starts as
+                                    H(n + 1) −n−1
+                                                      + O y −n−2 ,
+                                                                  
+                           qn (y) =           y                                          (2.7)
+                                       H(n)
+where H(n) and H(n + 1) is the short notation introduced in (2.3).
+   Proof. Let n ≥ 2. From (2.1), we get
+          pn (u)           (u − sn−1 )pn−1 (u)                pn−2 (u)
+        Z                Z                                  Z
+                 dµ(u) =                       dµ(u) − tn−2            dµ(u).                        (2.8)
+          y−u                     y−u                          y−u
+The first term on the right-hand side can be simplified as follows:
+     (u − sn−1 )pn−1 (u)            (y − sn−1 )pn−1 (u)             (y − u)pn−1 (u)
+ Z                               Z                              Z
+                         dµ(u) =                        dµ(u) −                     dµ(u)
+            y−u                           y−u                            y−u
+                               = (y − sn−1 )qn−1 (y).
+
+If this is used in (2.8) together with the definition (1.1) of qn (y), the recurrence (2.6)
+results immediately. The initial values for q0 (y) and q1 (y) are straightforward to derive
+from p0 (x) = 1 and p1 (x) = x − s0 .
+   In order to show the second assertion, we note that, by definition of qn (y), we have
+                                              ∞ Z
+                              pn (u)
+                            Z                X
+                   qn (y) =          dµ(u) =       pn (u)ui y −i−1 dµ(u).
+                              y−u            i=0
+
+   2 By “degree” of a formal power series f (y) in 1/y we mean the maximal exponent e such that y e appears
+
+in f (y) with non-zero coefficient. We warn the reader that the recurrence (2.6) is deceiving in regard of
+the degree of qn (y): it seems to suggest that — similar to the situation for the underlying orthogonal
+polynomials pn (x) — the degree would rise by 1 when going from qn−1 (y) to qn (y). However, as (2.7)
+shows, on the contrary the degree drops by 1, caused by a cancellation of leading terms in (2.6).
+
+                                                    6
+Because of the orthogonality of pn (u) with respect to the density dµ(u), all terms of the
+above sum with i < n vanish. Thus,
+             ∞ Z
+             X                                   Z
+                          i −i−1           −n−1
+                                                   pn (u)un dµ(u) + O y −n−2 .
+                                                                               
+    qn (y) =       pn (u)u y     dµ(u) = y                                           (2.9)
+                 i=n
+
+Now we use the formula of Lemma 4 with νs = µs for all s, to obtain
+                                             µ0          µ1          µ2       ...       µn
+                                                                                                
+     Z
+                           1
+                             Z         µ1               µ2          µ3       . . . µn+1 
+              n
+       pn (u)u dµ(u) =         det  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  un dµ(u)
+                                                                                                
+                        H(n)
+                                           µn−1 µn µn+1 . . . µ2n−1
+                                                                                                
+                                               1          u          u2       ...       un
+                                 µ0            µ1            µ2          ...       µn
+                                                                                         
+                                 µ             µ2            µ3          . . . µn+1 
+                              1
+                           1                                                              H(n + 1)
+                      =        . . . . . . . . . . . . . . . . . . . . . ...........  =                   .
+                        H(n)                                                                       H(n)
+                             
+                               µn−1            µn          µn+1 . . . µ2n−1
+                                                                                          
+                                 µn          µn+1 µn+2 . . .                       µ2n
+If this is substituted back in (2.9), the assertion of the lemma follows immediately.                            
+   3. Auxiliary determinant identities. The purpose of this section is to collect three
+determinant formulae that will turn out to be crucial in our proof of Theorem 1.
+   The proof method of our proof in Section 4 is the method of condensation (frequently
+referred to as “Dodgson condensation”; see [4, Sec. 2.3]). This method provides inductive
+proofs that are based on a determinant identity due to Jacobi, which we recall in the
+following proposition.
+     Proposition 7. Let A be an N × N matrix. Denote the submatrix of A in which rows
+i1 , i2 , . . . , ik and columns j1 , j2 , . . . , jk are omitted by Aij11,i,j22,...,i
+                                                                                ,...,jk
+                                                                                      k
+                                                                                        . Then we have
+
+                       det A · det Aij11,i,j22 = det Aji11 · det Aji22 − det Aji12 · det Aji21                 (3.1)
+
+for all integers i1 , i2 , j1 , j2 with 1 ≤ i1 < i2 ≤ N and 1 ≤ j1 < j2 ≤ N .
+   We need two further determinantal formulae, which involve Hankel determinants of
+linear combinations of sequence elements.
+   The following is [5, Lemma 3 with n replaced by n − 1].
+   Lemma 8. Let (cn )n≥0 be a given sequence, and α and β be variables. Then, for all
+positive integers n, we have
+                                                                       
+  (β − α) det         αβci+j + (α + β)ci+j+1 + ci+j+2       det    ci+j
+           0≤i,j≤n−2                                     0≤i,j≤n−1
+                                                                         
+                  =     det    αci+j + ci+j+1      det     βci+j + ci+j+1
+                     0≤i,j≤n−2                  0≤i,j≤n−1
+                                                                                 
+                            −   det     βci+j + ci+j+1       det    αci+j + ci+j+1 . (3.2)
+                                     0≤i,j≤n−2                           0≤i,j≤n−1
+
+   We require another, similarly looking determinant identity.
+
+                                                         7
+  Lemma 9. Let (cn )n≥0 be a given sequence, and α and β be variables. Then, for all
+positive integers n, we have
+                                                        
+      det     αci+j + ci+j+1      det     βci+j + ci+j+1
+  0≤i,j≤n−1                    0≤i,j≤n−1
+                                                                           
+              = − det ci+j           det    αβci+j + (α + β)ci+j+1 + ci+j+2
+                   0≤i,j≤n        0≤i,j≤n−2
+                                                                                
+                    +    det      ci+j    det     αβci+j + (α + β)ci+j+1 + ci+j+2 . (3.3)
+                       0≤i,j≤n−1        0≤i,j≤n−1
+
+
+   Proof. In principle, it should be possible to prove this directly in the style of the proof
+of Lemma 8 given in [5], that is, by extracting the coefficient of αs β t on both sides of (3.3),
+and by then reducing everything to some known determinant identity. Embarrassingly,
+I failed to carry this through. Therefore, instead I take recourse to a dirty trick that is
+based on the fact that Theorem 1 had been proved earlier for the special case in which
+k = 0 (cf. [5, Theorem 1] and Proposition 11 below). Namely, we interpret the        sequence
+(cn )n≥0 as the sequence of moments of some linear functional, and we let rn (x) n≥0 be the
+corresponding sequence of monic orthogonal polynomials with respect to that functional.
+As was said earlier, for the orthogonal polynomials to exist we must assume that all Hankel
+determinants det0≤i,j≤n−1 (ci+j ) are non-zero, which we do for the moment. Since both
+sides of (3.3) are polynomials in the ci ’s, α and β, this restriction can be removed in the
+end.
+   Now, in the above setting, by Theorem 1 with k = 0, m = 1, and x1 = −α, we have
+                                                   
+                             det    αci+j + ci+j+1 = H(n)rn (−α),
+                         0≤i,j≤n−1
+
+and, by Theorem 1 with k = 0, m = 2, x1 = −α and x2 = −β, we have
+                                                rn (−α)rn+1 (−β) − rn+1 (−α)rn (−β)
+   det    αβci+j + (α + β)ci+j+1 + ci+j+2 = H(n)                                     .
+0≤i,j≤n−1                                                       α−β
+Consequently, Equation (3.3) turns out to be equivalent with
+        2                                   rn−1 (−α)rn (−β) − rn (−α)rn−1 (−β)
+   H̃(n) rn (−α)rn (−β) = H̃(n + 1)H̃(n − 1)
+                                                              α−β
+                                              2 rn (−α)rn+1 (−β) − rn+1 (−α)rn (−β)
+                                    + H̃(n)                                          .
+                                                                α−β
+
+Here we used the short notation H̃(n) = det0≤i,j≤n−1 (ci+j ). After cancellation of common
+factors using (2.2) (with H̃(n) in place of H(n) and the appropriate sequence (t̃n )n≥0
+instead of (tn )n≥0 ), this becomes
+                                                                       
+  (α − β)rn (−α)rn (−β) = t̃n−1 rn−1 (−α)rn (−β) − rn (−α)rn−1 (−β)
+                                                                                       
+                                             + rn (−α)rn+1 (−β) − rn+1 (−α)rn (−β) .
+
+Indeed, this is trivially true because of (2.1) with n replaced by n + 1, pn (x) replaced by
+rn (x), sn replaced by s̃n , tn replaced by t̃n , and x = −β, respectively x = −α.    
+
+
+                                               8
+   4. Proof of Theorem 1. Here we prove Theorem 1. As announced, we shall apply
+the method of condensation (see Proposition 7) in order to set up an inductive proof.
+Propositions 11 and 12 will provide the start of the induction. In order to “keep the
+induction running”, we need a non-vanishing result that we present first.
+  Lemma 10. Under the assumption that the Hankel determinants H(n) in (2.3) do not
+vanish, the numerator determinant on the left-hand sides of (1.2) and (1.3),
+                                          Qm                   !
+                                            ℓ=1 (u − xℓ )
+                                  Z
+                                      i+j
+                          det       u Qk                  dµ(u) ,            (4.1)
+                       0≤i,j≤n−1
+                                            ℓ=1 (u − yℓ )
+
+does not vanish identically.
+  Proof. Adopting the viewpoint of formal series in the variables x1 , x2 , . . . , xm and
+1/y1 , 1/y2 , . . . , 1/yk , the highest degree term in (4.1) is
+                                         Qm      !               Qm n
+                                m−k           x
+                                           ℓ=1 ℓ          n(m−k)  j=1 xj
+             det          (−1)      µi+j Qk        = (−1)        Qk          det    (µi+j )
+         0≤i,j≤n−1                                                      n 0≤i,j≤n−1
+                                              y
+                                           ℓ=1 ℓ                      y
+                                                                  j=1 j
+                                                                      Qm n
+                                                          n(m−k)        j=1 xj
+                                                   = (−1)        H(n) Qk        ,
+                                                                            y n
+                                                                        j=1 j
+
+which is non-zero by our assumption of non-vanishing of H(n).
+  If we adopt the analytic point of view, then one would multiply the determinant (4.1)
+   Qm        Qk
+by j=1 x−nj
+                     −n
+                j=1 yj   and then compute the limit3 as xi → ∞ and yj → ∞ for all i
+and j. The result would be the determinant
+
+                                       (−1)m−k µi+j = (−1)n(m−k) H(n),
+                                                   
+                            det
+                         0≤i,j≤n−1
+
+
+with the same conclusion.          
+  Proposition 11. Theorem 1 holds for k = 0.
+   This is the main theorem (namely Theorem 1) in [5], for which three fundamentally
+different proofs are provided there.
+  Proposition 12. Theorem 1 holds for m = 0.
+  Proof. We prove the claim by induction on k.
+   For the start of the induction we need the validity of (1.2) for k = m = 0 — this is
+obvious since both left-hand and right-hand side equal 1 in that case —, of (1.3) for m = 0
+and k = 1 — also this is easy to see since the only case to consider is n = 0, which makes
+the left-hand side reduce to 1, and also the right-hand side, due to the evaluation of the
+Vandermonde determinant —, and of (1.2) for m = 0 and k = 1. The latter needs an
+argument, which we provide next.
+  3 This limit is unproblematic if dµ(u) is a measure with finite support.
+
+
+
+                                                   9
+   For m = 0 and k = 1, the numerator of the left-hand side of (1.2) reads
+                                       Z               
+                                             i+j dµ(u)
+                                det        u              .                                               (4.2)
+                             0≤i,j≤n−1           u − y1
+We have
+              i+j dµ(u)               i+j−1 u − y1 + y1                                        dµ(u)
+     Z                        Z                                                   Z
+          u               =       u                       dµ(u) = µi+j−1 + y1         ui+j−1          .
+                 u − y1                       u − y1                                           u − y1
+We use this relation in the last row, that is, for i = n − 1. Subsequently, we subtract the
+(n − 2)-nd row multiplied by y1 from the last row (the (n − 1)-st row). Thereby the entry
+in the j-th column of the last row becomes µn+j−2 . We repeat this operation with the
+(n − 2)-nd and the (n − 3)-rd row, with the (n − 3)-rd and the (n − 4)-th row, . . . , and with
+the first row and the 0-th row. As a result, we have converted the determinant in (4.2)
+into the determinant
+                            dµ(u)
+                      Z                                                  !
+                         uj           for i = 0, 0 ≤ j ≤ n − 1
+                det         u − y1
+                         µi+j−1       for 1 ≤ i ≤ n − 1, 0 ≤ j ≤ n − 1
+                                  1        u       u2     . . . un−1
+                                                                    
+                               µ0        µ1       µ2     . . . µn−1 
+                                                                      dµ(u)
+                       Z
+                    = det  µ1            µ2       µ3     ...    µn 
+                              
+                                                                      u − y1
+                                ................................
+                              
+                                µn−2 µn−1 µn+1 . . . µ2n−3
+                                                       pn−1 (u)
+                                                    Z
+                            n−1
+                    = (−1)          det     (µi+j )             dµ(u)
+                                0≤i,j≤n−2               u − y1
+                    = (−1)n      det     (µi+j ) qn−1 (y1 ),
+                                       0≤i,j≤n−2
+
+where the next-to-last line is due to Lemma 4. This confirms (1.2) for m = 0 and k = 1.
+   We now turn to the induction step. We have to distinguish between two cases, depending
+on whether n ≥ k or not. For convenience, we rewrite (1.2) (with m = 0) in the form
+             Q
+                  (yi − yj )                                    !
+                                                   dµ(u)
+                                        Z
+          1≤i<j≤k
+  (−1)nk                         det      ui+j Qk                 = det Mk,0,n (y1 , . . . , yk ),
+              det     (µi+j ) 0≤i,j≤n−1          ℓ=1 (u − y ℓ )
+         0≤i,j≤n−k−1
+                                                                                    (4.3)
+and we apply a similar rewriting to (1.3), leading to (4.3) with denominator omitted on
+the left-hand side and M replaced by N on the right-hand side.
+   Let k ≥ 2 and assume that (4.3), and also the analogue corresponding to (1.3), is true
+for “smaller k”.
+   We are going to use the condensation formula of Proposition 7. For n ≥ k, the identity
+(3.1) with N = k, A = Mk,0,n (y1 , . . . , yk ), i1 = j1 = 1 and ik = jk = k gives
+  det Mk,0,n (y1 , . . . , yk ) · det Mk−2,0,n−1 (y2 , . . . , yk−1 )
+                    = det Mk−1,0,n (y2 , . . . , yk ) · det Mk−1,0,n−1 (y1 , . . . , yk−1 )
+                                  − det Mk−1,0,n−1 (y2 , . . . , yk ) · det Mk−1,0,n (y1 , . . . , yk−1 ). (4.4)
+
+                                                       10
+For n < k, with the same choices of N, i1 , i2 , j1 , j2 , but with A = Nk,0,n (y1 , . . . , yk ),
+we obtain the same identity, but with N instead of M . A little detail is that, if n =
+k − 1, we encounter the terms Nk−2,0,n−1 (. . . ) = Nk−2,0,k−2 (. . . ) and Nk−1,0,n (. . . ) =
+Nk−1,0,k−1 (. . . ) in (4.4) (with M replaced by N ). It can be seen by inspection that
+Nk−2,0,k−2 (. . . ) = Mk−2,0,k−2 (. . . ) and Nk−1,0,k−1 (. . . ) = Mk−1,0,k−1 (. . . ). This is the
+interpretation that we give these terms in that special case.
+    The identity (4.4) can be seen as a recurrence formula for det Mk,0,n (y1 , . . . , yk ), as
+one can use it to express det Mk,0,n(y1 , . . . , yk ) in terms of expressions of the form
+det Ml,0,s (ya , . . . , yb ) with l smaller than k (and similarly with M replaced by N ), pro-
+vided the determinants det Mk−2,0,n−1 (y2 , . . . , yk−1 ) and det Nk−2,0,n−1 (y2 , . . . , yk−1 ) are
+all non-zero. (We shall address the latter point later.) Hence, for carrying out the induc-
+tion step it suffices to verify that the left-hand side of (4.3) satisfies the same recurrence.
+Consequently, we substitute this left-hand side in (4.4). After cancellation of factors that
+are common to both sides, we arrive at
+                                                       !                                         !
+                                           dµ(u)                                     dµ(u)
+                               Z                                         Z
+   (yk − y1 ) det                 ui+j Qk                 ·     det         ui+j Qk−1
+             0≤i,j≤n−1                                      0≤i,j≤n−2
+                                         ℓ=1 (u − yℓ )                             ℓ=2 (u − yℓ )
+                                                       !                                         !
+                                           dµ(u)                                     dµ(u)
+                               Z                                         Z
+          =       det             ui+j Qk                ·     det         ui+j Qk−1
+             0≤i,j≤n−1                                      0≤i,j≤n−2
+                                         ℓ=2 (u − yℓ )                             ℓ=1 (u − yℓ )
+                                                             !                                        !
+                                                 dµ(u)                                    dµ(u)
+                                    Z                                         Z
+                                        i+j                                       i+j
+                  −        det         u Qk                     ·    det         u Qk−1                 .
+                      0≤i,j≤n−2                                   0≤i,j≤n−1
+                                               ℓ=2 (u − yℓ )                            ℓ=1 (u − yℓ )
+
+This is the special case of Lemma 8 where
+                                            dµ(u)
+                                    Z
+                               cn = ui+j Qk              ,
+                                          ℓ=1 (u − y ℓ )
+α = −yk and β = −y1 . Since Lemma 10 with m = 0 says that all these determinants do
+not vanish identically, this establishes the induction step and proves (4.3) and thus the
+proposition.    
+   We are now ready to prove Theorem 1.
+   Proof of Theorem 1. We apply induction with respect to k + m. As start of the
+induction we use Propositions 11 and 12. In other words, we know that Theorem 1 holds
+for k = 0 and for m = 0.
+   In preparation of the induction step, we again rewrite (1.2),
+                                                         
+                       Q                    Q
+                             (xj − xi )          (yi − yj )
+                       1≤i<j≤m                    1≤i<j≤k
+  (−1)n(m−k)+km
+                                        det        (µi+j )
+                                  0≤i,j≤n−k−1
+                                                      Qm                        !
+                                                            (u − xℓ )
+                                              Z
+                           ×      det             ui+j Qℓ=1
+                                                        k
+                                                                      dµ(u)
+                               0≤i,j≤n−1
+                                                        ℓ=1 (u − yℓ )
+                                                       = det Mk,m,n (x1 , . . . , xm , y1 , . . . , yk ),   (4.5)
+
+                                                     11
+and similarly (1.3), leading to (4.5) with denominator omitted on the left-hand side and
+M replaced by N on the right-hand side.
+   Let now k and m be positive integers, and assume that (4.5), and also its analogue
+corresponding to (1.3), hold for “smaller k + m”.
+   Here again, we are going to use the condensation formula of Proposition 7. For n ≥ k,
+the identity (3.1) with N = k, A = Mk,m,n (x1 , . . . , xm , y1 , . . . , yk ), i1 = j1 = 1 and
+ik = jk = k + m gives
+   det Mk,m,n (x1 , . . . , xm , y1 , . . . , yk ) · det Mk−1,m−1,n (x2 , . . . , xm , y1 , . . . , yk−1 )
+    = det Mk,m−1,n+1 (x2 , . . . , xm , y1 , . . . , yk ) · det Mk−1,m,n−1 (x1 , . . . , xm , y1 , . . . , yk−1 )
+    − det Mk,m−1,n (x2 , . . . , xm , y1 , . . . , yk ) · det Mk−1,m,n (x1 , . . . , xm , y1 , . . . , yk−1 ). (4.6)
+For n < k, with the same choices of N, i1 , i2 , j1 , j2 , but with A = Nk,m,n (y1 , . . . , yk ), we
+obtain the same identity, but with N instead of M . Again we have to take notice of the
+little detail that, if n = k −1, we encounter terms such as Nk,m−1,n+1 (. . . ) = Nk,m−1,k (. . . )
+and Nk−1,m,n (. . . ) = Nk−1,m,k−1 (. . . ) in (4.6) (with M replaced by N ). Here also they
+have to be interpreted as the corresponding “M -terms”.
+    In order to accomplish the induction step, we have to prove that the left-hand side
+of (4.5) satisfies the same relation. Consequently, we substitute this left-hand side in (4.6).
+After cancellation of factors that are common to both sides, we arrive at
+                         Qm                       !                      Qm                       !
+                               (u −  x   )                                     (u −  x   )
+                 Z                                               Z
+                                       ℓ                                               ℓ
+       det          ui+j Qℓ=1
+                           k
+                                             dµ(u) ·     det        ui+j Qk−1
+                                                                           ℓ=2
+                                                                                            dµ(u)
+    0≤i,j≤n−1                  (u  − y   )           0≤i,j≤n−1                 (u  − y   )
+                           ℓ=1         ℓ                                   ℓ=1         ℓ
+                          Qm                       !                      Qm                        !
+                                (u  − x    )                                    (u  − x    )
+                  Z                                               Z
+                                         ℓ                                              ℓ
+  = − det            ui+j Qℓ=2
+                            k
+                                              dµ(u) ·     det        ui+j Qk−1
+                                                                            ℓ=1
+                                                                                              dµ(u)
+       0≤i,j≤n                  (u  − y    )          0≤i,j≤n−2                 (u  − y    )
+                            ℓ=1         ℓ                                   ℓ=1          ℓ
+                           Qm                      !                      Qm                        !
+                                 (u −  x    )                                    (u − x     )
+                  Z                                               Z
+                                          ℓ                                               ℓ
+  +      det          ui+j Qℓ=2
+                             k
+                                              dµ(u) ·     det        ui+j Qk−1
+                                                                             ℓ=1
+                                                                                              dµ(u) .
+     0≤i,j≤n−1                   (u −  y    )          0≤i,j≤n−1                 (u −  y    )
+                             ℓ=1          ℓ                                  ℓ=1          ℓ
+
+This is the special case of Lemma 9 where
+                                         Qm
+                                              (u − xℓ )
+                                  Z
+                                     i+j
+                              cn = u Qℓ=2 k
+                                                         dµ(u),
+                                          ℓ=1 (u − y ℓ )
+α = −x1 and β = −yk . Since Lemma 10 says that all these determinants do not vanish
+identically, this establishes the induction step and proves (4.5), and thus Theorem 1. 
+   5. The case of equal parameters. Let
+                                       R(x1 , x2 , . . . , xm , y1 , y2 , . . . , yk )
+denote the right-hand side of (1.2) if n ≥ k, and the right-hand side of (1.3) if n < k. Since
+the numerator (regardless whether we are considering (1.2) or (1.3)) is skew-symmetric in
+the xi ’s and skew-symmetric in the yi ’s, it is divisible by the Vandermonde products
+                         Y                     Y                    
+                                    (xj − xi )              (yi − yj )
+                                   1≤i<j≤m                        1≤i<j≤k
+
+
+                                                            12
+in the denominator. Thus, while in its definition it seems problematic to substitute the
+same value for two different xi ’s or for two different yi ’s in R(x1 , x2 , . . . , xm , y1 , y2 , . . . , yk ),
+this is actually not the case. The proposition below provides an explicit expression for
+such substitutions of equal parameters.
+   Proposition 13. Let r, s, k1 , k2 , . . . , ks , m1 , m2 , . . . , mr , and n be non-negative
+                                                                                             Ps inte-
+gers and ξ1 , ξ2 , . . . , P
+                           ξr and ω1 , ω2 , . . . , ωs be variables. We write k for the sum i=1 ki ,
+                             r
+and m for the sum i=1 mi .
+   Then
+
+  R(ξ1 , . . . , ξ1 , ξ2 , . . . , ξ2 , . . . , ξr , . . . , ξr , ω1 , . . . , ω1 , ω2 , . . . , ω2 , . . . , ωs , . . . , ωs )
+                                                                 det Mk1 ,...,ks ,m1 ,...,mr ,n (ξ1 , . . . , ξr , ω1 , . . . , ωs )
+                               = (−1)n(m−k)+km                                                                                    ,
+                                                                        (xj − xi )mi mj                          (yi − yj )ki kj
+                                                                   Q                                     Q
+                                                                 1≤i<j≤r                                   1≤i<j≤s
+
+
+where ξi is repeated mi times and ωi is repeated ki times in the argument of R on the
+left-hand side. The matrix in the numerator on the right-hand side is defined by
+                                                                                                        
+                                                                                          Pm1 ,k,n (ξ1 )
+                                                                                                ..      
+                                                                                        
+                                                                                                 .      
+                                                                                                         
+                                                                                         Pm ,k,n (ξr ) 
+                                                                                         Qk ,k,n (ω1 )  ,
+                      Mk1 ,...,ks ,m1 ,...,mr ,n (ξ1 , . . . , ξr , ω1 , . . . , ωs ) =    r            
+                                                                                         1              
+                                                                                               ..       
+                                                                                                .       
+                                                                                          Qks ,k,n (ωs )
+
+with                                                         (i−1)               
+                                                            pn−k+j−1 (ξ)
+                                    Pa,k.n (ξ) =
+                                                                (i − 1)!            1≤i≤a, 1≤j≤k+m
+
+and                                                         (i−1)                
+                                                            qn−k+j−1 (ω)
+                                  Qa,k,n (ω) =                                                                 .
+                                                                (i − 1)!            1≤i≤a, 1≤j≤k+m
+
+If b < 0 the polynomial pb (ξ) has to be interpreted as 0, while the function qb (ω) has to
+be interpreted as ω −b−1 ,
+   Proof. This can be proved in the same way as [5, Prop. 5]. We leave the details to
+the reader.  
+   Remark. Obviously, we have
+
+                                                                                       (i−1)
+                                                                                      pn (u)
+                                                                                Z
+                                   qn(i−1) (y) = (−1)i−1 (i − 1)!                              dµ(u).
+                                                                                      (y − u)i
+
+
+
+                                                                       13
+    6. Uvarov’s formula. Uvarov’s theorem [8, 9] (cf. [3, Theorem 2.7.3]) says that, in
+the setting of Theorem 1, the right-hand sides of (1.2) and (1.3), seen as polynomials in
+x1 , give orthogonal polynomials for the density
+                                    Qm
+                                      ℓ=2 (u − xℓ )
+                                    Qk               dµ(u).                         (5.1)
+                                      ℓ=1 (u − y ℓ )
+
+(The reader should note that the product in the numerator starts with ℓ = 2.)
+   The connection with our Theorem 1 is set up by Lemma 5. Namely, if in Lemma 5 we
+choose for the moments νi the moments corresponding to the density in (5.1), then the
+determinant (2.5) turns out to be exactly the determinant on the left-hand sides of (1.2)
+and (1.3). Hence, in view of Lemma 5, it is obvious that the right-hand sides of (1.2)
+and (1.3) are orthogonal polynomials with respect to the density in (5.1). There is one
+“catch” however: Lemma 5 says that this is only the case if all Hankel determinants of
+moments of (5.1) are non-zero. Phrased differently: the determinant in (2.5) must be a
+polynomial in x of degree n, for n = 0, 1, . . . .
+   Uvarov’s theorem provides one such scenario: he shows that, if
+                                      Qm
+                                         ℓ=2 (u − xℓ )
+                                      Qk
+                                         ℓ=1 (u − yℓ )
+
+is positive for all u in the support of the measure µ(u), then the right-hand sides of (1.2)
+and (1.3) are polynomials in x1 of degree n.
+   On the other hand, more generally, our Theorem 1 implies that, whenever the right-
+hand sides of (1.2) and (1.3) are polynomials in x1 of degree n, then they are orthogonal
+polynomials in x1 for the density in (5.1).
+  7. Applications: some Hankel determinant evaluations. In this final section,
+we apply Theorem 1 to derive some Hankel determinant evaluations featuring Catalan
+numbers and central binomial coefficients.
+  We restrict ourselves to the special case of Theorem 1 where
+                                  r
+                                         u2
+                         dµ(u) = 1 −        du,     −2 ≤ u ≤ 2.                        (7.1)
+                                          4
+The polynomials which are orthogonal with respect to this density are, essentially, the
+Chebyshev polynomials of the second kind Un (x), given by the generating function
+                                  X                         1
+                                        Un (x) z n =                 .
+                                                       1 − 2xz + z 2
+                                  n≥0
+
+
+More precisely, we have
+                            Z 2
+                        1
+                                                  q
+                                                         2
+                                  Um (u/2)Un (u/2) 1 − u4 du = δn,m ,
+                        π    −2
+
+                                                  14
+with, again, δn,m denoting the Kronecker delta. The polynomials Un (x/2) are monic, as
+can be seen from
+                              ∞
+                             X                      1
+                                 Un (x/2)z n =            2
+                                                            .                    (7.2)
+                             n=0
+                                               1 − xz + z
+
+The non-vanishing moments of the density (7.1) are given by the Catalan numbers Cn =
+ 1  2n
+      
+n+1 n
+       . To be precise, we have
+
+                        Z 2           r
+                                             u2            Cn/2 ,   if n is even,
+                                                       
+                    1             n
+                              u           1−    du =                                     n ≥ 0.
+                    π    −2                  4             0,       if n is odd,
+
+   We shall apply Theorem 1 with k = 1 and m = 0, and with k = m = 1. For carrying out
+the corresponding calculations, we need the following fundamental integral evaluation:4
+                                       √
+                                   a −   a2 − 1, for a ≥ 1,
+                                
+                                
+                                
+                                                  for Re a > 0 and Im a 6= 0,
+                                
+                                
+                                
+                                
+                                
+              Z √                                 for Re a = 0 and Im a > 0,
+                                
+                                
+            1 1 1 − u2
+                                
+                                
+                           du =    a,             for − 1 ≤ a ≤ 1,                  (7.3)
+            π −1 u + a                √
+                                   a + a2 − 1, for a ≤ −1,
+                                
+                                
+                                
+                                
+                                
+                                                  for Re a < 0 and Im a 6= 0,
+                                
+                                
+                                
+                                
+                                
+                                                  for Re a = 0 and Im a < 0.
+
+   For a “test”, we may use this to confirm the orthogonality of the Un (x/2)’s. We have
+                                                              q
+                                                                      2
+                    X 1           Z 2    q
+                                                     1
+                                                       Z  2     1 − u4
+                          n                   u2
+                        z        Un (u/2) 1 − 4 du =                      du
+                            π −2                     π −2 1 − uz + z 2
+                    n≥0
+                                                              √
+                                                     2 1        1 − u2
+                                                       Z
+                                                   =                       du
+                                                     π −1 1 − 2uz + z 2
+                                                           Z 1 √
+                                                        1         1 − u2
+                                                   =−                   2 du.                                 (7.4)
+                                                       zπ −1 u − 1+z 2z
+
+This calculation is meant as a calculation for (formal) power series in z. Thus, we must
+                                               2
+think of z as “small”, which implies that 1+z
+                                            2z
+                                                 is “large”. Hence, when we apply (7.3) with
+          2
+a = − 1+z
+        2z , we find ourselves in the third case of the case distinction. This gives
+
+                  Z 2                                                         r                    !
+              1                              1                     1 + z2         (1 + z 2 )2
+                              q
+                                     2
+     X
+           zn         Un (u/2) 1 − u4 du = −                     −        +                   −1       = 1,   (7.5)
+              π    −2                        z                       2z              4z 2
+     n≥0
+
+   4 The substitution u = 2t/(1 + t2 ) transforms the integral into an integral of a rational function.
+Subsequently, a thorough case analysis has to be performed.
+
+                                                            15
+as expected. Another “test” that we may perform is the calculation of moments (of the
+measure) of the Chebyshev polynomials. We have
+
+
+
+                                                                Z √
+                                             q
+                                                       2
+         X 1          Z 2 q
+                                      1
+                                        Z  2    1 − u4         2 1 1 − u2
+               n        n      u2
+             z        u    1 − 4 du =                     du =              du
+                 π −2                 π −2 1 − uz              π −1 1 − 2uz
+         n≥0
+                                            Z 1 √
+                                         1          1 − u2       1      p
+                                                                                  2
+                                                                                    
+                                    =−                   1 du = 2z 2 1 −   1 − 4z
+                                        zπ −1 u − 2z
+                                      X
+                                    =     Cn z 2n ,                                                              (7.6)
+                                                     n≥0
+
+
+
+
+again as expected.
+   We intend to apply Theorem 1 with k = 1 and y1 = −2a. For convenience, let us write
+ω(a) q
+     for the quantity in (7.3). Then, by (7.3) and (7.6), for the moments of the density
+  1          2
+u−y1   1 − u4 du we have
+
+
+                                     q                                     q
+                                               2                                  2
+           X          1
+                          Z 2 un         1 − u4           1
+                                                              Z 2           1 − u4
+                 zn                                du =                                    du
+                      π     −2       u + 2a               π     −2 (u + 2a)(1 − uz)
+           n≥0
+                                                     q                                           q
+                                                            2                                           2
+                                 1
+                                               Z 2    1 − u4z
+                                                                                           Z 2    1 − u4
+                          =                       du +                                                      du
+                            π(1 + 2az) −2 u + 2a        π(1 + 2az)                          −2    1 − uz
+                              ω(a)       z    X
+                          =         +           Cn z 2n
+                            1 + 2az   1 + 2az
+                                                          n≥0
+                                                                         ⌊(n−1)/2⌋
+                              X                            X               X
+                                                   n n               n
+                          =          ω(a)(−2a) z +               z               (−2a)n−2k−1 Ck .
+                              n≥0                          n≥0             k=0
+
+
+
+
+Hence,
+
+                                 q
+                                           2
+                 1
+                     Z 2 un          1 − u4                                 ⌊(n−1)/2⌋
+                                                                               X
+                                                                     n
+                                               du = ω(a)(−2a) +                         (−2a)n−2k−1 Ck .         (7.7)
+                 π    −2         u + 2a
+                                                                               k=0
+
+
+
+We next compute the functions qn (−2a) associated with the Chebyshev polynomials
+
+                                                              16
+Un (x/2) (cf. (1.1)),
+                                                q                                              q
+                                     Z 2 U (u/2) 1 − u2                         Z 2                     2
+                                                                                                   1 − u4
+ X                      X          1      n          4                     1
+       z n qn (−2a) =         zn                                    du = −                                   2)
+                                                                                                                  du
+                                   π   −2         −2a − u                  π        −2 (u + 2a)(1 − uz + z
+ n≥0                    n≥0
+                                                       q
+                                                         1 − u4
+                                                   Z 2         2
+                                1
+                   =−                                                du
+                         π(1 + 2az + z 2 )           −2    u + 2a
+                                                                                    q
+                                                                                           2
+                                              z                1 − u4     Z 2
+                                     −                                   du
+                                       π(1 + 2az + z 2 ) −2 1 − uz + z 2
+                        ω(a) + z        X                              n
+                   =−               = −     ω(a)U n (−a) + U n−1 (−a)  z ,
+                      1 + 2az + z 2
+                                                     n≥0
+
+
+where we used (7.3), (7.4)/(7.5), and finally (7.2) to obtain the last line. Hence,
+                                                                   
+                               qn (−2a) = − ω(a)Un (−a) + Un−1 (−a) .                                         (7.8)
+
+  If we put these findings together, we get the following result from Theorem 1 with k = 1
+and m = 0.
+   Theorem 14. Let X and a be variables. For all positive integers n, we have
+                                                                         
+                                       ⌊(i+j−1)/2⌋
+                                            X
+       det    X(−2a)i+j +                          (−2a)i+j−2k−1 Ck 
+  0≤i,j≤n−1
+                                            k=0
+
+                                                            = (−1)n−1 XUn−1 (−a) + Un−2 (−a) . (7.9)
+                                                                                            
+
+
+
+   Proof. Using
+           q (7.7) and (7.8), we see that Theorem 1 with k = 1, m = 0, y1 = −2a,
+                  1 − u4 du reads
+                         2
+and dµ(u) =
+                                                                               
+                                         ⌊(i+j−1)/2⌋
+                                              X
+       det    ω(a)(−2a)i+j +                         (−2a)i+j−2k−1 Ck 
+  0≤i,j≤n−1
+                                              k=0
+
+                                                                = (−1)n−1 ω(a)Un−1 (−a) + Un−2 (−a) .
+                                                                                                   
+
+
+This holds for all complex numbers a. Now, if we regard the above determinant (formally)
+as a polynomial in ω(a), then it is not difficult to see that the degree in ω(a) is at most 1.
+On the other hand, the right-hand side of the above equation√is visibly a polynomial√       of
+                                                                     2
+degree 1 in ω(a). If we now choose a = −2 (say), so that a + a − 1 = −2 + 3 and 1
+are linearly independent over the rational numbers, then we may conclude that ω(a) can
+be replaced by a variable, X say. This establishes the assertion of the theorem.        
+
+                                                           17
+  If we choose a = −1 in the above theorem, the sum in the determinant can be simplified.
+Namely, we have
+                       ⌊(n−1)/2⌋                    n
+                                              (       
+                          X                     − n/2  ,       if n is even,
+             (−1)2n +            2n−2k−1 Ck =     1   n+1
+                                                                                 (7.10)
+                          k=0
+                                                − 2 (n+1)/2
+                                                             , if n is odd,
+
+as is straightforward to verify by an induction on n. Since Un (1) = n + 1 for all n, the
+choice of X = −1 in Theorem 14 leads to the Hankel determinant evaluation
+                                                        
+                                 −2⌈(i+j)/2⌉ 2⌈(i + j)/2⌉
+                      det      2                             = 2−n(n−1) .          (7.11)
+                   0≤i,j≤n−1                  ⌈(i + j)/2⌉
+More generally, if we choose X = −Y − 1, then we get
+                                                    
+                             −2⌈(i+j)/2⌉ 2⌈(i + j)/2⌉
+              det       Y +2                             = 2−n(n−1) (Y n + 1).        (7.12)
+           0≤i,j≤n−1                      ⌈(i + j)/2⌉
+
+q In a similar fashion, Theorem 1 with k = m = 1, x1 = b, y1 = −2a, and dµ(u) =
+       2
+ 1 − u4 du implies the following result.
+  Theorem 15. Let X, a and b be variables. For all positive integers n, we have
+         
+                          ⌊(i+j)/2⌋
+                             X
+                  i+j+1
+    det  X(−2a)        +          (−2a)i+j−2k Ck
+  0≤i,j≤n−1
+                                 k=0
+                                                                   
+                                       ⌊(i+j−1)/2⌋               
+                                           X
+                     −b X(−2a)i+j +               (−2a)i+j−2k−1 Ck 
+                                           k=0
+                                                                        
+      = Un−1 (b/2) XUn (−a) + Un−1 (−a) − Un (b/2) XUn−1 (−a) + Un−2 (−a) . (7.13)
+
+  Again, it is worth stating the identities that one obtains in the special case where a = −1
+explicitly. Namely, in view of the simplification (7.10) and of Un (1) = n + 1, in that case
+Equation (7.13) reduces to
+                                                   
+                    −2⌈(i+j+1)/2⌉ 2⌈(i + j + 1)/2⌉
+      det      Y +2
+  0≤i,j≤n−1                          ⌈(i + j + 1)/2⌉
+                                                               
+                              1       −2⌈(i+j)/2⌉−1 2⌈(i + j)/2⌉
+                        −b 2 Y + 2
+                                                     ⌈(i + j)/2⌉
+                                  2
+                                                                                   
+                   = (−1)n−1 2−n Un−1 (b/2)(Y (n + 1) + 1) − Un (b/2)(Y n + 1) . (7.14)
+
+Since Un (0) = (−1)n/2 if n is even and Un (0) = 0 otherwise, for b = 0 Equation (7.14)
+becomes
+                                                 
+                   −2⌈(i+j+1)/2⌉ 2⌈(i + j + 1)/2⌉
+                                                       = (−1)( 2 ) 2−n 2⌈n/2⌉Y + 1 .
+                                                               n      2           
+      det     Y +2
+   0≤i,j≤n−1                       ⌈(i + j + 1)/2⌉
+                                                                                 (7.15)
+
+                                             18
+Finally, since                             
+                                            1,
+                                                    if n ≡ 0, 1 mod 6,
+                                Un (1/2) =   0,      if n ≡ 2 mod 3,
+                                           
+                                             −1,     if n ≡ 3, 4 mod 6,
+                                           
+
+for b = 1 Equation (7.14) becomes
+                                              
+                  −2⌈(i+j)/2⌉    2⌈(i + j)/2⌉
+     det     Y +2
+  0≤i,j≤n−1                     ⌈(i + j + 1)/2⌉
+                                  −n(n−1)
+                                 2
+                                            Y,                if n ≡ 0 (mod 3),
+                              =     −2−n(n−1) (Y (n + 1) + 1), if n ≡ 1 (mod 3),                  (7.16)
+                                 
+                                  −n(n−1)
+                                    2        (Y n + 1),        if n ≡ 2 (mod 3).
+
+   When testing (7.12) and (7.15) with the help of Mathematica, initially I mistyped the
+exponent of 2. This led to the discovery of two more — conjectural — Hankel determinant
+evaluations.
+  Conjecture 16. Let Y be a variable. For all positive integers n, we have
+                                                   
+                                −i−j    2⌈(i + j)/2⌉              2
+                                                        = −2−(n−1) Y (n − 3) + 1
+                                                                                 
+             det         Y +2                                                                     (7.17)
+         0≤i,j≤n−1                       ⌈(i + j)/2⌉
+
+and
+                                        
+                  −i−j−1 2⌈(i + j + 1)/2⌉
+     det     Y +2
+  0≤i,j≤n−1               ⌈(i + j + 1)/2⌉
+                         (
+                           (−1)⌊n/6⌋ 2−n(n−1) 12 4n+2
+                                                           
+                                                   3    Y + 1 , if n is even,
+                       =                                                                          (7.18)
+                           (−1)⌊n/6⌋ 2−n(n−1) 12 4n+4
+                                                           
+                                                   3
+                                                        Y + 1 , if n is odd.
+
+
+   Acknowledgement. I thank Mourad Ismail for insisting that, after having written [5],
+I throw a “combinatorial eye” on Uvarov’s formula.
+
+
+                                             References
+ 1. E. B. Christoffel, Über die Gaußische Quadratur und eine Verallgemeinerung derselben, J. reine angew.
+    Math. 55 (1858), 61–82.
+ 2. M. Elouafi, A unified approach for the Hankel determinants of classical combinatorial numbers, J.
+    Math. Anal. Appl. 431 (2015), 1253–1274.
+ 3. M. E. H. Ismail, Classical and quantum orthogonal polynomials in one variable, Encyclopedia of
+    Mathematics and its Applications, vol. 98, Cambridge University Press, Cambridge, 2009.
+ 4. C. Krattenthaler, Advanced determinant calculus, Séminaire Lotharingien Combin. 42 (“The Andrews
+    Festschrift”) (1999), Article B42q, 67 pp.
+ 5. C. Krattenthaler, Hankel determinants of linear combinations of moments of orthogonal polynomials,
+    II, preprint, arχiv:2101.04225.
+
+                                                   19
+ 6. A. Lascoux, Symmetric functions and combinatorial operators on polynomials, CBMS Regional Con-
+    ference Series in Mathematics, vol. 99, Amer. Math. Soc., Providence, RI, 2003.
+ 7. G. Szegő, Orthogonal polynomials, Amer. Math. Soc., Providence, RI, 1939.
+ 8. V. B. Uvarov, Relation between polynomials orthogonal with different weights (Russian), Dokl. Akad.
+    Nauk SSSR 126 (1959), 33–36.
+ 9. V. B. Uvarov, The connection between systems of polynomials that are orthogonal with respect to
+    different distribution functions (Russian), Ž. Vyčisl. Mat. i Mat. Fiz. 9 (1969), 1253–1262.
+10. X. Viennot, Une théorie combinatoire des polynômes orthogonaux généraux, UQAM, Montréal, Qué-
+    bec, 1983, available at http://www.xavierviennot.org/xavier/polynomes orthogonaux.html.
+
+Fakultät für Mathematik, Universität Wien, Oskar-Morgenstern-Platz 1, A-1090 Vienna,
+Austria.
+http://www.mat.univie.ac.at/˜kratt
+
+
+
+
+                                                  20
+

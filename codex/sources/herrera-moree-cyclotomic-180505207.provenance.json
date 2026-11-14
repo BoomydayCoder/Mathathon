@@ -1,0 +1,14 @@
+{
+  "authors": [
+    "Andrés Herrera-Poyatos",
+    "Pieter Moree"
+  ],
+  "title": "Coefficients and higher order derivatives of cyclotomic polynomials: old and new",
+  "source_url": "https://arxiv.org/pdf/1805.05207",
+  "version": "arXiv1805.05207v2,22August2018",
+  "retrieved_utc": "2026-11-14T11:21:04.605457+00:00",
+  "sha256": "73ea070ea7cec72270cea512794e9e816c08c8213b9f69a3c30047895792704c",
+  "bytes": 822754,
+  "inspected": "Theorem1.3,§3.1,Theorem3.3; identity directly matches exponential logarithmic derivatives via Stirling numbers",
+  "comparison_note": "../problem131/cyclotomic-mobius-integrality.md"
+}

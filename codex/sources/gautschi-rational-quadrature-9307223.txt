@@ -1,0 +1,990 @@
+                                             Gauss-type Quadrature Rules for Rational Functions∗
+arXiv:math/9307223v1 [math.CA] 20 Jul 1993
+
+
+
+
+                                                                                   Walter Gautschi
+
+
+
+
+                                                     Abstract. When integrating functions that have poles outside the interval of
+                                                     integration, but are regular otherwise, it is suggested that the quadrature rule
+                                                     in question ought to integrate exactly not only polynomials (if any), but also
+                                                     suitable rational functions. The latter are to be chosen so as to match the most
+                                                     important poles of the integrand. We describe two methods for generating such
+                                                     quadrature rules numerically and report on computational experience with them.
+
+
+
+                                             Introduction
+
+                                                 Traditionally, Gauss quadrature rules are designed to integrate exactly polynomi-
+                                             als of maximum possible degree. This is meaningful for integrand functions that are
+                                             “polynomial-like”. For integrands having poles (outside the interval of integration) it
+                                             would be more natural to include also rational functions among the functions to be
+                                             exactly integrated. In this paper we consider n-point quadrature rules that exactly
+                                             integrate m rational functions (with prescribed location and multiplicity of the poles)
+                                             as well as polynomials of degree 2n−m−1, where 0 ≤ m ≤ 2n. The limit case m = 2n,
+                                             in which only rational functions are being integrated exactly, is a rational counterpart
+                                             of the classical Gauss formula; the latter corresponds to the other limit case m = 0.
+                                                 In §1 we characterize these new quadrature rules in terms of classical (polynomial)
+                                             Gauss formulae with modified weight functions. We also identify special choices of
+                                             poles that are of interest in applications. The computation of the quadrature rules is
+                                             discussed in §2, and numerical examples are given in §3.
+
+
+
+
+                                               ∗
+                                                   Work supported in part by the National Science Foundation under grant DMS–9023403.
+1. Gauss quadrature for rational functions
+
+   Let dλ be a measure on the real line having finite moments of all orders. Let ζµ ∈ C,
+µ = 1, 2, . . . , M, be distinct real or complex numbers such that
+
+           ζµ 6= 0 and 1 + ζµ t 6= 0 for t ∈ supp(dλ),                    µ = 1, 2, . . . , M .   (1.1)
+
+For given integers m, n with 1 ≤ m ≤ 2n, we wish to find an n-point quadrature rule
+that integrates exactly (against the measure dλ) polynomials of degree 2n − m − 1 as
+well as the m rational functions
+
+                    (1 + ζµ t)−s ,     µ = 1, 2, . . . , M,       s = 1, 2, . . . , sµ ,          (1.2)
+
+where sµ ≥ 1 and
+                                            M
+                                            X
+                                                  sµ = m.                                         (1.3)
+                                            µ=1
+
+In the extreme case m = 2n (where polynomials of degree –1 are understood to be
+identically zero) the formula integrates exactly 2n rational functions (with poles of
+multiplicities sµ at −1/ζµ ), but no nontrivial polynomials. The formula, therefore,
+can be thought of as the rational analogue of the classical Gauss formula; the latter
+corresponds to the other limit case m = M = 0.
+   The solution of our problem is given by the following theorem.
+
+   THEOREM 1.1. Define
+                                                  M
+                                                       (1 + ζµ t)sµ ,
+                                                  Y
+                                     ωm (t) =                                                     (1.4)
+                                                 µ=1
+
+a polynomial of degree m. Assume that the measure dλ/ωm admits a (polynomial)
+n-point Gaussian quadrature formula
+                                    n
+                          dλ(t)
+             Z
+                                       wνG f (tG      G
+                                                                         RnG (P2n−1 ) = 0,
+                                   X
+                  f (t)          =             ν ) + Rn (f ),                                     (1.5)
+              R           ωm (t)   ν=1
+
+with nodes tG
+            ν contained in the support of dλ,
+
+                                          tG
+                                           ν ∈ supp(dλ).                                          (1.6)
+
+Define
+                      tν = tG
+                            ν,       λν = wνG ωm (tG
+                                                   ν ),         ν = 1, 2, . . . , n.              (1.7)
+Then                          Z                   n
+                                                  X
+                                   g(t)dλ(t) =          λν g(tν ) + Rn (g),                       (1.8)
+                               R                  ν=1
+where
+                       
+                        g(t) = (1 + ζµ t)−s ,
+                       
+                                                       µ = 1, 2, . . . , M; s = 1, 2, . . . , sµ ,
+                       
+                       
+    Rn (g) = 0 if                                                                                    (1.9)
+                       
+                        g ∈ P2n−m−1 .
+                       
+                       
+
+
+
+    Conversely, (1.8) with tν ∈ supp(dλ) and (1.9) imply (1.5), (1.6) with tG    G
+                                                                            ν , wν as
+defined in (1.7).
+
+    Remark. Theorem 1.1, for real ζµ and either all sµ = 1 and m = 2n, or all but one
+sµ = 2 and m = 2n − 1, is due to Van Assche and Vanherwegen [13]. The quadrature
+rule (1.5), especially its convergence properties for analytic functions f , has previously
+been studied by López and Illán [9, 10].
+
+    Proof of Theorem 1.1. Assume first (1.5), (1.6). For µ = 1, 2, . . . , M; s = 1, 2, . . . , sµ ,
+define
+                                               ωm (t)
+                               qµ,s (t) =               .                                 (1.10)
+                                            (1 + ζµ t)s
+Since m ≤ 2n and s ≥ 1, we have qµ,s ∈ Pm−s ⊂ P2n−1 , and therefore, by (1.5),
+                                                               n
+                        dλ(t)                       dλ(t)
+                   Z                        Z
+                                                                  wνG qµ,s (tG
+                                                              X
+                                  =       qµ,s (t)         =                 ν)
+                    R (1 + ζµ t)s      R           ωm (t)     ν=1
+                            n                          n
+                                     ωm (tG
+                                          ν)                  λν
+                               wνG
+                           X                          X
+                         =                  G   s
+                                                   =                   s
+                                                                         ,
+                           ν=1     (1 + ζµ tν )       ν=1 (1 + ζµ tν )
+
+where (1.7) has been used in the last step and none of the denominators on the far
+right vanishes by (1.6) and (1.1). This proves the assertion in the top line of (1.9). The
+bottom part of (1.9) follows similarly: Let p be an arbitrary polynomial in P2n−m−1 .
+Then, since p ωm ∈ P2n−1 , again by (1.5) and (1.7),
+
+                                                                      dλ(t)
+                              Z                    Z
+                                   p(t)dλ(t) =          p(t)ωm (t)
+                                 R                  R                 ωm (t)
+                                  n                            n
+                                        wνG p(tG       G
+                                 X                             X
+                             =                 ν )ωm (tν ) =         λν p(tν ).
+                                  ν=1                          ν=1
+
+
+   To prove the converse, we first note that wνG is well defined by (1.7), since ωm (tν ) 6= 0
+by the assumption on tν and (1.1). One then easily verifies that (1.5) holds for all
+polynomials (1.10) (of degree < m) and all polynomials of the form p ωm where
+p ∈ P2n−1−m . The collection of these polynomials, however, spans P2n−1 . ✷
+    We will concentrate on six special choices of the parameters ζµ that are of interest
+in applications.
+
+    Case 1 (Simple real poles). All sµ = 1 in (1.2) (hence M = m), and all ζµ are real,
+distinct, and nonzero,
+
+                        ζν = ξν ∈ R,        ξν 6= 0,          ν = 1, 2, . . . , m.                (1.11a)
+
+In this case the polynomial ωm has the form
+                                          m
+                                          Y
+                               ωm (t) =         (1 + ξν t),       ξν ∈ R.                         (1.11b)
+                                          ν=1
+
+If the support of dλ is an interval, ωm does not change sign on it because of (1.1).
+
+   Case 2 (Simple conjugate complex poles). All sµ = 1 (hence M = m), m even, and
+the ζµ occur in m/2 (distinct) pairs of conjugate complex numbers (cf. [9]),
+
+                ζν = ξν + iην ,      ζν+m/2 = ξν − iην ,            ν = 1, 2, . . . , m/2,        (1.12a)
+
+where ξν ∈ R and ην > 0. Here,
+                                          m/2
+                                                 [(1 + ξν t)2 + ην2 t2 ],
+                                           Y
+                               ωm (t) =                                                           (1.12b)
+                                          ν=1
+
+which is strictly positive for real t.
+
+  Case 2′ (Simple conjugate complex poles plus a simple real pole). All sµ = 1 (hence
+M = m), m (odd) ≥ 3, and, slightly changing the indexing of the ζ’s,
+
+  ζ0 ∈ R,    ζν = ξν + iην ,      ζν+(m−1)/2 = ξν − iην ,          ν = 1, 2, . . . , (m − 1)/2,   (1.13a)
+
+where ζ0 = ξ0 6= 0 and ξν ∈ R, ην > 0 for 1 ≤ ν ≤ (m − 1)/2. Then
+                                                (m−1)/2
+                                                          [(1 + ξν t)2 + ην2 t2 ].
+                                                   Y
+                        ωm (t) = (1 + ξ0 t)                                                       (1.13b)
+                                                  ν=1
+
+
+
+
+   Case 3 (Real poles of order 2). All sµ = 2 in (1.2) (hence 2M = m), and all ζµ are
+nonzero, real and distinct,
+
+                 ζν = ξν ∈ R,        ξν 6= 0,      sν = 2,         ν = 1, 2, . . . , m/2.         (1.14a)
+The polynomial ωm now has the form
+                                                  m/2
+                                                        (1 + ξν t)2
+                                                  Y
+                                    ωm (t) =                                                (1.14b)
+                                                  ν=1
+
+and is nonnegative for real t, and positive on the support of dλ.
+
+    Case 3′ (Real poles of order 2 plus a simple real pole). Here, all ζµ = ξµ are nonzero,
+real and distinct, sν = 2 for ν = 1, 2, . . . , M − 1 and sM = 1. Thus, m = 2M − 1, and
+                                   M −1
+                                                                 m+1
+                                         (1 + ξν t)2 , M =
+                                   Y
+             ωm (t) = (1 + ξM t)                                     , m(odd) ≥ 3.           (1.15)
+                                   ν=1                            2
+
+If M = n, i.e., m = 2n − 1, the quadrature rule (1.5) is then identical with the
+“orthogonal quadrature rule” of [13], having as nodes the zeros of the rational function
+              Pn−1
+(1 + ζn t)−1 + ν=1  aν (1 + ζν t)−1 which is orthogonal (relative to the measure dλ) to 1
+                 −1
+and to (1 + ζµ t) , µ = 1, 2, . . . , n − 1. As in Case 1, the polynomial ωm preserves its
+sign on the interval on which dλ is supported.
+
+    Case 4 (Conjugate complex poles of order 2). All sµ = 2 (hence 2M = m), m = 0
+(mod 4), and the ζµ , µ = 1, 2, . . . , m/2, occur in m/4 conjugate complex pairs, similarly
+as in Case 2. Thus,
+                                          m/4
+                                                [(1 + ξν t)2 + ην2 t2 ]2 .
+                                          Y
+                              ωm (t) =                                                       (1.16)
+                                          ν=1
+
+   In all six cases, the measure dλ/ωm admits a Gaussian n-point formula for each
+n = 1, 2, 3, . . . , so that the assumption of Theorem 1.1 is fulfilled for each n.
+   Putting f (t) = ωm (t)g(t) in (1.5) and using (1.7), we get
+                         Z                    n
+                                                    λν g(tν ) + RnG (ωm g),
+                                              X
+                              g(t)dλ(t) =                                                    (1.17)
+                          R                   ν=1
+
+where from the well-known expression for the remainder term of Gaussian quadrature
+rules, one has
+
+                                                                      β̂0 β̂1 · · · β̂n
+                   RnG (ωm g) = γn (ωm g)(2n) (τ ),          γn =                       .    (1.18)
+                                                                           (2n)!
+Here, τ is some number in the smallest interval containing the support of dλ, and
+β̂k = βk (dλ/ωm) are the β-recursion coefficients for the measure dλ/ωm (cf. (2.1)
+below). The latter are computed as part of the algorithms to be described in the next
+section.
+
+2. Computation of the quadrature rule (1.5)
+    We propose essentially two methods for generating the basic quadrature rule (1.5),
+the first being most appropriate if the support of dλ is a finite interval, the other more
+effective, though possibly slower, when the support interval of dλ is unbounded.
+    2.1. Method based on partial fraction decomposition and modification
+algorithms. To compute the n-point formula (1.5), it suffices to compute the nth-
+degree orthogonal polynomial π̂n ( · ) = πn ( · ; dλ̂) relative to the measure dλ̂ = dλ/ωm,
+or, more precisely, the recursion coefficients α̂k = αk (dλ̂), β̂k = βk (dλ̂), k = 0, 1, . . . ,
+n − 1, in the three-term recurrence relation satisfied by these (monic) polynomials:
+
+                             π̂k+1 (t) = (t − α̂k )π̂k (t) − β̂k π̂k−1 (t),
+
+                                                        k = 0, 1, . . . , n − 1,          (2.1)
+
+                             π̂0 (t) = 1,       π̂−1 (t) = 0.
+
+The nodes tG                G
+            ν and weights wν in (1.5) can then be obtained by standard techniques
+via an eigensystem problem for the (symmetric, tridiagonal)
+                                                        q Jacobi matrix of order n
+having the α̂k , k = 0, 1, . . . , n − 1, on the diagonal, and β̂k , k = 1, 2, . . . , n − 1, on
+the side diagonals (see, e.g., [7], [4, §6]). The coefficients α̂k , β̂k in turn are expressible
+in terms of the orthogonal polynomials π̂k as
+                                          (tπ̂k , π̂k )
+                                 α̂k =                  , 0 ≤ k ≤ n − 1,
+                                          (π̂k , π̂k )
+                                                                                          (2.2)
+                                                      (π̂k , π̂k )
+                   β̂0 = (π̂0 , π̂0 ), β̂k =                       , 1 ≤ k ≤ n − 1,
+                                                   (π̂k−1 , π̂k−1)
+where ( · , · ) denotes the inner product
+                                                  Z
+                                       (u, ν) =        u(t)ν(t)dλ̂(t).                    (2.3)
+                                                   R
+(If the error constant γn in (1.18) is desired, one needs to compute, in addition, β̂n .)
+    The basic idea of computing the coefficients in (2.2) is as follows. Suppose we can
+construct an N-point quadrature rule for dλ̂ = dλ/ωm , where N > n, which is exact
+for polynomials of degree ≤ 2n − 1:
+                         Z                      N
+                                                X
+                                 p(t)dλ̂(t) =         Wk p(Tk ),     p ∈ P2n−1 .          (2.4)
+                             R                  k=1
+
+Here the weights Wk are not necessarily all positive. Denote the discrete measure
+implied by the sum on the right by dΛN :
+                                   Z                      N
+                                                          X
+                                        p(t)dΛN (t) =           Wk p(Tk ).                (2.5)
+                                    R                     k=1
+Then from the formulae in (2.2) one easily sees by induction that
+
+
+                       αk (dλ̂) = αk (dΛN ),
+                                                  k = 0, 1, . . . , n − 1.            (2.6)
+                       βk (dλ̂) = βk (dΛN ),
+
+Thus, the desired recursion coefficients are the first n of the α- and β-coefficients
+belonging to the discrete measure dΛN . These can be generated by Stieltjes’s procedure,
+which is implemented in the routine sti of [4]. (The faster routine lancz of [4],
+implementing the Lanczos method, would also be applicable here, even though dΛN is
+not necessarily a positive measure.)
+   We next show how a quadrature rule of type (2.4), with N = O(mn), can be
+constructed by means of partial fraction decomposition and suitable modification al-
+gorithms. For this, we consider separately Cases 1–3′ identified in §1. The analysis of
+Case 4 becomes so tedious that we will not pursue it any further in this context; see,
+however, §2.2.
+
+   2.1.1. Simple real poles. We set up the partial fraction decomposition of 1/ωm in
+the form                                          m
+                       1             1           X        cν
+                            = Qm               =                 ,              (2.7)
+                    ωm (t)      ν=1 (1 + ξν t)   ν=1 t + (1/ξν )
+
+where
+                                     ξνm−2
+                         cν = Q m                , ν = 1, 2, . . . , m,               (2.8)
+                                  µ=1 (ξν − ξµ )
+                                  µ6=ν
+
+and an empty product in (2.8) (when m = 1) is to be taken as 1. Then, with dλ̂ =
+dλ/ωm ,
+                                       m Z
+                     Z                X            cν dλ(t)
+                         p(t)dλ̂(t) =       p(t)             .
+                       R              ν=1 R      t + (1/ξν )
+The integrals on the right involve measures cν dλ modified by linear divisors. For such
+measures, the associated recursion coefficients can be obtained from those of cν dλ
+(assumed known) by a suitable modification algorithm (cf. [4, §5]). Unless xν = −1/ξν
+is very close to the support interval of dλ, the most appropriate algorithm is the
+one embodied in the routine gchri of [4] with iopt = 1. Otherwise, the routine
+chri of [4] (again with iopt = 1) is preferable. A basic ingredient of the routine
+gchri   is the modified Chebyshev algorithm (cf. [2, §2.4]) using modified moments
+ R πk (t; dλ)cν dλ(t)/(t − xν ), k = 0, 1, 2, . . . , 2n − 1. These in turn are generated by
+R
+
+backward recurrence as minimal solution of the three-term recurrence relation for the
+measure dλ; cf. [1, §5].
+  Having obtained, in whichever way, the first n of the α- and β-coefficients for the
+modified measure cν dλ(t)/(t − xν ), and hence the Gaussian quadrature formula1
+                                                n
+                       Z
+                                     cν dλ(t)
+                                                  w (ν) p(t(ν)
+                                                X
+                            p(t)              =            r ),            p ∈ P2n−1 ,               (2.9)
+                        R          t + (1/ξν ) r=1 r
+
+via eigensystem techniques, we then get
+                                               m Z
+                                     dλ(t)                 cν dλ(t)
+                             Z                X
+                                p(t)        =       p(t)
+                              R      ωm (t)   ν=1 R      t + (1/ξν )
+                                       m X
+                                         n
+                                                 wr(ν) p(t(ν)
+                                       X
+                                   =                      r ),   p ∈ P2n−1 ,
+                                       ν=1 r=1
+
+hence the desired quadrature rule (2.4), with N = mn and
+
+
+                    T(ν−1)n+r = t(ν)
+                                 r ,
+                                                   ν = 1, 2, . . . , m; r = 1, 2, . . . , n.       (2.10)
+                    W(ν−1)n+r = wr(ν) ,
+
+
+    The procedure described works best if the support of dλ is a finite interval. Other-
+wise, the modified Chebyshev algorithm underlying the procedure is likely to suffer
+from ill-conditioning; cf. Example 3.4. Another difficulty that may adversely affect the
+accuracy of the results, in particular if m = 2n, is the possibility that the constants
+cν sgnt∈supp(dλ) (t + 1/ξν ) become very large and alternate in sign; cf. Example 3.2.
+This will cause serious cancellation errors in evaluating inner products relative to the
+measure dΛN (there being blocks of weights Wk which are very large positive alternating
+with blocks of weights which are very large negative). In such cases, either m has to be
+lowered, perhaps down to m = 1, or else the method discussed in §2.2 invoked, which
+will be more effective (but possibly more expensive).
+
+    2.1.2. Simple conjugate complex poles. We now consider Case 2 of §1, i.e., conjugate
+complex parameters ζν = ξν + iην , ζν+m/2 = ζ̄ν , where ξν ∈ R, ην > 0 and m is even.
+In this case, an elementary computation yields the partial fraction decomposition
+                               m/2
+                        1      X            cν + d ν t
+                             =                  2         2 ,                 t ∈ R,            (2.11)
+                      ωm (t)
+                                   
+                                          ξ
+                               ν=1  t + ξ2 +η
+                                           ν
+                                              2   + ξ2η+η
+                                                        ν
+                                                          2
+                                                    ν   ν         ν   ν
+   1
+     In order to produce positive β-coefficients, as required in the routine for Gauss quadrature for-
+mulae, one inputs the measure |cν /(t − xν )|dλ(t) and, if this entails a change of sign, reverses the sign
+of all Gauss weights after exiting from the Gauss quadrature routine.
+where
+                                                                                              
+                                              ξν
+                       cν =        1
+                                  ην       ξν2 +ην2
+                                                      Im pν + ξ2η+η
+                                                                 ν
+                                                                    2 Re pν ,
+                                                                       ν    ν
+                                                                                                                (2.12)
+                                   1
+                       dν =       ην
+                                     Im pν
+
+and
+                          m/2
+                          Y                  (ξν + iην )2
+                   pν =                                                                                         (2.13)
+                          µ=1
+                              (ξν − ξµ )2 − (ην2 − ηµ2 ) + 2iην (ξν − ξµ )
+                          µ6=ν
+
+with p1 = 1 if m = 2. One can then proceed as in §2.1.1, except that the modification
+of the measure dλ now involves multiplication by a nonconstant linear function (if
+dν 6= 0) in addition to division by a quadratic. The former modification is handled
+by the routine chri of [4] with iopt = 1, the latter by the routine gchri with iopt
+= 2 (or, if more appropriate, by chri with iopt = 5). The quadrature rule (2.4) so
+obtained has N = mn/2.
+    If the poles −1/ζµ are located in conjugate pairs on a line parallel to the imaginary
+axis, then by an elementary calculation one can show that all pν are real, hence dν = 0,
+and there is no need to call chri.
+
+   2.1.2′ . Simple conjugate complex poles plus a simple real pole. We are now in Case
+ ′
+2 of §1, with m odd, ζ0 = ξ0 ∈ R and the remaining ζµ conjugate complex as in Case
+2. This yields
+                               (m−1)/2
+          1          c′0         X                               c′ν + d′ν t
+               =             +                                         2                      2 ,    t ∈ R,   (2.14)
+        ωm (t)   t + (1/ξ0 )
+                                                                               
+                                                               ξν                      ην
+                                 ν=1    t+                  ξν2 +ην2
+                                                                            +       ξν2 +ην2
+
+where
+                                                         ξ0m−2
+                             c′0 = Q(m−1)/2                                            ,
+                                             ν=1        [(ξ0 − ξν )2 + ην2 ]
+                                                                                                   !
+                             1            ξν               ην
+                     c′ν =              2    2
+                                               Im p′ν + 2        Re p′ν ,                                       (2.15)
+                             ην        ξν + ην          ξν + ην2
+                                                        1
+                                              d′ν =        Im p′ν
+                                                        ην
+and
+                                                      ξν + iην
+                                       p′ν =                     pν ,                                           (2.16)
+                                                   ξν − ξ0 + iην
+with pν the same as in (2.13) with m replaced by m − 1. The technique called for is
+a combination of the one in §2.1.1, to deal with the first term in (2.14), and the one
+in §2.1.2, to deal with the remaining terms, and yields a quadrature rule (2.4) with
+N = (m + 1)n/2.
+   2.1.3. Real poles of order 2. This is Case 3 of §1, and leads to the partial fraction
+decomposition
+                                 m/2                             !
+                        1        X        cν             dν
+                             =                   +                 ,              (2.17)
+                      ωm (t)     ν=1   t + 1/ξν     (t + 1/ξν )2
+                                                          Pm/2        ξµ
+                                             2ξνm−3         µ=1     ξν −ξµ
+                                                            µ6=ν
+                               cν = −         Qm/2                                          (2.18)
+                                                 µ=1      (ξν − ξµ )2
+                                                 µ6=ν
+
+                                            ξ m−4
+                                  dν = Qm/2 ν            ,                                  (2.19)
+                                                       2
+                                        µ=1 (ξν − ξµ )
+                                              µ6=ν
+
+where c1 = 0, d1 = ξ1−2 when m = 2. Here, N = mn in (2.4).
+
+    2.1.3′ . Real poles of order 2 plus a simple real pole. Similarly as in §2.1.3, the partial
+fraction decomposition has now the form
+                        M −1
+               c′M               c′ν            d′ν
+                                                                    !
+     1                  X
+          =           +                +            , M = (m + 1)/2, m odd,
+   ωm (t)   t + 1/ξM    ν=1   t + 1/ξν (t + 1/ξν )2
+                                                                         (2.20)
+                                     m−2
+                                    ξM
+                  c′M =      QM −1            2
+                                                 ,
+                               ν=1 (ξM − ξν )              !
+                                                                     PM −1       ξµ
+                                ξνm−3 ξM + 2(ξν − ξM )                  µ=1    ξν −ξµ
+                                                                        µ6=ν
+                    c′ν   =−                              QM −1                         ,
+                                      (ξν − ξM       )2     µ=1    (ξν − ξµ )2
+                                                            µ6=ν
+                                             ξνm−4
+                    d′ν   =                  QM −1                       .
+                                (ξν − ξM )     µ=1        (ξν − ξµ )2
+                                               µ6=ν
+
+Empty sums and products (when M = 2) have their conventional values 0 and 1,
+respectively. Again, N = mn in (2.4).
+    The presence of two terms in the summations of (2.17) and (2.20) complicates mat-
+ters considerably, as they call for two applications of the routine gchri: First, we must
+generate sufficiently many of the recursion coefficients for the measure dλ(t)/(t − xν ),
+xν = −1/ξν , in order next to generate the desired recursion coefficients for dλ(t)/(t −
+xν )2 by backward recursion – a recursion based on the recurrence relation generated
+in the first application of gchri (which in turn requires backward recursion!). The
+procedure nevertheless works well if the xν are not too close to the support interval of
+dλ; see Example 3.3.
+   2.2. Discretization method. In this method, the inner product (2.3) is approx-
+imated by a discrete (positive) inner product,
+                                          N
+                                dλ(t)
+              Z                          X    (N ) (N )  (N )
+   (u, v) =        u(t)v(t)            ≈     ωk u(τk )v(τk ) =: (u, v)N , N > n,                    (2.21)
+              R                 ωm (t)   k=1
+
+whereupon the formulae (2.2) are applied with the inner product ( · , · ) replaced by
+( · , · )N throughout. This yields approximations
+                          α̂k,N ≈ α̂k ,    β̂k,N ≈ β̂k ,        k = 0, 1, . . . , n − 1.            (2.22)
+In effect we are generating the polynomials orthogonal with respect to the discrete
+inner product ( · , · )N in order to approximate the desired orthogonal polynomials.
+    The computation of the approximate coefficients (2.22) can be done by either
+Stieltjes’s procedure or Lanczos’s algorithm (cf., e.g., [3, §§6–7]). Both are imple-
+mented in the routine mcdis of [4].
+    With any reasonable choice of the discretization (2.21), it will be true that the
+procedure converges as N → ∞,
+                       lim α̂k,N = α̂k ,        lim β̂k,N = β̂k ,          0 ≤ k ≤ n − 1.           (2.23)
+                       N →∞                 N →∞
+
+A natural choice, indeed, is given by
+                                                         (N )
+                   (N )       (N )          (N )       wk (dλ)
+                  τk      = tk (dλ),       ωk      =            (N )
+                                                                       ,    k = 1, 2, . . . , N,    (2.24)
+                                                       ωm (τk )
+       (N )                                                                                        (N )
+where tk (dλ) are the zeros of the orthogonal polynomial πN ( · ; dλ), and wk (dλ)
+the respective Christoffel numbers.
+    The discretization method is conceptually simpler, and sometimes more stable, than
+the methods of §2.1, but may become significantly more expensive, regardless of the
+choice of m, if poles are close to the interval of integration, or if high accuracy is
+desired; cf. Examples 3.1 and 3.5. Note also that Case 4 that was skipped in §2.1 can
+easily be handled by the present method; see Example 3.6.
+
+3. Numerical Examples
+
+   All examples in this section were computed on the Cyber 205 in both single and
+double precision. The respective machine precisions are 7.11 × 10−15 and 5.05 × 10−29 .
+
+                         1     πt/ω
+   Example 3.1. I1 (ω) = −1           dt,                ω > 1.
+                                     R
+                            sin(πt/ω)
+
+    Here, dλ(t) = dt, and the poles of the integrand are located at the integer mul-
+tiples of ω. It is natural, then, to make our quadrature rule (1.8) exact for m ele-
+mentary rational functions matching the m poles closest to the origin, say those at
+−(m/2)ω, . . . , −ω, ω, . . . , (m/2)ω when m is even. This suggests to identify −1/ζµ in
+(1.2) with these poles, i.e., in (1.11a) to set
+
+                     ξν = (−1)ν /(ω⌊(ν + 1)/2⌋), ν = 1, 2, . . . , m.               (3.1)
+
+Best accuracy is expected when m = 2n, in which case the method described in §2.1.1
+was found to work rather well, the only difficulty being the relatively slow conver-
+gence of the backward recurrence algorithm for computing the 2n modified (Legendre)
+moments associated with the measure dt/(t ± ω) when ω is very close to 1. For single-
+precision accuracy ǫ = 12 × 10−10 and double-precision accuracy ǫd = 21 × 10−25 , and
+n = 20, the respective starting indices k0 and k0d in the backward recursion yielding
+the desired accuracy are shown in Table 3.1 for selected values of ω.
+
+
+                                     ω    k0  k0d
+                                    2.0   50 63
+                                    1.5   53 71
+                                    1.1   67 106
+                                    1.01 124 247
+
+                      TABLE 3.1. Starting indices for backward
+                             recurrence when n = 20
+
+
+    Other than that, the method appears to be very stable and produces quadrature
+rules that are rapidly converging. In Table 3.2, the results of the n-point rule (1.17)
+
+
+           ω   n         n-point rational Gauss     γn              err. Gauss
+          2.0   1     2.1                        3.94(–1)           1.43(–1)
+                4     2.33248722                 3.50(–7)           7.18(–5)
+                7     2.332487232246550235       2.61(–15)          2.73(–8)
+               10     2.332487232246550241107076 1.48(–24)          1.02(–11)
+          1.1   2     4.43                       1.73(–2)           2.60(–1)
+                5     4.467773637                2.00(–9)           2.09(–2)
+                8     4.46777364638776571        5.61(–18)          1.53(–3)
+               11     4.467773646387765789236123 1.66(–27)          1.09(–4)
+          1.01 3      8.429                      2.53(–4)           4.20(–1)
+                6     8.4301845803               6.27(–12)          1.85(–1)
+                9     8.4301845804708420582      7.52(–21)          8.37(–2)
+               12     8.430184580470842058971264 1.23(–30)          3.75(–2)
+               TABLE 3.2. Numerical results for I1 (ω), error constants,
+                      and comparison with Gauss quadrature
+
+
+applied to g(t) = (πt/ω)/ sin(πt/ω) in double precision are shown for ω = 2, 1.1 and
+1.01, along with the error constants γn of (1.18). Also shown in the last column are
+the relative errors of the n-point Gauss-Legendre rule. For ω = 2, the exact answer is
+known to be 8C/π, where C is Catalan’s constant (cf. [8, Eq. 3.747(2)]). The value
+shown in Table 3.2 for n = 10 agrees with it to all 25 decimal digits given. Ordinary
+Gauss-Legendre quadrature is seen to converge rather slowly, as ω approaches 1. In
+contrast, convergence of the rational Gauss quadrature rule is fast even for ω very close
+to 1. The extra effort required in this case is expended, as illustrated in Table 3.1, at
+the time when the rule is generated.
+
+                                    method of §2.1    method of §2.2
+                     ω   n           SP    DP          SP       DP
+                    2.0   1         .001 .004         .007      .178
+                          4         .008 .036         .010      .224
+                          7         .027 .125         .028      .220
+                         10         .065 .296         .016      .423
+                    1.1   2         .002 .014         .060    1.554
+                          5         .013 .063         .068    1.649
+                          8         .036 .177         .098    1.274
+                         11         .080 .376         .104    1.461
+                    1.01 3          .005 .037         .460   20.10
+                          6         .020 .104         .446   41.51
+                          9         .050 .244         .458   10.44
+                         12         .102 .487         .525   12.65
+
+              TABLE 3.3. Timings (in seconds) of the methods in §§2.1
+                         and 2.2 applied to Example 3.1
+
+    Identical results were obtained by the discretization method of §2.2, but with sub-
+stantially greater effort, particularly for higher accuracies and for ω close to 1. Respec-
+tive timings are shown in Table 3.3, both for single-precision (SP) and double-precision
+(DP) accuracy requirements of 12 × 10−10 and 12 × 10−25 , respectively.
+    While the choice m = 2n indeed gives best accuracy, other choices of m may be
+preferable if the effort and time to generate the quadrature rule is of any importance.
+It turns out that with the method of partial fractions, m = 2⌊(n + 1)/2⌋ gives almost
+the same accuracy at about half the effort, whereas m = 2 gives considerably less
+accuracy but requires only about one-tenth the effort. The discretization method of
+§2.2, on the other hand, requires essentially the same effort regardless of the choice of
+m. Some timings required to generate the quadrature rules for various m and n, and
+the relative errors achieved, are shown in Table 3.4
+
+
+                                  method of §2.1        method of §2.2
+            ω     n    m          SP      DP            SP      DP            err
+
+           2.0    10    2         .008        .037      .014        .399   1.10(–17)
+                       10         .033        .153      .015        .409   1.47(–25)
+                       20         .065        .296      .016        .423   1.58(–25)
+           1.1    11    2         .009        .047      .095       1.402   2.20(–13)
+                       12         .045        .213      .100       1.426   2.80(–23)
+                       22         .080        .376      .104       1.461   6.68(–26)
+           1.01 12      2         .011        .065      .526      12.65    1.15(–13)
+                       12         .052        .258      .511      12.46    9.10(–25)
+                       24         .102        .487      .526      12.65    3.55(–27)
+
+                 TABLE 3.4. Timings and errors for selected m ≤ 2n
+
+
+   If m = 2, the values of n for which full accuracy of about 10−25 is attained are 15,
+21 and 22 for ω = 2.0, 1.1 and 1.01, respectively. Interestingly, the timings involved
+are only about half those for m = 2⌊(n + 1)/2⌋ shown in Table 3.4.
+
+   Example 3.2. I2 (ω) = 01 t
+                                −1/2 Γ(1+t)
+                                              dt,    0 < ω < 1.
+                            R
+                                   t+ω
+
+   Here we take dλ(t) = t−1/2 dt on [0,1]. If we wish to match the first 2n − 1 poles of
+the gamma function at the negative integers as well as the pole at −ω, we set m = 2n
+in
+
+                                ξ1 = ω1 ,
+                                                                                       (3.2)
+                                      1
+                                ξν = ν−1 ,      ν = 2, 3, . . . , m.
+
+The rational n-point Gauss rule (1.7), (1.17), generated by the method of §2.1.1, then
+produces (in double precision) results as shown in Table 3.5, where ω = 12 . In the last
+column we list the absolute value of the difference between double-precision and single-
+precision results. In contrast to Example 3.1, we now see a case in which the accuracy
+reaches a limit (at about n = 10) and deteriorates, rather than improves, as n is further
+increased. (When n = 20, the calculation even breaks down in single precision!). The
+last column in Table 3.5 provides a clear hint as to what is happening: a steady growth
+in numerical instability. Closer examination reveals the true cause of this instability.
+The constants cν in the partial fraction decomposition (2.7) become very large and
+alternate in sign. Thus, for example, c18 = −2.3375 . . . × 109 and c19 = 2.3336 . . . × 109
+when n = 18. This produces blocks of large coefficients Wk in (2.10) that alternate
+in sign from block to block, causing severe cancellation errors in summations such as
+(2.5) (which are abundant in Stieltjes’s algorithm). The phenomenon evidently is a
+manifestation of the asymmetric distribution of the poles of the gamma function.
+
+                      n       n-point rational Gauss            |DP − SP |
+                       2    1.746                               2.24(–13)
+                       6    1.75012059121                       7.05(–11)
+                      10    1.750120591261335415386             3.36(–8)
+                      14    1.7501205912613354159               1.52(–5)
+                      18    1.7501205912613356                  4.31(–3)
+
+                    TABLE 3.5. Numerical results for I2 (ω), ω = .5
+
+   The method of §2.2, in contrast, does not suffer from any numerical instability and
+produces for n = 12, with comparable effort, the value
+                           I2 (.5) = 1.750120591261335415394610,                      (3.3)
+
+believed to be correct to all 25 digits shown.
+    Matching only n poles, and thus taking m = n in (3.2), stabilizes the procedure
+of §2.1.1 considerably, and as a consequence produces the correct result (3.3) (except
+for a discrepancy of 1 unit in the last decimal place) for n = 11. An even more stable
+procedure results from taking m = 2 and, amazingly, yields the correct answer (to all
+digits shown!) already for n = 13.
+                                             2
+                         1             πt/ω
+   Example 3.3. I3 (ω) = −1                      dt,   ω > 1.
+                            R
+                                    sin(πt/ω)
+   Similarly as in Example 3.1, we take
+                    ξν = (−1)ν /(ω⌊(ν + 1)/2⌋),           ν = 1, 2, . . . , m/2.      (3.4)
+
+We applied the procedure described in §2.1.3 for ω = 2, 1.5, 1.1 and 1.01, both in single
+and double precision, requesting accuracies of ǫ = 12 × 10−10 and ǫd = 21 × 10−25 ,
+
+
+                                 ω          k1     k1d k2  k2d
+                                2.0        130    163 50 63
+                                1.5        133    191 53 71
+                                1.1        177    306 67 106
+                                1.01       384    727 124 247
+                     TABLE 3.6. Starting indices for two backward
+                              recurrences when n = 20
+
+respectively. When m = 2n and n = 20, starting indices k1 , k1d in the first application of
+the backward recursion that were found to meet the accuracy requirements for the poles
+closest to [–1,1], and the analogous starting indices k2 , k2d in the second application,
+are shown in Table 3.6 for the four values of ω. As expected, the procedure becomes
+laborious as ω approaches 1. Selected double-precision results produced by the n-point
+rational Gauss rule, along with error constants, are shown in Table 3.7. The last
+column shows the relative error of results generated by the n-point Gauss-Legendre
+rule. For ω = 2, the exact answer is known to be I3 (2) = 4 ln 2 ([8, Eq. 3.837(2)])
+and is correctly reproduced to 25 digits when n = 11. Note again the fast convergence
+of the rational Gauss quadrature rule, even for ω very close to 1, in contrast to the
+relatively slow convergence of the ordinary Gauss rule, especially for ω close to 1.
+
+            ω   n        n-point rational Gauss            γn       err. Gauss
+           2.0   2    2.75                              9.90(–3)    4.36(–2)
+                 5    2.77258868                        1.16(–9)    4.70(–5)
+                 8    2.7725887222397811                3.28(–18)   2.92(–8)
+                11    2.772588722239781237668928        9.72(–28)   1.52(–11)
+           1.1   2    15.5                              3.00(–2)    6.69(–1)
+                 6    16.5328175                        8.54(–12)   6.79(–2)
+                10    16.5328177384604181               7.21(–24)   3.42(–3)
+                14    16.53281773846041830155898        2.35(–37)   1.40(–4)
+           1.01 2     184.                              6.34(–2)    9.64(–1)
+                 6    188.674782                        2.20(–11)   7.06(–1)
+                10    188.674784224994172               1.88(–23)   4.00(–1)
+                14    188.6747842249941742708325        6.15(–37)   1.92(–1)
+
+TABLE 3.7. Numerical results for I3 (ω), error constants, and comparison with Gauss
+                                     quadrature
+
+
+   While the choice m = 2⌊(n + 1)/2⌋ produced similar advantages as in Example 3.1
+— an increase of speed by a factor of about 2 at only a slight loss of accuracy — the
+choice m = 2 offered no significant gains in accuracy over the Gauss-Legendre rule,
+unlike m = 4, which did (since a symmetric pair of double poles is now accounted for).
+   We also applied the discretization method of §2.2 and obtained identical results
+with somewhat less effort in the case ω = 2, and about the same effort in the case
+ω = 1.1. For ω = 1.01, however, we were unable to attain the requested double-
+precision accuracy with a discretization parameter N ≤ 800 (in (2.21)).
+   Example 3.4. I4 = 0∞ et −1
+                           t
+                              e−t dt.
+                       R
+
+    The appropriate measure here is dλ(t) = e−t dt on [0,∞]. Since the integrand has
+poles at the integer multiples of 2πi, we let ζν = −1/(2νπi) = i/(2νπ), and thus in
+(1.12) take
+                                         1
+                        ξν = 0, ην =        , ν = 1, 2, . . . , m/2.               (3.5)
+                                        2νπ
+The quantity pν in (2.13) being real, and thus dν = 0 in (2.12), there is no nonconstant
+linear factor in the numerators of (2.11). This simplifies somewhat the procedure in
+§2.1.2, as it obviates the need to apply the routine chri.
+    In Table 3.8 we compare the performance (in double precision and for m = 2n)
+of our rational quadrature routine with Gauss-Laguerre quadrature (applied to f (t) =
+t/(et − 1)) and the Gaussian quadrature rule (applied to f (t) = e−t ) associated with
+“Einstein’s weight function” t/(et − 1); for the latter see [6]. The respective relative
+errors are shown in the last two columns. It can be seen that the Gauss-Laguerre and
+Gauss-Einstein quadratures are comparable in accuracy, the former being somewhat
+more accurate for small values of n, the latter for larger values of n. Both quadrature
+rules, however, are incomparably inferior to the rational Gauss formula, which for
+n = 15 produces the true value of the integral, ζ(2) − 1 = (π 2 /6) − 1, to 25 correct
+decimal digits. (Actually, the last digit is off by one unit.) The results become even
+slightly more accurate when we choose m = 2⌊(n+1)/2⌋, and are still better, by several
+orders of magnitude, than those for Gauss-Laguerre and Gauss-Einstein quadrature
+when m = 2.
+
+               n       n-point rational Gauss   err GL             err GE
+                1   .59                        9.76(–2)           4.09(–1)
+                5   .644934055                 1.50(–5)           2.97(–4)
+               10   .644934066848226428        2.22(–8)           1.15(–8)
+               15   .6449340668482264364724151 1.59(–11)          3.25(–13)
+              TABLE 3.8. Numerical results for I4 and comparison with
+                  Gauss-Laguerre and Gauss-Einstein quadrature
+
+    The high accuracy of our rational quadrature rules in this example is all the more
+remarkable as the routine gchri, used in their construction (by the methods of §2.1.2),
+is subject to ill-conditioning, causing the recursion coefficients for the relevant orthog-
+onal polynomials to gradually lose accuracy (by as much as 10 decimals, when n = 15
+and m = 2n).
+    This weakness is accentuated when one tries to deal with more difficult integrals,
+for example,
+                                     t q
+                             Z ∞                         Z ∞
+                                                1
+                      I(θ) =               1 + 2 θt dt =     , θ > 0,                  (3.6)
+                              0   et − 1                  0
+which has an additional branch point singularity at t = −2/θ. Here, when θ = .75, the
+n-point rational Gauss formula (in double precision and for m = 2n) gives only about
+13 correct decimal places for n = 15, and 18 for n = 30. By the time n reaches 33,
+the ill-conditioning in the routine gchri has built up to such a level that the method
+fails (by producing a negative β-recursion coefficient). To get higher accuracy, one
+needs to apply the discretization method of §2.2, which is more stable, but becomes
+fairly expensive if pushed much beyond n = 30. Using dλ(t) = e−t dt, and hence the
+N-point Gauss-Laguerre formula, to effect the discretization in (2.21), and requesting
+an accuracy of 21 ×10−25 for the desired recursion coefficients, we have observed timings
+of the order 12–16 seconds, and discretization parameters N as large as N = 370, for
+33 ≤ n ≤ 40. The rational Gauss formula so produced then yields relative errors of
+4.26 × 10−21 for n = 35, and 9.65 × 10−23 for n = 40. This is still better, by about
+4 decimal orders of accuracy, than Gauss-Laguerre quadrature applied to the second
+form of the integral in (3.6), and Gauss-Einstein quadrature applied to the first form.
+    Generalized Fermi-Dirac integrals (cf. [12]) are similar to I(θ) except that t/(et −1)
+is replaced by tk /(e−η+t + 1), where η is a real parameter and k = 1/2, 3/2 or 5/2. The
+poles are now located at η ± (2ν − 1)iπ, ν = 1, 2, 3, . . . . The use of rational Gauss
+quadrature to compute such integrals is dealt with elsewhere [5].
+
+   Example 3.5. I5 (η) = 0∞ e−η+t
+                               t
+                                     e−t dt,    η < 0.
+                          R
+                                  −1
+                                −t
+    Again, we take dλ(t) = e dt and note that the poles are now at η ± 2νπi, ν =
+0, 1, 2, . . . . Accordingly, in (1.13) we take
+        1                η               2νπ
+  ξ0 = − ,     ξν = − 2    2  2
+                                , ην = 2           ,          ν = 1, 2, . . . , (m − 1)/2,   (3.7)
+        η            η + 4ν π         η + 4ν 2 π 2
+and use the procedure of §2.1.2′ . Selected results (for m = 2n − 1), comparing rational
+Gauss formulae with Gauss-Laguerre formulae, are shown in Table 3.9. In the case
+
+                η    n               n-point rational Gauss   err GL
+                – .1  3       .4503                          1.16(–1)
+                      6       .4501936153                    5.13(–2)
+                      9       .450193614441350               2.70(–2)
+                     12       .45019361444134784096          1.55(–2)
+                –1.0 2        .113                           2.14(–1)
+                      6       .1111093520                    5.07(–3)
+                     11       .1111093516052317322           1.81(–4)
+                     16       .1111093516052317320105065     1.26(–5)
+               –10.0 2        .122(–4)                       1.79(–1)
+                      6       .113502121(–4)                 1.57(–4)
+                     11       .113502114635390578(–4)        7.31(–9)
+                     16       .1135021146353905701870968(–4) 1.20(–12)
+TABLE 3.9. Numerical results for I5 and comparison with Gauss-Laguerre quadrature
+
+η = −.1, we were able to go only up to n = 13; when n = 14, our procedure failed
+by producing a negative β-coefficient in (2.2). The difficulty is caused by the ill-
+conditioning (mentioned after (2.10)) affecting the modified Chebyshev procedure.
+Even though our procedure was successful for n = 13, it had to work hard to take
+care of the pole at η = −.1: Backward recursion to compute modified moments had
+to start at ν = 584 to get single-precision accuracy 12 × 10−10 , and at ν = 2650 to get
+double-precision accuracy 12 × 10−25 .
+    Replacing the numerator
+                     q        te−t in the integrand by tk , where k = 1/2, 3/2 or 5/2,
+and adding a factor 1 + 12 θt as in (3.6), produces the Bose-Einstein integral whose
+computation by rational Gauss quadrature is discussed in [5].
+                                     2
+   Example 3.6. I6 = 0∞         t
+                                           e−t dt.
+                      R
+                              et −1
+
+   Here, as in Example 3.4, we take dλ(t) = e−t dt and parameters ξν , ην as in (3.5),
+except that there are only m/4 of them, m being divisible by 4. In Table 3.10 we give
+
+
+              n       n-point rational Gauss   err GL           err GE
+               2   .47                        3.71(–2)         1.61(–2)
+               8   .4816405209                1.16(–6)         5.99(–10)
+              14   .4816405210580757311       4.36(–9)         7.26(–18)
+              20   .4816405210580757313458777 2.80(–11)        1.09(–25)
+
+  TABLE 3.10. Numerical results for I5 and comparison with Gauss-Laguerre and
+                          Gauss-Einstein quadrature
+
+
+the results for m = 2n (n even) obtained by the discretization method of §2.2, analogous
+to those of Table 3.8 but using the square of the Einstein function as weight function
+in GE. (The method of §2.1, as mentioned earlier, was not implemented.) What is
+remarkable in this example is the competitiveness of the Gauss-Einstein quadrature
+rule vis-à-vis the rational Gauss rule.
+
+References
+
+
+  1. GAUTSCHI, W., Minimal solutions of three-term recurrence relations and orthog-
+     onal polynomials, Math. Comp. 36 (1981), 547–554.
+  2. GAUTSCHI, W., On generating orthogonal polynomials, SIAM J. Sci. Stat. Com-
+     put. 3 (1982), 289–317.
+ 3. GAUTSCHI, W., Computational problems and applications of orthogonal polyno-
+    mials, in Orthogonal Polynomials and Their Applications (C. Brezinski et al.,
+    eds.), IMACS Annals Comput. Appl. Math., Vol. 9, Baltzer, Basel, 1991, pp.
+    61–71.
+ 4. GAUTSCHI, W., Algorithm xxx — ORTHPOL: A package of routines for generat-
+    ing orthogonal polynomials and Gauss-type quadrature rules, ACM Trans. Math.
+    Software, submitted.
+ 5. GAUTSCHI, W., On the computation of generalized Fermi-Dirac and Bose-Einstein
+    integrals, Comput. Phys. Comm., to appear.
+ 6. GAUTSCHI, W. and MILOVANOVIĆ, G.V., Gaussian quadrature involving Einstein
+    and Fermi functions with an application to summation of series, Math. Comp.
+    44 (1985), 177–190.
+ 7. GOLUB, G.H. and WELSCH, J.H., Calculation of Gauss quadrature rules, Math.
+    Comp. 23 (1969), 221–230.
+ 8. GRADSHTEYN, I.S. and RYZHIK, I.M., Table of Integrals, Series, and Products,
+    Academic Press, Orlando, 1980.
+ 9. LÓPEZ LAGOMASINO, G., and ILLÁN, J., A note on generalized quadrature for-
+    mulas of Gauss-Jacobi type, in Constructive Theory of Functions, Publ. House
+    Bulgarian Acad. Sci., Sofia, 1984, pp. 513–518.
+10. LÓPEZ LAGOMASINO, G. and ILLÁN GONZÁLEZ, J., Sobre los métodos interpola-
+    torios de integración numérica y su conexión con la aproximación racional, Rev.
+    Ciencias Matém. 8 (1987), no. 2, 31–44.
+11. PICHON, B., Numerical calculation of the generalized Fermi-Dirac integrals, Com-
+    put. Phys. Comm. 55 (1989), 127–136.
+12. SAGAR, R.P., A Gaussian quadrature for the calculation of generalized Fermi-
+    Dirac integrals, Comput. Phys. Comm. 66 (1991), 271–275.
+13. VAN ASSCHE, W. and VANHERWEGEN, I., Quadrature formulas based on rational
+    interpolation, Math. Comp., to appear.
+
+
+ Professor Walter Gautschi
+ Department of Computer Sciences
+ Purdue University
+ West Lafayette, Indiana 47907, U.S.A.
+ wxg@cs.purdue.edu
+

@@ -663,6 +663,8 @@ E\left(\prod_p p^{\lfloor b_p\rfloor}\right)F\in\mathbb Z[X],
 
 Thus floor rounding adds no upper arithmetic cost, including at negative valuations. The [independent review](prime-exponent-rounding-independent-review.md) proves both versions. The [complete guide](pnt-free-zeta5-guide.md) consequently ends with degree at most \(37n\), preserving the same quadratic decay budget. This is a simplification of normalization bookkeeping, not a new arithmetic theorem for all odd zeta values.
 
+An [independently audited eleven-factor option](eleven-factor-normalizer.md) now uses the reviewed outer Hermite-kernel gain pointwise. Its repaired arithmetic cost is below \(6923/5000=1.3846\), so it requires the stronger analytic magnitude \(2771/2000=1.3855\). The exact remaining margin is \(9/10000\). The list is shorter but its rational coefficients are less pleasant and it adds a local lemma; it does not supersede the primary 25-term route. Its common denominator \(3545916\) is auxiliary, with final degree still \(h\).
+
 ## 22. An adaptive adjacent-Legendre partner cancels the entire unwanted boundary
 
 Let \(P_n,R_n\) be as in Section 1, and set \(w_{n,a}(t)=(t-a)/(t+n+1)\). There is a uniquely determined rational \(a_n\) for all sufficiently large \(n\), bounded as \(n\to\infty\), such that
@@ -741,6 +743,8 @@ The [cumulant derivation](integer-depletion-cumulants.md) identifies
 
 ## 25. Higher Laurent geometry: distinguish the construction from the contour theorem
 
+The [primary-source comparison](rodrigues-primary-source-comparison.md) establishes exact containment of the underlying rational-function family and pure derivative forms in Nesterenko's 2003 construction. His Barnes representation also contains the finite Fourier decomposition, and his multiple-integral theorem contains the positive central period. The Rodrigues polynomial is a classical confluent Jacobi–Piñeiro specialization. These are explicit parameter dictionaries, not merely resemblances. The Laurent coordinates, critical-value identities and sharp certified rates remain historically unattributed; that is not a novelty claim.
+
 For \(m\ge1\), write \(C=\prod_{i=1}^{2m}(1+x_i)\), \(P=\prod_i x_i\). The higher-Rodrigues construction introduces
 
 \[
@@ -755,4 +759,17 @@ Its nonzero critical points reduce to
 
 The [Eulerian decomposition](eulerian-rodrigues-period-decomposition.md) now has a [completed independent core review](eulerian-periods-independent-review.md). For every fixed \(m\), it expresses the pure form as a finite sum of contour components and proves a conditional component saddle theorem and an unconditional central-component asymptotic. A positive Mellin convolution additionally proves the central component positive at every index. The other components are not thereby controlled, and no uniform estimate as \(m\) grows is asserted.
 
-**Review boundary:** the core all-\(m\) audit does not cover the newly developing finite saddle certificates for \(m=3,4,5\). A numerical candidate outside the permitted contour strip at \(m=6\) is not a theorem that the full form grows. The sharper proved decay for \(m=2\) still leaves insufficient arithmetic estimates; a sufficient denominator bound is not an actual primitive-denominator lower bound. No all-odd irrationality theorem follows.
+The separate [finite-saddle audit](finite-rodrigues-saddles-independent-review.md) has now passed for \(m=2,3,4,5\). Exact rational certificates establish all required strip roots, logarithm branches, a unique dominant nonreal conjugate pair, and modulus below one. Combined with the component theorem, they prove
+
+\[
+\mathscr L_{n,m}=
+\frac{2n^{-m-1/2}}{(2m-1)!}
+\Re\{\mathcal C_m(t_\star)\eta_\star^n\}
++O(n^{-m-3/2}|\eta_\star|^n),
+\quad
+\limsup|\mathscr L_{n,m}|^{1/n}=|\eta_\star|<1,
+\]
+
+with infinitely many positive and negative terms. This includes the pure forms for \(\zeta(7),\zeta(9),\zeta(11)\), as well as \(\zeta(5)\); it does not assert that every individual term is nonzero.
+
+**Review boundary:** these finite certificates do not cover \(m=6\) or all multiplicities. A numerical candidate outside the permitted contour strip at \(m=6\) is not a theorem that the full form grows. The proved decay still leaves insufficient arithmetic estimates; a sufficient denominator bound is not an actual primitive-denominator lower bound. No all-odd irrationality theorem follows.

@@ -45,3 +45,9 @@ The odd-prime mod-p² theorem subsequently passed independent manuscript-agent p
 ## Bounded excess-two refinement (new proof draft)
 
 excess-two-orbits.md classifies exact p^(D+2) orbits for p>=5 by two-uncarry digit profiles and visible-star inclusion–exclusion, yielding the normalized count modulo p³ as M0+pM1+p²M2. No closed harmonic p³ simplification or novelty claim. check_excess_two_orbits.py passed1,809 direct arithmetic/profile cases, independent small Sylow histograms, and1,085 actual raw labeled skeletons including nested perfect mergers. The p3,n7 extra repeated-nonperfect orbit precisely explains the prime restriction. Independent new-refinement review was requested; the reviewed p² theorem remains separate and intact.
+
+The excess-two theorem subsequently passed the odd_zeta agent's independent proof review: excess-two-independent-review.md/check_excess_two_independent.py cover113,489 raw skeletons and the explicit p3 omitted orbit. Its former pending-review note is superseded.
+
+## General low-excess recipe (new proof draft)
+
+general-low-excess-orbits.md unifies every0<=k<p-1: enumerate normalization carry vectors of total k, then remove all visible identical-leaf stars by full inclusion–exclusion. Marked-star collapse to a raw profile gives the exact factor product binom(collapsed label-(j+1) count,b_j); at most2^k terms per profile. This yields exact orbit counts M_k and normalized T_q(n)/p^D modulo p^(p-1). check_general_low_excess.py passed641 complete-range arithmetic/profile checks, exact agreement with earlier k1/k2 formulas, and independent small Sylow histograms. The first excluded repeated-nonperfect block at k=p-1 is exhibited for every prime and prime-power arity; naive extension failures were verified at p3,n7;p5,n11;p7,n15. Independent review requested for this generalization; no historical novelty claim.

@@ -1,0 +1,1519 @@
+Home   Search    Collections   Journals   About   Contact us    My IOPscience
+
+
+
+
+       Proof of the gamma conjecture for Fano 3-folds of Picard rank 1
+
+
+
+
+       This content has been downloaded from IOPscience. Please scroll down to see the full text.
+
+       2016 Izv. Math. 80 24
+
+       (http://iopscience.iop.org/1064-5632/80/1/24)
+
+       View the table of contents for this issue, or go to the journal homepage for more
+
+
+
+
+       Download details:
+
+
+       IP Address: 192.68.254.102
+       This content was downloaded on 11/05/2016 at 14:00
+
+
+
+       Please note that terms and conditions apply.
+Izvestiya: Mathematics 80:1 24–49                      Izvestiya RAN : Ser. Mat. 80:1 27–54
+DOI 10.1070/IM8343
+
+
+
+
+                      Proof of the gamma conjecture
+                     for Fano 3-folds of Picard rank 1
+
+                            V. V. Golyshev and D. Zagier
+
+
+       Abstract. We verify the (first) gamma conjecture, which relates the
+       gamma class of a Fano variety to the asymptotics at infinity of the Frobe-
+       nius solutions of its associated quantum differential equation, for all 17
+       of the deformation classes of Fano 3-folds of rank 1. This involves com-
+       puting the corresponding limits (‘Frobenius limits’) for the Picard–Fuchs
+       differential equations of Apéry type associated by mirror symmetry with
+       the Fano families, and is achieved using two methods, one combinatorial
+       and the other using the modular properties of the differential equations.
+       The gamma conjecture for Fano 3-folds always contains a rational multi-
+       ple of the number ζ(3). We present numerical evidence suggesting that
+       higher Frobenius limits of Apéry-like differential equations may be related
+       to multiple zeta values.
+       Keywords: gamma class, gamma conjecture, Picard–Fuchs equation,
+       Fano 3-fold.
+
+                                Dedicated to the memory of Andrei Andreevich Bolibrukh
+
+                                     Introduction
+   The goal of this paper is twofold. On the one hand, we will calculate cer-
+tain entries of the transition matrix (or central connection matrix) for the Laplace
+transform of a number of Apéry-like differential equations and find the expansion
+coefficients of the most rapidly growing solution at infinity in terms of the Frobe-
+nius basis at z = 0. On the other hand, these calculations, whose results always
+involve the number ζ(3), enable us to verify the prediction of mirror symmetry
+(the so-called first gamma conjecture) for each of the 17 deformation classes in
+Iskovskikh’s classification of smooth Fano 3-folds of Picard rank 1.
+   We will present two approaches to computing the limits in question. One of them,
+which we carry out for the differential equation satisfied by the generating function
+of the numbers used by Apéry in his famous proof of the irrationality of ζ(3), is
+based on the explicit hypergeometric formula that he gave for these numbers. This
+method is less satisfactory since it depends on complicated formulae that were found
+experimentally and whose proofs are somewhat artificial. Nevertheless we include
+   The work of the first author was supported by the Russian Science Foundation under grant
+no. 14-50-00150 at the Institute for Information Transmission Problems.
+   AMS 2010 Mathematics Subject Classification. 11B33, 11F37, 14J45, 14J81, 14N35.
+
+c 2016 Russian Academy of Sciences (DoM), London Mathematical Society, Turpion Ltd.
+                         Gamma conjecture for Fano 3-folds of rank 1                       25
+
+it because it could also be applied in non-modular situations (like the differential
+equations associated with most Fano 4-folds). It also works almost automatically
+whenever the differential equation is of hypergeometric type, which is the case in 10
+of the 17 cases in Iskovskikh’s list. The second method is based on the modular
+parametrization of the differential equations in question, like the one found many
+years ago by Beukers in the Apéry case. This method is much nicer and explains
+the crucial constant ζ(3) as a period of an Eisenstein series. It works in a uniform
+way for each of the differential equations admitting a modular parametrization,
+which holds for 15 of the 17 families, including all non-hypergeometric ones. This
+gives the following theorem, which is our main result.
+Theorem 1. The gamma conjecture holds for all Fano 3-folds of Picard rank 1.
+    Since the themes of the paper cover a wide spectrum and may not all be known to
+the same readers, we will include in § 1 a review of the main ingredients in the story
+(Fano varieties, Iskovskikh classification, quantum differential equations, gamma
+classes, gamma conjecture) for completeness. However, the actual calculations of
+the limits, which are given in § 2, involve only classical tools from number theory
+and can be read independently of this material. In the rest of this introduction we
+give a little more indication of the background of the problem and state the explicit
+prediction made by the gamma conjecture in the Apéry case.
+    Mirror symmetry predicts, among other things, that with each of the 17 families
+of Fano varieties in question there should be associated a family E of K3 surfaces
+over P1 (related by an isogeny to the so-called Landau–Ginzburg model) in such
+a way that the ‘quantum differential equation’ on the Fano side is the Laplace trans-
+form of the Picard–Fuchs differential equation satisfied by the periods of E. These
+quantum differential equations, whose definition will be recalled briefly in § 1.4, arise
+from counting embedded holomorphic curves (Gromov–Witten invariants), so that
+this is the ‘A-side’ in the terminology of string theory (where one is usually inter-
+ested in families of Calabi–Yau 3-folds) while both the Landau–Ginzburg model
+and our second family E with its Picard–Fuchs equation would be the ‘B-side’. One
+further expects that the Picard rank of the Fano variety and that of the generic
+fibre of E add up to 20. In the 17 cases we are considering, these predictions of
+mirror symmetry were made precise in [1] and proved in [1] and [2]. In each case
+E is a family of Kuga–Sato type whose base space is equal to the modular curve 1
+X0∗ (N ) = X0 (N )/WN classifying the unordered pairs (E, E 0 ) of N -isogeneous ellip-
+tic curves for some N , and the fibre is equal to the smooth resolution of the quotient
+of E × E 0 by (−1), with Picard number 19 = 20 − 1 as it should be (with 16 alge-
+braic cycles coming from the resolutions of the 16 singularities, and 3 more from
+the classes of E, E 0 and the graph of the isogeny). The fact that these fami-
+lies are of Kuga–Sato type means precisely that the solutions of their associated
+Picard–Fuchs differential equations have modular parametrizations. More specifi-
+cally, each ofPthese differential equations has a unique holomorphic solution of the
+                 ∞
+form Φ(t) = n=0 An tn with A0 = 1 at the point t = 0, where t is a suitably cho-
+sen coordinate on the base P1 , and the modular parametrization says that Φ(t(τ ))2
+   1 Or a d-sheeted covering of it, where d is the ‘index’. In the introduction we assume that
+
+d = 1.
+26                                 V. V. Golyshev and D. Zagier
+
+is a modular form of weight 4 on Γ∗0 (N ) for some Hauptmodul t(τ ) on X0∗ (N ).
+The gamma conjecture relates the asymptotics at infinity P     of the four Frobenius
+                                                                 ∞        n
+solutions of the differential equation satisfied by Ψ(z) =       n=0 An z /n! to the
+so-called gamma class (a characteristic class in cohomology with real coefficients,
+whose definition will be recalled in § 1.5) of the corresponding Fano 3-fold.
+   We now describe the picture in more detail in the Apéry case, corresponding
+to N = 6. Here we have
+             n  2         2
+            X    n     n+k
+      An =                      ,     Φ(t) = 1 + 5t + 73t2 + 1445t3 + · · · .   (0.1)
+                 k       k
+             k=0
+
+The corresponding recursion and differential equation are
+
+ (n+1)3 An+1 −P (n)An +n3 An−1 = 0,                 D3 −tP (D)+t2 (D+1)3 Φ(t) = 0, (0.2)
+                                                                        
+
+where D = t d/dt and P (n) is the polynomial
+
+                   34n3 + 51n2 + 27n + 5 = (2n + 1)(17n2 + 17n + 5).
+
+The modular parametrization, as found by Beukers [3], is given by
+                                 12
+                      η(τ )η(6τ )
+                t=                    = q − 12q 2 + 66q 3 + · · · ,
+                     η(2τ )η(3τ )
+                               (η(2τ )η(3τ ))7
+                      Φ(t) =                   = 1 + 5q + 13q 2 + · · · ,
+                                (η(τ )η(6τ ))5
+where η(τ ) is the Dedekind eta-function and q = e2πiτ , as usual. To state the
+gamma conjecture, we consider instead of Φ(t) the related power series 2
+                            ∞
+                            X          zn           73     1445 3
+                   Ψ(z) =         An      = 1 + 5z + z 2 +     z + ··· .
+                            n=0
+                                       n!            2      6
+
+It also satisfies a linear differential equation, this time of order 4, having no singu-
+larities on C∗ , a regular singularity at 0 and an irregular one at infinity. (This is
+what we called the ‘Laplace transform’ above, although ‘Borel transform’ might be
+a better name.) The space of solutions of the transformed equation near z = 0 has
+the standard Frobenius basis Ψj (z), 0 ⩽ j ⩽ 3, where each of the Ψj (z) has a sin-
+gularity of the form (log z)j /j! near the origin. We define the Frobenius limits κj
+by the formula
+                                                Ψj (z)
+                                    κj := lim          .                            (0.3)
+                                           z→∞ Ψ(z)
+
+The gamma conjecture gives their values in terms of ζ(3) and the Chern numbers
+of one of the Fano varieties (the one called V12 ) in the Iskovskikh list. Specifically,
+it predicts that
+                          γ2    3                    γ3    3        5
+      κ1 = −γ,      κ2 =      − ζ(2),       κ3 = − + γζ(2) + ζ(3),                (0.4)
+                           2    2                    6     2        2
+    2 We should warn the reader that our z is the reciprocal of the one occurring frequently in the
+
+literature.
+                        Gamma conjecture for Fano 3-folds of rank 1                       27
+
+where γ is Euler’s constant. (An easy explicit computation of the gamma class in
+this case and in the other 16 cases is given in § 1.5, Proposition 2.) This will be
+proved as a special case of our main theorem (§ 1.3, Theorem 3), which gives the
+Frobenius limits in all 17 cases.
+   We end by remarking that the Frobenius basis is a part of an infinite family of
+functions Ψj (z), j ⩾ 0, with singularities of type (log z)j at the origin, but with Ψj ,
+j ⩾ 4, satisfying some inhomogeneous versions of the differential equation for Ψ(z).
+The limits κj defined in (0.3) still exist and can be computed numerically to high
+precision by a method that will be explained in § 2.4. We find that for j ⩽ 10 each
+of these ratios is again a polynomial in γ and the Riemann zeta values, but this
+is not the case for κ11 , which involves a multiple zeta value as well. This point,
+although purely experimental at the moment, seems worth mentioning. It will be
+described in more detail in § 2.4.
+   Since the main ingredient in our story is the monodromy of Fuchsian differential
+equations, we hope that it is a suitable homage to Andrei Andreevich Bolibrukh,
+who contributed so deeply to this subject.
+
+            § 1. Fano varieties, Apéry-like differential equations,
+                            and mirror symmetry
+   In this section we briefly describe the gamma conjecture (see [4] and [5] for more
+details) and give a complete statement of the prediction it makes for Fano 3-folds
+whose Picard groups have rank 1. We also describe the associated Picard–Fuchs
+equations and their modular parametrizations, following [1].
+1.1. Fano varieties and the Iskovskikh classification. In this paper a Fano
+variety X means a smooth projective algebraic variety with ample anticanonical
+class. The projective line P1 is the only Fano variety of dimension 1. Fano varieties
+of dimension 2 are called del Pezzo surfaces; these are either P1 × P1 , or blow-
+ups of P2 at d points, 0 ⩽ d ⩽ 8. By the results of Mori and Mukai [6] there are
+105 deformation families of Fano 3-folds.
+    We will be interested in Fano 3-folds whose Picard lattices have rank 1. (Since
+all cohomology classes of degree 2 are algebraic here, this simply means that
+H 2 (X, Z) ∼= Z.) According to Iskovskikh [7], [8] (see also [9]) there are exactly
+17 such varieties up to deformation. The relevant numerical invariants for this clas-
+sification are the index d = [H 2 (X, Z) : Zc1 ], where c1 is the anticanonical divisor,
+and the level N = 2d12 hc31 , [X]i, which is always a positive integer. The 17 possible
+pairs of invariants (N, d) are then
+     (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 1), (11, 1),
+                                                                                        (1.1)
+                 (1, 2), (2, 2), (3, 2), (4, 2), (5, 2), (3, 3), (2, 4).
+For example, the pair (N, d) = (2, 4) corresponds to the Fano variety X = P3 (so
+here the deformation family has a 0-dimensional base), whose associated Picard–
+Fuchs differential equation is hypergeometric. The pair (N, d) = (6, 1) determines
+a family which is called V12 (its geometric definition plays no role for us and will
+be omitted) and corresponds to the Apéry differential equation as described in the
+introduction. This case will hereafter be referred to as the ‘Apéry case’.
+28                              V. V. Golyshev and D. Zagier
+
+1.2. Apéry-like differential equations. Here we describe the Picard–Fuchs dif-
+ferential equations associated with the 17 cases. The modular properties of these
+equations are presented in the next subsection, and the relation of their Laplace
+transforms to the quantum cohomology of Fano varieties is described in § 1.4.
+   The differential equations occurring are of type D3. Here ‘type Dn’ (the full
+name is ‘determinantal differential equations of order n ’) is a specific class of linear
+differential equations, introduced in [10], which includes the Picard–Fuchs differen-
+tial equations of certain families of Calabi–Yau varieties of dimension n − 1 and,
+in its Laplace-transformed version, the quantum differential equations of certain
+n-dimensional Fano varieties. Operators of type D2, which are of the form
+                                                                                      d
+     D2 + t(a1 D(D + 1) + b1 ) + a2 t2 (D + 1)2 + a3 t3 (D + 1)(D + 2),        D=t       ,
+                                                                                      dt
+are precisely the ones appearing as the ‘Apéry-like differential equations’ in [11]
+and [12]. Their prototype was the differential equation of order 2 coming from the
+coefficients used by Apéry in his new proof of the irrationality of ζ(2). Since the
+class D3 also contains the differential equation of order 3 corresponding to Apéry’s
+proof of irrationality of ζ(3), we will use the terminology ‘Apéry-like equations of
+order n ’ as an alternative name for the class Dn. The generic D3 operator, which
+is the case that we will be studying, is of the form
+                         
+                        1
+    L = D3 + t D +          (a1 D(D + 1) + b1 ) + t2 (D + 1)(a2 (D + 1)2 + b2 )
+                        2
+                                    
+                                   3
+             + a3 t3 (D + 1) D +       (D + 2) + a4 t4 (D + 1)(D + 2)(D + 3).   (1.2)
+                                   2
+It can also be written as tL, where L is a differential operator of the form
+             d3    3 2 0 d2
+                                  2                                     
+          2                        t 00         0       d      t 00 1 0
+    L = t Q 3 + (t Q) 2 +            Q + 3tQ + R           +     Q + R ,              (1.3)
+             dt    2       dt      2                    dt     2      2
+in which the polynomials
+
+     Q = Q(t) = 1 + a1 t + a2 t2 + a3 t3 + a4 t4 ,      R = R(t) = 1 + b1 t + b2 t2   (1.4)
+
+of degrees ⩽ 4 and ⩽ 2 describe the positions of the singularities of the equation
+and the so-called accessory parameters, respectively.
+   In general, a Dn equation is obtained from an (n + 1) × (n + 1) matrix A =
+(ai,j )0⩽i,j⩽n whose entries (which in the quantum cohomology situation arise as
+correlators in a way recalled briefly in § 1.4) satisfy the equations
+
+                  ai,j = 0 for j < i − 1,        ai,j = 1 for j = i − 1,
+                             ai,j = an−j,n−i ,       0 ⩽ i, j ⩽ n,
+
+so that this family of equations has n2 /4 + O(n) parameters. The differential
+operator L corresponding to A and its LaplaceP transform     L̃ (related
+                                                                     P to nL by the
+condition L̃Ψ = 0 ⇔ LΦ = 0, where Φ(t) =        An tn and Ψ(z) =        An z /n!) are
+then given by
+                  L = D−1 detR (δi,j D − ai,j (Dt)j−i+1 )0⩽i,j⩽n
+                                                                 
+                                                                                (1.5)
+                        Gamma conjecture for Fano 3-folds of rank 1                              29
+
+and (setting Dz = z d/dz)
+
+                       L̃ = detR (δi,j Dz − ai,j z j−i+1 )0⩽i,j⩽n .
+                                                                 
+                                                                                               (1.6)
+
+Here the ‘right determinant’ detR of a matrix with non-commuting entries is defined
+by induction as the alternating sum of the rightmost entries multiplied on the
+right by the right determinants of the corresponding minors, and formula (1.5)
+makes sense because every term in the rightmost column of the corresponding
+matrix is left-divisible by D. An alternative and possibly more natural way to
+introduce the two operators is to consider the connection given in matrix form by
+
+                  Dz (ξ0 , . . . , ξn ) = (ξ0 , . . . , ξn )(ai,j z j−i+1 )0⩽i,j⩽n ;           (1.7)
+
+then Le is the operator that annihilates ξ0 , and L arises formally as its ‘inverse
+Laplace transform’. We regard two matrices A differing by a scalar cI as equivalent,
+because this corresponds merely to a translation t−1 7→ t−1 + c on the t-side or to
+multiplication by exp(cz) on the z-side, with no effect on the Frobenius limits
+in (0.3). We remark that operators of type Dn are self-dual in the sense that
+the coefficient of ti is (−1)n−i -symmetric under D 7→ −D − i. The equations
+of type D3 are also symmetric squares, which is important for us because being
+a symmetric power of a second-order differential operator is a necessary condition
+for modularity. The corresponding assertion for higher Dn is completely false, and
+indeed the D4-equations occurring as the Picard–Fuchs equations of families of
+Calabi–Yau 3-folds are almost never modular.
+   The 4 × 4 matrices corresponding to the 17 Iskovskikh families were listed in [1].
+For example, the matrices
+                                                                                        
+        5    96   1692     12816                          12/5        24       198     880
+       1    12    216      1692                         1         22/5       44     198 
+       
+       0
+                                            and                                          
+              1     12       96                          0           1       22/5     24 
+        0     0      1       5                             0           0         1     12/5
+
+correspond to the Apéry case (N, d) = (6, 1) and to the most complicated case
+(N, d) = (11, 1), in which the differential equation corresponds to a 5-term recursion
+for the coefficients of its holomorphic solution, and the scalar shifts are chosen to
+make the solutions become Eisenstein series. Instead of giving the matrices in the
+remaining cases, we give in Table 1 the polynomials Q and R defined by (1.4).
+These polynomials contain the same information and are much more compact to
+write down. We give the data only for d = 1 since there is a simple algebraic
+procedure for deducing the differential equation satisfied by a power series Φ(td )
+from the one satisfied by Φ(t). (In our cases the passage from (N, 1) to (N, d)
+simply replaces Q(t) by Q(td ) while the new R-polynomial equals 1 + (4b1 − a1 )t2
+when d = 2 and just 1 when d = 3 or 4, where a1 and b1 are the linear coefficients
+of the original polynomials Q and R.) The final three P columns of the table contain
+certain invariants (fM )M |N , (hM )M |N and µN = 12 M M hM , which will be defined
+in the next subsection (see (1.14)) and used in the proof of the gamma conjecture.
+30                                       V. V. Golyshev and D. Zagier
+
+
+
+                                                   Table 1
+
+     N                 Q(t)                            R(t)              {fM }            {hM }        µN
+     1              1 − 1728t                        1 − 240t              —                —          62
+     2               1 − 256t                        1 − 48t           ( 24, −24 )      ( −80, 80 )    40
+     3               1 − 108t                        1 − 24t           ( 12, −12 )      ( −30, 30 )    30
+     4                1 − 64t                        1 − 16t           ( 8, 0, −8 )    ( −16, 0, 16 ) 24
+     5            1 − 44t − 16t2                  1 − 12t + 4t2         ( 6, −6 )       ( −10, 10 )    20
+                                 2
+     6             1 − 34t + t                       1 − 10t         ( 5, −1, 1, −5 ) ( −7, 1, −1, 7 ) 17
+                                     2                           2
+     7            1 − 26t − 27t                    1 − 8t + 3t          ( 4, −4 )        ( −5, 5 )     15
+     8            1 − 24t + 16t2                      1 − 8t         ( 4, −2, 2, −4 ) ( −4, 1, −1, 4 ) 13
+     9            1 − 18t − 27t2                      1 − 6t           ( 3, 0, −3 )     ( −3, 0, 3 )   12
+     11 1 − 68 t − 616 t2 − 252 t3 − 1504 t4 1 − 24     56 2
+                                                                       ` 12
+                                                                            , − 12
+                                                                                   ´
+             5      25      125      625         5
+                                                    t − 25 t              5      5
+                                                                                         ( −2, 2 )     10
+
+
+1.3. Modular properties. The operators we are studying are of type D3 by
+construction. They also have very special modularity properties, discovered in [1],
+which we now describe.
+   For every N ⩾ 1 we have the following modular curves: X0 (N ) (which is defined
+over C as H/Γ0 (N )∪{cusps}, that is, the completed quotient of the upper half-plane
+by the congruence subgroup of level N ) and X0∗ (N ) (the quotient of X0 (N ) by
+the Fricke involution WN sending τ ∈ H to −1/N τ ). As usual, we write Γ∗0 (N )
+for the group generated by Γ0 (N ) and WN . As moduli spaces, X0 (N ) and X0∗ (N )
+parametrize the ordered and unordered pairs (respectively) of elliptic curves related
+by a cyclic isogeny of degree N . The involution WN acts on the space Mk (Γ0 (N ))
+of holomorphic modular forms of weight k on Γ0 (N ) by the formula (f |k WN )(τ ) =
+N k/2 τ k f (−1/N τ ) and splits this space into two eigenspaces Mk± (Γ0 (N )) with
+
+              Mk+ (Γ0 (N )) = Mk (Γ∗0 (N )),            Mk− (Γ0 (N )) = Mk (Γ∗0 (N ), χ),
+
+where χ : Γ∗0 (N ) → {±1} is the homomorphism
+                                                    sending Γ0 (N ) to +1 and WN
+                                         0 −1
+to −1. If N = 1, then WN = S = 1 0 belongs to Γ0 (N ) = SL(2, Z), so that
+WN has only the eigenvalue   √ +1. In this case, by an abuse of notation, we will
+write F ∈ Mk− (Γ0 (1)) if F E4 is a modular form of weight k + 2 on Γ0 (1), where
+E4 (τ ) = 1+240q +· · · is the normalized Eisenstein series of weight 4. Then
+                                                                          √ F is not
+a single-valued function on H (since E4 has simple zeros at τ = (±1 + i 3)/2), but
+it is well defined and holomorphic on the union of the closed standard fundamental
+domain of SL(2, Z) and its image under S (this union is closed under S and contains
+the fixed point i) and satisfies the functional equation (F |k S) = −F in this domain.
+    We now state the main result on the modular properties of the differential equa-
+tions associated with the 17 families in Iskovskikh’s list. The first assertion of
+this theorem was proved in [1] along with a statement of the second assertion and
+a sketch of its proof in some cases. The remaining harder cases were checked
+by Przyjalkowski [2]. The ingredients used were the quantum Lefschetz theorem
+                         Gamma conjecture for Fano 3-folds of rank 1                        31
+
+of Givental [13], the computation of quantum multiplication by the first Chern
+class in the Grassmannians by Przyjalkowski [14] and Fulton and Woodward [15],
+Kuznetsov’s calculation of GW-invariants for the varieties V22 (private communi-
+cation), and Beauville’s result [16] on V5 .
+Theorem 2 (see [1], [2]). Let N and d be positive integers such that the curve
+Γ∗0 (N ) has genus 0 and there is a modular form in M2 (Γ0 (N ))− whose differential
+equation with respect to the dth root of a Hauptmodul 3 of the group Γ∗0 (N ) is of
+type D3. Then (N, d) belongs to the list (1.1) and, up to equivalence, the Laplace
+transform of this differential equation is the quantum differential equation (see § 1.4
+below ) of the corresponding Fano variety in Iskovskikh’s classification.
+    The modular form F and the Hauptmodul t occurring in this theorem can be
+given by a (nearly) uniform formula. If N > 1, we define a modular form FN ∈
+M2 (Γ0 (N ))− as the unique Eisenstein series of weight 2 on Γ0 (N ) which is equal
+to +1 at τ = ∞, −1 at τ = 0, and 0√at the other cusps. If N = 1, this definition
+makes no sense, but we can set F1 = E4 , and this again belongs to M2− (Γ0 (1)) in
+the sense just introduced. Then, in every case, the modular form F = FN,d and the
+Hauptmodul t = tN,d , whose existence is asserted by the theorem, are given (after
+the normalizations F (τ ) = 1 + O(q) and t(τ ) = q + O(q 2 ) and up to the equivalence
+t 7→ t/(1 + ct), F 7→ (1 + ct)F ) by the uniform formulae
+
+                      FN,d (τ ) = FN (dτ ),      tN,d (τ ) = tN (dτ )1/d                 (1.8)
+
+for all N and d, where the power series tN (τ ) in q is defined by the formula
+
+                          FN (τ )tN (τ )(N +1)/12 = η(τ )2 η(N τ )2 .                    (1.9)
+
+Conversely, it is an elementary exercise to show that the only pairs (N, d) ∈ N2
+for which the function t = tN,d defined by (1.8) and (1.9) is a modular function on
+Γ0 (dN ) are those listed in (1.1). We sketch the argument. If N is sufficiently large,
+then the well-known ‘valency formula’ (a formula giving the number of zeros of
+a holomorphic modular form in a fundamental domain for the group) implies that
+the order of at least one zero of FN in H is not divisible by (N +1)/GCD(N +1, 12),
+and then the function tN (τ ) defined for large Im(τ ) by (1.9) cannot be extended to
+the upper half-plane even as a single-valued meromorphic function, let alone a mod-
+ular function. Checking the remaining cases by computer, we find that the only N
+for which the required root can be extracted are the ten values N = 1, . . . , 9, 11
+occurring in (1.1) and four further values N = 12, 16, 18 and 36. But in each of
+the latter cases, the function tN (τ ) defined by (1.9) is not modular on Γ0 (N ). This
+fixes all possible values of N , and then for every N a similar argument shows that
+for all values of d except those occurring in (1.1), the function tN,d defined by (1.8)
+is only a root of a modular function on Γ0 (dN ).
+   We note that in each of the four cases N = 12, 16, 18 and 36 mentioned above,
+FN is an eta-product and tN +1 is also an eta-product and is a modular function
+   3 That is, a modular function of weight 0 parametrizing the quotient of the upper half-plane
+
+with respect to this group.
+32                                V. V. Golyshev and D. Zagier
+
+on Γ∗0 (N ), even though t itself is not. For example, if N = 12, then
+                                      η(2τ )4 η(3τ )η(4τ )η(6τ )4
+                           F12 (τ ) =                              ,
+                                            η(τ )3 η(12τ )3
+                                                                    1/13               (1.10)
+                                         η(τ )60 η(12τ )60
+                              
+                   t12 (τ ) =                                             ,
+                                η(2τ )48 η(3τ )12 η(4τ )12 η(6τ )48
+so t13 is a modular function on Γ0 (12), but t is invariant only under a non-congruence
+subgroup of Γ0 (12) of index 13.
+   As a side remark, we mention that there are exactly eight values of N for which
+the modular form FN ∈ M2− (Γ0 (N )) can be written as a quotient of products of
+eta-functions:
+
+     N      4       6         8         9         12          16         18        36
+             20     7 7      6 6        10      4 1 1 4      1 6 1     1 3 3 1    1 4 1
+            2      2 3      2 4        3      2 3 4 6       2 4 8     2 3 6 9    4 6 9
+     FN
+           18 48   15 65    14 84     13 33    13 123       12 162     22 182    11 361
+
+
+The notation in this table becomes clear from a comparison of the N = 12 entry
+with the formula (1.10) for F12 , or the N = 6 entry with the formula for Φ(t) in
+the Apéry case that was given in the introduction.
+   The modular form F = FN,d can be written in all cases as a power series Φ(t)
+in the Hauptmodul t = tN,d , where Φ = ΦN,d is a power series with integer coeffi-
+cients and leading coefficient 1. This integrality, which is clear from the modular
+description, is not at all obvious from the recursion for the coefficients that comes
+from the differential equation for Φ. This was one part of the ‘Apéry miracle’ that
+was demystified by Beuker’s modular interpretation. The operator L, which anni-
+hilates Φ, then has the form tL with L given by (1.3), as explained in the previous
+subsection. The following proposition expresses it in purely modular terms.
+Proposition 1. The differential operator L is given in terms of the modular vari-
+able τ by the formula
+                                            3
+                                1      1 d        1
+                         L=                            ,                   (1.11)
+                              H(τ ) 2πi dτ      F (τ )
+where F = FN,d ∈ M2− (Γ0 (N )) is the modular form defined above and H = HN,d
+is a modular form belonging to M4 (Γ0 (N ))− . This form is given explicitly by the
+formula HN,d (τ ) = HN (dτ ), where HN for N > 1 is the unique Eisenstein series
+of weight 4 on Γ0 (N )√which equals +1 at τ = ∞, −1 at τ = 0, and 0 at the other
+cusps, and H1 = E6 / E4 .
+Proof. We first note that the space of solutions of the differential equation is
+spanned by F (τ ), τ F (τ ) and τ 2 F (τ ). Hence it consists of precisely those func-
+tions whose quotient by F (τ ) is annihilated by (d/dτ )3 . Therefore L must be of
+the form (1.11) for some function H(τ ). Equating the symbols (that is, the coeffi-
+cients of (d/dt)3 ) on both sides of (1.11), using (1.3), we find that
+                                                 1      t0 (τ )3
+                            t(τ )2 Q(t(τ )) =                     ,                     (1.12)
+                                                H(τ ) t(τ )F (τ )
+                         Gamma conjecture for Fano 3-folds of rank 1                  33
+
+
+where t0 = 2πi1 dt
+                 dτ , and the expression (1.12) is at least a meromorphic modular
+form of weight 4 on Γ0 (N ) with WN -eigenvalue −1. On the other hand, since the
+differential operator is of type D3, a purely algebraic calculation shows that
+                                                       t0 (τ )
+                                      H(τ ) = F (τ )           .                  (1.13)
+                                                       t(τ )
+Comparing these two formulae, we see that the modular form H (for N > 1) is
+holomorphic and takes the prescribed values at the cusps. This yields the desired
+conclusion since S4 (Γ0 (N ))− is always equal to 0 here. Alternatively, one can
+simply check case-by-case that the right-hand sidepof any of the equations above
+                −
+coincides with E4,N  when N > 1 and with E6 (τ )/ E4 (τ ) when N = 1. The cases
+with d > 1 follow easily from the cases with d = 1, with H(τ ) = HN,d (τ ) defined
+as HN (dτ ). 
+    Note that the equality of the equations (1.12) and (1.13) for H implies that the
+curve u2 = Q(t), which is either rational or elliptic depending on the degree of Q,
+has a modular parametrization by t = t(τ ), u = t0 /tF , and in particular gives
+the Taniyama–Weil (Taylor–Wiles) parametrization when deg Q > 2 (which here
+happens in only four cases, (N, d) ∈ {(11, 1), (5, 2), (3, 3), (2, 4)}). In this case the
+function f = tF is the cusp form of weight 2 for which the expression f (τ ) dτ =
+t0 (τ )/u(τ ) is the Weierstrass differential dt/u on the corresponding elliptic curve.
+Hence this function is a Hecke eigenform with multiplicative coefficients. In this
+connection we mention the joint paper [17] of one of us and Vlasenko, which contains
+among other things a classification of all D3-equations with five distinct singularities
+for which the function tΦ(t) has an expansion with respect to exp(Φ1 /Φ0 ) with
+multiplicative coefficients (which in the modular case again means that this function
+is a Hecke eigenform).
+    If N > 1, then since all Eisenstein series on Γ0 (N ) come from level 1 in the cases
+considered, the functions FN and HN are given by formulae of the form
+                    X                                 X
+         FN (τ ) =     M fM G2 (M τ ),      HN (τ ) =      M 2 hM G4 (M τ ),       (1.14)
+                 M |N                                         M |N
+
+where
+                                                        ∞
+                                      1              1 X    nq n
+                        G2 (τ ) = −      E2 (τ ) = − +             ,
+                                      24            24 n=1 1 − q n
+                                                       ∞
+                                     1             1   X   n3 q n
+                        G4 (τ ) =       E4 (τ ) =    +
+                                    240           240 n=1 1 − q n
+
+are the Hecke-normalized Eisenstein series of level 1 and weights 2 and 4, and the
+coefficients fM , hM (M |N ) are rational and possess the antisymmetry property
+
+                    fN/M = −fM ,            hN/M = −hM               (M |N )      (1.15)
+
+because F and H are in the (−1)-eigenspace of the involution WN .P   (Note that the
+function G2 (τ ) is only quasimodular, but since (1.15) implies that   fM vanishes,
+the right-hand side of the formula for FN in (1.14) is modular.) The coefficients fM
+34                               V. V. Golyshev and D. Zagier
+
+and hM were tabulated in § 1.2 together with the coefficients of the corresponding
+D3-operators. The related numbers
+                             
+                             62              for N = 1,
+                             
+                             
+                       µN = 1     X                                          (1.16)
+                                      M hM for N > 1,
+                             2
+                             
+                             
+                                        M |N
+
+which were also tabulated in § 1.2, appear in the following theorem that gives the
+values of the Frobenius limits occurring in the gamma conjecture.
+Theorem 3. Let Ψ0 = Ψ, Ψ1 , Ψ2 , Ψ3 be the Frobenius               solutions of the fourth-
+                                                                     n
+                                                            P
+order linear   differential equation satisfied  by Ψ(z)  =     A n z   /n!, where FN,d (τ ) =
+               n
+P
+   An tN,d (τ ) for one of the 17 pairs (N, d) in (1.1). Define the Frobenius limits κj ,
+j = 1, 2, 3, by equation (0.3). Then
+
+                                             γ2
+                                                               
+                                                      12      1
+                       κ1 = −γ,       κ2 =       −         −      ζ(2),
+                                             2       d2 N     2
+                           γ3
+                                                                   
+                                   12      1               µN      1
+                   κ3 = − +            −       γζ(2) +          −       ζ(3),
+                            6     d2 N     2              d3 N     3
+where µN are the numbers defined in (1.16).
+   This theorem will be proved in §§ 2.2, 2.3. We remark that the formulae in the
+theorem can be written in the simpler-looking form
+                          ∞
+                          X                     2                 µN
+             Γ(1 + ε)−1         κj ε j = 1 −          π 2 ε2 +        ζ(3)ε3 + O(ε4 ).   (1.17)
+                          j=0
+                                               d2 N              d3 N
+
+It is in fact the expression on the left-hand side of (1.17) which is naturally com-
+puted from the modular side, since this expression describes certain limits associ-
+ated with Frobenius solutions of the differential equation for Φ itself, rather than
+for its Laplace transform Ψ. On the topological side, this is related to the ‘modified
+gamma class’ as defined in (1.19) below.
+1.4. Quantum differential equations of Fano varieties. In this subsection
+we briefly explain the definition of the differential equations whose asymptotic prop-
+erties play a role in the gamma conjecture. We first describe the meaning of the
+entries of the 4 × 4 matrix A = (ai,j ) that specifies the quantum differential equa-
+tion by the formula (1.6). Then, for the benefit of the interested reader, we briefly
+explain how this determinantal equation arises.
+   Very roughly, the entry ai,j with j ⩾ i (the other entries of A are 0 or 1 by
+definition) gives the (correctly interpreted) ‘number’ of rational curves of anti-
+canonical degree j − i + 1 that intersect algebraic cycles of codimension speci-
+fied by i and j. We state this more precisely in the case of interest to us, when
+X is a Fano 3-fold with H 2 (X; Q) = Qc1 . The three-point correlator hα1 , α2 , α3 i
+                                                                    ∗
+of three (effective
+                 P andn homogeneous) classes a1 , α2 , α3 in H (X) is defined as
+the polynomial      cn z , where cn is the expected number of holomorphic maps
+P1 → X of anticanonical degree n sending three fixed generic points Pi of P1 to
+                        Gamma conjecture for Fano 3-folds of rank 1                     35
+
+cycles representing the Poincaré duals of the classes αi . Using this correlator, one
+defines the quantum cohomology ring of X as H ∗ (X) ⊗ C[z] with quantum multi-
+plication ?, where α1 ? α2 is defined by regarding hα1 , α2 , · i as a linear functional
+on H ∗ (X)R ⊗ C[z] with values in C[z] and dualizing it with respect to the Poincaré
+pairing: [X] (α1 ? α2 ) ∪ α3 = hα1 , α2 , α3 i. Then the matrix G(z) = (gi,j (z))
+of the operator c1 ? with respect to the basis c = (1, c1 , c21 , c31 ) is of the form
+gi,j = ai,j z j−i+1 for some matrix A, and the desired fourth-order differential oper-
+                                            ~
+ator L̃ is associated with the system Dz ζ(z)        ~
+                                                 = ζ(z)G(z)   of first-order differential
+equations in the standard way (with 1 as the cyclic vector). The Frobenius basis
+{Ψi } of the space of solutions of the differential equation L̃Ψ = 0 then corresponds
+to the basis of H∗ (X, Q) that is Poincaré dual to the basis c. The expressions for
+the coefficients of L̃ (or for the expansion coefficients of the Frobenius solutions)
+in terms of the Gromov–Witten invariants of X can be found in [18].
+    The identification described enables us to regard the linear functional Ψ 7→
+limz→∞ ΨΨ(z)0 (z)
+                  on the space of solutions of the differential equation L̃Ψ = 0 as
+a cohomology class AX (called the ‘principal asymptotic class’ of X). In our case,
+it is given explicitly by the formula
+                                      3
+                                      X
+                              AX =          κj cj1 ∈ H ∗ (X; C),
+                                      j=0
+
+where the numbers κj are the Frobenius limits as defined in (0.3). The gamma con-
+jecture, to be described now, says that this class is equal to a certain characteristic
+class of X called the gamma class.
+1.5. The gamma class and the gamma conjecture. The gamma class of
+a holomorphic vector bundle E over a topological space X is the multiplicative
+characteristic class (in the sense of Hirzebruch) associated with the power series
+                                   2
+expansion Γ(1 + x) = 1 − γx + γ +ζ(2) 2    x2 + · · · of the gamma function at 1. In other
+words, it sends a holomorphic vector bundle E/X to the cohomology class Γ(E)       b     =
+                    ∗
+Q
+  i Γ(1 + τ i ) ∈ H   (X, R) if the  total  Chern    class of E has a formal factorization
+        Q
+c(E) = (1 + τi ) with elements τi of degree 2. When E is the tangent bundle of X,
+we write simply Γ  b X instead of Γ(E).
+                                   b       The terms of degree ⩽ 3 in this class, which
+are the only ones needed for our purposes, are given by the formula
+                                     ζ(2) + γ 2 2
+                                                   
+    ΓX = 1 − γc1 + −ζ(2)c2 +
+    b                                           c1
+                                         2
+                                                2ζ(3) + 3γζ(2) + γ 3 3
+                                                                       
+       + −ζ(3)c3 + (ζ(3) + γζ(2))c1 c2 −                              c1 + · · · ,   (1.18)
+                                                            6
+where ci = ci (T X) ∈ H 2i (X) are the Chern classes of X. If we introduce the
+                     b 0 by putting
+modified gamma class Γ X
+
+                                   Γ               b 0X ,
+                                   b X = Γ(1 + c1 )Γ                                (1.19)
+then the equality (1.18) takes a simpler form:
+                       b 0X = 1 − ζ(2)c2 + ζ(3)(c1 c2 − c3 ) + · · · .
+                       Γ                                                            (1.20)
+36                               V. V. Golyshev and D. Zagier
+
+
+(The passage from Γ   b X to Γ b 0 in our cases reflects a relation between the topol-
+                                 X
+ogy of a Fano variety and that of its K3-surface hyperplane sections. On the
+other side of the gamma conjecture, as already mentioned in connection with The-
+orem 3, this passage corresponds to a relation between the Frobenius limits for the
+quantum differential equation associated with the Fano 3-fold and the Frobenius
+limits for the Picard–Fuchs differential equations of its mirror dual.) The gamma
+class of a variety may be regarded as a ‘half’ of the Todd class occurring in the
+Hirzebruch–Riemann–Roch theorem, or, more precisely, a ‘half’ of the A-class    b
+        −c1
+AX = e
+ b          TdX occurring in the Atiyah–Hirzebruch theorem, since the Γ-function
+identity Γ(1 + z)Γ(1 − z) = πz/ sin(πz) implies that we can factorize the A-class
+                                                                                b
+in the form µ+ (Γb X )µ− (Γ
+                          b X ), where µ± are the rescaling operators of multiplication
+           −m        2m
+by (±2πi)      in H (X; C).
+   Let AX ∈ H ∗ (X) be the principal asymptotic class of the quantum differential
+equation associated with a Fano variety X (as explained in § 1.4), and let Γ      bX ∈
+H ∗ (X) be the gamma class of X.
+   We now have all the ingredients necessary to state the gamma conjecture.
+Definition. If the equality
+                                          AX = Γ
+                                               bX                                        (1.21)
+holds, then we say that the gamma conjecture 4 holds for X.
+   Theorem 1 says that the gamma conjecture holds in the 17 Iskovskikh cases. To
+prove it, we compute both sides of (1.21) independently and check that they agree
+in each case. The result on the Picard–Fuchs side was given in Theorem 3 and will
+be proved in § 2. The computation on the cohomology side is straightforward and
+will be given here.
+Proposition 2. The modified gamma class of a Fano 3-fold X of rank 1 is given
+by
+                                          1,2
+                  b 0 = 1 − 12 ζ(2)c2 + h + 10 ζ(3)c3 ,
+                  Γ X         2     1                  1
+                            d N            d2 N
+where c1 is the first Chern class of X and h1,2 is the dimension of H 1,2 (X).
+Proof. The three Chern numbers of X are given by the formulae hc31 , [X]i = 2d2 N
+(by the definition of N ), hc1 c2 , [X]i = 24 (since the hyperplane sections of X are
+K3-surfaces and hc2 , [S]i = e(S) = 24 for all K3-surfaces S) and hc3 , [X]i = e(X),
+where e(X) is the Euler characteristic of X. Here e(X) = 4 − 2h1,2 since all Hodge
+                                                                          i,i
+numbers of X vanish except for hi,i = 1 and h1,2 = h2,1 . Since ci ∈ Halg     (X; Q) =
+   i
+Qc1 , it follows that
+
+                              12 2                         h1,2 + 10 3
+                      c2 =       c    and c1 c2 − c3 =              c1 .
+                             d2 N 1                          d2 N
+Substituting these values into (1.20), we obtain the desired assertion. 
+
+   4 This is called ‘gamma conjecture I’ in [5]. Since we will not discuss ‘gamma conjecture II’
+
+here, we speak simply of the gamma conjecture.
+                             Gamma conjecture for Fano 3-folds of rank 1                           37
+
+
+Proof of Theorem 1. The numbers h1,2 for the 17 Iskovskikh families are given in
+the table below, which is taken from the comprehensive source [9] on Fano varieties.
+
+
+    N       1      2     3     4    5     6   7   8   9   11      1      2     3   4   5   3   2
+    d       1      1     1     1    1     1   1   1   1    1      2      2     2   2   2   3   4
+       12
+   h        52     30   20    14   10     7   5   3   2    0     21     10     5   2   0   0   0
+
+
+We check in all cases that h1,2 + 10 = µN /d, where µN are the integers defined
+in (1.16) and tabulated in § 1.2.5 Combining this with Theorem 3 in § 1.3 and
+Proposition 2, we obtain Theorem 1. 
+
+
+                        § 2. Computation of the Frobenius limits
+   In this section we give two different approaches to calculating the Frobenius
+limits. One of them uses the combinatorial description of the coefficients of the
+holomorphic solution as sums of binomial coefficients (like Apéry’s formula in
+the V12 -case or in general Landau–Ginzburg models), and the second uses the
+modular representation of the solution. In § 2.2 we carry out the first approach
+in detail in the V12 -case, and also verify the prediction of the gamma conjecture
+in the (easier) hypergeometric cases. The modular approach, which works uni-
+formly in all cases with N > 1, will be treated in § 2.3. Finally, in § 2.4 we briefly
+describe numerical calculations suggesting that the higher Frobenius limits (beyond
+the dimension of the Fano variety) are also interesting: the first few of them are
+still polynomials in Riemann zeta values, but further ones apparently involve more
+complicated kinds of periods like multiple zeta values.
+
+2.1. The two Frobenius bases and their relationship. Here we define the
+higher Frobenius functions for the Picard–Fuchs type differential equations as well
+as for their Laplace transforms. We illustrate everything using the Apéry numbers,
+but the definitions work in all cases.
+   The definition of the Apéry numbers A0 = 1, A1 = 5, A2 = 73, . . . and the
+recursion relations for them were already given in the introduction and will not be
+repeated here. We consider the Frobenius deformation of Apéry’s recursion, that is,
+the sequence of power series
+                                   ∞
+                                   X
+                        An (ε) =         A(j) j
+                                          n ε ∈ Q[[ε]],        n = 0, 1, . . . ,
+                                   j=0
+
+
+determined by the initial conditions A−1 (ε) = 0, A0 (ε) = 1 and the recursion
+
+                (n + ε + 1)3 An+1 (ε) − P (n + ε)An (ε) + (n + ε)3 An−1 (ε) = 0,               (2.1)
+   5 Galkin has pointed out to us that the left-hand side of this equality can be interpreted as
+
+minus half the Euler characteristic of the open Calabi–Yau 3-fold obtained from X by removing
+an anticanonical K3-section.
+38                                V. V. Golyshev and D. Zagier
+
+where P (x) is the same polynomial as in (0.2). We assemble the rational numbers
+ (j)
+An into further power series:
+                      ∞
+                      X                                    ∞
+                                                           X                  ∞
+                                                                              X
+           Φan
+            j (t) =         A(j) n
+                             n t ,          Φan (t, ε) =         Φan    j
+                                                                  j (t)ε =           A(ε) n
+                                                                                      n t .      (2.2)
+                      n=0                                  j=0                n=0
+
+
+The beginning terms of the first few power series Φan
+                                                   j (t) are given by
+
+
+     Φan                         2       3        4         5
+      0 (t) = Φ(t) = 1 + 5t + 73t + 1445t + 33001t + 819005t + · · · ,
+                                             13276637 5
+     Φan                2       3         4
+      1 (t) = 12t + 210t + 4438t + 104825t +            t + ··· ,
+                                                5
+     Φan         2       3        4          5
+      2 (t) = 72t + 2160t + 59250t + 1631910t + · · · ,
+                    1011 2 522389 3 90124865 4 264872026721 5
+     Φan
+      3 (t) = −7t −       t −         t −           t −                 t + ··· ,
+                      8         216          1728           216000
+                  1437 2 182489 3 5753277 4 663266820361 5
+    Φan
+     4 (t) = 9t +       t +         t +          t +                 t + ··· .
+                   16         144          256           1440000
+                                                                                (2.3)
+Putting tε = exp(ε log t), we define the Frobenius functions Φj (t) for all j ⩾ 0 by
+the expansions
+                                  ∞                                j
+                                  X                                X              (log t)j−i
+      Φ(t, ε) = tε Φan (t, ε) =         Φj (t)εj ,     Φj (t) =          Φan
+                                                                          i (t)              .   (2.4)
+                                  j=0                              i=0
+                                                                                   (j − i)!
+
+Then the recursion satisfied by An (ε) translates into the statement that the power
+series Φj (t) and Φ(t, ε) satisfy the differential equations
+
+                                                                   (log t)j−3
+                      L(Φ(t, ε)) = ε3 tε ,           L(Φj (t)) =              ,                  (2.5)
+                                                                    (j − 3)!
+
+where                                                                          
+                             3                             3               d
+                     L = D − tP (D) + t(D + 1)                         D=t
+                                                                           dt
+is the differential operator that annihilates Φ(t), and the right-hand side of the
+second equality in (2.5) is interpreted as 0 for j < 3. In particular, Φ0 , Φ1 and Φ2
+are solutions of the original differential equation LΦ = 0 and they constitute the
+well-known Frobenius basis in the space of solutions. The higher Φj are also of
+interest, as already mentioned in the introduction. In any case, the proof of the
+gamma conjecture requires the solution Φ3 of the inhomogeneous differential equa-
+tion LΦ = 1 because the Laplace transform establishes a correspondence between
+the tuples {Φ0 , . . . , ΦJ } and {Ψ0 , . . . , ΨJ } for all J, as we will see now, and the
+operator L̃ has order 4 and thus four Frobenius solutions Ψ0 , . . . , Ψ3 .
+   We now do the same thing on the Laplace transform side. The modified numbers
+an = An /n! satisfy the modified recursion relations
+
+                          (n + 1)4 an+1 − P (n)an + n2 an−1 = 0                                  (2.6)
+                         Gamma conjecture for Fano 3-folds of rank 1                                 39
+
+with
+P the      same polynomial P (n) as before, and their generating function Ψ(z) =
+   an z n therefore satisfies the modified differential equation (the Laplace transform
+of L)
+                   L̃(Ψ) = 0,      L̃ = Dz4 − zP (Dz ) + z 2 (Dz + 1)2 ,
+where D = z d/dz. The Frobenius deformation in this case is given by
+
+            (n + 1 + ε)4 an+1 (ε) + P (n + ε)an (ε) + (n + ε)2 an−1 (ε) = 0                       (2.7)
+
+for n ⩾ 0 with initial conditions a−1 (ε) = 0 and a0 (ε) = 1. We again set an (ε) =
+P (j) j
+   j an ε and define the power series
+                    X                                    X                  X
+         Ψan
+          j (z) =        a(j) n
+                          n z ,           Ψan (z, ε) =       Ψan    j
+                                                              j (z)ε =             an (ε)z n .
+                     n                                   j                   n
+
+Their first values are as follows:
+                             73 2 1445 3 33001 4 163801 5
+   Ψan
+    0 (z) = Ψ(z) = 1 + 5z +    z +       z +       z +         z + ··· ,
+                             2       6         24         24
+                  201 2 10733 3 432875 4 47115959 5
+   Ψan
+    1 (z) = 7z +      z +       z +        z +           z + ··· ,
+                   4        36        288         7200
+                    461 2 92323 3 9220085 4 6108294133 5
+   Ψan
+    2 (z) = −7z −       z −      z −          z −             z + · · · , (2.8)
+                     8       216        3456         432000
+              15 2 169 3 4285465 4 3811075 5
+   Ψan
+    3 (z) = −    z +      z +         z +         z + ··· ,
+               8        4       6912         768
+                  2449 2 441925 3 52564099 4 259795048429 5
+   Ψan
+    4 (z) = 9z +       z +        z +          z +                 z + ··· .
+                   32        864        18432          19200000
+As above, putting z ε = exp(ε log z), we find that the Frobenius functions defined by
+                                 ∞                                 j
+                                 X                                 X              (log z)j−i
+    Ψ(t, ε) = z ε Ψan (z, ε) =         Ψj (z)εj ,     Ψj (z) =           Ψan
+                                                                          i (z)                   (2.9)
+                                 j=0                               i=0
+                                                                                   (j − i)!
+
+satisfy the inhomogeneous differential equations
+
+                                                                   (log z)j−4
+                    L̃(Ψ(z, ε)) = ε4 z ε ,          L̃(Ψi (t)) =                                 (2.10)
+                                                                    (j − 4)!
+
+under the same conventions as before. In particular, Ψ0 , . . . , Ψ3 form a basis (again
+called the Frobenius basis) of solutions of the transformed differential equation.
+   The gamma conjecture concerns the limits κj defined in (0.3). However, to cal-
+                                                                    (j)
+culate them, it is more convenient to work with the numbers An and the functions
+Φj (t), which have better properties (regular singularities, modular parametriza-
+tion). We must therefore seek how the two sequences of numbers and functions are
+related. It follows from the recursion that
+                                                  n         −1
+                                An (ε)    An (ε) Y        ε
+                      an (ε) =          =             1+           .
+                               (1 + ε)n     n!            k
+                                                         k=1
+40                               V. V. Golyshev and D. Zagier
+
+Here (1 + ε)n stands for the ascending Pochhammer symbol (1+ε)(2+ε) · · · (n+ε).
+We continue the last formula by inserting the expansion
+              n        −1
+                                                 ε2     ε3
+                                                               
+             Y        ε
+                  1+         = exp −Hn ε + Hn(2) − Hn(3) + · · · ,
+                      k                          2       3
+              k=1
+
+where
+                           1        1                    (2)         1         1
+               Hm = 1 +      + ··· + ,                  Hm   =1+       + ··· + 2,
+                           2        m                                4        m
+and so on. This yields
+                                          n! a(0)  (0)
+                                              n = An ,
+
+                                  n! a(1)  (1)     (0)
+                                      n = An − Hn An ,
+                                                                        (2)                          (2.11)
+                                                Hn2 + Hn
+                      n! a(2)  (2)     (1)
+                          n = An − Hn An +                 A(0)
+                                                            n ,
+                                                     2
+                      ··········································
+                                                                         (m)
+Using the formulae Hn = log n + γ + O(1/n) and Hn = ζ(m) + O(1/n) for
+                                             (j)
+m > 1 and noticing that the maximum
+                              √ 4        of an z√n for large z and fixed j is attained
+at n ≈ Cz with C = (1 + 2) = 17 + 12 2 (since An ∼ const ·C n /n3/2 , as
+discussed in more detail in § 2.4), we see that the asymptotics of the Frobenius
+                                                                      (m)
+solutions are found simply by replacing Hn by log(Cz) + γ and Hn by ζ(m) for
+m > 1. This means that if we define a sequence of Frobenius limits κ0j and their
+generating function κ0 (ε) in the regular case by the formulae
+        j                            (i)                       ∞
+            (− log C)j−i
+                                                                                                       
+        X                            An                           X                               An (ε)
+κ0j =                      lim                  ,        0
+                                                        κ (ε) =         κ0j εj = C −ε   lim                ,
+        i=0
+               (j − i)!    n→∞       An                           j=0
+                                                                                        n→∞        An
+                                                                                                     (2.12)
+then the relation between κ0 (ε) and the generating function
+                                       ∞
+                                       X                       Ψ(z, ε)
+                            κ(ε) =            κj εj = lim                                            (2.13)
+                                        j=0
+                                                         z→∞    Ψ(z)
+
+is given simply by
+                                                       1
+                                     κ0 (ε) =                κ(ε).                                   (2.14)
+                                                    Γ(1 + ε)
+This is exactly the same relation (if we replace ε by c1 (X)) as that between the
+gamma class and the modified gamma class of a Fano variety X (see § 1.5). In § 2.4
+we will explain how to compute the limits in both (2.12) and (2.13) (which in any
+case determine each other by (2.14)) quickly and with a very high accuracy. We
+will also discuss some results of these numerical computations.
+2.2. Frobenius limits from the hypergeometric point of view. Here we
+prove the formula (0.4) for the Frobenius limits in the Apéry case using Apéry’s
+original formula (0.1) for his numbers as finite sums of products of binomial coeffi-
+cients, or terminating hypergeometric series. This method is fairly computational
+                        Gamma conjecture for Fano 3-folds of rank 1                     41
+
+and uses identities that were found experimentally and whose proofs are not par-
+ticularly enlightening, but has the advantages of being completely elementary and
+applicable in principle to all linear differential equations of this type, even if they
+are not modular. It also gives very easy proofs of the gamma conjecture in the
+10 cases of Iskovskikh’s list corresponding to hypergeometric differential equations.
+    The idea is to mimic Apéry’s original proof of the irrationality of ζ(3), where he
+studied the second solution A∗n of the recursions (0.2) with initial conditions A∗0 = 0,
+A∗1 = 1 (the generating function of this solution also satisfies an inhomogeneous
+version of the original differential equation, although with the right-hand side t
+rather than 1) and proved that the limiting ratio limn A∗n /An is equal to 16 ζ(3). He
+                                                             Pn        2       2
+did this by finding an explicit formula for A∗n of the form k=0 nk n+k        k    Q(n, k),
+where Q(n, k) is a suitably chosen elementary function involving partial sums of ζ(3)
+                                                                                   (i)
+(see [19] and [20]). When looking for similar formulae for the numbers An with
+small i, we found experimentally a number of identities of this type that gave the
+correct values for 1 ⩽ i ⩽ 3 and for all n up to some large number. Any of
+these identities could be used to evaluate the Frobenius limits in question. One
+choice, which has a particularly simple form, is reproduced in Proposition 3 below
+together with a proof by the standard method of telescoping sums. To find both the
+identities and their proofs, we made an Ansatz for the functions denoted by Qi (n, k)
+and Rn,k (ε) in Proposition 3. It has the form indicated there, but with unknown
+                                                      (i)     (i)         (i)
+coefficients (the three numerical coefficients of Hn+k , Hk and Hn in the case
+of Qi (n, k) and the four coefficients in Q(n, k) of εi in the case of Rn,k (ε)). Then
+we determined the values of these coefficients by a computer calculation. This proof
+is therefore not especially aesthetic, but (as already mentioned) has the advantage
+of being in principle applicable to the Frobenius deformations of other differential
+equations that do not necessarily have a modular interpretation.
+Proposition 3. For n, k ⩾ 0 set
+                       2      2      3
+                                                     εi
+                                       X                     
+                       n     n+k
+           an,k (ε) =               exp     Qi (n, k) + O(ε4 ) ,
+                       k      k         i=1
+                                                     i!
+where
+                                                                   (2)   (2)
+             Q1 (n, k) = 4Hn+k − 4Hk ,           Q2 (n, k) = 4Hk − 8Hn+k ,
+                                          (3)         (3)
+                         Q3 (n, k) = 32Hn+k − Hk − 14Hn(3) .
+Then
+                                        n
+                                        X
+                             An (ε) =         an,k (ε) + O(ε4 ).
+                                        k=0
+
+Proof. Define Rn,k (ε) ∈ Q(n, k)[ε]/ε4 by the formula
+ Rn,k (ε) = 4(2n + 1) 2k 2 + k − (2n + 1)2
+                                           
+
+               + 16k 2 + 8(4n + 3)k − 4(2n + 1)(12n + 5) ε + 16(2k − 5n − 2)ε2
+                                                          
+                                                                  
+                                        14(2n + 1)k     2
+                             + −16 + 2              (2n   + 2n − k)  ε3 + O(ε4 ).
+                                        3n (n + 1)2
+42                             V. V. Golyshev and D. Zagier
+
+Using the easily checked identity
+
+             an+1,k (ε)                 an−1,k (ε)                       an,k−1 (ε)
+(n+1+ε)3                −P (n+ε)+(n+ε)3            = Rn,k (ε)−Rn,k−1 (ε)
+              an,k (ε)                   an,k (ε)                         an,k (ε)
+
+in Q(n, k)[ε]/ε4 and induction on K, we find that
+K
+X
+      (n + 1 + ε)3 an+1,k (ε) − P (n + ε)an,k (ε) + (n + ε)3 an−1,k (ε) = Rn,K (ε)an,K (ε)
+                                                                       
+
+k=0
+                                                           Pn
+for all K ⩾ 0. Taking K > n shows that the sequence k=0 an,k (ε) satisfies the
+defining recursion for the sequence An (ε). Since these sequences also have the same
+initial values (0 for n = −1, 1 for n = 0), they are equal. 
+Corollary. We have
+                                                         
+                      An (ε)              2 17    3     4
+                  lim        = exp −2ζ(2)ε + ζ(3)ε + O(ε ) .
+                 n→∞ C ε An                 6
+
+                                             2     2
+Proof. For large n, the maximum of an,k = nk n+k       over 0 ⩽ k ⩽ n is sharply
+                    √                            k
+peaked at k = n 1/ 2 + o(1) since the ratio an,k /an,k−1 is equal to
+                                                              2
+                          (n + k)2 (n − k + 1)2         n2
+                                                    
+                                                ≈          − 1   .
+                                    k4                  k2
+
+It follows that
+  n              n
+                                     √ 
+                X                                              
+X
+                                                  2 17    3     4
+     an,k (ε) ∼    an,k exp 4 log 1 + 2 ε − 2ζ(2)ε + ζ(3)ε + O(ε ) . 
+                                                    6
+k=0               k=0
+
+    By (2.12) and (2.14), the statement of the corollary is equivalent to the for-
+mula (0.4) predicted by the gamma conjecture. This completes the proof of this
+conjecture in the Apéry case.
+    We mention that for each of our 17 families as well as for other Dn-equations
+arising as Picard–Fuchs equations, there are formulae like (0.1) expressing the coef-
+ficients An as ordinary or multiple finite sums of products of binomial coefficients
+(terminating hypergeometric series). For example, the ‘Landau–Ginzburg models’
+yield such formulae expressing An as the constant term of P (x, y, z)n for some
+Laurent polynomial P (x, y, z). One could therefore in principle study each of the
+other cases using the same idea of inserting appropriate factors into these formulae.
+We did not try to do this since the modular approach (discussed in the next sub-
+section) is much simpler and works in a uniform way in all cases. We can, however,
+use the combinatorial approach to give an easy direct proof of Theorem 3 in all
+ten cases of Iskovskikh’s list for which the corresponding differential operators are
+hypergeometric. This is useful since it includes the two cases with N = 1 in which
+the modular √ approach fails (or at least needs a modification) because the func-
+tion F1 = E4 is not a holomorphic modular form. Note, however, that the case
+                         Gamma conjecture for Fano 3-folds of rank 1                     43
+
+
+(N, d) = (2, 4) corresponds to the Fano variety P3 and is therefore a particular case
+of Dubrovin’s results in [21] (see also [5]) which prove the gamma conjecture for
+all Pn , and all hypergeometric cases are essentially known from the work of Iritani
+(see § 2.4). We nevertheless include our proof here since it is elementary and fits
+with the other cases considered.
+   We begin with a remark that applies to all 17 cases, not only the hypergeometric
+ones. Namely, it suffices to prove Theorem 3 in those 10 cases of Iskovskikh’s list
+that have d = 1. Indeed, comparing the conclusion (1.17) of Theorem 3 with the
+formula (2.14) which relates the Frobenius limits for the differential operators L
+and L̃, we see that the theorem now takes the simple form
+                                          2                   µN
+               κ0N,d (ε) = 1 + 0 · ε +            π 2 ε2 +        ζ(3)ε3 + O(ε4 ),   (2.15)
+                                         d2 N                d3 N
+where κ0N,d (ε) means the function κ0 (ε) as defined by (2.12) in the case (N, d) of
+the list (1.1) (so that the function κ0 in the Apéry case which was     √ used as an
+illustration in § 2.1 would be κ06,1 ), but with the constant C = 17 + 12 2 appearing
+                                                            1/n
+in (2.12) replaced in the other 16 cases by limn→∞ An , which is the reciprocal
+of the smallest positive root of Q(t). But the power series ΦN,d (t) is in this case
+simply ΦN,1 (td ). Hence the passage from (N, 1) to (N, d) replaces An and An (ε)
+by An/d and An/d (ε) (interpreted as 0 when d - n) and C by C 1/d . It follows that
+κ0N,d (ε) = κ0N,1 (ε/d) to all orders, not just up to O(ε4 ).
+    This remark reduces the number of hypergeometric cases to be studied from 10
+to 4, namely, to those whenP∞ 1 ⩽ N ⩽ 4 and d = 1. In these cases the coefficients of
+the power series Φ(t) = m=0 An tn are quotients of products of factorials as given
+by the following table:
+
+                     N           1            2              3          4
+                               (6n)!     (4n)!         (3n)!(2n)!     (2n)!3
+                    An
+                             (3n)!n!3     n!4             n!5          n!6
+
+In each case we write the expression for An as r ((rn)!)νr and notice that it
+                                                   Q
+also makes sense for non-integer values of n if we interpret x! as Γ(1 + x). Then
+the Frobenius-deformed numbers An (ε), which are defined by the same recursion
+(here of length 2 rather than 3 as before) with initial value AP 0 (ε) = 1, can be
+written simply as An (ε) = An+ε /Aε . On the other hand, since r rνr = 0 in all
+cases (otherwise the series Φ(t) would have radius of convergence zero),
+                                                                       Q Stirling’s
+                                       ν/2 x                                   νr /2
+formula  gives the asymptotics A x ∼ αx   C   as x →  ∞,  where  α  =   r (2πr)      ,
+ν = r νr , C = r rrνr . Hence,
+     P            Q
+
+                       An (ε)             An+ε     1   Y
+       κ0 (ε) = C −ε lim      = C −ε lim        =    =     Γ(1 + rε)−νr
+                   n→∞ An            n→∞ An Aε    Aε    r
+                  X                                      
+                                  ζ(2) 2 2 ζ(3) 3 3
+             = exp    νr −γrε +       r ε −      r ε + ···
+                    r
+                                   2          3
+           P           P 2                   P 3
+and, since   rνr = 0,     r νr = 24/N and       r νr = 3µN /N in all four cases
+1 ⩽ N ⩽ 4, this completes the proof of Theorem 3 in the ten hypergeometric cases.
+44                                  V. V. Golyshev and D. Zagier
+
+2.3. Frobenius limits from the modular point of view. The method
+described in the preceding subsection in Apéry’s case depends on a complicated
+and artificial-looking identity. We now give a more natural proof using the modular
+parametrizations of our differential equations as discussed in § 1.3. This approach
+works in a uniform way in all cases with N > 1 in Iskovskikh’s list, that is, in 15
+of the 17 cases. Since the remaining two cases with N = 1 are hypergeometric and
+have already been treated, this completes the proofs of Theorems 3 and 1.
+   By the remark made in the end of the previous subsection, it suffices to prove
+the theorem in the nine cases with d = 1 and N belonging to the list {2, . . . , 9, 11}.
+After our preparation, this is fairly easy now. In each case the differential operator L
+is of the form indicated in Proposition 1 (equation (1.11)), where H(τ ) = HN (τ ) is
+the Eisenstein series of weight 4 defined in (1.14). By (2.5) the first four Frobenius
+functions satisfy the differential equations LΦ0 = LΦ1 = LΦ2 = 0 and LΦ3 = 1,
+which on the modular side take the form (Φj (t(τ ))/F (t))000 = δj,3 H(τ ) for 0 ⩽ j ⩽ 3.
+(Here “ 0 ” means 2πi
+                    1 d
+                      dτ as in § 1.3.) In view of the asymptotic form of the Frobenius
+functions Φj (t) at the point t = 0, which corresponds to q = 0 under the change of
+variables 2πiτ = log q = log t + O(t), this means that
+
+                       (2πiτ )j
+        Φj (t(τ )) =            F (τ ),   j = 0, 1, 2,       Φ3 (t(τ )) = H(τ
+                                                                          e )F (τ ),   (2.16)
+                          j!
+
+where H(τ                                              e 000 = H and normalized by
+      e ) is the Eichler integral of H(τ ), defined by H
+
+                                               3
+                             e ) = (2πiτ ) + O(q)
+                             H(τ                              as q → 0.
+                                      3!
+
+But from (1.14) we have
+                                              X hM
+                                    H(τ
+                                    e )=                 G
+                                                         e 4 (M τ ),                   (2.17)
+                                                    M
+                                             M |N
+
+
+where
+                                                    3    X n−3 q n
+                                 e 4 (τ ) = (2πiτ ) +
+                                 G
+                                             1440              1 − qn
+                                                         n⩾1
+
+is the corresponding normalized Eichler integral of G4 (τ ). But it is well known and
+elementary to prove that G
+                         e 4 satisfies the functional equation
+
+                                                             π3 i
+                                          
+                                   2e    1     ζ(3) 2
+                        G4 (τ ) − τ G4 −
+                        e                    =     (τ − 1) −      τ                    (2.18)
+                                         τ      2             6
+
+for all τ ∈ H. (This follows from the transformation property G4 |4 S = G4 by 3-fold
+integration using ‘Bol’s identity’, which asserts that (F |−2 γ)000 = F 000 |4 γ for all
+holomorphic functions F and any Möbius transformation γ. This identity implies
+that the expression on the left of (2.18) is at most a quadratic polynomial, which
+we then calculate using the fact that the L-function of G4 is equal to ζ(s)ζ(s − 3).)
+                       Gamma conjecture for Fano 3-folds of rank 1                   45
+
+Substituting this into (2.17) and using the antisymmetry property (1.15), we get
+               
+       e − 1
+                              X hM                       µN
+  N τ 2H          + H(τ
+                     e )=            ζ(3)(M 2 τ 2 − 1) =    ζ(3)(N τ 2 + 1), (2.19)
+            Nτ                   2M                      N
+                              M |N
+
+where µN is the same as in (1.16). (A similar calculation is carried out in [3], § 1.2.)
+The calculation of the Frobenius limit now follows. Indeed, (2.16), (2.19) and the
+anti-invariance of F under |2 WN imply that if we set
+                                                   2π 2 µN
+                                                              
+                      (k0 , k1 , k2 , k3 ) = 1, 0,     ,   ζ(3) ,
+                                                    N N
+then Φj (t(τ ))−kj F (τ ) is a WN -invariant function on the upper half-plane for every
+j ∈ {0, 1, 2, 3}. But this means that these four expressions, regarded as functions
+of t = t(τ ), are
+                √ regular at the value t = t(τN ) = 1/C corresponding to the fixed
+point τN = i/ N of the involution WN and hence have radius of convergence that
+is greater than the radius of convergence 1/C of the series Φ(t). It follows that the
+Frobenius limit κ0j = limt→1/C Φj (t)/Φ(t) is equal to kj . This completes the proof
+of (1.17) in all cases with N > 1.
+   Finally, we make
+                  p some remarks about the missing case N = 1. Here the function
+H1 (τ ) = E6 (τ )/ E4 (τ ) = 1 − 624q + 64368q 2 − · · · is no longer a modular form,
+but from the transformation property H1 |4 S = −H1 and Bol’s identity we still have
+                                             
+                                    2 e     1
+                         H1 (τ ) + τ H1 −
+                          e                     = µζ(3)(τ 2 + 1)
+                                            τ
+for some complex number µ, so that the only thing missing is the evaluation
+µ = µ1 = 62. Of course, this evaluation follows from our alternative proof of
+the√formulae for the Frobenius limits in terms of the hypergeometric expansion
+of E4 , and we have also checked it numerically to high precision, but we have not
+found a purely modular proof. Such a proof could possibly be given by imitating the
+calculationspin [22], where the Eichler integral of the very similar almost-modular
+form ∆(τ )/ E6 (τ ) of weight 3 is related to the zeros of the Weierstrass ℘-function.
+2.4. Higher Frobenius limits: beyond the gamma conjecture. Here we
+briefly discuss the values of the Frobenius limits κj (or rather of the equivalent
+limits κ0j ) for j > 3.
+   Since all our results here are numerical, we first say briefly how to calculate κ0j
+and κj to very high accuracy and very quickly. (Of course, one does not really need
+both since they are related by (2.14). But being able to do the calculations in two
+ways provides a nice verification of the numerical correctness of the procedure.)
+For κj one can use (0.3) directly with a moderately large value of z like z = 100
+(much smaller values actually suffice) and, since the convergence is exponential, this
+works well. For κ0j one cannot use (2.12) directly because the ratio of C −ε An (ε)
+to An converges to its limit κ0 (ε) only like 1/n. Instead we use the fact that An
+has an asymptotic expansion (in Apéry’s case; the others are of course similar) of
+the form
+                                           C n+1/2
+                                                                      
+                              −9/4 −3/2                         1
+               An ∼ A(n) := 2     π                   P
+                                        (n + 1/2)3/2      64 n + 12 2
+                                                                   √
+46                              V. V. Golyshev and D. Zagier
+
+
+for a certain power series P (X) = 1 + 30X + 274X 2 − 17132X 3 + · · · with eas-
+ily computable rational (and conjecturally integral) coefficients determined by the
+property that A(n) satisfies the same recursion as An . Then
+                                            An (ε)             An (ε)
+                     κ0 (ε) = C −ε lim               = lim              .
+                                    n→∞ A(n)          n→∞ A(n + ε)
+
+
+The latter expression converges faster than any power of n. Hence taking a mod-
+erately large number of coefficients of P and a moderately large value of n, we get
+very precise values for the power series κ0 (ε). (For example, using 100 terms of P
+and taking n = 100 gives the first 15 coefficients κ0j to 300 decimal digits in less
+than 10 seconds on a normal PC.)
+   We did these calculations (to 300 digits) for both κj and κ0j in the V12 case and
+several others, each time finding agreement of the two series in (2.14) to the precision
+of the calculation. We then tried to recognize the coefficients κ0j beyond the range
+j ⩽ 3, where their values were predicted by the gamma conjecture and proved by
+our calculations in the last two subsections. It turned out that up to j = 10 (in the
+V12 case) these values were always polynomials in Riemann zeta values (and also
+in the Euler constant γ if we work with κj instead). The results are cleaner if we
+use the coefficients λj of the generating function
+                                  ∞
+                                  X
+                                        λj εj = log(κ0 (ε)).
+                                  j=1
+
+In this case the first ten values are given (within the accuracy of the calculation)
+by the formulae
+                                                17
+           λ1 = 0,       λ2 = −2ζ(2),      λ3 =    ζ(3),    λ4 = −3ζ(4),
+                                                 6
+           7                   2         1                  5        1
+     λ5 = ζ(5),         λ6 = − ζ(6) − ζ(3)2 ,        λ7 = − ζ(7) + ζ(3)ζ(4),
+           3                   3        72                  3        6
+      29         11                     8       5           11             17
+λ8 =     ζ(8) − ζ(3)ζ(5),         λ9 = ζ(9) + ζ(3)ζ(6) + ζ(4)ζ(5) +           ζ(3)3 ,
+      12         18                     9       3            3            648
+                      147         59            121        17
+             λ10 = −      ζ(10) − ζ(3)ζ(7) −        ζ(5)2 − ζ(4)ζ(3)2 ,
+                       5          18            18         36
+which involve only Riemann zeta values, as already stated. But for the 11th coef-
+ficient we find
+                 59           110           215           187            2
+λ11 = 66ζ(11)+      ζ(4)ζ(7)+     ζ(5)ζ(6)+     ζ(8)ζ(3)+     ζ(3)2 ζ(5)+ ζ(3, 5, 3),
+                 3             3             36           108            3
+where the last term involves the multiple zeta value
+                                X            1
+               ζ(3, 5, 3) =                       = 0.002630072587647 . . .
+                                         `3 m5 n3
+                              0<`<m<n
+
+instead of the ordinary ones. This suggests that the higher Frobenius limits may
+be interesting periods in general and that at least in some cases they are connected
+                      Gamma conjecture for Fano 3-folds of rank 1                  47
+
+with multiple zeta values. We make a few final remarks in this direction. First,
+the first weight in which the ring of multiple zeta values is not generated over Q by
+Riemann zeta values is 8, and the dimension of the space of multiple zeta values in
+both this weight and weight 10 is larger by 1 (more properly, by at most 1, since the
+required statements on linear independence have not yet been proved). However,
+neither of these values appear in our computations, and the first non-trivial multiple
+zeta value that we see is ζ(3, 5, 3) of weight 11. This suggests a connection with
+Brown’s ‘single-valued multiple zeta values’ [23], which also diverge from the ring of
+ordinary zeta values for the first time in weight 11. However, the connection is not
+quite clear since the new single-valued multiple zeta value in weight 11 (modulo
+polynomials in Riemann zeta values) is not a rational multiple of ζ(3, 5, 3), but
+rather a rational linear combination of ζ(3, 5, 3) and the product of ζ(3) and the
+non-trivial double zeta value ζ(3, 5). However, a private communication from Brown
+suggests that there may be an explanation connected with the duality property
+of D3-equations (mentioned in § 1.2) and with his calculations in [24]. Finally, we
+mention that in the other non-hypergeometric cases we looked at we again found
+polynomials in Riemann zeta values for the Frobenius limits up to a certain weight
+but not beyond, and that we could not always recognize the higher values (like κ7
+in the case (N, d) = (9, 1)). This phenomenon is presumably related to the fact
+that Fano varieties like V12 can be obtained as successive hyperplane sections of
+Fano varieties of higher dimension, but only up to a certain point, and this is
+precisely the range in which the gamma conjecture for these higher-dimensional
+Fano varieties can predict the values expressible as polynomials in Riemann zeta
+values. For example, the variety V12 can be obtained as a 7-fold iterated hyperplane
+section of a certain 10-dimensional Fano variety with Picard rank 1 (namely, the
+orthogonal Grassmannian of isotropic 5-planes in C10 ). We have checked in this
+case that the prediction of the gamma conjecture does indeed agree with the values
+of λj found numerically for all j ⩽ 10.
+2.5. Related work. Further references. The gamma conjecture in our hyper-
+geometric cases (which correspond to complete intersections in toric varieties) fol-
+lows essentially from the celebrated quantum Lefschetz theorem of Givental [25] and
+Iritani’s work [26]; we have given a proof for the sake of completeness. Dubrovin [21]
+has computed all other asymptotic expansions in the case of projective spaces.
+Another exposition of this case is given in [4], and our statement of the gamma
+conjecture may be regarded as an explicit and Fano-specific version of the condi-
+tion of ‘compatibility with the Stokes structure’ in that paper. Przyjalkowski [27]
+defined weak Landau–Ginzburg models for Fano varieties and proposed candidates
+for weak Landau–Ginzburg models in our 17 cases. He discovered that the number
+of irreducible components in the resolution of the central fibre (which corresponds
+to the point t = ∞ in our notation) is one more than the number h1,2 of the
+corresponding Fano variety. The relation between the Hodge numbers of Fano vari-
+eties and reducible fibres of their Landau–Ginzburg models is explained in [28].
+Galkin established the modularity of ‘G-Fano varieties’ [29]. He computed the
+‘Apéry constants’ for many homogeneous spaces and introduced what he called
+the ‘Apéry class’ in [30]. The work of van Enckevort and van Straten [31] per-
+tains to the case of Calabi–Yau (rather than Fano) 3-folds, but there is an implicit
+48                            V. V. Golyshev and D. Zagier
+
+relation to the topology of Fano 4-folds, again by the quantum Lefschetz princi-
+ple. Finally, the modularity of Fano 3-folds of all Picard ranks has recently been
+announced by Doran, Harder, Katzarkov, Lewis, and Przyjalkowski.
+
+                                    Bibliography
+
+ [1] V. Golyshev, “Classification problems and mirror duality”, Surveys in geometry and
+     number theory: reports on contemporary Russian mathematics, London Math. Soc.
+     Lecture Note Ser., vol. 338, Cambridge Univ. Press, Cambridge 2007, pp. 88–121.
+ [2] V. V. Przyjalkowski, “Quantum cohomology of smooth complete intersections in
+     weighted projective spaces and in singular toric varieties”, Mat. Sb. 198:9 (2007),
+     107–122; English transl., Sb. Math. 198:9 (2007), 1325–1340.
+ [3] F. Beukers, “Irrationality proofs using modular forms”, Journées arithmétiques
+     de Besançon (Besançon 1985), Astérisque, vol. 147/148, Soc. Math. France, Paris
+     1987, pp. 271–283.
+ [4] L. Katzarkov, M. Kontsevich, and T. Pantev, “Hodge theoretic aspects of mirror
+     symmetry”, From Hodge theory to integrability and TQFT tt∗ -geometry, Proc.
+     Sympos. Pure Math., vol. 78, Amer. Math. Soc., Providence, RI 2008, pp. 87–174.
+ [5] S. Galkin, V. Golyshev, and H. Iritani, Gamma classes and quantum cohomology of
+     Fano manifolds: Gamma conjectures, 2014, arXiv: 1404.6407.
+ [6] S. Mori and S. Mukai, “Classification of Fano 3-folds with b2 ⩾ 2”, Manuscripta
+     Math. 36:2 (1981), 147–162.
+ [7] V. A. Iskovskih, “Fano 3-folds. I”, Izv. Akad. Nauk SSSR Ser. Mat. 41:3 (1977),
+     516–562; English transl., Math. USSR-Izv. 11:3 (1977), 485–527.
+ [8] V. A. Iskovskih, “Fano 3-folds. II”, Izv. Akad. Nauk SSSR Ser. Mat. 42:3 (1978),
+     506–549; English transl., Math. USSR-Izv. 12:3 (1978), 469–506.
+ [9] V. A. Iskovskikh and Yu. G. Prokhorov, “Fano varieties”, Algebraic geometry. V,
+     Encyclopaedia Math. Sci., vol. 47, Springer, Berlin 1999, pp. 1–247.
+[10] V. Golyshev and J. Stienstra, “Fuchsian equations of type DN”, Commun. Number
+     Theory Phys. 1:2 (2007), 323–346.
+[11] F. Beukers, “On Dwork’s accessory parameter problem”, Math. Z. 241:2 (2002),
+     425–444.
+[12] D. Zagier, “Integral solutions of Apéry-like recurrence equations”, Groups and
+     symmetries, CRM Proc. Lecture Notes, vol. 47, Amer. Math. Soc., Providence, RI
+     2009, pp. 349–366.
+[13] A. B. Givental, “Equivariant Gromov–Witten invariants”, Internat. Math. Res.
+     Notices 1996:13 (1996), 613–663.
+[14] V. V. Przyjalkowski, “Gromov–Witten invariants of Fano threefolds of genera 6
+     and 8”, Mat. Sb. 198:3 (2007), 145–158; English transl., Sb. Math. 198:3 (2007),
+     433–446.
+[15] W. Fulton and C. Woodward, “On the quantum product of Schubert classes”,
+     J. Algebraic Geom. 13:4 (2004), 641–661.
+[16] A. Beauville, “Quantum cohomology of complete intersections”, Mat. Fiz. Anal.
+     Geom. 2:3-4 (1995), 384–398.
+[17] V. Golyshev and M. Vlasenko, Equations D 3 and spectral elliptic curves, 2012,
+     arXiv: 1212.0205.
+[18] V. V. Przyjalkowski, “Minimal Gromov–Witten rings”, Izv. Ross. Akad. Nauk Ser.
+     Mat. 72:6 (2008), 203–222; English transl., Izv. Math. 72:6 (2008), 1253–1272.
+[19] R. Apéry, “Irrationalité de ζ(2) et ζ(3)”, Astérisque, vol. 61, Soc. Math. France,
+     Paris 1979, pp. 11–13.
+                         Gamma conjecture for Fano 3-folds of rank 1                    49
+
+[20] A. van der Poorten, “A proof that Euler missed . . . Apéry’s proof of the
+     irrationality of ζ(3). An informal report”, Math. Intelligencer 1:4 (1979),
+     195–203.
+[21] B. Dubrovin, “Geometry and analytic theory of Frobenius manifolds”, Proceedings
+     of the International Congress of Mathematicians, Vol. II (Berlin 1998), Doc. Math.,
+     1998, Extra Vol. II, 315–326.
+[22] M. Eichler and D. Zagier, “On the zeros of the Weierstrass ℘-function”, Math. Ann.
+     258:4 (1982), 399–407.
+[23] F. Brown, “Single-valued motivic periods and multiple zeta values”, Forum Math.
+     Sigma 2 (2014), e25.
+[24] F. Brown, Irrationality proofs for zeta values, moduli spaces and dinner parties,
+     2014, arXiv: 1412.6508.
+[25] A. Givental, “A mirror theorem for toric complete intersections”, Topological field
+     theory, primitive forms and related topics (Kyoto 1996), Progr. Math., vol. 160,
+     Birkhäuser Boston, Boston, MA 1998, pp. 141–175.
+[26] H. Iritani, “An integral structure in quantum cohomology and mirror symmetry for
+     toric orbifolds”, Adv. Math. 222:3 (2009), 1016–1079.
+[27] V. V. Przyjalkowski, “Weak Landau–Ginzburg models of smooth Fano threefolds”,
+     Izv. Ross. Akad. Nauk Ser. Mat. 77:4 (2013), 135–160; English transl., Izv. Math.
+     77:4 (2013), 772–794.
+[28] L. Katzarkov, M. Kontsevich, and T. Pantev, Bogomolov–Tian–Todorov theorems
+     for Landau–Ginzburg models, 2014, arXiv: 1409.5996.
+[29] S. Galkin, G-Fano threefolds are mirror-modular, Preprint IPMU, 10-0150, 2010.
+[30] S. Galkin, On Apéry constants of homogeneous varieties, Preprint SFB45, 2008.
+[31] C. van Enckevort and D. van Straten, “Monodromy calculations of fourth order
+     equations of Calabi–Yau type”, Mirror symmetry V, AMS/IP Stud. Adv. Math.,
+     vol. 38, Amer. Math. Soc., Providence, RI 2006, pp. 539–559.
+
+Vasily V. Golyshev                                                      Received 25/JAN/15
+Institute for Information Transmission Problems,                                  9/JUN/15
+Russian Academy of Sciences, Moscow                                Edited by A. V. DOMRIN
+E-mail: golyshev@mccme.ru
+
+Don Zagier
+Max Planck Institute for Mathematics,
+Bonn, Germany
+International Centre for Theoretical Physics,
+Trieste, Italy
+E-mail: dbz@mpim-bonn.mpg.de
+

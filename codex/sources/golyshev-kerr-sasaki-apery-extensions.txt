@@ -1,0 +1,2044 @@
+                                                                                  APÉRY EXTENSIONS
+
+                                                                 VASILY GOLYSHEV, MATT KERR, AND TOKIO SASAKI
+arXiv:2009.14762v3 [math.AG] 10 Jul 2023
+
+
+
+
+                                                   Abstract. The Apéry numbers of Fano varieties are asymptotic invariants of their quantum
+                                                   differential equations. In this paper, we initiate a program to exhibit these invariants as
+                                                   (mirror to) limiting extension classes of higher cycles on the associated Landau-Ginzburg
+                                                   models — and thus, in particular, as periods. We also construct an Apéry motive, whose
+                                                   mixed Hodge structure is shown, as an application of the decomposition theorem, to contain
+                                                   the limiting extension classes in question.
+                                                      Using a new technical result on the inhomogeneous Picard-Fuchs equations satisfied by
+                                                   higher normal functions, we illustrate this proposal with detailed calculations for LG-models
+                                                   mirror to several Fano threefolds. By describing the “elementary” Apéry numbers in terms of
+                                                   regulators of higher cycles (i.e., algebraic K-theory/motivic cohomology classes), we obtain
+                                                   a satisfying explanation of their arithmetic properties. Indeed, in each case, the LG-models
+                                                   are modular families of K3 surfaces, and the distinction between multiples of ζ(2) and ζ(3)
+                                                   (or (2πi)3 ) translates ultimately into one between algebraic K1 and K3 of the family.
+
+
+
+
+                                                                                      1. Introduction
+                                             Over the years since Apéry’s discovery of a proof of irrationality of ζ(3) in 1979, his
+                                           recursions
+                                                           n3 un − (34n3 − 51n2 + 27n − 5)un−1 + (n − 1)3 un−2 = 0,            (A3)
+                                           and
+                                                                   n2 un − (11n2 − 11n + 3)un−1 − (n − 1)2 un−2 = 0,                               (A2)
+                                            originally viewed as interesting individuals rather than members of an important species
+                                           — to follow Siegel’s distinction — have gradually come to be seen as being the two most
+                                           basic instances of Fuchsian DEs arising from the class of extremal Calabi–Yau pencils which
+                                           appears in various subjects in algebraic and arithmetic geometry. This makes them natural
+                                           models for case studies of this class. In each of the two cases, a unique normalized integral
+                                                                           (A3)    P       2 n+k 2        (A2)   Pn      
+                                                                                                                         n 2 n+k
+                                                                                                                                  
+                                           solution {an } exists, namely an = nk=0 nk           k
+                                                                                                     , and an    =   k=0 k     k
+                                                                                                                                   . By
+                                           considering the solutions {bn } with the initial conditions b0 = 0, b1 = 1, and the rate of
+                                           convergence of the ratios bn /an to the limits
+                                                                           (A3)                               (A2)
+                                                                           bn   1                             bn   1
+                                                                     lim      =   ζ(3)        and       lim      =   ζ(2),
+                                                                    n→∞ a(A3)   6                      n→∞ a(A2)   5
+                                                                         n                                  n
+
+                                           Apéry was able to deduce the irrationality of ζ(3) and improve the known order of irra-
+                                                                                             (B3)       (A2)                (B3)
+                                           tionality of ζ(2). Now, to make a story, we put an     = 2n
+                                                                                                     n
+                                                                                                        an . Clearly, the {an }
+                                           satisfy
+                                                 n3 un − (22n3 − 33n2 + 17n − 3)un−1 + 16(n − 3/2)(n − 1)(n − 1/2)un−2 = 0,                        (B3)
+                                                                                                1
+2                            V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+                            (B3)   (B3)1
+                                                                                            P
+and the limit of the ratio bn /an is 10  ζ(2). Passing to the generating series Φ(t) =          cn tn
+with cn = an or bn and translating recursions into differential equations, we have
+                  (D − 1)L(A3) Φ(A3) (t) = 0 resp. (D − 1)L(B3) Φ(B3) (t) = 0
+with                                                         
+                  L(A3) = D 3 − t (2 D + 1) 17 D 2 + 17 D + 5 + t2 (D + 1)3
+and
+                                                    
+       L(B3) = D 3 − 2 t (2 D + 1) 11 D 2 + 11 D + 3 − 4 t2 (D + 1) (2 D + 3) (2 D + 1)
+   The differental operators L(A3) and L(B3) have quite a lot in common:
+       • quite naively, both are linear third-order differential operators of degree 2 in t;
+       • more specifically, both are operators of D3 type [GS07], which implies that the ith
+         coefficient in t is odd as a polynomial in D + i/2;
+       • each is a Picard–Fuchs operator which controls the variation of polarized Hodge
+         structure arising in the relative H 2 in a Shioda–Inose pencil of K3 surfaces;
+       • both are extremal, in the sense that the parabolic cohomology groups IH1 (P1 , –) of
+         the associated local systems vanish;                                  P∞         n
+       • both are modular, in the sense that in each case the solution            n=0 an t can be
+         identified with the expansion of a certain weight 2 level N Eisenstein series with
+         respect to a Hauptmodul on X0∗ (N = 6 and 5, respectively);
+       • each is the regularized quantum differential operator of a Fano complete intersection in
+         a G/P (namely, a 7–fold hyperplane section of OG(5, 10) for (A3) and an intersection
+         of two hyperplanes and a quadric in G(2, 5) for (B3)). It is this interpretation of (A3)
+         and (B3) as Picard–Fuchs operators in the Landau–Ginzburg models of such ‘Mukai
+         threefolds’ that we are concerned with in the present paper.
+Yet, in spite of all these similarities, the Apéry limit bn /an is proportional to ζ(3) in the first
+case resp. to ζ(2) in the second. Two natural questions arise:
+   (1) On the A–side of mirror symmetry, does the Apéry limit reflect the geometry of a
+Fano? Inspecting the five cases of Mukai threefolds V2n , n = 5, . . . , 9, one notices that the
+cases with limn→∞ bn /an of weight 3 match the rational Fanos V12 , V16 and V18 , while those
+of weight 2 correspond to the irrational V10 and V14 .
+   (2) On the B–side, what properties of the Landau–Ginzburg pencil control the weight of
+the Apéry limit?
+   A conceptual answer to both questions, unconditional for (2) but HMS–contingent for (1),
+is that it is ultimately the structure of the ‘south pole’ (t = ∞) fiber of the LG pencil that
+is responsible for the weight of the Apéry limit. Indeed, by HMS for Fanos, the structure of
+a Landau–Ginzburg model in the neighborhood of the south pole is expected to be related
+to the residual category [KS20], i.e. the semiorthogonal complement to the subcategory
+      b
+of Dcoh  (F ) generated by an incomplete exceptional collection. For a rational threefold the
+                                                                                     b
+properties of the residual category are closer, in a sense, to those of the Dcoh         of a bona
+fide algebraic variety than in the irrational cases. One notices a similararity here with how
+the intermediate Jacobian of a threefold can have properties inconsistent with being the
+full motive of a curve. Nevertheless, one can unconditionally relate the structure of the
+                                       APÉRY EXTENSIONS                                           3
+
+south-pole fiber to the Lefschetz decomposition of the cohomology of the Fano unsections –
+ambient varieties in which our Fano sits as a hyperplane section or a complete intersection.
+If the first non–trivial primitive class occurs in H 4 , rather than in H 6 or higher, the Apéry
+constant is going to have weight 2, in agreement with the gamma conjecture.
+   The present paper offers mainly a Hodge–theoretic answer to (2). In a nutshell, the struc-
+ture of the south-pole fiber, or more precisely, the type of the south–pole LMHS, dictates the
+Hodge type of the Hodge module whose underlying differential operator is (D −1)L: the ζ(3)
+(and L(χ−3 , 3)) cases correspond to extensions encoded by a class in relative HM   3
+                                                                                      (K3, Q(3)),
+while the ζ(2) cases correspond to extensions associated with HM (K3, Q(2)). In K–theoretic
+                                                                    3
+
+terms, the distinction is between the K3 and K1 groups of relative K3 surfaces respectively.
+A more general, heuristic view that suggests itself is this: just as the Fano F knows the quan-
+tum cohomology of its unsection, the LG-model of F remembers the asymptotics of periods
+of the LG-model of its unsection, expressed as solutions to inhomogeneous PF-equations
+L(−) = g(t) which underlie generalized normal functions.
+   Arithmetic Mirror Symmetry. Despite a smattering of examples in recent years
+[MW09, DK11, JW14, DK14], the role of algebraic cycles and their invariants in mirror
+symmetry remains something of a mystery. The above discussion suggests a new link in the
+context of Fano/LG-model duality, whose formulation (backed up by nontrivial evidence) is
+a principal goal of this paper.
+   One of the features of local mirror symmetry uncovered in [DK14, BKV17] was the en-
+trance of mixed Hodge structures, whose extension classes are described on the B-model
+side by regulators on algebraic K-theory. These same regulator classes, called higher normal
+functions when they occur in families, are at the heart of the second author’s interpretation
+[Ke17] of Apéry’s irrationality proofs for ζ(2) and ζ(3). It was in an effort to “recombine”
+this with the first author’s enumerative, A-model interpretation [Go09] of Apéry’s recurrence
+(see also [Ga16]), that the animating slogan of this paper suggested itself:
+Arithmetic Mirror Symmetry Problem: For each Fano n-fold F admitting a toric
+degeneration, show that its Apéry numbers arise as
+     • limits of (classical and higher ) normal functions produced by cycles on a 1-parameter
+        family of CY (n−1)-folds defined over Q̄,
+together with
+     • extension classes in the monodromy-invariant part of a limiting MHS of the family.
+
+A more detailed statement of this problem may be found in §5.2.
+  While computations by G. da Silva [dS19] appeared to support this line of thinking for
+the rational Fano 3-folds in [Go09], there initially seemed to be little hope for the Apéry
+           1
+numbers 10   ζ(2), 71 ζ(2) of the non-rational Fanos V10 , V14 , with neither the “deresonation off
+the motivic setting” nor the “quantum Satake” argument on the irregular side offering an
+explanation of these numbers as periods. Moreover, the model of [Ke17], in its limitation to
+Knalg of CY (n − 1)-folds, could only produce rational multiples of (2πi)3 or ζ(3) if n = 3.
+However, a new paradigm began to emerge around two years ago, allowing a much greater
+variety of cycles to enter. Our main result is thus the following affirmative solution to the
+Arithmetic Mirror Symmetry Problem (more precisely, to Problem 5.3):
+4                               V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+Theorem 1.1. The Apéry numbers of the five Mukai Fano threefolds1 are limits of higher
+normal functions arising from motivic cohomology classes on associated Landau-Ginzburg
+models.
+   The Theorem is proved in §§5.3-5.5 (modulo a detail deferred to §6), using a new result on
+inhomogeneous Picard-Fuchs equations satisfied by higher normal functions (Theorem 5.1).
+In §6 we propose a theory of “Apéry extensions” on the B-model side, which encompasses
+these examples, and highlight some implications of an affirmative solution to Problem 5.3.
+In §§2-4 we place our story in context, recalling the mixed Hodge theory of GKZ systems
+and local mirror symmetry, quantum D-modules and Apéry constants of Fanos, and higher
+normal functions on Landau-Ginzburg models. In the rest of this Introduction, we would
+like to convey the idea of what an Apéry extension is and why it is important.
+           π
+   Let X → P1 be a family of compact CY (n − 1)-folds with smooth total space and fibers2
+Xt = π −1 (t), smooth off Σ = {0, t1 , . . . , tc , ∞}. Laurent polynomials φ(x) ∈ Q̄[x±1           ±1
+                                                                                       1 , . . . , xn ]
+with reflexive Newton polytope ∆ are a key source for such families, with X obtained by
+blowing up P∆ along {φ = 0} ∩ (P∆ \Gnm ), and π extending 1/φ. In particular, the mirror
+LG-model of a Fano F degenerating to P∆◦ (like those in [Go09, Ga16]) arises in this way.
+                                                 πU
+   The cohomologies of the fibration XU →            U := P1 \Σ produce VHSs Hℓ = Hfℓ ⊕ Hvℓ with
+“fixed” and “variable” parts. At each σ ∈ Σ, we have the LMHS functor ψσ and monodromies
+Tσ . All our families will have maximal unipotent monodromy at the “north pole” σ = 0;3 for
+simplicity, here we also assume4 rk(Tσ −I) = 1 if σ 6= 0, ∞, and ker{H n (Xσ ) → ψσ Hn } = {0}
+(∀σ). Then we may write A†φ := H n (X \X0 , X∞ ) as an extension
+
+(1.1)                  0 → (ψ∞ Hvn−1 )T∞ → A†φ → IH1 (P1 \{0}, Hvn−1) → 0.
+of MHS. Now the Apéry numbers of F record limits of ratios of solutions to its quantum
+difference equation (Definition 3.5); and a first approximation to the Problem is to find them
+in the extension class of (1.1).
+   Unfortunately, extension classes of MHS do not produce well-defined numbers. For in-
+stance, we have Ext1MHS (Q(−a), Q(0)) ∼    = C/Q(a), which (say) would make 10    1
+                                                                                    ζ(2) trivial in
+C/Q(2). This is where writing them as limits of admissible normal functions 5 enters: if
+(1.1) arises as limt→0 ν(t) for some ν ∈ ANF(Hvn−1 (r)), and k := rk((ψ0 Hvn−1 )T0 ), then ν has
+a unique lift ν̃ on the disk |t| < |tk+1 | to a single-valued section of Hvn−1 . Pairing this with
+a suitable section ω ∈ Γ(P1 , F n−1 Hv,e
+                                      n−1
+                                           ) yields a truncated higher normal function (THNF)
+V (t) = hν̃, ωi whose first k Taylor coefficients in t are well-defined complex numbers refining
+the information in A†φ . So higher normal functions get us from extension data to constants,
+and this is why it is better to state the Problem in terms of their limits. But which HNF to
+choose? Here are two candidates.
+1These are, by definition, the rank-one Fano 3-folds arising as complete intersections in the Grassmannians
+of simple Lie groups other than projective spaces [Go09]; they are V10 , V12 , V14 , V16 , and V18 .
+2written X̃
+           t in the body of the paper
+3“North” refers to the infinity point of the Landau-Ginzburg potential; since we work primarily in a neigh-
+borhood of this point, however, it is t = 0 for us.
+4
+ in the Introduction, but not in the body of the paper
+5Admissible normal functions are reviewed in §4.2 below.
+                                      APÉRY EXTENSIONS                                         5
+
+  Consider the VMHS Aσφ := H n (X \Xσ , Xt ) over U (σ = 0 or ∞). As an extension it reads
+(1.2)                   0 → Hvn−1 → Aσφ → IH1 (P1 \{σ}, Hvn−1) → 0,
+in which the IH term is a constant VMHS. Taking first σ = 0, A†φ = (ψ∞ A0φ )T∞ is recovered
+as the “south pole” limit of A0φ . If Hvn−1 is extremal (cf. §6) with Hodge numbers all 1,
+then IH1 (P1 \{0}, Hvn−1) ∼
+                          = Q(−n), and (1.2) gives a normal function in ANF(Hvn−1 (n)).
+According to the Beilinson-Hodge conjecture (cf. Conjecture 4.8 below), this should come
+from a “Kn ” cycle (in CHn (X \ X0 , n)), recovering the paradigm of [Ke17].
+   The alternate (σ = ∞) perspective is to view A†φ = [(ψ0 A∞      T0 ∨
+                                                                φ ) ] (−n) as a “north pole”
+limit. This can make a huge difference, since A∞        0
+                                               φ and Aφ are not dual in general (although the
+                                                                        µ
+invariant parts of their limits are). Indeed, for any morphism Q(−a) ֒→ IH1 (P1 \{∞}, Hvn−1),
+the µ∗ -pullback
+(1.3)                        0 → Hvn−1 → µ∗ A∞
+                                             φ → Q(−a) → 0
+
+of (1.2) belongs to ANF(Hvn−1 (a)), and (by Beilinson-Hodge again) should arise from a
+“K2a−n ” cycle (in CHa (X \X∞ , 2a−n)). It is the extensions of VMHS (1.3) that we call Apéry
+extensions (Definition 6.4). In the families of K3s mirror to V10 and V14 , we have a = 2,
+and the corresponding normal functions do indeed arise from torically natural K1 -cycles
+                                           1
+whose THNFs have the north pole limits 10    ζ(2), 71 ζ(2). This change in perspective came as a
+revelation since, for these and similar cases, the south-pole approach is not computationally
+viable (Remark 6.6).
+Acknowledgments. VG and MK are grateful to the members of the International groupe
+de travail on differential equations in Paris for the stimulating discussions of some of the
+material of this paper, and the Max Planck Institute for Mathematics for support during
+our visits there. MK also thanks A. Harder, B. Lian and T. Pantev for relevant discussions.
+This work was partially supported by Simons Collaboration Grant 634268 and NSF Grant
+DMS-2101482 (MK).
+
+                           2. Generic Laurent polynomials
+2.1. GKZ system. Fix a vector a ∈ CN +1 and a convex polytope ∆ ⊂ Rn+1 containing
+the origin, with vertices in ZN +1 . The corresponding toric variety P∆ compactifies GN
+                                                                                      m
+                                                                                        +1
+
+(with coordinate x). Let M ⊆ ZN +1 denote the monoid generated by M := ∆ ∩ (ZN +1 \
+{0}) and L ⊂ Z|M| the lattice of relations; we assume for simplicity that Mgp = ZN +1
+and M = ZN +1 ∩ Cone0 (∆). The coefficients λ of the generic Laurent polynomial f (x) =
+P            m
+   m∈M λm x parametrize the affine parameter space on which we define the GKZ system of
+partial differential operators:
+                      (          P
+                            Zi = m∈M mi δλm + ai       (i = 0, . . . , N)
+(2.1)                          Q      ℓm  Q       −ℓm
+                         ℓ = ℓm >0 ∂λm − ℓm <0 ∂λm (ℓ ∈ L ⊂ Z|M| )
+
+Proposition 2.1. For each relative cycle C on (P∆ \ {f = 0}, D∆ \ {f = 0}), the function
+                                         ˆ
+(2.2)                         PC (λ) =     xa ef (x) dlog(x)
+                                             C
+6                              V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+is a (local) solution of (2.1).
+
+Check: Applying Zi to PC gives
+                   ˆ                             ˆ
+                       a              f
+                      x (δxi f + ai )e dlog(x) =   d[xa ef dlog(xî )] = 0,
+                       C                                   C
+
+while applying ℓ yields
+                           P               P
+                  ˆ
+                                     ℓ m             (−ℓ )m
+                      xa (x m : ℓm >0 m − x m : ℓm <0 m )ef dlog(x) = 0.
+                      C
+
+The solutions are (analytically) local because the cycles C , and hence their period integrals
+P, have monodromy about divisors in A|M| .                                                  
+
+    Since the corresponding D = C[λ, ∂λ ]-module
+                                       a,∆
+(2.3)                                 τGKZ := D/Dh{Zi }, {ℓ }i
+
+is holonomic [Ad94, Thm 3.9], the (local) solutions module
+
+(2.4)                          HomD (τ, Ôλ0 ) ≃ HomC (Cλ0 ⊗C[λ] τ, C)
+
+at a point λ0 ∈ C|M| is finite-dimensional. We shall think of (2.3) and (2.4) as “cohomology”
+and “homology” respectively, motivated by the parametrization of solutions by relative cycles;
+this will be made more precise in §2.3.
+
+2.2. Periods and residues. Given m ∈ ZN +1 , write deg(m) =: κ for the minimal κ ∈
+Z≥0 such that κ∆ ∋ m. The ring R = C[λ][xM ], its Jacobian ideal Jf = ({∂xi f }N
+                                                                               i=0 ),
+and the Jacobian ring R/Jf are thereby graded by degree. Moreover, sending p(x) 7→
+p(x)xa ef (x) dlog(x) induces a grading on τGKZ
+                                            ∆
+                                                and a graded isomorphism
+                                                       ∼
+                                                       =∆
+(2.5)                                  gr(R/Jf ) −→ gr(τGKZ ).
+                                                  gr(D)
+
+
+Specializing λ to a very general point λ0 (and hence R to R0 = C[xM ]), the graded pieces
+have dimensions
+                                                N
+                                                X +1
+                                                                 
+(2.6)                             0
+                           dimC (R /Jf )(k) =         (−1)j N j+1 dim(R(k−j)
+                                                                       0
+                                                                             ),
+                                                j=0
+
+            0
+(where dim(R(k−j) ) counts the points of degree k − j in M) with sum over k
+
+(2.7)                             dimC (R0 /Jf ) = (N + 1)! vol(∆).
+
+See [Ad94, (5.3) and Cor. 5.11].
+                                       APÉRY EXTENSIONS                                           7
+
+Irregular case in mirror symmetry: A polytope ∆ ⊂ Rn with integer vertices is reflexive
+iff its polar polytope ∆◦ also has integer vertices; this implies that both have 0 as unique
+interior integer point. Fixing such a ∆, take ∆ := ∆ and a = 0. (Note that N = n − 1.)
+Then we have a graded isomorphism of A- and B-model D-modules
+(2.8)                                QH ∗ (P∆◦ ) ∼
+                                                 = τ∆       GKZ
+                                                      gr
+
+with the grading by deg
+                     2
+                        on the left-hand side (see [Ir19]).
+Example 2.2. Let ∆ be the triangle in the figure. Choose λ so that the cycle T2 ∼
+                                                                                = S1 × S1
+               given by |x1 | = |x2 | = 1 avoids the zero-locus of f = λ1 x1 + λ2 x2 +
+    λ2         λ3 x−1   −1
+                    1 x2 , so that C = T is a relative cycle. By (2.6)-(2.7), the rank of
+                                          2
+
+               τ is 3, with three graded pieces each of rank 1. Computing the period in
+               (2.2) now gives
+           λ1                     ˆ                     X ˆ                   X (λ λ λ )m
+                  1          1       f             1      1       n                1 2 3
+λ3              (2πi)2
+                       P = (2πi)2
+                                    e  dlog(x) = (2πi)2   n!
+                                                                f   dlog(x) =       (m!)3
+                                                                                          ,
+                                      T2                          n≥0     T2         m≥0
+                                                                      ∆
+which is an irregular/exponential period. In particular, we see that τGKZ does not underlie
+a classical VHS or VMHS.
+Regular case in mirror symmetry: With ∆ as above, take ∆ ⊂ R1+n to be the convex hull of
+the origin and {1} × ∆ (so that now N = n), and put a := (1, 0). We denote the resulting
+                   ∆                               ∆                      1
+GKZ system by τ̂GKZ   . It has the same rank as τGKZ     since vol(∆) = (n+1)! vol(∆). Rather
+than being isomorphic, the two are related (roughly) by Fourier-Laplace transform; and (as
+will be explained in §2.3) we have an isomorphism of D-modules
+(2.9)                             QH ∗(+2) (KP ◦ ) ∼
+                                           c      ∆
+                                                   = τ̂ ∆ ,     GKZ
+                                                           gr
+
+where KP∆◦ is the total
+                    P space of the  canonical line bundle on P∆◦ .
+                                  m
+  Now let φλ (x) = m∈∆∩Zn λm x be a general Laurent polynomial on ∆ and Γ a relative
+n-cycle in (P∆ \ {φ = 0}, D∆ \ {φ = 0}). With f = x0 φ(x) and C = R− × Γ, the periods in
+(2.2) take the form
+(2.10)ˆ                     ˆ ˆ 0                     ˆ               ˆ               
+             f dx0                    x0 φ                 dlog(x)               dlog(x)
+P=       x0 e x0 ∧dlog(x) =          e dx0 dlog(x) =        φ(x)
+                                                                   = 2πi Resφ=0 φ(x)
+       C                       Γ    −∞                                Γ         γ
+
+if Γ = Tube(γ) for γ ⊂ {φ = 0}. In particular, these are (regular) periods of a variation of
+mixed Hodge structure.
+Example 2.3. With ∆ as in Ex. 2.2, ∆ is the tetrahedron in the figure. Taking Γ = T2 in
+                           (2.10) and writing t = λ1 λλ32 λ3 , Cauchy residue gives for |t| < 27
+                                                                                               1
+                λ2                                       0
+
+                                                     dlog(x)/(2πi)2               1 X (3m)! m
+                                        ˆ
+         λ0        λ1         1
+                                   P =                                 −1 −1 =                   t .
+                            (2πi)2
+                                          T2 λ0 + (λ1 x1 + λ2 x2 + λ3 x1 x2 )    λ0 m≥0 (m!)3
+ λ3
+                                       ∆
+                           Since rk(τ̂GKZ  ) = 3, one expects 3 distinct periods related to the
+                           geometry of the family of elliptic curves Et = {φλ (x) = 0}, which
+has a type I9 singular fiber at t = 0.
+8                              V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+  Fix λ0 = 1. If {α, β} is a symplectic basis for H1 (Et ), with α vanishing at t = 0, we can
+take Γ to be Tube(α) ≃ T2 (P holomorphic in t), Tube(β) (P ∼ 2πi    9
+                                                                       log(t)), or σ := R− ×R−
+         9      2
+(P ∼ 2(2πi)2 log (t)). Note that only the first two are “periods of Et ”.
+2.3. Mixed Hodge theory of GKZ. Continuing with the “regular case” above, and re-
+calling that D∆ := P∆ \ Gnm , we set Xλ := {φλ (x) = 0} and ∂Xλ := Xλ ∩ D∆ . By
+                                                         ∆
+Prop. 2.1, we know that at least some solutions of τ̂GKZ     are parametrized by the choice
+of Γ ∈ Hn (P∆ \ Xλ , D∆ \ ∂Xλ ), which (as a best-case scenario) suggests the following
+Theorem 2.4 ([HLYZ16]). We have a canonical isomorphism
+(2.11)                   τ̂ ∆ ∼
+                              = H n (P∆ \ Xλ , D∆ \ ∂Xλ ),
+                                  GKZ
+
+in which the D-module structure on the RHS is defined by the Gauss-Manin connection.
+    The connection to mirror symmetry is amplified by
+Theorem 2.5 (Conjectured by [KKP17], proved by [Ha21] (n = 3) and [Sa18]).
+         dim GrFn−k H n (P∆ \ Xλ , D∆ \ ∂Xλ ) = dim H k,k (P∆◦ ) = dim Hck+1,k+1(KP∆◦ ).
+This refines (2.11) into a graded isomorphism strongly reminiscent of Griffiths’s residue
+theory [Gr69], with grk (resp. multiplication by x0 xm as a map from grk → grk+1 ) on the
+left matching GrFn−k (resp. ∇∂λm : GrFn−k → Grn−k−1
+                                                F     ) on the right.
+   However, the RHS of (2.11) is a (variation of) mixed Hodge structure, with a nontrivial
+weight filtration. While intersection theory on the A-model KP∆◦ allows us to compute a
+basis of solutions to GKZ via mirror symmetry (Thm. 2.6 below), it is unclear how to see
+the weight filtration directly in these terms. To elaborate, we pose two questions:
+(1) How might one isolate the highest weight part GrW
+                                                    n+1 of (2.11) (i.e., H
+                                                                           n−1
+                                                                               (Xλ )) within
+the setting of GKZ solutions?
+
+Under mirror symmetry we have the correspondences:
+• m ∈ M ←→ divisors [Dm ] ∈ H 2 (P∆◦ );
+• relations ℓ ∈ L ←→ curves [Cℓ ] ∈ H2 (P∆◦ ); and
+• Mori cone L≥0 ⊂ L ←→ effective curve classes.
+                                                                       (i)
+We assume L≥0 is simplicial with basis {ℓ(i) }, and put ti := λℓ             (e.g. t = λ1 λλ23 λ3 above),
+                                                                                            0
+
+τi := log(t
+        2πi
+           i)
+              . The isomorphism class of Xλ (=: Xt ) depends only on t.
+Theorem 2.6 ([HLY96]). The (C-linear combinations of ) periods P of τ̂GKZ           ∆
+                                                                                         are the (C-
+linear combinations of ) coefficients of cohomology classes in
+         X Qm : ℓ <0 Dm (Dm −1)···(Dm +ℓm +1)
+  B∆ :=         Qm
+                         (Dm +1)···(Dm +ℓm )
+                                              (D0 − 1) · · · (D0 + ℓ0 )λℓ+D ∈ H ∗ (P∆◦ ) ⊗ C[[t]][τ ].
+                   m : ℓm >0
+         ℓ∈L≥0
+
+Conjecture 2.7 (Hyperplane Conjecture [HLY96, LZ21]). The periods of (∇-flat sections
+of ) H n−1 (Xt ) are the (C-linear combinations of ) coefficients of cohomology classes in B∆ ∪
+[X ◦ ], where X ◦ ⊂ P∆◦ is an anticanonical hypersurface.
+                                                 APÉRY EXTENSIONS                                        9
+
+Example 2.8. With ∆ as in Examples 2.2-2.3, we have P∆◦ = P2 , [X ◦ ] = 3[H] (for H a
+hyperplane in P2 ), and
+               B∆ = [1](holo. period) + [H](log period) + [H]2 (log2 period).
+In this case
+                     B∆ ∪ [X ◦ ] = [H](holo. period) + [H]2 (log period),
+and so the hyperplane conjecture correctly asserts that the holomorphic and log periods are
+the actual periods of H 1(Et ).
+(2) Can we compute the remaining GKZ periods, especially those which yield extension
+classes of GrW
+             n+1 by other weight-graded pieces?
+
+
+Here “compute” means using the A-model. We know at present of no (even conjectural)
+intrinsic A-model description of the full weight filtration. An extrinsic one, which we shall
+now sketch, was obtained in [BKV17] by presenting KP∆◦ as the large-fiber-volume limit
+of compact elliptically-fibered Calabi-Yau (n + 1)-folds. (Though [op. cit.] treats the case
+n = 2, this works in general.) To obtain these families of higher-dimensional CYs, let ⋄ ⊂ R2
+be the convex hull of {(−1, 1), (−1, −1), (2, −1)}, and ∆    ˆ ⊂ Rn+2 be the convex hull of
+∆ × (−1, −1) and 0 × ⋄. There are torically-induced morphisms P∆ˆ → P∆ and P∆ˆ ◦ → P∆◦
+which restrict to elliptic fibrations on anticanonical (CY-)hypersurfaces X̂, X̂ ◦ .
+   In particular, write X̂t,s for the closure of the zero-locus of Φ(x, u, v) := a + bu2 v −1 +
+                                            2 3
+cu−1 v −1 + φλ (x)u−1 v −1 , where s := λ0ab6 c . Instead of the large complex-structure limit
+(t → 0 and s → 0), we take only s → 0. This has the effect of degenerating the generic fiber
+of X̂t,s → P∆ and decompactifying that of X̂ ◦ → P∆◦ , resulting in the diagram
+
+(2.12)                                 KP ∆ ◦                                X̂t,0 ❖
+                             A1 ♦♦♦         O✤                                 O✤      ❖❖❖I5
+                                                                                           ❖❖❖
+                            ♦♦       ✤                                         ✤
+                      w w ♦♦
+                       ♦                              Batyrev
+                                                                                              ❖❖' '
+                  P∆ g❖g ❖                                                                     ♦7 7 P∆
+                                       ✤                                       ✤
+                    ◦            s→0                  o /o /o /o /o /                s→0
+                                         ✤             mirror                    ✤
+                           ❖❖❖
+                               ❖           ✤                                       ✤      ♦♦♦♦♦
+                                                                                         ♦
+                             ell.                                                        ell.
+                                      X̂ ◦ ⊂ P∆ˆ ◦                      P∆ˆ ⊃ X̂t,s
+
+with solid arrows labeled by generic fiber type. The singular CY X̂t,0 has the Hori-Vafa
+model
+                       Yt := X̂t,0 ∩ (Gnm × A2 ) = {φλ (x) + uv = 0},
+a smooth noncompact CY (n + 1)-fold, as a Zariski open subset, and one has the
+Theorem 2.9 ([DK11, BKV17]). There are isomorphisms of Q-VMHS
+(2.13)           H n+1 (X̂t,0 ) ∼
+                                = Hn+1 (Yt )(−n − 1) ∼
+                                                     = H n (P∆ \ Xt , D∆ \ ∂Xt ).
+                                                                     ∆
+   Now by Theorem 2.4, the RHS of (2.13) identifies with τ̂GKZ         . On the other hand, Ir-
+itani’s results [Ir11] on Γ̂-integral structure allow us to explictly compute the LHS of the
+isomorphism
+(2.14)                              QH even (X̂ ◦ ) ∼
+                                                    = H n+1 (X̂t,s )
+10                              V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+of A- and B-model Z-VHS. Taking LMHS on both sides as s → 0
+(2.15)                     ψs QH even (X̂ ◦ ) ∼
+                                              = ψs H n+1 (X̂t,s ),
+the (unipotent) monodromy invariants
+(2.16)                              QHc∗(+2) (KP∆◦ ) ∼
+                                                     = H n+1(X̂t,0 )
+must agree as Q-VMHS.
+Example 2.10. For P∆◦ = P2 , the Hodge-Deligne diagrams6 for (2.14)-(2.16) are
+
+                                      LMHS                N
+                                                                ⊃
+                                       s→0                    ker(N )
+
+
+
+Here n = 2 and h2,1 (X̂t,s
+                       ◦
+                           ) = 2, while each of the GrkF (k = 0, 1, 2) in Theorem 2.5 (visible in
+the right-most diagram) has rank 1.
+                                                                  (KP∆◦ ) ∼
+                                                            ∗(+2)             ∆
+   The upshot is that we recover the isomorphism QHc                      = τ̂GKZ claimed in (2.9),
+while promoting it to an isomorphism of Q-VMHS. Moreover, we obtain the promised A-
+                                                   ∆
+model description of the weight filtration on τ̂GKZ    as the monodromy weight filtration M• =
+                                                                                              ∆
+W (N)[−n−1]• on LHS(2.16) ⊂ LHS(2.15). We may therefore use [Ir11] to compute W• τ̂GKZ            ,
+and the associated “mixed-Q-periods”, in terms of the intersection theory of P∆ˆ ◦ and Gromov-
+Witten theory of X̂ ◦ , restricted to classes of curves whose volume remains finite in the s → 0
+limit. This boils down to intersection theory and local GW theory of P∆◦ . (The reader who
+wants to see this worked out in detail in some n = 2 cases may consult [BKV17].)
+   So far, we have said nothing about the extensions of MHS in (2.11) which these mixed
+periods are supposed to help us compute. (For instance, the right-hand term of Example
+2.10 can be viewed as the dual of the extension associated to the regulator of a family of
+K2alg classes on the family Et of elliptic curves.) The analysis of these VMHS undertaken in
+§§3-4 works in a “more general” setting which allows us to drop the genericity assumption
+on φ.
+
+                               3. Special Laurent polynomials
+3.1. Landau-Ginzburg models. Instead of starting with a reflexive polytope and letting
+φ vary over the corresponding parameter space minus discriminant locus, we begin by fixing
+a Laurent polynomial φ ∈ C[x±1                ±1
+                                 1 , . . . , xn ]. We assume that its Newton polytope ∆ (the
+                                             m
+convex hull of those {m} for which x has nonzero coefficient) is reflexive; and fixing a
+maximal projective triangulation tr(∆◦ ), we also assume that the associated toric n-fold
+P∆ := PΣ(tr(∆◦ )) is smooth.7 Write D∆ := P∆ \ Gnm as before, Xt ⊂ P∆ for the Zariski closure
+of {1 = tφ(x)}, and Z := D∆ ∩ X0 for the base locus of the resulting pencil.
+   As in [DvdK98, Thm. 4], we may fix a sequence of blow-ups of P∆ (typically along
+successive proper transforms of components of Z) with composition β : X → P∆ , such that:
+6The number of dots in the (p, q) spot represents hp,q of the given MHS.
+7We will write P′
+                ∆ := PΣ(∆◦ ) for the singular toric n-fold (of which P∆ is a blow-up).
+                                      APÉRY EXTENSIONS                                        11
+
+• X is smooth;
+   1
+• φ(x) extends to a holomorphic map π : X → P1 ;
+• X \ π −1 (0) contains Gnm as a Zariski open subset; and
+• dlog(x) := dxx1
+                 1
+                   ∧ · · · ∧ dx
+                              xn
+                                n
+                                  extends to a holomorphic n-form on X \ π −1 (0).
+We shall assume that β may be chosen in such a way that this extended form is nowhere
+vanishing, so that the X̃t := π −1 (t) are Calabi-Yau for t not in the discriminant locus Σ.
+This is weaker than assuming φ “generic”, and implies that βt := β|X̃t : X̃t ։ Xt is a crepant
+resolution for t ∈
+                 / Σ (and also, that X \ X̃0 is a log Calabi-Yau variety). Despite the notation,
+X̃t is not smooth for t ∈ Σ.
+
+Definition 3.1. (a) The compact LG-model associated to φ is the family π : X → P1t of CY
+(n−1)-folds X̃t just constructed. We may view its total space X as a smooth compactification
+of the pencil {1 = tφ(x)} ⊂ Gnm × (P1t \ {0}), and X̃0 as a blow-up of D∆ .
+   (b) The (noncompact) LG-model associated to φ is the restriction X \X̃0 → P1t \{0} of π.
+
+Example 3.2. Here are some Laurent polynomials in 2 variables (for n = 3, see §§5.3-5.5),
+together with the Kodaira types of the singular fibers of π (first and last at t = 0 resp. ∞):
+
+              i          ∆(i)                  φ(i)              singular fibers
+
+
+                                                   1
+              1                           x + y + xy           I9 , I1 , I1 , I1 (, I0 )
+
+
+                                        16x + y − 3xy
+              2                                  1
+                                           −6 + xy                 I8 , I1 , I1 , II
+
+
+
+                                        (1−x)(1−y)(1−x−y)
+              3                                 xy
+                                                                   I5 , I1 , I1 , I5
+
+
+                                          x2
+                                          y
+                                             + xy + xy
+                                                     1          I6 , I1 , . . . , I1 , I1
+                                                                     | {z }
+              4                                  1    1
+                                             −4 33    2                 5 times
+
+
+
+                                                1              I3 , I1 , . . . , I1 (, I0 )
+                                                  F
+                                               xy 3                 | {z }
+              5
+                                        (F3 a general cubic)           9 times
+
+
+
+
+                                            (1+x+y)3
+              6                                xy
+                                                                    I3 , I1 , IV∗
+12                             V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+For instance, the last two share the same P∆ ∼  = P2 , but have different X ’s: obtained by
+blowing up at 9 distinct points (for the general cubic), vs. blowing up three times at each
+of three points.
+3.2. Variation of Hodge structure. On a neighborhood of t = 0, consider the family of
+vanishing (n − 1)-cycles γt on X̃t whose image under Tube : Hn−1 (X̃t , Z) → Hn (X \ X̃t , Z) is
+[β −1 (Tn )], where Tn := ∩ni=1 {|xi | = 1}. The family of holomorphic forms
+                                                             
+                                      1              dlog(x)
+(3.1)                    ωt :=             ResX̃t               ∈ Ωn−1 (X̃t )
+                                 (2πi)n−1           1 − tφ(x)
+then has the holomorphic period
+                            ˆ
+                                             1
+                                                    ˛
+                                                            dlog(x)    X
+(3.2)               A(t) :=     ωt =                                 =     ak tk ,
+                                  γt       (2πi)n       Tn 1 − tφ(x)   k≥0
+
+where ak = [φk ]0 are the constant terms in powers of φ.
+   Writing πU : XU → U for the restriction of π over U := P1 \ Σ, the local system Hn−1 :=
+Rn−1 (πU )∗ Q has maximal unipotent monodromy8 at t = 0. It underlies a (polarized) VHS
+with sheaf of holomorphic sections Hn−1 ∼    = Hn−1 ⊗ OU and Gauss-Manin connection ∇.
+In fact, we will work with the sub-local-system Hvn−1 orthogonal to the fixed part Hfn−1 =
+H 0 (U, Hn−1 ). The corresponding sub-VHS Hvn−1 ⊆ Hn−1 contains the Hodge line Hn−1,0 =
+        n−1
+(πU )∗ ΩXU
+            . On the level of dπU -closed-form representatives, the polarization h , i : Hvn−1 ×
+Hvn−1 → O is simply given by hω, ηi = X̃t ωt ∧ ηt .
+                                         ´
+
+   For simplicity, we shall henceforth assume that Hvn−1 is irreducible, not just as a Q-
+VHS but as a D-module (or C-VHS).9 Let L ∈ C[t, δt ] be the differential operator with
+(Hvn−1 , ∇) ∼= D/DL, of degree d and order r = rk(Hvn−1 ), normalized so that the coefficient
+     r
+of δt is 1 at t = 0.
+   A putative mirror to the LG-model is given by the following folklore
+Conjecture 3.3. There is a weak Fano n-fold (X◦ , ω), determined by the triple (P∆ , D∆ , Z)
+and admitting a toric degeneration to P′∆◦ , from which one may recover Hvn−1 . (In particular,
+for generic φ, we have X◦ = P∆◦ .)
+Conversely, it is hoped that by studying “special” Laurent polynomials and classifying the
+associated local systems, one obtains a classification of weak Fano varieties admitting a toric
+degeneration. While Conjecture 3.3 is vague as stated, it will be refined below: a mechanism
+for recovering Hvn−1 (in some cases) is given in Conjecture 3.3 bis; while the Hodge-theoretic
+sense in which X◦ is mirror to X \ X̃0 → A1 is the subject of Conjecture 4.2.
+
+3.3. Quantum D-module. For simplicity, we assume in this subsection that the Picard
+rank ρ(X◦ ) = 1 (and X◦ is Fano). In the standard way [Go07], one uses genus-zero Gromov-
+Witten theory to construct a quantum product “⋆” on H ∗ (X◦ ) ⊗ C[s±1 ]. This is endowed
+with a D-module structure by letting δs act via 1 ⊗ δs − (KX◦ ⋆) ⊗ 1.
+8In this paper, a unipotent monodromy operator T = eN is maximally unipotent if N n−1 6= 0.
+9When n = 3, for instance, this assumption rules out (finite) monodromy in H2
+                                                                              alg ; for n = 2, it is vacuous.
+                                             APÉRY EXTENSIONS                                                   13
+
+   Now let Hvn−1 be as in Conjecture 3.3, and L be the corresponding Picard-Fuchs equation,
+with Fourier-Laplace transform L̂. (Here we recall that the FL-transform and its inverse are
+given on functions/solutions10 by
+                                                            ˆ ∞
+                          1              dt               1
+                             ˛
+(3.3)           fˆ(s) :=       f (t)es/t
+                                            and F̌ (t) :=       F (s)e−s/t ds,
+                         2πi              t                t 0
+and on operators by replacing ∂t ↔ −s and t ↔ ∂s .) Then we have the following amplification
+of that Conjecture when ω = −KX◦ :
+Conjecture 3.3 bis. As D-modules, H ∗(X◦ ) ⊗ C[t±1 ] ∼
+                                                     = D/D L̂.
+That is, by applying inverse FL-transform to L̂ we should obtain Hvn−1 .
+Remark 3.4. Conjecture 3.3 bis still makes sense without the assumption that ρ(X◦ ) = 1,
+by pulling back the quantum D-module via the anticanonical co-character of the Néron-
+Severi torus. It has been checked for an enormous number of Fano varieties of dimension 2
+and 3 [CCGGK13]. A more recent general result affirms it for Fano varieties admitting a
+toric degeneration with terminal singularities
+                                           P (and preserving      H2 ), in which case the nonzero
+                                                              m
+integer points of ∆ are vertices and φ = m∈∆∩(Zn \{0}) x [BGM22, Cor. 4.7].
+                                                                  P
+   Assuming Conjecture 3.3 bis holds for X◦ , we write (L̂ =) i,j βij ti δtj for the (irregular)
+differential operator killing the generator 1 ⊗ 1 of the quantum D-module, and convert this
+into an (irregular) quantum recursion
+                                     X
+(3.4)                          R̂ :     βij (k − i)j ûk−i = 0 (∀k)
+                                            i,j
+                                      P                                                 d−1
+by applying L̂ to a power series k ûk sk . We consider a basis of solutions {û(i)  . }i=0 , defined
+                                                      (i)                      (i)
+over the same field as L (typically Q), with ûk = 0 for k < i and ûi = i!1 . Regularizing
+via the inverse FL transform, L̂, R̂ become L, R, with solutions uk = k!ûk ; in particular, we
+         (i)                      (i)
+have uk = 0 for k < i and ui = 1.
+                                                          (0)
+  We shall take the basis to be chosen so that uk = ak is as in (3.2), and impose one
+more assumption: that the {ak } are nonzero. There are various ways to further normalize
+u(1)          (d−2)
+ . , . . . , u.     . For instance, there are r0 := rk((ψ0 Hvn−1 )T0 ) ≤ d independent holomorphic
+solutions to L(·) = 0 at the origin, which we take to be given by the generating series of
+              (r0 −1) 11
+u(0)
+ . , . . . , u.      . The remaining d − r0 generating series will then be solutions to inhomo-
+geneous equations L(·) = gi (t) ∈ C[t].12 In particular, it will be important in §5 that when
+                                            P      (1)
+d = 2 and r = n ( =⇒ P0 (T ) = T n ), k≥1 uk tk solves L(·) = t.
+  Slightly generalizing the definition in [Go09], we propose
+10If f (t) = P       k                               ˆ    P     ck k
+              k ck t is a power-series, this gives f (s) =    k k! s .
+11If (ψ Hn−1 )T0 is Hodge-Tate, with r distinct graded pieces {Q(−p )}r0 −1 (with p = 0), one can take
+       0                                     0                                i i=0           0
+P (i) k v                                                                                      n−1
+    u
+   k k  t (i =  0, . . . , r0 − 1) to be the C-periods of ω, against  local sections ϕ(i)
+                                                                                          of H v,C passing through
+C(−pi ) at t = 0.
+12Writing L = Pd   tℓ Pℓ (δt ), it is reasonable to expect that P0 (T ) =
+                                                                            Qr0 −1
+                                                                                     (T − i)n−2pi , and then we may
+           P ℓ=0
+               (i) k
+                                                                              i=0
+assume that k uk t (i = r0 , . . . , d − 1) solves L(·) = P0 (i)ti .
+14                              V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+Definition 3.5. The Apéry constants of X◦ are the limits
+                                                     (i)            (i)
+                                      (i)           ûk            uk
+(3.5)                                αX◦ :=   lim          = lim          ,
+                                              k→∞ û(0)     k→∞ u(0)
+                                                    k            k
+for 1 ≤ i ≤ d − 1. (When d = 2, we simply write αX◦ .)
+Remark 3.6. The closely related definition in [Ga16] (of an Apéry class A(X◦ ) ∈ Hprim   ∗
+                                                                                            (X◦ ),
+with the constants appearing as its coefficients) only considers the first r0 −1 Apéry constants,
+corresponding to solutions of the homogeneous equation. (As was first realized by Galkin
+and Iritani in the case of Grassmannians, these should correspond to the restriction of the
+regularized gamma class of X◦ to the Lefschetz coprimitive part of cohomology.)
+   However, the focus in [op. cit.] is on large-dimensional examples for which r0 = d; taking
+hyperplane sections preserves d as well as the α(i) (in our sense), even as r0 decreases. Since
+four of the five 3-dimensional examples we consider in §5 are indeed obtained as multisections
+                                                ∗
+of homogeneous Fano varieties with (dim(Hprim      (X◦ ) =) r0 = 2 = d, the “inhomogeneous”
+Apéry constants for the 3-folds in [Go09] are connected to the constants in [Ga16] in this
+way (albeit with a slightly different normalization).
+Remark 3.7. Adding a constant c to φ conjugates L̂ by ecs , which does not affect the Apéry
+constants. We may thus choose the constant term to make φ = 0 (i.e. X̃∞ ) singular.
+  By “specializing” Laurent polynomials, we hope not just to classify Fanos but to arrive at
+a B-model, Hodge-theoretic interpretation of their Apéry numbers. But there is a new twist.
+                                                                 (0)       (1)
+Consider the simplest case, where d = 2 and r0 = 1, and write uk = ak , uk =: bk = 0, 1, . . .,
+                                     P
+and αX◦ = limk→∞ abkk . While A(t) = k≥0 ak tk is just the holomorphic period, the {bk } and
+hence αX◦ are not visible from Hvn−1 alone. It is for this reason that we turn to variations of
+MHS in the next section.
+                                    4. Higher normal functions
+4.1. Variation of mixed Hodge structure. Fix a Laurent polynomial φ subject to the
+assumptions in §3.1, and write Xt∗ = Xt ∩ Gnm for the level sets of φ1 .
+Proposition 4.1. Suppose that φ is “generic” in the sense that it is ∆-regular.13 Then as
+MHSs, we have H n (X \ X̃0 , X̃t ) ∼
+                                   = H n (Gnm , Xt∗ ) and H n (X \ X̃t , X̃0 ) ∼
+                                                                               = H n (P∆ \ Xt , D∆ \ Z)
+for t 6= 0.
+Proof. With the additional genericity assumption, the construction of X in §3.1 proceeds by
+blowing up P∆ once along each component of Z (or rather, their successive strict transforms).
+An easy local computation shows that the restriction of π to the exceptional divisor E ⊂ X
+of β is then locally constant over P1 \ {0}. In particular, writing Et := E ∩ X̃t , E0 is a
+deformation retract of E \ Et for any t 6= 0.
+  Since Gnm = X \ (X̃0 ∪ E) and Xt∗ = X̃t \ Et , we have
+                 m       = H n (X \ (X̃0 ∪ E), X̃t \ Et ) ∼
+         H n (Gn , X ∗ ) ∼
+                      t                                   = Hn (X \ X̃t , X̃0 ∪ (E \ Et ))(−n)
+13That is, the intersections of X
+                                 t (t 6= 0) with each of the torus-orbits in D∆ are smooth and reduced; this
+is equivalent to the meaning of genericity in §2.
+                                             APÉRY EXTENSIONS                                                  15
+
+and H n (X \ X̃0 , X̃t ) ∼
+                         = Hn (X \ X̃t , X̃0 )(−n), which fit together in the long-exact sequence
+(4.1) → Hn (E \ Et , E0 )(−n) → H n (X \ X̃0 , X̃t ) → H n (Gnm , Xt∗ ) → Hn−1 (E \ Et , E0 )(−n) →
+whose end terms are zero by the deformation retract property. The other isomorphism
+follows by Lefschetz duality.                                                     
+The isomorphisms in Proposition 4.1 typically fail without the genericity assumption on φ;
+that is, the restriction morphism H n (X \ X̃0 , X̃t ) → H n (Gm , Xt∗ ) is not an isomorphism, and
+the left-hand object better reflects the topology of the LG-model.14 So from here on we shall
+focus primarily on the VMHS
+(4.2)                                     Vφ,t := H n (X \ X̃0 , X̃t )
+over U := P1 \ Σ, and its dual
+(4.3)                                   ∨
+                                       Vφ,t (−n) ∼
+                                                 = H n (X \ X̃t , X̃0 ).
+Of course, if φ is generic, by Prop. 4.1 and Thm. 2.4 the right-hand term of (4.3) is nothing
+                       ∆
+but a restriction of τ̂GKZ . This suggests the following generalization of Theorem 2.5:
+Conjecture 4.2 ([KKP17]). For t ∈
+                                / Σ, we have for each k
+(4.4)                             rk(GrFn−k Vφ∨ (−n)) = dim(H k,k (X◦ )).
+Remark 4.3. (i) The form in which we state this conjecture combines [KKP17, Conj. 3.7]
+with [Ha21, Thm. 3.1].
+  (ii) By Serre duality, (4.4) would imply that rk(GrFn−k Vφ ) = rk(GrkF Vφ ) for all of our
+LG-models, which has been proved by Harder [Ha16, Cor. 2.2.7].
+  (iii) There is a plausible amplification of (4.4) to an equality of C-MHSs with nilpotent
+endomorphism: on the left-hand (B-model) side, the LMHS (ψt H n (X \ X̃0 , X̃t ), Flim
+                                                                                    •
+                                                                                       , M• , N0 )
+          15                                            k,k ◦
+at t = 0; on the right-hand (A-model) side, ⊕k H (X ) endowed with the “downward”
+Hodge filtration F p = ⊕k≤n−p H k,k (X◦ ), together with N = ∪[−KX◦ ] and its weight filtration
+W (N)[−n]• (centered about n).
+In order to relate limits of extension classes in (4.2)-(4.3) to Apéry constants of X◦ , we shall
+need to kill off intermediate extensions which would otherwise “obstruct” these classes. This
+will be accomplished by placing a “K-theoretic” constraint on the Laurent polynomial:
+Definition 4.4. We say φ is tempered if the coordinate symbol {x1 , . . . , xn } ∈ HM
+                                                                                    n
+                                                                                      (Gnm , Q(n))
+                     n
+lifts to a class in HM (X \ X̃0 , Q(n)).
+Henceforth we shall mainly be concerned with the case where φ is tempered. When n = 2,
+this is just the condition that the edge polynomials of φ be cyclotomic [RV99]; some methods
+for checking temperedness for n = 3, 4 are given in [DK11, §3]. Up to scale, tempered reflexive
+Laurent polynomials are defined over Q̄ [op. cit., Prop. 4.16] and are thereby rigid.
+14For example, H 2 (G2 , X ∗ ) does not distinguish between cases i = 1 and i = 6 in Example 3.2/4.18, and
+                      m    t
+for the non-generic case i = 6 does not agree with Vφ,t .
+15Here M is the monodromy weight filtration of N relative to W , the weight filtration on the VMHS
+           •                                               0              •
+H n (X \ X̃0 , X̃t ); if this extended form of the conjecture holds then M• is just W (N0 )[−n]• . Moreover, if X◦
+is Fano (not just weak Fano), then it implies that this LMHS is Hodge-Tate.
+16                               V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+4.2. Admissible and geometric normal functions. A reference for the material that
+follows is [KP11, §2.11-12].
+Definition 4.5. A higher normal function on U is (equivalently)
+                                        ı
+ (i) a VMHS of the form 0 → H → V → Q(0) → 0, or
+(ii) a holomorphic, horizontal section ν of J(H) := H/(F 0 H + H),
+where H is a polarizable VHS of pure weight −r < −1.
+Here horizontal means that, for each local holomorphic lift ν̃ to H, we have ∇ν̃ ∈ F −1 H.
+For instance, given (i) we may locally lift 1 ∈ Q(0) to νF ∈ F 0 V and νQ ∈ V (the local
+system underlying V), then locally define ν̃ (hence ν as in (ii)) by ı(ν̃) = νQ − νF .
+   Let Ve denote Deligne’s canonical extension of V to P1 . Fixing disks Dσ ⊂ P1 at each
+σ ∈ Σ (= P1 \ U), with coordinate tσ , we write Tσ = eNσ Tσss for the monodromy of V on
+Dσ∗ = Dσ \ {σ}, and M•σ for the monodromy-weight filtration of the LMHS ψσ H. Suppose
+now that there exist “lifts of 1”:
+ • νFσ ∈ Γ(Dσ , Ve ) – holomorphic, single-valued, with νFσ |Dσ∗ in F 0 V
+ • νQσ ∈ Γ(Dfσ∗ un , V)Tσss – flat, multivalued, with Nσ ν σ ∈ M−2
+                                                                σ
+                                                                   ψσ H.
+                                                          Q
+Then we may confer on Ve |σ the status of a MHS ψσ V as follows:
+ • the weight filtration M•σ extends that on ψσ H, adding νQσ to M0σ ;
+ • the Hodge filtration Fσ• extends that on ψσ H, adding νFσ (σ) to Fσ0 ;
+ • the Q-structure (ψσ V)Q is easiest to describe after a base-change (to kill off Tσss ), as the
+   specialization of exp(− log(t    σ)
+                                  2πi
+                                       Nσ )V ⊂ Ve at σ.
+Definition 4.6. The HNF ν is admissible, written ν ∈ ANF(H), if this LMHS ψσ V (equiva-
+lently, νFσ and νQσ ) exists at each σ ∈ Σ. If, in addition, we may choose νQσ so that Nσ νQσ = 0,
+then the limit limσ ν ∈ J((ψσ H)Tσ ) is defined;16 otherwise, ν is singular at σ.
+Remark 4.7. Writing H = Hf ⊕ Hv for the decomposition into fixed and variable parts (with
+Hf = Hf ⊗ OU ), we claim that
+(4.5)                 0 → J(Hf ) → ANF(H) → Hg(H 1 (U, H)) → 0
+is exact. Indeed, since ANF(H) ∼ = Ext1AVMHS(U ) (Q(0), H), this follows at once from the
+spectral sequence
+                   RHomMHS (Q(0), −) ◦ RΓU =⇒ RHomAVMHS(U ) (Q(0), −)
+and triviality of Exti>1                                 0                  ∼    1
+                     MHS , by using the identifications H (H) = Hf , J(Hf ) = ExtMHS (Q(0), Hf ),
+and Hg(H (H)) ∼
+           1                           1
+                   = HomMHS (Q(0), H (H)).
+We say that ν ∈ ANF(H2p−r (p)) is of geometric origin when it arises from a motivic coho-
+mology class in
+(4.6)                               = Grp K (XU )Q ∼
+                H 2p−r+1(XU , Q(p)) ∼
+                        M
+                                           alg
+                                                   γ = CHp (XU , r − 1).
+                                                       r−1
+
+The most convenient representatives are found in the right-hand term, the higher Chow
+groups of Bloch [Bl86, Bl94], which (in their cubical formulation) are defined as the (r − 1)st
+16lim                   ^         σ    σ
+     σ ν is given by ı(limσ ν) = νQ − νF (0), as in the passage from (i) to (ii) above.
+                                                APÉRY EXTENSIONS                                                       17
+
+homology of a complex (Z p (X, •), ∂) of codim.-p cycles on X × • , where  := P1 \ {1}.17
+Given a cycle Z in (4.6), its restrictions Zt ∈ CHp (X̃t , r − 1) have (for each t ∈ U) Abel-
+Jacobi/regulator invariants18
+(4.7)                               AJ(Zt ) =: νZ (t) ∈ J(H 2p−r (X̃t )(p)).
+By [BZ90, Thm. 7.3], these glue together into an admissible normal function, so that Z 7→ νZ
+defines a map
+(4.8)                      AJφ : CHp (XU , r − 1) → ANF(H2p−r (p)).
+Composing with projection to ANF(Hv2p−r (p)) ∼     = Hg(H 1 (U, Hv2p−r (p))) (cf. Remark 4.7)
+defines AJvφ and νZv , for which we have the following special case of the Beilinson-Hodge
+Conjecture:
+Conjecture 4.8 (BHC). For XU defined over Q̄, AJvφ is surjective. That is, admissible and
+geometric HNFs with values in Hv2p−r (p) are the same thing.
+The equivalence in Definition 4.5, as well as the notion of admissibility, persist with H merely
+a VMHS; we shall loosely refer to such VMHSs (and the corresponding sections of J(H)) in
+this more general setting as mixed HNFs.
+4.3. Vφ as a (mixed) higher normal function. First we set (dually)
+                            ( ℓ
+                              H (Xt∗ ) := coker{H ℓ (Gm          ℓ    ∗
+                                                         n ) → H (Xt )}
+(4.9)
+                              H ℓ (Xt∗ ) := ker{Hℓ (Xt∗ ) → Hℓ (Gnm )}
+            ∗
+and write Vφ,t := H n (Gnm , Xt∗ ). Since Xt∗ is affine and H n (Gnm ) ∼
+                                                                       = Q(−n), the relative coho-
+mology sequence of the pair (Gnm , Xt∗ ) yields an exact sequence of MHS
+                                             n−1                      Ξ
+(4.10)                            0→H              (Xt∗ ) → Vφ,t
+                                                             ∗
+                                                                 → Q(−n) → 0.
+The kernel and cokernel of the restriction map
+                                                                ∗
+                                                    θ : Vφ,t → Vφ,t
+may be read off from the end terms of (4.1). Since we are not assuming that φ is ∆-regular,
+these may no longer be zero, but we claim they are “mild” in the sense of having weights
+between n and 2n − 2. More precisely:
+17Elements of Z p (X, n) must meet all faces X ×m (defined by setting -coordinates to 0 or ∞) properly, and
+∂ is given by an alternating sum of intersections with codim.-1 faces. See [DK11, §1] for a brief introduction
+to higher cycles and their Hodge-theoretic invariants.
+18These may be computed as the class of a closed (2p − r − 1)-current (2πi)p δ + (2πi)p − r + 1(Z ) R
+                                                                               Γ                      t ∗ r−1 ,
+where Rr−1 is a standard (r − 2)-current on r−1 , and Γ is a chain bounding on (Zt )∗ Rr−1<0 [loc. cit.]. One
+defines these regulator currents inductively by
+                                                                   dxℓ
+                    Rℓ (x1 , . . . , xℓ ) := log(x1 ) dx
+                                                      x1 ∧ · · · ∧ xℓ − 2πiδTx1 · Rℓ−1 (x2 , . . . , xℓ ),
+                                                         1
+
+
+
+where Tx := x−1 (R<0 ); they satisfy
+                                                            Pℓ
+                 d[Rℓ ] = dlog(x) − (2πi)ℓ δ∩ℓi=1 Txi +                i
+                                                               i=1 (−1) Rℓ−1 (x1 , . . . , x
+                                                                                           bi , . . . , xℓ )δ(xi ) .
+18                                   V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+Lemma 4.9. The map θ induces isomorphisms on GrW       ∼           W     ∼
+                                                   2n (= Q(−n)), Gr2n−1 (= {0}), and
+                n−1 ∼       n−1
+GrW
+  n−1 (namely, Hv   = Wn−1 H (Xt∗ ) = Wn−1 H n−1 (Xt∗ )).
+                       ∗ ∼                     ∗ ∼
+Proof. Clearly GrW                        W
+                   2n Vφ,t = Q(−n) and Gr2n−1 Vφ,t = {0}. Since dlog(x) extends to Ω (X \ X̃0 ),
+                                                                                    n
+                                   n n
+the composition Ξ ◦ θ : Vφ,t → H (Gm ) is surjective; and by Prop. 4.15 and Rem. 4.16 below,
+  ◦
+Vφ,t := ker(Ξ ◦ θ) has weights in [n−1, 2n−2]. Notice that we can write (4.2) as an extension
+                                            ◦                    Ξ◦θ
+(4.11)                                 0 → Vφ,t → Vφ,t → Q(−n) → 0
+in analogy to (4.10).
+                                           n−1
+   For GrW                     ∗
+         n−1 , we have Wn−1 Vφ,t = Wn−1 H      (Xt∗ ) = Wn−1 H n−1 (Xt∗ ) by (4.9) and (4.10),
+                                                          n−1
+and Wn−1 Vφ,t = coker{H n−1(X \ X̃0 ) → H n−1 (X̃t )} = Hv,t   by the global invariant cycle
+                                       n−1       n−1    ∗
+theorem. Clearly θ restricts to a map Hv,t → H (Xt ), which surjects onto the Wn−1 part
+by standard mixed Hodge theory, and is injective by the assumed irreducibility of Hvn−1 . 
+              ◦        n−1
+     Let Θ : Vφ,t →H         (Xt∗ ) be the map induced by θ, so that (4.11) 7→ (4.10) in
+                                                                                   n−1
+(4.12)             Θ∗ : Ext1MHS (Q(−n), Vφ,t
+                                         ◦
+                                             ) → Ext1MHS (Q(−n), H                       (Xt∗ )).
+That is, we may view Vφ and Vφ∗ as mixed HNFs related by Θ∗ , with Hodge-Deligne diagrams
+both of the form on the left below:
+
+                           q                                               q
+                                        Q(−n)                                      Q(−n)
+                       n                                               n
+
+                  n−1                                tempered n − 1
+                                                          case                 Wn−1 H n−1 (Xt∗ )
+
+                                                p                                            p
+                                      n−1 n                                      n−1 n
+
+
+Proposition 4.10. Vφ∗ is the (mixed ) geometric HNF associated to the coordinate symbol
+{x} = {x1 , . . . , xn } ∈ CHn (Gnm , n). Moreover, if φ is tempered, then Vφ and Vφ∗ have a
+common (pure) geometric sub-HNF with Hodge-Deligne diagram of the form shown on the
+right, associated to the lift of {x} to CHn (X \ X̃0 , n) (cf. Definition 4.4).
+Proof. Each γ ∈ H n−1 (Xt∗ , Q) may be written as ∂µ for a n-chain µ on Gnm . The extension
+class νφ (t) of (4.10) in
+                                 n−1
+                           J(H         (Xt∗ )(n)) ∼
+                                                  = Hom(H n−1 (Xt∗ , Q), C/Q(n))
+is then computed on γ (using Stokes’s theorem) by
+                          ˆ            ˆ         ˆ
+            hν̃φ (t), γi = dlog(x) ≡     d[Rn ] = Rn |Xt∗ = hAJ({x}|Xt∗ ), γi.
+                                 µ            Q(n)    µ                γ
+
+Therefore νφ is the geometric (mixed) HNF associated to the coordinate symbol {x} =
+{x1 , . . . , xn } ∈ CHn (Gnm , n) (i.e., the graph of this n-tuple, viewed as a cycle in Gnm × n ).
+                                            APÉRY EXTENSIONS                                        19
+
+   Now setting H n (X \ X̃0 )◦ := ker{H n (X \ X̃0 ) → H n (X̃t )}, we can write Vφ,t as an extension
+in a manner different from (4.11), as
+                                        n−1
+(4.13)                             0 → Hv,t → Vφ,t → H n (X \ X̃0 )◦ → 0.
+
+If φ is tempered, then {x} lifts to ξ ∈ CHn (X \ X̃0 , n), inducing a section of the MHS-
+morphism H n (X \ X̃0 )◦ ։ H n (Gnm ) ∼
+                                      = Q(−n) under which (4.13) pulls back to an extension
+of the form
+                                           n−1
+(4.14)                                0 → Hv,t → Vξ,t → Q(−n) → 0.
+
+The resulting morphism of sequences from (4.14) to (4.11) is a partial splitting as shown in
+the picture above. To see what it means geometrically, observe that the fiberwise restrictions
+ξt ∈ CHn (X̃t , n) of ξ compute νφ (t) via the composition
+                              AJ                                                n−1
+(4.15)      CHn (X̃t , n) → J(H n−1(X̃t )(n)) → J(Wn−1 H n−1 (Xt∗ )) ֒→ J(H           (Xt∗ )(n)).
+                                                 n−1
+So the “partial extensions” of Q(−n) by H (Xt∗ )/Wn−1 in (4.10) also split (∀t). The upshot
+is that the extension classes of both (4.10) and (4.11) reduce to (the image of) the class of
+(4.14), geometrically described by AJ(ξt ) in (4.15).                                      
+
+  Having exhibited Vφ∗ as the regulator extension, we turn to its dual
+                                     ∗ ∨
+(4.16)                  0 → Q(0) → (Vφ,t ) (−n) → H n−1 (Xt∗ )(−n) → 0,
+
+which identifies with the localization sequence
+                                                  Res                 ı
+0 → H n (P∆ , D∆ ) → H n (P∆ \ Xt , D∆ \ Z) → ker{H n−1 (Xt , Z) →
+                                                                 ∗
+                                                                   H n+1(P∆ , D∆ )}(−1) → 0.
+                dlog(x)
+Writing Ωt := 1−tφ(x)   ∈ Ωn (P∆ \ Xt ) (so that (2πi)n−1 ωt = Res(Ωt )), we obtain periods of
+the extension by lifting (2πi)n−1 [ωt ] ∈ F n {ker(ı∗ )(−1)} to [Ωt ] ∈ F n H n (P∆ \ Xt , D∆ \ Z; C)
+and pairing with the lift of 1∨ ∈ Q(0)∨ to Tx := ∩ni=1 Txi ∈ Hn (P∆ \ Xt , D∆ \ Z; Q). This
+yields
+              ˆ                ˆ                     ˆ
+                                     d[Rn ]                    d[Ωt ]
+(4.17)                   Ωt =       (−2πi)n
+                                            ∧ Ωt =       Rn ∧ (2πi) n ≡ hν̃φ (t), [ωt ]i,
+                 (−1)n−1 Tx            P∆                P∆
+
+where the last equality only holds if Tx ∩Xt∗ = ∅, and only modulo relative periods (2πi)n η ωt
+                                                                                          ´
+
+(with η ∈ Hn−1 (Xt , Z; Q)).
+
+Remark 4.11. The left-hand term of (4.17) is a special case of the GKZ integral (2.10), but
+with non-general φ. This type of integral also appears in Feynman integral computations
+[BKV15, BKV17].
+
+  When φ is tempered (so that ν̃φ (t) ∈ H n−1(X̃t , C)), and certain technical assumptions
+hold (cf. [BKV15, §4.2]), the last equality of (4.17) holds modulo usual periods of ωt . The
+20                            V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+VMHS picture, for (Vφ∗ )∨ (−n) as well as Vφ∨ (−n), is of course dual to that above:19
+                      q                                        q
+               n+1                                      n+1
+
+                  n                                        n
+                                                                   {GrW
+                                                                      n−1 H
+                                                                            n−1 (X , Z)}(−1)
+                                           tempered                               t
+
+
+                                                case
+                                                                              [ωt ]
+              Q(0)                         p           Q(0)                           p
+                                   n n+1                                  n n+1
+
+
+It will be convenient to enshrine the right-hand term of (4.17) in a
+Definition 4.12. The truncated higher normal function (THNF) associated to a tempered
+φ is (any branch of) the multivalued function Vφ (t) := hν̃φv (t), [ωt ]i.
+Later we shall choose a branch of Vφ ; but independent of this choice, it follows from [dAMS08]
+that the THNF satisfies an inhomogeneous Picard-Fuchs equation
+(4.18)                                         LVφ (t) = gφ (t)
+where gφ ∈ Q̄(t) and L (from §3.2) depend only on φ.
+                                                     P
+Remark 4.13. Suppose rk(Hvn−1 ) = n, write L = ni=0 qn−i (t)δti (with q0 (0) = 1), and let
+Y(t) := h(2πi)n−1 ωt , ∇δn−1
+                           t
+                             ωt i denote the Yukawa coupling. Taking γt∨ ∈ (Hvn−1 )T0 a local
+generator with hγt , γt∨ i = 1, define Dφ ∈ Q∗ by N0n−1 γt∨ =: Dφ γt . By [DK11, Cor. 4.5], we
+have gφ (t) = q0 (t)Y(t). Moreover, if the {X̃σ }σ∈Σ\{0,∞} have only nodal singularities, then
+                                 Dφ
+by [Ke22, Prop. 7.1] Y(t) = q0 (t)  .
+4.4. Vφ at infinity. While νφ is singular at 0, we can compute its limit at t = ∞. First we
+shall isolate a part of the extension that splits off whether or not φ is tempered (which we
+don’t assume here).
+Definition 4.14. For σ ∈ Σ, the (pure weight ℓ) phantom cohomology
+(4.19)           Phℓσ := ker{H ℓ (Xσ ) → ψσ Hℓ } = im{H2n−ℓ (Xσ )(−n) → H ℓ (Xσ )}
+measures the cycles that vanish on the nearby fiber. For any subset Σ′ ⊆ Σ (e.g. Σ∗ :=
+Σ \ {0, ∞}), put PhℓΣ′ := ⊕σ∈Σ′ Phℓσ .
+(We shall also write XS resp. X̃S for π −1 (S) when S is open resp. finite.)
+Proposition 4.15. In AVMHS(U) we have Vφ = A†φ ⊕ PhnΣ\{0} , where PhnΣ\{0} is constant
+of weight n, and A†φ,t is an extension of IH1 (P1 \ {0}, Hvn−1) (also constant, but mixed) by
+Hvn−1 . Viewing A†φ instead as an extension of Q(−n) recovers νφ .
+Proof. By the Decomposition Theorem (cf. [KL21, (5.9)]), for any proper algebraic subset
+S ⊂ P1 we have
+(4.20)                  H ℓ (XS ) ∼
+                                  = H ℓ ⊕ IH1 (S, Hℓ−1 ) ⊕ Phℓ
+                                               f                        Σ∩S
+
+19In view of the proof of Lemma 4.9 and the polarization, we have GrW
+                                                                   n−1 H
+                                                                           n−1
+                                                                                 (Xt , Z) ∼  n−1
+                                                                                          = Hv,t .
+                                        APÉRY EXTENSIONS                                            21
+
+as MHS. (See [op. cit., Prop. 5.5(i)] for the fact that PhℓΣ∩S is pure of weight ℓ, and also
+of level ≤ ℓ − 2.) The long exact sequence associated to (XS , Xt ) (for t ∈ U) therefore
+exhibits H n (XS , X̃t ) as an extension of IH1 (S, Hn−1 ) ⊕ PhnΣ∩S by Hvn−1 . But as a sub-
+MHS of H n (XS ), PhnΣ∩S is the image of Hn (X̃Σ∩S )(−n) ∼     = HX̃n
+                                                                          (XS ) ∼   n
+                                                                                = HX̃     (XS , X̃t )
+                                                                      Σ∩S             Σ∩S
+                                                             n
+under the Gysin map, which obviously factors through H (XS , Xt ), splitting that part of the
+extension. Specializing to S = P1 \{0}, we have IH1 (S, Hfn−1 ) ∼= H 1 (S)⊗Hfn−1 = {0}, and so
+IH1 (S, Hn−1 ) = IH1 (S, Hvn−1 ). Finally, since A†φ already gives the class of Vφ in LHS(4.12),
+applying Θ∗ yields νφ .                                                                           
+
+Remark 4.16. An initial observation about A†φ = Vφ /PhnΣ\{0} is that it elucidates what
+temperedness achieves. Comparing with the discussion around Lemma 4.9, we see that it is
+built out of the three parts
+
+(4.21)      W2n
+                A† ∼ GrW
+           W2n−2 φ =
+                            1  1        n−1 ∼
+                       2n IH (P \ {0}, Hv  ) = Q(−n)
+                                                           n−1
+                                                                                                
+           W2n−2 † ∼                                     ∼
+(4.22)     Wn−1
+                Aφ = W2n−2 IH1 (P1 \ {0}, Hvn−1)         = H (Xt∗ )/Wn−1 if φ is ∆-regular
+                 † ∼
+(4.23)    GrW         n−1
+            n−1 Aφ = Hv   .
+
+Temperedness splits the extension of (4.21) by (4.22), which is a constant extension since it
+appears inside IH1 (P1 \ {0}, Hvn−1).
+
+  Note that if σ ∈ Σ ∩ S, the same computation (together with20 Clemens-Schmid) exhibits
+H n (XS , X̃σ ) as the direct sum of PhnΣ∩S\{σ} with an extension of IH1 (S, Hn−1 ) by (ψσ Hvn−1 )Tσ .
+When S = P1 \ {0} this yields the
+
+Corollary 4.17. The MHS A†φ := H n (X \ X̃0 , X̃∞ )/PhΣ∗ is isomorphic to (ψ∞ A†φ )T∞ , hence
+computes lim∞ νφ .
+
+Dually, we may define
+
+(4.24)                    Aφ := H n (X \ X̃∞ , X̃0 )/PhΣ∗ ∼   †
+                                                          = (Aφ )∨ (−n),
+
+which is itself obtained as the limit at 0 (more precisely, (ψ0 Aφ )T0 ) of
+
+(4.25)                         Aφ,t := H n (X \ X̃∞ , X̃t )/PhΣ\{∞} .
+
+
+
+
+20Here we need not assume unipotent monodromies; see [KL21].
+22                                   V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+Example 4.18. For the six n = 2 Laurent polynomials in Example 3.2, the (weak) Fano
+varieties21 and VMHS Hodge-Deligne diagrams are:
+
+                                                       A†φ             A†φ (ψ0 0←−
+                                                                T∞           T
+             i tempered? X◦                Vφ    ⊇             ψ∞
+                                                              −→
+                                                                                )∨ (−n) Aφ
+
+
+
+
+             1     Y        P2
+
+
+
+
+             2     N        F1
+
+
+
+
+             3     Y       dP5              4
+
+
+
+
+             4     Y      P[1:2:3]          3            3               3              3
+
+
+
+
+             5     N      (P2 )◦            6            6               6              6
+
+
+
+
+             6     Y      dP3               6
+
+
+
+The red arrows in cases (2) and (5) denote nontorsion extensions of (4.21) by (4.22), reflecting
+the nontemperedness. (These extensions record, in Ext1MHS(Q(−2), Q(−1)) ∼     = C/Q(−1), the
+logarithms of the toric boundary coordinates of the base locus Xt ∩ D∆ .) In the other
+
+
+21This is meant in the sense of Conjectures 3.3 and 4.2 only, although Conjecture 3.3 bis does in fact hold
+(modulo constant terms) for φ(i) if i = 1, 3, 4, 6. (The nontempered examples were included for variety.)
+Note that the cases i = 4, 5 are weak Fano (not Fano) since they are resolutions of singular toric surfaces.
+                                            APÉRY EXTENSIONS                                                  23
+
+cases, the limit A†φ contains only torsion extensions.22 In all cases, we have rk(GrkF Vφ ) =
+dim(H k,k (X◦ )) in accordance with Conjecture 4.2.
+   More striking is the disparity in form between A†φ and Aφ . While both share GrW        ∼ 1
+                                                                                        1 = H
+and GrW    ∼ 1 1 1                  W4 † ∼               W4     ∼
+        2 = IH (P , H ), we have W2 Aφ = Q(−2) vs. W2 Aφ = (ψ∞ H )T∞ (−1). Only in cases
+                                                                         1
+
+(3) and (4) does Aφ yield a “K2 -type” normal function in ANF(H1 (2)), which for (3) is due
+to an involution of X over t 7→ − 1t [Ke17, §5.2]. However, we may regard (in (2), (4), and
+(5)) extensions of Q(−1) ⊆ IH1 (P1 , H1 ) by H1 as “K0 -type” normal functions, whose image
+in ANF(H1 (1)) generate the Mordell-Weil group (⊗Q) of π. That their limits at 0 capture
+part (or all, as in (2)) of lim∞ νφ is essentially the fact that the limits in X0 of Abel-Jacobi
+of differences of sections in Xt ∩ D∆ are given by ratios of toric coordinates on D∆ .
+
+  As mentioned in the Introduction, A†φ and Aφ do not share the dual relationship (4.24)
+with their limits. Indeed, as we have just seen, Aφ is not even an HNF in a canonical way
+(unlike A†φ ). However, for n ≥ 3, it is precisely this lack of canonicity which makes Aφ better
+adapted to exhibiting lim∞ νφ in terms of limits of truncated HNFs.
+
+
+                   5. The Problem and some Fano threefold examples
+   In this section we state a precise but restricted version of the Arithmetic Mirror Symmetry
+Problem (see §5.2), and then solve it when X◦ is one of the Mukai Fano threefolds V2N
+(5 ≤ N ≤ 9) [Go09]. For each of these, [FANO] provides many LG-models of the form in
+Definition 3.1 – corresponding to the many possible toric degenerations P∆◦ of X◦ – satisfying
+Conjectures 3.3 and 3.3 bis. They are found by taking φ to be (up to an additive constant) the
+Minkowski polynomial [CCGGK13] for the corresponding (reflexive) ∆, which is tempered
+in view of [dS19, Prop. 2.4].
+   Our job is then to exhibit Aφ,t as a geometric HNF in the sense of (4.8), and the Apéry
+constant αX◦ as the limit at t = 0 of the corresponding THNF, canonically normalized as
+described in §5.1. In contrast to A†φ,t, this cannot arise from the lift of the coordinate symbol
+{x1 , x2 , x3 } to CH3 (X̃t , 3), since that HNF is singular at 0. Rather, we are looking for an
+extension
+(5.1)                                0 → Hv2 (p) → Aφ,t → Q(0) → 0
+arising from
+                          Z 7→ νZ : CHp (X \ X̃∞ , r − 1) → ANF(Hv2p−r (p))
+with 2p − r = 2, which forces (p, r) = (3, 3) (Zt belongs to the K3alg of the K3 fibers X̃t ) or
+(2, 1) (Zt lies in K1 of the fibers).23 It is these cycles Z which (in §§5.3-5.5) we will show
+how to construct in each case.
+
+22In case (1) (X
+                  ∞ smooth) this is by a computation in K2 (X∞ ); in (3) and (4) (X∞ singular), it is because
+K3ind (Q) is torsion. Later we will see how torsion extensions actually may lift to well-defined invariants in C.
+23Taking p > 3 yields F −1 H2 (p) = {0}, making the extension class of (5.1) horizontal (by transversality)
+                               v
+with rational monodromy (images under Tσ − I), hence trivial (since monodromy acts irreducibly on Hv2 ).
+24                             V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+5.1. The inhomogeneous equation of a normal function. Given ν ∈ ANF(Hvn−1 (p)),
+let ν̃ := νQ − νF be a multivalued holomorphic lift to Hvn−1 . (Here v can be a higher or
+classical normal function, i.e. p ≥ n2 .) We may generalize Definition 4.12 and (4.18) by
+setting
+                                    V (t) := hν̃(t), [ωt ]i
+and g(t) := LV (t) ∈ C(t), which is zero iff ν is torsion [dAMS08]. (Note that since hF 1 , ωi =
+0 and LhHvn−1 , ωi = 0, g is independent of the choices of νQ and νF .) In a special case, in
+which ν is singular at 0, we have a formula for g(t) (Remark 4.13).
+  The next result summarizes what we can say more generally about this inhomogeneous
+term. It is motivated as follows. Suppose ν is nonsingular
+                                                       P      at 0 (Definition 4.6), so that the
+truncated NF has a power-series expanion V (t) = k≥0 vk tk there. If one knows L and can
+bound the degree of g (by some m), then we only need {vk }m    k=0 to compute g.
+  For its statement, we shall assume only that:
+• {X̃t } is a family of CY (n−1)-folds over P1 (smooth off Σ);
+                         n−1,0 ∼
+• {ωt } is a section of Hv,e   = OP1 (h), with divisor h[∞];
+        Pd j
+• L = j=0 t Pj (δt ) ∈ C[t, δt ] is its PF operator, of degree d; and
+• Hvn−1 has maximal unipotent monodromy at 0.
+This is somewhat more general than the setting of the rest of this paper, which takes {X̃t }
+to arise from the level sets of a Laurent polynomial; in this case we have h = 1 (see [Ke22,
+Ex. 4.5]), and frequently only nodal singularities on the {X̃σ }σ∈Σ∗ .
+Theorem 5.1. Assume ν is nonsingular away from 0 and ∞. Then g is a polynomial of
+degree ≤ d − h. If ν is also nonsingular at 0, then t | g. If ν is also nonsingular at ∞ and
+T∞ is unipotent, then deg(g) ≤ d − h − 1.
+Proof. Let u be a local coordinate on a disk Dσ about σ ∈ Σ, and He resp. He the canonical
+resp. dual-canonical extensions of Hvn−1 |Dσ∗ to Dσ . (That is, the eigenvalues of ∇δu are in
+(−1, 0] resp. [0, 1).) Assuming ν is nonsingular at σ, we may choose νQ so that Nσ νQ = 0;
+thus ν̃ is Tσ -invariant, and extends to a section of He . Since ω is a section of He , and
+h , i extends to He × He → O, V = hν̃, ωi extends to a holomorphic function on Dσ . For
+σ ∈ Σ∗ , we have L ∈ C[u, ∂u ] hence g|Dσ holomorphic. At σ = 0, maximal unipotency forces
+the indicial polynomial P0 (T ) to be divisible by T , so that L sends O(D0 ) → tO(D0 ) and
+g(0) = 0. If σ = ∞ and u = t−1 , our assumption that (ω) = h[∞] gives V |D∞ ∈ uh O(D∞ );
+                 P
+applying L = dj=0 u−j Pj (−δu ) yields g|D∞ ∈ uh−dO(D∞ ).
+    We can refine the result at ∞, and deal with singularities at 0 and ∞, by writing ν̃ and ω
+                                                                                        n−1
+locally in terms of bases of the canonical extension. With σ, u as above, Hv,C              = Hun
+                                                                                               C ⊕ HC
+                                                                                                      non
+
+decomposes into unipotent (Tσss -invariant) and nonunipotent parts, with (multivalued) bases
+                                                          a               2πi
+{ei } and {e∗j }, the latter chosen so that Tσss e∗j = ζk j e∗j (ζk := e k ). Writing ℓ(u) := log(u)
+                                                                                                  2πi
+                                                                                                      ,a
+                                                                                         a
+                   un      non                      −ℓ(u)Nσ            ∗      −ℓ(u)Nσ − ki ∗
+basis of He = He ⊕ He is given by ẽi := e                  ei and ẽj := e           u ej , which have
+                                  ∗
+the property that ∇δu ẽi , ∇δu ẽj ∈ He . Admissibility says that the Hodge lift takes the form
+                                 X                 X
+                      νF (u) = u     fi (u)ẽi + u    fj∗ (u)ẽ∗j + ẽC ∈ Γ(Dσ , V e ),
+                                  i                j
+                                          APÉRY EXTENSIONS                                         25
+
+where eC is a C-lift of 1 to VunC and ẽC := e
+                                              −ℓ(u)Nσ
+                                                      eC . If ν is nonsingular at σ, then ẽC = eC and
+∇δu ẽC = 0; if it is singular at σ, then we may assume ẽC = eC + ℓ(u)ẽ1 , so that ∇δu ẽC ∈ Heun .
+Write ordσ (ω) =: o (this is h if σ = ∞ and 0 if σ = 0).
+  Replacing
+      P        ν̃ by ν̂ := eC − νF changes it by a C-period hence does not affect g. Writing
+L = k≥0 qk (u)δuk , we have
+             σ
+
+                                              k
+                                             XX
+                            g = Lhν̂, ωi =              qkσ (u)h∇jδu ν̂, ∇δk−j
+                                                                            u
+                                                                               ωi
+                                              k≥1 j=1
+
+since ∇L ω = 0. Clearly ∇δk−j
+                            u
+                              ω ∈ uo He , while ∇jδu ν̂ ∈ uHe = uHun
+                                                                  e     e
+                                                                     ⊕Hnon  resp. Heun ⊕Henon =
+He for ν nonsingular resp. singular at σ. Hence h∇jδu ν̂, ∇δk−ju
+                                                                 ωi belongs to uo+1 O(Dσ ) if ν
+                                                           o
+is nonsingular and Tσ is unipotent, and otherwise to u O(Dσ ). For σ = ∞, multiplying by
+qkσ (u) introduces u−d. The result follows.                                                   
+Remark 5.2. Different choices of νQ yield branches of V that differ by Q(p)-periods (2πi)p ϕt ωt ,
+                                                                                           ´
+
+ϕt ∈ Hn−1 (X̃t , Q). If the {Tσ − I}σ∈Σ∗ have rank one, and there are d of them (i.e. Hvn−1
+has no “removable singularities”), and one σ0 ∈ Σ∗ has greater modulus than the others,
+then we say that X is of normal conifold type. In this case V can be chosen uniquely by
+maximizing its radius of convergence; that is, there is a unique branch which is single-valued
+on the complement of the interval [σ0 , ∞].
+5.2. The arithmetic mirror symmetry problem. Rather than reiterating the general
+but vague version from the Introduction, we give a more precise variant in a restricted setting.
+Assume that our Fano variety and LG-model satisfy the following:
+     ∗
+ • Hprim (X◦ ) and (ψ0 Hvn−1 )T0 are Hodge-Tate of rank r0 , with isomorphic associated gradeds
+   (as predicted by Conjecture 4.2);
+     n
+ • Hprim (X◦ ) = {0} (if n is even), and ρ(X◦ ) = 1;
+ • X is of normal conifold type (Remark 5.2), and satisfies Conjecture 3.3 bis;
+ • φ (and thus X , and L) is defined over Q̄;
+ • d = r0 + 1; and
+ • P0 (d − 1) 6= 0.
+                                      (d−1)            P                       (d−1)          b
+Referring to §3.3, we write bj := uj        and B(t) := j≥d−1 bj tj , so that αX◦ = limj→∞ ajj
+and LB = P0 (d − 1)td−1 .
+                                                        (i)
+Problem 5.3. Exhibit the Apéry constants {αX◦ }d−1           i=1 as periods, by showing that:
+                                          (i) d−2
+    (a) The first d − 2 constants {αX◦ }i=1 are (up to Q̄∗ -multiples) extension classes in
+(ψ0 Hvn−1 )T0 which are torsion (i.e. powers of 2πi) if φ is tempered.
+    (b) There is (up to scale) a unique HNF ν ∈ ANF(Hvn−1 (p)) \ {0} singular only at t = ∞,
+for some (unique) p ∈ [ n+1    2
+                                 , n] ∩ Z. This HNF is motivic, i.e. arises from some Z ∈
+     p
+CH (X \ X̃∞ , 2p − n)Q ; and LV = −ktd−1 for some24 k ∈ Q̄∗ .
+                                                                                               (d−1)
+    (c) Normalize V uniquely as in Remark 5.2, and set V̂ (t) := P0 (d−1)      k
+                                                                                  V (t). Then αX◦ =
+         P          (i)
+V̂ (0) + d−2i=1 βi αX◦ , where βi ∈ Q̄hV̂ (0), V̂ (0), . . . , V̂
+                                                 ′                (i)
+                                                                      (0)i.
+24More precisely, k should belong to the common field of definition of X and Z.
+26                           V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+Remark 5.4. Stated in this way, the thrust of the Arithmetic Mirror Symmetry Problem is
+somewhat obscured. What it really proposes is that given a Fano X◦ with Hprim ∗
+                                                                                  as above, of
+rank one less than the degree of its quantum differential equation, there exists an LG-model
+X (and cycle Z) satisfying the remaining hypotheses together with the content of 5.3(a)-(c).
+
+
+  In the three subsections that follow, we solve this Problem in several cases with n = 3 = r
+and d = 2. The situation simplifies, since P0 (1) = 1 and there is only one Apéry constant
+αX◦ ; moreover, Theorem 5.1 guarantees that LV = −kt for some k ∈ C∗ once we have a
+HNF of the type described. So it remains to produce Z (hence ν), and show k ∈ Q̄∗ and
+αX◦ = V̂ (0) in each case; we defer the uniqueness to §6.
+
+
+Remark 5.5. A general result (for n = r and d = 2) encompassing these cases appeared in
+[Ke22, Thm. 10.11], making essential use of Theorem 5.1 above. It reduces the Arithmetic
+Mirror Symmetry Problem to establishing the existence of a “good” LG-model and checking
+the Beilinson-Hodge Conjecture; once the cycle is found, the equality αX◦ = V̂ (0) is auto-
+matic. But we shall explicitly compute V̂ (0) below in each case anyway, both to provide
+explicit (and instructive) solutions to the Problem, and to check that k 6= 0 and the cycle
+indeed produces a nontrivial HNF. Moreover, with [loc. cit.] in hand, one may regard these
+computations of V̂ (0) as illustrations of a regulator calculus which is available for calculating
+the Apéry constant when modular and other methods (such as in [Go09]) are unavailable.
+
+
+5.3. K1 of a K3: the V10 HNF. The irrational Fano threefold V10 = G(2, 5) ∩ Q ∩ P1 ∩ P2
+(quadric and linear sections of the Plücker embedding)
+                                                   √
+                                                         has a mirror LG model with discrim-
+                                              −11±5 5
+inant locus Σ = {0, σ+ , σ− , ∞} (where σ± =     4
+                                                      ), given by the Laurent polynomial
+
+
+                         (1 − x3 )(1 − x1 − x3 )(1 − x2 − x3 )(1 − x1 − x2 − x3 )
+(5.2)           φ(x) =                                                            .
+                                                 −x1 x2 x3
+
+
+Namely, compactifying {1 = tφ(x)} in P∆ yields a family {Xt }t∈P1 , whose fibers over P1 \Σ are
+singular K3s with one A3 and six A1 singularities; these are resolved (to Picard-rank 19 K3s)
+                   by β : X̃t → Xt . The Newton polytope ∆, together with a portion
+                     Xt ∩ {x3 = 0} = {x1 = 1} ∪ {x2 = 1} ∪ {x1 + x2 = 1} =: C1 ∪ C2 ∪ C3
+                     of the base locus (red), are displayed in the figure. The PF operator
+                     and period sequence are given by
+                      L = δt3 − 2t(2δt + 1)(11δt2 + 11δt + 3) − 4t2 (δt + 1)(2δt + 3)(2δt + 1),
+                                      k X
+                                      X k−i
+                                                               k!2k!
+                     ak := [φk ]0 =             2 j!2 (k − i)!(k − j)!(k − i − j)!
+                                                                                   = 1, 6, 114, . . . ;
+                                      i=0 j=0
+                                              i!
+                                             APÉRY EXTENSIONS                                                  27
+
+while the monodromy operators T0 , T± , T∞ have Jordan forms J(3), (−1) ⊕ 12 , (−1)2 ⊕ 1 and
+LMHS types
+
+                                                                             − T∞
+                                                                                ss
+
+
+                            N0                        − T±ss
+                                                                                      − T∞
+                                                                                         ss
+
+                       σ=0                       σ = σ±                       σ=∞
+
+                                                                                       1
+where the Tσ -invariant classes are circled. The Apéry constant is α = 10                ζ(2) [Go09].
+                                      2
+   To construct the cycle Z ∈ CH (X \ X̃∞ , 1) we shall make use of the rational curves {Ci }.
+On Xt , a higher Chow cycle is given by (C1 , g1 := x2x−1  2
+                                                              ) + (C2 , g2 := x1x−1  1
+                                                                                         ) + (C3 , g3 := x1x−1
+                                                                                                            1
+                                                                                                               ),
+since the sums of divisors cancel on Xt . To lift this to a cycle Zt on X̃t (say, for t ∈                / Σ),
+one adds two more terms (D1 , f1 ) + (D2 , f2 ) supported on the exceptional divisors over the
+nodes of Xt at C1 ∩ C3 and C2 ∩ C3 . These {Zt } are the restrictions of an obvious precycle Z
+on X , whose boundary fails to vanish only on X̃∞ .25
+   The next step is to find a family of closed 2-currents Rt on X̃t representing the class
+νZ (t) ∈ J(H 2 (X̃t )(1)), or more precisely a lift to H 2 (X̃t , C) which is single-valued on D|σ− | .
+Writing µ := {(x1 , x2 ) ∈ R2 | 0 ≤ x2 ≤ 1, 1 − x2 ≤ x1 ≤ 1}, for |t| ≪ 1 let Γt denote
+the branch of {(x1 , x2 , x3 ) ∈ X̃t | (x1 , x2 ) ∈ µ} with x3 small. Then we have26 Rt =
+                  P                      P
+(2πi)2 δΓt + 2πi 3i=1 log(gi )δCi + 2πi 2i=1 log(fi )δDi , which yields the THNF
+                                 ˆ          ˆ ˆ
+                                                      dlog(x)
+                                                                  X ˆ                                  X
+                               2                                       k       k
+V (t) = h[Rt ], [ωt ]i = (2πi)           1
+                                   ωt = 2πi            1−tφ
+                                                              =      t      [φ   ] x 0
+                                                                                       dx1
+                                                                                     3 x1
+                                                                                           ∧  dx2
+                                                                                              x2
+                                                                                                   =:      vk tk .
+                                   Γt             µ   |x3 |=ǫ          k≥0     µ                       k≥0
+
+
+(Here [−]x03 takes terms of the Laurent polynomial constant in x3 .) By Theorem 5.1, it
+suffices to compute
+              ˆ 1ˆ 1                ˆ 1
+                       dx1 dx2                       dx2
+         v0 =             ∧      =−     log(1 − x2 )     = Li2 (1) = ζ(2) and
+               0  1−x2 x1    x2       0               x2
+              ˆ 1ˆ 1                                    
+                             x−1   −2
+                              1 (4x2 − 6 + 2x2 )+          dx1 dx2
+         v1 =                −1                 −1              ∧     = −10 + 6ζ(2)
+               0  1−x2 (−6x2 + 6 − x2 ) + x1 (2x2 − 1)     x1      x2
+
+to conclude that LV = −10t. Normalization therefore yields
+                                          1
+(5.3)                            V̂ (t) = 10 ζ(2) + (−1 + 53 ζ(2))t + · · · ,
+
+as desired.
+
+25The successive blowups along the components of the base locus occurring in the construction of X generate
+
+additional exceptional curves on X̃∞ which disconnect the 5-gon D1 ∪ D2 ∪ C1 ∪ C2 ∪ C3 , and it is on these
+that ∂Z is supported.
+26In the context of regulator currents, log(−) means the single-valued branch with discontinuity along R .
+                                                                                                        −
+28                                  V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+5.4. K3 of a K3: the V12 HNF. The LG mirror of the rational Fano V12 = OG(5, 10) ∩
+P1 · · · ∩ P7 is given by
+                               (1 − x1 )(1 − x2 )(1 − x3 )(1 − x1 − x2 + x1 x2 − x1 x2 x3 )
+(5.4)                 φ(x) =                                                                .
+                                                        −x1 x2 x3
+
+                                         This time the Picard-rank √  19 K3s X̃t , smooth for t ∈/ Σ =
+                                                                          4
+                                         {0, σ+ , σ− , ∞} (σ± = (−1± 2) ), resolve 7 A1 singularities on
+                                         Xt . The family X is birational to that of [BP84] and underlies
+                                         the proof of irrationality of ζ(3) [Ke17]; indeed, α = 16 ζ(3)
+                                         [Go09]. Its PF operator
+                                                  L = δt3 − t(2δt + 1)(17δt2 + 17δt + 5) + t2 (δt + 1)3
+and (Apéry) period sequence
+                 Xk  2       2
+                      k     k+ℓ
+           ak :=                   = 1, 5, 73, . . .                                                             N∞
+                      ℓ      ℓ
+                         ℓ=0
+reflect a VHS with monodromies of the same types as in §5.3
+except at t = ∞ (where we get maximal unipotent monodromy).                         σ=∞
+   Since φ is tempered, the symbol {x} liftsto ξ ∈ CH3 (X \ X̃0 , 3). The birational map
+                x3      −(1−x1 )(1−x2 )
+I : (x, t) 7→ 1−x   ,                         , x1 , 1 from X to itself, viewed as a correspondence,
+                   3 1−x1 −x2 +x1 x2 −x1 x2 x3 1−x1 t
+
+allows us to define Z := I ∗ ξ ∈ CH3 (X \ X̃∞ , 3). The resulting THNF
+                                                 ˆ          h             i ˆ h        i
+                         I        −1   −1                       1 dlog(x)       R3 (x)   dlog(x)
+  V (t) = hν̃Z (t), ωt i = hν̃φ (t ), t ωt−1 i =    R3 (x)∧d (2πi)3 t−φ(x) = d (2πi) 3 ∧ φ(x)−t
+                                                            Xt−1
+            ˆ                      X          ˆ                   X         ˆ        Q3
+                                                                                                                     X
+                                                                                             k        k
+                      dlog(x)             k          dlog(x)            k               i=1 Xi (1−Xi ) dXi
+        =             t−φ(x)
+                              =−         t          (φ(x))k+1
+                                                              =         t             (1−X3 (1−X1 X2 ))k+1
+                                                                                                                 =:         vk tk
+                R3−                k≥0        R3−                 k≥0        [0,1]3                                   k≥0
+
+has v0 = 2ζ(3) and v1 = −12 + 10ζ(3), which (again by Theorem 5.1) is enough to conclude
+that LV = −12t. But then normalization gives
+(5.5)                               V̂ (t) = 61 ζ(3) + (−1 + 56 ζ(3))t + · · · ,
+and in particular V̂ (0) = α.
+
+5.5. HNFs for V14 , V16 , V18 . Again, the LG models are families of Picard-rank 19 K3s. The
+irrational case V14 = G(2, 6) ∩ P1 ∩ · · · ∩ P5 is similar to V10 , with Laurent polynomial
+                          (1 − x1 − x2 − x3 ){(1−x2 −x3 )(1−x3 )2 − x2 (1−x1 −x2 −x3 )}
+            φ(x) =                                                                      ,
+                                                    −x1 x2 x3
+                            1
+discriminant locus Σ = {0, 27 , −1, ∞}, and PF operator
+                L = δt3 − t(1 + 2δt )(13δt2 + 13δt + 4) − 3t2 (δt + 1)(3δt + 4)(3δt + 2).
+The monodromy types are the same as for V10 , except for T∞ , which acts on (ψ∞ Hv2 )2,0 resp.
+                  2πi       2πi
+(ψ∞ Hv2 )0,2 by e− 3 resp. e 3 .
+                                               APÉRY EXTENSIONS                                                           29
+
+   The toric boundary divisor x1 = 0 intersects Xt in C1 = {x2 = 1 − x3 } and C2 = {x2 =
+(1 − x3 )2 }, and a cycle Z ∈ CH2 (X \X̃∞ , 1) is given by (C1 , 1−x
+                                                                   x3
+                                                                      3
+                                                                         ) + (C2 , 1−x
+                                                                                    x3
+                                                                                       3
+                                                                                         ). Arguing as
+before, this yields
+                                  X          X ˆ
+                                        k
+                          V (t) =   vk t =       tk [φk ]x01 dx
+                                                              x2
+                                                                2
+                                                                  ∧ dx
+                                                                    x3
+                                                                       3
+                                                                          ,
+                                         k≥0            k≥0      µ
+
+where µ := {(x1 , x2 ) ∈ R2 | 0 ≤ x3 ≤ 1, (1 − x3 )2 ≤ x2 ≤ 1 − x3 }. We compute v0 = ζ(2)
+and           ˆ 1 ˆ 1−x3                               
+                             2x2 x−1                 −1
+                                  3 + (−x3 + 4 − 3x3 )    dx2 dx3
+         v1 =                        −1 −1         3          ∧      = −7 + 4ζ(2) ,
+               0    (1−x3 )2      +x2 x3 (x3 − 1)         x2    x3
+hence that LV = −7t. Renormalizing this gives
+                                  V̂ (t) = 17 ζ(2) + (−1 + 47 ζ(2))t + · · · ,
+and V̂ (0) = 71 ζ(2) indeed matches the α from [Go09].
+  Turning to V16 = LG(3, 6) ∩ P1 ∩ P2 ∩ P3 and V18 = (G2 /P2 ) ∩ P1 ∩ P2 , we use
+     φ(x) = (1−x1 −x2 −x3−x
+                         )(1−x1 )(1−x2 )(1−x3 )
+                            1 x2 x3
+                                                resp.         (x1 +x2 +x3 )(x1 +x2 +x3 −x1 x2 −x2 x3 −x1 x3 +x1 x2 x3 )
+                                                                                    −x1 x2 x3
+                                                  √                     √
+from [dS19] for our LG models, with Σ = {0, 12 ± 8 2, ∞} resp. {0, 9 ± 6 3, ∞} and
+
+  L = δt3 − 4t(1 + 2δt )(3δt2 + 3δt + 1) + 16t2 (δt + 1)3
+                                                 resp. δt3 − 3t(1 + 2δt )(3δt2 + 3δt + 1) − 27t2 (δt + 1)3 .
+The monodromy/LMHS types are the same as for V12 ; we write N = 6, 8, or 9 for V2N ,
+and put I(t) := M1N t with MN = 1, 16 1 −1
+                                       , 27 respectively. In each case there is an isomorphism
+  2 ∼ ∗ 2
+Hv = I Hv of Q-VHS. For N = 8, 9 this is not an integral isomorphism so is induced by
+                        27
+
+correspondences I, I −1 ∈ Z 2 (X × I ∗ X )Q (with I ∗ ◦ (I −1 )∗ = idH2v ) rather than a birational
+map; nevertheless, we may still define Z := I ∗ ξ ∈ CH3 (X \X̃∞ , 3). Here we normalize I to
+pull back an integral generator ζs of (H2v )T∞ back to γt ∈ (H2v )T0 , where s = I(t).
+                      ´    dlog(x)
+  Since the integrals R3 (φ(x)) k+1 are quite difficult for N = 8, 9, we use a different strategy
+                         −
+than in §5.4. As a section of H2,0 ∼= OP1 (1), ωt has divisor [∞], and so (I −1 )∗ ωI(t) = CN tωt
+                                        v,e
+for some CN ∈ C∗ . Write ζs∨ ∈ (H2v )T∞ for the element dual to ζs , so that lims→∞ sωs =
+  −1
+(2πi)2
+       ResX̃∞ ( dlog(x)
+                 φ(x)
+                                 ∨
+                        ) = rN ζ ∞                            −1
+                                   in H2 (X̃∞ ) where rN := (2πi)     3 dlog(x)       1
+                                                                 3 Resp ( φ(x) ) = 1, 2 , resp.
+                                                                                                √1 (for
+                                                                                                 −3
+some triple-normal-crossing point p ∈ X̃∞ ). This yields
+    CN = lim 1t hγt , (I −1 )∗ ωI(t) i = lim MN sh(I −1 )∗ γI(s) , ωs i = lim MN hζs , sωs i = MN rN .
+            t→0                           s→∞                                    s→∞
+
+Write Λ for L with t replaced by s, we have L = M−1
+                                                  Ns
+                                                     Λ 1s . Applying this to
+
+(5.6)              V (t) = hν̃Z (t), ωt i = C1N t hI ∗ ν̃φ (s), (I −1 )∗ ωs i = MCNNs hν̃φ (s), ωs i
+
+27This is easiest to see from the differential equation, but also follows from the fact that (for all five cases)
+the LG model of V2N realizes the canonical weight-2 rank-3 VHS over X0 (N )+N , which for N composite has
+an additional Fricke involution.
+30                               V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+yields LV = C−1
+             Ns
+                Λhν̃φ (s), ωs i = −D N
+                                  CN s
+                                       = − DrNN t, where DN = 12, 16, resp. 9 is the constant
+                                               ∨
+from Remark 4.13. Moreover, thinking of ζ∞        as a “membrane stretched once around X∞ ”,
+taking lims→∞ of (5.6) gives
+                            ˆ                                     ˆ
+                          1                 1             dlog(x)
+(5.7)        V (0) = − rN        R3 (x) ∧ (2πi)2 ResX∞ φ(x) =         R3 (x)|X∞
+                                  X∞                                         ∨
+                                                                            ζ∞
+     ∨
+for ζ∞ in suitably general position;28 and V̂ (0) = DrNN V (0).
+   We now use (5.7) to verify that V̂ (0) recovers the Apéry    constants in [Go09]. For N = 6,
+                                         ∨
+                                                          ´
+the computation in [Ke17, §5.3] (with ζ∞ = −ψ) gives ζ ∨ R3 (x) = 2ζ(3), recovering V̂ (0) =
+                                                                   ∞
+ζ(3)                         ∨
+ 6
+     .For N = 8, putting ζ∞     in general position is tricky so we use the first expression in
+                           dx2
+(5.7). As R3 (x) = log(x1 ) x2 ∧ dxx3
+                                     3
+                                       + 2πi log(x2 ) dx    3
+                                                              δ + (2πi)2 log(x3 )δTx1 ∩Tx2 is nontrivial
+                                                         x3 Tx1
+only on the component {x1 = 1 − x2 − x3 } ⊂ X∞ , with only its third term surviving against
+the (2, 0) residue form, this yields
+               ˆ                                                 ˆ ∞          ˆ 0                    
+                                           dx2 ∧dx3                  log(x3 )             dx2
+  V (0) = −2               log(x3 ) (1−x2 )(1−x3 )(x2 +x3 ) = −2      1−x3           (1−x2 )(x2 +x3 )
+                                                                                                        dx3
+                T1−x2 −x3 ∩Tx2                                      1                1−x3
+                                                     ˆ 1      2
+                                                           log (u)
+                                             =−1 4                 du = 4(Li3 (1) − Li3 (−1)) = 7ζ(3),
+                                           u=x3       0     1 − u2
+                 7
+hence V̂ (0) = 32  ζ(3).
+  Finally, for N = 9 we first replace {x} (hence ξ, and Z) by the equivalent symbol {z},
+where z1 = x−x   3
+              1 +x2
+                    , z2 = − xx12 , and z3 = xx11+x
+                                                 x2
+                                                    2
+                                                      . In these coordinates,
+           φ(x(z)) = z1−1 z3−1 (1 − z1 ){(1 − z3 ) − z1 (1 − (1 − z2 )z3 )(1 − (1 − z2−1 )z3 )}
+             ′
+and so X∞ = X∞    ′′
+               ∪ X∞  = {z1 = 1} ∪ {z1 = ϕ(z2 , z3 ) := (1−(1−z )z 1−z 3
+                                                                   )(1−(1−z −1 )z )
+                                                                                    }, with
+                                                                                 2    3     2     3
+             ′        ′′                                       1−z2 −z2−1
+C∞ := X∞        ∩ X∞     described by z3 = z(z2 ) := (1−z )(1−z         −1 . Clearly R3 (x)|X∞
+                                                                                             ′ = 0. For
+                                                                 2      2 )
+ ∨        ′′
+ζ∞ ∩ X∞ , which must bound on C∞ , we may take the 2-chain parametrized by (z2 , z3 ) =
+{(eiθ , ρz(eiθ )) | θ ∈ [− π3 , π3 ], ρ ∈ [0, 1]}. This yields
+                                                                                                     
+                                       dz2 dz3                    Li2 (z(z2 )) − Li2 ((1 − z2 )z(z2 )) dz2
+           ˆ                                     ˆ
+ V (0) =              log(ϕ(z2 , z3 ))    ∧    =
+              ∨ ∩X ′′
+             ζ∞   ∞
+                                       z2   z3        ∨ ∩X ′′ )
+                                                   ∂(ζ∞   ∞
+                                                                        −Li2 ((1 − z2−1 )z(z2 ))        z2
+  ˆ e3 πi
+                                            du                                           3
+                                                                                               e πi3    3
+=         (4 log(1 − u) + log(u)) log(u)                                             1
+                                               = 4Li3 (u) − 4Li2 (u) log(u) + 3 log (u) e− πi3 = 4π27 i ,
+     − πi
+    e 3                                     u
+                                   3
+whereupon V̂ (0) = 9V√(0)
+                       −3
+                          = 34π    1
+                             5 3 = 3 L(χ3 , 3).
+                              √
+
+
+                                 6. Apéry and normal functions
+   In this brief final section, we introduce a framework for studying the normal functions
+arising in connection with the Arithmetic Mirror Symmetry Problem (including the examples
+in §5), and propose some terminology.
+28Compare [Ke17, Thm. 4.2(b) + Cor. 4.3], which this generalizes.
+                                             APÉRY EXTENSIONS                                                 31
+
+Definition 6.1. The Apéry motive is Aφ := H n (X \ X̃∞ , X̃0 )/PhΣ∗ from (4.24), or (if one
+prefers) its underlying mixed motive.
+We dig into its structure a bit: there are exact sequences of MHS
+(6.1)                                                                       0O
+
+                                                                   (ψ∞ Hvn−1 )T∞ (−1)
+                                                                             O
+
+                     0     / (ψ0 Hn−1 )T0           / Aφ            / IH1 (A1 , Hn−1 )          /0
+                                      v                                       O  v
+
+
+                                                                    IH1 (P1 , Hvn−1 )
+                                                                                 O
+                                                                            0
+where (·)T∞ = coker(T∞ − I), (·)T0 = ker(T0 − I), and A1 means P1 \ {t = ∞}. The parabolic
+cohomology IH1 (P1 , Hvn−1 ) is pure of weight n and rank
+                                                  X
+(6.2)                         ih1 (P1 , Hvn−1 ) =   rk(Tσ − I) − 2r.
+                                                           σ∈Σ
+
+Definition 6.2. Hvn−1 (or φ) is extremal if (6.2) is zero.
+Recall that if φ is tempered, the coordinate symbol {x} lifts to ξ ∈ CHn (X \ X̃0 , n). The
+cycle class of Res(ξ) ∈ CHn−1 (X̃0 , n − 1) yields an embedding Q(−n) ֒→ HX̃    n+1
+                                                                                     (X ) ∼
+                                                                                          =               0
+
+Hn−1 (X̃0 )(−n), or dually29 a splitting
+(6.3)                                      ε : (ψ0 Hvn−1 )T0 ։ Q(0).
+  Suppose then that φ is tempered and extremal, and that (for some p ∈ N) there exists an
+embedding
+(6.4)                                 µ : Q(−p) ֒→ (ψ∞ Hvn−1 )T∞ (−1).
+Then from (6.1) we obtain the diagram
+(6.5)            0          / Q(0)              / µ∗ ε∗ Aφ                 / Q(−p)                   /0
+                                                            _                  _
+                                                                              µ
+                 0          / Q(0)                / ε∗ Aφ           / (ψ∞ Hn−1 )T        (−1)        /0
+                                                                            v        ∞
+                                OO                     OO
+                              ε
+
+                 0       / (ψ0 Hn−1 )T0             / Aφ              / IH1 (A1 , Hn−1 )             /0
+                                  v                                                  v
+
+with exact rows. Under Ext1MHS (Q(−p), Q(0)) ∼
+                                             = C/Q(p), define
+(6.6)                                          αφ (µ) ∈ C/Q(p)
+to be the image of the extension class of the top row of (6.5).
+29The first map in the portion H                             n−1
+                                                      (X̃0 ) → (ψ0 Hvn−1 )T0 → 0 of the Clemens-Schmid
+                                      n+1 (X̃0 )(−n) → H
+sequence has pure weight n − 1, and so the second map has a splitting (ψ0 Hvn−1 )T0 ֒→ H n−1 (X̃0 ) which is
+an isomorphism in weights < n − 1. Dualizing the embedding yields H n−1 (X̃0 ) ։ Q(0), and (6.3) is the
+composition.
+32                              V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+Example 6.3. The Laurent polynomials considered in §§5.3-5.5 are tempered and extremal,
+with (ψ∞ Hv2 )T∞ (−1) ∼
+                      = Q(−2) resp. Q(−3) for V10 , V14 resp V12 , V16 , V18 . (Indeed, µ and ε
+are both isomorphisms.) In view of (6.10) below, in each case αφ (µ) is just V (0) viewed
+modulo Q(p). But for V10 , V14 , and V18 , V (0) is in Q(p) and so αφ (µ) is trivial!
+  From the example we see the importance of presenting (6.6) as a limit of a HNF, since by
+canonically normalizing the latter (Remark 5.2) we may then refine (6.6) to a well-defined
+complex number. To do this, note that the same proof as for Proposition 4.15 expresses the
+VMHS Aφ,t := H n (X \ X̃∞ , X̃t )/PhΣ\{∞} as an extension
+(6.7)                         0 → Hvn−1 → Aφ → IH1 (A1 , Hvn−1 ) → 0 .
+So we arrive at this article’s eponymous
+Definition 6.4. The pullback
+(6.8)                            0 → Hvn−1 → µ∗ Aφ → Q(−p) → 0
+of (6.7) under (6.4) is called an Apéry extension.
+We may view (6.8) as a higher normal function
+(6.9)                                   νµ ∈ ANF(Hvn−1 (p))
+which is singular at t = ∞ and only there,30 and we define and normalize Vµ (t) := hνµ,t , ωt i
+as in §5.1. Since µ∗ Aφ ∼
+                        = (ψ0 µ∗ Aφ )T0 and ε is induced by pairing with limt→0 ωt , we conclude
+that
+(6.10)                       Vµ (0) 7→ αφ (µ)   under       C ։ C/Q(p).
+                                                        1
+At least when φ is tempered and extremal, and IH (A1 , Hvn−1 ) is split Hodge-Tate, it is these
+Vµ (0) which are expected to produce (up to Q̄∗ ) the interesting Apéry constants. (In the
+absence of these conditions, of course, the situation will be more complicated.)
+  Conversely, any ν ∈ ANF(Hvn−1 (p)) nonsingular off ∞ arises as in (6.8). In our fine
+examples, IH1 (A1 , Hv2 ) ∼
+                          = (ψ∞ Hv2 )T∞ (−1) has rank one. So this finishes off the uniqueness
+part of Problem 5.3 in each case, completing the proof of Theorem 1.1.
+  Now according to the BHC (since X \X̃∞ is defined over Q̄), there exists a higher cycle
+Zµ ∈ CHp (X \X̃∞ , 2p − n)Q with νµ = νZµ . This provides a mechanism for explaining the
+arithmetic content of the Apéry constants. Let K ⊂ Q̄ be the field of definition of Zµ . By
+[7K19, Cor. 5.3ff], Vµ (0) may be interpreted as the image of Z0 := ı∗X̃ Zµ under
+                                                                          0
+
+                                          AJ                    h·,ω0 i
+                         n
+(6.11)                  HM (X̃0,K , Q(p)) → J(H n−1 (X̃0 )(p)) ։ C/Q(p) ,
+where the second map comes from temperedness of φ. Since X̃0 = ∪i Yi is a NCD, we
+                                        [a]                                          [a]
+have a spectral sequence E1a,b = Z p (X̃0 , 2p − n − b) =⇒ HM
+                                                            n+∗
+                                                                (X̃0 , Q(p)) where X̃0 :=
+                                                              a+b=∗
+∐|I|=a+1(∩i∈I Yi ). The induced filtration W• [op. cit., §3] has bottom piece
+                  (X̃0,K , Q(p)) ∼
+                n                               [−n+2]                 [−n+1]
+         W−n+1 HM                = coker{CHp (X̃0,K , 2p − 1) → CHp (X̃0,K , 2p − 1)}
+                                 ∼
+                                 = CHp (Spec(K), 2p − 1) ,
+30see the proof of [Ke22, Thm. 10.8].
+                                         APÉRY EXTENSIONS                                            33
+
+and (6.11) restricts to the Borel regulator on this piece.
+                                                                                √
+Example 6.5. In §§5.3-5.5, Z0 belongs to W−2 HM    3
+                                                     (X̃0,K , Q(p)), with K = Q( −3) for V18
+and K = Q for the other V2N ’s. Since each αX◦ is also real by construction, and k belongs to
+K, Borel’s theorem (together
+                       √     with part (c) of Problem 5.3) forces αX◦ to be in Q(2) (V10 , V14 ),
+ζ(3)Q (V12 , V16 ), and −3Q(3) (V18 ) respectively, before any computation is done.
+Remark 6.6. We finally owe the reader an explanation regarding the flip in perspective from
+ψ∞ A†φ (and the limit of the coordinate-symbol normal function at ∞) to ψ0 Aφ (and the
+limit of Apéry normal functions at 0), specifically the “computational nonviability” claimed
+for the former. First of all, if we choose the lift ν̃φ to be single-valued around ∞, it is a
+section of the dual-canonical extension (Hvn−1 )e ; since ω is a section of Hv,e
+                                                                               n−1
+                                                                                    with a simple
+zero at ∞, they do indeed pair to a holomorphic function Vφ on a disk D∞ , but one with
+Vφ (∞) = 0. Replacing ω by ω̂ := tω gives V̂φ := tVφ , from which we can in principle read off
+the limiting extension class if we know the limits of the invariant periods of ω̂ at ∞ (which
+is already nontrivial); and this was essentially the method used for V16 and V18 .
+   But this approach becomes problematic when T∞ is non-unipotent, intuitively because ω̂
+then has periods which blow up at ∞, and we lack a suitable representative for ω̂(∞) on
+X̃∞ . More precisely, if we let ρ : D∞ → D∞ be the base-change (ramified at ∞) which kills
+  ss
+T∞   , the pullback ρ∗ ω is not a section of (ρ∗ Hvn−1 )e over D∞ , and we cannot use [7K19, Cor.
+5.3] to compute V̂φ (∞). So while, for (say) V10 and V14 , one can show (abstractly, from its
+inhomogeneous equation) that V̂φ (∞) is a nonzero complex number, it does not seem nearly
+as accessible as the Vµ (0) values computed in §§5.3 and §§5.5.
+Remark 6.7. In addition to its implications for the arithmetic of αX◦ , Problem 5.3 appears
+to encode interesting algebro-geometric predictions about Fanos. To just give the idea in the
+simplest possible case, suppose Fm is a Fano m-fold, with Hprim  ∗
+                                                                   (Fm ) of rank two, concentrated
+in weights 0 and 2w, with degree 2 QDE. Let Pi denote general hyperplanes in some PM
+in which Fm is minimally embedded, and accept the idea that — as long as Fm−ℓ := Fm ∩
+P1 ∩ · · · ∩ Pℓ remains Fano — 5.3(a)-(c) continue to hold and the Apéry constant α remains
+unchanged (cf. Remark 3.6). At first, α = αFm is computed by the LMHS of the LG
+model; but after hyperplane sections kill off the second Lefschetz string in H ∗ , α = αFm−ℓ is
+computed by the limit of a nontorsion extension of Hm−ℓ−1 by Q(−w) (even if α is “torsion”).
+As soon as F w−1Hm−ℓ−1 = {0}, however, Griffiths transversality forces such normal functions
+to be flat and thus torsion. So for Problem 5.3 to be consistent, Fm−ℓ cannot be Fano for
+m − ℓ < w; that is, the index i(Fm ) is ≤ m − w + 1. (Recall that i is defined by −KF = ih.)
+A quick perusal of examples in this paper suggests that this is sharp: G(2, 5), OG(5, 10),
+                                                                      ∗
+and LG(3, 6) (but not G(2, 6) or G2 /P2 ) each have rank two Hprim          and d = 2; while their
+respective (m, w, i) are (6, 2, 5), (10, 3, 8), resp. (6, 3, 4).
+
+                                            References
+[Ad94] A. Adolphson, Hypergeometric functions and rings generated by monomials, Duke Math. J. 73 (1994),
+       269-290.
+[BGM22] P. Belmans, S. Galkin and S. Mukhopadhyay, Graph potentials and symplectic geometry of moduli
+       spaces of vector bundles, preprint, arXiv:2206.11584.
+34                              V. GOLYSHEV, M. KERR, AND T. SASAKI
+
+[Be83] F. Beukers, Irrationality of ζ(2), periods of an elliptic curve and Γ1 (5), in “Diophantine approxima-
+       tions and transcendental numbers (Luminy, 1982)”, Prog. Math. 31, Birkhäuser, Boston, MA, 1983,
+       47-66.
+[BP84] F. Beukers and C. Peters, A family of K3 surfaces and ζ(3), J. Reine Angew. Math. 351 (1984),
+       42-54.
+[Bl86] S. Bloch, Algebraic cycles and higher K-theory, Adv. Math. 61 (1986), 267-304.
+[Bl94] ———, The moving lemma for higher Chow groups, J. Alg. Geom. 3 (1994), 537-568.
+[BKV15] S. Bloch, M. Kerr and P. Vanhove, A Feynman integral via higher normal functions, Compositio
+       Math. 151 (2015), 2329-2375.
+[BKV17] S. Bloch, M. Kerr and P. Vanhove, Local mirror symmetry and the sunset Feynman integral, ATMP
+       21 (2017), 1373-1453.
+[BZ90] J.-L. Brylinski and S. Zucker, An overview of recent advances in Hodge theory, in “Several complex
+       variables, VI”, 39-142, Encyclopaedia Math. Sci., 69, Springer, Berlin, 1990.
+[CCGGK13] T. Coates, A. Corti, S. Galkin, V. Golyshev, A. Kasprzyk, Mirror symmetry and Fano mani-
+       folds, Euro. Congress of Mathematics, 285-300, Euro. Math. Soc., Zürich, 2013.
+[dS19] G. da Silva Jr., On the arithmetic of Landau-Ginzburg model of a certain class of threefolds, Commun.
+       Numb. Theor. Phys. 13 (2019), 149-163.
+[7K19] P. del Angel, C. Doran, J. Iyer, M. Kerr, J. Lewis, S. Müller-Stach, and D. Patel, Specialization of
+       cycles and the K-theory elevator, Commun. Numb. Theor. Phys. 13 (2019), no. 2, 299-349.
+[dAMS08] P. del Angel and S. Müller-Stach, Differential equations associated to families of algebraic cycles,
+       Ann. Inst. Fourier 58 (2008), no. 6, 2075-2085.
+[DK11] C. Doran and M. Kerr, Algebraic K-theory of toric hypersurfaces, Commun. Numb. Theor. Phys. 5
+       (2011), no. 2, 397-600.
+[DK14] C. Doran and M. Kerr, Algebraic cycles and local quantum cohomology, Commun. Numb. Theor.
+       Phys. 8 (2014), 703-727.
+[DvdK98] H. Duistermaat and W. van der Kallen, Constant terms in powers of a Laurent polynomial, Indag.
+       Math. 9 (1998), no. 2, 221-231.
+[FANO] T. Coates, A. Corti, S. Galkin, V. Golyshev and A. Kasprzyk, “Fano varieties and extremal Laurent
+       polynomials”, research blog and database, http://www.fanosearch.net.
+[Ga16] S. Galkin, Apéry constants of homogeneous varieties, preprint, arXiv:1604.04652.
+[Gr69] P. Griffiths, On the periods of certain rational integrals. I, Ann. of Math. 90 (1969), 460-495.
+[Go07] V. Golyshev, Classification problems and mirror duality, in “Surveys in geometry and number theory:
+       reports on contemporary Russian mathematics”, 88-121, LMS Lecture Note Series 338, Cambridge
+       Univ. Press, 2007.
+[Go09] V. Golyshev, Deresonating a Tate period, preprint, arXiv:0908.1458.
+[GS07] V. Golyshev and J. Stienstra, Fuchsian equations of type DN , Commun. Numb. Theor. Phys. 1
+       (2007), 323-346.
+[GZ16] V. Golyshev and D. Zagier, Proof of the gamma conjecture for Fano 3-folds with a Picard lattice of
+       rank one, Izv. Math. 80 (2016), no. 1, 24-49.
+[Ha16] A. Harder, The geometry of Landau-Ginzburg models, U. Alberta Ph.D. Thesis, 2016.
+[Ha21] A. Harder, Hodge numbers of Landau-Ginzburg models, Adv. Math. 378 (2021), art. no. 107436.
+[HLY96] S. Hosono, B. Lian and S-T. Yau, GKZ-generalized hypergeometric systemsin mirror symmetry of
+       Calabi-Yau hypersurfaces, Comm. Math. Phys. 182 (1996), no. 3, 535-577.
+[HLYZ16] A. Huang, B. Lian, S-T. Yau and X. Zhu, Chain integral solutions to tautological systems, Math.
+       Res. Lett. 23 (2016), 1721-1736.
+[Ir11] H. Iritani, Quantum cohomology and periods, Ann. Inst. Fourier 61 (2011), no.7, 2909-2958.
+[Ir19] ———, Quantum D-module of toric varieties and oscillatory integrals, in “Handbook of mirror sym-
+       metry for Calabi-Yau manifolds and Fano manifolds”, ALM 47, 131-147, 2019.
+[JW14] R. Jefferson and J. Walcher, Monodromy of inhomogeneous Picard-Fuchs equations, Commun.
+       Numb. Theor. Phys. 8 (2014), 1-40.
+                                          APÉRY EXTENSIONS                                              35
+
+[KKP17] L. Katzarkov, M. Kontsevich and T. Pantev, Bogomolov-Tian-Todorov theorems for Landau-
+       Ginzburg models, J. Differential Geom. 105 (2017), 55-117.
+[Ke17] M. Kerr, Motivic irrationality proofs, preprint, arXiv:1708.03836.
+[Ke22] M. Kerr, Unipotent extensions and differential equations (after Bloch-Vlasenko), Commun. Numb.
+       Theor. Phys. 16 (2022), no. 4, 801-849.
+[KL21] M. Kerr and R. Laza, Hodge theory of degenerations, (I): Consequences of the decomposition theorem,
+       with an appendix by M. Saito, Selecta Math. 27 (2021), Paper No. 71, 48 pp.
+[KP11] M. Kerr and G. Pearlstein, An exponential history of functions with logarithmic growth, in “Topology
+       of Stratified Spaces”, MSRI Pub. 58, Cambridge University Press, New York, 2011.
+[KS20] A. Kuznetsov and M. Smirnov, On residual categories for Grassmannians, Proc. LMS (3) 120 (2020),
+       617-641.
+[LZ21] B. Lian and M. Zhu, On the hyperplane conjecture for periods of Calabi-Yau hypersurfaces in Pn , J.
+       Differential Geom. 118 (2021), no. 1, 101-146.
+[MW09] D. Morrison and J. Walcher, D-branes and normal functions, Adv. Theor. Math. Phys. 13 (2009),
+       no. 2, 553-598.
+[RV99] F. Rodriguez-Villegas, Modular Mahler measures I, in “Topics in Number Theory (University Park,
+       PA, 1997)”, Kluwer Acad. Publ., Dordrecht, 1999, 17-48.
+[Sa18] C. Sabbah, Some properties and applications of Brieskorn lattices, J. Singul. 18 (2018), 238-247.
+
+  ICTP Math Section, Strada Costiera 11, Trieste 34151, Italy; and Algebra and Number
+Theory Lab, Institute for Information Transmission Problems, Bolshoi Karetny 19, Moscow
+127994, Russia
+  Email address: golyshev@mccme.ru
+
+  Department of Mathematics, Washington University in St. Louis, 1 Brookings Drive, Cam-
+pus Box 1146, St. Louis, MO 63130-4899
+  Email address: matkerr@wustl.edu
+
+  Department of Mathematics, University of Miami, 1365 Memorial Drive, Ungar building,
+Coral Gables, FL 33146-2508
+  Email address: txs885@miami.edu
+

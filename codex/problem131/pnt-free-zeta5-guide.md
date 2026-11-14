@@ -677,11 +677,12 @@ From the repository root, the main certificates use only Python's standard libra
 
 The proofs explain why these finite checks imply the asserted inequalities; experiments at many parameter values alone would not. Standard Hermite-integral, Bernoulli, integer-valued-polynomial, and determinant identities remain mathematical inputs. The covariance identities are elementary; the entire proof has not thereby become elementary.
 
-There are three distinct arithmetic routes:
+There are four distinct arithmetic routes:
 
 | Route | What it simplifies | What it retains |
 |---|---|---|
 | This PNT-free construction | Removes prime-density averaging; retains degree \(h\) by primitive parts or floor rounding | Refined outer rank estimate, 25-term rational certificate, both prime repairs; \(40000\) is only an auxiliary denominator |
+| [Optional eleven-factor construction](eleven-factor-normalizer.md) | Keeps the PNT-free argument with a shorter factor list and degree \(h\) | Additional outer Hermite-kernel lemma, less pleasant coefficients, stronger analytic bound \(2771/2000\); arithmetic cost below \(1.3846\) |
 | [Plain-rank route](fauzan-equilibrium-guide.md#12-spend-a-little-analytic-margin-to-simplify-the-local-arithmetic-too) | Removes the zero-weight optimization and long integration tables | PNT, its own normalizer \(\widetilde m\), degree \(h\) |
 | [Optional outer-kernel improvement](outer-gain-budget-update.md) | Gives a stronger arithmetic margin using a finite-field kernel | Additional reviewed local lemma, PNT, another explicitly changed normalizer |
 

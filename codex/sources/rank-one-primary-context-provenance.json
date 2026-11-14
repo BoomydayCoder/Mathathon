@@ -1,0 +1,35 @@
+[
+  {
+    "stem": "ferguson-hankel-200310616",
+    "url": "https://arxiv.org/pdf/2003.10616",
+    "bytes": 133240,
+    "sha256": "8f599e72b8609f5be4a978f2aeb727d41a676b758478ebefb1114dde92c26c41"
+  },
+  {
+    "stem": "krattenthaler-rational-moments-210303969",
+    "url": "https://arxiv.org/pdf/2103.03969",
+    "bytes": 214904,
+    "sha256": "9257216e0cfef032a4ab8f4799ef3251fe18027a053fade8f93e1e36c152001b"
+  },
+  {
+    "stem": "prevost-pade-1996",
+    "url": "https://www.math.ru.nl/~zudilin/zw/Prevost96.pdf",
+    "bytes": 477168,
+    "sha256": "e144782b86aef226b603078991d4f93350b10b8a0ba13f233b41caa372ca962c",
+    "ocr_file": "prevost-pade-1996.ocr.txt",
+    "ocr_sha256": "6c32ebc53ae9883de48149f385af2609fc239ffe0c20c9d23a4f06718c3e7d42",
+    "visual_verification": "Original printed pp228\u2013232; Eq53\u201358 read visually from rendered pages11\u201312. OCR is only a search aid."
+  },
+  {
+    "stem": "gautschi-rational-quadrature-9307223",
+    "url": "https://arxiv.org/pdf/math/9307223",
+    "bytes": 183774,
+    "sha256": "277af1dca9852d90cbf25dd1c979b7c78ff38e8322053dc55cbc8d11b64a3ddf"
+  },
+  {
+    "stem": "bultheel-rational-quadrature-1999",
+    "url": "https://nalag.cs.kuleuven.be/papers/ade/qorf/preprint.pdf",
+    "local_download": "HTTP503; inspected primary author PDF via web tool",
+    "section": "8, Theorem8.1"
+  }
+]

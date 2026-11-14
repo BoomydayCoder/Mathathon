@@ -1,9 +1,11 @@
 # The Laurent model gives Legendre P/Q, with a necessary boundary term
 
 Status: exact one-variable reductions and divergence identity; exact algebraic
-checks of the Apéry operator's symmetric-square and reciprocal structure. A
-full two-variable exact-form certificate remains missing. The homogeneous versus
-relative-period distinction below is essential, not a technicality.
+checks of the Apéry operator's symmetric-square and reciprocal structure.
+The full two-variable exact-form certificate was a gap when this note was
+written; it is now supplied by the [geometric divergence proof](geometric-divergence-proof.md),
+with [completed independent review](geometric-divergence-independent-review.md).
+The homogeneous versus relative-period distinction below remains essential.
 
 ## 1. The real generating function is not a homogeneous period solution
 
@@ -133,7 +135,10 @@ The compact branch satisfies the corresponding polynomial recurrence
 
 These identities contain variable coefficients a,δ depending on x,y. They
 cannot simply be integrated and replaced by the scalar coefficients 34 and 5.
-That remaining reduction is precisely the missing two-variable certificate.
+That remaining reduction requires a separate two-variable certificate.
+The reviewed geometric divergence proof now supplies it, with a rational
+three-variable lift and controlled real boundary terms. This does not justify
+replacing the variable coefficients in these one-variable identities by scalars.
 
 ## 4. Compute the final −12 without evaluating ζ(3)
 
@@ -162,10 +167,11 @@ the substitution u=xy gives
 
 The y term is identical, yielding another −4. Thus F₁−5F₀=−12 without
 knowing F₀ or evaluating any zeta value. This computes the inhomogeneous
-constant directly from the double-integral geometry. It is not a substitute
-for the missing full divergence certificate at general n.
+constant directly from the double-integral geometry. It is not by itself a
+full divergence certificate at general n; the separate reviewed geometric
+proof now constructs that certificate and evaluates its surviving corner.
 
-## 5. Two exact operator checks that constrain a future certificate
+## 5. Two exact operator checks preceding the full certificate
 
 First, L is a symmetric square. The second-order equation is
 
@@ -194,7 +200,11 @@ chain into a closed cycle or remove its boundary.
 
 `python codex/computations/check_laurent_legendre_periods.py` checks the
 constant-term formula, the divergence numerator, and the symmetric-square
-identity exactly. The remaining gap is an explicit x,y rational exact-form
-reduction deriving L from (2)–(5), with controlled boundary terms for the real
-chain. The one-variable reduction and initial boundary calculation are complete;
-that stronger geometric recurrence proof is not claimed here.
+identity exactly. The historical gap was an explicit x,y exact-form reduction
+deriving L from the geometry, with controlled boundary terms for the real
+chain. The reviewed geometric proof now closes it: unknown operator
+coefficients are determined by a finite rational system, then a rational lift
+and two edge fluxes give \(\mathcal LF=-12t\). Its sizeable certificates do
+not yet constitute a short hand derivation. This note's one-variable reduction
+remains useful for explaining why the real period has a boundary term; it
+does not make that period a homogeneous solution.

@@ -6,8 +6,13 @@ in this session are not claims of historical novelty.
 
 ## Three reading routes
 
-**Understand and present Apéry's proof.** Start with the [discovery guide](problem131/discovery-guide.md).
-It derives the rational square from its constraints, explains the recurrence
+**Shortest complete proof, then recurrence motivation.** Start with the
+[short elementary hybrid proof](problem131/short-elementary-hybrid-proof.md).
+Rational poles supply the denominators; two integrations by parts supply a
+positive integral; AM–GM and an elementary lcm estimate close the contradiction.
+It requires no recurrence, PNT, or complex contours. The
+[discovery guide](problem131/discovery-guide.md) then derives the square from
+its constraints and explains the recurrence
 through a quadratic Newton grid and finite balance, and gives a complete elementary
 irrationality proof. A single positive Laurent polynomial now connects its
 integer coefficients to the reciprocal-power Beukers integral; one AM–GM
@@ -32,6 +37,10 @@ The earlier [plain-rank route](problem131/fauzan-equilibrium-guide.md#12-spend-a
 remains available when simpler local arithmetic is preferred; it uses the PNT.
 The [optional outer-kernel improvement](problem131/outer-gain-budget-update.md)
 adds a local lemma for a larger margin.
+An [independently audited eleven-factor variant](problem131/eleven-factor-normalizer.md)
+uses that extra lemma pointwise, keeping the PNT-free proof. It has fewer factors
+but less pleasant coefficients and needs the stronger analytic certificate;
+the 25-term route remains the primary exposition.
 
 **Explore results and promising boundaries.** The [research results](problem131/research-results.md)
 collect precise theorem statements, proofs, obstructions, and links. The common
@@ -75,11 +84,24 @@ review status.
 For the geometric interpretation, [the Legendre/relative-period note](problem131/laurent-legendre-relative-periods.md)
 records the necessary boundary term: the real error generating function satisfies
 an inhomogeneous equation. The Laurent critical values alone are not a derivation
-of the full recurrence.
+of the full recurrence. The [reviewed geometric divergence proof](problem131/geometric-divergence-proof.md)
+now supplies the full exact-form certificate and computes that boundary directly;
+its large rational primitives remain a presentation challenge.
 
 Detailed higher-derivative, truncation, and prime-band investigations are indexed
 in [research results](problem131/research-results.md); their distinctions between
 actual failure and insufficient estimates matter.
+
+The [primary-source comparison](problem131/rodrigues-primary-source-comparison.md)
+identifies the higher-Rodrigues pure forms, finite Barnes decomposition, and
+positive central period as exact specializations of Nesterenko's 2003 work.
+The underlying polynomial is also a classical confluent Jacobi–Piñeiro
+specialization. Our explicit Laurent geometry and certified asymptotic analyses
+are developments within that established framework; their historical priority
+has not been established. The
+[completed finite-saddle review](problem131/finite-rodrigues-saddles-independent-review.md)
+now covers the oscillatory analytic forms for \(\zeta(5),\zeta(7),\zeta(9),\zeta(11)\).
+Their available arithmetic estimates still do not yield irrationality proofs.
 
 ## What has been verified
 

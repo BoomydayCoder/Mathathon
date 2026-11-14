@@ -1,4 +1,4 @@
-# Research handoff — 14 November 2026, 10:50 UTC
+# Research handoff — 14 November 2026, 12:07 UTC
 
 Continue autonomous research in `codex/` on `codex/independent-research` in the
 exact private repository `BoomydayCoder/Mathathon`. User authorizes continued
@@ -6,6 +6,44 @@ work without permission pauses, remaining credits but no automatic resets.
 Reporting target:14 November2026,08:00Los Angeles/16:00UTC. No usage-balance API
 is available; do not invent a balance or guarantee runtime. No Claude-owned
 files have been changed. Rough effort split remains80%#131/20%#137.
+
+## Newest continuation — 12:07 UTC
+
+The rank-one subspace theorem is now independently reviewed: see
+problem131/rank-one-zeta-subspace-approximants.md and its independent review.
+It gives strictly monotone rational bounds to every odd zeta value and an explicit
+factorial error bound. The adjacent-Apéry formula is still a checked conjecture;
+its proof and denominator control for higher odd indices remain open.
+The all-q elementary deformed-period audit is complete. Geometric compression
+found all 30 curl gauges and a small positive boundary representative of integral
+12, but no shorter full certificate. New work targets the Apéry identity, universal
+analytic rates of the rank-one family, and Fano/Gamma-class connections.
+
+## Newest continuation — 11:50 UTC
+
+Start with **problem131/short-elementary-hybrid-proof.md**, now a complete
+independently reviewed elementary proof requiring neither recurrence nor PNT nor
+complex contours. The discovery guide remains the recurrence-motivation route.
+The previously missing geometric exact-form reduction is now completed and
+reviewed in geometric-divergence-proof.md. Its231/188-term certificates are an
+expositioncost; an initially false discriminant bound was corrected before audit.
+All-n deformed-period arithmetic is reviewed; its new elementary all-q replacement
+is undergoing its final separate audit.
+
+Newest actual obstructions: originalcanonicalfamily fails at fixedodds>=13;
+anyfixed(r,α) eventuallyfailsatlargeodds; singledepletionL>=2 failscanonical
+familyatodds>=7. Each statement has its exact scope and independentreview.
+Cyclotomic moment classification, sharp tangentgcdprefix, and #137general
+low-excess recipe are independentlyreviewed. Read RESEARCH_MAP.md for a coherent
+40-hour project rather than every research branch.
+
+Activepositiveinvestigation: truncated/rank1Hankeldeterminants with
+K=2h+(s−1)/2−1,N0. They may yield elementary one-sided rational approximants to
+everyoddζ, with explicitfactorial error bounds; arithmetic remainsopen. This
+changes dimension and escapes the provedfullpole no-gos. Simplify developing;
+root derivedvariational/trialbound, no irrationalityclaim.
+
+Currentpushedcommit17a2f78; newerchangesawaitpush. Continueautonomouslyto16:00UTC.
 
 ## Newest continuation — 11:15 UTC
 
@@ -58,9 +96,9 @@ historical testimony. Use F_n=2(A_n*zeta(3)−B_n), A_0=1,A_1=5,B_0=0,B_1=6.
 **One Laurent polynomial supplies both sides.** The reviewed reciprocal model
 has A_n=CT Lambda^n and F_n=integral_R^3 Lambda^(-n-1). One AM–GM minimum gives
 17+12sqrt2 and its inverse. The same Hessian gives A_n F_n~1/(2sqrt2*n^3).
-The real generating function is relative: L F=−12t, not zero. The remaining
-full two-variable exact-form certificate is still unresolved; critical values
-alone do not derive a recurrence. See apery-laurent-reciprocal.md and
+The real generating function is relative: L F=−12t, not zero. The full two-variable exact-form certificate is now proved and independently
+reviewed in geometric-divergence-proof.md; critical values alone do not derive
+a recurrence. See apery-laurent-reciprocal.md and
 laurent-legendre-relative-periods.md.
 
 **PNT-free zeta-five normalization is complete and independently audited.**
