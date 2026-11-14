@@ -207,14 +207,22 @@ if __name__ == "__main__":
         low = list(range(N + 1, K + 1)); top = list(range(K, N, -1))
         low2 = [j for j in range(N + 1, N + h // 2 + 2) for _ in (0, 1)][:h]
         one = list(range(1, h + 1))
-        pairs = {'tail': (low, top), 'symlow': (low, low), 'low2': (low2, low2), 's3': (one, top)}
+        J1, J2, J3 = [int(round(t * K)) for t in (0.3308, 0.3804, 0.4387)]; J3 += K + 2 * N - (J1 + J2 + J3)
+        p3a = (list(range(N + 1, J3 + 1)) + list(range(N + 1, J2 + 1)) + list(range(N + 1, J1 + 1)))[:h]
+        p3b = (list(range(N + 1, J1 + 1)) + list(range(N + 1, J2 + 1)) + list(range(N + 1, J3 + 1)))[:h]
+        p3c = sorted(p3a)
+        pairs = {'tail': (low, top), 'symlow': (low, low), 'low2': (low2, low2), 's3': (one, top),
+                 'stairN-3pass(long first)': (p3a, p3a), 'stairN-3pass(short first)': (p3b, p3b), 'stairN-sorted': (p3c, p3c)}
+        nodes, raw = scale_design(K, (0.3308, 0.3804, 0.4387))
+        for M in (10, 20):
+            print(f"K={K} M={M} Hermite staircase {raw[0]}: model loss {Ctx(K, M).loss(nodes):.4f}")
         for M in (10, 20):
             P = inner_primes(K, M)
             locs = [gamma_loc(K, N, h, p) for p in P]
             for nm, (r, c) in pairs.items():
                 t0 = time.time()
                 L = sum((lo - newton_trop(K, N, h, r, c, p)) * math.log(p) for lo, p in zip(locs, P)) / K ** 2
-                print(f"K={K} M={M} Newton pair {nm:7s}: model loss {L:.4f}  ({time.time()-t0:.0f}s)", flush=True)
+                print(f"K={K} M={M} Newton pair {nm:26s}: model loss {L:.4f}  ({time.time()-t0:.0f}s)", flush=True)
     elif mode == 'search':
         K = int(sys.argv[2]); nst = int(sys.argv[3]); iters = int(sys.argv[4]); seed = int(sys.argv[5])
         M = int(sys.argv[6]) if len(sys.argv) > 6 else 20
@@ -264,7 +272,8 @@ if __name__ == "__main__":
     elif mode == 'search2':
         # hill climbing: search2 K M n_up n_down n_half use_m0 iters seed
         K, M, nu, nd, nh, um0, iters, seed = [int(x) for x in sys.argv[2:10]]
-        C = Ctx(K, M); N, h = C.N, C.h
+        import os
+        C = Ctx(K, M, float(os.environ.get('HI', '3'))); N, h = C.N, C.h
         rng = np.random.default_rng(seed)
         sg = [1] * nu + [-1] * nd + [1] * nh + [1]
         tot = h + 3 * N
@@ -281,6 +290,9 @@ if __name__ == "__main__":
         best, bv = None, 1e9
         cur, cv = start()
         scale = K // 8; stall = 0
+        if os.environ.get('START'):
+            cur = [int(v) for v in os.environ['START'].split(',')]; cv = C.loss(build(cur)); scale = K // 40
+            print('start loss', round(cv, 4), flush=True)
         for it in range(iters):
             x = list(cur)
             na = len(x) - (0 if um0 else 1)
@@ -342,3 +354,45 @@ if __name__ == "__main__":
             b = 3 * ell(al * x)
             G = ((T - b) * (T + b - ell(x) - 5)).sum() / p + s_ * (2 * T - q - 5) + max(0.0, s_ - npl)
             print(f"   p={p} x={x:.3f}: loc_p/p = {gamma_loc(K, N, h, p)/p:.4f}   Gamma(x) = {G:.4f}")
+    elif mode == 'family':
+        # best-of-n global staircases: for every prime use the best of n prime-independent Hermite bases.
+        # family K M pool nmax seed
+        K, M, pool, nmax, seed = [int(x) for x in sys.argv[2:7]]
+        C = Ctx(K, M); N, h = C.N, C.h
+        rng = np.random.default_rng(seed)
+        des, Lm = [], []
+        seeds = [(0.3227, 0.3799), (0.3308, 0.3804), (0.3515, 0.3826), (0.3194, 0.3798)]
+        while len(des) < pool:
+            if len(des) < len(seeds): t1, t2 = seeds[len(des)]
+            else: t1, t2 = sorted(rng.uniform(0.08, 0.6, 2))
+            J1, J2 = int(round(t1 * K)), int(round(t2 * K)); J3 = K + 2 * N - J1 - J2
+            if J3 < J2 or J1 < N: continue
+            nodes = design_nodes(K, N, h, [J1, J2, J3])
+            if nodes is None: continue
+            des.append((J1, J2, J3))
+            Lm.append([(lo - bound_design(K, N, h, nodes, p, b)) * math.log(p) / K ** 2 for p, b, lo in zip(C.P, C.b, C.loc)])
+        Lm = np.array(Lm)
+        cur = np.full(Lm.shape[1], np.inf); chosen = []
+        print(f"K={K} M={M}: pool of {pool} staircases, {len(C.P)} primes; greedy best-of-n family (loss vs loc, per K^2)")
+        for n in range(1, nmax + 1):
+            tot = np.minimum(cur[None, :], Lm).sum(axis=1)
+            k = int(tot.argmin()); cur = np.minimum(cur, Lm[k]); chosen.append(k)
+            xs = np.array([K / p for p in C.P])
+            print(f"   n={n:2d}: loss {cur.sum():.4f}  [x<6: {cur[xs < 6].sum():.4f}, 6<=x<20: {cur[(xs >= 6) & (xs < 20)].sum():.4f}, x>=20: {cur[xs >= 20].sum():.4f}]"
+                  f"   added theta={tuple(round(v / K, 4) for v in des[k])}", flush=True)
+    elif mode == 'famEval':
+        # famEval K M hi "t1,t2;t1,t2;..."  : best-of-n for the first n listed staircases (validation at another K)
+        K, M = int(sys.argv[2]), int(sys.argv[3]); hi = float(sys.argv[4])
+        C = Ctx(K, M, hi); N, h = C.N, C.h
+        Lm = []
+        for spec in sys.argv[5].split(';'):
+            t1, t2 = [float(v) for v in spec.split(',')]
+            J1, J2 = int(round(t1 * K)), int(round(t2 * K)); J3 = K + 2 * N - J1 - J2
+            nodes = design_nodes(K, N, h, [J1, J2, J3]); assert nodes is not None
+            Lm.append([(lo - bound_design(K, N, h, nodes, p, b)) * math.log(p) / K ** 2 for p, b, lo in zip(C.P, C.b, C.loc)])
+        Lm = np.array(Lm); xs = np.array([K / p for p in C.P])
+        print(f"K={K} M={M} p<=K/{hi}: {len(C.P)} primes; best-of-n of the listed prime-independent staircases (loss vs loc, per K^2)")
+        for n in range(1, len(Lm) + 1):
+            cur = Lm[:n].min(axis=0)
+            print(f"   n={n}: loss {cur.sum():.4f}  [x<3: {cur[xs < 3].sum():.4f}, 3<=x<6: {cur[(xs >= 3) & (xs < 6)].sum():.4f}, 6<=x<20: {cur[(xs >= 6) & (xs < 20)].sum():.4f},"
+                  f" 20<=x<40: {cur[(xs >= 20) & (xs < 40)].sum():.4f}, x>=40: {cur[xs >= 40].sum():.4f}]", flush=True)

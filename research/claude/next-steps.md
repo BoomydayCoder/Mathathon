@@ -22,6 +22,10 @@ Most promising: the core is already proved and exactly verified for K<=100.
   U_true = -1.3855 for Fauzan's field versus the proved -1.3670: the margin would double (1.3% -> 2.6%).
 - Done = a zeta(5) proof whose arithmetic section is as short as §4 of `hankel-zeta3.md`.
 
+Update after the second frontier run (`zeta5-simplification.md`): one global basis loses about 0.065 K^2
+(budget 0.0495); 2-3 Hermite staircase bases chosen by K/p are estimated to close. Sub-item with the
+best value/cost: prove the water-filling bound for K/3 < p <= 2K/5 (would roughly double Fauzan's margin).
+
 ## 3. Decide the fate of zeta(7) in the Hankel family
 - Prove the cost formula s(s+4)/(2(s+2)) K^2 for W=1 (upper and lower bounds), and the s-independence
   of the decay. That would be a clean no-go theorem for the unmodified family.

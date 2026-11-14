@@ -1,0 +1,147 @@
+### hankel5_model.py -- class-model study (see docstring).  Outputs collected from the runs of this session.
+
+## validate
+herm3 {29: (-303, -303), 31: (-255, -255), 37: (-346, -346)}  (fast formula, tropical of model matrix from hankel5_exact)
+herm2 {29: (-322, -322), 31: (-318, -318), 37: (-327, -327)}  (fast formula, tropical of model matrix from hankel5_exact)
+lagr {29: (-374, -374), 31: (-345, -345), 37: (-438, -438)}  (fast formula, tropical of model matrix from hankel5_exact)
+loc {11: 385, 13: 228, 17: 51, 19: -6, 23: -113, 29: -218, 31: -255, 37: -300, 41: -348, 43: -372, 47: -385}  expected 385,228,51,-6,-113,-218,-255,-300,-348,-372,-385
+tail  model trop {29: -484, 31: -492, 37: -498}  expected -484,-492,-498
+symlow model trop {29: -372, 31: -444, 37: -384}  expected -372,-444,-384
+
+## gammacheck 40000  (loc_p/p vs Fauzan's Gamma(x), (5.4))
+   p=12119 x=3.301: loc_p/p = -8.5324   Gamma(x) = -8.5323
+   p=8513 x=4.699: loc_p/p = -7.5762   Gamma(x) = -7.5765
+   p=6553 x=6.104: loc_p/p = -2.6965   Gamma(x) = -2.7036
+   p=4493 x=8.903: loc_p/p = 12.9907   Gamma(x) = 12.9846
+   p=3011 x=13.285: loc_p/p = 60.9764   Gamma(x) = 60.9392
+   p=2029 x=19.714: loc_p/p = 178.2780   Gamma(x) = 178.1198
+   p=1291 x=30.984: loc_p/p = 521.8342   Gamma(x) = 521.3338
+
+## fz (consistency with (5.18); prime sums fluctuate at the 0.002 level)
+K=9600: sum_(K/20<p<=K/3) -(loc_p+v_p(S_K)) log p/K^2 = 0.04178   [Fauzan (5.18): 0.04279]
+
+## ext (water filling vs (4.14) for K/3<p<K/2.47)
+K=480: sum over p>K/3 of (loc_p - out_p)_+ log p / K^2 = 0.0204  (7 primes, K/p in [2.487,2.945])
+K=1200: sum over p>K/3 of (loc_p - out_p)_+ log p / K^2 = 0.0206  (15 primes, K/p in [2.464,2.993])
+K=2400: sum over p>K/3 of (loc_p - out_p)_+ log p / K^2 = 0.0199  (25 primes, K/p in [2.472,2.967])
+K=4800: sum over p>K/3 of (loc_p - out_p)_+ log p / K^2 = 0.0198  (44 primes, K/p in [2.483,2.998])
+
+## scan (3-step Hermite profiles)
+K=4800 M=10: 159 primes in (480,1600];  -sum loc_p log p/K^2 = 0.2856
+    lagr  m=1 on (N,K]                   loss 0.2341
+    herm2 m=2 on (N,N+h/2]               loss 0.1643
+    herm3 m=3 on (N,N+h/3]               loss 0.2168
+    herm4 m=4 on (N,N+h/4]               loss 0.3987
+    m=1 on [1,h] (zeros of W re-used)    loss 0.5302
+    m=3 on (0,h/3]                       loss 0.8086
+K=4800 M=20: 199 primes in (240,1600];  -sum loc_p log p/K^2 = 0.0486
+    lagr  m=1 on (N,K]                   loss 0.2869
+    herm2 m=2 on (N,N+h/2]               loss 0.2094
+    herm3 m=3 on (N,N+h/3]               loss 0.2683
+    herm4 m=4 on (N,N+h/4]               loss 0.4797
+    m=1 on [1,h] (zeros of W re-used)    loss 0.6754
+    m=3 on (0,h/3]                       loss 1.0116
+K=4800 M=40: 215 primes in (155,1600];  -sum loc_p log p/K^2 = -0.1705
+    lagr  m=1 on (N,K]                   loss 0.3004
+    herm2 m=2 on (N,N+h/2]               loss 0.2250
+    herm3 m=3 on (N,N+h/3]               loss 0.2825
+    herm4 m=4 on (N,N+h/4]               loss 0.5119
+    m=1 on [1,h] (zeros of W re-used)    loss 0.7151
+    m=3 on (0,h/3]                       loss 1.0738
+
+## newton 480
+K=480 M=10 Hermite staircase [159, 183, 210]: model loss 0.0262
+K=480 M=20 Hermite staircase [159, 183, 210]: model loss 0.0262
+K=480 M=10 Newton pair tail                      : model loss 0.3709  (1s)
+K=480 M=10 Newton pair symlow                    : model loss 0.2965  (0s)
+K=480 M=10 Newton pair low2                      : model loss 0.2841  (0s)
+K=480 M=10 Newton pair s3                        : model loss 0.4983  (0s)
+K=480 M=10 Newton pair stairN-3pass(long first)  : model loss 0.2257  (0s)
+K=480 M=10 Newton pair stairN-3pass(short first) : model loss 0.2108  (0s)
+K=480 M=10 Newton pair stairN-sorted             : model loss 0.3779  (0s)
+K=480 M=20 Newton pair tail                      : model loss 0.3709  (0s)
+K=480 M=20 Newton pair symlow                    : model loss 0.2965  (0s)
+K=480 M=20 Newton pair low2                      : model loss 0.2841  (0s)
+K=480 M=20 Newton pair s3                        : model loss 0.4983  (0s)
+K=480 M=20 Newton pair stairN-3pass(long first)  : model loss 0.2257  (0s)
+K=480 M=20 Newton pair stairN-3pass(short first) : model loss 0.2108  (0s)
+K=480 M=20 Newton pair stairN-sorted             : model loss 0.3779  (0s)
+
+## search (random search, K=2400)
+K=2400 M=20 steps=3 iters=2500 seed=3: best loss 0.0401 at steps [796, 908, 1056] (N=180, K=2400, sum=2760)
+K=2400 M=20 steps=4 iters=2500 seed=4: best loss 0.0401 at steps [0, 796, 909, 1055] (N=180, K=2400, sum=2760)
+K=2400 M=20 steps=5 iters=2500 seed=5: best loss 0.0401 at steps [0, 0, 797, 908, 1055] (N=180, K=2400, sum=2760)
+K=2400 M=20 steps=6 iters=2500 seed=6: best loss 0.0406 at steps [0, 0, 0, 796, 907, 1057] (N=180, K=2400, sum=2760)
+
+## search2 (hill climbing, K=4800, M=20; generalized designs)
+K=4800 M=20 up=3 down=0 half=0 m0=0 iters=2500 seed=1: best loss 0.0727  up=[0.5519, 0.4771, 0.121] down=[] half=[] m0=0  raw=[2649, 2290, 581, 0]
+K=4800 M=20 up=3 down=0 half=0 m0=1 iters=2500 seed=2: best loss 0.0443  up=[0.4387, 0.3804, 0.3308] down=[] half=[] m0=0  raw=[2106, 1826, 1588, 0]
+K=4800 M=20 up=3 down=0 half=1 m0=1 iters=2500 seed=3: best loss 0.0443  up=[0.4387, 0.3827, 0.3285] down=[] half=[0.0] m0=0  raw=[2106, 1837, 1577, 0, 0]
+K=4800 M=20 up=4 down=1 half=0 m0=1 iters=2500 seed=4: best loss 0.0482  up=[0.4421, 0.2448, 0.3302, 0.3773] down=[0.2444] half=[] m0=0  raw=[2122, 1175, 1585, 1811, 1173, 0]
+
+## search2 restricted ranges
+K=4800 M=6 up=3 down=0 half=0 m0=0 iters=2000 seed=11: best loss 0.0162  up=[0.4508, 0.3798, 0.3194] down=[] half=[] m0=0  raw=[2164, 1823, 1533, 0]
+start loss 0.0295
+K=9600 M=40 up=3 down=0 half=0 m0=0 iters=900 seed=21: best loss 0.0206  up=[0.3515, 0.3826, 0.4159] down=[] half=[] m0=0  raw=[3374, 3673, 3993, 0]
+start loss 0.056
+K=9600 M=40 up=3 down=0 half=0 m0=0 iters=900 seed=22: best loss 0.0502  up=[0.3227, 0.3799, 0.4474] down=[] half=[] m0=0  raw=[3098, 3647, 4295, 0]
+
+## eval of the staircase theta=(0.3308,0.3804,0.4387) at K=40000
+K=40000 design up=[0.3308, 0.3804, 0.4387] down=[] half=[] m0=0 raw=([13232, 15216, 17552], [], [], 0) p<=K/3.0: loss vs loc  M=6:0.0265(724pr)  M=10:0.0365(1033pr)  M=20:0.0522(1280pr)  M=40:0.0602(1415pr)  M=80:0.0644(1488pr)
+K=40000 design up=[0.3308, 0.3804, 0.4387] down=[] half=[] m0=0 raw=([13232, 15216, 17552], [], [], 0) p<=K/2.47: loss vs loc  M=6:0.0296(1024pr)  M=80:0.0675(1788pr)
+
+## family (greedy best-of-n at K=9600) and validation at K=40000, 20000
+K=9600 M=40: pool of 400 staircases, 400 primes; greedy best-of-n family (loss vs loc, per K^2)
+   n= 1: loss 0.0502  [x<6: 0.0179, 6<=x<20: 0.0275, x>=20: 0.0049]   added theta=(0.3227, 0.3799, 0.4474)
+   n= 2: loss 0.0260  [x<6: 0.0120, 6<=x<20: 0.0117, x>=20: 0.0023]   added theta=(0.2944, 0.3834, 0.4722)
+   n= 3: loss 0.0181  [x<6: 0.0094, 6<=x<20: 0.0068, x>=20: 0.0019]   added theta=(0.1991, 0.4536, 0.4973)
+   n= 4: loss 0.0146  [x<6: 0.0076, 6<=x<20: 0.0056, x>=20: 0.0013]   added theta=(0.2351, 0.3525, 0.5624)
+   n= 5: loss 0.0123  [x<6: 0.0063, 6<=x<20: 0.0047, x>=20: 0.0013]   added theta=(0.2886, 0.3677, 0.4936)
+   n= 6: loss 0.0107  [x<6: 0.0061, 6<=x<20: 0.0035, x>=20: 0.0011]   added theta=(0.3071, 0.3418, 0.5011)
+   n= 7: loss 0.0094  [x<6: 0.0054, 6<=x<20: 0.0030, x>=20: 0.0009]   added theta=(0.2519, 0.2665, 0.6317)
+   n= 8: loss 0.0083  [x<6: 0.0050, 6<=x<20: 0.0028, x>=20: 0.0006]   added theta=(0.3308, 0.3804, 0.4387)
+   n= 9: loss 0.0074  [x<6: 0.0046, 6<=x<20: 0.0023, x>=20: 0.0005]   added theta=(0.2091, 0.3999, 0.541)
+   n=10: loss 0.0067  [x<6: 0.0040, 6<=x<20: 0.0022, x>=20: 0.0005]   added theta=(0.3099, 0.3617, 0.4784)
+   n=11: loss 0.0060  [x<6: 0.0036, 6<=x<20: 0.0020, x>=20: 0.0003]   added theta=(0.1515, 0.4109, 0.5876)
+   n=12: loss 0.0056  [x<6: 0.0034, 6<=x<20: 0.0019, x>=20: 0.0003]   added theta=(0.1416, 0.4582, 0.5502)
+K=40000 M=80 p<=K/3.0: 1488 primes; best-of-n of the listed prime-independent staircases (loss vs loc, per K^2)
+   n=1: loss 0.0621  [x<3: 0.0000, 3<=x<6: 0.0190, 6<=x<20: 0.0323, 20<=x<40: 0.0064, x>=40: 0.0045]
+   n=2: loss 0.0299  [x<3: 0.0000, 3<=x<6: 0.0121, 6<=x<20: 0.0126, 20<=x<40: 0.0033, x>=40: 0.0020]
+   n=3: loss 0.0207  [x<3: 0.0000, 3<=x<6: 0.0091, 6<=x<20: 0.0077, 20<=x<40: 0.0025, x>=40: 0.0013]
+   n=4: loss 0.0163  [x<3: 0.0000, 3<=x<6: 0.0072, 6<=x<20: 0.0063, 20<=x<40: 0.0017, x>=40: 0.0011]
+   n=5: loss 0.0135  [x<3: 0.0000, 3<=x<6: 0.0059, 6<=x<20: 0.0053, 20<=x<40: 0.0015, x>=40: 0.0008]
+   n=6: loss 0.0118  [x<3: 0.0000, 3<=x<6: 0.0058, 6<=x<20: 0.0040, 20<=x<40: 0.0013, x>=40: 0.0007]
+K=40000 M=80 p<=K/2.47: 1788 primes; best-of-n of the listed prime-independent staircases (loss vs loc, per K^2)
+   n=1: loss 0.0648  [x<3: 0.0026, 3<=x<6: 0.0190, 6<=x<20: 0.0323, 20<=x<40: 0.0064, x>=40: 0.0045]
+   n=2: loss 0.0316  [x<3: 0.0016, 3<=x<6: 0.0121, 6<=x<20: 0.0126, 20<=x<40: 0.0033, x>=40: 0.0020]
+   n=3: loss 0.0222  [x<3: 0.0016, 3<=x<6: 0.0091, 6<=x<20: 0.0077, 20<=x<40: 0.0025, x>=40: 0.0013]
+   n=4: loss 0.0179  [x<3: 0.0016, 3<=x<6: 0.0072, 6<=x<20: 0.0063, 20<=x<40: 0.0017, x>=40: 0.0011]
+   n=5: loss 0.0146  [x<3: 0.0012, 3<=x<6: 0.0059, 6<=x<20: 0.0053, 20<=x<40: 0.0015, x>=40: 0.0008]
+   n=6: loss 0.0129  [x<3: 0.0011, 3<=x<6: 0.0058, 6<=x<20: 0.0040, 20<=x<40: 0.0013, x>=40: 0.0007]
+K=20000 M=60 p<=K/3.0: 792 primes; best-of-n of the listed prime-independent staircases (loss vs loc, per K^2)
+   n=1: loss 0.0624  [x<3: 0.0000, 3<=x<6: 0.0184, 6<=x<20: 0.0327, 20<=x<40: 0.0075, x>=40: 0.0039]
+   n=2: loss 0.0304  [x<3: 0.0000, 3<=x<6: 0.0114, 6<=x<20: 0.0125, 20<=x<40: 0.0041, x>=40: 0.0022]
+   n=3: loss 0.0206  [x<3: 0.0000, 3<=x<6: 0.0089, 6<=x<20: 0.0073, 20<=x<40: 0.0030, x>=40: 0.0014]
+   n=4: loss 0.0162  [x<3: 0.0000, 3<=x<6: 0.0071, 6<=x<20: 0.0061, 20<=x<40: 0.0019, x>=40: 0.0011]
+   n=5: loss 0.0134  [x<3: 0.0000, 3<=x<6: 0.0059, 6<=x<20: 0.0051, 20<=x<40: 0.0016, x>=40: 0.0008]
+   n=6: loss 0.0115  [x<3: 0.0000, 3<=x<6: 0.0058, 6<=x<20: 0.0037, 20<=x<40: 0.0014, x>=40: 0.0007]
+
+## one staircase per cell m=floor(K/p) (optimised at K=9600) and validation at K=40000
+K=9600 M=4 up=3 down=0 half=0 m0=0 iters=700 seed=33: best loss 0.0044  up=[0.2954, 0.3823, 0.4723] down=[] half=[] m0=0  raw=[2836, 3670, 4534, 0]
+K=9600 M=5 up=3 down=0 half=0 m0=0 iters=700 seed=34: best loss 0.0050  up=[0.3151, 0.3739, 0.461] down=[] half=[] m0=0  raw=[3025, 3589, 4426, 0]
+K=9600 M=6 up=3 down=0 half=0 m0=0 iters=700 seed=35: best loss 0.0012  up=[0.3002, 0.3985, 0.4512] down=[] half=[] m0=0  raw=[2882, 3826, 4332, 0]
+K=9600 M=7 up=3 down=0 half=0 m0=0 iters=700 seed=36: best loss 0.0009  up=[0.337, 0.384, 0.4291] down=[] half=[] m0=0  raw=[3235, 3686, 4119, 0]
+K=9600 M=8 up=3 down=0 half=0 m0=0 iters=700 seed=37: best loss 0.0008  up=[0.2978, 0.3807, 0.4715] down=[] half=[] m0=0  raw=[2859, 3655, 4526, 0]
+K=9600 M=9 up=3 down=0 half=0 m0=0 iters=700 seed=38: best loss 0.0001  up=[0.3021, 0.3909, 0.457] down=[] half=[] m0=0  raw=[2900, 3753, 4387, 0]
+K=9600 M=10 up=3 down=0 half=0 m0=0 iters=700 seed=39: best loss 0.0004  up=[0.3522, 0.3824, 0.4154] down=[] half=[] m0=0  raw=[3381, 3671, 3988, 0]
+K=9600 M=11 up=3 down=0 half=0 m0=0 iters=700 seed=40: best loss 0.0006  up=[0.3219, 0.3843, 0.4439] down=[] half=[] m0=0  raw=[3090, 3689, 4261, 0]
+validation at K=40000 of the staircases optimised per cell m=floor(K/p) at K=9600 (loss vs loc on the cell, per K^2)
+   m= 3 (354 primes): cell-specific 0.0047   single global staircase 0.0092
+   m= 4 (222 primes): cell-specific 0.0049   single global staircase 0.0065
+   m= 5 (148 primes): cell-specific 0.0015   single global staircase 0.0033
+   m= 6 (107 primes): cell-specific 0.0010   single global staircase 0.0045
+   m= 7 (83 primes): cell-specific 0.0012   single global staircase 0.0051
+   m= 8 (66 primes): cell-specific 0.0006   single global staircase 0.0030
+   m= 9 (53 primes): cell-specific 0.0004   single global staircase 0.0008
+   m=10 (42 primes): cell-specific 0.0007   single global staircase 0.0008
+   total 3<=K/p<11: cell-specific family 0.0149   single global 0.0331

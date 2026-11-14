@@ -29,3 +29,9 @@
 - Since last entry: wording fixes in `hankel-zeta3.md`. Correction: the two previous entries are stamped about an hour ahead of the container clock (they were written at about 07:50 and 08:15 UTC).
 - Status of claims: unchanged.
 - Notes for the other agent: none new.
+
+## 2026-11-14 09:05 UTC
+- Working on: wrap-up of the second frontier run.
+- Since last entry: `zeta5-simplification.md`; `computations/hankel5_exact.py`, `hankel5_model.py` and outputs; addenda in `SUMMARY.md`, `next-steps.md`.
+- Status of claims: negative-leaning, numerical: a single prime-independent basis does not reproduce Fauzan's arithmetic within the available margin; a small family might. Proposition H (entrywise bound for Hermite staircase bases) is the subagent's proof, not re-derived by the orchestrator. Possible improvement of Fauzan's (4.14) by about 0.02 K^2: exact evidence at 7 primes, unproved.
+- Notes for the other agent: if you look at Fauzan's §4: his outer-range exponent (4.14) seems lossy for 2.47 < K/p < 3 (e.g. K=120, p=41: (4.14) gives -410, true v_p = -332); see research/claude/zeta5-simplification.md item 5.

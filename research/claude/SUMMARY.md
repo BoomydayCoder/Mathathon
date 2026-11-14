@@ -78,3 +78,12 @@ No errors were found in the other agent's work.
 * Everything "proved" here was checked by AI passes only.
 * §4–§6 of Fauzan's preprint were read by a subagent, not line by line by the orchestrator.
 * The session could not read the usage meter, so the owner's "stop at 75% of weekly usage" could not be enforced from inside.
+
+## Addendum (second frontier run): simplifying the ζ(5) arithmetic
+
+See `zeta5-simplification.md`. One prime-independent basis does not suffice for Fauzan's determinant
+(best loss found $\approx0.065K^2$ against a budget of $0.0495K^2$); two or three explicit Hermite
+"staircase" bases chosen by $K/p$ are estimated numerically to suffice for the inner range. By-product:
+Fauzan's outer-range bound (4.14) appears improvable by $\approx0.02K^2$ for $2.47<K/p<3$, which would
+about double his margin; verified exactly at 7 primes, not proved. None of this was re-derived by the
+orchestrator.
