@@ -11,7 +11,7 @@ these are AI passes.
 |---|---|
 | (a) degree, (b) positivity | proved here, given Hermite's formula for the Hurwitz zeta function (classical; cited, not re-proved) |
 | (c) arithmetic (Lemmas L1–L8) | proved here; conclusions also checked exactly for $K\le100$ |
-| (d) analytic bound | proved here **modulo one explicit one-variable inequality (H) on $[1,60]$, certified by interval arithmetic** (two independent implementations); numerically checked for $K\le160$ |
+| (d) analytic bound | proved here **modulo one explicit one-variable inequality (H) on $[1,60]$, certified by interval arithmetic** (two independent implementations for $\vartheta=\frac25$; one plus a dense grid for $\vartheta=\frac{21}{50}$); numerically checked for $K\le160$ |
 | prime input | any bound $\theta(u)\le\kappa u+o(u)$ with $\kappa<1.2155$; the elementary period-6 bound ($\kappa=1.17053$) suffices |
 | novelty | not investigated. The method is Fauzan's (ζ(5), 2026) specialised to $s=3$ with a different, simpler arithmetic; FLSZ (arXiv:2611.16156) use the same idea in another setting. We do not know whether an $s=3$ version exists in the literature. |
 
