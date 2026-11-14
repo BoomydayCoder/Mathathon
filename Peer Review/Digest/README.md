@@ -9,7 +9,7 @@ research archive and, at the user's request, revised the cookbook. See
 
 | file | pages | content |
 |---|---|---|
-| `zeta3-proofs.pdf` | 12 | *Why ζ(3) is irrational: the proof, built one need at a time.* Rewritten for motivation. Part I: one complete proof (Beukers' route) in which each object appears only after the difficulty that demands it, with the numbers for every rejected alternative and a note on what is forced and what is chosen. Part II: the same objects as sums (Zudilin's rational function), how Apéry's recurrence is found, and a second proof from it. |
+| `zeta3-proofs.pdf` | 16 | *Why ζ(3) is irrational: the proof, built one need at a time.* Rewritten for motivation. Part I: one complete proof (Beukers' route) in which each object appears only after the difficulty that demands it, with the numbers for every rejected alternative and a note on what is forced and what is chosen. Part II: the same objects as sums (Zudilin's rational function), how Apéry's recurrence is found and why it must exist, a second proof from it, and Zudilin's own proof via Ball's series (Section 11). |
 | `cookbook-and-directions.pdf` | 18 | Part I: one recipe, with complete proofs for log 2, eʳ, π², ζ(2). Part II: higher-constant obstructions, proved truncation repairs and balanced arithmetic. Part III: developed connections and next problems, including the final PNT-free determinant adaptation, Schur–Pell bounds and a random process realizing all odd-zeta correlations. Also specifies the scope of πʳ. |
 
 Suggested reading order: `zeta3-proofs.pdf` Part I straight through, then Part II; then the

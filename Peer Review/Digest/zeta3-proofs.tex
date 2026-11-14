@@ -560,14 +560,25 @@ explicit formula $b_n=\sum_k\bigl[c_k^2H_k^{(3)}+\tfrac12e_kH_k^{(2)}\bigr]$.
 \]
 Where could such a thing come from, and what is it good for?
 
-\q{What it is good for.} Two different solutions of one second-order recurrence are tied together
-by a simple identity (below), and that identity will give the sign and the size of $I_n$ with no
-integral at all. So it is a second, independent route to Sections~5 and~6.
+\q{Why we want it.} In the language of sums the sign and size of $I_n$ are invisible: the terms of
+\eqref{defI} have both signs and nearly cancel (Section~11 gives the numbers). A recurrence lets us
+get at sign and size without looking inside the sum. If $I_n$ and the integers $a_n$ satisfy the
+same second-order recurrence, they are tied together by a simple identity (below), which turns
+``how small is $I_n$?'' into ``how fast does the integer $a_n$ grow?''. So it is a second,
+independent route to Sections~5 and~6.
 
-\q{How to find it.} Both $a_n$ and $I_n$ are obtained from $R_n$ by an operation that kills any
-function of the form $S(t+1)-S(t)$. For $I_n$ the operation is ``differentiate and sum over
-$t\ge1$'', which telescopes. For $a_n$ it is ``add up the coefficients of the terms
-$\frac1{(t+k)^2}$'', which a shift $t\mapsto t+1$ does not change (details below). So we look for constants $A,B,C$ and a function $S$ with
+\q{The plan.} We want $A\,I_{n+1}+B\,I_n+C\,I_{n-1}=0$. Now $I_n$ is obtained from the function
+$R_n$ by a fixed linear operation (differentiate, then add up over $t=1,2,3,\dots$), so the left
+side is that operation applied to $A\,R_{n+1}+B\,R_n+C\,R_{n-1}$. This combination cannot be the zero
+function: the three functions are genuinely different. The next best thing is that it be something
+the operation sends to $0$ anyway. The one kind of function whose sum we can always evaluate is a
+difference $S(t+1)-S(t)$, because the sum \emph{telescopes}:
+$[S(2)-S(1)]+[S(3)-S(2)]+\cdots$ leaves only the two ends. (A familiar instance:
+$\frac1{t(t+1)}=\frac1t-\frac1{t+1}$, whence $\sum_{t\ge1}\frac1{t(t+1)}=1$.) This is the discrete
+version of showing that an integral vanishes by writing the integrand as a derivative.
+
+\q{How to find it.} So we look for constants $A,B,C$ and a function $S$, with $S'$ vanishing at
+$t=1$ and at infinity, such that
 \[
 A\,R_{n+1}(t)+B\,R_n(t)+C\,R_{n-1}(t)=S(t+1)-S(t).
 \]
@@ -588,7 +599,17 @@ A(t-n-1)^2(t-n)^2+B(t-n)^2(t+n+1)^2+C(t+n)^2(t+n+1)^2\\
 =\sigma(t+1)\,t^4-\sigma(t)\,(t-n)^2(t+n+1)^2 .
 \end{multline}
 (On the right the terms of degree $6$ and $5$ cancel automatically.) That is $5$ linear equations,
-one for each coefficient, in $6$ unknowns: $A,B,C$ and the three coefficients of $\sigma$. We solved this
+one for each coefficient, in $6$ unknowns: $A,B,C$ and the three coefficients of $\sigma$.
+
+\q{Why a solution must exist.} Five homogeneous linear equations in six unknowns always have a
+non-zero solution. And in such a solution $A,B,C$ are not all zero: otherwise
+$\sigma(t+1)R_n(t+1)=\sigma(t)R_n(t)$ for all $t$, so the rational function $\sigma R_n$ would repeat with
+period $1$; then it is constant, and it vanishes at $t=1$ (for $n\ge1$), so $\sigma=0$. So a three-term recurrence of this shape is \emph{guaranteed}
+before any computation. The reason the count works is that everything in sight is $R_n$ times an
+explicit rational function (the three ratios above): the search is finite-dimensional linear
+algebra, not a search in the dark. The only good fortune is the automatic cancellation of the
+degrees $6$ and $5$, which brings seven equations down to five; without it one would need a longer
+recurrence to gain unknowns. We solved the
 system with $n$ as a symbol: for $n\ge1$ it has rank $5$, so \emph{the solution is unique up to a
 common factor}. It is
 \begin{gather*}
@@ -634,7 +655,8 @@ $\mathcal L[X]_n=(n+1)^3X_{n+1}-\beta_nX_n+n^3X_{n-1}$.
 $t=1,\dots,T$. The right side telescopes to $(\sigma_nR_n)'(T+1)-(\sigma_nR_n)'(1)$. The last term is $0$
 because $R_n$ has a double zero at $t=1$. The other tends to $0$ because $\sigma_nR_n$ tends to a
 constant, so its derivative is $O(T^{-2})$.
-\item \emph{$\mathcal L[a]_n=0$ for $n\ge1$.} Recall $a_n=\sum c_k^2$ is the sum of the
+\item \emph{$\mathcal L[a]_n=0$ for $n\ge1$.} The same identity gives a second recurrence,
+because $a_n$ also comes from $R_n$ by a linear operation that kills differences. Recall $a_n=\sum c_k^2$ is the sum of the
 coefficients of the terms $\frac1{(t+k)^2}$ in $R_n$. For any rational function $f$, let
 $\delta(f)$ be the sum of the coefficients of all squared terms $\frac1{(t-p)^2}$ in its
 partial-fraction expansion (which is unique). This
@@ -689,8 +711,8 @@ differential equation satisfied by $x\mapsto\int_0^1P_n(y)K(x,y)\dd y$ and an in
 since it is a third proof of something already proved twice, we only state it. The proof is in the
 previous version of this document and in the Codex folder \texttt{Codex-Zeta3-03-Kernel-energy/}.
 
-\q{How this relates to Zudilin's paper.} Zudilin proves the arithmetic and identity \eqref{cert}
-as above, but he does \emph{not} obtain sign and size from the recurrence. He takes a different
+\q{How this relates to Zudilin's paper.} Zudilin proves the arithmetic as above and states
+identity \eqref{cert} (found by computer; the search and the five-point check here are ours), but he does \emph{not} obtain sign and size from the recurrence. He takes a different
 road, which Section~11 follows. Steps 1--4 above are shorter; his road shows more.
 
 \section{Zudilin's own ending: a second series with positive terms}
@@ -700,34 +722,40 @@ road, which Section~11 follows. Steps 1--4 above are shorter; his road shows mor
 
 \q{Attempt.} Look at the terms. The first $n$ vanish. After that they are not positive: for $n=5$
 the terms $-R_5'(t)$ are \emph{negative} for $t=6,\dots,30$ and positive from $t=31$ on, and they
-are of size $10^{-7}$ to $10^{-6}$ while the sum is $2.6\cdot10^{-9}$. So the series is a difference of
+are up to $10^{-5}$ in size while the sum is $2.6\cdot10^{-9}$. So the series is a difference of
 two much larger quantities. Nothing about its sign or size can be read off it.
 
 \q{Lesson.} The series \eqref{defI} is good at arithmetic (Section~9) and bad at sign and size.
-Zudilin's idea is to find a \emph{second series for the same number} with the opposite strengths,
-and to use each for what it does well.
+The idea (Rivoal's, according to Zudilin, whose contribution is to carry it out with two
+telescoping identities found by computer) is to find a \emph{second series for the same number}
+with the opposite strengths, and to use each for what it does well.
 
 \q{What should the second series look like?} We want a rational function $\widetilde R_n(t)$
 whose plain sum $\sum_{t\ge1}\widetilde R_n(t)$, with no derivative, is a combination of $1$ and
 $\zeta(3)$ and has positive terms. Let us list what this demands.
 \begin{itemize}
-\item \emph{Denominator $\bigl(t(t+1)\cdots(t+n)\bigr)^4$.} As in Section~9, terms
-$\frac1{(t+k)^j}$ with $k\le n$ sum to $\zeta(j)$ minus a finite sum. We need $j=3$ to occur.
-\item \emph{Zeros at $t=1,\dots,n$, and positivity beyond.} Put the factor
-$(t-1)(t-2)\cdots(t-n)$ in the numerator: the first $n$ terms vanish and this factor is positive
-for $t>n$.
+\item \emph{Denominator $\bigl(t(t+1)\cdots(t+n)\bigr)^e$ with $e\ge3$.} As in Section~9, terms
+$\frac1{(t+k)^j}$ with $k\le n$ sum to $\zeta(j)$ minus a finite sum. We need $j=3$ to occur, so the
+exponent is at least $3$. We shall take $e=4$, and explain after \eqref{ball} why $3$ is not enough.
+\item \emph{Zeros at $t=1,\dots,n$, and positivity beyond.} As for $R_n$, put the factor
+$(t-1)(t-2)\cdots(t-n)$ in the numerator. These zeros were the source of the smallness in
+Section~9, and we keep them (a choice, by analogy). Then the first $n$ terms vanish and this factor
+is positive for $t>n$.
 \item \emph{No $\zeta(2)$ and no $\zeta(4)$.} In Section~9 the unwanted $\zeta(2)$ cancelled because
 of the derivative. Here there is no derivative, so we need another mechanism, and it is a
 \emph{symmetry}. The denominator is unchanged by the reflection $t\mapsto-n-t$, which sends $t+k$ to
-$-(t+n-k)$. If the whole function is \emph{odd} under this reflection,
+$-(t+n-k)$ (the exponent $4$ is even, so the signs cancel). If the whole function is \emph{odd} under this reflection,
 $\widetilde R_n(-n-t)=-\widetilde R_n(t)$, then comparing the terms $\frac1{(t+k)^j}$ on both sides
 shows that the coefficient at $k$ and the coefficient at $n-k$ are equal for odd $j$ and opposite
-for even $j$. So for even $j$ the coefficients add up to $0$, and $\zeta(2)$, $\zeta(4)$ drop out.
+for even $j$. So for even $j$ the coefficients add up to $0$, and $\zeta(2)$, $\zeta(4)$ drop out. The terms
+with $j=1$ need a word, since $\sum_t\frac1{t+k}$ diverges: their coefficients add up to $0$ because
+the function decays faster than $\frac1t$, and then they contribute only a rational number. So only
+$j=3$ contributes a zeta value.
 \item \emph{Making it odd.} The reflection sends the zeros $1,\dots,n$ to $-n-1,\dots,-2n$, so the
 numerator must also contain $(t+n+1)\cdots(t+2n)$. The product of these $2n$ factors is unchanged
 by the reflection (each factor $t-j$ becomes $-(t+n+j)$ and vice versa, and there are $2n$ sign
-changes). One more factor that changes sign is needed: $2t+n$, which vanishes at the centre
-$t=-\frac n2$ of the reflection.
+changes). One more factor that changes sign is needed; the simplest is $2t+n$, which vanishes at the
+centre $t=-\frac n2$ of the reflection.
 \end{itemize}
 This leads to
 \begin{equation}\label{ball}
@@ -735,24 +763,42 @@ This leads to
 {\bigl(t(t+1)\cdots(t+n)\bigr)^4},\qquad\widetilde I_n=\sum_{t=1}^\infty\widetilde R_n(t).
 \end{equation}
 For $t>n$ every factor is positive. The series converges, since $\widetilde R_n(t)$ is of size
-$t^{-2n-3}$. By the symmetry argument, $\widetilde I_n$ is a combination of $1$ and $\zeta(3)$ only.
-(The series is due to Ball.)
+$t^{-2n-3}$. By the symmetry argument, $\widetilde I_n$ is a combination of $1$ and $\zeta(3)$ only, with
+rational coefficients. (The series is due to Ball.)
 
-\forced The zeros, the reflected zeros and the factor $2t+n$ are forced by the three demands. The
-exponent $4$ and the constant $n!^2$ are not: they are what makes $\widetilde I_n$ equal to the
-\emph{same} number $I_n$, as shown below, and we have no argument that would have predicted them.
-This is the one place in this document where an object is justified only by the fact that it works.
+\forced Given the zeros at $1,\dots,n$ (a choice, copied from $R_n$), the reflected zeros are
+forced by oddness, and $2t+n$ is the simplest factor that is odd about the centre. The constant
+$n!^2$ is a normalisation: with exponent $e$ in the denominator, $n!^{\,e-2}$ is exactly what makes
+the coefficients of the highest terms $\frac1{(t+k)^e}$ integers (for $e=4$ they are
+$\pm(n-2k)\binom nk^4\binom{n+k}n\binom{2n-k}n$). And why $e=4$?
+\begin{itemize}
+\item $e=2$: there are no cubes, so no $\zeta(3)$.
+\item $e=3$: everything on our list still works. (For even $n$ the function is already odd without
+the factor $2t+n$.) The sum is a combination of $1$ and $\zeta(3)$ with positive terms and
+denominators $D_n^3$; for $n=2$ it is $\frac{577}8-60\zeta(3)=0.0016$. But the largest-term
+computation below gives size $0.136^n$ for it, and $e^3\cdot0.136=2.7>1$: \emph{not small enough}
+(the product with $D_n^3$ is already $9\cdot10^4$ at $n=20$).
+\item $e=5$: fifth powers appear, and with them $\zeta(5)$.
+\end{itemize}
+So $e=4$ is the smallest exponent that is small enough to pay for $D_n^3$ (its size is $\rho^n$, and
+$e^3\rho=0.59$). What no argument here predicts is that its denominators really are $D_n^3$, and not
+the $D_n^4$ that one sees. That is the content of the equality $\widetilde I_n=I_n$ proved below.
 
 \q{What the second series is good at.} \emph{Sign:} $\widetilde I_n>0$, at a glance.
-\emph{Size:} a sum of positive terms is about as big as its largest term, so we only need to locate
-the largest term. Each block of consecutive integers in \eqref{ball} can be compared with powers:
+\emph{Size:} the terms are positive and decay like $t^{-2n-3}$, so only polynomially many of
+them matter and the sum is at most a polynomial factor bigger than its largest term. We only need to
+locate the largest term. Each block of consecutive integers in \eqref{ball} can be compared with powers:
 from $(1+\frac1m)^m<e<(1+\frac1m)^{m+1}$, multiplied over $m,m+1,\dots,m+n-1$,
 \[
 e^{-n}\frac{(m+n)^{m+n-1}}{m^{m-1}}<m(m+1)\cdots(m+n-1)<e^{-n}\frac{(m+n)^{m+n}}{m^m}.
 \]
-Apply this to each block of $n$ consecutive integers in \eqref{ball}, including the two copies of $n!$ (the powers of $e$ cancel) and write $t=\tau n$ with
-$\tau>1$. Up to factors that are polynomial in $n$ and $t$, the term $\widetilde R_n(t)$ is
-$e^{nf(\tau)}$ with
+Apply this to each block of $n$ consecutive integers in \eqref{ball}: $(t-1)\cdots(t-n)$ with
+$m=t-n$; $(t+n+1)\cdots(t+2n)$ with $m=t+n+1$; $n!$ with $m=1$, twice; and $t\cdots(t+n-1)$ with
+$m=t$, four times in the denominator. The powers of $e$ cancel, and up to factors that are
+polynomial in $n$ and $t$ the term is
+$n^{2n}\,t^{5t}(t+2n)^{t+2n}\big/\bigl((t-n)^{t-n}(t+n)^{5(t+n)}\bigr)$. Now write $t=\tau n$ with
+$\tau>1$. The powers of $n$ cancel as well (the exponents add up to
+$2+5\tau+(\tau+2)-(\tau-1)-5(\tau+1)=0$), and what is left is $e^{nf(\tau)}$ with
 \[
 f(\tau)=5\tau\log\tau+(\tau+2)\log(\tau+2)-(\tau-1)\log(\tau-1)-5(\tau+1)\log(\tau+1).
 \]
@@ -761,23 +807,30 @@ $f'(\tau)=\log\frac{\tau^5(\tau+2)}{(\tau-1)(\tau+1)^5}$, which vanishes where
 $\tau^5(\tau+2)=(\tau-1)(\tau+1)^5$. In the variable $x=\tau+\frac12$ (the centre of the reflection
 again) this equation is $x(2x^4-5x^2-\frac78)=0$, with the single root $x_0^2=\frac54+\sqrt2$ in
 the range $\tau>1$; so $\tau_0=1.1322\ldots$, and $f$ increases before $\tau_0$ and decreases after
-it. The value there can be computed by hand, and it is
+it (the sign of $f'$ is that of $-x(2x^4-5x^2-\frac78)$). For the value, use
+$f(\tau_0)=f(\tau_0)-\tau_0f'(\tau_0)$: in this combination every term $\tau\log(\cdot)$ cancels and
+$2\log(\tau_0+2)+\log(\tau_0-1)-5\log(\tau_0+1)$ remains. With $x_0^2=\frac54+\sqrt2$ this simplifies
+by hand (use $(x_0+\frac32)(x_0-\frac32)=\sqrt2-1$ and $(x_0+\frac12)^2=x_0+\frac32+\sqrt2$) to
 \[
 e^{f(\tau_0)}=\frac{(\tau_0+2)^2(\tau_0-1)}{(\tau_0+1)^5}=(\sqrt2-1)^4=\rho .
 \]
 \emph{The same number as in Section~6}, as it must be if the two series are equal: there it was the
 maximum of an integrand, here it is the size of the largest term (at $t\approx1.13\,n$). Carrying
-the polynomial factors along, Zudilin obtains
+the polynomial factors along, Zudilin obtains (following Ball and Rivoal)
 \begin{equation}\label{ballbound}
 0<\widetilde I_n<20\,(n+1)^4\rho^{\,n}.
 \end{equation}
 (We do not reproduce the bookkeeping; it is in our line-by-line exposition, cited in Section~12,
-and the inequality was checked numerically for $n=5,20,60$.)
+and the inequality was checked numerically for fourteen values of $n$ up to $60$.)
 
 \q{What the second series is bad at.} Arithmetic. Its terms $\frac1{(t+k)^4}$ have fourth powers in
 the denominator, so the argument of Section~9 only shows that $D_n^{4}$ clears the denominators.
+($\widetilde R_n$ is $2t+n$ times a product of four functions of the form
+$\sum_k\frac{\text{integer}}{t+k}$; multiplying out as in Section~9 costs one factor $D_n$ for each
+step down from the fourth power, and one more when the terms are summed.)
 And $D_n^4\rho^{\,n}\approx(e^4\rho)^n=1.6^n$ does not tend to $0$: \emph{the second series alone
-proves nothing}. This is the fourth-power failure from Section~8, appearing in practice.
+proves nothing}. This is the fourth-power failure from Section~8, appearing in practice. Zudilin records it as an
+open question (of Rivoal) to see the $D_n^3$ directly on the second series.
 
 \begin{center}\small
 \begin{tabular}{@{}lll@{}}
@@ -791,18 +844,20 @@ sign and size & hidden: terms of both signs & visible: positive terms, largest t
 \end{center}
 
 \q{The bridge.} So everything depends on proving $\widetilde I_n=I_n$. The two series look nothing
-alike, and Zudilin does not transform one into the other. He uses the principle that \emph{a
+alike, and Zudilin's proof does not transform one into the other (he remarks that a classical
+identity of Bailey does so directly). He uses the principle that \emph{a
 sequence satisfying a second-order recurrence is determined by its first two terms}:
 \begin{itemize}
 \item $I_n$ satisfies $\mathcal L[I]_n=0$ (Section~10).
 \item $\widetilde I_n$ satisfies the same recurrence. The proof has the same shape as in
-Section~10: one looks for $\widetilde S$ with
+Section~10: we do not search for $A,B,C$ again, but take those of Section~10 and ask for $\widetilde S$ with
 $(n+1)^3\widetilde R_{n+1}-\beta_n\widetilde R_n+n^3\widetilde R_{n-1}=\widetilde S(t+1)-\widetilde
-S(t)$ and sums over $t$, which telescopes to $0$ because $\widetilde R_n(1)=0$ and
-$\widetilde S(t)\to0$. This time
+S(t)$. Summing over $t=1,\dots,T$ gives $\widetilde S(T+1)-\widetilde S(1)$; here
+$\widetilde S(1)=0$ because $\widetilde R_n(1)=0$ for $n\ge1$, and $\widetilde S(T)\to0$. This time
 $\widetilde S(t)=\widetilde R_n(t)\cdot\frac{p_n(t)}{(2t+n)(t+2n-1)(t+2n)}$ with a polynomial $p_n$
-of degree $6$ in $t$ that has $22$ coefficients, found by computer (it is the same linear-algebra
-search as in Section~10, only larger). Checking it is a mechanical expansion of polynomials; we did
+of degree $6$ in $t$ that has $26$ coefficients, found by computer (the same kind of linear-algebra
+search as in Section~10, only larger; the denominator is the one of the ratio
+$\widetilde R_{n-1}/\widetilde R_n$). Checking it is a mechanical expansion of polynomials; we did
 it by computer algebra and do not print it.
 \item The first two values agree. $\widetilde R_0=\frac2{t^3}$, so $\widetilde I_0=2\zeta(3)=I_0$. And
 $\widetilde R_1(t)=-\frac2{t^4}+\frac2{(t+1)^4}+\frac5{t^3}+\frac5{(t+1)^3}-\frac5{t^2}+\frac5{(t+1)^2}$,
@@ -827,22 +882,22 @@ sign & positive integrand after integration by parts & $I_n/a_n$ decreases to $0
 terms of a second series\\
 size & maximum of the integrand & growth of $a_n$ & largest term of the second series\\
 rate obtained & $33.97^{-n}$ & $28^{-n}$ & $33.97^{-n}$\\
-unexplained input & the identity \eqref{sep} & none & the exponent $4$ in \eqref{ball}; a long
-computer-found identity\\
+unexplained input & the identity \eqref{sep} & none & that the second series has denominators
+$D_n^3$ (that is, equals $I_n$); a long computer-found identity\\
 \bottomrule
 \end{tabular}
 \end{center}
 What Zudilin's ending shows, and the others do not, is the symmetry that removes the even zeta
-values. That symmetry is the mechanism behind later results on $\zeta(5),\zeta(7),\dots$ (Rivoal,
-Ball--Rivoal: literature pointer, not retrieved here), which is why his paper is the natural
-starting point for going further.
+values. That symmetry is the mechanism behind the results of Rivoal and Ball--Rivoal on
+$\zeta(5),\zeta(7),\dots$, from which this proof was derived (literature pointer, not retrieved
+here). That is why his paper is the natural starting point for going further.
 
 \section{Status, sources, checks}
 
 \paragraph{What is proved here.} Part~I is a complete proof. Section~10 is a second complete
 proof of positivity and smallness. Section~11 explains Zudilin's own proof and proves its
-structural steps (the symmetry, positivity, the location and value of the largest term, the first
-two values); two computations are quoted rather than reproduced: the polynomial factors in
+structural steps (the symmetry, positivity, the location of the largest term, the first two
+values) and indicates how the value $\rho$ is computed; two computations are quoted rather than reproduced: the polynomial factors in
 \eqref{ballbound}, and the degree-$6$ certificate. Both are written out in
 \texttt{Zeta3-1-Zudilin-exposition/exposition.md} (Sections 3 and 4 there), our line-by-line
 account of the paper. The inequality quoted at the end of Section~10 is stated, not proved here.
@@ -867,11 +922,15 @@ quoted; the moments and the combinations $J(P)$, exactly; that $\binom{2n}n$ div
 $n<150$; the triple integral at $n=1$; Lemmas~\ref{lem:fact} and~\ref{lem:lcm}; the Mellin identity
 for $n\le4$; the rank of the linear system behind \eqref{poly} with $n$ symbolic; the five
 evaluations in Proposition~\ref{prop:cert}; the recurrence and $n^3\Omega_n=12$ exactly for
-$n\le10$; steps 1--4 of Section~10. Section~11 was added afterwards and checked separately: the equality of
-Ball's series with $I_n$ numerically for $n\le3$; the reflection symmetry symbolically for $n\le3$;
-the partial fractions of $\widetilde R_1$; the root $\tau_0$ and the value $e^{f(\tau_0)}=\rho$ to
-40 digits; the bound \eqref{ballbound} for $n=5,20,60$; the signs of the terms of $-R_5'(t)$; the
-certificate of degree $6$ by expansion (in the scripts of the exposition folder).
+$n\le10$; steps 1--4 of Section~10. Section~11 was added afterwards and checked by another fresh reader, in the same two passes
+(14 points as a reader, 4 factual slips, all applied; the explanation of the exponent $4$ comes from
+that reader's computations, which we spot-checked). Verified: the equality of Ball's series with
+$I_n$ numerically for thirteen values of $n$ up to $60$; the reflection symmetry symbolically for
+$n\le5$; the partial fractions of $\widetilde R_1$; the root $\tau_0$ and $e^{f(\tau_0)}=\rho$ to 50
+digits and by the hand reduction; the bound \eqref{ballbound}; the signs and sizes of the terms of
+$-R_5'(t)$; the degree-$6$ certificate, transcribed from Zudilin's paper, symbolically in $n$ and
+$t$; the exponent-$3$ variant for $n\le6$; every statement about what Zudilin's paper says, against
+its text.
 \textbf{No human has read this document.}
 
 \end{document}
