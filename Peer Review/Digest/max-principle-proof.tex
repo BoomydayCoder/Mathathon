@@ -124,8 +124,8 @@ Put $d_n=X_{n+1}-X_n$. The equation reads $(n+1)^3d_n=n^3d_{n-1}+4(2n+1)^3X_n$ f
 
 \emph{(a) Once up, always up.} Suppose $X_m>0$ and $d_m\ge0$ for some $m\ge0$. Then $X_{m+1}>0$, and
 the equation at $n=m+1$ gives $d_{m+1}>0$. Repeating, $d_n>0$ and $X_n\ge X_{m+1}=:c>0$ for all
-$n>m$. Then $(n+1)^3d_n>4(2n+1)^3c\ge4(n+1)^3c$, so $d_n>4c$ for all $n>m$: the sequence is
-unbounded, a contradiction.
+$n>m$. Then, as $n^3d_{n-1}\ge0$, we get $(n+1)^3d_n\ge4(2n+1)^3X_n\ge4(2n+1)^3c>4(n+1)^3c$, so
+$d_n>4c$ for all $n>m$: the sequence is unbounded, a contradiction.
 
 \emph{(b) Once non-positive, always down.} Suppose $X_m>0\ge X_{m+1}$ for some $m\ge0$. Then $d_m<0$,
 and the equation at $n=m+1$ gives $(m+2)^3d_{m+1}=(m+1)^3d_m+4(2m+3)^3X_{m+1}<0$, so
