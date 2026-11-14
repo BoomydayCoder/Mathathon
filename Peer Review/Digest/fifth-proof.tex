@@ -23,46 +23,68 @@
 
 \noindent\textbf{What this note contains.} Two things came out of the search.
 \begin{enumerate}
-\item \textbf{A new ending for the proof} (Section~1). Once the numbers $I_n$ are known to satisfy
-Ap\'ery's recurrence, their sign and size follow in six lines from a \emph{maximum principle}:
-$I_n>0$ and $I_n<I_{n-1}/33$. No integral, no second sequence, no determinant identity, no growth
-estimate. The complete proof fits on two pages and uses sums only.
-\item \textbf{A new way to see that $I_n\ne0$} (Section~2): a congruence modulo a prime. It uses no
-inequality at all, so it works where the sign is unknown. With it, a proof exists in which the
-sign of $I_n$ plays no role.
+\item \textbf{An ending for the proof, new to this project} (Section~1). Let $I_n$ be the numbers of
+the main document; they satisfy Ap\'ery's recurrence
+$(n+1)^3u_{n+1}-(2n+1)(17n^2+17n+5)u_n+n^3u_{n-1}=0$. Once they are known to satisfy it and to be
+bounded, their sign and size follow in half a page (Lemma~\ref{lem:max}) from a \emph{maximum
+principle}: $I_n>0$ and $I_n<I_{n-1}/33$. No integral, no second sequence, no determinant identity,
+no growth estimate. (These are the tools of the four endings in the main document, which is why we
+call this one the fifth: Beukers' triple integral; the identity $n^3(a_nI_{n-1}-a_{n-1}I_n)=12$
+together with the growth of the second solution $a_n$; the inequality
+$I_n\le1/(n(n+1)(2n+1)a_n)$, stated there; and Ball's second series, used by Zudilin.) Together
+with three facts quoted from the main document this is a complete proof using sums only.
+\item \textbf{A way to see that $I_p\ne0$ for all large primes $p$, new to this project}
+(Section~2), assuming $\zeta(3)=P/Q$: a congruence modulo $p$. It uses no inequality at all, so it
+does not need the sign. With it we sketch a proof in which the sign of $I_n$ plays no role; one
+classical Fourier integral is quoted without proof.
 \end{enumerate}
 \noindent\textbf{What it does not contain.} A proof that avoids Ap\'ery's numbers altogether. None of
-the five agents found one, and one of them produced evidence about why (Section~3).
+the five agents found one (Section~3).
 
 \smallskip\noindent\textbf{Status.} Found and checked by AI agents on 14 November 2026;
-\emph{no human has read this}. The maximum principle for such recurrences is standard material,
-and we have not searched the literature for its use here or for the congruence. We therefore claim
-no novelty; we only say that neither argument is in the sources read during this project (Zudilin's
-paper, Rajkumar's paper, the Claude and Codex notes). Notation is that of the main document
-\texttt{zeta3-proofs.pdf}, whose Sections 9 and 10 are quoted where indicated.
+\emph{no human has read this}. Notation is that of the main document
+\texttt{zeta3-proofs.pdf}, whose Sections 9 and 10 are quoted where indicated; the papers referred to
+are Zudilin, arXiv:math/0202159, and Rajkumar, arXiv:1212.5881.
+
+\smallskip\noindent\textbf{Relation to the literature} (short search, 14 November 2026; the passages
+cited were read). The condition that makes Lemma~\ref{lem:max} work, that the middle coefficient of
+Ap\'ery's recurrence exceeds the sum of the outer ones, was observed by A.~Mingarelli
+(arXiv:math/0608577), who calls the recurrence disconjugate and identifies $a_n\zeta(3)-b_n$ as its
+recessive solution; he states that this is a restatement of Ap\'ery's proof and takes the growth of
+$a_n$ from elsewhere. Mahboubi and Sibut-Pinote (arXiv:1912.06611, Lemma~5.6) prove $33^n=O(a_n)$
+and use $27<33$. Rajkumar (arXiv:1212.5881) gets the rate from the recurrence for the linear forms
+alone, by the Poincar\'e--Perron theorem. We did not find the elementary argument of
+Lemma~\ref{lem:max} applied directly to $I_n$. So the idea is known; at most the packaging is new.
+No search was made for the congruence of Section~2.
 
 \section{The proof by a maximum principle}
 
-\q{The setting (recalled from the main document, Sections 1 and 9).} Let
+\q{The setting (recalled from the main document, Sections 2, 4 and 9).} Let
 $D_n=\lcm(1,\dots,n)$ and
 \[
 r_n(t)=\frac{(t-1)(t-2)\cdots(t-n)}{t(t+1)\cdots(t+n)},\qquad R_n=r_n^2,\qquad
 I_n=-\sum_{t=1}^\infty R_n'(t).
 \]
-\emph{Arithmetic.} Partial fractions give $I_n=2(a_n\zeta(3)-b_n)$ with
-$a_n=\sum_k\binom nk^2\binom{n+k}k^2$ an integer and $D_n^3b_n$ an integer. So if $\zeta(3)=P/Q$,
-then $\frac12Q\,D_n^3I_n=D_n^3(a_nP-b_nQ)$ is an integer. \emph{What is needed:} $I_n\neq0$ and
-$|I_n|\le C\theta^n$ with $\theta<\frac1{27}$, because $D_n<3^n$ for infinitely many $n$
-(main document, Section~7).
+\emph{Arithmetic.} Partial fractions give (main document, Section~9) $I_n=2(a_n\zeta(3)-b_n)$ with
+$a_n=\sum_k\binom nk^2\binom{n+k}k^2$ an integer and $D_n^3b_n$ an integer. So if $\zeta(3)=P/Q$
+with positive integers $P,Q$, then $\frac12Q\,D_n^3I_n=D_n^3(a_nP-b_nQ)$ is an integer.
+\emph{What is needed:} $I_n\neq0$ and $|I_n|\le C\theta^n$ with $\theta<\frac1{27}$, because
+$D_n<3^n$ for infinitely many $n$ (main document, Section~7).
+\emph{The same numbers as integrals} (not needed for the proof; used only in three remarks below):
+with $P_n(x)=\sum_{k=0}^n(-1)^k\binom nk\binom{n+k}kx^k$ and $K(x,y)=\frac{-\log(xy)}{1-xy}$ one has
+$I_n=\int_0^1\!\!\int_0^1P_n(x)P_n(y)K(x,y)\dd x\dd y$ (main document, Sections 4 and 9).
 
 \q{Step 1: the recurrence, written so that its structure shows.} The main document (Section~10)
 finds, by solving five linear equations in six unknowns, the identity
 \[
 (n+1)^3R_{n+1}(t)-\beta_nR_n(t)+n^3R_{n-1}(t)=\sigma_n(t+1)R_n(t+1)-\sigma_n(t)R_n(t),
 \]
-with $\beta_n=(2n+1)(17n^2+17n+5)$ and $\sigma_n(t)=4(2n+1)(-2t^2+t+(2n+1)^2)$; differentiating and
-summing over $t\ge1$, the right side telescopes to $0$, so
-$(n+1)^3I_{n+1}-\beta_nI_n+n^3I_{n-1}=0$ for $n\ge1$. Now observe that
+with $\beta_n=(2n+1)(17n^2+17n+5)$ and $\sigma_n(t)=4(2n+1)(-2t^2+t+(2n+1)^2)$. Differentiate in
+$t$ and sum over $t=1,\dots,T$: the right side becomes $(\sigma_nR_n)'(T+1)-(\sigma_nR_n)'(1)$. The
+second term is $0$ because $R_n$ has a double zero at $t=1$ (this is where $n\ge1$ is used), and
+the first is $O(T^{-2})$, because $\sigma_nR_n$ is a quotient of two polynomials of the same degree.
+Letting $T\to\infty$ gives $(n+1)^3I_{n+1}-\beta_nI_n+n^3I_{n-1}=0$ for $n\ge1$; at $n=1$ this
+involves $I_0=-\sum_t(t^{-2})'=2\zeta(3)$. Now observe that
 \[
 \beta_n=(n+1)^3+n^3+4(2n+1)^3 .
 \]
@@ -73,16 +95,18 @@ $(n+1)^3I_{n+1}-\beta_nI_n+n^3I_{n-1}=0$ for $n\ge1$. Now observe that
 
 \q{Why this form is the right one.} Read $I_{n+1}-I_n$ as a derivative. Then \eqref{SL} is the
 discrete version of a differential equation $(p\,u')'=q\,u$ with $p>0$ and $q>0$. Such an equation
-has a simple feature: \emph{a solution cannot have a positive maximum in the interior}. At a
-maximum $u'=0$ and $u''\le0$, so $(pu')'=pu''\le0$, while $qu>0$. So a positive solution that starts
-to rise can never come back down; it runs off to infinity. A solution that stays bounded must
-therefore be positive and decreasing all the way. The same is true of sequences.
+has a simple feature: \emph{a solution cannot have a positive maximum} (there $u'=0$ and
+$u''\le0$, so $(pu')'=pu''\le0<qu$), and for the same reason it cannot have a negative minimum. So
+a solution that is positive and starts to rise keeps rising, and one that has become negative
+while falling keeps falling. If boundedness excludes both, a solution with $u(0)>0$ must stay
+positive and decrease all the way. Lemma~\ref{lem:max} is this argument for sequences; there the
+rise and the fall are shown to be unbounded.
 
 \q{Step 2: $I_n$ is bounded.} For integers $t>n\ge1$ one has $0<r_n(t)<\frac1t$, and
 $R_n'=2R_n\varphi_n$ where $\varphi_n(t)=\sum_{j=1}^n\frac1{t-j}-\sum_{j=0}^n\frac1{t+j}$ is a
 difference of two positive numbers each at most $n$. Since $R_n'(t)=0$ for $t=1,\dots,n$, we get
-$|I_n|\le2n\sum_{t>n}t^{-2}<2$. (This is the crude bound of the main document; nothing better is
-needed.)
+$|I_n|\le2n\sum_{t>n}t^{-2}<2$ for $n\ge1$; and $I_0=2\zeta(3)<3$. So the sequence $(I_n)$ is
+bounded. (This is the crude bound of the main document; nothing better is needed.)
 
 \begin{lemma}[Maximum principle]\label{lem:max}
 Let $(X_n)_{n\ge0}$ be a bounded real sequence with $X_0>0$ satisfying
@@ -96,8 +120,9 @@ Put $d_n=X_{n+1}-X_n$, so that \eqref{star} reads $(n+1)^3d_n=n^3d_{n-1}+4(2n+1)
 
 \emph{Once up, always up.} Suppose $X_m>0$ and $d_m\ge0$ for some $m\ge0$. Then $X_{m+1}>0$, and
 \eqref{star} at $n=m+1$ has a non-negative term and a positive term on the right, so $d_{m+1}>0$.
-Repeating, $d_n>0$ and $X_n\ge X_{m+1}=:c>0$ for all $n>m$. Then
-$(n+1)^3d_n>4(2n+1)^3c\ge4(n+1)^3c$, so $d_n>4c$ and $X_n\to\infty$. Impossible.
+Repeating, $d_n>0$ and $X_n\ge X_{m+1}=:c>0$ for all $n>m$. Then, since $n^3d_{n-1}\ge0$,
+$(n+1)^3d_n\ge4(2n+1)^3X_n\ge4(2n+1)^3c>4(n+1)^3c$ for all $n>m$, so $d_n>4c$ and $X_n\to\infty$.
+Impossible.
 
 \emph{Once non-positive, always down.} Suppose $X_m>0\ge X_{m+1}$ for some $m\ge0$. Then $d_m<0$, and
 \eqref{star} at $n=m+1$ gives $(m+2)^3d_{m+1}=(m+1)^3d_m+4(2m+3)^3X_{m+1}<0$. So
@@ -119,14 +144,16 @@ $0<I_n\le2\zeta(3)\,33^{-n}$ for all $n$, and $\zeta(3)$ is irrational.
 \end{theorem}
 \begin{proof}
 By Steps 1 and 2 the sequence $I_n$ satisfies the hypotheses of Lemma~\ref{lem:max}, with
-$I_0=2\zeta(3)>0$. If $\zeta(3)=P/Q$, then for the infinitely many $n$ with $D_n<3^n$ the number
+$I_0=2\zeta(3)>0$. If $\zeta(3)=P/Q$ with positive integers $P,Q$, then for the infinitely many
+$n$ with $D_n<3^n$ the number
 $\frac12QD_n^3I_n$ is a positive integer smaller than $Q\zeta(3)\,(27/33)^n$, which is less than $1$
 for large $n$.
 \end{proof}
 
 \q{How good is the bound?} The lemma gives $I_{n-1}/I_n>1+4(2+\frac1n)^3$. For $n=1,2,3$ this says
 $109$, $63.5$, $51.8$; the true ratios are $116.9$, $66.8$, $54.1$, and they decrease to
-$17+12\sqrt2=33.97$. So the constant $33$ is nearly the true rate, obtained with no estimate at all.
+$17+12\sqrt2=33.97$. So the constant $33$ is nearly the true rate; the only estimate used is
+$(2n+1)^3>8n^3$.
 
 \q{What was needed, and what was not.} Needed: the arithmetic of $I_n$; one telescoping identity;
 the bound $|I_n|<2$; the lemma; $D_n<3^n$ infinitely often. Not needed: any integral; the integers
@@ -135,33 +162,68 @@ identity between two solutions used by Ap\'ery; a second series; an optimisation
 theorem.
 
 \q{The same ending for other constants} (found by one of the agents; each checked exactly for
-$n\le40$). For $\log2$, the forms $y_n=\int_0^1\frac{P_n(x)}{1+x}\dd x$ satisfy
-$(n+1)(y_{n+1}-y_n)-n(y_n-y_{n-1})=2(2n+1)y_n$; the same lemma gives $0<y_n<y_{n-1}/5$, and $5>3$
-is enough against $D_n$. For $\zeta(2)$ the recurrence $(n+1)^2u_{n+1}=(11n^2+11n+3)u_n+n^2u_{n-1}$
-is not of this type (the small solution alternates in sign), but the analogous statement holds for
-$x_n=(-1)^n(\alpha_n\zeta(2)-\beta'_n)$: if $x$ is bounded and $x_0>0$ then all $x_n>0$ and
-$x_n<x_{n-1}/11$, and $11>9$ is enough against $D_n^2$.
+$n\le40$). \emph{For $\log2$.} With $P_n$ as above,
+$y_n=\int_0^1\frac{P_n(x)}{1+x}\dd x=A_n\log2-B_n$ (where $A_n=P_n(-1)\in\Z$, $D_nB_n\in\Z$,
+$y_0=\log2$) satisfies $(n+1)(y_{n+1}-y_n)-n(y_n-y_{n-1})=2(2n+1)y_n$ for $n\ge1$. (Divide the
+three-term relation of the Legendre polynomials, $(n+1)P_{n+1}=(2n+1)(1-2x)P_n-nP_{n-1}$, by $1+x$
+and integrate, using $\frac{1-2x}{1+x}=-2+\frac3{1+x}$ and $\int_0^1P_n=0$.) If $(y_n)$ is known to
+be bounded, the proof of Lemma~\ref{lem:max} applies with $n$ in place of $n^3$ and $2(2n+1)$ in
+place of $4(2n+1)^3$, and gives $0<y_n<y_{n-1}/(5+\frac2n)$; and $5>3$ is enough against $D_n$.
+(Boundedness has to come from elsewhere. The formula
+$y_n=\int_0^1\frac{x^n(1-x)^n}{(1+x)^{n+1}}\dd x$, formula (4) of the main document, gives it, but
+it shows sign and size directly; so for $\log2$ the lemma is an alternative, not a shortcut.)
+A streamlined, self-contained version of Section~1 is in the file \texttt{max-principle-proof.pdf}.
 
-\q{A remark on the two-index table.} The same agent showed that the two-index quantities
-$I_{n,m}$ (main document, earlier version; they are the table of Rajkumar's paper
-arXiv:1212.5881) satisfy, for each fixed $m$,
+\emph{For $\zeta(2)$.} Let $\alpha_n=\sum_k\binom nk^2\binom{n+k}k$, and let $\beta'_n$ be the
+solution of the same recurrence $(n+1)^2u_{n+1}=(11n^2+11n+3)u_n+n^2u_{n-1}$ with $\beta'_0=0$,
+$\beta'_1=5$ (Ap\'ery's numbers for $\zeta(2)$; $D_n^2\beta'_n\in\Z$). This recurrence is not of the
+type \eqref{star}: its small solution alternates in sign. But
+$x_n=(-1)^n(\alpha_n\zeta(2)-\beta'_n)$ satisfies $n^2x_{n-1}=(n+1)^2x_{n+1}+(11n^2+11n+3)x_n$, and
+\emph{if $x$ is bounded and $x_0>0$, then all $x_n>0$ and $x_n<x_{n-1}/11$}. Indeed, otherwise take
+$M$ with $x_M>0\ge x_{M+1}$; then $s_k=(-1)^kx_{M+k}$ has $s_0>0$, $s_1\ge0$ and
+$(n+1)^2s_{k+1}=(11n^2+11n+3)s_k+n^2s_{k-1}$ with $n=M+k$, so $s_2>0$, $s_{k+1}\ge\frac{11}4s_k$ and
+$s_k\to\infty$. So all $x_n>0$, and then $n^2x_{n-1}>(11n^2+11n+3)x_n>11n^2x_n$. Finally $11>9$ is
+enough against $D_n^2$. (Here too boundedness is an assumption.)
+
+\q{A remark on the two-index table.} Let
+$I_{n,m}=\int_0^1\!\!\int_0^1P_n(x)P_m(y)K(x,y)\dd x\dd y$, so that $I_{n,n}=I_n$ (according to the
+agent these are the entries of the table in Rajkumar's paper). The same agent showed that, for each
+fixed $m$,
 \[
-(n+1)^3(X_{n+1,m}-X_{n,m})+n^3(X_{n-1,m}-X_{n,m})=2(2n+1)\,m(m+1)\,X_{n,m}\qquad(n\ge1),
+(n+1)^3(I_{n+1,m}-I_{n,m})+n^3(I_{n-1,m}-I_{n,m})=2(2n+1)\,m(m+1)\,I_{n,m}\qquad(n\ge1),
 \]
 again with a non-negative right-hand coefficient, and that sign and size of the diagonal can be
-obtained from these row equations alone, with a little more work. We have not checked that
-derivation and do not use it.
+obtained from these row equations alone, with a little more work. The relation was verified exactly
+for $m\le6$, $n\le10$ (it depends on the sign convention $P_n(0)=1$); we have not checked the
+derivation of sign and size and do not use it.
+
+\q{Relation to the literature} (short search, 14 November 2026; the passages cited were read). The
+condition that makes Lemma~\ref{lem:max} work, that the middle coefficient of Ap\'ery's recurrence
+exceeds the sum of the outer ones, was observed by A.~Mingarelli (arXiv:math/0608577), who calls the
+recurrence disconjugate and identifies $a_n\zeta(3)-b_n$ as its recessive solution; he states that
+this is a restatement of Ap\'ery's proof and takes the growth of $a_n$ from elsewhere. Mahboubi and
+Sibut-Pinote (arXiv:1912.06611, Lemma~5.6) prove $33^n=O(a_n)$ and use $27<33$. Rajkumar
+(arXiv:1212.5881) gets the rate from the recurrence for the linear forms alone, by the
+Poincar\'e--Perron theorem. We did not find the elementary argument of Lemma~\ref{lem:max} applied
+directly to $I_n$. So the idea is known; at most the packaging is new. No search was made for the
+congruence of Section~2.
 
 \section{Non-vanishing without any inequality}
 
 \q{Question.} Every proof so far shows $I_n\ne0$ by showing $I_n>0$. Is the sign really needed?
-In other problems (for instance for $\zeta(5)$) small combinations are easy to build and their
-sign is unknown, so a different reason for non-vanishing would be valuable.
+In the language of sums the sign of $I_n$ is invisible (main document, Section~11: the terms of
+$-\sum R_n'(t)$ have both signs), so a reason for non-vanishing that does not pass through the sign
+is worth having.
 
 \q{Idea.} Under the hypothesis $\zeta(3)=P/Q$ the number $N_n=D_n^3(a_nP-b_nQ)$ is an integer. An
 integer is non-zero as soon as it is non-zero modulo some prime. Take $n=p$ prime. Then $D_p$ is
-divisible by $p$ exactly once, so $D_p^3a_pP\equiv0$, and everything depends on the part of $b_p$
-that has $p^3$ in its denominator. That part can be computed exactly.
+divisible by $p$ exactly once, so $D_p^3a_pP\equiv0\pmod p$, and everything depends on the part of
+$b_p$ that has $p^3$ in its denominator. That part can be computed exactly.
+
+\q{Congruences between fractions.} For rational numbers $x,y$ whose denominators in lowest terms
+are not divisible by $p$, we write $x\equiv y\pmod p$ if the numerator of $x-y$ is divisible by
+$p$; such fractions add and multiply like integers modulo $p$. A fraction ``has $p^e$ in its
+denominator'' if its denominator in lowest terms is divisible by $p^e$.
 
 \begin{proposition}\label{prop:cong}
 Let $p\ge5$ be prime and $0\le m<p$. Then the denominator of $p^3\,b_{p+m}$ is prime to $p$, and
@@ -170,25 +232,33 @@ p^3\,b_{p+m}\equiv6\,a_m\pmod p .\qquad\text{In particular}\quad p^3b_p\equiv6\p
 \]
 \end{proposition}
 \begin{proof}
-Let $n=p+m$ and let $c_k=(-1)^k\binom nk\binom{n+k}k$ be the coefficients of the polynomial $P_n$.
-By the moment formula of the main document (Section~3),
+Let $n=p+m$, let $c_k=(-1)^k\binom nk\binom{n+k}k$ (the numbers $c_k$ of formula (9) of the main
+document up to the common sign $(-1)^n$, which is irrelevant because only products occur), and
+$H_k^{(j)}=\sum_{u=1}^ku^{-j}$. By Section~9 of the main document,
 \[
-2b_n=\sum_{i}2c_i^2H_i^{(3)}-\sum_{i\ne j}c_ic_j\,\frac{H_i^{(2)}-H_j^{(2)}}{i-j}.
+b_n=\sum_{k}c_k^2H_k^{(3)}+\sum_k\sum_{j\ne k}\frac{c_kc_j}{j-k}\,H_k^{(2)} .
 \]
-Since $n<2p$, the only multiple of $p$ among $1,\dots,n$ is $p$ itself. So $p^3$ can occur in a
-denominator in exactly two ways: in $H_i^{(3)}$ for $i\ge p$, through the term $\frac1{p^3}$; and
-in $\frac{H_i^{(2)}-H_j^{(2)}}{i-j}$ when the numerator contains $\frac1{p^2}$ and $i-j=\pm p$, that
-is, for the pairs $\{i,i-p\}$ with $i\ge p$. All other terms have at most $p^2$ in the denominator.
-Hence
+As $n<2p$, the only multiple of $p$ among $1,\dots,n$ is $p$ itself, and the only multiples of $p$
+among the differences $j-k$ are $\pm p$. So $p^3$ appears in a denominator in exactly two ways: in
+$c_k^2H_k^{(3)}$ with $k\ge p$, through the part $c_k^2/p^3$; and in $\frac{c_kc_j}{j-k}H_k^{(2)}$
+with $k\ge p$ (so that $H_k^{(2)}$ contains $\frac1{p^2}$) and $j=k-p$, through the part
+$-c_kc_{k-p}/p^3$. All other parts have $p$ at most twice in the denominator and vanish modulo $p$
+after multiplication by $p^3$. Hence the denominator of $p^3b_n$ is prime to $p$, and
 \[
-p^3\cdot2b_n\equiv2\sum_{i=p}^{n}c_i^2-2\sum_{i=p}^{n}c_ic_{i-p}=2\sum_{i=p}^{n}c_i\,(c_i-c_{i-p})
-\pmod p .
+p^3b_n\equiv\sum_{k=p}^{n}c_k\,(c_k-c_{k-p})\pmod p .
 \]
-For $m=0$ the only term is $i=p$, with $c_0=1$ and $c_p=-\binom{2p}p\equiv-2$; the sum is
-$2(-2)(-3)=12$, so $p^3b_p\equiv6$. For general $m$, write $i=p+l$ with $0\le l\le m$ and let
-$\gamma_l=(-1)^l\binom ml\binom{m+l}l$ be the coefficients of $P_m$. Lucas' theorem for binomial
-coefficients modulo $p$ gives $c_{p+l}\equiv-2\gamma_l$ and $c_l\equiv\gamma_l$. So the sum is
-$2\sum_l(-2\gamma_l)(-3\gamma_l)=12\sum_l\gamma_l^2=12\,a_m$.
+For $m=0$ the only term is $k=p$, with $c_0=1$ and $c_p=-\binom{2p}p\equiv-2$; the sum is
+$(-2)(-3)=6$. For general $m$ write $k=p+l$ with $0\le l\le m$ and let
+$\gamma_l=(-1)^l\binom ml\binom{m+l}l$, so that $a_m=\sum_l\gamma_l^2$. \emph{Lucas' theorem} says
+$\binom{a_1p+a_0}{b_1p+b_0}\equiv\binom{a_1}{b_1}\binom{a_0}{b_0}\pmod p$ for $0\le a_0,b_0<p$. It
+gives $\binom{p+m}{p+l}\equiv\binom{p+m}l\equiv\binom ml$. If $m+l<p$, it gives
+$\binom{2p+m+l}{p+l}\equiv2\binom{m+l}l$ and $\binom{p+m+l}l\equiv\binom{m+l}l$. If $m+l\ge p$, put
+$s=m+l-p$, so that $0\le s<l$; then $\binom{m+l}l=\binom{p+s}l$,
+$\binom{2p+m+l}{p+l}=\binom{3p+s}{p+l}$ and $\binom{p+m+l}l=\binom{2p+s}l$ are all $\equiv0$, because
+by Lucas each is a multiple of $\binom sl=0$; so the same two congruences hold. With
+$(-1)^{p+l}=-(-1)^l$ we get $c_{p+l}\equiv-2\gamma_l$ and $c_l\equiv\gamma_l$, and therefore
+$p^3b_n\equiv\sum_l(-2\gamma_l)(-3\gamma_l)=6\sum_l\gamma_l^2=6\,a_m$. (The proof uses only that $p$
+is odd; $p\ge5$ is needed in Corollary~\ref{cor:nonvan}, where $6\not\equiv0$.)
 \end{proof}
 
 \begin{corollary}[Non-vanishing]\label{cor:nonvan}
