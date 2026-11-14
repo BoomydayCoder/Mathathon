@@ -30,3 +30,13 @@ repositories report completed proofs. We have not built Lean or audited all
 31 pages. Exact versions and inspected assumptions are in
 sources/odd-zeta-provenance.md. Current-source reporting must not be confused
 with our independent mathematical results above.
+
+## Fifth-stage independently checked components
+
+| Claim | Proof | Review | Limit |
+|---|---|---|---|
+| Positive one-interval equilibrium measure and global potential maximum | fauzan-analytic-simplification.md; general-equilibrium-family.md | equilibrium-independent-review.md | Standard logarithmic-potential framework; no novelty claim |
+| Endpoint existence and energy < -69/50 | equilibrium-endpoint-certificate.md; fauzan-equilibrium-certificate.md | endpoint-independent-review.md; equilibrium-energy-review.md | Two energy reductions share Arb; not formal verification |
+| Same leading analytic bound for every fixed odd index | common-odd-zeta-analytic-budget.md | common-odd-zeta-budget-review.md | Arithmetic normalizer unproved for other indices |
+| Functional odd-index shift and simple-pole obstruction | odd-functional-shift.md | exact symbolic and prime-band script | Uniform pole normalization cost is not determinant cost |
+| Inhomogeneous recurrence for W_n | W-recurrence.md | exact recurrence checks and independent prime audit | Does not imply density of nonvanishing modulo varying primes |

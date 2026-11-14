@@ -58,3 +58,18 @@ Fourth checkpoint (continuing, not final):
   versus source certificate−1.3669955. Endpoint and energy certification pending.
 - No usage/balance tool exists in discovered tool list. Execution remains active;
   user authorized remaining credits and no automatic resets.
+
+Fifth checkpoint, 2026-11-14 07:43 UTC (Nov13 23:43 LA), continuing:
+- Explicit one-interval equilibrium measure now replaces the sixteen-arcsine
+  trial measure in Fauzan's analytic estimate. Exact endpoint interval proof
+  and two different Arb energy reductions certify objective < -69/50.
+- Independent reviews checked positivity, global potential inequality, endpoint
+  bounds and both energy certificates. This verifies an analytic component,
+  not the full preprint's arithmetic or formalization.
+- The same analytic exponent is proved for every FIXED odd s. A matching
+  arithmetic normalizer remains the unsolved gate; no new odd-zeta theorem.
+- Functional index shift s to s+2 has an explicit differential operator,
+  creates triple poles, and has a proved uniform-pole denominator cost.
+- Active: simplify/audit Fauzan arithmetic using the improved analytic margin;
+  return to Zudilin's design constraints and conceptual recurrence mechanisms.
+- Files checkpointed on the codex branch only; Claude-owned files unchanged.
