@@ -7,6 +7,12 @@ limits, moments, Hilbert Gram identity and an exact integrality distinction.
 The Wilson family is classical; no historical novelty or irrationality
 theorem for arbitrary parameters is asserted.
 
+The target sum Z_tau introduced below is exactly the classical
+Koecher–Leshchiner generating function for odd zeta values, with parameter
+x=tau. Its accelerated series, and the exact Askey–Wilson antecedent of the
+later diagonal recurrence, are documented in
+[koecher-askey-wilson-primary-dictionary.md](koecher-askey-wilson-primary-dictionary.md).
+
 ## 1. The probability measure and its boundary
 
 For real \(|\tau|<1/2\), define, in the variable \(t=y^2\),

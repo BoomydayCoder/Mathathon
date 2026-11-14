@@ -1,5 +1,7 @@
 # Rational multiple orthogonality survives a triangular change of weights
 
+**Update, 14 November 2026:** the all-index constant-term and first negative-square formulas are now proved by the [generalized Wilson Rodrigues construction](balanced-generalized-wilson-rodrigues.md) and its [independent review](balanced-rodrigues-independent-review.md). The [binomial coefficient denominator theorem](balanced-rodrigues-integrality.md) has also passed [independent review](balanced-integrality-independent-review.md). Earlier conjecture and missing-construction labels below record the prior stage; they no longer describe these three results. Primitive zeta-linear-form denominators remain a separate question.
+
 Status: exact constructive theorem, developed while independently reviewing
 the positive hyperbolic decomposition. No historical novelty is asserted.
 This supplies one explicit polynomial for each fixed odd index; it is not

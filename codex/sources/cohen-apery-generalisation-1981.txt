@@ -1,0 +1,638 @@
+B ULLETIN DE LA S. M. F.
+
+
+
+
+H ENRI C OHEN
+Généralisation d’une construction de R. Apéry
+Bulletin de la S. M. F., tome 109 (1981), p. 269-281
+<http://www.numdam.org/item?id=BSMF_1981__109__269_0>
+
+
+
+
+   © Bulletin de la S. M. F., 1981, tous droits réservés.
+   L’accès aux archives de la revue « Bulletin de la S. M. F. » (http:
+   //smf.emath.fr/Publications/Bulletin/Presentation.html) implique l’accord
+   avec les conditions générales d’utilisation (http://www.numdam.org/
+   conditions). Toute utilisation commerciale ou impression systématique
+   est constitutive d’une infraction pénale. Toute copie ou impression de
+   ce fichier doit contenir la présente mention de copyright.
+
+
+
+
+                  Article numérisé dans le cadre du programme
+                Numérisation de documents anciens mathématiques
+                             http://www.numdam.org/
+Bull. Soc. math. France,
+ 109, 1981, p. 269-281.
+
+
+
+
+              GÉNÉRALISATION D'UNE CONSTRUCTION
+                          DE R. APÉRY
+                                               PAR
+
+                                  HENRI COHEN ( <t )
+
+
+  1. Introduction
+  Dans sa démonstration de l'irrationalité de Ç(3), Apéry introduit un
+tableau triangulaire (c^k)n^w avec :
+                                                          (
+                 .    -v       -L-.V
+                 -n.k—ZrfKm^n _,3 "'Z^KnKt
+                                                            ~lr'l
+                                  "•'     "2»,.("  "+m
+                                               \l}\ m 1 •OC
+qui possède les propriétés suivantes :
+   (a) c,^ approche de façon exponentielle Ç(3), donc fournit un moyen
+d'accélérer la convergence de Sm^i lAn3. Plus précisément
+IÇ(3)-c,.J=0(4-");
+   (b) c^ k a de bonnes propriétés arithmétiques : son dénominateur ne croît
+pas trop vite. Plus précisément, si on pose d^ == le plus petit commun multiple
+de 1, 2, ..., n, on a ^
+                                  --3/n-hfc\ -
+                                  2dî[ , c,,eZ.
+
+
+Il est instructif de comparer ceci au tableau triangulaire fourni par la formule
+sommatoire d'Euler-MacLaurin. Si on pose :
+                                                              mbm 1
+                        .    _y           -L-L-Lv                  -
+                        "*»»k~"Zjl«**<n    3   • ^Z^l^m^lk y.m+1       '
+
+
+   (») Texte reçu le 25 février 1980. révisé le 24 octobre 1980.
+   Henri COHEN, Laboratoire de Mathématiques pures. Institut Fourier dépendant de
+l'Université scientifique et médicale de Grenoble associé au C.N.R.S.. B. P. n° 116,38402 Saint-
+Martin d'Hères.
+
+
+
+BULLETIN DE LA SOCIÉTÉ MATHÉMATIQUE DE FRANCE - 0037-9484/1981/269/S 5.00
+ <&) Gauthicr-Villars
+ 270                                H. COHEN
+
+
+où les bi sont les nombres de Bernoulli (bo == 1, b^ = -1 /2, ^ = 1 /6, 63 =0,
+^4=-1/30, etc.) alors :
+  (c) ^ ^ approche de façon exponentielle Ç(3), plus rapidement que €„ ^.
+Plus précisément :      |Ç(3)-d^| =0(e-2111').
+
+La convergence en 4~ n est donc remplacée par une convergence en 535 ~ n , ce
+qui est beaucoup plus rapide;
+   (d) d^j, a de mauvaises propriétés arithmétiques. Le dénominateur de
+d^[nn] esi au moins de l'ordre de n2 x n, comparé a un dénominateur de l'ordre
+de (4e3)" pour €„ ^ A cause de ces mauvaises propriétés arithmétiques, il est
+peu probable que l'on puisse utiliser les d^^ dans une démonstration
+d'irrationalité, et c'est ce qui donne toute sa valeur aux c^ ^ d'Apéry.
+   Nous nous proposons ici de généraliser à d'autres fonctions que 1/w3 la
+méthode d'accélération d'Apéry, en conservant les propriétés (a) et (fc). Nous
+n'obtiendrons pas de nouveau résultat d'irrationalité, mais c'est peut-être un
+pas dans la direction de tels résultats.
+  NOTATIONS. — Nous utiliserons la notation x ! à la place de r(x+l).
+D'autre part, une somme du type ^i<»^ a pour convention la valeur 0 pour
+.4=0.
+     2. Une construction générale
+  Nous nous intéressons bien sûr avant tout à la généralisation des c^ ^ pour
+Ç(2p+1). Nous allons placer cela dans un contexte un peu plus général.
+  Soit g une fonction satisfaisant aux hypothèses suivantes :
+                    (a) g est une fonction entière nulle en 0,
+(*)
+                    (b) il existe ae[0, 1[ tel que ^^^(a*).
+On peut considérablement affaiblir les hypothèses (*) pour pouvoir effectuer
+la construction qui va suivre, mais nous n'en aurons pas besoin. Pour une
+telle fonction g nous poserons pour | x \ < 1 :
+                 ^(2 Log (x+^c2^))^^^^^)^
+                                                         Tfï '
+et
+     ^mte)^,!?^). Ces coefficients sont bien définis d'après (û).
+     Enfin, nous appellerons/la transformée de Laplace de g :
+
+                            f(x)^ [' e-^g^dt.
+                                  J o
+
+TOME 109 - 1981 - N* 3
+                           UNE CONSTRUCTION DE R. APÉRY                                271
+
+
+L'hypothèse {b) assure que/(x) existe pour x^ 1.
+    PROPOSITION 2.1. — La série ^,^1 /(w) converge et on a :
+
+                           S(/)=$^/(m)=JJ^r.
+    En effet, il est clair que :
+                                                       r 00 e^
+                     ^-?-1:^
+                                      a(t\
+                                     iw
+                                          ^-               ——rg(t)dt,
+
+les deux intégrales convergeant grâce aux hypothèses (*) (noter que
+9 W ~ tg' (0) quant t -^ 0). La fonction | g (r)/(^ — 1 ) | est bornée sur R + donc
+la deuxième intégrale tend vers 0 quand n + oo, d'où la proposition.
+   Le théorème fondamental de cet article est le suivant :
+  THÉORÈME 2.2. - Posons :
+               ^ v    ^ . v- </,ùr)(^(m/2))!
+             ^/)-L^n/(m)+L^ ,n(^(^/2))! •
+    On a alors pour n>l et 0 < k < n — l :
+
+.     l^     r       ^,_(«-fc-(l/2))!^                 4^l(g)
+^•^^"^-^^•'^(n+k-d/l))! 2^0                            n2'^
+                                                             (»-fe-l)!^         4^,(g)
+                                                        +                L1>0
+                                                              (H+fc)!               n2'^ •
+
+  De ce théorème, il nous sera facile de déduire que les c,^ (/ ) accélèrent la
+convergence de la série ^KBxii/t"*) et P^ précisément que
+|S(/)-c,,.(/)|-0(4-").
+    Démonstration. — On a :
+
+    Cn,t(/)-c.-i,*(/)=/(n)+L<,,,^^
+
+                           r(n-(m/2))!        (H-l-(m/2))! "|
+                       x
+                           L("+(m/2))!       ,(n-l+(m/2))! J
+
+                     (n-l-(m/2)).» ^             ^l^te)_v               ^'(tf)^
+                 :                           0        2t+2         0     W2t
+                      (n+(m/2))!     V            "                             /
+                                          ,. , ^      . / jH-l-(m/2))!
+                                         »/(")- £i<«<a^^) ^+^/2)).
+
+
+  BULLETIN DE LA SOCIÉTÉ MATHÉMATIQUE DE FRANCE
+272                                      H.COHEN
+
+Posons :
+
+                    h  i \-   (»-('"/2))! ^ ^"(g)
+                    C«.n^- - (n+(^/2)-i) i ^-^T-
+
+II est facile de voir que les hypothèses (*) entraînent que d^k) (g) = 0 (a2 *) (la
+constante du 0 dépendant de m) donc puisque a < 1 la définition de b^ „ (g) a
+bien un sens. Calculons b^^.^ (g)—b^,(g) :
+.         , , , . / ,           (»-l-(m/2))!
+^.2.,(0)-^.n(0)=-                (^^/2)),
+
+
+                   V       ^^(g) . ("-('"/2))! ^         ^(g)
+                  x2Jt>o
+                            n 2 * + 2 '(n+(m/2)-l)! 2J[>o n 2 ^ 2
+
+               (n-l-fm/2)) ! / ^^(g)                      ^.'"l^v  ^W
+           ""'"(n^iTÏ))^"'^0"»!1772"                      \   4 ^>0 n 2 ^ 2 /
+
+Or en dérivant deux fois la relation de définition des <^{g) nous obtenons :
+      1                           ,___                        {Ix)"'1
+            k+l                      r                    )
+    ——^< >(2 Log(x+^c ^T))=S„,l4* te)^yT
+
+
+                           ^yff< t+2 >(2 Log (x+^TÎ))
+
+
+             ^r^^^Log^+^TÏ)) -L"^^^)^^.
+
+
+D'où en multipliant par x/2 la première ligne, (1+x 2 ) la deuxième et en
+ajoutant :
+g^2^ Log(x+^/xr^'î))=-^L">o"<)(0)(^-
+
+                            1                          (2 rt1" •             f2ïl 1 "
+                                                   )          L
+                           +^L,>o"•(m-l)^ (0)^                    +L,.o^2(ff)4,7--
+
+
+On en déduit la relation :
+
+                            ^^(g)^^)+"^^{g).
+
+    TOME 109 - 1981 - ?3
+                       UNE CONSTRUCTION DE R. APÉRY                           273
+
+
+On obtient en reportant dans la formule obtenue plus haut :
+b^z,M-b^M
+
+                (n-l~(m/2))!/   -d^^g)                          d^^(g)\
+                              2 0
+                 (n+(m/2))! \ ^   n2^2                  2JC>0
+                                                                 n211 )
+
+                                                        _(n-l-(m/2))!
+                                                                          w
+On a donc:                                              - (rî+(m/2))!
+
+Cn.k(/ )-€„.,,, (/)=/(n)-L^^(fcm+2.n(^-^n^))
+
+                        -/(^-^^l.n^-^k^.n^+fcl.n^+^.nte).
+
+Or:
+
+^(2 Log(x+^/l+x 2 ))=^ ) (2x4-0(x 3 ))
+                               =^k)(0)+2^(k+l)(0)+2x2^k+2)(0)4-0(x3),
+
+donc dw(g)^g(k+l)(0) et 4 k) (^)=^ k+2) (0). On en déduit que :
+
+      fci.n^+^nte)--^!-^?-- ['gWe-^du^^f^
+                                   n
+                                                  J 0
+
+
+oar l'intégration terme à terme de la série de Taylor de g est justifiée d'après
+les hypothèses (*). On obtient donc :
+
+             ^n.k(/)-Cn-l.k(/)=-^2k+l.n(^)-^2k+2.nte)»
+
+
+ce qui n'est autre que le théorème 2.2.
+  PROPOSITION 2.3. — Posons :
+
+   <.(/) = 2^^J-l) w - l m/(m)+L^^(-l) w ^(^^^^
+on a alors pour n^l et O ^ f e ^ n — 1 :
+         <,(/)~c^,,,(/)=(-l) B - 1 2n(c„.,(/)-c^,.,(/)).
+  Démonstration. — Vérification évidente.
+  L'intérêt de cette proposition est mis en évidence quand on suppose, en
+plus des hypothèses (*),que^(0)=0. Eneffet,^' vérifie alors aussi (*)etcela
+assure la convergence de la série ]^i (— l)1""1 mf (m), et nous verrons que les
+c^ fc accélèrent la convergence de cette série de la même façon que les €„ ^
+accélèrent la convergence de ]^i/(w).
+
+  BULLETIN DE LA SOCIÉTÉ MATHÉMATIQUE DE FRANCE
+274                                      H. COHEN
+
+
+      3. Une famille de polynômes
+   II est utile pour la suite d'introduire une famille de polynômes jouant pour
+le procédé d'accélération décrit plus haut le même rôle que les polynômes de
+Bernoulli pour la formule sommatoire d'Euler-MacLaurin.
+      DÉFINITION 3.1. - On pose, pour | x \ < 1 :
+
+        ^^^-I^o^û)^                                 et   P.(û)=I:;.o^.^.
+
+      (On convient que b^ ,p==0 si p<0 ou p>w.)
+  Les propriétés des polynômes P^(a) sont résumées dans la proposition
+suivante :
+  PROPOSITION 3.2. — (1) P^(a) est un polynôme unitaire de degré m.
+  (2) Les P,n(û) vérifient la relation de récurrence :
+
+                         ^m(û+^)-P^(û-^)=mP^.i(û).
+
+      ( 3 ) ()// i/ î\, ((/»-= 1 ci pour w^l :
+                    p ( \   (fl4-(m/2)~l)!
+                               p
+                      ^)=flt (^/2))! •
+  (4) P„(--û)=(-l)WP„(û).
+   Démonstration. — (1) et (4) résultent de (3). (2) résulte immédiatement du
+fait que shtLog^+^/T+x 2 ^^. Pour (3) on vérifie que les polynômes Q^
+définis par Qo^l,
+                                                 w
+                               ^-'- ^ .
+vérifient la même relation de récurrence (2). Si on pose
+jRm(û)=P^(û)—Q^(û) et que l'on suppose par récurrence que J^»i(a)=0
+on voit que J^(û-h(l/2))=J^(û-(l/2)) donc que R^(a) est une constante,
+donc R^(a)=0(w^l)puisqueg^(0)=OetP^(0)=Oen mettant û=0dans la
+définition 3.1. D'où la proposition.
+  Les propriétés des coefficients b^ , p sont résumées dans la proposition
+suivante :
+PROPOSITION 3.3. — ( 1 ) b^. p=0 si m—p est impair.
+
+(2)                 ^.o^Oi^.^ï-l)^-1^'!)!2;
+
+                       ^^(-D^^-l)2^,^^)-!^2
+
+
+
+TOME 109 - 1981 - N° 3
+                        UNE CONSTRUCTION DE R. APÉRY                          275
+
+
+si m est pair;
+                                            2
+                        . -/ .y.n-n^/2)-l)!
+                                          2
+                                              .
+                        &«.i-(-l)  (-1/2)! '
+
+           b         r iy^iw2(C»/2)-l)!y
+                                   2
+                                                               ^ly2
+           ^m.S—V      A;     '"T—ly^)' l
+                                              ^ ^^ m - l ) / 2 \   27
+
+
+5i m est impair.
+   (3) Plus généralement, si w — p est pair :
+
+      ^^(-ir-^-i)!2^^,,,,                                   o« e.,,,6[o,i].
+
+  DemniîMi'ulion. — { 1 ) résulte de la proposition 3.2, (4), (2), (3) : pour m
+pair ^2 on peut écrire d'après la piopo-sinon 3.2, (3) :
+
+^,.<-,^-,)^(.-^(,-^.,.(>-^)
+d'où l'assertion de (2) pour m pair. Pour l'assertion (3) (avec m pair) on
+remarque que les contributions au terme a2 9 ont toujours le même signe
+(— l)<»»/2)-i ^_ ^«-1 ^ ^Qç qnç içm. somme en valeurs absolue est moins
+que ce qu'elle serait pour le produit infini, c'est-à-dire :
+
+(-i^-^-i^^
+                                 -(-n.^'î'-iW
+                                  v /
+                                              î'r^-i),
+                                                   v /
+                                            \2       \1' ^'(2q-l)!             '
+d'où (3) dans le cas m pair.
+  De façon analogue, si m est impair :
+
+P (a) ( iy^(W2)-l)!a2 ^                    4 ^ \ /1       4^\         fi_^.\
+^(a)-( 1)    (_i/2);2 ^                    12 ^           S 2 ; - - - ^ (m^/
+
+et la même démonstration que dans le cas m pair marche, en remarquant que :
+                 cositû o__/' 4 û 2 ^ /   4a2\
+                 a    =    2  l         l
+                 ^^ (-l/2)! ^, -T-M -^ • • •
+
+  BULLETIN DE LA SOCIÉTÉ MATHÉMATIQUE DE FRANCE
+276                              H. COHEN
+
+   4. Convergence et vitesse de convergence
+
+   PROPOSITION 4 . 1 . — Avec les notations des paragraphes précédents, on a :
+                        ^(^E^o^W,,,,,.
+   Démonstration. — On a :
+
+^,U>,(^ÏT^ S^oE^O^m.pû"^-
+
+
+                                                                   2X 1
+                                                =v°°  û'y"
+                                                 Zjp=0" ^m»p bm,p ^ ^, " •
+                                                                 u
+
+
+
+
+II résulte donc du développement en série entière de e"" que :
+
+                V«   h (^"'^LogOc-t-^l^))"
+                L"-P°m,p ^ ,     p,
+
+On a donc :
+
+gw(2Loë(x+^/î~^x2))
+
+                  ^^^^^f^^
+
+
+                    =£^o£^p0<t+l')(0)&«.p(^P
+
+                                       =£^o(^mŒ^o^+l))(0)^,p),
+d'où la proposition 4.1.
+  COROLLAIRE 4.2. — Si g vérifie (*) avec une certaine constante a< 1 on a :
+
+                        i^^w/^-i-w,
+                       \^(g)\^c.(^
+où C ne dépend que de g.
+  En effet, d'après les propositions 3.3 et 4.1 :
+
+IC^I^il^WI^-l)!2^^
+
+                            ^-l^o^C^-l)^
+
+
+avec €=€1^.
+
+  TOME 109 - 1981 - N° 3
+                           UNE CONSTRUCTION DE R. APÉRY                  277
+
+
+  COROLLAIRE 4 . 3 . — Quand n -^ oo, €„ ^ converge vers S{f)etc^k converge
+vers S ' ( f ) , uniformément pour 0<kQ.
+  En effet, l'estimation du corollaire, 4.2 montre que :
+
+                             Cn,^^nf(m)=o(^\
+
+
+
+et :
+                     <k-2Sl^J-l)m-l<(m)=0^\
+
+
+la constante du 0 ne dépendant pas de fc^n.
+    COROLLAIRE 4.4: \c^^S(f)\^0(n~5124~•n).
+    En effet, d'après le théorème 2.2, on a :
+c
+ n,n~~cn-l,tt-lsscn, n""^,»»-! "^n, n-1 "^n-1, n-1
+
+                       _d2n-l(g)        (1/2)!      ^nto)
+
+                            2yz-l    (2yî-(l/2))!   2n(2n)!
+
+                       ,     (1/2)!  ^ ^1^)._1__V            ^n0^)
+                                      z o  2 2  ^         >0
+                           (2n-(3/2))! ^  n ^  ' (2M-1)!^    w2^2 •
+
+On voit aisément en utilisant la formule de Stirling et le corollaire 4.2 que
+tous les termes de cette formule sont des O^"5^"1*). Le corollaire 4.4 en
+résulte immédiatement.
+
+ COROLLAIRE 4.5. — Si en plus des hypothèses (*) on a g ' (0)=0 et si on pose
+Sl(f)=^(-lr~lmf(m) alors on a :
+                            Kn-^.ni^n-3^-").
+
+    Ceci résulte immédiatement de la proposition 2.3 et du corollaire 4.4.
+
+    5. Applications. Exemples
+
+   Prenons g^^t2'l(lr)\ (r^l entier) qui vérifie bien g'{0)=Q et les
+hypothèses (*). On a alors / {x )= 1/x2 r + l , ^(^fc^ 2 r-k donc ^)=0
+si m est impair. On obtient :
+    THÉORÈME 5.1. - (1) Posons {cf. définition 3.1) :
+
+                -r ^y   _L^-LV     ^^2,{n-m)\
+                ^k Li^n ^2^1+2.10.^ 2^ (nïm)7-
+
+    BULLETIN DE LA SOCIÉTÉ MATHÉMATIQUE DE FRANCE
+278                                     H. COHEN
+
+
+  On a alors :
+
+                 ^      -^       _ ( n ~ f e ~ l ) ! ^^ l > 2 k ^ 2 2 r - 2 l
+                  nfk   cn ltk-
+                             -       (n+k)!        2^o—^277—— •
+
+  (2) On û :
+                           1 1
+                 rrîr-^n-V  - /?-»- 5^1 - 0^^n0 «
+                 Ç(2r+l)-^o^+
+                                                0    b2n2r 2f
+                                                  i ^ z ^ i (-2 ^ r
+
+OM ô,o ^5t le symbole de Kronecker, la convergence de cette série étant en
+0^-5/24-n)
+
+
+   Pour r=l, on retrouve bien les c^k d'Apéry, et la formule (2) s'écrit,
+d'après la proposition 3.3:
+
+          rm- 5 ^ (-ir^-D^S      (-1)"- 1
+          ',^-22.»'! ——^^———-2i»-i^/2n\-
+
+
+formule également donnée par Apéry, mais connue [2].
+  Pour r=2 on obtient de façon analogue :
+                   5        1
+               r^-   ^
+               ^(5)-2^i ^(-/ 2)"   (y
+                               n \ \L^n-^k-2 --^J-
+                                               4
+                                                 }
+
+
+
+  THÉORÈME 5.2. — (1) Posons :
+
+        C ' r -2V     (- 1 )"" 1           |y        . ^b             (n
+                                                                         ~m)[
+        ^n.k—^Z^l^nKn    ^.Tr——            ' Z,l<m<t V "~ 1 ) ^ m ^ r /  . x ^ •
+
+
+
+  On û alors :
+
+         ,,'r ^r _/   i ^ n - l ^ ^ ^ ^ " " ^ ) > ^Tr-1 ^ 2 k + 2 2 r - 2 l
+                               2
+         Cn..-C^x.,-(-l)           (^fc)t         L^O       ^21-M           •
+
+
+
+  (2) On û :
+                                                             b                  l   n
+      / l _ ^ l - 2 r ^ / n ^V^r-l ^ ^ S I O ^ V O G
+      (1    2         )Ç(2r)-^o^2 ^-^^i 2 n , 2^r^- (22Jn( ")•! )
+
+(û convergence de cette série étant en 0(n~3/24~").
+
+ TOME 109 - 1981 - N0 3
+                          UNE CONSTRUCTION DE R. APÉRY                   279
+
+  Pour r = l on retrouve bien les c, ^ d'Apéry et la formule :
+
+                   Ç(2)=3^=i       ^, =3V^i             /2^y
+
+                                                        \ "Y
+  Pour r=2 on obtient :
+
+             gÇ(4)=-^L»i            / 2 ^ \ ^L^-i^-J,,?^
+
+                                 " \ " )
+
+Dans ce cas particulier, on peut transformer de façon agréable cette formule.
+En effet, revenant au théorème 5.2, on a :
+                                   1  3
+              Irw-iY
+              ^W-^L,^                   ^ ^(-D-
+                                   ^. 2l««i ^^, .
+                                " \l " /
+Or nous avons vu que :
+
+                    v" ». (2x)m _(2Log(x+yr+x2))''
+                    Lm v m p
+                      °     • m\~~                p\
+II résulte de la nullité des ^2 »+i 4 que :
+
+  yco     b,^x2'1         (2Log((x/2)+^l+(x 2 /4))) 4    2/       (x\Y
+  ï l l
+   " - ~^2n)^ ———————24———————'S^811^;-
+                =
+
+
+
+La série de gauche définit une fonction holomorphe dans le disque | x \ <2 et
+on voit aisément qu'on obtient, en changeant x en ix :
+                    V"
+                    ZB=1
+                        ^(-l)"^" 2/ . xY
+                         ——W——^(Arcsm^.
+En particulier :
+                     2v« ,,      (-!)"_ il4 _..^ 5
+                     2l»=i t>2 ",4(2^ - Y^ - ^(4).^
+
+puisque ;(4)=^t4/90. On obtient donc :
+
+                          (^^)Ç(4)=2L..———.,
+
+
+
+
+  BULLETIN DE LA SOCIÉTÉ MATHÉMATIQUE DE FRANCE
+280                               H. COHEN
+
+
+soit :
+  COROLLAIRE 5.3:
+
+
+                          ^-^./^.            \n }
+
+  6. Conclusion
+
+
+   Comme annoncé dans l'introduction, nous avons généralisé la
+construction d'Apéry et montré que les c^ „ approchaient exponentiellement
+Ç(2r+l). En remarquant que d^^2 b^^ ^ y / { m — l ) PeZ pour w^n, on
+montre facilement comme dans [1] que les dénominateurs des c^ ^ sont bons,
+et plus précisément que :
+  PROPOSITION 6.1 :
+
+
+                                  •(":')<.'
+                          2.^'("^}.:.,<,1.
+
+  Toutefois, nous n'avons, ni généralisé les « coefficients barycentriques »
+( i ) (   ,   j qu'utilise Apéry, ni ses relations de récurrences. Je compte
+revenir sur ce dernier point dans un prochain papier.
+  D'autre part, il est possible de placer le processus d'accélération d'Apéry et
+celui d'Euler-MacLaurin dans un cadre commun plus général : soit
+5 = F (D) == D 4- û2 D2 -h ...    un     opérateur      (où     D =d/dx)      et
+D=F~ 1 (8)=Ô—Û28 2 + ... la série formelle réciproque. Si g et u sont des
+fonctions et si on pose :
+                             /(n)=^(-Z)).u(n),
+alors on peut accélérer ]^i/(w) par :
+
+              ^^L^n/^-Eo^^s"'1^^^)
+ou
+                      V     ^ Y » , ^ g(-f" 1 ^))
+                      ^"^m!           2 s^F-^JO/l)'
+
+ TOME 109 - 1981 - N" 3
+                          UNE CONSTRUCTION DE R. APÉRY                                 281
+
+
+  La famille de polynômes analogues aux P^{a) est définie par :
+                                                      yk
+                              ^F-W—V
+                              €r                p (a\——
+                                       —Zj^o^tWirY»
+
+et on a ÔP^ (a) = fc P^-1 (û). On retrouve Euler-MacLaurin en prenant ô = Z),
+u=/(n—(l/2)) et g(X)^e~~x/2. On retrouve la construction décrite ici en
+prenant 8=2 sh D/2, u=l/n.
+
+
+                                   BIBLIOGRAPHIE
+
+[1] COHEN (H.). - Démonstration de l'irrationalité de Ç(3) (d'après R. Apéry), Séminaire de
+    Théorie des Nombres, Grenoble, 1978, 9 p.
+[2] VAN DER POORTEN (A.). - A Proofthat Euler Missed..., Math. Intelligencer, vol. 1, n0 4,
+    1979, p. 195-203.
+
+
+
+
+BULLETIN DE LA SOCIÉTÉ MATHÉMATIQUE DE FRANCE
+

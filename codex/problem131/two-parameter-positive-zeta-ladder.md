@@ -1,6 +1,8 @@
 # A two-parameter positive ladder from logarithms to odd zeta values
 
-Status: complete proof draft; independent review requested. This is a
+Status: independently reviewed, including the boundary and every real order;
+see [two-parameter-positive-ladder-independent-review.md](two-parameter-positive-ladder-independent-review.md).
+This is a
 constructive extension of the two already proved families, not a claim of
 historical novelty or a new irrationality theorem. The dependencies are
 [logarithm-zeta3-wilson-deformation.md](logarithm-zeta3-wilson-deformation.md)

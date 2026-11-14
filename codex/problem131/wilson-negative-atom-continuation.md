@@ -1,7 +1,7 @@
 # Explicit negative atoms beyond the half-shift Wilson interval
 
-Status: root-proposed formula verified and proved below using Bernoulli
-polynomials; exact rational checks pass. Separate independent review is pending.
+Status: root-proposed formula proved using Bernoulli polynomials and accepted
+in [independent review](wilson-negative-atoms-independent-review.md). Exact rational checks pass.
 The input is the already proved positive measure and Bernoulli moments in
 [logarithm-zeta3-wilson-deformation.md](logarithm-zeta3-wilson-deformation.md).
 This is a self-contained derivation of the continuation, not a historical

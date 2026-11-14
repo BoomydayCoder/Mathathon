@@ -1,0 +1,420 @@
+                                                           A q-ANALOGUE OF THE KOECHER-LESHCHINER
+                                                           GENERATING FUNCTION OF ODD ZETA VALUES
+
+                                                                                         ROBERTO TAURASO
+
+
+                                                    Abstract. In the 1980s, Koecher and, independently, Leshchiner found an elegant formula
+                                                    for the generating function of odd zeta values. In this short note, we derive a q-analogue of
+arXiv:2511.18034v1 [math.NT] 22 Nov 2025
+
+
+
+
+                                                    this formula, which provides a q-version of the accelerated series for ζ(3) used by Apéry in
+                                                    his famous proof of irrationality.
+
+
+
+
+                                                                                          1. Introduction
+                                              In June 1978, during a talk, the French mathematician Roger Apéry outlined a rather
+                                           unexpected proof establishing that ζ(3) is an irrational number [1] (see also the survey paper
+                                           [8]). A fundamental component of his approach was identity
+                                                                                                     ∞
+                                                                                                   5 X (−1)k−1
+                                                                                        ζ(3) =                  .                                     (1)
+                                                                                                   2
+                                                                                                    k=1
+                                                                                                        k 3 2k   k
+
+                                           This accelerated series for ζ(3) was actually first found by Markov in 1890. It follows from
+                                           [7, (14)], which is rewritten below in a compact mode, by letting a = 0,
+                                                                              ∞              ∞
+                                                                                          X (−1)k−1 ( 5 k 2 + 3ak + a2 )
+                                                                              X      1                2
+                                                                                        =                      4
+                                                                                     k3          k 2k a+k
+                                                                                                  5
+                                                                                                         
+                                                                             k=a+1           k=1             k           a
+                                           After Apéry’s proof, several other related identities were either established or revived. Here,
+                                           we will focus on a generating function identity for odd zeta values obtained by Koecher [5]
+                                           and, independently, by Leshchiner [6] (see also [9, (1-2)]):
+                                                   ∞                         ∞                         ∞                        k−1
+                                                   X
+                                                                    2r
+                                                                             X           1        1 X (−1)k−1 5k 2 − x2 Y       x2 
+                                                         ζ(2r + 3)x      =                      =               ·          · 1 −      ,                (2)
+                                                                                   k(k 2 − x2 )   2    k 3 2k     k 2 − x2       m2
+                                                                                                              
+                                                   r=0                       k=1                      k=1            k          m=1
+                                           which implies, for r ≥ 0,
+                                                                          ∞                                  r
+                                                                         X   (−1)k−1−r  5          r
+                                                                                                            X   (−1)j          r−j
+                                                                                                                                    
+                                                         ζ(2r + 3) =                       Hk−1 ({2}  ) + 2           Hk−1 ({2}    )
+                                                                               k 3 2k                            k 2j
+                                                                                      
+                                                                                   k
+                                                                                         2
+                                                                         k=1                                j=1
+
+                                           where Hk ({2}s ) = 1≤j1 <···<js ≤k 1/(j12 · · · js2 ).
+                                                              P
+                                           For even zeta values, Bailey, Borwein, and Bradley using an experimental approach discovered
+                                           and then formally proved [3, Theorem 1.1] that
+                                                           ∞                   ∞                    ∞            Qk−1     4x2
+                                                                                                                              
+                                                                                        1                3        m=1 1 − m2
+                                                          X                   X                     X
+                                                                          2r
+                                                              ζ(2r + 2)x =                        =           · Qk       x2
+                                                                                                                              .
+                                                                                   k 2 − x2           k 2 2k
+                                                                                                           k      m=1 1 − 2
+                                                             r=0                       k=1                 k=1                     m
+
+                                              2020 Mathematics Subject Classification. Primary 11B65, 05A19; Secondary 05A15, 05A19, 05A30, 11M06.
+                                              Key words and phrases. q-analogue, zeta values, Apéry-like series, central binomial coefficients, generating
+                                           functions.
+                                                                                                      1
+2                                                    R. TAURASO
+
+Later in [4, Theorem 1]), Kh. Hessami Pilehrood and T. Hessami Pilehrood proved the
+interesting q-analogue,
+                                                     Qk−1     x2 (1+q m )2 
+                 X∞
+                          q k        ∞ k2
+                                     X q (1 + 2q )k   m=1 1 −     [m]2q
+                        2     2 2k
+                                   =         2k   · Qk          2 2m      .  (3)
+                     [k]q − x q         [k]2q k             1− x q 2
+                    k=1                        k=1               q               m=1    [m]q
+
+In particular, for x = 0, we get
+                                          ∞ k2               ∞
+                                         X   q (1 + 2q k ) X q k
+                                                          =           .
+                                              [k]2q 2k          [k]2q
+                                                    
+                                         k=1        k q     k=1
+
+Is there a q-analogue for the generating fuction of the odd zeta values (2)?
+In [4, (19) and (20)] the authors gave some q-version for the Markov-Apéry formula (1) for
+ζ(3). In this short note we provide a general q-version of (2):
+          ∞                              ∞                k+1
+          X           q k + q 2k         X (−1)k−1 q ( 2 )
+                                       =
+                [k]q ([k]2q − x2 q k )       [k]3q 2k
+                                                   
+          k=1                            k=1       k      q
+
+                                                 (1 + 3q k + q 2k )[k]2q − x2 q 2k k−1           x2 q m
+                                                                                    Y                  
+                                               ·                                  ·           1−          .
+                                                          [k]2q − x2 q k                         [m]2q
+                                                                                       m=1
+
+which is equivalent, after expanding the series with respect to the powers x2r , to the family
+of identities
+ ∞ (r+1)k                   ∞                k+1
+X    q       + q (r+2)k    X   (−1)k−1+r q ( 2 )
+                        =                                                                              (4)
+          [k]2r+3                  [k]3q 2k
+                                         
+k=1          q             k=1           k q
+                                                                          r
+                                                                        X   (−1)j q kj                   
+                        · (1 + 3q k + q 2k )Hq,k−1 ({2}r ) + (1 + q k )2                H q,k−1 ({2}r−j
+                                                                                                        )
+                                                                         j=1   [k]2j
+                                                                                  q
+
+where for s ≥ 1, Hq,k ({2}s ) is the multiple harmonic q-sum
+                                        X         q j1 +···+js
+                                                              [j1 ]2q · · · [js ]2q
+                                          1≤j1 <···<js ≤k
+
+and Hq,k ({2}0 ) = 1. It is worth noting that for r = 0, the q-series (4) yields a q-analogue of
+(1),
+                          ∞ k                   ∞             k+1
+                          X q + q 2k           X   (−1)k−1 q ( 2 ) (1 + 3q k + q 2k )
+                                             =                                        .
+                                 [k]3q                            3 2k
+                                                                     
+                          k=1                  k=1
+                                                              [k] q  k q
+
+                                                 2. Proof of (4)
+    We first introduce some notations. The q-analogue of a positive integer n is
+                                                          n−1
+                                             1 − qn X j
+                                      [n]q =          =       q ,
+                                              1−q
+                                                          j=0
+
+and the q-factorial [n]q ! is defined as nj=1 [j]q . The q-binomial coefficient is given by
+                                        Q
+                                        
+                                        n            [n]q !
+                                             =                  .
+                                        k q    [k]q ![n − k]q !
+ A q-ANALOGUE OF THE KOECHER-LESHCHINER GENERATING FUNCTION OF ODD ZETA VALUES 3
+
+We will show the following finite form of (4):
+N                             N                k+1
+X q (r+1)k + q (r+2)k        X   (−1)k−1+r q ( 2 )
+                          =
+          [k]2r+3                   [k]3q 2k
+                                          
+k=1          q               k=1           k q
+                                                                    r
+                           
+                                   k      2k        r          k 2
+                                                                   X   (−1)j q kj             r−j
+                                                                                                    
+                          · (1 + 3q + q )Hq,k−1 ({2} ) + (1 + q )                 H q,k−1 ({2}    )
+                                                                   j=1   [k]2j
+                                                                            q
+                             N                k
+                            X   (−1)k−1+r q −(2)+N k+k
+                          −                            Hq,k−1 ({2r }).
+                                       3 N
+                                          N +k
+                            k=1
+                                   [k] q k q  k q
+Then the claim is easily obtained by letting N → ∞.
+The definition of Hq,k ({2s }) leads to the recurrence relation
+                                                                   qk
+                           Hq,k ({2s }) − Hq,k−1 ({2s }) =              Hq,k−1 ({2s−1 })
+                                                                  [k]2q
+which implies
+                         [n + k]q [n − k]q                  [n]2q                     qn
+  q n−k Hq,k ({2s }) +                     Hq,k−1 ({2s
+                                                       }) =       H q,k−1 ({2 s
+                                                                                }) +       Hq,k−1 ({2s−1 }).
+                               [k]2q                        [k]2q                    [k]2q
+We multiply both sides of the above equality by
+                                                                      2
+                                          (−1)k q −(       ) Q([k]q !) .
+                                                       n−k+1
+                                                         2
+                                                              n+k
+                                                              j=n−k [j]q
+Then the left-hand side becomes
+                n−k    ([k]q !)2                              n−(k−1) ([k − 1]q !)2
+LHS = (−1)k q −( 2 ) Qn+k          Hq,k ({2s }) − (−1)k−1 q −( 2 ) Qn+k−1             Hq,k−1 ({2s })
+                       j=n−k q [j]                                    j=n−(k−1) q [j]
+while the right-hand side equals
+                                  n−k+1([k − 1]q !)2  2                                        
+           RHS = (−1)k q −(         2 )Q
+                                         n+k
+                                                      [n]  H
+                                                          q q,k−1 ({2s
+                                                                       }) + q n
+                                                                                Hq,k−1 ({2s−1
+                                                                                              })  .
+                                         j=n−k [j]q
+Summing both sides for k = 1, . . . , n − 1, the LHS telescopes and simplifies to
+                                                                  n
+                           (−1)n−1 (1 + q n )           s     q −( 2 )
+                     LHS =                    Hq,n−1 ({2 }) −          Hq,0 ({2s })
+                              [n]q 2n
+                                   
+                                    n q
+                                                                [n]
+(note that [2n]q = (1 + q n )[n]q ). Conversely, on the other side, we find
+                 n−1
+                                   n−k+1   ([k − 1]q !)2  2                                            
+                       (−1)k q −(         )Q
+                 X
+                                                                            s        n            s−1
+         RHS =                       2
+                                             n+k
+                                                          [n] q H q,k−1 ({2   }) + q   Hq,k−1 ({2     })  .
+                 k=1                         j=n−k [j]q
+After multiplying both sides by
+                                                    n
+                                           (−1)s q ( 2 )+(r−s)n (1 + q n )
+                                                                           ,
+                                                      [n]2r−2s
+                                                         q
+we get
+                              n
+            (−1)s+n−1 q ( 2 )+(r−s)n (1 + q n )2           s      q (r−s)n + q (r−s+1)n
+      LHS =           2r−2s+1 2n
+                                               Hq,n−1 ({2  }) −          2r−2s+1
+                                                                                        Hq,0 ({2s })
+                   [n]q           n q
+                                                                       [n]
+4                                                        R. TAURASO
+
+and
+
+                                      n−1                                       2
+                 n                                      n−k+1    ([k − 1]q !)
+        RHS = q ( 2 ) (1 + q n )            (−1)k q −(          )Q
+                                      X
+                                                          2
+                                                                   n+k
+                                      k=1                          j=n−k [j]q
+                                                                                               !
+                               (−1)s q (r−s)n           s     (−1)s−1 q (r−s+1)n           s−1
+                         ·                    Hq,k−1 ({2 }) −                    Hq,k−1 ({2 }) .
+                                [n]2r−2s−2
+                                   q                              [n]2r−2s
+                                                                     q
+
+
+
+The next step is to sum both sides for s = 0, . . . , r − 1. We obtain
+
+               r−1              n
+               X   (−1)n−1+s q ( 2 )+(r−s)n (1 + q n )2           s      q rn + q (r+1)n
+         LHS =                           2n             Hq,n−1 ({2  }) −
+                          [n]2r−2s+1                                         [n]2r+1
+                                          
+               s=0           q           n q                                    q
+                                       n                 r
+                 (−1)r+n−1 q ( 2 ) (1 + q n )2 X (−1)j q nj            r−j      q rn + q (r+1)n
+               =         2n                               H q,n−1 ({2    }) −                 ,
+                           n q
+                                                      2j+1
+                                               j=1 [n]q
+                                                                                    [n]2r+1
+                                                                                       q
+
+
+
+and the RHS telescopes,
+
+                                 n−1                                        2
+               n                                   n−k+1      ([k − 1]q !)
+      RHS = q ( 2 ) (1 + q n )         (−1)k q −(            )Q
+                                 X
+                                                     2
+                                                                n+k
+                                 k=1                            j=n−k [j]q
+                         r−1
+                                                                                                !
+                         X      (−1)s q (r−s)n           s     (−1)s−1 q (r−s+1)n           s−1
+                     ·                         Hq,k−1 ({2 }) −                    Hq,k−1 ({2 })
+                         s=0
+                                 [n]2r−2s−2
+                                    q                              [n]2r−2s
+                                                                      q
+                                                         n−1                                    2
+                                           n                            n−k+1        ([k − 1]q !) n
+                     = (−1)r−1 q ( 2 ) (1 + q n )              (−1)k q −(           )Q
+                                                         X
+                                                                          2
+                                                                                       n+k
+                                                                                                  q Hq,k−1 ({2r−1 })
+                                                         k=1
+                                                                                             [j]
+                                                                                       j=n−k q
+                                                  n−1
+                                                                k     ([k − 1]q !)2
+                                                      (−1)k q −(2)+nk Qn+k
+                                                  X
+                     = (−1)r−1 (1 + q n )                                           Hq,k−1 ({2r−1 }).
+                                                  k=1                   j=n−k [j] q
+
+
+
+Then we proceed by summing both sides for n = 1, . . . , N . After interchanging the order of
+summation, the RHS can be written as
+
+                    N                 n−1
+                                                    k     ([k − 1]q !)2
+                                          (−1)k q −(2)+nk Qn+k
+                    X                 X
+              r−1                 n
+RHS = (−1)               (1 + q )                                       Hq,k−1 ({2r−1 })
+                    n=1               k=1
+                                                                  [j]
+                                                            j=n−k q
+                    N −1           k                                N
+                    X   (−1)k q −(2)                               X    (1 + q n )q nk
+      = (−1)r−1               2k   H q,k−1 ({2 r−1
+                                                     }) · [2k]q !       Qn+k
+                    k=1
+                         [k]2q k q                                n=k+1   j=n−k [j]q
+                    N −1           k                                N
+                                                                                                                              !
+              r−1
+                    X   (−1)k q −(2)             r−1
+                                                                   X     1                          q nk        q (n+1)k
+      = (−1)                  2k   H q,k−1 ({2     }) · [2k]q !                            Qn+k−1         − Qn+1+k−1            ,
+                            2
+                         [k]q k q                                       [k] q                  j=n−k [j]q      j=n+1−k [j]q
+                    k=1                                           n=k+1
+ A q-ANALOGUE OF THE KOECHER-LESHCHINER GENERATING FUNCTION OF ODD ZETA VALUES 5
+
+so that the RHS telescopes again
+                        N −1            k
+                                                                                                   !
+                  r−1
+                        X   (−1)k q −(2)                             q k(k+1)       q (N +1)k
+ RHS = (−1)                       2k Hq,k−1 ({2r−1 }) · [2k]q !    Q2k        − QN +k
+                                3
+                             [k]q k q
+                        k=1                                            j=1 [j]q    j=N −k+1 [j]q
+           N −1           k+1                    N −1               k
+           X (−1)k−1+r q ( 2 )+k           r−1
+                                                 X    (−1)k−1+r q −(2)+N k+k
+       =                         Hq,k−1 ({2 }) −                             Hq,k−1 ({2r−1 })
+                     3 2k                                   3 N
+                                                             N +k
+         k=1
+                 [k] q k q                       k=1
+                                                         [k]q k q   k q
+          N               k+1                     N                k
+         X   (−1)k−1+r q ( 2 )+k           r−1
+                                                 X   (−1)k−1+r q −(2)+N k+k
+       =                         Hq,k−1 ({2 }) −                            Hq,k−1 ({2r−1 }).
+                     3 2k                                   3 N
+                                                             N +k
+         k=1
+                 [k] q k q                       k=1
+                                                        [k] q k q  k q
+Finally, putting the LHS and the RHS back together, we have, for r ≥ 1,
+     N rn                          N             n                 r
+     X q + q (r+1)n               X   (−1)n+r q ( 2 ) (1 + q n )2 X (−1)j q nj
+                               =−                                              Hq,n−1 ({2r−j })
+             [n]2r+1
+                                              2n                        2j+1
+     n=1        q                 n=1           n q               j=1 [n] q
+              N             k+1                     N              k
+             X   (−1)k+r q ( 2 )+k           r−1
+                                                   X   (−1)k+r q −(2)+N k+k
+           +                       Hq,k−1 ({2 }) −                          Hq,k−1 ({2r−1 })
+                        3 2k                                 3 N
+                                                              N +k
+             k=1
+                    [k] q k q                      k=1
+                                                         [k] q k q   k q
+which is the desired finite form of (4) after replacing r with r + 1.                                      □
+
+                                                  References
+ [1] R. Apéry, Irrationalité de ζ(2) and ζ(3), Astérisque 61 (1979), 11–13.
+ [2] J. Borwein and D. Bradley, Empirically determined Apéry-like formulae for ζ(4n+3), Exp. Math. 6 (1997),
+     181–194.
+ [3] D. H. Bailey, J. M. Borwein, D. M. Bradley, Experimental determination of Apéry-like identities for
+     zeta(2n + 2), Experiment. Math. 15 (2006), no. 3, 281-289.
+ [4] Kh. Hessami Pilehrood and T. Hessami Pilehrood, A q-analogue of the Bailey-Borwein-Bradley identity,
+     J. Symb. Comput. 46 (2011), 699–711.
+ [5] M. Koecher, Letters, Math. Intelligencer 2 (1980), 62–64.
+ [6] D. Leshchiner Some new identities for ζ(k) J. Number Theory 13 (1981), 355–362.
+ [7] A. A. Markov, Mémoire sur la transformation des séries peu convergentes en séries très convergentes,
+     Mém. de l’Acad. Imp. Sci. de St. Pétersbourg, vol. XXXVII, n. 9 (1890), 18 pp.
+ [8] A. van der Poorten, A proof that Euler missed... Apéry’s proof of the irrationality of ζ(3). An informal
+     report, Math. Intelligencer 2 (1979), 195–203.
+ [9] T. Rivoal, Simultaneous generation of Koecher and Almkvist-Granville’s Apéry-like formulae, Exp. Math.
+     13 (2004), 503-508.
+
+  Dipartimento di Matematica, Università di Roma “Tor Vergata”, 00133 Roma, Italy
+  Email address: tauraso@mat.uniroma2.it
+

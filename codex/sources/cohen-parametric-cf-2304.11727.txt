@@ -1,0 +1,896 @@
+                                           Parametric Continued Fractions for π 2, ζ(3), and
+arXiv:2304.11727v1 [math.NT] 23 Apr 2023
+
+
+
+
+                                                          other Constants
+                                                                              Henri Cohen
+                                                          Université de Bordeaux, LFANT,
+                                               IMB, U.M.R. 5251 du C.N.R.S., 351 Cours de la Libération
+                                                           33405 Talence Cedex, FRANCE
+
+                                                                             April 25, 2023
+
+                                                                                 Abstract
+                                                     We give an extensive list of parametrized families of polynomial con-
+                                                 tinued fractions of smallest possible degrees for π 2 and ζ(3), and mention
+                                                 similar results for other constants.
+
+
+
+                                           1     Introduction
+                                           One can find in the literature a huge number of continued fractions (abbreviated
+                                           CFs) for interesting constants and functions. The purpose of this paper is
+                                           to give possibly experimental results showing that there often exist families
+                                           of such CFs, usually depending on two, three, and even four parameters. In
+                                           many cases these experimental results can be proved, usually because either
+                                           pn /qn or pn /qn − pn−1 /qn−1 have an explicit expression. In other cases, I have
+                                           not bothered to try to prove the experimental results, although it may not be
+                                           difficult. Thus, when I speak of results, they should be considered experimental,
+                                           but with considerable evidence. I would appreciate receiving any additional data
+                                           of the same kind.
+                                               Notation: a CF will be written as a pair of sequences (an , bn )n≥0 represent-
+                                           ing the CF a0 + b0 /(a1 + b1 /(a2 + b2 /(a3 + · · · ))) (warning: note this precise
+                                           convention, other authors have different notation). All the CFs that we will
+                                           encounter will be convergent : if as usual pn /qn = a0 + b0 /(a1 + · · · + bn−1 /an ),
+                                           this means that z = limn→∞ pn /qn exists, and when we speak of the speed of
+                                           convergence, we mean the behavior of z − pn /qn .
+                                               Note that we always assume that bn 6= 0 for all n, but we allow a finite
+                                           number of an to vanish.
+
+
+
+                                                                                     1
+Definition 1.1 (1) Let (an )n≥0 be a sequence (always assumed to be of ratio-
+     nal numbers, and usually of integers). We say that it is ultimately poly-
+     nomial if there exists a polynomial denoted a(x) (by abuse of notation)
+     with rational coefficients such that an = a(n) and an 6= 0 for n sufficiently
+     large.
+ (2) We say that the CF (an , bn )n≥0 is of polynomial type if the sequences an
+     and bn are ultimately polynomial.
+    As a practical notation, if an = a(n) for n ≥ n0 , we will denote the sequence
+(an )n≥0 by the (n0 + 1)-component vector A = (a0 , a1 , . . . , an0 −1 , a(n)), where
+the last entry is a polynomial. Of course this is not unique: we also have for
+instance A = (a0 , a1 , . . . , an0 −1 , an0 , a(n)) with an0 = a(n0 ).
+    Thus a CF will be denoted by a pair of such vectors A and B representing
+(an ) and (bn ), and if the CF converges to some number z, we will write z =
+(an , bn ).
+Definition 1.2 We recall that two CFs (an , bn ) and (a′n , b′n ) are said to be
+equivalent if there exists an integer k such that (a′n , b′n ) = (an+k , bn+k ) for n
+sufficiently large, i.e., if the tails of the CFs are ultimately the same.
+   Since we assume everything rational, if we set z = (an , bn ) and z ′ = (a′n , b′n ),
+the CFs for z and z ′ are equivalent if and only if there exists a Möbius trans-
+formation with integer coefficients sending z to z ′ , in other words z ′ = (Az +
+B)/(Cz + D) for integers A, B, C, D with AD − BC 6= 0.
+   We can now give our final definition:
+Definition 1.3 We say that a pair of polynomials (A(x), B(x)) with rational
+coefficients represents a constant z if there exists a CF (an , bn ) converging to z
+such that an = A(n) and bn = B(n) for n sufficiently large, and in that case we
+simply write by abuse of notation z = (A(n), B(n)).
+    Because of what we have said above, this is almost, but not quite, equivalent
+to the fact that the CF (A(n), B(n))n≥0 converges to a Möbius transform of z
+(always assumed with integer coefficients): indeed, some values of A(n) and/or
+B(n) may vanish, which kills this property. But if we avoid these vanishing
+values by changing the corresponding coefficients of the CF to any nonzero
+value, this is indeed true.
+    Our goal is, given some interesting constant z, to find all (or at least many)
+pairs (A, B) representing z, subject to suitable restrictions. In particular, recall
+that if (an , bn )n≥0 is a CF converging to z and rn is any sequence with r0 = 1
+and rn 6= 0 for all n, the CF (an rn , bn rn rn+1 )n≥0 also converges to z. We will
+thus restrict to polynomials (A, B) of smallest possible degrees.
+    To make this more precise, we introduce the following definitions:
+Definition 1.4 We say that z ∈ C is a rational P period of degree k if it is equal
+to the sum of a convergent series of the form       n≥1 χ(n)f (n), where χ is a
+periodic arithmetic function taking rational values, and f ∈ Q(x) is a rational
+function with rational coefficients whose denominator is of degree k.
+
+                                           2
+    Note that this definition is not compatible with the definition of periods
+as given by Kontsevitch–Zagier [3]. Note also that a Q-linear combination of
+rational periods of degree ≤ k is again a rational period of degree ≤ k.
+                                           √            √        √ √
+√ Examples
+     √        of periods
+                  √      of degree 1: π, π/ d, log(2), 2 log(1+ 2), 3 log(2+
+  3), 5 log((1 + 5)/2).                           √
+    Examples of periods of degree 2: π 2 , π 2 / d, G = L(χ−4 , 2) (Catalan’s
+constant), G3 = L(χ−3 , 2).                     √
+    Examples of periods of degree 3: π 3 , π 3 / d, ζ(3).
+    By using Euler’s transformation of series it is clear that a period has a CF
+expansion where a(n) and b(n) are polynomials with rational coefficients for n
+large. However this is usually uninteresting, or at least not any more interesting
+than the series itself. Thus, really interesting CFs are those for which the
+degrees of the polynomials are reasonably small, specifically deg(a(n)) ≤ k and
+deg(b(n)) ≤ 2k for n sufficiently
+                            P large (we will say      thatPit has bidegree ≤ (k, 2k)).
+                                                    −                 n−1
+Trivial examples: S + =        n≥1 1/P (n) and S       =     n≥1 (−1)     /P (n) with
+deg(P ) = k ≥ 2 have the CFs S = ((0, P (n) + P (n − 1)), (1, −P (n)2 )) and
+                                     +
+
+S − = ((0, P (n) − P (n − 1)), (1, P (n)2 )) by Euler, of the required   degrees.
+                                                                           + 1)/n3 =
+                                                                 P
+    Note that if we apply Euler’s transformation to S =             n≥1 (n
+ζ(3) + ζ(2) which is a period of degree 3, we obtain a CF of bidegree (4, 8).
+However, there does exist a CF of bidegree (3, 6), for instance we have the
+(easily proved) CF:
+
+           ζ(3) + ζ(2) = ((3, 2n3 + 2n2 + 3n + 1), (−1, −n(n + 1)5 )) .
+
+    For most of this paper, we will focus on the cases z = π 2 (or equivalently
+z = ζ(2) = π 2 /6) and z = ζ(3), and attempt to classify all representations of
+π 2 with bidegree ≤ (2, 4), and of ζ(3) with bidegree ≤ (3, 6). A completely
+analogous study can be made for other periods such as those mentioned above,
+we will briefly mention this in the last section.
+    Note that, contrary to [1], we are interested in CFs for “pure” periods such as
+those mentioned above, and not in linear combinations, which is considerably
+more restrictive since one needs to get rid of “parasitic” terms (for instance
+log(2) for π 2 , or log(2) and ζ(2) for ζ(3), see below).
+
+
+2     CFs for π 2 : Convergence in 1/nP , P ∈ Z≥1
+As far as the author is aware, up to equivalence there exist exactly nine types of
+convergence of polynomial continued fractions for π 2 with bidegree ≤ (2, 4): two
+families with convergence in 1/nP with P ∈ Z, one with convergence in 1/nP
+with P ∈ 1/2 + Z, one with convergence in (−1)n /nP , one with convergence
+1/(E n nP ) for each of E = 4/3, 2, 4, and −8,
+                                            √and finally the unique CF of Apéry
+with convergence in 1/E n for E = −((1 + 5)/2)10 . We consider each of these
+families in turn.
+
+
+
+                                          3
+2.1    First Family
+
+Using Euler’s transformation of series into CFs applied to π 2 /6 = n≥1 1/n2 ,
+                                                                       P
+
+we see that π 2 /6 is given by the CF ((0, 2n2 − 2n + 1), (1, −n4 )), with speed of
+convergence identical to that of the series, in 1/n, which we write in abbreviated
+form as explained above where we do not give the initial values of an and bn
+
+                           π 2 = (2n2 − 2n + 1, −n4 ) .
+
+Remark: even though this notation means that there can be a number of initial
+values of an and bn which are not given by the general polynomial formulas, in
+most of the examples that we will see in this paper, only a0 and b0 would need
+to be specified (for instance here a0 = 0 and b0 = 1), the other an and bn for
+n ≥ 1 are given by the polynomials.
+     If we apply the Bauer–Muir transformation, we check that for any nonneg-
+ative integer k ≥ 0 we also have π 2 = (2n2 − 2n + k 2 + k + 1, −n4 ).
+     This naturally leads us to search numerically for other representations of
+the form π 2 = (A(n), B(n)), with A(n) = 2n2 + a1 n + a0 and B(n) of degree
+4 with leading coefficient −1. We speed up the search by assuming that B is a
+product of linear factors with integral coefficients (you are welcome to try other
+types of polynomials, but I am pretty sure that you will not find others), and
+since (A(n + j), B(n + j)) is equivalent to (A(n), B(n)), we can assume that
+B(n) = −n(n + u1 )(n + u2 )(n + u3 ) with 0 ≤ u1 ≤ u2 ≤ u3 .
+     We find a very large number of such representations, from which one can
+easily extract one and two-parameter families, less easily three-parameter fam-
+ilies, and finally with considerable difficulty, a single four-parameter family to
+rule them all: π 2 = (A(n), B(n)) with
+
+        A(n) = 2n2 + (3u + v + w − 2)n
+                + k 2 + u2 + uk + vk + wk + uv + uw + vw + k − u + 1
+        B(n) = −n(n + u)(n + u + v)(n + u + w) ,
+
+where u, v, w, and k are nonnegative integer parameters, with speed of conver-
+gence in C/nu+v+w+2k+1 for some constant C.
+    An extensive additional search seems to show that there are no additional
+sporadic representations. However, we will see in Section 3 that it is also possible
+to choose v or w (but not both) in 1/2 + Z.
+    Proof: in the present case, it is possible, not only to prove that the four-
+parameter family above does represent π 2 , but also to explain where it origi-
+nates.
+    Consider the series S = n≥1 1/ 0≤i≤m−1 (n + i)ei , where ei = 1 if 0 ≤ i ≤
+                           P         Q
+m1 − 1 or m1 + m2 ≤ i ≤ m − 1, and ei = 2 if m1 ≤ i ≤ m1 + m2 − 1, where
+m1 ≥ 0, m2 ≥ 1, and m ≥ m1 + m2 . By expanding into partial fractions it is
+immediate to show that the sum S satisfies S = aπ 2 + b with a, b rational and
+a 6= 0. On the other hand, applying Euler’s transformation of S into a CF, and
+
+
+                                         4
+simplifying by suitable factors, it is not difficult to show that S (hence π 2 ) is
+represented by the CF (A(n), B(n)), with
+      A(n) = (n − 1)(n + m1 − 1) + (n + m1 + m2 − 1)(n + m − 1) and
+      B(n) = −n(n + m1 )(n + m1 + m2 − 1)(n + m − 1) .
+This gives the three-parameter family above when k = 0, and the case of general
+k is obtained by successive Bauer–Muir accelerations.
+
+
+2.2     Second Family
+We alsoP   have the modified series obtained by removing the Euler factor at 2:
+π 2 /8 = n≥1 1/(2n − 1)2, giving the CF ((0, 1, 8n2 − 16n + 10), (1, −(2n − 1)4))
+for π 2 /8, that we write in abbreviated form
+                      π 2 = (8n2 − 16n + 10, −(2n − 1)4 ) .
+All the work has been done for us in the first family: we simply replace n by
+n − 1/2 and multiply by suitable powers of 2 to simplify the formulas, giving
+the single four-parameter family π 2 = (A(n), B(n)) with
+A(n) = 8n2 + 4(3u + v + w − 4)n
+      + 4(k 2 + u2 + uk + vk + wk + uv + uw + vw) + 4k − 10u − 2v − 2w + 10
+B(n) = −(2n − 1)(2n − 1 + 2u)(2n − 1 + 2u + 2v)(2n − 1 + 2u + 2w) ,
+with the same speed of convergence in C/nu+v+w+2k+1 .
+   However, inspection shows that while v, w, and k must still be nonnegative,
+we can have u negative as long as u ≥ −k − min(v, w). Note that here we cannot
+choose v or w in 1/2 + Z.
+
+
+3     CFs for π 2 : Convergence in 1/nP , P ∈ 1/2 + Z≥0
+We recall the following formula due to Euler:
+                            X (2z)2n
+                                        = 2 asin2 (z) ,
+                                n 2 2n
+                            n≥1      n
+
+which we will use several times. Here, we chooose z = 1 to obtain the series
+                               X      4n        π2
+                                           =      ,
+                               n≥1
+                                   n2 2n
+                                       n
+                                                2
+
+and using Euler’s transformation of series into CFs we see that π 2 /2 is given by
+the CF π 2 /2 = ((0, 4n2 √
+                         − 5n + 2), (2, −2n3 (2n − 1))) with convergence identical
+to that of the series in π/n1/2 , which we write in abbreviated form
+                      π 2 = (4n2 − 5n + 2, −2n3 (2n − 1)) .
+
+                                           5
+If we apply the Bauer–Muir transformation, we check that for any nonnegative
+integer k ≥ 0 we also have π 2 = (4n2 − 5n + 2k 2 + k + 2, −2n3 (2n − 1)).
+    Here, we could do a new search, but luckily we have already done the work:
+it is simply the first four-parameter family found above, but now with the pa-
+rameter w being a half integer instead of an integer. We thus replace w by
+w − 1/2 and simplify, so we obtain the four-parameter family π 2 = (A(n), B(n))
+with
+
+     A(n) = 4n2 + (6u + 2v + 2w − 5)n + 2k 2
+            + (2u + 2v + 2w + 1)k + 2u2 + (2v + 2w − 3)u + v(2w − 1) + 2
+     B(n) = −2n(n + u)(n + u + v)(2n + 2u + 2w − 1) ,
+
+where u, v, and k are nonnegative integer parameters and w ∈ Z, with speed of
+convergence in C/nu+v+w+2k+1/2 for some constant C.
+    The proof of the validity of this family follows from the one given in Section
+2.1.
+
+
+4     CFs for π 2 : Convergence in (−1)n/nP
+Using Euler’s transformation of series into CFs but now applied to π 2 /12 =
+           n−1
+               /n2 , we see that π 2 /12 is given by the CF ((0, 2n − 1), (1, n4 )),
+P
+  n≥1 (−1)
+with speed of convergence identical to that of the series, in (−1)n /(2n2 ), which
+we write in abbreviated form
+
+                                π 2 = (2n − 1, n4 ) .
+
+If we apply the Bauer–Muir transformation, we immediately see that for any
+odd integer k ≥ 1 we also have π 2 = (k(2n − 1), n4 ). We easily check that this
+is also true for even integers, so we have found a one-parameter family. Now
+we search numerically for other representations of the form π 2 = (A(n), B(n)),
+with A(n) of degree 1 and B(n) monic of degree 4, as before assumed to be a
+product of linear factors with integral coefficients. Since (−A(n), B(n)) is easily
+seen to be equivalent to (A(n), B(n)), we can also assume that the leading
+coefficient of A(n) is positive, so we set A(n) = a1 n + a0 with a1 ≥ 1 and
+B(n) = n(n + u1 )(n + u2 )(n + u3 ) with 0 ≤ u1 ≤ u2 ≤ u3 . We again find a
+large number of representations, and after some cleaning up, we obtain a three-
+parameter family and four one-parameter families, and no additional sporadic
+representations:
+
+π 2 = ((k + 1)(2n + 2u + 2v − 1), n(n + u)(n + u + 2v)(n + 2u + 2v))
+    = ((2u2 + 8u + 7)n + (2u + 3)(u2 + 3u + 1), n(n + u)(n + u + 1)(n + 2u + 4))
+    = ((2u2 + 8u + 7)n + (2u + 3)(u + 2)(u + 3), n(n + u + 3)(n + u + 4)(n + 2u + 4))
+    = ((8u + 7)n + (24u2 + 24u + 3), n(n + 2u)(n + 4u + 1)(n + 6u + 4))
+    = ((8u + 7)n + 6(u + 1)(4u + 3), n(n + 2u + 3)(n + 4u + 4)(n + 6u + 4)) ,
+
+                                         6
+where u, v, and k are nonnegative integer parameters, with speeds of conver-
+                                    2                  2
+gence (−1)n C/n2k+2 , (−1)n C/n2u +8u+7 , (−1)n C/n2u +8u+7 , (−1)n C/n8u+7
+        n     8u+7
+and (−1) C/n       respectively, for some constants C.
+   Proof: Although similar to the proof given in Section 2.1 the proof of the
+above is both more complicated and more interesting since we will need to
+generalize the construction. Here we consider the series
+                          X               Y
+                      S=      (−1)n−1 /         (n + i)ei ,
+                            n≥1           0≤i≤m−1
+
+with the same ei as above. Once again we can simplify the result given by
+Euler’s transformation of S into a CF, and we obtain that S is represented by
+the CF (A(n), B(n)) with
+    A(n) = −(n − 1)(n + m1 − 1) + (n + m1 + m2 − 1)(n + m − 1) and
+   B(n) = n(n + m1 )(n + m1 + m2 − 1)(n + m − 1) .
+The problem is that the sum S is not anymore of the form aπ 2 + b, but of
+the form aπ 2 + c log(2) + b. Thus, if we want a CF representing π 2 itself,
+we need c = 0. It is not difficult to show that this is indeed the case when
+(m1 , m2 , m3 ) := (m1 , m2 , m − m1 − m2 ) is of one of the following three shapes:
+(m1 , m2 , m3 ) = (m1 , 2u + 1, m1 ) or (2u, 2u + 2, 2u + 3), or (2u + 3, 2u + 2, 2u).
+It should not be difficult to prove that there are no other cases, but I have not
+done so. In any event, the first shape followed by Bauer–Muir accelerations
+leads to the three-parameter family, and the other two shapes lead to the last
+two one-parameter families.
+    The first two one-parameter families do not come from this construction,
+but from a more general one. We first note the following result, whose easy
+proof is left to the reader
+Proposition 4.1 Let c(x) ∈ Q[x] be a polynomial with deg(c) ≥ 2, let z = ±1,
+let P ∈ Q[x] be an irreducible polynomial which divides c(x)P (x + 1) + zc(x −
+1)P (x − 1), let R(x) = (c(x)P (x + 1) + zc(x − 1)P (x − 1))/P (x) and g(x) =
+gcd(c(x), c(x − 1)), and set
+                              X            zn
+                          S=                          .
+                                   c(n)P (n)P (n + 1)
+                                  n≥1
+
+Assume that c(x), P (x), and P (x + 1) are pairwise coprime. We have the con-
+tinued fraction S = [[0, R(n)/g(n)], [r1 , −zc(n)2 /(g(n)g(n+1))]] and the identity
+S = r2 + n≥1 z n d(n)/c(n) for some rational numbers r1 and r2 and polynomial
+         P
+d with deg(d) < deg(c).
+   We also need the following conjecture:
+Conjecture 4.2 Let u be a nonnegative integers. Up to a multiplicative con-
+stant there exists a unique polynomial P such that
+  (x + 2u + 4)(x + u + 1)P (x + 1) − (x − 1)(x + u − 1)P (x − 1)
+                            = ((2u2 + 8u + 7)x + (2u + 3)(u2 + 3u + 1))P (x) ,
+
+
+                                          7
+and we have deg(P ) = u(u + 3). The same is true if we require
+
+    (x + 2u + 4)(x + u + 4)P (x + 1) − (x − 1)(x + u + 2)P (x − 1)
+                            = ((2u2 + 8u + 7)x + (2u + 3)(u + 2)(u + 3))P (x) .
+
+Q Assuming this eiconjecture, in Proposition 4.1 we choose z = −1, c(x) =
+  0≤i≤2u+4 (n + i)  as before, with m1 = u, m2 = 2, and m3 = u + 3, so
+m = 2u + 5, and P the
+                   Q polynomial satisfying the first identity above. We check
+that g(x) = (x + u) 0≤i≤2u+3 (x + i), hence
+
+           −zc(n)2 /(g(n)g(n + 1)) = n(n + u)(n + u + 1)(n + 2u + 4) ,
+
+and because of the identity for P ,
+
+             R(n)/g(n) = ((2u2 + 8u + 7)n + (2u + 3)(u2 + 3u + 1) .
+
+Finally, the identity for S given by Proposition 4.1 implies that S is a linear
+combination of π 2 , log(2), and 1. Similarly for the second identity. Thus, the
+other two one-parameter families follow from the above conjecture together with
+the additional conjecture that log(2) does not occur in the linear combination
+for S.
+    Remark: Concerning the above conjecture, Peter Mueller from the Math-
+Overflow forum proves the following:
+ (1) The two statements are equivalent.
+ (2) If P exists it is indeed unique up to a multiplicative constant, and has
+     degree u(u + 3).
+
+   It is possible that there exist other, possibly more complicated, one-parameter
+families.
+
+
+5      CFs for π 2 : Convergence in 1/((4/3)nnP )
+                                               √
+Here we use the asin2 (z) series with z =          3/2, giving the series
+                               X      3n            2π 2
+                                           =            ,
+                               n≥1
+                                   n2 2n
+                                       n
+                                                     9
+
+and applying Euler’s transformation shows that 2π 2 /9 is given by the CF
+((0, 7n2 − 8n + 3), √
+                    (3, −6n3(2n − 1))) with speed of convergence identical to that
+of the series, in 3 π/((4/3)n n3/2 ), and as before we can write in abbreviated
+form
+                        π 2 = (7n2 − 8n + 3, −6n3 (2n − 1)) .
+Applying Bauer–Muir does not give anything simple. So as before we search
+for representations π 2 = (A(n), B(n)) with A(n) = 7n2 + a1 n + a0 and B(n) =
+
+                                           8
+−6n(n + u1 )(n + u2 )(2n − 1 + 2u3 ). Note that we could try other types for B(n)
+with the same leading term −12n4 and completely factored, for instance B(n) =
+−n(2n + u1 )(2n + u2 )(3n + u3 ), but I have not found any new representations
+in this way.
+    Here, the situation is less favorable since I have not been able to classify
+completely the representations. I have found four two-parameter families:
+
+
+    π 2 = (7n2 + (2u + 3v − 6)n − (5u2 + 15vu + 18v 2 − 2),
+         − 6n(n + u)(n + u + 3v)(2n + 1 − 4u − 6v))
+       = (7n2 + (2u + 3v − 8)n − (5u2 + (15v + 2)u + 3(3v − 1)(2v + 1)),
+        − 6n(n + u)(n + u + 3v)(2n − 1 − 4u − 6v))
+       = (7n2 + (15u + 3v − 8)n − 3(2v + 1)(3u + 3v − 1),
+         − 6n(n + u)(n + 3u + 3v)(2n − 1 − 6v))
+       = (7n2 + (15u + 3v − 3)n − 2(3v + 4)(3u + 3v + 2),
+        − 6n(n + u)(n + 3u + 3v + 3)(2n − 5 − 6v))
+
+
+with all parameters nonnegative, plus a number of apparently sporadic cases:
+
+
+             π 2 = (7n2 − 16n + 3, −6n3(2n − 5))
+                = (7n2 − 19n − 6, −6n2(n + 1)(2n − 11))
+                = (7n2 + 17n, −6n(n + 3)2 (2n + 1))
+                = (7n2 + 14n − 36, −6n(n + 3)(n + 5)(2n − 7))
+                = (7n2 + 54n + 5, −6n(n + 6)(n + 10)(2n + 1))
+                = (7n2 + 31n − 60, −6n(n + 1)(n + 10)(2n − 3)) ,
+
+    all with convergence speeds C/((4/3)n nP ) for varying half-integral P .
+    I have not tried to prove the validity of the above CFs.
+    The upshot of this case is that first, that I have probably not found all
+possible cases, and second, that I have not seen the patterns leading either to
+additional two-parameter families, or even possibly to a three-parameter family.
+    Note, however, that in Section 7 we will meet the same exact situation (four
+two-parameter families plus six sporadic cases), which makes me believe that
+there is a relation between the CFs of that section and those of the present
+section.
+
+
+
+
+                                       9
+6    CFs for π 2 : Convergence in 1/(2nnP )
+                                            √
+Here we use the asin2 (z) series with z =       2/2, giving the series
+                               X      2n         π2
+                                           =       ,
+                               n≥1
+                                   n2 2n
+                                       n
+                                                 8
+
+and applying Euler’s transformation shows that π 2 /8 is given by the CF ((0, 3n2 −
+             3
+3n+1),
+  √ (1, −n (2n−1))) with speed of convergence identical to that of the series,
+in π/(2n n3/2 ), and as before we can write in abbreviated form
+
+                       π 2 = (3n2 − 3n + 1, −n3 (2n − 1)) .
+
+    Here, applying Bauer–Muir gives the one-parameter family π 2 = (3n2 − 3n+
+1, −n3 (2n − 1 − 2k)), and we search for representations π 2 = (A(n), B(n)) with
+A(n) = 3n2 + a1 n + a0 and B(n) = −n(n + u1 )(n + u2 )(2n − 1 + 2u3 ). After
+some work, we find the three-parameter family:
+
+             π 2 = (3n2 + (8u + 4v − 3)n + (2u − 1)(2u + 2v − 1),
+                  − n(n + 2u)(n + 2u + 2v)(2n + 2u − 2k − 1)) ,
+
+where all the parameters are nonnegative, with speed of convergence
+
+                              C/(2n nu+2v+3/2+3k )
+
+for some constant C.
+    An extensive additional search seems to show that there are no additional
+sporadic representations.
+    It is easy to give a proof of the validity of the above family, which we leave
+to the reader.
+
+
+7    CFs for π 2 : Convergence in 1/(4nnP )
+Here we use the asin2 (z) series with z = 1/2, giving the series
+                               X      1          π2
+                                           =       ,
+                               n≥1
+                                   n2 2n
+                                       n
+                                                 18
+
+and applying Euler’s transformation shows that π 2 /18 is given by the CF
+((0, 5n2 − 4n + 1), (1,      3
+                      √−2n (2n    − 1))) with speed of convergence identical to
+that of the series, in π/3/(4nn3/2 ), and as before we can write in abbreviated
+form
+                       π 2 = (5n2 − 4n + 1, −2n3 (2n − 1)) .
+   Applying Bauer–Muir leads to an explicit complicated one-parameter family
+which will be a special case of the ones below, and the situation is similar to
+that of Section 5: I have found four two-parameter families:
+
+                                       10
+        π 2 = (5n2 + (14u + 21v − 4)n + (3u + 3v − 1)(3u + 6v − 1),
+             − 2n(n + u)(n + u + 3v)(2n − 1))
+           = (5n2 + (14u + 21v − 6)n + 9u2 + (27v − 8)u + 2(3v − 1)2 ,
+            − 2n(n + u)(n + u + 3v)(2n + 1))
+           = (5n2 + (17u + 21v + 15)n + 2(2u + 3v + 2)(3u + 3v + 2),
+             − 2n(n + u)(n + 3u + 3v + 3)(2n + 2u + 1))
+           = (5n2 + (17u + 21v − 4)n + (3u + 3v − 1)(4u + 6v − 1),
+            − 2n(n + u)(n + 3u + 3v)(2n + 2u − 1)) ,
+with all parameters nonnegative, plus a number of apparently sporadic cases:
+
+
+             π 2 = (5n2 + 4n + 1, −2n3 (2n + 3))
+                = (5n2 + 15n + 6, −2n2(n + 1)(2n − 1))
+                = (5n2 + 19n + 16, −2n(n + 3)2 (2n + 3))
+                = (5n2 + 78n + 261, −2n(n + 3)(n + 7)(2n − 1))
+                = (5n2 + 38n + 68, −2n(n + 3)(n + 5)(2n + 1))
+                = (5n2 + 45n + 60, −2n(n + 1)(n + 10)(2n + 3)) ,
+
+all with convergence speeds C/(4n nP ) for varying half-integral P .
+    As in Section 5, I have not tried to prove the validity of these CFs, I have
+also probably not found all possible cases, and I have not seen the patterns
+leading either to additional one- or two-parameter families, or even possibly to
+a three-parameter family.
+    Nonetheless, the reader has certainly noticed that there is a striking resem-
+blance between the families of this section and those of Section 5, and this
+should probably be investigated.
+
+
+8     CFs for π 2 : Convergence in (−1)n/(8nnP )
+Let
+                                       X n3
+                               Fn =
+                                          k
+                                      0≤k≤n
+
+be the nth Franel number. From the recursion found by Franel for these numbers
+and the computation of so-called Apéry limits (see for instance [2]), we have the
+CF π 2 /3 = ((0, 7n2 − 7n + 2), (8, 8n4 )) with speed of convergence C/(−8)n and
+whose nth denominator q(n) is given by q(n) = n!2 Fn , giving the formula
+                         π2   X           8n
+                            =   (−1)n−1 2        .
+                         3             n Fn Fn−1
+                               n≥1
+
+
+                                       11
+As usual we write the CF in abbreviated form
+
+                           π 2 = (7n2 − 7n + 2, 8n4 ) .
+
+Bauer–Muir acceleration gives something complicated, so as usual we search.
+The situation is even worse here: I have found experimentally a large number
+of representations, for which I was able to extract three two-parameter families
+and a small number of one-parameter families, as follows:
+
+
+π 2 = (7n2 + ((48 − 20v)u − 7)n + 2(4u − 1)((8 − 5v)u − 1),
+       8n(n + uv)(n + u(v + 2))(n + 4u))
+    = (7n2 + (24v − 20u − 7)n + (4v − 2)(4v − 5u − 1),
+       8n(n + u)(n + 2v)(n + u + v))
+    = (7n2 + (12u + 20v − 7)n + (4v − 2)(3u + 3v − 1),
+       8n(n + 2v)(n + 3u + 2v)(n + 3u + 3v))
+    = (7n2 + (30u − 7)n + (3u − 1)(9u − 2), 8n2 (n + 3u)2 )
+    = (7n2 + (34u − 7)n + 27u2 − 17u + 2, 8n2 (n + u)2 )
+    = (7n2 + (22u − 7)n + (3u − 1)(5u − 2), 8n(n + u)2 (n + 3u))
+    = (7n2 + (58u − 7)n + 87u2 − 29u + 2, 8n(n + u)2 (n + 3u))
+    = (7n2 + (48u − 23)n + 2(4u + 1)(8u − 7), 8n(n + 2)(n + 2u + 3)(n + 4u + 2))
+    = (7n2 + (34u + 17)n + 3(3u + 1)(3u + 2), 8n(n + 1)(n + u)(n + u + 2)) ,
+
+where u and v are nonnegative integers, except in the third two-parameter
+representation where one can have u ≥ −⌊2v/3⌋, all with convergence speeds
+C/((−8)n nP ) for varying integral P .
+   I have found many (for now more than 60) additional individual CFs, from
+which one can probably extract more one-parameter families. Here is a small
+sample:
+
+
+                   π 2 = (7n2 + 26n + 8, 8n3 (n + 3))
+                      = (7n2 + 80n + 105, 8n2(n + 1)(n + 2))
+                      = (7n2 + 24n + 9, 8n2 (n + 1)(n + 4))
+                      = (7n2 + 65n + 70, 8n2(n + 1)(n + 8))
+                      = (7n2 − 15n − 12, 8n2(n + 4)2 )
+                      = (7n2 + 57n + 96, 8n2(n + 4)2 ) .
+
+                                           √
+9     CFs for π 2 : Convergence in 1/(−((1+ 5)/2)10)n
+This is the famous CF of Apéry:
+
+                                       12
+                         π 2 = ((0, 11n2 − 11n + 3), (30, n4 ))
+                                       √
+     with convergence in 24π 2 /(1 + 2)10n+5 .
+     This CF seems to be unique of its kind, i.e. of the form π 2 = (11n2 + a1 n +
+a0 , n(n + u1 )(n + u2 )(n + u3 )).
+
+
+10     CFs for π 2 : Other Speeds of Convergence
+I have not found any convergent CF of the form π 2 = (A(n), B(n)) with
+deg(A) ≤ 2, deg(B) ≤ 4 and A and B with integral coefficients other than
+the families mentioned above, up to trivial equivalence such as changing n into
+n + j or multiplying (A, B) by (c, c2 ) for a nonzero constant c. Of course, there
+exist infinitely many other CFs for π 2 , but of larger bidegrees.
+
+
+11     CFs for ζ(3): Convergence in 1/nP
+We now study CFs for ζ(3). Similarly to π 2 , as far as the author is aware,
+up to equivalence there exist exactly eight types of convergence of polynomial
+continued fractions for ζ(3) with integral coefficients and bidegree ≤ (3, 6): three
+families with convergence in 1/nP with P ∈ Z, a single CF with convergence
+in (−1)n /nP , a single CF with convergence in 1/(4n nP ), a family of CFs with
+convergence in 1/((−4)n nP ), a single CF with convergence in 1/E n with (1 +
+√
+     , and finally the unique CF of Apéry with convergence in 1/E n for E =
+  2)4√
+(1 + 2)8 . We consider each of these cases in turn.
+
+
+11.1     First Family
+The natural series giving ζ(3) is ζ(3) = n≥1 1/n3 , so Euler’s transformation
+                                          P
+
+of series gives the CF ζ(3) = ((0, (2n − 1)(n2 − n + 1)), (1, −n6 )), abbreviated
+as usual as
+                      ζ(3) = ((2n − 1)(n2 − n + 1), −n6 ) .
+Bauer–Muir acceleration leads to the family ζ(3) = ((2n − 1)(n2 − n + 2k 2 +
+2k + 1), −n6 ) for nonnegative integer k.
+   Instead of doing a search, we generalize the proof given in Section 2.1: using
+the same notation, we choose ei = 1, 2, 3, 2, or 1 according to 0 ≤ i < m1 ,
+m1 ≤ i < m1 + m2 , m1 + m2 ≤ i < m1 + m2 + m3 , m1 + m2 + m3 ≤ i <
+m1 + m2 + m3 + m4 , or m1 + m2 + m3 + m4 ≤ i < m respectively, and this
+guarantees that the CF (A(n), B(n)) will have bidegree ≤ (3, 6), with
+  A(n) = (n + m1 + m2 + m3 − 1)(n + m1 + m2 + m3 + m4 − 1)(n + m − 1)
+        + (n − 1)(n + m1 − 1)(n + m1 + m2 − 1) and
+  B(n) = −n(n + m1 )(n + m1 + m2 )(n + m1 + m2 + m3 − 1)
+        (n + m1 + m2 + m3 + m4 − 1)(n + m − 1) .
+
+
+                                        13
+   However the sum S will be a linear combination of 1, π 2 , and ζ(3), and
+we do not want any π 2 . For this, a sufficient condition is that m3 is odd and
+m4 = m2 and m5 = m1 , giving the parametric family (A, B) with
+
+A(n) = (n + u + v + 2w)(n + u + 2v + 2w)(n + 2u + 2v + 2w)
+      + (n − 1)(n + u − 1)(n + u + v − 1) and
+B(n) = −n(n + u)(n + u + v)(n + u + v + 2w)(n + u + 2v + 2w)(n + 2u + 2v + 2w) ,
+
+and note that
+
+       A(n) = (2n + 2u + 2v + 2w − 1)(n2 + (2u + 2v + 2w − 1)n
+                + (u2 + (3v + 4w)u + 2v 2 + (6w + 1)v + 4w2 + 2w + 1)) .
+
+Applying Bauer–Muir, we thus find the four-parameter family ζ(3) = (A(n), B(n))
+with
+
+A(n) = (2n + 2(u + v + w) − 1)(n2 + (2(u + v + w) − 1)n + u2 + 2v 2 + 4w2
+      + 3uv + 4uw + 6vw + v + 2w + 1 + 2k(u + 2v + 3w) + 2k 2 + 2k),
+B(n) = −n(n + u)(n + u + v)(n + u + v + 2w)(n + u + 2v + 2w)(n + 2u + 2v + 2w) ,
+
+where u, v, w, and k are nonnegative integer parameters, with speed of conver-
+gence in C/n2u+4v+6w+4k+2 for some constant C.
+    However, the sufficient condition (symmetry of (m1 , m2 , m3 , m4 , m5 )) above
+is not necessary: it is easy to find as many nonsymmetrical examples as we like,
+the simplest being (m1 , m2 , m3 , m4 , m5 ) = (0, 0, 2, 2, 0). I have not yet been
+able to give a reasonable classification of these additional examples, here is a
+small sample:
+
+  ζ(3) = (2n3 + 4n2 + 18n + 8, −n3 (n + 1)(n + 3)2 )
+       = (2n3 + 8n2 + 26n + 28, −n2(n + 2)(n + 3)3 )
+       = (2n3 + 11n2 + 53n + 60, −n2 (n + 1)(n + 2)(n + 5)(n + 6))
+       = (2n3 + 17n2 + 78n + 119, −n(n + 2)2 (n + 3)(n + 5)(n + 8))
+       = (2n3 + 19n2 + 93n + 180, −n(n + 1)(n + 4)(n + 5)(n + 6)2 )
+       = (2n3 + 20n2 + 163n + 299, −n3(n + 3)(n + 10)2 )
+       = (2n3 + 22n2 + 156n + 360, −n(n + 1)(n + 2)(n + 5)(n + 8)(n + 9))
+       = (2n3 + 23n2 + 201n + 500, −n2(n + 1)(n + 5)(n + 10)2 ) .
+
+
+
+
+11.2     Second Family
+We also have the simple modification obtained by removing the Euler factor
+at 2: ζ(3) = (8/7) n≥1 1/(2n − 1)3 , so Euler’s transformation gives the CF
+                  P
+
+
+                                        14
+ζ(3) = ((0, 1, 4(n − 1)(4n2 − 8n + 7)), (8/7, −(2n − 1)6 )), abbreviated as usual
+as
+                  ζ(3) = (4(n − 1)(4n2 − 8n + 7), −(2n − 1)6 ) .
+Bauer–Muir acceleration leads to the family ζ(3) = (4(n − 1)(4n2 − 8n + 8k 2 +
+8k + 7), −(2n − 1)6 ) for nonnegative integer k. As in the case of π 2 , to find
+parametric families we simply replace n by n − 1/2 and multiply by suitable
+powers of 2 in the first family found above, giving the four-parameter family
+ζ(3) = (A(n), B(n)) with
+
+
+A(n) = 4(n + u + v + w − 1)(4n2 + 8(u + v + w − 1)n + 4u2 + 8v 2 + 16w2
+        + 12uv + 16uw + 24vw − 4u + 4w + 8k(u + 2v + 3w) + 8k 2 + 8k + 7),
+B(n) = −(2n − 1)(2n + u − 1)(2n + u + v − 1)(2n + u + v + 2w − 1)·
+        · (2n + u + 2v + 2w − 1)(2n + 2u + 2v + 2w − 1) ,
+
+where u, v, w, and k are nonnegative integer parameters, with speed of conver-
+gence in C/n2u+4v+6w+4k+2 for some constant C, and of course as in the first
+family, one also has the numerous additional apparently sporadic cases, such as
+
+        ζ(3) = (16n3 + 8n2 + 124n − 2, −(2n − 1)3 (2n + 1)(2n + 5)2 ) .
+
+11.3     Third Family
+From work of Y. Yang [4], one finds the CF
+
+               ζ(3) = ((0, (2n − 1)(2n2 − 2n + 1)), (2/7, −4n6))
+
+with extremely slow convergence in C/ log(n), which as usual we abbreviate to
+ζ(3) = ((2n − 1)(2n2 − 2n + 1), −4n6). Modifying his construction and applying
+Bauer–Muir, we find the two-parameter family ζ(3) = (A(n), B(n)) with
+
+       A(n) = (2n + 2u − 1)(2n2 + (4u − 2)n + (2k + 2)u + k 2 + 4k + 5),
+       B(n) = −4n3 (n + 2u)3 ,
+
+with u and k nonnegative, with speed of convergence in C/n2u+2k+4 .
+   It is interesting to compare this with the very similar two-parameter family
+ζ(3) = (A(n), B(n)) obtained by setting u = v = 0 and replacing w by u in
+Section 11.1:
+
+  A(n) = (2n + 2u − 1)(2n2 + (4u − 2)n + 8u2 + (12k + 4)u + 4k 2 + 4k + 2),
+  B(n) = −4n3 (n + 2u)3 ,
+
+with u and k nonnegative, with speed of convergence in C/n6u+4k+2 .
+
+
+
+
+                                       15
+12     CFs for ζ(3): Convergence in (−1)n/nP
+Using Euler’s transformation of series into CFs but now applied to (3/4)ζ(3) =
+           n−1
+               /n3 , we see that ζ(3) is given by the CF ((0, 3n2 −3n+1), (4/3, n6)),
+P
+  n≥1 (−1)
+with speed of convergence identical to that of the series, in (−1)n 2/(3n3 ), which
+we write in abbreviated form
+                            ζ(3) = (3n2 − 3n + 1, n6 ) .
+There is apparently no other CF of this type with convergence in (−1)n /nP .
+The main reason is probably    that, if we try to apply similar constructions to
+                                    n−1
+                                        /n2 , we are now going to obtain linear
+                         P
+those that we used for      n≥1 (−1)
+combinations of 1, ζ(3), and the two additional “parasitic” terms ζ(2) and
+log(2), instead of simply log(2) alone.
+
+
+13     CFs for ζ(3): Convergence in 1/(4nnP )
+Let
+                               X n2 2k 2n − 2k
+                       Dn =
+                                  k    k     n−k
+                              0≤k≤n
+
+be the nth so-called Domb number. From the recursion that one can find for
+these numbers and the computation of Apéry limits (see for instance [2]), we
+have the CF ζ(3) = ((0, (2n − 1)(5n2 − 5n + 2)), (12/7, −16n6)), whose nth
+denominator q(n) is given by q(n) = n!3 Dn /2n , giving the formula
+                            56ζ(3) X    64n
+                                  =   3
+                                               .
+                              3      n Dn Dn−1
+                                       n≥1
+
+As usual we write the CF in abbreviated form
+                    ζ(3) = ((2n − 1)(5n2 − 5n + 2), −16n6) .
+   Bauer–Muir acceleration gives something complicated, and as above I have
+not found any other CF of this type with convergence in 1/(4n nP ).
+
+
+14     CFs for ζ(3): Convergence in (−1)n/(4nnP )
+From the famous series mentioned by Apéry but known before him
+                                       5 X (−1)n−1
+                              ζ(3) =               ,
+                                       2
+                                        n≥1
+                                            n3 2n
+                                                n
+
+one deduces the CF ζ(3) = ((0, 3n3 + n2 − 3n                5
+                                           √ + 1), (5/2,n2n5/2(2n − 1))) with the
+same speed of convergence as the series in π/2/((−4) n ), which we write
+as
+                  ζ(3) = (3n3 + n2 − 3n + 1, 2n5 (2n − 1)) .
+
+                                         16
+Here, a variant of Bauer–Muir gives the family
+  ζ(3) = (3n3 + (11k + 1)n2 − (11k + 3)n + 3k + 1, n4 (2n − k)(2n − k − 1))
+with convergence in C/((−4)n n5k+5/2 ). A search apparently does not give any
+other CF.
+
+                                                                   √ 4n
+15     CFs for ζ(3): Convergence in 1/(1 +                          2)
+Let                                          2  2
+                                    X        n    2k
+                           Cn =
+                                             k    n
+                                  n/2≤k≤n
+
+(these numbers do not seem to have a name). From the recursion that one can
+find for these numbers and the computation of Apéry limits (see for instance
+[2]), we have the CF ζ(3) = √ ((0, (2n − 1)(3n2 − 3n + 1)), (8/7, −n6)) with speed
+                    3
+of convergence 4π /7/(1 + 2)4n+2 , whose nth denominator q(n) is given by
+q(n) = n!3 Cn /4n , giving the formula
+                            7ζ(3) X    16n
+                                 =   3
+                                              .
+                              2     n Cn Cn−1
+                                     n≥1
+
+As usual we write the CF in abbreviated form
+                     ζ(3) = ((2n − 1)(3n2 − 3n + 1), −n6 ) .
+   Since the exponent of the speed of convergence is irrational, Bauer–Muir
+acceleration would give irrational coefficients so is not applicable, and I have
+not been able to find other CFs of this type.
+
+                                                                   √ 8n
+16     CFs for ζ(3): Convergence in 1/(1 +                          2)
+This is the famous CF of Apéry:
+
+                 ζ(3) = ((0, (2n − 1)(17n2 − 17n + 5)), (6, −n6 ))
+                                √
+with convergence in 4π 3 /(1 + 2)8n+4 .
+    This CF seems to be unique of its kind, i.e. of the form ζ(3) = (34n3 +
+a2 n2 + a1 n + a0 , −n(n + u1 )(n + u2 )(n + u3 )(n + u4 )(n + u5 )(n + u6 )).
+
+
+17     CFs for ζ(3): Other Speeds of Convergence
+I have not found any convergent CF of the form ζ(3) = (A(n), B(n)) with
+deg(A) ≤ 3, deg(B) ≤ 6 and A and B with integral coefficients other than the
+families mentioned above, up to trivial equivalence such as changing n into n+ j
+or multiplying (A, B) by (c, c2 ) for a nonzero constant c. Of course, there exist
+infinitely many other CFs for ζ(3), but of larger bidegrees.
+
+                                        17
+18     Other Periods
+All the preceding sections dealt with CFs for π 2 and ζ(3). A similar study can
+be done for other periods. I briefly summarize what I have found, restricting as
+usual to CFs of bidegrees ≤ (k, 2k) for periods of degree k.
+
+
+18.1    Periods of Degree 1
+As just mentioned, we restrict to bidegrees ≤ (1, 2).
+                                                                          n   P
+    • z = π: one finds parametric
+                            √ 2nfamilies of CFs with convergence in (−1) /n ,
+     n P             n
+1/(2 n ), and√(−1) /(1 + 2) .
+    • z = π/ 3: one finds parametric families of CFs √with convergence in
+1/((4/3)nnP ), (−1)n /(3n nP ), 1/(4n nP ), and (−1)n /(2 + 3)2n .
+    • z = log(2): one finds parametric families of CFs with    √ convergence in
+(−1)n /nP , 1/(2n nP ), (−1)n /(8n nP ), 1/(9n nP ), and 1/(1 + 2)4n .
+    Note that one can also study CFs for z = log(m) for other rational values of
+m.        √          √
+    • z = √2 log(1 + 2): one finds parametric families of CFs with convergence
+in 1/(1 + 2)2n .
+
+
+18.2    Periods of Degree 2
+We restrict to bidegrees ≤ (2, 4).
+   • z = π 2 : see the extensive lists given in the preceding sections.
+   • z = L(χ−3 , 2): one finds parametric families of CFs with convergence
+1/((9/8)nnP ) and 1/(9n nP ).
+   • z = L(χ−4 , 2) = G, Catalan’s constant: one finds parametric families of
+CFs with convergence 1/nP , (−1)n /nP , and 1/(2n nP ).
+
+
+18.3    Periods of Degree 3
+We restrict to bidegrees ≤ (3, 6).
+    • z = ζ(3): see the extensive lists given in the preceding
+                                                          √ sections.
+    • For other periods of degree 3 such as π 3 and π 3 / 3, either the CFs are
+isolated, or are one-parameter families coming from Bauer–Muir acceleration.
+    I would evidently welcome any additional data and comments on the subject
+of this paper.
+
+
+
+References
+ [1] [Coh] H. Cohen, Elementary continued fractions for linear combinations of
+     zeta and L values, arXiv:2212.01095 (2022).
+
+
+
+                                      18
+[2] [Gor] O. Gorodetsky, New representations for all sporadic Apéry-like se-
+    quences, with applications to congruences, arXiv:2102.11839 (2021).
+[3] [Kon-Zag] M. Kontsevitch and D. Zagier, Periods, in Mathematics unlim-
+    ited 2001 and Beyond, Springer (2000), 771–808.
+[4] [Yan] Y. Yang, Apéry limits and special values of L-functions,
+    J. Math. Anal. Appl. 343 (2008), 492–513.
+
+
+
+
+                                    19
+

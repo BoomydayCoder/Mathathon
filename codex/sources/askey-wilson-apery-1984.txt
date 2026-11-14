@@ -1,0 +1,537 @@
+             /. Austral Math. Soc. (Series A) 36 (1984), 267-278
+
+
+
+
+                        A RECURRENCE RELATION GENERALIZING THOSE
+                                        OF APERY
+
+                                             RICHARD ASKEY and J. A. WILSON
+
+
+                                                      (Received 4 November 1982)
+
+                                                     Communicated by J. H. Loxton
+
+
+
+                                                                  Abstract
+
+             A three term recurrence relation is found for
+
+
+                                        ^0             k+d ) \            k+e         ){   k+f
+             when a + d = b + c. This includes the recurrence relations of Apery associated with f(3), f(2) and
+             log 2 as special or limiting cases.
+             1980 Mathematics subject classification (Amer. Math. Soc.): 33 A 30, 10 A 35.
+
+
+             In the fall of 1978 A. van der Poorten gave lectures on Apery's proof of the
+             irrationality of f(3) at a number of North American universities. The lecture was
+             delightful. An approximation can be made by reading his published version of the
+             lecture [14], but the lecture was even more exciting. See Mendes-France [6] for
+             some comments similar to those van der Poorten left out of his published version.
+             As a result of these lectures many people became aware that Apery had shown
+             that
+
+
+
+
+             satisfies the three term recurrence relation
+
+             (2)                n \ + (n-          \fbn_2 = (34«3 - 51n2 + Tin - 5)bn_x
+
+
+             The work of the first author was supported in part by N.S.F. grant MCS 8101568.
+             © 1984 Australian Mathematical Society 0263-6115/84 $A2.00 + 0.00
+
+                                                                    267
+
+
+https://doi.org/10.1017/S1446788700024691 Published online by Cambridge University Press
+             268                                   Richard Askey and J. A. Wilson                            (2 ]
+
+             and that
+
+
+
+             satisfies
+             (4)                      n2cn - (n - \fcH_2 = (lln 2 - Un + 3)c n _,.
+             The existence of one recurrence relation of this type could be an accident but the
+             existence of two suggested to a number of people that there should be more. We
+             received a few letters asking about the existence of three term recurrence relations
+             for a number of sequences. The most common example was
+
+
+
+             It is easy to see that dn satisfies a four term recurrence relation, and that
+
+
+
+             satisfies a five term one. It is also very likely that they do not satisfy a linear
+             recurrence relation of a lower order. This was not clear to the people we wrote to,
+             and to be honest it is not clear when the sequences are written in this form.
+             Fortunately, there is a much better way to write them, and in this other form it is
+             clear that (5) is a little more complicated than (3) and that (6) is much more
+             complicated than (1). The other form of writing these series is old, and has been
+             studied by Euler, Pfaff, Gauss, Kummer, Jacobi and many others, so it should not
+             be as unknown as it is. It is called hypergeometric series.
+                A generalized hypergeometric series, or better, a hypergeometric series, is a
+             series 1ck with ck+x/ck a rational function of k. This rational function is usually
+             factored, so
+             (7)                           Sill    =      (* + « i ) - " (* + «,)*
+                                            ck         (k + bx) • • • (k + bq)(k + 1) '
+             and if c0 = 1 this gives
+                                                                         2                 (at)t---(a.).xk
+
+
+             The shifted factorial (a)k is defined by
+             (9)               (a)k : = a(a + 1) • • • (a + k - 1) = T{a + k)/T(a).
+             Gauss [4], defined two 2FX series to be contiguous if there is a change of 1 in one
+             of the parameters and the others do not change. If F denotes 2F)(a> b; c; x) then
+             F(a + ) will denote 2 F,(a + 1, b; c, x), and obvious generalizations of this nota-
+             tion will be used in the following. Gauss showed that a 2 F, and any two series
+
+https://doi.org/10.1017/S1446788700024691 Published online by Cambridge University Press
+             (31                                          A recurrence relation                          269
+
+             that are contiguous to it are linearly related, and explicitly gave the (*) = 15
+             identities. Since 2^i( a > b\ c; x) is symmetric in a and b there are really nine
+             different identities. Gauss took one of his identities, set x — 1, and it reduced to a
+             two term recurrence relation. He iterated this and used it to prove that
+
+
+
+                The Gauss contiguous relations can be iterated, so 2Fx(a, b; c; x) and any two
+             2 F,'s whose parameters differ by integers from those of this 2FX are linearly
+             related. In particular if
+             (11)                          pn=2Fx(-n,n           +a+                   b+l;a+\;t)
+             then
+                                    <>nPn+l+bnPn + Cnpn_x=O,                               11=1,2,...,
+             for some an,bn,cn, and they can be found explicitly. The above statements can be
+             made much stronger, and bounds on the degree of the coefficients in any of the
+             parameters can be given. Without this the results are obvious, since we could take
+             cn = 0, bn = -pn+\, an — pn, which is a triviality. For the fundamental relations of
+             Gauss the coefficients are linear in each parameter and in the variable x.
+               Since
+                                 ~^2Fx(a, b; c, x) = ^2Fx{a                  + 1, b + 1; c + 1; x)
+             the relation connecting 2Fx{a, b; c, x), 2Fx(a + 1, ft + 1; c + 1; x) and
+             2Fl(a + 2, b + 2; c + 2; x) can be rewritten as a second order differential equa-
+             tion. It is well known that pFq(a],...,ap; bx,...,bq; x) satisfies a differential
+             equation of order q + 1 when/? < q + 1. The condition/? < q + 1 is necessary to
+             obtain convergence of the series (8). It is not quite as well known that such a
+             function and q + 1 of them that are contiguous to this function are linearly
+             related. See Rainville [8, Chapter 14]. Kummer [5] considered both 2 F, and ,F, in
+             detail, and at the end of the second part of this paper he wrote that he had tried
+             to study
+                                                         3F2(a,b,c; d,e;          x)
+             but only when x = 1 had he been able to do much. He only stated one
+             transformation formula, but linear three term relations exist between a 3 / 2 and
+             any two series contiguous to it when the power series variable is one. Again these
+             can be iterated, and a few of these relations have been recorded in print. The
+             complete listing of these three term relations was only published in the late
+             1970's. One list is in Wilson [17], a second listing in very compact form is in
+             Raynal[10].
+                At the 4F3 level a function and any four functions contiguous to it are linearly
+             related. When x = 1 it is usually (or always, we have not checked thoroughly)
+
+https://doi.org/10.1017/S1446788700024691 Published online by Cambridge University Press
+             270                                    Richard Askey and J. A. Wilson                    [4]
+
+             true that a 4 f 3 and three functions contiguous to it are linearly related. To find
+             cases when a function and two contiguous series are linearly related we ask, by
+             analogy with the 3F2, 2FX cases, if there are any 3F2's that can be summed. Being
+             able to sum a series that has a free parameter, or more, is usually an indication
+             that a two term recurrence relation exists between contiguous series in this family,
+             and what one hopes is that when new parameters are added the order of the
+             recurrence or contiguous relations will not increase very much. Pfaff [7] summed
+             the following series:
+
+                                                    -n,a,b                  \ _ (c-a)n(c-b)n
+                                                    b+l-n-c'                )   {c)n{c-a-b)n-
+             This series was evaluated again by Saalschiitz, almost one hundred years after
+             Pfaff, and since Pfaff s work was not well known this identity was known as
+             Saalschiitz's until recently. The condition the parameters satisfy is
+                                         -n + a + b+l=c                +a+ b + l - n - c ,
+             or
+
+             (12)                                              i + 2«, = 2>,-
+             If p = q + 1, if the series terminates, that is, if one of the a,'s is a negative
+             integer, if the power variable is one, and if (12) holds the series is called balanced.
+             The above analogy suggests that a balanced 4F3 and any two series contiguous to
+             it are likely related. This is not true, since a series contiguous to a balanced series
+             is not balanced. For the sum of the top parameters will be equal to the sum of the
+             bottom ones, or will be two more than the sum of the bottom ones. This suggests
+             redefining contiguous for balanced series. Change two parameters by one each in
+             such a way that the new series is still balanced. To see if this is reasonable,
+             observe that bn defined in (1) can be written as
+                                              u —• p[-n,-n,n+    \,n+                      \ . ,\
+                                              °n ~4r3\        111                            ' l /•
+                                                           \           1,1,1                    /
+             This is a balanced 4F3, as is bn+, and bn_,. cn from (3) is
+
+             04)                                    c.=,
+             and so is a 3F2 with power series variable equal to one. Thus both should satisfy
+             three term recurrence relations. The other two sequences
+
+             (15)                                   dn=3
+
+             and
+
+                                                e
+             06)                                    "=
+
+https://doi.org/10.1017/S1446788700024691 Published online by Cambridge University Press
+              (si                                         A recurrence relation                                    271
+
+             do not satisfy the right type of restrictions. dn satisfies a four term recurrence
+             relation, and en satisfies a five term recurrence relation. One gets a three term
+             relation for
+
+
+
+                The heuristic argument given above leads to the right conclusion. A balanced
+             4F3 and any two balanced contiguous series to it are linearly related. These
+             relations were first treated in detail by the same two who listed the 3F2 relations.
+             Wilson [18] gave a complete list, and Raynal [11] gave a method for deriving them
+             and stated the fundamental ones. Wilson's list is more convenient to use, but it
+             takes more space to print.
+                To see how to generalize (1) and (2) consider
+
+
+                                 Jo                                                              k+f
+             We do not assume the parameters are integers, and define
+
+                                                                  =
+                                                 (a-b)\b\             T(a-b+ \)T(b+ 1)
+             if a is not a negative integer. If a is a negative integer then the sum (19) can still
+             make sense if there is another gamma function that is in the denominator and
+             each pole of T(x) is cancelled by a zero of [T( _>>)]"'. One has to be careful in
+             taking limits, but this can usually be done. To avoid these problems assume they
+             do not arise. The series for gn can be rewritten as
+
+
+
+
+                                             -n,-n     — a, n -r b -r e -r \,n             -r ~ . j   . .     .
+                                                             d+\,e+\,f+l                                    ' I'
+             This 4 F 3 is balanced when b + c — a = d or a + d = b + c. Without a translation
+             it would be hard (or impossible) to see why this is a natural condition to assume.
+                The series in (21) will be denoted by
+                                            - n , - n - a,n + b + e + \ , n +                  c + f + \ \
+
+
+             If we show that
+             (23)
+             then
+             (24)
+
+
+https://doi.org/10.1017/S1446788700024691 Published online by Cambridge University Press
+              272                                   Richard Askey and J. A. Wilson               [6]
+
+              with
+                                                   (" + a+ Q(" + b + l)(w + c + 1)
+                             A' = A
+                                        " ( « + a + d+ l)(n + b + e+ l)(n + c+f+           1)'
+
+
+
+                               "        "           (n + a)(n + b)(n + c)
+              Note that Fn, F n _, and Fn+l are balanced series related in the same way as are the
+              series F, F(a + , b + , c-, d-), and F(a-, ft-, c + , d + ), where F is a balanced
+              series
+                                                                     a,b,c,d. A
+                                                                      e,f,8   ' /'
+              Note also that F(a + , c-) is a balanced series contiguous to F and F(a + ,
+              b + , c-, d-) and that F(b-, d + ) is contiguous to F and F(a-,ft-,c + ,rf+ ).
+              The contiguous relation
+
+
+
+
+                                            a(c — a + lj
+              from [18] gives a relation connecting F, F(a + , c-), and F(b-, d + ), another
+              relation connecting F, F(a + , Z»-), and F(a + , b + , c-, ^-), and a third con-
+              necting F, F(fe-, J + ), and F(a-,fe-,c + , d + ). Eliminating F(a + , c-) and
+              F(&-, d + ) from these three gives the desired three term relation. In terms of Fn
+              it is formula (23) with
+              An = (n + d + l)(w + e + l)(n + / + l)(n + a + d + l)(/i + a + e + 1)
+                          • (n + a + / + l)(n + 6 + e + 1)(« + c + / + 1 )//>,,
+              Cn = (n + c + / - d)(/i + c + / - e)(n + c)(« + ft + e - rf)(n + ft)
+                      •(« +ft+ e-f)n(n + a)/D2,
+              Bn = - ( " + a + ^ + l)(« + a + e + 1)(« + a + / + 1)(« +ft+ e + 1)
+                      •(/I + C + / + l)[(n + rf+ \)(n + e+ l)(n +f+ 1)
+                                  + (n + a + l)(2n +ft+ e + 2)(2« + a + c +f+ 2)] • Z),"1
+                      - ( n +ft+ e - rf)(n +ft)(«+ft+ e - f)(n + a)n
+                      •[(« + c+f- d)(n + c + f - e)(n + c)
+                                           + (2n + c + / ) ( « +ft+ e)(2/i + a + c +/)]£>2-'
+                      -(2/i + a +ft+ e + l)«(/i + c + / + 1),
+
+https://doi.org/10.1017/S1446788700024691 Published online by Cambridge University Press
+             [7]                                          A recurrence relation                          273
+
+             Z>, = (n + d+ 1)(« + e+ l ) ( n + / + 1)(« + b + e + 1)(2« + a + c + / + 2)
+                   + (n + c + / - r f + 1)(« + c + / - e + l)(n + c + l)(n + a + 1)
+                     •(2n + b + e + 2) +(2/i + c + / + 2)(« + a + l)(2n +fc+ e + 2)
+                     •(n +fc+ e + l)(2n + a + c + / + 2),
+             and
+                D2 = (n + d)(n + e)(n + / ) ( « + b + e)(2n + a + c + / )
+                     + (« + c + / - < / ) ( n + e + / - -e)(« + c)(« + a)(2« +fe+ e)
+                     + (In + c+f)(n + a)(2n + b + e)(n + b + e)(2n + a + c + / ) .
+                 To find a recurrence relation for cn, and more generally for
+
+             (26) h , , - 2 o ( k ) (            k+ d      )[        k+ b
+
+                           _ (n + a + d)( n + b + e\ FF ( -n,-n                         - a, n + b + e
+                           ~l            d       )\       e        hA                    rf+l,*+l
+             divide (23) by/and let/ —* oo. This gives a recurrence relation for the 3 F 2 in (26),
+             and so also for hn. When this recurrence relation is written there is a c in it, but
+             not in the 3 F 2 . Remove the c by using a + d = b + c.
+               If d -* oo in (22) with a + d = b + c and 6 and c fixed, the resulting series is
+
+                                  -n,n       + b + e+\,n           + c+f+\
+                                                                                    ;
+
+
+
+
+                                      =[c+y<)(b+r+f)\')           b++f
+
+
+
+
+             This gives a three term recurrence relation for the series defined in (17).
+               Similarly one can find a three term recurrence relation satisfied by
+
+                              •ei / " i f 3n + Ac + 1 1 / _ , \ * _         p j            -n,-n,-n,3n
+                                                                           4 3
+                             ki0\k)          I      *         r     ' ~         \          l.i.i
+             and many other sequences which may have some arithmetic significance.
+               This is not the end of the three term recurrence relations. Van der Poorten [14]
+             mentioned that T. Cusick had found two more.
+
+             (27)                                           «„ = j
+
+https://doi.org/10.1017/S1446788700024691 Published online by Cambridge University Press
+              274                                  Richard Askey and J. A. Wilson                             [8]
+
+              satisfies
+              (28)     n3wn = 2(2n - l)(3w2 - 3n + l ) « n _ , + (4/i - 3)(4w - 4)(4n - 5)u n _ 2
+              and
+
+             (»)                                             -,= 2
+             satisfies
+
+             (30)                      n \ = {In1 -ln            + 2)vn_x + 8(/i -
+                These do not fit directly into the above pattern, since
+
+
+
+             is not balanced and
+
+             (32)                                     °»=
+             has the wrong power series variable.
+                However both series can be transformed to the appropriate type of series. To
+             transform (32) recall a transformation of Whipple [16]
+
+                                         abc
+                          f(              ''                     x)
+
+             (33)                                      a + l - b - c , a/2, (a + l)/2 .              -Ax
+                               _ n _      v r
+
+
+
+
+             When x = -1 this gives
+             (34)
+
+                                                                            (a+ 1 - 6 - c , a / 2 , ( f l +
+                                                                                a+l-b,a+l-c
+             The series on the left is said to be well poised, since the parameters can be paired,
+             top ones with bottom ones, so that the sum is constant. The n! in the denominator
+             is considered as (l) n . A well poised 3 F 2 at x — - 1 can be transformed to a 3F2 at
+             x — 1; and series whose parameters differ by integers correspond on the two
+             sides. Thus Cusick's recurrence relation for vn can be extended to a recurrence
+             relation for
+
+
+
+             (35)
+                                     — InI + 2a\(n + 2b\                r   I -n,-n - a,-n — b
+
+
+
+https://doi.org/10.1017/S1446788700024691 Published online by Cambridge University Press
+             [9 ]                                         A recurrence relation                                   275
+
+             There is another way of pairing the terms to get a well poised series, so
+
+
+             (36)          k±0
+                                _ (n + c\in + c\ j , l -n,-n - c + a,-n- a
+                                -[     a )\c-ahF2\          c-a+l,a+l           ;
+                                                                                  ~
+             also satisfies a three term recurrence relation.
+                Cusick's other sequence is well poised, but it is most easily treated as a special
+             case of another class of well poised series, very well poised series. Whipple is also
+             responsible for this transformation. He showed [15] that
+
+                     /                             a,l+a/2,b,c,d,e,f
+              1 6
+                    \a/2, a+                               l-b,a+l-c,a+l-d,a+l-e,a+l-f
+                       _ T(a + 1 - d)T{a+ 1 - e)T(a + 1 - f)T(a + 1 - d - e - f)
+                       ~ T ( a + l ) r ( a + 1 -d-e)T(a+       1 - d - f)T(a + 1 - e - f)
+                         • 4 F 3 (a+ l-b-c,d,e,f;         a + 1 - b, a + 1 - c, d+ e+f- a; l)
+
+             when the 4 F 3 terminates and the 7F6 series converges. The 7F6 is well poised, but
+             there is an added restriction. The factors
+                                                     (a/2 + 1), = (In + a)
+
+             introduce a linear factor in the series. This can be removed by taking / = a/2 or
+             b = a/2. When this is done, say with/ = a/2, the resulting identity is
+                         pi             a,b,c,d,e                                          .A
+                     5
+                          *\a+ I- b, a+ l-c, a+ \ -d, a+l-e'                                 I
+                            _ T(g + 1 - d)T(a + 1 - e)T(a/2 + l)r(a/2 + 1 - d - e)
+                            ~ T(a + \)T(a +\-d-         e)T(a/2 + 1 - d)F(a/2 + 1 - e)
+                                   I     a+l-b-c,d,e,a/2                 \
+                              "4 3 \ a + 1 - b, a + 1 - c, d + e - a/2 ' J '
+               The 4 F 3 is balanced, but shifting a by one does not lead to a series whose
+             parameters have been changed by one, because of the a/2. However take
+             e = (a + l)/2 to get
+
+                             pi           a,b,c,d          .A
+                           4 3
+                               \a+ 1 - b,a+ 1 - c,a+ I - d' I
+                                  _ r(a + 1 - d)T((a + l)/2)r(a/2 + l)r(l/2 - d)
+                                  ~ T(a + l)r((a + l ) / 2 - d)T(a/2 + 1 -                             d)T(l/2)
+                                            ta+l-b-c,b,a/2,(a+\)/2                                \
+                                      ' 4 3 \ a+l-b,a+l-c,d+l/2                                  'J'
+
+
+https://doi.org/10.1017/S1446788700024691 Published online by Cambridge University Press
+             276                                    Richard Askey and J. A. Wilson                       [ 10]
+
+             and now shifting any of the parameters by one leads to a series whose parameters
+             have been shifted by one. Thus we can find the three term recurrence relation
+             satisfied by
+
+                    y ( n\( n + 2a\i n + 2b\( n + 2c\
+                   k 0\k!\
+                    r        k +a ) \k +b ) \k +c )
+                          - I n + 2a\[n + 2b\(n + 2c\ F I-n,n - a,-n - b,-n - c . A
+                            \    a ) \ b ) \ c / 4 3 \ a+ \,b+ \,c+ 1 ' ) '
+
+                This is not the end of three term recurrence relations. Wilson [18] showed that
+             very well poised two balanced (sum of top +2 equals the sum of bottom) 9Fg's
+             satisfy three-term contiguity relations, where the definition of contiguous requires
+             that both very well poised and two balanced be preserved. There are also basic
+             hypergeometric series extensions of all these results. A series 2 a t is a basic
+             hypergeometric series if ak+ l/ak is a rational function of qk for a fixed number q.
+             Only one of the balanced 4<p3 recurrence relations has been published so far. This
+             is one that comes from a set of orthogonal polynomials [2]. The rest have been
+             worked out by one of us (J.A.W.) and will be published in due course.
+                We were motivated to write this paper because of a note by Rieger [12]. He
+             found four sequences that satisfy three term recurrence relations and derived the
+             relations. The first two are special cases of the recurrence relation for Jacobi
+             polynomials [13, (4.5.1)]. These are the polynomials defined in (11). The other two
+             are special cases of the recurrence relation for hn defined in (26).
+                The main interest in many of these recurrence relations is because of orthogo-
+             nal polynomials. If pn(x) is a polynomial of degree n, {pn(x)}™=0 is a set of
+             orthogonal polynomials if
+
+                                                   Pn(x)pm(x)da(x)=O,                      m¥=n,
+                                               0
+
+
+
+             for a positive measure da(x). Such a polynomial set satisfies a three term
+             recurrence relation
+
+             (38)                     xPn(x) = AnPn+i(x)             + BnPn(x) + CnPn_x{x)
+
+             with An, Bn,Cn real and AnCn+, > 0, n = 0,1,        Conversely a set of polynomials
+             that satisfies (38) with the appropriate positivity conditions is a set of orthogonal
+             polynomials. See Szego [13, Theorem 3.2.1]. At the 4 F 3 level Wilson [17,19] has
+             shown that
+
+                                                                                   - 1, a + ix, a - ix
+
+
+https://doi.org/10.1017/S1446788700024691 Published online by Cambridge University Press
+             [ill                                        A recurrence relation                                    277
+
+             satisfies
+
+                                               r(g + ix)T(b + ix)T(c + ix)T(d + ix) "
+                    f                                         T(2ix)
+                                                                                      dx = Q,
+
+            m ¥= n, when a, b,c,d> 0. He also found their recurrence relation. It was the
+            existence of this relation that led to the complete list given in [18].
+              There are other applications of these recurrence relations. See [1] for an
+            application of a three term recurrence relation for a 3 F 2 with x = 1, and [3] for an
+            application of a three term recurrence relation for what at the time was thought to
+            be a messy double sum, but which in reality can be transformed into a two
+            balanced very well poised 9 F g . See [9].
+
+
+                                                              References
+
+              [1] R. Askey and G. Gasper, ' Jacobi polynomial expansions of Jacobi polynomials with non-nega-
+                  tive coefficients,' Proc. Cambridge Philos. Soc. 70 (1971), 243-255.
+              [2] R. Askey and J. Wilson, 'A set of orthogonal polynomials that generalize the Racah coefficients
+                    or6 - j symboK SIAMJ. Math. Anal. 10(1979), 1008-1016.
+               [3] G. Gasper, 'Linearization of the product of Jacobi polynomials, II,' Canad. J. Math. 22 (1970),
+                   582-593.
+               [4] C. F. Gauss, ' Disquisitiones generales circa seriem infinitam...,' Comment Gotting. 2 (1812),
+                    1-46; Werke, 111(1868), 123-162.
+               [5] E. E. Rummer, 'Uber die hypergeometrische Reihe,' / . fur Math. 15 (1836), 39-83, 127-172;
+                   Collected Papers, II, 75-166.
+               [6] M. Mendes-France, Roger Apery et I'irrationnel, (Le Recherche, No. 97).
+               [7] J. F. Pfaff, 'Observations analyticae ad L. Euler's Institutiones Calculi Integralis,' vol. IV,
+                   Supplem. II et IV, Historte de 1793, Nova acta academiae scientiarum Petropolitanae, XI, 1797,
+                   38-57. (Note, the history section is paged separately from the scientific section of this journal.)
+               [8] E. D. Rainville, Special functions (Macmillan, New York, 1960).
+               [9] M. Rahman, 'A non-negative representation of the linearization coefficients of the product of
+                   Jacobi polynomials,' Canad. J. Math. 33 (1981), 915-928.
+             [10] J. Raynal, 'On the definition and properties of generalized 3 —j symbols,' / . Math. Phys. 19
+                   (1978), 467-476.
+             [II] J. Raynal, 'On the definition annd properties of generalized 6 — j symbols,' / . Math. Phys. 20
+                   (1979), 2398-2415.
+             [12] G. J. Rieger, 'Einige Rekursionsformeln fur Summen mit Binomialkoeffizienten,' Abh.
+                   Braunschweig. Wiss. Gesellschil (1980), 137-143.
+             [13] G. Szego, Orthogonal polynomials, fourth edition (Amer. Math. Soc. Colloq. Publ. 23, Amer.
+                   Math. Soc., Providence, R.I., 1975).
+             [14] A. van der Poorten, 'A proof that Euler missed.. .Apery's proof of the irrationality of f(3),'
+                   Math. Intelligencer 1 (1979), 195-203.
+             [15] F. J. W. Whipple, 'On well-poised series, generalized hypergeometric series having parameters
+                   in pairs, each pair with the same sum,' Proc. London Math. Soc. (2) 24 (1926), 247-263.
+             [16] F. J. W. Whipple, 'Some transformations of generalized hypergeometric series,' Proc. London
+                   Math. Soc. (2) 26 (1927), 257-272.
+             [17] J. A. Wilson, 'Three-term contiguous relations and some new orthogonal polynomials,' Pade
+                   and rational approximation, edited by E. B. Saff and R. S. Varga (Academic Press, New York,
+                   1977,227-232).
+
+
+https://doi.org/10.1017/S1446788700024691 Published online by Cambridge University Press
+              278                                  Richard Askey and J. A. Wilson                                 112]
+
+               [18] J. A. Wilson, Hypergeometric series recurrence relations and some new orthogonal functions,
+                    (Ph.D. thesis, Univ. of Wisconsin-Madison, Madison, 1978).
+               [19] J. A. Wilson,'Some hypergeometric orthogonal polynomials,' SI A M J. Math. Anal. 11 (1980),
+                    690-701.
+
+             Department of Mathematics                                                     Department of Mathematics
+             University of Wisconsin-Madison                                                     Iowa State University
+             Van Vleck Hall                                                                         Ames, Iowa 50011
+             Madison, Wisconsin 53706                                                                          U.S.A.
+             U.S.A.
+
+
+
+
+https://doi.org/10.1017/S1446788700024691 Published online by Cambridge University Press
+

@@ -1,11 +1,65 @@
-# Research handoff — 14 November 2026, 13:54 UTC
+# Research handoff — 14 November 2026, 14:39 UTC
 
 Continue autonomous research in `codex/` on `codex/independent-research` in the
 exact private repository `BoomydayCoder/Mathathon`. User authorizes continued
 work without permission pauses, remaining credits but no automatic resets.
 Reporting target:14 November2026,08:00Los Angeles/16:00UTC. No usage-balance API
 is available; do not invent a balance or guarantee runtime. No Claude-owned
-files have been changed. Rough effort split remains80%#131/20%#137.
+files have been changed. The latest user instruction stops new #137 work; current research is on #131 and higher odd zeta values.
+
+## User steering after the landmark report
+
+The user has dropped further work on problem137/Fuss–Catalan numbers. Preserve
+completed files, but do not spend remaining research time on that project.
+The user authorized three extra-high-reasoning agents through08:00LA, then clarified
+that exactly ONE should focus on zeta5 and higher odd zeta values. Current allocation:
+- xhigh_balanced: sole higher-odd discovery agent; a promising generalized Wilson
+  Rodrigues construction, all-index constant term, endpoint ratio, and binomial
+  coefficient denominator bound are now proved and independently audited. The
+  agent is working on remaining grid/pole arithmetic for actual zeta linear forms.
+- xhigh_schur: zeta3 original Schur/adjacent-Apery identity.
+- xhigh_irrationality: redirected from zeta5 to a simpler direct bridge between
+  Zudilin rational interpolation, Legendre–Pade and Beukers integrals.
+Root continues verification and checkpointing; no automatic resets or balance claims.
+
+## Newest continuation — 14:39 UTC
+
+Eighteenth checkpoint supersedes older pending/conjecture labels below.
+
+- A complete elementary **logarithmic-kernel energy proof of zeta3 irrationality**
+  is written and independently audited: short-kernel-energy-zeta3-proof.md and
+  kernel-energy-independent-review.md. Rational-square partial fractions give
+  cubic-lcm arithmetic; the kernel PDE gives a unit-source differential equation;
+  Newton polynomial division forces the Apéry integer; positive energy and
+  Delannoy growth give the small nonzero error. It needs no measure, Bernoulli
+  calculation, recurrence asymptotic, or PNT. The full optional bridge identifies
+  the same form with the existing Padé and Beukers routes and recovers the Hilbert
+  Gram identity without Bernoulli moments. Classical objects; no novelty claim.
+- **Balanced generalized Wilson Rodrigues construction is proved and reviewed.**
+  It resolves both former all-index constant-term and negative-square conjectures.
+  A separate reviewed divided-difference argument proves F_(m,n)/n! in Z[x^2],
+  hence binom((m+1)n+m,n)*p_(m,n) in Z[t]. Root checked 42 systems and126 exact
+  independent divided-difference values. This is a coefficient theorem; actual
+  zeta-linear-form primitive denominators remain unresolved. See balanced-
+  generalized-wilson-rodrigues.md, balanced-rodrigues-integrality.md and reviews.
+- Generic deformed Apéry denominator recurrence has an exact primary match with
+  Askey–Wilson1984, including all coefficients. Associated numerator recurrence
+  now has a complete independent Pearson/compatibility proof and accepted audit.
+  The uniform Taylor-error sinc-squared limit and eventual alternating coefficient
+  signs are therefore fully supported. Finite pure-zeta5/7 denominator experiments
+  remain diagnostics, not an irrationality theorem.
+- Two-parameter positive zeta ladder and explicit negative Wilson atoms/Jacobi
+  eigenfunctions now both have accepted independent reviews. Real-order positive
+  representations, nested Gauss/Radau bounds, and complete log2 endpoint proof
+  remain established. Completed q3/q4/q6 arithmetic notes are saved; no new Fuss
+  work will be done.
+- Exactly three extra-high agents remain active: balanced (sole higher-zeta
+  discovery), Schur (original zeta3 identity), kernel (simplify and motivate
+  zeta3 recurrence through the same PDE). Original Schur/adjacent-Apéry identity
+  is still a conjecture; the boundary-defect lead is under development.
+- Latest pushed commit before this checkpoint:1434d60. Root is saving this batch
+  on the existing codex research branch; Claude files remain unchanged. Continuing
+  toward16:00UTC with no reset or usage-balance claims.
 
 ## Newest continuation — 13:54 UTC
 

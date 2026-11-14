@@ -1,5 +1,7 @@
 # Balanced Bernoulli polynomials as rank-one trial forms: exact arithmetic experiment
 
+**Update, 14 November 2026:** the all-index constant-term and first negative-square formulas are now proved by the [generalized Wilson Rodrigues construction](balanced-generalized-wilson-rodrigues.md) and its [independent review](balanced-rodrigues-independent-review.md). The [binomial coefficient denominator theorem](balanced-rodrigues-integrality.md) has also passed [independent review](balanced-integrality-independent-review.md). Earlier conjecture and missing-construction labels below record the prior stage; they no longer describe these three results. Primitive zeta-linear-form denominators remain a separate question.
+
 Status: complete bounded exact experiment for m=1,2,3 and n=1,...,6, with rational pole identities and high-precision diagnostic errors. The normalizer in Section4 is proved for any rational monic trial polynomial and has passed the separate review in rank-one-prime-band-independent-review.md. No asymptotic denominator/error conclusion, irrationality conclusion, or historical novelty claim. No full-pole obstruction is assumed.
 
 The input p_{m,n} is the actual balanced monic polynomial of degree d=mn satisfying

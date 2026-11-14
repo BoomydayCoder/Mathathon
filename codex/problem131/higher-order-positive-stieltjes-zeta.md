@@ -3,14 +3,16 @@
 Status: the core density, representation, moments, Gaussian error and convergence
 proof passed independent review; see
 [higher-order-positive-stieltjes-independent-review.md](higher-order-positive-stieltjes-independent-review.md).
-The additional minimal-order and Beta-product proofs are written below;
-their separate independent audit is pending. No historical novelty is asserted.
+The additional minimal-order and Beta-product proofs were checked in the
+[all-real-order independent review](real-order-positive-stieltjes-independent-review.md).
+No historical novelty is asserted.
 The construction gives
 strictly increasing rational lower bounds to every fixed odd zeta value;
 the [Gaussian–Radau supplement](nested-higher-zeta-gauss-radau.md) supplies
 strictly decreasing rational upper bounds and exact enclosure widths.
-That strengthening has a complete proof and exact checks; further review
-is requested. These results supply
+That strengthening has a complete proof and exact checks and was
+[independently accepted](nested-higher-zeta-radau-independent-review.md).
+These results supply
 no adequate reduced-denominator bound and no irrationality theorem.
 
 The ordinary Stieltjes obstruction in

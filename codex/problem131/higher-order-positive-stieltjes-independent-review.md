@@ -270,5 +270,6 @@ passes 80 Wronskian identities for both measures and 45 rational
 lower/upper pairs, with positive endpoint weights, strict nesting and
 both rational error radii. Five actual enclosures and their refined
 errors are independently certified using rational zeta-series bounds.
-A further independent review of this new supplement is requested;
+The new supplement subsequently passed a
+[further independent review](nested-higher-zeta-radau-independent-review.md);
 the previous core audit remains unchanged.

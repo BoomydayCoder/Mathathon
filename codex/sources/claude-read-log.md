@@ -24,3 +24,27 @@ newly checked lemma from the summary's numerical gain estimate.
 
 This log records consultation and provenance, not an endorsement of every
 mathematical statement in the source summary. No historical novelty is inferred.
+
+## User-requested progress comparison, 2026-11-14 14:21 UTC
+
+Fetched the exact research-claude branch read-only into Git objects; inspected
+SUMMARY.md and PROGRESS.md at commit e0f43956ac9c9e8f4f7ef149d45ab9c6b74ea76d.
+There is still no HANDOFF.md on that branch. No Claude files were checked out
+or edited. This consultation followed many independently developed approaches
+and was requested by the user asking for both agents' landmarks.
+
+Claude reports a complete draft of a Hankel-determinant Apéry proof, subsequently
+strengthened by an exact equilibrium measure with energy (9/2)log2; a short
+recurrence/Casoratian proof; and cross-checks of some Codex results. Claude says
+its zeta5 arithmetic simplification remains unfinished. These are attributed
+reports, not newly completed independent audits by this root agent.
+
+Claude's arithmetic check of the Codex PNT-free zeta5 normalizer explicitly notes
+that it needs our stronger analytic bound, rather than Fauzan's original weaker
+constant. Our assembled guide already uses that stronger separately reviewed
+bound; this dependence must remain visible. No contradiction was inferred.
+
+User also authorized three extra-high-level agents through08:00LA. Spawned three
+GPT-6 Astra agents with extra-high reasoning for the original Schur/Apery identity,
+balanced multiple orthogonal polynomial construction, and higher-zeta arithmetic.
+No usage balance is available through the tools.

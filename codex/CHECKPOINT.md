@@ -420,3 +420,28 @@ Seventeenth checkpoint, 2026-11-14 13:54 UTC (05:54 LA), continuing:
   a two-parameter positive zeta ladder, generic deformation recurrence.
 - Original Schur/adjacent-Apery identity and balanced constant-term pattern stay
   conjectural. Work remains in codex/; no credit balance or reset claims.
+
+User steering after the overnight landmark report (around14:25UTC):
+- Stop new problem137/Fuss work; preserve completed results.
+- Three GPT-6 Astra extra-high agents authorized through16:00UTC, with exactlyONE
+  on higheroddzetas. BalancedRodrigues agent retains that assignment; Schur agent
+  staysonζ3; formerhigher-arithmetic agent redirectedtoζ3proofsimplification.
+- Claude's latest published SUMMARY/PROGRESS read at e0f4395 for user-requested
+  comparison, logged in sources/claude-read-log.md; noClaude edits or endorsement.
+
+Eighteenth checkpoint, 2026-11-14 14:39 UTC (06:39 LA), continuing:
+- Complete elementary logarithmic-kernel energy proof of zeta3 irrationality
+  independently audited. Direct positive energy replaces the explicit spectral
+  measure; exact Mellin normalization retains cubic-lcm arithmetic. Optional bridge
+  recovers the Hilbert Gram matrix without Bernoulli moments. No novelty claim.
+- Generalized Wilson Rodrigues formula now proves every balanced polynomial,
+  its factorial constant term and first negative-square evaluation. Separate
+  reviewed theorem: binom((m+1)n+m,n) clears every monic coefficient denominator.
+  Primitive linear-form arithmetic is the sole higher-zeta agent's next task.
+- Generic deformed numerator recurrence fully proved/reviewed; parameter Taylor
+  sinc-squared error theorem now has its completed recurrence dependency.
+  Exact Askey–Wilson1984 denominator and recurrence match documented.
+- Negative Wilson atoms and two-parameter positive zeta ladder audits complete.
+- User scope: stop new #137; exactly one extra-high agent on higher odd values,
+  two on zeta3. Root reviews and checkpoints. Original Schur identity unresolved.
+- Continue to16:00UTC/08:00LA. No meter, runtime guarantee, or automatic resets.

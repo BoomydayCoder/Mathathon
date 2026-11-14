@@ -4,6 +4,22 @@ All 'proved' labels refer to arguments written and checked in this workspace,
 not historical novelty. Standard external inputs are identified in each note.
 Finite computation is supplementary evidence only.
 
+## Reviewed additions — 14 November 2026, 14:39 UTC
+
+This newest section supersedes the earlier balanced-constant conjecture labels
+and generic-recurrence pending labels. Historical stages below are preserved.
+
+| Result | Proof and review | Boundary |
+|---|---|---|
+| Complete elementary logarithmic-kernel energy proof of zeta3 irrationality | short-kernel-energy-zeta3-proof.md; kernel-energy-independent-review.md | Classical forms reconstructed; no historical novelty claim |
+| Exact kernel/resolvent/Beukers bridge and Bernoulli-free Hilbert Gram proof | log-kernel-legendre-resolvent-bridge.md; kernel-energy-independent-review.md | Optional measure identity uses the separately reviewed real-resolvent lemma |
+| All-balanced generalized Wilson Rodrigues construction, factorial constant and endpoint ratio | balanced-generalized-wilson-rodrigues.md; balanced-rodrigues-independent-review.md | All m,n>=1, not extrapolation from finite systems |
+| A single binomial coefficient clears all balanced monic polynomial coefficients | balanced-rodrigues-integrality.md; balanced-integrality-independent-review.md | Does not yet normalize actual zeta linear forms |
+| Associated numerator satisfies full generic deformed Apéry recurrence | deformed-associated-pearson-symmetry.md; deformed-associated-pearson-independent-review.md | Correct index-zero source; denominator/recurrence match Askey–Wilson1984 |
+| Uniform sinc-squared Taylor-error limit and eventual fixed-order alternating signs | sigma-taylor-error-asymptotic.md; sigma-taylor-independent-review.md | No successful asymptotic primitive-denominator estimate |
+| Positive two-parameter zeta ladder | two-parameter-positive-zeta-ladder.md; two-parameter-positive-ladder-independent-review.md | Parameter interpolation does not transfer irrationality |
+| Explicit negative Wilson atoms and Jacobi eigenfunctions | wilson-negative-atom-continuation.md; wilson-negative-atoms-independent-review.md | Finite algebra and explicit functions; no unproved operator closure claim |
+
 ## Current status — 14 November 2026
 
 This section supersedes pending-review or verification-status wording in the

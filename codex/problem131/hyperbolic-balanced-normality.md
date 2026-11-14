@@ -1,5 +1,7 @@
 # A self-reproducing Stieltjes jump proves all balanced hyperbolic normality
 
+**Update, 14 November 2026:** the all-index constant-term and first negative-square formulas are now proved by the [generalized Wilson Rodrigues construction](balanced-generalized-wilson-rodrigues.md) and its [independent review](balanced-rodrigues-independent-review.md). The [binomial coefficient denominator theorem](balanced-rodrigues-integrality.md) has also passed [independent review](balanced-integrality-independent-review.md). Earlier conjecture and missing-construction labels below record the prior stage; they no longer describe these three results. Primitive zeta-linear-form denominators remain a separate question.
+
 Status: full proof written from the root agent's discovery; the integral
 agent independently checked the analytic and algebraic argument, and the
 exposition agent independently checked the triangular jump/Möbius step.

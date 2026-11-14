@@ -1,0 +1,504 @@
+            SIMULTANEOUS GENERATION OF KOECHER AND
+            ALMKVIST-GRANVILLE’S APÉRY-LIKE FORMULAE
+
+                                                     T. RIVOAL
+
+       Abstract. We prove a very general identity, conjectured by Henri Cohen, involving the
+       generating function of the familly (ζ(2r + 4s + 3))r,s≥0 : it unifies two identities, proved
+       by Koecher in 1980 and Almkvist & Granville in 1999, for the generating functions of
+       (ζ(2r + 3))r≥0 and (ζ(4s + 3))s≥0 respectively. As a consequence, we obtain that, for any
+       integer j ≥ 0, there exist at least [j/2] + 1 Apéry-like formulae for ζ(2j + 3).
+
+
+
+
+                                              1. Introduction
+                                  P∞          3
+  In proving that ζ(3) =            k=1 1/k       is irrational, Apéry [2] noted that
+                                                         ∞
+                                                 5 X (−1)k+1
+                                          ζ(3) =       ¡ ¢ .                                                      (1.1)
+                                                 2 k=1 2k
+                                                        k
+                                                          k3
+
+Although the series on the right hand side converges much faster than the defining series
+for ζ(3), formula (1.1) is not essential in Apéry’s proof since truncations of this series are
+not diophantine approximations to ζ(3). On the other hand, it is very likely that (1.1) was
+a source of inspiration for Apéry1 and many authors have looked for similar identities, in
+the hope that they might give some idea of how to prove the irrationality of ζ(2s + 1) =
+P  ∞       2s+1
+   k=1 1/k      for any integer s ≥ 2: see for example [4, 6, 8, 10, 13]. This problem is far
+from being solved2, but many beautiful Apéry-like formulae have been proved. In fact, two
+apparently unrelated families of such formulae for ζ(2s + 3) and ζ(4s + 3) have emerged,
+both of which are more easily explained with the help of the generating functions
+         ∞
+         X                          ∞
+                                    X                            ∞
+                                                                 X                            ∞
+                                                                                              X
+                             2s              1                                       4s               n
+               ζ(2s + 3) a        =                       and          ζ(4s + 3) b        =                   .
+         s=0                        n=1
+                                        n(n − a2 )
+                                           2
+                                                                 s=0                          n=1
+                                                                                                    n4 − b4
+
+(The series on the left hand sides converge only for |a| < 1 and |b| < 1, whereas the
+right hand sides converge on much larger domains.) Koecher [8] (and independently
+
+  2000 Mathematics Subject Classification. Primary 11M06; Secondary 05A15, 11J72.
+  Key words and phrases. Riemann zeta function, Apéry-like series, generating functions.
+  1See [5, 12] for a detailed explanation of Apéry’s original method.
+  2We now know that infinitely many of the values ζ(2s + 1) (s ≥ 1) are Q–linearly independent [3, 11]
+and that at least one amongst ζ(5), ζ(7), ζ(9), ζ(11) is irrational [14].
+                                                          1
+2
+
+Leshchiner [10] in an expanded form) proved that
+                 ∞
+                 X                      ∞                    k−1 µ      ¶
+                           1         1 X (−1)k+1 5k 2 − a2 Y         a2
+                          2 − a2 )
+                                   =       ¡2k¢                    1− 2 ,                 (1.2)
+                      n(n            2          k 3 k 2 − a2         n
+                  n=1                  k=1   k               n=1
+
+for any complex number a such that |a| < 1, and, more recently, Almkvist & Granville [1]
+proved another identity, first conjectured by Borwein & Bradley [4]:
+                   ∞
+                   X                   ∞                k−1 µ          ¶
+                             n      1 X (−1)k+1 5k Y n4 + 4b4
+                           4 − b4
+                                  =       ¡2k¢   4 − b4         4 − b4
+                                                                         ,                (1.3)
+                      n=1
+                          n         2 k=1   k
+                                               k        n=1
+                                                              n
+
+for any complex number b such that |b| < 1. For a = b = 0, these identities reduce to (1.1),
+but otherwise produce different identities for the values of the zeta function at odd integers.
+For example, Borwein & Bradley note that (1.2) implies
+                       X∞               X (−1)k+1 5 X (−1)k+1
+                           (−1)k+1
+              ζ(7) = 2      ¡2k¢    −2      ¡2k¢        +         ¡ ¢
+                       k=1    k
+                                 k7    k>j≥1 k
+                                                 k 5 j 2 2 k>j>i≥1 2k
+                                                                    k
+                                                                      k 3 j 2 i2
+
+while (1.3) implies
+                                     ∞
+                                  5 X (−1)k+1 25 X (−1)k+1
+                           ζ(7) =       ¡ ¢    +        ¡ ¢       .
+                                  2 k=1 2k
+                                         k
+                                            k7   2 k>j≥1 2k
+                                                         k
+                                                            k3j 4
+
+  The purpose of this article is to prove the following very general generating function
+identity, which was conjectured by H. Cohen on the basis of computations in Pari.
+Theorem 1. Let a and b be complex numbers such that |a|2 + |b|4 < 1. Then
+     ∞
+     X         n
+                              ∞
+                           1 X (−1)k+1 5k 2 − a2         Y µ (n2 − a2 )2 + 4b4 ¶
+                                                         k−1
+                         =       ¡ ¢                                             .        (1.4)
+     n=1
+         n4 − a2 n2 − b4   2 k=1 2k
+                                  k
+                                     k k 4 − a2 k 2 − b4 n=1 n4 − a2 n2 − b4
+
+  We remark that Identity (1.4) unifies (1.2) (case b = 0) and (1.3) (case a = 0); conse-
+quently, it should yield new Apéry-like formulae. This is indeed true since
+                X ∞                     X∞ X ∞ µ    ¶
+                            n                    r+s
+                       4 − a2 n2 − b4
+                                      =               ζ(2r + 4s + 3) a2r b4s
+                 n=1
+                     n                  r=0 s=0
+                                                  r
+
+and since the number of representations of an integer j ≥ 0 as j = r + 2s with integers
+r, s ≥ 0 is [j/2] + 1. Hence, (1.4) produces [j/2] + 1 different identities for ζ(2j + 3) for
+any integer j ≥ 0, obtained by differentiating the right hand side of (1.4) r, resp. s, times
+with respect to a2 , resp. b4 , with j = r + 2s, and then by letting a = b = 0.
+   For 0 ≤ j ≤ 2, one of r, s is 0 and we only obtain identities resulting from (1.2) or (1.3).
+This is also the case for j = 3, (r, s) = (3, 0) and the first apparently new identity is for
+                                                                                                                         3
+
+j = 3, (r, s) = (1, 1) :
+              ∞
+           9 X (−1)k+1     X (−1)k+1          X (−1)k+1
+  ζ(9) =         ¡2k¢  +5      ¡2k¢       +5      ¡2k¢
+           4 k=1 k k 9    k>j≥1 k
+                                   k 5j 4
+                                             k>j≥1 k
+                                                       k3j 6
+                                    5 X (−1)k+1         25 X (−1)k+1             25 X (−1)k+1
+                               −           ¡2k¢       −          ¡2k¢          −           ¡ ¢            .
+                                    4 k>j≥1 k k 7 j 2   4 k>j>i≥1 k k 3 j 4 i2    4 k>j>i≥1 2k
+                                                                                             k
+                                                                                               k 3 j 2 i4
+
+
+
+
+   To prove Theorem 1, we will use Borwein & Bradley’s method in which the proof of (1.4)
+was reduced in several steps to the proof of a finite combinatorial identity (the last step in
+[4] is due to Wenchang Chu), which was finally proved by Almkvist & Granville. In our
+case, we will show that Theorem 1 follows from the identity
+          n           Qn−1 2                                                         µ ¶
+        X        2                            2     2     2
+                       j=1 (k + (j − k) − a )(k + (j + k) − a )
+                                                                       2 2
+                                                                                1     2n
+               2 − a2
+                            Q n              2 − j 2 )(k 2 + j 2 − a2 )
+                                                                           =  2 − a2
+                                                                                         ,
+         k=1
+             k                j=1, j6 = k (k                                 n         n
+
+for any integer n ≥ 1, which we will then prove as corollary of the following result.
+Theorem 2. Let g(X) ∈ C[X] be of degree at most 2. For any integer n ≥ 1 and any
+complex numbers a and t, with a 6∈ {±1, ±2, . . . , ±n}, we have that
+  n
+  X                  µ         ¶              µ      Y                                     Y                ¶
+               n−k        2n          4k 2                     ¡     2    2
+                                                                                   ¢
+        (−1)                                                       t(k − a ) + g(j) −                g(j)       = 0. (1.5)
+  k=1
+                         n−k       k 2 − a2        0≤j<n−k                               0≤j<n−k
+                                                  or n<j<n+k                            or n<j<n+k
+
+
+  For the special case a = 0, we obtain the key identity proved in [1].
+
+                                                       2. First step
+  We transform the right hand side of (1.4) by a partial fraction decomposition, with
+respect to b4 :
+                                      k−1
+                                      Y (n2 − a2 )2 + 4b4 X k
+                              1                                   Cn,k (a)
+                          4   2 2   4     4    2  2    4
+                                                         =                    ,                                      (2.1)
+                         k − a k − b n=1 n − a n − b       n=1
+                                                               n − a2 n2 − b4
+                                                                4
+
+
+where
+                                       Qk−1    2               2    2     2           2 2
+                                         j=1 (n + (j − n) − a )(n + (j + n) − a )
+                         Cn,k (a) =           Qk                                          .                          (2.2)
+                                                           (j 2 − n2 )(j 2 + n2 − a2 )
+                                                 j=1, j6=n
+
+Inserting (2.1) in the right hand side of (1.4) and inverting the summations, we see that it
+will be enough to show that (and in fact, this is equivalent)
+           ∞
+           X                      X∞                   X∞
+                      n                      1             (−1)k+1 5k 2 − a2
+                 4 − a2 n2 − b4
+                                =       4 − a2 n2 − b4
+                                                             ¡2k¢            Cn,k (a).
+           n=1
+               n                  n=1
+                                      n                k=n    k
+                                                                       2k
+4
+
+Clearly, it is enough to show that, for any integer n ≥ 1 and any complex a with |a| < 1,
+                                     X∞
+                                         (−1)k+1 5k 2 − a2
+                                           ¡2k¢            Cn,k (a) = n.                           (2.3)
+                                     k=n     k
+                                                     2k
+
+From now on, and otherwise specified, we assume that |a| < 1.
+
+                                             3. Second step
+                                                                        √
+   We define tn (k) to be the summand of the series in (2.3) and δ to be n2 − a2 (for any
+fixed branch of the logarithm). We observe that tn (k) can be extended to a meromorphic
+function of the complex variable k:
+                            (−1)n eiπk n2 Γ(1 ± iδ)(5k 2 − a2 )Γ(k + 1)2 Γ(k ± n ± iδ)
+              tn (k) =                                                                 ,           (3.1)
+                         Γ(1 − n ± iδ)Γ(n ± iδ)) k Γ(2k + 1)Γ(k + 1 ± n)Γ(k + 1 ± iδ)
+where Γ(x ± y ± z) is defined to be Γ(x + y + z)Γ(x + y − z)Γ(x − y + z)Γ(x − y − z), etc.
+   We note that, as a result of the factor Γ(k + 1 − n) in the denominator of (3.1), we
+have tn (k) = 0 for k = 1, . . . , n − 1. Furthemore, simple computations give that tn (0) =
+a2 n/(2n2 − a2 ) and, for k ∈ {1, . . . , n},
+                           µ ¶
+              n3 (n2 − a2 ) 2k                    5k 2 − a2
+  tn (−k) = −
+                 2n2 − a2     k (n2 + (k − n)2 − a2 )(n2 + (k + n)2 − a2 )
+                                                  k−1
+                                                  Y            (n2 − j 2 )(j 2 + n2 − a2 )
+                                              ·         2 + (j − n)2 − a2 )(n2 + (j + n)2 − a2 )
+                                                                                                 . (3.2)
+                                                  j=1
+                                                      (n
+
+    We are now ready to prove our second step.
+Proposition 1. For any given n ≥ 1, Equation (2.3) is equivalent to the following finite
+combinatorial identity:
+    n µ
+    X      ¶
+        2k                      5k 2 − a2
+    k=1
+          k     (n2 + (k − n)2 − a2 )(n2 + (k + n)2 − a2 )
+                                     k−1
+                                     Y           (n2 − j 2 )(j 2 + n2 − a2 )         2
+                                 ·         2          2      2    2          2 2
+                                                                                 = 2     . (3.3)
+                                     j=1
+                                         (n + (j − n) − a )(n + (j + n) − a )     n − a2
+
+Remark. Given any integer n ≥ 1, if (3.3) is true for |a| < 1, it is true for any complex
+number a such that a2 can not be written a2 = n2 +m2 with an integer m ∈ {0, ±1, . . . , ±n}.
+Proof. We will prove below that
+                                               +∞
+                                               X
+                                                        tn (k) = 0.                                (3.4)
+                                              k=−n
+                                                                                                  5
+
+Equation (3.4) can be written
+           n
+           X                           n−1
+                                       X                ∞
+                                                        X                     X∞
+                                                                   a2 n
+                 tn (−k) = −tn (0) −     tn (k) −     tn (k) = − 2       2
+                                                                           −       tn (k)
+             k=1                     k=1          k=n
+                                                                 2n −   a     k=n
+      P∞                                            Pn                      3      2      2
+and     k=n tn (k) = n is clearly equivalent to        k=1 tn (−k) = −2n /(2n − a ), which,
+given (3.2), is exactly (3.3).
+   We now prove (3.4), and for that we closely follow Borwein & Bradley, whose method is
+based on Gosper’s hypergeometric summation algorithm (see [7, p. 225–227] for details).
+We note that
+      tn (k + 1)       1 5(k + 1)2 − a2 k            (k ± n ± iδ)            pn (k + 1)qn (k)
+                  =−                                                      =                   ,
+         tn (k)        2 5k 2 − a2 2k + 1 (k + 1 ± n)(k + 1 ± iδ)            pn (k)rn (k + 1)
+is a rational function of k, with qn (k) = (k − n ± iδ), rn (k) = −2(2k − 1)(k + n) and
+                                                     n−1
+                                                     Y
+                                          2      2
+                            pn (k) = (5k − a )              (k − j)(k + j ± iδ).
+                                                      j=1
+
+Since qn and rn do not have roots differing by integers3, Gosper’s algorithm ensures that
+there exists a polynomial sn of degree at most deg(pn ) − deg(qn − rn ) = 3n − 3 such that
+pn (k) = sn (k + 1)qn (k) − rn (k)sn (k). We now define
+                                             rn (k)sn (k)tn (k)
+                                    Tn (k) =                    ,
+                                                   pn (k)
+which satisfies Tn (k + 1) − Tn (k) = tn (k). Since tn (−n) is finite and pn (−n) 6= 0 = rn (−n),
+                                                                  P
+we have Tn (−n) = 0. Hence, for any k ≥ 1 − n, Tn (k) = k−1         j=−n tn (k). Since deg(rn sn ) =
+deg(pn ), we have Tn (k) = O(tn (k)) as k → +∞, which implies that Tn (k) tends to 0 as
+k → +∞. It follows that (3.4) holds.                                                               ¤
+                                              4. Third step
+  Here, we generalise the last reduction step of [4] (due to Wenchang Chu).
+Proposition 2. Equation (3.3) for every integer n ≥ 1 is equivalent to the following
+identity for every integer n ≥ 1:
+       n           Qn−1 2                                                         µ ¶
+     X        2                            2     2     2
+                    j=1 (k + (j − k) − a )(k + (j + k) − a )
+                                                                    2 2
+                                                                            1      2n
+            2    2
+                         Qn               2     2     2     2    2
+                                                                        = 2     2
+                                                                                      . (4.1)
+     k=1
+          k   − a          j=1, j6 = k (k   − j   )(k   + j   − a  )     n  − a     n
+Remark. The simplification (4.2) below shows that, given any integer n ≥ 1, if (4.1) is true
+for |a| < 1, it is true for any complex number a such that a 6∈ {±1, . . . , ±n}. Furthermore,
+it can also be written as           n                   µ ¶
+                                   X   Ck,n (a)  (−1)n+1 2n
+                                 2              = 2            ,
+                                   k=1
+                                       k 2 − a2  n − a2 n
+where Ck,n (a) is defined in (2.2).
+  3Since |a| < 1 and n ≥ 1, iδ can’t be an integer.
+6
+
+Proof of Proposition 2. We use Krattenthaler’s inversion formula [9]:
+              n
+              X                                                          Xn
+                an dn + bn cn           ϕ(ck /dk ; n)                         ψ(−cn /dn ; k)
+    f (n) =                                              g(k) iff g(n) =                        f (k),
+              k=r
+                            dk      ψk (−ck /dk ; n + 1)                 k=r
+                                                                             ϕ(c n /dn ; k + 1)
+
+where
+                    k−1
+                    Y                                  k−1
+                                                       Y                                   k−1
+                                                                                           Y
+     ϕ(x; k) =            (aj + xbj ),   ψ(x; k) =           (cj + xdj ) and ψm (x; k) =          (cj + xdj ).
+                    j=0                                j=0                                 j=0
+                                                                                           j6=m
+
+
+Applied to (3.3), it yields the result with the choices r = 1, aj = (j 2 − a2 )2 , bj = 4,
+cj = j 4 − a2 j 2 , dj = 1,
+                                µ ¶
+                       k    2 2  2k                   2 4k 4 − 4a2 k 2 + (a2 − 1)2
+        f (k) = (−1) (5k − a )        and g(k) = 2                                  .
+                                 k                 k − a2        k 4 − a2 k 2
+                                                                                                                 ¤
+  Using the same trick as Almkvist & Granville, it is easy to write (4.1) in a more conve-
+nient form, that we will prove below: for any n ≥ 1,
+          X n         µ        ¶            Y                             µ ¶
+                  n−k     2n        4k 2            2   2   2     (2n)! 2n
+              (−1)                 2 − a2
+                                                  (k + j − a ) = 2      2
+                                                                               .      (4.2)
+          k=1
+                        n −  k   k        0≤j<n−k
+                                                                 n  −  a    n
+                                                     or n<j<n+k
+
+
+
+                                              5. The final step
+   Note that (4.2) is simply Theorem 2 with g(X) = X 2 and t = 1: indeed, the first product
+in the left hand side of (1.5) corresponds exactly to the left hand side of (4.2) and (since
+only the n–th summand is non zero)
+   Xn           µ        ¶            Y
+            n−k     2n        4k 2
+       (−1)                  2 − a2
+                                            g(j)
+   k=1
+                  n −  k   k        0≤j<n−k
+                                          or n<j<n+k
+
+                                                  Y                                µ ¶
+                                             n2          2   4n2 (2n − 1)!2   (2n)! 2n
+                                         = 2            j = 2               = 2        .
+                                          n − a2 n<j<2n    n − a2   n!2      n − a2 n
+
+Hence Theorem 1 follows from Theorem 2.
+Proof of Theorem 2. So far, we have been very lucky in that every step of [4] generalises
+without problems to this more general setting. But here, the general Theorem 10 in [1] is
+apparently not strong enough to prove (4.2). Fortunately, we can adapt the method there
+used for our purpose. For any k ≥ 1, we define the polynomial of degree n − 1
+                                         Y
+                             Fk (X) =           (X − g(j)).
+                                                        0≤j<n−k
+                                                       or n<j<n+k
+                                                                                                      7
+
+Proposition 1 in [1] establishes the existence of polynomials Qr (X) of degree dr ≤ r such
+that
+                                           n−2
+                                           X
+                         Fk (X) − Fk (0) =     Qr (k 2 − a2 ) X n−1−r .               (5.1)
+                                                r=0
+
+The important point for us is the fact that since Fk (X) − Fk (0) vanishes at X = 0, then
+the sum in (5.1) terminates at n − 2. (In fact, Qr (X) = cr (X + a2 ) with the polynomials
+                                   Pr
+cr given in [1].) We write Qr (X) = di=0 qr,i X i . Equation (1.5) can be expressed as
+             n
+             X             µ  ¶
+       n−1           n−k   2n     4k 2 ¡              2     2
+                                                                            ¢
+  (−1)        (−1)                          F k (−t(k   − a   )) −  F k (0)
+          k=1
+                         n − k k 2 − a2
+                   n−2 X
+                   X    dr                Xn            µ         ¶
+               n−1             n−1−r               n−k      2n         4k 2
+       = (−1)              (−t)      qr,i     (−1)                    2 − a2
+                                                                              (k 2 − a2 )i+n−1−r . (5.2)
+                   r=0 i=0                k=1
+                                                          n −   k   k
+
+Since i ≥ 0 et r ≤ n − 2, we have
+                                  4k 2
+                                 2     2
+                                         (k 2 − a2 )i+n−1−r = P (k 2 ),
+                                k −a
+where P (X) = 4X(X−a2 )n+i−r−2 is a polynomial of degree i+n−r−1 ≤ dr +n−r−1 ≤ n−1
+such that P (0) = 0. Lemma 1 in [1], which reads
+                              Xn          µ        ¶
+                                      n−k     2n
+                                  (−1)               k 2` = 0                 (5.3)
+                              k=1
+                                            n −  k
+
+for any 1 ≤ ` ≤ n − 1, then gives that
+      Xn          µ        ¶                            Xn           µ       ¶
+              n−k     2n        4k 2    2   2 i+n−1−r            n−k    2n
+          (−1)                 2 − a2
+                                      (k − a )        =     (−1)              P (k 2 ) = 0.
+      k=1
+                    n −  k   k                          k=1
+                                                                      n −  k
+
+This proves that the left hand side of (5.2) is 0 for all t and the proof of Theorem 2 is
+complete.                                                                              ¤
+
+  We conclude this section with the following remark. Almkvist & Granville proved (5.3)
+by expressing its left hand side as the 2`-th Taylor coefficient of the function e−nz (ez − 1)2n .
+Another proof is as follows: define S(z) = z ` /z(z − 12 ) · · · (z − n2 ) for any integers ` ≥ 0
+and n ≥ 0. Then, by the residue theorem, for any closed direct contour Γ enclosing the
+poles of S, we have
+                          Z             X n                Xn
+                       1                                                        k 2`
+       −Res∞ (S) =           S(z) dz =       Resk2 (S) = 2      (−1)n−k                    .
+                      2iπ Γ              k=0               k=0
+                                                                         (n  − k)!(n + k)!
+
+If we assume that ` ≤ n − 1, then Res∞ (S) = 0 and if furthemore ` ≥ 1, then (5.3) follows
+after multiplication by (2n)!/2.
+8
+
+                                          Acknowledgment
+  The main result (Theorem 1) of this paper was conjectured by Henri Cohen, and it was
+his encouragement that prompted me to work on this problem. I warmly thank him for
+this.
+                                              Bibliography
+[1] G. Almkvist and A. Granville, Borwein and Bradley’s Apéry-Like Formulae for ζ(4n + 3), Exp. Math.
+    8 (1999), no. 2, 197–203. Available at http  ://www.expmath.org/expmath/volumes/8/8.html.
+[2] R. Apéry, Irrationalité de ζ(2) et ζ(3), Astérisque 61 (1979), 11–13.
+[3] K. Ball and T. Rivoal, Irrationalité d’une infinité de valeurs de la fonction zêta aux entiers impairs,
+    Invent.Math. 146 (2001), no. 1, 193–207.
+[4] J. Borwein and D. Bradley, Empirically Determined Apéry-Like Formulae, Exp. Math. 6 (1997), no. 3,
+    181–194. Available at http  ://www.expmath.org/expmath/volumes/6/6.html.
+[5] H. Cohen, Démonstration de l’irrationalité de ζ(3) (d’après Apéry), Sém. de Théorie des Nombres de
+    Grenoble, octobre 1978 (9 p.).
+[6] H. Cohen, Généralisation d’une construction de R. Apéry, Bull. Soc. Math. France 109 (1981), 269–
+    281. Available at http ://www.numdam.org/accueil.php.
+[7] R. L. Graham, D. E. Knuth and O. Patashnik, Concrete mathematics: a fundation for computer
+    science, 2nd edition, Addison-Wesley Publishing, 1994.
+[8] M. Koecher, Letter to the editor, Math. Intelligencer 2 (1980), 62–64.
+[9] C. Krattenthaler, A new matrix inverse, Proc. Amer. Math. Soc 124 (1996), no. 1, 47–59.
+[10] D. H. Leshchiner, Some new identities for ζ(k), J. Number Theory 13 (1981), no. 3, 355–362.
+[11] T. Rivoal, La fonction Zêta de Riemann prend une infinité de valeurs irrationnelles aux en-
+    tiers impairs, C. R. Acad. Sci. Paris, Série I Math. 331 (2000), no. 4, 267–270. Available at
+    http://arXiv.org/abs/math.NT/0008051.
+[12] A. van der Poorten, A proof that Euler missed. . . Apéry’s proof of the irrationality of ζ(3). An informal
+    report, Math. Intelligencer 1 (1978/79), no. 4, 195–203.
+[13] A. van der Poorten, Some wonderful formulas... An introduction to polylogarithms, Queen’s Papers
+    in Pure and Applied Mathematics 54, Proc. 1979 Queen’s Number Theory Conference, 1980, 269–286.
+[14] W. Zudilin, Arithmetic of linear forms involving odd zeta values, to appear in J. Théor. Nombres
+    Bordeaux (2004). Available at http    ://arXiv.org/abs/math.NT/0206176.
+
+  Laboratoire de Mathématiques Nicolas Oresme, CNRS UMR 6139, Université de Caen,
+BP 5186, 14032 Caen cedex, France
+  E-mail address: rivoal@math.unicaen.fr
+

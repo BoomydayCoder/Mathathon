@@ -1,0 +1,834 @@
+                                                   AN IDENTITY OF ANDREWS, MULTIPLE INTEGRALS, AND
+                                                       VERY-WELL-POISED HYPERGEOMETRIC SERIES
+arXiv:math/0312148v2 [math.CA] 17 Dec 2003
+
+
+
+
+                                                                              C. KRATTENTHALER† AND T. RIVOAL
+
+                                                     Abstract. We give a new proof of a theorem of Zudilin that equates a very-well-poised
+                                                     hypergeometric series and a particular multiple integral. This integral generalizes integrals
+                                                     of Vasilenko and Vasilyev which were proposed as tools in the study of the arithmetic
+                                                     behaviour of values of the Riemann zeta function at integers. Our proof is based on
+                                                     limiting cases of a basic hypergeometric identity of Andrews.
+
+
+
+
+                                                                                          1. Introduction
+                                                After Apéry’s 1978 proof of the irrationality of ζ(2) and ζ(3) (see [3]), ζ(s) denoting
+                                             the Riemann zeta function, Beukers [6] gave another proof with the help of his famous
+                                             integrals
+                                                                           xn (1 − x)n y n (1 − y)n
+                                                                  Z
+                                                                                                    dx dy = αn ζ(2) − βn
+                                                                    [0,1]2   (1 − (1 − x)y)n+1
+                                             and
+                                                                        xn (1 − x)n y n (1 − y)n z n (1 − z)n
+                                                             Z
+                                                                                                              dx dy dz = 2an ζ(3) − bn .
+                                                                 [0,1]3     (1 − (1 − (1 − x)y)z)n+1
+                                             Here, n ≥ 0 is an integer, and αn , βn , an , bn are rational numbers. More precisely, αn , an ,
+                                             d2n βn and d3n bn are integers, with dn = lcm{1, 2, . . . , n}.
+                                                 Extending Vasilenko’s method [17], Vasilyev [18, 19] considered a family of integrals
+                                             generalizing Beukers’ pattern:
+                                                                                      QE n                    n
+                                                                                        i=1 xi (1 − xi )
+                                                                           Z
+                                                                   JE,n =                                      n+1
+                                                                                                                   dx1 dx2 · · · dxE , (1.1)
+                                                                             [0,1]E QE (x1 , x2 , . . . , xE )
+
+                                             where
+                                                                   QE (x1 , x2 , . . . , xE ) = 1 − (· · · (1 − (1 − xE )xE−1 ) · · · )x1 ,
+                                             and where E is an integer ≥ 2.
+                                                He then formulated the following conjecture, which he proved for E = 4, 5 and which is
+                                             also true for E = 2, 3 because of Beukers’ work.
+
+                                               2000 Mathematics Subject Classification. Primary 33C20; Secondary 11J72.
+                                               Key words and phrases. Riemann zeta function, hypergeometric series.
+                                               †
+                                                 Research partially supported by the programme “Improving the Human Research Potential” of the
+                                             European Commission, grant HPRN-CT-2001-00272, “Algebraic Combinatorics in Europe”.
+                                                                                                      1
+2
+
+Conjecture 1 (Vasilyev).
+(i) For all integers E ≥ 2 and n ≥ 0, there exist rational numbers pm,E,n such that
+                                              X
+                           JE,n = p0,E,n +           pm,E,n ζ(m).                                         (1.2)
+                                                     m=2,...,E
+                                                    m≡E (mod 2)
+
+(ii) Furthermore, dE
+                   n pm,E,n is an integer for all m = 0, 1, . . . , E.
+
+   Part (i) of this conjecture has been proved by Zudilin in [23, Sec. 8], thanks to an
+unexpected identity between a certain multiple integral Jm (generalizing Vasilyev’s ones)
+and a non-terminating very-well-poised hypergeometric series (see Theorem 1 below). Part
+(ii) was also proved by Zudilin in [23], except for the coefficient p0,E,n . A sharper version
+of Part (ii) has been established by the authors [10] when E is odd (including the claim
+about p0,E,n ), and for all coefficients but p0,E,n when E is even.
+   The aim of this note is to give a new proof of Zudilin’s identity, which is the content
+of Theorem 1 in the next section. In fact, our proof shows that, modulo a more or less
+evident expansion of the Vasilyev-type integral Jm as a multiple sum (see Proposition 2
+in Section 4), Zudilin’s identity is a limiting case of a thirty year old identity between a
+terminating multiple sum and a terminating very-well-poised hypergeometric series due
+to Andrews (see (3.1) below). We believe that this is an interesting observation because
+attempts to prove Zudilin’s identity by manipulating hypergeometric series directly failed
+because of convergence problems. Zudilin circumvents these problems by having recourse
+to a Barnes-type (i.e., contour) integral in place of the very-well-poised hypergeometric
+series. Our proof shows that there is indeed a “purely hypergeometric” proof (i.e., a proof
+just using summation and transformation formulas for hypergeometric series), but to be
+able to accomplish it, one has to go “one level higher in hierarchy,” meaning that one finds
+a terminating identity “above,” of which the identity which one actually wants to prove
+is a limiting case.1 This identity “above” is Andrews’ identity, and it does indeed have a
+purely hypergeometric proof (see Section 3 for more information).
+   As an aside, we mention that, in the recent paper [22], Zlobin shows that the multiple
+integral Jm is also equal to an integral of the same type as those of Sorokin in [15, 16]
+(see also Fischler [7] for similar results). The latter integral can also be expanded as a
+multisum, in a manner completely analogous to the way we derive the multisum expansion
+for Jm in the proof of Proposition 2. As a result, one obtains again exactly the right-hand
+sides of (4.1) and (4.2), respectively. Thus, this provides an alternative proof of Zlobin’s
+    1This point is also of interest “philosophically.” There are several proposers (of whom Koornwinder
+[9] seems to have been the first; see [13, Remark 3.2] and [20, paragraph after Eq. (Apery)] for printed
+versions) of the “conjecture” that above every identity for non-terminating hypergeometric series (which
+are very often difficult to prove; in particular, the automatic tools described in [11] do not apply) there sits
+a more general identity for terminating series (which, at least in principle, can be proved automatically), of
+which the non-terminating identity is a limiting case. Of course, the analyst would object that above every
+terminating identity there exists an even more general non-terminating identity, of which the terminating
+one is a special case. Clearly, this dispute is as easy to settle as the dispute about the question of which
+was first, the hen or the egg . . .
+                                                                                                             3
+
+result. As a matter of fact, when this work originated, we went the other way, that is,
+our starting point was the multisum expansion of Zlobin’s integral, until we realized that,
+actually, the integral Jm admits the same treatment.
+   Zudilin’s identity is recalled in Theorem 1 in the next section. The limiting cases of
+Andrews’ identity which we need are stated and proved in Proposition 1 in Section 3. One
+of the lemmas which we need for carrying out these limits generalizes a lemma of Zhao
+[21] on the convergence of multizeta functions, see the remark after the proof of Lemma 3.
+The purpose of Section 4 is to relate these identities to the Vasilyev-type integral Jm , see
+Proposition 2. We finally prove Theorem 1 in Section 5.
+
+
+
+                                           2. Zudilin’s identity
+   In order to be able to state Zudilin’s identity, we need to recall the standard notation
+for (generalized) hypergeometric series,
+                                                       X∞
+                                α0 , α1 , . . . , αp        (α0 )k (α1 )k · · · (αp )k k
+                   p+1 Fp                            ;z =                             z ,
+                                 β1 , . . . , βp              k! (β1 )k · · · (βp )k
+                                                        k=0
+
+
+where p ≥ 1, αj ∈ C, βj ∈ C \ Z≤0 and, by definition, (x)0 = 1 and (x)ℓ = x(x + 1) · · · (x +
+ℓ − 1) for ℓ ≥ 1. The series is absolutely convergent for all z ∈ C such that |z| < 1,
+and also for |z| = 1 provided Re(β1 + · · · + βp ) > Re(α0 + α1 + · · · + αp ). Furthermore,
+it is said to be balanced if α0 + · · · + αp + 1 = β1 + · · · + βp and very-well-poised if
+α0 + 1 = α1 + β1 = · · · = αp + βp and α1 = 12 α0 + 1. See the books [2, 4, 8, 14] for more
+information on hypergeometric series.
+   Let z, a0 , a1 , . . . , am , and b1 , . . . , bm be complex numbers such that |z| < 1, Re(bi ) >
+Re(ai ) > 0 for all i = 1, 2, . . . , m, and let us define the Vasilyev-type integral
+                                                Qm ai −1
+                                                              (1 − xi )bi −ai −1
+                              Z
+       a0 , a1 , . . . , am                       i=1 xi
+   Jm                       ;z =                                                          dx1 dx2 · · · dxm ,
+          b1 , . . . , bm         [0,1]m (1 − (1 − (· · · (1 − xm )xm−1 ) · · · )x1 z)
+                                                                                       a0
+
+                                                                                                          (2.1)
+which is absolutely convergent under the above conditions. (We will sometimes use the
+short notation Jm for this integral if there is no ambiguity about the parameters.) It is also
+absolutely convergent for z = 1, provided that we also assume that Re(b1 − a1 ) > Re(a0 )
+if m = 1, respectively Re(b1 − a1 ) ≥ Re(a0 ) if m > 1. Since previous authors assume more
+restrictive conditions in the case z = 1 (in particular, restrictions that are not satisfied by
+Vasilyev’s integrals (1.1)), we sketch the verification of the convergence here for the sake
+of completeness.
+   If m = 1, then Jm = J1 is a beta integral. If m ≥ 2, then, because of
+
+                                1 − (1 − (· · · (1 − xm )xm−1 ) · · · )x1 ≥ 1 − x1
+4
+
+and Re(b1 − a1 ) ≥ Re(a0 ), we have
+    Z 1−εm     Z 1−ε2 Z 1−ε1          Qm ai −1
+                                        i=1 xi     (1 − xi )bi −ai −1
+           ...                                                                 dx1 dx2 · · · dxm
+     εm          ε2    ε1     (1 − (1 − (· · · (1 − xm )xm−1 ) · · · )x1 )a0
+               Z 1−εm     Z 1−ε2 Z 1−ε1 Qm Re(ai −1)
+                                           i=2 xi         (1 − xi )Re(bi −ai −1)
+           ≤          ...                                                        dx1 dx2 · · · dxm
+                εm         ε2     ε1              (1 − x1 + Xx2 x1 )
+               Z 1−εm     Z 1−ε2 Y  m
+                                                                         !
+                                        Re(ai −1)
+           ≤          ...             xi          (1 − xi )Re(bi −ai −1)
+                    εm          ε2       i=2
+                                                                    1−ε1
+                                              log(1 − x1 + Xx2 x1 )
+                                          · −                                dx2 · · · dxm ,
+                                                    1 − Xx2           x1 =ε1
+
+for any small ε1 , ε2 , . . . , εm > 0, where we wrote X for 1 − (· · · (1 − xm )xm−1 ) · · · )x3 . (In
+case that m = 2, X has to be interpreted as 1.) If we perform the limit ε1 → 0, then the
+right-hand side of this inequality becomes the integral
+    Z 1−εm     Z 1−ε2 Y       m
+                                                                    !            
+                                  Re(ai −1)           Re(bi −ai −1)     log(Xx2 )
+           ...                   xi         (1 − xi )                 −             dx2 · · · dxm . (2.2)
+     εm         ε2           i=2
+                                                                         1 − Xx2
+
+In the integrand, there is no problem as Xx2 → 1, since the function log(Xx2 )/(1 − Xx2 )
+is continuous at Xx2 = 1. On the other hand, if we fix η > 0, then for Xx2 sufficiently
+close to 0, we have
+                           | log(Xx2 )| < (Xx2 )−η ≤ (1 − x3 )−η x−η
+                                                                  2 .
+                      1
+Thus, choosing η = 2 min{Re(a2 ), Re(b3 − a3 )}, we see that the integral in (2.2), and thus
+the original integral Jm , exists.
+Theorem 1 (Zudilin). For every integer m ≥ 1, the following identity holds:
+                                                                      
+                       h1 , h2 , h3 , . . . , hm+1
+  Jm                                                                ;1
+          1 + h0 − h3 , 1 + h0 − h4 , . . . , 1 + h0 − hm+2
+          Γ(1 + h0 ) m+1
+                     Q                       m+1
+                                                                              !
+                       j=3   Γ(h  j )        Y
+     = Qm+2                            ·         Γ(1 + h0 − hj − hj+1 )
+              j=1 Γ(1 + h0 − hj )            j=1
+
+                                                         h0 , 21 h0 + 1, h1 , . . . , hm+2
+                                                                                                      
+                                                                                                   m+1
+                             × m+4 Fm+3 1                                                   ; (−1)       , (2.3)
+                                                    h , 1 + h0 − h1 , . . . , 1 + h0 − hm+2
+                                                   2 0
+                                          2
+                                              Pm+2
+provided that 1 + Re(h0 ) > m+1                  j=1 Re(hj ), Re(1 + h0 − hj+1 ) > Re(hj ) > 0 for j =
+2, 3, . . . , m + 1, and Re(1 + h0 − h3 − h2 ) ≥ Re(h1 ), these conditions ensuring that both
+sides of (2.3) are well-defined.
+   In the case of the original integrals JE,n of Vasilyev, the identity in Theorem 1 reads as
+follows: for any integers n ≥ 0 and E ≥ 2,
+               n!2E+1 (3n + 2)!            3n + 2, 23 n + 2, n + 1, . . . , n + 1
+                                                                                            
+                                                                                         E+1
+        JE,n =                   E+4 FE+3     3                                   ; (−1)       .
+                 (2n + 1)!E+2                 2
+                                                n + 1, 2n + 2, . . . , 2n + 2
+                                                                                                          5
+
+From [5, 12], it follows that such a very-well-poised hypergeometric series gives rise to a
+decomposition of the shape (1.2).
+
+             3. Limiting cases of Andrews’ hypergeometric identity
+   Let N and s be positive integers, and a, b1 , . . . , bs+1 , c1 , . . . , cs+1 be complex numbers
+such that none of 1 + a − bj , 1 + a − cj , j = 1, 2, . . . , s + 1, and 1 + a + N are non-positive
+integers.
+   Andrews’ identity [1, Theorem 4] relates a terminating very-well-poised basic hyperge-
+ometric series to a terminating multiple basic hypergeometric series. We shall need here
+the limiting case of this identity when q → 1, so that the series there reduce to “ordinary”
+hypergeometric series. That is, we replace a by q a , bi by q bi , ci by q ci , there, and then let
+q tend to 1. The result can be compactly written in the form
+                                   a, a2 + 1, b1 , c1 , . . . , bs+1 , cs+1, −N
+                                                                                               
+  2s+5 F2s+4   a                                                                             ;1
+               2
+                 , 1 + a − b1 , 1 + a − c1 , . . . , 1 + a − bs+1 , 1 + a − cs+1 , 1 + a + N
+      (1 + a)N (1 + a − bs+1 − cs+1 )N           X                       (−N)k1 +···+ks
+   =
+      (1 + a − bs+1 )N (1 + a − cs+1 )N k ,k ,...,k ≥0 (bs+1 + cs+1 − a − N)k1 +···+ks
+                                              1   2   s
+                                         s
+                                         Y   (1 + a − bj − cj )kj (bj+1 )k1 +···+kj (cj+1)k1 +···+kj
+                                     ·                                                               . (3.1)
+                                         j=1
+                                               kj ! (1 + a − bj )k1 +···+kj (1 + a − cj )k1 +···+kj
+The proof in [1] uses Whipple’s transformation between a balanced 4 F3 -series and a very-
+well-poised 7 F6 -series,
+                                           
+                    a, b, c, −N                  (−a − b + e + f )N (−a − c + e + f )N
+ 4 F3                                     ;1 =
+        e, f, 1 + a + b + c − e − f − N          (−a + e + f )N (−a − b − c + e + f )N
+                          −1 − a + e + f, 2 − 2 + 2e + f2 , −a + f, −a + e, b, c, −N
+                                          1   a
+                                                                                         
+          · 7 F6 1 a e f                                                                ;1 ,
+                 − 2 − 2 + 2 + 2 , e, f, −a − b + e + f, −a − c + e + f, −a + e + f + N
+and the Pfaff–Saalschütz summation in an iterative fashion. In particular, the identity
+(3.1) reduces to Whipple’s transformation for s = 1.
+  We prove that the same kind of identity holds for non-terminating hypergeometric series
+provided the parameters a, bj , and cj , j = 1, 2, . . . , s + 1, satisfy some further conditions.
+Proposition 1. (i) Let s ≥ 1 be an integer, and let a, b1 , . . . , bs+1 , c1 , . . . , cs+1 be complex
+numbers such that none of 1 + a − bj , 1 + a − cj , j = 1, 2, . . . , s + 1, is a non-positive
+integer. Furthermore, we assume that
+                                               s+1
+                                                                !
+                                               X
+                       Re (2s + 1)(a + 1) − 2      (bj + cj ) > 0                                  (3.2)
+                                                                j=1
+
+and                                                                                     !
+                                                          s
+                                                          X
+                  Re (1 + a − bs+1 − cs+1 ) +                   Aj (1 + a − bj − cj )       >0        (3.3)
+                                                          j=r
+6
+                                                                                       Ps
+for all r = 2, 3, . . . , s + 1 (in the case that r = s + 1, the empty sum              j=r has to be
+interpreted as 0), for all possible choices of Aj = 1 or 2, for j = 2, 3, . . . , s. Then
+
+                               a, a2 + 1, b1 , c1 , . . . , bs+1 , cs+1
+                                                                                     
+  2s+4 F2s+3   a                                                                 ; −1
+               2
+                 , 1 + a − b1 , 1 + a − c1 , . . . , 1 + a − bs+1 , 1 + a − cs+1
+                 Γ(1 + a − bs+1 ) Γ(1 + a − cs+1 )
+             =
+                 Γ(1 + a) Γ(1 + a − bs+1 − cs+1 )
+                                          s
+                              X          Y   (1 + a − bj − cj )kj (bj+1 )k1 +···+kj (cj+1)k1 +···+kj
+                       ×                                                                                    . (3.4)
+                          k ,k ,...,k ≥0 j=1
+                                               k j ! (1 + a − bj ) k 1 +···+k j
+                                                                                (1 + a − c j ) k 1 +···+k j
+                             1   2   s
+
+
+  (ii) Let s ≥ 1 be an integer, and let a, c0 , b1 , . . . , bs , c1 , . . . , cs be complex numbers such
+that none of 1 + a − bj , 1 + a − cj , j = 0, 1, . . . , s, is a non-positive integer. Furthermore,
+we assume that                                                            !
+                                                        X s
+                        Re 2s(a + 1) − 2c0 − 2               (bj + cj ) > 0,                         (3.5)
+                                                                  j=1
+
+                                                        s−1
+                                                                                      !
+                                                        X
+                      Re (1 + a − bs − cs ) +                 Aj (1 + a − bj − cj )       >0                (3.6)
+                                                        j=r
+                                                                     Ps−1
+for all r = 2, 3, . . . , s (in the case that r = s, the empty sum j=r       has to be interpreted as
+0), and
+                                                     s−1
+                                                                              !
+                                                     X
+                  Re (1 + a − c0 − b1 − c1 ) +           Aj (1 + a − bj − cj ) > 0,             (3.7)
+                                                            j=2
+
+for all possible choices of Aj = 1 or 2, for j = 2, 3, . . . , s − 1. Then
+
+                                   a, a2 + 1, c0 , b1 , c1 , . . . , bs , cs
+                                                                                            
+  2s+3 F2s+2   a                                                                          ;1
+               2
+                 , 1 + a − c0 , 1 + a − b1 , 1 + a − b1 , . . . , 1 + a − bs , 1 + a − cs
+         Γ(1 + a − bs ) Γ(1 + a − cs )        X               (b1 )k1 (c1 )k1
+      =
+         Γ(1 + a) Γ(1 + a − bs − cs ) k ,k ,...,k ≥0 k1 ! (1 + a − c0 )k1
+                                                1   2   s
+                                             s
+                                             Y (1 + a − bj−1 − cj−1 )kj (bj )k1 +···+kj (cj )k1 +···+kj
+                                         ·                                                                . (3.8)
+                                                k ! (1 + a − bj−1 )k1 +···+kj (1 + a − cj−1 )k1 +···+kj
+                                             j=2 j
+
+    Our proof of this proposition is based on three lemmas, which we state and prove first.
+Lemma 1. Let α and β, i = 1, 2, . . . , m, be complex numbers such that β is not a non-
+positive integer. Then for any non-negative integer k we have
+                                     Γ(α + k)
+                                              ≤ D1 · (k + 1)Re(α−β) ,
+                                     Γ(β + k)
+where D1 is a constant which does not depend on k.
+                                                                                                           7
+
+Proof. By Stirling’s formula, we have
+                                        Γ(α + k)
+                                                 ∼ (k + 1)α−β
+                                        Γ(β + k)
+as k → ∞. Hence, the claim follows immediately.                                                           
+Lemma 2. Let A and B be real numbers such that A + B + 1 < 0, and let C be a non-
+negative integer. Then, for any non-negative integer h, we have
+  X∞
+      (k + 1)A (h + k + 1)B (log(h + k + 2))C ≤ D2 (h + 1)max{B,A+B+1} (log(h + 2))C+1 ,
+   k=0
+
+where D2 is a constant independent of h.
+Proof. We split the summation range into the ranges R0 = {0, 1, . . . , 2⌈log2 (h+1)⌉+1 − h − 1}
+and
+Rs = {2s − h, 2s − h + 1, . . . , 2s+1 − h − 1},          s = ⌈log2 (h + 1)⌉ + 1, ⌈log2 (h + 1)⌉ + 2, . . . ,
+where ⌈x⌉ denotes the least integer ≥ x. Since, depending on whether A and B are positive
+or not, for k ∈ Rs , s > 0, we have
+                                                       
+                                                       
+                                                        2(s+1)(A+B)     if A, B ≥ 0,
+                                                           (s−1)A+(s+1)B
+                                                       
+                                                   C   2               if A < 0, B ≥ 0,
+(k + 1)A (h + k + 1)B (log(h + k + 2))C ≤ log 2s+2 ·       (s+1)A+sB
+                                                       
+                                                        2               if A ≥ 0, B < 0,
+                                                       
+                                                        (s−1)A+sB
+                                                         2               if A, B < 0,
+which implies that
+                (k + 1)A (h + k + 1)B (log(h + k + 2))C ≤ D3 · (s + 2)C · 2s(A+B) ,
+with a constant D3 which is independent of h. Thus, for the sum over the range {k ≥
+2⌈log2 (h+1)⌉+1 − h} we have
+           ∞
+           X
+                       (k + 1)A (h + k + 1)B (log(h + k + 2))C
+    k=2⌈log2 (h+1)⌉+1 −h
+                                         ∞
+                                         X             X
+                                =                           (k + 1)A (h + k + 1)B (log(h + k + 2))C
+                                    s=⌈log2 (h+1)⌉+1 k∈Rs
+                                         ∞
+                                         X
+                                ≤                      D3 · 2s · (s + 1)C+1 · 2s(A+B)
+                                    s=⌈log2 (h+1)⌉+1
+
+                                                                         (C + 1)!
+                                ≤ D3 · 2(⌈log2 (h+1)⌉+1)(A+B+1)
+                                                                    (1 − 2A+B+1 )C+2
+                                ≤ D4 · (h + 1)A+B+1 ,
+for a constant D4 independent of h.
+8
+
+  Now we consider the remaining range, R0 = {0, 1, . . . , 2⌈log2 (h+1)⌉+1 − h − 1}. For any
+k ∈ R0 we have k ≤ 3h + 3, and therefore
+                                                           (
+                                     C               C       (h + 1)B       if B ≤ 0,
+        (h + k + 1)B (log(h + k + 2)) ≤ (log(4h + 5)) ·                 B
+                                                             (4h + 4)       if B > 0.
+
+In particular, there is a constant D5 independent of k such that
+
+                    (h + k + 1)B (log(h + k + 2))C ≤ D5 (log(h + 2))C (h + 1)B
+
+for all k ∈ R0 . Using this fact, we are able to conclude that
+    X                                                                                     X
+           (k + 1)A (h + k + 1)B (log(h + k + 2))C ≤ D5 · (log(h + 2))C (h + 1)B                 (k + 1)A .
+    k∈R0                                                                                  k∈R0
+
+                                                                                                       −1
+Now, if A < −1, then k∈R0 (k + 1)A < ζ(−A). If A = −1, then
+                                P                                                     P
+                                                                                      k∈R0 (k + 1)            <
+log(4h + 4). Finally, if A > −1, then
+                                    Z 4h+4
+                     X
+                                 A                  1
+                          (k + 1) <        xA dx =     (4h + 4)A+1 .
+                     k∈R              0            A+1
+                            0
+
+
+In all cases, we obtain that
+    X
+           (k + 1)A (h + k + 1)B (log(h + k + 2))C < D6 (log(h + 2))C+1 (h + 1)max{B,A+B+1} ,
+    k∈R0
+
+where D6 is a constant independent of h.
+  To conclude the proof of the lemma, the two estimates for the two ranges are combined,
+and the claimed result follows.                                                       
+
+   In the statement of the next lemma, we use the following notation: given two sets S and
+T , we write S + T for the sum-set {x + y : x ∈ S and y ∈ T }.
+
+Lemma 3. Let Ej and Fj be real numbers and let Zj denote the set {Fj , Ej + Fj + 1},
+j = 1, 2, . . . , s. If
+
+                          Er + Fr + 1 + max(Zr+1 + Zr+2 + · · · + Zs ) < 0                             (3.9)
+
+for r = 1, 2, . . . , s, then the multiple series
+                                X        s
+                                         Y
+                                                 (kj + 1)Ej (k1 + · · · + kj + 1)Fj                   (3.10)
+                             k1 ,...,ks ≥0 j=1
+
+converges.
+                                                                                                                    9
+
+Proof. By applying Lemma 2 iteratively, we have
+     X        s
+              Y
+                (kj + 1)Ej (k1 + · · · + kj + 1)Fj
+  k1 ,...,ks ≥0 j=1
+                                           s−1
+                                                                                       !
+                             X             Y
+              ≤ D7                               (kj + 1)Ej (k1 + · · · + kj + 1)Fj
+                        k1 ,...,ks−1 ≥0    j=1
+
+                                          · (k1 + · · · + ks−1 + 1)max(Zs ) log(k1 + · · · + ks−1 + 2)
+                                            s−2
+                                                                                   !
+                             X              Y
+              ≤ D8                              (kj + 1)Ej (k1 + · · · + kj + 1)Fj
+                        k1 ,...,ks−2 ≥0    j=1
+
+                                          · (k1 + · · · + ks−2 + 1)max(Zs−1 +Zs ) (log(k1 + · · · + ks−2 + 2))2 ,
+and, after the t-th iteration, 1 ≤ t ≤ s − 1,
+    X        s
+             Y
+                     (kj + 1)Ej (k1 + · · · + kj + 1)Fj
+ k1 ,...,ks ≥0 j=1
+                                          s−t
+                                                                                      !
+                             X            Y
+              ≤ D9                              (kj + 1)Ej (k1 + · · · + kj + 1)Fj
+                        k1 ,...,ks−t ≥0   j=1
+
+                                    · (k1 + · · · + ks−t + 1)max(Zs−t+1 +···+Zs ) (log(k1 + · · · + ks−t + 2))t .
+To justify these steps, we have to verify that the condition A + B + 1 < 0 in Lemma 2 is
+satisfied in each iteration. However, this is exactly the condition (3.9) with r replaced by
+s − t.
+  Thus, for t = s − 1 we arrive at the estimate
+            X          s
+                       Y
+                         (kj + 1)Ej (k1 + · · · + kj + 1)Fj
+         k1 ,...,ks ≥0 j=1
+                                                         X
+                                            ≤ D10            (k1 + 1)E1 +F1 +max(Z2 +···+Zs ) (log(k1 + 2))s−1 .
+                                                         k1 ≥0
+
+Since the sum over k1 at the right-hand side converges because of (3.9) with r = 1, the
+claim follows.                                                                       
+Remark. A careful check of our arguments reveals that, in fact, the conditions in Lemma 3
+are optimal, meaning that they describe exactly the domain of convergence of the multiple
+sum (3.10). This can be seen by verifying that, if condition (3.9) is violated for a particular
+r, then the subsum
+                          X Y    s
+                                   (kj + 1)Ej (k1 + · · · + kj + 1)Fj
+                                     kr ,...,ks ≥0 j=1
+10
+
+of (3.10) does not converge. Thus, this lemma generalizes Proposition 1 in [21]. It does
+at the same time correct that proposition, and it answers the question raised after the
+(incomplete) proof of the proposition. The question, which is asked there, is to determine
+the domain of absolute convergence of the multizeta function
+                                                       X             1
+                       ζ(sd , sd−1 , . . . , s1 ) =             s1 s2        sd .    (3.11)
+                                                    0<n <···<n
+                                                               n1 n2  · · · nd
+                                                         1        d
+
+Proposition 1 in [21] states that, for all d-tuples (s1 , s2 , . . . , sd ) with Re(sd ) > 1 and
+Pd
+   i=1 Re(si ) > d, the series ζ(sd , sd−1 , . . . , s1 ) converges absolutely. (As the case d = 3,
+s1 = 3, s2 = −1, s3 = 2 shows, these conditions are not sufficient.)
+   Applying Lemma 3 to
+                                                              d
+                  X            1                 X            Y                1
+                          s1 s2        sd =
+              0<n ≤···≤n
+                         n1 n2  · · · nd                      j=1
+                                                                  (k1 + k2 + · · · + kj + 1)sj
+                  1     d                     k1 ,...,kd ≥0
+
+(that is, one chooses s = d, Ei = 0 and Fi = − Re(si ), i = 1, 2, . . . , d, there), it is seen
+that the domain of absolute convergence of this latter multisum is the set of all d-tuples
+(s1 , s2 , . . . , sd ) such that
+                            d
+                            X
+                                  Re(si ) > d − r + 1,            i = 1, 2, . . . , d.           (3.12)
+                            i=r
+Moreover, it is not difficult to see that, for the domain of absolute convergence, it does not
+matter whether we sum the summand on the right-hand side of (3.11) over 0 < n1 < · · · <
+nd or over 0 < n1 ≤ · · · ≤ nd . Therefore, the domain described by the inequalities (3.12)
+is at the same time the domain of absolute convergence of ζ(sd , sd−1 , . . . , s1 ). That is, one
+has to add the conditions (3.12) for i = 2, . . . , d − 1 to Zhao’s two conditions to obtain a
+complete description of the domain of absolute convergence. As a matter of fact, all the
+arguments given in the proof of Proposition 1 in [21] are correct. However, it is only the
+case d = 2 which is carried out in detail (in which case there are no missing conditions),
+and therefore the additional d − 2 conditions are overlooked.
+Proof of Proposition 1. (i) We consider first the left-hand side of Andrews’ identity (3.1).
+We write the hypergeometric series as a sum over k. Let Sk denote the k-th summand.
+Since for N ≥ k > |a| we have
+                (−N)k               (N − k + 1) · · · (N − 1)N
+                          ≤                                                ≤ 1,
+             (1 + a + N)k   (N + 1 − |a|)(N + 2 − |a|) · · · (N + k − |a|)
+and since for k > N we have (−N)k = 0, the modulus of (−N)k /(1 + a + N)k is bounded
+above by a constant for all k = 0, 1, . . . . Hence, using Lemma 1, we obtain that
+                                       |Sk | ≤ D11 · (k + 1)−E−1,
+where D11 is some constant independent of k, and where E is theP left-hand side of (3.2).
+Since, by (3.2), we have E > 0, the absolutely convergent series ∞ k=0 D11 · (k + 1)
+                                                                                     −E−1
+
+dominates the hypergeometric series on the left-hand side of (3.1) term-wise. Thus, by
+                                                                                                       11
+
+Lebesgue’s dominated convergence theorem, we may perform its limit as N → ∞ term-
+wise. This term-wise limit is exactly the left-hand side of (3.4).
+  Now we consider the right-hand side of (3.1). We need to temporarily assume that
+                                          Re(a − bs+1 − cs+1 ) > 0.                                (3.13)
+(This is slightly stronger than (3.3) with r = s + 1.) Writing A for a − bs+1 − cs+1 , for any
+non-negative integer K ≤ N we have
+         (−N)K                        N(N − 1) · · · (N − K + 1)
+                        ≤                                                      ≤ 1,
+ (bs+1 + cs+1 − a − N)K   (N + Re(A))(N + Re(A) − 1) · · · (N + Re(A) − K + 1)
+and since for K > N we have (−N)K = 0, the modulus of (−N)K /(bs+1 + cs+1 − a − N)K
+is bounded above by a constant for all K = 0, 1, . . . . Thus, again using Lemma 1, the
+modulus of the summand indexed by k1 , k2, . . . , ks on the right-hand side of (3.1) is bounded
+above by
+               s
+               Y
+         D12         (kj + 1)Re(a−bj −cj ) (k1 + · · · + kj + 1)Re(bj +cj +bj+1 +cj+1 −2(a+1)) ,   (3.14)
+               j=1
+
+for some constant D12 independent of the summation indices. Now we apply Lemma 3 with
+Ej = Re(a−bj −cj ) and Fj = Re(bj +cj +bj+1 +cj+1 −2(a+1)). This is indeed justified since,
+for this choice of parameters, the set of conditions (3.9) is exactly the set (3.3). Hence,
+the sum of the expression (3.14) over all k1 , . . . , ks ≥ 0 converges. Another application of
+Lebesgue’s dominated convergence theorem then implies that we may perform the limit of
+the multiple sum on the right-hand side of (3.1) as N → ∞ term-wise. Together with the
+fact that
+                (1 + a)N (1 + a − bs+1 − cs+1 )N        Γ(1 + a − bs+1 ) Γ(1 + a − cs+1 )
+           lim                                      =                                     ,
+         N →+∞ (1 + a − bs+1 )N (1 + a − cs+1 )N        Γ(1 + a) Γ(1 + a − bs+1 − cs+1 )
+this establishes the identity (3.4), provided (3.13) holds in addition to the conditions of
+the statement of the proposition.
+  We can finally get rid of the restriction (3.13) by analytic continuation. Indeed, by using
+arguments very similar to those above, one can show that both sides of (3.4) are analytic
+in the parameters a, b1 , . . . , bs+1 , c1 , . . . , cs+1 as long as (3.2) and (3.3) are satisfied. In
+particular, in variation of Lemma 1, one would use the fact that, for fixed complex numbers
+α and β, there are constants D13 and D14 such that
+                                              Γ(x + k) ψ(x + k)
+  D13 · (k + 1)Re(α−β) log(k + 2) ≤                             ≤ D14 · (k + 1)Re(α−β) log(k + 2)
+                                                  Γ(β + k)
+for all non-negative integers k and all complex numbers x in a sufficiently small neigh-
+bourhood of α, say for |x − α| < 1. Here, ψ(x) denotes the logarithmic derivative of
+Γ(x).
+   (ii) In (3.4), we first shift the parameters to bj → bj−1 and cj → cj−1 , and then we let
+b0 → +∞. The same kind of argument as above then yields (3.8).                            
+12
+
+                    4. Multisum expansions of the Vasilyev-type integral Jm
+   The link between Andrews’ identity and the Vasilyev-type integrals Jm becomes apparent
+in the next proposition.
+Proposition 2. Let z, a0 , a1 , . . . , am , and b1 , . . . , bm be complex numbers such that |z| < 1,
+Re(a0 ) > 0, Re(bi ) > Re(ai ) > 0 for all i = 1, 2, . . . , m.
+  (i) If m = 2s ≥ 2 is even, then
+                                     Y2s
+              a0 , a1 , . . . , am         Γ(aj ) Γ(bj − aj )
+     Jm                            ;z =
+                b1 , . . . , bm                  Γ(bj )
+                                                  j=1
+                                                    s
+                    X                              Y  (b2s−2j+2 − a2s−2j+2 )kj (a2s−2j+1 )k1 +···+kj (a2s−2j )k1 +···+kj
+          ×                        z k1 +···+ks                                                                                  .
+               k1 ,k2 ,...,ks ≥0                  j=1
+                                                                k j !          (b2s−2j+1 ) k 1 +···+k j
+                                                                                                        (b2s−2j+2 ) k 1 +···+k j
+
+                                                                                                                                    (4.1)
+This identity holds also for z = 1 provided Re(b1 − a1 ) ≥ Re(a0 ), and provided (3.9) holds
+with Ej = Re(b2s−2j+2 − a2s−2j+2 − 1) and Fj = Re(a2s−2j + a2s−2j+1 − b2s−2j+1 − b2s−2j+2 ),
+j = 1, 2, . . . , s.
+  (ii) If m = 2s + 1 ≥ 3 is odd, then
+                                     2s+1
+                                        Y Γ(aj ) Γ(bj − aj )
+              a0 , a1 , . . . , am                                               X                            (a2s+1 )k1 (a2s )k1
+     Jm                            ;z =                      ·                                 z k1 +···+ks
+                b1 , . . . , bm                 Γ(bj )                                                           k1 ! (b2s+1 )k1
+                                                  j=1                        k1 ,...,ks+1 ≥0
+                            s+1
+                            Y   (b2s−2j+4 − a2s−2j+4 )kj (a2s−2j+3 )k1 +···+kj (a2s−2j+2 )k1 +···+kj
+                        ×                                                                                  .
+                            j=2
+                                          k j !          (b2s−2j+3 ) k 1 +···+k j
+                                                                                  (b2s−2j+4 ) k 1 +···+k j
+
+
+                                                                                                                                    (4.2)
+This identity holds also for z = 1 provided Re(b1 − a1 ) ≥ Re(a0 ), and provided (3.9) holds
+with E1 = Re(a2s+1 − 1), F1 = Re(a2s − b2s+1 ), Ej = Re(b2s−2j+4 − a2s−2j+4 − 1), and
+Fj = Re(a2s−2j+2 + a2s−2j+3 − b2s−2j+3 − b2s−2j+4 ), j = 2, 3, . . . , s + 1.
+Proof. For m ≥ 2, we denote by Qm (x1 , . . . , xm ; z) the nested expression in the denominator
+of the integrand in (2.1), that is
+                              Qm (x1 , . . . , xm ; z) = 1 − (1 − (· · · (1 − xm )xm−1 ) · · · )x1 z.
+                                                                                        
+                                                                                   a0
+     (i) We prove the claim by induction on m. For m = 0, the (empty) integral J0     ;z
+can be consistently interpreted as 1. In order to do the induction step, we fix m = 2s ≥ 2
+and z such that |z| < 1. Then, trivially,
+     Q2s (x1 , . . . , x2s ; z) = Q2s−2 (x1 , . . . , x2s−2 ; z) − zx1 · · · x2s−1 (1 − x2s )
+                                                                                                                    
+                                                                                       zx1 · · · x2s−1 (1 − x2s )
+                                             = Q2s−2 (x1 , . . . , x2s−2 ; z) 1 −                                      ,
+                                                                                      Q2s−2 (x1 , . . . , x2s−2 ; z)
+                                                                                                                      13
+
+where for s = 1 the term Q0 (−; z) has to be interpreted as 1. Since for xj ∈ [0, 1], we have
+                                        zx1 · · · x2s−1 (1 − x2s )
+                                                                       ≤ |z| < 1,
+                                        Q2s−2 (x1 , . . . , x2s−2 ; z)
+we may apply the binomial theorem to obtain
+                                   −a0 X ∞                                                         k1
+      zx1 · · · x2s−1 (1 − x2s )                 k1   Γ(a0 + k1 )      x1 · · · x2s−1 (1 − x2s )
+  1−                                    =      z                                                          .
+     Q2s−2 (x1 , . . . , x2s−2 ; z)       k =0
+                                                    Γ(a0 )Γ(k1 + 1)   Q2s−2 (x1 , . . . , x2s−2 ; z)
+                                                   1
+
+
+Hence
+                               Z            ∞
+      a0 , a1 , . . . , a2s                  X             Γ(a0 + k1 )      a2s−1 +k1 −1
+ J2s                        ;z =                   z k1                  x2s−1            (1 − x2s−1 )b2s−1 −a2s−1 −1
+        b1 , . . . , b2s             [0,1]2s k =0       Γ(a0 )Γ(k1 + 1)
+                                              1
+                                                                Q2s−2 aj +k1 −1
+                              a2s −1            b2s −a2s +k1 −1   j=1 xj            (1 − xj )bj −aj −1
+                          · x2s (1 − x2s )                                                             dx1 · · · dx2s .
+                                                                 Q2s−2 (x1 , . . . , x2s−2 ; z)k1 +a0
+The conditions on the parameters ensure that the integral
+              ∞
+                            Γ(a0 + k1 )
+   Z
+                                                +k −1
+              X                           a
+                   z k1                  x 2s−1 1 (1 − x2s−1 )b2s−1 −a2s−1 −1
+    [0,1]2s k =0          Γ(a0 )Γ(k1 + 1) 2s−1
+              1
+                                                            Q2s−2 aj +k1 −1
+                              a2s −1        b2s −a2s +k1 −1   j=1 xj            (1 − xj )bj −aj −1
+                           · x2s (1 − x2s )                                                        dx1 · · · dx2s
+                                                             Q2s−2 (x1 , . . . , x2s−2 ; z)a0 +k1
+is convergent. Thus, we can exchange the integral and the summation, and, using the beta
+integral evaluation and some straightforward simplifications, we obtain
+                                 
+         a0 , a1 , . . . , a2s          Γ(a2s ) Γ(a2s−1 ) Γ(b2s − a2s ) Γ(b2s−1 − a2s−1 )
+   J2s                         ;z =
+           b1 , . . . , b2s                              Γ(b2s ) Γ(b2s−1 )
+          ∞                                                                                                 
+                  k1 (b2s − a2s )k1 (a2s−1 )k1 (a0 )k1             a0 + k1 , a1 + k1 , . . . , a2s−2 + k1
+         X
+       ·       z                                          J2s−2                                           ; z . (4.3)
+                             k1 ! (b2s )k1 (b2s−1 )k1                  b1 + k1 , . . . , b2s−2 + k1
+         k =0
+          1
+
+
+If we substitute the induction hypothesis for J2s−2 , we arrive exactly at (4.1).
+   We now perform the limit z → 1: since the conditions on the parameters guarantee that
+the integral J2s is absolutely convergent for z = 1, dominated convergence implies that one
+can interchange limit and integral. Similarly, if we put z = 1 in the above multiple sum,
+then the conditions on the parameters allow us to apply Lemmas 1 and 3 and to conclude
+that it converges absolutely. Thus, again, dominated convergence implies that we may
+interchange limit and summation. As a result, Case (i) of Proposition 2 is now completely
+proved.
+  (ii) We do not provide all the details for the case where m is odd, m = 2s + 1 ≥ 3, since
+this case can be treated in a rather similar manner as the case where m is even. A main
+14
+
+difference, however, is that, to get started, we use the alternative identity
+                                                                                                     
+                                                                             zx1 · · · x2s+1
+           Q2s+1 (x1 , . . . , x2s+1 ; z) = Q2s (x1 , . . . , x2s ; z) 1 −                              ,
+                                                                           Q2s (x1 , . . . , x2s ; z)
+which implies the expansion
+                                  
+        a0 , a1 , . . . , a2s+1
+ J2s+1                          ;z
+          b1 , . . . , b2s+1
+                                     ∞                                                          
+       Γ(a2s+1 ) Γ(b2s+1 − a2s+1 ) X k (a0 )k (a2s+1 )k       a0 + k, a1 + k, . . . , a2s + k
+     =                            ·     z               J2s                                   ;z .
+                Γ(b2s+1 )                 k! (b2s+1 )k            b1 + k, . . . , b2s + k
+                                    k=0
+                                                                                                (4.4)
+At this point, we substitute the multiple series (4.1) for J2s , and after some simple manip-
+ulations we arrive at (4.2).                                                               
+Remark. Both of the recursive formulas (4.3) and (4.4) appear already earlier in the article
+[22] of Zlobin which we mentioned in the Introduction. He used them to express the
+integrals Jm in terms of another family of integrals, like those considered by Sorokin in [15,
+16].
+
+                                        5. Proof of Theorem 1
+   We are now in the position to prove Zudilin’s theorem, by putting together the identities
+in Proposition 2 and 1. Because of the use of Proposition 2 when z = 1, we shall need to
+temporarily impose stronger conditions on the parameters than required by the assertion
+of the theorem. We shall do this without mention. One gets rid of these restrictions at the
+end by analytic continuation.
+   Let first m be even, m = 2s. We apply Proposition 2, Eq. (4.1), with aj−1 = hj ,
+j = 1, 2, . . . , 2s + 1, bj = 1 + h0 − hj+2 , j = 1, 2, . . . , 2s. Thus, using (4.1), we express the
+integral on the left-hand side of (2.3) in terms of a multiple sum. If we subsequently apply
+the identity (3.4) with bj = h2s−2j+4 , cj = h2s−2j+3 for j = 1, 2, . . . , s + 1, to the multiple
+sum, then we arrive at the very-well-poised hypergeometric series on the right-hand side
+of (2.3).
+   Similarly, if m is odd, m = 2s+1, then we apply Proposition 2, Eq. (4.2), with aj−1 = hj ,
+j = 1, 2, . . . , 2s + 2, bj = 1 + h0 − hj+2 , j = 1, 2, . . . , 2s + 1. Thus, using (4.2), we express
+the integral on the left-hand side of (2.3) in terms of a multiple sum. If we subsequently
+apply the identity (3.8) with s replaced by s + 1, bj = h2s−2j+4 , j = 1, 2, . . . , s + 1,
+cj = h2s−2j+3 for j = 0, 1, . . . , s + 1, to the multiple sum, then we arrive at the very-well-
+poised hypergeometric series on the right-hand side of (2.3).
+
+                                            Acknowledgement
+   We thank Wadim Zudilin for an attentive reading of an earlier version of the paper, and,
+in particular, for several useful suggestions for improvement of the exposition.
+                                                                                                               15
+
+                                              Bibliography
+[1] G. E. Andrews, Problems and prospects for basic hypergeometric functions, Theory and application of
+    special functions, R. A. Askey, ed., Math. Res. Center, Univ. Wisconsin, Publ. No. 35, Academic Press,
+    New York, pp. 191–224, 1975.
+[2] G. E. Andrews, R. A. Askey et R. Roy, Special Functions, The Encyclopedia of Mathematics and Its
+    Applications, vol. 71, (G.-C. Rota, ed.), Cambridge University Press, Cambridge (1999).
+[3] R. Apéry, Irrationalité de ζ(2) et ζ(3), Astérisque 61 (1979), 11–13.
+[4] W. N. Bailey, Generalized hypergeometric series, Cambridge University Press, Cambridge, 1935.
+[5] K. Ball et T. Rivoal, Irrationalité d’une infinité de valeurs de la fonction zêta aux entiers impairs,
+    Invent. Math. 146.1 (2001), 193–207.
+[6] F. Beukers, A note on the irrationality of ζ(2) and ζ(3), Bull. London Math. Soc. 11 (1979), 268–272.
+[7] S. Fischler, Formes linéaires en polyzêtas et intégrales multiples, C. R. Acad. Sci. Paris, Série. I Math.
+    335 (2002), 1–4.
+[8] G. Gasper et M. Rahman, Basic hypergeometric series, Encyclopedia of Mathematics And Its Appli-
+    cations 35, Cambridge University Press, Cambridge, 1990.
+[9] T. Koornwinder, Problem in the Open Problem Session during the Workshop on “Special Functions,
+    q-Series, and Related Topics,” Toronto, Canada, June 12–23, 1995.
+[10] C. Krattenthaler and T. Rivoal, Hypergéométrie et fonction zêta de Riemann, preprint (2003), sub-
+    mitted for publication. http://arXiv.org/abs/math.NT/0311114.
+[11] M. Petkovšek, H. Wilf et D. Zeilberger, A=B, A. K. Peters, Wellesley, 1996.
+[12] T. Rivoal, La fonction zêta de Riemann prend une infinité de valeurs irrationnelles
+    aux entiers impairs, C. R. Acad. Sci. Paris, Série I Math. 331.4 (2000), 267–270.
+    http://arXiv.org/abs/math.NT/0008051.
+[13] M. Schlosser, Abel-Rothe type generalizations of Jacobi’s triple product identity, in: “Theory and
+    Applications of Special Functions. A Volume Dedicated to Mizan Rahman,” M. E. H. Ismail and
+    E. Koelink, eds., Developments in Math., Kluwer Academic Publishers, Dordrecht, to appear.
+[14] L. J. Slater, Generalized hypergeometric functions, Cambridge University Press, Cambridge, 1966.
+[15] V. N. Sorokin, A transcendence measure for π 2 , Mat. Sbornik 187.12 (1996), 1819–1852.
+[16] V. N. Sorokin, Apéry’s theorem, Vestnik Moskov. Univ. Ser. I Mat. Mekh. no. 3 (1998), 48–52; English
+    translation in Moscow Univ. Math. Bull. no. 3 (1998), 48–52.
+[17] O. N. Vasilenko, Certain formulae for values of the Riemann zeta function at integral points, Number
+    theory and its applications, Proceedings of the science-theoretical conference (Tashkent, 1990), p. 27
+    (in russian).
+[18] D. V. Vasilyev, Some formulas for the Riemann zeta function at integer points, Vestnik Moskov. Univ.
+    Ser I Mat. Mekh. 51.1 (1996), pp. 81–84; English translation in Moscow Univ. Math. Bull. 51.1 (1996),
+    pp. 41–43.
+[19] D. V. Vasilyev, On small linear forms for the values of the Riemann zeta-function at odd points,
+    prépublication no.1 (558), Nat. Acad. Sci. Belarus, Institute Math., Minsk (2001).
+[20] D. Zeilberger, Identities in search of identity, Theoret. Comput. Sci. 117 (1993), 23–38.
+[21] J. Zhao, Analytic continuation of multiple zeta functions, Proc. Amer. Math. Soc. 128 (2000), 1275–
+    1283.
+[22] S. Zlobin, Integrals presented as linear forms in generalized polylogarithms, Mat. Zametki 71.5 (2002),
+    782–787.
+[23] W. Zudilin, Well-poised hypergeometric service for diophantine problems of zeta values, Actes des
+    12èmes rencontres arithmétiques de Caen (juin 2001), to appear in J. Théor. Nombres Bordeaux; see
+    also: Multiple integral-representations of very-well-poised hypergeometric series, e-print available at
+    http://arXiv.org/abs/math.NT/0206177.
+16
+
+  Institut Girard Desargues, Université Claude Bernard Lyon-I, 21, avenue Claude Ber-
+nard, F-69622 Villeurbanne Cedex, France
+  E-mail address: kratt@igd.univ-lyon1.fr
+
+  Laboratoire de Mathématiques Nicolas Oresme, CNRS UMR 6139, Université de Caen,
+BP 5186, 14032 Caen cedex, France
+  E-mail address: rivoal@math.unicaen.fr
+

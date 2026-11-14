@@ -7,12 +7,18 @@ plus one well-chosen extension and a combinatorial proof for prime-power
 Fuss–Catalan numbers. The goal is an understandable chain of reasons, with
 precise boundaries on generalization.
 
-Allocate **32 focused hours to #131 and 8 to #137**. These are suggested project
-effort blocks, not a prediction about autonomous runtime. Team members can work
-in parallel, but should preserve the approximate 80/20 split. The exact
-[#131 statement](sources/problem131-official.md) asks for recurrence motivation;
-the [#137 statement](sources/problem137-official.md) asks for combinatorial
-exactness of the valuation, beyond divisibility.
+**Updated scope:** the user has stopped further #137/Fuss–Catalan work.
+Use the remaining project effort on #131 and one higher-zeta extension; the
+completed #137 results below are retained as optional background. The exact
+[#131 statement](sources/problem131-official.md) asks for recurrence motivation.
+Only one research agent is currently assigned to higher odd values.
+
+A new [reviewed kernel-energy proof](problem131/short-kernel-energy-zeta3-proof.md)
+is now the most direct route from Zudilin's rational square to an elementary
+positive estimate: a logarithmic kernel equation, polynomial division, and
+one integration by parts replace the explicit measure construction. Its
+[bridge supplement](problem131/log-kernel-legendre-resolvent-bridge.md) explains
+how the measure and Beukers integral fit the same calculation.
 
 ## The main proof story
 
@@ -22,17 +28,22 @@ AM–GM and an elementary lcm bound. It gives a complete proof without using the
 recurrence, so the team can first see exactly what must be achieved. Then use
 the recurrence narrative below to address the official motivation question.
 
-**Optional replacement for the integral supplement:** if the team knows basic
-complex integration, use the
+**Optional replacement for the integral supplement:** use the fully real
 [reviewed resolvent–Legendre proof](problem131/resolvent-legendre-pade-proof.md).
-One short residue calculation gives a positive measure whose resolvent is a
-zeta tail. An exact Hilbert Gram isometry transports Legendre polynomials to
+A finite Chebyshev-product calculation gives a positive measure whose resolvent
+is a zeta tail. An exact Hilbert Gram isometry transports Legendre polynomials to
 the required orthogonal family; evaluation on a negative half-square gives
 Apéry's integer binomial sum. Its design section explains each choice, and
 direct arithmetic and Delannoy growth complete the proof. This reconstructs
 Prévost's classical Wilson–Padé argument, rather than claiming a new
 underlying proof. Keep the mixed-telescope recurrence derivation in the main
 project whichever positivity route is selected.
+
+For this route's motivation, start with
+[Designing the Apéry measure](problem131/designing-the-apery-measure.md).
+It derives the quadratic grid and critical quarter, then follows the same
+family to the reviewed Catalan–beta proof for log 2. That short extension can
+replace either package below; it also supplies a concrete bridge to #137.
 
 Use the [Apéry discovery guide](problem131/discovery-guide.md) as the spine.
 Return to [Zudilin's seven lemmas](problem131/zudilin-explained.md) when checking

@@ -6,6 +6,15 @@ in this session are not claims of historical novelty.
 
 ## Three reading routes
 
+**New reviewed simplification:** the [logarithmic-kernel energy proof](problem131/short-kernel-energy-zeta3-proof.md)
+now gives a complete elementary proof using rational partial fractions, one
+kernel differential equation, polynomial division, and integration by parts.
+It proves positivity and the needed smallness directly. The [full bridge](problem131/log-kernel-legendre-resolvent-bridge.md)
+then identifies the same form with the Legendre–Padé resolvent and Beukers
+integral; its Hilbert identity no longer needs Bernoulli moments. Both passed
+[an independent audit](problem131/kernel-energy-independent-review.md).
+
+
 **Shortest complete proof, then recurrence motivation.** Start with the
 [short elementary hybrid proof](problem131/short-elementary-hybrid-proof.md).
 Rational poles supply the denominators; two integrations by parts supply a
@@ -24,8 +33,15 @@ integer coefficients to the reciprocal-power Beukers integral; one AM–GM
 minimum explains their reciprocal scales. The resistor chain gives a further
 exact interpretation of the error. For the original paper's sequence of steps, use
 [Zudilin explained](problem131/zudilin-explained.md). The
-[40-hour research map](RESEARCH_MAP.md) selects a manageable 80/20 project
-and offers a choice of one extension.
+[40-hour research map](RESEARCH_MAP.md) selects a manageable project
+and offers a choice of one extension. Further #137 work is stopped by the latest user instruction; its completed notes remain available.
+
+For one compact account of the strongest design connections, read
+[Designing the Apéry measure](problem131/designing-the-apery-measure.md):
+Hilbert symmetry forces the quadratic grid, a sharp Hardy inequality selects
+the half-shift, and Legendre transport gives the Apéry sum. Catalan beta
+integrals explain the logarithmic endpoint's single lcm; the higher-zeta
+kernel obstruction identifies what must change and what arithmetic is missing.
 
 The fully real
 [positive resolvent–Legendre proof](problem131/resolvent-legendre-pade-proof.md)
@@ -163,9 +179,7 @@ solved moment system. The new
 [balanced hyperbolic normality proof](problem131/hyperbolic-balanced-normality.md)
 has now passed its [full independent audit](problem131/hyperbolic-balanced-normality-independent-review.md):
 every rectangular balanced index has a unique monic polynomial with simple
-positive roots. This gives no denominator-growth or error-rate theorem.
-Its Bernoulli construction's factorial constant-term formula remains finite
-evidence, not a theorem.
+positive roots. An [explicit generalized Wilson Rodrigues formula](problem131/balanced-generalized-wilson-rodrigues.md) now proves its factorial constant term and first negative-square evaluation. The [arithmetic theorem](problem131/balanced-rodrigues-integrality.md) proves that a single binomial coefficient clears all monic coefficient denominators. Both passed independent review. These results do not yet control the primitive denominators of the resulting zeta linear forms.
 
 One nearby distinction is already settled: the moving-pole Wilson bounds equal
 the adjacent-Apéry quotients for every index and inherit Apéry's arithmetic.

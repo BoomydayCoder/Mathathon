@@ -1,7 +1,7 @@
 # Catalan numbers clear the logarithmic endpoint with one lcm
 
-**Status: complete elementary arithmetic proof and irrationality assembly;
-independent review requested.** The positive-measure and isometry inputs are
+**Status: complete elementary arithmetic proof and irrationality assembly,
+accepted in [independent review](log2-catalan-independent-review.md).** The positive-measure and isometry inputs are
 the independently reviewed
 [logarithm–zeta deformation](logarithm-zeta3-deformation-independent-review.md).
 The Wilson family and logarithmic irrationality are classical. This is a

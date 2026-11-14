@@ -2,7 +2,8 @@
 
 Status: full proof developed from the root agent's strengthening of the
 audited higher-order positive-kernel construction. Exact rational checks
-are supplied; a further independent review is requested. No historical
+are supplied, and the [independent audit](nested-higher-zeta-radau-independent-review.md)
+has accepted the full proof. No historical
 novelty or irrationality theorem is asserted.
 
 Fix an integer \(m\ge1\), put \(s=2m+1\), and let

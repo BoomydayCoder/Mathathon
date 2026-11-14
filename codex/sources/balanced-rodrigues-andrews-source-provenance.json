@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://arxiv.org/pdf/math/0312148v2",
+    "pdf": "codex/sources/krattenthaler-rivoal-andrews-0312148.pdf",
+    "sha256": "7fa672e854483c796d72359cb71c8582af542e5f776538e9127f0f73b42e395d",
+    "bytes": 225387
+  },
+  {
+    "url": "https://arxiv.org/pdf/math/0311114v4",
+    "pdf": "codex/sources/krattenthaler-rivoal-denominators-0311114.pdf",
+    "sha256": "d6a128281d057dbca9a42a1fbb26d1cbf800ae5a84d77fefbc6d0b847e74d734",
+    "bytes": 578532
+  }
+]
