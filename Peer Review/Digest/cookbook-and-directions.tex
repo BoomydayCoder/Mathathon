@@ -24,10 +24,16 @@
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{definition}
-\newtheorem{problem}{First problem}
-\renewcommand{\theproblem}{D\arabic{problem}}
-\setlength{\parskip}{2pt plus 1pt}
+\newtheorem*{problem}{First problem}
+\setlength{\parskip}{0pt plus 1pt}
 \frenchspacing
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}{-2.2ex plus -.6ex minus -.2ex}{1.1ex plus .2ex}{\normalfont\large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}{-1.6ex plus -.5ex minus -.2ex}{.7ex plus .2ex}{\normalfont\normalsize\bfseries}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}{1.2ex plus .4ex minus .2ex}{-.8em}{\normalfont\normalsize\bfseries}}
+\makeatother
+\AtBeginDocument{\abovedisplayskip=5pt plus 2pt minus 2pt \belowdisplayskip=5pt plus 2pt minus 2pt
+  \abovedisplayshortskip=2pt plus 2pt \belowdisplayshortskip=4pt plus 2pt minus 2pt}
 
 \title{A cookbook of irrationality proofs,\\ and where to push next}
 \author{Mathathon peer-review digest\\
@@ -35,12 +41,12 @@
 \date{14 November 2026}
 
 \begin{document}
-\maketitle
+{\let\newpage\relax\vspace*{-14mm}\maketitle}\vspace{-3mm}
 
 \noindent\textbf{What this document is.}
 Part~I gives one recipe for proving that a number is irrational and runs it, with complete proofs,
 on $\log 2$, $e^r$, $\pi^2$ and $\zeta(2)$; the proofs for $\zeta(3)$ are in the companion digest
-\texttt{zeta3-proofs.pdf} (``the companion''). Part~II records why the obvious extensions to
+\path{zeta3-proofs.pdf} (``the companion''). Part~II records why the obvious extensions to
 $\zeta(5)$, $\zeta(7)$, Catalan's constant and Euler's constant fail, separating what is proved from
 what is only computed. Part~III lists directions to develop, each with a first concrete problem.
 
@@ -57,13 +63,14 @@ we make no claim that any statement is new.
 $H_n^{(s)}=\sum_{m=1}^n m^{-s}$ and $H_n=H_n^{(1)}$.
 $P_n$ is the shifted Legendre polynomial \eqref{eq:legendre}.
 The Ap\'ery numbers are $a_n=\sum_{k}\binom nk^2\binom{n+k}k^2$ $(1,5,73,1445,\dots)$ and $b_n$
-$(0,6,\frac{351}4,\frac{62531}{36},\dots)$, and $F_n=2(a_n\zeta(3)-b_n)$.
-$\lambda=17+12\sqrt2=(1+\sqrt2)^4=33.970563$, so $\lambda^{-1}=17-12\sqrt2=0.0294373$.
-Dictionary: Codex writes $L_n$ for our $P_n$, $A_n,B_n,d_n,I_n$ for our $a_n,b_n,D_n,F_n$, and
+$(0,6,\frac{351}4,\frac{62531}{36},\dots)$, and $I_n=2(a_n\zeta(3)-b_n)$. As in the companion,
+$r_n(t)=\prod_{j=1}^n(t-j)\big/\prod_{j=0}^n(t+j)$, $R_n=r_n^2$, and
+$\Lambda=17+12\sqrt2=(1+\sqrt2)^4=33.970563$, so $\Lambda^{-1}=17-12\sqrt2=0.0294373$.
+Dictionary: Codex writes $L_n$ for our $P_n$, $A_n,B_n,d_n$ for our $a_n,b_n,D_n$, and
 $P_n(z),Q_n(z)$ for the Pad\'e polynomials that we call $U_n(z),V_n(z)$. In Fauzan's preprint $D_m(t)$
 denotes $\prod_{j\le m}(t+j^2)$, which we write $\Pi_m(t)$.
 
-\section*{Part I. The cookbook}
+\section*{\Large Part I. The cookbook}
 \section{The recipe}
 
 An irrationality proof of the kind treated here manufactures a positive integer smaller than $1$.
@@ -85,11 +92,10 @@ that clears denominators, $d_nA_n,d_nB_n\in\Z$. The lemma then asks for three th
 \item[(S) Smallness.] $|\ell_n|\le e^{-(\rho+o(1))n}$.
 \end{description}
 The proof closes when the \emph{balance inequality} $\rho>\delta$ holds. Three remarks guide all that
-follows. First, $A_n$ may be enormous; only $d_n\ell_n$ matters, so a good rational approximation
-$B_n/A_n$ proves nothing by itself. Second, the three obligations are usually visible in three
-different representations of the same $\ell_n$ (a polynomial expansion shows denominators, an
-integral shows the sign, an extremal problem or a recurrence shows the size), and the work is in
-passing between them. Third, the lemma needs only infinitely many $n$: if (N) holds for
+follows. First, only $d_n\ell_n$ matters, so a good rational approximation $B_n/A_n$ proves nothing by
+itself. Second, the three obligations are usually visible in three different representations of
+$\ell_n$ (an expansion shows denominators, an integral the sign, an extremal problem or a recurrence
+the size), and the work is in passing between them. Third, the lemma needs only infinitely many $n$: if (N) holds for
 \emph{every} $n$, the budget (I) may be met along a subsequence. Section~\ref{sec:lcm} exploits this.
 
 \begin{lemma}[Polynomial variant \st{P}]\label{lem:poly}
@@ -136,30 +142,30 @@ $P_n^{(n)}=(-1)^n\binom{2n}n n!$, and $\int_0^1x^n(1-x)^n\dd x=\frac{n!^2}{(2n+1
 \subsection{$\log 2$, and $\log\frac{m+1}{m}$ for every integer $m\ge1$}
 \emph{Motivation.} We have $\log\frac{m+1}m=\int_0^1\frac{dx}{m+x}$. Integrating a polynomial
 $p\in\Z[x]$ against $\frac1{m+x}$ gives a linear form in $1$ and the logarithm, because
-$p(x)=p(-m)+(x+m)\,r(x)$ with $r\in\Z[x]$. The coefficient of the logarithm is the integer
-$p(-m)$, and the rational part $\int_0^1r$ has denominator dividing $D_{\deg p}$. Lemma~\ref{lem:rod}
+$p(x)=p(-m)+(x+m)\,s(x)$ with $s\in\Z[x]$. The coefficient of the logarithm is the integer
+$p(-m)$, and the rational part $\int_0^1s$ has denominator dividing $D_{\deg p}$. Lemma~\ref{lem:rod}
 says that $p=P_n$ makes the integral small. Set
 \[
-I_n=\int_0^1\frac{P_n(x)}{m+x}\dd x .
+\mathcal L_n=\int_0^1\frac{P_n(x)}{m+x}\dd x .
 \]
 \begin{theorem}[\st{C}, proved here]\label{thm:log}
 For every integer $m\ge1$ the number $\log\frac{m+1}m$ is irrational.
 \end{theorem}
 \begin{proof}
-\emph{Integrality.} Write $P_n(x)=P_n(-m)+(x+m)r_n(x)$. Since $x^k-(-m)^k$ is divisible by $x+m$
-in $\Z[x]$, the polynomial $r_n$ has integer coefficients and degree $n-1$. Hence
-$I_n=P_n(-m)\log\frac{m+1}m+\rho_n$ with $P_n(-m)\in\Z$ and $D_n\rho_n=D_n\int_0^1r_n\in\Z$.
+\emph{Integrality.} Write $P_n(x)=P_n(-m)+(x+m)s_n(x)$. Since $x^k-(-m)^k$ is divisible by $x+m$
+in $\Z[x]$, the polynomial $s_n$ has integer coefficients and degree $n-1$. Hence
+$\mathcal L_n=P_n(-m)\log\frac{m+1}m+\rho_n$ with $P_n(-m)\in\Z$ and $D_n\rho_n=D_n\int_0^1s_n\in\Z$.
 
 \emph{Non-vanishing and smallness.} Lemma~\ref{lem:rod} with $f(x)=(m+x)^{-1}$,
 $f^{(n)}(x)=(-1)^nn!\,(m+x)^{-n-1}$, gives
 \[
-I_n=\int_0^1\Bigl(\frac{x(1-x)}{m+x}\Bigr)^{\!n}\frac{dx}{m+x}>0 .
+\mathcal L_n=\int_0^1\Bigl(\frac{x(1-x)}{m+x}\Bigr)^{\!n}\frac{dx}{m+x}>0 .
 \]
 The function $h(x)=\frac{x(1-x)}{m+x}$ has $h'(x)=0$ exactly when $(1-2x)(m+x)=x(1-x)$, that is
 $x^2+2mx-m=0$, so $x_0=\sqrt{m^2+m}-m$; at that point $h(x_0)=1-2x_0=(\sqrt{m+1}-\sqrt m)^2=:\kappa_m$.
-Therefore $0<I_n\le\kappa_m^n\log\frac{m+1}m$, and $\kappa_m\le\kappa_1=3-2\sqrt2=0.171573$.
+Therefore $0<\mathcal L_n\le\kappa_m^n\log\frac{m+1}m$, and $\kappa_m\le\kappa_1=3-2\sqrt2=0.171573$.
 
-\emph{Balance.} If $\log\frac{m+1}m=p/q$, then $qD_nI_n$ is a positive integer, at most
+\emph{Balance.} If $\log\frac{m+1}m=p/q$, then $qD_n\mathcal L_n$ is a positive integer, at most
 $p\,D_n\kappa_1^n$. By Lemma~\ref{lem:lcmsub} below, $D_n<3^n$ for infinitely many $n$, and
 $3\kappa_1=0.514719<1$. Contradiction.
 \end{proof}
@@ -182,9 +188,9 @@ U_n(z)=\sum_{j=0}^n\frac{(2n-j)!}{j!\,(n-j)!}\,z^j,\qquad V_n(z)=U_n(-z).
 These have integer coefficients, since $\frac{(2n-j)!}{j!(n-j)!}=\binom nj\frac{(2n-j)!}{n!}$. For
 every $z\in\C$,
 \begin{equation}\label{eq:pade}
-V_n(z)e^z-U_n(z)=\frac{(-1)^n}{n!}\int_0^zx^n(z-x)^ne^x\dd x
-=\frac{(-1)^nz^{2n+1}}{n!}\int_0^1u^n(1-u)^ne^{zu}\dd u
-=z^{n+1}\!\int_0^1P_n(u)e^{zu}\dd u .
+V_n(z)e^z-U_n(z)=\tfrac{(-1)^n}{n!}\!\int_0^z\!x^n(z-x)^ne^x\dd x
+=\tfrac{(-1)^nz^{2n+1}}{n!}\!\int_0^1\!u^n(1-u)^ne^{zu}\dd u
+=z^{n+1}\!\!\int_0^1\!P_n(u)e^{zu}\dd u .
 \end{equation}
 \end{proposition}
 \begin{proof}
@@ -260,29 +266,29 @@ denominators $D_n\cdot|k-l|$, the diagonal ones $D_n^2$. For smallness use $P_n(
 Rodrigues transfer applied to $x\mapsto\frac1{1-xy}$ produces the factor $y^n$ by itself, since
 $\partial_x^n\frac1{1-xy}=\frac{n!\,y^n}{(1-xy)^{n+1}}$; a zero at $y=1$ must be put in by hand. So set
 \[
-I_n=\int_0^1\!\!\int_0^1\frac{P_n(x)(1-y)^n}{1-xy}\dd x\dd y .
+\mathcal Z_n=\int_0^1\!\!\int_0^1\frac{P_n(x)(1-y)^n}{1-xy}\dd x\dd y .
 \]
 \begin{theorem}[Ap\'ery; proof after Beukers \st{C}, proved here]\label{thm:z2}
 $\zeta(2)$ is irrational.
 \end{theorem}
 \begin{proof}
 \emph{Integrality.} Expanding both polynomials and using \eqref{eq:z2mom},
-$I_n=\alpha_n\zeta(2)-\beta_n$ with $\alpha_n=\sum_k\binom nk^2\binom{n+k}k\in\Z$ (the diagonal
+$\mathcal Z_n=\alpha_n\zeta(2)-\beta_n$ with $\alpha_n=\sum_k\binom nk^2\binom{n+k}k\in\Z$ (the diagonal
 terms) and $D_n^2\beta_n\in\Z$.
 
 \emph{Non-vanishing and smallness.} For fixed $y\in[0,1)$ apply Lemma~\ref{lem:rod} in $x$, then
 integrate over $y$ (the integrand $|P_n(x)|(1-y)^n/(1-xy)$ is integrable on the square, so Fubini
 applies):
 \[
-(-1)^nI_n=\int_0^1\!\!\int_0^1\Bigl(\frac{x(1-x)y(1-y)}{1-xy}\Bigr)^{\!n}\frac{dx\dd y}{1-xy}>0 .
+(-1)^n\mathcal Z_n=\int_0^1\!\!\int_0^1\Bigl(\frac{x(1-x)y(1-y)}{1-xy}\Bigr)^{\!n}\frac{dx\dd y}{1-xy}>0 .
 \]
 To bound $h=\frac{x(1-x)y(1-y)}{1-xy}$ put $s=\sqrt{xy}$. Since $x+y\ge2s$,
 $(1-x)(1-y)\le(1-s)^2$, so $h\le\frac{s^2(1-s)}{1+s}$. The derivative of the right side is
 $\frac{2s(1-s-s^2)}{(1+s)^2}$, which vanishes at $g=\frac{\sqrt5-1}2$; using $1-g=g^2$ and
 $\frac1{1+g}=g$ the maximum is $g^5=\frac{5\sqrt5-11}2=0.0901699$. Hence
-$0<|I_n|\le g^{5n}\zeta(2)$.
+$0<|\mathcal Z_n|\le g^{5n}\zeta(2)$.
 
-\emph{Balance.} If $\zeta(2)=p/q$, then $qD_n^2|I_n|$ is a positive integer, at most $p\,D_n^2g^{5n}$.
+\emph{Balance.} If $\zeta(2)=p/q$, then $qD_n^2|\mathcal Z_n|$ is a positive integer, at most $p\,D_n^2g^{5n}$.
 Along the infinitely many $n$ with $D_n<3^n$ this is at most $p\,(9g^5)^n$, and
 $9g^5=0.811529<1$.
 \end{proof}
@@ -291,22 +297,23 @@ Rates: $\delta=2$ against $\rho=-5\log g=2.406059$.
 \subsection{$\zeta(3)$: summary only}
 Replace $\frac1{1-xy}$ by the kernel $\frac{-\log(xy)}{1-xy}$, whose moments are
 $2(\zeta(3)-H_k^{(3)})$ on the diagonal and $\frac{H_k^{(2)}-H_l^{(2)}}{k-l}$ off it, and use
-$P_n$ in both variables. Then \st{C; proofs in the companion}
+$P_n$ in both variables. Then \st{C; proved in the companion, Sections 3--6}
 \[
-F_n=\int_0^1\!\!\int_0^1\!P_n(x)P_n(y)\frac{-\log(xy)}{1-xy}\dd x\dd y=2(a_n\zeta(3)-b_n),
-\quad D_n^3b_n\in\Z,\quad 0<F_n\le2\zeta(3)\lambda^{-n},
+I_n=\int_0^1\!\!\int_0^1\!P_n(x)P_n(y)\frac{-\log(xy)}{1-xy}\dd x\dd y=2(a_n\zeta(3)-b_n),
+\quad D_n^3b_n\in\Z,\quad 0<I_n\le2\zeta(3)\Lambda^{-n},
 \]
-and $27\lambda^{-1}=0.794806<1$ closes the proof along the indices with $D_n<3^n$. The companion
-gives three routes to positivity and smallness (Beukers' triple integral, Zudilin's rational function
-with a Casoratian, and a kernel-energy identity). Rates: $\delta=3$ against
-$\rho=\log\lambda=3.525494$.
+and $27\Lambda^{-1}=0.794806<1$ closes the proof along the indices with $D_n<3^n$. The companion
+gives three routes to positivity and smallness: Beukers' triple integral (its Section~4), one
+telescoping identity for $R_n$ with a Casoratian (Section~5, which reaches only the rate $28^{-n}$,
+still enough against $27^n$), and an energy inequality (Section~6). Rates: $\delta=3$ against
+$\rho=\log\Lambda=3.525494$.
 
 \section{The lcm toolkit}\label{sec:lcm}
 The budget in the integral examples is a power of $D_n$. Three levels of information about $D_n$ are
 available; the first is all that the examples above need, because their linear forms are non-zero for
 every $n$.
 
-\begin{lemma}[\st{P}; from the Codex exposition, \S6]\label{lem:lcmid}
+\begin{lemma}[\st{P}; Codex exposition \S6; also companion, Section~2]\label{lem:lcmid}
 For every integer $N\ge1$, $\;N!=\prod_{k=1}^{N}D_{\lfloor N/k\rfloor}$.
 \end{lemma}
 \begin{proof}
@@ -333,16 +340,15 @@ $N$. Finally $e<3$.
 
 \noindent The lemma suffices for a budget $D_n^k$ against decay $e^{-\rho n}$ whenever $\rho>k$ and
 the form is non-zero for every $n$: here $e\kappa_1=0.4664$, $e^2g^5=0.6663$,
-$e^3\lambda^{-1}=0.5913$.
+$e^3\Lambda^{-1}=0.5913$.
 
 \smallskip\noindent\textbf{Bounds for all $n$} \st{R: proofs are in the source files; we rechecked
 the constants only}. A Chebyshev-type argument with a period-6 step function gives
 $\log D_n\le c_6n+O(\log^2n)$ with $c_6=\frac12\log2+\frac34\log3=1.170533$
-(\texttt{Codex-Zeta3-03-Kernel-energy/main-explanation.tex}, \S5.2; Claude's summary reports having
-re-derived it). Chebyshev's period-30 function gives
-$c_{30}=\frac{14\log2+9\log3+5\log5}{25}=1.105550$
-(\texttt{Codex-Zeta3-01-Zudilin-and-recurrence/zudilin-explained.md}, \S10). Both are below the
-thresholds $\frac13\log\lambda=1.1752$ and $-\frac52\log g=1.2030$ needed for $\zeta(3)$ and
+(Codex package 03, \path{main-explanation.tex}, \S5.2; the referee reports re-derive it).
+Chebyshev's period-30 function gives $c_{30}=\frac{14\log2+9\log3+5\log5}{25}=1.105550$ (Codex
+package 01, \path{zudilin-explained.md}, \S10). Both are below the
+thresholds $\frac13\log\Lambda=1.1752$ and $-\frac52\log g=1.2030$ needed for $\zeta(3)$ and
 $\zeta(2)$, the first only just. Such bounds are needed when the non-vanishing argument works only
 for some $n$ (for instance when a Casoratian shows that one of two consecutive forms is non-zero).
 
@@ -351,11 +357,13 @@ the margin $\rho-\delta$ is small, as in the determinant proof for $\zeta(5)$
 (Section~\ref{sec:hankel}), and even there a subsequence argument may replace it (direction D4).
 
 \section{Which ingredient does what}
+Table~\ref{tab:main} lists, for each proof, which ingredient supplies each obligation of the
+recipe. Its last two rows are reported by the sources (Section~\ref{sec:hankel}), not verified by us.
 
-\begin{table}[h]
+\begin{table}[t]
 \centering\footnotesize
 \setlength{\tabcolsep}{3.5pt}
-\begin{tabular}{@{}p{19mm}p{26mm}p{26mm}p{27mm}p{25mm}p{27mm}@{}}
+\begin{tabular}{@{}p{18mm}p{25mm}p{26mm}p{27mm}p{25mm}p{26mm}@{}}
 \toprule
 constant & object & integrality & non-vanishing & smallness & cost vs.\ decay\\
 \midrule
@@ -367,12 +375,12 @@ $\pi^2$ \st{P} & $T_n(-\pi^2)$, even part of Pad\'e at $i\pi$ & $T_n\in\Z[X]$, d
  $\lfloor\frac n2\rfloor$ & $\sin\pi u>0$ on $(0,1)$ & the $n!$ & $\frac n2\log m$ vs.\ $n\log n$\\[2pt]
 $\zeta(2)$ \st{P} & $\iint\frac{P_n(x)(1-y)^n}{1-xy}$ & moments \eqref{eq:z2mom}; $D_n^2$ & positive
  integrand after transfer in $x$ & $\max h=g^5$ & $2$ vs.\ $2.4061$\\[2pt]
-$\zeta(3)$, Beukers \st{C} & triple integral $=F_n$ & log-kernel moments; $D_n^3$ & positive
- integrand & maximum of the integrand, $\lambda^{-1}$ & $3$ vs.\ $3.5255$\\[2pt]
+$\zeta(3)$, Beukers \st{C} & triple integral $=I_n$ & log-kernel moments; $D_n^3$ & positive
+ integrand & maximum of the integrand, $\Lambda^{-1}$ & $3$ vs.\ $3.5255$\\[2pt]
 $\zeta(3)$, Zudilin \st{C} & $-\sum_{t\ge1}R_n'(t)$ & partial fractions of $R_n$; $D_n^3$ &
- Casoratian $=\frac6{(n+1)^3}$ & recurrence; $F_n=\sum$ of Casoratian quotients & same\\[2pt]
-$\zeta(3)$, energy \st{C} & $\langle P_n,k_n\rangle=F_n$ & same moments & $a_nF_n=\langle Bg,g\rangle>0$
- & Cauchy--Schwarz, growth of $a_n$ & same\\[2pt]
+ Casoratian of the recurrence & $I_n<\frac6{n^2a_{n+1}}$, growth of $a_n$ & $\log27=3.296$ vs.\ $\log28=3.332$\\[2pt]
+$\zeta(3)$, energy \st{C} & $\langle P_n,k_n\rangle=I_n$ & same moments & $a_nI_n=\langle Bg,g\rangle>0$
+ & Cauchy--Schwarz, growth of $a_n$ & $3$ vs.\ $3.5255$\\[2pt]
 $\zeta(3)$, Hankel \st{R} & $Q_K\in\Z[X]$, $\deg K$ & $p$-adic valuation of a determinant &
  Gram determinant of a positive weight & logarithmic energy, $\frac92\log2$ &
  $\frac94c_6=2.634$ vs.\ $3.119$ (per $K^2$)\\[2pt]
@@ -381,9 +389,7 @@ $\zeta(5)$, Fauzan \st{R} & $Q_n\in\Z[X]$, $\deg 37n$ & $p$-adic valuation of th
  $1.3496$ vs.\ $1.3670$ (per $K^2$, $K=40n$)\\
 \bottomrule
 \end{tabular}
-\caption{The three obligations in each proof. The last two rows are reported by the sources
-(Section~\ref{sec:hankel}) and were not verified by us. This table also serves as the summary of
-what each step contributed.}\label{tab:main}
+\caption{The three obligations in each proof, and what each step contributes.}\label{tab:main}
 \end{table}
 
 \section{The shared mechanisms}\label{sec:mech}
@@ -397,17 +403,16 @@ $\int_0^1x^{t-1}(1-x)^n\dd x=\frac{n!}{t(t+1)\cdots(t+n)}$ gives \st{P; checked 
 \]
 The left side is $\sum_kc_k/(t+k)$ with $c_k$ the coefficients of $P_n$, so this is an identity of
 rational functions. The zeros at $t=1,\dots,n$ \emph{are} the orthogonality relations, and the
-poles at $0,-1,\dots,-n$ record the degree. The square of the right side is Zudilin's
-$R_n(t)$. Summing $(xy)^{t-1}$ over $t\ge1$ gives $\frac1{1-xy}$, and $-\frac d{dt}$ inserts
+poles at $0,-1,\dots,-n$ record the degree. The right side is $(-1)^nr_n(t)$, and its square is
+Zudilin's $R_n(t)$. Summing $(xy)^{t-1}$ over $t\ge1$ gives $\frac1{1-xy}$, and $-\frac d{dt}$ inserts
 $-\log(xy)$: this is the dictionary between the integral and the rational-function proofs of
-Ap\'ery's theorem, and it explains why $R_n$ is not a guess.
+Ap\'ery's theorem.
 
 \paragraph{M2. Invert on polynomials, then use a boundary identity.}
 On polynomials of bounded degree $D=\frac d{dx}$ is nilpotent, so $(1+D)^{-1}=\sum_j(-1)^jD^j$ is a
 finite sum. The function $F$ in the proof of Proposition~\ref{prop:pade} is $(1+D)^{-1}f$, and
 $(e^xF)'=e^xf$ is the boundary identity. For $\pi^2$ the corresponding operator is $(\pi^2+D^2)^{-1}$
-and the boundary identity is Green's formula against $\sin\pi x$. The ``mysterious sums of
-derivatives'' in the textbook proofs are exact inverses. When the operator \emph{raises} the degree
+and the boundary identity is Green's formula against $\sin\pi x$. When the operator \emph{raises} the degree
 instead (as for $\zeta(3)$), the inverse exists up to a one-dimensional obstruction, and that
 obstruction is the Ap\'ery number $a_n$; see direction D3.
 
@@ -419,7 +424,7 @@ of a positive measure $\nu$ with infinite support is positive, because the matri
 the quadratic form $c\mapsto\int(\sum c_it^i)^2\dd\nu$. It equals
 $\frac1{h!}\int\prod_{i<j}(t_i-t_j)^2\prod_i\dd\nu(t_i)$ \st{C: Andr\'eief's identity}, and the
 $\binom h2$ factors of the squared Vandermonde are the source of the $e^{-ch^2}$ scale in
-Lemma~\ref{lem:poly}. (iii) An energy identity $a_nF_n=\langle Bg,g\rangle$ with a positive
+Lemma~\ref{lem:poly}. (iii) An energy identity $a_nI_n=\langle Bg,g\rangle$ with a positive
 operator $B$ (direction D3) gives sign and size at once.
 
 \paragraph{M4. Casoratians are discrete Wronskians.}
@@ -429,17 +434,29 @@ does (Abel's formula). For Ap\'ery's recurrence
 $(n+1)^3u_{n+1}=(2n+1)(17n^2+17n+5)u_n-n^3u_{n-1}$ one gets $(n+1)^3W_n=n^3W_{n-1}$, so
 $a_nb_{n+1}-a_{n+1}b_n=\frac6{(n+1)^3}$ \st{P; checked exactly for $n<20$}. This single identity gives
 non-vanishing (two consecutive forms cannot both vanish), monotonicity of $b_n/a_n$, and the exact
-error $F_n=2a_n\sum_{m\ge n}\frac6{(m+1)^3a_ma_{m+1}}$ \st{N: 60 digits, $n=0,1,3$; proved in the
-companion}. The Pad\'e polynomials obey $R_{n+1}=2(2n+1)R_n+z^2R_{n-1}$ with Casoratian
+error $I_n=2a_n\sum_{m\ge n}\frac6{(m+1)^3a_ma_{m+1}}$ \st{N: 60 digits, $n=0,1,3$; proved in the
+companion, Section~5}. The companion's bound $I_n<\frac6{n^2a_{n+1}}$ was checked by us for
+$n<30$. The Pad\'e polynomials $U_n$ and $V_n$ both obey $u_{n+1}=2(2n+1)u_n+z^2u_{n-1}$, with Casoratian
 $V_nU_{n+1}-V_{n+1}U_n=2z(-z^2)^n$ \st{N: symbolic check, $n\le7$; stated in Codex's
-\texttt{shared-coefficients-exp-pi-zeta.md}}.
+\path{shared-coefficients-exp-pi-zeta.md}}.
 
-\section*{Part II. Why the obvious extensions fail}
+\emph{Where Ap\'ery's recurrence itself comes from} \st{P in the companion, Section~7; the identity
+below rechecked symbolically by us for $n\le5$ and by a referee subagent}. Keep two indices,
+$r_nr_m$ in place of $r_n^2$. The mixed family satisfies a three-term relation in $n$ with middle
+coefficient $(2n+1)(n(n+1)+2m(m+1)+1)$, and the diagonal is closed by one telescoping identity,
+\[
+r_n(t)^2+r_{n-1}(t)^2+6\,r_n(t)r_{n-1}(t)=g_n(t+1)-g_n(t),\qquad g_n(t)=\frac4{n^2}(t+n)^2r_n(t)^2 .
+\]
+Eliminating the off-diagonal terms gives the coefficient $(2n+1)(17n^2+17n+5)$ with
+$17=6\cdot3-1$ and $5=6\cdot1-1$. Is there such a pair of telescopes for the $\zeta(2)$ recurrence, or a three-index family for
+forms in $\zeta(5)$ \st{Q, from the referee report on Codex package~01}?
+
+\section*{\Large Part II. Why the obvious extensions fail}
 \section{Higher powers of the logarithm}\label{sec:logk}
 
 The kernel $\frac{-\log(xy)}{1-xy}$ produced $\zeta(3)$, so one tries
 $K_k=\frac{(-\log xy)^k}{1-xy}$ and
-$J_n^{[k]}=\iint P_n(x)P_n(y)K_k(x,y)\dd x\dd y$ (so $J_n^{[1]}=F_n$).
+$J_n^{[k]}=\iint P_nP_nK_k$, that is, $\iint P_n(x)P_n(y)K_k(x,y)\dd x\dd y$, so that $J_n^{[1]}=I_n$.
 
 \emph{The arithmetic is perfect} \st{P for the formula; N: recomputed exactly for $k=1,3,5$,
 $n\le40$}. The moments of $K_k$ are $(k+1)!\,(\zeta(k+2)-H_r^{(k+2)})$ on the diagonal and
@@ -457,22 +474,21 @@ J_n^{[3]}=\frac{12\,(H_{n-1}+H_{n+1})}{n^2(n+1)^2}+O\Bigl(\frac{\log n}{n^8}\Big
 \]
 Our exact evaluation \st{N} gives $J_n^{[3]}=5.80083\cdot10^{-3}$, $4.89328\cdot10^{-4}$,
 $3.81758\cdot10^{-5}$ for $n=10,20,40$, against the main term $5.80051\cdot10^{-3}$,
-$4.89326\cdot10^{-4}$, $3.81758\cdot10^{-5}$; for comparison $F_n=2.2\cdot10^{-17}$,
+$4.89326\cdot10^{-4}$, $3.81758\cdot10^{-5}$; for comparison $I_n=2.2\cdot10^{-17}$,
 $4.1\cdot10^{-33}$, $3.5\cdot10^{-64}$. Since $D_n^5\ge n^5$, the quantity $D_n^5J_n^{[3]}$ tends to
 infinity. So this extension fails for a proved reason: decay $n^{-4}$ instead of exponential.
 
 \emph{Repairs tried} \st{R, numerical only; Codex \S16.4 and \S17}. Removing the first $M$ terms of the
-series replaces $P_n$ by $x^MP_n$ and the budget by $D_{n+M}^{k+2}$; the best primitive integer forms
-found have logarithm $+12.6,\dots,+342.7$ for $\zeta(5)$ ($n=10,\dots,120$), so they exceed $1$.
-Polynomials with fourth-order Mellin zeros (degree $2n$) give tiny values, for example
-$-1.29\cdot10^{-21}$ at $n=10$, but the budget $D_{2n}^5$ turns this into $8.8\cdot10^{20}$, and
-positivity is lost. These are finite experiments, not theorems about every variant.
+series replaces $P_n$ by $x^MP_n$ and the budget by $D_{n+M}^{k+2}$; polynomials with fourth-order
+Mellin zeros have degree $2n$ and budget $D_{2n}^5$, and lose positivity. In the cases computed the
+resulting integer forms are far larger than $1$ (for example $8.8\cdot10^{20}$ at $n=10$ in the
+second family). These are finite experiments.
 
 \section{The determinant method}\label{sec:hankel}
 
 All statements in this section are \st{R}: they come from Claude's research notes
-(\texttt{fauzan-status.md}, \texttt{zeta5-margin.md}, \texttt{hankel-zeta3.md},
-\texttt{zeta7-status.md}, \texttt{anand-referee.md}), which describe a preprint and two Lean
+(\path{fauzan-status.md}, \path{zeta5-margin.md}, \path{hankel-zeta3.md},
+\path{zeta7-status.md}, \path{anand-referee.md}), which describe a preprint and two Lean
 projects that we did not rebuild. We recomputed only the arithmetic of the displayed constants.
 
 \paragraph{How the $\zeta(5)$ preprint works.}
@@ -483,7 +499,7 @@ functional $\mu_X$ on rational functions of $t$ with simple poles at $t=-j^2$, w
 on polynomials and
 $\mu_X\bigl(\frac1{t+j^2}\bigr)=j^4(X-H_j^{(5)})-\frac14+\frac1{2j}$, and takes
 $Q_n$ proportional to $\det\bigl[\mu_X\bigl(\Pi_N(t)^6t^{i+j}/\Pi_K(t)\bigr)\bigr]_{0\le i,j<h}$.
-Three facts carry the proof. \emph{Positivity:} at $X=\zeta(5)$ the functional is integration
+\emph{Positivity:} at $X=\zeta(5)$ the functional is integration
 against the positive weight $w(y)=\frac{(2\pi)^4}{12}y^5\sum_{\ell\ge1}\ell^4e^{-2\pi\ell y}$ in the
 variable $t=y^2$, so the determinant is a Gram determinant (M3(ii)). \emph{Size:} by Andr\'eief's
 identity and a weighted logarithmic-energy estimate, $\log\det\le UK^2+O(K\log K)$ with
@@ -491,21 +507,18 @@ $U=-\frac{2733991}{2000000}=-1.3670$; this step is computer-assisted. \emph{Arit
 lower bounds for the valuation of the determinant as a whole (far better than entry by entry),
 summed over primes with the prime number theorem, give a normaliser of size $e^{A K^2}$ with
 $A=A_{200}\approx1.3496$. The margin is $A_{200}+U\approx-0.0174$, about $1.3\%$ of either term.
-The notes report that the theorem is formalised in Lean in two independent projects (one with the
-prime number theorem as its only axiom, one importing it), and that the formalisations repair at
-least two gaps in the printed proof.
+The notes report two independent Lean formalisations (one with the prime number theorem as its
+only axiom, one importing it), which repair at least two gaps in the printed proof.
 
 \paragraph{An improved arithmetic bound (``Theorem W'').}
-\texttt{zeta5-margin.md} proves that the preprint's inner-range valuation bound holds for all primes
+\path{zeta5-margin.md} proves that the preprint's inner-range valuation bound holds for all primes
 $p\ge5$ with $p^2>104n+6$ and beats the outer bound for $\frac K3<p<\frac{69}{170}K$. The cost
 constant drops by $\frac{3203}{163200}=0.019626$, so $A_{200}$ becomes $1.329961$ and the margin
-$-0.037034$ (ratio $2.13$). Status as reported: proof re-derived by the orchestrating agent; zero
-violations in exact computations for $K\le200$; constants confirmed by an independent
-recomputation. Further gains reported with weaker status (margin $-0.073$ without the cutoff,
-$-0.092$ with a numerically computed exact energy) are not relied on here.
+$-0.037034$ (ratio $2.13$). Status as reported: proof re-derived by the orchestrating agent, no violation in exact
+computations for $K\le200$, constants confirmed by an independent recomputation.
 
 \paragraph{The same method at $s=3$.}
-\texttt{hankel-zeta3.md} carries out the method for $\zeta(3)$ with no numerator and full size:
+\path{hankel-zeta3.md} carries out the method for $\zeta(3)$ with no numerator and full size:
 $\Delta_K(X)=\det[\mu_X(t^{i+j}/\Pi_K(t))]_{i,j<K}$ with
 $\mu_X(\frac1{t+j^2})=j^2(X-H_j^{(3)})-\frac12+\frac1{2j}$. Reported: $\deg\Delta_K=K$ with leading
 coefficient $\pm K!^2$; $\Delta_K(\zeta(3))>0$; a normaliser $\Phi_K$ with
@@ -513,9 +526,8 @@ $\Phi_K\Delta_K\in\Z[X]$ and $\log\Phi_K\le\frac94\kappa K^2+o(K^2)$ whenever
 $\sum_{p\le u}\log p\le\kappa u+o(u)$; and
 $\log\Delta_K(\zeta(3))=-\frac92\log2\cdot K^2+O(K\log K)$, where $\frac92\log2=3.1192$ is the
 energy of an explicit equilibrium measure on $[0,\frac34]$. With $\kappa=c_6$ the exponent is
-$-0.485K^2$, so no prime number theorem is needed. This is a determinant proof of Ap\'ery's theorem
-with integer polynomials instead of linear forms; the notes say it is a variant of known work
-(Zudilin 2017; Fauzan's method at $s=3$) and a proof draft.
+$-0.485K^2$, so no prime number theorem is needed. The notes call this a proof draft and a variant of known work
+(Zudilin 2017; Fauzan's method at $s=3$).
 
 \paragraph{Why $\zeta(7)$ fails in this family.}
 On the $K^2$ scale the decay does not depend on $s$: the weight for $\zeta(s)$ differs from that for
@@ -536,26 +548,25 @@ $\frac{s(s+4)}{2(s+2)}K^2$ ($=4.28K^2$ at $s=7$), which would give the no-go for
 all fail; the best cost-to-decay ratio is $1.218$.
 \end{itemize}
 A Zenodo preprint (P.~Anand, record 22920911) claims $0<Q_n(\zeta(7))<e^{-19000n^2}$ with the same
-architecture. \texttt{anand-referee.md} reports that this is impossible: integrality of the leading
+architecture. \path{anand-referee.md} reports that this is impossible: integrality of the leading
 coefficient contradicts the claimed size of the normaliser, exact computation for $n\le4$ gives
 values at least $e^{1274},\dots,e^{22661}$, and the error is one wrong value of an integral over
-primes ($-15.28$ printed where the preprint's own definitions give $+1.5757$). We make no statement
-about whether $\zeta(7)$ is irrational.
+primes. We make no statement about whether $\zeta(7)$ is irrational.
 
 \section{Catalan's constant and Euler's constant}
 
-\paragraph{Catalan's constant $G=\sum_{k\ge0}(-1)^k(2k+1)^{-2}$} \st{R: \texttt{catalan-status.md};
-exact finite computations, lemmas not re-derived}. Positive functionals of the same type exist; for
-instance with integer nodes the weight $\frac{\pi y}4\frac{\sinh\pi y}{\cosh^2\pi y}$ has rational
-moments and pole values in $\Q+\Q G$ with no $\pi^2$. The Hankel determinants are positive at $G$,
-but the totals $\log|P_K(G)|/K^2$ are $+0.38,+0.46,+0.49,+0.52$ at $K=40,80,120,160$. The obstruction
-is quantitative and has two parts. The kernel decays like $e^{-\pi y}$, half as fast as for
-$\zeta(3)$, so the decay is only $2\log3=2.197$ per $K^2$. The partial sums of the series for $G$
-run up to $2K$, so primes up to $2K$ enter; the cost is about $\frac83K^2$ (reported as following
-from an observed valuation pattern and the prime number theorem). Mixed node sets that would cancel
-$\pi^2$ need at least $2h$ extra nodes for a matrix of size $h$ and gain nothing analytically, by a
-reported structural lemma. The notes mention a claimed proof of the irrationality of $G$ by a
-different determinant construction (OpenAI, Sep 2026); neither they nor we verified it.
+\paragraph{Catalan's constant $G=\sum_{k\ge0}(-1)^k(2k+1)^{-2}$} \st{R: \path{catalan-status.md};
+exact finite computations, lemmas not re-derived}. Positive functionals of the same type exist; with
+integer nodes the weight $\frac{\pi y}4\frac{\sinh\pi y}{\cosh^2\pi y}$ has rational moments and
+pole values in $\Q+\Q G$ with no $\pi^2$. The Hankel determinants are positive at $G$, but
+$\log|P_K(G)|/K^2$ is $+0.38,+0.46,+0.49,+0.52$ at $K=40,80,120,160$. The obstruction is
+quantitative and has two parts. The kernel decays like $e^{-\pi y}$, half as fast as for $\zeta(3)$,
+so the decay is only $2\log3=2.197$ per $K^2$. The partial sums of the series for $G$ run up to
+$2K$, so primes up to $2K$ enter, and the cost is about $\frac83K^2$ (from an observed valuation
+pattern and the prime number theorem). Mixed node sets that would cancel $\pi^2$ need at least $2h$
+extra nodes for a matrix of size $h$ and gain nothing analytically (a reported lemma). The notes
+mention a claimed proof of $G\notin\Q$ by a different determinant construction (OpenAI, Sep 2026);
+neither they nor we verified it.
 
 \paragraph{Euler's constant $\gamma$: Sondow's integral} \st{C for the construction, as presented in
 Codex \S18; N for the value}. The integral
@@ -573,11 +584,10 @@ with Bernoulli numbers $B_m$. The Gram determinants of $t^{i+j}/(t+1)$, $t=y^2$,
 positive rational linear forms in $1,\gamma$ (there is one pole, so the determinant has degree one
 in $\gamma$). After removing common factors they are $2\gamma-1$, $33\gamma-19$,
 $150980\gamma-87117$, $1576293905340\gamma-909774886661$, with values $0.154$, $0.0481$, $31.0$,
-$8.7\cdot10^7$. The rational approximations improve while the integer forms grow: the moments grow
-factorially and the denominators outrun the error. Nothing here is a statement about the
-irrationality of $\gamma$.
+$8.7\cdot10^7$. The rational approximations improve while the integer forms grow: the denominators outrun the
+error. Nothing here bears on the irrationality of $\gamma$.
 
-\section*{Part III. Further directions}
+\section*{\Large Part III. Further directions}
 \section{D1. Differential equations: the Ap\'ery operator}
 
 \emph{Idea.} The proof of $e^r\notin\Q$ rests on the differential equation $y'=y$. The Ap\'ery
@@ -597,54 +607,52 @@ $a_1=5a_0$), so $L\cA=0$. The sequence $b_n$ satisfies it for $n\ge1$, and at $n
 equals $b_1-5b_0=6$, so $L\cB=6z$. (Checked exactly on the first eight coefficients.) Since
 $\vartheta^3=z^3\frac{d^3}{dz^3}+\cdots$, the coefficient of the third derivative in $L$ is
 $z^3(1-34z+z^2)$. The singular points are therefore $0$, the two roots
-$\lambda^{\mp1}=17\mp12\sqrt2$ of $z^2-34z+1$, and $\infty$. The exponents at $0$ are $0,0,0$, and at
-$z=\lambda^{-1}$ they are $0,\frac12,1$ (our symbolic computation).
+$\Lambda^{\mp1}=17\mp12\sqrt2$ of $z^2-34z+1$, and $\infty$. The exponents at $0$ are $0,0,0$, and at
+$z=\Lambda^{-1}$ they are $0,\frac12,1$ (our symbolic computation).
 
-\begin{proposition}[\st{P}, given $0<F_n\le2\zeta(3)\lambda^{-n}$ from the companion]\label{prop:ode}
+\begin{proposition}[\st{P}, given $0<I_n\le2\zeta(3)\Lambda^{-n}$ from the companion]\label{prop:ode}
 The series $\cA$ and $\cB$ have radius of convergence at most $1$, but
-$\zeta(3)\cA(z)-\cB(z)=\frac12\sum F_nz^n$ converges for $|z|<\lambda=33.97$ and satisfies
+$\zeta(3)\cA(z)-\cB(z)=\frac12\sum I_nz^n$ converges for $|z|<\Lambda=33.97$ and satisfies
 $L\bigl(\zeta(3)\cA-\cB\bigr)=-6z$. Moreover $\zeta(3)$ is the only number $c$ for which
 $c\,\cA-\cB$ converges on a disc of radius greater than $1$.
 \end{proposition}
 \begin{proof}
-The $a_n$ are positive integers, so $\cA$ diverges at $z=1$. The bound on $F_n$ gives the radius
-$\lambda$. If $c\,\cA-\cB$ and $c'\cA-\cB$ both converged at some $z$ with $|z|>1$, so would
+The $a_n$ are positive integers, so $\cA$ diverges at $z=1$. The bound on $I_n$ gives the radius
+$\Lambda$. If $c\,\cA-\cB$ and $c'\cA-\cB$ both converged at some $z$ with $|z|>1$, so would
 $(c-c')\cA$, forcing $c=c'$.
 \end{proof}
-In fact $a_n^{1/n}\to\lambda$ \st{C; numerically $a_{51}/a_{50}=32.98$}, so $\cA$ and $\cB$ have
-radius exactly $\lambda^{-1}$ and a singularity of square-root type there, and the proposition says:
+In fact $a_n^{1/n}\to\Lambda$ \st{C; numerically $a_{51}/a_{50}=32.98$}, so $\cA$ and $\cB$ have
+radius exactly $\Lambda^{-1}$ and a singularity of square-root type there, and the proposition says:
 \emph{$\zeta(3)$ is the unique constant for which $c\,\cA-\cB$ continues analytically past the first
-singularity $\lambda^{-1}$, as far as the second one, $\lambda$.} The approximants $b_n/a_n$ are
+singularity $\Lambda^{-1}$, as far as the second one, $\Lambda$.} The approximants $b_n/a_n$ are
 ratios of Taylor coefficients of two solutions, and the irrationality proof is the statement that
-the Taylor coefficients of the combination that is regular at $\lambda^{-1}$ are small compared with
+the Taylor coefficients of the combination that is regular at $\Lambda^{-1}$ are small compared with
 $D_n^{-3}$.
 
 \emph{The two classes of functions, in plain words.} The series $e^z=\sum z^n/n!$ has factorials in
-the denominators; it is entire and satisfies an equation with constant coefficients whose only
-finite singular point is none at all. Such series are called $E$-functions. Their rational
-approximants at a rational point carry an $n!$, and that is the infinite margin of
-Theorem~\ref{thm:er}. The series $\cA$ and $\cB$ have coefficients that are integers, or rationals
-whose common denominators $D_n^3$ grow only geometrically. They have a finite radius of convergence and satisfy an equation
-all of whose singular points are regular (solutions grow at most like a power of the distance).
-Such series are called $G$-functions. For them the interesting numbers are not values at rational
-points but \emph{connection constants} between singular points, the margin is exponential against
-exponential, and each case has to be won by its constants ($3$ against $3.5255$ here).
-\st{Literature pointers, not retrieved or verified by us: the general theory of $E$- and
-$G$-functions (Siegel, Shidlovskii, Andr\'e, Chudnovsky, Katz); the statement that $L$ is the
-symmetric square of a second-order operator; modular parametrisations of $\cA$ (Beukers); lists of
-similar ``Calabi--Yau'' or Ap\'ery-like operators (Almkvist--Zagier and others).}
+its denominators; it is entire and satisfies an equation with constant coefficients and no finite
+singular point. Such series are called $E$-functions. Their rational approximants at a rational
+point carry an $n!$, which is the infinite margin of Theorem~\ref{thm:er}. The series $\cA$, $\cB$
+have coefficients that are integers, or rationals whose common denominators $D_n^3$ grow only
+geometrically; they have a finite radius of convergence and satisfy an equation all of whose singular
+points are regular (solutions grow at most like a power of the distance). Such series are called
+$G$-functions. For them the interesting numbers are not values at rational points but
+\emph{connection constants} between singular points; the margin is exponential against exponential
+and has to be won by the constants ($3$ against $3.5255$ here).
+\st{Literature pointers, not retrieved or verified by us: the theory of $E$- and $G$-functions
+(Siegel, Shidlovskii, Andr\'e, Chudnovsky, Katz); $L$ as the symmetric square of a second-order
+operator; modular parametrisations of $\cA$ (Beukers); lists of Ap\'ery-like or ``Calabi--Yau''
+operators (Almkvist--Zagier and others).}
 
 \begin{problem}
 (a) Repeat the derivation for $\zeta(2)$: with $\alpha_n=\sum_k\binom nk^2\binom{n+k}k$
 $(1,3,19,147)$ and $\beta_n$ $(0,5,\frac{125}4,\dots)$ satisfying
 $(n+1)^2u_{n+1}=(11n^2+11n+3)u_n+n^2u_{n-1}$, show that
 $L_2=\vartheta^2-z(11\vartheta^2+11\vartheta+3)-z^2(\vartheta+1)^2$ kills $\sum\alpha_nz^n$ and
-sends $\sum\beta_nz^n$ to $5z$, with singular points $0$, $g^5$, $-g^{-5}$, $\infty$ (we checked the
-first eight coefficients and that $\beta_n/\alpha_n\to\zeta(2)$). For $\log2$ the analogous
-generating function is algebraic: $\sum_nP_n(-1)z^n=(1-6z+z^2)^{-1/2}$ (checked to order 8). So the
-three constants sit on equations of order $1$, $2$, $3$.
+sends $\sum\beta_nz^n$ to $5z$, with singular points $0$, $g^5$, $-g^{-5}$, $\infty$ (checked on the first eight coefficients). For $\log2$ the generating function is algebraic,
+$\sum_nP_n(-1)z^n=(1-6z+z^2)^{-1/2}$, so the three constants sit on equations of order $1,2,3$.
 (b) Starting only from $L\cB=6z$ and $\cB(0)=0$, compute by variation of constants the unique $c$ for
-which $c\cA-\cB$ is regular at $\lambda^{-1}$, and recognise $\zeta(3)$ without summing a series.
+which $c\cA-\cB$ is regular at $\Lambda^{-1}$, and recognise $\zeta(3)$ without summing a series.
 Do (b) for $L_2$ first.
 \end{problem}
 
@@ -725,10 +733,10 @@ give $c=-1$, $s=0$, that is $e^M=-I$; this is (c). Taking $r=\theta^2$ gives (d)
 
 \emph{Honest assessment.} Theorem~\ref{thm:matrix} is a special case of the Lindemann--Weierstrass
 theorem \st{C, not retrieved}: if $e^M$ were rational, its eigenvalue $e^{\lambda_0}$ would be
-algebraic with $\lambda_0\neq0$ algebraic, contradicting Hermite--Lindemann; and each of $\cos\theta$,
-$\sin\theta$ is in fact transcendental. The point is the proof: one page, uniform in $d$, the same
-three obligations as before, and it makes $e^r$ and $\pi^2$ two cases of one statement. We did not
-find this formulation in the sources we read; we have not searched the literature.
+algebraic with $\lambda_0\neq0$ algebraic; and each of $\cos\theta$, $\sin\theta$ is in fact
+transcendental. The point is the proof: one page, uniform in $d$, with the same three obligations
+as before, and $e^r$ and $\pi^2$ become two cases of one statement. We did not find this formulation
+in the sources we read; we have not searched the literature.
 
 \begin{problem}
 (a) Make the theorem quantitative: bound $\|e^M-S/q\|$ from below in terms of $q$.
@@ -737,15 +745,14 @@ $M=\bigl(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\bigr)$, identity \eqref{e
 for each $n$, two integer linear forms in $1,\cos1,\sin1$ of size about $\frac1{4^nn!}$ with
 coefficients of size about $\frac{(2n)!}{n!}$. Decide whether the forms for $n$ and $n+1$, together
 with the Casoratian of M4, prove that $1,\cos1,\sin1$ are linearly independent over $\Q$. A rough
-count gives a product of error and coefficient of order $\binom{2n}n4^{-n}\approx(\pi n)^{-1/2}$, so
-the margin, if any, is thin \st{heuristic, not checked}.
+count gives error times coefficient of order $\binom{2n}n4^{-n}\approx(\pi n)^{-1/2}$, a thin
+margin \st{heuristic, not checked}.
 \end{problem}
 
 \subsection{Path-ordered exponentials and polylogarithms}
-\emph{Idea.} The function $e^{zM}$ is the solution of $Y'=MY$, $Y(0)=I$. When the coefficient matrix
-depends on $z$ and its values do not commute, the solution is no longer the exponential of an
-integral; it is a ``path-ordered exponential'', a sum of iterated integrals. Polylogarithms
-$\Li_k(z)=\sum_{n\ge1}z^n/n^k$ arise exactly this way, because
+\emph{Idea.} The function $e^{zM}$ solves $Y'=MY$, $Y(0)=I$. When the coefficient matrix depends on
+$z$ and its values do not commute, the solution is a ``path-ordered exponential'', a sum of iterated
+integrals. Polylogarithms $\Li_k(z)=\sum_{n\ge1}z^n/n^k$ arise this way, because
 $\Li_1'(z)=\frac1{1-z}$ and $\Li_k'(z)=\frac{\Li_{k-1}(z)}z$.
 
 \emph{Key formulas} \st{P; verified symbolically}. Let $E_{ij}$ be the $4\times4$ matrix unit and
@@ -771,9 +778,8 @@ $z^{N_0}(1-z)^{-N_1}$ and no zeta values would appear; they come from the commut
 
 \emph{Is Ap\'ery's construction the Pad\'e approximation for this system?} \st{Q, with a partial
 answer.} For $e^z$ the Pad\'e problem is: find polynomials $U,V$ of degree $n$ with
-$Ve^z-U=O(z^{2n+1})$; there are $2n+2$ unknowns and $2n+1$ conditions. Now let
-$R_n(t)=\bigl(\prod_{j=1}^n(t-j)\big/\prod_{j=0}^n(t+j)\bigr)^2
-=\sum_{k=0}^n\bigl[\frac{A_k}{(t+k)^2}+\frac{B_k}{t+k}\bigr]$ with
+$Ve^z-U=O(z^{2n+1})$; there are $2n+2$ unknowns and $2n+1$ conditions. Now write
+$R_n(t)=r_n(t)^2=\sum_{k=0}^n\bigl[\frac{A_k}{(t+k)^2}+\frac{B_k}{t+k}\bigr]$ with
 $A_k=\binom nk^2\binom{n+k}k^2$, and put $p_2(w)=\sum A_kw^k$, $p_1(w)=\sum B_kw^k$. Using
 $\sum_{t\ge1}\frac{z^t}{(t+k)^s}=z^{-k}\bigl(\Li_s(z)-\sum_{m=1}^kz^m/m^s\bigr)$ one finds \st{P}
 \begin{align*}
@@ -782,9 +788,9 @@ T_n(z)&:=-\sum_{t\ge1}R_n'(t)z^t=2p_2(\tfrac1z)\Li_3(z)+p_1(\tfrac1z)\Li_2(z)+\t
 \end{align*}
 with polynomials $p_0,\tilde p_0$ of degree less than $n$. Because $R_n$ has double zeros at
 $1,\dots,n$, both $S_n$ and $T_n$ are $O(z^{n+1})$ at $z=0$; because $R_n(t)=O(t^{-2})$,
-$p_1(1)=\sum B_k=0$; and then $T_n(1)=2a_n\zeta(3)+\tilde p_0(1)=F_n$. Multiplying by $z^n$, this is
+$p_1(1)=\sum B_k=0$; and then $T_n(1)=2a_n\zeta(3)+\tilde p_0(1)=I_n$. Multiplying by $z^n$, this is
 a \emph{simultaneous} Pad\'e problem for the pairs $(\Li_2,\Li_1)$ and $(\Li_3,\Li_2)$ with shared
-polynomial coefficients: $4n+4$ unknown coefficients, and $2(2n+1)+1=4n+3$ linear conditions (two
+polynomial coefficients of degree at most $n$: $4n+4$ unknown coefficients, and $2(2n+1)+1=4n+3$ linear conditions (two
 vanishing orders $2n+1$, and $p_1(1)=0$). \st{N}: for $n\le5$ we solved this linear system exactly;
 its solution space is one-dimensional and is Ap\'ery's. \st{Literature pointer, not retrieved:
 Hermite--Pad\'e approximants to polylogarithms, attributed to Beukers (1981) and Sorokin.} The
@@ -806,9 +812,10 @@ the proof of Theorem~\ref{thm:matrix}?
 \emph{Idea} \st{P for the lemma; the $\zeta(3)$ instance is Codex's proof, presented in the
 companion}. Positivity and smallness of a linear form can both come from one positive quadratic form.
 
-\begin{lemma}[Codex, \texttt{polynomial-inverses-and-boundary-pairings.md}]\label{lem:energy}
-Let $\langle\cdot,\cdot\rangle$ be the inner product of $L^2(0,1)$ and let $P$ be a non-zero
-polynomial of degree $n$ orthogonal to all polynomials of lower degree. Let $B$ be a linear operator
+\begin{lemma}[from Codex's boundary-pairings note]\label{lem:energy}
+Let $\langle\cdot,\cdot\rangle$ be a real inner product on a space of functions containing the
+polynomials, and let $P$ be a non-zero polynomial of degree $n$ orthogonal to all polynomials of
+lower degree. Let $B$ be a linear operator
 and suppose that \textup{(i)} $P=Br+A$ for a polynomial $r$ of degree less than $n$ and a constant
 $A$; \textup{(ii)} there is a function $k$ with $Bk=1$; \textup{(iii)}
 $\langle Bf,f\rangle\ge c\|f\|^2$ with $c>0$ for $f=r+Ak$. Then
@@ -825,36 +832,51 @@ $\langle P,g\rangle\le\|P\|^2/c$.
 Hypothesis (i) is automatic when $B$ raises the degree of polynomials by exactly one: then
 $B$ maps polynomials of degree less than $n$ onto a complement of the constants.
 
-\emph{Instance 1: $\zeta(3)$} \st{C; companion}. $B=H+n(n+1)$ with
-$H=-\frac d{dx}\bigl[x^2(1-x)\frac d{dx}\bigr]+x$, for which
-$Hx^j=(j+1)^2x^{j+1}-j(j+1)x^j$; $k_n(x)=\int_0^1P_n(y)\frac{-\log(xy)}{1-xy}\dd y$; $c=n(n+1)$; and
+\emph{Instance 1: $\zeta(3)$} \st{C; companion, Section~6}. On $L^2(0,1)$ take
+$B=\mathcal H+n(n+1)$ with $\mathcal Hf=-(x^2(1-x)f')'+xf$, for which
+$\mathcal Hx^j=(j+1)^2x^{j+1}-j(j+1)x^j$; $k_n(x)=\int_0^1P_n(y)\frac{-\log(xy)}{1-xy}\dd y$; $c=n(n+1)$; and
 the constant is $A=a_n$. With $\|P_n\|^2=\frac1{2n+1}$ the lemma gives
-$0<F_n\le\frac1{n(n+1)(2n+1)\,a_n}$. Numerically \st{N} the ratio of the two sides is
-$0.6171$, $0.7052$, $0.70709$ at $n=1,10,120$, so the bound is sharp up to a factor that appears to
-tend to $1/\sqrt2$.
+$0<I_n\le\frac1{n(n+1)(2n+1)\,a_n}$. Numerically \st{N} the ratio of the two sides is $0.6171$, $0.7052$, $0.70709$ at $n=1,10,120$:
+the bound is sharp up to a factor that appears to tend to $1/\sqrt2$.
 
-\emph{Instance 2: $\log\frac{m+1}m$} \st{P}. Take $B$ to be multiplication by $x+m$ and
-$k=\frac1{x+m}$. Then $P_n=(x+m)r_n+P_n(-m)$ as in Theorem~\ref{thm:log}, $c=m$, and
+\emph{Instance 2: $\log\frac{m+1}m$} \st{P}. On $L^2(0,1)$ take $B$ to be multiplication by $x+m$ and
+$k=\frac1{x+m}$. Then $P_n=(x+m)s_n+P_n(-m)$ as in Theorem~\ref{thm:log}, $c=m$, and
 $g=P_n/(x+m)$. The lemma gives
-$0<P_n(-m)\,I_n=\int_0^1\frac{P_n(x)^2}{x+m}\dd x\le\frac1{m(2n+1)}$, a second proof of positivity
+$0<P_n(-m)\,\mathcal L_n=\int_0^1\frac{P_n(x)^2}{x+m}\dd x\le\frac1{m(2n+1)}$, a second proof of positivity
 and (with the growth of $P_n(-m)$) of smallness. Numerically the ratio tends to $\sqrt{m/(m+1)}$.
 
+\emph{Instance 3: $\zeta(3)$ again, by multiplication} \st{R: Codex package~04, which attributes the
+route to Pr\'evost (1996), not retrieved; verified by a referee subagent; the displayed facts
+rechecked numerically by us for small indices}. Let $\dd\nu(t)=\pi^2\operatorname{sech}^2(\pi\sqrt t)\tanh(\pi\sqrt t)\dd t$
+on $t>0$. Then $\int\frac{d\nu(t)}{t+a^2}=2\zeta(3,a+\frac12)$ for $a>0$, which equals
+$2(\zeta(3)-H_n^{(3)})$ at $a=n+\frac12$. The polynomials
+$Q_k(t)=\prod_{r<k}(t+(r+\frac12)^2)/(k!)^2$ satisfy the Hilbert-matrix identity
+\[
+\nu(Q_jQ_k)=\frac1{j+k+1}=\int_0^1u^{j+k}\dd u ,
+\]
+so $u^k\mapsto Q_k$ is an isometry from polynomials in $L^2(0,1)$ to polynomials in $L^2(\nu)$. It
+carries $P_n$ to $\Phi_n=\sum_k(-1)^k\binom nk\binom{n+k}kQ_k$, which is therefore orthogonal to
+lower degrees with $\nu(\Phi_n^2)=\frac1{2n+1}$, and $\Phi_n(-(n+\frac12)^2)=a_n$. Lemma~\ref{lem:energy}
+with $B$ = multiplication by $t+(n+\frac12)^2$ and $c=(n+\frac12)^2$ gives
+\[
+0<I_n=\frac1{a_n}\int\frac{\Phi_n(t)^2}{t+(n+\frac12)^2}\dd\nu(t)\le\frac4{(2n+1)^3a_n},
+\]
+the same leading order as Instance~1. The referee's question \st{Q}: for which pairs (measure, basis) is the Gram
+matrix a Hilbert or Cauchy matrix? Each such pair transports a classical orthogonal family together
+with its norms.
+
 \begin{problem}
-Find a third instance. The natural target is $\zeta(2)$: find an operator $B$ and a function $k$
+Find an instance for another constant. The natural target is $\zeta(2)$: find an operator $B$ and a function $k$
 with $Bk=1$ and $\langle P_n,k\rangle$ equal to a form $\alpha_n\zeta(2)-\beta_n$, or show that no
 second-order operator raising degrees by one does this. Then explain the constant $1/\sqrt2$ in
-Instance~1 (it agrees with $F_n\approx\frac{12}{n^3a_n(\lambda-\lambda^{-1})}$ from M4, since
-$\lambda-\lambda^{-1}=24\sqrt2$).
+Instance~1 (it agrees with $I_n\approx\frac{12}{n^3a_n(\Lambda-\Lambda^{-1})}$ from M4, since
+$\Lambda-\Lambda^{-1}=24\sqrt2$).
 \end{problem}
 
 \section{D4. Pushing the determinant method}
 
-\emph{Where the margins are} \st{R}. Per $K^2$: $\zeta(3)$ has $2.634$ against $3.119$; $\zeta(5)$
-has $1.3496$ against $1.3670$ in the preprint and $1.3300$ with Theorem~W; $\zeta(7)$ is short by
-about $0.87$ in every variant computed. According to the notes, a proof for $\zeta(7)$ in this
-family would need either about one extra unit of $p$-adic valuation per row at every prime
-$p\le K$, or an analytic gain of about $20\%$; no mechanism for either is known to the authors of
-the notes.
+\emph{What a proof for $\zeta(7)$ would need} \st{R}. According to the notes: about one extra unit
+of $p$-adic valuation per row at every prime $p\le K$, or an analytic gain of about $20\%$.
 
 \emph{Why determinants are cheaper than their entries} \st{P}. If $A,B$ are integer $h\times h$
 matrices and $A$ has rank at most $r$, then $p^r\det(B+p^{-1}A)\in\Z$: expand by multilinearity in
@@ -884,83 +906,62 @@ would settle $s=7,\dots,13$ negatively for that family.
 
 \section{D5. Smaller items worth a look}
 
-\emph{Upper approximants for $\zeta(3)$} \st{R: Codex,
-\texttt{zeta3-schur-final-status-and-provenance.md}; N for our checks}. The fractions $b_n/a_n$
+\emph{Upper approximants for $\zeta(3)$} \st{R: Codex package~05; N for our checks}. The fractions $b_n/a_n$
 increase to $\zeta(3)$. Codex's Schur-complement study reports that
 $q_h=\frac{5b_h-b_{h-1}}{5a_h-a_{h-1}}$ lies \emph{above} $\zeta(3)$, with
-$q_h-\zeta(3)\sim4\pi^3(3-2\sqrt2)\lambda^{-2h}$. The identity
+$q_h-\zeta(3)\sim4\pi^3(3-2\sqrt2)\Lambda^{-2h}$. The identity
 $q_h-\frac{b_h}{a_h}=\frac6{h^3a_h(5a_h-a_{h-1})}$ is immediate from the Casoratian of M4 \st{P}.
 We checked $q_h>\zeta(3)$ for $1\le h\le120$ and that the ratio to the stated asymptotic is
 $1.056$, $1.028$, $1.014$, $1.009$ at $h=20,40,80,120$. So there are explicit two-sided rational
-brackets $\frac{b_h}{a_h}<\zeta(3)<q_h$ with the same denominators. Problem: prove $q_h>\zeta(3)$,
-equivalently $F_{h-1}>5F_h$, in three lines from the recurrence, or explain why this needs more.
-
-\emph{One family of integers behind several proofs} \st{P, by inspection of the formulas above}. The
-numbers $\varphi_k(n)=\binom nk\binom{n+k}k$ are the coefficients of $P_n$. They give
-$\log\frac{m+1}m$ through $P_n(-m)=\sum\varphi_k(n)m^k$; the Pad\'e polynomial is
-$U_n(z)=\sum_k\varphi_k(n)\,k!\,z^{n-k}$; $\zeta(2)$ pairs $\varphi_k(n)$ with $\binom nk$, and
-$\zeta(3)$ pairs it with itself, $a_n=\sum\varphi_k(n)^2$. What changes from one constant to the next
-is the functional applied to the same coefficient vector.
-
-\emph{Why the cubic logarithm also loses the sign argument} \st{R: Codex \S20}. For the kernel
-$\frac{-\log(xy)}{1-xy}$ all determinants $\det[K(x_i,y_j)]$ at ordered points have a fixed sign,
-which gives non-vanishing of the associated moment determinants. For the cube of the logarithm
-Codex exhibits a $4\times4$ determinant that changes sign. Any determinant approach built on
-$K_3$ therefore needs a different non-vanishing argument; the functional of
-Section~\ref{sec:hankel} avoids the issue by using a positive weight in one variable.
+brackets $\frac{b_h}{a_h}<\zeta(3)<q_h$ of width $\frac6{h^3a_h(5a_h-a_{h-1})}$. The source of
+$q_h$ is an extremal problem (verified by a referee subagent, with exact agreement for
+$h\le10$): with
+$w_3(y)=y^3\frac{d^2}{dy^2}\frac1{e^{2\pi y}-1}>0$,
+\[
+q_h-\zeta(3)=\min_{p\text{ monic},\ \deg p=h-1}\int_0^\infty\frac{p(y^2)^2\,w_3(y)}{\prod_{j=1}^{2h}(y^2+j^2)}\dd y>0 .
+\]
+This is not a new irrationality proof (the form is $I_{h-1}-5I_h$ up to a factor); it adds a
+description in which sign and monotonicity are immediate. The same
+construction for $\zeta(5)$ gives convergent one-sided rational approximants whose denominators are
+observed to grow far too fast \st{R, numerical only}. Problems: prove $q_h>\zeta(3)$, that is
+$I_{h-1}>5I_h$, directly from the recurrence; and explain the denominator growth at $s=5$, where
+only the arithmetic fails.
 
 \section*{Status and sources}
-\addcontentsline{toc}{section}{Status and sources}
+\footnotesize
 
-\noindent\textbf{What each part is drawn from.}
-\begin{itemize}\itemsep1pt
-\item Sections 1--2 and M1--M4: \texttt{Codex-Cookbook-of-irrationality-proofs/}
-(\texttt{irrationality-framework.md}, \texttt{shared-coefficients-exp-pi-zeta.md},
-\texttt{polynomial-inverses-and-boundary-pairings.md}, \texttt{pi-powers.md}). The proofs were
-rewritten and rechecked here; the proof of Theorem~\ref{thm:pi} is the $z=i\pi$ specialisation in
-the second of these files.
-\item Section 3: Codex exposition PDF, \S6 (Lemmas~\ref{lem:lcmid}, \ref{lem:lcmsub});
-\texttt{main-explanation.tex} and \texttt{zudilin-explained.md} for the bounds valid for all $n$.
-\item Sections 6 and 8 ($\gamma$): Codex exposition PDF, \S16--18, \S21, Appendix~A.
-\item Sections 7, 8 (Catalan) and D4: branch \texttt{research-claude}, folder
-\texttt{research/claude/}: \texttt{SUMMARY.md}, \texttt{fauzan-status.md}, \texttt{zeta5-margin.md},
-\texttt{hankel-zeta3.md}, \texttt{zeta7-status.md}, \texttt{anand-referee.md},
-\texttt{catalan-status.md}, \texttt{literature-status.md}, \texttt{next-steps.md}; Codex exposition
-PDF, \S19 and Appendix~D.
-\item D1: the differential equation is stated in \texttt{irrationality-framework.md}, \S6; the
-inhomogeneous equation, Proposition~\ref{prop:ode} and the exponents were worked out here.
-\item D2: written here. D3: \texttt{Codex-Zeta3-03-Kernel-energy/main-explanation.tex} and the
-boundary-pairings note; Instance~2 was worked out here. D5: the Schur--Ap\'ery status file and Codex
-\S20.
-\end{itemize}
+\noindent\textbf{Sources.} Paths are relative to \texttt{Peer Review/} unless a branch is named.
+Sections 1--2, M1--M4: the Codex cookbook folder (its framework, shared-coefficients,
+boundary-pairings and pi-powers notes); proofs rewritten and rechecked here.
+Section 3: Codex exposition PDF \S6; \path{main-explanation.tex} (package 03) and
+\path{zudilin-explained.md} (package 01). Sections 6 and 8 ($\gamma$): Codex exposition PDF
+\S16--18, \S21, App.~A. Sections 7, 8 (Catalan), D4: branch \texttt{research-claude},
+\path{research/claude/} (\path{SUMMARY.md}, \path{fauzan-status.md}, \path{zeta5-margin.md},
+\path{hankel-zeta3.md}, \path{zeta7-status.md}, \path{anand-referee.md}, \path{catalan-status.md},
+\path{literature-status.md}, \path{next-steps.md}); Codex exposition PDF \S19, App.~D. D1: the
+homogeneous equation is in the framework note; the inhomogeneous equation,
+Proposition~\ref{prop:ode} and the exponents were worked out here. D2: written here. D3: package 03
+and the boundary-pairings note; Instance~2 was worked out here; Instance~3 and the recurrence
+paragraph of M4 follow the reports on Codex packages 04 and 01 in \path{Referee-reports/}. D5:
+package 05, its status file and its referee report.
 
-\noindent\textbf{What we verified ourselves} (mpmath at 40--400 digits, sympy and exact rational
-arithmetic). Every displayed numerical constant in Part~I; the Pad\'e identity \eqref{eq:pade} in all
-three forms (real and complex $z$, $n\le5$) and its specialisation at $i\pi$; the integral and
-linear-form expressions for $\log\frac{m+1}m$ and $\zeta(2)$ including the denominators; the Mellin
-formula of M1; the Casoratians of M4; the moment formula, integrality and values of $J_n^{[k]}$ for
-$k=1,3,5$, $n=10,20,40$; $E_1$ and the four linear forms in $\gamma$; $L\cA=0$, $L\cB=6z$, the
-exponents, the bound $0<F_n\le2\zeta(3)\lambda^{-n}$ for $n<15$ and the $\zeta(2)$ analogue; the
-matrix identity \eqref{eq:padematrix}, the variance $\frac1{4(2n+3)}$ and the concentration estimate;
-the polylogarithm system, its factorisation and the limit at $1$; the simultaneous Pad\'e problem for
-$n\le5$; both instances of Lemma~\ref{lem:energy}; the identities and inequalities for $q_h$; and
-the arithmetic of the constants quoted in Sections~7 and D4 ($-0.017408$, $-0.037034$, $0.019626$,
-$0.214$, $-0.031925$, and the list $0.875,2.0,2.44,2.89$).
+\noindent\textbf{What we verified ourselves} (mpmath at 40--400 digits, sympy, exact rational
+arithmetic). Every numerical constant in Part~I; identity \eqref{eq:pade} in its three forms (real
+and complex $z$, $n\le5$) and at $z=i\pi$; the integrals, linear forms and denominators for
+$\log\frac{m+1}m$ and $\zeta(2)$; the Mellin formula of M1; the Casoratians, the bound
+$I_n<6/(n^2a_{n+1})$ and the telescoping identity of M4; moments, integrality and values of
+$J_n^{[k]}$ ($k=1,3,5$; $n=10,20,40$); $E_1$ and the four forms in $\gamma$; $L\cA=0$, $L\cB=6z$,
+the exponents, $0<I_n\le2\zeta(3)\Lambda^{-n}$ for $n<15$, and the $\zeta(2)$ analogue; identity
+\eqref{eq:padematrix}, the variance and the concentration estimate; the polylogarithm system, its
+factorisation and its limit at $1$; the simultaneous Pad\'e problem for $n\le5$; the three instances
+of Lemma~\ref{lem:energy} (the third for small indices only); the statements about $q_h$ for
+$h\le120$; and the arithmetic of the constants quoted in Sections~7 and D4. Proofs marked \st{P} were checked line by line by the drafting agent.
 
-\noindent\textbf{What we did not verify.} Everything labelled \st{R}: in particular the content of
-the preprints on $\zeta(5)$ and $\zeta(7)$, the Lean projects, Theorem~W, the $s=3$ determinant
-proof, the no-go theorem for $s\ge15$, all statements about Catalan's constant, the full proof of
-Codex's Proposition~16.1, and the proofs of the Chebyshev-type bounds. Statements marked as
-literature pointers were written from general knowledge and no source was retrieved for them.
-
-\noindent\textbf{References named above.} F.~Beukers, \emph{A note on the irrationality of
-$\zeta(2)$ and $\zeta(3)$}, Bull.\ London Math.\ Soc.\ 11 (1979) (not retrieved by us);
-W.~Zudilin, \emph{An elementary proof of Ap\'ery's theorem}, arXiv:math/0202159;
-I.~Niven, \emph{A simple proof that $\pi$ is irrational}, Bull.\ Amer.\ Math.\ Soc.\ 53 (1947);
-J.~Sondow's work on $\gamma$ as cited in the Codex exposition (not retrieved by us);
-A.~Fauzan, \emph{$\zeta(5)$ is irrational}, preprint, doi:10.5281/zenodo.22826419;
-P.~Anand, \emph{$\zeta(7)$ is irrational}, Zenodo record 22920911;
-W.~Zudilin, \emph{A determinantal approach to irrationality}, arXiv:1507.05697 (as cited in
-Claude's notes).
+\noindent\textbf{What we did not verify.} Everything labelled \st{R}: the preprints on $\zeta(5)$
+(A.~Fauzan, \path{doi:10.5281/zenodo.22826419}) and $\zeta(7)$ (P.~Anand, Zenodo record 22920911), the Lean
+projects, Theorem~W, the $s=3$ determinant proof, the no-go theorem, everything about Catalan's
+constant, the full proof of Codex's Proposition~16.1, the Chebyshev-type bounds. Literature pointers
+and the classical references named in the text (Beukers 1979, Niven 1947, Sondow, Pr\'evost 1996,
+Zudilin arXiv:math/0202159 and arXiv:1507.05697) were not retrieved by the drafting agent.
 
 \end{document}
