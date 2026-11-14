@@ -73,3 +73,45 @@ B4. mu_(zeta(s))(R) vs -(1/(s-1)!) sum'_{x>=1} g^(s-1)(x),  g = x^s R(-x^2)
 [PASS] s=3, R=t^2/((t+1)(t+4)(t+9)): deg g=1; mu - (-(1/(s-1)!)sum') = -0.5 ; predicted boundary tau(poly part)=-1/2
 [PASS] s=5, R=t^0/((t+1)(t+4)(t+9)): deg g=-1; mu - (-(1/(s-1)!)sum') = -6.54816181092e-32 ; predicted boundary tau(poly part)=0
 [PASS] s=5, R=t^1/((t+1)(t+4)(t+9)): deg g=1; mu - (-(1/(s-1)!)sum') = 1.05194293562e-30 ; predicted boundary tau(poly part)=0
+[PASS] s=5, R=t^2/((t+1)(t+4)(t+9)): deg g=3; mu - (-(1/(s-1)!)sum') = -0.25 ; predicted boundary tau(poly part)=-1/4
+[PASS] s=3, R=1/(t+1): deg g=1; mu - (-(1/(s-1)!)sum') = -0.5 ; predicted boundary tau(poly part)=-1/2
+[PASS] s=3, R=1/((t+1)(t+4)): deg g=-1; mu - (-(1/(s-1)!)sum') = 0.0 ; predicted boundary tau(poly part)=0
+[PASS] s=5, R=1/(t+1): deg g=3; mu - (-(1/(s-1)!)sum') = -0.25 ; predicted boundary tau(poly part)=-1/4
+[PASS] s=5, R=1/((t+1)(t+4)): deg g=1; mu - (-(1/(s-1)!)sum') = 0.0 ; predicted boundary tau(poly part)=0
+   Result: mu_(zeta(s))(R) = -(1/(s-1)!) sum'_{x>=1} g^(s-1)(x) + L(P^(s-2))/(s-1)!, P = polynomial part of g.
+   The boundary term vanishes iff deg g < s-2; for deg g = s-2 with leading coefficient c it equals c/(s-1)
+   (deg g >= s-1 makes the plain sum diverge).
+
+============================================================================
+B5. Hankel determinants Delta(X) = det[ mu^(s)_X(t^(i+j)/D_K(t)) ]_{0<=i,j<h}
+============================================================================
+  s  K  h deg Delta(zeta(s))  log|P(zeta)|  log max|P_i|  log lcm den
+  3  2  1   1    0.047943097       -1.6514        1.6094       1.3863
+  3  2  2   2  0.00022048312       -5.6471        4.9127       2.7726
+  3  3  2   2   2.3573162e-6       -6.3142        7.5517       6.6438
+  3  3  3   3  9.0804972e-10      -12.3842       13.2909       8.4355
+  3  4  3   3  1.7594724e-13      -13.7660       17.1189      15.6026
+  3  4  4   4  1.1985898e-17      -20.4698       26.8547      18.4930
+  3  5  4   4  2.2378275e-23      -22.1119       32.2438      30.0420
+  3  6  5   5  5.1018064e-36      -33.6401       50.5320      47.6234
+  5  2  1   1    0.065361224       -1.3415        3.0445       1.3863
+  5  2  2   2   0.0011681549       -2.8811        7.1452       3.8712
+  5  3  2   2   1.1673686e-5       -5.1198       10.8703       6.2383
+  5  3  3   3   3.2156127e-8       -6.3322       19.0465      10.9205
+  5  4  3   3  5.7441603e-12       -5.5981       28.1836      20.2847
+  5  4  4   4  4.4312742e-15       -8.8942       38.4223      24.1559
+  5  5  4   4   7.566834e-21       -7.0420       51.1248      39.2885
+  5  6  5   5   2.577645e-32      -15.8252       72.9015      56.9107
+  7  2  1   1    0.074665175       -1.2084        4.4427       1.3863
+  7  2  2   2   0.0033430547       -0.7311        9.5219       4.9698
+  7  3  2   2   3.1067165e-5        0.1356       18.7677      10.5150
+  7  3  3   3   3.4966178e-7       -0.2570       26.2207      14.6093
+  7  4  3   3  5.7229821e-11        0.2843       38.1415      23.8682
+  7  4  4   4  2.6682355e-13       -0.0733       49.2924      28.8789
+  7  5  4   4  4.1427498e-19        6.4304       70.1987      48.7581
+  7  6  5   5  1.0704231e-29        9.7592      105.6200      76.4661
+[PASS] Delta(zeta(s)) > 0 in all B5 cases (Gram positivity)
+   (P = primitive integer polynomial proportional to Delta, leading coeff > 0; deg = min(h, K) expected.)
+
+============================================================================
+SUMMARY: 34/34 checks passed

@@ -48,16 +48,31 @@ $$0<F_n\le\sum_{m>n}\frac{24}{m^3u_m}<\frac{24}{u_{n+1}}\sum_{m>n}\frac1{m^3}<\f
 
 **Step 6 (growth of $u_n$).** From $\mathcal L[u]_n=0$ and $u_{n-1}\le u_n$:
 $$\frac{u_{n+1}}{u_n}\ge\frac{\beta_n-n^3}{(n+1)^3}=33-\frac{48n^2+72n+28}{(n+1)^3}\ \ge30\quad\text{for }n\ge15$$
-($3\cdot16^3=12288>11908=48\cdot225+72\cdot15+28$, and the subtracted fraction decreases). So
-$u_n\ge c\,30^n$ with $c=u_{15}30^{-15}>0$.
+($3\cdot16^3=12288>11908=48\cdot225+72\cdot15+28$, and the subtracted fraction decreases). Feed this
+back: for $n\ge16$ we now know $u_{n-1}\le u_n/30$, so
+$$\frac{u_{n+1}}{u_n}\ge\frac{\beta_n-n^3/30}{(n+1)^3}\xrightarrow[n\to\infty]{}34-\frac1{30}=33.966\ldots$$
+Hence for every $\rho<33.96$ there is $c_\rho>0$ with $u_n\ge c_\rho\,\rho^{\,n}$ for all $n$. (The true rate
+is $(\sqrt2+1)^4=33.970\ldots$)
 
 **Step 7 (conclusion).** If $\zeta(3)=p/q$, then $qD_n^3F_n=D_n^3u_np-D_n^3v_nq$ is an integer and
-$$0<qD_n^3F_n<\frac{12q}{c\,n^2}\cdot\frac{D_n^3}{30^{\,n}}\longrightarrow0,$$
-using $D_n\le C^n$ for large $n$ with any $C<30^{1/3}=3.107\ldots$ (e.g. $D_n<3^n$, or the prime number
-theorem $D_n=e^{n+o(n)}$; see exposition §5.1 for the status of this input). Contradiction. $\blacksquare$
+$$0<qD_n^3F_n<\frac{12q}{c_\rho\,n^2}\cdot\frac{D_n^3}{\rho^{\,n}}.$$
+This tends to $0$ as soon as $\limsup D_n^{1/n}<\rho^{1/3}$ for some $\rho<33.96$, i.e. as soon as
+$\limsup D_n^{1/n}<3.238$. Any of the following suffices:
 
-With slightly more care in Step 6 the ratio tends to $(\sqrt2+1)^4=33.97$, so the requirement is again
-$\limsup D_n^{1/n}<(\sqrt2+1)^{4/3}=3.2388$, exactly as in Zudilin's proof.
+* the prime number theorem, $D_n=e^{n+o(n)}$;
+* $D_n<3^n$ (true; quoted by Zudilin without proof);
+* the **elementary** bound $\log D_n\le c\,n+O(\log^2n)$ with $c=\frac12\log2+\frac34\log3=1.17053\ldots$, proved in
+  ten lines by the other agent from the periodic function
+  $\lfloor y\rfloor-\lfloor y/2\rfloor-2\lfloor y/3\rfloor+\lfloor y/6\rfloor\in\{0,1\}$ and Stirling
+  (`codex/problem131/denominator-design.md` §1 on `origin/codex/independent-research`). **We checked
+  that proof by hand** (period 6, table $0,1,1,0,0,1$, the cancellation of $x\log x$ and $x$ terms, the
+  constant $a=\frac13\log2+\frac12\log3$, the geometric sum $\frac32a=c$). It gives
+  $e^{3c}=2^{3/2}3^{9/4}=33.50\ldots<33.96$. The margin is small but strict.
+
+Contradiction. $\blacksquare$
+
+With the third option the whole proof is elementary and self-contained: no prime number theorem,
+no unproved "$D_n<3^n$", no second series, no Stirling-type optimisation.
 
 ## What was removed, and what it cost
 

@@ -382,6 +382,12 @@ $$\limsup_{n\to\infty}D_n^{1/n}<(\sqrt2+1)^{4/3}=3.2388\ldots\qquad\text{i.e.}\q
   $D_n<3^n$ for all $n$ by elementary means. *(These two attributions are quoted from memory;
   the sources were not retrieved in this session.)* Either suffices.
 
+* **A short elementary proof that suffices** was found by the other agent
+  (`codex/problem131/denominator-design.md` §1 on `origin/codex/independent-research`):
+  $\log D_n\le cn+O(\log^2n)$ with $c=\frac12\log2+\frac34\log3=1.17053<1.17516$, from the
+  non-negative 6-periodic function $\lfloor y\rfloor-\lfloor y/2\rfloor-2\lfloor y/3\rfloor+\lfloor y/6\rfloor$.
+  We verified that proof by hand; it closes this gap, with margin $3c+\log\lambda=-0.0139$.
+
 So the elementary proof is complete modulo a Chebyshev-type estimate strictly stronger than
 the "$4^n$" one. `computations/dn_bound_check.py` checks $D_n<3^n$ for $1\le n\le 10^5$ numerically
 (evidence only, not a proof). We regard this as the single external input of the proof.
