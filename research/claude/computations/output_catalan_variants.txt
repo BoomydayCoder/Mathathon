@@ -9,3 +9,41 @@
   odd nodes n=1,3,..,2K-1    K= 60 deg= 60 sign=+1 cost=3.9932 logdet=-3.0934 total=+0.8998  v2=-60
       -v_p: {2: 60, 3: 440, 5: 283, 7: 238, 11: 180, 13: 156, 17: 120, 19: 120, 23: 120, 29: 120, 31: 120, 37: 120, 41: 120, 43: 120, 47: 120, 53: 108, 59: 92, 61: 90, 67: 86, 71: 84, 73: 84, 79: 80, 83: 78, 89: 76, 97: 72, 101: 70, 103: 68, 107: 66, 109: 66, 113: 64, 127: 56, 131: 54, 137: 52, 139: 50, 149: 46, 151: 44, 157: 42, 163: 38, 167: 36, 173: 34, 179: 30, 181: 30, 191: 24, 193: 24, 197: 22, 199: 20, 211: 14, 223: 8, 227: 6, 229: 6, 233: 4}
   odd nodes n=1,3,..,2K-1    K= 80 deg= 80 sign=+1 cost=4.0449 logdet=-3.0997 total=+0.9452  v2=-80
+(B) Fauzan-type families at K=40:  kernel N a h | deg cost logdet total   (per K^2)
+  cosh  N=0 a=0 h=40 | deg=40 cost=2.5807 logdet=-2.1991 total=+0.3816
+  cosh  N=0 a=0 h=37 | deg=37 cost=2.7338 logdet=-2.4027 total=+0.3312
+  cosh  N=3 a=6 h=37 | deg=37 cost=1.1400 logdet=-0.2838 total=+0.8562
+  cosh  N=3 a=4 h=37 | deg=37 cost=1.6178 logdet=-1.0367 total=+0.5810
+  cosh  N=3 a=2 h=37 | deg=37 cost=2.1289 logdet=-1.7424 total=+0.3865
+  cosh  N=2 a=6 h=38 | deg=38 cost=1.6612 logdet=-0.9399 total=+0.7213
+  cosh  N=1 a=6 h=40 | deg=39 cost=2.0508 logdet=-1.4829 total=+0.5679
+  cosh  N=4 a=2 h=36 | deg=36 cost=1.9894 logdet=-1.5858 total=+0.4036
+  cosh  N=1 a=2 h=40 | deg=39 cost=2.3596 logdet=-1.9670 total=+0.3926
+  cosh  N=2 a=2 h=40 | deg=38 cost=2.1450 logdet=-1.7212 total=+0.4238
+  chi3  N=0 a=0 h=40 | deg=40 cost=3.0546 logdet=-3.1212 total=-0.0666
+  chi3  N=0 a=0 h=37 | deg=34 cost=3.1305 logdet=-3.1841 total=-0.0536
+  chi3  N=3 a=6 h=37 | deg=37 cost=2.1009 logdet=-1.4447 total=+0.6562
+  chi3  N=3 a=4 h=37 | deg=37 cost=2.3946 logdet=-2.0592 total=+0.3354
+  chi3  N=3 a=2 h=37 | deg=37 cost=2.7568 logdet=-2.6385 total=+0.1183
+  chi3  N=2 a=6 h=38 | deg=38 cost=2.4652 logdet=-2.0263 total=+0.4389
+  chi3  N=1 a=6 h=40 | deg=39 cost=2.7307 logdet=-2.5427 total=+0.1880
+  chi3  N=4 a=2 h=36 | deg=36 cost=2.6518 logdet=-2.4674 total=+0.1845
+  chi3  N=1 a=2 h=40 | deg=39 cost=2.9001 logdet=-2.9337 total=-0.0336
+  chi3  N=2 a=2 h=40 | deg=38 cost=2.7411 logdet=-2.7299 total=+0.0111
+(C) functional II, W=1, h = lam*K:  K h | deg cost logdet total   (per K^2)
+  K= 40 h= 16 | deg= 16 cost=2.5700 logdet=-1.9644 total=+0.6056
+  K= 40 h= 22 | deg= 22 cost=2.9004 logdet=-2.3936 total=+0.5068
+  K= 40 h= 28 | deg= 28 cost=2.9823 logdet=-2.5922 total=+0.3901
+  K= 40 h= 32 | deg= 32 cost=2.9199 logdet=-2.5836 total=+0.3363
+  K= 40 h= 36 | deg= 36 cost=2.7800 logdet=-2.4545 total=+0.3255
+  K= 40 h= 40 | deg= 40 cost=2.5807 logdet=-2.1991 total=+0.3816
+  K= 40 h= 44 | deg= 40 cost=2.2845 logdet=-1.8122 total=+0.4723
+  K= 40 h= 52 | deg= 40 cost=1.4574 logdet=-0.6255 total=+0.8320
+  K= 60 h= 24 | deg= 24 cost=2.8052 logdet=-2.1556 total=+0.6496
+  K= 60 h= 33 | deg= 33 cost=3.1531 logdet=-2.5911 total=+0.5620
+  K= 60 h= 42 | deg= 42 cost=3.1982 logdet=-2.7599 total=+0.4383
+  K= 60 h= 48 | deg= 48 cost=3.0925 logdet=-2.7113 total=+0.3812
+  K= 60 h= 54 | deg= 54 cost=2.9094 logdet=-2.5260 total=+0.3834
+  K= 60 h= 60 | deg= 60 cost=2.6513 logdet=-2.1984 total=+0.4530
+  K= 60 h= 66 | deg= 60 cost=2.2656 logdet=-1.7231 total=+0.5425
+  K= 60 h= 78 | deg= 60 cost=1.2220 logdet=-0.3109 total=+0.9111

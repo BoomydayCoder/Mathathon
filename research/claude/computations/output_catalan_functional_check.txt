@@ -163,4 +163,7 @@ PASS (P) n=2: 0.008802412896486296867187429624092356  ref 0.00880241289648629686
 PASS (P) n=3: 0.004019249631180174418207837787357662  ref 0.004019249631180174418207837787357662  err 1.84e-51
 PASS (P) n=6: 0.001022551106567198339742231548486626  ref 0.001022551106567198339742231548486626  err 2.04e-51
 PASS (W) w>0 on grid (0,8]
+PASS (D) K=4 Gram determinant by quadrature vs exact polynomial at X0, kernel=cosh (tol 1e-25: the determinant amplifies quadrature error): 1.0  ref 1.0  err 8.31e-36
+PASS (D) K=4 Gram determinant by quadrature vs exact polynomial at X0, kernel=sinh (tol 1e-25: the determinant amplifies quadrature error): 1.0  ref 1.0  err 6.0e-38
+PASS (D) K=4 Gram determinant by quadrature vs exact polynomial at X0, kernel=chi3 (tol 1e-25: the determinant amplifies quadrature error): 1.000000000000000000000000000057682  ref 1.0  err 5.77e-29
 ALL PASS

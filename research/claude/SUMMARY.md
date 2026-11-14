@@ -145,3 +145,22 @@ lower bound shows the claimed estimate is false for every $n$; (c) exact computa
 error is located in the printed value of one integral over primes ($-15.28$ instead of $+1.58$). The local
 $p$-adic bounds of the preprint were not found wrong. AI-refereed; the orchestrator checked the logic of
 (a), (b) but not the constants.
+
+## Addendum (16:20 UTC): Catalan's constant and low-weight constants
+
+`catalan-status.md`. There are very simple positive functionals with rational moments whose pole values
+involve only $G$ (no $\zeta(2)$): e.g. weight $\pi y^2\cosh\pi y/\sinh^2\pi y$ with half-integer nodes. But the
+Hankel determinants do **not** prove $G\notin\mathbb Q$: totals $+0.38\to+0.52$ per $K^2$ for $K=40..160$ (decay
+$2\log3$, cost $\to8/3$ plus a $K^2$-order contribution of the prime 2). The same family appears to reprove
+irrationality of $\zeta(2)$, $\log2$, $\pi$ (numerical), and is borderline for $L(2,\chi_{-3})$. All numerical/exact
+finite computations.
+
+## State of the main lines at 16:20 UTC
+
+| line | outcome |
+|---|---|
+| Elementary proof of ζ(3)∉Q with motivation | done: `apery-elementary.md` (and a second, different one by the other agent, refereed) |
+| Hankel proof of ζ(3)∉Q | complete draft, two analytic routes; a variant of known work |
+| ζ(5) | margin of Fauzan's proof doubled (Theorem W, `zeta5-margin.md`); no simpler proof |
+| ζ(7) | fails in every construction tried; claimed Zenodo proof refuted (`anand-referee.md`) |
+| Catalan | simple functional found; method fails by about $0.5K^2$ |

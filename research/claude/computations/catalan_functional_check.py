@@ -56,10 +56,10 @@ def q2m(q):
     return mp.mpf(int(q.p)) / mp.mpf(int(q.q))
 
 
-def report(name, val, ref):
+def report(name, val, ref, tol=None):
     global fails
     err = abs(val - ref)
-    ok = err < TOL * max(1, abs(ref))
+    ok = err < (tol or TOL) * max(1, abs(ref))
     fails += (not ok)
     print(f"{'PASS' if ok else 'FAIL'} {name}: {mp.nstr(val, 34)}  ref {mp.nstr(ref, 34)}  err {mp.nstr(err, 3)}")
 
@@ -92,7 +92,7 @@ for (kernel, s, alpha) in cases:
 # ---- functional II for Catalan ('cosh') and the chi_{-3} functional ('chi3'): explicit weights ----
 w_cosh = lambda u: mp.pi * u / 4 * mp.sinh(mp.pi * u) / mp.cosh(mp.pi * u) ** 2
 kap3 = lambda u: 1 / (3 + 4 * mp.sinh(mp.pi * u) ** 2)
-w_chi3 = lambda u: -2 / (3 * mp.sqrt(3)) * u * mp.diff(kap3, u)
+w_chi3 = lambda u: 2 / (3 * mp.sqrt(3)) * u * 8 * mp.pi * mp.sinh(mp.pi * u) * mp.cosh(mp.pi * u) / (3 + 4 * mp.sinh(mp.pi * u) ** 2) ** 2   # = -(2/(3 sqrt3)) u kap3'(u)
 L3 = (mp.zeta(2, mp.mpf(1) / 3) - mp.zeta(2, mp.mpf(2) / 3)) / 9
 for (kernel, wf, x0) in (('cosh', w_cosh, mp.catalan), ('chi3', w_chi3, L3)):
     print(f"--- kernel={kernel} s=2 nodes n=1,2,... ---")
@@ -105,4 +105,16 @@ for (kernel, wf, x0) in (('cosh', w_cosh, mp.catalan), ('chi3', w_chi3, L3)):
     grid_ok = all(wf(mp.mpf(k) / 50) > 0 for k in range(1, 400))
     fails += (not grid_ok)
     print(f"{'PASS' if grid_ok else 'FAIL'} (W) w>0 on grid (0,8]")
+# ---- end-to-end: Hankel determinant from quadrature of the Gram matrix vs exact Delta_K(X0) from catalan_lib ----
+from catalan_lib import analyse
+w_sinh2 = lambda u: mp.pi * u * u * mp.cosh(mp.pi * u) / mp.sinh(mp.pi * u) ** 2
+for (kernel, alpha, wf, x0) in (('cosh', fmpq(1), w_cosh, mp.catalan), ('sinh', fmpq(1, 2), w_sinh2, 4 * mp.catalan), ('chi3', fmpq(1), w_chi3, L3)):
+    K = 4
+    r = analyse(2, kernel, alpha, K)
+    exact = sum(q2m(c) * x0 ** k for k, c in enumerate(r['cs']))
+    al = q2m(alpha)
+    D = lambda y: mp.fprod(y * y + (al + j) ** 2 for j in range(K))
+    mom = [mp.quad(lambda y: y ** (2 * e) * wf(y) / D(y), [0, mp.mpf(1) / 4, 1, 3, 8, 20, 60]) for e in range(2 * K - 1)]
+    num = mp.det(mp.matrix([[mom[i + j] for j in range(K)] for i in range(K)]))
+    report(f"(D) K=4 Gram determinant by quadrature vs exact polynomial at X0, kernel={kernel} (tol 1e-25: the determinant amplifies quadrature error)", num / exact, mp.mpf(1), tol=mp.mpf(10) ** -25)
 print("ALL PASS" if fails == 0 else f"{fails} FAILURES")

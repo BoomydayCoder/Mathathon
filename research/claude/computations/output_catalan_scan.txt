@@ -1,0 +1,96 @@
+# K=24  kernel cosh; columns: j0 N a h | deg cost/K^2 logdet/K^2 total/K^2   (8s)
+  j0=  0 N=  0 a= 0 h= 17 | deg= 17 cost=2.7046 logdet=-2.3902 total=+0.3144
+  j0=  0 N=  0 a= 0 h= 20 | deg= 20 cost=2.6523 logdet=-2.4163 total=+0.2360
+  j0=  0 N=  0 a= 0 h= 24 | deg= 24 cost=2.4625 logdet=-2.2008 total=+0.2617
+  j0=  0 N=  0 a= 0 h= 28 | deg= 24 cost=2.1124 logdet=-1.6767 total=+0.4357
+  j0=  0 N=  0 a= 0 h= 31 | deg= 24 cost=1.7282 logdet=-1.0681 total=+0.6601
+  j0=  0 N=  1 a= 2 h= 17 | deg= 17 cost=2.4916 logdet=-2.2032 total=+0.2884
+  j0=  0 N=  1 a= 2 h= 20 | deg= 20 cost=2.4169 logdet=-2.1765 total=+0.2405
+  j0=  0 N=  1 a= 2 h= 24 | deg= 23 cost=2.1755 logdet=-1.8851 total=+0.2904
+  j0=  0 N=  1 a= 2 h= 28 | deg= 23 cost=1.7788 logdet=-1.2796 total=+0.4992
+  j0=  0 N=  1 a= 2 h= 31 | deg= 23 cost=1.3505 logdet=-0.6068 total=+0.7437
+  j0=  0 N=  1 a= 4 h= 17 | deg= 17 cost=2.3280 logdet=-2.0035 total=+0.3245
+  j0=  0 N=  1 a= 4 h= 20 | deg= 20 cost=2.2246 logdet=-1.9228 total=+0.3018
+  j0=  0 N=  1 a= 4 h= 24 | deg= 23 cost=1.9598 logdet=-1.5541 total=+0.4056
+  j0=  0 N=  1 a= 4 h= 28 | deg= 23 cost=1.5107 logdet=-0.8661 total=+0.6446
+  j0=  0 N=  1 a= 4 h= 31 | deg= 23 cost=0.9940 logdet=-0.1283 total=+0.8656
+  j0=  0 N=  1 a= 6 h= 17 | deg= 17 cost=2.2305 logdet=-1.7907 total=+0.4397
+  j0=  0 N=  1 a= 6 h= 20 | deg= 20 cost=2.1025 logdet=-1.6549 total=+0.4476
+  j0=  0 N=  1 a= 6 h= 24 | deg= 23 cost=1.8094 logdet=-1.2076 total=+0.6018
+  j0=  0 N=  1 a= 6 h= 28 | deg= 23 cost=1.2537 logdet=-0.4358 total=+0.8179
+  j0=  0 N=  1 a= 6 h= 31 | deg= 23 cost=0.6973 logdet=0.3677 total=+1.0651
+  j0=  0 N=  1 a=10 h= 17 | deg= 17 cost=2.0979 logdet=-1.3246 total=+0.7732
+  j0=  0 N=  1 a=10 h= 20 | deg= 20 cost=1.9322 logdet=-1.0752 total=+0.8570
+  j0=  0 N=  1 a=10 h= 24 | deg= 23 cost=1.5367 logdet=-0.4667 total=+1.0700
+  j0=  0 N=  1 a=10 h= 28 | deg= 23 cost=0.8879 logdet=0.4760 total=+1.3639
+  j0=  0 N=  1 a=10 h= 31 | deg= 23 cost=0.2627 logdet=1.4133 total=+1.6761
+  j0=  0 N=  2 a= 2 h= 17 | deg= 17 cost=2.2736 logdet=-1.9886 total=+0.2850
+  j0=  0 N=  2 a= 2 h= 20 | deg= 20 cost=2.1553 logdet=-1.9071 total=+0.2482
+  j0=  0 N=  2 a= 2 h= 24 | deg= 22 cost=1.8808 logdet=-1.5376 total=+0.3432
+  j0=  0 N=  2 a= 2 h= 28 | deg= 22 cost=1.4441 logdet=-0.8488 total=+0.5952
+  j0=  0 N=  2 a= 2 h= 31 | deg= 22 cost=0.9327 logdet=-0.1106 total=+0.8220
+  j0=  0 N=  2 a= 4 h= 17 | deg= 17 cost=1.9283 logdet=-1.5442 total=+0.3841
+  j0=  0 N=  2 a= 4 h= 20 | deg= 20 cost=1.7918 logdet=-1.3507 total=+0.4410
+  j0=  0 N=  2 a= 4 h= 24 | deg= 22 cost=1.4134 logdet=-0.8219 total=+0.5915
+  j0=  0 N=  2 a= 4 h= 28 | deg= 22 cost=0.7750 logdet=0.0361 total=+0.8111
+  j0=  0 N=  2 a= 4 h= 31 | deg= 22 cost=0.1764 logdet=0.9070 total=+1.0834
+  j0=  0 N=  2 a= 6 h= 17 | deg= 17 cost=1.7132 logdet=-1.0541 total=+0.6591
+  j0=  0 N=  2 a= 6 h= 20 | deg= 20 cost=1.4713 logdet=-0.7444 total=+0.7269
+  j0=  0 N=  2 a= 6 h= 24 | deg= 22 cost=0.9381 logdet=-0.0514 total=+0.8867
+  j0=  0 N=  2 a= 6 h= 28 | deg= 22 cost=0.2286 logdet=0.9802 total=+1.2089
+  j0=  0 N=  2 a= 6 h= 31 | deg= 22 cost=-0.4769 logdet=1.9868 total=+1.5099
+  j0=  0 N=  2 a=10 h= 17 | deg= 17 cost=1.3188 logdet=0.0599 total=+1.3787
+  j0=  0 N=  2 a=10 h= 20 | deg= 20 cost=0.9625 logdet=0.6150 total=+1.5774
+  j0=  0 N=  2 a=10 h= 24 | deg= 22 cost=0.2522 logdet=1.6516 total=+1.9039
+  j0=  0 N=  2 a=10 h= 28 | deg= 22 cost=-0.6494 logdet=3.0436 total=+2.3943
+  j0=  0 N=  2 a=10 h= 31 | deg= 22 cost=-1.5057 logdet=4.3303 total=+2.8245
+  j0=  0 N=  5 a= 2 h= 17 | deg= 17 cost=1.5791 logdet=-1.2308 total=+0.3483
+  j0=  0 N=  5 a= 2 h= 20 | deg= 19 cost=1.3874 logdet=-0.9746 total=+0.4128
+  j0=  0 N=  5 a= 2 h= 24 | deg= 19 cost=0.9154 logdet=-0.3586 total=+0.5568
+  j0=  0 N=  5 a= 2 h= 28 | deg= 19 cost=0.2266 logdet=0.5904 total=+0.8170
+  j0=  0 N=  5 a= 2 h= 31 | deg= 19 cost=-0.4442 logdet=1.5319 total=+1.0877
+  j0=  0 N=  5 a= 4 h= 17 | deg= 17 cost=0.5823 logdet=0.1236 total=+0.7060
+  j0=  0 N=  5 a= 4 h= 20 | deg= 19 cost=0.1661 logdet=0.6853 total=+0.8515
+  j0=  0 N=  5 a= 4 h= 24 | deg= 19 cost=-0.5772 logdet=1.7298 total=+1.1526
+  j0=  0 N=  5 a= 4 h= 28 | deg= 19 cost=-1.5912 logdet=3.1285 total=+1.5373
+  j0=  0 N=  5 a= 4 h= 31 | deg= 19 cost=-2.5540 logdet=4.4198 total=+1.8658
+  j0=  0 N=  5 a= 6 h= 17 | deg= 17 cost=-0.2207 logdet=1.6936 total=+1.4729
+  j0=  0 N=  5 a= 6 h= 20 | deg= 19 cost=-0.8406 logdet=2.5832 total=+1.7426
+  j0=  0 N=  5 a= 6 h= 24 | deg= 19 cost=-1.8838 logdet=4.0826 total=+2.1988
+  j0=  0 N=  5 a= 6 h= 28 | deg= 19 cost=-3.1966 logdet=5.9545 total=+2.7579
+  j0=  0 N=  5 a= 6 h= 31 | deg= 19 cost=-4.3851 logdet=7.6114 total=+3.2263
+  j0=  0 N=  5 a=10 h= 17 | deg= 17 cost=-1.3198 logdet=5.3361 total=+4.0163
+  j0=  0 N=  5 a=10 h= 20 | deg= 19 cost=-2.2569 logdet=6.9431 total=+4.6861
+  j0=  0 N=  5 a=10 h= 24 | deg= 19 cost=-3.8265 logdet=9.4267 total=+5.6002
+  j0=  0 N=  5 a=10 h= 28 | deg= 19 cost=-5.6358 logdet=12.3117 total=+6.6759
+  j0=  0 N=  5 a=10 h= 31 | deg= 19 cost=-7.2287 logdet=14.7459 total=+7.5172
+  j0=  0 N=  7 a= 2 h= 17 | deg= 17 cost=1.1129 logdet=-0.6551 total=+0.4578
+  j0=  0 N=  7 a= 2 h= 20 | deg= 17 cost=0.7863 logdet=-0.2751 total=+0.5112
+  j0=  0 N=  7 a= 2 h= 24 | deg= 17 cost=0.1907 logdet=0.5140 total=+0.7047
+  j0=  0 N=  7 a= 2 h= 28 | deg= 17 cost=-0.6229 logdet=1.6443 total=+1.0213
+  j0=  0 N=  7 a= 2 h= 31 | deg= 17 cost=-1.4019 logdet=2.7264 total=+1.3246
+  j0=  0 N=  7 a= 4 h= 17 | deg= 17 cost=-0.3661 logdet=1.4128 total=+1.0467
+  j0=  0 N=  7 a= 4 h= 20 | deg= 17 cost=-0.9610 logdet=2.2404 total=+1.2795
+  j0=  0 N=  7 a= 4 h= 24 | deg= 17 cost=-1.9764 logdet=3.6532 total=+1.6768
+  j0=  0 N=  7 a= 4 h= 28 | deg= 17 cost=-3.3170 logdet=5.4344 total=+2.1174
+  j0=  0 N=  7 a= 4 h= 31 | deg= 17 cost=-4.4929 logdet=7.0208 total=+2.5279
+  j0=  0 N=  7 a= 6 h= 17 | deg= 17 cost=-1.4667 logdet=3.8423 total=+2.3755
+  j0=  0 N=  7 a= 6 h= 20 | deg= 17 cost=-2.3958 logdet=5.1575 total=+2.7617
+  j0=  0 N=  7 a= 6 h= 24 | deg= 17 cost=-3.8605 logdet=7.2417 total=+3.3812
+  j0=  0 N=  7 a= 6 h= 28 | deg= 17 cost=-5.6224 logdet=9.7163 total=+4.0939
+  j0=  0 N=  7 a= 6 h= 31 | deg= 17 cost=-7.1287 logdet=11.8360 total=+4.7073
+  j0=  0 N=  7 a=10 h= 17 | deg= 17 cost=-2.9897 logdet=9.4815 total=+6.4919
+  j0=  0 N=  7 a=10 h= 20 | deg= 17 cost=-4.3677 logdet=11.8733 total=+7.5057
+  j0=  0 N=  7 a=10 h= 24 | deg= 17 cost=-6.4978 logdet=15.4242 total=+8.9264
+  j0=  0 N=  7 a=10 h= 28 | deg= 17 cost=-9.0041 logdet=19.3987 total=+10.3946
+  j0=  0 N=  7 a=10 h= 31 | deg= 17 cost=-11.0773 logdet=22.6635 total=+11.5862
+  j0=  6 N=  0 a= 0 h= 20 | deg= 20 cost=3.4781 logdet=-2.9689 total=+0.5091
+  j0=  6 N=  0 a= 0 h= 24 | deg= 24 cost=3.2737 logdet=-2.8118 total=+0.4619
+  j0=  6 N=  0 a= 0 h= 28 | deg= 24 cost=2.8700 logdet=-2.3373 total=+0.5328
+  j0= 12 N=  0 a= 0 h= 20 | deg= 20 cost=4.3259 logdet=-3.3702 total=+0.9558
+  j0= 12 N=  0 a= 0 h= 24 | deg= 24 cost=4.2386 logdet=-3.2641 total=+0.9746
+  j0= 12 N=  0 a= 0 h= 28 | deg= 24 cost=3.8064 logdet=-2.8342 total=+0.9723
+  j0= 24 N=  0 a= 0 h= 20 | deg= 20 cost=6.0653 logdet=-3.9624 total=+2.1029
+  j0= 24 N=  0 a= 0 h= 24 | deg= 24 cost=6.2085 logdet=-3.9426 total=+2.2659
+  j0= 24 N=  0 a= 0 h= 28 | deg= 24 cost=5.7602 logdet=-3.5901 total=+2.1701
+# best total/K^2: ((2, 'cosh', 24, 0, 0, 0, 20), (20, 2.6522706309060777, -2.416289623831707, 0.2359810070743704))

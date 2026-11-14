@@ -53,3 +53,16 @@ best value/cost: prove the water-filling bound for K/3 < p <= 2K/5 (would roughl
 ## 7. By-products worth a short note
 - Companion forms G_n = sum R_n(t) in 1, zeta(2) with Apéry's zeta(3) recurrence and right side -8(2n+1).
 - Hand derivation of the recurrence; 17n^2+17n+5 = 4(2n+1)^2 + n(n+1) + 1.
+
+
+## Update (14 Nov, 16:20 UTC): re-ranked after the afternoon's results
+
+1. **Human referee + Lean for Theorem W (`zeta5-margin.md`).** Highest value per hour: in mo271's formalization the
+   needed statement (`class_frame`) is already proved; using it on K/3 < p < (69/170)K should lower the cost constant by
+   3203/163200 and double the margin. Also check whether Giraudin's exponent improvement (arXiv:2611.01708) combines with it.
+2. **Send the referee report on the ζ(7) preprint** (`anand-referee.md`) to someone who can verify it independently
+   (the decisive point is elementary: integrality of the leading coefficient versus the claimed normaliser).
+3. **Prove Conjecture C1** of `zeta7-status.md` for W=1 (a clean no-go theorem for the unmodified family, s>=7).
+4. **Catalan, mixed nodes** (`catalan-status.md` §5.1) and **L(2,chi_{-3})**, which needs only ~0.1 K^2.
+5. **Write the Hankel proofs for ζ(2), log 2, π** as teaching examples (totals -0.4 to -0.8, so room is ample).
+6. Earlier items (Lean for `apery-elementary.md`; human referee of `hankel-zeta3.md`) remain.
