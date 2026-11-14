@@ -1,0 +1,21 @@
+{
+  "status": "PASS exact profile, infinite tail, rational logarithms and elementary patch budget",
+  "nonzero_terms": 17,
+  "breakpoints": 473,
+  "common_power": 10,
+  "tail_slope": "111/400",
+  "weighted_l1": "1753/50",
+  "small_prime_C": 116,
+  "small_prime_M": 10000000,
+  "stirling_enclosure": [
+    "1378946059047/1000000000000",
+    "172368257381/125000000000"
+  ],
+  "patched_enclosure": [
+    "1378994302091/1000000000000",
+    "344748575523/250000000000"
+  ],
+  "patched_upper_bound": "13791/10000",
+  "uses_outer_improvement": true,
+  "analytic_threshold": "69/50"
+}

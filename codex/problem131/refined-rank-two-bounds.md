@@ -145,3 +145,103 @@ large minors vanish exactly. One first constructs a lift of small actual
 rank and absorbs its integral remainder into \(A\). This distinction is
 essential when comparing the short multilinearity proof with modular
 kernel arguments elsewhere in the notes.
+
+## 4. In the source outer matrix, the residue-field rank is already exact
+
+The stronger version above does not by itself give another improvement for
+the source outer correction. Its original rank bound is attained modulo
+\(p\), as follows from a general monic-division observation.
+
+Let \(D,W\) be monic over a field, with degrees \(h,w\), respectively.
+Let \(\nu\) be a linear functional on polynomials satisfying
+
+\[
+\nu(t^e)=0\ (0\le e<e_0),\qquad \nu(t^{e_0})=c\ne0.
+\]
+
+Form the \(h\)-by-\(h\) matrix
+
+\[
+M_{ij}=\nu\!\left(\operatorname{quotient}
+                   \frac{Wt^{i+j}}D\right),\qquad 0\le i,j<h.
+\]
+
+Put \(r=\max(0,h+w-e_0-1)\), and assume \(r\le h\).
+If \(r=0\), every quotient has degree below \(e_0\), so \(M=0\).
+If \(r>0\), the first \(h-r\) rows and columns vanish, because the largest
+possible quotient degree in any such row or column is below \(e_0\).
+In the remaining block, write \(i=h-r+u\), \(j=h-r+v\).
+For \(u+v<r-1\) its entry is zero; for \(u+v=r-1\), the quotient
+is monic of degree \(e_0\), so the entry is \(c\). Thus this block is
+anti-triangular, with determinant
+
+\[
+(-1)^{r(r-1)/2}c^r\ne0.
+\]
+
+Consequently \(\operatorname{rank}M=r\), independently of every lower
+coefficient of \(W,D\) and every higher moment of \(\nu\).
+
+For the source ζ(5) functional over \(\mathbb F_p\), \(p\ge7\),
+
+\[
+\nu(t^e)=
+\begin{cases}
+\displaystyle
+\frac{(-1)^{e+1}(2e+3)(2e+4)(2e+5)}{24},
+ &p-1\mid2e+2,\\[4pt]
+0,&p-1\nmid2e+2.
+\end{cases}
+\]
+
+The first three positive multiples of \(p-1\) are cancelled by the three
+displayed factors. Hence the first nonzero moment is at
+
+\[
+e_0=2p-3,\qquad \nu(t^{e_0})=-\tfrac14\ne0.
+\]
+
+Take \(W=D_N^5\), \(w=5N\), \(D=D_K/D_N\), \(h=K-N\). This gives
+
+\[
+\operatorname{rank}_{\mathbb F_p}\overline L
+ =\max(0,K+4N-2p+2)=r_p.
+\]
+
+The source condition \(5N\le2p-2\) ensures \(r_p\le h\).
+Combined with the independently proved upper bound on actual rank, both
+actual and residue-field ranks are exactly \(r_p\). Unimodular CRT basis
+changes preserve these statements.
+
+For completeness, the same calculation works for odd \(s\ge3\) and
+\(p>s\), using the moment functional defined in
+outer-correction-Hermite-ideal.md:
+
+\[
+\nu_s(t^e)=
+\begin{cases}
+\displaystyle\frac{(-1)^{e+1}\prod_{j=3}^{s}(2e+j)}{(s-1)!},
+ &p-1\mid2e+2,\\[4pt]
+0,&p-1\nmid2e+2.
+\end{cases}
+\]
+
+The first \(s-2\) positive multiples are cancelled. The first surviving
+index and its value are
+
+\[
+e_0=\frac{(s-1)(p-1)}2-1,\qquad
+\nu_s(t^{e_0})=-\frac1{s-1}.
+\]
+
+Here \(e_0\) is odd and the product of the factors modulo \(p\) is
+\(-(s-2)!\), which verifies the sign. Provided
+\(5N\le(s-1)(p-1)/2\), the same monic-division lemma gives exact rank
+
+\[
+r_s=\max\!\left(0,K+4N-\frac{(s-1)(p-1)}2\right).
+\]
+
+The additional ζ(5) Hermite-ideal gain therefore comes from the position of
+the correction kernel relative to the row weights, not from an unexploited
+reduction of its global rank.

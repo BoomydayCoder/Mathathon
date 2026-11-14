@@ -22,7 +22,10 @@ constructs an explicit normalizer, and completes the rationality contradiction.
 A 25-term rational certificate controls every prime individually; both the
 small-prime and large-prime repairs are included. The arithmetic rate is below
 1.379, while the reviewed equilibrium estimate supplies decay faster than 1.38
-in the quadratic exponent. This computer-assisted alternative retains Fauzan's
+in the quadratic exponent. A reviewed primitive-part argument keeps the final
+degree at \(37n\) when \(K=40n\); the certificate denominator \(40000\) is only
+auxiliary bookkeeping. Explicit floor rounding gives the same degree without
+any added upper arithmetic cost. This computer-assisted alternative retains Fauzan's
 determinant and local arithmetic construction, including its refined rank bound.
 For fuller analytic motivation, read the [equilibrium guide](problem131/fauzan-equilibrium-guide.md).
 The earlier [plain-rank route](problem131/fauzan-equilibrium-guide.md#12-spend-a-little-analytic-margin-to-simplify-the-local-arithmetic-too)
@@ -91,13 +94,25 @@ checks the superfactorial replacement for prime averaging, including every highe
 prime power and eventual coefficientwise integrality. Its exact sparse certificate
 proves the arithmetic rate is below 6893/5000; the [rational energy review](problem131/rational-energy-review.md)
 certifies the analytic magnitude exceeds 2771/2000. The
+[primitive-part and rounding review](problem131/prime-exponent-rounding-independent-review.md)
+removes the unnecessary determinant power. The
 [new guide](problem131/pnt-free-zeta5-guide.md) assembles these dependencies.
 The older plain-rank route and its exp(−13n²) bound remain valid with their own
 normalizer and PNT input; the outer-kernel option gives exp(−26n²).
 These are computer-assisted derivations retaining Fauzan's construction, not
 claims of elementary proofs, historical novelty, formal verification, or external
-acceptance. Lean has not been built locally.
+acceptance.
 No all-odd irrationality theorem is claimed. See [source provenance](sources/odd-zeta-provenance.md).
+
+Separately, the pinned Romik Lean formalization **was built locally**, and its
+ordinary-series statement and axiom checks passed. The completed kernel replay
+checked all 71 project modules against their imported environments. The compiled
+theorem retains the explicit prime number theorem axiom, along with Lean's
+standard logical axioms. This was not a fresh replay of all Mathlib constants
+and does not formalize our new equilibrium, PNT-free normalizer, or Python
+certificates. The [verification report](problem131/lean-local-verification.md)
+links the exact commit, successful build log, axiom output, and durable replay
+result.
 
 Symbolic scripts check identities; finite experiments alone do not prove all-index
 statements. Reconstructed motivation explains how one might design a proof, not
@@ -127,6 +142,7 @@ python codex/computations/certify_equilibrium_energy_rational.py
 python codex/computations/check_floor_covariance_barnes.py
 python codex/computations/check_sparse_barnes_certificate.py
 python codex/computations/check_pnt_free_normalizer_review.py
+python codex/computations/check_prime_exponent_rounding_review.py
 ```
 
 The sparse check verifies 561 exact breakpoints and propagates the inequality

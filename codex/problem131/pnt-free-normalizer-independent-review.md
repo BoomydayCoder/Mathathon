@@ -2,6 +2,8 @@
 
 **Status.** The factorial-product construction and its two repairs in `barnes-normalizer-without-pnt.md` are mathematically valid, conditional on the separately checked finite profile majorant and the previously audited local valuation bounds. The argument controls every prime power and every polynomial coefficient. It does not use the prime number theorem, an asymptotic prime count, or an assumption about exceptional-prime density.
 
+**Subsequent improvement:** `prime-exponent-rounding-independent-review.md` proves that floor rounding, or simply taking the primitive part, removes the fixed determinant power without increasing the upper cost. The powered formula below remains a valid fallback.
+
 This review covers the construction, rational exponents, coefficientwise integrality, floors, higher prime powers, repairs and Stirling calculation. The finite profile inequality is separately certified by exact rational computations. The resulting arithmetic estimate still depends on the source's nontrivial local determinant lemmas; this is not an independent certification of the full real determinant argument or the whole irrationality proof.
 
 ## 1. Exact notation and certificate assumptions
@@ -118,7 +120,7 @@ Fix a positive integer \(M\ge40\), put \(H_K=\lfloor K/M\rfloor\), and let \(r_K
  \mathcal T_K\,\Delta_K(X)^q.}
 \tag{7}
 \]
-It is a rational polynomial of degree at most \(qh\). The power must be applied to \(\Delta_K\) as well as to the factorial ratio. Merely treating fractional optimization coefficients as a rational scalar multiplier of \(\Delta_K\) would be invalid.
+It is a rational polynomial of degree at most \(qh\). For this unrounded formula, the power must be applied to \(\Delta_K\) as well as to the factorial ratio. Merely treating fractional optimization coefficients as a rational scalar multiplier of \(\Delta_K\) would be invalid.
 
 Gauss valuation is multiplicative: after scaling two polynomials to have integral coefficients and a nonzero reduction, their product still has a nonzero reduction in the integral domain \(\mathbf F_p[X]\). Thus
 \(v_p^G(\Delta_K^q)=qv_p^G(\Delta_K)\). This supplies coefficientwise control, not just integer-valuedness on rational inputs.
@@ -220,6 +222,6 @@ A previous denser certificate also works with its own constants. The two coeffic
 If the separately established real estimate is
 \(0<F_K(\zeta(5))\le\exp(-(1.38-o(1))K^2)\), then (10) gives positive integral-polynomial values tending to zero exponentially in \(qK^2\). Under a hypothetical rationality assumption \(\zeta(5)=a/b\), multiplication by \(b^{qh}\) contributes only \(O(qK)\) to the logarithm and makes these values integers. This is the usual final contradiction, conditional on the stated real and local-arithmetic inputs.
 
-The audit finding is that **the prime-number-theorem averaging step can be replaced by this exact factorial construction**. The tradeoff is a finite rational majorant and a fixed power 40000. The original refined outer rank estimate remains in use; this is not simultaneously the earlier simplification that discarded it.
+The audit finding is that **the prime-number-theorem averaging step can be replaced by this exact factorial construction**. The tradeoff is a finite rational majorant; in the original unrounded formula its common denominator gives a fixed power 40000. The subsequently proved floor-rounding construction removes that power from the determinant and restores degree h. The original refined outer rank estimate remains in use; this is not simultaneously the earlier simplification that discarded it.
 
 No mathematical gap was found in the normalizer construction. Remaining review obligations are the separately certified pointwise profile, the real determinant estimate, and the full assembly of the proposed proof. The explicit repair is asymptotically valid but yields no useful practical starting index here.

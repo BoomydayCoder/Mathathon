@@ -29,7 +29,7 @@ N=\alpha K,\quad h=\lambda K,\qquad
 \alpha=\frac3{40},\quad\lambda=\frac{37}{40}.
 \]
 
-The final polynomial will be a fixed power \(Q=40000\) of a degree-\(h\) determinant, multiplied by an explicit positive rational scalar. This large fixed power is harmless for the linear-versus-quadratic comparison.
+The final polynomial will be the primitive integer part of a degree-\(h\) rational determinant. A common denominator \(Q=40000\) appears in the arithmetic certificate, but a short application of Gauss's lemma removes this power from the final polynomial. Its degree remains at most \(h\).
 
 ## 2. The determinant has rational coefficients and a positive real meaning
 
@@ -313,14 +313,14 @@ Here \(z\) counts zero weights. First, expand using complementary minors: terms 
 
 Second, replace each zero weight by \(-1/2\), leaving all other weights unchanged. The new weights \(w_i'\) satisfy \(w_i'\le-1/2\), so both \(A\) and \(p^{-1}L\) satisfy the entry bounds \(w_i'+w_j'\): for the correction, use \(v_p(L_{ij})-1\ge-1\ge w_i'+w_j'\). Every determinant term then has valuation at least
 \(2\sum_iw_i'=2\sum_iw_i-z\).
-Taking the better of these two bounds proves (17), with no optimization over sorted minors. This independently reviewed argument explains the saving \(d\) in (16).
+Taking the better of these two bounds proves (17), with no optimization over sorted minors. The [independent two-bound proof](refined-rank-two-bounds.md) explains the saving \(d\) in (16).
 
 This route **retains (17)**. Dropping its zero-weight saving gives the separate plain-rank proof; the present 25-term certificate must not be applied to that different, larger target without a new verification.
 
 ## 5. Discover the right arithmetic object: covariance, Bernoulli, superfactorial
 
 Why should any short factorial product match the complicated allocation?
-The [floor-covariance derivation](floor-covariance-barnes-design.md) starts with
+The [floor-covariance derivation](floor-covariance-barnes-design.md), with [independent symbolic review](floor-covariance-independent-review.md), starts with
 
 \[
 \ell_u(z)=\lfloor u-z\rfloor+\lfloor u+z\rfloor+1,
@@ -420,7 +420,7 @@ Every \(x\ge3\) reduces to \([3,43]\) by subtracting a nonnegative multiple of \
 
 A floating-point optimization suggested the coefficients. It is not a logical dependency: the rational list, exact breakpoint comparisons, and exact periodic identity suffice to verify the result.
 
-## 7. Construct the integer polynomial, including both repairs
+## 7. Construct an integral intermediate, including both repairs
 
 Set
 
@@ -436,19 +436,22 @@ D_m=\operatorname{lcm}(1,\ldots,m),\quad
 r_K=\lceil\sqrt K\rceil.
 \]
 
-Define
+Define the repair factor and powered intermediate
+
+\[
+E_K=D_{H_K}^{\,3CK}((5K)!)^{r_K},
+\]
 
 \[
 \boxed{\quad
-P_K(X)=
-\left[D_{H_K}^{\,3CK}((5K)!)^{r_K}\right]^Q
+\mathcal W_K(X)=E_K^Q
 \mathcal T_K\,\Delta_K(X)^Q.
 \quad}
 \tag{25}
 \]
 
 The \(D_m\) here is an integer lcm, not the polynomial \(D_m(t)\) in Section 2.
-All superfactorial exponents \(Qa_j\) are integers; negative exponents produce rational numbers. We do not take fractional powers in a \(p\)-adic field.
+All superfactorial exponents \(Qa_j\) are integers; negative exponents produce rational numbers. We do not take fractional powers in a \(p\)-adic field. This intermediate makes the valuation verification convenient; Section 9 extracts an integer polynomial of the original degree.
 
 **Large primes.** Fix \(M\) before allowing \(K\) to grow. If \(p>H_K\), then \(p>K/M\), and eventually \(p^2>5K\). Equation (21) therefore becomes exactly
 
@@ -493,12 +496,12 @@ The lcm factor in (25) clears (28).
 Every coefficient now has nonnegative valuation at every prime, proving
 
 \[
-P_K\in\mathbb Z[X]
+\mathcal W_K\in\mathbb Z[X]
 \quad\text{for all sufficiently large admissible }K.
 \tag{29}
 \]
 
-Gauss valuation is multiplicative, so raising the determinant to \(Q\) is legitimate coefficientwise. Positivity follows from Section 2 and the positive scalar, and \(\deg P_K\le Qh\).
+Gauss valuation is multiplicative, so raising the determinant to \(Q\) is legitimate coefficientwise. Positivity follows from Section 2 and the positive scalar, and \(\deg\mathcal W_K\le Qh\). This degree belongs to the arithmetic intermediate, not to the final primitive polynomial.
 
 The threshold \(K\ge200M^2=2\cdot10^{16}\) is sufficient for the displayed elementary size comparisons, but is not an explicit starting index for the whole theorem: the uniform constant \(E_M\) and subsequent asymptotics can require a larger \(K\). The unbounded repair \(r_K\) avoids needing its numerical value.
 
@@ -541,7 +544,7 @@ To see this, each prime power in \((\lfloor m/2\rfloor,m]\) contributes its prim
 \(\log D_m\le\log D_{\lfloor m/2\rfloor}+m\log2+\log m\);
 iterate. No asymptotic statement about primes is being used.
 
-Writing \(P_K\) as the scalar in (25) divided by \(S_K^Q\), times \(F_K^Q\), its arithmetic cost per \(QK^2\) is therefore at most
+Writing \(\mathcal W_K\) as the scalar in (25) divided by \(S_K^Q\), times \(F_K^Q\), its arithmetic cost per \(QK^2\) is therefore at most
 
 \[
 A+\frac{3C\log4}{M}.
@@ -559,7 +562,7 @@ A+\frac{3C\log4}{M}
 The diagnostic value is about \(1.3785819071\); decimals do not decide any inequality. Combining the convenient bound \(1.379\) with (5) gives
 
 \[
-\limsup\frac{\log P_K(\zeta(5))}{QK^2}
+\limsup\frac{\log\mathcal W_K(\zeta(5))}{QK^2}
 <\frac{1379}{1000}-\frac{69}{50}
 =-\frac1{1000}.
 \tag{33}
@@ -568,23 +571,77 @@ The diagnostic value is about \(1.3785819071\); decimals do not decide any inequ
 In particular, for all sufficiently large admissible \(K\),
 
 \[
-0<P_K(\zeta(5))<
+0<\mathcal W_K(\zeta(5))<
 \exp\!\left(-\frac{QK^2}{2000}\right).
 \tag{34}
 \]
 
 We deliberately use a weaker decay constant to leave visible room for every lower-order term.
 
-## 9. The contradiction and the exact dependency chain
+## 9. Remove the power by Gauss's lemma, then contradict rationality
 
-Suppose \(\zeta(5)=a/b\), with integers \(a\) and \(b>0\). By (29) and the degree bound,
+There is a useful general principle. Write a nonzero rational polynomial as
 
 \[
-b^{Qh}P_K(a/b)\in\mathbb Z_{>0}.
+F=gP,\qquad g\in\mathbb Q_{>0},\quad
+P\in\mathbb Z[X]\ \text{primitive}.
 \]
 
-By (34), it is smaller than
-\(\exp(Q\lambda K\log b-QK^2/2000)\), which tends to zero. This proves the contradiction. No coefficient-height estimate is needed, \(b\) is fixed, and positivity excludes a zero polynomial value.
+Here primitive means that the greatest common divisor of the integer coefficients is \(1\); the sign remains in \(P\). Suppose \(c>0\) is rational and \(cF^Q\in\mathbb Z[X]\). Gauss's lemma makes \(P^Q\) primitive, so its rational scalar \(cg^Q\) must be a positive integer. In particular \(cg^Q\ge1\), and at any real \(\theta\) with \(F(\theta)>0\),
+
+\[
+0<P(\theta)=\frac{F(\theta)}g
+\le\bigl(cF(\theta)^Q\bigr)^{1/Q}.
+\tag{35}
+\]
+
+Apply this to \(F=\Delta_K\) and \(c=E_K^Q\mathcal T_K\). Its primitive part \(P_K\) has degree at most \(h\), and (34) gives
+
+\[
+\boxed{\quad P_K\in\mathbb Z[X],\qquad
+\deg P_K\le h,\qquad
+0<P_K(\zeta(5))<e^{-K^2/2000}.\quad}
+\tag{36}
+\]
+
+Thus clearing the rational certificate's denominator need not multiply the final degree. The [independent rounding and primitive-part review](prime-exponent-rounding-independent-review.md) verifies this step, including the positivity of the content scalar.
+
+Suppose now that \(\zeta(5)=a/b\), with integers \(a\) and \(b>0\). By (36),
+
+\[
+b^{h}P_K(a/b)\in\mathbb Z_{>0}.
+\]
+
+It is smaller than
+\(\exp(\lambda K\log b-K^2/2000)\), which tends to zero. This proves the contradiction. No coefficient-height estimate is needed, \(b\) is fixed, and positivity excludes a zero polynomial value.
+
+There is also an explicit normalization without taking a determinant power. Put
+
+\[
+b_p=\sum_j a_jv_p(\mathcal B(c_jK)),\qquad
+m_K^-=\prod_p p^{\lfloor b_p\rfloor}.
+\]
+
+Only finitely many exponents are nonzero. The fully repaired proof in Section 7 says
+\(v_p(E_K)+v_p^{\mathrm G}(\Delta_K)+b_p\ge0\).
+The first two terms have an integer sum \(z_p\). Consequently
+\(z_p\ge\lceil-b_p\rceil=-\lfloor b_p\rfloor\), even when \(b_p<0\). Hence
+
+\[
+\widehat P_K=E_Km_K^-\Delta_K\in\mathbb Z[X],
+\qquad \deg\widehat P_K\le h.
+\]
+
+Rounding down adds no upper cost:
+
+\[
+\log m_K^-
+\le\sum_p b_p\log p
+=\sum_j a_j\log\mathcal B(c_jK).
+\tag{37}
+\]
+
+This direct formula gives the same quadratic estimate. It requires the repairs to have been included first; rounding an uncorrected profile is not sufficient. The primitive-part proof (35) is the shortest route to the contradiction, while (37) gives a finite explicit normalizer.
 
 The complete chain is:
 
@@ -598,12 +655,13 @@ flowchart TD
   C --> G["Required prime valuation profile T"]
   G --> H["25-term rational majorant and periodic propagation"]
   H --> I["Superfactorial product plus both prime repairs"]
-  I --> J["Integer coefficients and arithmetic rate below 1.379"]
+  I --> J["Integral intermediate and arithmetic rate below 1.379"]
+  J --> L["Gauss primitive-part lemma: degree h"]
   F --> K["Positive integer under rationality tends to zero"]
-  J --> K
+  L --> K
 ~~~
 
-The [PNT-free normalizer audit](pnt-free-normalizer-independent-review.md) checks (21) and (25)–(32), including all prime powers, rational exponents, the constant \(148\), and the uniform large-prime repair. The [earlier end-to-end audit](fauzan-simplified-proof-audit.md) supplies the shared moment, local-functional, and real-transfer proofs; its prime-averaging stage is replaced here by Sections 5–8. Its plain-rank normalizer is not silently reused.
+The [PNT-free normalizer audit](pnt-free-normalizer-independent-review.md) checks (21) and (25)–(32), including all prime powers, rational exponents, the constant \(148\), and the uniform large-prime repair. The [rounding review](prime-exponent-rounding-independent-review.md) checks (35)–(37). The [earlier end-to-end audit](fauzan-simplified-proof-audit.md) supplies the shared moment, local-functional, and real-transfer proofs; its prime-averaging stage is replaced here by Sections 5–8. Its plain-rank normalizer is not silently reused.
 
 ## 10. Reproduce, compare routes, and keep the limits explicit
 
@@ -612,6 +670,7 @@ From the repository root, the main certificates use only Python's standard libra
     python codex/computations/check_floor_covariance_barnes.py
     python codex/computations/check_sparse_barnes_certificate.py
     python codex/computations/check_pnt_free_normalizer_review.py
+    python codex/computations/check_prime_exponent_rounding_review.py
     python codex/computations/certify_equilibrium_endpoints.py
     python codex/computations/check_rational_energy_primitives.py
     python codex/computations/certify_equilibrium_energy_rational.py
@@ -622,7 +681,7 @@ There are three distinct arithmetic routes:
 
 | Route | What it simplifies | What it retains |
 |---|---|---|
-| This PNT-free construction | Removes prime-density averaging; supplies an explicit factorial product | Refined outer rank estimate, 25-term certificate, fixed power \(40000\), both prime repairs |
+| This PNT-free construction | Removes prime-density averaging; retains degree \(h\) by primitive parts or floor rounding | Refined outer rank estimate, 25-term rational certificate, both prime repairs; \(40000\) is only an auxiliary denominator |
 | [Plain-rank route](fauzan-equilibrium-guide.md#12-spend-a-little-analytic-margin-to-simplify-the-local-arithmetic-too) | Removes the zero-weight optimization and long integration tables | PNT, its own normalizer \(\widetilde m\), degree \(h\) |
 | [Optional outer-kernel improvement](outer-gain-budget-update.md) | Gives a stronger arithmetic margin using a finite-field kernel | Additional reviewed local lemma, PNT, another explicitly changed normalizer |
 

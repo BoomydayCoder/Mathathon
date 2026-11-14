@@ -4,6 +4,8 @@ This is a compact record of independently derived results from the ongoing inves
 
 The main exposition is [the discovery guide](discovery-guide.md). The results here test its mechanism by changing the derivative, the summation range, the arithmetic normalization, and the representation of the auxiliary function.
 
+**Current status, 14 November 2026.** The [PNT-free zeta-five assembly](pnt-free-zeta5-guide.md) now keeps degree \(h\): independently reviewed floor rounding or the primitive-part lemma removes the unnecessary determinant power. The adaptive boundary repair, signed zeta-seven model and its total-variation obstruction, and Euler-depleted functional have completed independent reviews; Sections 21–24 record their exact limits. Higher-Rodrigues geometry and Eulerian contour developments have their separate status in Section 25. The pinned existing Lean formalization also completed its local build and 71-module project replay, with an explicit PNT axiom; it does not formalize these new constructions.
+
 ## 1. One notation for the derivative constructions
 
 Let
@@ -280,11 +282,11 @@ The next useful work has explicit mathematical targets:
 3. Quantify the rational Gram comparison for the positive odd-zeta moment matrices. The proposed estimate separates an exact rational determinant from a one-variable weighted maximum; its cancellation on the relevant large-parameter scale remains unproved.
 4. Find a growing-dimensional positive auxiliary space whose primitive arithmetic error tends to zero. Fixed-dimensional coefficient tuning can be arithmetically equivalent to rescaling, and fixed positive cones have their own lower-gap obstructions.
 
-The original [Zudilin paper](https://arxiv.org/abs/math/0202159) remains the primary starting point. Current claims concerning Fauzan’s 2026 \(\zeta(5)\) work are documented separately in [source provenance](../sources/odd-zeta-provenance.md); the [assembled alternative derivation](fauzan-simplified-proof-audit.md) has now passed an end-to-end mathematical review, without locally building Lean or certifying every claim in the original preprint. No claim here depends on treating an unreviewed research proposal as an established theorem.
+The original [Zudilin paper](https://arxiv.org/abs/math/0202159) remains the primary starting point. Current claims concerning Fauzan’s 2026 \(\zeta(5)\) work are documented separately in [source provenance](../sources/odd-zeta-provenance.md). The [assembled alternative derivation](fauzan-simplified-proof-audit.md) passed end-to-end mathematical review. Separately, the [pinned existing Lean formalization](lean-local-verification.md) passed its local build, ordinary-series statement/axiom checks, and replay of all 71 project modules. Its external mathematical axiom is the usual PNT; replay was against imported environments, not a fresh replay of all Mathlib constants. This does not Lean-verify the new equilibrium construction or PNT-free certificate. No claim here depends on treating an unreviewed research proposal as an established theorem.
 
 ## 9. An analytic equilibrium construction replaces Fauzan’s sixteen-component measure
 
-The newest result improves a specific analytic component of Fauzan’s preprint. It does not independently validate the paper’s arithmetic proof.
+This result improves a specific analytic component of Fauzan’s preprint. Its analytic proof alone does not validate the arithmetic; those components have their own reviews.
 
 For the source parameters \(\alpha=3/40\), \(\lambda=37/40\), the external field has derivative
 
@@ -512,7 +514,7 @@ For example, \(N=0,K=2,s=3\) yields
 \frac{17-\sqrt5}{16}<\zeta(3)<\frac{17+\sqrt5}{16}.
 \]
 
-The [matrix-pencil proof](real-rooted-zeta-pencils.md) applies standard spectral theory to the constructed moments; it does not assert distinct roots, a shrinking-rate theorem, or adequate denominator control. The proof and exact example were checked during this editorial pass; a separate review is in progress. No historical novelty is claimed.
+The [matrix-pencil proof](real-rooted-zeta-pencils.md) applies standard spectral theory to the constructed moments; it does not assert distinct roots, a shrinking-rate theorem, or adequate denominator control. Its proof and exact example received editorial checking; no separate completed review is recorded here. No historical novelty is claimed.
 
 ## 16. Bernoulli numbers connect the same rational data to two geometries
 
@@ -636,6 +638,112 @@ P_p(t)=Q_p(t)^2\quad\text{or}\quad
 P_p(t)=(1-34t+t^2)Q_p(t)^2.
 \]
 
-Here \(Q_p(0)=1\), its roots are simple, and it is coprime to \(1-34t+t^2\). The proof reduces an exact characteristic-zero differential first integral and analyzes root multiplicities; deriving only a zero derivative in characteristic \(p\) would be insufficient. The rule deciding which case occurs is not proved in that review.
+Here \(Q_p(0)=1\), its roots are simple, and it is coprime to \(1-34t+t^2\). The proof reduces an exact characteristic-zero differential first integral and analyzes root multiplicities; deriving only a zero derivative in characteristic \(p\) would be insufficient. The rule deciding which case occurs is proved separately in the [completed character review](apery-cm-independent-review.md): the extra quadratic factor occurs exactly when \(\left(\frac{-6}{p}\right)=-1\).
 
 [The digit-factorization proof](apery-digit-arithmetic.md) connects this to the Fuss–Catalan project: carries are removed by a quotient there, while carry terms vanish under summation here. These are complete finite-digit mechanisms, not claims of historical novelty or stronger prime-power congruences.
+
+## 21. Rational valuation weights need not increase the polynomial degree
+
+The [reviewed superfactorial normalizer](pnt-free-normalizer-independent-review.md) and exact 25-term certificate replace prime-density averaging by a pointwise valuation majorant. For \(K=40n\), its repaired arithmetic rate is below \(6893/5000<1.379\), against a separately certified analytic magnitude exceeding \(1.38\). Both small-prime and large-prime repairs remain necessary.
+
+Rational coefficients in the majorant do not force a power \(40000\) in the final degree. If \(F=gP\), with \(g>0\) rational and \(P\) primitive integral, and \(cF^q\in\mathbb Z[X]\) for \(c>0\), Gauss's lemma gives \(cg^q\in\mathbb Z_{>0}\). Hence, whenever \(F(\theta)>0\),
+
+\[
+0<P(\theta)\le[cF(\theta)^q]^{1/q}.
+\]
+
+Equivalently, once the repairs prove
+\(v_p(EF)+b_p\ge0\) for rational \(b_p\), the integer \(v_p(EF)\) implies
+
+\[
+E\left(\prod_p p^{\lfloor b_p\rfloor}\right)F\in\mathbb Z[X],
+\qquad
+\log\prod_p p^{\lfloor b_p\rfloor}\le\sum_p b_p\log p.
+\]
+
+Thus floor rounding adds no upper arithmetic cost, including at negative valuations. The [independent review](prime-exponent-rounding-independent-review.md) proves both versions. The [complete guide](pnt-free-zeta5-guide.md) consequently ends with degree at most \(37n\), preserving the same quadratic decay budget. This is a simplification of normalization bookkeeping, not a new arithmetic theorem for all odd zeta values.
+
+## 22. An adaptive adjacent-Legendre partner cancels the entire unwanted boundary
+
+Let \(P_n,R_n\) be as in Section 1, and set \(w_{n,a}(t)=(t-a)/(t+n+1)\). There is a uniquely determined rational \(a_n\) for all sufficiently large \(n\), bounded as \(n\to\infty\), such that
+
+\[
+\sum_{j=1}^n(R_nw_{n,a_n})'''(j)=0.
+\]
+
+The multiplier changes the polynomial partner only to a rational combination of two adjacent Legendre polynomials. The resulting full sum is a pure zeta-five linear form and equals its tail:
+
+\[
+\mathcal L_n=-\frac16\sum_{t\ge1}(R_nw_{n,a_n})'''(t)
+=-\frac16\sum_{t>n}(R_nw_{n,a_n})'''(t)
+\sim\pi\frac{\log n}{n^3}16^{-n}.
+\]
+
+This cancels the sum of boundary contributions, not every contribution separately. The [construction](adaptive-boundary-cancellation.md) and [completed independent review](adaptive-boundary-independent-review.md) prove the tuning, uniform contour comparison, exact constant, and eventual positivity. The sufficient arithmetic multiplier counts the extra denominators of the tuning parameter. Finite primitive-arithmetic samples show a serious cost but do not prove an all-index obstruction. This is an analytically successful repair with unresolved asymptotic arithmetic.
+
+## 23. A signed single-zeta-seven model has nonzero determinants, but total variation is too costly
+
+For even \(n\ge2\), the [signed model](signed-single-zeta7-model.md) uses
+
+\[
+R_n(t)=108^n(n!)^4
+\frac{(t+1/2)_n(t+1/3)_n(t+2/3)_n}{(t)_{n+1}^7}
+\]
+
+and lattice-dilation weights \((45,-9,1)\). Reflection removes even zeta values, while
+\(\sum_{b=1}^3w_bb^3=\sum w_bb^5=0\) and \(\sum w_bb^7=1080\) remove the two lower odd values. The resulting ordinary signed measure has moments in \(\mathbb Q+\mathbb Q\zeta(7)\).
+
+The hypotheses of Fischler–Lai–Sprang–Zudilin's general nonvanishing Proposition 5.4 are checked directly. For integers \(1\le M\le2n-8\), some Hankel determinant with \(M\le m\le M+11\) is nonzero. Their large-\(s\) main theorem is not specialized to \(s=7\); the general proposition is the explicit external input. This does not imply nonvanishing at every size.
+
+There is also a genuine obstruction to discarding the signs. For the stated normalized total-variation determinant \(J^{\rm abs}_{n,m}\), along admissible sizes with \(m/n\to c\in(0,2]\),
+
+\[
+\liminf\frac{\log J^{\rm abs}_{n,m}}{n^2}
+\ge c\log54-c^2\log2>0.
+\]
+
+A single positive atom configuration proves this lower bound, using only an elementary lcm lower bound. The [independent review](signed-zeta7-independent-review.md) checks its normalization, endpoint \(c=2\), coefficient denominators, and nonvanishing window. It rules out this total-variation bound with the displayed multiplier; it does not bound the signed determinant from below or rule out a smaller primitive normalization. No irrationality theorem for \(\zeta(7)\) follows.
+
+## 24. Euler depletion improves polynomial denominators but not automatically the local arithmetic
+
+For every fixed odd \(s\ge3\), the positive functional with density
+
+\[
+\widetilde w_s(y)=2w_s(y/2)-w_s(y)>0
+\]
+
+satisfies
+
+\[
+\nu_s(t^e)=(2^{2e+2}-1)\mu_s(t^e),\qquad
+2^{1+v_2(s-1)}\nu_s(t^e)\in\mathbb Z
+\quad(e\ge0).
+\]
+
+The power of two is uniformly sharp. Euler/Genocchi identities remove every odd prime from these polynomial denominators. The pole moments instead isolate \(\eta(s)=(1-2^{1-s})\zeta(s)\):
+
+\[
+\nu_s((t+j^2)^{-1})
+=(-1)^{j-1}j^{s-1}
+\left(\eta(s)-\sum_{k=1}^j\frac{(-1)^{k-1}}{k^s}\right)+\frac1{2j}.
+\]
+
+The [completed Euler review](euler-depletion-independent-review.md) checks these identities, sharpness, exact divided-difference obstructions, and determinant scaling in [the construction](euler-depleted-positive-moments.md), with 1,686 exact checks. The polynomial Euler distribution law still has factor \(p^{1-s}\): losing the Bernoulli averaging factor costs one additional derivative. Extending this law to rational poles remains a separate task. Moreover, explicit paired poles have genuine coefficientwise losses, and the real weight decays at rate \(\pi\) rather than \(2\pi\). The finite determinant experiments do not establish an improved asymptotic normalizer.
+
+## 25. Higher Laurent geometry: distinguish the construction from the contour theorem
+
+For \(m\ge1\), write \(C=\prod_{i=1}^{2m}(1+x_i)\), \(P=\prod_i x_i\). The higher-Rodrigues construction introduces
+
+\[
+\Lambda_m=(1+z)^mC\left(1+\frac C{zP}\right)^m,\qquad
+\operatorname{CT}\Lambda_m^n
+=\sum_{k=0}^{mn}\binom{mn}{k}^2\binom{n+k}{k}^{2m}.
+\]
+
+Its nonzero critical points reduce to
+\((m-x)(1+x)^m=\pm x^{m+1}\), with value
+\([m(1+x)/(m-x)]^{2m}\). The [geometry note](higher-rodrigues-laurent-geometry.md) contains the exact construction and a full sharp \(\zeta(5)\) contour-asymptotic draft. The latter predicts and derives an oscillating conjugate-pair contribution of modulus \(\lambda^{-1/2}\), rather than the reciprocal real minimum \(\lambda^{-1}\).
+
+The [Eulerian decomposition](eulerian-rodrigues-period-decomposition.md) expresses every multiplicity's pure form as a finite sum of geometric contour components. It gives a conditional component saddle theorem and an unconditional central-component asymptotic; the other components are not thereby controlled. In particular a numerical candidate outside the allowed contour strip at \(m=6\) is not a theorem that the full form grows.
+
+**Review boundary at this documentation update:** the higher-Rodrigues sharp contour proof and the all-\(m\) Eulerian decomposition are under independent review; no completed review files have yet been incorporated here. The separate [integer-depletion cumulant derivation](integer-depletion-cumulants.md) is also awaiting its completed independent audit. Exact or high-precision experiments are not being substituted for those reviews. Even a proved sharper decay rate would not make the available sufficient denominator bound an actual primitive-denominator lower bound or yield an all-odd irrationality theorem.

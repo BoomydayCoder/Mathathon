@@ -244,3 +244,25 @@ Tenth checkpoint,2026-11-14 10:20UTC (02:20LA), continuing:
   partial JSON/PTY logging while its agent remains active. No completed replay
   claim is made at this checkpoint.
 - Work continues toward16:00UTC/08:00LA, with no usage-meter access or resets.
+
+Eleventh checkpoint,2026-11-14 10:50UTC (02:50LA), continuing:
+- Independently checked Gauss/primitive-part lemma removes the40000th determinant
+  power from the final PNT-free argument. Final degree37n; explicit floor rounding
+  has zero extra upper cost. The assembled guide now uses this simplification.
+- Completed project Lean kernel replay:71modules,exit0,692.237s,10:28:40UTC;
+  build and two target checks also succeeded. Explicit PNT axiom remains; this
+  is the existing formalization, not our new PNT-free proof formalized.
+- Adaptive adjacent-Legendre cancellation passed independent proof review.
+- Signed single-zeta7 ordinary atomic model and its total-variation obstruction
+  passed independent review; only the sign-discarding estimate is ruled out.
+- Higher Rodrigues Laurent geometry now has a sharp complex-saddle asymptotic
+  proof draft, independently under audit. All-m Eulerian Fourier decomposition
+  is a second draft; general-m contour restrictions are explicit.
+- Positive Euler frequency depletion has sharp dyadic polynomial denominators
+  but costly pole collisions; independent audit ongoing. Parent generalized this
+  to integerell and discrete-uniform cumulants, proving an exact proposed uniform
+  denominator.6840 exact moment comparisons and550 Lucas constructions pass;
+  independent review requested before promoting the new theorem.
+- Smaller25-term/q100 and17-term/q10 arithmetic certificates pass exact checks;
+  original25-term/q40000 remains main due its stronger margin and fewer dependencies.
+- Work continues toward16:00UTC/08:00LA. No balance API or resets.

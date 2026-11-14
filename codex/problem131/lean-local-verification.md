@@ -1,10 +1,10 @@
 # Local verification of the pinned Romik Lean project
 
-**Status: local compilation and exact theorem/axiom checks passed on
-2026-11-14 UTC.** The full pinned project built successfully (8995 jobs, exit
-status 0). Both the repository's statement check and the independent fully
-qualified statement check compiled with exit status 0. The separate project
-kernel replay is still running; no completed replay result is claimed yet.
+**Status: local build, exact theorem/axiom checks and project kernel replay
+all passed on 2026-11-14 UTC.** The full pinned project built successfully
+(8995 jobs, exit status 0). Both statement checks compiled with exit status 0.
+The completed kernel replay checked all 70 source modules plus the root
+`Zeta5` module, with no missing or duplicate module, and exited 0.
 
 Source: `https://github.com/danromik/zeta5-irrationality`, commit
 `fc2fefa77076e22e7e80b4c101ded5a98d53e14d`, Git tree
@@ -24,8 +24,8 @@ The full source has 70 files under `Zeta5/`, totaling 28,976 lines. The four
 files previously archived in `codex/sources/` match byte-for-byte. Source scans
 find the explicit PNT axiom and no use of `sorry`, `admit`, `native_decide`,
 `implemented_by`, `extern` or unsafe declarations in the project proof code;
-mentions of such terms in comments do not count as declarations. These scans supplement the completed compiled axiom report; they are not its
-replacement.
+mentions of such terms in comments do not count as declarations. These scans
+supplement the completed compiled axiom report; they are not its replacement.
 
 The declared external axiom is the usual prime number theorem:
 
@@ -59,7 +59,9 @@ The installed `LeanChecker.lean` source was inspected. Default
 against its imported environment. It does not independently recheck every
 Mathlib declaration. The separate `--fresh Zeta5` mode replays imported constants
 as well into an empty environment. Both use Lean's own kernel, not a second
-independent kernel implementation. The first replay, started at 09:54:25 UTC, lost its wrapper/result capture.
+independent kernel implementation.
+
+The first replay, started at 09:54:25 UTC, lost its wrapper/result capture.
 Its old process was later a zombie with Linux exit-code field zero and no
 recorded OOM, but the log contained only the initial banner and no result JSON.
 The cause of the missing wrapper is not established; this incomplete record is
@@ -67,8 +69,20 @@ not used as a completed replay certificate. The evidence is preserved in
 `kernel-replay-attempt1.log` and `kernel-replay-attempt1-status.json`.
 
 A second replay started at 10:17:08 UTC with one Lean worker, PTY-backed logging,
-a periodically updated result JSON, and a 45-minute bound. It is running while
-the reviewing agent remains active. No completed replay result is claimed yet.
+a periodically updated result JSON, and a 45-minute bound. The reviewing agent
+remained active throughout. It **completed successfully at 10:28:40 UTC**,
+exit status 0, in 692.237 seconds, with maximum resident size 8,294,040 KiB.
+The log contains exactly the expected 71 module names. Its record, rather than
+the incomplete first attempt, supports the completed replay claim.
+
+The durable wrapper can be rerun with the same environment above:
+
+```sh
+LEAN_NUM_THREADS=1 python /workspace/Mathathon/codex/verification/romik-lean/run_replay.py --max-seconds 2700
+```
+
+This is project-level kernel replay against imported environments. No
+`--fresh` replay of all Mathlib constants is claimed.
 
 
 ## Actual compiled statement and axiom output
@@ -108,13 +122,17 @@ Saved evidence:
 - [Repository statement check](../verification/romik-lean/repository-check.log)
 - [Independent statement/axiom check](../verification/romik-lean/independent-check.log)
 - [Exact source, compiler and log hashes](../verification/romik-lean/metadata.json)
-- [Kernel replay log, currently incomplete](../verification/romik-lean/kernel-replay.log)
+- [Complete kernel replay log](../verification/romik-lean/kernel-replay.log)
+- [Replay exit status, duration and resource report](../verification/romik-lean/kernel-replay-result.json)
 
 The mathematical external input is PNT, an established theorem, but its proof is
 not formalized within this pinned development. The locally checked formal claim
 is therefore the implication from that PNT statement to irrationality of the
 ordinary real ζ(5). Lean's standard logical axioms and kernel remain trusted;
-Mathlib dependencies were obtained from the pinned compiled cache.
+Mathlib dependencies were obtained from the pinned compiled cache. Their
+source definitions were also inspected: `Irrational x` is
+`x ∉ Set.range ((↑) : ℚ → ℝ)`, and `Chebyshev.theta x` is
+`∑ p ∈ Ioc 0 ⌊x⌋₊ with p.Prime, log p`.
 
 This check concerns Romik's unmodified formalization of Fauzan's argument. It
 does not make the new equilibrium construction or Python certificates in this
