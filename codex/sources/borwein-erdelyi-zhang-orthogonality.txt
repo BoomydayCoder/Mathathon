@@ -1,0 +1,594 @@
+               ORTHOGONALITY AND IRRATIONALITY
+
+                PETER BORWEIN, TAMÁS ERDÉLYI, AND JOHN ZHANG
+
+
+
+                    This version was printed on November 3, 2013
+
+         Abstract. The fairly recent proofs of the irrationality of log 2, π 2 , ζ(3) and
+         various values of polylogarithms are re-examined by using a particular family
+         of orthogonal forms. This allows us to give a uniform and arguably more
+         natural treatment of these results.
+
+                                       1. Introduction
+   Apéry’s astonishing proof of the irrationality of ζ(3) amounts to showing that
+                                  0 < |d3k ak ζ(3) − bk | −→ 0
+where bk is an integer,
+                                           k     2  2
+                                           X  i+k     k
+                                   ak :=
+                                            i=0
+                                                        k        i
+and
+                                dk := lcm{1, 2, . . . , k}.
+Here and throughout the paper lcm denotes the least common multiple. This is
+entertainingly proved in van der Poorten [15] and given a very elegant treatment by
+Beukers [4], [5]. In [5] Beukers puts the proof in the context of Padé approximants.
+   Many, maybe most, irrationality proofs may be based on approximation by Padé
+approximants and related orthogonal polynomials ([8], [9], [14]). Sometimes this is
+very natural, as with e, where the Padé approximants generate convergents of the
+simple continued fraction. This is, however, an exceptional case.
+   It is the intention of this paper to try to put the well known proofs of the
+irrationality of the constants log 2, ζ(2), and ζ(3), as well as certain values of poly-
+logarithms into the framework of orthogonality. This reproduces results of Apéry,
+Alladi and Robinson, and Chudnovsky in a unified fashion ([15], [2], [10]).
+   In [7], the authors considered orthogonalization of the system
+                                       {xλ0 , xλ1 , xλ2 , . . . },
+and from this point of view orthogonalization of the system
+                          {x0 , x0 , . . . , x0 , x1 , x1 , . . . , x1 , . . . }
+                           |      {z          } |        {z          }
+                               n times                n times
+
+  1991 Mathematics Subject Classification. 11J72, 41A20, 42C05.
+  Key words and phrases. Riemann zeta function, polylogarithm, irrationality, orthogonality,
+Padé approximant, Müntz-Legendre polynomial.
+  Research of the first author is supported, in part, by the NSERC of Canada.
+  Research of the second author is supported, in part, by the NSF of the USA under Grant No.
+DMS-9024901, and conducted while an NSERC International Fellow at Dalhousie University.
+                                                    1
+2                PETER BORWEIN, TAMÁS ERDÉLYI, AND JOHN ZHANG
+
+
+is very natural to study (the repeated indices are taken to be in a limiting sense).
+This leads to orthogonal functions that generalize Legendre polynomials and are of
+the form
+                                 n−1
+                                 X
+                                     Aj,l (x) logj x
+                                   j=0
+
+where each Aj,l (x) is a polynomial of degree l.
+   Legendre polynomials are closely tied to irrationality questions concerning log-
+arithms ([2], [6, Chapter 11]) and higher order analogues prove to be the basis for
+                                                      X zn
+dealing with the irrationality of the polylogarithm            ([12]).
+                                                        n
+                                                           nm
+   We argue that the irrationality proofs flow quite naturally from this point of
+view. A nice feature of this approach is that the non-vanishing of the estimates,
+which is essential for the proofs, comes very easily from the orthogonality.
+   This paper is organized in the following way. First we produce a contour integral
+which generalizes the Legendre polynomials and consider the properties of this
+function. We then specialize this form for particular cases in order to prove the
+irrationality of log 2, ζ(2), ζ(3), and some values of the polylogarithm in general.
+The approach to ζ(2), ζ(3), and log(2) eventually reproduces the estimates of Apéry
+and Alladi and Robinson [2]. In the case of ζ(2) and ζ(3) we end up with the
+integrals of Beukers [4]. The results for irrationality of polylogarithms are very
+similar to those of Chudnovsky [10] but the estimates are different.
+   In all cases, the estimate allow for inequalities of the form
+                                          p   1
+                                     α−     > c
+                                          q  q
+for all integers p and q > 0 for some c > 0. So in all cases the stronger conclusion,
+that the numbers in question are not Liouville is possible.
+
+
+                            2. The Contour Integral
+   The orthogonalization of repeated monomials can be expressed by contour inte-
+grals.
+
+Theorem 1. Let k, l, m, and n be positive integers satisfying (l + 1)n − km ≥ 1.
+Define
+                                               I Qk          m
+                                (n − 1)! (l!)n    j=1 (t + j)
+           F (x; k, l; m, n) :=                  Q             xt dt
+                                  2πi (k!)m γ lj=0 (t − j)n
+where γ is any simple contour containing the poles at t = 0, 1, . . . , l. Then
+                                                  n−1
+                                                  X
+                     F (x; k, l; m, n) = (−1)nl         Aj,l (x) logj x
+                                                  j=0
+
+where Ai,l := Ai,l,k,m,n is a polynomial of degree l. So,
+                                    l            m  n
+                                    X         i+k
+                                             ni       l
+                      An−1,l (x) :=     (−1)              xi
+                                    i=0
+                                               k      i
+                           ORTHOGONALITY AND IRRATIONALITY                                           3
+
+
+and
+                                                                                              
+                   l              m  n            k        l
+                   X         i + k     l             X    m    X                            n  i
+   An−2,l (x) :=     (−1)ni                (n − 1)          −                                   x
+                 i=0
+                               k       i             j=1
+                                                         i+j                               i−j
+                                                                                j=0,j6=i
+
+Furthermore, this function enjoys the orthogonality relations
+    Z 1
+        F (x; k, l; m, n)xi logj xdx = 0, i = 0, 1, . . . , k − 1, j = 0, 1, . . . , m − 1.
+       0
+   The polynomial An−1,l has integer coefficients. If k = l and n ≥ 2 then the
+polynomial dk An−2,l also has integer coefficients (dk := lcm{1, 2, . . . , k}).
+Proof. The representation of F is just the evaluation of the integral at the poles
+t = 0, 1, . . . , l by the Residue Theorem. The orthogonality conditions follow by
+interchanging the order of integrations and observing the behaviour as the contour
+is allowed to become arbitrarily large.
+   The fact that An−1,l has integer coefficients is obvious from the above forms. To
+show that An−2,l has integer coefficients whenever k = l and n ≥ 2, we need to
+observe that if p is a prime and α is a positive integer so that k ≤ pα ≤ k + i then
+p divides i+k k . This is straightforward from Euler’s formula for the largest power
+of a prime dividing a factorial.                                                    
+    It is interesting to note that the orthogonality relation stated above encompasses
+an m-dimensional orthogonality conditions on the m-dimensional cube I m . That
+is,
+             Z                          m
+                                        Y
+                 F (πm (x); k, l; m, n)   xsi i dx = 0,  si ∈ {0, 1, . . . , k − 1}
+            Im                         i=1
+                   m
+                   Y
+where πm (x) :=          xi and where x := (x1 , x2 , . . . , xm ). Here and throughout
+                   i=1
+                   Z                 Z 1         Z 1Z 1
+                          g(x)dx =         ···             g(x)dx1 dx2 · · · dxm .
+                     Im               0           0   0
+This can be deduced from the following theorem.
+Theorem 2. We have
+            Z                                             Z 1
+                                              1
+                F (πn (x))dx =                                  F (u)| log u|n−1 du.
+                    In                     (n − 1)!        0
+
+
+Proof. It is straightforward to verify by using the change of variables
+                                              1
+                             u := xy, v := (x2 − y 2 )
+                                              2
+that the double integral can be transformed as
+                       Z 1Z 1                  Z 1
+                              F (xy)dxdy = −       F (u) log udu.
+                           0   0                           0
+In the general case, the proof follows recursively.                                                  
+   Various specializations of the parameters give us the results we are looking for.
+4                PETER BORWEIN, TAMÁS ERDÉLYI, AND JOHN ZHANG
+
+
+                        3. Irrationality of log 2 and ζ(3)
+    For these cases we set l = k and n = m in Theorem 1, so
+                                               I Qk           m
+                                      (m − 1)!     j=1 (t + j)
+                  F (x; k, k; m, m) =             Qk            xt dt
+                                        2πi     γ  j=0 (t − j)
+                                                              m
+
+
+which are orthogonal in the sense that
+                  Z 1
+                       F (x; k, k; m, m)F (x; k ′ , k ′ ; m, m)dx = 0
+                        0
+
+for any two distinct positive integers k and k ′ . Also
+                         dj
+                            F |x=1 = 0,       j = 0, 1, . . . , m − 2
+                        dxj
+and
+                                dm−1
+                                      F |x=1 = (m − 1)!.
+                               dxm−1
+The above equations can be easily verified by using the results of Theorem 1.
+  When we set m = 1 and m = 2 these are in fact the polynomials needed in the
+proof of the irrationality of log 2 and ζ(3) respectively. Both proofs are very similar
+and we outline them below.
+Theorem 3. We have
+        Z 1                                                   √
+            F (x; k, k; 1, 1)
+     0<                       dx = |A0,k (−1) log 2 + Rk | ≤ ( 2 − 1)2k log 2
+          0     1  +  x
+where A0,k (−1) is an integer, Rk is a rational number, and dk Rk is an integer
+(dk := lcm{1, 2, . . . , k}).
+Proof. We decompose the rational function as follows
+                                                                    
+          F (x; k, k; 1, 1)       k   A0,k (−1) A0,k (x) − A0,k (−1)
+                            = (−1)             +                       .
+              1+x                      1+x              1+x
+The first term of the right-hand side integrates to A0,k (−1) log 2 while the second
+integrates to a rational number which can be integralized by the factor dk introduced
+by the integration process. To establish the inequality we note that
+                             k             
+                            X          i+k   k i       dk xk (1 − x)k
+                 A0,k (x) =     (−1)i           x = k
+                            i=0
+                                        k     i       dx       k!
+
+which is the shifted Legendre polynomial of degree k. By making use of the above
+Rodrigues’ formula for these polynomials, and integrating by parts, we find
+         Z 1                        Z 1 k              Z 1           √
+             F (x; k, k; 1, 1)         x (1 − x)k           dx
+   0<                          dx =           k+1
+                                                  dx ≤            · ( 2 − 1)2k
+          0       1+x                0 (1 + x)          0 1+x
+
+since
+                                    x(1 − x)    √
+                               0<            ≤ ( 2 − 1)2
+                                     1+x
+for every x ∈ (0, 1).                                                                
+                        ORTHOGONALITY AND IRRATIONALITY                                5
+
+
+   The irrationality of log 2 now simply follows by multiplying both sides of the
+inequality by dk , which by the prime number theorem is of O(e(1+δ)k ) for any
+δ > 0.
+   For ζ(3) we proceed as follows.
+
+Theorem 4. We have
+      Z 1Z 1                                                         √
+             F (xy; k, k; 2, 2)
+  0<                            dxdy = |2A1,k (1)ζ(3) + Rk | ≤ 2ζ(3)( 2 − 1)4k
+       0  0      1 − xy
+where A1,k (1) is an integer, Rk is a rational number, and d3k Rk is an integer.
+Proof. As in the proof of Theorem 3 we write
+    F (xy; k, k; 2, 2)              log(xy) A1,k (xy) − A1,k (1)              A0,k (xy)
+                       = A1,k (1)            +                     log(xy) +            .
+        1 − xy                       1 − xy         1 − xy                     1 − xy
+Note that F (1; k, k; 2, 2) = 0 implies that A0,k (1) = 0. Hence the third term above
+is a polynomial in xy, while the second term is log(xy) times a polynomial in xy.
+(Both polynomials are of degree k − 1.) Now recall that
+                                      Z Z
+                                    1 1 1 log(xy)
+                                 −                     = ζ(3)
+                                    2 0 0 1 − xy
+since                     Z 1 Z 1
+                                                             −2
+                                    (xy)n log(xy)dx dy =            .
+                           0     0                        (n + 1)3
+This accounts for the form of the double integral above. The right-hand inequality
+and the non-vanishing follow from the next lemmas and the comment after them.
+   The next detail is that dk3 Rk is an integer. For this we use the explicit form of
+A1,k and A0,k in Theorem 1 to see that A1,k and dk A0,k have integer coefficients
+and observe that each integration introduces a dk .
+   The final detail is to verify the inequalities of the theorem. This can be easily
+done by Lemma 3 below. This yields
+       Z 1Z 1                                   Z 1Z 1Z 1                       √
+                F (xy; k, k; 2, 2)                             dxdydv
+ 0<                                dxdy ≤                                    · ( 2 − 1)4k
+        0   0        1 − xy                      0   0  0 (1 − (1 − xy)v)
+                                                       √
+                                            = 2ζ(3) · ( 2 − 1)4k
+since
+                          xyv(1 − x)(1 − y)(1 − v)    √
+                     0<                            ≤ ( 2 − 1)4
+                               1 − (1 − xy)v
+for every x, y, v ∈ (0, 1).
+   The irrationality of ζ(3) now follows directly by multiplying by d3k and invoking
+the estimate dk = O(e(1+δ)k ) for every δ > 0.                                    
+Lemma 1. (Padé Approximation.) For each n there exist polynomials pn and qn
+of degree n so that
+               I                            Z 1
+         (n!)2       xt dt             2n+1       v n (1 − v)n dv
+                  Qn       2
+                             =  (x − 1)                         n+1
+          2πi γ j=0 (t − j)                  0 (1 − (1 − x)v)
+
+                                   =   pn (x) log x + qn (x) = O((x − 1)2n+1 )
+where γ is a simple contour containing all the poles. (In fact pn /qn is the (n, n)
+Padé approximant to log x at x = 1.)
+6                  PETER BORWEIN, TAMÁS ERDÉLYI, AND JOHN ZHANG
+
+
+Proof. An expansion of both integrals about the point x = 1, and a comparison of
+coefficients verifies the identity.                                           
+Lemma 2. (Rodrigues-Type Formula.) With γ as in Lemma 1,
+                                      I
+                         dk dk xk y k       (xy)t dt
+   F (xy; k, k; 2, 2) =    k   k         Qk
+                        dy dx 2πi γ j=0 (t − j)2
+                                      Z 1
+                          1 dk dk         (xy)k (xy − 1)2k+1 v k (1 − v)k
+                      =      2   k k
+                                                                          dv.
+                        (k!) dy dx 0           (1 − (1 − xy)v)k+1
+Proof. This follows directly from the definition of F (x; k, k; 2, 2) and differentiation
+in Lemma 1.                                                                             
+Lemma 3. We have
+ Z 1Z 1                             Z 1Z 1Z 1
+        F (xy; k, k; 2, 2)                    (xyv(1 − x)(1 − y)(1 − v))k
+                           dxdy = −                                       dxdydv.
+  0  0      1 − xy                   0  0  0      (1 − (1 − xy)v)k+1
+Proof. For i, k nonnegative integers
+                       Z 1Z 1
+                               (xy)k+i [(1 − x)(1 − y)]k dxdy
+                                0       0
+                           Z 1Z 1
+                 −1                         1    dk dk
+               =                                         (xy)k+i (xy − 1)2k+1 dxdy.
+                (k!)2 0             0    1 − xy dy k dxk
+(Both sides are equal to
+                                               2
+                                    k!(k + i)!
+                                  (2k + i + 1)!
+though this is not completely transparent. One can verify this by induction.) So
+                     Z 1Z 1
+                 1             1   dk dk
+                                           (xy)k (xy − 1)2k+1+i dxdy
+               (k!)2 0 0 1 − xy dy k dxk
+                       Z 1Z 1
+                   =−         (xy(1 − x)(1 − y))k (xy − 1)i dxdy.
+                                0       0
+Hence                      Z 1Z 1
+                     1      1    dk dk (xy)k (xy − 1)2k+1
+                                                           dxdy
+                   (k!)2
+                     0
+                                   k   k
+                       0 1 − xy dy dx (1 − (1 − xy)v)
+                                                       k+1
+                         Z 1Z 1
+                                (xy(1 − x)(1 − y))k
+                      =−                       k+1
+                                                    dxdy
+                          0   0 (1 − (1 − xy)v)
+which together with Lemma 2 completes the proof.                                       
+
+                                        4. Irrationality of ζ(2)
+    In this section the values of the parameters are l = k, m = 1, and n = 2. Then
+                                               I Qk
+                                ′           k!     j=1 (t + j) t
+                      F (x; k, k ; 1, 2) =       Qk           x dt
+                                           2πi γ j=0 (t − j)2
+and the orthogonality relations
+                    Z 1
+                         F (x; k, k; 1, 2)F (x; k ′ , k ′ ; 1, 2, )dx = 0
+                            0
+hold for any two distinct positive integers k and k ′ .
+                         ORTHOGONALITY AND IRRATIONALITY                                 7
+
+
+Theorem 5. We have
+          Z 1                                                              √    !5k
+              F (x; k, k; 1, 2)                                             5−1
+      0<                        dx = |A1,k (1)ζ(2) + Rk | ≤ C
+           0      1−x                                                        2
+where A1,k−1 (1) is an integer, Rk is a rational number, d2k Rk is an integer, and C
+is an absolute constant.
+Proof. The proof proceeds in an entirely analogous manner as the two previous
+ones. The inequality of the theorem is derived by making use of Lemma 1 again.
+Here, the Rodrigues-type formula has the form
+                                                   Z 1                        
+                             1 dk      k       2k+1        v k (1 − v)k
+       F (x; k, k; 1, 2) = −          x (1 − x)                             dv. .
+                             k! dxk                  0 (1 − (1 − x)v)
+                                                                        k+1
+
+This yields
+               Z 1                            Z 1Z 1
+                     F (x; k, k; 1, 2)                   xk (1 − x)k v k (1 − v)k
+         0<                            dx =                                       dvdx
+                0        1−x                    0    0    (1 − (1 − x)v)k+1
+and the inequality of the theorem follows by estimating the the maximum of the
+integrand on the unit square.                                               
+  The irrationality of ζ(2) now follows easily as it did for ζ(3).
+
+                      5. Irrationality of Polylogarithms
+   The parameters we use in this case are m = N and n = 1 where N is an arbitrary
+positive integer N . We also set k = ⌈l/N ⌉ throughout this section, that is k is the
+smallest integer not less than l/N . Using the results of Theorem 1, we now write
+the contour integral as
+
+                                                     I Qk            N
+                                                 1    l!  i=1 (t + i)
+          Fl (x) := F (x; k, l; N, 1) =                  Ql             xt dt
+                                                2πi (k!)N
+                                                      γ    i=0 (t − i)
+                                                 l             N  
+                                                        i i+k         l i
+                                                X
+                                              l
+                                        = (−1)      (−1)                 x.
+                                                i=0
+                                                            k         i
+We use this form to prove the irrationality of some values of the polylogarithm
+function [13] defined as
+                                          ∞
+                                          X zj
+                             LiN (z) :=              ,     |z| < 1.
+                                          j=1
+                                                jN
+
+Theorem 6. Let N and α be fixed positive integers. With πN (x) := x1 x2 · · · xN
+and k := ⌈l/N ⌉, we have
+       Z                                    
+            Fl (πN (x))       1              1
+                        dx =    Fl (α) LiN     + RN,k
+        I N πN  (x) − α       α              α
+                                              2                 k
+                             1     1        1          2N (N +2)
+                           ≤     √ +√                √    √            .
+                             2      α      α−1      ( α + α − 1)2
+where RN,k is a rational number and (dl )N RN,k is an integer. The integral does
+not vanish for infinitely many positive integers l. Note that Fl (α) is an integer.
+8                 PETER BORWEIN, TAMÁS ERDÉLYI, AND JOHN ZHANG
+
+
+Proof. Using our standard decomposition, we write
+                    Fl (πN (x))      Fl (α)     Fl (πN (x)) − Fl (α)
+                                =             +                      .
+                    πN (x) − α     πN (x) − α        πN (x) − α
+Integration of this form shows the structure of the terms as stated in the equality
+of the theorem.
+   To prove the inequality of the theorem, note that the orthogonality conditions
+satisfied by F and Theorem 2 imply that
+        Z                      Z                               
+             Fl (πN (x))                  1
+                         dx =                   − Pk−1 (πN (x)) Fl (πN (x))dx
+         I N πN (x) − α         IN   πN (x) − α
+where Pk−1 (x) is any polynomial of degree k − 1. Proceeding on, we obtain
+         Z
+              Fl (πN (x))                    1
+                          dx ≤ max               − Pk−1 (x) max |Fl (πN (x))|
+          I N πN  (x) − α           0≤x≤1  x − α            x∈I N
+                                                      1
+                               ≤ 2(l+k)N +l max           − Pk−1 (x)
+                                             0≤x≤1 x − α
+
+                                                      1
+                               ≤ 2N (N +2)k max           − Pk−1 (x)
+                                             0≤x≤1 x − α
+
+where the upper bound of the second maximum is derived from the explicite form
+of the coefficients of the polynomial Fl .
+   To have the best possible upper bound for the remaining maximum in the above
+                                                                                  1
+estimate, we wish to find a polynomial of degree k−1 such that the deviation of x−α
+from Pk−1 is minimized. This problem was solved by Tchebysheff and is discussed
+by Akhieser [1] as in the next lemma from which the right hand-side inequality of
+the theorem follows.
+   The non-vanishing of the integral follows from the orthogonality conditions. Each
+Fl is a polynomial of exact degree l. So, with g(x) := 1/(x − α),
+                            Z
+                                Fl (πN (x))g(πN (x))dx = 0
+                             IN
+implies
+                           Z 1
+                                 Fl (x)g(x)(log x)N −1 dx = 0.
+                             0
+So vanishing at all large l implies that g(x)(log x)N −1 is a polynomial, which is a
+contradiction.                                                                    
+Lemma 4. The (k − 1)-th degree polynomial
+                                                                        
+                              1      M k−1 a − v                  1 − av
+               Pk−1 (x) =         −        v           + v −(k−1)
+                            x−α       2        1 − av              a−v
+where
+                                            
+               1       1            1        1                          4ak+1
+         x :=     v+       , α :=       a+       , |a| < 1, M :=
+               2       v            2        a                        (1 − a2 )2
+and
+                                     1
+                             max           − Pk−1 (x) = M,
+                             |x|≤1 x − α
+                           1
+deviates the least from x−α    on the interval [−1, 1] in the uniform norm.
+Proof. See [1].                                                                    
+                         ORTHOGONALITY AND IRRATIONALITY                             9
+
+
+   ¿From these we obtain, on using k = ⌈l/N ⌉, and transforming the above Lemma
+to [0, 1], that
+           Z                                    2                  k
+                Fl (πN (x))      1    1    1              2N (N +2)
+                            dx ≤     √ +√              √     √           .
+            I N πN (x) − α       2     α  α−1         ( α + α − 1)2
+Theorem 7. For positive integers α the polylogarithm function values LiN (1/α)
+are irrational provided
+                                            2
+                                1 p        1
+                         α>          β+√
+                                2           β
+                                   2
+where β := 2N (N +2) e(1.0388... )N .
+Proof. We multiply the form in Theorem 6 by (dl )N and demand for large k that
+                      k                                 k
+          2N (N +2)            N           2N (N +2)
+        √    √            (dl )  ≤      √     √                 e((1.0388... )lN/k)k
+       ( α + α − 1)2                   ( α + α − 1)2
+                                                                2
+                                                                  !k
+                                       2N (N +2) e(1.0388... )N
+                                 ≤        √       √                   < 1.
+                                         ( α + α − 1)2
+For this is suffices that
+                                                      2
+                                2N (N +2) e(1.0388... )N
+                                   √       √             <1
+                                  ( α + α − 1)2
+where we have used the sharp global estimate dl ≤ e(1.0388... )l (see [15]). The
+theorem now follows by solving the above inequality for α                     
+   We can extend our results in Theorem 6 to show the irrationality of the function
+                             ∞
+                             X      zj
+             Φ(z, N, u) :=                ,       |z| < 1, u 6= 0, −1, −2, . . .
+                             j=0
+                                 (u + j)N
+
+(several properties of Φ may be found in [11]) whenever N is an integer, u is a
+rational number, and z = 1/α, where α is an integer greater than a constant
+depending only on N and u. This follows from
+Theorem 8. Let N and α be fixed positive integers. Let u = q/p be a rational
+mumber where p and q are nonzero integers. Then there exists a constant CN,u
+depending only on N and u so that
+       Z                            N                      
+             Fl (πN (x))p/q )dx   1 q                1      q
+                      p/q − α
+                                =          Fl (α)Φ     , N,     + RN,k
+         I N (πN (x))             α p                α      p
+                                                           1
+                                       ≤   (CN,u )k max       − Pk−1 (x)
+                                                  0≤x≤1   x−α
+where RN,k is a rational number, dN  pl+q RN,k is an integer, and Pk−1 (x) is an arbi-
+trary polynomial of degree k −1. The integral is not zero for infinitely many positive
+integers l. Note that Fl (α) is an integer.
+Proof. This follows analogously to the proof of Theorem 6 with the substitution
+                                  πN (x) → (πN (x))p/q .
+                                                                                    
+10                 PETER BORWEIN, TAMÁS ERDÉLYI, AND JOHN ZHANG
+
+
+                                         References
+ 1. N. I. Akhieser, Theory of Approximation, Ungar, New York, 1956.
+ 2. K. Alladi and M.L. Robinson, Legendre polynomials and irrationality, J. Reine Ang. Math.
+    318 (1980), 137-155.
+ 3. M. Abromowitz and I. A. Stegun, Handbook of Mathematical Functions, Dover, New York,
+    1970.
+ 4. F. Beukers, A note on the irrationality of ζ(2) and ζ(3), Bull. London Math. Soc. 11 (1979),
+    286-272.
+ 5. F. Beukers, The values of polylogarithms, Colloq. Math. Soc. János Bolyai 34 (1981), 219-228.
+ 6. J. M. Borwein and P. B. Borwein, Pi and the AGM – A Study in Analytic Number Theory
+    and Computational Complexity, Wiley, New York, 1987.
+ 7. P. B. Borwein, T. Erdélyi and J. Zhang, Müntz systems and orthogonal Müntz-Legendre
+    polynomials, Trans. Amer. Math. Soc. P  (to appear).
+                                                   1
+ 8. P. B. Borwein, On the irrationality of     (q n +r)
+                                                        , J. Number Th. 37 (1991), 253-259.
+ 9. P. B. Borwein, On the irrationality of certain series, Proc. Cambridge. Phil. Soc. 112 (1992),
+    343-362.
+10. G. Chudnovsky, Padé Approximations to the Generalized Hypergeometric Functions. 1, J.
+    Math. Pures et Appl., 58 (1979), 445-476.
+11. A. Erdélyi et al, Higher Transcendental Functions, Vol. 1, McGraw–Hill, New York, 1953.
+12. M. Hata, Legendre type polynomials and irrationality measures, J. Reine Aug. Math. 407
+    (1990), 99-125.
+13. L. Lewin, Polylogarithms and Associated Functions, North Holland, New York, 1981.
+14. K. Mahler, Zur Approximation des Exponentialfunktion und des Logarithmus, J. Reine Aug.
+    Math. 166 (1931), 118-150.
+15. A. van der Poorten, A proof that Euler missed . . . Apéry’s proof of the irrationality of ζ(3),
+    Math. Intelligencer 1 (1979), 195-203.
+
+  Department of Mathematics and Statistics, Simon Fraser University, Burnaby, British
+Columbia, Canada V5A 1S6
+  E-mail address: pborwein@cs.sfu.ca
+
+  Department of Mathematics and Statistics, Simon Fraser University Burnaby, British
+Columbia, Canada V5A 1S6
+  E-mail address: erdelyi@cs.sfu.ca
+
+     SCCM, Department of Computer Science, Stanford University, CA 94305, USA
+     E-mail address: zhang@sccm.stanford.edu
+

@@ -445,3 +445,16 @@ Eighteenth checkpoint, 2026-11-14 14:39 UTC (06:39 LA), continuing:
 - User scope: stop new #137; exactly one extra-high agent on higher odd values,
   two on zeta3. Root reviews and checkpoints. Original Schur identity unresolved.
 - Continue to16:00UTC/08:00LA. No meter, runtime guarantee, or automatic resets.
+
+Nineteenth checkpoint, 2026-11-14 15:01 UTC, continuing:
+- Shortened kernel-only zeta3 proof and direct commuting-grid recurrence audited.
+  Reciprocal design lemma explains the kernel; exact Zudilin bridge retained.
+- Positive Euler-kernel deformation audited, including associated numerator and
+  generic recurrence. Exact arithmetic checker fixed over QQ(sigma) and passed.
+- Andrews positive multisum, grid divisibility and exponential many-pole normalizer
+  all reviewed. Single-moving-pole positivity and Int(Z) associated clearing also
+  reviewed. No adequate irrationality rate comparison; one agent continues this.
+- Original Schur boundary defect, rational moments and exact Cauchy-norm reduction
+  reviewed. A symmetric Heun equation is a new draft; adjacent-Apéry identity open.
+- Primary comparisons and rational pi-power scope recorded. No new Fuss work.
+- Continuing to16:00UTC with three extra-high agents; no automatic resets or meter.

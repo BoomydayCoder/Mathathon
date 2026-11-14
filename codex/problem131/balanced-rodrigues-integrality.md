@@ -179,3 +179,12 @@ not claim a primitive denominator bound for any particular zeta linear form:
 those forms introduce additional rational moments and pole denominators, which
 must be analyzed separately. The result supplies one previously missing
 arithmetic ingredient, not an irrationality proof.
+
+## Subsequent arithmetic advance
+
+The [Andrews grid theorem](balanced-andrews-grid-arithmetic.md), now
+[independently audited](balanced-andrews-independent-review.md), proves
+an all-integer negative-square divisor and an explicit exponential normalizer
+for the pure-zeta rank-one trial forms. Its exponential constant is not shown
+to be effective for irrationality. This resolves the formerly missing
+factorial cancellation, while leaving the decisive rate comparison open.

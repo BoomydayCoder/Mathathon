@@ -1,6 +1,6 @@
 # Two commuting Legendre grids force Apéry’s recurrence
 
-Status: complete proof draft, with exact checks; independent review requested. This derives the recurrence directly from the logarithmic kernel and Legendre identities. It uses no Bernoulli functional and no rational-summation telescope. The objects and recurrence are classical; no historical novelty is asserted. The compatibility argument specializes the reviewed generic argument in [deformed-associated-pearson-symmetry.md](deformed-associated-pearson-symmetry.md), but here both grid equations follow immediately from one symmetric real kernel.
+Status: complete proof accepted in the [independent audit](kernel-grids-independent-review.md), with exact checks. This derives the recurrence directly from the logarithmic kernel and Legendre identities. It uses no Bernoulli functional and no rational-summation telescope. The objects and recurrence are classical; no historical novelty is asserted. The compatibility argument specializes the reviewed generic argument in [deformed-associated-pearson-symmetry.md](deformed-associated-pearson-symmetry.md), but here both grid equations follow immediately from one symmetric real kernel.
 
 Put
 

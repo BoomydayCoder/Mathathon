@@ -53,6 +53,14 @@ It still does not establish irrationality of pi^4: an irrational number can have
 
 The following proof avoids citing the transcendence of pi as a black box. It uses polynomial symmetry, elementary algebraic-integer facts, and integration of entire functions along finitely many line segments. These are undergraduate algebra/analysis tools, but the construction is the core of a classical transcendence proof, not a lighter Niven-style shortcut.
 
+**Scope for rational powers.** The integer-power theorem immediately implies
+that pi^r is irrational for every nonzero rational r. Write r=p/q with
+q>0 and p!=0. A rational pi^(p/q) would make pi^p rational after taking
+its qth power; for p<0, take its reciprocal to contradict the positive
+integer-power theorem. This does not assert the result for every real r:
+for example r=log(2)/log(pi) gives pi^r=2. Thus the intended uniform
+power statement has an explicit nonzero-rational range.
+
 ### Step A: manufacture an exponential relation stable under algebraic symmetry
 
 Suppose pi^r=a/b with positive integers a,b. Let alpha_1,...,alpha_d be all roots, with d=2r, of

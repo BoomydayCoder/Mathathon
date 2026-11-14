@@ -1,4 +1,4 @@
-# Research handoff — 14 November 2026, 14:39 UTC
+# Research handoff — 2026-11-14 15:01 UTC
 
 Continue autonomous research in `codex/` on `codex/independent-research` in the
 exact private repository `BoomydayCoder/Mathathon`. User authorizes continued
@@ -21,6 +21,53 @@ that exactly ONE should focus on zeta5 and higher odd zeta values. Current alloc
 - xhigh_irrationality: redirected from zeta5 to a simpler direct bridge between
   Zudilin rational interpolation, Legendre–Pade and Beukers integrals.
 Root continues verification and checkpointing; no automatic resets or balance claims.
+
+## Newest continuation — 2026-11-14 15:01 UTC
+
+Nineteenth checkpoint. The completed logarithmic-kernel proof now starts with
+monomial double-integral arithmetic and an ordinary-coefficient annihilator;
+its rational-square/Mellin identity remains the explicit Zudilin bridge.
+Both revisions are reviewed. The SAME kernel gives the fully reviewed Apéry
+recurrence through two commuting Legendre grids, including the source at0.
+Reciprocal Legendre geometry forces the kernel within the stated design.
+
+The Euler-kernel extension to the existing zeta3/log2 deformation is now
+reviewed: positive real integral, exact unit flux, both grids, normalization
+of Z_sigma, associated rational numerator, and generic recurrence. This
+replaces the longer Pearson numerator argument in the analytic route; the
+older independent algebraic proof is retained. Its checker genuinely passed
+following an exact QQ(sigma) polynomial-domain fix. Exact monomial-moment
+formulas and a Jacobi Green-function interpretation are newer drafts under review.
+
+Higher-zeta agent has completed TWO further all-index arithmetic results:
+- Andrews transformation gives a positive multiple sum and proves
+  d_n^(2m-2)*p(-j²)/p(0) is integral at every integerj. An explicit exponential
+  normalizer clears the pure-zeta many-pole trial; no effective rate comparison.
+  Root visually checked primary eq3.1 and independently checked616 multisums
+  plus28 complete normalizers. balanced-andrews-independent-review.md accepts it.
+- Even balanced indices have a proved positive SINGLE-moving-pole remainder.
+  Int(Z), one linear divided difference, D=log(1+Delta), and Bernoulli reflection
+  clear its associated rational part with (2m)!*d_J^(2m+1) after the grid factor.
+  Full proof reviewed;84 independent exact numerator checks pass. No successful
+  irrationality inequality. See balanced-positive-moving-pole.md and its review.
+The newly observed diagonal a=n+1 needs no grid lcm factor in the zeta
+coefficient; remaining numerator cancellation is the sole higher-zeta task.
+
+Original zeta3 Schur family: explicit Wilson rank-two boundary defect and
+closed rational Newton moments are reviewed. A real differential factorization,
+polynomial density and Riesz duality give an EXACT Cauchy-kernel variational
+reformulation, also reviewed. Original adjacent-Apéry identity remains unproved.
+A new symmetric Heun operator from cancellation of the two boundary defects
+is under development; do not promote its endpoint consequences yet.
+
+Primary comparison archived Borwein–Erdelyi–Zhang and Arvesu2009; the classical
+Mellin/convolution/Beukers links are credited. No historical novelty follows
+from the search. Pi-power scope now explicitly includes every nonzero rational
+exponent, with the elementary reduction from integer powers and no all-real claim.
+
+Current allocation unchanged: exactlyone extra-high agent on higheroddvalues,
+two on zeta3; no further#137 work. Latest pushed commit before this checkpoint
+is1e747e1. Root continues independent audits and codex-only saves through16:00UTC.
 
 ## Newest continuation — 14:39 UTC
 

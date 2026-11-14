@@ -14,6 +14,13 @@ then identifies the same form with the Legendre–Padé resolvent and Beukers
 integral; its Hilbert identity no longer needs Bernoulli moments. Both passed
 [an independent audit](problem131/kernel-energy-independent-review.md).
 
+The same kernel now gives a [fully reviewed derivation of the recurrence](problem131/kernel-commuting-grids-apery-recurrence.md):
+two Legendre index equations commute, their compatibility forces the adjacent
+factor6, and closing the diagonal yields17 and5. The [reciprocal design lemma](problem131/reciprocal-legendre-kernel-design.md)
+explains why the kernel itself is forced within this construction. A
+[positive Euler-kernel extension](problem131/euler-kernel-deformed-legendre-bridge.md)
+connects the same mechanism to the classical family joining zeta3 and log2.
+
 
 **Shortest complete proof, then recurrence motivation.** Start with the
 [short elementary hybrid proof](problem131/short-elementary-hybrid-proof.md).

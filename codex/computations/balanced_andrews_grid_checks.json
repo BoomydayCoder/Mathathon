@@ -1,0 +1,205 @@
+{
+  "evaluation_comparisons": 320,
+  "positive_summands": 11462,
+  "endpoint_blocks": 15870,
+  "residue_floor_cases": 155627,
+  "linear_forms": 16,
+  "grid_certificates": [
+    {
+      "m": 1,
+      "n": 1,
+      "exact_integer_grid_fixed_divisor": 1,
+      "proved_grid_divisor": 1,
+      "evaluation_multiplier": 1
+    },
+    {
+      "m": 1,
+      "n": 2,
+      "exact_integer_grid_fixed_divisor": 4,
+      "proved_grid_divisor": 4,
+      "evaluation_multiplier": 1
+    },
+    {
+      "m": 1,
+      "n": 3,
+      "exact_integer_grid_fixed_divisor": 36,
+      "proved_grid_divisor": 36,
+      "evaluation_multiplier": 1
+    },
+    {
+      "m": 1,
+      "n": 4,
+      "exact_integer_grid_fixed_divisor": 576,
+      "proved_grid_divisor": 576,
+      "evaluation_multiplier": 1
+    },
+    {
+      "m": 1,
+      "n": 5,
+      "exact_integer_grid_fixed_divisor": 14400,
+      "proved_grid_divisor": 14400,
+      "evaluation_multiplier": 1
+    },
+    {
+      "m": 2,
+      "n": 1,
+      "exact_integer_grid_fixed_divisor": 1,
+      "proved_grid_divisor": 1,
+      "evaluation_multiplier": 1
+    },
+    {
+      "m": 2,
+      "n": 2,
+      "exact_integer_grid_fixed_divisor": 4,
+      "proved_grid_divisor": 4,
+      "evaluation_multiplier": 4
+    },
+    {
+      "m": 2,
+      "n": 3,
+      "exact_integer_grid_fixed_divisor": 1296,
+      "proved_grid_divisor": 36,
+      "evaluation_multiplier": 36
+    },
+    {
+      "m": 2,
+      "n": 4,
+      "exact_integer_grid_fixed_divisor": 4608,
+      "proved_grid_divisor": 2304,
+      "evaluation_multiplier": 144
+    },
+    {
+      "m": 2,
+      "n": 5,
+      "exact_integer_grid_fixed_divisor": 10368000,
+      "proved_grid_divisor": 57600,
+      "evaluation_multiplier": 3600
+    },
+    {
+      "m": 3,
+      "n": 1,
+      "exact_integer_grid_fixed_divisor": 1,
+      "proved_grid_divisor": 1,
+      "evaluation_multiplier": 1
+    },
+    {
+      "m": 3,
+      "n": 2,
+      "exact_integer_grid_fixed_divisor": 4,
+      "proved_grid_divisor": 4,
+      "evaluation_multiplier": 16
+    },
+    {
+      "m": 3,
+      "n": 3,
+      "exact_integer_grid_fixed_divisor": 576,
+      "proved_grid_divisor": 36,
+      "evaluation_multiplier": 1296
+    },
+    {
+      "m": 3,
+      "n": 4,
+      "exact_integer_grid_fixed_divisor": 73728,
+      "proved_grid_divisor": 9216,
+      "evaluation_multiplier": 20736
+    },
+    {
+      "m": 3,
+      "n": 5,
+      "exact_integer_grid_fixed_divisor": 1492992000,
+      "proved_grid_divisor": 230400,
+      "evaluation_multiplier": 12960000
+    },
+    {
+      "m": 4,
+      "n": 1,
+      "exact_integer_grid_fixed_divisor": 1,
+      "proved_grid_divisor": 1,
+      "evaluation_multiplier": 1
+    },
+    {
+      "m": 4,
+      "n": 2,
+      "exact_integer_grid_fixed_divisor": 4,
+      "proved_grid_divisor": 4,
+      "evaluation_multiplier": 64
+    },
+    {
+      "m": 4,
+      "n": 3,
+      "exact_integer_grid_fixed_divisor": 2304,
+      "proved_grid_divisor": 36,
+      "evaluation_multiplier": 46656
+    },
+    {
+      "m": 4,
+      "n": 4,
+      "exact_integer_grid_fixed_divisor": 73728,
+      "proved_grid_divisor": 36864,
+      "evaluation_multiplier": 2985984
+    },
+    {
+      "m": 4,
+      "n": 5,
+      "exact_integer_grid_fixed_divisor": 1074954240000,
+      "proved_grid_divisor": 921600,
+      "evaluation_multiplier": 46656000000
+    },
+    {
+      "m": 5,
+      "n": 1,
+      "exact_integer_grid_fixed_divisor": 1,
+      "proved_grid_divisor": 1,
+      "evaluation_multiplier": 1
+    },
+    {
+      "m": 5,
+      "n": 2,
+      "exact_integer_grid_fixed_divisor": 4,
+      "proved_grid_divisor": 4,
+      "evaluation_multiplier": 256
+    },
+    {
+      "m": 5,
+      "n": 3,
+      "exact_integer_grid_fixed_divisor": 27648,
+      "proved_grid_divisor": 36,
+      "evaluation_multiplier": 1679616
+    },
+    {
+      "m": 5,
+      "n": 4,
+      "exact_integer_grid_fixed_divisor": 589824,
+      "proved_grid_divisor": 147456,
+      "evaluation_multiplier": 429981696
+    },
+    {
+      "m": 5,
+      "n": 5,
+      "exact_integer_grid_fixed_divisor": 6191736422400,
+      "proved_grid_divisor": 3686400,
+      "evaluation_multiplier": 167961600000000
+    },
+    {
+      "m": 2,
+      "n": 8,
+      "exact_integer_grid_fixed_divisor": 943895819059200,
+      "proved_grid_divisor": 3745618329600,
+      "evaluation_multiplier": 705600
+    },
+    {
+      "m": 3,
+      "n": 6,
+      "exact_integer_grid_fixed_divisor": 53747712000,
+      "proved_grid_divisor": 10749542400,
+      "evaluation_multiplier": 12960000
+    },
+    {
+      "m": 6,
+      "n": 3,
+      "exact_integer_grid_fixed_divisor": 36864,
+      "proved_grid_divisor": 36,
+      "evaluation_multiplier": 60466176
+    }
+  ]
+}

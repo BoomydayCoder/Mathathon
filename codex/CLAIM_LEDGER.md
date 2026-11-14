@@ -4,6 +4,18 @@ All 'proved' labels refer to arguments written and checked in this workspace,
 not historical novelty. Standard external inputs are identified in each note.
 Finite computation is supplementary evidence only.
 
+## Latest reviewed additions — kernel and grid arithmetic
+
+| Result | Proof / independent review | Exact scope |
+|---|---|---|
+| Same logarithmic kernel proves positivity and the full Apéry recurrence | kernel-commuting-grids-apery-recurrence.md; kernel-grids-independent-review.md | Both index sources retained; no coefficient-fitting assumption |
+| Reciprocal Legendre design forces the unit-flux kernel | reciprocal-legendre-kernel-design.md; kernel-energy-independent-review.md | Uniqueness only within stated PDE and endpoint assumptions |
+| Positive Euler kernel gives the exact classical deformation numerator and recurrence | euler-kernel-deformed-legendre-bridge.md; euler-kernel-independent-review.md | Real tau between -1 and1; positive-measure comparison first on sigma<=1/4; algebra extends rationally |
+| Positive Andrews multisum, all-integer grid divisor and exponential many-pole normalizer | balanced-andrews-grid-arithmetic.md; balanced-andrews-independent-review.md | No favorable primitive-error estimate or new irrationality conclusion |
+| Positive single-moving-pole balanced remainder and Int(Z) associated clearing | balanced-positive-moving-pole.md; balanced-moving-pole-independent-review.md | Positivity for evenn and a>n/2; arithmetic for alln and positive integera |
+| Original Wilson boundary defect and rational Newton moments | rank-one-wilson-boundary-pearson.md; rank-one-boundary-independent-review.md | Original Schur endpoint formulas still conjectural |
+| Original Schur error equals a finite Cauchy-remainder variational norm | rank-one-logarithmic-remainder-isometry.md; rank-one-remainder-isometry-independent-review.md | Exact reduction; adjacent-Apéry identification remains unresolved |
+
 ## Reviewed additions — 14 November 2026, 14:39 UTC
 
 This newest section supersedes the earlier balanced-constant conjecture labels

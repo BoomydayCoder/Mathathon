@@ -1,0 +1,1334 @@
+    Orthogonal forms: a simple tool for proving
+             the irrationality of ζ(3)∗
+                                       J. Arvesú
+ Department of Mathematics, Universidad Carlos III de Madrid,
+  Avda. de la Universidad, 30, 28911, Leganés, Madrid, Spain
+                                 August 24, 2009
+
+                                       Abstract
+            A new proof of the irrationality of ζ(3) is given. The orthogonality
+        relation among certain known forms [17] constitutes a novel ingredient
+        used in the present approach. Here, the same sequences of integers
+        obtained in [10] appear. Apéry’s recurrence relation for the sequence
+        of rational approximants to ζ(3) are constructively obtained. A simul-
+        taneous rational approximation problem is used for such purposes.
+
+2000 Mathematics Subject Classification: Primary 42C05, 11B37, 11J72,
+11M06; Secondary 30B70, 11A55, 11J70, 33C47
+Keywords: Simultaneous rational approximation, multiple orthogonal poly-
+nomials, irrationality, recurrence relations.
+
+
+1       Introduction
+Since Apéry’s proof on the irrationality of ζ(3) in 1978 [1], several authors
+have constructed different approaches to explain the irrationality of ζ(3),
+    ∗
+    This research was partially supported by ‘Ramón y Cajal’ research program of Spain,
+the research project MTM2006-13000-C03-02 of the Ministerio de Educación y Ciencia of
+Spain, and Projects CCG07-UC3M/ESP-3339 and CCG08-UC3M/ESP-4516 from Comu-
+nidad Autónoma de Madrid.
+
+                                           1
+mostly leading to the same sequence of rational approximants. This surpris-
+ing fact, gives rise to the so-called Apéry’s phenomenon. Exceptions to this
+issue are the researches dealing with the irrationality measure (see for in-
+stance [8, 16] and the references contained there). As a consequence, a quite
+reasonable amount of material can be gathered under the title ‘irrationality
+of ζ(3)’, and therefore, any recent contribution on this topic must necessarily
+be summarized. Mainly, two different approaches have been developed to
+explain the irrationality of ζ(3), namely, complex contour integrals proposed
+by Nesterenko [10] -in a similar fashion that [7]- and triple integrals involving
+Legendre polynomials considered by Beukers [3]. Recently, in [11] was estab-
+lished certain equivalency between multiple and contour integrals, which is
+related with hypergeometric type series. An elementary explanation on how
+the solutions of the hypergeometric equation can be expressed by means of
+countour integrals can be found in [12].
+   Specially relevant for its consequences in the study of linear forms involv-
+ing odd zeta values [21] is the next lemma:
+   Suppose that for n = 1, 2, . . . , one has the sequences
+          n
+          X                           µ    ¶2 µ ¶2
+             (n)                (n)    n+k     n
+  αn = −2   bk ,      where    bk =                ,
+           k=0
+                                        k      k
+          n
+         X (n) X k                                     n
+                                                       X       n
+                                                               X
+                    ¡ −3        ¢                         1         1
+  βn = 2     bk      r − r2 γk,n ,      with γk,n =          −          .
+         k=1    r=1                                 j=1
+                                                        k + j j=0 k − j
+                                                                       j6=k
+
+
+Lemma 1.1 (Nesterenko [10]) The following expression is valid:
+                                      Z µ                   ¶2
+                                 1           π(1 − z)n
+                 αn ζ(3) − βn =                                  dz,          (1)
+                                2πi    L    (z)n+1 sin πz
+where L is the vertical line <z = C, 0 < C < n + 1, oriented from top to
+bottom, and (α)n = Γ(α+n)
+                    Γ(α)
+                          denotes the Pochhammer symbol.
+
+                                       2
+   The above lemma is the cornerstone that the author uses in [10] for the
+irrationality proof of ζ(3). Indeed, the turning point method (also known
+as Laplace’s method) gives an estimation to the above contour integral (1)
+yielding the irrationality of ζ(3). In addition, the author obtained a new
+continuous fraction expansion of ζ(3).
+   Going back to the late seventies, in [5] the author considers a simulta-
+neous rational approximation problem in the neighborhood of zero for poly-
+logarithms which allows to prove the irrationality of ζ(3). Similarly, other
+simultaneous rational approximation problem in the neighborhood of infin-
+ity involved the same functions (polylogarithms) is formulated in [17], and
+consequently proved the irrationality of ζ(3) (see also [18]).
+   The aim of the present contribution is twofold. First, give a constructive
+but a the same time elementary proof of the irrationality of ζ(3). This goal
+is achieved by a simple approach to deduce the Apéry’s difference equation
+(6). In [10], p.629, the author notes the interest in obtaining an elementary
+proof of the irrationality of ζ(3). In an elementary proof one expects to find
+the use of simple methods -basic mathematical tools if possible- to estimate
+the sequence of rational approximants to ζ(3) (see formula (28)) and prove
+in a simple way that none of the remainder approximation terms vanishes.
+Lemma 3.1 gives a simple answer to the last question. For contrasting our
+approach two other proofs of the irrationality of ζ(3) are included in section
+4. Second, present a general framework based on a suitable simultaneous
+rational approximation problem which comprises some previous independent
+proofs on the irrationality of ζ(3). Indeed, this approximation problem serves
+as a main stem in which the complex contour integral and multiple integral
+approaches find their common roots. Usually, simultaneous approximation
+has been introduced to obtain the Beukers’s integrals (triple integrals over a
+
+
+                                       3
+unitary cube) for the evaluation of the irrationality of ζ(3) [17, 18], but not
+for the complex contour integrals. This paper covers this lack and intents to
+use elementary techniques -from the point of view of rational approximation-
+in its exposition. A compressed collection of references including some proofs
+dealing with the aforementioned two approaches are: [1, 3, 4, 5, 10, 17, 18],
+and [20]. See also [21] for a reasonable relation of references on the topic.
+   The contents of this paper are as follows. In Section 2, we familiarize
+the reader with some preliminary notions and well-known results on linear
+difference equations with varying coefficients, more specifically, the Perron’s
+theorem; this theorem is essential to obtain a proof of the irrationality of
+ζ(3) as a consequence of Apéry’s difference equation (6) obtained in lemma
+3.3 of the next section. In Section 3, we carefully discuss the simultaneous
+rational approximation problem; generated by equations (8)-(10) that has as-
+sociated the orthogonal forms (16). Since the orthogonal forms contain the
+logarithmic function we avoid referring to them as linear forms. Likely, the
+Plato’s sense of Forms is more adequate. Here, the novelty in the given irra-
+tionality proof consists only in the simplicity of the ingredients for proving
+the positiveness of the remainder sequence of approximation to ζ(3) as well
+as for obtaining the well-known Apéry’s difference equation in a simple and
+constructive way. From the simultaneous rational approximation problem
+two key sequences appear, namely, the Apéry’s sequence (see (qn )≥0 in (6))
+and the remainder sequence (rn )≥0 (see (30)). Indeed, it will be obtained
+that the verification of the Apéry’s difference equation indistinctly by one
+of these sequences -no matter which of them- is a necessary and sufficient
+condition in order the other one also verifies it (see also remark 4.1). Subsec-
+tion 3.2 contains an interesting result, namely, lemma 3.4 which establishes
+a usefull expression for the remainder sequence in terms of complex contour
+
+
+                                       4
+integrals (in similar fashion lemma 1.1 was proved in [10]). This result allows
+us to connect naturally in the last subsection of this paper the two aforemen-
+tioned approaches: triple integrals and complex contour integrals (58). To
+address the question whether or not our two sequences of integers generate
+good rational approximants to ζ(3), we avoid to use turning point method
+for estimating the complex contour integral (42) as well as an upper bound
+for triple integrals, i.e., for the remainder of the equation (9) of the simul-
+taneous rational approximation, the asymptotic behavior deduced from the
+Apéry’s difference equation is used instead. This fact makes the irrationality
+proof of ζ(3) much more elementary. Lastly, Section 4 comprises some known
+results mainly regarding the Apéry’s difference equation (6) satisfied by the
+sequences of numbers (numerators and denominators of the rational approx-
+imants) that approach ζ(3). Thus, a more selfconsisting character is given
+to the paper. In this section, the method to deduce that the remainder se-
+quence (rn )n≥0 verifies Apéry’s difference equation follows the ideas exposed
+in [19] and [20], and serves to double-check the results obtained in previous
+sections. Finally, a relation between triple and contour integrals are estab-
+lished. Consequently, Beukers’s integral (59) verifies the Apéry’s difference
+equation.
+
+
+2    Preliminary notions
+Simultaneous rational approximation also known as Hermite-Padé approxi-
+mation (see [13], [17], and [18] for a detailed explanation of the concept) is a
+quite useful approach in proving irrationality of some notable constants like
+ζ(2) and ζ(3), being
+                                    X 1
+                           ζ(s) =            ,   s > 1,                     (2)
+                                    n≥1
+                                        ns
+
+
+                                       5
+the Riemann zeta-function. This kind of approximation appears naturally
+when the analyzed constants are the values of the Cauchy transforms µ̂(z)
+of certain measures, for z ∈ C outside the support of the measure. Indeed,
+this approach to the study of the irrationality has its historical roots in the
+Hermite’s proof of the transcendence of the number e. A particular well-
+known statement that characterizes the irrational numbers is the following
+lemma:
+
+Lemma 2.1 Let x be a real number, and let (pn )n≥1 , (qn )n≥1 be two se-
+quences of integers such that |qn x − pn | > 0, for all positive integers n ∈ N,
+and limn→∞ qn x − pn = 0; then x is irrational.
+
+   In section 3 and subsection 3.2 we will implicitly use the above lemma
+2.1. Furthermore, for the real number x = ζ(3), mainly based on the orthog-
+onality of some forms (see relation (18)) we will find two sequences (pn )n≥1 ,
+(qn )n≥1 that form the rational approximants pn /qn to ζ(3). In addition, these
+sequences verify a second order difference equation with variable coefficients
+(Apéry’s difference equation [1]).
+   For k ∈ N, consider the following recurrence relation of order k
+
+                un = αn,1 un−1 + · · · + αn,k un−k ,          n = 1, 2, . . . ,   (3)
+
+for which the variable coefficients have limits
+
+                          lim αn,i = ai ,       i = 1, 2, . . . , k.              (4)
+                         n→∞
+
+The polynomial
+                                                        k
+                                                        Y
+                     λk − a1 λk−1 − · · · − ak =              (λ − λi ),          (5)
+                                                        i=1
+
+is called the characteristic polynomial of the recurrence relation (3). The
+recurrence relation (3) is said to be non-degenerate if αn,i 6= 0 for n = 1, 2, . . .
+
+                                            6
+Theorem 2.1 (Perron’s theorem [14]) Suppose that for non-degenerate re-
+currence relation (3), the condition (4) is verified, and all the zeros of the
+characteristic polynomial are ordered in modulus |λ1 | < · · · < |λk |. Then
+for each zero λ of the characteristic polynomial (5) there exists a solution
+(un )n≥1−k of (3) such that limn→∞ un+1 /un = λ.
+
+    Notice that the general solution (un )n≥1−k can be expressed as a linear
+combination of the k-linearly independent solutions (un,i )n≥1−k of (3) such
+that limn→∞ un+1,i /un,i = λi , i = 1, 2, . . . , k.
+    Perron’s theorem requires that the relation (3) be non-degenerate. Con-
+sequently, some authors [6] interprets it as a refinement of the following
+classical theorem of Poincaré.
+
+Theorem 2.2 (Poincaré’s theorem [15]) Let assume for the recurrence rela-
+tion (3), that the condition (4) is verified, and all the zeros of the character-
+istic polynomial are ordered in modulus |λ1 | < · · · < |λk |. Then for each so-
+lution (un )n≥1−k of (3), either un = 0, ∀n > N (N ∈ Z), or limn→∞ un+1 /un
+converges to one of the roots λ of the characteristic polynomial (5).
+
+    Poincaré’s theorem does not answer a priori to which of the roots λ does
+converge the ratio un+1 /un while Perron’s theorem does.
+    A typical application of the previous results is the Apéry’s recurrence
+relation (also known as Apéry’s difference equation)
+
+ (n + 1)3 yn+1 − (2n + 1)(17n2 + 17n + 5)yn + n3 yn−1 = 0,           n = 1, 2, . . . , (6)
+
+which gives two linearly independent solutions (pn )n≥0 and (qn )n≥0 , with the
+initial conditions
+
+                        p0 = 0,    p1 = 6,       q0 = 1,   q1 = 5,
+
+                                             7
+respectively. Indeed, (see expressions (3) in [10])
+                  n µ
+                  X      ¶2 µ ¶2                          n µ
+                                                          X       ¶2 µ ¶2
+                     n+k     n                                n+k     n
+           qn =                            ,     pn =        γk,n ,
+                  k=0
+                          k       k                     k k=1
+                                                                 k
+                               Xn         k       µ   ¶−1 µ ¶−1
+                                   1 X (−1)j−1 n + j       n
+                        γk,n =       3
+                                       +        3
+                                                                  .
+                               j=1
+                                   j     j=1
+                                             2j     j      j
+
+However, the search of the above explicit expressions for the sequences (pn )n≥0
+and (qn )n≥0 that verify the Apéry’s recurrence relation becomes a difficult
+problem.
+    A natural question appears: How to obtain constructively the Apéry’s dif-
+ference equation (6)? In addition, it will be desired to develop an approach
+that gives the recurrence relation as well as nice representations of the so-
+lutions, i.e., in terms of their quantitative and qualitative behavior. Also,
+it will be interesting to relate one of the independent solutions of the above
+difference equation with the complex contour integrals given in [10] viewed
+from a simultaneous rational approximation problem. Below, the reader will
+find answers to these questions.
+
+
+3     Mixed type I and type II multiple orthog-
+      onal polynomials
+For all positive integers k ∈ N, the Riemann zeta-function (2) can be ex-
+pressed as                                           Z 1
+                                     (−1)k                 logk x
+                          ζ(k + 1) =                              dx.
+                                       k!             0     1−x
+This function is related up to a multiplicative factor with two of the following
+three functions
+                                      Z 1
+                              1                (log x)k−1
+                  fk (z) =                                dx,     k = 1, 2, 3.   (7)
+                           (k − 1)!    0          z−x
+
+                                                 8
+In particular, f1 (1) is the Cauchy transform of the Lebesgue measure sup-
+ported on the interval (0, 1), f2 (1) = −ζ(2), and f3 (1) = ζ(3). The above sys-
+tem {f1 (z), f2 (z), f3 (z)} slightly differs from those used in [18] for construct-
+ing a rational approximation problem; specifically, there is a sing change in
+f2 (z) when comparing both systems.
+   For the system (7) and polynomials An (z), Bn (z), Cn (z), and Dn (z) we
+pose the following simultaneous rational approximation problem near infinity
+
+               An (z)f1 (z) + Bn (z)f2 (z) − Cn (z) = O(z −n−1 ),               (8)
+               An (z)f2 (z) + 2Bn (z)f3 (z) − Dn (z) = O(z −n−1 ),              (9)
+               An (1) = 0,                                                     (10)
+               n
+               X                     n
+                                     X
+                  (n) k                 (n)
+being An (z) =   ak z , and Bn (z) =   bk z k polynomials of degree
+                  k=0                          k=0
+exactly n.
+   For the linear space of polynomials with complex coefficients we will use
+the notation P, while Pn will denote the corresponding n-dimensional sub-
+space. Indeed, An (z), Bn (z), Cn (z), Dn (z) ∈ Pn ; below we will find explicitly
+each of these polynomials.
+   The equations (8) and (9) define a type I rational approximation problem
+for the systems (f1 , f2 ) and (f2 , f3 ), respectively (see [13]). The combination
+(8)-(9) is a vector type II rational approximation problem with common
+vector denominator (An , Bn ), see [17] and [18]. This fact motivates the de-
+nomination of the problem (8)-(10) as a mixed type I and type II rational
+approximation problem.
+   Notice that this approximation problem leads to a linear system of equa-
+tions for determining (4n + 3)-unknowns (the coefficients of the unknown
+polynomials An (z), Bn (z), Cn (z), Dn (z) ∈ Pn ). However, one can find a
+smaller linear system of equations for (2n + 1)-unknowns that produces the
+
+                                         9
+polynomial solutions An (z), Bn (z), Cn (z), and Dn (z), instead. This is due
+to the fact that Cn (z), and Dn (z) will depend on An (z) and Bn (z) (see equa-
+tions (11) and (13) below). In addition, the aforementioned linear system
+of equations for determining the (2n + 1)-unknown coefficients of An (z) and
+Bn (z) derives from two orthogonality conditions of certain forms (see rela-
+tions (12) and (14)). Indeed, a detailed explanation of these facts is included
+here.
+   Substituting f1 (z) and f2 (z) into the equation (8) give
+             Z 1
+                 An (z) + Bn (z) log x                 ¡     ¢
+                                       dx − Cn (z) = O z −n−1 .
+              0          z−x
+
+Observe that An (z)−A
+                  z−x
+                      n (x)
+                            and Bn (z)−B
+                                     z−x
+                                         n (x)
+                                               are polynomials of degree n−1, then
+one selects
+  Z 1                       Z 1
+       An (z) − An (x)          Bn (z) − Bn (x)
+                       dx +                     log x dx = Cn (z) ∈ Pn .     (11)
+    0       z−x              0       z−x
+Consequently, the remainder term is given by
+                 Z 1
+                     An (x) + Bn (x) log x
+      rn,1 (z) =                           dx
+                  0           z−x
+                 X∞        Z 1
+                       1                                       ¡      ¢
+               =       k+1
+                               xk (An (x) + Bn (x) log x)dx = O z −n−1 ,
+                 k=n
+                     z      0
+
+
+where the orthogonality condition
+         Z 1
+             xk (An (x) + Bn (x) log x)dx = 0,       k = 0, . . . , n − 1,   (12)
+           0
+
+guarantees the prescribed order near infinity imposed by equation (8).
+   Analogously, one proceeds with the equation (9) of the simultaneous ap-
+proximation problem (8)-(10). Indeed, one gets
+   Z 1
+       An (z) − An (x) + (Bn (z) − Bn (x)) log x
+                                                 log x dx = Dn (z) ∈ Pn .    (13)
+    0                   z−x
+
+                                       10
+Thus, a second orthogonality condition
+   Z 1
+       ((An (x) + Bn (x) log x) log x) xk dx = 0,        k = 0, . . . , n − 1,   (14)
+     0
+
+guarantees the prescribed order near infinity of the second remainder term
+               Z 1
+                   (An (x) + Bn (x) log x) log x
+    rn,2 (z) =                                   dx                           (15)
+                0              z−x
+               X∞        Z 1
+                     1                                              ¡      ¢
+             =       k+1
+                             xk (An (x) + Bn (x) log x) log x dx = O z −n−1 .
+               k=n
+                   z      0
+
+
+   Accordingly, the initial approximation problem for determining 4n + 3
+unknown coefficients is reduced to 2n + 1 coefficients since Cn (z) and Dn (z)
+depend on An (z) and Bn (z). In fact, we have found the orthogonality con-
+ditions (12) and (14) for the forms
+
+             Fn (x) = (An (x) + Bn (x) log x) and Gn (x) = Fn (x) log x,         (16)
+
+respectively, i.e.,
+          Z 1               Z 1
+                      k
+               Fn (x)x dx =     Gn (x)xk dx = 0,       k = 0, . . . , n − 1.     (17)
+               0                  0
+
+   Notice that (17) gives 2n linear equations with (2n + 1)-unknowns (un-
+derdetermined linear system of equations). Furthermore, the following ex-
+pression
+      Z 1
+              Fn (x) (P (x) + Q(x) log x) dx = 0,   ∀P (x), Q(x) ∈ Pn−1 ,        (18)
+         0
+
+yields. This relation can be interpreted as an orthogonality condition among
+two different forms
+                 Z 1
+                          Fn (x)Fm (x)dx = 0,   whenever n 6= m.
+                      0
+
+
+
+                                          11
+   Another consequence of the orthogonality relations (17) are the following
+formulas
+                        Z 1                       Z 1
+                                 Fn (x)               Fn (x)
+                            p(x)        dx = p(z)            dx,                          (19)
+                         0       z−x               0 z−x
+                        Z 1                       Z 1
+                                 Gn (x)               Gn (x)
+                            q(x)        dx = q(z)            dx,                          (20)
+                         0       z−x               0 z−x
+
+being p(z) and q(z) arbitrary polynomials of degree at most n.
+   The coefficients for polynomials An (x) and Bn (x) are determined from
+the orthogonality conditions (17). Indeed, one gets the rational functions
+                          n
+                             "                                #
+                         X        ak
+                                    (n)             (n)
+                                                   bk
+             Rn,1 (t) =                     −               2
+                                                                 ,
+                               t +  k +   1   (t + k  +  1)
+                         k=0
+                             n
+                                "                                      #   (21)
+                            X            (n)
+                                        ak                 bk
+                                                             (n)
+             Rn,2 (t) = −                      2
+                                                 −2                  3
+                                                                         .
+                            k=0
+                                  (t +  k  + 1)       (t + k   +   1)
+
+The linear system of equations (17) is an underdetermined one, so the coef-
+           (n)         (n)
+ficients ak , and bk are determined up to a constant factor κn . Indeed,
+
+                                        t2 (t − 1)2 · · · (t − n + 1)2
+                        Rn,1 (t) = κn                                  ,                  (22)
+                                         (t + 1)2 · · · (t + n + 1)2
+and                                         " n−1                 #
+                                             X 1         n+1
+                                                         X
+                      d                                       1
+            Rn,2 (t) = Rn,1 (t) = 2Rn,1 (t)            −            .                     (23)
+                      dt                      k=0
+                                                  t − k k=1 t + k
+With the choice κn = −1 from (21) one obtains
+                                                µ         ¶2 µ ¶2
+  (n)                            2                  n+k       n
+ bk = −          lim (t + k + 1) R1,n (t) =                       , k = 0, 1, . . . , n, (24)
+            t→−(k+1)                                 k        k
+and
+
+   (n)                                                        (n)
+ ak = Res Rn,1 (t) = 2 (Hn+k − 2Hk + Hn−k ) bk ,                      k = 0, 1, . . . , n, (25)
+         t=−k−1
+
+
+
+
+                                              12
+           (r)                                                                     (1)
+where Hk         denotes the Harmonic Number k of order r (Hk                            = Hk and
+H0 = 0). Accordingly, the following expressions
+                         Xn µ       ¶2 µ ¶2
+                                n+k      n
+               Bn (1) =                      , B0 (x) = 1,
+                         k=0
+                                  k      k
+                       Xn ³                   ´
+                              (n)     (n) (2)
+             Cn (1) =       ak Hk − bk Hk , C0 (x) = 0,                                      (26)
+                            k=1
+                            n ³
+                            X                                    ´
+                                    (n)   (3)        (n)   (2)
+                 Dn (1) =         2bk Hk − ak Hk                     ,   D0 (x) = 0,
+                            k=1
+
+are easily calculated by taking into account the formulas (11) and (13) as
+well as (24) and (25).
+   In particular, for n ∈ N ∪ {0}, the simultaneous rational approximation
+problem (8)-(10) by setting z = 1 gives
+                                          Z 1
+                                              Fn (x)
+       Bn (1)f2 (1) − Cn (1) = rn,1 (1) =            dx,                                     (27)
+                                           0 1−x
+                                          Z 1             X∞
+                                              Gn (x)
+      2Bn (1)f3 (1) − Dn (1) = rn,2 (1) =            dx =     Rn,2 (t).                      (28)
+                                           0 1−x          t=n
+
+   Notice that (15) is valid for |x/z| < 1, and we have written in (28) the
+relation                                        ∞
+                                                X
+                                  rn,2 (1) =          Rn,2 (t).                              (29)
+                                                t=n
+
+Apparently, for such a limit situation at the singular point z = 1, the per-
+formed change of integration and summation in (15) has no sense, however
+a rigorous justification of (29) is given in lemma 3.4 below. In what follows
+in this section regarding the irrationality proof of ζ(3), relation (29) is irrel-
+evant, while orthogonal forms Fn (x), n = 0, 1, . . . , play a fundamental role.
+However, section 4 makes use of relation (29) aimed to prove the irrationality
+of ζ(3) base on Apéry’s recurrence relation as well as to connect the triple
+integral and complex contour integral approaches.
+
+                                                13
+   Now, the main goal will be the study of the asymptotic behavior of rn,2 (1),
+when n goes to infinity. Observe that according with (28), the opposite
+situation when n is identically equal to zero leads to the identities f2 (1) =
+−ζ(2) and f3 (1) = ζ(3), respectively.
+   For brevity, let us denote the sequences involved in (27)-(28) as
+
+ (qn )n≥0 = {Bn (1)}∞
+                    n=0 ,      (pn )n≥0 = {Dn (1)}∞
+                                                  n=0 ,    (rn )n≥0 = {rn,2 (1)}∞
+                                                                                n=0 ,
+
+    (q̃n )n≥0 = −(qn )n≥0 ,    (p̃n )n≥0 = {Cn (1)}∞
+                                                   n=0 ,   (r̃n )n≥0 = {rn,1 (1)}∞
+                                                                                 n=0 .
+                                                                                   (30)
+Hence, by using (3)-(7) the expressions (27)-(28) can be rewritten as
+
+                q̃n ζ(2) − p̃n = r̃n ,   2qn ζ(3) − pn = rn ,   n ≥ 0.            (31)
+
+Regardless of what method is used for the approximation of ζ(3), the above
+expression (31) must containt good rational approximants pn /qn such that
+|ζ(3) − pn /qn | = o(qn−1 ), then based on lemma 2.1 ζ(3) has to be irrational,
+provided that |qn ζ(3) − pn | > 0, for all positive integers n ∈ N. This con-
+dition is crucial. Indeed, one of the main difficulties in the study of the
+irrationality of ζ(3) is to determine whether or not the terms of the remain-
+der sequence (rn )n≥0 vanish. Essentially, two different approaches have been
+suggested for answering this question (see [3], [17] and [18] where tripe inte-
+grals are used for such purpose, and [10] where complex variable techniques
+are applied). Here, we will obtain that the sequences involved in (31), i.e.,
+(qn )n≥0 , (pn )n≥0 and (rn )n≥0 verify the Apéry’s difference equation, and two
+of them are linearly independent.
+   The following lemma gives a simple answer to the above question on the
+non-vanishing terms of (rn )n≥0 .
+
+Lemma 3.1 Suppose that An (x), Bn (x) ∈ Pn \ {0} are the solutions of the
+rational approximation problem (8)-(10), i.e., with coefficients determined by
+
+                                           14
+(24) and (25), respectively. Then, for n = 0, 1, 2, . . . , the remainder function
+rn,2 (z) does not vanish at z = 1.
+
+Proof. Suppose on the contrary that rn,2 (1) = 0, i.e.,
+                    Z 1
+                        (An (x) + Bn (x) log x) log x
+               rn =                                   dx = 0.
+                     0             1−x
+                                                   (An (x) + Bn (x) log x)2
+    Let us consider the auxiliary function f (x) =                          , and
+                                                            1−x
+f (1) = 0, on (0, 1], where polynomials An (x) and Bn (x) are Zsolutions of the
+                                                                  1
+approximation problem (8)-(10). Notice that f (x) ≥ 0, and          f (x)dx > 0.
+                                                                   0
+   On the other hand, one has
+ Z 1           Z 1µ                                              ¶
+                    qn Gn (x) ³                           ´
+     f (x)dx =               − Ãn−1 (x) + B̃n−1 (x) log x Fn (x) dx, (32)
+  0             0    1−x
+being Ãn−1 (x) = An (1)−A
+                       1−x
+                           n (x)
+                                 and B̃n−1 (x) = Bn (1)−B
+                                                      1−x
+                                                          n (x)
+                                                                . From the orthogo-
+nality conditions (18) and equation (32) one gets
+                               Z 1
+                           0<      f (x)dx = qn rn .
+                                   0
+
+Hence, rn cannot vanish. This contradiction proves our statement.
+   As a consequence of the above lemma the terms of the sequence (rn )n≥0 ,
+where rn = 2qn ζ(3) − pn , are strictly positive. It follows from being (qn )n≥0
+a strictly positive sequence -see (24)-.
+
+3.1    Apéry’s difference equation and irrationality of ζ(3)
+From the simultaneous rational approximation problem (8)-(10) we know
+that the remainder function rn,2 (z) decreases at infinity while the polynomial
+Bn (z) obviously grows, so hopefully at the singular point z = 1, the numerical
+sequences formed by Bn (1) and rn,2 (1), n = 0, 1, . . . , will conserve such a
+behavior and be linearly independents. The next lemmas give a positive
+answer to these questions.
+
+                                        15
+Lemma 3.2 The sequences (qn )n≥0 and (rn )n≥0 are linearly independent.
+
+Proof. Suppose on the contrary that there exists nonzero constants α1 and
+α2 (not all zero) such that
+
+                          α1 qn + α2 rn = 0,     n = 0, 1, . . .
+
+Equivalently, the analog of the Wronskian determinant for qn and rn vanishes,
+                                       µ           ¶
+                                          qn   rn
+                    W (qn , rn ) = det               = 0.
+                                         qn+1 rn+1
+Let us consider the integral
+                                   Z 1
+                                         Fn (x)Fn+1 (x)
+                            In =                        dx.
+                                    0        1−x
+Using formulas (19)-(20) one gets
+                Z 1                        Z 1
+                    Fn (x)Fn+1 (x)             Gn+1 (x)
+          In =                     dx = qn              = qn rn+1 .         (33)
+                 0      1−x                 0   1−x
+On the other hand,
+         Z 1                     Z 1
+             Fn (x)Fn+1 (x)           xFn (x)Fn+1 (x)
+   In =                     dx =                      dx
+          0      1−x               0       1−x
+             Z 1                    Z 1                      Z 1
+                  xGn (x)     (n+1)      n             (n+1)
+      = qn+1              − an+1        x Fn (x)dx − bn+1        xn Gn (x)dx
+               0   1 − x             0                        0
+                      12
+      = qn+1 rn −           .                                                (34)
+                   (n + 1)3
+
+Equating (33) and (34) one obtains that W (qn , rn ) 6= 0. This contradiction
+proves our statement.
+   Notice that the preceding lemma makes use of an ad hoc property
+                    Z 1                     Z 1
+              (n+1)      n            (n+1)
+             an+1       x Fn (x)dx + bn+1       xn Gn (x)dx 6= 0,
+                      0                             0
+
+which follows by straightforward calculations from the expressions (22)-(25).
+
+                                           16
+Lemma 3.3 The sequences (qn )n≥0 and (rn )≥0 verify the following second
+order difference equation
+
+                  αn yn+1 + βn yn + γn yn−1 = 0,     n = 1, 2, . . .             (35)
+
+where αn = (n + 1)3 , βn = −(2n + 1)(17n2 + 17n + 5), and γn = n3 .
+
+Proof. From lemma 3.2, and equations (33)-(34), we have
+                            12                                                 12
+   qn rn+1 = qn+1 rn −            ,   or equivalently, qn−1 rn = qn rn−1 −        .
+                         (n + 1)3                                              n3
+Multiplying the first equation by a non-zero factor α, the second equation
+by a non-zero factor −γ, and adding both equations one gets
+                               µ             ¶
+                                    α      γ
+      qn (αrn+1 + γrn−1 ) + 12           −     = rn (αqn+1 + γqn−1 ) .
+                                 (n + 1)3 n3
+Hence,
+                qn (αrn+1 + γrn−1 ) = rn (αqn+1 + γqn−1 ) ,                      (36)
+                ¡      ¢3
+yields, when α = 1 + n1 γ. Equivalently,
+
+         qn (αn rn+1 − bn rn + γn rn−1 ) = rn (αn qn+1 − bn qn + γn qn−1 ) ,     (37)
+
+where αn and γn are given in (35), and bn is chosen arbitrarily.
+   Clearly, from equation (37) one has the following equivalency: If there
+exist a coefficient bn such that
+
+                  αn qn+1 − bn qn + γn qn−1 = 0,    n = 1, 2, . . . ,            (38)
+
+then,
+
+                  αn rn+1 − bn rn + γn rn−1 = 0,    n = 1, 2, . . . ,            (39)
+
+and vice versa.
+
+                                         17
+   Since the sequences (qn )n≥0 and (rn )n≥0 are linearly independent, identity
+(37) implies that the above second order homogeneous difference equations
+are the only possible choice -of minimal length- that these sequences might
+satisfy. Notice that if equations (38) and (39) are non-homogeneous, then
+the sequences (qn )n≥0 and (rn )n≥0 were linearly dependent, which contradices
+lemma 3.3. Now, let us find the coefficient bn such that the sequences (qn )n≥0
+and (rn )n≥0 verify the recurrence relation
+
+                 αn yn+1 − bn yn + γn yn−1 = 0,    n = 1, 2, . . .           (40)
+
+Observe that bn can not vanish. On the contrary if bn vanishes, then from
+(36) one has
+
+               αn rn+1 + γn rn−1 = 0 ⇐⇒ αn qn+1 + γn qn−1 = 0,
+
+and none of these degenerate equations are fulfilled.
+   Accordingly, from equations (38)-(39) we have
+                      qn+1      qn−1            rn+1      rn−1
+           (n + 1)3        + n3      = (n + 1)3      + n3      = bn .        (41)
+                       qn        qn              rn        rn
+   Now, aimed to use Perron’s theorem 2.1 one seeks coefficient bn such
+that when n goes to infinity the ratio bn /n3 behaves like a constant a ∈
+(−∞, 2) ∪ (2, ∞). This last requirement implies that the roots t1 and t2 of
+the characteristic equation of (40) can be ordered in modulus since
+                         √                          √
+                     a − a2 − 4                 a + a2 − 4
+                t1 =              , and t2 =               .
+                           2                          2
+So let us formally write bn = an3 +bn2 +cn+d. Thus, from (26) and (41) one
+gets a linear system of equations for determining the unknown coefficients a,
+b, c, and d. In particular, for n = 1, 2, 3, 4 the following linear system
+                        
+                        
+                          117 = a + b + c + d,
+                        
+                           535 = 8a + 4b + 2c + d,
+                        
+                          1463 = 27a + 9b + 3c + d,
+                        
+                           3105 = 64a + 16b + 4c + d,
+
+                                        18
+yields, being its solution a = 34, b = 51, c = 27, and d = 5. Hence, bn = βn ,
+and the lemma is completely proved.
+   In [9] a lower bound for the minimal length of the polynomial recurrence
+of a binomial sum is studied. Here, specifically for the Apéry’s sequence
+(qn )n≥0 the previous lemma gives answer to this question based on some
+properties of the forms defined by (17).
+
+Remark 3.1 The equation (40) verifies the hypotheses of Perron’s theorem;
+consequently
+                        qn+1                  rn+1
+                             = O(t1 ),             = O(t2 ),
+                         qn                    rn
+where t1 and t2 denote the roots of the characteristic equation of (40). There-
+fore, multiplying both side of (41) by 1/(n + 1)3 and taking limits n → ∞,
+yields the following relation
+                                   1        1
+                            t1 +      = t2 + = 34.
+                                   t1       t2
+Now, t1 and t2 are solutions of the above equation. Indeed,
+            √             1         √             1
+           ( 2 + 1)4 + √         = ( 2 − 1)4 + √        = 34.
+                      ( 2 + 1) 4              ( 2 − 1)4
+
+Finally, observe that from (37) sequence (pn )n≥0 also solves (35).
+
+   As consequence of elementary previous lemmas 3.2 and 3.3 as well as
+Perron’s theorem the irrationality of ζ(3) can be easily proved.
+
+Theorem 3.2 (Apéry [1]) The real number ζ(3) is irrational.
+
+Proof. The characteristic equation for (35) is t2 − 34t + 1 and their zeros
+           √                  √
+are: t1 = ( 2 + 1)4 and t2 = ( 2 − 1)4 , respectively. Hence, from Perron’s
+theorem 2.1 and lemma 3.2 one has the behavior qn = O (tn1 ) and rn = O (tn2 ),
+
+
+                                         19
+as n goes to infinity, for the two linearly independent solutions, respectively.
+Thus, from (28) one writes
+                                          ³√         ´
+                    2qn ζ(3) − pn = rn = O ( 2 − 1)4n .
+
+Therefore,
+               p                                p              √
+       lim sup n ln3 (2qn ζ(3) − pn ) = lim sup n ln3 rn ≤ e3 ( 2 − 1)4 < 1,
+        n→∞                             n→∞
+
+where ln denotes the least common multiple of {1, 2, . . . , n}. This inequality
+proves the irrationality of ζ(3).
+
+3.2    Contour integral representation for (rn )n≥0
+An important fact in the context of our simultaneous rational approximation
+                                                                 P
+problem remains to be addressed; specifically, the equality: rn = ∞t=n Rn,2 (t),
+
+n = 0, 1, . . . , whose proof is included here. Accordingly, the goal now is to
+prove it, and show later how different mathematical technologies (different
+approaches) fit together (see subsection 4.1). Immediately, afther being this
+proof done, base on some known procedures [20] the irrationality of ζ(3) is
+again proved.
+
+Lemma 3.4 The following relations for the remainder term (15) at z = 1
+are valid:
+       Z 1             X∞                Z − 1 +i∞          ³ π ´2
+           Gn (x)                      1       2
+  rn =            dx =     Rn,2 (t) =              Rn,1 (ν)         dν, (42)
+         0 1−x         t=n
+                                      2πi − 12 −i∞           sin πν
+
+where Gn (x) and Rn,1 (ν) are given in (16) and (22), respectively.
+
+Proof. The Cauchy kernel 1/(z − x) in the integral expression for the remain-
+der term (15) can be substituted by the expression
+                    Z ³          µ        ¶     ¯x¯
+        1       1           x ´ν      1         ¯ ¯
+            =             −                 dν, ¯ ¯ < 1,         x 6= 0,       (43)
+       x−z     2iz          z      sin πν        z
+                    <ν=− 21
+
+
+                                        20
+where the vertical line <z = −1/2 is oriented from top to bottom. Indeed,
+the right-hand side can be directly computed by expressing conveniently
+the integrand function, i.e., the product of the complex power (−x/z)ν by
+1/ sin πν, for ν = − 21 + ib, b ∈ (−∞, ∞). Observe that the integral converges
+uniformly for ² ≤ x ≤ 1, and z < −1 − ², ² ∈ (0, 1). Thus,
+                                                    
+                        Z 1       Z ³
+                             1          x ´ν dν 
+           rn,2 (z) = −              −               Gn (x)dx,
+                         0    2iz        z sin πν
+                                     <ν=− 21
+                             Z       µZ 1                    ¶µ           ¶ν
+                      1                        ν                      1          dν
+                  =−                         x Gn (x)dx             −
+                     2iz                0                             z        sin πν
+                           <ν=− 21
+                                 Z                   µ     ¶ν µ            ¶
+                      1                          1                 πdν
+                  =−                  Rn,2 (ν) −                               ,        (44)
+                     2zπi                        z                sin πν
+                            <ν=− 21
+
+
+yields, since z < −1 and 0 < x ≤ 1.
+   Now, accomplishing the integrand function in (44) by using the differen-
+tiation formula (23) and taking limit when z goes to 1, one gets
+                                         Z − 1 +i∞                  ³
+                                 1               2                         π ´2
+           2qn ζ(3) − pn = rn =                          Rn,1 (ν)               dν.     (45)
+                                2πi         − 12 −i∞                    sin πν
+                                     P∞
+   Finally, let us show that rn =       t=n Rn,2 (t), which will complete the proof.
+
+Thus, for the evaluation of the above integral one expresses it as a limit of
+contour integrals along the contour Ωn that goes along the imaginary line
+from − 21 + iLn to − 21 − iLn and then counterclockwise along a semicircle
+centered at −1/2 from − 21 + iLn to − 21 − iLn , where the semicircle radius
+Ln > n+ 21 . We have taken Ln to be greater than n+ 21 , so that n singularities
+of the integrand function are enclosed within the curve. The rational function
+Rn,1 (z) = O(L−2
+              n ) on the arc of Ωn , while the function (sin πz)
+                                                                 −1
+                                                                    is bounded.
+
+
+
+                                            21
+Now, by residue theorem one can compute (45). Indeed,
+               µ        ³ π ´2 ¶
+           Res Rn,1 (z)            = Rn,2 (n), n = 0, 1, 2 . . . ,
+           z=n           sin πz
+which can be easily checked by considering the following expansions at the
+integers
+                                                          ¡        ¢
+                 Rn,1 (z) = Rn,1 (n) + Rn,2 (n)(z − n) + O (z − n)2 ,
+              ³ π ´2            1
+                          =           + O(1).
+               sin πz       (z − n)2
+    Therefore,
+                                  Z − 1 +i∞       ³     π ´2      X∞
+                             1        2
+       2qn ζ(3) − pn = rn =                 Rn,1 (ν)         dν =     Rn,2 (t),
+                            2πi    − 12 −i∞          sin πν       t=n
+
+holds. The lemma is completely proved.
+    Observe that the summation starts at t = n since the rational function
+Rn,2 (t) vanishes at n = 0, 1, . . . , n − 1.
+    The above lemma is presented in a constructive way. We have started
+from expression (15) and concluded with the verification of the right-hand
+side of expression (28).
+    Notice that the integration in (42) over a shifted imaginary line <z =
+−1/2+k, k = 1, . . . , n, does not alter the result. Indeed, if one integrates over
+a contour Ωn shifted to the right along the real axis whenever the imaginary
+line does not pass by zero and does not exceed the singularity at z = n + 1
+the same result for (42) yields. Thus, lemma 3.4 is in accordance to lemma
+1.1.
+
+
+4       Comparison with some known results
+This section comprises some known results leading to the irrationality of
+ζ(3). Mostly, these results are related with the Apéry’s difference equation
+
+                                           22
+(6) satisfying by the sequence of numbers (numerators and denominators of
+the rational approximants) that approach ζ(3) (see (28)-(30)) as well as the
+remainder sequence (rn )n≥0 . The method to deduce that sequence (rn )n≥0
+verifies Apéry’s difference equation follows the ideas exposed in [19] and [20];
+however the computations below might slightly differ from those.
+   Observe that from (36) the following relation involving the polynomial
+Bn (z) and the remainder term rn,2 (z) at z = 1, holds:
+                                Z 1
+                                an Gn+1 (x) + cn Gn−1 (x)
+                       Bn (1)
+                             0            1 − xZ                              (46)
+                                                  1
+                                                    Gn (x)
+                  = (an Bn+1 (1) + cn Bn−1 (1))            dx,
+                                                 0 1−x
+          ¡      ¢3
+being an = 1 + n1 cn , and cn an arbitrary constant.
+   Clearly, from lemma 3.1 and (46) the verification of the second order
+difference equation (35) for the sequence (qn )n≥0 will implies the verification
+of the same difference equation for the remainder sequence (rn )n≥0 , and vice
+versa. Therefore, if (qn )n≥0 satisfies (35) then, (rn )n≥0 also verifies it (see
+equation (37) of lemma 3.3).
+
+Remark 4.1 If there exists nonzero constants αn , βn , γn , such that
+
+     αn qn+1 + βn qn + γn qn−1 = 0,   then   αn rn+1 + βn rn + γn rn−1 = 0,
+
+holds. The converse is also true.
+
+   Accordingly, it is enough to find the difference equation that is fulfilled
+by (qn )n≥0 or (rn )n≥0 , indistinctly. Let us firstly prove the verification of
+(35) for the sequence (qn )n≥0 in a more standard way (see [19]), and lastly
+prove independently of the previous remark that (rn )n≥0 also fulfilled Apéry’s
+difference equation.
+
+
+                                       23
+Proposition 4.1 There exists non-zero constants αn , βn , γn , such that
+
+                  αn qn+1 + βn qn + γn qn−1 = 0,      n = 1, 2, . . . ,             (47)
+
+holds.
+
+Proof. The equation (47) is equivalent to
+                     n+1 ³
+                     X                                       ´
+                                 (n+1)       (n)     (n−1)
+                             αn bk     + βn bk + γn bk           = 0,
+                     k=0
+         (i)
+since bj = 0, for i < j. Hence,
+   ¡     ¢2 ¡n+1¢2       ¡n+k¢2 ¡n¢2       ¡n+k−1¢2 ¡n−1¢2
+ αn n+k+1
+      k       k
+                   + β n   k     k
+                                     + γ n    k       k
+                                                           = fn (k + 1) − fn (k),
+                                                                                    (48)
+such that fn (0) = fn (n + 2) = 0. Indeed, one can define
+                                              ¡ ¢2 ¡n¢2
+                                  k 4 π2,n (k) n+k
+                                                k   k
+                        fn (k) =                        ,                           (49)
+                                 (k − n − 1)2 (k + n)2
+being π2,n (k) = an k 2 +bn k +cn , a polynomial of degree 2 in k, and coefficients
+depending on n.
+   From (48) and (49) the following equation
+ αn (n + k + 1)2 (n + k)2 + βn (n − k − 1)2 (n + k)2 + γn (n − k + 1)2 (n − k)2
+               = (k − n − 1)2 (k + n)2 π2,n (k + 1) − k 4 π2,n (k),
+yields. This expression leads to a linear system of equations (5 equations for
+the 6-unknowns: αn , βn , γn , an , bn , cn ). A particular solution to this system
+is given by
+
+      αn = (n + 1)3 ,      βn = −(2n + 1)(17n2 + 17n + 5),              γn = n3 ,   (50)
+      an = 8(2n + 1),       bn = −12(2n + 1),      cn = −16n(2n2 + 3n + 1),
+
+which proves (47).
+   In the same fashion that proposition 4.1, one can prove the verification
+of (35) for the sequence (rn )n≥0 , see [20].
+
+                                          24
+Proposition 4.2 There exists non-zero constants αn , βn , γn , such that
+
+                   αn rn+1 + βn rn + γn rn−1 = 0,        n = 1, 2, . . . ,     (51)
+
+holds.
+
+Recall that the remainder function rn,2 (z) is given by (15), so relation (51)
+can be written as
+              Z 1
+                       αn Gn+1 (x) + βn Gn (x) + γn Gn−1 (x)
+                                                             dx = 0,
+                   0                  1−x
+where the constant coefficients are given in (50). For proving the above
+proposition one needs to use lemma 3.4 and the following result (see [20]):
+
+Lemma 4.1 There exists non-zero constants αn , βn , γn , such that
+
+         αn Rn+1,1 (t) + βn Rn,1 (t) + γn Rn−1,1 (t) = Fn (t + 1) − Fn (t),    (52)
+
+where Fn (t) = 4(2n + 1)(−2t2 − 3t + 4(n2 + n))Rn,1 (t), holds.
+
+Proof. Let us assume that
+
+         αn Rn+1,1 (t) + βn Rn,1 (t) + γn Rn−1,1 (t) = Fn (t + 1) − Fn (t).    (53)
+
+For finding the coefficients αn , βn , γn as well as function Fn (t) we divide both
+side of (53) by Rn,1 (t) and use
+
+              Rn+1,1 (t)     (n − t)2            Rn−1,1 (t)   (t + n + 1)2
+                         =              ,                   =              .
+               Rn,1 (t)    (t + n + 2)2           Rn,1 (t)    (t − n + 1)2
+Hence,
+                (n − t)2               (t + n + 1)2    Fn (t + 1) − Fn (t)
+         αn              2
+                           + β n + γ n             2
+                                                     =                     .
+              (t + n + 2)              (t − n + 1)           Rn,1 (t)
+
+
+
+                                            25
+   Now, assume that Fn (t) is equal to Pn (t)R1,n (t), where Pn (t) must be
+determined. Thus,
+
+   [αn (n − t)2 + βn (t + n + 2)2 ] (t − n + 1)2 + γn (t + n + 1)2 (t + n + 2)2
+             = (t + 1)4 Pn (t + 1) − (t − n + 1)2 (t + n + 2)2 Pn (t),
+
+yields, being Pn (t) = an t2 + bn t + cn . This expression leads to a linear system
+of equations (5-equations for the 6-unknowns coefficients αn , βn , γn , an , bn ,
+and cn ). Hence, by solving this system one obtains the unknown coefficients
+
+        αn = (n + 1)3 ,   βn = −(2n + 1)(17n2 + 17n + 5),        γn = n3 ,
+
+as well as the polynomial Pn (t) = 4(2n+1)(−2t2 −3t+4(n2 +n)). Therefore,
+equation (52) holds, and the lemma is completely proved.
+Proof of proposition 4.2 (Zudilin [20]). Now, differentiating expression (52)
+and summing the result over t = 0, 1, . . . , one gets (51) since for n ≥ 1 the
+rational function Rn,1 (t) has a zero of order 2, and consequently Fn0 (0) = 0.
+
+Remark 4.2 Using Perron’s theorem 2.1 the irrationality of ζ(3) holds (see
+theorem 3.2 above).
+
+   The converse result of remark 4.1 immediately follows if one multiplies
+both sides of (52) by (t + n)2 , substitutes t = −n, and sum over all integers
+n, i.e., the sequence (qn )n≥0 also satisfies the Apéry’s difference equation.
+Consequently, the sequence (pn )n≥0 (where pn = Dn (1), see (26)) also verifies
+it. However, the direct implication of remark 4.1 only follows from lemma
+3.3, therefore (pn )n≥0 also satisfies Apéry’s difference equation.
+   In closing, it is enough to indicate the difference equation that satisfies the
+sequence (qn )n≥0 to have the irrationality of ζ(3) as an intrinsic property of
+the simultaneous rational approximation problem (lemma 3.3), provided that
+the roots of the characteristic equation for the aforementioned second order
+
+                                        26
+difference equation gives a good approximation. Apéry was totally right
+when first announced his proof [1] of the irrationality of ζ(3) by showing
+                                                             P    ¡ ¢2 ¡n¢2
+the difference equation satisfied by the sequence of integers nk=0 n+k
+                                                                    k   k
+                                                                            ,
+n = 0, 1, . . . .
+
+4.1      Relation between triple and contour integrals
+The relation between the two approaches, namely, complex contour integrals
+introduced by Nesterenko [10], and triple integrals involving Legendre poly-
+nomials considered by Beukers [3] can be easily obtained by using the Mellin
+convolution                                    Z x                   ³ x ´ dt
+                          (f ∗ g)(x) =               .      f (t)g
+                                               t t  1
+Let us prove that the expression of this convolution coincides with the form
+Fn (x) given in (16) if one takes f (z) = g(z) = Ln (z), being Ln (z) the n-th
+Legendre polynomial
+                                 Xn                                             µ         ¶µ ¶
+            1 dn n           n         (n)                        (n)               n+k     n
+   Ln (z) =       n
+                    z (1 − z)  =     l k xk ,                    lk = (−1)k                    , (54)
+            n! dz                k=0
+                                                                                     k      k
+orthogonal with respect to the Lebesgue measure on (0, 1), i.e.,
+                                                    Z x
+                                                                      dt
+   Fn (x) = An (x) + Bn (x) log x = (Ln ∗ Ln )(x) =     Ln (x/t)Ln (t) .                         (55)
+                                                     1                t
+Indeed,
+                                Z x ÃX
+                                     n                  ³ x ´j
+                                                                 !Ã n
+                                                                   X (n)
+                                                                             !
+                                                (n)                            dt
+              (Ln ∗ Ln )(x) =                  lj                      lk tk
+                                 1       j=0
+                                                             t     k=0
+                                                                               t
+                             n
+                             X            Z x
+                                (n) (n) j
+                           =   lj lk x        tk−j−1 dx
+                                j,k=0                        1
+
+                                 Xn                     k             Xn ³     ´2
+                                         (n) (n) x       − xj              (n)
+                           =            lj lk                 + log x     lk      xk             (56)
+                                j,k=0
+                                                        k−j           k=0
+                                 k6=j
+
+                           = Ān (x) + Bn (x) log x.
+
+                                                    27
+Now, let us prove that Ān (x) = An (x), where the coefficients of An (x) are
+given in (25). Thus,
+        Z 1                                Z 1 Z x
+                                     k                                dt
+            (Ān (x) + Bn (x) log x)x dx =      xk      Ln (x/t)Ln (t) dx
+         0                                                             t
+                                           Z0 1      1
+                                                       Z 0
+                                                                         dt
+                                         =      Ln (t)     Ln (x/t)xk dx .
+                                            0           t                t
+Changing the variable x by yt one gets the following relation
+    Z 1                                  Z 1            Z 1
+                                 k                  k
+        (Ān (x) + Bn (x) log x)x dx = −     Ln (t)t dt     Ln (y)y k dy,         (57)
+      0                                            0              0
+
+which vanishes for k = 0, 1, . . . , n − 1, in virtue of the orthogonality of Leg-
+endre polynomials (54). Hence, if one subtracts equation (57) from (12)
+            Z 1
+                (An (x) − Ān (x))xk dx = 0, k = 0, . . . , n − 1,
+                  0
+
+yields. Since An (x) − Ān (x) ∈ Pn two possible situations appear; either
+An (x) − Ān (x) ≡ 0, or expression An (x) − Ān (x) must be equal to Ln (x)
+up to a multiplicative factor. From (25), and (56) by comparing the leading
+coefficients follows the first situation. Accordingly, the relation (55) is valid.
+   Analogously, for getting the second orthogonality condition (14) one uses
+   Z 1         Z x                     Z 1        Z 0
+        k                        dt                                      dt
+       x log x     Ln (x/t)Ln (t) dx =     Ln (t)     Ln (x/t)xk log x dx .
+    0           1                t      0          t                     t
+Now, replacing x by yt the following relation
+       Z 1                Z 1            Z 1
+                  k                    k
+           Gn (x)x dx = −      Ln (t)t       Ln (y)y k (log y + log t)dy dt,
+          0                    0               0
+
+yields. Since the above integral is symmetric with respect to the variables y
+and t one has
+           Z 1                      Z 1                     Z 1
+                        k                              k
+                  Gn (x)x dx = −2         Ln (t)t log tdt         Ln (y)y k dy.
+              0                      0                       0
+
+                                          28
+From the orthogonality relation of the Legendre polynomials when k =
+0, 1, . . . , n − 1, relation (14) holds.
+    Notice that from (42) we have
+             Z 1                 Z − 1 +i∞          ³ π ´2
+                  Gn (x)       1       2
+                         dx =              Rn,1 (ν)         dν.
+               0 1−x          2πi − 12 −i∞           sin πν
+Now, let us transform the left-hand side of the above expression. Thus, from
+(55) one gets
+    Z 1             Z 1                   Z 1Z 0
+        Gn (ξ)          Fn (ξ) log ξ               log ξ                  dy
+               dξ =                  dξ =                Ln (ξ/y)Ln (y)dξ
+     0 1−ξ           0     1−ξ             0    y 1−ξ                     y
+                                             Z 1Z 1
+                                                     log xy
+                                        =−                   Ln (x)Ln (y)dxdy,
+                                              0   0 1 − xy
+
+where variable ξ has been changed by xy.
+    Considering the following well-known relation
+                        Z 1
+                                 dv           log xy
+                                         =−          ,
+                         0 1 − (1 − xy)v      1 − xy
+one obtains
+                 Z 1                 Z 1Z 1Z 1
+                       Gn (ξ)                       Ln (x)Ln (y)
+                              dξ =                               dxdydv.
+                  0    1−ξ            0   0   0    1 − (1 − xy)v
+Using expression (54) in terms of the nth derivative, and integrating by parts
+n times with respect to x
+          Z 1             Z 1Z 1Z 1
+              Gn (ξ)                (xyv)n (1 − x)n Ln (y)
+                     dξ =                                  dxdydv,
+           0 1−ξ           0  0  0   (1 − (1 − xy)v)n+1
+yields. Substitute v = (1 − z)/(1 − (1 − xy)z), on the right-hand side, one
+gets       Z 1           Z 1Z 1Z 1
+             Gn (ξ)                (1 − x)n (1 − z)n Ln (y)
+                    dξ =                                    dxdydz.
+          0 1−ξ           0  0   0     1 − (1 − xy)z
+Using once more expression (54), and integrating by parts with respect to y
+      Z 1             Z 1Z 1Z 1
+          Gn (ξ)                (xyz(1 − x)(1 − y)(1 − z))n
+                 dξ =                                         dx dy dz.
+       0 1−ξ           0   0  0     (1 − (1 − xy)z)n+1
+
+                                              29
+yields.
+   Finally, from lemma 3.4 relation
+                           Z − 1 +i∞          ³ π ´2
+                       1       2
+                                     Rn,1 (ν)         dν
+                      2πi − 12 −i∞             sin πν
+                Z 1Z 1Z 1                                              (58)
+                            (xyz(1 − x)(1 − y)(1 − z))n
+              =                                         dx dy dz,
+                 0  0    0        (1 − (1 − xy)z)n+1
+holds.
+   As a consequence the Beukers’s integral [3]
+               Z 1Z 1Z 1
+                          (xyz(1 − x)(1 − y)(1 − z))n
+          Bn =                                        dx dy dz,        (59)
+                 0  0   0     (1 − (1 − xy)z)n+1
+verifies the Apéry’s recurrence relation (35), i.e.,
+
+          (n + 1)3 Bn+1 − (2n + 1)(17n2 + 17n + 5)Bn + n3 Bn−1 = 0,
+
+which allows to compute numerically (59) for n large enough more faster
+than a naive direct integration.
+                                                       ¡√         ¢
+   In closing, notice that from Perron’s theorem Bn = O ( 2 − 1)4n .
+Again, this result is in accordance with the fact that
+                          xyz(1 − x)(1 − y)(1 − z)    √
+                  max                              ≤ ( 2 − 1)4 .
+                0≤x,y,z≤1      1 − (1 − xy)z
+Therefore
+        Z 1                √         Z 1Z 1Z 1
+               Gn (x)             4n                  1
+                      dx ≤( 2 − 1)                            dxdydz
+           0   1−x                    0   0   0 1 − (1 − xy)z
+                              √
+                           ≤ ( 2 − 1)4n 2ζ(3),
+
+which was used by Beukers in [3] to prove the irrationality of ζ(3).
+
+Acknowledgments
+
+The author is grateful to Professors P. Deift and J. Geronimo for several
+helpful discussions on an earlier draft of this paper. This work was started
+
+                                        30
+while the author visited the School of Mathematics at Georgia Institute of
+Technology (Gatech) and the Courant Institute of Mathematical Sciences at
+New York University for part of the academic years 2003 and 2007 (during the
+latest year the author was hired as visiting professor at Gatech). He gratefully
+acknowledges the aforementioned colleagues for their kind hospitality and
+numerous mathematical discussions during his stay as well as for stimulating
+about a Riemann-Hilbert approach for the study of this irrationality problem
+[2].
+
+
+References
+ [1] R. Apéry, Irrationalité de ζ(2) et ζ(3), Astérisque 61 (1979), 11–13.
+
+ [2] J. Arvesú, P. Deift, and J. Geronimo, On a Riemann-Hilbert approach
+       and irrationality of ζ(3), manuscript (2008).
+
+ [3] F. Beukers, A note on the irrationality of ζ(2) and ζ(3), Bull. London
+       Math. Soc. 11 (1979), 268–272.
+
+ [4] F. Beukers, Legendre polynomials in irrationality proofs, Bull. Austral.
+       Math. Soc. 22 (1980), 431–438.
+
+ [5] F. Beukers, Padé approximations in number theory, Padé approximation
+       and its applications, (Amsterdam, 1980), 90–99, Lecture Notes in Math.,
+       888, Springer, Berlin-New York, 1981.
+
+ [6] V. I. Buslaev, Poincare’s theorem and its applications to the convergence
+       of continued fractions, Sbornik Math. 189 (1998), 1749–1764.
+
+ [7] L. A. Gutnik, On the irrationality of certain quantities involving ζ(3),
+       Acta Arith. 42 (1983), 255–264.
+
+                                         31
+ [8] M. Hata, A new irrationality measure for ζ(3), Acta Arith. 92 (2000),
+    47–57.
+
+ [9] Y. Jin, and H. Dickinson, Apéry sequences and Legendre transforms, J.
+    Austral. Math. Soc. 68 (2000), 349–356.
+
+[10] Yu. V. Nesterenko, A few remarks on ζ(3), Math. Notes 59, No. 6,
+    (1996), 625–636.
+
+[11] Yu. V. Nesterenko, Integral identities and constructions of approxima-
+    tions to zeta values, Journal de Théorie des Nombres de Bordeaux 15
+    (2003), 535–550.
+
+[12] A. F. Nikiforov, V. B. Uvarov, Special Functions in Mathematical
+    Physics, Birkhauser Verlag, Basel, (1988).
+
+[13] E. M. Nikishin, V. N. Sorokin, Rational Approximations and Orthogo-
+    nality, Translations of Mathematical Monographs, vol. 92, Amer. Math.
+    Soc., Providence, RI, 1991.
+
+[14] O. Perron, Über ein Satz des Herrn Poincaré, J. Reine Angew. Math.,
+    136 (1909), 17–37; Über die Poincarésche lineare Differenzgleichung,
+    137 (1910), 6–64.
+
+[15] H. Poincaré, Sur les équations linéaires aux différentielles et aux
+    différences finies, Amer. J. Math., 7 (1885), 203–258.
+
+[16] G. Rhin, C. Viola. The Group Structure for ζ(3), Acta Arith. 97 (2001),
+    269–293.
+
+[17] V. N. Sorokin, Hermite-Padé approximations for Nikishin systems and
+    the irrationality of ζ(3), Communications of the Moscow Math. Soc.
+    (1993), 176–177.
+
+                                     32
+[18] W. Van Assche, Multiple orthogonal polynomials, irrationality and tran-
+    scendence, Contemporary Mathematics 236 (1999), 325–342.
+
+[19] A. Van der Poorten, A proof that Euler missed... Apérys proof of the
+    irrationality of ζ(3), An informal report, Math. Intelligencer 1 (1978/79),
+    no. 4, 195–203.
+
+[20] W. Zudilin, An elementary proof of Apéry’s theorem, E-print math.
+    NT/0202159, Moscow Lomonosov State University (2002), 1–8.
+
+[21] W. Zudilin, Arithmetic of linear forms involving odd zeta values, Journal
+    de Théorie des Nombres de Bordeaux 16 (2004), 251–291.
+
+
+
+
+                                     33
+

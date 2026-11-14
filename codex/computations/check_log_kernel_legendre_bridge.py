@@ -72,7 +72,13 @@ for n,phi in enumerate(phis):
     r=inverse_U(q)
     assert s.expand(T(r)+a*a*r+A-L(n))==0
     assert average(L(n)*r)==0
-print('Polynomial operator division and orthogonality: n=0,...,10.')
+    def E(poly):
+        return sum(cc*(-1)**mon[0]*s.binomial(n,mon[0])*s.binomial(n+mon[0],mon[0])
+                   for mon,cc in s.Poly(s.expand(poly),x).terms())
+    assert E(L(n))==A
+    for j in range(n):
+        assert E(T(x**j)+a*a*x**j)==0
+print('Polynomial operator division, ordinary-coefficient annihilator, and orthogonality: n=0,...,10.')
 
 H2=[s.harmonic(j,2) for j in range(11)]
 H3=[s.harmonic(j,3) for j in range(11)]

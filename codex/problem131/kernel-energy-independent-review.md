@@ -81,3 +81,27 @@ logarithmic integrals and match 2(A_n zeta(3)-B_n). The strict rate comparison
 also passes exactly. The author's separate symbolic bridge checker passes
 its PDE, endpoint, ladder, 81 Gram entries and 121 mixed-integral checks.
 These computations corroborate the written all-index proof.
+
+## Reciprocal design supplement
+
+The later `reciprocal-legendre-kernel-design.md` was also checked in full.
+The reciprocal L2 change V f(z)=f(1/z)/z gives the displayed exterior
+Legendre expression. The product-kernel PDE reduces exactly to
+D_v[v D_v((v-1)k)]=0, whose two solutions have the stated logarithmic and
+simple-pole form. Regularity at1 and flux at0 uniquely select K under these
+assumptions. The quadratic-coefficient divided-difference identity is correct,
+as are the two Mellin shift identities and rational-periodic uniqueness
+argument. No broader uniqueness or historical priority is implied.
+
+## Later simplification of the standalone core
+
+The revised core now computes arithmetic directly from monomial double-kernel
+integrals. The off-diagonal formula (H_j^(2)-H_i^(2))/(j-i), together with
+the diagonal2(zeta(3)-H_i^(3)), gives exactly the former residue numerator
+after pairing the two off-diagonal contributions. Cubic-lcm integrality is
+unchanged. The ordinary-coefficient functional E_n(x^j)=(-1)^j C_(nj)
+annihilates (H+n(n+1))x^j for j<n by the explicit adjacent coefficient ratio.
+Descending polynomial elimination therefore forces the constant remainder
+E_n(L_n)=sum C_(nj)^2. This is exactly the earlier Newton division argument,
+now in ordinary coefficients. Both revisions were independently checked;
+the rational-square/Mellin identity remains as the explicit Zudilin bridge.
