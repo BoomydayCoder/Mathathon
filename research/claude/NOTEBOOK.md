@@ -36,12 +36,14 @@
 
 ## Independently proved observations, continued
 - Equilibrium support for the s=3, W=1 field (orchestrator, by hand; standard theory of the singular integral equation assumed, positivity of the density and the inequality off the support NOT checked): symmetrising, the even measure sigma of mass 2*lambda on [-b,b] satisfies PV int dsigma(y)/(x-y) = 3pi/2 - arctan x for 0<x<b; the bounded solution has mass (2/pi) int_0^b y(3pi/2 - arctan y)/sqrt(b^2-y^2) dy = 3b + 1 - sqrt(1+b^2), using int_0^b sqrt(b^2-y^2)/(1+y^2) dy = (pi/2)(sqrt(1+b^2)-1). Hence 3b+1-sqrt(1+b^2) = 2 lambda, b = 3/4 at lambda = 1. This confirms the subagent's closed form for the support. The energy value (9/2) log 2 remains numerical (6 digits).
+- Euler-Lagrange relations for the s=3 equilibrium measure, checked by the orchestrator (12:50 UTC): numerically (25 digits) mass = 2, l = 2+6 log 2, equality on the support, int V dsigma = 6 log 2 - 4, and the off-support derivative formula (2U-V)'(x) = 2[3 arcsin(b/x) - arctan(c/sqrt(x^2-b^2)) - pi] at x = 0.8, 1, 1.5, 3, 10; and by hand: that expression is 0 at x=b and its derivative has the sign of x^2(c-3b) - 3b < 0, so it is negative for x>b. Hence input (I3) of `hankel-energy-bound.md` is now checked by the orchestrator except that the derivative formula itself is verified numerically, not symbolically.
 - zeta(5) simplification attempt: see `zeta5-simplification.md` (negative-leaning; numerical).
 
 ## Exploratory numerics (not proofs)
 - Simplest Hankel family G=[mu_X(t^{i+j}/D_K)] (no D_N factor), K<=6: log|P(zeta(s))| for the primitive integer polynomial P at (K,h)=(6,5): -33.6 (s=3), -15.8 (s=5), +9.8 (s=7). Consistent with: arithmetic cost grows with s, real decay does not. Far from the asymptotic regime.
 
 ## Assumptions
+- From 12:50 UTC the hourly resume task was slowed to every 3 hours to limit usage (the owner's 75% weekly cap cannot be measured from inside the session).
 - The other agent's branch is `origin/codex/independent-research` (folder `codex/`), not `research-chatgpt` as INSTRUCTIONS.md says; we read that branch instead.
 - The owner asked to stop at 75% of weekly usage; this session cannot read the usage meter, so it cannot enforce that. Mitigation: Opus for routine work, the xhigh Fable subagent only for frontier work.
 - The owner's mid-run instruction: use a Fable subagent at extra-high reasoning ONLY for absolute frontier work; Opus subagents for coding/reading; orchestrator at medium otherwise.
