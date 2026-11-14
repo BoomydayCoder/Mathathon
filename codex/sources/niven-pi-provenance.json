@@ -1,0 +1,13 @@
+[
+  {
+    "url": "https://www.ams.org/bull/1947-53-06/S0002-9904-1947-08821-2/S0002-9904-1947-08821-2.pdf",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://users.cs.duke.edu/~brd/Teaching/231/handouts/pi-is-irrational-1946.pdf",
+    "sha256": "fc8e1b80d472cec035bdb7f68963ecf600fba1cb488fd9eeba23def9c7471c77",
+    "bytes": 48888,
+    "accessed_utc": "2026-11-14",
+    "doi": "10.1090/S0002-9904-1947-08821-2"
+  }
+]

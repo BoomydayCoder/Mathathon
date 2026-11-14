@@ -1,5 +1,11 @@
 # What the confluent Wilson transform gives toward a Rodrigues formula
 
+**Later resolution (15:20 UTC):** the original Schur–Apéry identity is now
+proved and accepted in two independent audits; see
+[the Heun/RII proof](rank-one-original-apery-heun-rii-proof.md).
+Unresolved labels below describe this earlier investigation only.
+
+
 Status: bounded constructive investigation following the independent audit.
 The exact identities below are proved and checked. They do not yet prove the
 all-balanced factorial constant term or an all-n Rodrigues formula. The

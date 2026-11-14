@@ -6,6 +6,8 @@ in this session are not claims of historical novelty.
 
 ## Three reading routes
 
+A concise [common proof-design principle](problem131/polynomial-inverses-and-boundary-pairings.md) compares the finite derivative inverses for exp(r) and pi² with the one-dimensional polynomial obstruction that forces Apéry's binomial sum.
+
 **New reviewed simplification:** the [logarithmic-kernel energy proof](problem131/short-kernel-energy-zeta3-proof.md)
 now gives a complete elementary proof using rational partial fractions, one
 kernel differential equation, polynomial division, and integration by parts.
@@ -21,6 +23,14 @@ explains why the kernel itself is forced within this construction. A
 [positive Euler-kernel extension](problem131/euler-kernel-deformed-legendre-bridge.md)
 connects the same mechanism to the classical family joining zeta3 and log2.
 
+
+The original Schur construction now has a [proved exact Apéry identity](problem131/rank-one-original-apery-heun-rii-proof.md):
+its rational upper bound is (5B_h-B_(h-1))/(5A_h-A_(h-1)). A symmetric
+polynomial difference operator supplies the endpoint values; a varying-measure
+recurrence identifies the original sequence. Two independent proof audits
+accepted this bridge. Historical novelty remains unresolved. The
+[Jacobi expansion](problem131/jacobi-boundary-kernel-spectrum.md) gives another
+concrete connection: deleting polynomial modes produces the exact cubic tail.
 
 **Shortest complete proof, then recurrence motivation.** Start with the
 [short elementary hybrid proof](problem131/short-elementary-hybrid-proof.md).

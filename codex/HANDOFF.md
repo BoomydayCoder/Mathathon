@@ -1,4 +1,4 @@
-# Research handoff — 2026-11-14 15:01 UTC
+# Research handoff — 2026-11-14 15:22 UTC
 
 Continue autonomous research in `codex/` on `codex/independent-research` in the
 exact private repository `BoomydayCoder/Mathathon`. User authorizes continued
@@ -21,6 +21,41 @@ that exactly ONE should focus on zeta5 and higher odd zeta values. Current alloc
 - xhigh_irrationality: redirected from zeta5 to a simpler direct bridge between
   Zudilin rational interpolation, Legendre–Pade and Beukers integrals.
 Root continues verification and checkpointing; no automatic resets or balance claims.
+
+## Newest continuation — 2026-11-14 15:22 UTC
+
+Twentieth checkpoint. The ORIGINAL Schur–Apéry identity is now proved for allh:
+q_(h,3)=(5B_h-B_(h-1))/(5A_h-A_(h-1)). A symmetric Heun operator forces two
+endpoint values; varying-measure orthogonality forces an RII relation;
+interpolation transfers it to the numerator; scaling identifies adjacent
+Apéry solutions. Root and a separate extra-high agent independently audited
+all steps and boundary cases. Both accepted. Historical novelty is unresolved.
+See rank-one-original-apery-heun-rii-proof.md and its two independent reviews.
+The formerly required contour boundary lemma now has an accepted finite-grid
+proof in exactly the needed degree range: proper partial fractions, detailed
+balance, and a vanishing finite difference. See rank-one-real-boundary-proof.md
+and rank-one-real-boundary-independent-review.md. The entire bridge is real.
+
+Exact Euler monomial moments and the Jacobi boundary-kernel expansion are also
+reviewed: euler-kernel-moments-jacobi-independent-review.md. Legendre degree
+removes the firstn Jacobi modes exactly; the cubic tail is a projection norm.
+The boundary kernel is NOT asserted to be an operator-domain eigenfunction.
+
+Root added a direct fixed-interval pi² irrationality proof from a finite
+polynomial inverse and a common finite-inverse/energy design principle.
+Independent review of those new expository constructions is in progress.
+Primary Niven1947 paper archived; classical adaptation, no novelty claim.
+
+The sole higher-zeta agent has a written diagonal large-prime cancellation
+and improved explicit normalizer, plus a newer uniform positive-saddle proof.
+The prime proof is being independently checked; the saddle proof is not yet
+accepted. The sharper observed small-prime normalizer remains unproved, and
+no new higher-odd irrationality theorem is claimed. The other two agents stay
+on zeta3; the Schur agent is examining a finite-rank extension.
+
+Latest pushed commit before this checkpoint:4191392. All work remains codex-only;
+no further Fuss work, no reset or usage-balance claims. Continue through16:00UTC.
+Earlier conjecture labels below are historical and superseded by this section.
 
 ## Newest continuation — 2026-11-14 15:01 UTC
 

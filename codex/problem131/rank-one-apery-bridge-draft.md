@@ -1,5 +1,11 @@
 # The remaining Apéry bridge: a proved moving-pole identity and one explicit gap
 
+**Later resolution (15:20 UTC):** the original Schur–Apéry identity is now
+proved and accepted in two independent audits; see
+[the Heun/RII proof](rank-one-original-apery-heun-rii-proof.md).
+Unresolved labels below describe this earlier investigation only.
+
+
 **Status: partial proof, with the unresolved step isolated.** The terminating Wilson contiguous identity and the general associated-polynomial identity below are proved. They identify a classical moving-pole Schur upper bound with the Prévost finite-difference quotient. The equality of that moving-pole bound with the newly constructed D_(2h) rank-one determinant root is still unproved, despite exact agreement through h=12. No sample-based theorem is claimed.
 
 This is a checkpoint of the bounded proof investigation requested by the parent. Primary context and notation are in `rank-one-primary-source-context.md`; the independent construction is in `rank-one-zeta-subspace-approximants.md`.

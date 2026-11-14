@@ -1,6 +1,6 @@
 # Exact monomial integrals of the Euler kernel
 
-Status: complete elementary proof, with exact checks against the independently constructed associated numerator. Independent review requested. The kernel and parameter family are classical; no historical novelty is asserted. This note gives a direct finite arithmetic formula for the existing zeta-three/logarithmic approximation, without Bernoulli moments or polynomial operator division.
+Status: complete elementary proof, with exact checks against the independently constructed associated numerator. Accepted in [the independent review](euler-kernel-moments-jacobi-independent-review.md). The kernel and parameter family are classical; no historical novelty is asserted. This note gives a direct finite arithmetic formula for the existing zeta-three/logarithmic approximation, without Bernoulli moments or polynomial operator division.
 
 Let K_tau be the positive Euler kernel from [the deformed bridge](euler-kernel-deformed-legendre-bridge.md), with -1<tau<1 and sigma=tau^2. Put
 \[

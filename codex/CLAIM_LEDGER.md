@@ -4,6 +4,18 @@ All 'proved' labels refer to arguments written and checked in this workspace,
 not historical novelty. Standard external inputs are identified in each note.
 Finite computation is supplementary evidence only.
 
+## Latest reviewed additions — 15:20 UTC
+
+This section supersedes all earlier unresolved/conjectural labels for the
+ORIGINAL Schur–Apéry identity. Historical snapshots below are retained.
+
+| Result | Proof / independent review | Exact scope |
+|---|---|---|
+| Original Schur root q_(h,3)=(5B_h-B_(h-1))/(5A_h-A_(h-1)) for every h>=1 | rank-one-original-apery-heun-rii-proof.md; original-schur-apery-root-review.md; rank-one-heun-rii-second-independent-review.md | Two independent all-index audits; original positive measure, not an assumed identification with a moving-pole family; historical novelty unresolved |
+| Real finite-grid proof of the needed Wilson boundary defect | rank-one-real-boundary-proof.md; rank-one-real-boundary-independent-review.md | Degree sum<=M-1; exactly sufficient for Heun symmetry; replaces contour input |
+| Exact Euler monomial matrix and Jacobi boundary-kernel expansion | euler-kernel-exact-moments.md; jacobi-boundary-kernel-spectrum.md; euler-kernel-moments-jacobi-independent-review.md | Real abs(tau)<1; expansion in weighted L², no endpoint convergence or operator-domain assertion |
+| Legendre degree deletes the first n Jacobi modes | jacobi-boundary-kernel-spectrum.md §4; euler-kernel-moments-jacobi-independent-review.md | Gives the exact cubic tail as a projection norm at sigma=0 |
+
 ## Latest reviewed additions — kernel and grid arithmetic
 
 | Result | Proof / independent review | Exact scope |
@@ -13,8 +25,8 @@ Finite computation is supplementary evidence only.
 | Positive Euler kernel gives the exact classical deformation numerator and recurrence | euler-kernel-deformed-legendre-bridge.md; euler-kernel-independent-review.md | Real tau between -1 and1; positive-measure comparison first on sigma<=1/4; algebra extends rationally |
 | Positive Andrews multisum, all-integer grid divisor and exponential many-pole normalizer | balanced-andrews-grid-arithmetic.md; balanced-andrews-independent-review.md | No favorable primitive-error estimate or new irrationality conclusion |
 | Positive single-moving-pole balanced remainder and Int(Z) associated clearing | balanced-positive-moving-pole.md; balanced-moving-pole-independent-review.md | Positivity for evenn and a>n/2; arithmetic for alln and positive integera |
-| Original Wilson boundary defect and rational Newton moments | rank-one-wilson-boundary-pearson.md; rank-one-boundary-independent-review.md | Original Schur endpoint formulas still conjectural |
-| Original Schur error equals a finite Cauchy-remainder variational norm | rank-one-logarithmic-remainder-isometry.md; rank-one-remainder-isometry-independent-review.md | Exact reduction; adjacent-Apéry identification remains unresolved |
+| Original Wilson boundary defect and rational Newton moments | rank-one-wilson-boundary-pearson.md; rank-one-boundary-independent-review.md | Endpoint formulas now proved by the later Heun/RII bridge |
+| Original Schur error equals a finite Cauchy-remainder variational norm | rank-one-logarithmic-remainder-isometry.md; rank-one-remainder-isometry-independent-review.md | Exact reduction; adjacent-Apéry identification now proved above |
 
 ## Reviewed additions — 14 November 2026, 14:39 UTC
 

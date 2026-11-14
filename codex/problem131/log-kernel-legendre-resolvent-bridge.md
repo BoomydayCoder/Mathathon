@@ -1,6 +1,6 @@
 # A logarithmic kernel joins the rational square, Newton transport, and positive energy
 
-Status: complete proof draft, with exact checks in the accompanying script; the independent audit is complete. This is a reconstruction connecting classical Apéry, Beukers, Legendre, and Wilson objects. No historical novelty is asserted. Its main contribution to the present exposition is that **the positive Padé estimate and the Hilbert isometry can both be obtained without Bernoulli polynomials or an imported spectral theorem**.
+Status: complete proof, accepted in [the independent audit](kernel-energy-independent-review.md), with exact checks in the accompanying script. This is a reconstruction connecting classical Apéry, Beukers, Legendre, and Wilson objects. No historical novelty is asserted. Its main contribution to the present exposition is that **the positive Padé estimate and the Hilbert isometry can both be obtained without Bernoulli polynomials or an imported spectral theorem**.
 
 The positive logarithmic kernel already present in the rational-square proof satisfies a short differential equation. Its endpoint flux is exactly one. Those two facts supply the resolvent that the Newton construction needs, including its normalization. No self-adjoint operator closure is assumed: all functions used below are explicit integrals plus polynomials, and all energy estimates are ordinary integrations by parts.
 

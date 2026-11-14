@@ -44,7 +44,6 @@ for h in range(1,10):
     _,mom=beta_moments(3,h)
     G=s.Matrix(h,h,lambda i,j:s.Rational(mom[i+j].numerator,mom[i+j].denominator))
     v=[s.Integer(1)] if h==1 else list(-G[:h-1,:h-1].inv()*G[:h-1,h-1])+[s.Integer(1)]
-    p=s.expand((-1)**(h-1)*sum(a*x**(2*k) for k,a in enumerate(v))*((-1)**(h-1)))
     # Construct Q_h(x^2)=(-1)^(h-1) p_h(-x^2) explicitly.
     p=s.expand((-1)**(h-1)*sum(a*(-x*x)**k for k,a in enumerate(v)))
     cc=s.Rational(h,s.factorial(2*h)**2)

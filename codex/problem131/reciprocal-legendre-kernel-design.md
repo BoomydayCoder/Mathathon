@@ -1,6 +1,6 @@
 # Why this logarithmic kernel: reciprocal Legendre geometry and a uniqueness lemma
 
-Status: root-reviewed elementary supplement to the [kernel-energy proof](short-kernel-energy-zeta3-proof.md). Exact symbolic checks are supplied in the companion checker. No historical novelty is asserted. This is motivation within a specified design, not uniqueness among all irrationality proofs.
+Status: elementary supplement to the [kernel-energy proof](short-kernel-energy-zeta3-proof.md), accepted in [the independent review](kernel-grids-independent-review.md). Exact symbolic checks are supplied in the companion checker. No historical novelty is asserted. This is motivation within a specified design, not uniqueness among all irrationality proofs.
 
 The operator and logarithmic kernel need not be guessed independently. Legendre's equation outside the interval, carried back by the reciprocal coordinate, gives exactly the operator H used in the proof. Requiring a product kernel that intertwines the two equations, stays regular at 1, and has unit endpoint flux then determines K(v)=-log(v)/(1-v) uniquely.
 

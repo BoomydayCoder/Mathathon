@@ -26,26 +26,61 @@ The zeta(2) monomial integrals are
 
 The numerator and denominator in the off-diagonal formula have the same sign. The n-fold integration-by-parts sign is (-1)^n. The maximum of x(1-x)y(1-y)/(1-xy) is g^5, g=(sqrt(5)-1)/2, and the shared proven lcm rate c=(14log2+9log3+5log5)/25 is sufficient because 2c+5log g<0. The framework now cites the self-contained lcm appendix instead of relying on the unproved sharper bound D_n<3^n.
 
-## 2. A direct elementary route to irrationality of pi squared
+## 2. A short direct proof for pi squared
 
-The completed Beukers-type zeta(2) argument in irrationality-framework.md gives irrationality of zeta(2) without transcendence theory. Combining it with Euler's identity
+The Niven method also proves pi squared irrational by ordinary calculus alone.
+Here is the fixed-interval version, which avoids both Parseval and zeta(2).
+The original1947 one-page paper proves pi irrational using the same finite
+inverse of D²+1; its scan is now archived at [niven-pi-1947.pdf](../sources/niven-pi-1947.pdf),
+with URL/hash provenance. This adaptation and method are classical, not a
+historical novelty claim.
 
-    zeta(2)=pi^2/6
+Suppose pi²=a/b with positive integers a,b. For n>=1 define
 
-proves pi^2 irrational.
+    f_n(x)=x^n(1-x)^n/n!,
+    G_n(x)=sum_(j=0)^n (-1)^j a^(n-j)b^j f_n^(2j)(x).
 
-For the intended audience, the identity can be justified through one standard undergraduate analysis theorem, Parseval's identity. The odd function f(x)=x on [-pi,pi] has sine coefficients
+Every derivative of f_n at0 is an integer: its powers start at degree n,
+and each nonzero endpoint derivative has a factorial j!/n!. Symmetry
+f_n(1-x)=f_n(x) gives the same at1. Thus G_n(0),G_n(1) are integers.
+The finite derivative sum telescopes:
 
-    b_n=(1/pi) integral_(-pi)^pi x sin(nx) dx=2(-1)^(n+1)/n
+    b G_n''+a G_n=a^(n+1) f_n,
+    G_n''+pi² G_n=pi² a^n f_n.
 
-by integration by parts. Parseval gives
+Multiply by sin(pi x) and integrate the elementary Green identity:
 
-    (1/pi) integral_(-pi)^pi x^2 dx=sum_{n>=1} b_n^2,
-    2pi^2/3=4 sum_{n>=1}1/n^2.
+    derivative[G_n' sin(pi x)-pi G_n cos(pi x)]
+       =(G_n''+pi² G_n)sin(pi x).
 
-Thus pi^2=6 zeta(2). Parseval is an explicit prerequisite here, not proved in this note. Alternative elementary proofs of Euler's identity can be substituted. This argument does not require Lindemann's theorem.
+At0 and1, sine vanishes and cosine is respectively1 and-1. Consequently
 
-It still does not establish irrationality of pi^4: an irrational number can have rational square. Each move from one power to another needs justification.
+    G_n(0)+G_n(1)=pi a^n integral_0^1 f_n(x)sin(pi x)dx.
+
+The right side is strictly positive and at most
+
+    pi (a/4)^n/n! ->0,
+
+because0<x(1-x)<=1/4. This is a positive integer tending to zero,
+a contradiction. Therefore pi² is irrational.
+
+**Why the construction works.** On polynomials D² is nilpotent. The finite
+sum defining G_n is the exact inverse of bD²+a, after multiplication by the
+integer a^(n+1). Its boundary pairing with the solution sin(pi x) converts
+that algebraic identity into a small positive integer. The auxiliary
+polynomial's endpoint zeros and factorial scaling are chosen to make every
+boundary derivative integral. This is the same design issue seen in the
+exp(r) proof, expressed through a second-order differential equation.
+
+An alternative connection remains useful: the completed Beukers-type proof
+for zeta(2), combined with Euler's pi²=6zeta(2), gives another proof. Parseval
+for x on[-pi,pi] supplies Euler's identity from sine coefficients
+2(-1)^(n+1)/n. That alternative uses a standard analysis theorem which the
+direct argument above does not need.
+
+Neither argument by itself proves pi^4 irrational: irrational numbers may
+have rational squares. The uniform nonzero-rational-power statement below
+uses the stronger classical construction and the stated reduction.
 
 ## 3. Every positive integral power: an explicit proof
 

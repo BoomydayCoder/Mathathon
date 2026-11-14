@@ -1,6 +1,6 @@
 # Degree-drop subspaces give monotone rational approximants to every odd zeta value
 
-**Status: exact degree-drop theorem, rational Schur construction, strict monotonicity, factorial error bound and multipoint-Padé interpretation proved below.** Exact computations cover h=1,...,12 and s=3,5,7,9. The adjacent-Apéry identity recorded at the end is a conjecture checked through h=12, not yet a theorem. No irrationality or historical novelty claim follows from these approximants alone.
+**Status: exact degree-drop theorem, rational Schur construction, strict monotonicity, factorial error bound and multipoint-Padé interpretation proved below.** Exact computations cover h=1,...,12 and s=3,5,7,9. The adjacent-Apéry identity recorded at the end is now proved in [the Heun/RII bridge](rank-one-original-apery-heun-rii-proof.md), with two independent proof audits. No irrationality or historical novelty claim follows from these approximants alone.
 
 The parent proposed the degree-drop and trial-polynomial constructions. The proofs here independently check them and add a strict monotonicity argument and an exact rational-sample multipoint-Padé interpretation. The previous full-pole obstructions do not apply: the matrix dimension here is substantially smaller than the number of surviving poles.
 
@@ -199,7 +199,7 @@ At h=12 the diagnostic data are:
 
 Denominators are exact reduced rational denominators. The numerical errors were evaluated at 180-digit precision and are diagnostics only. Their positivity, monotonicity and upper bounds follow from the proofs above. These finite data do not establish an asymptotic denominator theorem or rule out higher-index irrationality from a different construction.
 
-## 7. A striking Apéry match, currently a checked conjecture
+## 7. A striking Apéry match, subsequently proved
 
 Let A_0=1,A_1=5 and B_0=0,B_1=6 be the standard Apéry recurrence solutions
 \[

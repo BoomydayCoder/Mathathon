@@ -458,3 +458,16 @@ Nineteenth checkpoint, 2026-11-14 15:01 UTC, continuing:
   reviewed. A symmetric Heun equation is a new draft; adjacent-Apéry identity open.
 - Primary comparisons and rational pi-power scope recorded. No new Fuss work.
 - Continuing to16:00UTC with three extra-high agents; no automatic resets or meter.
+
+Twentieth checkpoint, 2026-11-14 15:22 UTC, continuing:
+- Original Schur–Apéry quotient proved for everyh; root and second extra-high
+  reviewer independently accepted the all-index proof and exact checks.
+- Finite-grid/finite-difference boundary identity now replaces the contour input;
+  root accepted the exact needed degree range and all Heun applications.
+- Exact Euler moments, Jacobi expansion and Legendre-to-Jacobi mode deletion
+  independently reviewed; projection norm explains the cubic tail.
+- Direct fixed-interval pi² proof and finite-inverse/energy design note added;
+  independent audit in progress. Niven1947 primary source archived.
+- Sole higher-zeta agent developing diagonal numerator arithmetic and positive
+  asymptotics; other two remain on zeta3. No new irrationality assertion.
+- Continuing to16:00UTC; no automatic resets or usage-meter claims.
