@@ -311,6 +311,35 @@ terms, each at most $\frac1{n+1}$), and $R_n(t)<t^{-2}$.
 As $R_n'(t)=0$ for $t\le n$, we get $|I_n|\le2n\sum_{t>n}t^{-2}<2$.
 \end{proof}
 
+\q{The picture behind the next lemma: read differences as derivatives.} Write
+$d_n=X_{n+1}-X_n$ for the slope of the sequence between $n$ and $n+1$. Then \eqref{star} says
+\[
+(n+1)^3d_n-n^3d_{n-1}=4(2n+1)^3X_n .
+\]
+This is the discrete form of the differential equation $(p\,u')'=q\,u$ with $p(x)=x^3$ and $q>0$:
+the change of (weight times slope) is a positive multiple of the height. Three things can be read
+off.
+\begin{itemize}
+\item \emph{No positive maximum.} At a maximum the slope passes from $\ge0$ to $\le0$, so the left
+side is $\le0$; but the right side is positive wherever the solution is positive.
+\item \emph{Once up, always up, and without bound.} If $X_m>0$ and $d_m\ge0$, the equation gives
+$d_{m+1}>0$, then $d_{m+2}>0$, and so on. Rising for ever does not yet contradict boundedness: the
+partial sums $s_n$ rise for ever and stay below $\zeta(3)$. The size of the right side settles
+it. Once $X_n\ge c>0$, the equation gives $(n+1)^3d_n\ge4(2n+1)^3c>4(n+1)^3c$, so every later step
+rises by more than $4c$.
+\item \emph{The mirror image} holds for negative values: a solution that has become $\le0$ after
+being positive keeps falling, without bound.
+\end{itemize}
+So a bounded solution that starts positive can neither turn upward nor reach zero. It is positive
+and decreasing all the way; and then the equation, read as
+$n^3(-d_{n-1})=(n+1)^3(-d_n)+4(2n+1)^3X_n>32\,n^3X_n$, says that each step down loses more than
+$32$ times what is left. This is the whole lemma, and it is the reason for its name. (Made precise,
+these three steps are a complete proof; it is the one in the earlier version of this note.) The
+proof below does the same with absolute values in place of the two cases, which is shorter and
+gives a bound on both sides. One warning: the differential equation shows the shape, not the
+number. Taken literally it would predict a decay by the factor $e^{\sqrt{32}}\approx286$ per step
+instead of $33.97$, because one step is not small on the scale on which the solution changes.
+
 \begin{lemma}[Maximum principle]\label{lem:max}
 Let $(X_n)_{n\ge0}$ be a bounded real sequence that satisfies \eqref{star} for all $n\ge1$, with
 $X_0\ne0$. Then all $X_n$ have the sign of $X_0$, and for every $n\ge1$
@@ -344,12 +373,17 @@ Divide by $n^3X_n$; note $\beta_n-(n+1)^3=n^3+4(2n+1)^3$.
 \emph{(3) The case $X_0=0$.} If $X_0=0$ and $X_1\ne0$, then $|X_1|\ge|X_0|$, and the argument of
 (1) makes the sequence unbounded. So $X_1=0$, and then the equation gives $X_n=0$ for all $n$.
 \end{proof}
-\noindent\emph{Why ``maximum principle''.} A sequence in which every term is at most the average of
-its neighbours has no interior maximum. Here $|X_n|$ is far less than that average, and the
-conclusion is stronger: $|X_n|$ cannot even stop decreasing without exploding. Part (1) of the proof
-used only that $\beta_n-n^3\ge14\,(n+1)^3$: the middle coefficient exceeds the sum of the absolute
-values of the outer ones by a definite factor. The signs of the outer coefficients were used only
-in part (2), to decide the sign of $X_{n-1}$.
+\noindent\emph{What the proof uses of the recurrence, and what it does not.} Write
+$\ell_n=\beta_n-(n+1)^3-n^3$ for what is left of the middle coefficient after the two outer ones are
+subtracted (the ``leak''; here $\ell_n=4(2n+1)^3$). The proof used two facts: in part (1), that
+$\ell_n$ is at least a fixed positive multiple of $(n+1)^3$; in part (2), that the outer
+coefficients are positive and $\ell_n>32\,n^3$, which gives the ratio $1+32$. So the split of
+$\beta_n$ into two outer coefficients and a leak is used, because the hypothesis of the lemma is a
+statement about the leak. Two things are \emph{not} used. The differences $X_{n+1}-X_n$ are never
+manipulated in the proof; the difference form of \eqref{star} is the way to see the lemma (the
+picture above), not a step in it. And it is not used that the leak is a perfect cube: any leak
+larger than $26\,n^3$ would give a ratio above $27$, which is all the Theorem needs. The exact
+shape $4(2n+1)^3$ has a reason (Section~8), but the proof has room to spare without it.
 
 \begin{center}
 \begin{tabular}{@{}rccc@{}}
