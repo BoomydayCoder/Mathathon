@@ -1,0 +1,4 @@
+theta=2/5 delta=1/20: [1,1+1/64]: True; [1+1/64,40]: True (min certified margin 0.00210 near r=1.467); r>=40: True;  16 exp(-2 pi theta - I(theta)) = 0.4311 < 1: True
+theta=21/50 delta=2/5: [1,1+1/64]: True; [1+1/64,40]: True (min certified margin 0.02956 near r=1.467); r>=40: True;  16 exp(-2 pi theta - I(theta)) = 0.3627 < 1: True
+theta=9/20 delta=9/10: [1,1+1/64]: True; [1+1/64,40]: True (min certified margin 0.04637 near r=1.472); r>=40: True;  16 exp(-2 pi theta - I(theta)) = 0.2802 < 1: True
+theta=1/2 delta=3/2: [1,1+1/64]: True; [1+1/64,40]: True (min certified margin 0.14194 near r=1.466); r>=40: True;  16 exp(-2 pi theta - I(theta)) = 0.1828 < 1: True

@@ -1,0 +1,43 @@
+=== (0) parameters ===
+PASS  V closed form = 2 pi x + int_0^1 log(x^2+u^2)du at x=0.4: value=1.61392608773613344746828733744  ref=1.61392608773613344746828733744  err=0.0
+PASS  mass condition 3b + 1 - sqrt(1+b^2) = 2 at b = 3/4: value=2.0  ref=2  err=0.0
+PASS  c = sqrt(1+b^2) = 5/4: value=1.25  ref=1.25  err=0.0
+=== (1) density ===
+PASS  sigma closed form = a-integral representation at x=0.05: value=3.02686890374720729589731301429  ref=3.02686890374720729589731301429  err=4.59e-41
+PASS  sigma closed form = a-integral representation at x=0.3: value=1.29938766240829185830567601185  ref=1.29938766240829185830567601185  err=2.3e-41
+PASS  sigma closed form = a-integral representation at x=0.6: value=0.541940292146466619679327862705  ref=0.541940292146466619679327862705  err=1.15e-41
+PASS  sigma closed form = a-integral representation at x=0.74: value=0.125630101581299703426771584552  ref=0.125630101581299703426771584552  err=5.74e-42
+PASS  sigma > 0 on (0,b) (grid of 399 pts; analytic: s/b > s/c and 3>1) min=0.05409
+PASS  total mass of sigma = 2 (rho mass 1): value=2.0  ref=2  err=0.0
+PASS  Hilbert transform PV int sigma/(x-y) = g(x) at x=0.1: value=4.61272032789352783031551895504  ref=4.61272032789352783031551895504  err=0.0
+PASS  Hilbert transform PV int sigma/(x-y) = g(x) at x=0.4: value=4.33188260327232497139037715811  ref=4.33188260327232497139037715811  err=0.0
+PASS  Hilbert transform PV int sigma/(x-y) = g(x) at x=0.7: value=4.10166301599548124115020619843  ref=4.10166301599548124115020619843  err=9.18e-41
+PASS  E-L equality V - 2U = ell at x=0.0: value=6.15888308335967185650339272875  ref=6.15888308335967185650339272875  err=1.84e-40
+PASS  E-L equality V - 2U = ell at x=0.1: value=6.15888308335967185650339272875  ref=6.15888308335967185650339272875  err=9.18e-41
+PASS  E-L equality V - 2U = ell at x=0.3: value=6.15888308335967185650339272875  ref=6.15888308335967185650339272875  err=9.18e-41
+PASS  E-L equality V - 2U = ell at x=0.5: value=6.15888308335967185650339272875  ref=6.15888308335967185650339272875  err=9.18e-41
+PASS  E-L equality V - 2U = ell at x=0.7: value=6.15888308335967185650339272875  ref=6.15888308335967185650339272875  err=0.0
+PASS  (2U-V)' closed form off support at x=0.8: value=-1.69425867269068940850273849191  ref=-1.69425867269068940850273849191  err=9.18e-41
+PASS  strict inequality 2U - V < -ell at x=0.8 2U-V+ell=-0.057239659
+PASS  (2U-V)' closed form off support at x=1.0: value=-3.36301557673094726214275279049  ref=-3.36301557673094726214275279049  err=4.59e-41
+PASS  strict inequality 2U - V < -ell at x=1.0 2U-V+ell=-0.59435619
+PASS  (2U-V)' closed form off support at x=2.0: value=-5.16320421250500951488924434743  ref=-5.16320421250500951488924434743  err=9.18e-41
+PASS  strict inequality 2U - V < -ell at x=2.0 2U-V+ell=-5.1446564
+PASS  (2U-V)' closed form off support at x=5.0: value=-5.87511452585861375688818162888  ref=-5.87511452585861375688818162888  err=0.0
+PASS  strict inequality 2U - V < -ell at x=5.0 2U-V+ell=-22.058463
+PASS  (2U-V)' closed form off support at x=20.0: value=-6.18305780024041069322452888161  ref=-6.18305780024041069322452888161  err=0.0
+PASS  strict inequality 2U - V < -ell at x=20.0 2U-V+ell=-113.51463
+=== (2) constants and energy ===
+PASS  ell = 2 + 6 log 2: value=6.15888308335967185650339272875  ref=6.15888308335967185650339272875  err=9.18e-41
+PASS  ell = 6b - 2c + 2log(2/b) + 2artanh(1/c): value=6.15888308335967185650339272875  ref=6.15888308335967185650339272875  err=1.84e-40
+PASS  int V dsigma = 6 log 2 - 4: value=0.158883083359671856503392728749  ref=0.158883083359671856503392728749  err=2.58e-41
+PASS  virial: int x V'(x) dsigma = 4: value=4.0  ref=4  err=0.0
+PASS  int V dsigma = int log(1+x^2) dsigma: value=0.158883083359671856503392728749  ref=0.158883083359671856503392728749  err=0.0
+PASS  iG(it) closed form at t=0.2: value=5.5728289928339724914086139205  ref=5.5728289928339724914086139205  err=9.18e-41
+PASS  iG(it) closed form at t=1.0: value=1.85629799036562617248540127406  ref=1.85629799036562617248540127406  err=0.0
+PASS  iG(it) closed form at t=3.0: value=0.660282855159370998782503161532  ref=0.660282855159370998782503161532  err=1.15e-41
+PASS  2 int_0^1 iG(it) dt = 12 log 2: value=8.3177661667193437130067854575  ref=8.3177661667193437130067854575  err=0.0
+PASS  min E = (1/4) int V dsigma + ell/2 = (9/2) log 2: value=3.11916231251975389237754454656  ref=3.11916231251975389237754454656  err=4.59e-41
+PASS  direct E = 1/2[int V dsigma - iint log|x-y|] (tol 1e-18): value=3.11916231251975389237754455499  ref=3.11916231251975389237754454656  err=8.43e-27
+min E = 3.11916231251975389237754454656   (9/2)log2 = 3.11916231251975389237754454656
+ALL PASS

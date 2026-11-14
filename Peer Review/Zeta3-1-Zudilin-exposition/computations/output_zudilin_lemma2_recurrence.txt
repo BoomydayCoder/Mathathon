@@ -1,0 +1,86 @@
+========================================================================
+(a) Reduced identity of Lemma 2, symbolic in n and t
+========================================================================
+[PASS] (n+1)^3((t-n-1)/(t+n+1))^2 - (2n+1)(17n^2+17n+5) + n^3((t+n)/(t-n))^2 == s_n(t+1)(t^2/((t-n)(t+n+1)))^2 - s_n(t)
+[PASS]   ratio formulas R_(n+1)/R_n, R_(n-1)/R_n, R_n(t+1)/R_n(t) correct for n=1
+[PASS]   ratio formulas R_(n+1)/R_n, R_(n-1)/R_n, R_n(t+1)/R_n(t) correct for n=2
+[PASS]   ratio formulas R_(n+1)/R_n, R_(n-1)/R_n, R_n(t+1)/R_n(t) correct for n=3
+[PASS]   ratio formulas R_(n+1)/R_n, R_(n-1)/R_n, R_n(t+1)/R_n(t) correct for n=4
+[PASS]   ratio formulas R_(n+1)/R_n, R_(n-1)/R_n, R_n(t+1)/R_n(t) correct for n=5
+[PASS]   identity (6) holds exactly as rational functions, n=1
+[PASS]   identity (6) holds exactly as rational functions, n=2
+[PASS]   identity (6) holds exactly as rational functions, n=3
+[PASS]   identity (6) holds exactly as rational functions, n=4
+[PASS]   identity (6) holds exactly as rational functions, n=5
+[PASS]   identity (6) holds exactly as rational functions, n=6
+
+========================================================================
+(b) Double zeros at t=1 and S_n'(1) = 0, n = 1..6
+========================================================================
+[PASS] n=1: R_n(1)=R_n'(1)=0, S_n(1)=S_n'(1)=0
+[PASS] n=1: multiplicity of zero of R_n at t=1 is exactly 2  (mult=2)
+[PASS] n=2: R_n(1)=R_n'(1)=0, S_n(1)=S_n'(1)=0
+[PASS] n=2: multiplicity of zero of R_n at t=1 is exactly 2  (mult=2)
+[PASS] n=3: R_n(1)=R_n'(1)=0, S_n(1)=S_n'(1)=0
+[PASS] n=3: multiplicity of zero of R_n at t=1 is exactly 2  (mult=2)
+[PASS] n=4: R_n(1)=R_n'(1)=0, S_n(1)=S_n'(1)=0
+[PASS] n=4: multiplicity of zero of R_n at t=1 is exactly 2  (mult=2)
+[PASS] n=5: R_n(1)=R_n'(1)=0, S_n(1)=S_n'(1)=0
+[PASS] n=5: multiplicity of zero of R_n at t=1 is exactly 2  (mult=2)
+[PASS] n=6: R_n(1)=R_n'(1)=0, S_n(1)=S_n'(1)=0
+[PASS] n=6: multiplicity of zero of R_n at t=1 is exactly 2  (mult=2)
+  info: S_0'(1) = -12 (nonzero; Lemma 2/3 need n>=1)
+
+========================================================================
+(c) Apery recurrence L[X]_n = (n+1)^3 X_(n+1) - (2n+1)(17n^2+17n+5) X_n + n^3 X_(n-1) = 0
+========================================================================
+[PASS] n=1: L[u]_n = 0 and L[v]_n = 0 (exact)
+[PASS] n=2: L[u]_n = 0 and L[v]_n = 0 (exact)
+[PASS] n=3: L[u]_n = 0 and L[v]_n = 0 (exact)
+[PASS] n=4: L[u]_n = 0 and L[v]_n = 0 (exact)
+[PASS] n=5: L[u]_n = 0 and L[v]_n = 0 (exact)
+[PASS] n=6: L[u]_n = 0 and L[v]_n = 0 (exact)
+[PASS] n=7: L[u]_n = 0 and L[v]_n = 0 (exact)
+[PASS] n=8: L[u]_n = 0 and L[v]_n = 0 (exact)
+[PASS] n=9: L[u]_n = 0 and L[v]_n = 0 (exact)
+[PASS] n=10: L[u]_n = 0 and L[v]_n = 0 (exact)
+  info: paper's eq. (7) as printed reads '... + n^3 u_n'; with u_n (not u_(n-1)) at n=1: -868 != 0 -> typo, must be n^3 u_(n-1)
+[PASS] literal (7) with n^3 u_n fails (confirms typo)
+
+========================================================================
+(d) Discovery by undetermined coefficients, fixed numeric n = 1..8
+    a R_(n+1)(t) + b R_n(t) + c R_(n-1)(t) = s(t+1)R_n(t+1) - s(t)R_n(t),  s polynomial in t
+========================================================================
+[PASS] n=1: deg s <= 2 solution space is 1-dim and reproduces b, c, s_n  dim = 1; normalized a=(n+1)^3=8: b=-117, c=1, s=(108) + (12)t + (-24)t^2
+[PASS] n=2: deg s <= 2 solution space is 1-dim and reproduces b, c, s_n  dim = 1; normalized a=(n+1)^3=27: b=-535, c=8, s=(500) + (20)t + (-40)t^2
+[PASS] n=3: deg s <= 2 solution space is 1-dim and reproduces b, c, s_n  dim = 1; normalized a=(n+1)^3=64: b=-1463, c=27, s=(1372) + (28)t + (-56)t^2
+[PASS] n=4: deg s <= 2 solution space is 1-dim and reproduces b, c, s_n  dim = 1; normalized a=(n+1)^3=125: b=-3105, c=64, s=(2916) + (36)t + (-72)t^2
+[PASS] n=5: deg s <= 2 solution space is 1-dim and reproduces b, c, s_n  dim = 1; normalized a=(n+1)^3=216: b=-5665, c=125, s=(5324) + (44)t + (-88)t^2
+[PASS] n=6: deg s <= 2 solution space is 1-dim and reproduces b, c, s_n  dim = 1; normalized a=(n+1)^3=343: b=-9347, c=216, s=(8788) + (52)t + (-104)t^2
+[PASS] n=7: deg s <= 2 solution space is 1-dim and reproduces b, c, s_n  dim = 1; normalized a=(n+1)^3=512: b=-14355, c=343, s=(13500) + (60)t + (-120)t^2
+[PASS] n=8: deg s <= 2 solution space is 1-dim and reproduces b, c, s_n  dim = 1; normalized a=(n+1)^3=729: b=-20893, c=512, s=(19652) + (68)t + (-136)t^2
+
+Solution-space dimensions for variants (n = 1..8):
+  deg s<=0                        : [0, 0, 0, 0, 0, 0, 0, 0]
+  deg s<=1                        : [0, 0, 0, 0, 0, 0, 0, 0]
+  deg s<=2, c=0 (first order)     : [0, 0, 0, 0, 0, 0, 0, 0]
+  deg s<=2                        : [1, 1, 1, 1, 1, 1, 1, 1]
+  deg s<=3                        : [1, 1, 1, 1, 1, 1, 1, 1]
+  deg s<=4                        : [1, 1, 1, 1, 1, 1, 1, 1]
+  deg s<=6                        : [1, 1, 1, 1, 1, 1, 1, 1]
+[PASS] deg s<=1 admits only the zero solution for n=1..8
+[PASS] first-order (c=0, deg s<=2) admits only zero solution for n=1..8
+[PASS] deg s<=3 and deg s<=4 still give 1-dim space (no new solutions)
+  deg s<=6, c=0                   : [0, 0, 0, 0, 0, 0, 0, 0]
+
+========================================================================
+(e) Footnote: multiply (6) by (t+k)^2 and set t = -k
+========================================================================
+  (t+k)^2 R_m(t)|_{t=-k} = A2k^(m);  (t+k)^2 S_n(t+1)|_{t=-k} = s_n(1-k) A2,(k-1)^(n)  [R_n(t+1) has its double pole at t+1 = -(k-1), i.e. t = -k]
+  so the k-th coefficient identity is
+  (n+1)^3 A2k^(n+1) - (2n+1)(17n^2+17n+5) A2k^(n) + n^3 A2k^(n-1) = s_n(1-k) A2,(k-1)^(n) - s_n(-k) A2k^(n) = B_(k-1) - B_k,
+  with B_k := s_n(-k) A2k^(n)  (B_(-1) = B_(n+1) = 0).
+[PASS] footnote coefficient identity, n=1..6, k=0..n+1 (both from formula and from (6) directly)
+[PASS] summing over k telescopes to 0 => L[u]_n = 0, n=1..6
+
+SUMMARY: 48/48 checks PASS
