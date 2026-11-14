@@ -128,3 +128,11 @@ of the ζ(5) proof at $M=200$ goes from $-0.0174$ to $-0.0370$ (×2.13). Proof r
 exact verification $K\le200$ with zero violations; the underlying statement is already a proved Lean theorem
 in mo271's repo (it is just not used in that range). Also: a model-level no-go for ζ(7) in this family
 (best total $+0.87K^2$; exact data within $0.015K^2$ of the model).
+
+## Addendum (15:45 UTC): ζ(7)
+
+`zeta7-status.md`. About 420 exact determinants in 8 families of modifications: none comes close
+(best scale-free ratio cost/decay 1.218; a proof needs < 1). For the exact shape used in a Zenodo preprint
+claiming ζ(7)∉Q ($D_N^8$, $K=40n$), the primitive integer polynomial is $\ge e^{1274},e^{5576},e^{12728}$ at ζ(7)
+for $n=1,2,3$, increasing. Mechanism: analytic decay is independent of $s$, arithmetic cost grows like $s$.
+All negative results are finite/numerical evidence plus a few lemmas not re-derived by the orchestrator.

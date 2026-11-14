@@ -107,14 +107,16 @@ def pole_values(s, kernel, alpha, J):
     return out
 
 
-def moments(s, kernel, alpha, K, h=None, j0=0, tscale=1):
+def moments(s, kernel, alpha, K, h=None, j0=0, tscale=1, step=1):
     """(alpha_e, beta_e), e=0..2h-2: mu_X(t^e/D) = alpha_e + beta_e X, D = prod_{j=j0}^{j0+K-1}(t+a_j^2).
     tscale: use the variable T = tscale * t (nodes -tscale*a_j^2) -- changes Delta only by tscale^(O(K))."""
     if h is None:
         h = K
     alpha = fmpq(alpha)
-    nodes = [-(alpha + j) ** 2 * tscale for j in range(j0, j0 + K)]
-    pv = pole_values(s, kernel, alpha, j0 + K)[j0:]
+    idx = [j0 + step * i for i in range(K)]          # nodes a = alpha + j, j in idx
+    nodes = [-(alpha + j) ** 2 * tscale for j in idx]
+    pv_all = pole_values(s, kernel, alpha, idx[-1] + 1)
+    pv = [pv_all[j] for j in idx]
     # mu_X(1/(T - T_j)) with T = tscale*t:  1/(tscale*(t+a^2)) -> pv/tscale
     D = fmpq_poly([1])
     for tj in nodes:
@@ -199,10 +201,10 @@ def eval_poly(cs, x):
     return acc
 
 
-def analyse(s, kernel, alpha, K, h=None, j0=0, tscale=1, want_vals=False):
+def analyse(s, kernel, alpha, K, h=None, j0=0, tscale=1, want_vals=False, step=1):
     if h is None:
         h = K
-    al, be = moments(s, kernel, alpha, K, h, j0, tscale)
+    al, be = moments(s, kernel, alpha, K, h, j0, tscale, step)
     A, B = hankel(al, h), hankel(be, h)
     cs = det_poly_affine(A, B)
     deg = max(k for k, c in enumerate(cs) if c != 0)
@@ -225,7 +227,7 @@ def analyse(s, kernel, alpha, K, h=None, j0=0, tscale=1, want_vals=False):
     if want_vals:
         vals = {}
         rest = cont
-        for p in primes_upto(8 * K + 50):
+        for p in primes_upto(8 * K * step + 50):
             v = gauss_val(cs, p)
             if v != 0:
                 vals[p] = v
