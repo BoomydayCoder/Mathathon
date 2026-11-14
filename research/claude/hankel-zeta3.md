@@ -256,7 +256,14 @@ independently by the orchestrator, the rest was not re-derived by the orchestrat
 * $\ell=2+6\log2$, $\int V\,d\sigma=6\log2-4$, and $E^*=\frac14\int V\,d\sigma+\frac\ell2=\frac92\log2=3.1191\ldots$
   (proved symbolically via a virial identity; numerically confirmed to 40 digits).
 
-What is **not** written: the standard upper bound $\log\Delta_K(\zeta(3))\le-E^*K^2+o(K^2)$ from Andréief's
+**Update.** A write-up of the missing link now exists: `hankel-energy-bound.md` (Opus subagent) claims
+$\log\Delta_K(\zeta(3))\le-\frac92\log2\cdot K^2+5K\log K+O(K)$ for all $K\ge2$, via Andréief, circle
+regularisation and the negativity of the logarithmic energy of zero-mass measures (cited from
+Saff–Totik, not proved). **It has not been refereed by the orchestrator**, one step (finite-energy
+conditions) is only sketched, and it imports the Euler–Lagrange inequality from `equilibrium_s3.py`.
+Until it is refereed, Theorem 1(d) stands as stated above and the remarks below are conditional.
+
+What was **not** written before that file: the standard upper bound $\log\Delta_K(\zeta(3))\le-E^*K^2+o(K^2)$ from Andréief's
 formula and the energy inequality (as in Fauzan §6). With it, (d) would hold with $\frac92\log2$ in place of
 $1-2\log\vartheta$, the computer-assisted inequality (H) would disappear, and the proof would close for
 every $\kappa<\log4$, i.e. for *any* improvement on the trivial bound $\theta(u)<u\log4$. Numerically,
