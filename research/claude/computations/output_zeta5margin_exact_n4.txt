@@ -1,2 +1,3 @@
 # s=5 K=160 N=12 h=148: Delta_K computed exactly in 164s
 #    p   K/p    | true |  out |   wf | new=max | true-new | 2*level | wf valid (p>=5, p^2>2.6K+6) | wf<=true
+     2 80.000 small | 13183|    . |    . |     .   |     .    |     .   | False | None
