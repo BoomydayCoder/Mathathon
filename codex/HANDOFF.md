@@ -1,4 +1,4 @@
-# Research handoff — 2026-11-14 15:22 UTC
+# Research handoff — 2026-11-14 15:35 UTC
 
 Continue autonomous research in `codex/` on `codex/independent-research` in the
 exact private repository `BoomydayCoder/Mathathon`. User authorizes continued
@@ -21,6 +21,37 @@ that exactly ONE should focus on zeta5 and higher odd zeta values. Current alloc
 - xhigh_irrationality: redirected from zeta5 to a simpler direct bridge between
   Zudilin rational interpolation, Legendre–Pade and Beukers integrals.
 Root continues verification and checkpointing; no automatic resets or balance claims.
+
+## Newest continuation — 2026-11-14 15:35 UTC
+
+Twenty-first checkpoint. New independently accepted results:
+- The original Schur error has an exact positive tail, rational bracket width,
+  and sharp asymptotic4pi³(3-2sqrt2)(17-12sqrt2)^(2h). Existing comparison
+  immediately gives the exact nth-root rate for EVERY FIXED odd rank-one
+  family. No adequate higher-odd denominator theorem follows.
+- A finite rank-q Heun quotient controls original zeta3 pencil fields.
+  Rank-two bounds have fieldQ(sqrt(8h²-12h+5)); Pell indices give rational
+  bounds, including exact original-moment checks ath=11. Root accepted all
+  steps. A newer explicit Apéry formula for those bounds is being drafted.
+- Finite Christoffel modification of adjacent Legendre polynomials explains
+  the cubic tail without Jacobi formulas or infinite spectral expansion.
+- Root derived a uniform-triangle Gibbs sampler: T uniform(x,1), then next
+  point uniform(0,T), stationary density2(1-x). For K=-logx/(1-x), stationary
+  E[K(X0)K(Xr)]=4zeta(2r+3). Separate agent accepted the proof and supplied
+  a shorter ODE-to-Volterra Euler-resolvent identification. General Gibbs/
+  polynomial framework credited to Diaconis-Khare-Saloff-Coste2008; exact
+  historical provenance unresolved. No irrationality conclusion.
+- Balanced diagonal prime support/normalizer and exact positive saddle rate
+  accepted. A uniform comparison proves the specified lcm^(2m+1) multiplier
+  yields growing forms for ALL integer single-pole choices in the positive
+  range. Actual primitive arithmetic remains open. Sole higher-zeta agent
+  is exploring a distinct consecutive-pole construction.
+- Finite polynomial inverse principle and direct pi² proof independently
+  accepted. Explicit linearity and positive-coercivity range are now stated.
+
+Latest pushed commit before this checkpoint:215e637. Root continues auditing
+and organizing discoveries through16:00UTC. Exactly one extra-high agent on
+higherodd values, two on zeta3; no further Fuss work, resets or meter claims.
 
 ## Newest continuation — 2026-11-14 15:22 UTC
 

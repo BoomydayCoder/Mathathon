@@ -1,6 +1,6 @@
 # A common design principle: invert on polynomials, then use a boundary identity
 
-Status: the finite-dimensional energy lemma below is proved here; its Apéry
+Status: accepted in [the independent audit](polynomial-inverse-pi-square-independent-review.md). The finite-dimensional energy lemma below is proved here; its Apéry
 specialization is the independently reviewed kernel-energy proof. The comparison
 with exponential and sine proofs reconstructs classical arguments. No historical
 novelty or new irrationality result is asserted.
@@ -43,7 +43,7 @@ One must not infer irrationality of every power from irrationality of pi alone.
 ## 2. A degree-raising operator has a one-dimensional obstruction
 
 Let P_n be a real polynomial of degree n orthogonal to all lower-degree
-polynomials for an inner product. Suppose B maps polynomials of degree k to
+polynomials for an inner product. Suppose a linear operator B maps polynomials of degree k to
 polynomials of degree k+1 with a nonzero leading coefficient, for k<n.
 Then
 
@@ -85,7 +85,7 @@ They cannot be inferred from the degree argument alone.
 
 ## 3. Why the Apéry binomial sum is forced
 
-Take the shifted Legendre polynomial
+For n>=1, take the shifted Legendre polynomial
 
     L_n(x)=sum_j (-1)^j C_(nj) x^j,
     C_(nj)=binom(n,j)binom(n+j,j),

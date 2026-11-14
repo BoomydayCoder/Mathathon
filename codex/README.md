@@ -32,6 +32,14 @@ accepted this bridge. Historical novelty remains unresolved. The
 [Jacobi expansion](problem131/jacobi-boundary-kernel-spectrum.md) gives another
 concrete connection: deleting polynomial modes produces the exact cubic tail.
 
+Two further connections now have independent audits. An elementary
+[uniform random process](problem131/uniform-gibbs-zeta-correlations.md)
+has correlations exactly equal to the odd zeta values; the Euler kernel is
+its resolvent. A [rank-two polynomial construction](problem131/zeta3-rank-q-heun-reduction.md)
+produces bounds for zeta3 in quadratic fields and rational bounds at Pell
+indices. These are proved identities and useful project extensions, without
+claims of historical novelty or new irrationality results.
+
 **Shortest complete proof, then recurrence motivation.** Start with the
 [short elementary hybrid proof](problem131/short-elementary-hybrid-proof.md).
 Rational poles supply the denominators; two integrations by parts supply a

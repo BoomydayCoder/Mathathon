@@ -471,3 +471,16 @@ Twentieth checkpoint, 2026-11-14 15:22 UTC, continuing:
 - Sole higher-zeta agent developing diagonal numerator arithmetic and positive
   asymptotics; other two remain on zeta3. No new irrationality assertion.
 - Continuing to16:00UTC; no automatic resets or usage-meter claims.
+
+Twenty-first checkpoint, 2026-11-14 15:35 UTC, continuing:
+- Sharp original Schur error and rational bracket audited; existing comparison
+  identifies the optimized exponential rate for every fixed odd rank-one family.
+- Rank-q Heun spectral reduction and rank-two Pell rational bounds audited;
+  exact h11 endpoints independently reconstructed from original moments.
+- Christoffel mode deletion and stationary uniform-sampler odd-zeta correlations
+  audited. Euler kernel is its resolvent by a direct two-integration argument.
+- Balanced diagonal prime arithmetic and positive asymptotic audited; specified
+  lcm multiplier fails uniformly over all allowed integer single poles.
+- Actual primitive denominator question remains open. Consecutive-pole extension
+  and explicit rank-two Apéry formula under development; no new irrationality.
+- Continuing to16:00UTC with unchanged one-higher/two-zeta3 agent allocation.

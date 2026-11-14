@@ -1,5 +1,7 @@
 # The diagonal balanced remainder has an explicit saddle and exact rate
 
+Independent review: accepted in [balanced-diagonal-independent-review.md](balanced-diagonal-independent-review.md).
+
 Status: all-index analytic proof drafted for independent review. The remainder
 is positive for even n. The resulting arithmetic comparison concerns specified
 nonprimitive lcm multipliers, not the actual reduced denominator of the rational
@@ -205,3 +207,165 @@ This makes the analytic distinction from m=1 precise for this particular
 balanced diagonal construction. It is not a universal obstruction to
 higher-odd irrationality, to other moving-pole choices, or to a smaller
 primitive normalization of the same rational approximants.
+
+## 5. Changing the pole's fixed aspect ratio does not fix this lcm template
+
+Let n tend through even integers, let a_n be positive integers with
+
+    a_n>n/2, a_n/n -> c>1/2,
+
+and put
+
+    L_(m,n)(a_n)=mu_(2m+1)[(p_(m,n)(t)/p_(m,n)(0))/(t+a_n^2)]>0.
+
+The same positive transport and uniform Laplace argument give
+
+    lim (1/n)log L_(m,n)(a_n)=phi_m(c):=max_(v>=0)Phi_(m,c)(v),          (14)
+
+where
+
+    Phi_(m,c)(v)=2m+(2m+2) integral_0^(1/2)log(v^2+u^2)du
+                   -integral_(c-1/2)^(c+1/2)log(v^2+u^2)du-2pi v.     (15)
+
+For completeness, all compact Riemann sums remain uniform when their endpoints
+are perturbed by o(1). Since c>1/2, the denominator endpoints stay bounded away
+from zero. The small-v upper bound uses the denominator at v=0, whose Riemann
+sum now converges over [c-1/2,c+1/2]. The same large-v bound from section 1
+still works because D>= (n^2v^2)^(n+1), irrespective of the pole locations.
+Thus the proof covers every such integer sequence a_n, not merely a formal
+substitution of a real multiple of n.
+
+Write a=c-1/2>=0 and b=c+1/2=a+1 temporarily for the integral endpoints.
+There is again a unique positive saddle, satisfying
+
+    (2m+2)arctan(1/(2v))-arctan(b/v)+arctan(a/v)=pi.       (16)
+
+To check strict concavity, differentiate twice:
+
+    Phi_(m,c)''(v)=-(2m+2)/(v^2+1/4)
+                       +2(v^2-ab)/[(v^2+a^2)(v^2+b^2)].
+
+The second rational term before its factor 2 is less than 1/(v^2+1/4), since
+
+    (v^2+a^2)(v^2+b^2)-(v^2-ab)(v^2+1/4)
+      =v^2(a^2+b^2+ab-1/4)+a^2b^2+ab/4>0.
+
+Here a^2+b^2+ab-1/4=3a^2+3a+3/4>0. Thus the second derivative is negative.
+For c>1/2 the first derivative tends to 2m pi at zero and -2pi at infinity,
+which proves the asserted unique saddle and (16).
+
+For m>=2 this saddle always satisfies v>1/2. At v=1/2 the left side of
+(16), minus pi, is bounded below by
+
+    6 arctan(1)-arctan(2)-pi=pi/2-arctan(2)>0.
+
+Indeed the difference arctan((c+1/2)/v)-arctan((c-1/2)/v) decreases with c,
+and is therefore at most arctan(2) at v=1/2, c>=1/2. Increasing m only
+increases the displayed left side.
+
+The unique saddle depends smoothly on c by strict concavity. The envelope
+rule, or direct differentiation with its v-derivative zero, gives
+
+    phi_m'(c)=-log[(v^2+(c+1/2)^2)/(v^2+(c-1/2)^2)].     (17)
+
+For v>=1/2 and c>=1/2, the ratio in (17) is at most 3+2sqrt(2)<6. To see
+this, it decreases with v^2, so replace v^2 by 1/4; the resulting single-
+variable ratio has its maximum at c=1/sqrt(2), where it is 3+2sqrt(2).
+Consequently
+
+    -log 6<phi_m'(c)<0, m>=2.                            (18)
+
+Now consider the **specified**, possibly nonprimitive multiplier
+
+    d_(max(n,a_n))^(2m+1).
+
+The elementary lcm lower bound implies
+
+    liminf (1/n)log[d_(max(n,a_n))^(2m+1)L_(m,n)(a_n)]
+       >=(2m+1)log 2 * max(1,c)+phi_m(c).                (19)
+
+On 1/2<c<=1 the right side decreases with c by (18). On c>=1 its derivative
+is at least 5log 2-log 6>0. Hence its minimum occurs exactly at c=1. By
+section 4, that minimum is strictly greater than log(9/4). Therefore
+
+    liminf [d_(max(n,a_n))^(2m+1)L_(m,n)(a_n)]^(1/n)
+       >9/4, m>=2, c>1/2.                              (20)
+
+This conclusion is entirely analytic plus the elementary lcm lower bound;
+it does not assume this particular multiplier clears the rational numerator.
+If it did clear it, the resulting positive integer forms would grow. Any
+larger multiplier also fails to produce small values in this sense.
+
+The design consequence is limited but concrete: moving the pole to a different
+fixed multiple of n cannot rescue the simple lcm-to-the-(2m+1) normalization
+for this balanced family. A successful continuation would need smaller
+primitive arithmetic or a different polynomial or kernel family. Section 6
+below removes the fixed-ratio restriction on this specified multiplier. The
+small-prime numerator cancellation problem remains open; no bound on the actual primitive form is
+asserted by (20).
+
+
+## 6. A uniform comparison for every integer pole, without an aspect-ratio assumption
+
+The previous multiplier limitation in fact holds uniformly over *all* allowed
+integer poles. Fix m>=2, let s=2m+1, and let n=2r>=4. Then for every integer
+a>r, with A=max(n,a),
+
+    d_A^s L_(m,n)(a) >= [2^(n-1)/n]^s L_(m,n)(n+1).       (21)
+
+In particular no boundedness or convergence assumption on a/n is needed.
+
+To prove this, the positive transport formula gives
+
+    L_(m,n)(a)=1/(n!)^(2m) integral_0^infinity
+       S_(m,n)(y^2)/product_(k=-r)^r[y^2+(a+k)^2] w_s(y)dy.
+
+All factors a+k are positive. Hence L_(m,n)(a) decreases with a on a>r.
+For a>=a_0:=n+1, each factor also satisfies
+
+    [y^2+(a_0+k)^2]/[y^2+(a+k)^2]
+        >=[(a_0+k)/(a+k)]^2.
+
+Writing K(a)=product_(k=-r)^r(a+k), positivity of the integral yields
+
+    L_(m,n)(a)>=L_(m,n)(a_0)[K(a_0)/K(a)]^2.             (22)
+
+For u>=a_0,
+
+    (log K)'(u)=sum_(k=-r)^r 1/(u+k)
+        <=sum_(j=r+1)^(3r+1)1/j <=log 3.                (23)
+
+The last inequality is exact for every r>=1: convexity of 1/x implies
+1/j<=integral_(j-1/2)^(j+1/2)dx/x, and these intervals combine into
+[r+1/2,3r+3/2], whose endpoint ratio is 3. Integrating (23) in (22), and
+using monotonicity for a<=a_0, gives the uniform estimate
+
+    L_(m,n)(a)>=L_(m,n)(n+1) 9^(-max(a-n-1,0)).          (24)
+
+Use d_A>=2^(A-1)/A. When A=n or n+1, the desired comparison (21) follows
+at once from (24). For A>=n+1, the remaining lower-bound factor is
+
+    G(A)=2^(s(A-1)) A^(-s) 9^(-(A-n-1)).
+
+For successive integers A>=n+1>=5,
+
+    G(A+1)/G(A)=[2A/(A+1)]^s/9
+        >=(5/3)^5/9=3125/2187>1.
+
+Thus G(A)>=G(n+1)>[2^(n-1)/n]^s, proving (21).
+
+Combining (21) with the exact diagonal rate gives the stronger uniform result
+
+    liminf_(n even ->infinity)
+      inf_(a integer, a>n/2)
+        [d_(max(n,a))^(2m+1) L_(m,n)(a)]^(1/n)
+      >=2^(2m+1)rho_m>9/4,  m>=2.                       (25)
+
+This includes poles arbitrarily close to the positivity boundary, poles with
+fixed aspect ratio, and poles growing arbitrarily faster than n. The proof
+uses only positivity, the already established diagonal rate, and an elementary
+lcm lower bound. Formula (25) retains the same arithmetic scope as (20): it
+rules out decay under the specified lcm multiplier, or a larger one, and says
+nothing about the actual primitive normalization. A successful use of these
+particular single-pole forms must exploit smaller arithmetic, rather than
+merely relocate the pole within its full positive range.

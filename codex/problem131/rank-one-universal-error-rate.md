@@ -1,5 +1,13 @@
 # All fixed odd zeta rank-one errors have the same exponential rate
 
+**Later resolution (15:35 UTC):** the original zeta3 identity and its sharp
+asymptotic are now proved. Applying the comparison below gives, for every
+fixed odd s>=3, lim E_(h,s)^(1/h)=(17+12sqrt2)^(-2). See
+[the exact error corollary](rank-one-original-error-tail-and-rate.md) and
+[its audit](rank-one-original-error-independent-review.md). Earlier statements
+that the common rate was unidentified are historical; no higher-odd arithmetic
+conclusion follows.
+
 Status: proved by an explicit comparison of positive measures, independently
 developed from the parent's proposed comparison. No adjacent-Apéry identity
 is assumed. The theorem equates both lower and upper exponential rates; it

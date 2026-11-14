@@ -4,6 +4,18 @@ All 'proved' labels refer to arguments written and checked in this workspace,
 not historical novelty. Standard external inputs are identified in each note.
 Finite computation is supplementary evidence only.
 
+## Latest reviewed additions — 15:35 UTC
+
+| Result | Proof / independent review | Exact scope |
+|---|---|---|
+| Sharp original Schur error and exact rational bracket | rank-one-original-error-tail-and-rate.md; rank-one-original-error-independent-review.md | Full zeta3 constant; existing measure comparison gives rate (17+12sqrt2)^(-2) for each fixed odd index, without new arithmetic |
+| Rank-q Heun quotient and rank-two Pell fields/bounds | zeta3-rank-q-heun-reduction.md; zeta3-rank-q-independent-review.md | Original zeta3 pencils; rational rank-two bounds at an infinite Pell subsequence; no new irrationality conclusion |
+| Finite adjacent-Legendre projection explains cubic tail | legendre-christoffel-cubic-tail.md; legendre-christoffel-independent-review.md | No infinite spectral expansion needed |
+| Uniform-triangle sampler gives all odd-zeta correlations and Euler resolvent | uniform-gibbs-zeta-correlations.md; uniform-gibbs-zeta-independent-review.md | Exact stationary correlations; classical Gibbs framework credited; no historical novelty or irrationality claim |
+| Balanced diagonal numerator prime support and explicit normalizer | balanced-diagonal-numerator-primes.md; balanced-diagonal-independent-review.md | Sharper observed small-prime normalization still unproved |
+| Positive balanced diagonal rate and uniform all-pole lcm limitation | balanced-diagonal-positive-rate.md; balanced-diagonal-independent-review.md | All integer poles in the positive range; obstruction only for specified nonprimitive multiplier, not actual reduced denominators |
+| Finite polynomial inverse principle and direct pi² proof | polynomial-inverses-and-boundary-pairings.md; polynomial-inverse-pi-square-independent-review.md | Classical sine adaptation; explicit linearity and n>=1 coercivity hypotheses |
+
 ## Latest reviewed additions — 15:20 UTC
 
 This section supersedes all earlier unresolved/conjectural labels for the

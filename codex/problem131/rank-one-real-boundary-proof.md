@@ -1,7 +1,8 @@
 # A finite-difference proof of the exact boundary identity needed by the Schur theorem
 
-Status: complete elementary proof, accepted in the root agent's independent
-review (the audit link is added when its file is finalized). This
+Status: complete elementary proof, accepted in
+`rank-one-real-boundary-independent-review.md` and
+`rank-one-real-boundary-second-independent-review.md`. This
 replaces the contour input in `rank-one-original-apery-heun-rii-proof.md`.
 It proves exactly the finite degree range that theorem needs. The unrestricted
 all-degree contour identity remains a separate result, but is not needed here.

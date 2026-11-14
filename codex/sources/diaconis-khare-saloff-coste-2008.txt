@@ -1,0 +1,2006 @@
+                                          Statistical Science
+                                          2008, Vol. 23, No. 2, 151–178
+                                          DOI: 10.1214/07-STS252
+                                           c Institute of Mathematical Statistics, 2008
+
+
+
+                                          Gibbs Sampling, Exponential Families and
+                                          Orthogonal Polynomials1
+                                          Persi Diaconis, Kshitij Khare and Laurent Saloff-Coste
+arXiv:0808.3852v1 [stat.ME] 28 Aug 2008
+
+
+
+
+                                                                    Abstract. We give families of examples where sharp rates of conver-
+                                                                    gence to stationarity of the widely used Gibbs sampler are available.
+                                                                    The examples involve standard exponential families and their conjugate
+                                                                    priors. In each case, the transition operator is explicitly diagonalizable
+                                                                    with classical orthogonal polynomials as eigenfunctions.
+                                                                    Key words and phrases: Gibbs sampler, running time analyses, expo-
+                                                                    nential families, conjugate priors, location families, orthogonal polyno-
+                                                                    mials, singular value decomposition.
+
+
+                                                               1. INTRODUCTION                                          which has f as stationary density under mild con-
+                                                                                                                        ditions discussed in [4, 102].
+                                              The Gibbs sampler, also known as Glauber dy-                                 The algorithm was introduced in 1963 by Glauber
+                                          namics or the heat-bath algorithm, is a mainstay of [49] to do simulations for Ising models, and inde-
+                                          scientific computing. It provides a way to draw sam- pendently by Turcin [103]. It is still a standard tool
+                                          ples from a multivariate probability density f (x1 , x2 , of statistical physics, both for practical simulation
+                                          . . . , xp ), perhaps only known up to a normalizing (e.g., [88]) and as a natural dynamics (e.g., [10]).
+                                          constant, by a sequence of one-dimensional sampling The basic Dobrushin uniqueness theorem showing
+                                          problems. From (X1 , . . . , Xp ) proceed to (X1′ , X2 , . . . , existence of Gibbs measures was proved based on
+                                          Xp ), then (X1′ , X2′ , X3 , . . . , Xp ), . . . , (X1′ , X2′ , . . . , Xp′ ) this dynamics (e.g., [54]). It was introduced as a
+                                          where at the ith stage, the coordinate is sampled base for image analysis by Geman and Geman [46].
+                                          from f with the other coordinates fixed. This is one Statisticians began to employ the method for rou-
+                                          pass. Continuing gives a Markov chain X, X ′ , X ′′ , . . . , tine Bayesian computations following the works of
+                                                                                                                        Tanner and Wong [101] and Gelfand and Smith [45].
+                                                                                                                        Textbook accounts, with many examples from bi-
+                                          Persi Diaconis is Professor, Department of Statistics,                        ology and the social sciences, along with extensive
+                                          Sequoia Hall, 390 Serra Mall, Stanford University,                            references are in [47, 48, 78].
+                                          Stanford, California 94305-4065, USA e-mail:
+                                                                                                                           In any practical application of the Gibbs sampler,
+                                          diaconis@math.stanford.edu. Kshitij Khare is Graduate
+                                                                                                                        it is important to know how long to run the Markov
+                                          Student, Department of Statistics, Sequoia Hall, 390
+                                                                                                                        chain until it has forgotten the original starting state.
+                                          Serra Mall, Stanford University, Stanford, California
+                                          94305-4065, USA e-mail: kdkhare@stanford.edu. Laurent
+                                                                                                                        Indeed, some Markov chains are run on enormous
+                                          Saloff-Coste is Professor, Department of Mathematics,                         state spaces (think of shuffling cards or image anal-
+                                          Cornell University, Malott Hall, Ithaca, New York                             ysis). Do they take an enormous number of steps to
+                                          14853-4201, USA e-mail: lsc@math.cornell.edu.                                 reach stationarity? One way of dealing with these
+                                              1
+                                                Discussed in 10.1214/08-STS252A, 10.1214/08-STS252B, problems is to throw away an initial segment of the
+                                          10.1214/08-STS252C and 10.1214/08-STS252D; rejoinder at                       run. This leaves the question of how much to throw
+                                          10.1214/08-STS252REJ.                                                         away. We call these questions running time analyses
+                                           This is an electronic reprint of the original article                        below.
+                                           published by the Institute of Mathematical Statistics in                        Despite heroic efforts by the applied probability
+                                           Statistical Science, 2008, Vol. 23, No. 2, 151–178. This                     community,    useful running time analyses for Gibbs
+                                           reprint differs from the original in pagination and                          sampler chains is still a major research effort. An
+                                           typographic detail.                                                          overview of available tools and results is given at the
+                                                                                                            1
+2                                           P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+
+end of this introduction. The main purpose of the
+present paper is to give families of two component
+examples where a sharp analysis is available. These
+may be used to compare and benchmark more ro-
+bust techniques such as the Harris recurrence tech-
+niques in [64], or the spectral techniques in [2] and
+[107]. They may also serve as a base for the compar-
+ison techniques in [2, 26, 32].
+  Here is an example of our results. The following
+example was studied as a simple expository example
+in [16] and [78], page 132. Let
+                
+                n x
+    fθ (x) =      θ (1 − θ)n−x ,
+                x
+    π(dθ) = uniform on (0, 1),                x ∈ {0, 1, 2, . . . , n}.
+
+These define the bivariate Beta/Binomial density
+(uniform prior)                                                           Fig. 1. Simulation of the Beta/Binomial “x-chain” with
+                                                                        n = 100.
+                                 n x
+                f (x, θ) =         θ (1 − θ)n−x
+                                 x
+                                                                          is reversible with stationary density m(x) [i.e., m(x)·
+with marginal density                                                     k(x, x′ ) = m(x′ )k(x′ , x)]. For the Beta/Binomial ex-
+                     Z 1                                                  ample
+                                                                                                               
+          m(x) =            f (x, θ) dθ                                                      ′     n + 1 nx xn′
+                        0                                                              k(x, x ) =          2n  ,
+                                                                                                  2n + 1 x+x
+                      1                                                                                       ′
+                 =       ,            x ∈ {0, 1, 2, . . . , n}.           (1.1)
+                     n+1                                                                                            0 ≤ x, x′ ≤ n.
+The posterior density [with respect to the prior                             A simulation of the Beta/Binomial “x-chain” (1.1)
+π(dθ)] is given by                                                        with n = 100 is given in Figure 1. The initial posi-
+               fθ (x)                                                     tion is 100 and we track the position of the Markov
+    π(θ|x) =                                                              chain for the first 200 steps.
+               m(x)
+                                                                           The proposition below gives an explicit diagonal-
+                             n x                                          ization of the x-chain and sharp bounds for the bi-
+           = (n + 1)           θ (1 − θ)n−x ,             θ ∈ (0, 1).                    fℓ denotes the density of the distri-
+                             x                                            variate chain [K  n,θ
+                                                                          bution of the bivariate chain after ℓ steps starting
+    The Gibbs sampler for f (x, θ) proceeds as follows:
+                                                                          from (n, θ)]. It shows that order n steps are neces-
+• From x, draw θ ′ from Beta(x + 1, n − x + 1).                           sary and sufficient for convergence. That is, for sam-
+                                                                          pling from the Markov chain K  f to simulate from the
+• From θ ′ , draw x′ from Binomial(n, θ ′ ).
+                                                                          probability distribution f , a small (integer) multi-
+                               f θ; x′ , θ ′ ) be the tran-
+The output is (x′ , θ ′ ). Let K(x,                                       ple of n steps suffices, while n2 steps do not. The
+sition density for this chain. While K f has f (x, θ) as                  following bounds make this quantitative. The proof
+                             f
+stationary density, the (K, f ) pair is not reversible                    is given in Section 4. For example, when n = 100,
+(see below). This blocks straightforward use of spec-                     after 200 steps the total variation distance (see be-
+tral methods. Liu et al. [77] observed that the “x-                       low) to stationarity is less than 0.0192, while after
+chain” with kernel                                                        50 steps the total variation distance is greater than
+                                Z 1                                       0.1858, so the chain is far from equilibrium.
+                        ′
+               k(x, x ) =             fθ (x′ )π(θ|x) dθ                      We simulate 3000 independent replicates of the
+                                 0                                        Beta/Binomial “x-chain” (1.1) with n = 100, start-
+                                Z 1
+                                      fθ (x)fθ (x′ )                      ing at the initial value 100. We provide histograms
+                            =                        dθ                   of the position of the “x-chain” after 50 steps and
+                                 0        m(x)
+                                 GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                              3
+
+
+
+
+Fig. 2. Histograms of the observations obtained from simulating 3000 independent replicates of the Beta/Binomial “x-chain”
+after 50 steps and 200 steps.
+
+
+200 steps in Figure 2. Under the stationary distribu-           The calculations work because the operator with
+tion (which is uniform on {0, 1, . . . , 100}), one would     density k(x, x′ ) takes polynomials to polynomials.
+expect roughly 150 observations in each block of the          Our main results give classes of examples with the
+histogram. As expected, these histograms show that            same explicit behavior. These include:
+the empirical distribution of the position after 200
+                                                              • fθ (x) is one of the exponential families singled
+steps is close to the stationary distribution, while            out by Morris [86, 87] (binomial, Poisson, negative
+the empirical distribution of the position after 50             binomial, normal, gamma, hyperbolic) with π(θ)
+steps is quite different.                                       the conjugate prior.
+   If f, g are probability densities with respect to a        • fθ (x) = g(x−θ) is a location family with π(θ) con-
+σ-finite measure µ, then the total variation distance           jugate and g belongs to one of the six exponential
+between f and g is defined as                                   families above.
+                           Z
+(1.2)     kf − gkTV = 21       |f (x) − g(x)|µ(dx).              Section 2 gives background. In Section 2.1 the
+                                                              Gibbs sampler is set up more carefully in both sys-
+                                                              tematic and random scan versions. Relevant Markov
+ Proposition 1.1. For the Beta/Binomial ex-                   chain tools are collected in Section 2.2. Exponential
+ample with uniform prior, we have:                            families and conjugate priors are reviewed in Section
+                                                              2.3. The six families are described more carefully
+  (a) The chain (1.1) has eigenvalues                         in Section 2.4 which calculates needed moments. A
+  β0 = 1,                                                     brief overview of orthogonal polynomials is in Sec-
+                                                              tion 2.5.
+             n(n − 1) · · · (n − j + 1)                          Section 3 is the heart of the paper. It breaks the
+   βj =                                    ,   1 ≤ j ≤ n.
+          (n + 2)(n + 3) · · · (n + j + 1)                    operator with kernel k(x, x′ ) into two pieces: T :
+In particular, β1 = 1 − 2/(n + 2). The eigenfunctions         L2 (m) → L2 (π) defined by
+                                                                                       Z
+are the discrete Chebyshev polynomials [orthogonal
+polynomials for m(x) = 1/(n + 1) on {0, . . . , n}].                        T g(θ) =       fθ (x)g(x)m(dx)
+  (b) For the bivariate chain K,f for all θ, n and ℓ,
+                                                              and its adjoint T ∗ . Then k is the kernel of T ∗ T . Our
+                                          ℓ−1/2               analysis rests on a singular value decomposition of
+            1 ℓ     fℓ − f kTV ≤ β1
+              β1 ≤ kKn,θ                   .                  T . In our examples, T takes orthogonal polynomials
+            2                   1 − β12ℓ−1                    for m(x) into orthogonal polynomials for π(θ). This
+4                              P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+
+leads to explicit computations and allows us to treat     also makes useful connections with classical renewal
+the random scan, x-chain and θ-chain on an equal          theory.
+footing.                                                     The Markov chains studied in this paper generate
+  The x-chains and θ-chains corresponding to three        stochastic processes which have the marginal as sta-
+of the six classical exponential families are treated     tionary distribution. These chains have been used
+in Section 4. There are some surprises; while order       in a variety of applied modeling contexts in [80] and
+n steps are required for the Beta/Binomial exam-          [89, 90, 91]. The present paper presents some new
+ple above, for the parallel Poisson/Gamma example,        tools for these models. A related family of Markov
+log n + c steps are necessary and sufficient. The six     chains and analyses have been introduced by Eaton
+location chains are treated in Section 5 where some       [33, 34, 35] to study admissibility of formal Bayes
+standard queuing models emerge (e.g., the M/M/∞           estimators. The process is a two-component Gibbs
+queue). The final section points to other examples        sampler, as above, with π an improper prior having
+with polynomial eigenfunctions and other methods          an almost surely proper posterior. Under regular-
+for studying present examples. Our examples are           ity assumptions, Eaton shows that recurrence of the
+just illustrative. It is easy to sample from any of       θ-chain implies the admissibility of certain formal
+the families f (x, θ) directly. Further, we do not see    Bayes estimators corresponding to π. Hobert and
+how to carry our techniques over to higher compo-         Robert [61] have developed this research, introduc-
+nent problems. We further point out that in routine       ing the x-chain as a useful tool. Spectral techniques
+Bayesian use of the Gibbs sampler, the distribution       have proved to be a useful adjunct to Foster-type
+we wish to sample from is typically a posterior dis-      criteria for studying recurrence. We hope to develop
+tribution of the parameters. Nevertheless, our two        our theory in these directions.
+component problems are easy-to-understand stan-              The analyses carried out in this paper hinge criti-
+dard statistical examples.                                cally on the existence of all marginal and conditional
+  Basic convergence properties of the Gibbs sampler       moments. These moments need not exist. Indeed,
+can be found in [4, 102]. Explicit rates of conver-       consider the geometric density fθ (x) = θ x (1 − θ), 0 ≤
+gence appear in [95, 96]. These lean on Harris recur-     x < ∞, and put a Beta(α, β) prior on θ, with α ≥ 1
+rence and require a drift condition of type               being an integer. The marginal distribution of x ad-
+E(V (X1 )|X0 = x) ≤ aV (x) + b for all x. Also re-        mits only α − 1 moments. For α > 1, the available
+quired are a minorization condition of the form           moments are put to good use in [25].
+k(x, x′ ) ≥ εq(x′ ) for ε > 0, some probability density
+q, and all x with V (x) ≤ d. Here d is fixed with                         2. BACKGROUND
+d ≥ b/(1 + a). Rosenthal [95] then gives explicit up-       This section gives needed background. The two-
+per bounds and shows these are sometimes practi-          component Gibbs sampler is defined more carefully
+cally relevant for natural statistical examples. His      in Section 2.1. Bounds on convergence using eigen-
+paper [97] is a nice expository account. Finding use-     values are given in Section 2.2. Exponential families
+ful V and q is currently a matter of art. For example,    and conjugate priors are reviewed in Section 2.3.
+a group of graduate students tried to use these tech-     The six families with variance a quadratic function
+niques in the Beta/Binomial example treated above         of the mean are treated in Section 2.4. Finally, a
+and found it difficult to make choices giving useful      brief review of orthogonal polynomials is in Section
+results. This led to the present paper.                   2.5.
+  A marvelous expository account of this set of tech-
+niques with many examples and an extensive liter-         2.1 Two-Component Gibbs Samplers
+ature review is given by Jones and Hobert in [64].          Let (X , F) be a measurable space equipped with
+In their main example an explicit eigenfunction was       a σ-finite measure µ. Let (Θ, G) be a measurable
+available for V ; our Gamma/Gamma examples be-            space equipped with a probability measure π(dθ).
+low generalize this. Further, “practically relevant”      In many classical situations the prior is given by a
+examples with useful analyses of Markov chains for        density g(θ) with respect to the Lebesgue measure
+stationary distributions which are difficult to sample    dθ, and so π(dθ) = g(θ) dθ. However, we also con-
+directly from are in [65, 81, 98]. Some sharpenings       sider examples where the parameter θ is discrete,
+of the Harris recurrence techniques are in [9] which      which cannot be described in the fashion mentioned
+                                      GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                                            5
+                                                                               R
+above. Thus, we work with general prior probabili-                 Note that k(x, x′ )µ(dx′ ) = 1 so that k(x, x′ ) is a
+ties π(dθ) throughout. Let {fθ (x)}θ∈Θ be a family of              probability density with respect to µ. Note further
+probability densities with respect to µ. These define              that m(x)k(x, x′ ) = m(x′ )k(x′ , x) so that the x-chain
+a probability measure on X × Θ via                                 has m(dx) as a stationary distribution.
+                       Z Z                                           The “θ-chain” [from θ, draw x from fθ (x) and
+        P (A × B) =                  fθ (x)µ(dx)π(dθ),             then θ ′ from π(θ ′ |x)] has transition density
+                         B A
+                                                                                                      Z
+                                                   A ∈ F, B ∈ G.              k(θ, θ ) = ′
+                                                                                                           fθ (x)π(θ ′ |x)µ(dx)
+                                                                                                       X
+The marginal density on X is                                       (2.2)                              Z
+                             Z                                                                           fθ (x)fθ′ (x)
+                m(x) =               fθ (x)π(dθ)                                             =                         µ(dx).
+                                                                                                       X     m(x)
+                                 Θ                                             R
+                                            Z                    Note that k(θ, θ ′ )π(dθ ′ ) = 1 and that k(θ, θ ′ ) has
+                                        so       m(x)µ(dx) = 1 .   π(dθ) as reversing measure.
+                                             X
+
+We assume that 0 < m(x) < ∞ for every x ∈ X . The                     Example (Poisson/Exponential). Let X = {0, 1,
+posterior density with respect to π(dθ) is given by                2, 3, . . .}, µ(dx) = counting measure, Θ = (0, ∞),
+                                                                   fθ (x) = e−θ θ x /x!. Take π(dθ) = e−θ dθ. Then m(x) =
+                 π(θ|x) = fθ (x)/m(x).                             R ∞ e−θ θx −θ
+                                                                    0       x! e    dθ = 1/2x+1 . The posterior density with
+The probability P splits with respect to m(dx) =                   respect to π(dθ) is π(θ|x) = fθ (x)/m(x) = 2x+1 e−θ θ x /x!.
+m(x)µ(dx) in the form                                              Finally, the x-chain has kernel
+                      Z Z
+                                                                                     Z ∞                       ′
+        P (A × B) =                  π(θ|x)π(dθ)m(dx),                                       2x+1 θ x+x e−3θ
+                         A B                                           k(x, x′ ) =                           dθ
+                                                                                     0            x!x′ !
+                                                   A ∈ F, B ∈ G.                                                   !
+                                                                                      2x+1                 x + x′
+  The systematic scan Gibbs sampler for drawing                                =                 ′                ,    0 ≤ x, x′ < ∞,
+                                                                                     3x+x +1                 x
+from the distribution P proceeds as follows:
+                                                                   whereas the θ-chain has kernel
+• Starting from (x, θ), first, draw x′ from fθ (·); sec-                                             ∞
+                                                                                                     X (2θθ ′ )x                √
+  ond, draw θ ′ from π(·|x′ ).                                      k(θ, θ ′ ) = 2e−θ−θ
+                                                                                             ′                             ′
+                                                                                                                   = 2e−θ−θ I0 ( 8θθ ′ )
+    The output is (x′ , θ ′ ). This generates a Markov                                               x=0
+                                                                                                           (x!)2
+  chain (x, θ) → (x′ , θ ′ ) → · · · having kernel
+                                                                   with respect to π(dθ), where I0 is the classical mod-
+          K(x, θ; x′ , θ ′ ) = fθ (x′ )fθ′ (x′ )/m(x′ )            ified Bessel function; see Feller [44], Section 2.7, for
+  with respect to µ(dx′ )π(dθ ′ ). A slight variant ex-            background.
+  changes the order of the draws:                            A second construction called the random scan chain
+• Starting from (x, θ), first, draw θ ′ from π(·|x); sec- is frequently used. From (x, θ), pick a coordinate at
+  ond, draw x′ from fθ′ (·).                              random and update it from the appropriate condi-
+     The output is (x′ , θ ′ ). The corresponding Markov tional distribution. More formally, for g ∈ L2 (P )
+  chain (x, θ) → (x′ , θ ′ ) → · · · has kernel                                Z
+           f θ; x′ , θ ′ ) = f ′ (x)f ′ (x′ )/m(x)               K̄g(x, θ) = 1
+                                                                             2     g(x, θ ′ )π(θ ′ |x)π(dθ ′ )
+           K(x,                  θ     θ                                        Θ
+                                                          (2.3)                    Z
+  with respect to µ(dx′ )π(dθ ′ ). Under mild condi-                         +2  1
+                                                                                      g(x′ , θ)fθ (x′ )µ(dx′ ).
+  tions these two chains have stationary distribu-                                  X
+  tion P .                                                   We note three things. First, K̄ sends L2 (P ) →
+  The “x-chain” [from x, draw θ ′ from π(θ ′ |x) and               L2 (P ) and is reversible with respect to P . This is
+then x′ from fθ′ (x′ )] has transition kernel                      the usual reason for using random scans. Second,
+                         Z                                         the right-hand side of (2.3) is the sum of a func-
+           k(x, x′ ) =       π(θ|x)fθ (x′ )π(dθ)                   tion of x alone and a function of θ alone. That is,
+                         Θ
+(2.1)                                                              K̄ : L2 (P ) → L2 (m) + L2 (π) [the range of K̄ is con-
+                         Z
+                           fθ (x)fθ (x′ )                          tained in L2 (m) + L2 (π)]. Third, if g ∈ (L2 (m) +
+                     =                    π(dθ).                   L2 (π))⊥ [complement in L2 (P )], then K̄g = 0 [Ker
+                         Θ     m(x)
+6                                            P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+
+K̄ ⊇ (L2 (m) +  2    ⊥
+             R L (π)) ]. Indeed,
+                            R    for any h ∈ L2 (P ),                     we can compute Kφ and m(φ)]. The second condi-
+hK̄g, hiP = (K̄g)h dP = (K̄h)g dP = 0. Thus                               tion [orthogonality to constants in L2 (m)] will be
+K̄g = 0. We diagonalize random scan chains in Sec-                        automatically satisfied when |β| < 1. Such an eigen-
+tion 3.                                                                   function yields a simple lower bound on the conver-
+                                                                          gence of the chain to its stationary measure.
+2.2 Bounds on Markov Chains
+   2.2.1 General results. We briefly recall well-known      Lemma 2.1. Referring to the    R notation   above, as-
+                                                          sume that φ ∈ L 2 (m(dξ)) and       |φ|2 dm = 1. Then
+results that will be applied to either our two-compo-
+nent Gibbs sampler chains or the x- and θ-chains.                         χ2ξ (ℓ) ≥ |φ(ξ)|2 |β|2ℓ .
+Suppose we are given a Markov chain described by
+its kernel K(ξ, ξ ′ ) with respect to a measure µ̃(dξ ′ ) Moreover, if φ is a bounded function, then
+[e.g., ξ = (x, θ), µ̃(dξ) = µ(dx)π(dθ) for the two-com-
+                                                                                         |φ(ξ)||β|ℓ
+ponent sampler, ξ = θ, µ̃(dθ) = π(dθ) for the θ-chain,                 kKξℓ − mkTV ≥                .
+etc.]. Suppose further that the chain has stationary                                      2kφk∞
+measure m(dξ) = m(ξ)µ̃(dξ) and write                        Proof. This follows from the well-known results
+         K̂(ξ, ξ ′ ) = K(ξ, ξ ′ )/m(ξ ′ ),                                (2.5)    χ2ξ (ℓ) =      sup {|Kξℓ (g) − m(g)|2 }
+                                                                                               kgk2,m ≤1
+          K̂ξℓ (ξ ′ ) = K̂ ℓ (ξ, ξ ′ ) = K ℓ (ξ, ξ ′ )/m(ξ ′ )
+                                                                          and
+for the kernel and iterated kernel of the chain with
+respect to the stationary measure m(dξ). We define                        (2.6) kKξℓ − mkTV = 21 sup {|Kξℓ (g) − m(g)|}.
+the chi-square distance between the distribution of                                                       kgk∞ ≤1
+the chain started at ξ after ℓ steps and its stationary
+                                                                          Here, Kξl (g) denotes the expectation of g under the
+measure by
+                     Z                                                    density K l (ξ, ·). For chi-square, use g = φ as a test
+         χ2ξ (ℓ) =        |K̂ξℓ (ξ ′ ) − 1|2 m(dξ ′ )                     function. For total variation use g = φ/kφk∞ as a
+                                                                          test function. More sophisticated lower bounds on
+                     Z
+                          |K ℓ (ξ, ξ ′ ) − m(ξ ′ )|2                      total variation are based on the second moment method
+                =                                    µ̃(dξ ′ ).
+                                   m(ξ ′ )                                (e.g., [99, 106]). 
+This quantity always yields an upper bound on the                           To obtain upper bounds on the chi-square dis-
+total variation distance                                                  tance, we need much stronger hypotheses. Namely,
+                                Z
+                                                                          assume that K is a self-adjoint operator on L2 (m)
+    kKξℓ − mkTV = 21                |K̂ξℓ (ξ ′ ) − 1|m(dξ ′ )             and that L2 (m) admits an orthonormal basis of real
+                                Z                                         eigenfunctions ϕi with real eigenvalues βi ≥ 0, β0 =
+                         = 21       |K ℓ (ξ, ξ ′ ) − m(ξ ′ )|µ̃(dξ ′ ),   1, ϕ0 ≡ 1, βi ↓ 0 so that
+                                                                                   Z
+namely,                                                                                K̂(ξ, ξ ′ )ϕi (ξ ′ )m(dξ ′ ) = βi ϕi (ξ).
+(2.4)              4kKξℓ − mk2TV ≤ χ2ξ (ℓ).
+                                                                          Assume furtherP
+                                                                                         that K acting on L2 (m) is Hilbert–
+  Our analysis will be based on eigenvalue decom-                         Schmidt (i.e., |βi |2 < ∞). Then we have
+positions. Let us first assume that we are given a                                                        X
+function φ such that                                                                   K̂ ℓ (ξ, ξ ′ ) =       βiℓ ϕi (ξ)ϕi (ξ ′ )
+                     Z                                                                                    i
+        Kφ(ξ) =           K(ξ, ξ ′ )φ(ξ ′ )µ̃(dξ ′ ) = βφ(ξ),
+                                                                                                          [convergence in L2 (m × m)]
+                     Z
+        m(φ) =            φ(ξ)m(ξ)µ̃(dξ) = 0                              and
+                                                                                                          X
+for some (complex number) β. In words, φ is a gener-                      (2.7)              χ2ξ (ℓ) =          βi2ℓ ϕ2i (ξ).
+                                                                                                          i>0
+alized eigenfunction with eigenvalue β. We say “gen-
+eralized” here because we have not assumed here                           Useful references for this part of classical functional
+that φ belongs to a specific L2 space [we only assume                     analysis are [1, 94].
+                                              GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                                       7
+
+   2.2.2 Application to the two-component Gibbs sam- For the variant K,                f the similar formula reads
+pler. All of the bounds in this paper are derived via                                    Z
+                                     1     2                     Kfℓ (x, θ; x′ , θ ′ ) = k ℓ−1 (x, z) fθ′ (z) f ′ (x′ )µ(dz).
+the following route: bound L by L and use the ex-                                                              θ
+                                                                                                      m(z)
+plicit knowledge of eigenvalues and eigenfunctions to
+bound the sum in (2.7). This, however, does not ap- These two bivariate chains have stationary density
+ply directly to the two-component Gibbs sampler K f (x, θ) = fθ (x) with respect to the measure µ(dx) ·
+     f because these chains are not reversible with π(dθ). So, we write
+(or K)
+respect to their stationary measure. Fortunately, the                       K ℓ (x, θ; x′ , θ ′ )
+                                                                                                  −1
+x-chain and the θ-chain are reversible and their anal-                           f (x′ , θ ′ )
+ysis yields bounds on the two-component chain thanks                                Z
+to the following elementary observation. The x-chain                           = (k̂ℓ−1 (z, x′ ) − 1)fθ (z)µ(dz)
+has kernel k(x, x′ ) with respect to the measure µ(dx).
+                                                                and
+It will also be useful to have k̂(x, x′ ) = k(x, x′ )/m(x′ ),
+                                                                           Kfℓ (x, θ; x′ , θ ′ )
+the kernel with respect to the probability m(dx) =                                                −1
+m(x)µ(dx).       For ℓ ≥ 2, we let kxℓ (x′ ) = kℓ (x, x′ ) =                     f (x′ , θ ′ )
+R                                                                                  Z
+  k(x, y)kℓ−1 (y, x′ )µ(dy) denote the density [w.r.t.
+µ(dx)] of the distribution of the x-chain after l steps                       = (k̂ℓ−1 (x, z) − 1)fθ′ (z)µ(dz).
+                                   R
+and set k̂xℓ (x′ ) = k̂ℓ (x, x′ ) = k̂(x, y)k̂ℓ−1 (y, x′ )m(dy) To prove the second inequality in the lemma (the
+[the density w.r.t. m(dx)]. Also                                proof of the first is similar), write
+                  Z                                1/p
+                                                                                   fℓ /f ) − 1kp
+                                                                                 k(K
+      kgkp,P =             |g(ω)|p P (dω)                  for p ≥ 1.               x,θ        p,P
+                                                                                       Z Z     Z                                         p
+                                       f two-                                      =                (k̂ℓ−1 (x, z) − 1)fθ′ (z)µ(dz)
+   Lemma 2.2. Referring to the K, K
+component chains and x-chain introduced in Sec-
+                                                                                               · fθ′ (x′ )µ(dx′ )π(dθ ′ )
+tion 2.1, for any p ∈ [1, ∞], we have                                                  Z Z Z
+                                  Z
+                                                                                   ≤               |k̂ℓ−1 (x, z) − 1|p
+     ℓ
+  k(Kx,θ /f ) − 1kpp,P ≤                     kk̂zℓ−1 − 1kpp,m fθ (z)µ(dz)
+                                                                                                   · fθ′ (z)µ(dz)fθ′ (x′ )µ(dx′ )π(dθ ′ )
+                                ≤ sup kk̂zℓ−1 − 1kpp,m                                 Z
+                                         z
+                                                                                   =       |k̂ℓ−1 (x, z) − 1|p m(z)µ(dz)
+and                                                                                    Z
+            fℓ /f ) − 1kp ≤ kk̂ ℓ−1 − 1kp .
+          k(Kx,θ        p,P    x        p,m
+                                                                                   =       |k̂ℓ−1 (x, z) − 1|p m(dz).
+
+Similarly, for the θ-chain, we have                                         This gives the desired bound. 
+                                 Z
+   fℓ /f ) − 1kp ≤                                                            To get lower bounds, we observe the following.
+ k(Kx,θ        p,P                       kkθℓ−1 − 1kpp,π π(θ | x)π(dθ)
+                                                                              Lemma 2.3. Let g be a function of x only [abus-
+                            ≤ sup kkθℓ−1 − 1kpp,π                           ing notation, g(x, θ) = g(x)]. Then
+                                     θ                                                                  Z
+                                                                                       f
+                                                                                       Kg(x, θ) =           k(x, x′ )g(x′ )µ(dx′ ).
+and
+              l
+           k(Kx,θ /f ) − 1kpp,P ≤ kkθℓ−1 − 1kpp,π .                         If instead, g is a function of θ only, then
+                                                                                                        Z
+  Proof. We only prove the results involving the                                       Kg(x, θ) =           k(θ, θ ′ )g(θ ′ )π(dθ ′ ).
+x-chain. The rest is similar. Recall that the bivariate
+                                                                              Proof. Assume g(x, θ) = g(x). Then
+chain has transition density                                                                   ZZ
+                                                                               f                     fθ′ (x)fθ′ (x′ )
+                       ′    ′                   ′
+          K(x, θ; x , θ ) = fθ (x )fθ′ (x )/m(x ).     ′       ′               Kg(x, θ) =                             g(x′ )µ(dx′ )π(dθ ′ )
+                                                                                                          m(x)
+By direct computation                                                                          Z
+                            Z                                                              =       k(x, x′ )g(x′ )µ(dx′ ).
+                                                    fθ′ (x′ )
+  K ℓ (x, θ; x′ , θ ′ ) =       fθ (z)kℓ−1 (z, x′ )           µ(dz).        The other case is similar. 
+                                                    m(x′ )
+8                                     P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+
+   Lemma 2.4. Let χ2x,θ (ℓ) and χ         e2x,θ (ℓ) be the chi-   2.3.2 Conjugate priors for exponential families.
+square distances after ℓ steps for the K-chain and With notation as above, fix n0 > 0 and x0 in the
+    f
+the K-chain,     respectively, starting at (x, θ). Let χ2x (ℓ), interior of the convex hull of the support of µ. Define
+  2
+χθ (ℓ) be the chi-square distances for the x-chain a prior density with respect to Lebesgue measure dθ
+(starting at x) and the θ-chain (starting at θ), re- by
+spectively. Then we have
+                                                                        πn0 ,x0 (dθ) = z(n0 , x0 )en0 x0 θ−n0 M (θ) dθ,
+            χ2θ (ℓ) ≤ χ2x,θ (ℓ) ≤ χ2θ (ℓ − 1),
+                                                                where z(n0 , x0 ) is a normalizing constant shown to
+      kkθℓ − 1kTV ≤ kKx,θ  ℓ
+                               − f kTV ≤ kkθℓ−1 − 1kTV          be positive and finite in Diaconis and Ylvisaker [29]
+and                                                             which contains proofs of the assertions below. The
+                                                                posterior is
+                      e2x,θ (ℓ) ≤ χ2x (ℓ − 1),
+            χ2x (ℓ) ≤ χ
+                                                                          π(dθ|x) = πn0 +1,(n0 x0 +x)/(n0 +1) (dθ).
+    kkxℓ − mkTV ≤ kK   fℓ − f kTV ≤ kk ℓ−1 − mkTV .
+                          x,θ                x
+                                                                Thus the family of conjugate priors is closed under
+   Proof. This is immediate from (2.5)–(2.6) and sampling. This is sometimes used as the definition
+Lemma 2.3.                                                     of conjugate prior. A central fact about conjugate
+2.3 Exponential Families and Conjugate Priors                   priors is
+   Three topics are covered in this section: exponen-       (2.8)             E(m(θ)|x) = ax + b.
+tial families, conjugate priors for exponential fami-
+lies and conjugate priors for location families.          This linear expectation property characterizes con-
+                                                       jugate priors for families where µ has infinite sup-
+   2.3.1 Exponential families. Let µ be a σ-finite port. Section 3 shows that linear expectation implies
+measure on the RBorel sets of the real line R. De- that the associated chain defined at (2.1) always has
+fine Θ = {θ ∈ R : exθ µ(dx) < ∞}. Assume that Θ is an eigenfunction of the form x − c with eigenvalue
+nonempty and open. Hölder’s inequality shows that a, and c equal to the mean of the marginal distribu-
+Θ is an interval. For θ ∈ Θ, set                       tion.
+                            Z
+                                                          Often, an exponential family is not parametrized
+                M (θ) = log exθ µ(dx),
+                                                       by the natural parameter θ, but in terms of the mean
+                                                       parameter m(θ). If we construct conjugate priors
+                fθ (x) = exθ−M (θ) .
+                                                       with respect to this parametrization, then (2.8) does
+The family of probability densities {fθ , θ ∈ Θ} is not hold in general. However, for the six exponen-
+the exponential family through µ in its “natural tial families having quadratic variance function (dis-
+parametrization.”
+                R Allowable differentiations yield the cussed in Section 2.4 below), (2.8) holds even with
+mean m(θ) = xfθ (x)µ(dx) = M ′ (θ) and the vari- the mean parametrization. In [19], this is shown to
+ance σ 2 (θ) = M ′′ (θ).                               hold only for these six families. See [15, 55] for more
+   Statisticians realized that many standard families on this.
+can be put in such form so that properties can be
+studied in a unified way. Standard references for ex-     Example. For the Poisson example above the
+ponential families include [8, 11, 66, 73, 74].        conjugate   priors with respect to θ are of the form
+                                                                                                     θ
+ Example. Let X = {0, 1, 2, 3, . . .}, µ(x) = 1/x!.                          z(n0 , x0 )en0 x0 θ−n0 e dθ.
+Then Θ = R, and M (θ) = eθ ,
+                                                            The mean parameter is λ = eθ . Since dθ = dλ/λ, the
+                            θ
+                      exθ−e                                 priors transform to
+           fθ (x) =             ,   x = 0, 1, 2, . . . .
+                        x!
+                                                                           z(n0 , x0 )λn0 x0 −1 e−n0 λ dλ.
+This is the Poisson(λ) distribution with λ = eθ .
+   This paper works with familiar exponential fam-            The Poisson density parametrized by λ is given
+ilies. Many exotic families have been studied. See          by
+[12, 79]. These lead to interesting problems when                                ex log λ−λ
+studied in conjunction with the Gibbs sampler.                        fλ (x) =              ,   x = 0, 1, 2, . . . .
+                                                                                     x!
+                              GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                         9
+
+Hence, the conjugate priors with respect to λ are of     at discrete times: If this is Xn at time n, then SXn is
+the form                                                 the number served in the next time period and εn+1
+                                                         is the number of unserved new arrivals. The explicit
+               z̃(n0 , x0 )λn0 x0 e−n0 λ dλ.
+                                                         diagonalization of the M/M/∞ chain, in continuous
+Here, the Jacobian of the transformation θ → m(θ)        time, using Charlier polynomials appears in [3].
+blends in with the rest of the prior so that both           This same chain has      yet a different interpreta-
+                                                                               η j
+parametrizations lead to the usual Gamma priors          tion: Let fη (j) = j p (1 − p)η−j . Here 0 < p < 1
+for the Poisson density, which satisfy (2.8).            is fixed and η ∈ {0, 1, 2, . . .} is a parameter. This
+                                                         model arises in underreporting problems where the
+  2.3.3 Conjugate priors for location families. Let
+                                                         true sample size is unknown. See [85]. Let η have a
+µ be Lebesgue measure on R or counting measure
+                                                         Poisson(λ) prior. The Gibbs    sampler for the bivari-
+on N. In this section we consider random variables of
+                                                         ate distribution f (j, η) = ηj pj (1−p)η−j e−λ λη /η! goes
+the form Y = θ + ε, with θ having density π(θ) and
+                                                         as follows:
+ε having density g(x) (both with respect to µ). This
+can also be written as [densities w.r.t. µ(dx)× µ(dθ)]   • From η, choose j from Bin(η, p).
+                                                         • From j, choose η = j + ε with ε ∼ Poisson(λ(1 −
+                 fθ (x) = g(x − θ),
+                                                           p)).
+               f (x, θ) = g(x − θ)π(θ).
+                                                         Up to a simple renaming of parameters, this is the
+In [30], a family of “conjugate priors” π is suggested   same chain discussed above. Similar “translations”
+via posterior linearity. See [82] for further develop-   hold for any location problem where π(θ|x) has
+ments. The idea is to use the following well-known       bounded range.
+fact: If X and Y are independent random variables           Note finally that there are natural statistical fam-
+with finite means and the same distribution, then        ilies and priors not of exponential form where the
+E(X|X + Y ) = (X + Y )/2. More generally, if Xr and      analysis works out neatly. The hypergeometric dis-
+Xs are random variables which are independent with       tribution for sampling from a finite population with
+Xr (resp. Xs ) having the distribution of the sum of     a hypergeometric prior is developed in [28].
+r (resp. s) independent copies of the same random
+                                         r               2.4 The Six Families
+variable Z, then E(Xr |Xr + Xs ) = r+s     (Xr + Xs ).
+Here r and s may be taken as any positive real num-       Morris [86, 87] has characterized exponential fam-
+bers if the underlying Z is infinitely divisible.      ilies where the variance σ 2 (θ) is a quadratic func-
+   With this notation, take g as the density for Xr    tion of the mean: σ 2 (θ) = v0 + v1 m(θ) + v2 m2 (θ).
+and π as the density for Xs and call these a conjugate These six families have been characterized earlier by
+location pair. Then the marginal density m(y) is the   Meixner [83] in the development of a unified theory
+convolution of g and π.                                of orthogonal polynomials via generating functions.
+                                                       In [56] the same families are characterized in a re-
+   Example. Let g(x) = e−λ λx /x! for x ∈ X = {0, 1, gression context: For X independent with a finite
+                                                                                   i
+2, . . .}. Take Θ = X and let π(θ) = e−η η θ /θ!. Then mean, X̄ = 1 P X , S 2 = 1 P(X − X̄)2 , one has
+                                                                     n      i n      n−1       i
+m(x) = e−(λ+η) (λ + η)x /x! and
+                          θ       x−θ                          E(Sn2 |X̄ = x̄) = a + bx̄ + cx̄2
+                    x    η         λ
+          π(θ|x) =                            ,
+                    θ   λ+η       λ+η                  if and only if the distribution of Xi is one of the six
+                                                       families. In [39, 40], the six families are characterized
+                                      0 ≤ θ ≤ x < ∞.
+                                                       by a link between orthogonal polynomials and mar-
+The Gibbs sampler (bivariate chain K) for this ex- tingales whereas [41, 92] makes a direct link to Lie
+ample becomes:                                         theory. Finally, Consonni and Veronese [19] find the
+                                                       same six families in their study of conjugate priors:
+• From x, choose θ from Binomial(x, η/(η + λ)).
+                                                       The conjugate priors in the natural parametrization
+• From θ, choose X = θ + ε with ε ∼ Poisson(λ).
+                                                       given above transform into the same family in the
+   The x-chain may be represented as Xn+1 = SXn + mean parametrization only for the six families. Wal-
+εn+1 with Sk ∼ Binomial(k, η/(η + λ)) and ter and Hamedani [105] construct orthogonal poly-
+ε ∼ Poisson(λ). This also represents the number of nomials for the six families for use in empirical Bayes
+customers on service in an M/M/∞ queue observed estimation. See also Pommeret [93].
+10                                         P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+
+   Extensions are developed by Letac and Mora [76]                                                             k           k−1
+                                                                                                                             X
+                                                                                          k              α
+and Casalis [15] who give excellent surveys of the                                   Ex (θ ) =                        xk +             bj xj .
+                                                                                                        α+1                      j=0
+literature. Still most useful, Morris [86, 87] gives a
+unified treatment of basic (and not so basic) prop-                        Negative Binomial: X = {0, 1, 2, . . .}, µ counting mea-
+erties such as moments, unbiased estimation, or-                           sure, Θ = (0, 1):
+thogonal polynomials and statistical properties. We                                            Γ(x + r) x
+give the six families in their usual parametrization                                  fθ (x) =         θ (1 − θ)r ,
+                                                                                                Γ(r)x!
+along with the conjugate prior and formulae for the
+moments Eθ (X k ), Ex (θ k ) of X and θ under dP =                                                                                       0 < θ < 1, r > 0.
+fθ (x)µ(dx)π(dθ), given the value of the other. For                                                     Γ(α + β) α−1
+each of these families, Eθ (X k ) and Ex (θ k ) are poly-                                π(dθ) =                 θ   (1 − θ)β−1 dθ,
+                                                                                                        Γ(α)Γ(β)
+nomials of degree k in θ and x, respectively. We only
+specify the leading coefficients of these polynomials                                                                                     0 < α, β < ∞.
+below. In fact, the leading coefficients are all we re-                                                                    k         k−1
+                                                                                                                                       X                      j
+                                                                                                                     θ                                    θ
+quire for our analysis. In the conditional expectation                                 Eθ (X k ) = (r)k                           +           aj                    ,
+                                                                                                                    1−θ                                  1−θ
+formulae, k is an integer running from 0 to ∞ unless                                                                                   j=0
+specified otherwise. For a ∈ R and n ∈ N ∪ {0}, we                                       k                                          k−1
+                                                                                                                                        X
+                                                                                      θ                                          k
+define                                                                     Ex                       = (β + r − k)k x +                         bj x j ,
+                                                                                     1−θ                                                j=0
+           (a)n = a(a + 1) · · · (a + n − 1)
+                                                                                                                                                     k < β + r.
+                                               if n ≥ 1, (a)0 = 1.
+                                                                           Normal: X = Θ = R, µ Lebesgue measure:
+While some of the following calculations are stan-
+                                                                                               1                2  2
+dard and well known, others are not, and since the                                 fθ (x) = √       e(−1/2)(x−θ) /σ ,
+                                                                                              2πσ 2
+details enter our main theorems, we give complete
+statements.                                                                                                                                      0 < σ2 < ∞
+Binomial: X = {0, . . . , n}, µ counting measure, Θ =                                                       1                             2      2
+(0, 1):                                                                                 π(dθ) = √                   e(−1/2)(θ−v) /τ dθ,
+                                                                                                          2πτ 2
+                     n x
+        fθ (x) =       θ (1 − θ)n−x ,               0 < θ < 1,                                                        −∞ < v < ∞, 0 < τ < ∞,
+                     x
+                                                                                                                k−1
+                                                                                                                X
+                    Γ(α + β) α−1                                                      Eθ (X k ) = θ k +               aj θ j ,
+       π(dθ) =               θ   (1 − θ)β−1 dθ,
+                    Γ(α)Γ(β)                                                                                    j=0
+
+                                                      0 < α, β < ∞,                                                   k              k−1
+                                                                                              k     τ2                                 X
+                                             k−1                                      Ex (θ ) =                             xk +              bj xj .
+                                             X                                                  τ 2 + σ2
+     Eθ (X k ) = (n − k + 1)k θ k +                aj θ j ,                                                                            j=0
+
+                                             j=0                           Gamma: X = Θ = (0, ∞), µ Lebesgue measure:
+                                                              0 ≤ k ≤ n,                          xa−1 e−x/θ
+                                                                                     fθ (x) =                ,           0 < a < ∞,
+                                              k−1
+                                              X                                                    θ a Γ(a)
+                         1
+      Ex (θ k ) =                xk +     bj x j .
+                    (α + β + n)k                                                                  cb θ −(b+1) e−c/θ
+                                      j=0                                         π(dθ) =                           dθ,                0 < b, c < ∞,
+                                                                                                         Γ(b)
+Poisson: X = {0, 1, 2, . . .}, µ counting measure, Θ =
+(0, ∞):                                                                         Eθ (X k ) = (a)k θ k ,
+                    e−θ θ x                                                                                                      k−1
+                                                                                                                                 X
+        fθ (x) =            ,    0 < θ < ∞,                                      Ex (θ k ) = (a + b − k)k xk +                         bj xj ,
+                      x!
+                                                                                                                                 j=0
+                θ a−1 e−θ/α
+        π(dθ) =             dθ,              0 < α, a < ∞,                                                                                    0 ≤ k < a + b.
+                  Γ(a)αa
+                                                                             Hyperbolic: X = Θ = R, µ Lebesgue measure:
+                          k−1
+                          X
+      Eθ (X k ) = θ k +         aj θ j ,                                                              2r−2
+                                                                                  fθ (x) =
+                          j=0                                                                     πr(1 + θ 2 )r/2
+                                      GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                                11
+                                                              
+                    rx tan−1 θ       r irx r irx                     an explicit diagonalization of the univariate chains
+                  ·e               β   +  , −     ,
+                                     2   2 2  2                      (x-chain, θ-chain) in Section 3.
+                                                 r > 0,                2. The first five families are very familiar, the sixth
+                                                        Γ(a)Γ(b)     family less so. As one motivation, consider the gen-
+                                     where β(a, b) =             ,   eralized arc sine densities
+                                                        Γ(a + b)
+              Γ(ρ/2 − ρδi/2)Γ(ρ/2 + ρδi/2)                                          y θ−1 (1 − y)(1−θ)−1
+      π(dθ) =                      √                                     fθ (y) =                        ,   0 ≤ y, θ < 1.
+                 Γ(ρ/2)Γ(ρ/2 − 1/2) π                                                   Γ(θ)Γ(1 − θ)
+                              −1
+                     eρδ tan θ                                       Transform these to an exponential family via x =
+                  ·               dθ,                                log(y/(1 − y)), η = πθ − π/2. This has density
+                    (1 + θ 2 )ρ/2
+                                              −∞ < δ < ∞, ρ ≥ 1,                                 exη+log(cos η)
+                          k−1
+                                                                                     gη (x) =                   ,
+                          X                                                                     2 cosh((π/2)x)
+   Eθ (X k ) = k!θ k +             aj θ j ,                                                                           π    π
+                          j=0                                                                     −∞ < x < ∞, −         <η< .
+                                                                                                                      2    2
+                                          k−1
+                                          X
+                           1
+    Ex (θ k ) =    k
+                                     xk
+                                        +     bj x j ,               The appearance of cosh explains the name hyper-
+                  r (r + ρ − k − 1)k      j=0                        bolic. This density appears in [44], page 503, as
+                                                0 < k ≤ r + ρ − 1.   an example of a density which is its own Fourier
+                                                                     transform (like the normal). Many further references
+  A unified way to prove the formulas involving                      are in [37, 86, 87]. In particular, g0 (x) is the den-
+Eθ (X k ) follows from Morris [87], (3.4). This says,                sity of π2 log |C| with C standard Cauchy. The mean
+for any of the six families with m(θ) the mean pa-                   of gη (x) is tan(η) = θ. Parametrizing by the mean
+rameter and pk (x, m0 ) the monic, orthogonal poly-                  leads to the density shown with r = 1. The aver-
+nomials associated to the parameter θ0 ,                             age of r independent copies of independent vari-
+        Eθ (pk (x, m0 )) = bk (m(θ) − m(θ0 ))k ,                     ates with this density gives the density with general
+                                                                     r. The beta function is defined as usual; β(a, b) =
+where, if the family has variance function σ 2 (θ) =                 Γ(a)Γ(b)/Γ(a + b).
+v2 m2 (θ) + v1 m(θ) + v0 ,                                              The conjugate prior for the mean parameter is of
+                              k−1                                    Pearson Type IV. When δ = 0 this is a rescaled t
+                              Y
+                       bk =         (1 + iv2 ).                      density. For general δ the family is called the skew t
+                              i=0                                    in [37] which contains a wealth of information. Un-
+For example, for the Binomial(n, θ) family, m(θ) =                   der the prior, the parameter θ has mean ρδ/(ρ − 2)
+nθ, σ 2 (θ) = nθ(1 − θ), so v2 = −1/n and                            and satisfies
+                              (k−1              )
+                               Y                                        (ρ − (k + 2))E(θ k+1 ) = kE(θ k−1 ) + ρδE(θ k ),
+                                                          k
+      Eθ (pk (x, m0 )) =                 (n − i) (θ − θ0 ) .
+                                   i=0
+                                                                                                                    1 ≤ k < ρ − 2.
+Comparing lead terms and using induction gives the  This makes it simple to compute the Ex (θ k ) entry.
+first binomial entry. The rest are similar; the values
+                                                    Moments past ρ are infinite.
+of v2 are v2 (Poisson) = 0, v2 (NB) = 1/r,            The marginal distribution m(x) can be computed
+v2 (Normal) = 0, v2 (Gamma) = 1/r, v2 (Hyperbolic) =in closed form.
+1. Presumably, there is a unified way to get the                  √ Using   Stirling’s formula in the form
+                                                                         −π|t|/2
+                                                    |Γ(σ + it)| ∼ 2π e           |t|σ−1/2 as |t| ↑ ∞, shows
+Ex (θ k ) entries, perhaps using [87], Theorem 5.4. This
+                                                    that m(x) has tails asymptotic to c/xρ . It thus has
+result shows that we get polynomials in x but the   only finitely many moments, so the x-chain must be
+lead coefficients do not come out as easily. At any
+                                                    studied by nonspectral methods. Of course, the ad-
+rate, they all follow from elementary computations.
+                                                    ditive version of our setup has moments of all order.
+  Remarks. 1. The moment calculations above are The relevant orthogonal polynomials are Meixner–
+transformed into a singular value decomposition and Pollaczek.
+12                                           P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+
+2.5 Some Background on Orthogonal                                              These polynomials satisfy
+    Polynomials                                                                                          (β)j (α + β + j − 1)n+1
+                                                                                        Em (Qj Qℓ ) =
+  A variety of orthogonal polynomials are used cru-                                                         (α + β + 2j − 1)
+cially in the following sections. While we usually just                        (2.10)
+                                                                                                                 j!(n − j)!
+quote what we need from the extensive literature,                                                        ·                     δjl .
+this section describes a simple example. Perhaps the                                                          (α + β)n (α)j n!
+best introduction is in [18]. We will make frequent                            Thus they are orthogonal polynomials for m. When
+reference to [63] which is thorough and up-to-date.                            α = β = 1, these become the discrete Chebyshev
+The classical account [100] contains much that is                              polynomials cited in Proposition 1.1. From our work
+hard to find elsewhere. The on-line account [68] is                            in Section 2.2, we see we only need to know Qj (x0 )
+very useful. For pointers to the literature on orthog-                         with x0 the starting position. This is often available
+onal polynomials and birth and death chains, see,                              in closed form for special values, for example, for
+for example, [104].                                                            x0 = 0 and x0 = n,
+  As an indication of what we need, consider the
+                                                                                          Qj (0) = 1,
+Beta/Binomial example with a general Beta(α, β)                                (2.11)
+prior. Then the stationary distribution for the x-                                                   (−β − j)j
+chain on X = {0, 1, 2, . . . , n} is                                                      Qj (n) =             ,          0 ≤ j ≤ n.
+                                                                                                      (α + 1)j
+                                
+                                   n    (α)x (β)n−x                            For general starting values, one may draw on the
+                     m(x) =
+                                   x     (α + β)n                              extensive work on uniform asymptotics; see, for ex-
+                                                                               ample, [100], Chapter 8, or [5].
+where                                                                            We note that [86], Section 8, gives an elegant self-
+                    Γ(a + x)                                                   contained development of orthogonal polynomials
+        (a)x =               = a(a + 1) · · · (a + x − 1).                     for the six families. Briefly, if fθ (x) = exθ−M (θ) is
+                      Γ(a)
+                                                                               the density, then
+The choice α = β = 1 yields the uniform distribution                                                                        
+                                                                                                                   dk          .
+while α = β = 1/2 yields the discrete arc-sine density                                   pk (x, θ) = σ   2k
+                                                                                                                       f   (x)   fθ (x)
+                                                                                                                         θ
+from [43], Chapter 3,                                                                                             dk m
+                                       2x 2n−2x                              [derivatives with respect to the mean m(θ)]. If σ 2 (θ) =
+                       m(x) =          x    n−x .
+                                          22n                                  v2 m2 (θ) + v1 m(θ) + v0 , then
+                                                                                                                                  k−1
+                                                                                                                                  Y
+The orthogonal polynomials for m are called Hahn
+polynomials [see (2.10) below]. They are developed                               Eθ (pn pk ) = δnk ak σ 2k         with ak = k!         (1 + iv2 ).
+                                                                                                                                  i=0
+in [63], Section 6.2, which refers to the very useful
+treatment of Karlin and McGregor [67]. The poly-                                 We also find need for orthogonal polynomials for
+nomials are given explicitly in [63], pages 178–179.                           the conjugate priors π(θ).
+Shifting parameters by 1 to make the classical no-
+tation match present notation, the orthogonal poly-                             3. A SINGULAR VALUE DECOMPOSITION
+nomials are                                                                       The results of this section show that many of the
+                                                           
+                              −j, j + α + β − 1, −x                            Gibbs sampler Markov chains associated to the six
+        Qj (x) = 3 F2                               1 ,                        families have polynomial eigenvectors, with explic-
+                                      α, −n
+                                                                               itly known eigenvalues. This includes the x-chain, θ-
+                                                           0 ≤ j ≤ n.
+                                                                               chain and the random scan chain. Analysis of these
+Here                                                                           chains is in Sections 4 and 5. For a discussion of
+                                 ∞
+                                                                               Markov operators related to orthogonal polynomi-
+                   a1 · · · ar     X (a1 a2 · · · ar )ℓ z ℓ                    als, see, for example, [6]. For closely related statis-
+        r Fs                   z =
+                   b1 · · · bs       (b1 b2 · · · bs )ℓ ℓ!                     tical literature, see [13] and the references therein.
+                                       ℓ=0
+(2.9)                                                                             Throughout, notation is as in Section 2.1. We have
+                                                                r
+                                                                Y
+                                       with (a1 · · · ar )ℓ =       (ai )ℓ .   {fθ (x)}θ∈Θ a family of probability densities on the
+                                                                i=1            real line R with respect to a σ-finite measure µ(dx),
+                              GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                                         13
+
+for θ ∈ Θ ⊆ R. Further, π(dθ) is a probability mea-          section consists of five examples in all. For each,
+sure on Θ. These define a joint probability P on             we set up the results for general parameter values
+R × Θ with marginal density m(x) [w.r.t. µ(dx)] and          and carry out the bounds in some natural special
+posterior density [w.r.t. the prior π(dθ)] given by          cases. The other three families are not amenable to
+π(θ|x) = fθ (x)/m(x). The densities do not have to           this analysis due to lack of existence of all moments
+come from exponential families in this section.              [which violates hypothesis (H1) in Section 3]. How-
+  Let c = #supp m(x). This may be finite or infinite.        ever, they are analyzed by probabilistic techniques
+For simplicity, throughout this section, we assume           such as coupling in [25].
+supp(π) is infinite. Moreover, we make the following
+hypotheses:                                                  4.1 Beta/Binomial
+                                       R                       4.1.1 The x-chain for the Beta/Binomial. Fix α,
+  (H1) For some α1 , α2 > 0,         eα1 |x|+α2 |θ| P (dx,
+dθ) < ∞.                                                     β > 0. On the state space X = {0, 1, 2, . . . , n}, let
+  (H2) For 0 ≤ k < c, Eθ (X k ) is a polynomial in θ             k(x, x′ )
+of degree k with lead coefficient ηk > 0.                                 Z 1             
+  (H3) For 0 ≤ k < ∞, Ex (θ k ) is a polynomial in x                                n         ′                   ′
+                                                                      =              ′ θ α+x+x −1 (1 − θ)β+2n−(x+x )−1
+of degree k with lead coefficient µk > 0.                                 0         x
+  By (H1), L2 (m(dx)) admits a unique monic, or-                                      Γ(α + β + n) dθ
+                                                             (4.1)             ·
+thogonal basis of polynomials pk , 0 ≤ k < c, with pk                               Γ(α + x)Γ(β + n − x)
+of degree k. Also, L2 (π(dθ)) admits a unique monic,                              
+                                                                              n        Γ(α + β + n)Γ(α + x + x′ )
+orthogonal basis of polynomials qk , 0 ≤ k < ∞, with                  =
+                                                                              x′         Γ(α + x)Γ(β + n − x)
+qk of degree k. As usual, η0 = µ0 = 1 and p0 ≡ q0 ≡ 1.
+                                                                                           Γ(β + 2n − (x + x′ ))
+  Theorem 3.1.        Assume (H1)–(H3). Then:                                          ·                         .
+                                                                                              Γ(α + β + 2n)
+  (a) The x-chain (2.1) has eigenvalues βk = ηk µk
+                                                             When α = β = 1 (uniform prior), k(x, x′ ) is given by
+with eigenvectors pk , 0 ≤ k < c.
+                                                             (1.1). For general α, β, the stationary distribution is
+  (b) The θ-chain (2.2) has eigenvalues βk = ηk µk
+with eigenvectors qk for 0 ≤ k < c, and eigenvalues          the Beta/Binomial:
+                                                                                                 
+zero with eigenvectors qk for c ≤ k < ∞.                                                          n      (α)x (β)n−x
+  (c) The random scan chain (2.3) has spectral de-                                 m(x) =                            ,
+                                                                                                  x       (α + β)n
+composition given by
+                         √                                   where
+      eigenvalues 12 ± 12 ηk µk ,
+                              r                                                    Γ(a + j)
+                                  ηk                                 (a)j =                 = a(a + 1) · · · (a + j − 1).
+      eigenvectors pk (x) ±          qk (θ),   0 ≤ k < c,                           Γ(a)
+                                  µk
+                                                             From our work in previous sections we obtain the
+      eigenvalues 12 , eigenvectors qk ,       c ≤ k < ∞.    following result.
+  The proof of Theorem 3.1 is in the Appendix.                 Proposition 4.1. For n = 1, 2, . . . , and α,
+   Remark. The theorem holds with obvious mod-               β > 0, the Beta/Binomial x-chain (4.1) has:
+ification if #supp(π) < ∞. This occurs for binomial
+                                                             (a) Eigenvalues β0 = 1 and βj = n(n−1)···(n−j+1)
+                                                                                                 (α+β+n)j     ,1 ≤
+location problems. It will be used without further
+comment in Section 5. Further, the arguments work                j ≤ n.
+to give some eigenvalues with polynomial eigenvec-           (b) Eigenfunctions Qj , 0 ≤ j ≤ n, the Hahn polyno-
+tors when only finitely many moments are finite.                 mials of Section 2.5.
+                                                             (c) For any ℓ ≥ 1 and any starting state x,
+    4. EXPONENTIAL FAMILY EXAMPLES                                                                     n
+                                                                                                       X
+                                                                                           χ2x (ℓ) =         βi2ℓ Q2i (x)zi
+  This section carries out the analysis of the x- and                                                  i=1
+θ- chains for the Beta/Binomial, Poisson/Gamma                                                                                 
+and normal families. The x- and θ-chains for the                                           (α + β + 2i − 1)(α + β)n (α)i       n
+                                                                     where zi =                                                  .
+normal family are essentially the same. Hence, this                                           (β)i (α + β + i − 1)n+1          i
+14                                          P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+
+  We now specialize this to α = β = 1 and prove the                                                     Γ(α + β + n)
+                                                                          (4.2)                  ·
+bounds announced in Proposition 1.1.                                                                 Γ(α + j)Γ(β + n − j)
+  Proof of Proposition 1.1. From (a), βi =
+  n(n−1)···(n−i+1)                   2                                                           · (θ ′ )α+j−1 (1 − θ ′ )β+n−j−1 .
+(n+2)(n+3)···(n+i+1) . From (2.11), Qi (n) = 1. By ele-
+mentary manipulations, zi = βi (2i + 1). Thus
+                              n                                           This is a transition density with respect to Lebesgue
+                              X (kℓ (n, y) − m(y))2
+                 χ2n (ℓ) =                                                measure dθ ′ on [0, 1]. It has stationary density
+                              y=0
+                                            m(y)
+                                                                                             Γ(α + β) α−1
+                              n
+                              X                                                    π(dθ) =            θ   (1 − θ)β−1 dθ.
+                         =          βi2ℓ+1 (2i + 1).                                         Γ(α)Γ(β)
+                              i=1                                            Remark. In this specific example, the prior π(dθ)
+                                                                                                 Γ(α+β) α−1
+                              2 i
+We may bound βi ≤ β1i = (1 − n+2 ) , and so                               has a density g(θ) = Γ(α)Γ(β)   θ      (1 − θ)β−1 with re-
+                                                                          spect to the Lebesgue measure dθ. For ease of expo-
+                 n
+                 X                           n
+                                             X
+     χ2n (ℓ) =         βi2ℓ+1 (2i + 1) ≤
+                                                    i(2ℓ+1)
+                                                   β1         (2i + 1).   sition, we deviate from the general treatment in Sec-
+                 i=1                         i=1
+                                                                          tion 2.1, where k(θ, θ ′ ) is a transition density with
+         P∞                              P∞                               respect to π(dθ ′ ). Instead, we absorb g(θ ′ ) in the
+Using       1    xi = x/(1 − x),            1   ixi = x/(1 − x)2 , we     transition density, so that k(θ, θ ′ ) is a transition den-
+obtain                                                                    sity with respect to the Lebesgue measure dθ ′ .
+                                             3β12ℓ+1                         The relevant orthogonal polynomials are Jacobi
+                 3β12ℓ+1 ≤ χ2n (ℓ) ≤                     .                polynomials Pia,b , a = α − 1, b = β − 1, given on
+                                          (1 − β12ℓ+1 )2
+                                                                          [−1, 1] in standard literature [68], 1.8. We make the
+                                  f chain)
+By Lemma 2.4, this gives (for the K                                       change of variables θ = 1−x     2    and write pi (θ) =
+                                                                            α−1,β−1
+                                                                          Pi        (1 − 2θ). Then, we have
+                                              3β12ℓ−1
+                3β12ℓ+1 ≤ χ
+                          e2n,θ (ℓ) ≤                     .                           Z 1
+                                           (1 − β12ℓ−1 )2                 (4.3)             pj (θ)pk (θ)π(θ) dθ = zj−1 δjk ,
+                                                                                        0
+The upper bound in total variation follows from
+(2.4). For a lower bound in total variation, use the                      where
+eigenfunction ϕ1 (x) = x − n2 . This is maximized at                               (2j + α + β − 1)Γ(α)Γ(β)Γ(j + α + β − 1)j!
+                                                                            zj =                                              .
+x = n and the lower bound follows from Lemma 2.1.                                           Γ(α + β)Γ(j + α)Γ(j + β)
+
+                                                                            Proposition 4.2. For α, β > 0, the θ-chain for
+   Remark. Essentially, the same results hold for                         the Beta/Binomial (4.2) has:
+any Beta(α, β) prior in the sense that, for fixed α, β,
+starting at n, order n steps are necessary and suf-                          (a) Eigenvalues β0 = 1, βj = n(n−1)···(n−j+1)
+                                                                                                               (α+β+n)j    ,1 ≤
+ficient for convergence. The computation gets more                        j ≤ n, βj = 0 for j > n.
+involved if one starts from a different point than                           (b) Eigenfunctions pj , the shifted Jacobi polyno-
+n. Mizan Rahman and Mourad Ismail have shown                              mials.
+us how to evaluate the Hahn polynomials at n/2                               (c) With zi from (4.3), for any ℓ ≥ 1 and any
+when n is even and α = β using [63], (1.4.12) (the                        starting state θ ∈ [0, 1],
+odd-degree Hahn polynomials vanish at n/2 and the                                                       n
+                                                                                                        X
+three-term recurrence then easily yields the values                                         χ2θ (ℓ) =         βi2ℓ p2i (θ)zi .
+of the even-degree Hahn polynomials at n/2). See                                                        i=1
+Section 5.1 for a closely related example.                                   The following proposition gives sharp chi-square
+  4.1.2 The θ-chain for the Beta/Binomial. Fix α,                         bounds, uniformly over α, β, n in two cases: (i) α ≥
+β > 0. On the state space [0, 1], let                                     β, starting from 0 (worst starting point), (ii) α =
+                        n  
+                                                                          β, starting from 1/2 (heuristically, the most favor-
+                        X  n                                              able starting point). The restriction α ≥ β is not re-
+        k(θ, θ ′ ) =                  θ j (1 − θ)n−j
+                                j                                         ally a restriction because of the symmetry Pia,b (x) =
+                        j=0
+                                GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                                   15
+
+(−1)i Pib,a (−x). For α ≥ β > 1/2, it is known (e.g.,                              2i + α + β + 1 i + α + β − 1 i + α
+                                                                (4.4)          ·
+[63], Lemma 4.2.1) that                                                            2i + α + β − 1     i+1       i+β
+                                                 (α)i                          5 (α + β)(α + 1)
+      sup |pi | = sup |Piα−1,β−1 | = pi (0) =         .                    ≤
+                                                  i!                           6     β +1
+      [0,1]       [−1,1]
+                                                                                                            2ℓ
+Hence, 0 is clearly the worst starting point from                                            α+β +2
+                                                                               · 1−                              .
+the viewpoint of convergence in chi-square distance,                                      α+β +n+1
+that is,                                                          The lead term in χ20 (ℓ) is
+                                                                                                         
+                     sup {χ2θ (ℓ)} = χ20 (ℓ).                                            (α + β + 1)α 2ℓ
+                                                                                                            β1 .
+                   θ∈[0,1]                                                                       β
+   Proposition 4.3. For α ≥ β > 0, n > 0, set N = From (4.4), we get that for any
+log[(α + β)(α + 1)/(β + 1)]. The θ-chain for the                                   1
+                                                                         ℓ≥                log[(α + β)(α + 1)/(β + 1)]
+Beta/Binomial (4.2) satisfies:                                                 −2 log β1
+ (i) • χ20 (ℓ) ≤ 7e−c , for ℓ ≥ −2Nlog +c                         we have
+                                          β1 , c > 0.                                 2ℓ p          2
+      • χ20 (ℓ) ≥ 61 ec , for ℓ ≤ −2Nlog
+                                      −c                                            βi+1    i+1 (0) zi+1
+                                         β1 , c > 0.                                                       ≤ 5/6.
+(ii) Assuming α = β > 0,                                                                βi2ℓ pi (0)2 zi
+                                            1                        Hence, for such ℓ,
+      • χ21/2 (ℓ) ≤ 13β22ℓ , for ℓ ≥ −2 log    β2 .                                                            ∞
+                                                                                                                            !
+          2           1 2ℓ                                                            (α  +  β  +  1)α         X
+      • χ1/2 (ℓ) ≥ 2 β2 , for ℓ > 0.                                     χ20 (ℓ) ≤                       β12ℓ        (5/6)k
+                                                                                              β                   0
+   Roughly speaking, part (i) says that, starting from                                                  
+0, ℓ(α, β, n) steps are necessary and sufficient for                                    (α + β + 1)α 2ℓ
+                                                                                 =6                        β1 .
+convergence in chi-square distance where                                                        β
+                       log[(α + β)(α + 1)/(β + 1)]                With N = log[(α+β)(α+1)/(β +1)] as in the propo-
+     ℓ(α, β, n) =                                            .    sition, we obtain
+                    −2 log(1 − (α + β)/(α + β + n))
+                                                                                                          N +c
+Note that if α, n, n/α tend to infinity and β is fixed,                   χ20 (ℓ) ≤ 7e−c for ℓ ≥                    , c > 0;
+                                                                                                        −2 log β1
+                            n log α                 α                                                   N −c
+            ℓ(α, β, n) ∼            , β1 ∼ 1 − .                          χ20 (ℓ) ≥ 61 ec for ℓ ≤                  , c > 0.   
+                               α                     n                                                 −2 log β1
+If α, n, n/α tend to infinity and α = β,                             Proof of Proposition 4.3(ii). When a = b,
+                           n log α                  2α            the  classical Jacobi polynomial Pka,b is given by
+           ℓ(α, α, n) ∼            , β1 ∼ 1 −          .
+                             4α                      n                                         (a + 1)k a+1/2
+                                                                                Pka,a (x) =               C         (x)
+The result also says that, starting from 0, conver-                                           (2a   + 1)k k
+gence occurs abruptly (i.e., with cutoff) at ℓ(α, β, n) where the Ckν ’s are the ultraspherical polynomials.
+as long as α tends to infinity.                                   See [63], (4.5.1). Now, [63], (4.5.16) gives Cnν (0) = 0
+   Part (ii) indicates a completely different behav- if n is odd and
+ior starting from 1/2 (in the case α = β). There is                               ν               (2ν)n (−1)n/2
+no cutoff and convergence occurs at the exponen-                                C n (0)  =
+                                                                                            2n (n/2)!(ν + 1/2)n/2
+tial rate given by β2 (β2 ∼ 1 − 4α        n   if  n/α    tends to
+                                                                  if n is even. Going back to the shifted Jacobi’s, this
+infinity).
+                                                                  yields p2k+1 (1/2) = 0 and
+   Proof of Proposition 4.3(i). We have χ0 (ℓ) =            2
+Pn 2ℓ                                                                                        (α)2k        α−1/2
+               2
+   1 βi pi (0) zi and
+                                                                          p2k (1/2) =                   C        (0)
+                                                                                          (2α − 1)2k 2k
+          2ℓ p
+        βi+1            2
+                i+1 (0) zi+1                                                                 (α)2k (2α − 1)2k (−1)k
+              2ℓ       2
+             βi pi (0) zi                                                             =
+                                                                                          (2α − 1)2k        22k k!(α)k
+                              2ℓ
+              n−i                                                                          (α + k)k (−1)k
+          =                                                                            =                  .
+            α+β +n+i                                                                           22k k!
+16                                                 P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+
+  We want to estimate                                                        The orthogonal polynomials for the negative bino-
+                                  ⌊n/2⌋
+                                  X                                          mial are Meixner polynomials [68], (1.9):
+               χ21/2 (ℓ) =                      2ℓ
+                                               β2i p2i (1/2)2 z2i
+                                          1
+                                                                                                                                 
+                                                                                                                    −j − x
+and thus we compute                                                                      Mj (x) = 2 F1                     −α .
+                                                                                                                      a
+          2ℓ
+         β2(i+1) p2(i+1) (1/2)2 z2(i+1)                                        These satisfy [68], (1.92),
+                2ℓ p (1/2)2 z
+               β2i  2i       2i                                                     ∞
+                                                                                    X                                    (1 + α)j j!
+                                                                   2ℓ                  Mj (x)Mk (x)m(x) =                          δjk .
+                        (n − 2i)(n − 2i − 1)                                                                                (a)j
+           =                                                                       x=0
+                   (2α + n + 2i)(2α + n + 2i + 1)
+                                                                               Our work in previous sections, together with basic
+                 4i + 2α + 1 2i + 2α − 1                                     properties of Meixner polynomials, gives the follow-
+               ·
+                 4i + 2α − 1 2i + 2α + 1                                     ing propositions.
+                 2i(2i + 1)(2α + 2i + 1)(2α + 2i)                             Proposition 4.4. For a, α > 0 the Poisson/
+(4.5)          ·
+                      (2i + α)2 (2i + α + 1)2                                Gamma x-chain (4.6) has:
+                                                        2
+                       (α + 2i)(α + 2i + 1)                                     (a) Eigenvalues βj = (α/(1 + α))j , 0 ≤ j < ∞.
+               ·
+                          4(α + i)(i + 1)                                      (b) Eigenfunctions Mj (x), the Meixner polynomi-
+            9                                                                als.
+           ≤ β22ℓ .                                                             (c) For any ℓ ≥ 0 and any starting state x
+            5
+                                                                                              ∞
+Hence                                                                                         X (kℓ (x, y) − m(y))2
+                                                                                  χ2x (ℓ) =
+                                                                   1                                            m(y)
+     χ21/2 (ℓ) ≤ 10β22ℓ p2 (1/2)2 z2                 for ℓ ≥             .                    y=0
+                                                               −2 log β2                      ∞
+                                                                                              X                                     (a)i
+As                                                                                       =          βi2ℓ Mi2 (x)zi ,      zi =               .
+                         α+1                              4(2α + 3)                           i=1
+                                                                                                                                 (1 + α)i i!
+        p2 (1/2) =                            and z2 =              ,
+                          4                               α(α + 1)2            Proposition 4.5.                 For α = a = 1, starting at n,
+this gives χ21/2 (ℓ) ≥ 12 β22ℓ and, assuming ℓ ≥ −2 log
+                                                     1
+                                                        β2 ,                    χ2n (ℓ) ≤ 2−2c           for ℓ = log2 (1 + n) + c, c > 0;
+ 2             2ℓ
+χ1/2 (ℓ) ≤ 13β2 .                                                              χ2n (ℓ) ≥ 22c            for ℓ = log2 (n − 1) − c, c > 0.
+4.2 Poisson/Gamma                                                               Proof. From the definitions, for all j and pos-
+  4.2.1 The x-chain for the Poisson/Gamma. Fix                               itive integer x,
+α, a > 0. For x, y ∈ X = {0, 1, 2, . . .} = N, let                                            j∧x
+                                                                                              X              
+                                                                                                                j
+                       Z ∞
+                                      e−λ(α+1)/α λa+x−1                        |Mj (x)| =           (−1)i            x(x − 1) · · · (x − i + 1)
+        k(x, y) =                                                                                               i
+                                                                                              i=0
+                        0       Γ(a + x)(α/(α + 1))a+x
+                                                                                             j  
+                                                                                             X
+                                  e−λ λy                                                        j
+                                                                                         ≤                 xi = (1 + x)j .
+(4.6)                           ·        dλ                                                          i
+                                    y!                                                       i=0
+
+              Γ(a + x + y)(α/(2α + 1))a+x+y                                  Thus, for ℓ ≥ log2 (1 + n) + c,
+                   =                           .
+                 Γ(a + x)(α/(α + 1))a+x y!                                                                ∞
+                                                                                                          X
+                                                                                          χ2n (ℓ) =             Mj2 (n)2−j(2ℓ+1)
+The stationary distribution is the negative binomial
+                        a        x                                                                    j=1
+            (a)x     1          α                                                                         ∞
+     m(x) =                            , x ∈ N.                                                           X
+             x! α + 1         α+1                                                                   ≤         (1 + n)2j 2−j(2ℓ+1)
+When α = a = 1, the prior is a standard exponential,                                                      j=1
+an example given in Section 2.1. Then,
+                        x+y+1                         . x+1                                           (1 + n)2 2−(2ℓ+1)
+                            1                    x+y           1                                    ≤
+        k(x, y) =                                                     ,                                   1 − (1 + n)2 2−(2ℓ+1)
+                            3                     x            2
+                                                                                                            2−2c−1
+         m(x) = 1/2             x+1
+                                      .                                                             ≤                ≤ 2−2c .
+                                                                                                          1 − 2−2c−1
+                                        GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                                                      17
+                                                                                                      ′         (a−1)/2          √
+The lower bound follows from using only the lead                                           e−θ−θ    θ′
+term. Namely,                                                                         =                                     Ia−1 (2 θθ ′ )
+                                                                                          α/(1 + α) θ
+              χ2n (ℓ) ≥ (1 − n)2 2−2ℓ                                                                       ′                   (a−1)/2
+                                                                                        e−θ−(α+1)θ /α (α + 1)θ ′
+                                                                                      =                                                     Ia−1
+                     ≥ 22c    for ℓ = log2 (n − 1) − c.                                 α/(1 + α)       αθ
+                                                                                              q
+  Remark. Note the contrast with the Beta/                                                 · (2 (α + 1)θθ ′ /α).
+Binomial example above. There, order n steps are
+necessary and sufficient starting from n and there                         Thus, k(θ, θ ′ ) is a transition density with respect to
+is no cutoff. Here, log2 n steps are necessary and                         the Lebesgue measure dθ ′ , that is,
+sufficient and there is a cutoff. See [27] for further                                            Z
+discussion of cutoffs.                                                                                    k(θ, θ ′ ) dθ ′ = 1.
+  Jim Hobert has shown us a neat appearance of
+                                                                           Here Ia−1 is the modified Bessell function. For fixed
+the x-chain as branching process with immigration.
+                                                                           θ, k(θ, θ ′ ) integrates to 1 as discussed in [44], pages
+Write the transition density above as
+                                           a+x             y           58–59. The stationary distribution of this Markov
+               Γ(a + x + y) α + 1                      α                   chain is the Gamma:
+     k(x, y) =                                                     .
+                Γ(a + x)y! 2α + 1                    2α + 1
+                                                                                                                e−θ/α θ a−1
+   This is a negative binomial mass function with                                             π(dθ) =                       dθ.
+                   α
+                                                                                                                 Γ(a)αa
+parameters θ = 2α+1    and r = x + a. Hence, the x-
+chain can be viewed as a branching process with                              To simplify notation, we take α = 1 for the rest of
+immigration. Specifically, given that the population                       this section. The relevant polynomials are the La-
+size at generation n is Xn = x, we have                                    guerre polynomials ([68], Section 1.11)
+                              x                                                                                           
+                              X                                                                 (a)i      −i
+                    Xn+1 =          Ni,n + Mn+1 ,                                      Li (θ) =      1 F1    θ
+                                                                                                 i!       a
+                              i=1
+                                                                                                     i
+where N1,n , N2,n , . . . , Nx,n are i.i.d. negative binomi-                                     1X    (−i)j
+                                 α                                                             =             (a + j)i−j θ j .
+als with parameters θ = 2α+1         and r = 1, and Mn+1 ,                                       i! j=0 j!
+which is independent of the Ni,n ’s, has a negative
+                                                     α
+binomial distribution with parameters θ = 2α+1           and               Note that classical notation has the parameter a
+r = a. The Ni,n ’s represent the number of offspring                       shifted by 1 whereas we have labeled things to mesh
+of the nth generation and Mn+1 represents the im-                          with standard statistical notation. The orthogonal-
+migration. This branching process representation was                       ity relation is
+used in [61] to study admissibility.                                                 Z ∞
+                                                                                                                           Γ(a + j)
+  4.2.2 The θ-chain for the Poisson/Gamma. Fix                                             Li (θ)Lj (θ)π(θ) dθ =                    δij
+                                                                                      0                                     j!Γ(a)
+α, a > 0. For θ, θ ′ ∈ Θ = (0, ∞), let η = (α + 1)θ ′ /α.
+Note that π(dθ ′ ) = g(θ ′ ) dθ ′ , where g(θ ′ ) =                                                                    = zj−1 δij .
+e   −θ ′ /α
+      (θ ′ )a−1
+   Γ(a)αa       . Hence, as in Section 4.1.2, we absorb                    The multilinear generating function formula ([63],
+   ′
+g(θ ) in the transition density of the θ-chain. This                       Theorem 4.7.5) gives
+gives                                                                        ∞                                   ∞                           j
+                                                                             X                       e−2tθ/(1−t) X  1    θ2t
+                   ∞ −θ j
+                   X e θ
+                                  ′
+                               e−θ (α+1)/α (θ ′ )a+j−1                             Li (θ)2 zi ti =                                                 .
+    k(θ, θ ′ ) =                                                             i=0
+                                                                                                      (1 − t)a 0 j!(a)j 1 − t2
+                   j=0
+                         j!   Γ(a + j)(α/(α + 1))a+j
+                                                                           Combining results, we obtain the following state-
+                         ′      ∞
+                e−θ−θ (θ ′ )a−1 X    (θθ ′ )j                              ments.
+              =
+                  α/(α + 1) j=0 j!Γ(a + j)
+                                                                             Proposition 4.6. For α = 1 and a > 0, the Markov
+                       ′    ′ (a−1)/2 X∞ √ ′ 2j+a−1                      chain with kernel (4.7) has:
+                 e−θ−θ       θ                ( θθ )
+              =
+                α/(α + 1) θ             j=0
+                                               j!Γ(a + j)                    (a) Eigenvalues βj = 21j , 0 ≤ j < ∞.
+(4.7)                                                                        (b) Eigenfunctions Lj , the Laguerre polynomials.
+18                                                  P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+                                                                                         2      2
+     (c) For any ℓ ≥ 1 and any starting state θ,                              e−1/2(θ−ν)
+                                                                                  √
+                                                                                           /τ
+                                                                                                    dθ. The marginal density is Normal(v,
+                                                                                    2πτ  2
+                      ∞
+                      X                         j!Γ(a)                        σ 2 + τ 2 ).
+          χ2θ (ℓ) =           βj2ℓ L2j (θ)                                      A stochastic description of the chain is
+                      j=1
+                                               Γ(a + j)
+                                 −2ℓ+1θ            −2ℓ )                                               Xn+1 = aXn + εn+1
+                      e−2      /(1−2
+                                                                              (4.8)
+                    =                                                                                                                            
+                         (1 − 2−2ℓ )a                                                            τ2                 σ2ν
+                                                                                      with a = 2     , ε ∼ Normal          , σ2 .
+                             ∞                             j                                σ + τ2              σ2 + τ 2
+                             X       1    θ 2 2−2ℓ
+                         ·                                         − 1.       This is the basic autoregressive (AR1) process. Feller
+                             0
+                                  j!(a)j 1 − 2−4ℓ
+                                                                              ([44], pages 97–99) describes it as the discrete-time
+ Proposition 4.7. For α = 1 and a > 0, the                                    Ornstein–Uhlenbeck process. The diagonalization of
+Markov chain with kernel (4.7) satisfies:                                     this Gaussian Markov chain has been derived by
+                                                                              other authors in various contexts. Goodman and
+• For θ > 0, χ2θ (ℓ) ≤ e2 2−c if ℓ ≥ 21 (log2 [2(1 + a +                      Sokal [50] give an explicit diagonalization of vector-
+  θ 2 /a)] + c), c > 0.                                                       valued Gaussian autoregressive processes which spe-
+• For θ ∈ (0, a/2) ∪ (2a, ∞), χ2θ (ℓ) ≥ 2c if ℓ ≤                             cialize to (a), (b) below. Donoho and Johnstone ([31],
+  1          1 2
+  2 (log 2 [ 2 (θ /a + a)] − c), c > 0.                                       Lemma 2.1) also specialize to (a), (b) below. Both
+ Proof. For the upper bound, assuming ℓ ≥ 1,                                  sets of authors give further references. Since it is so
+we write                                                                      well studied, we will be brief and treat the special
+                                                   −ℓ )/(1−4−ℓ )
+                                                                              case with ν = 0, σ 2 + τ 2 = 1/2. Thus the stationary
+      χ2θ (ℓ) = (1 − 4−ℓ )−a e−(2θ4                                           distribution is Normal(0, 1/2). The orthogonal poly-
+                    ∞                                 j                     nomials are now Hermite polynomials ([68], 1.13).
+                    X           1    θ 2 4−ℓ
+                ·                                           −1                These are given by
+                     0
+                             j!(a)j 1 − 4−ℓ                                                                                                  
+                                                                                                       n             −n/2, −(n − 1)/2   1
+                exp((2θ 2 /a)4−ℓ )                                               Hn (y) = (2y) 2 F0                                   − 2
+            ≤                      −1                                                                                      −−          y
+                   (1 − 4−ℓ )a
+                                                                                                     [n/2]
+                                                                                                    X (−1)k (2y)n−2k
+                      2                   −ℓ       exp(2(θ 2 /a)4−ℓ )                     = n!                                   .
+            ≤ 2(θ /a + a)4                                            .                                          k!(n − 2k)!
+                                                     (1 − 4−ℓ )a+1                                    k=0
+                                                                              They satisfy
+For ℓ ≥ 21 (log2 [2(1 + θ 2 /a + a)] + c), c > 0, we obtain                            Z ∞
+χ2θ (ℓ) ≤ e2 2−c .                                                                  1         2
+                                                                                   √       e−y Hm (y)Hn (y) dy = 2n n!δmn .
+   The stated lower bound does not easily follow                                     π −∞
+from the formula we just used for the upper bound.                            There is also a multilinear generating function for-
+Instead, we simply use the first term in χ2θ (ℓ) =                            mula which gives ([63], Example 4.7.3)
+P        2ℓ 2      j!Γ(a)             −1         2 −ℓ
+   j≥1 βj Lj (θ) Γ(a+j) , that is, a (θ − a) 4 . This                                   ∞                                               
+                                                                                        X Hn (x)2            n          1         2x2 t
+easily gives the desired result.                                                                            t =√             exp       .
+                                                                                         0
+                                                                                                    2n n!              1 − t2     1+t
+   Remark. It is not easy to obtain sharp formulas
+starting from θ near a. For example, starting at θ =                           Proposition 4.8. For ν = 0, σ 2 + τ 2 = 1/2, the
+a, one gets a lower bound by using the second term                            Markov chain (4.8) has:
+         P                  j!Γ(a)
+χ2θ (ℓ) = j≥1 βj2ℓ L2j (θ) Γ(a+j)  (the first term vanishes                     (a) Eigenvalues βj = (2τ 2 )j (as σ 2 + τ 2 = 1/2, we
+at θ = a). This gives χa (ℓ) ≥ [2a/(a + 1)]4−2ℓ . When
+                           2                                                  have 2τ 2 < 1).
+a is large, this is significantly smaller than the upper                        (b) Eigenfunctions the Hermite polynomials Hj .
+bound proved above.                                                             (c) For any starting state x and all ℓ ≥ 1,
+                                                                                                    ∞
+                                                                                                    X
+4.3 The Gaussian Case                                                                                                     1
+                                                                                    χ2x (ℓ) =          (2τ 2 )2kℓ Hk2 (x) k
+                                                                                                    k=1
+                                                                                                                         2 k!
+  Here, the x-chain and the θ-chain are essentially
+the same and indeed the same as the chain for the                                                   exp(2x2 (2τ 2 )2ℓ /(1 + (2τ 2 )2ℓ ))
+additive models, so we just treat the x-chain. Let                                           =                   q                         − 1.
+                          2  2 √                                                                                     1 − (2τ 2 )4ℓ
+X = R, fθ (x) = e−1/2(x−θ) /σ / 2πσ 2 and π(dθ) =
+                                    GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                                 19
+
+  The next proposition turns the available chi-square                follows: from x, draw θ ′ from π(·|x) and then go to
+formula into sharp estimates when x is away from 0.                  X ′ = θ ′ + ε′ with ε′ independently drawn from g.
+Starting from 0, the formula gives χ20 (ℓ) =                         It has stationary distribution m(x) dx, the convolu-
+(1 − (2τ 2 )4ℓ )−1/2 − 1. This shows convergence at the              tion of π and g. For the θ-chain, starting at θ, set
+faster exponential rate of β2 = (2τ 2 )2 instead of β1 =             X ′ = θ + ε and draw θ ′ from π(·|x′ ). It has stationary
+2τ 2 .                                                               distribution π. Observe that
+  Proposition 4.9. For ν = 0, σ 2 + τ 2 = 1/2, x ∈                               Eθ (X k ) = Eθ ((θ + ε)k )
+R, the Markov chain (4.8) satisfies:
+                                                                                                k  
+                                                                                                X  k
+                              log(2(1 + x2 )) + c                                          =              θ j E(εk−j ).
+  χ2x (ℓ) ≤ 8e−c      for ℓ ≥                     , c > 0,                                      j=0
+                                                                                                      j
+                                 −2 log(2τ 2 )
+                x2 ec                   log(2(1 + x2 )) − c          Thus (H2) of Section 3 is satisfied with ηk = 1. To
+  χ2x (ℓ) ≥                  for ℓ ≤                        ,        check the conjugate condition we may use results
+              2(1 + x2 )                   −2 log(2τ 2 )
+                                                                     of [87], Section 4. In present notation, Morris shows
+                                                            c > 0,   that if pk is the monic orthogonal polynomial of de-
+  χ20 (ℓ) = (1 − (2τ 2 )4ℓ )−1 − 1 ≥ (2τ 2 )4ℓ .                     gree k for the distribution π and p′k is the monic
+                                                                     orthogonal polynomial of degree k for the distribu-
+  Proof. For the upper bound, assuming
+                                                                     tion m, then
+               1                                                                                          k
+    ℓ≥                  (log(2(1 + x2 )) + c),          c > 0,                                 n1
+          −2 log(2τ 2 )                                                        Ex (pk (θ)) =                    bk p′k (x).
+                                                                                             n1 + n2
+we have
+                                                                     Here π is taken as the sum of n1 copies and ε the
+              (2τ 2 )2ℓ < 1/2,      2x2 (2τ 2 )2ℓ < 1                sum of n2 copies of one of the six families and
+and it follows that                                                                       k−1
+                                                                                          Y      1 + ic/n1
+                 exp(2x2 (2τ 2 )2ℓ /(1 + (2τ 2 )2ℓ ))                              bk =                         ,
+     χ2x (ℓ) =              q                            −1                               i=0
+                                                                                              1 + ic/(n1 + n2 )
+                                 1 − (2τ 2 )4ℓ
+                                                                     where c is the coefficient of m2 (θ) in σ 2 (θ) = a +
+                             2 4ℓ            2   2 2ℓ
+              ≤ (1 + 2(2τ ) )(1 + 6x (2τ ) ) − 1                     bm(θ)+cm2 (θ) for the family. Comparing lead terms
+                                                                     gives (H3) (in Section 3) with an explicit value of µk .
+              ≤ 8(1 + x2 )(2τ 2 )2ℓ .
+                                                                     In the present setup, µk = βk is the kth eigenvalue.
+For the lower bound, write                                             We now make specific choices for each of the six
+                                                                     cases.
+                 exp(2x2 (2τ 2 )2ℓ /(1 + (2τ 2 )2ℓ ))
+     χ2x (ℓ) =              q                            −1
+                                 1 − (2τ 2 )4ℓ                       5.1 Binomial
+                                                                       For fixed p, 0 < p < 1, let π = Bin(n1 , p), g =
+              ≥ exp(x2 (2τ 2 )2ℓ ) − 1
+                                                                     Bin(n2 , p). Then m = Bin(n1 + n2 , p) and
+              ≥ x2 (2τ 2 )2ℓ .                                                                       n1  n2 
+                                                                                                       θ     x−θ
+                                                                                      π(θ|x) =          n1 +n2 
+     5. LOCATION FAMILIES EXAMPLES                                                                         x
+
+  Sharp rates of convergence using spectral tech-                    is hypergeometric. The θ-chain progresses as a popu-
+niques are not restricted to exponential families and                lation process on 0 ≤ θ ≤ n1 : from θ, there are ε new
+conjugate priors. In this section, we show how simi-                 births and the resulting population of size x = θ + ε
+lar analyses are available for location families. Very               is thinned down by random sampling. The x-chain
+different examples are collected in Section 6. In this               denoted by {Xk }k≥0 can be represented in an au-
+section fθ (x) = g(x − θ) with g and π members of                    toregressive cast. More precisely,
+one of the six families of Section 2.4. To picture the               (5.1)            Xk+1 = SXk + εk+1 ,
+associated Markov chains it is helpful to begin with
+the representation X = θ + ε. Here θ is distributed                  where SXk is a hypergeometric with parameters n1 , n2 ,
+as π and ε is distributed as g. The x-chain goes as                  Xk and εk+1 is drawn independently from Bin(n2 , p).
+20                                             P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+
+  For the binomial, the parameter c is c = −1 and                             This gives the desired result since we also have χ20 (ℓ) ≥
+the eigenvalues of the x-chain are                                            N qβ12ℓ . 
+                n1 (n1 − 1) · · · (n1 − k + 1)         In general, it is not very easy to evaluate the poly-
+ βk =                                                  ,
+       (n1 + n2 )(n1 + n2 − 1) · · · (n1 + n2 − k + 1)
+                                                     nomials kj at x 6= 0 to estimate χ2x (ℓ) and under-
+                             0 ≤ k ≤ n1 + n2 = N. stand what the role of the starting point is. However,
+Note that βk = 0 for k ≥ n1 + 1. The orthogonal if p = 1/2 and x = n1 = N/2, then the recurrence
+polynomials are Krawtchouck polynomials ([68], 1.10; equation ([63], (6.2.37)) shows that k2j+1 (N/2) = 0
+[63], page 100):                                     and
+                                                                                                                       (2j − 1)!
+                                         −j, −x 1                                       k2j (N/2) = (−1)j                             .
+(5.2)            kj (x) = 2 F1                                                                                         (N − 2j + 1)2j
+                                          −N    p
+which satisfy                                                                 Thus, for ℓ ≥ 1,
+           N 
+           X     
+               N                                                                                ⌈N/4⌉
+                                                                                                X                                         2
+                             px (1 − p)N −x kj (x)kℓ (x)                                                          N           (2j − 1)!
+                      x                                                           χ2N/2 (ℓ) =            2ℓ
+                                                                                                        β2j
+           x=0                                                                                                    2j        (N − 2j + 1)2j
+                                                                                                j=1
+                            −1              j
+                         N           1−p
+                =                                   δjℓ .                                       ⌈N/4⌉
+                                                                                                X                 (2j − 1)!
+                         j            p                                                     =            2ℓ
+                                                                                                        β2j                    .
+                                                                                                j=1
+                                                                                                              2j(N − 2j + 1)2j
+  Proposition 5.1. Consider the chain (5.1) on
+{0, . . . , n1 + n2 } with 0 < p < 1, starting at x = 0.                      This is small for ℓ = 1 if N is large enough. Indeed,
+Set N = n1 + n2 , q = p/(1 − p). Then we have                                 splitting the sum into two parts at N/8 easily yields
+
+                     e−c ≤ χ20 (ℓ) ≤ e−c ee
+                                                       −c                                                  3 −4ℓ
+                                                                                         χ2N/2 (ℓ) ≤         2   + N 2−N ℓ/2 .
+                                                                                                          2N
+whenever
+                 log(qN ) + c                                                 5.2 Poisson
+        ℓ=                        ,               c ∈ (−∞, ∞).
+               −2 log(1 − n2 /N )                                               Fix positive reals µ, n1 , n2 . Let π = Poisson(µn1 ),
+  Note two cases of interest: (i) For p = 1/2, the                            g = Poisson(µn2 ). Then
+                            log(N )
+proposition shows that −2 log(1−n  2 /N )
+                                          steps are nec-                                    m = Poisson(µ(n1 + n2 ))
+essary and sufficient. There is a chi-square cutoff
+when N tends to infinity. (ii) For p = 1/N , there is                         and
+no cutoff.                                                                                                                        
+                                                                                                              n1
+                                                                                            π(θ|x) = Bin x,         .
+  Proof. From (2.9) and (5.2), we have kj2 (0) = 1                                                          n1 + n2
+for all j and the chi-square distance becomes
+                                                                              The x-chain is related to the M/M/∞ queue and the
+                                 N
+                                 X                   
+                                                  N                           θ-chain is related to Bayesian missing data examples
+                     χ20 (ℓ) =         βj2ℓ               qj
+                                                  j                           in Section 2.3.3. Here, the parameter c = 0 so that
+                                 j=1
+                                                                                                                 k
+with N = n1 + n2 , q = p/(1 − p) and ℓ ≥ 1. For j ≤                                                    n1
+                                                                                         βk =                          ,    0 ≤ k < ∞.
+n1 , the eigenvalues satisfy                                                                         n1 + n2
+               Y
+               j−1
+                          n2       n2
+                                                             j
+                                                                              The orthogonal polynomials are Charlier polynomi-
+        βj =          1−      ≤ 1−                                  = β1j .   als ([68], 1.12; [63], page 177):
+               i=0
+                         N −i      N
+                                                                                                                                            
+Hence, we obtain                                                                                                                −j, −x   1
+                                                                                                        Cj (x) = 2 F0                  −   ,
+                             N 
+                             X                                                                                                  −−      µ
+                                 N
+               χ20 (ℓ) ≤                      (qβ12ℓ )j                          X e−µ µx
+                                     j
+                             j=1                                                            Cj (x)Ck (x) = j!µ−j δjk .
+                                                                                       x!
+                          = (1 + qβ12ℓ )N − 1                                 We carry out a probabilistic analysis of this problem
+                          ≤ qN β12ℓ (1 + qβ12ℓ )N −1 .                        in [25].
+                                GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                           21
+
+5.3 Negative Binomial                                       The orthogonal polynomials are Laguerre polynomi-
+                                                            als, discussed in Section 4.2 above.
+  Fix p with 0 < p < 1 and positive real n1 , n2 . Let
+π = NB(n1 , p), g = NB(n2 , p). Then m = NB(n1 +            5.6 Hyperbolic
+n2 , p) and
+                                                               The density of the sixth family is given in Sec-
+             x    Γ(n1 + n2 )Γ(θ + n1 )Γ(x − θ − n2 )       tion 2.3 in terms of parameters r > 0 and |θ| < π/2.
+π(θ|x) =                                              ,
+             θ       Γ(x + n1 + n2 )Γ(n1 )Γ(n2 )            It has mean µ = r tan(θ) and variance µ2 /r + r. See
+                                               0 ≤ θ ≤ x,   [86], Section 5 or [37] for numerous facts and refer-
+                                                            ences. Fix real µ and positive n1 , n2 . Let the density
+which is a negative hypergeometric. A simple ex-            π be hyperbolic with mean n1 µ and r1 = n1 (1 + µ2 ).
+ample has n1 = n2 = 1 (geometric distribution) so
+                                                            Let the density g be hyperbolic with mean n2 µ and
+π(θ|x) = 1/(1 + x). The x-chain becomes: From x,
+                                                            r2 = n2 (1 + µ2 ). Then m is hyperbolic with mean
+choose θ uniformly in 0 ≤ θ ≤ x and let X ′ = θ + ε
+                                                            (n1 + n2 )µ and r = (n1 + n2 )(1 + µ2 ). The condi-
+with ε geometric. The parameter c = 1 so that
+                                                            tional density π(θ|x) is “unnamed and apparently
+ β0 = 1,                                                    has not been studied” ([87], page 581).
+                 n1 (n1 + 1) · · · (n1 + k − 1)                For this family, the parameter c = 1 and thus
+ βk =                                                   ,
+        (n1 + n2 )(n1 + n2 + 1) · · · (n1 + n2 + k − 1)               β0 = 1,
+                                              1 ≤ k < ∞.                       n1 (n1 + 1) · · · (n1 + k − 1)
+                                                                      βk =                                      .
+The orthogonal polynomials are Meixner polynomi-                             (n1 + n2 ) · · · (n1 + n2 + k − 1)
+als discussed in Section 4.2.                               The orthogonal polynomials are Meixner–Pollaczek
+5.4 Normal                                                  polynomials ([100], page 395; [68], 1.7; [63], page
+                                                            171). These are given in the form
+  Fix reals µ and n1 , n2 , v > 0. Let π = Normal(n1 µ,
+n1 v), g = Normal(n2 µ, n2 v). Then m = Normal((n1 +            Pnλ (x, ϕ)
+n2 )µ, (n1 + n2 )v) and π(θ|x) = Normal( n1n+n    1
+                                                      x,              (2λ)n
+                                                                                                             
+                                                    2                            −n, λ + ix
+ n1 n2
+       v). Here c = 0 and                                           =       2 F1            1 − e−2iϕ einϕ ,
+n1 +n2                                                                  n!          2λ
+                          k                               (5.3)     Z ∞
+                    n1                                            1
+           βk =              , 0 ≤ k < ∞.                                    e(2ϕ−π)x |Γ(λ + ix)|2 Pm
+                                                                                                    λ λ
+                                                                                                      Pn dx
+                  n1 + n2                                        2π     −∞
+The orthogonal polynomials are Hermite, discussed
+                                                                         Γ(n + 2λ)
+in Section 4.3. Both the x- and θ-chains are classical              =                 δmn .
+autoregressive processes as described in Section 4.3.                   n!(2 sin ϕ)2λ
+
+5.5 Gamma                                                   Here −∞ < x < ∞, λ > 0, 0 < ϕ < π. The change
+                                                            of variables y = rx       π       −1
+                                                                              2 , ϕ = 2 + tan (θ) λ = r/2 trans-
+  Fix positive real n1 , n2 , α. Let π = Gamma(n1 , α),     forms the density e(2ϕ−π)x |Γ(λ + ix)|2 to a constant
+g = Gamma(n2 , α). Then                                     multiple of the density fθ (x) of Section 2.4.
+                  m = Gamma(n1 + n2 , α),                     We carry out one simple calculation. Let π, g have
+                                                            the density of π2 log |C|, with C standard Cauchy.
+            π(θ|x) = x · Beta(n1 , n2 ).
+                                                            Thus
+A simple case to picture is α = n1 = n2 = 1. Then,                                             1
+the x-chain may be described as follows: From x,            (5.4)    π(dx) = g(x) dx =                dx.
+                                                                                         2 cosh(πx/2)
+choose θ uniformly in (0, x) and set X ′ = θ + ε with
+ε standard exponential. This is simply a continuous         The marginal density is the density of π2 log |C1 C2 |,
+version of the examples of Section 5.3. The param-          that is,
+eter c = 1 and so                                                                       x
+                                                                          m(x) =               .
+ β0 = 1,                                                                          2 sinh(πx/2)
+                 n1 (n1 + 1) · · · (n1 + k − 1)               Proposition 5.2.           For the additive walk based
+ βk =                                                   ,
+        (n1 + n2 )(n1 + n2 + 1) · · · (n1 + n2 + k − 1)     on (5.4):
+                                                                                            1
+                                              0 < k < ∞.      (a) The eigenvalues are βk = k+1 , 0 ≤ k < ∞.
+22                                  P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+
+  (b) The eigenfunctions are the Meixner–Pollaczek           Koudou shows that, given σ, one can always find
+polynomials (5.3) with ϕ = π/2, λ = 1.                    sequences of orthonormal functions such that σ is
+                 P
+  (c) χ2x (ℓ) = 2 ∞k=1 (k + 1)
+                              −2ℓ−1 (P 1 ( x , π ))2 .
+                                      k 2 2               Lancaster for these sequences. He then character-
+                                                          izes those sequences ρn such that the associated σ
+   Proof. Using Γ(z + 1) = zΓ(z), Γ(z)Γ(1 − z) =
+   π                                                      is absolutely continuous with respect to µ × ν with
+sin(πz) , we check that                                                             X
+                                                                            dσ
+                      2                                   (6.6)     f=            =   ρn pn (x)qn (y)
+          |Γ(1 + ix)| = Γ(1 + ix)Γ(1 − ix)                               d(µ × ν)   n
+                          = (ix)Γ(ix)Γ(1 − ix)                                                      in L2 (µ × ν).
+                                π(ix)      πx             For such Lancaster densities (6.6), the equivalence
+                          =            =         .
+                              sin π(ix) sinh(πx)          (6.5) says precisely that the x-chain for the Gibbs
+The result now follows from routine simplification.       sampler for f has {pn } as eigenvectors with eigen-
+                                                         values {ρ2n } (cf. Section 3 above). For more on Lan-
+                                                          caster families with marginals in the six exponential
+  Remark. Part (c) has been used to show that             families, see [7], Section 7, which makes fascinat-
+order log x steps are necessary and sufficient for con-   ing connections between these families and diagonal
+vergence in unpublished joint work with Mourad Is-        multivariate families.
+mail.                                                       The above does not require polynomial eigenvec-
+                                                          tors and Griffiths [52] gives examples of triangular
+     6. OTHER MODELS, OTHER METHODS                       margins and explicit nonpolynomial eigenfunctions.
+                                                          Here is another. Let G be a compact Abelian group
+  Even in the limited context of bivariate Gibbs
+                                                          with characters {pn (x)} chosen orthonormal with
+sampling, there are other contexts in which the in-       respect to Haar measure µ. For a probability density
+gredients above arise. These give many further ex-        f on G, the location problem
+amples where present techniques lead to sharp re-
+sults. This section gives brief pointers to Lancaster                σ(dx, dy) = f (x − y)µ(dx)ν(dy)
+families, alternating projections, the multivariate       has uniform margins,    {pn } as eigenfunctions of the
+                                                                             R
+case and to other techniques for proving conver-          x-chain and ρn = pn (x)f (x) dµ(x) as eigenvalues.
+gence.                                                       A main focus of Koudou and his co-authors is
+6.1 Lancaster Families                                    delineating all of the extremal Lancaster sequences
+                                                          and so, by Choquet’s theorem (every point in a com-
+  There has been a healthy development of bivariate       pact convex subset of a metrizable topological vector
+distributions with given margins. The part of inter-      space is a barycenter of a probability measure sup-
+est here begins with the work of Lancaster, nicely        ported on the extreme points; see [84], Chapter 11.2)
+summarized in his book [72]. Relevant papers by           all densities f with {pn }, {qn } as in (6.5). Of course,
+Angelo Koudou [69, 70, 71] summarize recent work.         any of these can be used with the Gibbs sampler and
+Briefly, let (X , µ), (Y, ν) be probability spaces with   present techniques. These characterizations are car-
+associated L2 (µ), L2 (ν). Let σ be a measure on X ×      ried out for a variety of classical orthogonal polyno-
+Y with margins µ and ν. Suppose the relevant con-         mials. In particular, Koudou gives a clear translation
+ditional probabilities exist, so                          into probabilists’ language of Gasper’s complete de-
+                                                          termination of the extremals of the Lancaster fami-
+        σ(dx, dy) = µ(dx)Kx (dy) = ν(dy)Ly (dx).
+                                                          lies with equal Beta(α, β) margins for α, β ≥ 21 . We
+Say that σ is a Lancaster probability with respect        give but one example.
+to the given sequences of orthonormal functions if          Example. Consider the uniform distribution on
+there exists a positive real sequence {ρn } such that,    the unit disk in R2 given by
+for all n,
+            Z                                                                    1
+                                                          (6.7)      f (x, y) = , 0 ≤ x2 + y 2 ≤ 1.
+(6.5)           pn (x)qm (y)σ(dx, dy) = ρn δmn .                                 π
+                                          R               The conditional
+                                                                      √      distribution
+                                                                                  √         of X given Y is uni-
+This equation isRalso equivalent to qn (y)Kx (dy) =                            2          2
+                                                          form on [− 1 − Y , 1 − Y ]. Similarly, the con-
+ρn pn (x) and to pn (x)Ky (dx) = ρn qn (y).               ditional distribution of Y given X is uniform on
+                               GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                          23
+   √         √
+[− 1 − X 2 , 1 − X 2 ]. The marginal density of X         with [42], was unified in [14]. See [38] for a text-
+is                                                        book treatment. Models of Fisher–Wright, Moran,
+                  2p                                      Kimura, Karlin and McGregor are included. While
+          m(x) =      1 − x2 , −1 ≤ x ≤ 1.                many models are either absorbing, nonreversible, or
+                  π
+                                                          have intractable stationary distributions, there are
+By symmetry, Y has the same marginal density.
+                                                          also tractable new models to be found. See the Stan-
+Since for every k ≥ 0,
+                                                          ford thesis work of Hua Zhou.
+                                 (1 − Y 2 )k                Interesting classes of reversible Markov chains with
+                E(X 2k | Y ) =               ,            explicit polynomial eigenfunctions appear in the work
+                                   2k + 1
+                                                          of Hoare, Rahman and their collaborators [20, 58,
+                                 (1 − X 2 )k
+                E(Y 2k | X) =                             59, 60]. These seem distinct from the present exam-
+                                   2k + 1                 ples, are grounded in physics problems (transfer of
+and                                                       vibrational energy between polyatomic molecules)
+                                                          and involve some quite exotic eigenfunctions (9 − j
+                   E(X 2k+1 | Y ) = 0,
+                                                          symbols). Their results are explict and it seems like a
+                   E(Y 2k+1 | X) = 0,                     worthwhile project to convert them into sharp rates
+                                                          of convergence.
+we conclude that the x-chain has polynomial eigen-          A rather different class of examples can be cre-
+functions {pk (x)}k≥0 and eigenvalues {λk }k≥0 where      ated using autoregressive processes. For definiteness,
+          1
+λ2k = (2k+1) 2 and λ2k+1 = 0, k ≥ 0. The polynomi-
+                                                          work on the real line R. Consider processes of form
+als {pk }k≥0 are orthogonal polynomials correspond-       X0 = 0, and for 1 ≤ n < ∞,
+ing to the marginal density m. They are Chebyshev
+polynomials of the second kind, given by the identity                   Xn+1 = an+1 Xn + εn+1 ,
+
+                  sin((k + 1)θ)                           with {(ai , εi )}i≥1 independent and identically dis-
+  pk (cos(θ)) =                 ,     0 ≤ θ ≤ π, k ≥ 0.   tributed. Under mild conditions on the distribution
+                      sin(θ)
+                                                          of (ai , εi ), the Markov chain Xn has a unique sta-
+Using present theory we have the following theorem.       tionary distribution m which can be represented as
+  Theorem 6.1. For the x-chain from the Gibbs             the probability distribution of
+sampler for the density (6.7):                                      X∞ = ε0 + a0 ε1 + a1 a0 ε2 + · · · .
+                 P
+  (a)   χ2x (l) = ∞        1     2
+                   k=1 (2k+1)4l p2k (x).                  The point here is that for any k such that moments
+                             P
+  (b)   For x = 0, χ2x (l) = ∞          1
+                                k=1 (2k+1)4l .            exist
+  Thus                                                          E(X1k |X0 = x) = E((a1 x + ε1 )k )
+                                       
+                1              8l + 1 1                                             k  
+                4l
+                   ≤ χ2x (l) ≤            .                                         X  k
+               3               8l − 2 34l                                       =             xi E(ai1 ε1k−i ).
+                               P∞                                                         i
+                                        1                                           i=0
+  (c) For |x| = 1, χ2x (l) = k=1 (2k+1)   4l−2 .
+
+  Thus                                                    If, for example, the stationary distribution m has
+                                                        moments of all orders and is determined by those
+            1        2         8l − 3     1
+                ≤  χ x (l) ≤                 .            moments, then the Markov chain {Xn }∞    n=0 is gener-
+          34l−2                8l − 6 34l−2               ated by a compact operator with eigenvalues E(ai1 ),
+  One of the hallmarks of our examples is that they       0 ≤ i < ∞, and polynomial eigenfunctions.
+are statistically natural. It is an open problem to          We have treated the Gaussian case in Section 4.5.
+give natural probabilistic interpretations of a gen-      At the other extreme, take |a| < 1 constant and let εi
+eral Lancaster family. There are some natural ex-         take values ±1 with probability 1/2. The fine prop-
+amples. Eagleson [36] has shown that W1 + W2 and          erties of π have been intensively studied as Bernoulli
+W2 + W3 are Lancaster if W1 , W2 , W3 are indepen-        convolutions. See [23] and the references there. For
+dent and from one of the six quadratic families. Nat-     example, if a = 1/2, then π is the usual uniform dis-
+ural Markov chains with polynomial eigenfunctions         tribution on [−1, 1] and the polynomials are Cheby-
+have been extensively studied in mathematical ge-         shev polynomials. Unfortunately, for any value of
+netics literature. This work, which perhaps begins        a 6= 0, in the ±1 case, the distribution π is known
+24                             P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+
+to be continuous while the distribution of Xn is dis-    using the notation of Section 6.1. We develop the
+crete and so does not converge to π in L1 or L2 . We     tools used to quantify rates of convergence for von
+do not know how to use the eigenvalues to get quan-      Neumann’s algorithm for use with the Gibbs sam-
+titative rates of convergence in one of the standard     pler in [24].
+metrics for weak convergence.
+   As a second example take (a, ε) = (u, 0) with prob-   6.3 Multivariate Models
+ability p and (1 + u, −u) with probability 1 − p with      The present paper and its companion paper [25]
+u uniform on (0, 1) and p fixed in (0, 1). This Markov  have discussed univariate models. There are a num-
+chain has a Beta(p, 1 − p) stationary density. The      ber of models with x or θ multivariate where the as-
+eigenvalues are 1/(k + 1), 1 ≤ k < ∞. It has poly-      sociated Markov chains have polynomial eigenfunc-
+nomial eigenfunctions. Alas, it is not reversible and   tions. Some analogs of the six exponential families
+again we do not know how to use the spectral infor-     are developed in [15]. In Koudou and Pommeret [69],
+mation to get usual rates of convergence. See [23] or   the Lancaster theory for these families is elegantly
+[75] for more information about this so-called “don-    developed. Their work can be used to give the eigen-
+key chain.”                                             values and eigenfunctions for the multivariate ver-
+   Finally, we mention the work of Hassairi and Zarai   sions of the location models in Section 5. In their
+[57] which develops the orthogonal polynomials for      work, families of multivariate polynomials depend-
+cubic (and other) exponential families such as the      ing on a parameter matrix are given. For our ex-
+inverse Gaussian. They introduce a novel notion of      amples, specific forms must be chosen. In a series
+2-orthogonality. It seems possible (and interesting)    of papers, developed independently of [69], Griffiths
+to use their tools to handle the Gibbs sampler for      [51, 53] has developed such specific bases and illu-
+conjugate priors for cubic families.                    minated their properties. This work is turned into
+6.2 Alternating Conditional Expectations                sharp rates of convergence for two-component mul-
+                                                        tivariate Gibbs samplers in the Stanford thesis work
+   The alternating conditional expectations that un-
+                                                        of Kshitij Khare and Hua Zhou.
+derlie the Gibbs sampler arise in other parts of prob-
+                                                           An important special case, high-dimensional
+ability and statistics. These include classical canoni-
+                                                        Gaussian distributions, has been studied in [2, 50].
+cal correlations, especially those abstracted by Daux-
+                                                        Here is a brief synopsis of these works. Let m(x) be
+ois and Pousse [21]. This last paper contains a frame-
+                                                        a p-dimensional normal density with mean µ and
+work for studying our problems where the associated
+                                                        covariance Σ [i.e., Np (µ, Σ)]. A Markov chain with
+operators are not compact.
+                                                        stationary density m may be written as
+   A nonlinear version of canonical correlations was
+developed by Breiman and Jerry Friedman as the (6.8)                   Xn+1 = AXn + Bv + Cεn+1 .
+A.C.E. algorithm. Buja [13] pointed out the connec-
+                                                                                                           −1
+tions to Lancaster families. He found several other Here εn has a Np (0, I) distribution, v = Σ µ, and
+parallel developments, particularly in electrical en- the matrices A, B, C have the form
+gineering ([13], Section 7–12). Many of these come
+                                                                            A = −(D + L)−1 LT ,
+with novel, explicit examples which are grist for our
+mill. Conversely, our development gives new exam-                           B = (D + L)−1 ,
+ples for understanding the alternating conditional
+                                                                            C = (D + L)−1 D 1/2 ,
+expectations that are the central focus of [13].
+   There is a classical subject built around alternat- where D and L are the diagonal and lower triangular
+ing projections and the work of von Neumann. See parts of Σ−1 . The chain (6.8) is reversible if and only
+Deutsch [22]. Let H1 and H2 be closed subspaces if AΣ = ΣAT . If this holds, A has real eigenvalues
+of a Hilbert space H. Let P1 , P2 be the orthogonal (λ1 , λ2 , . . . , λp ). In [50], Goodman and Sokal show
+projection onto H1 , H2 and let PI be the orthogo- that the Markov chain (6.8) has eigenvalues λK and
+nal projection onto H1 ∩ H2 . von Neumann showed eigenfunctions HK for K = (k1 , k2 , . . . , kp ), ki ≥ 0,
+that (P1 P2 )n → PI as n tends to infinity. That is with
+k(P1 P2 )n (x) − PI (x)k → 0. In [24] we show that the                     p                 p
+                                                                          Y                 Y
+Gibbs sampler is a special case of von Neumann’s                  K
+                                                                 λ =           ki
+                                                                              λi , HK (x) =       Hki (zi ),
+algorithm; with H = L2 (σ), H1 = L2 (µ), H2 = L2 (ν)                      i=1               i=1
+                            GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                                      25
+
+where Z = P T Σ−1/2 X and {Hk } are the usual             θ. Since it is orthogonal to all polynomials of degree
+one-dimensional Hermite polynomials. Here                 less than k, we must have Eθ [pk (X)] = ηk qk (θ). 
+Σ−1/2 AΣ1/2 = P DP T is the eigendecomposition of
+                                                            The second lemma is dual to the first.
+Σ−1/2 AΣ1/2 . Goodman and Sokal show how a vari-
+ety of stochastic algorithms, including the system-         Lemma A2. Ex [qk (θ)] = µk pk (x), 0 ≤ k < c. If
+atic scan Gibbs sampler for sampling from m, are          c < ∞, Ex (qk (θ)) = 0 for k ≥ c.
+covered by this framework. Explicit rates of conver-        Proof. The first part is proved as per Lemma
+gence for this Markov chain can be found in the           A1. If c < ∞, and k ≥ c, by the same argument
+Stanford thesis work of Kshitij Khare.                    we have, for 0 ≤ j < c, E[pj (X)EX [qk (θ)]] = 0. But
+6.4 Conclusion                                            {pj }0≤j<c form a basis for L2 (m(dx)), and Ex [qk (θ)] ∈
+                                                          L2 (m(dx)) since
+   The present paper studies rates of convergence us-
+ing spectral theory. In a companion paper [25] we                      E[(EX qk (θ))2 ] ≤ E[qk2 (θ)] < ∞.
+develop a stochastic approach which uses one eigen-       It follows that Ex [qk (θ)] = 0. 
+function combined with coupling. This is possible
+when the Markov chains are stochastically mono-             Proof of part (a) of Theorem 3.1. Suppose
+tone. We show this is the case for all exponential        0 ≤ k < c. From the definitions, the x-chain operates
+families, with any choice of prior, and for location      on pk as
+families where the density g(x) is totally positive of         Ex [Eθ (pk (X ′ ))] = Ex [ηk qk (θ)] = ηk µk pk (x)
+order 2. This lets us give rates of convergence for
+                                                          with equalities from Lemmas A1, A2. Hence, ηk µk
+the examples of Section 4 when moments do not ex-
+                                                          are eigenvalues of the x-chain with pk as eigenfunc-
+ist (negative binomial, gamma, hyperbolic). In ad-
+                                                          tions. This proves (a). 
+dition, location problems fall into the setting of it-
+erated random functions so that backward iteration          Proof of part (b). Suppose first 0 ≤ k < c.
+and coupling are available. See [17, 23] for extensive    Then, arguing as above, µk ηk are eigenvalues of the
+references.                                               θ-chain with qk as eigenvectors. If c = ∞, we are
+                                                          done. If c < ∞, then, for k ≥ c, Lemma A2 shows
+    APPENDIX: PROOF OF THEOREM 3.1                        that qk is an eigenfunction for the θ-chain with eigen-
+                                                          value zero. 
+   The proof will follow from the two dual lemmas
+below which show that the expectation operators Eθ          Proof of part (c). From the development in
+and Ex each take one orthogonal polynomial fam-           Section 2.1, the random scan chain K takes L2 (P )
+ily into the other. For the Beta/Binomial example         into L2 (m) + L2 (π) ⊆ L2 (P ) and ker K ⊇ (L2 (m) +
+treated in the Introduction and in Section 4.1, these     L2 (π))⊥ . We have
+operators relate Hahn polynomials on {0, . . . , n} to         Kg(X, θ) = 21 Ex [g(x, θ ′ )] + 21 Eθ [g(X ′ , θ)].
+Jacobi polynomials on (0, 1). These facts are of in-                                                                q
+                                                                                                                        ηk
+dependent interest and some have been observed be-         For 0 ≤ k < c, consider K acting on pk (x)+                  µk qk (θ).
+fore. See [62], (3.7) for the correspondence between      The result is
+Hahn and Jacobi polynomials and for a host of fur-                                   r 
+                                                              1                    ′   ηk
+ther references.                                                 pk (x) + Ex [qk (θ )]
+                                                              2                        µk
+                                                                                           r            
+  Lemma A1.       Eθ [pk (X)] = ηk qk (θ), 0 ≤ k < c.               1                            ηk
+                                                                  +   Eθ [pk (x)] +                 qk (θ)
+   Proof. For k = 0, Eθ [p0 ] = 1 = η0 q0 . If 0 < k <              2                            µk
+                                                                                                     r            
+c, then for 0 ≤ i < k, the unconditional expectation               1 1√                                      ηk
+is given by                                                      =  +   ηk µk                pk (x) +           qk (θ) .
+                                                                   2 2                                       µk
+  E[θ i pk (X)] = E[pk (X)EX (θ i )] = E[pk (X)pb(X)]     Similarly,
+                                                                              r        
+with pb a polynomial of degree i < k. Since 0 ≤ i <                                ηk
+                                                               K pk −                 qk (x, θ)
+k < c, E[pk (X)pb(X)] = 0 by orthogonality. Thus 0 =                               µk
+                                                                                                     r            
+E[θ i pk (X)] = E[θ i Eθ (pk (X))]. By assumption (H2),            1 1√                                      ηk
+ηk−1 Eθ [pk (X)] is a monic polynomial of degree k in            =  −   ηk µk                pk (x) −           qk (θ) .
+                                                                   2 2                                       µk
+26                                    P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+
+Suppose first that c < ∞. For k ≥ c, Lemma A2                      [3] Anderson, W. (1991). Continuous-Time Markov
+shows Ex qk (θ) = 0 for all x. Thus Kqk (x, θ) = 12 qk (θ).                Chains. An Applications-Oriented Approach.
+Further                                                                    Springer, New York. MR1118840
+                  r                                               [4] Athreya, K., Doss, H. and Sethuraman, J. (1996).
+                      ηk                                                   On the convergence of the Markov chain simula-
+   span pk (x) ±          qk (θ)
+                      µk                                                   tion method. Ann. Statist. 24 89–100. MR1389881
+                                                                  [5] Baik, J., Kriecherbauer, T., McLaughlin, K. and
+            0 ≤ k < c, qk (θ) c ≤ k < ∞                                    Miller, P. (2003). Uniform asymptotics for poly-
+                                                                           nomials orthogonal with respect to a general class
+        = span{pk (x) 0 ≤ k < c, qk (θ), 0 ≤ k < ∞}                        of weights and universality results for associated
+                                                                           ensembles. Intern. Math. Res. Not. 15 821–858.
+        = L2 (m) + L2 (π).                                         [6] Bakry, D. and Mazet, O. (2003). Characterization of
+                                                                           Markov semigroups on R associated to some fami-
+It follows that K is diagonalizable with eigenval-                         lies of orthogonal polynomials. Séminaire de Prob-
+ues/eigenvectors                                                           abilités XXXVII 60–80. Lecture Notes in Math.
+                         q                                                 1832. Springer, Berlin. MR2053041
+       1√
+  1
+  2 ± 2 µk ηk ,  pk (x) ± µηkk qk (θ) for 0 ≤ k < c,               [7] Bar-Lev, S., Bshouty, D., Enis, P., Letac, G.,
+                                                                           Lu, I.-L. and Richards, D. (1994). The diago-
+                1
+                2,   qk (θ) for c ≤ k < ∞,                                 nal multivariate natural exponential families and
+                                                                           their classification. J. Theoret. Probab. 7 883–929.
+and Kg = 0 for g ∈ (L2 (m) + L2 (π))⊥ .                                    MR1295545
+  Suppose next that c = ∞; then K is diagonalizable                [8] Barndorff-Nielsen, O. (1978). Information and Ex-
+with eigenvalues/eigenfunctions                                            ponential Families in Statistical Theory. Wiley,
+                              r                                          Chichester. MR0489333
+    1 √                             ηk                             [9] Baxendale, P. (2005). Renewal theory and com-
+      ± ηk µk ,      pk (x) ±          qk (θ),       0 ≤ k < ∞.
+    2                               µk                                     putable convergence rates for geometrically er-
+                             q                                             godic Markov chains. Ann. Appl. Probab. 15 700–
+                                 ηk
+Again, span {pk (x) ±            µk   qk (θ) 0 ≤ k < c} =                  738. MR2114987
+                                                                  [10] Ben Arous, G., Bovier, A. and Gayard, V. (2003).
+span {pk (x), qk (θ)} = L2 (m) + L2 (π) and Kg = 0
+                                                                           Glauber dynamics of the random energy model.
+for g ∈ (L2 (m) + L2 (π))⊥ . This completes the proof                      I, II. Comm. Math Phys. 235 379–425, 236 1–54.
+of (c).                                                                   MR1977880
+                                                                  [11] Brown, L. (1986). Fundamentals of Statistical Expo-
+                ACKNOWLEDGMENTS                                            nential Families. IMS, Hayward, CA.
+                                                                  [12] Bryc, W. (2006). Approximation operators, exponen-
+  We thank Jinho Baik, Alexi Borodin, Onno Boxma,                          tial, and free exponential families. Preprint, Dept.
+Vlodic Bryc, Robert Griffiths, Len Gross, Jim Hobert,                      Math. Sci., Univ. Cincinnati.
+Susan Holmes, Mourad Ismail, Tom Koornwinder,                     [13] Buja, A. C. (1990). Remarks on functional canoni-
+Angelo Koudou, Christian Krattenthaler, Laurent                            cal variates, alternating least square methods and
+                                                                           ACE. Ann. Statist. 18 1032–1069. MR1062698
+Miclo, Grigori Olshanski, Dennis Pommeret, Mizan
+                                                                  [14] Cannings, C. (1974). The latent roots of certain
+Rahman, Dennis Stanton and Hua Zhou for their en-                          Markov chains asrising in genetics: A new ap-
+thusiastic help. We particularly thank Gerard Letac                        proach. I. Haploid models. Adv. in Appl. Probab.
+for telling us about Lancaster families and for his                        6 260–290. MR0343949
+seminal work on these topics over the years. Finally,             [15] Casalis, M. (1996). The 2d + 4 simple quadratic
+we thank two anonymous referees and an editor for                          families on Rd . Ann. Statist. 24 1828–1854.
+their detailed and helpful comments.                                       MR1416663
+                                                                  [16] Casella, G. and George, E. (1992). Explaining
+  Research supported in part by NSF Grants DMS-                            the Gibbs sampler. Amer. Statist. 46 167–174.
+01-02126 and DMS-06-03886.                                                 MR1183069
+                                                                  [17] Chamayou, J. and Letac, G. (1991). Explicit station-
+                                                                           ary distributions for compositions of random func-
+                      REFERENCES                                           tions and products of random matrices. J. Theoret.
+    [1] Akhiezer, N. and Glazman, I. (1993). Theory of Lin-                Probab. 4 3–36. MR1088391
+            ear Operators in Hilbert Space. Dover, New York.      [18] Chihara, T. (1978). An Introduction to Orthogo-
+            MR1255973                                                      nal Polynomials. Gordon and Breach, New York.
+    [2] Amit, Y. (1996). Convergence properties of the Gibbs               MR0481884
+            sampler for perturbations of Gaussians. Ann.          [19] Consonni, G. and Veronese, P. (1992). Conjugate
+            Statist. 24 122–140. MR1389883                                 priors for exponential families having quadratic
+                               GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                                    27
+
+         variance functions. J. Amer. Statist. Assoc. 87         [37] Esch, D. (2003). The skew-t distribution: Proper-
+         1123–1127. MR1209570                                             ties and computations. Ph.D. dissertation, Dept.
+[20] Cooper, R., Hoare, M. and Rahman, M. (1977).                         Statistics, Harvard Univ.
+         Stochastic Processes and special functions: On the      [38] Ewens, W. (2004). Mathematical Population Genetics.
+         probabilistic origin of some positive kernels asso-              I. Theoretical Introduction, 2nd ed. Springer, New
+         ciated with classical orthogonal polynomials. J.                 York. MR2026891
+         Math. Anal. Appl. 61 262–291. MR0486694                 [39] Feinsilver, P. (1986). Some classes of orthogonal poly-
+[21] Dauxois, J. and Pousse, A. (1975). Une extension de                  nomials associated with martingales. Proc. Amer.
+         l’analyse canonique. Quelques applications. Ann.                 Math. Soc. 98 298–302. MR0854037
+         Inst. H. Poincaré Sect. B (N.S.) 11 355–379.           [40] Feinsilver, P. (1991). Orthogonal polynomials and co-
+         MR0408118                                                        herent states. In Symmetries in Science V 159–
+[22] Deutsch, F. (2001). Best Approximation in Inner                      172. Plenum Press, New York. MR1143591
+         Product Spaces. Springer, New York. MR1823556           [41] Feinsilver, P. and Schott, R. (1993). Algebraic
+[23] Diaconis, P. and Freedman, D. (1999). Iterated ran-                  Structures and Operator Calculus. I. Representa-
+         dom functions. SIAM Rev. 41 45–76. MR1669737                     tions and Probability Theory. Kluwer Academic
+[24] Diaconis, P., Khare, K. and Saloff-Coste,                            Press, Dordrecht. MR1227095
+         L. (2006). Stochastic alternating projections.          [42] Feller, W. (1951). Diffusion processes in genet-
+         Preprint, Dept. Statistics, Stanford Univ.                       ics. Proc. Second Berkeley Symp. Math. Statist.
+[25] Diaconis, P., Khare, K. and Saloff-Coste, L.                         Probab. 227–246. Univ. California Press, Berkeley.
+         (2006). Gibbs sampling, exponential families and                 MR0046022
+         coupling. Preprint, Dept. of Statistics, Stanford       [43] Feller, W. (1968). An Introduction to Probability The-
+         Univ.                                                            ory and Its Applications. I, 3rd ed. Wiley, New
+[26] Diaconis, P. and Saloff-Coste, L. (1993). Com-                       York. MR0228020
+         parison theorems for Markov chains. Ann. Appl.          [44] Feller, W. (1971). An Introduction to Probability The-
+         Probab. 3 696–730. MR1233621                                     ory and Its Applications. II, 2nd ed. Wiley, New
+[27] Diaconis, P. and Saloff-Coste, L. (2006). Separa-                    York.
+         tion cut-offs for birth and death chains. Ann. Appl.    [45] Gelfand, A. E. and Smith, A. F. M. (1990). Sam-
+         Probab. 16 2098–2122. MR2288715                                  pling based approaches to calculating marginal
+[28] Diaconis, P. and Stanton, D. (2006). A hypergeo-                     densities. J. Amer. Statist. Assoc. 85 398–409.
+         metric walk. Preprint, Dept. Statistics, Stanford                MR1141740
+         Univ.                                                   [46] Geman, S. and Geman, D. (1984). Stochastic re-
+[29] Diaconis, P. and Ylvisaker, D. (1979). Conjugate                     laxation Gibbs distributions and the Bayesian
+         priors for exponential families. Ann. Statist. 7 269–            restoration of images. IEEE Trans. Pattern Anal.
+         281. MR0520238                                                   Machine Intelligence 6 721–741.
+[30] Diaconis, P. and Ylvisaker, D. (1985). Quantify-            [47] Gilks, W. Richardson, S. and Spiegelhalter, D.
+         ing prior opinion. In Bayesian Statistics 2 (J.                  (1996). Markov Chain Monte Carlo in Practice.
+         Bernardo et al. eds.) 133–156. North-Holland, Am-                Chapman and Hall, London. MR1397966
+         sterdam. MR0862488                                      [48] Gill, J. (2002). Bayesian Methods: A Social and Be-
+[31] Donoho, D. and Johnstone, I. (1989). Projection-                     havioral Sciences Approach. Chapman and Hall,
+         based approximation and a duality with kernel                    Boca Raton, FL.
+         methods. Ann. Statist. 17 58–106. MR0981438             [49] Glauber, R. (1963). Time dependent statistics of
+[32] Dyer, M., Goldberg, L., Jerrum, M. and Mar-                          the Ising model. J. Math. Phys. 4 294–307.
+         tin, R. (2005). Markov chain comparison. Probab.                 MR0148410
+         Surv. 3 89–111. MR2216963                               [50] Goodman, J. and Sokal, A. (1984). Multigrid Monte
+[33] Eaton, M. L. (1992). A statistical diptych: Admissi-                 Carlo method conceptual foundations. Phys. Rev.
+         ble inferences—Recurrence of symmetric Markov                    D 40 2035–2071.
+         chains. Ann. Statist. 20 1147–1179. MR1186245           [51] Griffiths, R. C. (1971). Orthogonal polynomials on
+[34] Eaton, M. L. (1997). Admissibility in quadratically                  the multinomial distribution. Austral. J. Statist.
+         regular problems and recurrence of symmetric                     13 27–35. MR0275548
+         Markov chains: Why the connection? J. Statist.          [52] Griffiths, R. C. (1978). On a bivariate triangu-
+         Plann. Inference 64 231–247. MR1621615                           lar distribution. Austral. J. Statist. 20 183–185.
+[35] Eaton, M. L. (2001). Markov chain conditions for ad-                 MR0548185
+         missibility on estimation problems with quadratic       [53] Griffiths, R. C. (2006). n-kernel orthogonal poly-
+         loss. In State of the Art in Statistics and Proba-               nomials on the Dirichlet, Dirichlet-multinomial,
+         bility. A Festschrift for Willen von Zwet (M. de                 Ewens’ sampling distribution and Poisson
+         Gunst, C. Klaassen and A. van der Vrad, eds.)                    Dirichlet processes. Lecture notes available at
+         223–243. IMS, Beachwood, OH. MR1836563                           http://www.stats.ox.ac.uk/~ griff/.
+[36] Eagleson, G. (1964). Polynomial expansions of bi-           [54] Gross, L. (1979). Decay of correlations in classical lat-
+         variate distributions. Ann. Math. Statist. 25 1208–              tice models at high temperatures. Comm. Math.
+         1215. MR0168055                                                  Phys. 68 9–27. MR0539733
+28                               P. DIACONIS, K. KHARE AND L. SALOFF-COSTE
+
+[55] Gutierrez-Pena, E. and Smith, A. (1997). Exponen-       [74] Letac, G. (1992). Lectures on Natural Exponential
+         tial and Bayes in conjugate families: Review and              Families and Their Variance Functions. Mono-
+         extensions. Test 6 1–90. MR1466433                            grafı́as de Matemática 50. IMPA, Rio de Janeiro.
+[56] Harkness, W. and Harkness, M. (1968). Generalized                 MR1182991
+         hyperbolic secant distributions. J. Amer. Statist.  [75] Letac, G. (2002). Donkey walk and Dirichlet distribu-
+         Assoc. 63 329–337. MR0234503                                  tions. Statist. Probab. Lett. 57 17–22. MR1911808
+[57] Hassairi, A. and Zarai, M. (2004). Characterization     [76] Letac, G. and Mora, M. (1990). Natural real ex-
+         of the cubic exponential families by orthogonal-              ponential families with cubic variance functions.
+         ity of polynomials. Ann. Statist. 32 2463–2476.               Ann. Statist. 18 1–37. MR1041384
+         MR2078547                                           [77] Liu, J., Wong, W. and Kong, A. (1995). Covariance
+[58] Hoare, M. and Rahman, M. (1979). Distributed pro-                 structure and convergence rates of the Gibbs sam-
+         cesses in discrete systems. Physica 97A 1–41.                 pler with various scans. J. Roy. Statist. Soc. Ser.
+[59] Hoare, M. and Rahman, M. (1983). Cumula-                          B 57 157–169. MR1325382
+         tive Bernoulli trials and Krawtchouk processes.     [78] Liu, J. (2001). Monte Carlo Strategies in Scientific
+         Stochastic Process. Appl. 16 113–139. MR0724060               Computing. Springer, New York. MR1842342
+[60] Hoare, M. and Rahman, M. (2007). A probabilis-          [79] Malouche, D. (1998). Natural exponential fami-
+         tic origin for a new class of bivariate polynomi-             lies related to Pick functions. Test 7 391–412.
+         als. Preprint, School of Math. and Stat. Carleton             MR1667006
+         Univ., Ottawa.                                      [80] Mckenzie, E. (1988). Some ARMA models for depen-
+[61] Hobert, J. P. and Robert, C. P. (1999).                           dent sequences of Poisson counts. Adv. in Appl.
+         Eaton’s Markov chain, its conjugate partner                   Probab. 20 822–835. MR0968000
+         and P-admissibility. Ann. Statist. 27 361–373.      [81] Marchev, D. and Hobert, J. P. (2004). Geometric
+         MR1701115                                                     ergodicity of van Dyk and Meng’s algorithm for the
+[62] Ismail, M. (1977). Connection relations and bilinear              multivariate Student’s t model. J. Amer. Statist.
+         formulas for the classical orthogonal polynomials.            Assoc. 99 228–238. MR2054301
+         J. Math. Anal. Appl. 57 487–496. MR0430361          [82] Meng, X. L. and Zaslavsky, A. (2002). Single obser-
+[63] Ismail, M. (2005). Classical and Quantum Orthogonal               vation unbiased priors. Ann. Statist. 30 1345–1375.
+         Polynomials. Cambridge Univ. Press. MR2191786                 MR1936322
+[64] Jones, G. and Hobert, J. (2001). Honest explo-          [83] Meixner, J. (1934). Orthogonal polynom system mit
+         ration of intractable probability distributions via           einer Besonderth Gestalt der Erzengerder func-
+         Markov chain Monte Carlo. Statist. Sci. 16 312–               tion. J. London Math. Soc. 9 6–13.
+         334. MR1888447                                      [84] Meyer, P. A. (1966). Probability and Potentials. Blais-
+[65] Jones, G. L. and Hobert, J. P. (2004). Sufficient                 dell, Waltham, MA. MR0205288
+         burn-in for Gibbs samplers for a hierarchical       [85] Moreno, E. and Girón, F. (1998). Estimating with
+         random effects model. Ann. Statist. 32 784–817.               incomplete count data: A Bayesian approach. J.
+         MR2060178                                                     Statist. Plann. Inference 66 147–159. MR1617002
+[66] Jorgensen, C. (1997). The Theory of Dispersion Mod-     [86] Morris, C. (1982). Natural exponential families with
+         els. Chapman and Hall, London. MR1462891                      quadratic variance functions. Ann. Statist. 10 65–
+[67] Karlin, S. and McGregor, J. (1961). The Hahn poly-                80. MR0642719
+         nomials, formulas and application. Scripta. Math.   [87] Morris, C. (1983). Natural exponential families with
+         26 33–46. MR0138806                                           quadratic variance functions: Statistical theory.
+[68] Koekoek, R. and Swarttouw, R. (1998). The                         Ann. Statist. 11 515–589. MR0696064
+         Askey-scheme of hypergeometric orthogonal           [88] Newman, M. and Barkema, G. (1999). Monte Carlo
+         polynomials and its q-analog. Available at                    Methods in Statistical Physics. Oxford Univ. Press.
+         http://math.nist.gov/opsf/projects/koekoek.html.              MR1691513
+[69] Koudou, A. and Pommeret, D. (2000). A construc-         [89] Pitt, M. and Walker, S. (2006). Extended con-
+         tion of Lancaster probabilities with margins in the           structions of stationary autoregressive processes.
+         multidimensional Meixner class. Austr. N. Z. J.               Statist. Probab. Lett. 76 1219–1224. MR2269348
+         Stat. 42 59–66. MR1747462                           [90] Pitt, M. and Walker, S. (2005). Constructing sta-
+[70] Koudou, A. (1996). Probabilities de Lancaster. Exp.               tionary time series models using auxiliary vari-
+         Math. 14 247–275. MR1409004                                   ables with applications. J. Amer. Statist. Assoc.
+[71] Koudou, A. (1998). Lancaster bivariate probability                100 554–564. MR2160559
+         distributions with Poisson, negative binomial and   [91] Pitt, M., Chatfield, C. and Walker, S. (2002).
+         gamma margins. Test 7 95–110. MR1650839                       Constructing first order stationary autoregressive
+[72] Lancaster, H. O. (1969). The Chi-Squared Distribu-                models via latent processes. Scand. J. Statist. 29
+         tion. Wiley, New York. MR0253452                              657–663. MR1988417
+[73] Lehmann, E. and Romano, J. (2005). Testing Sta-         [92] Pommeret, D. (1996). Natural exponential fami-
+         tistical Hypotheses, 3rd ed. Springer, New York.              lies and Lie algebras. Exp. Math. 14 353–381.
+         MR2135927                                                     MR1418028
+                                GIBBS SAMPLING AND ORTHOGONAL POLYNOMIALS                                                    29
+
+ [93] Pommeret, D. (2001). Posterior variance for quadratic                (with discussion). J. Amer. Statist. Assoc. 82 528–
+          natural exponential families. Statist. Probab. Lett.             550. MR0898357
+          53 357–362. MR1856159                                  [102] Tierney, L. (1994). Markov chains for exploring pos-
+ [94] Ringrose, J. (1971). Compact Non-Self-Adjoint Oper-                  terior distributions (with discussion). Ann. Statist.
+          ators. Van Nostrand, New York.                                   22 1701–1762. MR1329166
+ [95] Rosenthal, J. (1995). Minorization conditions and          [103] Turcin, V. (1971). On the computation of multidi-
+          convergence rates for Markov chain Monte Carlo.                  mensional integrals by the Monte Carlo method.
+          J. Amer. Statist. Assoc. 90 558–566. MR1340509                   Probab. Appl. 16 720–724. MR0292259
+ [96] Rosenthal, J. (1996). Analysis of the Gibbs sampler        [104] Van Doorn, E. A. (2003). Birth-death processes and
+          for a model related to James-Stein estimations.                  associated polynomials. In Proceedings of the Sixth
+          Statist. Comput. 6 269–275.                                      International Symposium on Orthogonal Polyno-
+ [97] Rosenthal, J. S. (2002). Quantitative convergence                    mials, Special Functions and their Applications
+          rates of Markov chains: A simple account. Elec-                  (Rome, 2001 ). J. Comput. Appl. Math. 153 497–
+          tron. Comm. Probab. 7 123–128. MR1917546                         506. MR1985718
+ [98] Roy, V. and Hobert, J. P. (2007). Convergence rates        [105] Walter, G. and Hamedani, G. (1991). Bayes em-
+          and asymptotic standard errors for MCMC al-                      pirical Bayes estimation for natural exponential
+          gorithms for Bayesian probit regression. J. Roy.                 families with quadratic variance functions. Ann.
+          Statist. Soc. Ser. B 69 607–623.                                 Statist. 19 1191–1224. MR1126321
+ [99] Saloff-Coste, L. (2004). Total variation lower             [106] Wilson, D. (2004). Mixing times of Lozenge tiling and
+          bounds for finite Markov chains: Wilson’s lemma.                 card shuffling Markov chains. Ann. Appl. Probab.
+          In Random Walks and Geometry (V. Kaimanovich                     14 274–325. MR2023023
+          and W. Woess, eds.) 515–532. de Gruyter, Berlin.       [107] Yuen, W. K. (2000). Applications of geometric bounds
+          MR2087800                                                        to the convergence rate of Markov chains in Rn .
+[100] Szego, G. (1959). Orthogonal Polynomials, rev. ed.
+                                                                           Stochastic Process. Appl. 87 1–23. MR1751162
+          Amer. Math. Soc., New York. MR0106295
+[101] Tanner, M. and Wong, W. (1987). The calculation
+          of posterior distributions by data augmentation
+
