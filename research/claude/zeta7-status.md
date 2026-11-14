@@ -101,3 +101,26 @@ denominators enter the polynomial part. The exact data say the true constant is 
 Imports: the positive integral representation for general odd $s$ (Hermite); the two integrals of $\rho$
 (reconfirmed numerically to 25 digits); the prime number theorem. Numerator families $W=D_N^a$ are not
 covered.
+
+## 6. Attempt to extend the no-go to $s=7,9,11,13$: not achieved; the gap located (third run)
+
+Source: frontier subagent (`computations/nogo7_wild.py`, `output_nogo7_*.txt`). Not re-derived by the
+orchestrator.
+
+* **Proved constants unchanged**: $\gamma_0=0.875,\,2.0,\,2.44,\,2.89$ for $s=7,9,11,13$ against the needed $3.119$.
+* **Theorem A\*** (a sharper form of Theorem A): hypothesis (H3) can be replaced by the two conditions
+  its proof actually uses, (C1) and (C2), on the block of multiples of $p$. Exact data (84 primes,
+  $K=40,80,120$): both hold in every "unsaturated" case $2m\le s-3$ except at the boundary $m=(s-3)/2$, and
+  never in the "saturated" regime.
+* **Budget for $s=7$**: even if the unsaturated layers ($m\le2$) and the fully saturated regime were both
+  proved, one gets $\frac{14}9+\frac{14}9=3.111<3.119$. So $s=7$ needs, in addition, the layer $m=3$ or the
+  extra "+2" roots: every route passes through the saturated regime, where the polynomial part is
+  highly divisible by $p$ and no longer loses to the diagonal.
+* **Structure found**: a Loewner identity for the polynomial block, $P_{ij}=(\varphi_i-\varphi_j)/(j^2-i^2)$; and a
+  "descent congruence" (exact in 40/40 cases for $m=2$; derivation only sketched): modulo $p$ the block of
+  multiples of $p$ for $\zeta(s)$ looks like the polynomial entry of the $\zeta(s-4)$ problem on the leftover
+  window. This explains saturation and suggests an inductive proof.
+* **A counterexample to any soft argument**: non-integral rows from the wild block can destroy every
+  unit root of the tame rows, so a proof must use the actual structure.
+* Conditional statements: $s=13$ would follow from (C2) for $m\le4$ (held in all 16 tested cases);
+  $s=11$ is short by $0.03$ and needs $m=4$, where (C2) fails with equality.

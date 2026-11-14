@@ -1,0 +1,84 @@
+s= 7 K= 40 p= 11 m=3 r= 7 unsat(2m<=s-3)=False: minv(P)=-1 g= 8 (H3-bound 9, g*=6) theta'= 7 theta''= 0 C1&C2=False
+s= 7 K= 40 p= 13 m=3 r= 1 unsat(2m<=s-3)=False: minv(P)=-1 g= 8 (H3-bound 9, g*=6) theta'= 7 theta''= 0 C1&C2=False
+s= 7 K= 40 p= 17 m=2 r= 6 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 4 theta''= 3 C1&C2=True | descent P_WW=mu^(3)(D_6)*J mod p: True, v_p(mu^(3)(D_r))=0, p|2^s+1: False
+s= 7 K= 40 p= 19 m=2 r= 2 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 4 theta''= 3 C1&C2=True | descent P_WW=mu^(3)(D_2)*J mod p: True, v_p(mu^(3)(D_r))=0, p|2^s+1: False
+s= 7 K= 80 p= 13 m=6 r= 2 unsat(2m<=s-3)=False: minv(P)= 4 g=54 (H3-bound 54, g*=39) theta'=46 theta''= 0 C1&C2=False
+s= 7 K= 80 p= 17 m=4 r=12 unsat(2m<=s-3)=False: minv(P)= 1 g=19 (H3-bound 20, g*=14) theta'=16 theta''= 0 C1&C2=False
+s= 7 K= 80 p= 19 m=4 r= 4 unsat(2m<=s-3)=False: minv(P)= 0 g=19 (H3-bound 20, g*=14) theta'=16 theta''= 0 C1&C2=False
+s= 7 K= 80 p= 23 m=3 r=11 unsat(2m<=s-3)=False: minv(P)=-1 g= 8 (H3-bound 9, g*=6) theta'= 7 theta''= 0 C1&C2=False
+s= 7 K= 80 p= 29 m=2 r=22 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 3 theta''= 2 C1&C2=True | descent P_WW=mu^(3)(D_22)*J mod p: True, v_p(mu^(3)(D_r))=0, p|2^s+1: False
+s= 7 K= 80 p= 31 m=2 r=18 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 3 theta''= 2 C1&C2=True | descent P_WW=mu^(3)(D_18)*J mod p: True, v_p(mu^(3)(D_r))=0, p|2^s+1: False
+s= 7 K= 80 p= 37 m=2 r= 6 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 4 theta''= 3 C1&C2=True | descent P_WW=mu^(3)(D_6)*J mod p: True, v_p(mu^(3)(D_r))=0, p|2^s+1: False
+s= 7 K=120 p= 17 m=7 r= 1 unsat(2m<=s-3)=False: minv(P)= 6 g=76 (H3-bound 77, g*=56) theta'=67 theta''= 0 C1&C2=False
+s= 7 K=120 p= 19 m=6 r= 6 unsat(2m<=s-3)=False: minv(P)= 4 g=53 (H3-bound 54, g*=39) theta'=46 theta''= 0 C1&C2=False
+s= 7 K=120 p= 23 m=5 r= 5 unsat(2m<=s-3)=False: minv(P)= 2 g=34 (H3-bound 35, g*=25) theta'=29 theta''= 0 C1&C2=False
+s= 7 K=120 p= 29 m=4 r= 4 unsat(2m<=s-3)=False: minv(P)= 0 g=19 (H3-bound 20, g*=14) theta'=16 theta''= 0 C1&C2=False
+s= 7 K=120 p= 31 m=3 r=27 unsat(2m<=s-3)=False: minv(P)=-1 g= 8 (H3-bound 9, g*=6) theta'= 7 theta''= 0 C1&C2=False
+s= 7 K=120 p= 37 m=3 r= 9 unsat(2m<=s-3)=False: minv(P)=-1 g= 8 (H3-bound 9, g*=6) theta'= 7 theta''= 0 C1&C2=False
+s= 7 K=120 p= 41 m=2 r=38 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 3 theta''= 2 C1&C2=True | descent P_WW=mu^(3)(D_38)*J mod p: True, v_p(mu^(3)(D_r))=0, p|2^s+1: False
+s= 7 K=120 p= 43 m=2 r=34 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 3 theta''= 2 C1&C2=True | descent P_WW=mu^(3)(D_34)*J mod p: True, v_p(mu^(3)(D_r))=0, p|2^s+1: True
+s= 7 K=120 p= 47 m=2 r=26 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 3 theta''= 2 C1&C2=True | descent P_WW=mu^(3)(D_26)*J mod p: True, v_p(mu^(3)(D_r))=0, p|2^s+1: False
+s= 7 K=120 p= 53 m=2 r=14 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 4 theta''= 3 C1&C2=True | descent P_WW=mu^(3)(D_14)*J mod p: True, v_p(mu^(3)(D_r))=0, p|2^s+1: False
+s= 7 K=120 p= 59 m=2 r= 2 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 4 theta''= 3 C1&C2=True | descent P_WW=mu^(3)(D_2)*J mod p: True, v_p(mu^(3)(D_r))=0, p|2^s+1: False
+s= 9 K= 40 p= 11 m=3 r= 7 unsat(2m<=s-3)=True : minv(P)= 0 g= 6 (H3-bound 9, g*=6) theta'= 7 theta''= 2 C1&C2=True
+s= 9 K= 40 p= 13 m=3 r= 1 unsat(2m<=s-3)=True : minv(P)= 0 g= 6 (H3-bound 9, g*=6) theta'= 8 theta''= 3 C1&C2=True
+s= 9 K= 40 p= 17 m=2 r= 6 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 6 theta''= 5 C1&C2=True | descent P_WW=mu^(5)(D_6)*J mod p: True, v_p(mu^(5)(D_r))=0, p|2^s+1: False
+s= 9 K= 40 p= 19 m=2 r= 2 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 6 theta''= 5 C1&C2=True | descent P_WW=mu^(5)(D_2)*J mod p: True, v_p(mu^(5)(D_r))=0, p|2^s+1: True
+s= 9 K= 80 p= 13 m=6 r= 2 unsat(2m<=s-3)=False: minv(P)= 2 g=52 (H3-bound 54, g*=39) theta'=46 theta''= 0 C1&C2=False
+s= 9 K= 80 p= 17 m=4 r=12 unsat(2m<=s-3)=False: minv(P)=-1 g=17 (H3-bound 20, g*=14) theta'=15 theta''= 0 C1&C2=False
+s= 9 K= 80 p= 19 m=4 r= 4 unsat(2m<=s-3)=False: minv(P)=-1 g=17 (H3-bound 20, g*=14) theta'=15 theta''= 0 C1&C2=False
+s= 9 K= 80 p= 23 m=3 r=11 unsat(2m<=s-3)=True : minv(P)= 0 g= 6 (H3-bound 9, g*=6) theta'= 8 theta''= 3 C1&C2=True
+s= 9 K= 80 p= 29 m=2 r=22 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 5 theta''= 4 C1&C2=True | descent P_WW=mu^(5)(D_22)*J mod p: True, v_p(mu^(5)(D_r))=0, p|2^s+1: False
+s= 9 K= 80 p= 31 m=2 r=18 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 5 theta''= 4 C1&C2=True | descent P_WW=mu^(5)(D_18)*J mod p: True, v_p(mu^(5)(D_r))=0, p|2^s+1: False
+s= 9 K= 80 p= 37 m=2 r= 6 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 6 theta''= 5 C1&C2=True | descent P_WW=mu^(5)(D_6)*J mod p: True, v_p(mu^(5)(D_r))=0, p|2^s+1: False
+s= 9 K=120 p= 17 m=7 r= 1 unsat(2m<=s-3)=False: minv(P)= 4 g=74 (H3-bound 77, g*=56) theta'=66 theta''= 0 C1&C2=False
+s= 9 K=120 p= 19 m=6 r= 6 unsat(2m<=s-3)=False: minv(P)= 2 g=51 (H3-bound 54, g*=39) theta'=45 theta''= 0 C1&C2=False
+s= 9 K=120 p= 23 m=5 r= 5 unsat(2m<=s-3)=False: minv(P)= 0 g=32 (H3-bound 35, g*=25) theta'=28 theta''= 0 C1&C2=False
+s= 9 K=120 p= 29 m=4 r= 4 unsat(2m<=s-3)=False: minv(P)=-1 g=17 (H3-bound 20, g*=14) theta'=15 theta''= 0 C1&C2=False
+s= 9 K=120 p= 31 m=3 r=27 unsat(2m<=s-3)=True : minv(P)= 0 g= 6 (H3-bound 9, g*=6) theta'= 7 theta''= 2 C1&C2=True
+s= 9 K=120 p= 37 m=3 r= 9 unsat(2m<=s-3)=True : minv(P)= 0 g= 6 (H3-bound 9, g*=6) theta'= 8 theta''= 3 C1&C2=True
+s= 9 K=120 p= 41 m=2 r=38 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 5 theta''= 4 C1&C2=True | descent P_WW=mu^(5)(D_38)*J mod p: True, v_p(mu^(5)(D_r))=0, p|2^s+1: False
+s= 9 K=120 p= 43 m=2 r=34 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 5 theta''= 4 C1&C2=True | descent P_WW=mu^(5)(D_34)*J mod p: True, v_p(mu^(5)(D_r))=0, p|2^s+1: False
+s= 9 K=120 p= 47 m=2 r=26 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 5 theta''= 4 C1&C2=True | descent P_WW=mu^(5)(D_26)*J mod p: True, v_p(mu^(5)(D_r))=0, p|2^s+1: False
+s= 9 K=120 p= 53 m=2 r=14 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 6 theta''= 5 C1&C2=True | descent P_WW=mu^(5)(D_14)*J mod p: True, v_p(mu^(5)(D_r))=0, p|2^s+1: False
+s= 9 K=120 p= 59 m=2 r= 2 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 6 theta''= 5 C1&C2=True | descent P_WW=mu^(5)(D_2)*J mod p: True, v_p(mu^(5)(D_r))=0, p|2^s+1: False
+s=11 K= 40 p= 13 m=3 r= 1 unsat(2m<=s-3)=True : minv(P)= 0 g= 6 (H3-bound 9, g*=6) theta'=10 theta''= 5 C1&C2=True
+s=11 K= 40 p= 17 m=2 r= 6 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 8 theta''= 7 C1&C2=True | descent P_WW=mu^(7)(D_6)*J mod p: True, v_p(mu^(7)(D_r))=0, p|2^s+1: False
+s=11 K= 40 p= 19 m=2 r= 2 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 8 theta''= 7 C1&C2=True | descent P_WW=mu^(7)(D_2)*J mod p: True, v_p(mu^(7)(D_r))=0, p|2^s+1: False
+s=11 K= 80 p= 13 m=6 r= 2 unsat(2m<=s-3)=False: minv(P)= 0 g=50 (H3-bound 54, g*=39) theta'=44 theta''= 0 C1&C2=False
+s=11 K= 80 p= 17 m=4 r=12 unsat(2m<=s-3)=True : minv(P)= 0 g=14 (H3-bound 20, g*=14) theta'=14 theta''= 2 C1&C2=False
+s=11 K= 80 p= 19 m=4 r= 4 unsat(2m<=s-3)=True : minv(P)= 0 g=14 (H3-bound 20, g*=14) theta'=15 theta''= 3 C1&C2=True
+s=11 K= 80 p= 23 m=3 r=11 unsat(2m<=s-3)=True : minv(P)= 0 g= 6 (H3-bound 9, g*=6) theta'=10 theta''= 5 C1&C2=True
+s=11 K= 80 p= 29 m=2 r=22 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 7 theta''= 6 C1&C2=True | descent P_WW=mu^(7)(D_22)*J mod p: True, v_p(mu^(7)(D_r))=0, p|2^s+1: False
+s=11 K= 80 p= 31 m=2 r=18 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 7 theta''= 6 C1&C2=True | descent P_WW=mu^(7)(D_18)*J mod p: True, v_p(mu^(7)(D_r))=0, p|2^s+1: False
+s=11 K= 80 p= 37 m=2 r= 6 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 8 theta''= 7 C1&C2=True | descent P_WW=mu^(7)(D_6)*J mod p: True, v_p(mu^(7)(D_r))=0, p|2^s+1: False
+s=11 K=120 p= 17 m=7 r= 1 unsat(2m<=s-3)=False: minv(P)= 2 g=71 (H3-bound 77, g*=56) theta'=64 theta''= 0 C1&C2=False
+s=11 K=120 p= 19 m=6 r= 6 unsat(2m<=s-3)=False: minv(P)= 0 g=48 (H3-bound 54, g*=39) theta'=43 theta''= 0 C1&C2=False
+s=11 K=120 p= 23 m=5 r= 5 unsat(2m<=s-3)=False: minv(P)=-1 g=29 (H3-bound 35, g*=25) theta'=26 theta''= 0 C1&C2=False
+s=11 K=120 p= 29 m=4 r= 4 unsat(2m<=s-3)=True : minv(P)= 0 g=14 (H3-bound 20, g*=14) theta'=15 theta''= 3 C1&C2=True
+s=11 K=120 p= 31 m=3 r=27 unsat(2m<=s-3)=True : minv(P)= 0 g= 6 (H3-bound 9, g*=6) theta'= 9 theta''= 4 C1&C2=True
+s=11 K=120 p= 37 m=3 r= 9 unsat(2m<=s-3)=True : minv(P)= 0 g= 6 (H3-bound 9, g*=6) theta'=10 theta''= 5 C1&C2=True
+s=11 K=120 p= 41 m=2 r=38 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 7 theta''= 6 C1&C2=True | descent P_WW=mu^(7)(D_38)*J mod p: True, v_p(mu^(7)(D_r))=0, p|2^s+1: False
+s=11 K=120 p= 43 m=2 r=34 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 7 theta''= 6 C1&C2=True | descent P_WW=mu^(7)(D_34)*J mod p: True, v_p(mu^(7)(D_r))=0, p|2^s+1: False
+s=11 K=120 p= 47 m=2 r=26 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 7 theta''= 6 C1&C2=True | descent P_WW=mu^(7)(D_26)*J mod p: True, v_p(mu^(7)(D_r))=0, p|2^s+1: False
+s=11 K=120 p= 53 m=2 r=14 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 8 theta''= 7 C1&C2=True | descent P_WW=mu^(7)(D_14)*J mod p: True, v_p(mu^(7)(D_r))=0, p|2^s+1: False
+s=11 K=120 p= 59 m=2 r= 2 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 8 theta''= 7 C1&C2=True | descent P_WW=mu^(7)(D_2)*J mod p: True, v_p(mu^(7)(D_r))=0, p|2^s+1: False
+s=13 K= 40 p= 17 m=2 r= 6 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'=10 theta''= 9 C1&C2=True | descent P_WW=mu^(9)(D_6)*J mod p: True, v_p(mu^(9)(D_r))=0, p|2^s+1: False
+s=13 K= 40 p= 19 m=2 r= 2 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'=10 theta''= 9 C1&C2=True | descent P_WW=mu^(9)(D_2)*J mod p: True, v_p(mu^(9)(D_r))=0, p|2^s+1: False
+s=13 K= 80 p= 17 m=4 r=12 unsat(2m<=s-3)=True : minv(P)= 0 g=14 (H3-bound 20, g*=14) theta'=16 theta''= 4 C1&C2=True
+s=13 K= 80 p= 19 m=4 r= 4 unsat(2m<=s-3)=True : minv(P)= 0 g=14 (H3-bound 20, g*=14) theta'=17 theta''= 5 C1&C2=True
+s=13 K= 80 p= 23 m=3 r=11 unsat(2m<=s-3)=True : minv(P)= 0 g= 6 (H3-bound 9, g*=6) theta'=12 theta''= 7 C1&C2=True
+s=13 K= 80 p= 29 m=2 r=22 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 9 theta''= 8 C1&C2=True | descent P_WW=mu^(9)(D_22)*J mod p: True, v_p(mu^(9)(D_r))=0, p|2^s+1: False
+s=13 K= 80 p= 31 m=2 r=18 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 9 theta''= 8 C1&C2=True | descent P_WW=mu^(9)(D_18)*J mod p: True, v_p(mu^(9)(D_r))=0, p|2^s+1: False
+s=13 K= 80 p= 37 m=2 r= 6 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'=10 theta''= 9 C1&C2=True | descent P_WW=mu^(9)(D_6)*J mod p: True, v_p(mu^(9)(D_r))=0, p|2^s+1: False
+s=13 K=120 p= 17 m=7 r= 1 unsat(2m<=s-3)=False: minv(P)= 0 g=67 (H3-bound 77, g*=56) theta'=61 theta''= 0 C1&C2=False
+s=13 K=120 p= 19 m=6 r= 6 unsat(2m<=s-3)=False: minv(P)=-1 g=44 (H3-bound 54, g*=39) theta'=40 theta''= 0 C1&C2=False
+s=13 K=120 p= 23 m=5 r= 5 unsat(2m<=s-3)=True : minv(P)= 0 g=25 (H3-bound 35, g*=25) theta'=25 theta''= 3 C1&C2=False
+s=13 K=120 p= 29 m=4 r= 4 unsat(2m<=s-3)=True : minv(P)= 0 g=14 (H3-bound 20, g*=14) theta'=17 theta''= 5 C1&C2=True
+s=13 K=120 p= 31 m=3 r=27 unsat(2m<=s-3)=True : minv(P)= 0 g= 6 (H3-bound 9, g*=6) theta'=11 theta''= 6 C1&C2=True
+s=13 K=120 p= 37 m=3 r= 9 unsat(2m<=s-3)=True : minv(P)= 0 g= 6 (H3-bound 9, g*=6) theta'=12 theta''= 7 C1&C2=True
+s=13 K=120 p= 41 m=2 r=38 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 9 theta''= 8 C1&C2=True | descent P_WW=mu^(9)(D_38)*J mod p: True, v_p(mu^(9)(D_r))=0, p|2^s+1: False
+s=13 K=120 p= 43 m=2 r=34 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 9 theta''= 8 C1&C2=True | descent P_WW=mu^(9)(D_34)*J mod p: True, v_p(mu^(9)(D_r))=0, p|2^s+1: False
+s=13 K=120 p= 47 m=2 r=26 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'= 9 theta''= 8 C1&C2=True | descent P_WW=mu^(9)(D_26)*J mod p: True, v_p(mu^(9)(D_r))=0, p|2^s+1: False
+s=13 K=120 p= 53 m=2 r=14 unsat(2m<=s-3)=True : minv(P)= 0 g= 2 (H3-bound 2, g*=1) theta'=10 theta''= 9 C1&C2=True | descent P_WW=mu^(9)(D_14)*J mod p: True, v_p(mu^(9)(D_r))=1, p|2^s+1: False
+s=13 K=120 p= 59 m=2 r= 2 unsat(2m<=s-3)=True : minv(P)= 0 g= 1 (H3-bound 2, g*=1) theta'=10 theta''= 9 C1&C2=True | descent P_WW=mu^(9)(D_2)*J mod p: True, v_p(mu^(9)(D_r))=0, p|2^s+1: False
