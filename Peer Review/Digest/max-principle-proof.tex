@@ -352,9 +352,10 @@ $F_{m+1}\ge4(2m+1)^3X_m$, hence
 \[
 X_{m+1}-X_m=\frac{F_{m+1}}{(m+1)^3}\ge4\Bigl(\frac{2m+1}{m+1}\Bigr)^3X_m\ge13\,X_m ,
 \]
-so $X_{m+j}\ge14^jX_m$ for all $j$. As the sequence is bounded, $X_m=0$ for every $m\ge n$. Then
-$F_m=0$ for $m>n$, and $F_n=F_{n+1}-4(2n+1)^3X_n=0$, so $X_{n-1}=X_n=0$; and a solution with two
-consecutive zeros is identically zero. This is excluded. Hence $X_nF_n<0$ for all $n\ge1$.
+so $X_{m+j}\ge14^jX_m$ for all $j$. If $X_n=F_n=0$, then $X_{n-1}=X_n=0$, and a solution with two
+consecutive zeros is identically zero, which is excluded. Otherwise a positive value appears at
+once ($X_n>0$, or else $X_n=0$ and $X_{n+1}=F_n/(n+1)^3>0$) and then grows geometrically, which
+contradicts boundedness. Hence $X_nF_n<0$ for all $n\ge1$.
 
 \emph{(2) Sign and decrease.} $X_nF_n<0$ says $X_n^2<X_nX_{n-1}$. So $X_{n-1}$ has the sign of
 $X_n$, and $|X_n|<|X_{n-1}|$. In particular $X_0\ne0$. So a bounded solution with $X_0=0$ is
@@ -376,9 +377,12 @@ Divide by $n^3X_n$.
 solution cannot have a maximum, because there the slope would pass from $\ge0$ to $\le0$, while by
 \eqref{S} the slope of a positive solution only increases. In the plane of the pairs $(X,F)$ the
 two quadrants where $X$ and $F$ have the same sign are traps, and the bounded solution is the one
-that never enters them. One warning about the differential equation: it shows the shape, not the
-number. Taken literally it would predict a decay by the factor $e^{\sqrt{32}}\approx286$ per step
-instead of $33.97$, because one step is not small on the scale on which the solution changes.
+that never enters them. One warning about the differential equation: taken literally it gives the
+wrong number. For large $n$ it reads $u''\approx32\,u$ and predicts a decay by
+$e^{\kappa}\approx286$ per step, where $\kappa=\sqrt{32}$. The difference equation
+$X_{n+1}-2X_n+X_{n-1}\approx32\,X_n$ has instead the rate $e^\theta$ with
+$2\sinh\frac\theta2=\kappa$, and that is $e^\theta=17+12\sqrt2=33.97$ exactly. The two agree only
+when $\kappa$ is small, that is, when one step is small on the scale on which the solution changes.
 
 \noindent\emph{What the proof uses.} The two equations \eqref{S}; that the weights $n^3$ and the
 term $\ell_n=4(2n+1)^3$ are positive; and the size of $\ell_n$ twice: in (1), that $\ell_n$ is at
@@ -716,6 +720,10 @@ proof of Mahboubi and Sibut-Pinote (arXiv:1912.06611; passage read).
 $\sum_{k>x}k^{-3}$ at $x=m$ (Berndt, \emph{Ramanujan's Notebooks II}, Entry 32(iii)), as quoted by
 K.~Rajkumar (arXiv:1212.5881; paper read), who builds the table by a two-dimensional recurrence
 and obtains the rate from Poincar\'e's theorem. According to Rajkumar's introduction, tables of this kind go back to Ap\'ery.
+\item The function $R_n$ and the series $-\sum_{t\ge1}R_n'(t)$ are the starting point of
+W.~Zudilin's elementary proof (arXiv:math/0202159; paper read in this project), which builds on
+ideas of Nesterenko, Rivoal and Ball. Zudilin obtains the recurrence by creative telescoping and
+the size by a second series; those two steps are what is done differently here.
 \item From memory, not retrieved: relations between neighbouring sums like \eqref{rowid} and
 \eqref{six} are classical (contiguous relations; Askey and Wilson, 1984); and that hitting
 probabilities are smallest solutions of such recurrences and equal voltages in a network is
