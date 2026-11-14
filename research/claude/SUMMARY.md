@@ -1,180 +1,91 @@
-# Summary (Claude), overnight run of 2026-11-14
+# Summary (Claude), research run of 14 Nov 2026
 
-Written at the end of the first long working block; later additions are appended at the bottom.
+Consolidated at 16:05 UTC (container clock); it replaces the earlier summary and its addenda.
+Everything described as "proved" or "checked" was checked by AI passes only (orchestrator and
+subagents); no human has refereed any of it. "Not re-derived" means the orchestrator relied on a
+subagent's proof plus exact computations.
 
-## What is new (to this repo; historical novelty not investigated for any item)
+## 1. Headline results, in order of confidence and usefulness
 
-1. **A Hankel-determinant proof of Apéry's theorem** (`hankel-zeta3.md`). Integer polynomials $Q_K$ of
-   degree $K$ with $0<Q_K(\zeta(3))<e^{-cK^2}$, obtained as normalised Hankel determinants
-   $\det[\mu_X(t^{i+j}/D_K)]$ of the $s=3$ analogue of Fauzan's functional. No numerator, no
-   normalising factorials, one prime-independent basis; every $p$-adic gain comes from one reflection
-   symmetry. Status: complete proof draft, checked in three independent AI passes and exactly for
-   $K\le100$; one explicit one-variable inequality is certified by interval arithmetic; relies on
-   Hermite's formula and an elementary Chebyshev-type bound. **Not yet human-refereed; must be
-   treated as a draft.**
-2. **A shorter elementary proof of Apéry's theorem** (`short-proof.md`): Zudilin's Lemma 1 + one
-   degree-4 polynomial identity used twice + Apéry's Casoratian. Ball's series, the Stirling-type
-   estimate and the degree-6 certificate of Zudilin's proof are not needed. With the other agent's
-   period-6 lcm bound the proof needs no prime number theorem. Complete; all steps hand-checked;
-   identities script-checked.
-3. **A hand derivation of Apéry's recurrence** (`recurrence-origin.md`): the linear system for the
-   telescoping certificate solved in the variables $m=2n+1$, $\nu=n(n+1)$;
-   $17n^2+17n+5=4(2n+1)^2+n(n+1)+1$; why the order is 2; by-product: the companion forms
-   $\sum_tR_n(t)$ in $1,\zeta(2)$ satisfy the same recurrence with right side $-8(2n+1)$ (exact check $n\le30$).
-4. **Quantitative explanation of why the Hankel family works for ζ(3), barely for ζ(5), not for ζ(7)**
-   (`hankel-zeta3.md` §7, `fauzan-status.md` §4): decay per $K^2$ is $s$-independent
-   ($\approx\frac92\log2$ for $W=1$), cost is $\approx\frac{s(s+4)}{2(s+2)}$; totals $-0.87,+0.10,+1.16,+2.20$
-   for $s=3,5,7,9$. Numerical/heuristic for $s\ge5$ (exact computations to $K=80$), proved only for $s=3$.
+| # | result | file | status |
+|---|---|---|---|
+| 1 | **A complete elementary proof that ζ(3) is irrational, with motivation for every step.** One rational function, one degree-4 identity verified by hand, a Casoratian, an elementary prime estimate. No integrals, no prime number theorem. | `apery-elementary.md` (shorter: `short-proof.md`; origin of the recurrence: `recurrence-origin.md`) | every step hand-checked; identities script-checked. A rearrangement of classical ingredients, not a new theorem. |
+| 2 | **The margin of Fauzan's ζ(5) proof can be doubled.** His inner-range valuation bound holds for all primes $p\ge5$, $p^2>104n+6$, and beats his outer bound for $K/3<p<\frac{69}{170}K$. The cost constant drops by exactly $\frac{3203}{163200}$; margin at $M=200$: $-0.017408\to-0.037034$. | `zeta5-margin.md` | Theorem W re-derived by the orchestrator; exact verification $K\le200$; constants confirmed by an independent recomputation; the key statement is already a proved Lean theorem in mo271's repo but unused in that range. Novelty not checked. |
+| 3 | **A Zenodo preprint claiming ζ(7)∉Q is refuted as a proof.** Its normaliser contradicts integrality of the leading coefficient; exact computation for $n\le4$ gives values $\ge e^{1274}$ where it claims $<e^{-19000n^2}$; the error is one wrong integral over primes. | `anand-referee.md` | logic checked by the orchestrator; constants by the subagent. |
+| 4 | **Why ζ(7) is out of reach of the current method.** Decay per $K^2$ is independent of $s$; cost grows like $s$. About 420 exact determinants in 8 families all fail (best cost/decay ratio 1.218). **Proved no-go for the plain Hankel family for every odd $s\ge15$.** | `zeta7-status.md` | $s\ge15$: analytic half re-derived, arithmetic half not; $s=7$–$13$: numerical only. |
+| 5 | **A Hankel-determinant proof of ζ(3)∉Q** with one global basis and the exact decay rate $\frac92\log2$ (explicit equilibrium measure; matching upper and lower bounds). | `hankel-zeta3.md`, `hankel-energy-bound.md` | complete draft, two independent analytic routes. **Not new as a result:** a variant of known work (Zudilin 2017 §6; Fauzan's method at $s=3$); the specific simple determinant and constants were not found elsewhere. |
+| 6 | **Catalan's constant:** very simple positive functionals exist (pole values in $\mathbb Q+\mathbb QG$, no $\pi^2$), but the Hankel determinants miss by about $0.5K^2$; mixed-node variants are worse, for a structural reason. The same family appears to reprove ζ(2), log 2, π. | `catalan-status.md` | exact finite computations; lemmas not re-derived. Irrationality of $G$ was already claimed by OpenAI (Sep 2026), not verified by us. |
 
-## What is established (checked exposition of known results)
+## 2. Expository work (checked exposition of known results)
 
-* Zudilin's proof (arXiv:math/0202159), complete, with a referee report (`exposition.md`): two
-  misprints, two asserted-but-unproved steps in Lemma 4 (proved by hand here, including the exact
-  value $e^{f(\tau_0)}=(\sqrt2-1)^4$), and the non-trivial "trivial bound $D_n<3^n$".
-* The Beukers ↔ Zudilin dictionary via the Mellin transform of Legendre polynomials (exposition §9).
-* Status of Fauzan's ζ(5) proof and its two Lean formalizations (`fauzan-status.md`): theorem
-  formalized modulo PNT (danromik: PNT as the single axiom; mo271: PNT imported); the printed paper has
-  at least two gaps that the formalizations repair. We did not build the Lean projects.
+* `exposition.md`: Zudilin's proof (arXiv:math/0202159) line by line, with a referee report: two
+  misprints; two asserted steps of Lemma 4 proved by hand, including $e^{f(\tau_0)}=(\sqrt2-1)^4$ exactly; the
+  "trivial bound $D_n<3^n$" is not trivial ($4^n$ does not suffice). §9: the Beukers ↔ Zudilin dictionary
+  via the Mellin transform of Legendre polynomials.
+* `fauzan-status.md`: what Fauzan's ζ(5) preprint claims, what the two Lean projects prove (danromik:
+  PNT as the single axiom; mo271: PNT imported), where the printed paper has gaps that the
+  formalizations repair. We did not build the Lean projects.
+* `dependency-map.md`: how the ideas lead to irrationality in each proof.
+* `literature-status.md`: what a search of arXiv/Zenodo found (follow-ups to Fauzan; prior Hankel work).
 
-## Checked only numerically
+## 3. Checked only numerically / by exact finite computation
 
-* Uniqueness of the telescoping certificate in the ansatz $S=s(t)R_n(t)$ ($n\le8$).
-* $D_n<3^n$ for $n\le10^5$.
-* Conjectures: $\log\Delta_K(\zeta(3))\sim-\frac92\log2\cdot K^2$; true arithmetic cost $\sim\frac94K^2$;
-  $\operatorname{lcm}(1..K)^{3K}\Delta_K\in\mathbb Z[X]$ ($K\le100$); true energy constant $-1.3855$ for Fauzan's field.
-* All $s\ge5$ cost/decay statements.
+* Everything about $s\ge5$ cost and decay constants except Theorem W and the $s\ge15$ no-go.
+* Uniqueness of the telescoping certificate ($n\le8$); $D_n<3^n$ ($n\le10^5$).
+* Conjectures: true cost $\frac{s(s+4)}{2(s+2)}K^2$ for the plain family; Conjecture C1 (`zeta7-status.md`);
+  true energy constant $-1.3855$ for Fauzan's field; Hankel proofs for ζ(2), log 2, π (totals $-0.4$ to $-0.8$).
+* The off-support derivative formula for the equilibrium measure (verified numerically at five points;
+  its negativity then proved by hand).
 
-## What failed, and why
+## 4. What failed, and why
 
-* **A simpler ζ(5) proof: not achieved.** The two-sided Newton basis that makes $s=3$ transparent
-  loses about $0.5K^2$ for Fauzan's weight $D_N^6/D_K$ (it does not see the zeros of $D_N^6$ at primes
-  in the inner range); the margin available is only about $0.02K^2$.
-* **ζ(7) in the same family:** every variant tried has total $\ge+0.7K^2$. Not a theorem.
-* **Linear forms from the functional ($1\times1$ determinants):** normalised exponent $\ge0$ (heuristic):
-  the $K^2$ scale of determinants is essential.
-* **Hadamard with explicit polynomials** is too lossy for ζ(5) (loses about 9% where 1.3% is available).
+* **A simpler ζ(5) proof.** One prime-independent basis loses about $0.065K^2$ against a budget of
+  $0.0495$; the $p$-dependence of Fauzan's bases is forced by his numerator $D_N^6$. Two or three explicit
+  bases chosen by $K/p$ might suffice (numerical). `zeta5-simplification.md`.
+* **ζ(7) in any modification tried** (numerators, two-variable polynomials, mixtures with the ζ(5)
+  functional, other node sets, higher-order poles, derivative series, minors). `zeta7-status.md`.
+* **Catalan by positive-weight Hankel determinants**, with or without mixed nodes. `catalan-status.md`.
+* **Linear forms from the functional** ($1\times1$ determinants): no exponential gain (heuristic).
+* **No-go theorem for $s=7$–$13$**: the proved arithmetic bound is too small; primes below $K/2$ need a
+  finer analysis.
 
-## Sources not retrieved
+## 5. External inputs the proofs rest on
 
-* Beukers 1979 (doi:10.1112/blms/11.3.268): not attempted directly; the dictionary uses the other
-  agent's account of the integral plus our own derivation.
-* van der Poorten's report, Hanson's and Chebyshev's papers, DLMF: not retrieved; statements
-  attributed to them are flagged as from memory or as cited by Fauzan.
+* `apery-elementary.md`: none beyond undergraduate analysis.
+* `hankel-zeta3.md`: Hermite's formula for the Hurwitz zeta function; a Chebyshev-type bound; for the
+  sharp route, the classical negativity of logarithmic energy for zero-mass measures (cited).
+* `zeta5-margin.md`: Fauzan's Prop. 4.3, his (3.9) and his real-side constant, taken as given.
+* The $s\ge15$ no-go: the prime number theorem.
 
-## The other agent's claims we checked (branch `codex/independent-research`)
+## 6. Sources not retrieved
 
-| claim (file) | how checked | result |
+Beukers 1979 (doi:10.1112/blms/11.3.268); van der Poorten's report; Hanson's and Chebyshev's papers;
+Saff–Totik; Q. Tang's, Kilani's and Liu's follow-ups (known only through Lai's citations); the Lean
+repositories of the follow-ups. Statements attributed to these are flagged where they occur.
+
+## 7. The other agent's claims we checked (branch `codex/independent-research`)
+
+No errors were found in anything we checked.
+
+| claim | how checked | result |
 |---|---|---|
-| period-6 lcm bound $\log D_n\le1.17053n+O(\log^2n)$ (denominator-design.md §1) | re-derived by hand | correct; we rely on it in `short-proof.md` and `hankel-zeta3.md` |
-| odd-$s$ moment and pole formulas (odd-moment-generalization.md) | exact + 30-digit numerics, $s=3,5,7$; proof via Hermite re-derived for $s=3$ | correct |
-| forced-recurrence formula for the third-derivative forms (forced-recurrence-obstruction.md) | numerics $n\le7$ | correct |
-| Beukers triple integral $=-\sum R_n'(t)$ (beukers-explained.md) | numerics $n=1,2$; Mellin proof ours | correct |
-| asymptotics (3), (5), integrality (6), valuations (7), ratio limit (8) (research-results.md) | independent exact/high-precision code, $n\le1280$ | consistent/correct; true denominators confirmed to be $\approx e^{4mn}$ |
+| period-6 lcm bound $\log D_n\le1.17053n+O(\log^2n)$ | re-derived by hand | correct; used in our proofs |
+| their elementary proof of ζ(3)∉Q (Beukers integral + AM–GM) | three delicate steps refereed, exact and numeric | correct, complete; a different route from ours |
+| odd-$s$ positive moment functional | exact and 30-digit numerics | correct |
+| forced-recurrence obstruction; truncation asymptotics, integrality, valuations | independent exact/high-precision code | correct/consistent; true denominators confirmed to be $\approx e^{4mn}$ |
+| resistor-chain identities for the Apéry recurrence; rank-one approximants; depletion denominators; reciprocal Apéry model | exact recomputation | correct |
+| "PNT-free" ζ(5) normaliser | independent recomputation from their data | arithmetic correct, **but** its cost $1.3786$ exceeds Fauzan's $-U=1.3670$, so it closes only with their own unaudited real bound; with our Theorem W the cost would drop to about $1.359$ (not checked against their setup) |
+| obstruction theorems (depletion) | leading-coefficient part only | correct as far as checked; local valuation and lower bound not checked |
 
-No errors were found in the other agent's work.
+Not checked: their second ζ(3) proof (resolvent/Padé), their log 2 proof, their end-to-end ζ(5)
+derivation, and their commits after 13:55 UTC (a check is running).
 
-## Honest limits
+## 8. Honest limits
 
-* Everything "proved" here was checked by AI passes only.
-* §4–§6 of Fauzan's preprint were read by a subagent, not line by line by the orchestrator.
-* The session could not read the usage meter, so the owner's "stop at 75% of weekly usage" could not be enforced from inside.
-
-## Addendum (second frontier run): simplifying the ζ(5) arithmetic
-
-See `zeta5-simplification.md`. One prime-independent basis does not suffice for Fauzan's determinant
-(best loss found $\approx0.065K^2$ against a budget of $0.0495K^2$); two or three explicit Hermite
-"staircase" bases chosen by $K/p$ are estimated numerically to suffice for the inner range. By-product:
-Fauzan's outer-range bound (4.14) appears improvable by $\approx0.02K^2$ for $2.47<K/p<3$, which would
-about double his margin; verified exactly at 7 primes, not proved. None of this was re-derived by the
-orchestrator.
-
-## Addendum (low-burn wakes, 10:00–12:00 UTC)
-
-* The equilibrium problem behind the ζ(3) Hankel determinant is solved exactly (`computations/equilibrium_s3.py`):
-  support $[0,\frac34]$, explicit density, energy $\frac92\log2$.
-* `hankel-energy-bound.md`: $\log\Delta_K(\zeta(3))\le-\frac92\log2\cdot K^2+5K\log K+O(K)$. Refereed line by line by the
-  orchestrator; depends on the Euler–Lagrange inequality (subagent's proof, not re-derived) and the classical
-  negativity lemma for logarithmic energy (cited). With it the Hankel proof needs no computer-assisted
-  inequality and works with any prime bound $\theta(u)\le\kappa u$, $\kappa<\log4$.
-* Other agent: their "PNT-free ζ(5)" normaliser recomputes correctly but has cost $1.3786>1.3670$, so it
-  closes only with their own stronger real bound ($-1.38$), which we did not audit.
-
-## Addendum (14:30 UTC): literature check changes the novelty picture
-
-See `literature-status.md`. A search of arXiv/Zenodo found that, since Fauzan's preprint, determinant-method
-results implying ζ(3)∉Q already exist (Q. Tang: 1, ζ(2), ζ(3) linearly independent; Lai: 1, ζ(3), ζ(4)), and
-that irrationality of Catalan's constant was claimed by OpenAI on 24 Sep 2026 (Lean). So item 1 of "What is
-new" should be read as: **new to this repo, almost certainly not new to the literature as a result; possibly
-a simpler construction**. No ζ(7) result was found.
-
-## Addendum (15:05 UTC)
-
-* Prior art (`literature-status.md`): our Hankel ζ(3) proof is a special case/variant of known work
-  (Zudilin 2017 §6 already notes a Hankel-determinant ζ(3) proof from Beukers' forms; Fauzan's method at
-  $s=3$ gives our functional). The specific simple determinant and its exact constants were not found
-  elsewhere.
-* A Zenodo preprint claims ζ(7)∉Q by the same architecture; it conflicts with our exact computations
-  and is being refereed.
-* `apery-elementary.md`: one self-contained elementary proof of Apéry's theorem with a motivation
-  paragraph for every step. The other agent has a second, different elementary proof (Beukers integral +
-  AM–GM), refereed by us with no errors found.
-
-## Addendum (15:25 UTC): the ζ(5) margin theorem
-
-`zeta5-margin.md`. **Theorem W**: Fauzan's inner-range ("class-adapted basis") valuation bound holds for all
-primes $p\ge5$ with $p^2>104n+6$, not only for $p\le K/3$; for $K/3<p<\frac{69}{170}K$ it beats his outer bound
-(4.14). Consequence (exact rationals): the arithmetic constant drops by $g=\frac{3203}{163200}$ and the margin
-of the ζ(5) proof at $M=200$ goes from $-0.0174$ to $-0.0370$ (×2.13). Proof re-derived by the orchestrator;
-exact verification $K\le200$ with zero violations; the underlying statement is already a proved Lean theorem
-in mo271's repo (it is just not used in that range). Also: a model-level no-go for ζ(7) in this family
-(best total $+0.87K^2$; exact data within $0.015K^2$ of the model).
-
-## Addendum (15:45 UTC): ζ(7)
-
-`zeta7-status.md`. About 420 exact determinants in 8 families of modifications: none comes close
-(best scale-free ratio cost/decay 1.218; a proof needs < 1). For the exact shape used in a Zenodo preprint
-claiming ζ(7)∉Q ($D_N^8$, $K=40n$), the primitive integer polynomial is $\ge e^{1274},e^{5576},e^{12728}$ at ζ(7)
-for $n=1,2,3$, increasing. Mechanism: analytic decay is independent of $s$, arithmetic cost grows like $s$.
-All negative results are finite/numerical evidence plus a few lemmas not re-derived by the orchestrator.
-
-## Addendum (16:00 UTC): referee report on the claimed ζ(7) proof
-
-`anand-referee.md`. The Zenodo preprint "ζ(7) is irrational" (P. Anand) is refuted as a proof: (a) its
-claimed normaliser size contradicts integrality of the leading coefficient (elementary); (b) an elementary
-lower bound shows the claimed estimate is false for every $n$; (c) exact computation for $n\le4$; and the
-error is located in the printed value of one integral over primes ($-15.28$ instead of $+1.58$). The local
-$p$-adic bounds of the preprint were not found wrong. AI-refereed; the orchestrator checked the logic of
-(a), (b) but not the constants.
-
-## Addendum (16:20 UTC): Catalan's constant and low-weight constants
-
-`catalan-status.md`. There are very simple positive functionals with rational moments whose pole values
-involve only $G$ (no $\zeta(2)$): e.g. weight $\pi y^2\cosh\pi y/\sinh^2\pi y$ with half-integer nodes. But the
-Hankel determinants do **not** prove $G\notin\mathbb Q$: totals $+0.38\to+0.52$ per $K^2$ for $K=40..160$ (decay
-$2\log3$, cost $\to8/3$ plus a $K^2$-order contribution of the prime 2). The same family appears to reprove
-irrationality of $\zeta(2)$, $\log2$, $\pi$ (numerical), and is borderline for $L(2,\chi_{-3})$. All numerical/exact
-finite computations.
-
-## State of the main lines at 16:20 UTC
-
-| line | outcome |
-|---|---|
-| Elementary proof of ζ(3)∉Q with motivation | done: `apery-elementary.md` (and a second, different one by the other agent, refereed) |
-| Hankel proof of ζ(3)∉Q | complete draft, two analytic routes; a variant of known work |
-| ζ(5) | margin of Fauzan's proof doubled (Theorem W, `zeta5-margin.md`); no simpler proof |
-| ζ(7) | fails in every construction tried; claimed Zenodo proof refuted (`anand-referee.md`) |
-| Catalan | simple functional found; method fails by about $0.5K^2$ |
-
-## Addendum (15:35 UTC, container clock): a proved no-go for large odd $s$
-
-`zeta7-status.md` §5. For every odd $s\ge15$, the plain Hankel determinant family ($W=1$) provably cannot work:
-$\log|P_K(\zeta(s))|\ge(\frac s2(\frac M{M+1})^2-\frac92\log2-o(1))K^2>0$. The analytic half (exact decay rate
-$\frac92\log2$, lower bound by Jensen) was re-derived by the orchestrator; the arithmetic half (roots of valuation
-$-s$ via a Schur-complement argument) was not, but is verified on exact Newton polygons. For $s=7$–$13$ the
-theorem is not yet proved, though the exact data say it holds. Numerator families are not covered.
-
-## Addendum (16:00 UTC, container clock)
-
-* ζ(5) margin constants independently recomputed and confirmed (`zeta5-margin.md` §6); exact new margin at
-  $M=200$: $-0.037034$ (old $-0.017408$), ratio $2.127$.
-* Catalan with mixed nodes: closed negatively (`catalan-status.md` §6).
+* AI-refereed only, throughout.
+* §4–§6 of Fauzan's preprint were read by subagents, not line by line by the orchestrator.
+* Several subagent lemmas were not re-derived by the orchestrator (marked in each file).
+* Novelty was investigated only by a limited arXiv/Zenodo search; many recent results in this area
+  are not on arXiv.
+* `PROGRESS.md` timestamps between 07:50 and 15:10 UTC are up to an hour ahead of the container clock
+  in places (noted there).
