@@ -1,0 +1,277 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype,booktabs,enumitem}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\hypersetup{pdftitle={A fifth proof that zeta(3) is irrational},pdfauthor={Mathathon peer-review digest}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\dd}{\,\mathrm d}
+\DeclareMathOperator{\lcm}{lcm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}[lemma]{Corollary}
+\setlist{itemsep=1pt,topsep=3pt}
+\newcommand{\q}[1]{\medskip\noindent\textbf{#1}}
+\title{A fifth proof that $\zeta(3)$ is irrational\\[2mm]
+\large a maximum principle, and non-vanishing by a congruence}
+\author{Mathathon peer-review digest\\
+\small results of a short search by five AI agents, assembled and checked by Claude}
+\date{14 November 2026}
+\begin{document}
+\maketitle
+
+\noindent\textbf{What this note contains.} Two things came out of the search.
+\begin{enumerate}
+\item \textbf{A new ending for the proof} (Section~1). Once the numbers $I_n$ are known to satisfy
+Ap\'ery's recurrence, their sign and size follow in six lines from a \emph{maximum principle}:
+$I_n>0$ and $I_n<I_{n-1}/33$. No integral, no second sequence, no determinant identity, no growth
+estimate. The complete proof fits on two pages and uses sums only.
+\item \textbf{A new way to see that $I_n\ne0$} (Section~2): a congruence modulo a prime. It uses no
+inequality at all, so it works where the sign is unknown. With it, a proof exists in which the
+sign of $I_n$ plays no role.
+\end{enumerate}
+\noindent\textbf{What it does not contain.} A proof that avoids Ap\'ery's numbers altogether. None of
+the five agents found one, and one of them produced evidence about why (Section~3).
+
+\smallskip\noindent\textbf{Status.} Found and checked by AI agents on 14 November 2026;
+\emph{no human has read this}. The maximum principle for such recurrences is standard material,
+and we have not searched the literature for its use here or for the congruence. We therefore claim
+no novelty; we only say that neither argument is in the sources read during this project (Zudilin's
+paper, Rajkumar's paper, the Claude and Codex notes). Notation is that of the main document
+\texttt{zeta3-proofs.pdf}, whose Sections 9 and 10 are quoted where indicated.
+
+\section{The proof by a maximum principle}
+
+\q{The setting (recalled from the main document, Sections 1 and 9).} Let
+$D_n=\lcm(1,\dots,n)$ and
+\[
+r_n(t)=\frac{(t-1)(t-2)\cdots(t-n)}{t(t+1)\cdots(t+n)},\qquad R_n=r_n^2,\qquad
+I_n=-\sum_{t=1}^\infty R_n'(t).
+\]
+\emph{Arithmetic.} Partial fractions give $I_n=2(a_n\zeta(3)-b_n)$ with
+$a_n=\sum_k\binom nk^2\binom{n+k}k^2$ an integer and $D_n^3b_n$ an integer. So if $\zeta(3)=P/Q$,
+then $\frac12Q\,D_n^3I_n=D_n^3(a_nP-b_nQ)$ is an integer. \emph{What is needed:} $I_n\neq0$ and
+$|I_n|\le C\theta^n$ with $\theta<\frac1{27}$, because $D_n<3^n$ for infinitely many $n$
+(main document, Section~7).
+
+\q{Step 1: the recurrence, written so that its structure shows.} The main document (Section~10)
+finds, by solving five linear equations in six unknowns, the identity
+\[
+(n+1)^3R_{n+1}(t)-\beta_nR_n(t)+n^3R_{n-1}(t)=\sigma_n(t+1)R_n(t+1)-\sigma_n(t)R_n(t),
+\]
+with $\beta_n=(2n+1)(17n^2+17n+5)$ and $\sigma_n(t)=4(2n+1)(-2t^2+t+(2n+1)^2)$; differentiating and
+summing over $t\ge1$, the right side telescopes to $0$, so
+$(n+1)^3I_{n+1}-\beta_nI_n+n^3I_{n-1}=0$ for $n\ge1$. Now observe that
+\[
+\beta_n=(n+1)^3+n^3+4(2n+1)^3 .
+\]
+(Indeed $(n+1)^3+n^3=(2n+1)(n^2+n+1)$ and $17n^2+17n+5=(n^2+n+1)+4(2n+1)^2$.) So the recurrence is
+\begin{equation}\label{SL}
+(n+1)^3\bigl(I_{n+1}-I_n\bigr)-n^3\bigl(I_n-I_{n-1}\bigr)=4(2n+1)^3\,I_n\qquad(n\ge1).
+\end{equation}
+
+\q{Why this form is the right one.} Read $I_{n+1}-I_n$ as a derivative. Then \eqref{SL} is the
+discrete version of a differential equation $(p\,u')'=q\,u$ with $p>0$ and $q>0$. Such an equation
+has a simple feature: \emph{a solution cannot have a positive maximum in the interior}. At a
+maximum $u'=0$ and $u''\le0$, so $(pu')'=pu''\le0$, while $qu>0$. So a positive solution that starts
+to rise can never come back down; it runs off to infinity. A solution that stays bounded must
+therefore be positive and decreasing all the way. The same is true of sequences.
+
+\q{Step 2: $I_n$ is bounded.} For integers $t>n\ge1$ one has $0<r_n(t)<\frac1t$, and
+$R_n'=2R_n\varphi_n$ where $\varphi_n(t)=\sum_{j=1}^n\frac1{t-j}-\sum_{j=0}^n\frac1{t+j}$ is a
+difference of two positive numbers each at most $n$. Since $R_n'(t)=0$ for $t=1,\dots,n$, we get
+$|I_n|\le2n\sum_{t>n}t^{-2}<2$. (This is the crude bound of the main document; nothing better is
+needed.)
+
+\begin{lemma}[Maximum principle]\label{lem:max}
+Let $(X_n)_{n\ge0}$ be a bounded real sequence with $X_0>0$ satisfying
+\begin{equation}\label{star}
+(n+1)^3(X_{n+1}-X_n)-n^3(X_n-X_{n-1})=4(2n+1)^3X_n\qquad(n\ge1).
+\end{equation}
+Then $X_0>X_1>X_2>\dots>0$, and $X_n<X_{n-1}/33$ for every $n\ge1$.
+\end{lemma}
+\begin{proof}
+Put $d_n=X_{n+1}-X_n$, so that \eqref{star} reads $(n+1)^3d_n=n^3d_{n-1}+4(2n+1)^3X_n$.
+
+\emph{Once up, always up.} Suppose $X_m>0$ and $d_m\ge0$ for some $m\ge0$. Then $X_{m+1}>0$, and
+\eqref{star} at $n=m+1$ has a non-negative term and a positive term on the right, so $d_{m+1}>0$.
+Repeating, $d_n>0$ and $X_n\ge X_{m+1}=:c>0$ for all $n>m$. Then
+$(n+1)^3d_n>4(2n+1)^3c\ge4(n+1)^3c$, so $d_n>4c$ and $X_n\to\infty$. Impossible.
+
+\emph{Once non-positive, always down.} Suppose $X_m>0\ge X_{m+1}$ for some $m\ge0$. Then $d_m<0$, and
+\eqref{star} at $n=m+1$ gives $(m+2)^3d_{m+1}=(m+1)^3d_m+4(2m+3)^3X_{m+1}<0$. So
+$X_{m+2}<X_{m+1}\le0$. Repeating, $d_n<0$ and $X_n\le X_{m+2}=:-c<0$ for $n\ge m+2$, and then
+$(n+1)^3d_n<-4(2n+1)^3c$, so $d_n<-4c$ and $X_n\to-\infty$. Impossible.
+
+\emph{Conclusion.} If $X_m>0$, the first paragraph gives $X_{m+1}<X_m$ and the second gives
+$X_{m+1}>0$. By induction from $X_0>0$, all $X_n$ are positive and the sequence decreases. Finally
+write \eqref{star} as
+\[
+n^3(X_{n-1}-X_n)=(n+1)^3(X_n-X_{n+1})+4(2n+1)^3X_n .
+\]
+Both terms on the right are positive, and $(2n+1)^3>8n^3$, so $n^3(X_{n-1}-X_n)>32\,n^3X_n$, that
+is, $X_{n-1}>33\,X_n$.
+\end{proof}
+
+\begin{theorem}
+$0<I_n\le2\zeta(3)\,33^{-n}$ for all $n$, and $\zeta(3)$ is irrational.
+\end{theorem}
+\begin{proof}
+By Steps 1 and 2 the sequence $I_n$ satisfies the hypotheses of Lemma~\ref{lem:max}, with
+$I_0=2\zeta(3)>0$. If $\zeta(3)=P/Q$, then for the infinitely many $n$ with $D_n<3^n$ the number
+$\frac12QD_n^3I_n$ is a positive integer smaller than $Q\zeta(3)\,(27/33)^n$, which is less than $1$
+for large $n$.
+\end{proof}
+
+\q{How good is the bound?} The lemma gives $I_{n-1}/I_n>1+4(2+\frac1n)^3$. For $n=1,2,3$ this says
+$109$, $63.5$, $51.8$; the true ratios are $116.9$, $66.8$, $54.1$, and they decrease to
+$17+12\sqrt2=33.97$. So the constant $33$ is nearly the true rate, obtained with no estimate at all.
+
+\q{What was needed, and what was not.} Needed: the arithmetic of $I_n$; one telescoping identity;
+the bound $|I_n|<2$; the lemma; $D_n<3^n$ infinitely often. Not needed: any integral; the integers
+$a_n$ beyond their integrality (in particular not their recurrence and not their growth); the
+identity between two solutions used by Ap\'ery; a second series; an optimisation; the prime number
+theorem.
+
+\q{The same ending for other constants} (found by one of the agents; each checked exactly for
+$n\le40$). For $\log2$, the forms $y_n=\int_0^1\frac{P_n(x)}{1+x}\dd x$ satisfy
+$(n+1)(y_{n+1}-y_n)-n(y_n-y_{n-1})=2(2n+1)y_n$; the same lemma gives $0<y_n<y_{n-1}/5$, and $5>3$
+is enough against $D_n$. For $\zeta(2)$ the recurrence $(n+1)^2u_{n+1}=(11n^2+11n+3)u_n+n^2u_{n-1}$
+is not of this type (the small solution alternates in sign), but the analogous statement holds for
+$x_n=(-1)^n(\alpha_n\zeta(2)-\beta'_n)$: if $x$ is bounded and $x_0>0$ then all $x_n>0$ and
+$x_n<x_{n-1}/11$, and $11>9$ is enough against $D_n^2$.
+
+\q{A remark on the two-index table.} The same agent showed that the two-index quantities
+$I_{n,m}$ (main document, earlier version; they are the table of Rajkumar's paper
+arXiv:1212.5881) satisfy, for each fixed $m$,
+\[
+(n+1)^3(X_{n+1,m}-X_{n,m})+n^3(X_{n-1,m}-X_{n,m})=2(2n+1)\,m(m+1)\,X_{n,m}\qquad(n\ge1),
+\]
+again with a non-negative right-hand coefficient, and that sign and size of the diagonal can be
+obtained from these row equations alone, with a little more work. We have not checked that
+derivation and do not use it.
+
+\section{Non-vanishing without any inequality}
+
+\q{Question.} Every proof so far shows $I_n\ne0$ by showing $I_n>0$. Is the sign really needed?
+In other problems (for instance for $\zeta(5)$) small combinations are easy to build and their
+sign is unknown, so a different reason for non-vanishing would be valuable.
+
+\q{Idea.} Under the hypothesis $\zeta(3)=P/Q$ the number $N_n=D_n^3(a_nP-b_nQ)$ is an integer. An
+integer is non-zero as soon as it is non-zero modulo some prime. Take $n=p$ prime. Then $D_p$ is
+divisible by $p$ exactly once, so $D_p^3a_pP\equiv0$, and everything depends on the part of $b_p$
+that has $p^3$ in its denominator. That part can be computed exactly.
+
+\begin{proposition}\label{prop:cong}
+Let $p\ge5$ be prime and $0\le m<p$. Then the denominator of $p^3\,b_{p+m}$ is prime to $p$, and
+\[
+p^3\,b_{p+m}\equiv6\,a_m\pmod p .\qquad\text{In particular}\quad p^3b_p\equiv6\pmod p .
+\]
+\end{proposition}
+\begin{proof}
+Let $n=p+m$ and let $c_k=(-1)^k\binom nk\binom{n+k}k$ be the coefficients of the polynomial $P_n$.
+By the moment formula of the main document (Section~3),
+\[
+2b_n=\sum_{i}2c_i^2H_i^{(3)}-\sum_{i\ne j}c_ic_j\,\frac{H_i^{(2)}-H_j^{(2)}}{i-j}.
+\]
+Since $n<2p$, the only multiple of $p$ among $1,\dots,n$ is $p$ itself. So $p^3$ can occur in a
+denominator in exactly two ways: in $H_i^{(3)}$ for $i\ge p$, through the term $\frac1{p^3}$; and
+in $\frac{H_i^{(2)}-H_j^{(2)}}{i-j}$ when the numerator contains $\frac1{p^2}$ and $i-j=\pm p$, that
+is, for the pairs $\{i,i-p\}$ with $i\ge p$. All other terms have at most $p^2$ in the denominator.
+Hence
+\[
+p^3\cdot2b_n\equiv2\sum_{i=p}^{n}c_i^2-2\sum_{i=p}^{n}c_ic_{i-p}=2\sum_{i=p}^{n}c_i\,(c_i-c_{i-p})
+\pmod p .
+\]
+For $m=0$ the only term is $i=p$, with $c_0=1$ and $c_p=-\binom{2p}p\equiv-2$; the sum is
+$2(-2)(-3)=12$, so $p^3b_p\equiv6$. For general $m$, write $i=p+l$ with $0\le l\le m$ and let
+$\gamma_l=(-1)^l\binom ml\binom{m+l}l$ be the coefficients of $P_m$. Lucas' theorem for binomial
+coefficients modulo $p$ gives $c_{p+l}\equiv-2\gamma_l$ and $c_l\equiv\gamma_l$. So the sum is
+$2\sum_l(-2\gamma_l)(-3\gamma_l)=12\sum_l\gamma_l^2=12\,a_m$.
+\end{proof}
+
+\begin{corollary}[Non-vanishing]\label{cor:nonvan}
+Suppose $\zeta(3)=P/Q$. Let $p\ge5$ be a prime not dividing $Q$. Then the integer
+$N_p=D_p^3(a_pP-b_pQ)$ is not divisible by $p$; in particular $I_p\ne0$.
+\end{corollary}
+\begin{proof}
+$D_p=p\,D_{p-1}$ with $D_{p-1}$ prime to $p$. So $D_p^3a_pP\equiv0$ and
+$D_p^3b_pQ=D_{p-1}^3\,(p^3b_p)\,Q\equiv6\,D_{p-1}^3Q\not\equiv0\pmod p$.
+\end{proof}
+\noindent No inequality, no integral and no recurrence was used: only the explicit shape of the
+coefficients. This is, as we recall it, the device by which the auxiliary numbers in the classical
+transcendence proofs for $e$ (Hermite, Hilbert) are shown not to vanish; here it is applied to
+Ap\'ery's combinations.
+
+\q{A proof in which the sign plays no role.} With Corollary~\ref{cor:nonvan}, any \emph{upper}
+bound for $|I_p|$ along primes finishes the proof. One of the agents found a bound that never looks
+at the sign. For every half-integer $c$ with $0<c<n+1$,
+\begin{equation}\label{line}
+I_n=\frac\pi2\int_{-\infty}^{\infty}\frac{r_n(c+iu)^2}{\cosh^2(\pi u)}\dd u,
+\qquad\text{and hence}\qquad |I_n|\le\frac{\pi^2c}4\,r_n(c)^2 .
+\end{equation}
+The formula comes from the classical Fourier integral
+$\frac{-\log z}{1-z}=\frac\pi2\int\frac{z^{-1/2+iu}}{\cosh^2\pi u}\dd u$ for $z>0$, inserted into the
+double integral for $I_n$. The inequality comes from the product
+$\cosh\pi u=\prod_{h=\frac12,\frac32,\dots}(1+\frac{u^2}{h^2})$: in
+$\frac{|r_n(c+iu)|^2}{r_n(c)^2\cosh^2\pi u}$ every factor $1+\frac{u^2}{(c-j)^2}$ of the numerator is
+cancelled by a factor of $\cosh^2$, and what remains is at most $(1+\frac{u^2}{c^2})^{-2}$. For odd
+$n$ and $c=\frac n2$ the value $r_n(\frac n2)$ is a ratio of double factorials, and \eqref{line}
+gives $|I_n|\le\frac{3\pi^2}2\,n^3\,27^{-n}$. Together with the fact that $D_p<2.9^p$ for infinitely
+many primes $p$ this gives
+$1\le|N_p|\le C\,p^3(2.9^3/27)^p\to0$, a contradiction. (For the primes: the main document, Section~7, gives infinitely many $n$ with
+$D_n<2.8^n$; let $p$ be the first prime $\ge n$. Then $D_p/D_n$ is $p$ times a product of at most
+$\sqrt p\,\log_2p$ numbers $\le\sqrt p$, one for each proper prime power in $(n,p]$, which is
+$e^{o(p)}$.) We verified \eqref{line} and the bound
+numerically (below) but have not written out the Fourier step in full, so this second proof should
+be regarded as a detailed sketch. It is a relative of Nesterenko's proof by a contour integral, with
+the asymptotic analysis replaced by one inequality and positivity replaced by the congruence.
+
+\section{What the search found, and did not find}
+
+Five agents worked for about ten minutes each on different ideas. In brief:
+
+\begin{center}\small
+\begin{tabular}{@{}p{38mm}p{112mm}@{}}
+\toprule
+idea & outcome\\
+\midrule
+maximum principle & Section~1. Correct; extends to $\log2$ and $\zeta(2)$.\\
+wildcards (13 strategies) & Section~2: the congruence, and the sign-free bound. Dead: Siegel-lemma
+constructions (the non-vanishing step reduces to one congruence that the lemma does not control),
+determinants of series remainders, continued-fraction criteria.\\
+function theory in the half-plane & An explicit bound
+$0<I_n\le\frac{\Gamma(2c)^4}{\Gamma(4c)}\bigl(\frac{\Gamma(n+1-c)}{\Gamma(n+1+c)}\bigr)^2$ for
+$0<c<n+1$, within a factor $\sqrt2$ of the truth at the best $c$. Its positivity step is Beukers'
+integral in another form, so it is not a new proof.\\
+one formula showing everything & (report not yet received when this note was written)\\
+is our combination the only one? & No. See below.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\q{The classical combination is not the smallest one.} The fifth agent examined \emph{all}
+combinations $A\zeta(3)-B$ obtainable from rational functions with poles of order at most $3$ at
+$0,-1,\dots,-n$ (so that $D_n^3B$ is an integer). It found that every pair
+$(A,B)\in\Z\times\frac1{D_n^3}\Z$ occurs. So, for a given size of $A$, far smaller combinations
+than $I_n$ exist: for $n=10$, with $|A|\le2a_{10}$, one finds a value $1.4\cdot10^{-24}$ against
+$I_{10}=2.2\cdot10^{-17}$. These are simply the best rational approximations of $D_n^3\zeta(3)$,
+and they prove nothing, because their smallness is known only numerically. \emph{What singles out
+Ap\'ery's combination is not that it is small but that its smallness can be proved.} This sharpens
+the statement in the main document that the objects are ``forced'': they are forced by the
+requirement of a certificate, not by size. It also explains why the search for a proof with
+different numbers found nothing: there is no shortage of small combinations, only of provable ones.
+
+\section{Checks}
+All by AI agents; no human. The lemma: proof read line by line by two agents and by the
+orchestrator; the conclusions $I_n>0$, $I_n<I_{n-1}/33$ verified with exact $a_n,b_n$ and
+$150$-digit arithmetic for $n\le40$; the identity for $\beta_n$ symbolically. The congruence of
+Proposition~\ref{prop:cong}: derived by hand (case $m=0$ by an agent, general $m$ by the
+orchestrator) and verified exactly in $90$ cases ($p\le23$, $p+m\le40$), and for $m=0$ for all
+primes up to $43$. Formula \eqref{line}: verified to $12$ digits for $n=1,3,5,7$ and three values
+of $c$; the bound $\frac{3\pi^2}2n^3\,27^{-n}$ for odd $n\le101$. The statement about primes with
+$D_p<2.9^p$ was derived by the orchestrator and not checked by anyone else. The numbers in Section~3
+are as reported by the agents.
+
+\end{document}
