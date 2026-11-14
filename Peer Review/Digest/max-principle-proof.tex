@@ -24,8 +24,8 @@ reason.
 \item Each object is introduced by the difficulty that calls for it (Sections 1 to 3).
 \item The recurrence on which the proof rests is derived, not verified. Its three coefficients
 $(n+1)^3$, $n^3$ and $4(2n+1)^3$ each come out of a short computation (Section 4).
-\item Sign and size then follow from a short lemma about that recurrence, with bounds on both
-sides (Section 5).
+\item Sign and size then follow from a short lemma about that recurrence, read as two first-order
+equations for a height and a slope (Section 5).
 \end{itemize}
 Sections 1 to 6 are the proof. Section 7 says what the three coefficients mean.
 Section 8 answers three questions about them: do they have a meaning, can they be constructed, are
@@ -270,36 +270,53 @@ $(n+1)^3u_{n+1}=(34n^3+51n^2+27n+5)\,u_n-n^3u_{n-1}$.
 
 \section{What the recurrence says}
 
-\q{Without the right-hand side} the recurrence, for an unknown sequence $X_n$, would read
-$(n+1)^3(X_{n+1}-X_n)=n^3(X_n-X_{n-1})$: the quantity $n^3(X_n-X_{n-1})$ does not depend on $n$.
-Its solutions are $X_n=\lambda+\mu s_n$ with constants $\lambda,\mu$,
-and the one that tends to $0$ is $\zeta(3)-s_n$. \emph{That is the first attempt, which failed.}
-(It sits in the table: for $m=0$ equation \eqref{R} has no right-hand side, and with
-$I_{0,0}=2\zeta(3)$, $I_{1,0}=2\zeta(3)-2$ it gives $I_{n,0}=2(\zeta(3)-s_n)$.) So the whole
-difference between decay like $n^{-2}$ and decay like $34^{-n}$ lies in the one term
-$4(2n+1)^3I_n$.
-
-\q{What that term does.} Solve \eqref{star} for the middle value:
+\q{Two first-order equations.} For any sequence $X_0,X_1,X_2,\dots$ put
 \[
-X_n=p_nX_{n+1}+q_nX_{n-1},\qquad p_n=\frac{(n+1)^3}{\beta_n},\quad q_n=\frac{n^3}{\beta_n}.
+F_n=n^3\,(X_n-X_{n-1})\qquad(n\ge1).
 \]
-Without the extra term we would have $p_n+q_n=1$: each $X_n$ would be a weighted average of its two
-neighbours. With it,
-\[
-p_n+q_n=\frac{n^2+n+1}{17n^2+17n+5}\le\frac1{13}\qquad(n\ge1),
-\]
-so $X_n$ is a weighted average of its neighbours multiplied by a factor of at most $\frac1{13}$.
-A sequence with this property cannot stay level. Take $X_0=1$. With $X_1=0.008$ the recurrence gives
-$X_2,\dots,X_6=-0.008,\ -0.16,\ -3.7,\ -91,\ -2390$. With $X_1=0.009$ it gives
-$0.0066,\ 0.13,\ 2.9,\ 73,\ 1910$. Between the two there is exactly one value
-(this is part of Lemma~\ref{lem:max}), $X_1=5-6/\zeta(3)=0.0085558$, for which the sequence does
-not explode, and then it collapses:
-$1.3\cdot10^{-4},\ 2.4\cdot10^{-6},\ 4.9\cdot10^{-8},\dots$
+Think of $X_n$ as a height and of $F_n$ as a slope, weighted by $n^3$. For an unknown sequence $X$,
+the recurrence \eqref{star} is then the pair
+\begin{equation}\label{S}
+X_n-X_{n-1}=\frac{F_n}{n^3},\qquad\qquad F_{n+1}-F_n=4(2n+1)^3\,X_n\qquad(n\ge1).
+\end{equation}
+The first equation is the definition of $F_n$: the slope moves the height. The second is
+\eqref{star}: the height moves the slope. This is the discrete form of the differential equation
+$(p\,u')'=q\,u$ with $p(x)=x^3$ and $q>0$, written as $u'=F/p$, $F'=q\,u$. Everything in this
+section is read off \eqref{S}.
 
-The solutions of \eqref{star} form a plane ($X_0$ and $X_1$ are free), and, as
-Lemma~\ref{lem:max} will show, all of them except one line explode. If we know that $I_n$ does not explode, we know which solution it is, and its
-sign and size can be read off the recurrence. ``Does not explode'' is a very weak statement, and
-it can be proved crudely.
+\q{Without the right-hand side} of the second equation, $F_n$ would not depend on $n$, and the
+solutions would be $X_n=\lambda+\mu s_n$ with constants $\lambda,\mu$. The one that tends to $0$ is
+$\zeta(3)-s_n$. \emph{That is the first attempt, which failed.} (It sits in the table: for $m=0$
+equation \eqref{R} has no right-hand side, and with $I_{0,0}=2\zeta(3)$, $I_{1,0}=2\zeta(3)-2$ it
+gives $I_{n,0}=2(\zeta(3)-s_n)$.) So the whole difference between decay like $n^{-2}$ and decay
+like $34^{-n}$ lies in the one term $4(2n+1)^3X_n$.
+
+\q{What that term does.} In \eqref{S} each of the two quantities pushes the other in its own
+direction. If height and slope are both positive, the second equation makes the slope larger, then
+the first makes the height larger, and so on: the sequence runs away upward. If both are negative,
+it runs away downward. There is a balance only as long as they have opposite signs. Here are three
+solutions with $X_0=1$; each entry is the pair $(X_n,F_n)$.
+\begin{center}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+$X_1$ & $n=1$ & $n=2$ & $n=3$ & $n=4$\\
+\midrule
+$0.008$ & $(0.008,\,-0.99)$ & $(-0.008,\,-0.13)$ & $(-0.16,\,-4.1)$ & $(-3.7,\,-225)$\\
+$0.009$ & $(0.009,\,-0.99)$ & $(0.0066,\,-0.019)$ & $(0.13,\,+3.3)$ & $(2.9,\,+180)$\\
+$0.0085558$ & $(0.0086,\,-0.99)$ & $(0.00013,\,-0.067)$ & $(2.4\cdot10^{-6},\,-0.0034)$ &
+$(4.9\cdot10^{-8},\,-0.00015)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+In the first row the height becomes negative at $n=2$ while the slope is still negative. In the
+second the slope becomes positive at $n=3$ while the height is still positive. From that moment on
+both have the same sign, and the sequence explodes. In the third row, where $X_1=5-6/\zeta(3)$, the
+height stays positive and the slope negative, and the sequence collapses.
+
+The solutions of \eqref{star} form a plane ($X_0$ and $X_1$ are free). Lemma~\ref{lem:max} will
+show that all of them except one line explode, as in the first two rows. So if we know that $I_n$
+does not explode, we know which solution it is, and its sign and size can be read off \eqref{S}.
+``Does not explode'' is a very weak statement, and it can be proved crudely.
 
 \begin{lemma}[Boundedness]\label{lem:bdd}
 $|I_n|<2$ for $n\ge1$.
@@ -311,79 +328,67 @@ terms, each at most $\frac1{n+1}$), and $R_n(t)<t^{-2}$.
 As $R_n'(t)=0$ for $t\le n$, we get $|I_n|\le2n\sum_{t>n}t^{-2}<2$.
 \end{proof}
 
-\q{The picture behind the next lemma: read differences as derivatives.} Write
-$d_n=X_{n+1}-X_n$ for the slope of the sequence between $n$ and $n+1$. Then \eqref{star} says
-\[
-(n+1)^3d_n-n^3d_{n-1}=4(2n+1)^3X_n .
-\]
-This is the discrete form of the differential equation $(p\,u')'=q\,u$ with $p(x)=x^3$ and $q>0$:
-the change of (weight times slope) is a positive multiple of the height. Three things can be read
-off.
-\begin{itemize}
-\item \emph{No positive maximum.} At a maximum the slope passes from $\ge0$ to $\le0$, so the left
-side is $\le0$; but the right side is positive wherever the solution is positive.
-\item \emph{Once up, always up, and without bound.} If $X_m>0$ and $d_m\ge0$, the equation gives
-$d_{m+1}>0$, then $d_{m+2}>0$, and so on. Rising for ever does not yet contradict boundedness: the
-partial sums $s_n$ rise for ever and stay below $\zeta(3)$. The size of the right side settles
-it. Once $X_n\ge c>0$, the equation gives $(n+1)^3d_n\ge4(2n+1)^3c>4(n+1)^3c$, so every later step
-rises by more than $4c$.
-\item \emph{The mirror image} holds for negative values: a solution that has become $\le0$ after
-being positive keeps falling, without bound.
-\end{itemize}
-So a bounded solution that starts positive can neither turn upward nor reach zero. It is positive
-and decreasing all the way; and then the equation, read as
-$n^3(-d_{n-1})=(n+1)^3(-d_n)+4(2n+1)^3X_n>32\,n^3X_n$, says that each step down loses more than
-$32$ times what is left. This is the whole lemma, and it is the reason for its name. (Made precise,
-these three steps are a complete proof; it is the one in the earlier version of this note.) The
-proof below does the same with absolute values in place of the two cases, which is shorter and
-gives a bound on both sides. One warning: the differential equation shows the shape, not the
-number. Taken literally it would predict a decay by the factor $e^{\sqrt{32}}\approx286$ per step
-instead of $33.97$, because one step is not small on the scale on which the solution changes.
-
 \begin{lemma}[Maximum principle]\label{lem:max}
-Let $(X_n)_{n\ge0}$ be a bounded real sequence that satisfies \eqref{star} for all $n\ge1$, with
-$X_0\ne0$. Then all $X_n$ have the sign of $X_0$, and for every $n\ge1$
+Let $(X_n)_{n\ge0}$ be a bounded real sequence that satisfies \eqref{star} for all $n\ge1$ and is
+not identically zero, and let $F_n=n^3(X_n-X_{n-1})$. Then
+\[
+X_n\,F_n<0\qquad\text{for all }n\ge1:
+\]
+height and slope never have the same sign. Consequently $X_0\ne0$, all $X_n$ have the sign of
+$X_0$, and for every $n\ge1$
 \[
 1+4\Bigl(2+\frac1n\Bigr)^3\;<\;\frac{X_{n-1}}{X_n}\;<\;1+\Bigl(1+\frac1n\Bigr)^3+4\Bigl(2+\frac1n\Bigr)^3 .
 \]
-In particular $|X_n|<|X_{n-1}|/33$. A bounded solution with $X_0=0$ is identically zero; so the
-bounded solutions form a line.
+In particular $|X_n|<|X_{n-1}|/33$, and the bounded solutions of \eqref{star} form a line.
 \end{lemma}
 \begin{proof}
-Write the equation as $\beta_nX_n=(n+1)^3X_{n+1}+n^3X_{n-1}$.
-
-\emph{(1) $|X_n|<|X_{n-1}|$ for all $n\ge1$.} Suppose $|X_n|\ge|X_{n-1}|$ for some $n\ge1$. Then
+\emph{(1) The trap.} Suppose $X_nF_n\ge0$ for some $n\ge1$. Changing the sign of the whole sequence
+if necessary, $X_n\ge0$ and $F_n\ge0$. By \eqref{S},
 \[
-\beta_n|X_n|\le(n+1)^3|X_{n+1}|+n^3|X_{n-1}|\le(n+1)^3|X_{n+1}|+n^3|X_n| ,
+F_{n+1}=F_n+4(2n+1)^3X_n\ge0,\qquad X_{n+1}=X_n+\frac{F_{n+1}}{(n+1)^3}\ge X_n\ge0 .
 \]
-so $|X_{n+1}|\ge\frac{\beta_n-n^3}{(n+1)^3}|X_n|=\bigl[1+4\bigl(\frac{2n+1}{n+1}\bigr)^3\bigr]|X_n|\ge14\,|X_n|$.
-In particular $|X_{n+1}|\ge|X_n|$, so the same argument applies at $n+1$, then at $n+2$, and so on:
-$|X_{n+j}|\ge14^j|X_n|$ for all $j$. Since the sequence is bounded, $X_n=0$; then $X_{n-1}=0$; and
-then the equation, used at $n-1,n-2,\dots,1$, gives $X_{n-2}=\dots=X_0=0$, which is excluded.
-In particular no $X_n$ is zero, since $X_n=0$ would force $|X_{n+1}|<0$.
-
-\emph{(2) Sign and size.} $n^3X_{n-1}=\beta_nX_n-(n+1)^3X_{n+1}$, and by (1) the last term is smaller
-in absolute value than $(n+1)^3|X_n|<\beta_n|X_n|$. So $X_{n-1}$ has the sign of $X_n$: all signs
-are equal. Replacing $X$ by $-X$ if necessary, all $X_n$ are positive and $0<X_{n+1}<X_n$, whence
+So the assumption reproduces itself: $X_m\ge0$ and $F_m\ge0$ for all $m\ge n$. Moreover
+$F_{m+1}\ge4(2m+1)^3X_m$, hence
 \[
-\bigl(\beta_n-(n+1)^3\bigr)X_n\;<\;n^3X_{n-1}\;<\;\beta_nX_n .
+X_{m+1}-X_m=\frac{F_{m+1}}{(m+1)^3}\ge4\Bigl(\frac{2m+1}{m+1}\Bigr)^3X_m\ge13\,X_m ,
 \]
-Divide by $n^3X_n$; note $\beta_n-(n+1)^3=n^3+4(2n+1)^3$.
+so $X_{m+j}\ge14^jX_m$ for all $j$. As the sequence is bounded, $X_m=0$ for every $m\ge n$. Then
+$F_m=0$ for $m>n$, and $F_n=F_{n+1}-4(2n+1)^3X_n=0$, so $X_{n-1}=X_n=0$; and a solution with two
+consecutive zeros is identically zero. This is excluded. Hence $X_nF_n<0$ for all $n\ge1$.
 
-\emph{(3) The case $X_0=0$.} If $X_0=0$ and $X_1\ne0$, then $|X_1|\ge|X_0|$, and the argument of
-(1) makes the sequence unbounded. So $X_1=0$, and then the equation gives $X_n=0$ for all $n$.
+\emph{(2) Sign and decrease.} $X_nF_n<0$ says $X_n^2<X_nX_{n-1}$. So $X_{n-1}$ has the sign of
+$X_n$, and $|X_n|<|X_{n-1}|$. In particular $X_0\ne0$. So a bounded solution with $X_0=0$ is
+identically zero, and the bounded solutions form a line.
+
+\emph{(3) Size.} Let $X_0>0$; then all $X_n>0$ and all $F_n<0$. Write $J_n=-F_n=n^3(X_{n-1}-X_n)>0$
+for the flow down the sequence. The second equation of \eqref{S} reads
+\[
+J_n=J_{n+1}+4(2n+1)^3X_n:
+\]
+what flows in is what flows on plus what is lost. Since $0<J_{n+1}=(n+1)^3(X_n-X_{n+1})<(n+1)^3X_n$,
+\[
+4(2n+1)^3X_n\;<\;n^3(X_{n-1}-X_n)\;<\;\bigl[(n+1)^3+4(2n+1)^3\bigr]X_n .
+\]
+Divide by $n^3X_n$.
 \end{proof}
-\noindent\emph{What the proof uses of the recurrence, and what it does not.} Write
-$\ell_n=\beta_n-(n+1)^3-n^3$ for what is left of the middle coefficient after the two outer ones are
-subtracted (the ``leak''; here $\ell_n=4(2n+1)^3$). The proof used two facts: in part (1), that
-$\ell_n$ is at least a fixed positive multiple of $(n+1)^3$; in part (2), that the outer
-coefficients are positive and $\ell_n>32\,n^3$, which gives the ratio $1+32$. So the split of
-$\beta_n$ into two outer coefficients and a leak is used, because the hypothesis of the lemma is a
-statement about the leak. Two things are \emph{not} used. The differences $X_{n+1}-X_n$ are never
-manipulated in the proof; the difference form of \eqref{star} is the way to see the lemma (the
-picture above), not a step in it. And it is not used that the leak is a perfect cube: any leak
-larger than $26\,n^3$ would give a ratio above $27$, which is all the Theorem needs. The exact
-shape $4(2n+1)^3$ has a reason (Section~8), but the proof has room to spare without it.
+
+\noindent\emph{Why ``maximum principle''.} Part (1) contains the classical statement: a positive
+solution cannot have a maximum, because there the slope would pass from $\ge0$ to $\le0$, while by
+\eqref{S} the slope of a positive solution only increases. In the plane of the pairs $(X,F)$ the
+two quadrants where $X$ and $F$ have the same sign are traps, and the bounded solution is the one
+that never enters them. One warning about the differential equation: it shows the shape, not the
+number. Taken literally it would predict a decay by the factor $e^{\sqrt{32}}\approx286$ per step
+instead of $33.97$, because one step is not small on the scale on which the solution changes.
+
+\noindent\emph{What the proof uses.} The two equations \eqref{S}; that the weights $n^3$ and the
+term $\ell_n=4(2n+1)^3$ are positive; and the size of $\ell_n$ twice: in (1), that $\ell_n$ is at
+least a fixed positive multiple of $(n+1)^3$, and in (3), that $\ell_n>32\,n^3$, which is the
+ratio $1+32$. It does not use that $\ell_n$ is a perfect cube: any term larger than $26\,n^3$ would
+give a ratio above $27$, which is all the Theorem needs.
+
+\noindent\emph{One more turn.} Part (3) can be fed its own result. Since $X_{n+1}<X_n/33$, we get
+$J_{n+1}>\frac{32}{33}(n+1)^3X_n$, and then $X_{n-1}/X_n>33+\frac{32}{33}=33.9697$ for every
+$n\ge1$. The true limit of the ratio is $33.9706$ (Section~7).
 
 \begin{center}
 \begin{tabular}{@{}rccc@{}}
@@ -398,7 +403,8 @@ $n\to\infty$ & $33$ & $17+12\sqrt2=33.97$ & $34$\\
 \bottomrule
 \end{tabular}
 \end{center}
-(The limit of the true ratio is proved in Section~7; it is not used in the proof.)
+(The bounds are those of Lemma~\ref{lem:max}. The limit of the true ratio is proved in Section~7; it
+is not used in the proof.)
 
 \section{The price, and the end}
 
@@ -440,6 +446,14 @@ The recurrence splits the number $\beta_n=(2n+1)(17n^2+17n+5)$ into three positi
 \[
 \beta_n=\underbrace{(n+1)^3}_{\text{up}}+\underbrace{n^3}_{\text{down}}+\underbrace{4(2n+1)^3}_{\text{lost}} .
 \]
+
+Dividing by $\beta_n$, the recurrence reads
+\[
+X_n=p_nX_{n+1}+q_nX_{n-1},\qquad p_n=\frac{(n+1)^3}{\beta_n},\quad q_n=\frac{n^3}{\beta_n},
+\]
+and $p_n+q_n=\frac{n^2+n+1}{17n^2+17n+5}\le\frac1{13}$ for $n\ge1$.
+Without the third part we would have $p_n+q_n=1$, and each $X_n$ would be a weighted average of its
+neighbours. A weighted average with weight missing is what a game with a risk of ruin produces.
 
 \q{A walker.} A walker lives on the sites $0,1,2,\dots$ At a site $n\ge1$ it steps up to $n+1$,
 steps down to $n-1$, or vanishes, with probabilities in the ratio $(n+1)^3:n^3:4(2n+1)^3$; that is,
@@ -526,6 +540,38 @@ chain, from node $0$ to earth, is $I_0/12=\zeta(3)/6$:
 paragraph is an interpretation and no part of the proof.) The walker and the network are the same
 picture: the voltage at $n$, as a fraction of the voltage at $0$, is the chance of getting home
 from $n$.
+
+\q{Three more consequences of the two equations \eqref{S}.} In the network, $X_n$ is the voltage
+and $J_n=-F_n=n^3(I_{n-1}-I_n)>0$ is the current from node $n-1$ to node $n$. Write
+$\ell_n=4(2n+1)^3$.
+\begin{itemize}
+\item \emph{Current is conserved.} Adding up the second equation of \eqref{S}, and using
+$J_N<N^3I_{N-1}\to0$, gives $J_n=\sum_{k\ge n}\ell_kI_k$: the current through a link is the total
+leak beyond it. With the equation at node $0$ this becomes an exact formula:
+\[
+\sum_{k=0}^\infty(2k+1)^3\,I_k=3 .
+\]
+(All of the current $12$ fed in at node $0$ leaks away.)
+\item \emph{Power is only lost.} From \eqref{S}, $I_{n-1}J_n-I_nJ_{n+1}=J_n^2/n^3+\ell_nI_n^2$: the
+power passing link $n$, minus the power passing link $n+1$, is the heat produced in resistor $n$
+and in leak $n$. In particular the products $I_{n-1}J_n\ge I_nJ_n\ge I_nJ_{n+1}\ge\cdots$ decrease,
+which is part (1) of Lemma~\ref{lem:max} in other words. Adding up,
+\[
+12\,I_0=\sum_{n\ge1}n^3\,(I_{n-1}-I_n)^2+4\sum_{n\ge0}(2n+1)^3\,I_n^2 .
+\]
+\item \emph{Least energy.} For a sequence $V$ with $V_0=1$ and only finitely many non-zero terms
+put $E(V)=\sum_{n\ge1}n^3(V_n-V_{n-1})^2+4\sum_{n\ge0}(2n+1)^3V_n^2$. Then
+\[
+\frac6{\zeta(3)}=\inf_VE(V),
+\]
+and the infimum is not attained. (Write $V=I/I_0+W$, so that $W_0=0$. Then $E(V)=E(I/I_0)+Q(W)$, where
+$Q(W)=\sum_{n\ge1}n^3(W_n-W_{n-1})^2+4\sum_{n\ge1}(2n+1)^3W_n^2>0$, because the mixed terms cancel by
+\eqref{S} after a summation by parts; and $E(I/I_0)=12/I_0$ by the previous item. Cutting $I/I_0$
+off further and further out shows that the infimum is $12/I_0$.) So $\zeta(3)$ is $6$ divided by the least value of an
+explicit positive quadratic form whose coefficients are cubes, and every $V$ gives a lower bound
+$6/E(V)<\zeta(3)$. The best $V$ with $V_n=0$ for $n\ge N$ gives $\frac65$, $\frac{351}{292}$,
+$\frac{62531}{52020},\dots$: again the quotients $b_N/a_N$ (checked for $N\le8$).
+\end{itemize}
 
 \section{Three questions about the decomposition}
 
@@ -644,9 +690,13 @@ most $2\max|r_n|<2$. The proof of Lemma~\ref{lem:max} then gives $0<y_n<y_{n-1}/
 the walker being in the ratio $n+1:n:2(2n+1)$. Since $D_n<3^n$ infinitely often and $3<5$, $\log2$
 is irrational. (Checked numerically for $n<60$; written here as a sketch.)
 \item \emph{$\zeta(2)$.} The classical recurrence (quoted from memory) is $(n+1)^2u_{n+1}=(11n^2+11n+3)u_n+n^2u_{n-1}$.
-Its outer coefficients have opposite signs, so there is no walker, and the small solution
-alternates. But part (1) of the proof of Lemma~\ref{lem:max} uses only absolute values, and
-$11n^2+11n+3>(n+1)^2+n^2$: a bounded solution satisfies $|X_{n-1}|>(10+\frac9n+\frac2{n^2})|X_n|$,
+Its outer coefficients have opposite signs, so there is no walker and no system like \eqref{S}
+with positive weights, and the small solution alternates. A cruder form of Lemma~\ref{lem:max}
+survives, with absolute values. From
+$(11n^2+11n+3)|X_n|\le(n+1)^2|X_{n+1}|+n^2|X_{n-1}|$: if $|X_n|\ge|X_{n-1}|$ for some $n$, then
+$|X_{n+1}|\ge\frac{10n^2+11n+3}{(n+1)^2}|X_n|\ge6\,|X_n|$, and so on, so the solution is unbounded or
+zero. Hence a bounded non-zero solution has $|X_n|<|X_{n-1}|$ for all $n$, and then
+$n^2|X_{n-1}|>(11n^2+11n+3)|X_n|-(n+1)^2|X_n|$, that is, $|X_{n-1}|>(10+\frac9n+\frac2{n^2})|X_n|$;
 and $10>9$ is what is needed against $D_n^2$. We have not written out the boundedness of the
 classical linear forms, so this is a statement about the recurrence only.
 \item \emph{What the proof (Sections 1 to 6) does not use:} integrals; the recurrence for the
@@ -676,12 +726,13 @@ Proposition~\ref{prop:walker} in what we read, but we did not search for them sp
 \item \emph{Status of the statements.} \emph{Proved here:} Lemmas 1 to 5, the Theorem,
 Proposition~\ref{prop:walker}, identities \eqref{G1} to \eqref{star}, the formula for $g_n$ with
 its two bounds, the limit $g_n\to17-12\sqrt2$, the continued fraction and its convergence, the
+conservation and power identities of Section~7, the
 scaling statement and the leak formula of Section~8, the statement that the $6$ is forced (up to
 one exact rank computation), and note~2 as a statement about the recurrence. \emph{Computed
 exactly in a finite range:} the searches of Section~8; the truncations of the continued fraction
 and their agreement with $b_N/a_N$ for $N\le8$. \emph{Numerical:} the numbers for $n=5$ in
 Section~3, the experiments of Section~5, the table of ratios, the limits $\frac7{32}\zeta(3)$ and
-$\frac7{24}\zeta(3)$, the decay of the rows. \emph{Sketch:} note~1. \emph{Heuristic:} the staircase
+$\frac7{24}\zeta(3)$, the decay of the rows. \emph{Sketch:} note~1; the least-energy statement of Section~7. \emph{Heuristic:} the staircase
 argument; the remark on the exponent of $t$ for $\zeta(2)$. \emph{Interpretation, not used:} the
 resistor network. \emph{Quoted, neither proved nor used in the proof:} $D_n=e^{n+o(n)}$; the
 classical recurrence for $\zeta(2)$; the attributions to Ap\'ery.
@@ -692,7 +743,10 @@ compared with direct summation of the series. The bounds of Lemma~\ref{lem:max} 
 of Section~7 were checked with 150-digit arithmetic for $n\le44$. An independent AI reader then
 went through the note twice, once as a reader and once recomputing every formula and experiment.
 It found no mathematical error; its corrections (one missing hypothesis in the telescoping
-principle, missing reasons, labels) are incorporated. An earlier three-page version, which
+principle, missing reasons, labels) are incorporated. After that reading, Section~5 was rewritten
+to work directly with the two equations \eqref{S}, and the three consequences at the end of
+Section~7 were added; these were checked by the author and numerically (400 digits, $n\le55$; the
+trap on 300 random rational solutions), not by the independent reader. An earlier three-page version, which
 verified a single identity with a polynomial certificate
 $\sigma_n(t)=4(2n+1)\bigl(-2t^2+t+(2n+1)^2\bigr)$ in place of Section~4, is in the git history (commit
 \texttt{da189f3}); that identity is the combination of \eqref{rowid} and \eqref{six} used in
