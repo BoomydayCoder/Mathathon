@@ -1,0 +1,219 @@
+    Astérisque
+
+ROGER A PÉRY
+Irrationalité de ζ2 et ζ3
+Astérisque, tome 61 (1979), p. 11-13
+<http://www.numdam.org/item?id=AST_1979__61__11_0>
+
+
+
+
+    © Société mathématique de France, 1979, tous droits réservés.
+    L’accès aux archives de la collection « Astérisque » (http://smf4.emath.fr/
+    Publications/Asterisque/) implique l’accord avec les conditions générales d’uti-
+    lisation (http://www.numdam.org/conditions). Toute utilisation commerciale ou
+    impression systématique est constitutive d’une infraction pénale. Toute copie
+    ou impression de ce fichier doit contenir la présente mention de copyright.
+
+
+
+
+                      Article numérisé dans le cadre du programme
+                    Numérisation de documents anciens mathématiques
+                                 http://www.numdam.org/
+ Société Mathématique de France
+ Astérisque 61 (1979) p. 11-13
+
+
+
+
+                                          IRRATIONALITE DE                     $$2   ET $$3
+
+
+                                                                  par
+
+
+                                                               Roger APÉRY
+
+
+
+
+         Notre méthode de démonstration de l'irrationalité d'un réel                                                 a     défini par les
+sommes partielles                d'une série de rationnels, comporte les étapes suivantes :
+
+         1. Remplacer la suite            a       = u              par une suite de rationnels à deux indices
+                 r                                                r
+                                              n            o,n
+u^   n   avec        O^k^n    telle que pour chaque                        k     la suite         u^   n    converge plus rapi-
+
+dement vers           a   que la suite            u^.j -   n
+
+
+
+
+         2. Poser LL   =      .
+                                n +
+                   K,n   / k\
+                                      ;
+                         ^ k
+
+         3. Majorer, en fonction de                n           exclusivement, le dénominateur de                           t^    c'est-à
+dire montrer qu'il existe une suite d'entiers
+                      n
+                                                                                 p     tels que
+                                                                                              M
+                                                                                                            p    t,         soit entier
+                                                                                 *n                        *n     k,n
+           , n+e
+et que P < y R
+
+
+
+
+         4. Effectuer une même combinaison linéaire (dépendant de                                               n)
+                                                                                                            à coefficients
+                                                                                                                        n+k
+entiers positifs sur la colonne     du tableau des t,  n                                           et du tableau des   ( . ).
+                                                      k,n                                                                h
+                                    v
+     5. On obtient ainsi une suite —     de fractions de numérateur rationnel et de
+                                    u
+                                      n
+dénominateur entier. On détermine la limite commune X de      /v" et de    /u~.
+                                                                n            n
+
+         6. Si on a de la chance, X > y : on peut conclure l'irrationalité. On peut aussi
+déduire une mesure d'irrationalité                             : quels que soient les entiers                            p,q,
+
+
+                                                       |£-a| > - L -
+
+
+
+
+                                                                      11
+                                                                            R.              APÊRY
+
+
+
+
+                                                                                2 log X
+                                             avec              Y = -;   T i
+                                                                    log X - log y
+         Pour la construction des                          u   n   ^ , nous utilisons le développement suivant :
+étant donnée une suite de réels a.,a ...a,, toute fonction analytique       9                                                                                   f(x)    par
+                       1       .       1
+rapport à la variable                         —       qui tend vers                         0       avec         —            admet un développement                   (uni-
+que) de la forme
+
+                                                  f(x) =    Z                -
+                                                           k^l      (x+a )(x+a )...(x+a )               2                      fc
+
+
+
+
+         (Nous écrivons                   =       au lieu de            =               pour tenir compte des répugnances des mathé-
+maticiens qui considèrent avec Abel, Cauchy et d'Alembert                                                                                    les séries divergentes
+comme une invention du diable ; en fait, nous n'utilisons jamais qu'une somme finie
+de termes, mais le nombre de termes croit avec                                                                  x).
+
+
+         Pour étudier                   ç2, nous posons :
+
+                                                                                                                               1
+                  J_        E            1                  1                   +       _                       M)*"                    k!          +   ^
+
+                        2
+                    n               n(n-l)             n(n-l)(n-2)                                  n(n-l)(n-2)...(n-k-l)
+
+
+t^   n   appartient au module
+
+
+                                                                   *<!,{,... -~)
+                                                                                                    n
+         D'après un résultat classique sur le p . p . c m . des n premiers entiers, y                                                                                    est
+             2
+égal à      e .
+         La suite           u           s'écrit          (1,3,19,147,1251,11253,...)
+                                n
+                                                              125
+         La suite           v   n       s'écrit          (0,5,-^,...)
+
+         Elles vérifient la récurrence
+
+                                                  2                 2                                                     2
+                                        (n+l) u         . - (lln +lln+3)u - ( n - l ) u   . = 0
+                                                      n+1                n              n-1
+
+                                                                        , _ 11+5/5
+                                                                        Л
+                                                                              2
+
+                                                            2
+         L'irrationalité de                           ç2 - -r- est connue depuis Euler, mais notre méthode donne
+                                                            2
+une mesure d'irrationalité de                              TT .
+         Pour étudier                   ç3, nous posons :
+
+                                                                                                                                    k           2
+                            J_ _ J  =                              1                            +           +         (-D (k!)                          ,_
+                                3             2                2                    2                                 2                         2           2
+                            n            n(n -l)         n(n -l)(n -4)                                          n(n -ï)...(n -(k+l) )
+
+
+
+                                                                                            12
+                                                IRRATIONALITÉ           DE         Ç3
+
+
+
+
+         L'utilisation de la diagonale                    u        donne la série
+                                                           n ,n
+                                                                   (-I)11""1
+                                                    ç3 =    \ Z     3,2n..
+                                                            ^ n
+
+qui à défaut de prouver immédiatement l'irrationalité de                                    ç3   converge mieux que
+
+
+    n
+          2.t^ ^     appartient au module
+
+
+                                                    zoA...-^...)
+                                                       2    n
+                        3
+y       est égal à     e .
+
+         La suite     U   r   s'écrit     (1,5,73,1445,33001,...)
+
+         La suite     v       s'écrit     ca ft 351          62531        i
+                          n               ( 0   6
+                                            > ' — >          " 3 6 ~ ••••      }
+
+
+
+
+         Les deux suites vérifient la relation de récurrence
+
+                                   3                  3       2                         3
+                              (n+l) u      _ - (34n +51n +27n+5)u + n u   , = 0
+                                        n+1                      n      n-1
+
+                                                     A = 17+12/2
+
+
+
+
+                                                                                    Roger APERY
+                                                                                    Département de Mathématiques
+                                                                                    Esplanade de la Paix
+                                                                                    14032 CAEN CEDEX
+
+
+
+
+                                                              13
+

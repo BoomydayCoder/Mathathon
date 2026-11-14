@@ -1,0 +1,264 @@
+                                            Théorie des Nombres/Theory of Numbers
+
+                                                            La fonction Zêta de Riemann prend une infinité
+                                                             de valeurs irrationnelles aux entiers impairs.
+arXiv:math/0008051v1 [math.NT] 7 Aug 2000
+
+
+
+
+                                                                                      Tanguy Rivoal
+
+                                            Résumé - Nous montrons que la dimension de l’espace vectoriel engendré sur les rationnels par
+                                            1 et les n premières valeurs de la fonction Zêta de Riemann aux entiers impairs croı̂t au moins
+                                            comme un multiple de log(n). Il en résulte l’irrationalité d’une infinité de valeurs de la fonction
+                                            Zêta aux entiers impairs.
+
+                                                                   There are infinitely many irrational values of
+                                                                   the Riemann Zeta function at odd integers.
+
+                                            Abstract - We provide a lower bound for the dimension of the vector space spanned over the
+                                            rationals by 1 and by the values of the Riemann Zeta function at the first n odd integers. We
+                                            prove that this dimension increases at least like a constant times log(n). As a consequence, the
+                                            Zeta function takes infinitely many irrational values at odd integers.
+
+
+                                            1 - INTRODUCTION. - Hormis l’irrationalité de ζ(3), démontrée par R. Apéry
+                                                                                                                      P [1], peu de
+                                            résultats sont connus sur la nature arithmétique des nombres ζ(2n + 1) = k≥1 1/k 2n+1
+                                            (n entier ≥ 1). Dans cette note, nous esquissons la démonstration du théorème suivant,
+                                            dont découle l’irrationalité d’une infinité de ζ(2n + 1) :
+
+                                            THÉORÈME 1 Pour tout ε > 0, il existe un entier N (ε) tel que si n > N (ε),
+
+                                                                                                                           (1 − ε)
+                                                    dimQ (Q + Q ζ(3) + · · · + Q ζ(2n − 1) + Q ζ(2n + 1)) ≥                         log(n).
+                                                                                                                         1 + log(2)
+                                            La démonstration s’inspire du travail de P  Nikishin [7] sur les approximants de Padé de type I
+                                            des fonctions polylogarithmes Ln (z) = k≥0 z k /(k + 1)n (pour z ∈ C , |z| < 1). De façon
+                                            plus précise, ayant fixé des entiers a et b tels que 1 ≤ b ≤ a, il détermine, pour |z| > 1, des
+                                            polynômes Qi,n (z) de degré ≤ n si i = 1, . . . , b et de degré ≤ n − 1 si i = 0, b + 1, . . . , a,
+                                            tels que l’ordre en z = ∞ de la fonction
+                                                                                                    a
+                                                                                                    X
+                                                                       Nn,a,b (z) = Q0,n (z) +            Qi,n (z)Li (1/z)
+                                                                                                    i=1
+
+                                            soit au moins an + b − 1 . En particulier, il obtient la formule explicite
+                                                                           +∞
+                                                                           X           k(k − 1) · · · (k − an − b + 2)
+                                                            Nn,a,b (z) =                                                       z −k
+                                                                                 (k + 1)a (k + 2)a · · · (k + n)a (k + n + 1)b
+                                                                           k=0
+
+                                            ce qui lui permet de montrer que si p/q ∈ Q est tel que |q| > |p|a (4a)a(a−1) , alors les nom-
+                                            bres 1, L1 (p/q), . . . , La (p/q) sont linéairement indépendants sur Q. Malheureusement les
+                                            approximations de Nikishin, spécialisées en z = −1 et b = a, permettent seulement de
+                                            montrer qu’il y a au moins un irrationnel parmi les nombres log(2), ζ(2), ζ(3), . . . , ζ(a)
+                                            (ce qui résulte a priori de la transcendance de log(2), par exemple).
+
+                                            Pour améliorer ce résultat, on pourrait modifier la série Nn,a,a (z) en introduisant un
+                                            paramètre r conduisant à de meilleures estimations sur la croissance des coefficients de la
+                                            combinaison linéaire des valeurs de la fonction Zêta. Un choix convenable de r montrerait
+                                            alors que la dimension D(a) de l’espace vectoriel engendré sur Q par 1, ζ(2), ζ(3), . . . , ζ(a)
+
+                                                                                                1
+est au moins c0 log(a) (où c0 est une constante effective). Cependant la formule d’Euler
+ζ(2n) = 22n−1 Bn π 2n /(2n)! et la transcendance de π impliquent que D(a) ≥ a/2 : pour
+obtenir le Théorème 1, il s’agit donc d’éliminer les nombres ζ(2n). Dans le cas de ζ(2), ζ(3)
+et ζ(4), K. Ball [1] a construit la série
+                            +∞ 
+                            X      n  (k − 1) · · · (k − n)(k + n + 1) · · · (k + 2n)
+              Bn = n!2          k+
+                                   2               k 4 (k + 1)4 · · · (k + n)4
+                            k=1
+
+dont la forme particulière permet en effet d’éliminer ζ(2) et ζ(4). Dans un message à
+l’auteur, K. Ball indiquait que sa formule était ¡¡ facilement généralisable à ζ(5) et ainsi
+de suite ¿¿ [2]. Nous généraliserons ici les séries de Nikishin et Ball en considérant la série
+(convergente pour |z| ≥ 1)
+                        +∞                                                      +∞
+                        X               (k − rn + 1)rn (k + n + 2)rn −k X
+            Sn (z) =           n!a−2r                               z =   Rn (k)z −k
+                                                (k + 1)an+1
+                        k=0                                                     k=0
+
+où n, r et a sont des entiers vérifiant 1 ≤ r < a/2, n ∈ N et où (α)k est le symbole de
+Pochammer : (α)0 = 1 et (α)k = α(α + 1) · · · (α + k − 1) si k = 1, 2, . . . .
+Ces séries, spécialisées en z = 1, donneront des combinaisons linéaires à coefficients ra-
+tionnels des Zêta impairs. Moyennant un bon choix de r, ces combinaisons auront une
+décroissance rapide vers 0 et leurs coefficients auront des dénominateurs et une croissance
+bien contrôlés. Le Théorème 1 découlera alors du résultat suivant, dû à Y. Nesterenko [6] :
+
+CRITÈRE D’INDÉPENDANCE LINÉAIRE Considérons N réels θ1 , θ2 , . . . , θN (N ≥ 2)
+et supposons qu’il existe N suites d’entiers (pi,n )n≥0 tels que :
+            PN
+   i) log     i=1 pi,n θi    = n log(α) + o(n) avec 0 < α < 1 ;
+
+  ii) ∀i = 1, . . . , N , log |pi,n | ≤ n log(β) + o(n) avec β > 1.
+
+Dans ces conditions, dimQ (Q θ1 + Q θ2 + · · · + Q θN ) ≥ 1 − log(α)/ log(β).
+
+Je tiens à remercier vivement le professeur K. Ball : sans les fructueux échanges que nous
+avons eus autour de sa série, cet article n’aurait pu voir le jour. Je tiens également à
+exprimer toute ma gratitude aux professeurs F. Amoroso et M. Waldschmidt pour leurs
+précieux conseils et leur soutien constant.
+
+2 - RÉSULTATS AUXILIAIRES. - Pour i = 1, . . . , a, j = 0, . . . , n, définissons les nombres
+                                                                      1 λ
+rationnels ci,j,n = Da−i (Rn (t)(t + j + 1)a )|t=−j−1 où Dλ = λ!       d /dtλ et les polynômes
+               a X n         j−1                               n
+             X               X      1       j−k
+                                                              X
+P0,n (z) = −          ci,j,n            i
+                                          z     et Pi,n (z) =     ci,j,n z j (i = 1, . . . , a).
+              i=1 j=1
+                                 (k + 1)                      j=0
+                              k=0
+
+
+LEMME 1 Si n est pair et a impair ≥ 3, alors
+                                                  (a−1)/2
+                                                   X
+                            Sn (1) = P0,n (1) +             P2i+1,n (1)ζ(2i + 1).
+                                                   i=1
+
+
+Preuve. - En décomposant Rn (t) en fractions partielles, on a
+                                                 n
+                                               a X
+                                               X           ci,j,n
+                                    Rn (t) =                        .
+                                               i=1 j=0
+                                                       (t + j + 1)i
+
+
+                                                     2
+D’où si |z| > 1,
+                                                  a
+                                                  X
+                            Sn (z) = P0,n (z) +            Pi,n (z)Li (1/z).
+                                                     i=1
+
+La convergence de la série Sn (1) implique que lim
+                                                z→1
+                                                    (P1,n (z)L1 (1/z)) = 0. On peut écrire
+                                                       |z|>1
+
+ci,j,n = (−1)a−i Da−i (Φn,j (x))|x=j où Φn,j (x) = Rn (−x − 1)(j − x)a : en appliquant
+l’identité (α)l = (−1)l (−α − l + 1)l , on montre que
+
+                                 Φn,n−j (n − x) = (−1)na Φn,j (x).
+                           (k)                                   (k)
+Donc pour tout k ≥ 0, Φn,n−j (n − x) = (−1)k (−1)na Φn,j (x) : en particulier avec k = a − i
+et x = j, on a ci,n−j,n = (−1)a−i (−1)an ci,j,n , d’où
+
+                                  Pi,n (1) = (−1)(n+1)a+i Pi,n (1).
+
+Si n est pair et a impair, on en déduit que pour tout i pair, Pi,n (1) = 0.
+
+Le Lemme suivant donne une expression intégrale similaire à celles de Beukers [4] (voir
+aussi [5], §1.3).
+
+LEMME 2 La série Sn (z) admet la représentation intégrale, pour |z| ≥ 1 :
+                                       Qa+1 r                   !n
+         ((2r + 1)n + 1)!                 i=1 xi (1 − xi )           dx1 dx2 · · · dxa+1
+                          Z
+Sn (z) = 2r+1 −(r+1)n−2                                    2r+1
+                                                                                            .
+        n!     z           [0,1]a+1 (z − x1 x2 · · · xa+1 )        (z − x1 x2 · · · xa+1 )2
+
+Preuve. - Si |z| > 1, cette égalité s’obtient en développant en série entière le dénominateur
+de la fraction sous le signe intégral, l’interversion des signes somme et intégral étant
+alors justifiée. En utilisant un argument de continuité, on montre que l’égalité reste
+valable si |z| = 1.
+
+Cette représentation intégrale permet alors d’estimer la décroissance des nombres Sn (1) :
+
+
+                                               1/n
+LEMME 3 La limite sr,a = lim |Sn (1)|                existe et vérifie
+                                 n→+∞
+
+                                            (ra + r)ra+r (a − 2r)a−2r
+                      sr,a ≤ (2r + 1)2r+1                             .
+                                               (ra + a − r)ra+a−r
+
+Pour estimer la croissance des nombres Pi,n (1), il suffit de majorer convenablement les
+coefficients cl,j,n au moyen de la formule de Cauchy
+
+                                  1
+                                    Z
+                        cl,j,n =                 Rn (z)(z + j + 1)l−1 dz
+                                 2iπ |z+j+1|=1/2
+
+où |z + j + 1| = 1/2 désigne le cercle de centre −j − 1 et de rayon 1/2. On obtient alors le
+
+                                                                       1/n
+LEMME 4 Pour tout i = 0, . . . , a, on a lim sup |Pi,n (1)|                  ≤ 2a−2r (2r + 1)2r+1 .
+                                              n→+∞
+
+
+Enfin, pour construire des combinaisons linéaires à coefficients entiers, il reste à déterminer
+les dénominateurs des nombres Pi,n (1), ce qui résulte du
+
+LEMME 5 On pose dn = ppcm(1, 2, . . . , n). Alors pour i = 0, . . . , a, dna−i Pi,n (1) ∈ Z.
+
+
+                                                 3
+Preuve. - Il s’agit d’évaluer le dénominateur commun des coefficients ci,j,n . Pour cela,
+fixons n et j et décomposons le numérateur de Rn (t) en 2r produits de n facteurs
+consécutifs : on a Rn (t)(t + j + 1)a = F1 (t) · · · Fr (t)G1 (t) · · · Gr (t)H(t)a−2r où
+           (t − nl + 1)n                        (t + nl + 2)n                      n!(t + j + 1)
+Fl (t) =                 (t + j + 1) , Gl (t) =               (t + j + 1) , H(t) =               .
+            (t + 1)n+1                            (t + 1)n+1                        (t + 1)n+1
+En décomposant Fl (t), Gl (t) et H(t) en fractions partielles, on montre que pour tout entier
+λ ≥ 0, dλn (Dλ Fl )|t=−j−1 , dλn (Dλ Gl )|t=−j−1 et dλn (Dλ Hl )|t=−j−1 sont des entiers. Grâce
+à la formule de Leibniz, on en déduit que dna−i ci,j,n ∈ Z et donc dna−i Pi,n (1) ∈ Z pour
+i = 0, . . . , a et pour tout n ∈ N.
+
+3 - PREUVE DU THÉORÈME 1. - Soit a un entier impair ≥ 3 : notons δ(a) la dimension
+de l’espace vectoriel engendré sur Q par 1 et les ζ(j) pour 3 ≤ j ≤ a et j impair.
+D’après le Théorème des Nombres Premiers, dn = en+o(n) . Définissons pour tout entier
+n ≥ 0 : ℓn = da2n S2n (1), p0,n = da2n P0,2n (1) et pi,n = da2n P2i+1,2n (1) (i = 1, . . . , (a − 1)/2).
+Le Lemme 5 implique que pi,n ∈ Z pour tout i = 0, . . . , (a − 1)/2 et d’après le Lemme 1,
+                                                (a−1)/2
+                                                 X
+                                  ℓn = p0,n +             pi,n ζ(2i + 1).
+                                                 i=1
+
+On peut appliquer le critère de Nesterenko avec N = (a + 1)/2, β = (ea 2a−2r (2r + 1)2r+1 )2
+(Lemme 4) et α = (ea sr,a )2 (Lemme 3) : pour tout entier r tel que 1 ≤ r < a/2, on en
+déduit alors δ(a) ≥ f (a, r)/g(a, r) où
+                   f (a, r)   =   (a − 2r) log(2) + (ra + a − r) log(ra + a − r)
+                                  −(ra + r) log(ra + r) − (a − 2r) log(a − 2r)
+et
+                       g(a, r) = a + (a − 2r) log(2) + (2r + 1) log(2r + 1).
+Effectuons maintenant un développement limité pour a, r → +∞ des fonctions f (a, r) et
+g(a, r) :
+      f (a, r) = a log(r) + O(a) + O(r log(r)) et g(a, r) = (1 + log(2))a + O(r log(r)).
+On choisit r = r(a) comme l’entier < a/2 le plus proche de a(log(a))−2 : on a alors
+a log(r) = a log(a)(1 + o(1)) et r log(r) = o(a). D’où
+                       f (a, r)   a log(a)(1 + o(1)) + O(a)     log(a)
+              δ(a) ≥            =                           =            (1 + o(1)) ,
+                       g(a, r)       (1 + log(2))a + o(a)     1 + log(2)
+ce qui prouve le Théorème 1.
+
+                                            Références
+[1] R. Apéry, Irrationalité de ζ(2) et ζ(3), Astérisque 61, 11-13 (1979).
+[2] K. Ball, Communication personnelle du 17 décembre 1999.
+[3] K. Ball, Communication personnelle du 4 janvier 2000.
+[4] F. Beukers, A note on the irrationality of ζ(2) and ζ(3), Bull. London. Math. Soc.
+11, no. 33, 268-272 (1978).
+[5] R. Dvornicich et C. Viola, Some remarks on Beukers’ integrals, Number theory, Vol.
+II (Budapest, 1987), 637–657, Colloq. Math. Soc. János Bolyai, 51, North-Holland, Am-
+sterdam, 1990.
+[6] Y.V. Nesterenko, On the linear independence of numbers, Mosc. Univ. Math. Bull.
+40, no. 1, 69-74 (1985) traduction de Vest. Mosk. Univ., Ser. I, no. 1, 46-54 (1985).
+[7] E.M. Nikishin, On the irrationality of the values of the functions F (x, s), Mat. Sbornik
+37, no. 3, 381-388 (1979).
+
+
+
+                                                   4
+

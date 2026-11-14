@@ -1,0 +1,442 @@
+                                                       AN ELEMENTARY PROOF OF APÉRY’S THEOREM
+arXiv:math/0202159v1 [math.NT] 17 Feb 2002
+
+
+
+
+                                                                              Wadim Zudilin (Moscow)
+
+                                                                              E-print math.NT/0202159
+                                                                                   17 February 2002
+
+
+                                                   Abstract. We present a new ‘elementary’ proof of the irrationality of ζ(3) based on
+                                                   some recent ‘hypergeometric’ ideas of Yu. Nesterenko, T. Rivoal, and K. Ball, and on
+                                                   Zeilberger’s algorithm of creative telescoping.
+
+
+
+
+                                                A question of an arithmetic nature of the values of Riemann’s zeta function
+
+                                                                                                 ∞
+                                                                                                 X 1
+                                                                                     ζ(s) :=
+                                                                                                 n=1
+                                                                                                       ns
+
+                                             at odd integral points s = 3, 5, 7, . . . looks like a challenge for Number Theory. An
+                                             expected answer ‘each odd zeta value is transcendental’ is still far from being proved.
+                                             We dispose of a particular information on the irrationality of odd zeta values, namely:
+                                                   • ζ(3) is irrational (R. Apéry [Ap], 1978);
+                                                   • infinitely many of the numbers ζ(3), ζ(5), ζ(7), . . . are irrational (T. Rivoal
+                                                     [Ri1], [BR], 2000);
+                                                   • each set ζ(s + 2), ζ(s + 4), . . . , ζ(8s − 3), ζ(8s − 1) with odd s > 1 contains at
+                                                     least one irrational number (this author [Zu1], [Zu2], 2001);
+                                                   • at least one of the four numbers ζ(5), ζ(7), ζ(9), ζ(11) is irrational (this au-
+                                                     thor [Zu3], [Zu4], 2001).
+                                             All these results have a classical well-poised-hypergeometric origin, and we refer the
+                                             reader roused the curiosity of this terminology to the forthcoming works [Zu4], [Zu5],
+                                             [RZ] for details. The aim of this note is to prove Apéry’s famous result by ‘elementary
+                                             means’.
+
+                                                 Key words and phrases. Zeta value, hypergeometric series, Apéry’s theorem, Zeilberger’s algo-
+                                             rithm of creative telescoping.
+                                                                                             1
+2                                             W. ZUDILIN
+
+Apéry’s theorem. The number ζ(3) is irrational.
+
+   The idea of the following proof is due to T. Rivoal [Ri2], [Ri3], who mixed ap-
+proaches of Yu. Nesterenko [Ne] and K. Ball, and our contribution here is to make a
+use of Zeilberger’s algorithm of creative telescoping in the most elementary manner.
+   Our starting point is repetition of [Ne, Section 1]. For each integer n = 0, 1, 2, . . .
+define the rational function
+                                                                          2
+                                                  (t − 1) · · · (t − n)
+                                Rn (t) :=
+                                                  t(t + 1) · · · (t + n)
+
+and denote by Dn the least common multiple of the numbers 1, 2, . . . , n (and D0 = 1
+for completeness).
+
+Lemma 1 (cf. [Ne, Lemma 1]). There holds the equality
+                                            ∞
+                                            X
+                               Fn := −            Rn′ (t) = un ζ(3) − vn ,                               (1)
+                                            t=1
+
+
+where un ∈ Z, Dn3 vn ∈ Z.
+
+Proof. Taking square of the partial-fraction expansion
+                                                         n                 n+k
+                                                                                  n
+                            (t − 1) · · · (t − n)   X (−1)n−k
+                                                              n                       k
+                                                  =
+                           t(t + 1) · · · (t + n)          t+k
+                                                       k=0
+
+with a help of the relation
+                                                                   
+                  1   1     1                          1   1
+                    ·    =     ·                         −                      for       k 6= l,
+                 t+k t+l   l−k                        t+k t+l
+
+we arrive at the formula
+                                        n 
+                                        X       (n)     (n) 
+                                              A2k      A1k
+                               Rn (t) =              +       ,
+                                            (t + k)2   t+k
+                                            k=0
+
+               (n)
+with Ajk = Ajk satisfying the inclusions
+                   2  2
+                n+k     n
+         A2k =              ∈ Z and Dn A1k ∈ Z,                                   k = 0, 1, . . . , n.   (2)
+                 n      k
+
+Furthermore,
+                     n
+                     X             n
+                                   X
+                           A1k =         Rest=−k Rn (t) = − Rest=∞ Rn (t) = 0
+                     k=0           k=0
+                    AN ELEMENTARY PROOF OF APÉRY’S THEOREM                                                       3
+
+since Rn (t) = O(t−2 ) as t → ∞, hence the quantity
+                X∞ Xn                         Xn ∞ 
+                                                   X             
+                          2A2k         A1k             2A2k  A1k
+           Fn =                 3
+                                  +         2
+                                               =          3
+                                                            + 2
+                t=1
+                        (t + k)     (t + k)             l     l
+                          k=0                                         k=0 l=k+1
+                      n
+                      X           X
+                                   ∞          k 
+                                              X             n
+                                                            X           X
+                                                                         ∞            k 
+                                                                                      X
+                                                     1                                    1
+               =2           A2k           −             +         A1k             −
+                                                     l3                                      l2
+                      k=0           l=1       l=1           k=0             l=1       l=1
+
+has the desired form (1), with
+                          n
+                          X                               n
+                                                          X           k
+                                                                      X              n
+                                                                                     X           k
+                                                                                                 X
+                                                                        1                          1
+              un = 2            A2k ,         vn = 2            A2k              +         A1k               .   (3)
+                                                                            l3                          l2
+                          k=0                             k=0         l=1            k=0          l=1
+
+Finally, using the inclusions (2) and
+                            k
+                            X 1
+                  Dnj ·                  ∈Z         for    k = 0, 1, . . . , n,        j = 2, 3,
+                                   lj
+                            l=1
+
+we deduce that un ∈ Z and Dn3 vn ∈ Z as required.
+  Since
+                                  1                        1        4      4    4
+                 R0 (t) =            ,        R1 (t) =        +          −   +     ,
+                                  t2                       t2   (t + 1)2   t   t+1
+in accordance with formulae (3) we find that
+
+                            F0 = 2ζ(3)              and          F1 = 10ζ(3) − 12.                               (4)
+
+  Now, with a help of Zeilberger’s algorithm of creative telescoping [PWZ, Chapter 6]
+we get the rational function Sn (t) := sn (t)Rn (t), where
+
+                            sn (t) := 4(2n + 1)(−2t2 + t + (2n + 1)2 ),                                          (5)
+
+satisfying the following property.
+Lemma 2. For each n = 1, 2, . . . , there holds the identity
+
+ (n + 1)3 Rn+1 (t) − (2n + 1)(17n2 + 17n + 5)Rn (t) + n3 Rn−1 (t) = Sn (t + 1) − Sn (t). (6)
+
+‘One-line’ proof. Divide both sides of (6) by Rn (t) and verify numerically the identity
+                              2                                     2
+                  3 t−n−1                         2             3 t+n
+          (n + 1)                 − (2n + 1)(17n + 17n + 5) + n
+                    t+n+1                                          t−n
+                                                2
+                                      t2
+               = sn (t + 1)                         − sn (t),
+                              (t − n)(t + n + 1)
+
+where sn (t) is given in (5).
+4                                           W. ZUDILIN
+
+Lemma 3. The quantity (1) satisfies the difference equation
+
+                   (n + 1)3 un+1 − (2n + 1)(17n2 + 17n + 5)un + n3 un = 0                       (7)
+
+for n = 1, 2, . . . .
+Proof. Since Rn′ (t) = O(t−3 ) and Sn′ (t) = O(t−2 ), differentiating identity (6) and
+summing the result over t = 1, 2, . . . we arrive at the equality
+
+             (n + 1)3 Fn+1 − (2n + 1)(17n2 + 17n + 5)Fn + n3 Fn−1 = Sn′ (1).
+
+It remains to note that, for n ⩾ 1, both functions Rn (t) and Sn (t) = sn (t)Rn (t) have
+second-order zero at t = 1. Thus Sn′ (1) = 0 for n = 1, 2, . . . and we obtain the desired
+recurrence (7) for the quantity (1).
+    Consider another rational function
+
+              en (t) := n!2 (2t + n) (t − 1) · · · (t − n) · (t + n + 1) · · · (t + 2n)
+              R                                                                                 (8)
+                                                   (t(t + 1) · · · (t + n))4
+and the corresponding hypergeometric series
+                                                  ∞
+                                                  X
+                                         Fen :=         en (t),
+                                                        R                                       (9)
+                                                  t=1
+
+proposed by K. Ball.
+Lemma 4 (cf. [BR, the second proof of Lemma 3]). For each n = 0, 1, 2, . . . , there
+holds the inequality
+                                             √
+                       0 < Fen < 20(n + 1)4 ( 2 − 1)4n .                        (10)
+
+             en (t) = 0 for t = 1, 2, . . . , n and R
+Proof. Since R                                      en (t) > 0 for t > n we deduce that
+Fen > 0.
+   With a help of elementary inequality
+                                m                    m+1
+         1 (m + 1)m            1                      1           1 (m + 1)m+1
+           ·          = 1+            <e< 1+                  =     ·
+         m   mm−1              m                      m          m       mm
+that yields (m + 1)m /mm−1 < em < (m + 1)m+1 /mm for m = 1, 2, . . . , we deduce
+that
+                 (m + n)m+n−1                                 −n (m + n)
+                                                                         m+n
+           e−n                < m(m + 1) . . . (m + n − 1) < e               .
+                    mm−1                                            mm
+Therefore, for integers t ⩾ n + 1,
+
+       en (t) ·       (t + n)5             (t − 1) · · · (t − n) · (t + n) · · · (t + 2n − 1)
+       R                           = n!2 ·
+                  (2t + n)(t + 2n)                   (t(t + 1) · · · (t + n − 1))4
+                                                             t5t−4 (t + 2n)t+2n
+                                   < (n + 1)2(n+1) ·
+                                                         (t − n)t−n (t + n)5(t+n)−4
+                    AN ELEMENTARY PROOF OF APÉRY’S THEOREM                                      5
+
+and, as a consequence,
+     en (t) ·         t4 (t + n)                 2n       t5t (t + 2n)t+2n
+    R                                  < (n + 1)    ·
+              (2t + n)(t + 2n)(n + 1)2                (t − n)t−n (t + n)5(t+n)
+                                                2n                                 n
+                                               1         nf (t/n)    2         f (τ )
+                                       = 1+            ·e         < e · sup e            ,
+                                               n                          τ >1
+                                                                                             (11)
+where
+                                               τ 5τ (τ + 2)τ +2
+                           f (τ ) := log                             .
+                                         (τ − 1)τ −1 (τ + 1)5(τ +1)
+The unique (real) solution τ0 of the equation
+                                               τ 5 (τ + 2)
+                            f ′ (τ ) = log                     =0
+                                            (τ − 1)(τ + 1)5
+in the region τ > 1 is the zero of the polynomial
+                                                              4         2     
+      5                            5              1             1           1      7
+     τ (τ + 2) − (τ − 1)(τ + 1) = − τ +                2 τ+          −5 τ +      −     ,
+                                                  2             2           2      8
+hence we can determine it explicitly:
+                                                  r
+                                            1        5 √
+                                    τ0 = − +           + 2.
+                                            2        4
+Thus,
+   sup f (τ ) = f (τ0 ) = f (τ0 ) − τ0 f ′ (τ0 ) = 2 log(τ0 + 2) + log(τ0 − 1) − 5 log(τ0 + 1)
+   τ >1
+                       √
+              = 4 log( 2 − 1)
+and we can continue the estimate (11) as follows:
+                                t4 (t + n)                    √
+                   en (t) ·
+                   R                          < e2 (n + 1)2 ( 2 − 1)4n ,       (12)
+                            (2t + n)(t + 2n)
+Finally, we apply the inequality (12) to deduce the required estimate (10):
+          X∞                                      X∞
+                                       √                (2t + n)(t + 2n)
+  Fen =        en (t) < e2 (n + 1)2 ( 2 − 1)4n
+               R
+         t=n+1                                   t=n+1
+                                                            t4 (t + n)
+                                   X∞                    
+          2       2
+                     √        4n           2  5n 2n2
+      < e (n + 1) ( 2 − 1)                   + 4 + 3
+                                 t=n+1
+                                          t5   t      t
+                                                  √                     √
+      ⩽ e2 (n + 1)2 2ζ(5) + 5nζ(4) + 2n2 ζ(3) ( 2 − 1)4n < 20(n + 1)4 ( 2 − 1)4n .
+This completes the proof.
+   For the rational function (8) we obtain Zeilberger’s certificate
+                           en (t)
+                           R
+    Sen (t) :=                              · −t6 − (8n − 1)t5 + (4n2 + 27n + 5)t4
+               (2t + n)(t + 2n − 1)(t + 2n)
+                + 2n(67n2 + 71n + 15)t3 + (358n4 + 339n3 + 76n2 − 7n − 3)t2
+                + (384n5 + 396n4 + 97n3 − 29n2 − 17n − 2)t
+                                                          
+                + n(153n5 + 183n4 + 50n3 − 30n2 − 22n − 4) .                                 (13)
+6                                           W. ZUDILIN
+
+Lemma 5. For each n = 1, 2, . . . , there holds the identity
+
+           en+1 (t)−(2n+1)(17n2 +17n+5)R
+    (n+1)3 R                           en (t)+n3 R
+                                                 en−1 (t) = Sen (t+1)− Sen (t). (14)
+
+                                               en (t) and verify the reduced identity.
+‘One-line’ proof. Divide both sides of (14) by R
+Lemma 6. The quantity (9) satisfies the difference equation (7) for n = 1, 2, . . . .
+Proof. Since Ren (t) = O(t−5 ) and Sen (t) = O(t−2 ) as t → ∞ for n ⩾ 1, summation of
+equalities (14) over t = 1, 2, . . . yields the relation
+
+               (n + 1)3 Fen+1 − (2n + 1)(17n2 + 17n + 5)Fen + n3 Fen−1 = −Sen (1).
+
+It remains to note that, for n ⩾ 1, both functions (8) and (13) have zero at t = 1.
+Thus Sen (1) = 0 for n = 1, 2, . . . and we obtain the desired recurrence (7) for the
+quantity (9).
+Lemma 7. For each n = 0, 1, 2, . . . , the quantities (1) and (9) coincide.
+Proof. Since both Fn and Fen satisfy the same second-order difference equation (7),
+we have to verify that F0 = Fe0 and F1 = Fe1 . Direct calculations show that
+
+         e0 (t) = 2 ,
+         R                 e1 (t) = − 2 +
+                           R
+                                              2       5
+                                                    + 3+
+                                                             5       5
+                                                                   − 2+
+                                                                            5
+                                                                                 ,
+                  t3                 t 4  (t + 1) 4  t   (t + 1) 3  t   (t + 1)2
+
+hence Fe0 = 2ζ(3) and Fe1 = 10ζ(3) − 12, and comparison of this result with (4) yields
+the desired coincidence.
+Proof of Apéry’s theorem. Suppose, on the contrary, that ζ(3) = p/q, where p and q
+are positive integers. Then, using a trivial bound Dn < 3n , we deduce that, for each
+n = 0, 1, 2, . . . , the integer qDn3 Fn = Dn3 un p − Dn3 vn q satisfies the estimate
+                                                             √
+                            0 < qDn3 Fn < 20q(n + 1)4 33n ( 2 − 1)4n                  (15)
+                                √
+that is not possible since 33 ( 2 − 1)4 = 0.7948 . . . < 1 and the right-hand side of (15)
+is less than 1 for a sufficiently large integer n. This contradiction completes the proof
+of the theorem.
+   Inspite of its elementary arguments, our proof of Apéry’s theorem does not look
+simpler than the original (also elementary) Apéry’s proof well-explained in A. van der
+Poorten’s informal report [Po], or (almost elementary) Beukers’s proof [Be] by means
+of Legendre polynomials and multiple integrals. We want to mention that our way
+to deduce the recursion (7) for the sequence Fn as well as for the coefficients un , vn ‡
+     ‡ Hint:
+          multiply both sides of (6) by (t + k)2 , substitute t = −k and sum over all integers k to
+show that the sequence un satisfies the difference equation (7); then vn = un ζ(3) − Fn also satisfies
+it.
+                     AN ELEMENTARY PROOF OF APÉRY’S THEOREM                                        7
+
+slightly differs from those considered in [Po, Section 8] and [Ze, Section 13] although
+it is based on the same algorithm of creative telescoping. This algorithm and the
+above scheme allow us [Zu5], [Zu6] to obtain Apéry-like difference equations for ζ(4)
+and Calalan’s constant.
+   The fact that Fen = u    en ζ(3) − ven with Dn u    en , Dn4 ven ∈ Z was first discovered by
+K. Ball; the proof follows lines of the proof of Lemma 1 and vanishing the coefficients
+for ζ(4) and ζ(2) is due to a well-poised origin of the series (9). An open question
+of T. Rivoal here is to get the better inclusions u       en , Dn3 ven ∈ Z by elementary means
+without going back to Apéry’s series (1). A solution of this question accompanied
+with Ball’s Lemma 4 can bring the ‘most elementary’ proof of Apéry’s theorem.
+   Lemma 7 can be proved by specialization of Bailey’s identity [Ba, Section 6.3,
+formula (2)]
+                                                                                    
+           a, 1 + 12 a,     b,          c,          d,            e,         f
+     7F6         1                                                                 1
+                 2 a,   1 + a  − b, 1 + a  − c, 1 + a − d,  1 +   a − e, 1 + a − f
+              Γ(1 + a − b) Γ(1 + a − c) Γ(1 + a − d) Γ(1 + a − e) Γ(1 + a − f )
+           =
+               Γ(1 + a) Γ(b) Γ(c) Γ(d) Γ(1 + a − b − c) Γ(1 + a − b − d)
+                                                 ×Γ(1 + a − c − d) Γ(1 + a − e − f )
+                        Γ(b + t) Γ(c + t) Γ(d + t) Γ(1 + a − e − f + t)
+                      Z i∞
+                 1                            ×Γ(1 + a − b − c − d − t) Γ(−t)
+              ×                                                               dt,
+                2πi −i∞           Γ(1 + a − e + t) Γ(1 + a − f + t)
+                                                                                                 (16)
+
+provided that the very-well-poised hypergeometric series on the left-hand side con-
+verges. Namely, taking a = 3n + 2 and b = c = d = e = f = n + 1 in (16) we obtain
+Ball’s sequence (9) on the left and Apéry’s sequence (1) on the right (for the last
+fact see [Ne, Lemma 2]). Identity (16) can be put forward for an explanation how
+the permutation group from [RV] for linear forms in 1 and ζ(3) appears (see [Zu5,
+Sections 4 and 5 for details]).
+
+                                          References
+[Ap]  R. Apéry, Irrationalité de ζ(2) et ζ(3), Astérisque 61 (1979), 11–13.
+[Ba]  W. N. Bailey, Generalized hypergeometric series, Cambridge Math. Tracts, vol. 32, Cambridge
+      Univ. Press, Cambridge, 1935; 2nd reprinted edition, Stechert-Hafner, New York–London,
+      1964.
+[BR] K. Ball and T. Rivoal, Irrationalité d’une infinité de valeurs de la fonction zêta aux entiers
+      impairs, Invent. Math. 146 (2001), no. 1, 193–207.
+[Be] F. Beukers, A note on the irrationality of ζ(2) and ζ(3), Bull. London Math. Soc. 11 (1979),
+      no. 3, 268–272.
+[Ne] Yu. V. Nesterenko, A few remarks on ζ(3), Mat. Zametki [Math. Notes] 59 (1996), no. 6,
+      865–880.
+[PWZ] M. Petkovšek, H. S. Wilf, and D. Zeilberger, A = B, A. K. Peters, Ltd., Wellesley, M.A., 1997.
+[Po] A. van der Poorten, A proof that Euler missed... Apéry’s proof of the irrationality of ζ(3),
+      An informal report, Math. Intelligencer 1 (1978/79), no. 4, 195–203.
+8                                             W. ZUDILIN
+
+[RV]    G. Rhin and C. Viola, The group structure for ζ(3), Acta Arith. 97 (2001), no. 3, 269–293.
+[Ri1]   T. Rivoal, La fonction zêta de Riemann prend une infinité de valeurs irrationnelles aux
+        entiers impairs, C. R. Acad. Sci. Paris Sér. I Math. 331 (2000), no. 4, 267–270; E-print
+        math.NT/0008051.
+[Ri2]   T. Rivoal, Propriétés diophantinnes des valeurs de la fonction zêta de Riemann aux entiers
+        impairs, Thèse de Doctorat, Univ. de Caen, Caen, 2001.
+[Ri3]   T. Rivoal, Séries hypergéométriques et irrationalité des valeurs de la fonction zêta, Journées
+        arithmétiques (Lille, July, 2001), 2002 (to appear).
+[RZ]    T. Rivoal and W. Zudilin, Diophantine properties of numbers related to Catalan’s constant,
+        Prépublication de l’Institut de Math. de Jussieu, no. 315 (Janvier 2002), submitted for pub-
+        lication.
+[Ze]    D. Zeilberger, Closed form (pun intended!), A tribute to Emil Crosswald “Number theory
+        and related analysis”, Contemporary Math. (M. Knopp and M. Sheingorn, eds.), vol. 143,
+        Amer. Math. Soc., Providence, R.I., 1993, pp. 579–607.
+[Zu1]   W. Zudilin, Irrationality of values of zeta-function, Contemporary Research in Mathematics
+        and Mechanics, Proceedings of the XXIII Conference of Young Scientists of the Department
+        of Mechanics and Mathematics (Moscow State University, April 9–14, 2001), Publ. Dept.
+        Mech. Math. MSU, Moscow, 2001, Part 2, pp. 127–135; English transl., E-print math.NT/
+        0104249.
+[Zu2]   W. Zudilin, Irrationality of values of the Riemann zeta function, Izv. Ross. Akad. Nauk Ser.
+        Mat. [Russian Acad. Sci. Izv. Math.] 66 (2002), no. 3.
+[Zu3]   W. V. Zudilin, One of the numbers ζ(5), ζ(7), ζ(9), ζ(11) is irrational, Uspekhi Mat. Nauk
+        [Russian Math. Surveys] 56 (2001), no. 4, 149–150.
+[Zu4]   W. Zudilin, Arithmetic of linear forms involving odd zeta values, Preprint (August 2001),
+        submitted for publication.
+[Zu5]   W. Zudilin, Difference equation and permutation group for ζ(4), Actes des 12èmes rencontres
+        arithmétiques de Caen (June 29–30, 2001), J. Théorie Nombres Bordeaux (2002) (to appear).
+[Zu6]   W. Zudilin, Apéry-like difference equation for Catalan’s constant, Preprint (January 2002),
+        E-print math.NT/0201024, submitted for publication.
+
+    Moscow Lomonosov State University
+    Department of Mechanics and Mathematics
+    Vorobiovy Gory, Moscow 119899 RUSSIA
+    URL: http://wain.mi.ras.ru/index.html
+    E-mail address: wadim@ips.ras.ru
+
