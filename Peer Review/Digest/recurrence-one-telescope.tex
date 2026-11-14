@@ -1,0 +1,150 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype,enumitem}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={The recurrence from one telescope},pdfauthor={Mathathon peer-review digest}}
+\newcommand{\T}{\mathcal T}
+\newcommand{\q}[1]{\medskip\noindent\textbf{#1}}
+\setlist{itemsep=1pt,topsep=3pt}
+\title{The recurrence from one telescope\\[2pt]
+\large a shorter replacement for Section 2 of ``Why the maximum-principle proof of $\zeta(3)$ works''}
+\author{Mathathon peer-review digest (Claude)}
+\date{15 November 2026 \quad(draft)}
+\begin{document}
+\maketitle
+
+\noindent Section~2 of the expanded exposition derives the recurrence in four pages: a second index
+$m$, a telescope $G$ for the rows, a different telescope $g$ for the diagonal, and an elimination.
+Here the same result comes from \emph{one} telescope used twice. There is no second index. The
+output is exactly what Section~3 of that exposition needs (its equations (11) and (13)).
+
+\q{Notation, as there.}
+$r_n(t)=\dfrac{(1-t)\cdots(n-t)}{t(t+1)\cdots(t+n)}$,\quad $\T(f)=-\sum_{t\ge1}f'(t)$,\quad
+$I_n=\T(r_n^2)$. The one analytic fact:
+\begin{equation}\label{tel}
+\T\bigl(g(t+1)-g(t)\bigr)=0
+\end{equation}
+if $g$ is a rational function with no pole at $1,2,3,\dots$, a zero of order at least two at
+$t=1$, and a finite limit at infinity.
+
+\q{What we want.} With the current $J_n=n^3(I_{n-1}-I_n)$ through the link from $n-1$ to $n$:
+\begin{equation}\label{K}
+J_n-J_{n+1}=4(2n+1)^3\,I_n\qquad(n\ge1).
+\end{equation}
+
+\section*{1. Neighbours share a factor}
+
+From the products, $r_n=\frac{n-t}{n+t}\,r_{n-1}$. So the two functions at the ends of the link
+from $n-1$ to $n$ are multiples of one function, which belongs to the link:
+\[
+r_{n-1}=(n+t)\,v_n,\qquad r_n=(n-t)\,v_n,\qquad
+v_n(t)=\frac{(1-t)\cdots(n-1-t)}{t(t+1)\cdots(t+n)} .
+\]
+Adding and subtracting, $v_n=\frac{r_{n-1}+r_n}{2n}$: the link function is the mean of its two ends.
+Besides the values $I_{n-1},I_n$ at the ends we shall need one number in the middle of the link,
+\[
+e_n=\T(r_n\,r_{n-1})=\T\bigl((n^2-t^2)\,v_n^2\bigr).
+\]
+
+\section*{2. The telescope}
+
+To use \eqref{tel} we need functions with a finite limit at infinity. The link function $v_n$ decays
+like $t^{-2}$; multiplying it by $n^2-t^2$ restores the balance and gives
+\[
+s_n(t)=(n^2-t^2)\,v_n(t)=\frac{(1-t)(2-t)\cdots(n-t)}{t(t+1)\cdots(t+n-1)} ,
+\]
+with $n$ zeros, at $1,\dots,n$, over $n$ poles, at $0,\dots,-(n-1)$. Now shift $t$ by one. The zeros
+move to $0,\dots,n-1$ and the poles to $-1,\dots,-n$:
+\[
+s_n(t+1)=\frac{(-t)(1-t)\cdots(n-1-t)}{(t+1)\cdots(t+n)}=-t^2\,v_n(t).
+\]
+\emph{So $s_n$ and its shift are both multiples of the same $v_n$:} the factors are $n^2-t^2$ and
+$-t^2$. Hence for any two links $n,m\ge1$ the product $g=s_ns_m$ satisfies
+\[
+g(t+1)-g(t)=\bigl[t^4-(n^2-t^2)(m^2-t^2)\bigr]v_nv_m=\bigl[(n^2+m^2)\,t^2-n^2m^2\bigr]\,v_nv_m .
+\]
+This $g$ has a double zero at $t=1$ (one from each factor), no pole at a positive integer, and the
+limit $\pm1$. By \eqref{tel},
+\begin{equation}\label{star}
+\boxed{\;\T\Bigl(\bigl[(n^2+m^2)\,t^2-n^2m^2\bigr]\,v_n\,v_m\Bigr)=0\qquad(n,m\ge1).\;}
+\end{equation}
+This is the only telescope in the derivation. We use it for a link with itself, and for two links
+that meet at a node.
+
+\section*{3. A link with itself ($m=n$): the middle of the link}
+
+\eqref{star} reads $\T\bigl((2t^2-n^2)\,v_n^2\bigr)=0$. On the other hand, by Section~1,
+\[
+r_{n-1}^2+r_n^2-6\,r_nr_{n-1}=\bigl[2(n^2+t^2)-6(n^2-t^2)\bigr]v_n^2=4\,(2t^2-n^2)\,v_n^2 .
+\]
+Therefore
+\begin{equation}\label{six}
+I_{n-1}+I_n=6\,e_n :
+\end{equation}
+the value in the middle of a link is one sixth of the sum of the values at its ends.
+
+\section*{4. Two links at a node ($m=n+1$): the node}
+
+The links $n$ and $n+1$ meet at the node $n$, and $r_n=(n-t)\,v_n=(n+1+t)\,v_{n+1}$. So
+$v_nv_{n+1}=\dfrac{r_n^2}{(n-t)(n+1+t)}$, and the bracket in \eqref{star}, divided by these two
+factors, splits into partial fractions. The numerator $(n^2+(n+1)^2)\,t^2-n^2(n+1)^2$ takes the
+values $n^4$ and $(n+1)^4$ at the two poles $t=n$ and $t=-n-1$, so
+\[
+\frac{(n^2+(n+1)^2)\,t^2-n^2(n+1)^2}{(n-t)(n+1+t)}
+=-\bigl(n^2+(n+1)^2\bigr)+\frac1{2n+1}\Bigl[\frac{n^4}{n-t}+\frac{(n+1)^4}{n+1+t}\Bigr].
+\]
+The two simple fractions give back the link functions: $\frac{r_n^2}{n-t}=r_nv_n=\frac{r_n(r_n+r_{n-1})}{2n}$
+and $\frac{r_n^2}{n+1+t}=r_nv_{n+1}=\frac{r_n(r_{n+1}+r_n)}{2(n+1)}$. Applying $\T$, \eqref{star}
+becomes
+\begin{equation}\label{node}
+n^3\,(e_n+I_n)+(n+1)^3\,(e_{n+1}+I_n)=2\,(2n+1)\,\bigl(n^2+(n+1)^2\bigr)\,I_n .
+\end{equation}
+\emph{This is where the cubes come from:} a fourth power at each pole, divided by the $2n$ or
+$2(n+1)$ of the mean.
+
+\section*{5. Removing the middles}
+
+By \eqref{six}, $e_n+I_n=\frac16(I_{n-1}-I_n)+\frac43I_n$ and
+$e_{n+1}+I_n=-\frac16(I_n-I_{n+1})+\frac43I_n$. In terms of the currents,
+\[
+n^3(e_n+I_n)=\tfrac16J_n+\tfrac43n^3I_n,\qquad (n+1)^3(e_{n+1}+I_n)=-\tfrac16J_{n+1}+\tfrac43(n+1)^3I_n .
+\]
+Put this into \eqref{node} and multiply by $6$. With $p=n+1$ and $q=n$,
+\[
+J_n-J_{n+1}=\bigl[12\,(p+q)(p^2+q^2)-8\,(p^3+q^3)\bigr]I_n=4\,(p+q)\bigl[3(p^2+q^2)-2(p^2-pq+q^2)\bigr]I_n
+=4\,(p+q)^3\,I_n ,
+\]
+which is \eqref{K}. In the notation of the exposition, with $F_n=-J_n=n^3(I_n-I_{n-1})$, this is
+$F_{n+1}=F_n+4(2n+1)^3I_n$, its equation (11).
+
+\section*{What changed, and what is lost}
+
+\begin{itemize}
+\item \emph{One telescope instead of two, and no second index.} Both the $6$ and the cubes come out
+of \eqref{star}: the $6$ from a link paired with itself, the cubes from two links paired at a node.
+\item \emph{No design step.} In the exposition one has to decide which factors a polynomial
+prefactor should cancel, twice. Here the function $s_n$ is forced: it is the multiple of the link
+function that has a finite limit.
+\item \emph{One partial fraction, with simple poles,} as before.
+\item \emph{Lost:} the table $I_{n,m}$ and with it the remark that its row $m=0$ is the failed
+approximation by partial sums. Section~3.3 of the exposition recovers that remark in another way
+(``what happens if we remove the leakage'').
+\item \emph{A picture that comes for free.} Written with differences, \eqref{six} and \eqref{node}
+are
+\[
+(I_{n-1}-e_n)-(e_n-I_n)=4\,e_n,\qquad n^3(e_n-I_n)-(n+1)^3(I_n-e_{n+1})=2n(n+1)(2n+1)\,I_n .
+\]
+So the staircase $I_0,e_1,I_1,e_2,I_2,\dots$ is itself a chain of the kind studied in Section~3:
+each link is split into two halves of conductance $n^3$, with a positive leak at every middle and
+at every node. Section~5 above removes the middles from this finer chain.
+\end{itemize}
+
+\noindent\emph{Status.} Checked by the author only: the shift formula for $s_n$ symbolically for
+$n\le5$; \eqref{star} in exact arithmetic for $1\le n,m\le7$; \eqref{six}, \eqref{node} and the
+recurrence for $n\le12$; the partial fraction and the last line with $n$ (or $p,q$) symbolic. Three
+AI agents are examining this and the other sections independently. The identity \eqref{star} is
+equivalent to a relation between four neighbouring entries of the table $I_{n,m}$ found earlier in
+this project by another agent; relations of this kind between neighbouring hypergeometric sums are
+classical, and nothing here is claimed as new.
+\end{document}
