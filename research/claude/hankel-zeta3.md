@@ -11,6 +11,7 @@ these are AI passes.
 |---|---|
 | (a) degree, (b) positivity | proved here, given Hermite's formula for the Hurwitz zeta function (classical; cited, not re-proved) |
 | (c) arithmetic (Lemmas L1–L8) | proved here; conclusions also checked exactly for $K\le100$ |
+| (d′) sharp analytic bound | `hankel-energy-bound.md`: refereed by the orchestrator; depends on the Euler–Lagrange inequality from `equilibrium_s3.py` (subagent's proof) and a cited classical lemma; no computer-assisted step |
 | (d) analytic bound | proved here **modulo one explicit one-variable inequality (H) on $[1,60]$, certified by interval arithmetic** (two independent implementations for $\vartheta=\frac25$; one plus a dense grid for $\vartheta=\frac{21}{50}$); numerically checked for $K\le160$ |
 | prime input | any bound $\theta(u)\le\kappa u+o(u)$ with $\kappa<1.2155$; the elementary period-6 bound ($\kappa=1.17053$) suffices |
 | novelty | not investigated. The method is Fauzan's (ζ(5), 2026) specialised to $s=3$ with a different, simpler arithmetic; FLSZ (arXiv:2611.16156) use the same idea in another setting. We do not know whether an $s=3$ version exists in the literature. |
@@ -256,12 +257,21 @@ independently by the orchestrator, the rest was not re-derived by the orchestrat
 * $\ell=2+6\log2$, $\int V\,d\sigma=6\log2-4$, and $E^*=\frac14\int V\,d\sigma+\frac\ell2=\frac92\log2=3.1191\ldots$
   (proved symbolically via a virial identity; numerically confirmed to 40 digits).
 
-**Update.** A write-up of the missing link now exists: `hankel-energy-bound.md` (Opus subagent) claims
-$\log\Delta_K(\zeta(3))\le-\frac92\log2\cdot K^2+5K\log K+O(K)$ for all $K\ge2$, via Andréief, circle
-regularisation and the negativity of the logarithmic energy of zero-mass measures (cited from
-Saff–Totik, not proved). **It has not been refereed by the orchestrator**, one step (finite-energy
-conditions) is only sketched, and it imports the Euler–Lagrange inequality from `equilibrium_s3.py`.
-Until it is refereed, Theorem 1(d) stands as stated above and the remarks below are conditional.
+**Theorem 1(d′) (sharp form).** `hankel-energy-bound.md` proves, for all $K\ge2$,
+$$\log\Delta_K(\zeta(3))\le-\tfrac92\log2\cdot K^2+5K\log K+O(K),$$
+via Andréief's formula, an exact Riemann-sum bound for $D_K$, circle regularisation, and the
+negativity of the logarithmic energy of zero-mass measures. **Refereed by the orchestrator line by
+line (Steps 1–13 all check).** It depends on two inputs that the orchestrator did *not* re-prove:
+(I3) the Euler–Lagrange inequality $2U^\mu\le V-\ell$ off the support and the value
+$\int V\,d\sigma=6\log2-4$ (subagent's symbolic proof, 39 numerical cross-checks in `equilibrium_s3.py`;
+the orchestrator re-derived only the support equation), and (I4) the classical negativity lemma
+(cited: Saff–Totik, Lemma I.1.8; also Fauzan's Lemma 6.2). With (d′) in place of (d):
+
+* the corollary holds for every $\kappa<\log4=1.3863$: exponent $-(\frac92\log2-\frac94\kappa)K^2$, which is
+  $-0.485K^2$ for the period-6 bound and $-0.869K^2$ under the prime number theorem;
+* the interval-arithmetic inequality (H) is not needed.
+
+Route (d) (Hadamard + (H)) and route (d′) (energy) are independent; either one completes the proof.
 
 What was **not** written before that file: the standard upper bound $\log\Delta_K(\zeta(3))\le-E^*K^2+o(K^2)$ from Andréief's
 formula and the energy inequality (as in Fauzan §6). With it, (d) would hold with $\frac92\log2$ in place of

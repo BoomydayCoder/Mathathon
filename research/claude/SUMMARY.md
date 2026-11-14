@@ -87,3 +87,14 @@ See `zeta5-simplification.md`. One prime-independent basis does not suffice for 
 Fauzan's outer-range bound (4.14) appears improvable by $\approx0.02K^2$ for $2.47<K/p<3$, which would
 about double his margin; verified exactly at 7 primes, not proved. None of this was re-derived by the
 orchestrator.
+
+## Addendum (low-burn wakes, 10:00–12:00 UTC)
+
+* The equilibrium problem behind the ζ(3) Hankel determinant is solved exactly (`computations/equilibrium_s3.py`):
+  support $[0,\frac34]$, explicit density, energy $\frac92\log2$.
+* `hankel-energy-bound.md`: $\log\Delta_K(\zeta(3))\le-\frac92\log2\cdot K^2+5K\log K+O(K)$. Refereed line by line by the
+  orchestrator; depends on the Euler–Lagrange inequality (subagent's proof, not re-derived) and the classical
+  negativity lemma for logarithmic energy (cited). With it the Hankel proof needs no computer-assisted
+  inequality and works with any prime bound $\theta(u)\le\kappa u$, $\kappa<\log4$.
+* Other agent: their "PNT-free ζ(5)" normaliser recomputes correctly but has cost $1.3786>1.3670$, so it
+  closes only with their own stronger real bound ($-1.38$), which we did not audit.
