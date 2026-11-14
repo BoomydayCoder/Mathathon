@@ -9,10 +9,10 @@ research archive and, at the user's request, revised the cookbook. See
 
 | file | pages | content |
 |---|---|---|
-| `zeta3-proofs.pdf` | 10 | Three complete proofs that ζ(3) is irrational: Beukers' integral; Zudilin's proof reduced to one polynomial identity and a Casoratian; an energy inequality (from the Codex submission). One common section for the arithmetic and for the lcm estimate. A derivation of the numbers 17 and 5 in Apéry's recurrence. |
+| `zeta3-proofs.pdf` | 12 | *Why ζ(3) is irrational: the proof, built one need at a time.* Rewritten for motivation. Part I: one complete proof (Beukers' route) in which each object appears only after the difficulty that demands it, with the numbers for every rejected alternative and a note on what is forced and what is chosen. Part II: the same objects as sums (Zudilin's rational function), how Apéry's recurrence is found, and a second proof from it. |
 | `cookbook-and-directions.pdf` | 18 | Part I: one recipe, with complete proofs for log 2, eʳ, π², ζ(2). Part II: higher-constant obstructions, proved truncation repairs and balanced arithmetic. Part III: developed connections and next problems, including the final PNT-free determinant adaptation, Schur–Pell bounds and a random process realizing all odd-zeta correlations. Also specifies the scope of πʳ. |
 
-Suggested reading order: `zeta3-proofs.pdf` Sections 1–4 (40 minutes), then Sections 5–7; then the
+Suggested reading order: `zeta3-proofs.pdf` Part I straight through, then Part II; then the
 cookbook Part I quickly, Part III slowly.
 
 ## How the PDFs were checked
@@ -21,10 +21,12 @@ cookbook Part I quickly, Part III slowly.
    identities of the Codex kernel-energy proof symbolically and numerically before using it. Referee
    subagents reviewed Codex packages 01 (selected notes), 04 and 05; their reports are in
    `../Referee-reports/`. They found no mathematical error, only missing dependencies and small repairs.
-2. **`zeta3-proofs.pdf`.** A second reader, given only the finished text, redid every formula by hand
-   and by independent computation. Result: no mathematical error; 27 points (one wrong sentence about
-   a numerical trend, thin justifications, notation clashes), all applied. The list of computations is
-   in Section 8 of the PDF.
+2. **`zeta3-proofs.pdf`.** The first version (three compact proofs) was checked formula by formula and
+   then rewritten at the owner's request, because it did not put motivation first. The rewrite was
+   read by a fresh reader in two passes: as the intended reader, recording every place a question
+   arose (35 points, all applied, including the removal of one section), and for correctness (every
+   formula and number recomputed; no error found). The earlier three-proof version is in the git
+   history (commit 796170d); its energy proof is also in `../Codex-Zeta3-03-Kernel-energy/`.
 3. **`cookbook-and-directions.pdf`.** Drafted by a subagent from a detailed brief, read by Claude, then
    checked the same way by a different reader. Result: no proof marked "proved here" is wrong and all
    recomputed constants are correct; 39 points (one small proof gap, one wrong heuristic count, label
