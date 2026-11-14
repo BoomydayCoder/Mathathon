@@ -38,8 +38,7 @@ Thus we want cubic poles at nonpositive integers. Rather than construct them dir
 
 ## 2. Zeros and poles force the auxiliary product
 
-Fix \(n\ge0\). Place simple poles at
-\(0,-1,\ldots,-n\), and require zeros at the first \(n\) positive integers. Up to scaling, these conditions force
+The square need not be guessed. For \(n\ge1\), require a rational function with poles only at \(0,-1,\ldots,-n\), each of order at most two, with quadratic decay at infinity and double zeros at \(1,\ldots,n\). Multiplication by \([t(t+1)\cdots(t+n)]^2\) leaves a polynomial of degree at most \(2n\). Its prescribed double zeros already account for \(2n\) roots. Therefore it is a constant multiple of \([(t-1)\cdots(t-n)]^2\). Normalizing the leading coefficient to one forces
 
 \[
 P_n(t)=\frac{(t-1)\cdots(t-n)}{t(t+1)\cdots(t+n)},
@@ -47,7 +46,9 @@ P_n(t)=\frac{(t-1)\cdots(t-n)}{t(t+1)\cdots(t+n)},
 \tag{1}
 \]
 
-The numerator degree is at most \(n\), so prescribing \(n\) roots leaves only one scalar parameter. The normalization in (1) is especially useful because all residues are integers:
+For \(n=0\), use the empty-product convention. Thus the square follows from a saturated interpolation problem: every available degree has a job. For a nonzero function, this also uses the fewest possible double poles. With \(M\) such poles and quadratic decay, the numerator has degree at most \(2M-2\); the \(n\) double zeros require \(M\ge n+1\).
+
+These statements classify the specified constraints, not all possible auxiliary constructions. Their purpose is to explain why the formula becomes inevitable once this design has been chosen. Its normalization is especially useful because all residues are integers:
 
 \[
 P_n(t)=\sum_{k=0}^{n}\frac{c_{n,k}}{t+k},
@@ -61,6 +62,15 @@ To check (2), multiply by \(t+k\) and substitute \(t=-k\). Both sides then have 
 Why these particular features? The integral pole lattice controls denominators through differences \(k-\ell\). The positive integer zeros suppress the first summands. Squaring makes these zeros double, so they remain zeros after one differentiation. The function also decays as \(t^{-2}\), which will cancel an unwanted zeta coefficient.
 
 These are simultaneous design decisions, not decorative features of an already-known answer.
+
+The balanced product has an exact symmetry worth distinguishing from a tempting false one. If \(B_n(t)=tP_n(t)\), then
+
+\[
+B_n(-t)=B_n(t)^{-1},\qquad R_n(t)R_n(-t)=t^{-4}.
+\]
+
+It does **not** obey \(R_n(-n-t)=R_n(t)\). Each factor \((z-j)/(z+j)\) has modulus one on the imaginary axis and less than one in the right half-plane, because \(|z+j|^2-|z-j|^2=4j\operatorname{Re}z\). Thus the same product is a finite rational inner function after multiplication by \(t\). This supplies a complex-analytic interpretation of its size balance; the elementary proof below needs only its real product formula.
+
 
 ## 3. The arithmetic is easiest before simplifying the formula
 
@@ -93,6 +103,14 @@ a_{n,k}\in\mathbb Z,\qquad
 D_n\frac{b_{n,k}}2\in\mathbb Z.
 \tag{4}
 \]
+
+The consecutive lattice is optimal for this particular denominator mechanism. If \(b_0,\ldots,b_n\) are distinct integers and
+
+\[
+L=\operatorname{lcm}_{i<j}|b_i-b_j|,
+\]
+
+then \(D_n\mid L\). Indeed, for every prime power \(p^e\le n\), two of the \(n+1\) positions occupy the same residue class modulo \(p^e\); their nonzero difference supplies that prime power. Consecutive positions attain \(L=D_n\). More precisely, the least multiplier clearing the simple-pole coefficients of a square for **all integer residue vectors** is \(L/\gcd(L,2)\), since those coefficients contain \(2/(b_i-b_j)\). The consecutive lattice minimizes this sharper multiplier too. Special residues may admit further cancellation, so this is not a global optimality claim about irrationality proofs.
 
 Only differences between pole locations occur. An alternative logarithmic-derivative formula introduces harmonic numbers as large as \(H_{n+k}\), making the same denominator fact look mysterious. Formula (3) exposes the cancellation before it needs to be proved.
 
@@ -312,6 +330,49 @@ This proves nonvanishing and its sign. Moreover \(A_{n+k}\ge5^kA_n\), so
 \]
 
 Growth of one solution has produced reciprocal decay of the complementary solution. This is the conceptual replacement for Ball’s positive series in this presentation. A second-order recurrence has two dimensions of solutions; after the growing component is cancelled, the determinant identity controls what remains.
+
+### The determinant identity is Kirchhoff's law
+
+There is an exact physical interpretation of (17). Put a conductance
+
+\[
+c_n=(n+1)^3A_nA_{n+1}
+\]
+
+on the edge from \(n\) to \(n+1\), with resistance \(\rho_n=1/c_n\). If \(u_n=A_nv_n\) solves the recurrence, subtraction of the recurrence for \(A_n\) gives
+
+\[
+c_n(v_{n+1}-v_n)=c_{n-1}(v_n-v_{n-1}).
+\]
+
+The current is constant along the chain. For \(u=B\), its value is \(c_0(B_1/A_1-B_0/A_0)=6\). Thus
+
+\[
+\frac{B_n}{A_n}=6\sum_{j<n}\rho_j,\qquad
+\frac{\zeta(3)}6=\sum_{j\ge0}\rho_j,
+\qquad
+A_n\zeta(3)-B_n=6A_n\sum_{j\ge n}\rho_j.
+\]
+
+The approximation error is the resistance of the omitted tail. Its sign and size are consequences of positive resistances and increasing conductances. The identification of the total resistance with \(\zeta(3)/6\) still uses (15); electrical terminology does not identify that constant by itself.
+
+The same substitution yields a sharp inequality. For every finitely supported real sequence \(f\),
+
+\[
+\begin{aligned}
+\mathcal Q(f)
+&:=\sum_{n\ge0}\beta_nf_n^2
+ -2\sum_{n\ge0}(n+1)^3f_nf_{n+1}\\
+&=\sum_{n\ge0}c_n
+ \left(\frac{f_n}{A_n}-\frac{f_{n+1}}{A_{n+1}}\right)^2
+ \ge\frac6{\zeta(3)}f_0^2.
+\end{aligned}
+\]
+
+Expansion proves the equality using the recurrence for \(A_n\). Weighted Cauchy–Schwarz proves the inequality: the voltage drops telescope to \(f_0\), and the sum of their resistance weights is \(\zeta(3)/6\). To see sharpness, choose on \(0\le n\le N\) the voltage
+\(v_n=\sum_{j=n}^N\rho_j/\sum_{j=0}^N\rho_j\), and zero afterwards; then \(f_n=A_nv_n\) has energy \(1/\sum_{j=0}^N\rho_j\), tending to \(6/\zeta(3)\).
+
+This is a useful theorem obtained from the proof, not an extra prerequisite for it. Positive finite energy also makes every finite recurrence matrix positive definite, explaining the positivity of its continued-fraction pivots. The [network derivation](discrete-green-motivation.md) and [independent review](discrete-green-independent-review.md) give its full Green kernel and the required boundary conditions for infinite minimizers.
 
 ## 7. Prove only the growth estimate the arithmetic requires
 
@@ -539,10 +600,41 @@ This is a substantive mathematical consequence of the motivation: double zeros a
 
 These are precise research questions. They should not be described as evidence that an unverified generalization succeeds.
 
+### A second stress test: preserve the arithmetic and change the spacing
+
+For a fixed integer \(d\ge2\), dilate the entire pattern:
+
+\[
+R_{n,d}(t)=d^{-2}R_n(t/d),\qquad
+F_{n,d}=-\sum_{t=1}^\infty R_{n,d}'(t).
+\]
+
+The integer residues, reciprocal symmetry, and isolation of \(\zeta(3)\) survive. A denominator bound survives too, with \(D_{dn}^3\) replacing \(D_n^3\). What fails is the alignment with the summation lattice. The certificate now shifts by \(d\); its telescoping lower boundary contains \(d\) terms:
+
+\[
+(TF_{\cdot,d})_n=d^{-3}\sum_{r=1}^{d-1}S_n'(r/d),
+\qquad
+(Tu)_n=(n+1)^3u_{n+1}-\beta_nu_n+n^3u_{n-1}.
+\]
+
+Only the omitted \(r=d\) term sits at a double zero. The first unmatched point \(1/d\) creates polynomial forcing. The [classification and deformation proof](zudilin-design-classification.md), [independently checked](zudilin-design-independent-review.md), establishes the actual asymptotic
+
+\[
+F_{n,d}\sim\frac4{d^3}
+ \left[\frac{\Gamma(1/d)}{\Gamma(1-1/d)}\right]^2
+ n^{-4/d}\log n.
+\]
+
+Thus this is a proved failure of exponential decay, not merely an unsuccessful upper bound. For example,
+\(F_{n,2}=[\log n+\gamma+2\log2]/(2n^2)+o(n^{-2})\).
+The gamma notation only names the positive product constant; these asymptotics are a supplementary investigation and are not needed for the elementary proof above.
+
+The lesson is more specific than “choose small denominators.” The zeros, poles, derivative order, and **unit summation step** must fit together. Dilation keeps much of the algebra and arithmetic while exposing exactly the boundary cancellation that made the original construction succeed.
+
 ## 11. What to retain for a presentation
 
-The proof can be told as a sequence of necessities. Start with the integer contradiction. Choose poles where sums become zeta values. Choose zeros where the sum should disappear. Square to combine integer coefficients with surviving zeros. Differentiate once to reach cubic poles. Discover a recurrence by matching the few poles in adjacent ratios. Identify the limit with a deliberately rough bound. Use the Casoratian to convert growth into positive reciprocal error. Finally compare that growth with a proved denominator estimate.
+The proof can be told as a sequence of necessities. Start with the integer contradiction. Choose poles where sums become zeta values. Choose zeros where the sum should disappear. Use the saturated double-zero constraints to force the square. Differentiate once to reach cubic poles. Discover a recurrence by matching the few poles in adjacent ratios. Identify the limit with a deliberately rough bound. Use the Casoratian to convert growth into positive reciprocal error. Finally compare that growth with a proved denominator estimate.
 
-The strongest connections are exact, not analogies: polynomial orthogonality becomes zeros of a Mellin transform; its coefficients become residues; a discrete Wronskian measures approximation error; and a factorial valuation table pays the arithmetic cost of the approximation. The higher-derivative obstruction shows which part of this architecture is special to the successful construction.
+The strongest connections are exact, not analogies: polynomial orthogonality becomes zeros of a Mellin transform; its coefficients become residues; a discrete Wronskian is the constant current of a resistor chain and measures approximation error; and a factorial valuation table pays the arithmetic cost of the approximation. The higher-derivative obstruction shows which part of this architecture is special to the successful construction.
 
 The [claim ledger](../CLAIM_LEDGER.md) records proof and review status. The [source provenance](../sources/odd-zeta-provenance.md) also matters for current higher-zeta claims: this project retrieved Fauzan’s September 2026 preprint and inspected formalization reports, but has not locally built Lean or independently audited that entire preprint. No historical novelty is asserted for the reorganizations or derived lemmas here.

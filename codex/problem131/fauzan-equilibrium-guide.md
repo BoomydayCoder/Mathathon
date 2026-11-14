@@ -1,8 +1,8 @@
-# Discovering an equilibrium measure for Fauzan’s analytic estimate
+# Simplifying the analytic and arithmetic estimates in Fauzan’s construction
 
-This note explains a concrete simplification of the analytic part of Fauzan’s 2026 \(\zeta(5)\) construction. An explicitly constructed equilibrium measure replaces the preprint’s mixture of sixteen arcsine measures and its many potential comparisons. A one-sign-change argument proves the global inequality; rigorous interval computations certify the two endpoint equations and the remaining energy bound.
+This note explains a concrete simplification of the analytic part of Fauzan’s 2026 \(\zeta(5)\) construction. An explicitly constructed equilibrium measure replaces the preprint’s mixture of sixteen arcsine measures and its many potential comparisons. A one-sign-change argument proves the global inequality; rigorous interval computations certify the two endpoint equations and the remaining energy bound. A separate elementary estimate removes the source’s arithmetic integration tables, conditional on its local valuation envelope. The analytic construction also extends to every fixed odd index, with a clearly identified arithmetic gap.
 
-The construction and certificates were developed and independently checked within this session. Historical novelty has not been established. This is **not an independent audit of the complete Fauzan preprint**. The final consequence for its integer polynomials remains conditional on the separate arithmetic and moment arguments. The source is [Fauzan’s preprint, version 1](https://doi.org/10.5281/zenodo.22826419), Sections 6–7 and Appendix A; detailed derivations are in [fauzan-analytic-simplification.md](fauzan-analytic-simplification.md).
+The construction and certificates were developed and independently checked within this session. Historical novelty has not been established. This is **not an independent audit of the complete Fauzan preprint**. The moment and local arithmetic arguments now have separate independent reconstructions, including the small-prime estimate. The combined final proof is still undergoing assembly review; this guide does not promote the entire preprint to an independently audited theorem. The source is [Fauzan’s preprint, version 1](https://doi.org/10.5281/zenodo.22826419), Sections 6–7 and Appendix A; detailed derivations are in [fauzan-analytic-simplification.md](fauzan-analytic-simplification.md).
 
 ## 1. Start from the quantity that actually needs to be bounded
 
@@ -371,3 +371,232 @@ conditionally on those retained arguments. The source’s stated bound is \(e^{-
 This comparison concerns the limiting quadratic coefficient. It does not assert that the source’s particular finite remainder constants remain unchanged, nor provide an explicit starting index. The fixed bounded equilibrium density and the growth of \(V\) at infinity permit the same regularization-and-tail strategy with lower-order errors; the separate arithmetic and moment proofs still carry their own obligations.
 
 The central simplification is conceptual: a signed field with one sign change determines a positive equilibrium density and its global potential shape. A large trial-measure table is replaced by two endpoint equations, a sign argument, and two reproducible scalar energy certificates. It is a local improvement to one analytic component, not a new fully independent elementary proof of \(\zeta(5)\)’s irrationality.
+
+## 9. The same leading analytic budget works for every fixed odd index
+
+The equilibrium construction has a useful extension that is stronger than a numerical observation but weaker than a general irrationality theorem.
+
+Fix one odd integer \(s\ge3\). Put
+
+\[
+w_s(y)=\frac{2y^s}{(s-1)!}
+ \frac{d^{s-1}}{dy^{s-1}}\frac1{e^{2\pi y}-1}.
+\]
+
+This weight is positive. On rational functions with polynomial parts and only simple poles at negative integer squares, its moment functional is affine in a single constant:
+
+\[
+\begin{aligned}
+\mu_{s,X}(t^e)
+ &=\frac{(-1)^eB_{2e+2}(2e+s)!}{(s-1)!(2e+2)!},\\
+\mu_{s,X}\!\left(\frac1{t+j^2}\right)
+ &=j^{s-1}\bigl(X-H_j^{(s)}\bigr)
+   -\frac1{s-1}+\frac1{2j}.
+\end{aligned}
+\]
+
+At \(X=\zeta(s)\), it is the positive integral \(\int_0^\infty R(y^2)w_s(y)\,dy\). The [moment theorem](odd-moment-generalization.md) proves the identity using Hermite’s integral formula.
+
+Set \(K=40n\), \(N=3n\), \(h=37n\), and
+
+\[
+\mathscr D_m(t)=\prod_{j=1}^m(t+j^2),
+\qquad
+\Delta_{K,s}(X)=\det\left[
+ \mu_{s,X}\!\left(\frac{\mathscr D_N(t)^6t^{i+j}}
+                         {\mathscr D_K(t)}\right)
+                         \right]_{0\le i,j<h}.
+\]
+
+Use the same rational normalizer as the source:
+
+\[
+S_K=\frac{(K!)^{2h}4^{h-1}}
+ {(N!)^{12h}\prod_{i=1}^{h-1}((2i)!)^2}.
+\]
+
+**Fixed-odd analytic theorem.** The determinant has degree exactly \(h\), its value at \(\zeta(s)\) is positive, and
+
+\[
+\boxed{\quad
+\limsup_{\substack{K\to\infty\\40\mid K}}
+ K^{-2}\log\bigl[S_K\Delta_{K,s}(\zeta(s))\bigr]
+ \le-\frac{69}{50}.
+\quad}
+\tag{21}
+\]
+
+The proof and [independent review](common-odd-zeta-budget-review.md) are in [the common-budget note](common-odd-zeta-analytic-budget.md). The reason is concrete: every fixed \(s\) changes only the polynomial factor in
+
+\[
+w_s(y)\le C_s(1+y)^s e^{-2\pi y}.
+\]
+
+After scaling \(y=K\sqrt t\), those changes contribute \(O_s(K\log K)\), while the common external field controls the \(K^2\) term. The proof also bounds the Riemann-sum error uniformly at \(t=0\), retains an integrable tail on the unbounded domain, and checks cancellation of every \(K^2\log K\) term. The conclusion is for each **fixed** \(s\); it is not uniform when \(s\) grows with \(K\).
+
+The remaining arithmetic target can now be stated without ambiguity. One would need positive rational multipliers \(\nu_{K,s}\) such that
+
+\[
+\nu_{K,s}S_K\Delta_{K,s}(X)\in\mathbb Z[X],
+\qquad
+\limsup K^{-2}\log\nu_{K,s}<\frac{69}{50}.
+\tag{22}
+\]
+
+Then positivity and the degree \(h=37K/40\) would give the polynomial integer contradiction. Equation (22) is a **sufficient condition to be proved**, not a result established for all odd \(s\). A common analytic field does not make the prime-adic arithmetic independent of \(s\).
+
+## 10. An exact index-shift identity explains why the arithmetic does not transfer for free
+
+There is an analytic operator shifting \(s\) to \(s+2\). With \(\theta=t\,d/dt\),
+
+\[
+\mu_{s+2}(R)=\mu_s(\mathcal L_sR),
+\qquad
+\mathcal L_s=
+ \frac{(2\theta+s+1)(2\theta+s+2)}{s(s+1)}.
+\tag{23}
+\]
+
+Two integrations by parts prove the identity. On polynomials it is particularly harmless:
+
+\[
+\mathcal L_s(t^e)=
+ \frac{(2e+s+1)(2e+s+2)}{s(s+1)}t^e.
+\]
+
+On a simple pole, however,
+
+\[
+\mathcal L_s\!\left(\frac1{t+a}\right)
+ =\frac{s-1}{s+1}\frac1{t+a}
+ +\frac{2(2s-3)a}{s(s+1)}\frac1{(t+a)^2}
+ +\frac{8a^2}{s(s+1)}\frac1{(t+a)^3}.
+\tag{24}
+\]
+
+The repeated poles leave the domain of the original single-zeta arithmetic lemma. Their moment values contain additional zeta indices. The cancellation in the final analytic identity is valid, but it cannot be obtained by pretending that the old simple-pole coefficient bounds still apply unchanged.
+
+There is a precise obstruction to avoiding this issue universally. Any finite-order differential operator over \(\mathbb Q(t)\) that preserves the space of rational functions with arbitrary polynomial part and only simple poles among \(-1,-4,-9,\ldots\) must be multiplication by a polynomial. The highest derivative would otherwise create a higher-order pole at infinitely many locations, forcing its rational coefficient to have infinitely many zeros. No such polynomial multiplier realizes the index shift: comparing large-degree moments would force a linear coefficient \(4\pi^2/[s(s+1)]\), which is not rational.
+
+The arithmetic loss is also visible without an asymptotic guess. Write the rational constant in the simple-pole functional as
+
+\[
+h_s(j)=-j^{s-1}H_j^{(s)}-\frac1{s-1}+\frac1{2j}.
+\]
+
+For every prime \(p>s+1\),
+
+\[
+v_p(h_s(p+1))=-s,
+\qquad
+v_p(h_{s+2}(p+1))=-(s+2).
+\tag{25}
+\]
+
+Thus increasing the index can genuinely cost two additional prime powers. These statements are proved in [odd-functional-shift.md](odd-functional-shift.md).
+
+The scope matters. This rules out a cost-free transfer by one universal simple-pole-preserving rational differential operator. It does **not** rule out a \(K\)-dependent operator, determinant-specific cancellations, a different basis, or a fresh local arithmetic argument. Those are the appropriate next targets after the common analytic budget has been established.
+
+
+## 11. A table-free arithmetic budget for the source's zeta-five construction
+
+There is a second simplification, separate from equilibrium theory. It reduces the integration of the source's arithmetic envelope to variance bounds and fractional-part identities. Its precise status matters: the envelope and the passage from local prime valuations to its integral are separate from this integration calculation. The [local arithmetic reconstruction](fauzan-local-arithmetic-review.md) now checks the local inputs, including small primes and coefficientwise integrality, while [a separate review](fauzan-arithmetic-simplification-review.md) checks the envelope integration. The full assembly remains under review. Neither component extends the arithmetic normalization to every odd index.
+
+For the source normalizer \(m_{K,M}\), take the fixed cutoff \(M=1000\). The [arithmetic note](fauzan-arithmetic-simplification.md) derives
+
+\[
+\boxed{\quad
+\limsup_{\substack{K\to\infty\\40\mid K}}
+ K^{-2}\log m_{K,1000}
+ \le \frac{439979}{320000}
+ =1.374934375<\frac{11}{8}.
+\quad}
+\tag{26}
+\]
+
+The key design choice is to cancel the large terms before estimating anything. In the source's inner envelope, the quadratic terms cancel exactly, leaving
+
+\[
+R(x)=xF(x)+Q(x),\qquad
+F(x)=4\lambda+2\lambda\{x\}-12\lambda\{\alpha x\},
+\qquad Q(x)\le\frac{13}{8}.
+\]
+
+The bound on \(Q\) follows from the variance of a function taking only two adjacent integer values, followed by Cauchy–Schwarz. This is where a long subdivision into floor-function cases can be avoided: one bounds the fluctuation collectively rather than integrating every case exactly.
+
+The remaining fractional parts have a closed integral. For an integer \(n\ge1\),
+
+\[
+\int_n^\infty\frac{\{x\}}{x^2}\,dx
+ =H_n-\log n-\gamma.
+\]
+
+The convexity of \(1/x\) gives \(\gamma>5/3-\log3\). Combining this with the source's outer envelope, integrated using positive-part primitives, yields
+
+\[
+\limsup K^{-2}\log m_{K,M}
+ \le \frac{127751}{96000}+\frac{13}{144}
+ +\lambda\left(\frac53+8\alpha+12\alpha\log\alpha\right)
+ +\frac{14\lambda}{M}.
+\tag{27}
+\]
+
+Here \(\alpha=3/40\), \(\lambda=37/40\). Even the logarithm needs no decimal certificate: the positive series for \(\operatorname{atanh}\), truncated after five terms in total, proves
+
+\[
+\log\alpha
+ =-2\operatorname{atanh}(1/4)-6\operatorname{atanh}(1/3)
+ <-\frac{33559}{12960}.
+\]
+
+Substituting this into (27) proves (26) by exact fractions. The [standard-library computation](../computations/check_table_free_arithmetic.py) verifies the final rational arithmetic; the accompanying note proves the integral estimates. This replaces the source's 143-piece inner integration and 11-piece outer table by a weaker but sufficient bound.
+
+The analytic and arithmetic constants then leave the exact margin
+
+\[
+\frac{69}{50}-\frac{439979}{320000}
+ =\frac{1621}{320000}>\frac1{200}.
+\tag{28}
+\]
+
+Thus, retaining the source's moment identities, local arithmetic envelope, prime-sum conversion, and integrality proposition, these two replacements give a negative quadratic exponent for its normalized zeta-five determinant. The tradeoff for the simpler arithmetic estimate is a larger fixed cutoff: the source requirement \(K\ge200M^2\) becomes \(K\ge200{,}000{,}000\). This is acceptable for an asymptotic argument but not a useful small-approximant computation.
+
+The result is a substantial simplification of two quantitative components, with their dependencies exposed. It is not a complete independent audit of the source proof, and it does not remove the arithmetic gate in Section 9 for higher odd zeta values.
+
+
+## 12. Spend a little analytic margin to simplify the local arithmetic too
+
+The strongest simplification is not the smallest numerical constant. The extra analytic margin lets us remove one of the source's arithmetic optimizations as well as its integration tables.
+
+In the outer-prime argument the matrix is written \(A+p^{-1}L\), with row weights \(w_i\le0\), entry bounds \(v_p(A_{ij})\ge w_i+w_j\), integral \(L\), and \(r=\operatorname{rank}L\). Complementary-minor expansion immediately gives
+
+\[
+v_p^{\mathrm G}\det(A+p^{-1}L)\ge2\sum_iw_i-r.
+\tag{29}
+\]
+
+Here \(v_p^{\mathrm G}\) is the minimum valuation of the polynomial coefficients. A term using a \(k\)-minor of \(L\) vanishes if \(k>r\); otherwise the factor \(p^{-k}\) costs at most \(r\), and deleting nonpositive row weights cannot worsen the lower bound. This proof avoids counting zero-weight rows and avoids the source's finer rank correction.
+
+The [local arithmetic review](fauzan-local-arithmetic-review.md) reconstructs the actual bases and local functional estimates needed to apply (29). The simplification increases the asymptotic arithmetic cost by exactly \(9/640\). Choose the fixed cutoff \(M=10000\), instead of \(1000\), to reduce the tail cost. The table-free calculation then gives, for the resulting positive rational normalizer \(\widetilde m_{K,10000}\),
+
+\[
+\widetilde m_{K,10000}S_K\Delta_{K,5}(X)\in\mathbb Z[X],
+\qquad
+\limsup K^{-2}\log\widetilde m_{K,10000}
+ \le\frac{2203747}{1600000}=1.377341875.
+\tag{30}
+\]
+
+The normalizer retains signed prime exponents: positive local divisibility permits division by a prime power. Taking only denominator-clearing exponents would discard useful arithmetic savings and would require a new budget calculation.
+
+The exact remaining margin is
+
+\[
+\frac{69}{50}-\frac{2203747}{1600000}
+ =\frac{4253}{1600000}>\frac1{400}.
+\tag{31}
+\]
+
+For \(K=40n\), this corresponds to a leading negative exponent at most \(-4.253n^2\). Once the analytic, normalization, and positivity statements are assembled with their stated hypotheses, lower-order terms can be absorbed to give an eventual bound \(0<\widetilde m S_K\Delta_{K,5}(\zeta(5))<e^{-4n^2}\). The degree is \(37n\), so this decay is strong enough to beat the factor \(q^{37n}\) arising from a hypothetical rational value with denominator \(q\).
+
+That last paragraph describes the assembly implication, which is being independently reviewed; it is not a declaration that every component of the source preprint has been certified. The source threshold is now \(K\ge200M^2=20{,}000{,}000{,}000\), and no explicit practical starting index for the final decay is supplied. The quantitative goal is eventual decay; the conceptual gain is that stronger real-variable control can pay for simpler local arithmetic.

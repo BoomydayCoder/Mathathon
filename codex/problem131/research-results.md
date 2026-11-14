@@ -281,3 +281,251 @@ The next useful work has explicit mathematical targets:
 4. Find a growing-dimensional positive auxiliary space whose primitive arithmetic error tends to zero. Fixed-dimensional coefficient tuning can be arithmetically equivalent to rescaling, and fixed positive cones have their own lower-gap obstructions.
 
 The original [Zudilin paper](https://arxiv.org/abs/math/0202159) remains the primary starting point. Current claims concerning Fauzan’s 2026 \(\zeta(5)\) work are documented separately in [source provenance](../sources/odd-zeta-provenance.md); this project has not independently certified that complete preprint or locally built its Lean formalizations. No claim here depends on treating an unreviewed research proposal as an established theorem.
+
+## 9. An analytic equilibrium construction replaces Fauzan’s sixteen-component measure
+
+The newest result improves a specific analytic component of Fauzan’s preprint. It does not independently validate the paper’s arithmetic proof.
+
+For the source parameters \(\alpha=3/40\), \(\lambda=37/40\), the external field has derivative
+
+\[
+V'(x)=\int_0^\infty\frac{q(u)}{x+u^2}\,du,
+\qquad
+q(u)=\begin{cases}
+-3,&0<u<\alpha,\\
+3,&\alpha<u<1,\\
+2,&u>1.
+\end{cases}
+\]
+
+This single negative-to-positive sign change makes it possible to construct the actual equilibrium measure on one interval \([a,b]\). Sweeping each charge onto that interval gives the density
+
+\[
+d\rho(x)=-\frac{\sqrt{(x-a)(b-x)}}{2\pi}
+ \left[\int_0^\infty
+ \frac{q(u)\,du}{(x+u^2)\sqrt{(u^2+a)(u^2+b)}}\right]dx.
+\tag{17}
+\]
+
+Two endpoint equations fix the mass \(\lambda\) and make the density vanish at both edges. Subtracting the integrand’s value at the charge-sign-change point proves that the bracket is negative. The same sign proves that \(2U_\rho-V\) increases before the support, is constant on it, and decreases afterwards. This establishes positivity and the **global** potential inequality analytically; it does not rely on a grid of potential values.
+
+An exact integer-interval certificate locates the unique endpoint pair in
+
+\[
+0.00007119508<a<0.00007119517,
+\qquad
+0.75394957<b<0.75394967.
+\]
+
+Two validated energy evaluations then prove
+
+\[
+\mathcal J(\rho):=\lambda\sup_{x\ge0}(2U_\rho(x)-V(x))
+ -I(\rho)+C_*< -\frac{69}{50}=-1.38.
+\tag{18}
+\]
+
+One evaluates the density through Carlson integrals; the other uses an equilibrium virial identity and elementary off-support potentials. They use different integral representations but share the certified endpoint box and Arb arithmetic library. The respective enclosures are approximately \(-1.3855\pm0.0000964\) and \(-1.3855\pm0.0000295\). The mathematical identities and certificate reductions were independently checked within the session; no historical novelty is asserted.
+
+**Conditional quantitative improvement.** The preprint’s arithmetic constant is
+
+\[
+A_{200}=\frac{127125602969131786927559}
+ {94195881588024216000000},
+\qquad
+1600\left(\frac{69}{50}-A_{200}\right)>48.
+\]
+
+Retaining the preprint’s separate moment, integrality, and arithmetic-normalization arguments, this stronger analytic comparison implies for its existing polynomial sequence
+
+\[
+0<Q_{40n,200}(\zeta(5))<e^{-48n^2}
+\]
+
+for all sufficiently large \(n\), improving the source’s stated exponent \(139/5=27.8\). This concerns an eventual rate, not a certified starting index or unchanged finite-error constants. It remains conditional on the retained parts of the preprint, which have not received a complete independent audit here.
+
+The [equilibrium guide](fauzan-equilibrium-guide.md) explains the construction and exact scope. The [endpoint proof](equilibrium-endpoint-certificate.md), [Carlson energy certificate](../computations/certify_equilibrium_energy.py), and [virial energy certificate](../computations/certify_equilibrium_energy_elementary.py) make the local analytic claim reproducible. The main gain is that the sign of the field’s charge distribution replaces sixteen trial components and many separate potential comparisons.
+
+## 10. A common fixed-odd analytic budget, with an explicit arithmetic gate
+
+The equilibrium improvement extends analytically to each **fixed** odd \(s\ge3\). For the positive moment determinant \(\Delta_{K,s}\) with the source proportions \(K=40n\), \(N=3n\), \(h=37n\), and its fixed factorial normalizer \(S_K\), the [reviewed theorem](common-odd-zeta-analytic-budget.md) proves
+
+\[
+\deg\Delta_{K,s}=h,\qquad \Delta_{K,s}(\zeta(s))>0,
+\qquad
+\limsup K^{-2}\log[S_K\Delta_{K,s}(\zeta(s))]\le-\frac{69}{50}.
+\]
+
+The change of odd index affects polynomial weight factors and hence only \(O_s(K\log K)\) terms, leaving the leading external field unchanged. Uniform control at the origin and infinity is included in [the independent review](common-odd-zeta-budget-review.md).
+
+This is not an all-odd irrationality theorem. The missing condition is a positive rational normalization \(\nu_{K,s}\) with
+
+\[
+\nu_{K,s}S_K\Delta_{K,s}(X)\in\mathbb Z[X],
+\qquad \limsup K^{-2}\log\nu_{K,s}<69/50.
+\]
+
+The exact analytic index shift uses
+\(\mathcal L_s=(2\theta+s+1)(2\theta+s+2)/[s(s+1)]\), \(\theta=t\,d/dt\). It turns a simple pole into a combination including a nonzero cubic pole. Moreover, no universal finite-order rational differential operator both preserves the entire prescribed simple-pole domain and implements the shift. Actual pole constants lose two additional prime powers in an explicit prime family. These are [proved obstructions to a particular free transfer](odd-functional-shift.md), not impossibility results for determinant-specific arithmetic cancellation.
+
+## 11. The recurrence is a resistor chain, and \(\zeta(3)\) is its sharp boundary constant
+
+The Casoratian has a concrete energy interpretation. Put
+
+\[
+c_n=(n+1)^3A_nA_{n+1},\qquad r_n=c_n^{-1}.
+\]
+
+Writing a recurrence solution as \(u_n=A_nv_n\) gives exactly Kirchhoff’s law
+
+\[
+c_n(v_{n+1}-v_n)=c_{n-1}(v_n-v_{n-1}).
+\]
+
+For the companion solution \(B_n\), the current is \(6\). The independently established limit \(B_n/A_n\to\zeta(3)\) therefore identifies
+
+\[
+\frac{\zeta(3)}6=\sum_{n\ge0}r_n,
+\qquad
+A_n\zeta(3)-B_n=6A_n\sum_{j=n}^\infty r_j.
+\]
+
+The approximation error is the resistance of the omitted tail. Positive resistance explains its sign; growing conductance explains its smallness.
+
+More strongly, for every finitely supported real sequence \(f\), with \(b_n=(2n+1)(17n^2+17n+5)\),
+
+\[
+\sum_{n\ge0}b_nf_n^2-2\sum_{n\ge0}(n+1)^3f_nf_{n+1}
+=\sum_{n\ge0}c_n
+ \left(\frac{f_n}{A_n}-\frac{f_{n+1}}{A_{n+1}}\right)^2
+\ge\frac6{\zeta(3)}f_0^2.
+\]
+
+The constant is sharp, approached by explicit rational finite sequences whose voltage drops are proportional to the edge resistances. Positive definiteness also proves positivity of every Schur-complement denominator in the continued fraction, resolving the earlier concern about its nested denominators.
+
+The [independent audit](discrete-green-independent-review.md) also gives the entire finite Green kernel. If \(J_N\) is the tridiagonal matrix of this quadratic form on indices \(0,\ldots,N\), then
+
+\[
+(J_N^{-1})_{ij}=A_iA_j\sum_{k=\max(i,j)}^N r_k.
+\]
+
+Its entrywise limit is \(A_i(A_j\zeta(3)-B_j)/6\) for \(i\le j\). The difference between this limit and any finite leading block is positive semidefinite and rank one. Thus the growing and decaying Apéry solutions are exactly the two factors of the Green kernel. This identity makes no assumption about a self-adjoint extension of an infinite operator.
+
+The [network derivation](discrete-green-motivation.md) is an exact identity, not merely an analogy. Its finite matrix and minimizer identities pass [exact checks](../computations/check_discrete_green.py). It still requires the separate rational-function argument to identify the total resistance with \(\zeta(3)\), and separate arithmetic to prove irrationality.
+
+
+## 12. Arithmetic-envelope integration without the source's tables
+
+For \(\alpha=3/40\), \(\lambda=37/40\), the [table-free arithmetic calculation](fauzan-arithmetic-simplification.md) proves, **conditional on the source's local valuation envelope and Proposition 5.2**, that its fixed-cutoff normalizer satisfies
+
+\[
+\limsup_{\substack{K\to\infty\\40\mid K}}
+ K^{-2}\log m_{K,1000}
+ \le\frac{439979}{320000}<\frac{11}{8}.
+\]
+
+The construction cancels the main quadratic terms before integration, bounds the residual floor-function fluctuations by a two-value variance estimate, and evaluates the fractional-part averages using Euler's constant. Convexity supplies a sufficient elementary bound for that constant; five positive \(\operatorname{atanh}\)-series terms supply a rational logarithm bound. The remaining outer integral uses positive-part primitives. No 143-piece inner or 11-piece outer integration table is needed.
+
+Combining with the certified analytic budget gives the exact positive margin
+
+\[
+\frac{69}{50}-\frac{439979}{320000}
+ =\frac{1621}{320000}>\frac1{200}.
+\]
+
+The [exact rational script](../computations/check_table_free_arithmetic.py) passes, but it checks the concluding algebra, not the source's local prime-adic lemmas. Those premises and integrality are separate from this calculation; they have now been independently reconstructed in [the local arithmetic review](fauzan-local-arithmetic-review.md), including the small-prime bound. Full assembly is still under review. The larger cutoff also retains the source's very large threshold \(K\ge200{,}000{,}000\). This is a simpler sufficient asymptotic arithmetic estimate for the source's zeta-five construction, not a proven arithmetic transfer to all odd indices. See [the guide](fauzan-equilibrium-guide.md#11-a-table-free-arithmetic-budget-for-the-sources-zeta-five-construction) for the combined interpretation.
+
+
+## 13. The rational square is forced within its minimal interpolation ansatz
+
+For \(n\ge1\), a rational function with only poles \(0,-1,\ldots,-n\) of order at most two, decay \(O(t^{-2})\), and double zeros at \(1,\ldots,n\), is necessarily \(CR_n(t)\). The proof is a degree count: the numerator has degree at most \(2n\), already exhausted by its prescribed roots. A nonzero function with these zeros and decay needs at least \(n+1\) double poles. This is a classification under explicit constraints, not a classification of all irrationality constructions.
+
+For any \(n+1\) distinct integer pole positions, the lcm \(L\) of pairwise differences is divisible by \(D_n\), by the pigeonhole principle modulo each prime power. Consecutive positions attain equality. The least universal multiplier for the simple-pole coefficients of a square with arbitrary integral residues is more precisely \(L/\gcd(L,2)\); consecutiveness minimizes that too. Special residue cancellation and the shifted harmonic sums remain additional costs.
+
+The actual reflection is reciprocal, \(R_n(t)R_n(-t)=t^{-4}\), not additive reflection about \(-n/2\). It is equivalent to the finite half-plane inner-function structure of \(tP_n(t)\).
+
+A deformation shows why these properties are not enough. For each fixed integer \(d\ge2\),
+
+\[
+-\sum_{t\ge1}\frac{d}{dt}\bigl[d^{-2}R_n(t/d)\bigr]
+\sim\frac4{d^3}\left[\frac{\Gamma(1/d)}{\Gamma(1-1/d)}\right]^2
+ n^{-4/d}\log n.
+\]
+
+Dilation preserves integral residues and zeta isolation but introduces unmatched lower-boundary terms in the telescoper. The asymptotic proves actual polynomial decay, not merely the insufficiency of an exponential estimate. The [classification proof](zudilin-design-classification.md) and [independent review](zudilin-design-independent-review.md) establish all these statements; the [discovery guide](discovery-guide.md) integrates their motivation into the elementary proof.
+
+## 14. Plain rank plus table-free integration still fits the analytic budget
+
+The [independent local arithmetic reconstruction](fauzan-local-arithmetic-review.md) checks inner and outer primes, the Bernoulli distribution mechanism, small-prime control, and coefficientwise integrality. It also permits the simpler outer bound
+
+\[
+v_p^{\mathrm G}\det(A+p^{-1}L)\ge2\sum_iw_i-\operatorname{rank}L
+\]
+
+for the actual local matrices, whose weights satisfy \(w_i\le0\). This replaces the refined rank/zero-weight correction. Its extra prime-averaged cost is exactly \(9/640\).
+
+Using the fixed cutoff \(M=10000\), the [independently reviewed table-free integration](fauzan-arithmetic-simplification-review.md) gives the relaxed normalization budget
+
+\[
+A_{\mathrm{plain}}\le\frac{2203747}{1600000},
+\qquad
+\frac{69}{50}-A_{\mathrm{plain}}\ge\frac{4253}{1600000}>0.
+\]
+
+Together with the positive determinant's analytic budget, this leaves an eventual \(e^{-4n^2}\) bound for \(K=40n\), **subject to the full assembly now under review**. The mathematical gain is that the improved analytic estimate buys a simpler arithmetic proof. The degree remains linear; no new higher-odd normalization follows. The enormous source threshold \(K\ge20{,}000{,}000{,}000\) and unspecified onset of the asymptotic bound make this a proof-design result rather than a practical approximation algorithm.
+
+## 15. Positive moments force real roots and locate the target between them
+
+Fix odd \(s\ge3\), integers \(K>N\ge0\), \(h=K-N\), and even \(r\ge2\). Let \(D_m(t)=\prod_{j=1}^m(t+j^2)\), and form
+
+\[
+G(X)_{ab}=\mu_{s,X}\!\left(\frac{D_N(t)^r t^{a+b}}{D_K(t)}\right),
+\qquad 0\le a,b<h.
+\]
+
+Then \(\det G(X)\) has degree exactly \(h\), all its roots are real, and none equals \(\zeta(s)\). The number below \(\zeta(s)\) is the number of odd integers in \(\{N+1,\ldots,K\}\); the number above it is the number of even integers. Multiplicities are allowed.
+
+The proof uses two exact facts. First \(G_0=G(\zeta(s))\) is a positive definite Gram matrix, so \(G_0^{-1/2}[X]G\,G_0^{-1/2}\) is real symmetric. Second the coefficient matrix is a Vandermonde congruence of the diagonal residue matrix
+
+\[
+c_j=\frac{j^{s-1}D_N(-j^2)^{r-1}}
+ {(D_K/D_N)'(-j^2)},\qquad \operatorname{sign}c_j=(-1)^{j-1}.
+\]
+
+These residues are nonzero. Their signs determine the inertia, and a positive eigenvalue produces a root below the target. When both parities occur, \(G(X)\) is positive definite exactly between the nearest root on either side of \(\zeta(s)\). This produces algebraic enclosures whose rational polynomial coefficients can be computed without knowing the target value.
+
+For example, \(N=0,K=2,s=3\) yields
+
+\[
+\frac{17-\sqrt5}{16}<\zeta(3)<\frac{17+\sqrt5}{16}.
+\]
+
+The [matrix-pencil proof](real-rooted-zeta-pencils.md) applies standard spectral theory to the constructed moments; it does not assert distinct roots, a shrinking-rate theorem, or adequate denominator control. The proof and exact example were checked during this editorial pass; a separate review is in progress. No historical novelty is claimed.
+
+## 16. Bernoulli numbers connect the same rational data to two geometries
+
+For fixed odd \(s\ge3\), set \(L(x^k)=B_k\), with \(B_1=-1/2\), and
+
+\[
+\tau_s(g)=\frac{L(g^{(s-2)})}{(s-1)!},
+\qquad
+\tau_s(e^{tx})=\frac{t^{s-1}}{(s-1)!(e^t-1)}.
+\]
+
+The generating function makes a finite difference into one boundary derivative:
+
+\[
+\tau_s(g(x+1)-g(x))=\frac{g^{(s-1)}(0)}{(s-1)!}.
+\]
+
+Adjoining simple integer poles and setting \(\tau_{s,X}(1/x)=-X\) forces their harmonic values by this boundary rule and reflection. Pulling back through \(t=-x^2\), with the factor \(x^s\), gives exactly the positive real moment functional \(\mu_{s,X}\). Its correction terms \(-1/(s-1)+1/(2j)\) are consequences of polynomial division and the two paired harmonic indices.
+
+On polynomials the same Bernoulli functional is the p-adic limit
+
+\[
+L(g)=\lim_{m\to\infty}\frac1{p^m}\sum_{a=0}^{p^m-1}g(a).
+\]
+
+Residue-class subdivision gives the arithmetic distribution law. For primes \(p>s\), its rational extension has parameter change \(Y=p^sX+C_{p,s}\), with \(C_{p,s}\in p^s\mathbb Z_p\). This constant is p-adic, not asserted rational. Continuity is established on restricted analytic power series; no boundedness claim on all continuous functions is needed.
+
+The [dictionary](bernoulli-local-global-dictionary.md) and [independent review](bernoulli-dictionary-review.md) prove these identities and their domains. This is an exact bridge between real positivity and local divisibility, not an analogy. It still leaves the difficult task of designing a determinant basis with sufficient local valuation gains for each higher odd index.

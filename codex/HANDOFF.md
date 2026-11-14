@@ -50,3 +50,15 @@ zeta5 is open was outdated relative to current sources.
 All claims from other agents require review. No historical novelty claimed.
 Work only in codex/, branch codex/independent-research. No Claude files changed;
 a read-only tree search found no published HANDOFF on research-claude at e364df8.
+
+## Latest continuation
+
+Read sixth checkpoint. Connections agent is performing full simplified-zeta5
+assembly audit. IMPORTANT: relaxed plain-rank proof uses new tilde-m normalizer
+with outer exponent2sum(weights)-rank; do not use the source's stronger
+min(rank,zero-count) exponent while claiming that refinement was eliminated.
+The new budget is2203747/1600000 and final eventual exponent4n².
+Integral agent developed primary-source modular/elliptic route; exposition
+agent now independently auditing it. Simplify agent developing localizing pencils
+and exact enclosing intervals; odd-zeta agent exploring changed proportions.
+No new all-odd irrationality theorem. No historical novelty claim.

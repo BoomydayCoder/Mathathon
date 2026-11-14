@@ -40,3 +40,17 @@ with our independent mathematical results above.
 | Same leading analytic bound for every fixed odd index | common-odd-zeta-analytic-budget.md | common-odd-zeta-budget-review.md | Arithmetic normalizer unproved for other indices |
 | Functional odd-index shift and simple-pole obstruction | odd-functional-shift.md | exact symbolic and prime-band script | Uniform pole normalization cost is not determinant cost |
 | Inhomogeneous recurrence for W_n | W-recurrence.md | exact recurrence checks and independent prime audit | Does not imply density of nonvanishing modulo varying primes |
+
+## Sixth-stage developments
+
+| Claim | Proof | Review | Limit |
+|---|---|---|---|
+| Zudilin saturated interpolation and optimal difference lattice | zudilin-design-classification.md | zudilin-design-independent-review.md | Specified pole/zero/degree constraints |
+| Dilation breaks exponential decay, exact asymptotic | zudilin-design-classification.md | same review, including second term | Fixed integer dilation d>=2 |
+| Sharp discrete inequality and all Green entries | discrete-green-motivation.md | discrete-green-independent-review.md | Identification with zeta3 uses separate bounded form |
+| Table-free and plain-rank arithmetic budget | fauzan-arithmetic-simplification.md | fauzan-arithmetic-simplification-review.md | New relaxed normalizer; full assembly audit pending |
+| Local determinant arithmetic including small primes | fauzan-local-arithmetic-review.md | independent reconstruction and3335 outer cases | Full proof assembly separately reviewed |
+| Bernoulli boundary-rule and general odd distribution dictionary | bernoulli-local-global-dictionary.md | bernoulli-dictionary-review.md | Does not imply determinant valuation bound |
+| All-real roots and exact inertia of zeta pencils | real-rooted-zeta-pencils.md | editorial proof review; deeper localizing review active | No denominator control or convergence rate |
+| Fixed odd-index arithmetic envelope obstruction | odd-inner-prime-shift.md | exact checks; proof review pending | Obstruction to sufficient estimate, not actual normalizers |
+| Fuss-Catalan forced carries and finite digit transducer | ../problem137/valuation.md |36120 exact cases; proof review pending | Official problem statement unverified |

@@ -73,3 +73,26 @@ Fifth checkpoint, 2026-11-14 07:43 UTC (Nov13 23:43 LA), continuing:
 - Active: simplify/audit Fauzan arithmetic using the improved analytic margin;
   return to Zudilin's design constraints and conceptual recurrence mechanisms.
 - Files checkpointed on the codex branch only; Claude-owned files unchanged.
+
+Sixth checkpoint, 2026-11-14 approximately08:05UTC (midnightLA), continuing:
+- Exact table-free arithmetic estimate independently reviewed. Combined with
+  plain-rank outer bound, a NEW relaxed normalizer has growth budget
+  2203747/1600000<69/50, enough for eventual exp(-4n²) atK40n.
+- Local-prime normalization, including small-prime lemma, reconstructed by
+  independent reviewer; full end-to-end assembly audit is active.
+- Zudilin square now characterized by saturated interpolation; consecutive poles
+  minimize the universal difference lcm. Integer dilation provably destroys
+  exponential decay despite preserving arithmetic. Independent review passed.
+- Resistor-chain / sharp discrete energy inequality and full Green kernel proved
+  and independently reviewed; original continued-fraction gap closed.
+- Bernoulli functional dictionary connects boundary cancellation, positive real
+  moments and p-adic averaging; all odd-index identities independently reviewed.
+- Real-rooted symmetric matrix pencils yield algebraic zeta enclosures. Localizing
+  matrices and convergence are being developed; no arithmetic-rate claim.
+- Beukers1987 primary modular paper retrieved; hypergeometric/elliptic and modular
+  proof route developed, independent review active.
+- General odd local-bound transfer has a proved cost obstruction; varying root
+  multiplicity/parameters under investigation, numerical trials not proofs.
+- Secondary Fuss-Catalan project: forced-carry cancellation, tree/cycle lemma and
+  finite digit transducer saved;36120 exact checks pass. ExactSAIR wording remains
+  inaccessible (latestllms.txt and.mdrequests403).

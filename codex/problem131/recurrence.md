@@ -60,9 +60,12 @@ Proof: multiply A_n and B_n by (n!)^3. The transformed sequences X,Y obey
     Y_(n+1)=b_n Y_n-n^6 Y_(n-1),
     (X_0,X_1)=(1,5), (Y_0,Y_1)=(0,6).
 
-The numerator and denominator continuants of the displayed fraction satisfy precisely these recurrences and initial conditions (expansion of a tridiagonal determinant proves the continuant recurrence). This proves the identity whenever the nested fraction is defined. Positivity of every tail denominator follows independently: backward induction gives the denominator at index k at least (k+1)^3, since b_k-(k+1)^6/(k+2)^3 > (k+1)^3. Alternatively interpret the identity as one of rational functions before evaluation; a rigorous tail-positivity bound should be checked before using this particular sufficient inequality in exposition.
+The numerator and denominator continuants of the displayed fraction satisfy precisely these recurrences and initial conditions (expansion of a tridiagonal determinant proves the continuant recurrence). Every actual nested denominator is positive. To prove this without an auxiliary numerical bound, let J be the tridiagonal matrix indexed 0,...,N-1 with diagonal b_n and neighboring entries -(n+1)^3. For a vector f extended by zero beyond N-1, the ground-state identity is
 
-**Proof-draft gap in the preceding tail-positivity sentence:** the stated sufficient inequality is not yet independently algebraically checked here. The continuant identity is proved; the nested expression can safely be defined through its continuants. Do not promote the tail-positivity assertion until checked.
+    f^T J f = sum_(n>=0) (n+1)^3 A_n A_(n+1)
+                  (f_n/A_n-f_(n+1)/A_(n+1))^2.
+
+It is strictly positive for every nonzero f, so J is positive definite. Backward elimination produces positive Schur-complement pivots, which are exactly the denominators of the nested continued fraction. Thus the earlier tail-positivity gap is closed. See [discrete-green-motivation.md](discrete-green-motivation.md), Sections 2 and 4, for the boundary check and full argument, and [discrete-green-independent-review.md](discrete-green-independent-review.md) for independent verification. This uses standard ground-state and matrix ideas; no historical novelty is asserted.
 
 ## A precise arithmetic gate
 
