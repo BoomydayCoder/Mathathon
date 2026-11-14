@@ -1,0 +1,12 @@
+{
+  "observed_utc": "2026-11-14T10:16:55.361636+00:00",
+  "proc_stat": "19652 (leanchecker) Z 1 19599 19599 0 -1 4228364 10046695 0 98591 0 39463 18149 0 0 20 0 1 0 1457386 0 0 18446744073709551615 0 0 0 0 0 0 0 4096 1088 1 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 9",
+  "pid": 19652,
+  "state": "Z",
+  "ppid": "1",
+  "kernel_exit_code_field52": 9,
+  "tool_session": "92057 unavailable to both agents",
+  "wrapper_result": "missing",
+  "oom_events": "low 0\nhigh 0\nmax 85210\noom 0\noom_kill 0\noom_group_kill 0\n",
+  "conclusion": "incomplete capture; not used as a completed kernel-replay certificate; cause of missing wrapper not established"
+}

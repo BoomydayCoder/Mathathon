@@ -2,7 +2,9 @@
 
 *A living mathematical exposition for the Mathathon team.*
 
-The main result is a complete proof of the irrationality of \(\zeta(3)\) using Zudilin’s first rational function and one short recurrence certificate. The analytic half is reorganized: a very rough estimate identifies the approximation limit, and a discrete determinant then gives positivity and exponential smallness. Ball’s second series and the saddle-point calculation are unnecessary for this route.
+The goal is to explain why the ingredients of Apéry’s proof fit together, then give a complete elementary proof. The integer residues lead to a quadratic Newton grid and a finite balance law that derive the recurrence’s coefficients. A rough bound identifies the zeta-valued limit; the recurrence then supplies positive, exponentially small error. No saddle-point theorem is needed.
+
+A second exact bridge explains the reciprocal scales: the same positive Laurent polynomial produces the integer \(A_n\) as the constant term of its \(n\)-th power and the Beukers error integral as a real integral of its \((-n-1)\)-st power. One elementary minimization controls both. We introduce that polynomial with the integer sequence, then return to it when the integral representation is available.
 
 This is a simplification assembled from classical Apéry-type ingredients, not a claim of a historically new proof. The explanations of how one might discover the ingredients are mathematical reconstructions. They are not claims about the private reasoning of Apéry, Zudilin, or Beukers. The principal source is [Zudilin’s original paper](https://arxiv.org/abs/math/0202159); [the companion exposition](zudilin-explained.md) follows its seven lemmas individually. All normalizations used here are explicit.
 
@@ -160,6 +162,38 @@ The initial values are
 \]
 
 The arithmetic half of the proof is now complete. We have not assumed irrationality or positivity.
+
+### The same integers are constant terms of one positive polynomial
+
+A Laurent polynomial allows negative integer powers of its variables; \(\operatorname{CT}\) denotes its constant coefficient. The binomial sum in (8) has the useful representation
+
+\[
+\boxed{\quad
+\Lambda(x,y,z)=
+\frac{(1+x)(1+y)(1+z)\bigl((1+x)(1+y)+xyz\bigr)}{xyz},
+\qquad A_n=\operatorname{CT}_{x,y,z}\Lambda^n.
+\quad}
+\]
+
+This can be discovered systematically. Leave one factor \(\binom nj\) in the sum, and express the other three binomial factors by independent coefficient extractions. Writing \(U=(1+x)(1+y)\), the binomial theorem gives
+
+\[
+\begin{aligned}
+A_n
+&=\operatorname{CT}_{x,y,z}
+ U^n(1+z)^n\sum_{j=0}^n\binom nj
+       \left(\frac{U}{xyz}\right)^j\\
+&=\operatorname{CT}_{x,y,z}
+ \left[U(1+z)\left(1+\frac{U}{xyz}\right)\right]^n
+ =\operatorname{CT}\Lambda^n.
+\end{aligned}
+\]
+
+For each \(j\), extraction in \(x,y,z\) supplies respectively
+\(\binom{n+j}{j},\binom{n+j}{j},\binom nj\), exactly the missing factors.
+Everything is finite algebra. The expanded \(\Lambda\) has nonnegative integer coefficients, so integrality is visible. Equivalently, \(A_n\) counts closed walks with its exponent vectors as steps, each coefficient recording the number of colors of that step.
+
+Why introduce this language? Its reciprocal will be precisely the positive kernel in Beukers’ integral, recording both sides of the approximation in one object. First, the residue coefficients themselves give the most direct explanation of the recurrence.
 
 ## 4. Discover the recurrence from the coefficients, then certify it for the linear form
 
@@ -427,7 +461,7 @@ This proves nonvanishing and its sign. Moreover \(A_{n+k}\ge5^kA_n\), so
 \tag{18}
 \]
 
-Growth of one solution has produced reciprocal decay of the complementary solution. This is the conceptual replacement for Ball’s positive series in this presentation. A second-order recurrence has two dimensions of solutions; after the growing component is cancelled, the determinant identity controls what remains.
+Growth of one solution has produced reciprocal decay of the complementary solution. A second-order recurrence has two dimensions of solutions; after the growing component is cancelled, the determinant identity controls what remains. Section 9 will reveal the same reciprocity directly: positive powers of \(\Lambda\) create the integer sequence, while inverse powers create the small integral.
 
 ### The determinant identity is Kirchhoff's law
 
@@ -594,9 +628,9 @@ flowchart TD
   K --> L
 ```
 
-## 9. The integral supplement reveals the same object
+## 9. The Laurent polynomial connects the integer sequence and the small integral
 
-There is an unexpected reason the numerator and denominator in (1) fit together. Define the shifted Legendre polynomial
+We now connect the Laurent constant-term formula to the error, without assuming that a shared recurrence alone identifies a constant. The bridge begins with the shifted Legendre polynomial
 
 \[
 \mathcal P_n(x)=\frac1{n!}\frac{d^n}{dx^n}[x^n(1-x)^n].
@@ -639,23 +673,122 @@ w=\frac{1-z}{1-z+xyz}.
 
 This removes the unwanted \(y^n\) factor from the kernel. A second integration by parts now produces (24). The explicit Jacobian, endpoint conditions, and absolute-integrability justification are in [the integral proof](beukers-explained.md).
 
-Even the exponential bound can be discovered through squares. Put \(t=\sqrt{xy}\) and \(a=\sqrt2-1\). Then
+### The reciprocal change of variables
+
+Call the cube variables in (24) \(a,b,c\), and substitute
 
 \[
-\frac{x(1-x)y(1-y)z(1-z)}{1-z+xyz}
- \le\left(\frac{t(1-t)}{1+t}\right)^2\le a^4.
+a=\frac{x}{1+x},\qquad b=\frac{y}{1+y},\qquad
+c=\frac{z}{1+z},\qquad x,y,z>0.
 \]
 
-The first inequality uses \(x+y\ge2\sqrt{xy}\) and
-\([1-(1+t)z]^2\ge0\). The second is exactly
+This bijection turns endpoint factors into monomials. With \(U=(1+x)(1+y)\),
 
 \[
-a^2(1+t)-t(1-t)=(t-a)^2\ge0.
+\mathcal Q:=1-c+abc=\frac{U+xyz}{U(1+z)},\qquad
+h:=\frac{a(1-a)b(1-b)c(1-c)}{\mathcal Q}=\frac1{\Lambda(x,y,z)}.
 \]
 
-Thus \(0<F_n\le2\zeta(3)(\sqrt2-1)^{4n}\). This supplies positivity and decay directly, bypassing the recurrence argument. Indeed \(Q=135/4<17+12\sqrt2=(\sqrt2-1)^{-4}\), as squaring \(67<48\sqrt2\) verifies. Together with (21), the elementary denominator estimate is therefore sufficient here too. It is a second complete route once combined with the arithmetic already proved.
+The measure is just as important as the kernel. Its Jacobian is
+\(da\,db\,dc=dx\,dy\,dz/[U^2(1+z)^2]\), and hence
 
-The two routes explain different things. The recurrence route explains why growth and decay are reciprocal. The integral route makes positivity visible and gives the sharp exponential constant. Their equality through the Mellin transform explains why they repeatedly produce the same coefficients and constants.
+\[
+\frac{da\,db\,dc}{\mathcal Q}
+ =\frac1{\Lambda(x,y,z)}\frac{dx\,dy\,dz}{xyz}.
+\]
+
+Thus the two objects have the exact common representation
+
+\[
+\boxed{\quad
+A_n=\operatorname{CT}\Lambda^n,\qquad
+F_n=\int_{(0,\infty)^3}\Lambda^{-n-1}
+                     \frac{dx\,dy\,dz}{xyz}.
+\quad}
+\]
+
+The exponent is **\(-n-1\)**, not \(-n\). The substitution covers the whole open cube, and positivity justifies the improper change of variables. At \(n=0\), \(F_0=2\zeta(3)<\infty\).
+
+Coefficient extraction makes the first quantity integral. Integration of a positive reciprocal power makes the second nonzero and small. The earlier partial-fraction or Legendre argument is still needed to prove their arithmetic relation \(F_n=2(A_n\zeta(3)-B_n)\); it is not inferred from the geometry alone.
+
+### One AM–GM calculation controls both quantities
+
+Put \(V=xy\), \(u=\sqrt U\), and \(v=\sqrt V\). Expand only in \(z\):
+
+\[
+\Lambda=Uz+\frac{U^2}{Vz}+U+\frac{U^2}{V}
+ \ge U\left(1+\sqrt{U/V}\right)^2.
+\]
+
+Equality holds when \(z=\sqrt{U/V}\). Also \(x+y\ge2\sqrt{xy}\), so
+\(u\ge1+v\). Consequently
+
+\[
+\sqrt\Lambda
+ \ge u+\frac{u^2}{v}
+ \ge(1+v)+\frac{(1+v)^2}{v}
+ =3+2v+\frac1v
+ \ge3+2\sqrt2.
+\]
+
+All equalities hold together, uniquely at
+
+\[
+x=y=\frac1{\sqrt2},\qquad z=1+\sqrt2.
+\]
+
+Therefore
+
+\[
+\lambda:=\min_{x,y,z>0}\Lambda
+ =(3+2\sqrt2)^2=17+12\sqrt2,\qquad
+\rho:=\lambda^{-1}=(\sqrt2-1)^4.
+\]
+
+Since the coefficients of \(\Lambda^n\) are nonnegative, evaluation at any positive point bounds its constant term from above. Evaluate at the minimum for the first bound below; use \(\Lambda^{-n-1}\le\lambda^{-n}\Lambda^{-1}\) for the second:
+
+\[
+\boxed{\qquad
+A_n\le\lambda^n,\qquad
+0<F_n\le2\zeta(3)\lambda^{-n}.
+\qquad}
+\]
+
+These are reciprocal bounds from one minimization. The integral bound supplies a second elementary irrationality proof with the arithmetic of Section 3 and the denominator lemma of Section 7: \(Q=135/4<\lambda\), as \(67<48\sqrt2\) verifies, and (21) gives \(e^{3c}<Q<\lambda\). Thus the denominator-cleared positive error tends to zero.
+
+The [full Laurent derivation](apery-laurent-reciprocal.md), with [independent review](apery-laurent-independent-review.md), also proves that their actual exponential scales are \(\lambda\) and \(\lambda^{-1}\). Optional Gaussian analysis uses the same logarithmic Hessian on a complex torus and on the positive real domain. Each contributes \(n^{-3/2}\), and the correctly normalized product is
+
+\[
+A_nF_n\sim\frac1{2\sqrt2\,n^3}.
+\]
+
+None of that asymptotic machinery is needed for the bounds or the irrationality proof. It explains why the reciprocal-error identity in Section 6 has exactly the scale it does.
+
+### What the geometric viewpoint does—and does not—prove
+
+The Newton-grid balance remains our derivation of the recurrence. The Laurent model explains its scales and singular values: its two nonzero interior critical values are \(\lambda\) and \(\lambda^{-1}\), giving
+\((1-\lambda t)(1-\lambda^{-1}t)=1-34t+t^2\).
+Knowing those values alone does not determine the full differential equation or rule out boundary contributions.
+
+There is a concrete boundary contribution here. Set
+\(\mathscr A(t)=\sum A_nt^n\), \(\mathscr F(t)=\sum F_nt^n\),
+\(\theta=t\,d/dt\), and
+
+\[
+\mathscr D=\theta^3
+ -t(2\theta+1)(17\theta^2+17\theta+5)+t^2(\theta+1)^3.
+\]
+
+The already proved recurrence and initial values give
+
+\[
+\mathscr D\mathscr A=0,\qquad
+\boxed{\mathscr D\mathscr F=-12t.}
+\]
+
+Indeed \(F_1-5F_0=-12\). The real integration domain is not a closed compact cycle; calling it a “period” does not erase that boundary term. [The one-variable Legendre reduction](laurent-legendre-relative-periods.md) makes this visible through the polynomial and logarithmic Legendre solutions. A full geometric exact-form derivation of the Apéry operator from the remaining two integrations is still a separate task. The elementary recurrence proof above has no such gap.
+
+The resulting picture is coherent: integer residues lead to a finite-balance recurrence; the recurrence converts growth into a positive tail error; and the Laurent model shows that the same integer sequence and integral error are positive and reciprocal powers of a single function.
 
 ## 10. Test the mechanism by changing the derivative
 
@@ -734,7 +867,7 @@ The lesson is more specific than “choose small denominators.” The zeros, pol
 
 The proof can be told as a sequence of necessities. Start with the integer contradiction. Choose poles where sums become zeta values. Choose zeros where the sum should disappear. Use the saturated double-zero constraints to force the square. Differentiate once to reach cubic poles. Transpose multiplication on the quadratic Newton grid to discover the cubic operator; a finite balance identity gives the constants 17 and 5. Match the few poles in adjacent rational-function ratios to certify that the full linear form obeys the same recurrence. Identify the limit with a deliberately rough bound. Use the Casoratian to convert growth into positive reciprocal error. Finally compare that growth with a proved denominator estimate.
 
-The strongest connections are exact, not analogies: polynomial orthogonality becomes zeros of a Mellin transform; its coefficients become residues; a discrete Wronskian is the constant current of a resistor chain and measures approximation error; and a factorial valuation table pays the arithmetic cost of the approximation. The higher-derivative obstruction shows which part of this architecture is special to the successful construction.
+The strongest connections are exact: polynomial orthogonality becomes zeros of a Mellin transform; its coefficients become residues; a discrete Wronskian is the constant current of a resistor chain; and the same Laurent polynomial produces both the integers and the small integral through powers and reciprocal powers. The Newton grid explains the recurrence coefficients, while the Laurent minimum explains the reciprocal exponential scales. A factorial valuation table pays the arithmetic cost. The derivative and dilation tests identify precisely which cancellations can break.
 
 For a different advanced explanation, [the modular and elliptic construction](apery-modular-elliptic.md), with [its completed review](apery-modular-review.md), realizes the generating series as the square of an elliptic period and uses Fricke symmetry to remove its nearest branch singularity. Standard modular-form and covering theorems are explicit inputs; the elementary argument above does not require them.
 

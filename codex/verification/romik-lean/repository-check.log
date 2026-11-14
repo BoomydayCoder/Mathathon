@@ -1,0 +1,4 @@
+'Zeta5.zeta5_irrational' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ Zeta5.Axioms.chebyshev_theta_asymptotic]

@@ -169,3 +169,78 @@ Eighth checkpoint, 2026-11-14 09:28UTC (01:28LA), continuing:
   retain their individual status labels until checked.
 - Target remains16:00UTC/08:00LA; no usage-meter API is available. Autonomous
   work continues with remaining authorized usage and no automatic resets.
+
+Ninth checkpoint,2026-11-14 09:56UTC (01:56LA), continuing:
+- The reciprocal Laurent bridge is fully independently reviewed and integrated
+  centrally into discovery-guide.md. One exact function supplies both integer
+  constant terms and inverse-power real integrals; one AM–GM minimum supplies
+  their reciprocal rates. The shared Hessian gives the sharp product constant.
+- A one-variable Legendre P/Q reduction explains growing/recessive solutions,
+  and the noncompact boundary is retained: L(sum F_n t^n)=-12t. Full remaining
+  two-variable exact-form reduction is explicitly unresolved.
+- The general positive period tower has logarithmic mth derivative exactly the
+  Bernoulli generating function. Its rational Euler projector isolates the top
+  zeta integration constant and yields a positive Bose tail. Independent review
+  passed; the loss of rational-q arithmetic and radius limit are explicit.
+- The multiplicity-lifted ζ5 construction has a reviewed exponential bound,
+  infinitely-often nonvanishing, and a proved actual new-prime obstruction.
+  Its associated positive higher-dimensional periods mix lower zeta values;
+  the exact n=1 counterexample and general Mellin–Beta theorem are reviewed.
+- ζ7 inner cancellation now has two full-matrix reviews, giving an actual
+  1/25200 improvement to a sufficient arithmetic bound, still far from a proof.
+- The independently developed ζ5 outer correction kernel is now adversarially
+  reviewed: gain d_p=K+3N-3p+1, asymptotic saving27/3200. The changed normalizer
+  has budget2190247/1600000, yielding eventual exp(-26n²) with the existing
+  rational energy certificate. This optional lemma strengthens the margin;
+  it is not automatically a shorter complete exposition.
+- Existing pinned Romik formalization ACTUALLY BUILT locally:8995 jobs complete,
+  repository check and independent fully-qualified ordinary-series check pass.
+  Printed axioms: propext, Classical.choice, Quot.sound, and the explicit PNT
+  limit theta(x)/x->1. Parent read the saved successful logs. A separate kernel
+  replay is running; this is verification of the existing formalization, not
+  formalization of our new simplifications.
+- #137 next-digit refinement found for oddp, with4509 exact checks and independent
+  recursive orbit histograms. It classifies one-uncarry skeletons and proves a
+  modulo-p² normalized-unit formula; independent proof review is active.
+- Read-only Claude SUMMARY consultation is logged with commitfc6da97. It supplied
+  the outer-prime research lead, not its proof; no Claude-owned files changed.
+- Continued research: factorial/superfactorial arithmetic majorants; jet-form
+  interpretation; adaptive cancellation of early derivative contributions;
+  next-digit proof audit and kernel replay. No usage-meter access or resets.
+
+Tenth checkpoint,2026-11-14 10:20UTC (02:20LA), continuing:
+- MAJOR checked simplification: PNT-free arithmetic normalizer is complete and
+  independently audited. A 25-term superfactorial product, fixed power40000,
+  explicit small-prime lcm repair and o(K²) factorial repair give integer
+  polynomials with arithmetic exponent below1.379. No prime-distribution
+  asymptotic is used. Existing analytic bound below-1.38 completes the squeeze.
+- `check_sparse_barnes_certificate.py` uses only standard-library Fractions,
+  checks561 exact breakpoints, propagates by a positive period slope, and bounds
+  logs with rational series. Certified patched interval is approximately
+  [1.378581907097,1.378581907098], below6893/5000=1.3786.
+  The original100-frequency certificate is retained as a separate fallback.
+- Parent reconstructed the profile origin: centered residue-floor counts have
+  Brownian-bridge covariance; B2 identities give the six Barnes profiles.
+  The general-alpha identity passes5995 direct rational integral checks.
+- The retained refined-rank bound now has a short two-bound proof: one loses at
+  most rank, another at most the number of zero weights. Their maximum gives
+  the original min(rank,zeros) estimate without sorted-minor optimization.
+- The outer-prime gain has an explicit Hermite-ideal kernel of exact selected
+  dimension K+3N-3p+1. It replaces a target-column table and is independently
+  reviewed. The PNT-free25-term proof does not need this extra improvement.
+- `pnt-free-zeta5-guide.md` assembles the full alternative proof route with
+  dependencies and limits. It is computer-assisted, retains Fauzan's local
+  construction, and is not claimed historically new or formally verified.
+- #137 next-digit theorem now independently audited: normalized unit modulo p²
+  for oddp follows from one-uncarry skeletons and forbidden-star subtraction.
+  Independent enumeration checks16145 actual trees plus972 arithmetic cases.
+- Adaptive adjacent-Legendre tuning cancels the entire early derivative sum
+  and restores a positive exponentially small pureζ5 form. Its proof draft and
+  exact samples are saved; full independent review is still requested. Actual
+  sampled arithmetic costs are large; no all-n arithmetic obstruction claimed.
+- The pinned Lean build and exact target/axiom checks remain successful. First
+  optional replay lost its wrapper/result record; a zombie exitcode alone is
+  not accepted as a replay certificate. A second replay is running with durable
+  partial JSON/PTY logging while its agent remains active. No completed replay
+  claim is made at this checkpoint.
+- Work continues toward16:00UTC/08:00LA, with no usage-meter access or resets.

@@ -188,13 +188,13 @@ Subtracting \(c_e/p\) from each nonintegral polynomial moment, with \(c_e\in\mat
  \operatorname{rank}_{\mathbf Q_p}L\le r_p=\max(0,K+4N-2p+2).
 \]
 
-This is a rank statement over \(\mathbf Q_p\), not only modulo \(p\). The quotient of \(D_N^5t^{i+j}\) by \(D_K/D_N\) has degree at most \(i+j+6N-K\), so
+This is an actual rank statement over \(\mathbf Q_p\), which is sufficient for the direct multilinearity proof below. Actual rank is not necessary: a rank bound modulo \(p\) also suffices after lifting a unit pivot block and absorbing an integral remainder into \(A\); see [refined-rank-two-bounds.md](refined-rank-two-bounds.md), Section 3. The quotient of \(D_N^5t^{i+j}\) by \(D_K/D_N\) has degree at most \(i+j+6N-K\), so
 
 \[
  L_{ij}=0\quad\text{if}\quad i+j<K-6N+2p-3.
 \]
 
-The first \(h-r_p\) rows and columns vanish identically. This is exactly the strength needed to kill large complementary minors. Unimodular basis changes preserve both integrality of \(L\) and its rank.
+The first \(h-r_p\) rows and columns vanish identically, so all larger minors vanish exactly. This directly justifies the actual-rank proof; the modular-rank version first replaces \(L\) by a suitable lift of small actual rank. Unimodular basis changes preserve both integrality of \(L\) and its rank.
 
 ### Residues and the choice of rows
 
@@ -233,6 +233,15 @@ The accounting is: row zeros contribute \(i+j\), the numerator \(D_N^5\) contrib
 The zero class with one pole has weight \(-1/2\). With two poles \(p,2p\), the node difference has valuation two; in the rows \(1,t+p^2\) the entry bounds are \(-3,-1,0\). Weights \(-2,0\) are valid and nonpositive.
 
 ### The refined lemma is valid, but dispensable
+
+**Subsequent simplification.** The original refined bound has a shorter
+proof in [refined-rank-two-bounds.md](refined-rank-two-bounds.md):
+multilinearity gives loss at most \(r\); independently, replacing every
+zero weight by \(-1/2\) makes the correction integral after scaling and
+gives loss at most \(z\). Taking the better bound gives \(\min(r,z)\)
+without sorting minors. The older argument and plain-rank alternative
+below remain valid; dropping the refinement is no longer needed merely
+to shorten the lemma's proof.
 
 For complementary row/column sets \(I,J\), a term using a \(k\)-minor of \(L\) has valuation at least
 

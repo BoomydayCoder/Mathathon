@@ -35,3 +35,7 @@ depth-weighted-extension.md proves that ordinary-depth weights b_h=u modulo p, w
 Apéry connections are in ../problem131/apery-digit-arithmetic.md and its computation script: carries kill cross-digit binomial terms, yielding Lucas factorization, while tree quotients/orbits explain a different digit-sum mechanism here.
 
 Next useful work is exposition, a bounded specialist novelty check, or a carefully defined weighted extension. Do not reopen a claim of incompleteness merely because the early notes originally stopped at integrality; the later cycle-splicing proof completes the required enumeration. This agent has not committed changes; the parent manages the shared branch and root checkpoint.
+
+## Bounded second-digit refinement
+
+next-digit-orbits.md proposes a complete odd-prime refinement modulo p² of the normalized count: ((p-1)!)^D/(product d_j!) times [1-p sum_j d_(j+1) H_(d_j)]. It classifies next-size p^(D+1) orbits by a single uncarry, subtracts uniquely forbidden identical-leaf stars, and gives their exact count. check_next_digit_orbits.py passed4,509 arithmetic/profile cases plusindependent exactnext-orbit histograms for p3/5,e1/2 atsmall sizes. Independent manuscript-agent audit is requested; do not describe that review as completed until its report arrives. Historical novelty unresolved. Oddp/perfect-tree sizes givecount1modp²; p2requiresdifferentcorrections and is explicitly excluded.

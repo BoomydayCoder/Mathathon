@@ -9,19 +9,26 @@ in this session are not claims of historical novelty.
 **Understand and present Apéry's proof.** Start with the [discovery guide](problem131/discovery-guide.md).
 It derives the rational square from its constraints, explains the recurrence
 through a quadratic Newton grid and finite balance, and gives a complete elementary
-irrationality proof. The resistor-chain and integral interpretations explain the
-same error in two further ways. For the original paper's sequence of steps, use
+irrationality proof. A single positive Laurent polynomial now connects its
+integer coefficients to the reciprocal-power Beukers integral; one AM–GM
+minimum explains their reciprocal scales. The resistor chain gives a further
+exact interpretation of the error. For the original paper's sequence of steps, use
 [Zudilin explained](problem131/zudilin-explained.md).
 
-**Follow the strongest zeta-five simplification.** Read the [equilibrium guide](problem131/fauzan-equilibrium-guide.md),
-then the [end-to-end audit](problem131/fauzan-simplified-proof-audit.md).
-An explicit equilibrium measure replaces sixteen trial components; table-free
-integration and a plain-rank estimate simplify the arithmetic. The assembled
-computer-assisted alternative derivation retains Fauzan's determinant and local
-arithmetic construction. The modified normalizer is defined explicitly. The
-[rational-only certificate](problem131/rational-energy-certificate.md), with
-[independent review](problem131/rational-energy-review.md), supplies the strongest
-current analytic bound and eventual decay by exp(−13n²).
+**Follow the zeta-five simplification without the prime number theorem.**
+Start with the [PNT-free guide](problem131/pnt-free-zeta5-guide.md).
+It connects residue-class covariance to Bernoulli polynomials and superfactorials,
+constructs an explicit normalizer, and completes the rationality contradiction.
+A 25-term rational certificate controls every prime individually; both the
+small-prime and large-prime repairs are included. The arithmetic rate is below
+1.379, while the reviewed equilibrium estimate supplies decay faster than 1.38
+in the quadratic exponent. This computer-assisted alternative retains Fauzan's
+determinant and local arithmetic construction, including its refined rank bound.
+For fuller analytic motivation, read the [equilibrium guide](problem131/fauzan-equilibrium-guide.md).
+The earlier [plain-rank route](problem131/fauzan-equilibrium-guide.md#12-spend-a-little-analytic-margin-to-simplify-the-local-arithmetic-too)
+remains available when simpler local arithmetic is preferred; it uses the PNT.
+The [optional outer-kernel improvement](problem131/outer-gain-budget-update.md)
+adds a local lemma for a larger margin.
 
 **Explore results and promising boundaries.** The [research results](problem131/research-results.md)
 collect precise theorem statements, proofs, obstructions, and links. The common
@@ -47,9 +54,10 @@ extensions remain unresolved.
 | Question | Read |
 |---|---|
 | Why precisely this square and this recurrence? | [Design classification](problem131/zudilin-design-classification.md); [Newton grid and finite diagonal balance](problem131/newton-symmetric-square-review.md) |
-| Why does a growing integer solution create a small positive error? | [Resistor chain and Green function](problem131/discrete-green-motivation.md); [integral supplement](problem131/beukers-explained.md) |
+| Why does a growing integer solution create a small positive error? | [The same Laurent polynomial in positive and inverse powers](problem131/apery-laurent-reciprocal.md), with [independent review](problem131/apery-laurent-independent-review.md); [resistor chain](problem131/discrete-green-motivation.md) |
 | Can advanced machinery make the structure clearer? | [Elliptic periods and modular branch cancellation](problem131/apery-modular-elliptic.md); [completed independent review](problem131/apery-modular-review.md) |
 | How can the same moments control real size and prime denominators? | [Bernoulli local/global dictionary](problem131/bernoulli-local-global-dictionary.md); [local arithmetic reconstruction](problem131/fauzan-local-arithmetic-review.md) |
+| Why do prime-allocation floors suggest a factorial product? | [Centered indicators, Brownian-bridge covariance, and superfactorials](problem131/floor-covariance-barnes-design.md); [PNT-free assembly](problem131/pnt-free-zeta5-guide.md) |
 | What do positive matrices reveal—and where do they fail? | [Real-rooted zeta pencils](problem131/real-rooted-zeta-pencils.md); [Wilson-polynomial one-pole solution and exact denominator obstruction](problem131/one-pole-schur-structure.md) |
 | What connects this to prime-adic Fuss–Catalan questions? | [Carry cancellation and digit factorization](problem131/apery-digit-arithmetic.md); [elementary character rule](problem131/apery-cm-character.md), now [independently reviewed](problem131/apery-cm-independent-review.md) |
 | What transfers to other irrationality proofs? | [Shared exponential, pi-squared, and zeta coefficients](problem131/shared-coefficients-exp-pi-zeta.md); [zeta-two/zeta-three balance](problem131/zeta2-zeta3-balance-unification.md); [powers of pi](problem131/pi-powers.md) |
@@ -60,6 +68,11 @@ while off-diagonal terms are rational. Its [dedicated review](problem131/monomia
 is complete; choosing partners with sufficient nonzero decay remains a separate
 problem. Follow-up periodic-weight and mixed-partner constructions have separate
 review status.
+
+For the geometric interpretation, [the Legendre/relative-period note](problem131/laurent-legendre-relative-periods.md)
+records the necessary boundary term: the real error generating function satisfies
+an inhomogeneous equation. The Laurent critical values alone are not a derivation
+of the full recurrence.
 
 Detailed higher-derivative, truncation, and prime-band investigations are indexed
 in [research results](problem131/research-results.md); their distinctions between
@@ -72,13 +85,18 @@ route now includes a reviewed direct global covering argument, with standard
 modular-form and covering-theory inputs stated explicitly.
 
 For the zeta-five alternative, the [completed assembly audit](problem131/fauzan-simplified-proof-audit.md)
-checks the positive moments, local arithmetic including small primes, coefficientwise
-integrality, prime averaging, certified energy, discrete determinant bound, and
-rationality contradiction together. Its new normalizer has arithmetic budget
-2203747/1600000, below the certified analytic magnitude 2771/2000. Their exact
-gap is 13053/1600000, giving eventual exp(−13n²) decay when K=40n. The route is computer-assisted
-and retains Fauzan's construction; it is not claimed elementary, historically
-novel, formally verified, or externally accepted. Lean has not been built locally.
+checks the shared positive moments, local arithmetic, real determinant transfer,
+and final contradiction. The new [normalizer review](problem131/pnt-free-normalizer-independent-review.md)
+checks the superfactorial replacement for prime averaging, including every higher
+prime power and eventual coefficientwise integrality. Its exact sparse certificate
+proves the arithmetic rate is below 6893/5000; the [rational energy review](problem131/rational-energy-review.md)
+certifies the analytic magnitude exceeds 2771/2000. The
+[new guide](problem131/pnt-free-zeta5-guide.md) assembles these dependencies.
+The older plain-rank route and its exp(−13n²) bound remain valid with their own
+normalizer and PNT input; the outer-kernel option gives exp(−26n²).
+These are computer-assisted derivations retaining Fauzan's construction, not
+claims of elementary proofs, historical novelty, formal verification, or external
+acceptance. Lean has not been built locally.
 No all-odd irrationality theorem is claimed. See [source provenance](sources/odd-zeta-provenance.md).
 
 Symbolic scripts check identities; finite experiments alone do not prove all-index
@@ -96,16 +114,25 @@ Konvalinka is now recorded in [the comparison note](problem137/konvalinka-compar
 Most scripts use Python 3 with SymPy and mpmath; their headers state dependencies.
 The [Newton closure check](computations/check_newton_diagonal_closure.py) and
 [modular review check](computations/check_apery_modular_review.py) use exact identities.
-The endpoint and current rational-energy certificates use only the Python
-standard library and local interval primitives. From the repository root:
+The [independent Laurent check](computations/check_apery_laurent_independent_review.py)
+verifies the reciprocal measure and covariance separately from the main derivation.
+The sparse superfactorial certificate, its independent normalizer checks, and
+the endpoint and rational-energy certificates use only the Python standard
+library and local interval primitives. From the repository root:
 
 ```bash
 python codex/computations/certify_equilibrium_endpoints.py
 python codex/computations/check_rational_energy_primitives.py
 python codex/computations/certify_equilibrium_energy_rational.py
-python codex/computations/check_table_free_arithmetic.py
+python codex/computations/check_floor_covariance_barnes.py
+python codex/computations/check_sparse_barnes_certificate.py
+python codex/computations/check_pnt_free_normalizer_review.py
 ```
 
+The sparse check verifies 561 exact breakpoints and propagates the inequality
+to the infinite tail by an exact period identity. The independent normalizer
+check tests the factorial identities and repair bounds. For the older PNT route,
+run [check_table_free_arithmetic.py](computations/check_table_free_arithmetic.py).
 The [rational energy review](problem131/rational-energy-review.md) explains every
 remainder and outward-rounding bound; the saved JSON records exact dyadic endpoints.
 Older [Carlson](computations/certify_equilibrium_energy.py) and

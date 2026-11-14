@@ -1,0 +1,7 @@
+def Zeta5.zeta5 : ℝ :=
+∑' (v : ℕ), 1 / (↑v + 1) ^ 5
+axiom Zeta5.Axioms.chebyshev_theta_asymptotic : Filter.Tendsto (fun x => Chebyshev.theta x / x) Filter.atTop (nhds 1)
+'Zeta5.zeta5_irrational' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ Zeta5.Axioms.chebyshev_theta_asymptotic]

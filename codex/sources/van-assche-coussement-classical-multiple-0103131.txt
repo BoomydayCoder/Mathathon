@@ -1,0 +1,1938 @@
+                                                        Some classical multiple orthogonal polynomials ∗
+                                                                       Walter Van Assche and Els Coussement
+arXiv:math/0103131v1 [math.CA] 21 Mar 2001
+
+
+
+
+                                                                Department of Mathematics, Katholieke Universiteit Leuven
+
+
+
+
+                                             1         Classical orthogonal polynomials
+                                             One aspect in the theory of orthogonal polynomials is their study as special functions.
+                                             Most important orthogonal polynomials can be written as terminating hypergeometric series
+                                             and during the twentieth century people have been working on a classification of all such
+                                             hypergeometric orthogonal polynomial and their characterizations.
+                                                The very classical orthogonal polynomials are those named after Jacobi, Laguerre, and
+                                             Hermite. In this paper we will always be considering monic polynomials, but in the literature
+                                             one often uses a different normalization. Jacobi polynomials are (monic) polynomials of
+                                             degree n which are orthogonal to all lower degree polynomials with respect to the weight
+                                             function (1−x)α (1+x)β on [−1, 1], where α, β > −1. The change of variables x 7→ 2x−1 gives
+                                             Jacobi polynomials on [0, 1] for the weight function w(x) = xβ (1 − x)α , and we will denote
+                                                                                (α,β)
+                                             these (monic) polynomials by Pn (x). They are defined by the orthogonality conditions
+                                                              Z 1
+                                                                  Pn(α,β) (x)xβ (1 − x)α xk dx = 0, k = 0, 1, . . . , n − 1.         (1.1)
+                                                                   0
+
+                                                                                     (α)
+                                             The monic Laguerre polynomials Ln (x) (with α > −1) are orthogonal on [0, ∞) to all
+                                             polynomials of degree less than n with respect to the weight w(x) = xα e−x and hence satisfy
+                                             the orthogonality conditions
+                                                                 Z ∞
+                                                                      L(α)    α −x k
+                                                                        n (x)x e x dx = 0,        k = 0, 1, . . . , n − 1.          (1.2)
+                                                                       0
+
+                                             Finally, the (monic) Hermite polynomials Hn (x) are orthogonal to all lower degree polyno-
+                                                                                                 2
+                                             mials with respect to the weight function w(x) = e−x on (−∞, ∞), so that
+                                                                  Z ∞
+                                                                                2
+                                                                       Hn (x)e−x xk dx = 0,    k = 0, 1, . . . , n − 1.           (1.3)
+                                                                           −∞
+
+                                             These three families of orthogonal polynomials can be characterized in a number of ways:
+                                                     • Their weight functions w satisfy a first order differential equation with polynomial
+                                                       coefficients
+
+                                                                                      σ(x)w ′ (x) = ρ(x)w(x),                                 (1.4)
+                                                 The first author is a Research Director of the Belgian Fund for Scientific Research (FWO). Research
+                                                 ∗
+
+                                             supported by INTAS and FWO research project G.0278.97.
+
+                                                                                               1
+  with σ of degree at most two and ρ of degree one. This equation is known as Pear-
+  son’s equation and also appears in probability theory, where the corresponding weights
+  (densities) are known as the beta density (Jacobi), the gamma density (Laguerre), and
+  the normal density (Hermite). Note however that for probability density functions
+  one needs to normalize these weights appropriately. For the Jacobi weight we have
+  σ(x) = x(1 − x), for the Laguerre weight we have σ(x) = x, and for the Hermite weight
+  we see that σ(x) = 1, so that each family corresponds to a different degree of the
+  polynomial σ.
+
+• The derivatives of the very classical polynomials are again orthogonal polynomials of
+  the same family but with different parameters (Sonin 1887, W. Hahn 1949). Indeed,
+  integration by parts of the orthogonality relations and the use of Pearson’s equation
+  show that
+                             d (α,β)         (α+1,β+1)
+                               Pn (x) = nPn−1          (x),
+                            dx
+                               d (α)         (α+1)
+                                 Ln (x) = nLn−1 (x),
+                              dx
+                                d
+                                  Hn (x) = nHn−1 (x).
+                               dx
+  The differential operator D = d/dx therefore acts as a lowering operator that lowers
+  the degree of the polynomial.
+
+• Pearson’s equation also gives rise to a raising operator that raises the degree of the
+  polynomials. Indeed, integration by parts shows that
+          d  β                                                   (α−1,β−1)
+             x (1 − x)α Pn(α,β) (x) = −(α + β + n)xβ−1 (1 − x)α−1 Pn+1       (x), (1.5)
+         dx
+                 d  α −x (α)                  (α−1)
+                    x e Ln (x) = −xα−1 e−x Ln+1 (x),                              (1.6)
+                dx
+                   d h −x2         i       2
+                      e Hn (x) = −2e−x Hn+1 (x).                                  (1.7)
+                  dx
+  The raising operator is therefore of the form σ(x)/w(x)Dw(x). Using this raising
+  operation repeatedly gives the Rodrigues formula for these orthogonal polynomials:
+           dn  β+n           
+             n
+               x (1 − x)α+n = (−1)n (α + β + n + 1)n xβ (1 − x)α Pn(α,β) (x), (1.8)
+          dx
+                  dn  α+n −x 
+                      x e       = (−1)n xα e−x L(α)
+                                                n (x),                         (1.9)
+                 dxn
+                        dn −x2        n n −x2
+                           e    = (−1)  2 e Hn (x).                           (1.10)
+                       dxn
+  The Rodrigues formula is therefore of the form
+                             dn n
+                                [σ (x)w(x)] = Cn w(x)Pn (x),
+                            dxn
+  where Cn is a normalization constant (Hildebrandt 1931).
+
+
+                                         2
+   • Combining the lowering and the raising operator gives a linear second order differential
+     equation for these orthogonal polynomials, of the form
+
+                                  σ(x)y ′′ (x) + τ (x)y ′ (x) = λn y(x),               (1.11)
+
+      where σ is a polynomial of degree at most 2 and τ a polynomial of degree at most
+      1, both independent of the degree n, and λn is a constant depending on n (Bochner
+      1929).
+   The Laguerre polynomials and the Hermite polynomials are limiting cases of the Jacobi
+polynomials. Indeed, one has
+
+                                 lim αn Pn(α,β) (x/α) = L(β)
+                                                         n (x),                        (1.12)
+                               α→∞
+
+and
+                                                        √
+                                   n   n/2            x+     α
+                            lim 2 α          Pn(α,α) ( √         ) = Hn (x).           (1.13)
+                            α→∞                        2 α
+The Hermite polynomials are also a limit case of the Laguerre polynomials:
+                                           √
+                         lim (2α)−n/2 L(α)
+                                       n ( 2αx + α) = Hn (x).                          (1.14)
+                           α→∞
+
+In this respect the Jacobi, Laguerre and Hermite polynomials are in a hierarchy, with Jacobi
+leading to Laguerre and Laguerre leading to Hermite, and with a shortcut for Jacobi leading
+to Hermite. This is just a very small piece in a large table known as Askey’s table which also
+contains classical orthogonal polynomials of a discrete variable (Hahn, Meixner, Kravchuk,
+and Charlier) for which the differential operator D needs to be replaced by difference oper-
+ators ∆ and ∇ on a linear lattice (a lattice with constant mesh, see [31]). Finally, allowing
+a quadratic lattice also gives Meixner-Pollaczek, dual Hahn, continuous Hahn, continuous
+dual Hahn, Racah, and Wilson polynomials, which are all in the Askey table. These poly-
+nomials have a number of q-extensions involving the q-difference operator and leading to
+the q-extension of the Askey table. In [2] Andrews and Askey suggest to define the classical
+orthogonal polynomials as those polynomials that are a limiting case of the 4 ϕ3 -polynomials
+                                                  −n n+1                         
+                                                  q , q ab, q −x , q x+1 cd
+                 Rn (λ(x); a, b, c, d; q) = 4 ϕ3                            ; q, q ,
+                                                       aq, bdq, cq
+
+with λ(x) = q −x + q x+1 cd and bdq = q −N (these are the q-Racah polynomials) or the 4 ϕ3 -
+polynomials
+                                                −n n−1                        
+               an Wn (x; a, b, c, d|q)          q , q abcd, aeiθ , ae−iθ
+                                        = 4 ϕ3                           ; q, q ,
+             (ab; q)n (ac; q)n (ad; q)n               ab, ac, ad
+
+with x = cos θ (these are the Askey-Wilson polynomials). All these classical orthogonal
+polynomials then have the following properties:
+   • they have a Rodrigues formula,
+
+   • an appropriate divided difference operator acting on them gives a set of orthogonal
+     polynomials,
+
+                                                   3
+    • they satisfy a second order difference equation in x which is of Sturm-Liouville type.
+The classical orthogonal polynomials in this wide sense have been the subject of intensive
+research during the twentieth century. We recommend the report by Koekoek and Swarttouw
+[26], the book by Andrews, Askey and Roy [3], and the books by Nikiforov, Uvarov [30], and
+Nikiforov, Suslov, and Uvarov [31] for more material. Szegő’s book [44] is still a very good
+source for the very classical orthogonal polynomials of Jacobi, Laguerre, and Hermite. For
+characterization results one should consult a survey by Al-Salam [1].
+
+
+2     Multiple orthogonal polynomials
+ Recently, there has been a renewed interest in an extension of the notion of orthogonal
+ polynomials known as multiple orthogonal polynomials. This notion comes from simulta-
+ neous rational approximation, in particular from Hermite-Padé approximation of a system
+ of r functions, and hence has its roots in the nineteenth century. However, only recently
+ examples of multiple orthogonal polynomials appeared in the (mostly Eastern European)
+ literature. In this paper we will introduce multiple orthogonal polynomials using the or-
+ thogonality relations and we will only use weight functions. The extension to measures is
+ straightforward.
+     Suppose we are given r weight functions w1 , w2 , . . . , wr on the real line and that the
+ support of each wi is a subset of an interval ∆i . We will often be using a multi-index
+~n = (n1 , n2 , . . . , nr ) ∈ Nr and its length |~n| = n1 + n2 + · · · + nr .
+    • The r-vector of type I multiple orthogonal polynomials (A~n,1 , . . . , A~n,r ) is such that
+      each A~n,i is a polynomial of degree ni − 1 and the following orthogonality conditions
+      hold:
+                      Z     r
+                            X
+                          k
+                        x     A~n,j (x)wj (x) dx = 0,  k = 0, 1, 2, . . . , |~n| − 2.        (2.15)
+                              j=1
+
+      Each A~n,i has ni coefficients so that the type I vector is completely determined if we
+      can find all the |~n| unknown coefficients. The orthogonality relations (2.15) give |~n| − 1
+      linear and homogeneous relations for these |~n| coefficients. If the matrix of coefficients
+      has full rank, then we can determine the type I vector uniquely up to a multiplicative
+      factor.
+    • The type II multiple orthogonal polynomial P~n is the polynomial of degree |~n| that
+      satisfies the following orthogonality conditions
+                         Z
+                             P~n (x)w1 (x)xk dx = 0,   k = 0, 1, . . . , n1 − 1,    (2.16)
+                          ∆1
+                         Z
+                             P~n (x)w2 (x)xk dx = 0,   k = 0, 1, . . . , n2 − 1,    (2.17)
+                         ∆2
+                                                ..
+                        Z                        .
+                              P~n (x)wr (x)xk dx = 0,      k = 0, 1, . . . , nr − 1.        (2.18)
+                         ∆r
+
+      This gives |~n| linear and homogeneous equations for the |~n| + 1 unknown coefficients
+      of P~n (x). We will choose the type II multiple orthogonal polynomials to be monic so
+
+                                                 4
+     that the remaining |~n| coefficients can be determined uniquely by the orthogonality
+     relations, provided the matrix of coefficients has full rank.
+
+    In this paper the emphasis will be on type II multiple orthogonal polynomials. The unicity
+of multiple orthogonal polynomials can only be guaranteed under additional assumptions on
+the r weights. Two distinct cases for which the type II multiple orthogonal polynomials are
+given as follows.
+
+  1. In an Angelesco system (Angelesco, 1918) the intervals ∆i , on which the weights are
+     supported, are disjoint, i.e., ∆i ∩ ∆j = ∅ whenever i 6= j. Actually, it is sufficient that
+                             ◦
+     the open intervals ∆i are disjoint, so that the closed intervals ∆i are allowed to touch.
+
+     Theorem 1 In an Angelesco Qr system the type II multiple orthogonal polynomial P~n (x)
+     factors into r polynomials j=1 qnj (x), where each qnj has exactly nj zeros on ∆j .
+
+     Proof: Suppose P~n (x) has mj < nj sign changes on ∆j at the points x1 , . . . , xmj . Let
+     Qmj (x) = (x − x1 ) · · · (x − xmj ), then P~n (x)Qmj (x) does not change sign on ∆j , and
+     hence
+                                    Z
+                                         P~n (x)Qmj (x)wj (x) dx 6= 0.
+                                          ∆j
+
+
+     But this is in contradiction with the orthogonality relation on ∆j . Hence P~n (x) has
+     at least nj zeros on ∆j . Now all the intervals ∆j (j = 1, 2, . . . , r) are disjoint, hence
+     this gives at least |~n| zeros of P~n (x) on the real line. The degree of this polynomials is
+     precisely |~n|, so there are exactly nj zeros on each interval ∆j .
+
+
+  2. For an AT system all the weights are supported on the same interval ∆, but we require
+     that the |~n| functions
+
+       w1 (x), xw1 (x), . . . , xn1 −1 w1 (x), w2 (x), xw2 (x), . . . , xn2 −1 w2 (x),
+                                                                   . . . , wr (x), xwr (x), . . . , xnr −1 wr (x)
+
+     form a Chebyshev system on ∆ for each multi-index ~n. This means that every linear
+     combination
+                                               r
+                                               X
+                                                      Qnj −1 (x)wj (x),
+                                                j=1
+
+
+     with Qnj −1 a polynomial of degree at most nj − 1, has at most |~n| − 1 zeros on ∆.
+
+     Theorem 2 In an AT system the type II multiple orthogonal polynomial P~n (x) has
+     exactly |~n| zeros onP
+                          ∆. For the type I vector of multiple orthogonal polynomials, the
+     linear combination rj=1 A~n,j (x)wj (x) has exactly |~n| − 1 zeros on ∆.
+
+
+
+
+                                                        5
+     Proof: Suppose P~n (x) has m < |~n| sign changes on ∆ at the points x1 , . . . , xm . Take
+                   ~ = (m1 , m2 , . . . , mr ) such that mi ≤ ni for every i and mj < nj for
+     a multi-index m
+     some j and construct the function
+                                                     r
+                                                     X
+                                         Q(x) =            Qi (x)wi (x),
+                                                     i=0
+
+     where each Qi is a polynomial of degree mi − 1 whenever i 6= j, and Qj is a polynomial
+     of degree mj , satisfying the interpolation conditions
+
+                                    Q(xk ) = 0,            k = 1, 2, . . . , m,
+
+     and Q(x0 ) = 1 for an additional point x0 ∈ ∆. This interpolation problem has a
+     unique solution since we are dealing with a Chebyshev system. The function Q has
+     already m zeros, and since we are in a Chebyshev system, it can have no additional
+     sign changes. Furthermore, the function does not vanish identically since Q(x0 ) = 1.
+     Obviously P~n (x)Q(x) does not change sign on ∆, so that
+                                     Z
+                                        P~n (x)Q(x) dx 6= 0,
+                                            ∆
+
+     but this is in contrast with the orthogonality relations for the type II multiple orthog-
+     onal polynomial. Hence P~n (x) has exactly |~n| zeros on ∆.
+     The proof for the type I multiple orthogonal polynomials is similar. First of all, since
+     we are dealing with an AT system, the function
+                                                    r
+                                                    X
+                                        A(x) =             A~n,j (x)wj (x)
+                                                     j=1
+
+
+     has at most |~n| − 1 zeros on ∆. Suppose it has m < |~n| − 1 sign changes at the
+     points x1 , x2 , . . . , xm , then we use the polynomial Qm (x) = (x − x1 ) · · · (x − xm ) so
+     that A(x)Q(x) does not change sign on ∆, and
+                                            Z
+                                               A(x)Q(x) dx 6= 0,
+                                            ∆
+
+     which is in contradiction with the orthogonality of the type I multiple orthogonal
+     polynomial. Hence A(x) has exactly |~n| − 1 zeros on ∆.
+
+
+    Orthogonal polynomials on the real line always satisfy a three-term recurrence relation.
+There are also finite order recurrences for multiple orthogonal polynomials, and there are
+quite a few of recurrence relations possible since we are dealing with multi-indices. There is
+an interesting recurrence relation of order r+1 for the type II multiple orthogonal polynomials
+with nearly diagonal multi-indices. Let n ∈ N and write it as n = kr + j, with 0 ≤ j < r.
+The nearly diagonal multi-index ~s(n) corresponding to n is then given by
+
+                         ~s(n) = (k + 1, k + 1, . . . , k + 1, k, k, . . . , k).
+                                  |          {z             } | {z }
+                                                j times              r−j times
+
+
+                                                     6
+If we denote the corresponding multiple orthogonal polynomials by
+
+                                       Pn (x) = P~s(n) (x),
+
+then the following recurrence relation holds:
+                                                    r
+                                                    X
+                             xPn (x) = Pn+1 (x) +         an,j Pn−j (x),                  (2.19)
+                                                    j=0
+
+
+with initial conditions P0 (x) = 1, Pj (x) = 0 for j = −1, −2, . . . , −r. The matrix
+                                                                           
+                      a0,0    1
+                    a1,1 a1,0       1                                      
+                                                                           
+                    a2,2 a2,1 a2,0 1                                       
+                                                                           
+                     ..                  . .   . .                         
+                     .                       .     .                       
+                                                                           
+                     ar,r ar,r−1 · · ·         ar,0    1                   
+                                                                           
+                                   ..                                      
+                           ar+1,r     .              ar+1,0 1              
+                    
+                                   .     .
+                                      .. ..                  . ..  . ..
+                                                                            
+                                                                            
+                                                                           
+                                         . ..  . ..               . ..     
+                                                                         1 
+                                                an,r an,r−1 · · · an,1 an,0
+
+has eigenvalues at the zeros of Pn+1 (x), so that in the case of Angelesco systems or AT systems
+we are dealing with non-symmetric matrices with real eigenvalues. The infinite matrix will
+act as an operator on ℓ2 , but this operator is never self-adjoint and furthermore has not a
+simple spectrum, as is the case for ordinary orthogonal polynomials. Now there will be a set
+of r cyclic vectors and the spectral theory of this operator becomes more complicated (and
+more interesting). There are many open problems concerning this non-symmetric operator.
+
+
+3     Some very classical multiple orthogonal polynomials
+We will now describe seven families of multiple orthogonal polynomials which have the same
+flavor as the very classical orthogonal polynomials of Jacobi, Laguerre, and Hermite. They
+certainly deserve to be called classical since they have a Rodrigues formula and there is a first
+order differential operator which, when applied to these classical multiple orthogonal poly-
+nomials, gives another set of multiple orthogonal polynomials. However, these are certainly
+not the only families of multiple orthogonal polynomials (see Section 4.1). The first four
+families are AT systems which are connected by limit passages, the last three families are
+Angelesco systems which are also connected by limit passages. All these families have been
+introduced in the literature before. We will list some of their properties and give explicit
+formulas, most of which have not appeared earlier.
+
+
+
+
+                                                7
+                       AT systems                                       Angelesco systems
+
+                      Jacobi-Piñeiro                                    Jacobi-Angelesco
+                        (α ,α ,α )                                           (α,β,γ)
+                       Pn,m0 1 2 (x)                                       Pn,m (x; a)
+                   ✟✟❍❍                                                  ✟✟❍❍
+                 ✟✟    ❍❍                                              ✟✟    ❍❍
+               ✙✟
+               ✟         ❍❍
+                          ❥                                          ✙✟
+                                                                     ✟         ❍❍
+                                                                                ❥
+
+      multiple Laguerre I         multiple Laguerre II        Jacobi-Laguerre           Laguerre-Hermite
+            (α1 ,α2 )                  (α0 ,c1 ,c2 )              (α,β)                       (β)
+          Ln,m        (x)            Ln,m            (x)        Ln,m (x; a)                 Hn,m (x)
+               ❅
+                ❅
+                 ❅❘
+                  ❅              ❄
+
+                     multiple Hermite
+                          (c1 ,c2 )
+                        Hn,m        (x)
+
+
+
+
+3.1     Jacobi-Piñeiro polynomials
+ The Jacobi-Piñeiro polynomials are multiple orthogonal polynomials associated with an AT
+ system consisting of Jacobi weights on [0, 1] with different singularities at 0 and the same
+ singularity at 1. They were first studied by Piñeiro [37] when α0 = 0. The general case
+ appears in [34, p. 162]. Let α0 > −1 and α1 , . . . , αr be such that each αi > −1 and
+                                                                               (α ,~α)
+ αi − αj ∈ / Z whenever i 6= j. The Jacobi-Piñeiro polynomial P~n 0 for the multi-index
+~n = (n1 , n2 , . . . , nr ) ∈ Nr and α
+                                      ~ = (α1 , . . . , αr ) is the monic polynomial of degree |~n| =
+ n1 + n2 + · · · + nr that satisfies the orthogonality conditions
+                   Z 1
+                           (α ,~
+                               α)
+                        P~n 0 (x)xα1 (1 − x)α0 xk dx = 0,           k = 0, 1, . . . , n1 − 1,  (3.20)
+                     0
+                   Z 1
+                           (α ,~
+                               α)
+                        P~n 0 (x)xα2 (1 − x)α0 xk dx = 0,           k = 0, 1, . . . , n2 − 1,  (3.21)
+                 0
+                                                         ..
+                                                          .
+               Z 1
+                       (α ,~
+                           α)
+                     P~n 0      (x)xαr (1 − x)α0 xk dx = 0,        k = 0, 1, . . . , nr − 1.      (3.22)
+                 0
+
+Since each weight wi (x) = xαi (1 − x)α0 satisfies a Pearson equation
+
+                                 x(1 − x)wi′ (x) = [αi (1 − x) − α0 x]wi (x)
+
+                                                     8
+and the weights are related by
+
+                                          wi (x) = xαi −αj wj (x),
+
+one can use integration by parts on each of the r integrals (3.20)–(3.22) to find the following
+raising operators:
+    d  αj            (α ,~
+                          α)
+                             
+                                                                        (α −1,~α−~
+                                                                                 ej )
+        x (1 − x)α0 P~n 0 (x) = −(|~n| + α0 + αj )xαj −1 (1 − x)α0 −1 P~n+~0ej        (x), (3.23)
+   dx
+where ~ej is the jth standard unit vector. Repeatedly using this raising operator gives the
+Rodrigues formula
+           r                                                      r        nj
+                                                                                         
+                                                                      −αj d
+          Y                            (α0 ,~
+                                            α)
+                                                                 Y
+      |~
+       n|                                                    −α0                  nj +αj
+ (−1)         (|~n| + α0 + αj + 1)nj P~n       (x) = (1 − x)         x       n
+                                                                                 x         (1 − x)α0 +|~n| .
+          j=1                                                    j=1
+                                                                         dx    j
+
+
+                                                                                                     (3.24)
+
+The product of the r differential operators x−αj D nj xnj +αj on the right hand side can be
+taken in any order since these operators are commuting.
+   The Rodrigues formula allows us to obtain an explicit expression. For the case r = 2 we
+write
+
+  (−1)n+m (n + m + α0 + α1 + 1)n (n + m + α0 + α2 + 1)m Pn,m
+                                                          (α0 ,α1 ,α2 )
+                                                                        (x)
+                                               n            m
+                                             d            d
+                           = (1 − x)−α0 x−α1 n xα1 −α2 +n m xα2 +m (1 − x)α0 +n+m . (3.25)
+                                            dx           dx
+The mth derivative can be worked out using the Rodrigues formula (1.8) for Jacobi polyno-
+mials and gives
+
+  (−1)n (n + m + α0 + α1 + 1)n Pn,m
+                                (α0 ,α1 ,α2 )
+                                              (x)
+                                                                  dn α1 +n
+                                            = (1 − x)−α0 x−α1        x     (1 − x)α0 +n Pm(α0 +n,α2 ) (x).
+                                                                 dxn
+Now use Leibniz’ rule to work out the nth derivative:
+
+  (−1)n (n + m + α0 + α1 + 1)n Pn,m
+                                 (α0 ,α1 ,α2 )
+                                               (x)
+                                                n   k
+                                −α0 −α1
+                                             X     n d α1 +n dn−k
+                      = (1 − x) x                      k
+                                                         x     n−k
+                                                                   (1 − x)α0 +n Pm(α0 +n,α2 ) (x).
+                                              k=0
+                                                   k dx     dx
+
+In order to work out the derivative involving the Jacobi polynomial, we will use the following
+lemma.
+                    (α,β)
+Lemma 1 Let Pn              (x) be the nth degree monic Jacobi polynomial on [0, 1]. Then for α > 0
+and β > −1
+                    d                     
+                       (1 − x)α Pn(α,β) (x) = −(α + n)(1 − x)α−1 Pn(α−1,β+1) (x),                    (3.26)
+                   dx
+and
+       dm                      
+        m
+            (1 − x)α Pn(α,β) (x) = (−1)m (α + n − m + 1)m (1 − x)α−m Pn(α−m,β+m) (x).                (3.27)
+      dx
+
+                                                     9
+Proof: First of all, observe that
+           d                                                                        
+               (1 − x)α Pn(α,β) (x) = (1 − x)α−1 −αPn(α,β) (x) + (1 − x)[Pn(α,β) (x)]′ ,
+          dx
+so that the right hand side is −(α + n)(1 − x)α−1 Qn (x), with Qn a monic polynomial of
+degree n. Integrating by parts gives
+             Z 1
+  − (α + n)      (1 − x)α−1 xβ+k+1 Qn (x) dx
+              0
+                                                                Z 1
+                       β+k+1         α (α,β)    1
+                   =x         (1 − x) Pn (x) 0 − (β + k + 1)        xβ+k (1 − x)α Pn(α,β) (x) dx.
+                                                                      0
+
+Obviously, when α > 0 and β > −1, then the integrated terms on the right hand side vanish.
+The integral on the right hand side vanishes for k = 0, 1, . . . , n − 1 because of orthogonality.
+Hence Qn is a monic polynomial which is orthogonal to all polynomials of degree less than n
+with respect to the weight xβ+1 (1 − x)α−1 , which proves (3.26). The more general expression
+(3.27) follows by applying (3.26) m times.
+   By using this lemma we arrive at
+                          (α0 ,α1 ,α2 )
+  (n + m + α0 + α1 + 1)n Pn,m           (x)
+                                 n
+                               X α1 + nα0 + m + n
+                                     
+                         = n!                        xn−k (x − 1)k Pm(α0 +k,α2 +n−k)(x).
+                               k=0
+                                            k n−k
+For the Jacobi polynomial we have the expansion
+                                           n              
+                              (α,β)
+                                         X     β + n α + n n−j
+            (α + β + n + 1)n Pn (x) = n!                       x (x − 1)j ,                (3.28)
+                                          j=0
+                                                 j     n − j
+
+which can easily be obtained from the Rodrigues formula (1.8) by using Leibniz’ formula, so
+that we finally find
+                                                 (α0 ,α1 ,α2 )
+ (n + m + α0 + α1 + 1)n (n + m + α0 + α2 + 1)m Pn,m            (x)
+        n   m
+       X X α1 + n α0 + m + n α2 + n + m − k α0 + k + m
+                                                      
+= n!m!                                                                 xn+m−k−j (x−1)k+j .
+       k=0 j=0
+                  k          n−k               j                   m−j
+                                                                                               (3.29)
+                                                         (α ,α ,α )
+We can explicitly find the first few coefficients of Pm,n0 1 2 (x) from this expression. We
+introduce the notation
+                                                  n!m!
+                Kn,m =
+                           (n + m + α0 + α1 + 1)n (n + m + α0 + α2 + 1)m
+                                               −1                   −1
+                             α0 + α1 + 2n + m        α0 + α2 + 2m + n
+                       =                                                   .
+                                     n                       m
+First let us check that the polynomial is indeed monic by working out the coefficient of xm+n .
+This is given by
+                  n X m                                                    
+                 X        α1 + n α0 + m + n α2 + n + m − k           α0 + k + m
+           Kn,m                                                                     .
+                 k=0 j=0
+                             k        n−k                 j             m−j
+
+                                               10
+The sum over j can be evaluated using the Chu-Vandermonde identity
+              m                                                 
+             X    α2 + n + m − k     α0 + k + m      α0 + α2 + n + 2m
+                                                 =                    ,
+             j=0
+                          j             m−j                  m
+
+which is independent of k. The remaining sum over k can also be evaluated and gives
+                   n                                           
+                  X     α1 + n α0 + m + n         α0 + α1 + m + 2n
+                                              =                       ,
+                  k=0
+                           k        n−k                   n
+
+                                          −1
+and the double sum is therefore equal to Kn,m , showing that this polynomial is indeed monic.
+Now let us write
+          (α0 ,α1 ,α2 )
+         Pn,m           (x) = xm+n + An,m xn+m−1 + Bn,m xn+m−2 + Cn,m xn+m−3 + · · · .
+
+The coefficient An,m of xm+n−1 is given by
+           n Xm                                               
+           X              α1 + n α0 + m + n α2 + n + m − k α0 + k + m
+     −Kn,m       (k + j)                                               .
+             j=0
+                             k      n−k            j          m−j
+              k=0
+
+This double sum can again be evaluated using Chu-Vandermonde and gives
+
+                    n(α1 + n)(α0 + α2 + n + m) + m(α2 + n + m)(α0 + α1 + 2n + m)
+        An,m = −                                                                 .
+                                 (α0 + α1 + 2n + m)(α0 + α2 + n + 2m)
+
+Similarly we can compute the coefficient Bn,m of xn+m−2 and the coefficient Cn,m of xm+n−3 ,
+but the computation is rather lengthy. Once these coefficients have been determined, one
+can compute the coefficients in the recurrence relation
+
+                    xPn (x) = Pn+1 (x) + bn Pn (x) + cn Pn−1 (x) + dn Pn−2 (x),
+
+where
+                                 (α0 ,α1 ,α2 )                        (α ,α ,α )
+                      P2n (x) = Pn,n           (x),     P2n+1 (x) = Pn+1,n
+                                                                       0 1 2
+                                                                             (x).
+
+Indeed, by comparing coefficients we have
+
+                       b2n = An,n − An+1,n ,          b2n+1 = An+1,n − An+1,n+1 ,           (3.30)
+
+which gives
+
+ b2n = [36n4 + (48α0 + 28α1 + 20α2 + 38)n3
+       + (21α02 + 8α12 + 4α22 + 30α0 α1 + 18α0 α2 + 15α1 α2 + 39α0 + 19α1 + 19α2 + 9)n2
+       + (3α03 + 10α02 α1 + 4α02 α2 + 6α0 α12 + 2α0 α22 + 11α0 α1 α2 + 5α12 α2 + 3α1 α22
+       + 12α02 + 3α12 + 3α22 + 13α0 α1 + 13α0 α2 + 8α1 α2 + 6α0 + 3α1 + 3α2 )n
+       + α02 + α0 α1 + α2 α12 + 2α2 α12 α0 + 2α02 α1 + α12 α0 + α22 α0 + α22 α1 + α03 α1
+       + α02 α12 + α22 α0 α1 + α22 α12 + 2α2 α02 α1 + 3α2 α1 α0 + 2α2 α02 + α1 α2 + α03 + α0 α2 ]
+       × (3n + α0 + α2 )−1 (3n + α0 + α1 )−1 (3n + α0 + α2 + 1)−1 (3n + α0 + α1 + 2)−1 ,
+
+                                                      11
+and
+b2n+1 = [36n4 + (48α0 + 20α1 + 28α2 + 106)n3
+        + (21α02 + 4α12 + 8α22 + 18α0 α1 + 30α0 α2 + 15α1 α2 + 105α0 + 41α1 + 65α2 + 111)n2
+        + (3α03 + 4α02 α1 + 10α02 α2 + 2α0 α12 + 6α0 α22 + 11α0 α1 α2 + 3α12 α2 + 5α1 α22
+        + 30α02 + 5α12 + 13α22 + 23α0 α1 + 47α0 α2 + 22α1 α2 + 72α0 + 25α1 + 49α2 + 48)n
+        + 18α0 α2 + 8α2 α02 + 4α1 + 4α22 α1 + 8α1 α2 + 2α03 + 5α22 α0 + 8α2 α1 α0 + 12α2
+        + 7 + 15α0 + α22 α12 + 10α02 + 6α0 α1 + 2α2 α12 + 2α02 α1 + α12 α0 + 5α22 + α2 α03
+        + α22 α02 + α12 + α2 α12 α0 + 2α2 α02 α1 + 2α22 α0 α1 ]
+        × (3n + α0 + α2 + 1)−1 (3n + α0 + α1 + 2)−1 (3n + α0 + α2 + 3)−1 (3n + α0 + α1 + 3)−1 .
+For the recurrence coefficient cn we have the formulas
+      c2n = Bn,n − Bn+1,n − b2n An,n ,    c2n+1 = Bn+1,n − Bn+1,n+1 − b2n+1 An+1,n ,          (3.31)
+which, after some computation (and using Maple V), gives
+c2n = n(2n + α0 )(2n + α0 + α1 )(2n + α0 + α2 )
+      × [54n4 + (63α0 + 45α1 + 45α2 )n3
+      + (24α02 + 8α12 + 8α22 + 42α0 α1 + 42α0 α2 + 44α1 α2 − 8)n2
+      + (3α03 + α13 + α23 + 12α02 α1 + 12α02 α2 + 3α0 α12 + 3α0 α22 + 33α0 α1 α2 + 8α12 α2
+      + 8α1 α22 − 3α0 − 4α1 − 4α2 )n
+      + α03 α1 + α03 α2 + 6α02 α1 α2 + α13 α2 + α1 α23 + 3α0 α12 α2 + 3α0 α1 α22 − α0 α1 − α0 α2 − 2α1 α2 ]
+      × (3n + α0 + α1 + 1)−1 (3n + α0 + α2 + 1)−1 (3n + α0 + α1 )−2 (3n + α0 + α2 )−2
+      (3n + α0 + α1 − 1)−1 (3n + α0 + α2 − 1)−1
+and
+c2n+1 = (2n + α0 + 1)(2n + α0 + α1 + 1)(2n + α0 + α2 + 1)
+        × [54n5 + (63α0 + 45α1 + 45α2 + 135)n4
+        + (24α02 + 8α12 + 8α22 + 42α0 α1 + 42α0 α2 + 44α1 α2 − +126α0 + 76α1 + 104α2 + 120)n3
+        + (3α03 + α13 + α23 + 12α02 α1 + 12α02α2 + 3α0 α12 + 3α0 α22 + 33α0 α1 α2 + 8α12 α2
+        + 8α1 α22 + 36α02 + 5α12 + 19α22 + +54α0 α1 + 72α0 α2 + 66α1 α2 + 87α0 + 39α1
+        + 81α2 + 45)n2
+        + (α03 α1 + α03 α2 + 6α02 α1 α2 + α13 α2 + α1 α23 + 3α0 α12 α2 + 3α0 α1 α22 + 3α03 + 2α23
+        + 12α02 α1 + 12α02 α2 + 6α0 α22 + 33α0 α1 α2 + 5α12 α2 + 11α1 α22 + 18α02 + 20α0 α1
+        + 38α0 α2 + 14α22 + 26α1 α2 + 24α0 + 6α1 + 24α2 + 6)n
+        + α03 α1 + 3α02α1 α2 + 3α0 α1 α22 + α1 α23 + α03 + α23 + 3α02 α1 + 3α02 α2 + 6α0 α1 α2
+        + 3α0 α22 + 3α1 α22 + 3α02 + 3α22 + 2α0 α1 + 6α0 α2 + 2α1 α2 + 2α0 + 2α2 ]
+        × (3n + α0 + α1 + 3)−1 (3n + α0 + α2 + 2)−1 (3n + α0 + α1 + 2)−2 (3n + α0 + α2 + 1)−2
+        (3n + α0 + α1 + 1)−1 (3n + α0 + α2 )−1 .
+Finally, for dn we have
+                     d2n = Cn,n − Cn+1,n − b2n Bn,n − c2n An,n−1 ,
+                   d2n+1 = Cn+1,n − Cn+1,n+1 − b2n+1 Bn+1,n − c2n+1 An,n ,                    (3.32)
+
+                                                 12
+giving
+    d2n = n(2n + α0 )(2n + α0 − 1)(2n + α0 + α1 )(2n + α0 + α1 − 1)
+          (2n + α0 + α2 )(2n + α0 + α2 − 1)(n + α1 )(n + α1 − α2 )
+          (3n + 1 + α0 + α1 )−1 (3n + α0 + α1 )−2 (3n + α0 + α2 )−1 (3n − 1 + α0 + α1 )−2
+          (3n − 1 + α0 + α2 )−1 (3n − 2 + α0 + α1 )−1 (3n − 2 + α0 + α2 )−1
+and
+d2n+1 = n(2n + 1 + α0 )(2n + α0 )(2n + α0 + α1 )(2n + 1 + α0 + α1 )
+        (2n + 1 + α0 + α2 )(2n + α0 + α2 )(n + α2 )(n + α2 − α1 )
+        (3n + 2 + α0 + α1 )−1 (3n + 2 + α0 + α2 )−1 (3n + 1 + α0 + α1 )−1 (3n + 1 + α0 + α2 )−2
+        (3n + α0 + α1 )−1 (3n + α0 + α2 )−2 (3n − 1 + α0 + α2 )−1 .
+These formulas are rather lengthy, but explicit knowledge of them will be useful in what
+follows. Observe that for large n we have
+                                                  
+                                          4        4
+                                 lim bn =   =3          ,
+                                n→∞       9       27
+                                                   2
+                                          16         4
+                                 lim cn =      =3         ,
+                                n→∞       243        27
+                                                    3
+                                            64         4
+                                lim dn =         =          .
+                               n→∞        19683       27
+
+3.2      Multiple Laguerre polynomials (first kind)
+In the same spirit as for the Jacobi-Piñeiro polynomials, we can consider two different families
+of multiple Laguerre polynomials. The multiple Laguerre polynomials of the first kind L~nα~ (x)
+are orthogonal on [0, ∞) with respect to the r weights wj (x) = xαj e−x , where αj > −1 for
+j = 1, 2, . . . , r. So these weights have the same exponential decrease at ∞ but have different
+singularities at 0. Again we assume αi − αj ∈      / Z in order to have an AT system. These
+polynomials were first considered by Sorokin [39], [41]. The raising operators are given by
+                 d                                   α
+                                                      ~ −~e
+                    xαj e−x L~nα~ (x) = −xαj −1 e−x L~n+~ejj (x),        j = 1, . . . , r,   (3.33)
+                dx
+and a repeated application of these operators gives the Rodrigues formula
+                                             r             nj
+                                                                         
+                                                   −αj d
+                                            Y
+                             |~
+                              n| α  ~     x                       nj +αj
+                       (−1) L~n (x) = e           x          n
+                                                                 x         e−x .             (3.34)
+                                            j=1
+                                                         dx    j
+
+
+
+   When r = 2 one can use this Rodrigues formula to obtain an explicit expression for these
+multiple Laguerre polynomials, from which one can compute the recurrence coefficients in
+                      xPn (x) = Pn+1 (x) + bn Pn (x) + cn Pn−1 (x) + dn Pn−2 (x),
+                      (α ,α )                            (α ,α )
+where P2n (x) = Ln,n1 2 (x) and P2n+1 (x) = Ln+1,n
+                                                 1 2
+                                                     (x). But having done all that work for
+Jacobi-Piñeiro polynomials, it is much easier to use the limit relation
+                                 (α1 ,α2 )
+                                Ln,m       (x) = lim α0n+m Pn,m
+                                                            (α0 ,α1 ,α2 )
+                                                                          (x/α0 ).           (3.35)
+                                                α0 →∞
+
+
+
+                                                        13
+The recurrence coefficients can then be found in terms of the following limits of the corre-
+sponding recurrence coefficients of Jacobi-Piñeiro polynomials:
+
+                                        bn =      lim b(α
+                                                       n
+                                                         0 ,α1 ,α2 )
+                                                                     α0 ,
+                                                 α0 →∞
+
+                                        cn =      lim c(α
+                                                       n
+                                                         0 ,α1 ,α2 ) 2
+                                                                    α0 ,
+                                                 α0 →∞
+
+                                       dn =       lim d(α
+                                                       n
+                                                         0 ,α1 ,α2 ) 3
+                                                                    α0 ,
+                                                 α0 →∞
+
+giving
+
+                                b2n =      3n + α1 + 1,
+                              b2n+1 =      3n + α2 + 2,
+                                c2n =      n(3n + α1 + α2 ),
+                              c2n+1 =      3n2 + (α1 + α2 + 3)n + α1 + 1,
+                                d2n =      n(n + α1 )(n + α1 − α2 ),
+                              d2n+1 =      n(n + α2 )(n + α2 − α1 ).
+
+Observe that for large n we have
+                                                       
+                                            bn   3      1
+                                        lim    =   =3      ,
+                                       n→∞ n     2      2
+                                                       2
+                                            cn   3      1
+                                        lim 2 =    =3        ,
+                                       n→∞ n     4      2
+                                                      3
+                                            dn   1    1
+                                        lim    =   =      .
+                                       n→∞ n3    8    2
+
+3.3      Multiple Laguerre polynomials (second kind)
+Another family of multiple Laguerre polynomials is given by the weights wj (x) = xα0 e−cj x
+on [0, ∞), with cj > 0 and ci 6= cj for i 6= j. So now the weights have the same singularity
+at the origin but different exponential rates at infinity. These multiple Laguerre polynomials
+                      (α ,~c)
+of the second kind L~n 0 (x) appear already in [34, p. 160]. The raising operators are
+
+          d  α0 −cj x (α0 ,~c)                    (α0 −1,~c)
+             x e      L~n (x) = −cj xα0 −1 e−cj x L~n+~ej      (x),         j = 1, . . . , r,   (3.36)
+         dx
+and a repeated application of these operators gives the Rodrigues formula
+                               r                     r         nj
+                                                                           
+                                                         cj x d
+                              Y    nj  (α0 ,~c)
+                                                    Y
+                        |~
+                         n|                     −α0                  −cj x
+                  (−1)            cj L~n (x) = x        e        nj
+                                                                    e        x|~n|+α0 .         (3.37)
+                              j=1                   j=1
+                                                             dx
+
+These polynomials are also a limit case of the Jacobi-Piñeiro polynomials. For the case r = 2
+we have
+
+                       L(α0 ,c1 ,c2 )
+                        n,m           (x) = lim (−α)n+m Pn,m
+                                                         (α0 ,c1 α,c2 α)
+                                                                         (1 − x/α).             (3.38)
+                                           α→∞
+
+
+
+
+                                                     14
+The recurrence coefficients can be obtained from the corresponding recurrence coefficients
+of Jacobi-Piñeiro polynomials by
+
+                                  bn =     lim (1 − b(α
+                                                     n
+                                                       0 ,c1 α,c2 α)
+                                                                     )α,
+                                          α→∞
+
+                                  cn =     lim c(α
+                                                n
+                                                  0 ,c1 α,c2 α) 2
+                                                               α ,
+                                          α→∞
+
+                                  dn =     lim −d(α
+                                                 n
+                                                   0 ,c1 α,c2 α) 3
+                                                                α ,
+                                          α→∞
+
+giving
+
+                          n(c1 + 3c2 ) + c2 + α0 c2
+                 b2n =                                  ,
+                                       c1 c2
+                          n(3c1 + c2 ) + 2c1 + c2 + α0 c1
+              b2n+1 =                                            ,
+                                            c1 c2
+                          n(2n + α0 )(c21 + c22 )
+                 c2n =                                ,
+                                    c21 c22
+                          2n2 (c21 + c22 ) + n[c21 + 3c22 + α0 (c21 + c22 )] + c22 + α0 c22
+              c2n+1 =                                                                       ,
+                                                         c21 c22
+                          n(2n + α0 )(2n + α0 − 1)(c2 − c1 )
+                d2n =                                               ,
+                                               c31 c2
+                          n(2n + α0 )(2n + α0 + 1)(c1 − c2 )
+              d2n+1 =                                               .
+                                               c1 c32
+
+Observe that for large n we have
+                                     
+                                       c + 3c2
+                             bn       1
+                                                 if n ≡ 0 (mod 2),
+                         lim       =     2c1 c2
+                         n→∞ n         3c + c2
+                                      1
+                                                 if n ≡ 1 (mod 2),
+                                         2c1 c2
+                           cn        c2 + c2
+                         lim       = 1 2 22 ,
+                       n→∞ n2         2c c2
+                                      c1 −  c1
+                                        2
+                                     
+                                      3        if n ≡ 0 (mod 2),
+                           dn           2c1 c2
+                         lim       =   c −c
+                       n→∞ n3
+                                      1 32 if n ≡ 1 (mod 2).
+                                     
+                                        2c1 c2
+
+3.4      Multiple Hermite polynomials
+                                                         2
+Finally we can consider the weights wj (x) = e−x +cj x on (−∞, ∞), for j = 1, 2, . . . , r and
+cj different real numbers. The multiple Hermite polynomials H~n~c (x) once more have raising
+operators and a Rodrigues formula, and they are also limiting cases of the Jacobi-Piñeiro
+polynomials, but also of the multiple Laguerre polynomials of the second kind. For r = 2
+this is
+                                                                     √ 
+                    (c1 ,c2 )
+                                   √ n+m (α,α+c1 √α,α+c2 √α) x + α
+                  Hn,m (x) = lim (2 α)     Pn,m                     √      ,            (3.39)
+                              α→∞                                  2 α
+
+
+
+                                                   15
+so that the recurrence coefficients can be obtained from the Jacobi-Piñeiro case by
+                                                 √      √     1 √
+                         bn = lim 2(bn(α,α+c1 α,α+c2 α) − ) α,
+                                  α→∞
+                                                √      √
+                                                              2
+                                         (α,α+c1 α,α+c2 α)
+                         cn = lim 4cn                      α,
+                                  α→∞
+                                                √      √    √
+                         dn = lim 8dn(α,α+c1 α,α+c2 α) ( α)3 .
+                                  α→∞
+
+This gives
+                                     b2n =     c1 /2,
+                                   b2n+1 =     c2 /2,
+                                      cn =     n/2,
+                                     d2n =     n(c1 − c2 )/4,
+                                   d2n+1 =     n(c2 − c1 )/4.
+Alternatively, we can use the limit transition from the multiple Laguerre polynomials of the
+first kind:
+                                                 √       √     √
+                    (c1 ,c2 )         n+m (α+c1 α/2,α+c2 α/2)
+                  Hn,m (x) = lim α        Ln,m                ( 2αx + α).             (3.40)
+                                α→∞
+
+The recurrence coefficients are then also given in terms of the following limits of the recur-
+rence coefficients of the multiple Laguerre polynomials of the first kind
+                                            √        √           √
+                                       (α+c1 α/2,α+c2 α/2)
+                         bn = lim (bn                      − α)/ 2α,
+                                 α→∞
+                                           √        √
+                                      (α+c1 α/2,α+c2 α/2)
+                         cn = lim cn                      /(2α),
+                                 α→∞
+                                            √        √
+                                      (α+c1 α/2,α+c2 α/2) √
+                         dn = lim dn                      /( 2α)3 ,
+                                 α→∞
+
+which leads to the same result. Observe that for large n we have
+                                                 bn
+                                           lim √     = 0,
+                                          n→∞      n
+                                                  cn   1
+                                             lim     =   ,
+                                            n→∞ n      2
+                                                dn
+                                        lim √ 3 = 0.
+                                       n→∞ ( n)
+
+
+3.5    Jacobi-Angelesco polynomials
+The following system is probably the first that was investigated in detail ([20], [25]). It is an
+Angelesco system with weights w1 (x) = |h(x)| on [a, 0] (with a < 0) and w2 (x) = |h(x)| on
+[0, 1], where h(x) = (x − a)α xβ (1 − x)γ and α, β, γ > −1. Hence the same weight is used for
+both weights w1 and w2 but on two touching intervals. The Jacobi-Angelesco polynomials
+  (α,β,γ)
+Pn,m (x; a) therefore satisfy the orthogonality relations
+          Z 0
+               (α,β,γ)
+              Pn,m     (x; a)(x − a)α |x|β (1 − x)γ xk dx = 0, k = 0, 1, 2, . . . , n − 1, (3.41)
+           a
+           Z 1
+                 (α,β,γ)
+               Pn,m      (x; a)(x − a)α xβ (1 − x)γ xk dx = 0, k = 0, 1, 2, . . . , m − 1. (3.42)
+             0
+
+                                               16
+The function h(x) satisfies a Pearson equation
+
+           (x − a)x(1 − x)h′ (x) = [αx(1 − x) + β(x − a)(1 − x) − γ(x − a)x]h(x),
+
+where (x − a)x(1 − x) is now a polynomial of degree 3. Using this relation, we can integrate
+the orthogonality relations by part to see that
+
+   d                                      
+      (x − a)α xβ (1 − x)γ Pn,m
+                            (α,β,γ)
+                                    (x; a)
+  dx
+                                                               (α−1,β−1,γ−1)
+             = −(α + β + γ + n + m)(x − a)α−1 xβ−1 (1 − x)γ−1 Pn+1,m+1       (x; a), (3.43)
+
+which raises both indices of the multi-index (n, m). Repeated use of this raising operation
+gives the Rodrigues formula
+
+   dm h        α+m β+m         γ+m (α+m,β+m,γ+m)
+                                                        i
+       (x − a)     x   (1 − x)    P k,0          (x; a)
+  dxm
+                                                                        (α,β,γ)
+                = (−1)m (α + β + γ + k + 2m + 1)m (x − a)α xβ (1 − x)γ Pm+k,m (x; a). (3.44)
+
+For k = 0 and m = n, this then gives
+
+   dn         α+n β+n         γ+n
+                                   
+       (x − a)    x    (1 − x)
+  dxn
+                     = (−1)n (α + β + γ + 2n + 1)n (x − a)α xβ (1 − x)γ Pn,n
+                                                                         (α,β,γ)
+                                                                                 (x; a). (3.45)
+
+Use Leibniz’ formula to find
+
+  (−1)n (α + β + γ + 2n + 1)n (x − a)α xβ (1 − x)γ Pn,n
+                                                     (α,β,γ)
+                                                             (x; a)
+                                     n
+                                    X n         k
+                                                                          n−k              
+                                                  d β+n             γ+n     d            α+n
+                                 =                   x (1 − x)                   (x − a)       .
+                                    k=0
+                                           k     dxk                       dxn−k
+
+Now use the Rodrigues formula for the Jacobi polynomials (1.8) to find
+                 
+   α + β + γ + 3n     (α,β,γ)
+                    Pn,n      (x; a)
+         n
+             n                           
+                     n−k β + γ + 2n    α+n
+            X                                                           (γ+n−k,β+n−k)
+          =     (−1)                          (x − a)k xn−k (1 − x)n−k Pk             (x).
+            k=0
+                                  k     n−k
+
+Use of the expansion (3.28) for the Jacobi polynomial gives
+                          
+            α + β + γ + 3n     (α,β,γ)
+                             Pn,n      (x; a)
+                   n
+                 n X k                         
+                X        α+n β+n γ+n
+             =                                       (x − a)k xn−j (x − 1)n−k+j            (3.46)
+                k=0 j=0
+                          n−k           j      k−j
+                 n Xn−k                            
+                X        α+n β+n                γ+n
+             =                                           (x − a)n−k xn−j (x − 1)k+j ,      (3.47)
+                k=0 j=0
+                           k            j     n − k − j
+
+
+                                               17
+where the last equation follows by the change of variable k 7→ n − k. If we write this in
+terms of Pochhammer symbols, then
+                       
+         α + β + γ + 3n     (α,β,γ)
+                          Pn,n      (x; a)
+                n
+                       n n−k
+             (γ + 1)n X X (−n)k+j (−α − n)k (−β − n)j
+         =                                               (x − a)n−k (x − 1)k+j xn−j
+                n!    k=0 j=0
+                                         (γ + 1)k+j k!j!
+                                                                         
+              n       n γ +n                                    x−1 x−1
+         = x (x − a)              F1 −n, −α − n, −β − n, γ + 1;       ,        ,
+                            n                                   x−a x
+where
+                                                    ∞ X
+                                                      ∞
+                                    ′
+                                                    X   (a)m+n (b)m (b′ )n xm y n
+                         F1 (a, b, b , c; x, y) =
+                                                    m=0 n=0
+                                                                  (c)m+n          m!n!
+
+is the first of Appell’s hypergeometric functions of two variables.
+                           (α,β,γ)
+    For the polynomial Pn+1,n (x; a) we have the Rodrigues formula
+
+   dn h        α+n β+n         γ+n (α+n,β+n,γ+n)
+                                                        i
+       (x − a)    x    (1 − x)    P 1,0          (x; a)
+  dxn
+                                                                         (α,β,γ)
+                     = (−1)n (α + β + γ + 2n + 2)n (x − a)α xβ (1 − x)γ Pn+1,n (x; a), (3.48)
+         (α+n,β+n,γ+n)                    (α,β,γ)
+where P1,0          (x; a) = x − Xn         is the monic orthogonal polynomial of first degree
+for the weight (x − a)α+n |x|β+n (1 − x)γ+n on [a, 0]. If we write down the orthogonality of
+this polynomial to the constant function,
+                    Z 0
+                        (x − Xn(α,β,γ) )(x − a)α+n |x|β+n (1 − x)γ+n dx = 0,
+                         a
+
+then we see that
+                                        R0
+                                             x(x − a)α+n |x|β+n (1 − x)γ+n dx
+                             Xn(α,β,γ) = Ra 0                                  .
+                                              (x − a) α+n |x|β+n (1 − x)γ+n dx
+                                           a
+
+A standard saddle point method gives the asymptotic behavior
+
+                                             lim Xn(α,β,γ) = x1 ,                                (3.49)
+                                             n→∞
+
+where x1 is the zero of g ′ (x) in [a, 0], where g(x) = (x − a)x(1 − x). . Combining the
+Rodrigues equation in (3.48) with the Rodrigues equation (3.45) shows that
+
+        (α,β,γ)        (α,β+1,γ)                            α + β + γ + 2n + 1 (α,β,γ)
+     Pn+1,n (x; a) = xPn,n       (x; a) − Xn(α,β,γ)                           P        (x; a).   (3.50)
+                                                            α + β + γ + 3n + 1 n,n
+   In order to compute the coefficients of the recurrence relation
+
+                   xPn (x) = Pn+1 (x) + bn Pn (x) + cn Pn−1 (x) + dn Pn−2 (x),
+
+where
+                                    (α,β,γ)                             (α,β,γ)
+                         P2n (x) = Pn,n     (x; a),      P2n+1 (x) = Pn+1,n (x; a),
+
+                                                       18
+we will compute the first few coefficients of the polynomials
+             (α,β,γ)
+            Pn,m     (x; a) = xm+n + An,m xn+m−1 + Bn,m xm+n−2 + Cn,m xn+m−3 + · · · .
+
+First we take n = m. In order to check that our polynomial is monic, we see from (3.46)
+that the leading coefficient is given by
+                                     −1 Xn X k                  
+                        α + β + γ + 3n            α+n β+n γ+n
+                                                                        .
+                              n           k=0 j=0
+                                                   n − k    j    k − j
+
+Chu-Vandermonde gives
+                               k                                    
+                               X   β+n γ+n                     β + γ + 2n
+                                                       =                  ,
+                               j=0
+                                         j    k−j                  k
+
+and also
+                         n                                         
+                         X   α + n β + γ + 2n             α + β + γ + 3n
+                                                       =                 ,
+                         k=0
+                               n−k            k                 n
+
+so that the leading coefficient is indeed 1. The coefficient An,n of x2n−1 is equal to
+                               n X
+                            −1 X  k                  
+              α + β + γ + 3n          α+n β+n γ+n
+           −                                                (ak + n − k + j).
+                    n             j=0
+                                       n − k    j    k − j
+                                     k=0
+
+Working out this double sum gives
+
+                                         −n[α + β + 2n + a(β + γ + 2n)]
+                            A(α,β,γ)
+                             n,n     =                                  .                 (3.51)
+                                                α + β + γ + 3n
+      (α,β,γ)
+For Pn+1,n (x; a) the coefficient An+1,n of x2n can be obtained from (3.50)
+
+                          (α,β,γ)                          α + β + γ + 2n + 1
+                         An+1,n = A(α,β+1,γ)
+                                   n,n       − Xn(α,β,γ)                      .           (3.52)
+                                                           α + β + γ + 3n + 1
+
+The coefficient bn in the recurrence relation can now be found from (3.30)
+
+                          n[n + γ + a(n + α)]                      2n + α + β + γ + 1
+        b2n =                                          + Xn(α,β,γ)                    ,
+                  (α + β + γ + 3n)(α + β + γ + 3n + 1)             3n + α + β + γ + 1
+                  
+      b2n+1     = 5n2 + (4α + 4β + 3γ + 7)n + (α + β + γ + 1)(α + β + 2)
+                                                                               
+                  + a[5n2 + (3α + 4β + 4γ + 7)n + (α + β + γ + 1)(β + γ + 2)]
+                   × (α + β + γ + 3n + 1)−1 (α + β + γ + 3n + 3)−1
+                              2n + α + β + γ + 1
+                   −Xn(α,β,γ)                    .
+                              3n + α + β + γ + 1
+
+
+
+
+                                                  19
+                                    (α,β,γ)
+The coefficient Bn,n of x2n−2 in Pn,n         (x; a) is given by
+        (α,β,γ)             an(α + β + γ + 2n)(β + n)
+       Bn,n     =
+                      (α + β + γ + 3n)(α + β + γ + 3n − 1)
+                                        n(n − 1)
+                      +
+                        2(α + β + γ + 3n)(α + β + γ + 3n − 1)
+                      × [(α + β + 2n)(α + β + 2n − 1) + 2a(α + β + 2n)(β + γ + 2n)
+                                                         
+                       + a2 (β + γ + 2n)((β + γ + 2n − 1) ,
+and from (3.50) we also find
+                     (α,β,γ) (α,β+1,γ)                        α + β + γ + 2n + 1
+                   Bn+1,n = Bn,n       − Xn(α,β,γ) A(α,β,γ)
+                                                    n,n                          .
+                                                              α + β + γ + 3n + 1
+Using (3.31) then gives
+                                   n(α + β + γ + 2n)
+      c2n =
+               (α + β + γ + 3n − 1)(α + β + γ + 3n)2 (α + β + γ + 3n − 1)
+                                                                               
+               × (α + β + 2n)(γ + n) − 2a(α + n)(γ + n) + a2 (β + γ + 2n)(α + n) ,
+and
+                                        α + β + γ + 2n + 1
+c2n+1 =
+           (α + β + γ + 3n + 3)(α + β + γ + 3n + 2)(α + β + γ + 3n + 1)2 (α + β + γ + 3n)
+              
+            × n(n + γ)(α + β + 2n + 1)(α + β + γ + 3n + 3)
+              − a[24n4 + (29α + 41β + 29γ + 48)n3
+              + (10α2 + 39αβ + 26αγ + 29β 2 + 39βγ + 10γ 2 + 44α + 62β + 44γ + 30)n2
+              + (α3 + 11α2 β + 5α2 γ + 19αβ 2 + 24αβγ + 5αγ 2 + 9β 3 + 19β 2 γ + 11βγ 2 + γ 3
+              + 11α2 + 39αβ + 28αγ + 28β 2 + 39βγ + 11γ 2 + 19α + 25β + 19γ + 6)n
+              + (α + β + γ)(α + β + γ + 1)(α + β + γ + 2)(β + 1)]
+                                                                
+              + a2 n(n + α)(β + γ + 2n + 1)(α + β + γ + 3n + 3)
+                               α + β + γ + 2n + 1
+           +                                                          X (α,β,γ)
+            (α + β + γ + 3n + 3)(α + β + γ + 3n + 1)2 (α + β + γ + 3n) n
+             
+           × 12n3 + (16α + 16β + 10γ + 18)n2
+              + [(α + β + γ)(7α + 7β + 2γ) + 16α + 16β + 10γ]n
+              + (α + β + γ)2 (α + β) + (α + β + γ)(3α + 3β + 2γ + 2)
+                  
+              + a 12n3 + (10α + 16β + 16γ + 18)n2
+              + [(α + β + γ)(2α + 7β + 7γ) + 10α + 16β + 16γ]n
+                               2
+                                                                   
+              + (α + β + γ) (β + γ) + (α + β + γ)(2α + 3β + 3γ + 2)
+               (α + β + γ + 2n + 1)2 (α,β,γ) 2
+           −                        (X      ).
+               (α + β + γ + 3n + 1)2 n
+                                      (α,β,γ)
+The coefficient Cn,n of x2n−3 in Pn,n (x; a) can be computed in a similar way, and the
+                                (α,β,γ)
+coefficient Cn+1,n of x2n−2 in Pn+1,n (x; a) is given by
+                    (α,β,γ)  (α,β+1,γ)                        α + β + γ + 2n + 1
+                   Cn+1,n = Cn,n       − Xn(α,β,γ) Bn,n
+                                                    (α,β,γ)
+                                                                                 .
+                                                              α + β + γ + 3n + 1
+
+                                                    20
+A lengthy but straightforward calculation, using (3.32), then gives
+                −an(n + β)(α + β + γ + 2n)(α + β + γ + 2n − 1)[n + γ + a(n + α)]
+d2n =
+          (α + β + γ + 3n − 2)(α + β + γ + 3n − 1)(α + β + γ + 3n)2 (α + β + γ + 3n + 1)
+                                                                                     (α,β,γ)
+                          n(α + β + γ + 2n)(α + β + γ + 2n − 1)Xn−1
+        +
+          (α + β + γ + 3n − 2)(α + β + γ + 3n − 1)(α + β + γ + 3n)2 (α + β + γ + 3n + 1)
+                                                                          
+        × (n + γ)(α + β + 2n) − 2a(n + γ)(n + α) + a2 (n + α)(β + γ + 2n) ,
+and
+                               n(α + β + γ + 2n + 1)(α + β + γ + 2n)
+d2n+1 =
+           (α + β + γ + 3n + 2)(α + β + γ + 3n + 1)2 (α + β + γ + 3n)2 (α + β + γ + 3n − 1)
+              
+           × (n + γ)(α + β + 2n)(α + β + 2n + 1)
+             − a(n + α)(n + γ)(2α + 2β − γ + 3n + 1)
+             − a2 (n + α)(n + γ)(−α + 2β + 2γ + 3n + 1)
+                                                     
+                 3
+             + a (n + α)(β + γ + 2n)(β + γ + 2n + 1)
+                                                                          (α,β,γ)
+                    n(α + β + γ + 2n + 1)(α + β + γ + 2n)Xn
+           −
+             (α + β + γ + 3n + 1)2 (α + β + γ + 3n)2 (α + β + γ + 3n − 1)
+                                                                           
+           × (n + γ)(α + β + 2n) − 2a(n + α)(n + γ) + a2 (n + α)(β + γ + 2n) .
+The asymptotic behavior of these recurrence coefficients can easily be found using (3.49),
+giving
+                                  a + 1 2x1                        5(a + 1) 2x1
+                      lim b2n =        +    ,        lim b2n+1 =           −    ,
+                  n→∞               9    3           n→∞              9      3
+
+                      4 2                               4     8    1
+          lim c2n =      (a − a + 1),      lim c2n+1 = − x21 + x1 + (4a2 − a + 4),
+        n→∞           81                  n→∞           9     27   81
+
+                                         4
+                            lim d2n =       [2(a2 − a + 1)x1 − a(a + 1)],
+                            n→∞         243
+
+                                    4                         8x1 2
+                  lim d2n+1 =          (4a3 − 3a2 − 3a + 4) −     (a − a + 1),
+                  n→∞              729                        243
+where x1 is the zero of g ′ (x) in [a, 0] and g(x) = (x − a)x(x − 1). These formulas can be
+made more symmetric by also using the zero x2 of g ′(x) in [0, 1] and using the fact that
+x1 + x2 = 2(a + 1)/3:
+                                   a + 1 2x1                        a + 1 2x2
+                       lim b2n =        +    ,        lim b2n+1 =        −    ,
+                      n→∞            9    3           n→∞             9    3
+
+                                                4 2
+                                     lim cn =      (a − a + 1),
+                                     n→∞        81
+
+                                         4                               4
+                          lim d2n = −      g(x1 ),        lim d2n = −      g(x2 ).
+                          n→∞           27                n→∞           27
+
+                                                     21
+3.6    Jacobi-Laguerre polynomials
+When we consider the weights w1 (x) = (x − a)α |x|β e−x on [a, 0], with a < 0, and w2 (x) =
+(x − a)α |x|β e−x on [0, ∞), then we are again using one weight but on two touching intervals,
+one of which is the finite interval [a, 0] (Jacobi part), the other the infinite interval [0, ∞)
+(Laguerre part). This system was considered by Sorokin [38]. The corresponding Jacobi-
+                          (α,β)
+Laguerre polynomials Ln,m (x; a) satisfy the orthogonality relations
+              Z 0
+                  L(α,β)             α   β −x k
+                   n,m (x; a)(x − a) |x| e x dx = 0,          k = 0, 1, . . . , n − 1,
+                a
+               Z ∞
+                   L(α,β)              α β −x k
+                     n,m (x; a)(x − a) x e x dx = 0,          k = 0, 1, . . . , m − 1.
+              0
+
+The raising operator is
+         d                                        α−1 β−1 −x (α−1,β−1)
+             (x + a)α xβ e−x L(α,β)
+                              n,m (x; a) = −(x − a)    x e Ln+1,m+1 (x; a),                 (3.53)
+        dx
+from which the Rodrigues formula follows:
+    dm h        α+m β+m −x (α+m,β+m)
+                                             i
+                                                                        (α,β)
+     m
+        (x − a)    x   e   Lk,0       (x; a)   = (−1)m (x − a)α xβ e−x Lm+k,m (x; a).       (3.54)
+   dx
+From this Rodrigues formula we can proceed as before to find an expression for the polyno-
+mials, but it is more convenient to view these Jacobi-Laguerre polynomials as a limit case
+of the Jacobi-Angelesco polynomials
+
+                           L(α,β)
+                            n,m (x; a) = lim γ
+                                               n+m (α,β,γ)
+                                                  Pn,m (x/γ; a/γ),                          (3.55)
+                                           γ→∞
+
+so that (3.47) gives
+                               n X
+                                 n−k           
+                               X       α + n β + n (−1)k+j (x − a)n−k xn−j
+              L(α,β)
+               n,n (x; a) =                                                             .   (3.56)
+                               k=0 j=0
+                                           k             j               (n − k − j)!
+
+For the recurrence coefficients in
+
+                    xPn (x) = Pn+1 (x) + bn Pn (x) + cn Pn−1 (x) + dn Pn−2 (x),
+                   (α,β)                            (α,β)
+where P2n (x) = Ln,n (x; a) and P2n+1 (x) = Ln+1,n (x; a) we have in terms of the correspond-
+ing recurrence coefficients of the Jacobi-Angelesco polynomials
+
+                                   bn =        lim γb(α,β,γ)
+                                                     n       (a/γ),
+                                            γ→∞
+
+                                   cn =        lim γ 2 c(α,β,γ)
+                                                        n       (a/γ),
+                                            γ→∞
+
+                                   dn =        lim γ 3 d(α,β,γ)
+                                                        n       (a/γ),
+                                            γ→∞
+
+and
+                                          R0
+                                              x(x − a)α+n |x|β+n e−x dx
+                   lim γXn(α,β,γ) (a/γ) = Ra 0                          := Xn(α,β) .
+                  γ→∞                                 α+n   β+n
+                                               (x − a) |x| e dx  −x
+                                            a
+
+                                                    22
+This gives
+    b2n =    n + Xn(α,β) ,
+  b2n+1 =    3n + α + β + 2 + a − Xn(α,β) ,
+    c2n =    n(α + β + 2n),
+  c2n+1 =    n(α + β + 2n + 1) − a(n + β + 1) + (α + β + 2n + 2 + a)Xn(α,β) − (Xn(α,β) )2 ,
+                                                (α,β)
+      d2n = −an(β + n) + n(α + β + 2n)Xn−1 ,
+  d2n+1 = n[(α + β + 2n)(α + β + 2n + 1) + a(n + α)] − n(α + β + 2n)Xn(α,β) .
+                        (α,β)
+For large n we have Xn          = a/2 + o(1) so that
+                                           (
+                                   bn        1/2 if n ≡ 0      (mod 2),
+                              lim      =
+                             n→∞ n           3/2 if n ≡ 1      (mod 2),
+                                   cn
+                              lim 2 = 1/2,
+                             n→∞ n
+                                           (
+                                   dn        0     if n ≡ 0    (mod 2),
+                              lim 3 =
+                             n→∞ n           1/2 if n ≡ 1      (mod 2).
+
+3.7     Laguerre-Hermite polynomials
+Another limit case of the Jacobi-Angelesco polynomials are the multiple orthogonal polyno-
+       (β)
+mials Hn,m (x) for which
+                 Z 0
+                        (β)            2
+                      Hn,m  (x)|x|β e−x xk dx = 0,    k = 0, 1, . . . , n − 1,
+                   −∞
+                   Z ∞
+                          (β)          2
+                       Hn,m   (x)xβ e−x xk dx = 0,    k = 0, 1, . . . , m − 1.
+                   0
+
+We call these Laguerre-Hermite polynomials because both weights are supported on semi-
+infinite intervals (Laguerre) with a common weight that resembles the Hermite weight. These
+polynomials were already considered (for general r) by Sorokin [40]. The limit case is ob-
+tained by taking
+                            (β)
+                                           √                  √
+                         Hn,m   (x) = lim ( α)n+m Pn,m
+                                                   (α,β,α)
+                                                           (x/ α; −1).                (3.57)
+                                       α→∞
+
+This allows us to obtain the raising operator, the Rodrigues formula, an explicit expression,
+and the recurrence coefficients by taking the appropriate limit passage in the formulas for
+the Jacobi-Angelesco polynomials. For the recurrence coefficients this gives
+                                          √
+                             bn = lim αb(α,β,α)n    (a = −1),
+                                        α→∞
+
+                                cn =    lim αc(α,β,α)
+                                              n       (a = −1),
+                                        α→∞
+                                             √ 3 (α,β,α)
+                                dn =    lim ( α) dn       (a = −1),
+                                        α→∞
+
+and
+                                                    R0              2
+                        √                           −∞
+                                                       x|x|β+n e−x dx
+                  lim       αXn(α,β,α) (a = −1) =   R0                  := Xn(β) ,
+                  α→∞                                   |x| β+n e−x2 dx
+                                                     −∞
+
+
+                                                23
+from which we find
+
+                               b2n = Xn(β) ,
+                             b2n+1 = −Xn(β) ,
+                               c2n = n/2,
+                                     2n + β + 1
+                             c2n+1 =            − (Xn(β) )2 ,
+                                            2
+                                     n (β)
+                               d2n =   X ,
+                                     2 n−1
+                                     −n (β)
+                             d2n+1 =     X .
+                                      2 n
+For large n we have
+                                          r
+                                              β+n     √
+                                Xn(β) = −         + o( n),
+                                               2
+so that
+                                       (
+                                 bn      −1/2      if n ≡ 0 (mod 2),
+                           lim √     =
+                          n→∞      n     1/2       if n ≡ 1 (mod 2),
+                                  cn
+                             lim     = 1/4,
+                            n→∞ n
+                                       (
+                                dn       −1/8      if n ≡ 0 (mod 2),
+                        lim √ 3 =
+                       n→∞ ( n)          1/8       if n ≡ 1 (mod 2).
+
+
+4     Open research problems
+In the previous sections we gave a short description of multiple orthogonal polynomials and
+a few examples. For a more detailed account of multiple orthogonal polynomials we refer to
+Aptekarev [4] and Chapter 4 of the book of Nikishin and Sorokin [34]. Multiple orthogonal
+polynomials arise naturally in Hermite-Padé approximation of a system of (Markov) func-
+tions. For this kind of simultaneous rational approximation we refer to Mahler [28] and de
+Bruin [9], [10]. Hermite-Padé approximation goes back to the nineteenth century, and many
+algebraic aspects have been investigated since then: existence and uniqueness, recurrences,
+normality of indices, etc. The more detailed analytic investigation of the zero distribution,
+the nth root asymptotics, and the strong asymptotics is more recent and mostly done by
+researchers from the schools around Nikishin [32], [33] and Gonchar [18], [19]. See in par-
+ticular the work of Aptekarev [4], Kalyagin [20], [25], Bustamante and López [11], but also
+the work by Driver and Stahl [15], [16] and Nuttall [35]. First one needs to understand the
+analysis of ordinary orthogonal polynomials, and then one has a good basis for studying this
+extension, for which there are quite a few possibilities for research.
+
+4.1       Special functions
+The research of orthogonal polynomials as special functions has now led to a classification
+and arrangement of various important (basic hypergeometric) orthogonal polynomials. In
+
+                                              24
+Section 3 we gave a few multiple orthogonal polynomials of the same flavor as the very
+classical orthogonal polynomials of Jacobi, Laguerre, and Hermite. Regarding these very
+classical multiple orthogonal polynomials, a few open problems arise:
+
+  1. Are the polynomials given in Section 3 the only possible very classical multiple or-
+     thogonal polynomials? The answer very likely is no. First one needs to make clear
+     what the notion of classical multiple orthogonal polynomial means. A possible way is
+     to start from a Pearson type equation for the weights. If one chooses one weight but
+     restricted to disjoint intervals, as we did for the Jacobi-Angelesco, Jacobi-Laguerre,
+     and Laguerre-Hermite polynomials, then Aptekarev, Marcellán and Rocha [7] used the
+     Pearson equation for this weight as the starting point of their characterization. For
+     several weights it is more natural to study a Pearson equation for the vector of weights
+     (w1 , w2 , . . . , wr ). Douak and Maroni [13], [14] have given a complete characterization
+     of all type II multiple orthogonal polynomials for which the derivatives are again type
+     II multiple orthogonal polynomials (Hahn’s characterization for the Jacobi, Laguerre,
+     and Hermite polynomials, and the Bessel polynomials if one allows moment function-
+     als which are not positive definite). They call such polynomials classical d-orthogonal
+     polynomials, where d corresponds to our r, i.e., the number of weights (functionals)
+     needed for the orthogonality. Douak and Maroni show that this class of multiple
+     orthogonal polynomials is characterized by a Pearson equation of the form
+
+                                         (Φw)     ~ = ~0,
+                                           ~ ′ + Ψw
+
+           ~ = (w1 , . . . , wr )t is the vector of weights, and Ψ and Φ are r × r matrix
+     where w
+     polynomials:
+                                                                
+                                            0    1 0 ···       0
+                                         0
+                                                0 2 ···       0 
+                                                                 
+                                         ..     .
+                                                 .   .
+                                                     .  . .    .
+                                                               . 
+                               Ψ(x) =  .        .   .      .  . ,
+                                                                
+                                         0      0 0 · · · r − 1
+                                          ψ(x) c1 c2 · · · cr−1
+
+     with ψ(x) a polynomial of degree one and c1 , . . . , cr−1 constants, and
+                                                                    
+                                    φ1,1 (x) φ1,2 (x) · · · φ1,r (x)
+                                 φ2,1 (x) φ2,2 (x) · · · φ2,r (x)
+                                                                    
+                         Φ(x) =  ..             ..               ..  ,
+                                  .              .      ···       . 
+                                    φr,1 (x) φr,2 (x) · · · φr,r (x)
+
+     where φi,j (x) are polynomials of degree at most two. In fact only φr,1 can have degree at
+     most two and all other polynomials are constant or of degree one, depending on their
+     position in the matrix Φ. Douak and Maroni actually investigate the more general
+     case where orthogonality is given by r linear functionals, rather than by r positive
+     measures. We believe that Hahn’s characterization is not the appropriate property to
+     define classical multiple orthogonal polynomials, but gives a more restricted class. None
+     of the seven families, given in the present paper, belong to the class studied by Douak
+     and Maroni, but their class certainly contains several interesting families of multiple
+     orthogonal polynomials. In fact, the matrix Pearson equation could result from a
+
+                                              25
+   single weight (and its derivatives) satisfying a higher order differential equation with
+   polynomial coefficients. As an example,
+                                       √ one can have multiple orthogonal    √ polynomials
+   with weights w1 (x) = 2xα+ν/2 Kν (2 x) and w2 (x) = 2xα+(ν+1)/2 Kν+1 (2 x) on [0, ∞),
+   where Kν (x) is a modified Bessel function and α > −1, ν ≥ 0 (see [47] and [12]).
+2. The polynomials of Jacobi, Laguerre, and Hermite all satisfy a linear second order dif-
+   ferential equation of Sturm-Liouville type. A possible way to extend this characterizing
+   property is to look for multiple orthogonal polynomials satisfying a linear differential
+   equation of order r + 1. Do the seven families in this paper have such a differential
+   equation? If the answer is yes, then an explicit construction would be desirable. We
+   only worked out in detail the case where r = 2, so the search is for a third order
+   differential equation for all the polynomials considered in Section 3. Such a third order
+   equation has been found for certain Jacobi-Angelesco systems in [25]. For the Angele-
+   sco systems in Section 3 this third order differential equation indeed exists and it was
+   constructed in [7]. The existence (and construction) is open for the AT systems. A
+   deeper problem is to characterize all the multiple orthogonal polynomials satisfying a
+   third order (order r + 1) differential equation, extending Bochner’s result for ordinary
+   orthogonal polynomials. Observe that we already know appropriate raising operators
+   for the seven systems described in Section 3. If one can construct lowering operators
+   as well, then a combination of the raising and lowering operators will give the differ-
+   ential equation, which will immediately be in factored form. Just differentiating will
+   usually not be sufficient (except for the class studied by Douak and Maroni): if we
+           ′
+   take Pn,m  (x), then this is a polynomial of degree n + m − 1, so one can write it as
+   Pn−1,m (x)+ lower order terms, but also as Pn,m−1 (x)+ lower order terms. So it is not
+   clear which of the multi-indices has to be lowered. Furthermore, the lower order terms
+   will not vanish in general since there usually are not enough orthogonality conditions
+   to make them disappear.
+3. In the present paper we only considered the type II multiple orthogonal polynomi-
+   als. Derive explicit expressions and relevant properties of the corresponding vector
+   (An,m (x), Bn,m (x)) of type I multiple orthogonal polynomials. Type I and type II
+   multiple orthogonal polynomials are connected by
+                                              An+1,m (x) Bn+1,m (x)
+                          Pn,m (x) = const.                         ,
+                                              An,m+1 (x) Bn,m+1 (x)
+   but from this it is not so easy to obtain the type I polynomials.
+4. So far we limited ourselves to the very classical orthogonal polynomials of Jacobi,
+   Laguerre, and Hermite. Discrete orthogonal polynomials, such as those of Charlier,
+   Kravchuk, Meixner, and Hahn, can also be considered and several kinds of discrete
+   multiple orthogonal polynomials can be worked out. It would not be a good idea to
+   do this case by case, since these polynomials are all connected by limit transitions,
+   with the Hahn polynomials as the starting family. At a later stage, one could also
+   consider multiple orthogonal polynomials on a quadratic lattice and on the general
+   exponential lattice, leading to q-polynomials. Again, all these families are related,
+   with the Askey-Wilson polynomials as the family from which all others can be ob-
+   tained by limit transitions. Do these polynomials have a representation as a (basic)
+   hypergeometric function? Recall that we needed an Appell hypergeometric function of
+
+                                              26
+      two variables for the Jacobi-Angelesco polynomials, so that one may need to consider
+      (basic) hypergeometric functions of several variables.
+
+  5. Multiple orthogonal polynomials arise naturally in the study of Hermite-Padé approx-
+     imation, which is simultaneous rational approximation to a vector of r functions. In
+     this respect it is quite natural to study multiple orthogonal polynomials as orthogonal
+     vector polynomials. This approach is very useful in trying to extend results for the
+     case r = 1 to the case r > 1 by looking for an appropriate formulation using vector
+     algebra. Van Iseghem already used this approach to formula a vector QD-algorithm for
+     multiple orthogonal polynomials [48]. Several algebraic aspects of multiple orthogonal
+     polynomials follow easily from the vector orthogonality [42], [27]. A further general-
+     ization is to study matrix orthogonality, where the matrix need not be a square matrix
+     [43]. Orthogonal polynomials and Padé approximants are closely related to certain
+     continued fractions (J-fractions and S-fractions). For multiple orthogonal polynomi-
+     als there is a similar relation with vector continued fractions and the Jacobi-Perron
+     algorithm [36]. The seven families which we considered in this paper lead to seven
+     families of vector continued fractions, which could be studied in more detail in the
+     framework of continued fractions. Finally, one may wonder whether it is possible to
+     use hypergeometric functions of matrix argument in the study of multiple orthogonal
+     polynomials?
+
+4.2    Non-symmetric banded operators
+In Section 2 the connection between multiple orthogonal polynomials and banded Hessenberg
+operators of the form
+                                                                             
+                 a0,0   1
+               a1,1 a1,0      1                                              
+                                                                             
+               a2,2 a2,1 a2,0 1                                              
+                                                                             
+                ..                ..   ..                                    
+                .                    .    .                                  
+                                                                             
+               ar,r ar,r−1 · · ·       ar,0    1                             
+                             ..                                              
+               
+                     ar+1,r     .           ar+1,0   1                       
+                                                                              
+                             .. ..                  ..   ..                  
+               
+                                .    .                 .    .                
+                                                                              
+                                  ..   ..                ..                  
+                                     .    .                 .  1             
+                                                                             
+                                                                   ..        
+                                       an,r an,r−1 · · · an,1 an,0    .      
+                                               ..                        ..
+                                                  . ···             ···     .
+
+was explained. For ordinary orthogonal polynomials the operator is tridiagonal and can
+always be made symmetric, and often it can be extended in a unique way to a self-adjoint
+operator (e.g, when all the coefficients are bounded). The spectrum of this tridiagonal
+operator corresponds to the support of the orthogonality measure, and the spectral measure
+is precisely the orthogonality measure. Each tridiagonal matrix with ones on the upper
+diagonal and positive coefficients on the lower diagonal, corresponds to a system of orthogonal
+polynomials on the real line (Favard’s theorem). Some preliminary work on the spectral
+theory of the higher order operators (r > 1) was done by Kalyagin [21], [22], [23], [5], but
+there are still quite a few open problems here.
+
+                                              27
+  1. What is the proper extension of Favard’s theorem for these higher order banded Hes-
+     senberg operators? Not every banded Hessenberg operator corresponds to a system of
+     multiple orthogonal polynomials with orthogonality relations on the real line. There
+     needs to be additional structure, but so far this additional structure is still unknown.
+     There is a weak version of the Favard theorem that gives multiple orthogonality with
+     respect to linear functionals ([48], [24]), but a stronger version that gives positive mea-
+     sures on the real line is needed. How do we recognize an Angelesco system, an AT
+     system, or one of the combinations considered in [19] from the recurrence coefficients
+     (from the operator)? The special case where all the diagonals are zero, except for the
+     upper diagonal (which contains 1’s) and the lower diagonal, has been studied in detail
+     in [6]. They show that when the lower diagonal contains positive coefficients, the oper-
+     ator corresponds to multiple orthogonal polynomials on an (r + 1)-star in the complex
+     plane. Using a symmetry transformation, similar to the quadratic transformation that
+     transforms Hermite polynomials to Laguerre polynomials, this also gives an AT system
+     of multiple orthogonal polynomials on [0, ∞).
+
+  2. The asymptotic behavior of the recurrence coefficients of the seven systems described
+     above is known. Each of the limiting operators deserves to be investigated in more
+     detail. The limiting operator for the Jacobi-Piñeiro polynomials is a Toeplitz operator,
+     and hence can be investigated in more detail. See, e.g., [46] for this case. Some of the
+     other limiting operators are block Toeplitz matrices and can be investigated as well.
+     Are there any multiple orthogonal polynomials having such recurrence coefficients?
+     The Chebyshev polynomials of the second kind have this property when one deals
+     with tridiagonal operators.
+
+  3. The next step would be to work out a perturbation theory, where one allows certain
+     perturbations of the limiting matrices. Compact perturbations would be the first step,
+     trace class perturbations would allow us to give more detailed results.
+
+4.3   Applications
+  1. Hermite-Padé approximation was introduced by Hermite for his proof of the transcen-
+     dence of e. More recently it became clear that Apéry’s proof of the irrationality of ζ(3)
+     relies on an AT system of multiple orthogonal polynomials with weights w1 (x) = 1,
+     w2 (x) = − log(x) and w3 (x) = log2 (x) on [0, 1]. These multiple orthogonal polynomials
+     are basically limiting cases of Jacobi-Piñeiro polynomials where α0 = 0 = α1 = α2 . A
+     very interesting problem is to prove irrationality of other remarkable constants, such as
+     ζ(5), Catalan’s constant, or Euler’s constant. Transcendence proofs will even be better.
+     See [4] [45] for the connection between multiple orthogonal polynomials, irrationality,
+     and transcendence.
+
+  2. In numerical analysis one uses orthogonal polynomials when one constructs Gauss
+     quadrature. In a similar way one can use multiple orthogonal polynomials to construct
+     optimal quadrature formulas for jointly approximating r integrals of the same function
+     f with respect to r weights w1 , . . . , wr . See, e.g., Borges [8], who apparently is not
+     aware that he is using multiple orthogonal polynomials. Gautschi [17] has summa-
+     rized some algorithms for computing recurrence coefficients, quadrature nodes (zeros
+     of orthogonal polynomials) and quadrature weights (Christoffel numbers) for ordinary
+
+                                              28
+     Gauss quadrature. A nice problem is to modify these algorithms so that they compute
+     recurrence coefficients, zeros of multiple orthogonal polynomials (eigenvalues of banded
+     Hessenberg operators) and quadrature weights for simultaneous Gauss quadrature.
+
+
+References
+ [1] W. Al-Salam, Characterization theorems for orthogonal polynomials, in ‘Orthogonal
+     Polynomials: Theory and Practice’ (P. Nevai, ed.), NATO ASI Series C 294, Kluwer,
+     Dordrecht, 1990, pp. 1–24.
+
+ [2] G. E. Andrews, R. Askey, Classical orthogonal polynomials, in ‘Polynômes Orthogonaux
+     et Applications’, Lecture Notes in Mathematics 1171, Springer, Berlin, 1985, pp. 36–62.
+
+ [3] G. E. Andrews, R. A. Askey, R. Roy, Special Functions, Encyclopedia of Mathematics
+     and its Applications 71, Cambridge University Press, 1999.
+
+ [4] A. I. Aptekarev, Multiple orthogonal polynomials, J. Comput. Appl. Math. 99 (1998),
+     423–447.
+
+ [5] A. I. Aptekarev, V. Kaliaguine (Kalyagin), Complex rational approximation and differ-
+     ence operators, Rend. Circ. Matem. Palermo, Ser. II, suppl. 52 (1998), 3–21.
+
+ [6] A. I. Aptekarev, V. Kaliaguine (Kalyagin), J. Van Iseghem, Genetic sum representation
+     for the moments of a system of Stieltjes functions and its application, Constr. Approx.
+     (to appear)
+
+ [7] A. I. Aptekarev, F. Marcellán, I. A. Rocha, Semiclassical multiple orthogonal polyno-
+     mials and the properties of Jacobi-Bessel polynomials, J. Approx. Theory 90 (1997),
+     117–146.
+
+ [8] C. F. Borges, On a class of Gauss-like quadrature rules, Numer. Math. 67 (1994), 271–
+     288.
+
+ [9] M. G. de Bruin, Simultaneous Padé approximation and orthogonality, in ‘Polynômes
+     Orthogonaux et Applications’ (C. Brezinski et al., eds.), Lecture Notes in Mathematics
+     1171, Springer-Verlag, Berlin, 1985, pp.74–83.
+
+[10] M. G. de Bruin, Some aspects of simultaneous rational approximation, in ‘Numerical
+     Analysis and Mathematical Modeling’, Banach Center Publications 24, PWN-Polish
+     Scientific Publishers, Warsaw, 1990, pp. 51–84.
+
+[11] J. Bustamante, G. López, Hermite-Padé approximation for Nikishin systems of analytic
+     functions, Mat. Sb. 183 (1992), 117–138; translated in Math. USSR Sb. 77 (1994),
+     367–384.
+
+[12] Y. Ben Cheick, K. Douak, On two-orthogonal polynomials related to the Bateman Jnu,v -
+     function, manuscript.
+
+[13] K. Douak, P. Maroni, Les polynômes orthogonaux ‘classiques’ de dimension deux, Anal-
+     ysis 12 (1992), 71–107.
+
+                                            29
+[14] K. Douak, P. Maroni, Une Caractérisation des polynômes d-orthogonaux ‘classiques’, J.
+     Approx. Theory 82 (1995), 177–204.
+
+[15] K. Driver, H. Stahl, Normality in Nikishin systems, Indag. Math., N.S. 5 no. 2 (1994),
+     161–187.
+
+[16] K. Driver, H. Stahl, Simultaneous rational approximants to Nikishin systems, I, II, Acta
+     Sci. Math. (Szeged) 60 (1995), 245–263; 61 (1995), 261–284.
+
+[17] W. Gautschi, Orthogonal polynomials: applications and computation, in ‘Acta Numerica
+     1996’ (A. Iserles, ed.), Cambridge University Press, pp. 45–119.
+
+[18] A. A. Gonchar, E. A. Rakhmanov, On the convergence of simultaneous Padé approx-
+     imants for systems of Markov type functions, Trudy Mat. Inst. Steklov 157 (1981),
+     31–48; translated in Proc. Steklov Math. Inst. 3 (1983), 31–50.
+
+[19] A. A. Gonchar, E. A. Rakhmanov, V. N. Sorokin, Hermite-Padé approximants for sys-
+     tems of Markov-type functions, Mat. Sb. 188 (1997), 33–58; translated in Russian Acad.
+     Sci. Sb. Math. 188 (1997), 671–696.
+
+[20] V. A. Kalyagin (Kaliaguine), On a class of polynomials defined by two orthogonality
+     relations, Mat. Sb. 110 (1979), 609–627 (in Russian); Math. USSR Sb. 38 (1981), 563–
+     580.
+
+[21] V. Kalyagin (Kaliaguine), Hermite-Padé approximants and spectral analysis of non-
+     symmetric operators, Mat. Sb. textbf185 (1994), 79–100; translated in Russian Acad.
+     Sci. Sb. Math. 82 (1995), 199–216.
+
+[22] V. A. Kalyagin (Kaliaguine), Higher order difference operators’ spectra characteristics
+     and the convergence of the joint rational approximations, Dokl. Akad. Nauk 340 no. 1
+     (1995), 15–17; translated in Dokl. Math. 51 no. 1 (1995), 11–13.
+
+[23] V. A. Kaliaguine (Kalyagin), On operators associated with Angelesco systems, East J.
+     Approx. 1 (1995), 157–170.
+
+[24] V. Kaliaguine (Kalyagin), The operator moment problem, vector continued fractions and
+     an explicit form of the Favard theorem for vector orthogonal polynomials, J. Comput.
+     Appl. Math. 65 (1995), 181–193.
+
+[25] V. A. Kaliaguine (Kalyagin), A. Ronveaux, On a system of classical polynomials of
+     simultaneous orthogonality, J. Comput. Appl. Math. 67 (1996), 207–217.
+
+[26] R. Koekoek, R.F. Swarttouw, The Askey-scheme of hypergeometric orthogonal polyno-
+     mials and its q-analogue, Delft University of Technology, Report 98–17, 1998. Available
+     on-line at http://aw.twi.tudelft.nl/~koekoek/research.html
+
+[27] G. Labahn, B. Beckermann, A uniform approach for Hermite-Padé and simultaneous
+     Padé approximants and their matrix type generalization, Numer. Algorithms 3 (1992),
+     45–54.
+
+[28] K. Mahler, Perfect systems, Compositio Math. 19 (1968), 95–166.
+
+
+                                             30
+[29] P. Maroni, L’orthogonalité et les récurrences de polynômes d’ordre supérieur à deux,
+     Ann. Fac. Sci. Toulouse 10 (1989), 105–139.
+
+[30] A. F. Nikiforov, V. B. Uvarov, Special Functions of Mathematical Physics, Birkhäuser,
+     Basel, 1988.
+
+[31] A. F. Nikiforov, S. K. Suslov, V. B. Uvarov, Classical Orthogonal Polynomials of a
+     Discrete Variable, Springer Series in Computational Physics, Springer-Verlag, Berlin,
+     1991.
+
+[32] E. M. Nikishin, A system of Markov functions, Vestnik Mosk. Univ., Ser. I (1979), no. 4,
+     60–63; translated in Moscow Univ. Math. Bull. 34 (1979), 63–66.
+
+[33] E. M. Nikishin, On simultaneous Padé approximants, Mat. Sb. 113 (115) (1980), 499–
+     519; translated in Math. USSR Sb. 41 (1982), 409–425.
+
+[34] E. M. Nikishin, V. N. Sorokin, Rational Approximations and Orthogonality, Transla-
+     tions of Mathematical Monographs 92, Amer. Math. Soc., Providence, RI, 1991.
+
+[35] J. Nuttall, Asymptotics of diagonal Hermite-Padé polynomials, J. Approx. Theory 42
+     (1984), 299–386.
+
+[36] V. K. Parusnikov, The jacobi-Perron algorithm and simultaneous approximation of func-
+     tions, Mat. Sb. 114 (156) (1981), 322–333; translated in Math. USSR Sb. 42 (1982),
+     287–296.
+
+[37] L. R. Piñeiro, On simultaneous approximations for a collection of Markov functions,
+     Vestnik Mosk. Univ., Ser. I (1987), no. 2, 67–70 (in Russian); Moscow Univ. Math.
+     Bull. 42 (2) (1987), 52–55.
+
+[38] V. N. Sorokin, Simultaneous Padé approximants for finite and infinite intervals, Izv.
+     Vyssh. Uchebn. Zaved., Mat. (1984) no. 8 (267), 45–52; translated in J. Soviet Math.
+     28 (1984) no. 8, 56–64.
+
+[39] V. N. Sorokin, A generalization of classical orthogonal polynomials and the convergence
+     of simultaneous Padé approximants, Trudy Sem. Im. I. G. Petrovsk. 11 (1986), 125–165;
+     translated in J. Soviet Math. 45 (1989), 1461–1499.
+
+[40] V. N. Sorokin, A generalization of Laguerre polynomials and convergence of simultane-
+     ous Padé approximants, Uspekhi Mat. Nauk 41 (1986), 207–208; translated in Russian
+     Math. Surveys 41 (1986), 245–246.
+
+[41] V. N. Sorokin, Simultaneous Padé approximation for functions of Stieltjes type, Siber.
+     Mat. Zh. 31 no. 5 (1990), 128–137; translated in Siber. Math. J. 31 no. 5 (1990),
+     809–817.
+
+[42] V. N. Sorokin, J. Van Iseghem, Algebraic aspects of matrix orthogonality for vector
+     polynomials, J. Approx. Theory 90 (1997), 97–116.
+
+[43] V. N. Sorokin, J. Van Iseghem, Matrix continued fractions, J. Approx. Theory 96 (1999),
+     237–257
+
+
+                                             31
+[44] G. Szegő, Orthogonal Polynomials, Amer. Math. Soc. Colloq. Publ. 23, fourth edition
+     1975.
+
+[45] W. Van Assche, Multiple orthogonal polynomials, irrationality and transcendence, in
+     ‘Continued Fractions: from analytic number theory to constructive approximation’ (B.
+     C. Berndt et al., eds.), Contemporary Mathematics 236, Amer. Math. Soc. providence,
+     RI, 1999, pp. 325–342.
+
+[46] W. Van Assche, Non-symmetric linear difference equations for multiple orthogonal poly-
+     nomials, CRM Proceedings and Lecture Notes 25 (2000), pp. 391–405.
+
+[47] W. Van Assche, S. B. Yakubovich, Multiple orthogonal polynomials associated with Mac-
+     donald functions, Integral Transforms Special Functions. (to appear)
+
+[48] J. Van Iseghem, Vector orthogonal relations, vector QD-algorithm, J. Comput. Appl.
+     Math. 19 (1987), 141–150.
+
+
+
+
+                                            32
+

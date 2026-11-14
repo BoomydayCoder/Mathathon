@@ -1,7 +1,7 @@
 # One interpolation-and-balance recipe for the zeta(2) and zeta(3) recurrences
 
 Status: elementary general identities proved below, with exact checks. Independent
-review is requested. These are classical sequences and recurrence formulas; no
+review passed; see `zeta-balance-independent-review.md`. These are classical sequences and recurrence formulas; no
 historical novelty is claimed. The new explanatory organization is not an account
 of the authors' historical thought process.
 

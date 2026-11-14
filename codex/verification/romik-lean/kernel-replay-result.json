@@ -1,0 +1,18 @@
+{
+  "status": "running",
+  "command": [
+    "lake",
+    "env",
+    "leanchecker",
+    "--verbose",
+    "Zeta5"
+  ],
+  "commit": "fc2fefa77076e22e7e80b4c101ded5a98d53e14d",
+  "started_utc": "2026-11-14T10:17:08.687571+00:00",
+  "threads": "1",
+  "max_seconds": 2700,
+  "scope": "project modules replayed against imported environments, not --fresh replay of all Mathlib constants",
+  "pid": 20718,
+  "elapsed_seconds": 208.64917446400068,
+  "last_checkpoint_utc": "2026-11-14T10:20:39.338945+00:00"
+}

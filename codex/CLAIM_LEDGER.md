@@ -123,3 +123,41 @@ not as the current verdict. All proof paths below are relative to `codex/`.
 No proof of irrationality for all odd zeta values, weighted Fuss–Catalan
 extension, historical novelty claim, or guaranteed usage/runtime budget follows
 from this ledger.
+
+## Ninth-stage independently checked discoveries
+
+| Claim | Proof | Review | Scope |
+|---|---|---|---|
+| One Laurent polynomial gives Apéry constant terms and reciprocal Beukers periods | apery-laurent-reciprocal.md | apery-laurent-independent-review.md | Exact common kernel/measure, bounds and asymptotics; no historical novelty claim |
+| Bernoulli numbers are logarithmic derivatives of a positive period tower | bernoulli-period-tower.md; laurent-deformation-arithmetic.md | bernoulli-period-independent-review.md | Higher odd constants appear as multiple integration constants |
+| Rational Euler projection isolates the top constant and gives a positive Bose tail | bernoulli-period-projectors.md | exact operator checks and parent derivation | Preserves Taylor denominators, not rational-q evaluated arithmetic |
+| Multiplicity lift restores exponentially small single-ζ5 forms | multiplicity-lifted-zeta-family.md | multiplicity-lifted-independent-review.md | Infinitely often nonzero, but actual new-prime denominators obstruct the old normalization |
+| Actual ζ7 inner-kernel cancellation improves a sufficient budget by1/25200 | inner-leading-block-cancellation.md | inner-leading-block-independent-review.md; inner-leading-block-adversarial-review.md | Small gain, not an irrationality proof or exact normalizer asymptotic |
+| Laurent one-variable periods are Legendre P/Q with a boundary correction | laurent-legendre-relative-periods.md | exact symbolic checks; parent inspection | Full two-variable exact-form reduction remains unresolved; real series satisfies L F=-12t |
+
+The general Laurent-deformation geometry and newly developing higher-pole
+positive-period constructions retain their individual review labels. The local
+Lean build of the pinned existing formalization is active; it is not yet a
+successful verification and does not formalize our simplified proof.
+
+| Further checked claim | Proof / evidence | Limit |
+|---|---|---|
+| Actual ζ5 outer correction kernel gains K+3N-3p+1 | outer-polynomial-correction-kernel.md; outer-correction-adversarial-review.md | Specified outer band; original source dependencies remain |
+| New normalizer budget2190247/1600000, eventual exp(-26n²) | outer-gain-budget-update.md and completed assembly dependencies | Stronger margin, optional extra lemma, no novelty claim |
+| Higher positive Laurent amplitudes mix lower zeta values | positive-period-amplitude-mixing.md; positive-period-amplitude-review.md | Precisely the displayed family; not a general impossibility theorem |
+| Existing pinned Lean theorem compiles with ordinary-series target | verification/romik-lean/build.log; independent-check.log; repository-check.log | Explicit PNT axiom; separate kernel replay ongoing; not our new proof formalized |
+
+## Tenth-stage proof status
+
+| Claim | Proof / verification | Limit |
+|---|---|---|
+| PNT-free explicit all-prime normalizer | barnes-normalizer-without-pnt.md; pnt-free-normalizer-independent-review.md | Retains source local lemmas; eventual integrality, no practical first K |
+| Sparse25-term profile and patched arithmetic exponent<1.3786 | check_sparse_barnes_certificate.py; sparse_barnes_verification.json | Exact finite computation, no LP solver in verification |
+| Complete PNT-free ζ5 alternative route | pnt-free-zeta5-guide.md plus completed component reviews | Not formally verified; computer-assisted; not historical novelty |
+| Explicit Hermite ideal is the entire selected outer kernel | outer-correction-Hermite-ideal.md; independent review | Optimal only within selected C row space, not exact determinant valuation |
+| Odd-prime next normalized Fuss–Catalan digit | problem137/next-digit-orbits.md; next-digit-independent-review.md | p odd and arityp^e; no modulo-p³ or novelty claim |
+| Adaptive adjacent-Legendre pureζ5 repair | adaptive-boundary-cancellation.md | Draft analytic proof awaiting independent review; arithmetic samples not a failure theorem |
+
+The source formalization's successful local build and axiom checks are unchanged.
+An optional separate replay had incomplete result capture and is being rerun;
+no stronger formal-verification claim is inferred from it.

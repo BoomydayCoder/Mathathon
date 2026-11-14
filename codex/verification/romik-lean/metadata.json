@@ -1,0 +1,153 @@
+{
+  "status": "local build and both exact statement/axiom checks passed; project kernel replay running",
+  "utc_checkpoint": "2026-11-14T10:17:47.745320+00:00",
+  "repository": "https://github.com/danromik/zeta5-irrationality",
+  "commit": "fc2fefa77076e22e7e80b4c101ded5a98d53e14d",
+  "tree": "738083ba7638325055bb2a37b795c1a57d463327",
+  "lean_version": "Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+  "lean_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "leanchecker_binary_sha256": "ccef1bfe9bfeecea65137d94a69033c1a89f360711f50fa3178e7ba3e696fcbe",
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "lake_manifest_sha256": "ed77f08897047da656548351936ba275247b20ec648809fa6389032657c84889",
+  "project_lean_file_count": 70,
+  "project_lean_line_count": 28976,
+  "mathlib_commit": "5ed2965256430c3649e86755f9576b54eca72435",
+  "manifest": {
+    "version": "1.2.0",
+    "packagesDir": ".lake/packages",
+    "packages": [
+      {
+        "url": "https://github.com/leanprover-community/mathlib4",
+        "type": "git",
+        "subDir": null,
+        "scope": "leanprover-community",
+        "rev": "5ed2965256430c3649e86755f9576b54eca72435",
+        "name": "mathlib",
+        "manifestFile": "lake-manifest.json",
+        "inputRev": "v4.34.0",
+        "inherited": false,
+        "configFile": "lakefile.lean"
+      },
+      {
+        "url": "https://github.com/leanprover-community/plausible",
+        "type": "git",
+        "subDir": null,
+        "scope": "leanprover-community",
+        "rev": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+        "name": "plausible",
+        "manifestFile": "lake-manifest.json",
+        "inputRev": "main",
+        "inherited": true,
+        "configFile": "lakefile.toml"
+      },
+      {
+        "url": "https://github.com/leanprover-community/LeanSearchClient",
+        "type": "git",
+        "subDir": null,
+        "scope": "leanprover-community",
+        "rev": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+        "name": "LeanSearchClient",
+        "manifestFile": "lake-manifest.json",
+        "inputRev": "main",
+        "inherited": true,
+        "configFile": "lakefile.toml"
+      },
+      {
+        "url": "https://github.com/leanprover-community/import-graph",
+        "type": "git",
+        "subDir": null,
+        "scope": "leanprover-community",
+        "rev": "e928b72544873815af278d38681b31c0293588e3",
+        "name": "importGraph",
+        "manifestFile": "lake-manifest.json",
+        "inputRev": "main",
+        "inherited": true,
+        "configFile": "lakefile.toml"
+      },
+      {
+        "url": "https://github.com/leanprover-community/ProofWidgets4",
+        "type": "git",
+        "subDir": null,
+        "scope": "leanprover-community",
+        "rev": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+        "name": "proofwidgets",
+        "manifestFile": "lake-manifest.json",
+        "inputRev": "main",
+        "inherited": true,
+        "configFile": "lakefile.lean"
+      },
+      {
+        "url": "https://github.com/leanprover-community/aesop",
+        "type": "git",
+        "subDir": null,
+        "scope": "leanprover-community",
+        "rev": "355695d523e41d0554926416cba2a2b3544fbbc9",
+        "name": "aesop",
+        "manifestFile": "lake-manifest.json",
+        "inputRev": "master",
+        "inherited": true,
+        "configFile": "lakefile.toml"
+      },
+      {
+        "url": "https://github.com/leanprover-community/quote4",
+        "type": "git",
+        "subDir": null,
+        "scope": "leanprover-community",
+        "rev": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+        "name": "Qq",
+        "manifestFile": "lake-manifest.json",
+        "inputRev": "master",
+        "inherited": true,
+        "configFile": "lakefile.toml"
+      },
+      {
+        "url": "https://github.com/leanprover-community/batteries",
+        "type": "git",
+        "subDir": null,
+        "scope": "leanprover-community",
+        "rev": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+        "name": "batteries",
+        "manifestFile": "lake-manifest.json",
+        "inputRev": "main",
+        "inherited": true,
+        "configFile": "lakefile.toml"
+      },
+      {
+        "url": "https://github.com/leanprover/lean4-cli",
+        "type": "git",
+        "subDir": null,
+        "scope": "leanprover",
+        "rev": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+        "name": "Cli",
+        "manifestFile": "lake-manifest.json",
+        "inputRev": "v4.34.0",
+        "inherited": true,
+        "configFile": "lakefile.toml"
+      }
+    ],
+    "name": "Zeta5",
+    "lakeDir": ".lake",
+    "fixedToolchain": false
+  },
+  "compilation_command": "LEAN_NUM_THREADS=2 lake --no-cache build",
+  "local_setup": "ELAN_HOME and MATHLIB_CACHE_DIR are both under ignored codex/.cache/lean-romik",
+  "kernel_replay": "first capture incomplete; bounded single-worker rerun active since 2026-11-14T10:17:08 UTC",
+  "build_started_utc": "2026-11-14T09:43:24+00:00",
+  "build_exit_code": 0,
+  "repository_check_exit_code": 0,
+  "independent_check_exit_code": 0,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "Zeta5.Axioms.chebyshev_theta_asymptotic",
+    "propext"
+  ],
+  "warning_count": 17,
+  "source_working_tree_status": "",
+  "saved_log_sha256": {
+    "build.log": "cbb12581fd117a178277000e409fa3119e5069ee340be124500edc51ff606cfe",
+    "repository-check.log": "db7bf554009b6b367c237395fe789a1393e20d9ca5b33420056674b2867c4214",
+    "independent-check.log": "8129a7fc13f7512c3f40dbe994a8df2c28f9a53fd5abb8d3c8ec188d018a1624",
+    "toolchain-install.log": "77975ed01b8b11520f8bd31a9f111aa73d06c4184a729c952632071919a1c8d5"
+  }
+}

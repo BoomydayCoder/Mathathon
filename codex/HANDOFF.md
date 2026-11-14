@@ -121,3 +121,57 @@ Endpoint and rational-energy scripts use ordinary Python's standard library;
 commands are in [README.md](README.md). Other checks use SymPy/mpmath.
 Older Carlson/virial checks use python-flint/Arb and remain cross-checks.
 Finite computations supplement, not replace, the general proofs.
+
+## Newest continuation,09:45UTC
+
+The common Laurent model is now independently reviewed and integrated into the
+main discovery guide. A_n=CT Lambda^n, F_n=integral_R^3 Lambda^(-n-1), so one
+AM–GM minimum gives both reciprocal exponential rates. Its same Hessian also
+gives A_n F_n~1/(2sqrt(2)n^3). The real generating series has the boundary term
+L F=-12t; a homogeneous all-period assertion would be incorrect.
+
+The Bernoulli period tower and its projection extension are checked. They connect
+higher odd constants, rational Taylor data and a positive Bose-moment tail, while
+pinpointing the loss of rational-q arithmetic under logarithmic projection.
+The multiplicity-lifted single-ζ5 forms have a reviewed exponential bound and
+actual new-prime obstruction; no irrationality conclusion follows.
+
+Active next tasks: stronger ζ5 outer-prime cancellation with an adversarial
+review; exact higher-dimensional Laurent period mixing; multiple orthogonality
+and root geometry; bounded #137 next-prime-digit refinement. A local Lean build
+of the existing pinned Romik formalization is running under ignored codex/.cache;
+verification logs/metadata are under codex/verification. No success claim yet.
+
+Read-only Claude consultation is now documented in sources/claude-read-log.md.
+Its published SUMMARY at fc6da97 supplied only the outer-prime investigation lead;
+we are deriving and checking the mathematics independently. No Claude files changed.
+
+09:56UTC update: outer-correction-adversarial-review.md accepts the ζ5 outer
+lemma. `outer-gain-budget-update.md` defines the new normalizer and derives
+budget2190247/1600000 and eventual exp(-26n²). Existing simpler route stays valid.
+The pinned Romik Lean project and two final checks have now succeeded locally;
+standard logic plus explicit PNT are the printed axioms. Separate kernel replay
+is still active. See verification/romik-lean/ logs, not just source metadata.
+The positive-period amplitude-mixing theorem has an independent review. The
+#137 odd-prime modulo-p² refinement awaits manuscript-agent review.
+
+## Read first after the tenth checkpoint
+
+`problem131/pnt-free-zeta5-guide.md` is now the strongest assembled simplification:
+25 explicit Barnes/superfactorial factors replace PNT averaging, with exact
+standard-library verification and a complete independent normalizer audit.
+The underlying proof remains computer-assisted and retains the source local
+lemmas; it has not been formalized. The prior plain-rank and new outer-kernel
+routes remain useful optional alternatives.
+
+For the user’s central motivation request, `problem131/discovery-guide.md`
+combines Newton/balance recurrence construction with the reviewed reciprocal
+Laurent model. `floor-covariance-barnes-design.md` explains how Bernoulli
+covariance leads to the new factorial construction. `bernoulli-period-tower.md`
+and its projectors connect the higher-odd analytic constants and arithmetic.
+
+Next bounded work: review adaptive adjacent-Legendre cancellation; finish optional
+kernel replay with reliable capture; consider smaller factorial certificates using
+the independently reviewed outer Hermite ideal; polish proof dependencies without
+turning hypotheses or numerical experiments into claims. #137’s mod-p² refinement
+is now reviewed. No all-odd irrationality theorem is claimed.
