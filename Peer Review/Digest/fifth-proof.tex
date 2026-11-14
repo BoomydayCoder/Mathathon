@@ -46,16 +46,9 @@ the five agents found one (Section~3).
 \texttt{zeta3-proofs.pdf}, whose Sections 9 and 10 are quoted where indicated; the papers referred to
 are Zudilin, arXiv:math/0202159, and Rajkumar, arXiv:1212.5881.
 
-\smallskip\noindent\textbf{Relation to the literature} (short search, 14 November 2026; the passages
-cited were read). The condition that makes Lemma~\ref{lem:max} work, that the middle coefficient of
-Ap\'ery's recurrence exceeds the sum of the outer ones, was observed by A.~Mingarelli
-(arXiv:math/0608577), who calls the recurrence disconjugate and identifies $a_n\zeta(3)-b_n$ as its
-recessive solution; he states that this is a restatement of Ap\'ery's proof and takes the growth of
-$a_n$ from elsewhere. Mahboubi and Sibut-Pinote (arXiv:1912.06611, Lemma~5.6) prove $33^n=O(a_n)$
-and use $27<33$. Rajkumar (arXiv:1212.5881) gets the rate from the recurrence for the linear forms
-alone, by the Poincar\'e--Perron theorem. We did not find the elementary argument of
-Lemma~\ref{lem:max} applied directly to $I_n$. So the idea is known; at most the packaging is new.
-No search was made for the congruence of Section~2.
+\smallskip\noindent\textbf{Relation to the literature.} The idea behind Section~1 is known; at
+most the packaging is new. The details and references are at the end of Section~1. No search was
+made for the congruence of Section~2.
 
 \section{The proof by a maximum principle}
 
@@ -174,9 +167,10 @@ $y_n=\int_0^1\frac{x^n(1-x)^n}{(1+x)^{n+1}}\dd x$, formula (4) of the main docum
 it shows sign and size directly; so for $\log2$ the lemma is an alternative, not a shortcut.)
 A streamlined, self-contained version of Section~1 is in the file \texttt{max-principle-proof.pdf}.
 
-\emph{For $\zeta(2)$.} Let $\alpha_n=\sum_k\binom nk^2\binom{n+k}k$, and let $\beta'_n$ be the
-solution of the same recurrence $(n+1)^2u_{n+1}=(11n^2+11n+3)u_n+n^2u_{n-1}$ with $\beta'_0=0$,
-$\beta'_1=5$ (Ap\'ery's numbers for $\zeta(2)$; $D_n^2\beta'_n\in\Z$). This recurrence is not of the
+\emph{For $\zeta(2)$.} The integers $\alpha_n=\sum_k\binom nk^2\binom{n+k}k$ satisfy
+$(n+1)^2u_{n+1}=(11n^2+11n+3)u_n+n^2u_{n-1}$; let $\beta'_n$ be the solution of the same recurrence
+with $\beta'_0=0$, $\beta'_1=5$ (these are Ap\'ery's numbers for $\zeta(2)$, and
+$D_n^2\beta'_n\in\Z$). This recurrence is not of the
 type \eqref{star}: its small solution alternates in sign. But
 $x_n=(-1)^n(\alpha_n\zeta(2)-\beta'_n)$ satisfies $n^2x_{n-1}=(n+1)^2x_{n+1}+(11n^2+11n+3)x_n$, and
 \emph{if $x$ is bounded and $x_0>0$, then all $x_n>0$ and $x_n<x_{n-1}/11$}. Indeed, otherwise take
@@ -255,7 +249,7 @@ gives $\binom{p+m}{p+l}\equiv\binom{p+m}l\equiv\binom ml$. If $m+l<p$, it gives
 $\binom{2p+m+l}{p+l}\equiv2\binom{m+l}l$ and $\binom{p+m+l}l\equiv\binom{m+l}l$. If $m+l\ge p$, put
 $s=m+l-p$, so that $0\le s<l$; then $\binom{m+l}l=\binom{p+s}l$,
 $\binom{2p+m+l}{p+l}=\binom{3p+s}{p+l}$ and $\binom{p+m+l}l=\binom{2p+s}l$ are all $\equiv0$, because
-by Lucas each is a multiple of $\binom sl=0$; so the same two congruences hold. With
+by Lucas each is congruent to a multiple of $\binom sl=0$; so the same two congruences hold. With
 $(-1)^{p+l}=-(-1)^l$ we get $c_{p+l}\equiv-2\gamma_l$ and $c_l\equiv\gamma_l$, and therefore
 $p^3b_n\equiv\sum_l(-2\gamma_l)(-3\gamma_l)=6\sum_l\gamma_l^2=6\,a_m$. (The proof uses only that $p$
 is odd; $p\ge5$ is needed in Corollary~\ref{cor:nonvan}, where $6\not\equiv0$.)
@@ -269,34 +263,70 @@ $N_p=D_p^3(a_pP-b_pQ)$ is not divisible by $p$; in particular $I_p\ne0$.
 $D_p=p\,D_{p-1}$ with $D_{p-1}$ prime to $p$. So $D_p^3a_pP\equiv0$ and
 $D_p^3b_pQ=D_{p-1}^3\,(p^3b_p)\,Q\equiv6\,D_{p-1}^3Q\not\equiv0\pmod p$.
 \end{proof}
-\noindent No inequality, no integral and no recurrence was used: only the explicit shape of the
-coefficients. This is, as we recall it, the device by which the auxiliary numbers in the classical
-transcendence proofs for $e$ (Hermite, Hilbert) are shown not to vanish; here it is applied to
+\noindent No inequality and no recurrence was used, only the explicit formula for $b_n$. Showing
+that an integer is non-zero by reducing it modulo a suitable prime is the device of Hilbert's 1893
+proof that $e$ is transcendental (quoted from memory, sources not retrieved); here it is applied to
 Ap\'ery's combinations.
 
-\q{A proof in which the sign plays no role.} With Corollary~\ref{cor:nonvan}, any \emph{upper}
-bound for $|I_p|$ along primes finishes the proof. One of the agents found a bound that never looks
-at the sign. For every half-integer $c$ with $0<c<n+1$,
+\q{A proof in which the sign plays no role (sketch).} With Corollary~\ref{cor:nonvan}, a bound
+$|I_p|\le C\theta^p$ with $\theta<e^{-3}$ along primes finishes the proof, once $D_p$ is controlled
+along primes (see below). One of the agents found a bound that never looks at the sign. For every
+$c\in\{\frac12,\frac32,\dots,n+\frac12\}$,
 \begin{equation}\label{line}
 I_n=\frac\pi2\int_{-\infty}^{\infty}\frac{r_n(c+iu)^2}{\cosh^2(\pi u)}\dd u,
 \qquad\text{and hence}\qquad |I_n|\le\frac{\pi^2c}4\,r_n(c)^2 .
 \end{equation}
-The formula comes from the classical Fourier integral
-$\frac{-\log z}{1-z}=\frac\pi2\int\frac{z^{-1/2+iu}}{\cosh^2\pi u}\dd u$ for $z>0$, inserted into the
-double integral for $I_n$. The inequality comes from the product
-$\cosh\pi u=\prod_{h=\frac12,\frac32,\dots}(1+\frac{u^2}{h^2})$: in
-$\frac{|r_n(c+iu)|^2}{r_n(c)^2\cosh^2\pi u}$ every factor $1+\frac{u^2}{(c-j)^2}$ of the numerator is
-cancelled by a factor of $\cosh^2$, and what remains is at most $(1+\frac{u^2}{c^2})^{-2}$. For odd
-$n$ and $c=\frac n2$ the value $r_n(\frac n2)$ is a ratio of double factorials, and \eqref{line}
-gives $|I_n|\le\frac{3\pi^2}2\,n^3\,27^{-n}$. Together with the fact that $D_p<2.9^p$ for infinitely
-many primes $p$ this gives
-$1\le|N_p|\le C\,p^3(2.9^3/27)^p\to0$, a contradiction. (For the primes: the main document, Section~7, gives infinitely many $n$ with
-$D_n<2.8^n$; let $p$ be the first prime $\ge n$. Then $D_p/D_n$ is $p$ times a product of at most
-$\sqrt p\,\log_2p$ numbers $\le\sqrt p$, one for each proper prime power in $(n,p]$, which is
-$e^{o(p)}$.) We verified \eqref{line} and the bound
-numerically (below) but have not written out the Fourier step in full, so this second proof should
-be regarded as a detailed sketch. It is a relative of Nesterenko's proof by a contour integral, with
-the asymptotic analysis replaced by one inequality and positivity replaced by the congruence.
+\emph{The formula.} Let $c=k+\frac12$ with $0\le k\le n$. Since $R_n'(t)=0$ for $t=1,\dots,n$, we
+may drop the first $k$ terms:
+$I_n=-\sum_{t\ge k+1}R_n'(t)=\int_0^1\!\!\int_0^1P_n(x)P_n(y)\,(xy)^k\,\frac{-\log(xy)}{1-xy}\dd x\dd y$
+(main document, Section~9). Insert the classical Fourier integral
+$\frac{-\log z}{1-z}=\frac\pi2\int_{-\infty}^\infty\frac{z^{-1/2+iu}}{\cosh^2\pi u}\dd u$ ($z>0$)
+with $z=xy$ and exchange the integrals (allowed because
+$\iint|P_n(x)P_n(y)|(xy)^{k-1/2}<\infty$ and $\int\cosh^{-2}<\infty$). The inner integrals are
+$\int_0^1P_n(x)x^{c-1+iu}\dd x=(-1)^nr_n(c+iu)$ by formula (8) of the main document, which holds for
+complex exponents with positive real part because both sides are the same rational function. For
+$c=\frac12$ the resulting bound is only $\frac{\pi^2}{2(2n+1)^2}$; discarding the first $k$ terms is
+what makes it exponentially small. (For other real $c$ in $(0,n+1)$ the formula is false as it
+stands; it holds with $\sin^2\pi(c+iu)$ in place of $\cosh^2\pi u$.)
+
+\emph{The inequality.} We use the product
+$\cosh\pi u=\prod_{h=\frac12,\frac32,\dots}(1+\frac{u^2}{h^2})$. First,
+$\frac{|r_n(c+iu)|^2}{r_n(c)^2}=\prod_{j=1}^n\bigl(1+\frac{u^2}{(c-j)^2}\bigr)\big/
+\prod_{j=0}^n\bigl(1+\frac{u^2}{(c+j)^2}\bigr)$. The numbers $|c-j|$, $1\le j\le n$, lie in
+$\{\frac12,\frac32,\frac52,\dots\}$; a value $h$ occurs at most twice ($j=c\pm h$), and the value $h=c$ at most once (only
+$j=2c$, since $j=0$ is not in the range). As $\cosh^2\pi u=\prod_h(1+\frac{u^2}{h^2})^2$ contains
+every factor twice, the whole numerator cancels and at least one factor $1+\frac{u^2}{c^2}$ of
+$\cosh^2$ is left; with the factor $j=0$ of the denominator this makes $(1+\frac{u^2}{c^2})^2$, and
+all other remaining factors are $\ge1$. So
+$\frac{|r_n(c+iu)|^2}{r_n(c)^2\cosh^2\pi u}\le(1+\frac{u^2}{c^2})^{-2}$, and
+$\int_{-\infty}^\infty(1+\frac{u^2}{c^2})^{-2}\dd u=\frac{\pi c}2$.
+
+\emph{The bound.} For odd $n$ and $c=\frac n2$ one finds $|r_n(\frac n2)|=\frac{2\,(n!!)^3}{n^2(3n)!!}$,
+where $n!!=n(n-2)\cdots3\cdot1$. With $\rho_n=(n!!)^3/(3n)!!$ one has
+$\frac{\rho_{n+2}}{\rho_n}=\frac{(n+2)^2}{27n^2+54n+24}\le\frac{n+2}{27n}$, hence
+$\rho_n\le\frac n3\,27^{-(n-1)/2}$, and \eqref{line} gives
+$|I_n|\le\frac{3\pi^2}{2n}\,27^{-n}$ for odd $n$.
+
+\emph{The primes.} A \emph{proper prime power} is a number $q^a$ with $q$ prime and $a\ge2$. By
+Lemma~6 of the main document (Section~7) there are infinitely many $n$ with $D_n<2.8^n$. For such
+$n$ let $p$ be the least prime $\ge n$. The prime powers in $(n,p]$ are $p$ itself (if $p>n$) and
+proper prime powers $q^a$; each of the latter multiplies the least common multiple by $q\le\sqrt p$,
+and there are at most $\sqrt p\,\log_2p$ of them (for each $a=2,\dots,\lfloor\log_2p\rfloor$ at most
+$p^{1/a}\le\sqrt p$ values of $q$; $\log_2$ is the logarithm to base $2$). So
+$D_p\le D_n\cdot p\cdot(\sqrt p)^{\sqrt p\log_2p}\le2.8^p\,e^{\sqrt p(\ln p)^2}<2.9^p$ for large $p$.
+
+\emph{Conclusion.} For the infinitely many primes $p$ with $D_p<2.9^p$, $p\ge5$ and $p\nmid Q$,
+\[
+1\le|N_p|=\tfrac Q2\,D_p^3\,|I_p|\le\frac{3\pi^2Q}{4p}\Bigl(\frac{2.9^3}{27}\Bigr)^p\to0,
+\]
+a contradiction. \emph{What is not proved here} is the Fourier integral (the Fourier transform of
+$1/\cosh^2$), which is classical but not elementary; we verified it, \eqref{line} and the bound
+numerically (Section~4). So this second proof is a sketch. Formula \eqref{line} is the classical
+contour-integral representation of $I_n$ (Gutnik, Nesterenko) on a line where
+$\sin^2\pi s=\cosh^2\pi u$. What differs here is the estimate (one inequality instead of the
+saddle-point method) and the non-vanishing (the congruence instead of positivity). Nesterenko's
+paper was not retrieved; the attribution is from memory and from Zudilin's survey
+arXiv:math/0206176.
 
 \section{What the search found, and did not find}
 
@@ -308,40 +338,79 @@ Five agents worked for about ten minutes each on different ideas. In brief:
 idea & outcome\\
 \midrule
 maximum principle & Section~1. Correct; extends to $\log2$ and $\zeta(2)$.\\
-wildcards (13 strategies) & Section~2: the congruence, and the sign-free bound. Dead: Siegel-lemma
-constructions (the non-vanishing step reduces to one congruence that the lemma does not control),
-determinants of series remainders, continued-fraction criteria.\\
+free search (one agent, 13 unrelated strategies) & Section~2: the congruence, and the sign-free
+bound. Abandoned: constructions by Siegel's lemma, that is, with coefficients obtained from the
+pigeonhole principle instead of explicitly (the non-vanishing step reduces to one congruence that
+the lemma does not control); determinants of series remainders; continued-fraction criteria.\\
 function theory in the half-plane & An explicit bound
 $0<I_n\le\frac{\Gamma(2c)^4}{\Gamma(4c)}\bigl(\frac{\Gamma(n+1-c)}{\Gamma(n+1+c)}\bigr)^2$ for
-$0<c<n+1$, within a factor $\sqrt2$ of the truth at the best $c$. Its positivity step is Beukers'
-integral in another form, so it is not a new proof.\\
-one formula showing everything & (report not yet received when this note was written)\\
+$0<c<n+1$, within a factor $1.5$ of the truth at the best $c$ (the factor appears to tend to
+$\sqrt2$). Its positivity step is Beukers' integral in another form, so it is not a new proof.\\
+one formula showing everything & No new single positive series with visible $D_n^3$. A positive
+double series with all three properties exists,
+$I_n=\sum_{v\ge u\ge n+1}r_n(u)\binom{n+v-u}{n}\bigl(\frac{n!}{v(v+1)\cdots(v+n)}\bigr)^2$, but it is
+Sorokin's integral expanded term by term (a known construction), and its equality with $I_n$ was
+only checked numerically for $n\le5$. Ball's series (main document, Section~11) equals $-R_n'$ plus
+a telescoping term, exactly, for $n\le5$, but the telescoping function has fourth-order poles and no
+closed form, so this does not explain $D_n^3$.\\
 is our combination the only one? & No. See below.\\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\q{The classical combination is not the smallest one.} The fifth agent examined \emph{all}
-combinations $A\zeta(3)-B$ obtainable from rational functions with poles of order at most $3$ at
-$0,-1,\dots,-n$ (so that $D_n^3B$ is an integer). It found that every pair
-$(A,B)\in\Z\times\frac1{D_n^3}\Z$ occurs. So, for a given size of $A$, far smaller combinations
-than $I_n$ exist: for $n=10$, with $|A|\le2a_{10}$, one finds a value $1.4\cdot10^{-24}$ against
-$I_{10}=2.2\cdot10^{-17}$. These are simply the best rational approximations of $D_n^3\zeta(3)$,
-and they prove nothing, because their smallness is known only numerically. \emph{What singles out
-Ap\'ery's combination is not that it is small but that its smallness can be proved.} This sharpens
-the statement in the main document that the objects are ``forced'': they are forced by the
-requirement of a certificate, not by size. It also explains why the search for a proof with
-different numbers found nothing: there is no shortage of small combinations, only of provable ones.
+\q{The classical combination is not the smallest one.} The fifth agent considered all sums
+$\sum_{t\ge1}F(t)=A\zeta(3)-B$ with
+$F(t)=\sum_{k=0}^n\bigl[\frac{A_k}{(t+k)^3}+\frac{B_k}{(t+k)^2}+\frac{C_k}{t+k}\bigr]$, where $A_k$,
+$D_nB_k$, $D_n^2C_k$ are integers and $\sum B_k=\sum C_k=0$ (the class containing $-R_n'$; then
+$A\in\Z$ and $D_n^3B\in\Z$). Every pair $(A,B)\in\Z\times\frac1{D_n^3}\Z$ occurs, already with
+$B_k=C_k=0$: then $A=\sum_kA_k$ and $B=\sum_{j=1}^nT_j/j^3$ with arbitrary integers
+$T_j=\sum_{k\ge j}A_k$, and the numbers $D_n^3/j^3$ ($1\le j\le n$) have no common factor, so these
+sums fill $\frac1{D_n^3}\Z$. (So this is a fact about the tails $\sum_{t>k}t^{-3}$ of the series, and
+$I_n$ is one point of a set that contains everything.) In particular far smaller combinations than
+$I_n$ exist: for $n=10$ and $|A|\le2a_{10}$ the smallest value is $1.4\cdot10^{-24}$, at
+$A=668\,163\,577\,273$, against $I_{10}=2.2\cdot10^{-17}$. (The restriction on $A$ is only a
+normalisation: the criterion looks at $D_n^3|A\zeta(3)-B|$, not at $A$.) These are the
+continued-fraction approximations of $D_n^3\zeta(3)$. A single such value, certified numerically,
+proves only that a denominator of $\zeta(3)$ exceeds $1/(D_n^3\cdot\text{value})$, here
+$4\cdot10^{13}$; irrationality needs $D_n^3\cdot|\text{value}|\to0$ along an infinite family, proved
+for all $n$ at once. \emph{What singles out Ap\'ery's combination is not that it is small but that
+its smallness can be proved.} So the objects that the main document calls ``forced'' are not singled
+out by size; what distinguishes them is that their size can be proved. This is consistent with the
+search for a proof with different numbers finding nothing: there is no shortage of small
+combinations, only of provable ones.
 
 \section{Checks}
-All by AI agents; no human. The lemma: proof read line by line by two agents and by the
-orchestrator; the conclusions $I_n>0$, $I_n<I_{n-1}/33$ verified with exact $a_n,b_n$ and
-$150$-digit arithmetic for $n\le40$; the identity for $\beta_n$ symbolically. The congruence of
-Proposition~\ref{prop:cong}: derived by hand (case $m=0$ by an agent, general $m$ by the
-orchestrator) and verified exactly in $90$ cases ($p\le23$, $p+m\le40$), and for $m=0$ for all
-primes up to $43$. Formula \eqref{line}: verified to $12$ digits for $n=1,3,5,7$ and three values
-of $c$; the bound $\frac{3\pi^2}2n^3\,27^{-n}$ for odd $n\le101$. The statement about primes with
-$D_p<2.9^p$ was derived by the orchestrator and not checked by anyone else. The numbers in Section~3
-are as reported by the agents.
+All by AI agents; no human.
+
+\emph{First round.} The lemma: proof read line by line by two agents and by the orchestrator; the
+conclusions $I_n>0$, $I_n<I_{n-1}/33$ verified with exact $a_n,b_n$ and $150$-digit arithmetic for
+$n\le40$; the identity for $\beta_n$ symbolically. The congruence of Proposition~\ref{prop:cong}:
+derived by hand (case $m=0$ by an agent, general $m$ by the orchestrator) and verified exactly in
+$90$ cases ($p\le23$, $p+m\le40$), and for $m=0$ for all primes up to $43$. Formula \eqref{line}:
+verified to $12$ digits for $n=1,3,5,7$ and three values of $c$.
+
+\emph{Referee round.} A fresh agent read the note twice, for correctness and as the intended reader
+($31$ points, all applied; no mathematical claim had to be withdrawn), and recomputed
+independently: the recurrence exactly for $a_n$ and $b_n$ ($n\le44$), and $I_n>0$,
+$I_n<I_{n-1}/33$ with $200$-digit arithmetic for $n\le45$ (about $125$ digits cancel at $n=40$, so
+the $150$ digits of the first round were just enough); the telescoping identity symbolically in $n$
+and $t$, and its boundary term for $n\le4$; Lemma~\ref{lem:max} by experiment (changing $I_1$ by
+$\pm10^{-30}$ sends the solution to $\pm3\cdot10^{27}$ at $n=40$); Proposition~\ref{prop:cong} and
+both Lucas congruences exactly in $127$ cases (all primes $5\le p\le31$ with $p+m\le45$; $46$ of
+them have $m+l\ge p$ for some $l$) and for $p=2,3$; formula \eqref{line} for all $n\le8$ and all
+admissible $c$ (relative error below $10^{-17}$), its failure for other $c$, the inequality at
+$4620$ points, the Fourier integral at five values of $z$, and the bound
+$\frac{3\pi^2}{2n}27^{-n}$ for odd $n\le301$; the statement on primes for all $n<298\,000$ (the
+factorisation of $D_p/D_n$, the count, and $D_p<2.9^p$); the $\log2$ and $\zeta(2)$ statements
+exactly for $n\le41$; the two-index relation for $m\le6$, $n\le10$; in Section~3 the half-plane
+bound for $n\le45$, the value $1.4\cdot10^{-24}$, and the double series of the table numerically for
+$n\le3$.
+
+\emph{Not proved here:} the Fourier integral behind \eqref{line}; boundedness of the $\log2$ and
+$\zeta(2)$ forms. \emph{Not verified:} the statements about Rajkumar's table and about Sorokin's
+integral and Ball's series in the table of Section~3; the outcomes of the abandoned strategies; the
+attributions to Hilbert, Gutnik and Nesterenko, which are from memory. For the paragraph on the
+literature the referee confirmed only that arXiv:math/0608577 and arXiv:1912.06611 exist and are on
+the stated subjects.
 
 \end{document}
