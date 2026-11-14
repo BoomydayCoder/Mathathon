@@ -2,7 +2,7 @@
 
 Independent review: accepted in [balanced-diagonal-independent-review.md](balanced-diagonal-independent-review.md).
 
-Status: all-index proof drafted for independent review. The only additional
+Status: all-index proof accepted in the linked independent review. The only additional
 classical arithmetic input is the primewise consequence of the von
 Staudt–Clausen theorem: for even k>=2, B_k has at most a simple p in its
 denominator, and such a p can occur only if p-1 divides k.

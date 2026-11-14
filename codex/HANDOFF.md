@@ -1,11 +1,43 @@
-# Research handoff — 2026-11-14 15:50 UTC
+# Research handoff — 2026-11-14 15:58 UTC
 
-Continue autonomous research in `codex/` on `codex/independent-research` in the
-exact private repository `BoomydayCoder/Mathathon`. User authorizes continued
+The scheduled research run is complete and the results are ready for handoff.
+Work is saved in `codex/` on `codex/independent-research` in the exact private
+repository `BoomydayCoder/Mathathon`. User authorizes continued
 work without permission pauses, remaining credits but no automatic resets.
 Reporting target:14 November2026,08:00Los Angeles/16:00UTC. No usage-balance API
 is available; do not invent a balance or guarantee runtime. No Claude-owned
 files have been changed. The latest user instruction stops new #137 work; current research is on #131 and higher odd zeta values.
+
+## Final handoff
+
+Start with START_HERE.md. It prioritizes the complete kernel/recurrence proof,
+Schur–Apéry/Pell results, real cubic model, uniform-sampler connections, and
+higher-odd arithmetic successes and limits. RESEARCH_MAP.md is the revised
+40-hour #131 project; REPRODUCE.md gives thirteen selected checker commands.
+The main research payload is pushed as `b6b5bc1`, following `50f6ed1` and `215e637`.
+
+All three extra-high agents have completed their assigned work and final
+checks. The final allocation used exactly one agent on higher odd values and
+two on zeta3. No further Fuss work was performed after the user's change.
+A final independent review found no substantive overclaims in the guide;
+normalization, parameter ranges, provenance and multiplier scope were tightened.
+All checked guide links resolve, source hashes match, and all current changes
+are inside `codex/`. No Claude-owned files were edited; latest read-only summary
+consultation is recorded at commit `668fad0` in sources/claude-read-log.md.
+
+The last pedagogical addition explains why the sampler's naive harmonic
+truncations do not prove irrationality under their standard lcm multiplier,
+and why the second Legendre factor matters in the successful cubic proof.
+It passed a separate independent audit. Stale opening status labels in the
+Zudilin and diagonal arithmetic notes were corrected.
+
+No new independent elementary zeta5 proof or all-odd irrationality theorem
+was obtained. The advanced PNT-free adaptation retains Fauzan's construction.
+The next mathematical gap is sharper primitive arithmetic; historical novelty
+requires further primary comparison. Internal proof reviews are not external
+peer review. No usage balance is available, no credit spend is claimed, and
+no automatic reset was used. No background research should be inferred after
+this completed handoff; a subsequent session should resume from these files.
 
 ## User steering after the landmark report
 
@@ -164,7 +196,7 @@ Mellin/convolution/Beukers links are credited. No historical novelty follows
 from the search. Pi-power scope now explicitly includes every nonzero rational
 exponent, with the elementary reduction from integer powers and no all-real claim.
 
-Current allocation unchanged: exactlyone extra-high agent on higheroddvalues,
+Current allocation unchanged: exactlyone extra-high agent on higher odd values,
 two on zeta3; no further#137 work. Latest pushed commit before this checkpoint
 is1e747e1. Root continues independent audits and codex-only saves through16:00UTC.
 

@@ -1,5 +1,11 @@
 # Checkpoint
 
+**Latest:** final handoff prepared 2026-11-14 15:58 UTC. All assigned agents completed.
+Read START_HERE.md, HANDOFF.md and REPRODUCE.md. Entries below are a chronological
+research log; earlier access blockers, pending reviews and conjectures may have
+been resolved by later entries. Research payload commit: `b6b5bc1`.
+
+
 2026-11-13 22:38 America/Los_Angeles: research restarted with explicit user authorization.
 Target 2026-11-14 08:00 LA. Primary source Zudilin retrieved and read; five
 independent research agents running. See RESEARCH_PLAN.md.
@@ -495,3 +501,17 @@ Twenty-second checkpoint, 2026-11-14 15:50 UTC, final verification continuing:
   multiplier fails for every higherodd index, primitive arithmetic still open.
 - Exact primary Rodrigues degeneration documented and independently checked.
 - Finishing active checks and provenance, then final branch save by16:00UTC.
+
+Final handoff checkpoint, 2026-11-14 15:58 UTC:
+- All requested bounded research and final audits completed; agents finished.
+- Main research payload pushed as `b6b5bc1`; final status/wording cleanup follows.
+- Reading guide independently checked; current changed-file local links and
+  thirteen reproduction command paths resolve. Latest primary PDF hashes match.
+- Added and independently audited the elementary explanation of why harmonic
+  projection alone fails under its specified lcm multiplier, while the second
+  Legendre factor gives the successful exponential energy estimate.
+- Claude summary consulted read-only after independent work; exact commit and
+  nonendorsement boundaries recorded. No Claude files changed.
+- No new independent elementary zeta5 or all-odd irrationality proof. Primitive
+  arithmetic and historical attribution remain the principal next tasks.
+- No automatic resets; no usage-balance or credit-expenditure claim.

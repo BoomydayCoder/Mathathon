@@ -82,7 +82,7 @@ one proved normalizer and its exact analytic cost. The
 is a useful case study: for fixed m>=2 and even n, moving the pole anywhere
 in the allowed integer range a>n/2 cannot save the specified lcm multiplier,
 while actual primitive cancellation remains open. Do not combine
-this full package with both extensions above within40 hours.
+this full package with both extensions above within 40 hours.
 
 ## Time allocation and concrete output
 
@@ -94,14 +94,14 @@ this full package with both extensions above within40 hours.
 | 17–24 | Two commuting grids, adjacent identity and diagonal closure | Board derivation of the recurrence, including index0 |
 | 24–28 | Mellin square and Beukers comparison; e^r/pi² design principle | One diagram and concise classical-source dictionary |
 | 28–34 | One selected extension | One complete theorem and one clearly scoped limitation |
-| 34–40 | Independent checks, attribution, manuscript and rehearsal | An8–12-page main exposition, appendices and25-minute talk |
+| 34–40 | Independent checks, attribution, manuscript and rehearsal | An 8–12-page main exposition, appendices and a 25-minute talk |
 
 Have a second team member check normalization, boundary signs and recurrence
 closure. A numerical test is not a replacement for any of these proofs.
 
 ## Presentation and provenance
 
-For25 minutes, spend about18 on the core proof/recurrence and7 on the chosen
+For 25 minutes, spend about 18 on the core proof/recurrence and 7 on the chosen
 connection. Start with the arithmetic target, explain the forced coefficient,
 derive the recurrence, and close the contradiction. Leave the long symbolic
 certificates and optional asymptotic constants in the appendix.
@@ -114,7 +114,7 @@ proves novelty. [CLAIM_LEDGER.md](CLAIM_LEDGER.md) and each linked audit specify
 the exact scope of verification.
 
 The [PNT-free zeta-five adaptation](problem131/pnt-free-zeta5-guide.md) is an
-advanced comparison retaining Fauzan's construction, not the main40-hour project.
+advanced comparison retaining Fauzan's construction, not the main 40-hour project.
 The [pi-power note](problem131/pi-powers.md) distinguishes the elementary pi²
 argument from the advanced machinery needed in its uniform pi^r treatment.
 The completed #137 notes are preserved as separate background and receive no

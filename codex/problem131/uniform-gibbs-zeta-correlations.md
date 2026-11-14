@@ -238,3 +238,38 @@ Thus its Newton weights are reciprocals of the sampler's finite polynomial deter
  \qquad |\sigma|\le\tfrac14,                            \tag{10}
 \]
 uniformly on that closed disk. This adds an interpretation of the previously proved sinc-squared factor, not a new asymptotic proof or a larger validity range for(10). It does not improve the arithmetic cost of extracting parameter coefficients.
+
+
+## 6. Why this positive representation alone is not the irrationality proof
+
+The exact projection remainder gives, for fixed s=2r+3,
+
+\[
+ \zeta(s)-\sum_{k=1}^n k^{-s}
+ =\tfrac12\langle G_n,P^rG_n\rangle_w>0.
+\]
+
+But these are ordinary harmonic truncations. Their error is only polynomial:
+by the elementary integral comparison,
+
+\[
+ \sum_{k>n}k^{-s}\ge\frac1{(s-1)(n+1)^{s-1}}.
+\]
+
+The standard clearing multiplier d_n^s, where d_n=lcm(1,...,n), grows too fast.
+The earlier elementary binomial-divisibility lemma gives d_n>=2^(n-1)/n, hence
+
+\[
+ d_n^s\left(\zeta(s)-\sum_{k=1}^n k^{-s}\right)
+ \ge\frac{2^{s(n-1)}}{(s-1)n^s(n+1)^{s-1}}\longrightarrow\infty.
+\]
+
+This is a failure of that specified clearing multiplier, not a theorem about
+the exact primitive denominators of the harmonic sums.
+
+In the cubic proof this distinction explains the second Legendre factor.
+The boundary row I_(n,0)=2(zeta(3)-H_n^(3)) has the polynomial tail above.
+The diagonal I_(n,n)=2(A_n zeta(3)-B_n) instead has the exponentially small
+positive energy estimate proved in the standalone kernel argument. The second
+polynomial and its forced large coefficient A_n supply the stronger
+cancellation; positivity of a representation by itself supplies no such gain.

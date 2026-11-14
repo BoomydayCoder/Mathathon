@@ -55,3 +55,12 @@ The identity for A_n is just substitution of the finite product into its already
 
 
 The added dilogarithm illustration in Section 3 also has the stated normalization. Under the stationary triangle law, the latent density is 2t, so the unnormalized pairing is integral t Af(t)Ag(t)dt. Differentiating zeta(2)-Li_2(1-t) gives -log(t)/(1-t), and its value at t=0 is zero. Thus the integral of its square divided by t is exactly <K,PK>_w=2 zeta(5). Near zero the primitive is O(t(1+|log t|)), and near one it is bounded, so both endpoints converge. This is a consequence of the already reviewed correlation formula.
+
+
+## Harmonic-truncation limitation and the second Legendre factor
+
+Section 6 is accepted for each fixed integer r>=0, s=2r+3, and n>=1. The earlier exact tail correlation has the factor 2, so one half of <G_n,P^rG_n>_w is precisely the harmonic tail. Since x^-s is decreasing, summing its values at integers k>=n+1 dominates its integral from n+1 to infinity, giving the stated lower bound 1/[(s-1)(n+1)^(s-1)]. The companion upper integral bound from n to infinity also confirms its polynomial order.
+
+The multiplier d_n^s really does clear the harmonic sum because every k<=n divides d_n. The accepted elementary bound d_n>=2^(n-1)/n, raised to the fixed power s and multiplied by the positive tail lower bound, gives exactly the displayed exponential-over-polynomial lower bound. It tends to positive infinity. This conclusion concerns this specified clearing multiplier; it neither lower-bounds the reduced denominator nor excludes further cancellation under a smaller one.
+
+The final comparison preserves the distinct normalizations: I_(n,0)=2(zeta(3)-H_n^(3)) is the boundary row, while I_(n,n)=2(A_n zeta(3)-B_n) is the diagonal linear form. The accepted energy estimate and the exponential lower growth of A_n make the latter exponentially small. Thus the explanation of why the second Legendre factor matters is accurate and does not claim that positivity alone proves the improved rate or an irrationality theorem.

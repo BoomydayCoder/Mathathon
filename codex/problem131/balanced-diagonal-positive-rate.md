@@ -2,7 +2,7 @@
 
 Independent review: accepted in [balanced-diagonal-independent-review.md](balanced-diagonal-independent-review.md).
 
-Status: all-index analytic proof drafted for independent review. The remainder
+Status: all-index analytic proof accepted in the linked independent review. The remainder
 is positive for even n. The resulting arithmetic comparison concerns specified
 nonprimitive lcm multipliers, not the actual reduced denominator of the rational
 approximant and not all possible approximations to an odd zeta value.
