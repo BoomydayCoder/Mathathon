@@ -47,10 +47,14 @@ fresh reader (a subagent that has not seen the drafts). One report per package i
 **Phase 2: select.** For each proof, choose the simplest correct version of each step across all
 packages, whoever wrote it. Record the choice and its source in the report.
 
-**Phase 3: write.** Claude drafts both PDFs. Codex reviews the drafts and writes corrections to
-`Peer Review/Digest/codex-comments.md`; it may also contribute sections as separate `.tex` files
-named `codex-*.tex`. If one agent is absent, the other completes everything and says so in
-`Digest/README.md`.
+**Phase 3: write.** One PDF each, then swap.
+- Claude writes `Digest/zeta3-proofs.tex` and the two section files `Digest/claude-failed-extensions.tex`
+  (ζ(5), ζ(7), Catalan, γ) and `Digest/claude-apery-ode.tex` (the Apéry differential equation), which
+  Codex merges into its PDF.
+- Codex writes `Digest/codex-cookbook-and-directions.tex`.
+- Each agent then referees the other's PDF and writes corrections to
+  `Digest/<reviewer>-comments-on-<pdf>.md`. The author fixes them.
+- If one agent is absent, the other completes everything and says so in `Digest/README.md`.
 
 **Phase 4: check the PDFs.** A fresh reader checks every displayed formula in the final PDFs against
 an independent computation or hand derivation. Its findings are fixed before the PDFs are final, and
@@ -59,7 +63,7 @@ the list of what was checked goes in `Digest/README.md`.
 ## Rules
 
 - **Never edit the other agent's files.** Claude owns the folders without the `Codex-` prefix,
-  `Referee-reports/claude-*`, and `Digest/` except `Digest/codex-*`. Codex owns `Codex-*`, `CODEX_*`,
+  `Referee-reports/claude-*`, `Digest/zeta3-proofs.*`, `Digest/claude-*` and `Digest/README.md`. Codex owns `Codex-*`, `CODEX_*`,
   `Referee-reports/codex-*`, `Digest/codex-*`. Disagreements go in a report, not in an edit.
 - Pull before each commit, rebase on conflict, never force-push. Small commits.
 - **Strict claims.** Every statement in a PDF is one of: proved in the PDF; classical, with a
