@@ -1,0 +1,60 @@
+=== Fauzan (a=6, alpha=3/40, lam=37/40); his proved U = -2733991/2000000 = -1.3669955
+  float solver: A=0.000071195125 B=0.753949618282 E*=4.038545773510 U=-1.385509783169 mass=0.925000000000
+  parameters a=6.0, alpha=0.075, lam=0.925   (working precision 40 digits, 295 nodes in x=sqrt(t) (rho=1.21871), 2751 nodes in t)
+  support [A,B] (t-variable): A = 0.0000711951252378986150275032380644
+                              B = 0.753949618281545446503877778408   (sqrt: [0.00843772038159, 0.868302722719])
+  residuals of (C1),(C2): -1.03e-40, 2.3e-41;   quadrature mass - lam = 0.0
+  -Hh > 0 at all nodes: min psi = 1.7736971;  Hh(0) = -1.6963822e+48, Hh(A) = -23961.188, Hh(B) = -1.7735605; max density = 36.45653
+  E-L equality on [A,B]: max_k<= 12 |v_k + 4 c_k/k| = 4.59e-41
+  E-L strict inequality off the support, phi = 2U - V + ell: phi(0.0)=-0.0504138, phi(1.78e-5)=-0.0171979, phi(3.56e-5)=-0.00760738, phi(0.9424)=-0.148874, phi(1.508)=-0.906148, phi(3.77)=-3.96838, phi(15.08)=-14.2498, phi(150.8)=-63.9779
+  ell = 6.66078112303310994387797530232
+  int V dmu = 1.91586900821353167123849730015
+  E* = (int V dmu + lam ell)/2 = 4.038545773509579332561863523
+  independent check of ell: int_B^2B 2 R Hh dt - phi(2B) = -6.89e-41
+  C_* = 2.65303599034048869923457981634
+  U = -E* + C_* = -1.38550978316909063332728370666
+=== a=5, alpha=1/9, lam=1-alpha
+  float solver: A=0.000027316579 B=0.767111232783 E*=4.023858467697 U=-1.182730620299 mass=0.888888888889
+  parameters a=5.0, alpha=0.111111111111, lam=0.888888888889   (working precision 40 digits, 369 nodes in x=sqrt(t) (rho=1.16743), 4448 nodes in t)
+  support [A,B] (t-variable): A = 0.0000273165791439567207328136561011
+                              B = 0.767111232783307143597023468164   (sqrt: [0.00522652648936, 0.875848864122])
+  residuals of (C1),(C2): 4.59e-41, 1.15e-41;   quadrature mass - lam = 1.15e-41
+  -Hh > 0 at all nodes: min psi = 1.7127594;  Hh(0) = -2.2444314e+48, Hh(A) = -41682.153, Hh(B) = -1.712675; max density = 40.101098
+  E-L equality on [A,B]: max_k<= 12 |v_k + 4 c_k/k| = 9.18e-41
+  E-L strict inequality off the support, phi = 2U - V + ell: phi(0.0)=-0.0208868, phi(6.829e-6)=-0.00714629, phi(1.366e-5)=-0.00316561, phi(0.9589)=-0.148933, phi(1.534)=-0.907458, phi(3.836)=-3.98127, phi(15.34)=-14.3243, phi(153.4)=-64.4346
+  ell = 6.68419600053981183499244000981
+  int V dmu = 2.10620937935926878521490482268
+  E* = (int V dmu + lam ell)/2 = 4.02385846769732837658301906222
+  independent check of ell: int_B^2B 2 R Hh dt - phi(2B) = -3.44e-41
+  C_* = 2.84112784739804458273827011463
+  U = -E* + C_* = -1.18273062029928379384474894759
+=== a=5, alpha=9/80, lam=1-alpha
+  float solver: A=0.000028946515 B=0.769616067663 E*=4.029542629937 U=-1.165663054556 mass=0.887500000000
+  parameters a=5.0, alpha=0.1125, lam=0.8875   (working precision 40 digits, 364 nodes in x=sqrt(t) (rho=1.16993), 4330 nodes in t)
+  support [A,B] (t-variable): A = 0.0000289465153015892077717880866788
+                              B = 0.769616067663070317240716004463   (sqrt: [0.00538019658578, 0.87727764571])
+  residuals of (C1),(C2): -9.18e-41, -1.15e-41;   quadrature mass - lam = 4.59e-41
+  -Hh > 0 at all nodes: min psi = 1.7033232;  Hh(0) = -2.1233083e+48, Hh(A) = -39267.408, Hh(B) = -1.703237; max density = 38.947592
+  E-L equality on [A,B]: max_k<= 12 |v_k + 4 c_k/k| = 1.38e-40
+  E-L strict inequality off the support, phi = 2U - V + ell: phi(0.0)=-0.0215003, phi(7.237e-6)=-0.00735597, phi(1.447e-5)=-0.00325845, phi(0.962)=-0.149085, phi(1.539)=-0.908445, phi(3.848)=-3.98605, phi(15.39)=-14.3435, phi(153.9)=-64.5312
+  ell = 6.6893015023648934196616424251
+  int V dmu = 2.12233017652462667806300603272
+  E* = (int V dmu + lam ell)/2 = 4.02954262993673464547402591079
+  independent check of ell: int_B^2B 2 R Hh dt - phi(2B) = -1.26e-40
+  C_* = 2.8638795753802851310021695491
+  U = -E* + C_* = -1.16566305455644951447185636169
+=== a=5, alpha=3/25, lam=1-alpha
+  float solver: A=0.000039092839 B=0.783116680613 E*=4.058454149511 U=-1.075813882741 mass=0.880000000000
+  parameters a=5.0, alpha=0.12, lam=0.88   (working precision 40 digits, 341 nodes in x=sqrt(t) (rho=1.18354), 3765 nodes in t)
+  support [A,B] (t-variable): A = 0.0000390928391768696608163910916549
+                              B = 0.783116680613268467019195266109   (sqrt: [0.00625242666305, 0.88493880049])
+  residuals of (C1),(C2): -6.89e-41, 0.0;   quadrature mass - lam = 0.0
+  -Hh > 0 at all nodes: min psi = 1.6537335;  Hh(0) = -1.5957068e+48, Hh(A) = -28808.819, Hh(B) = -1.6536383; max density = 33.469558
+  E-L equality on [A,B]: max_k<= 12 |v_k + 4 c_k/k| = 1.04e-41
+  E-L strict inequality off the support, phi = 2U - V + ell: phi(0.0)=-0.0249814, phi(9.773e-6)=-0.00854562, phi(1.955e-5)=-0.00378514, phi(0.9789)=-0.149889, phi(1.566)=-0.913679, phi(3.916)=-4.01148, phi(15.66)=-14.4463, phi(156.6)=-65.0479
+  ell = 6.71631104040699092022364085595
+  int V dmu = 2.20655458346414858448757962956
+  E* = (int V dmu + lam ell)/2 = 4.05845414951115031205539810661
+  independent check of ell: int_B^2B 2 R Hh dt - phi(2B) = -9.18e-41
+  C_* = 2.98264026677056251999450723399
+  U = -E* + C_* = -1.07581388274058779206089087262

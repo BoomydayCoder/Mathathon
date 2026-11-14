@@ -13,9 +13,14 @@ Two evaluations:
     F = 4 lam + 2 lam {x} - 2 a lam {alpha x}, period = denominator of alpha, summed with Hurwitz zeta);
   * exact (fractions) for int_3^X0 and for the outer integrals, with an exact kink-finding integrator of piecewise-linear functions.
 Usage:  python3 zeta5opt_asymptotic.py a num den [X0]      (alpha = num/den)
+KNOWN DEFECT (found at the end of the run, not fixed): integrate_pl tests linearity at 5 sample points per cell and can miss
+kinks lying between them.  The exact outer value agrees with the robust float midpoint rule to 1e-8 for alpha = 3/40 (where it also
+equals the closed form 2139737/1632000 - 289/800 obtained from Fauzan's formulas) and alpha = 1/9, but NOT for alpha = 3/25
+(exact routine 0.725614 vs float 0.725792) and alpha = 9/80 (4e-6 off, 2 unresolved cells).  For those alpha trust the float value.
 Nothing is claimed by this file; it only computes.
 """
 import sys, math
+sys.setrecursionlimit(100000)
 from fractions import Fraction as Fr
 from math import floor
 sys.path.insert(0, '/home/user/Mathathon/research/claude/computations')
@@ -60,8 +65,15 @@ def A_numeric(a, num, den, X0=40, nx=3000, ny=60000, check=False):
 
 
 # ------------------------------------------------------------------ exact part
+INEXACT = [0, Fr(0)]      # number and total width of cells treated by the midpoint rule (width < 1e-30)
+
+
 def integrate_pl(f, u, v, depth=0):
-    """exact integral over [u,v] of a piecewise-linear f (finitely many kinks, possibly discontinuous slopes only)."""
+    """exact integral over [u,v] of a piecewise-linear f (finitely many kinks).  If a cell of width < 1e-30 is still not
+    linear (isolated jump of f), it is integrated by the midpoint rule and recorded in INEXACT (error <= width * jump)."""
+    if v - u < Fr(1, 10 ** 30):
+        INEXACT[0] += 1; INEXACT[1] += v - u
+        return f((u + v) / 2) * (v - u), 1
     pts = [u + (v - u) * Fr(k, 16) for k in (1, 2, 8, 14, 15)]
     val = [f(t) for t in pts]
     sl = (val[1] - val[0]) / (pts[1] - pts[0])
@@ -145,5 +157,6 @@ if __name__ == "__main__":
     print(f"          outer  int_(1/3)^1 [min(C_wf,C_out)+scal] = {Ibest} = {float(Ibest):.10f}  ({cells} linear pieces)   [numeric: {r['outer']:.7f}]")
     print(f"          (with C_out alone: {Iold} = {float(Iold):.10f};  gain {float(Iold - Ibest):.10f})")
     print(f"          beyond int_1^(2 lam) scal = {Ibey} = {float(Ibey):.10f}   [numeric: {r['beyond']:.7f}]")
+    print(f"          cells not resolved exactly (width < 1e-30, midpoint rule): {INEXACT[0]}, total width {float(INEXACT[1]):.2e}")
     Aex = float(Iin + Ibest + Ibey) + (r2['tail'] if X0 == 20 else float('nan'))
     print(f" A(a,alpha) = exact part + numeric tail int_{X0}^inf ({r2['tail']:.7f}) = {Aex:.7f}")

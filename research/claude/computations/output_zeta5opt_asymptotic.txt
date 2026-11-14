@@ -1,0 +1,46 @@
+=== a=6, alpha=3/40, lambda=37/40, s=5
+ numeric: inner int_3^40 = -0.0019378, tail int_40^inf = -0.0153478, outer(1/3..1) = 0.9498634, beyond(1..2lam) = 0.3612500
+          A = 1.2938278;  gain of max(wf,out) over out alone = 0.0196262
+          R = xF + Q on one period [40,40+40]: periodicity defect of Q 2.04e-11; Q in [0.0002,1.5089], mean 0.79167; mean F = -0.925000 (expected (5-a) lam = -0.925000)
+          same with X0=20: A = 1.2938278  (difference +0.00e+00)
+ exact:   int_3^20 R/x^3 dx = 322437603634266857629/7535670527041937280000 = 0.0427881769  (125 cells)   [numeric: 0.0427882]
+          outer  int_(1/3)^1 [min(C_wf,C_out)+scal] = 1550177/1632000 = 0.9498633578  (15 linear pieces)   [numeric: 0.9498634]
+          (with C_out alone: 93071/96000 = 0.9694895833;  gain 0.0196262255)
+          beyond int_1^(2 lam) scal = 289/800 = 0.3612500000   [numeric: 0.3612500]
+          cells not resolved exactly (width < 1e-30, midpoint rule): 0, total width 0.00e+00
+ A(a,alpha) = exact part + numeric tail int_20^inf (-0.0600738) = 1.2938278
+=== a=5, alpha=1/9, lambda=8/9, s=5
+ numeric: inner int_3^40 = -0.0077184, tail int_40^inf = -0.0018581, outer(1/3..1) = 0.7799432, beyond(1..2lam) = 0.3024691
+          A = 1.0728358;  gain of max(wf,out) over out alone = 0.0299334
+          R = xF + Q on one period [40,40+9]: periodicity defect of Q 4.29e-12; Q in [0.0002,1.0399], mean 0.56313; mean F = 0.000000 (expected (5-a) lam = 0.000000)
+          same with X0=20: A = 1.0728358  (difference +0.00e+00)
+ exact:   int_3^20 R/x^3 dx = -11892995599727267/1118748740268322800 = -0.0106306226  (106 cells)   [numeric: -0.0106306]
+          outer  int_(1/3)^1 [min(C_wf,C_out)+scal] = 79601/102060 = 0.7799431707  (12 linear pieces)   [numeric: 0.7799432]
+          (with C_out alone: 328/405 = 0.8098765432;  gain 0.0299333725)
+          beyond int_1^(2 lam) scal = 49/162 = 0.3024691358   [numeric: 0.3024691]
+          cells not resolved exactly (width < 1e-30, midpoint rule): 0, total width 0.00e+00
+ A(a,alpha) = exact part + numeric tail int_20^inf (0.0010541) = 1.0728358
+=== a=5, alpha=3/25, lambda=22/25, s=5
+ numeric: inner int_3^40 = -0.0484995, tail int_40^inf = 0.0000814, outer(1/3..1) = 0.7257917, beyond(1..2lam) = 0.2888000
+          A = 0.9661737;  gain of max(wf,out) over out alone = 0.0351683
+          R = xF + Q on one period [40,40+25]: periodicity defect of Q 1.41e-11; Q in [0.0002,1.0407], mean 0.56253; mean F = 0.000000 (expected (5-a) lam = 0.000000)
+          same with X0=20: A = 0.9661737  (difference +2.22e-16)
+ exact:   int_3^20 R/x^3 dx = -55217766823395342279229/1291268543435831961000000 = -0.0427624193  (123 cells)   [numeric: -0.0427624]
+          outer  int_(1/3)^1 [min(C_wf,C_out)+scal] = 571421/787500 = 0.7256139683  (14 linear pieces)   [numeric: 0.7257917]
+          (with C_out alone: 21397/28125 = 0.7607822222;  gain 0.0351682540)
+          beyond int_1^(2 lam) scal = 361/1250 = 0.2888000000   [numeric: 0.2888000]
+          cells not resolved exactly (width < 1e-30, midpoint rule): 0, total width 0.00e+00
+ A(a,alpha) = exact part + numeric tail int_20^inf (-0.0056556) = 0.9659959
+=== a=5, alpha=9/80, lambda=71/80, s=5
+ numeric: inner int_3^40 = -0.0141849, tail int_40^inf = -0.0019536, outer(1/3..1) = 0.7715295, beyond(1..2lam) = 0.3003125
+          A = 1.0557035;  gain of max(wf,out) over out alone = 0.0307205
+          R = xF + Q on one period [40,40+80]: periodicity defect of Q 1.22e-10; Q in [0.0002,1.0416], mean 0.56250; mean F = -0.000000 (expected (5-a) lam = 0.000000)
+          same with X0=20: A = 1.0557035  (difference +0.00e+00)
+ exact:   int_3^20 R/x^3 dx = -72892001411187373937/4637335708948884480000 = -0.0157185086  (128 cells)   [numeric: -0.0157279]
+          outer  int_(1/3)^1 [min(C_wf,C_out)+scal] = 11158138382212951405709916263957408575265050423946600965916852269/14462442398330912479877658831070463422699826944045135517712384000 = 0.7715251736  (44 linear pieces)   [numeric: 0.7715295]
+          (with C_out alone: 11602431643043620670174213439332047204196775142305765328739631149/14462442398330912479877658831070463422699826944045135517712384000 = 0.8022456597;  gain 0.0307204861)
+          beyond int_1^(2 lam) scal = 961/3200 = 0.3003125000   [numeric: 0.3003125]
+          cells not resolved exactly (width < 1e-30, midpoint rule): 2, total width 1.42e-30
+ A(a,alpha) = exact part + numeric tail int_20^inf (-0.0004107) = 1.0557085
+
+NOTE: the 'exact' outer values for alpha = 3/25 and 9/80 are NOT reliable (kink finder missed kinks; see docstring). The float values are robust (pointwise functions agree with exact arithmetic to 1e-15; midpoint rule). alpha = 3/40 and 1/9: exact = float to 1e-8.

@@ -1,6 +1,6 @@
 # Summary (Claude), research run of 14 Nov 2026
 
-Consolidated at 16:05 UTC (container clock); it replaces the earlier summary and its addenda.
+Final consolidation at 16:55 UTC (container clock), 14 Nov 2026.
 Everything described as "proved" or "checked" was checked by AI passes only (orchestrator and
 subagents); no human has refereed any of it. "Not re-derived" means the orchestrator relied on a
 subagent's proof plus exact computations.
@@ -15,6 +15,21 @@ subagent's proof plus exact computations.
 | 4 | **Why ζ(7) is out of reach of the current method.** Decay per $K^2$ is independent of $s$; cost grows like $s$. About 420 exact determinants in 8 families all fail (best cost/decay ratio 1.218). **Proved no-go for the plain Hankel family for every odd $s\ge15$.** | `zeta7-status.md` | $s\ge15$: analytic half re-derived, arithmetic half not; $s=7$–$13$: numerical only. |
 | 5 | **A Hankel-determinant proof of ζ(3)∉Q** with one global basis and the exact decay rate $\frac92\log2$ (explicit equilibrium measure; matching upper and lower bounds). | `hankel-zeta3.md`, `hankel-energy-bound.md` | complete draft, two independent analytic routes. **Not new as a result:** a variant of known work (Zudilin 2017 §6; Fauzan's method at $s=3$); the specific simple determinant and constants were not found elsewhere. |
 | 6 | **Catalan's constant:** very simple positive functionals exist (pole values in $\mathbb Q+\mathbb QG$, no $\pi^2$), but the Hankel determinants miss by about $0.5K^2$; mixed-node variants are worse, for a structural reason. The same family appears to reprove ζ(2), log 2, π. | `catalan-status.md` | exact finite computations; lemmas not re-derived. Irrationality of $G$ was already claimed by OpenAI (Sep 2026), not verified by us. |
+
+### Reading order
+
+1. `apery-elementary.md` — the self-contained, motivated elementary proof of Apéry's theorem.
+2. `zeta5-margin.md` — the one result that improves a current proof (ζ(5)).
+3. `anand-referee.md` — the referee report on the claimed ζ(7) proof.
+4. `zeta7-status.md` — why ζ(7) fails, the proved no-go for $s\ge15$, and the located gap for $s=7$–$13$.
+5. `hankel-zeta3.md` + `hankel-energy-bound.md` — the Hankel-determinant proof for ζ(3) (teaching model).
+6. `catalan-status.md`, `fauzan-status.md`, `literature-status.md`, `exposition.md`, `next-steps.md`.
+
+### Still running when this was written
+
+One subagent is re-optimising the ζ(5) construction (generalised valuation bound for other parameters,
+exact energy for Fauzan's field, effect on the margin and the irrationality exponent). Nothing from it
+is included here; if it reports, the result will be appended at the bottom under a dated heading.
 
 ## 2. Expository work (checked exposition of known results)
 
@@ -46,8 +61,8 @@ subagent's proof plus exact computations.
   functional, other node sets, higher-order poles, derivative series, minors). `zeta7-status.md`.
 * **Catalan by positive-weight Hankel determinants**, with or without mixed nodes. `catalan-status.md`.
 * **Linear forms from the functional** ($1\times1$ determinants): no exponential gain (heuristic).
-* **No-go theorem for $s=7$–$13$**: the proved arithmetic bound is too small; primes below $K/2$ need a
-  finer analysis.
+* **No-go theorem for $s=7$–$13$**: attempted twice, not achieved. For $s=7$ even the two regimes that look
+  provable give $3.111<3.119$; a proof must go through the "saturated" primes. `zeta7-status.md` §6.
 
 ## 5. External inputs the proofs rest on
 
@@ -78,7 +93,8 @@ No errors were found in anything we checked.
 | obstruction theorems (depletion) | leading-coefficient part only | correct as far as checked; local valuation and lower bound not checked |
 
 Not checked: their second ζ(3) proof (resolvent/Padé), their log 2 proof, their end-to-end ζ(5)
-derivation, and their commits after 13:55 UTC (a check is running).
+derivation, and most of their notes after 13:55 UTC (two claims from those commits were checked and are
+correct: the closed formula for their rank-one ζ(3) approximants, and an integrality statement).
 
 ## 8. Honest limits
 
