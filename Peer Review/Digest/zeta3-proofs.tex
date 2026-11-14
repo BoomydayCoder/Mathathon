@@ -33,9 +33,10 @@ section has the same shape: a \emph{question}; the \emph{obvious attempt} and th
 fails; the \emph{construction} that the failure points to; and a note on what was \emph{forced} and
 what was a choice. Whenever we reject an alternative we give the numbers.
 
-Part I (Sections 1--8) is one complete proof, due in essence to Beukers. Part II (Sections 9--10)
+Part I (Sections 1--8) is one complete proof, due in essence to Beukers. Part II (Sections 9--11)
 shows the same objects in the language of Zudilin's paper, where they are sums instead of
-integrals, and explains where Ap\'ery's recurrence comes from. No symbol is used before it is
+integrals, explains where Ap\'ery's recurrence comes from, and follows Zudilin's own proof to its
+end. No symbol is used before it is
 defined. Part~I uses integration by parts, geometric series, partial fractions, the AM--GM
 inequality, and the fact that $n$ homogeneous linear equations in $n+1$ unknowns have a non-zero
 solution. Part~II also uses partial-fraction expansions of rational functions.
@@ -43,7 +44,7 @@ solution. Part~II also uses partial-fraction expansions of rational functions.
 \smallskip\noindent\textbf{Status.} The theorem and constructions are classical (Ap\'ery,
 Beukers, Zudilin); nothing here is claimed to be new, and when we say an object is ``forced'' we
 mean forced by the stated requirement, not that no other proof could exist. All statements were
-checked by AI agents only; \emph{no human has refereed this}. Details are in Section~11.
+checked by AI agents only; \emph{no human has refereed this}. Details are in Section~12.
 
 \part*{Part I. One proof, from the beginning}
 
@@ -689,15 +690,162 @@ since it is a third proof of something already proved twice, we only state it. T
 previous version of this document and in the Codex folder \texttt{Codex-Zeta3-03-Kernel-energy/}.
 
 \q{How this relates to Zudilin's paper.} Zudilin proves the arithmetic and identity \eqref{cert}
-as above. For positivity and size he passes to a second series with positive terms and proves it
-equal to $I_n$ through a second, much longer identity of the same type; steps 1--4 replace that,
-at the price of the rate $28^{-n}$ instead of $33.97^{-n}$.
+as above, but he does \emph{not} obtain sign and size from the recurrence. He takes a different
+road, which Section~11 follows. Steps 1--4 above are shorter; his road shows more.
+
+\section{Zudilin's own ending: a second series with positive terms}
+
+\q{Question.} In the language of sums, $I_n=-\sum_{t\ge1}R_n'(t)$. Why can we not simply
+\emph{see} that this is positive and small, term by term?
+
+\q{Attempt.} Look at the terms. The first $n$ vanish. After that they are not positive: for $n=5$
+the terms $-R_5'(t)$ are \emph{negative} for $t=6,\dots,30$ and positive from $t=31$ on, and they
+are of size $10^{-7}$ to $10^{-6}$ while the sum is $2.6\cdot10^{-9}$. So the series is a difference of
+two much larger quantities. Nothing about its sign or size can be read off it.
+
+\q{Lesson.} The series \eqref{defI} is good at arithmetic (Section~9) and bad at sign and size.
+Zudilin's idea is to find a \emph{second series for the same number} with the opposite strengths,
+and to use each for what it does well.
+
+\q{What should the second series look like?} We want a rational function $\widetilde R_n(t)$
+whose plain sum $\sum_{t\ge1}\widetilde R_n(t)$, with no derivative, is a combination of $1$ and
+$\zeta(3)$ and has positive terms. Let us list what this demands.
+\begin{itemize}
+\item \emph{Denominator $\bigl(t(t+1)\cdots(t+n)\bigr)^4$.} As in Section~9, terms
+$\frac1{(t+k)^j}$ with $k\le n$ sum to $\zeta(j)$ minus a finite sum. We need $j=3$ to occur.
+\item \emph{Zeros at $t=1,\dots,n$, and positivity beyond.} Put the factor
+$(t-1)(t-2)\cdots(t-n)$ in the numerator: the first $n$ terms vanish and this factor is positive
+for $t>n$.
+\item \emph{No $\zeta(2)$ and no $\zeta(4)$.} In Section~9 the unwanted $\zeta(2)$ cancelled because
+of the derivative. Here there is no derivative, so we need another mechanism, and it is a
+\emph{symmetry}. The denominator is unchanged by the reflection $t\mapsto-n-t$, which sends $t+k$ to
+$-(t+n-k)$. If the whole function is \emph{odd} under this reflection,
+$\widetilde R_n(-n-t)=-\widetilde R_n(t)$, then comparing the terms $\frac1{(t+k)^j}$ on both sides
+shows that the coefficient at $k$ and the coefficient at $n-k$ are equal for odd $j$ and opposite
+for even $j$. So for even $j$ the coefficients add up to $0$, and $\zeta(2)$, $\zeta(4)$ drop out.
+\item \emph{Making it odd.} The reflection sends the zeros $1,\dots,n$ to $-n-1,\dots,-2n$, so the
+numerator must also contain $(t+n+1)\cdots(t+2n)$. The product of these $2n$ factors is unchanged
+by the reflection (each factor $t-j$ becomes $-(t+n+j)$ and vice versa, and there are $2n$ sign
+changes). One more factor that changes sign is needed: $2t+n$, which vanishes at the centre
+$t=-\frac n2$ of the reflection.
+\end{itemize}
+This leads to
+\begin{equation}\label{ball}
+\widetilde R_n(t)=n!^2\,(2t+n)\,\frac{(t-1)\cdots(t-n)\cdot(t+n+1)\cdots(t+2n)}
+{\bigl(t(t+1)\cdots(t+n)\bigr)^4},\qquad\widetilde I_n=\sum_{t=1}^\infty\widetilde R_n(t).
+\end{equation}
+For $t>n$ every factor is positive. The series converges, since $\widetilde R_n(t)$ is of size
+$t^{-2n-3}$. By the symmetry argument, $\widetilde I_n$ is a combination of $1$ and $\zeta(3)$ only.
+(The series is due to Ball.)
+
+\forced The zeros, the reflected zeros and the factor $2t+n$ are forced by the three demands. The
+exponent $4$ and the constant $n!^2$ are not: they are what makes $\widetilde I_n$ equal to the
+\emph{same} number $I_n$, as shown below, and we have no argument that would have predicted them.
+This is the one place in this document where an object is justified only by the fact that it works.
+
+\q{What the second series is good at.} \emph{Sign:} $\widetilde I_n>0$, at a glance.
+\emph{Size:} a sum of positive terms is about as big as its largest term, so we only need to locate
+the largest term. Each block of consecutive integers in \eqref{ball} can be compared with powers:
+from $(1+\frac1m)^m<e<(1+\frac1m)^{m+1}$, multiplied over $m,m+1,\dots,m+n-1$,
+\[
+e^{-n}\frac{(m+n)^{m+n-1}}{m^{m-1}}<m(m+1)\cdots(m+n-1)<e^{-n}\frac{(m+n)^{m+n}}{m^m}.
+\]
+Apply this to each block of $n$ consecutive integers in \eqref{ball}, including the two copies of $n!$ (the powers of $e$ cancel) and write $t=\tau n$ with
+$\tau>1$. Up to factors that are polynomial in $n$ and $t$, the term $\widetilde R_n(t)$ is
+$e^{nf(\tau)}$ with
+\[
+f(\tau)=5\tau\log\tau+(\tau+2)\log(\tau+2)-(\tau-1)\log(\tau-1)-5(\tau+1)\log(\tau+1).
+\]
+So the question is the maximum of $f$. Its derivative is
+$f'(\tau)=\log\frac{\tau^5(\tau+2)}{(\tau-1)(\tau+1)^5}$, which vanishes where
+$\tau^5(\tau+2)=(\tau-1)(\tau+1)^5$. In the variable $x=\tau+\frac12$ (the centre of the reflection
+again) this equation is $x(2x^4-5x^2-\frac78)=0$, with the single root $x_0^2=\frac54+\sqrt2$ in
+the range $\tau>1$; so $\tau_0=1.1322\ldots$, and $f$ increases before $\tau_0$ and decreases after
+it. The value there can be computed by hand, and it is
+\[
+e^{f(\tau_0)}=\frac{(\tau_0+2)^2(\tau_0-1)}{(\tau_0+1)^5}=(\sqrt2-1)^4=\rho .
+\]
+\emph{The same number as in Section~6}, as it must be if the two series are equal: there it was the
+maximum of an integrand, here it is the size of the largest term (at $t\approx1.13\,n$). Carrying
+the polynomial factors along, Zudilin obtains
+\begin{equation}\label{ballbound}
+0<\widetilde I_n<20\,(n+1)^4\rho^{\,n}.
+\end{equation}
+(We do not reproduce the bookkeeping; it is in our line-by-line exposition, cited in Section~12,
+and the inequality was checked numerically for $n=5,20,60$.)
+
+\q{What the second series is bad at.} Arithmetic. Its terms $\frac1{(t+k)^4}$ have fourth powers in
+the denominator, so the argument of Section~9 only shows that $D_n^{4}$ clears the denominators.
+And $D_n^4\rho^{\,n}\approx(e^4\rho)^n=1.6^n$ does not tend to $0$: \emph{the second series alone
+proves nothing}. This is the fourth-power failure from Section~8, appearing in practice.
+
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+ & $I_n=-\sum R_n'(t)$ & $\widetilde I_n=\sum\widetilde R_n(t)$\\
+\midrule
+denominators & $D_n^3$: good enough & only $D_n^4$ visible: not good enough\\
+sign and size & hidden: terms of both signs & visible: positive terms, largest term $\approx\rho^n$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\q{The bridge.} So everything depends on proving $\widetilde I_n=I_n$. The two series look nothing
+alike, and Zudilin does not transform one into the other. He uses the principle that \emph{a
+sequence satisfying a second-order recurrence is determined by its first two terms}:
+\begin{itemize}
+\item $I_n$ satisfies $\mathcal L[I]_n=0$ (Section~10).
+\item $\widetilde I_n$ satisfies the same recurrence. The proof has the same shape as in
+Section~10: one looks for $\widetilde S$ with
+$(n+1)^3\widetilde R_{n+1}-\beta_n\widetilde R_n+n^3\widetilde R_{n-1}=\widetilde S(t+1)-\widetilde
+S(t)$ and sums over $t$, which telescopes to $0$ because $\widetilde R_n(1)=0$ and
+$\widetilde S(t)\to0$. This time
+$\widetilde S(t)=\widetilde R_n(t)\cdot\frac{p_n(t)}{(2t+n)(t+2n-1)(t+2n)}$ with a polynomial $p_n$
+of degree $6$ in $t$ that has $22$ coefficients, found by computer (it is the same linear-algebra
+search as in Section~10, only larger). Checking it is a mechanical expansion of polynomials; we did
+it by computer algebra and do not print it.
+\item The first two values agree. $\widetilde R_0=\frac2{t^3}$, so $\widetilde I_0=2\zeta(3)=I_0$. And
+$\widetilde R_1(t)=-\frac2{t^4}+\frac2{(t+1)^4}+\frac5{t^3}+\frac5{(t+1)^3}-\frac5{t^2}+\frac5{(t+1)^2}$,
+whose sum is $5\zeta(3)+5(\zeta(3)-1)-2-5=10\zeta(3)-12=I_1$. (Here one sees the symmetry at work:
+the terms with even exponents come in opposite pairs.)
+\end{itemize}
+Hence $\widetilde I_n=I_n$ for all $n$.
+
+\q{Zudilin's proof, assembled.} The arithmetic of $I_n$ (Section~9); the recurrence for $I_n$
+(Section~10, Proposition~\ref{prop:cert}); Ball's series, positive and bounded by \eqref{ballbound};
+its recurrence; equality of the two. Then $0<q\,D_n^3I_n<20q(n+1)^4D_n^3\rho^{\,n}$, and the proof
+ends as in Section~8. (Zudilin quotes $D_n<3^n$ for all $n$ without proof; Lemma~\ref{lem:lcm}
+suffices.)
+
+\q{Three endings compared.} All three start from the same $I_n$ with the same arithmetic.
+\begin{center}\small
+\begin{tabular}{@{}p{30mm}p{37mm}p{37mm}p{37mm}@{}}
+\toprule
+ & Beukers (Sections 5--6) & recurrence only (Section 10) & Zudilin (this section)\\
+\midrule
+sign & positive integrand after integration by parts & $I_n/a_n$ decreases to $0$ & positive
+terms of a second series\\
+size & maximum of the integrand & growth of $a_n$ & largest term of the second series\\
+rate obtained & $33.97^{-n}$ & $28^{-n}$ & $33.97^{-n}$\\
+unexplained input & the identity \eqref{sep} & none & the exponent $4$ in \eqref{ball}; a long
+computer-found identity\\
+\bottomrule
+\end{tabular}
+\end{center}
+What Zudilin's ending shows, and the others do not, is the symmetry that removes the even zeta
+values. That symmetry is the mechanism behind later results on $\zeta(5),\zeta(7),\dots$ (Rivoal,
+Ball--Rivoal: literature pointer, not retrieved here), which is why his paper is the natural
+starting point for going further.
 
 \section{Status, sources, checks}
 
 \paragraph{What is proved here.} Part~I is a complete proof. Section~10 is a second complete
-proof of positivity and smallness. The inequality quoted at the end of Section~10 is stated, not
-proved here.
+proof of positivity and smallness. Section~11 explains Zudilin's own proof and proves its
+structural steps (the symmetry, positivity, the location and value of the largest term, the first
+two values); two computations are quoted rather than reproduced: the polynomial factors in
+\eqref{ballbound}, and the degree-$6$ certificate. Both are written out in
+\texttt{Zeta3-1-Zudilin-exposition/exposition.md} (Sections 3 and 4 there), our line-by-line
+account of the paper. The inequality quoted at the end of Section~10 is stated, not proved here.
 
 \paragraph{Sources.} Part~I follows the Codex manuscript in
 \texttt{Zeta3-4-Motivated-proof-Codex/}, a motivated account of Beukers' proof; the comparison
@@ -719,6 +867,11 @@ quoted; the moments and the combinations $J(P)$, exactly; that $\binom{2n}n$ div
 $n<150$; the triple integral at $n=1$; Lemmas~\ref{lem:fact} and~\ref{lem:lcm}; the Mellin identity
 for $n\le4$; the rank of the linear system behind \eqref{poly} with $n$ symbolic; the five
 evaluations in Proposition~\ref{prop:cert}; the recurrence and $n^3\Omega_n=12$ exactly for
-$n\le10$; steps 1--4 of Section~10. \textbf{No human has read this document.}
+$n\le10$; steps 1--4 of Section~10. Section~11 was added afterwards and checked separately: the equality of
+Ball's series with $I_n$ numerically for $n\le3$; the reflection symmetry symbolically for $n\le3$;
+the partial fractions of $\widetilde R_1$; the root $\tau_0$ and the value $e^{f(\tau_0)}=\rho$ to
+40 digits; the bound \eqref{ballbound} for $n=5,20,60$; the signs of the terms of $-R_5'(t)$; the
+certificate of degree $6$ by expansion (in the scripts of the exposition folder).
+\textbf{No human has read this document.}
 
 \end{document}
