@@ -1,0 +1,72 @@
+[
+  {
+    "file": "irrationality-framework.md",
+    "source": "codex/problem131/irrationality-framework.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "31e462d9e35678d2276186c0dbc0bdd1bf45fef5eaaf48d31193b96a60eafd4b",
+    "packaged_sha256": "687279d349fda0e7a7ca1604973c6ee01c8a71e562ec9e3226c552859ccea0fc"
+  },
+  {
+    "file": "polynomial-inverses-and-boundary-pairings.md",
+    "source": "codex/problem131/polynomial-inverses-and-boundary-pairings.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "7e7ea9fd4e0ce7587862a0d8f88b51ce2d0edde3d48b75c1c72c83b8b9c5e9f5",
+    "packaged_sha256": "7e7ea9fd4e0ce7587862a0d8f88b51ce2d0edde3d48b75c1c72c83b8b9c5e9f5"
+  },
+  {
+    "file": "polynomial-inverse-pi-square-independent-review.md",
+    "source": "codex/problem131/polynomial-inverse-pi-square-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "832d8cf14d96ac6eedd6de2def937efada2052ad84b183e4da6a6b27ec4e9bf0",
+    "packaged_sha256": "832d8cf14d96ac6eedd6de2def937efada2052ad84b183e4da6a6b27ec4e9bf0"
+  },
+  {
+    "file": "pi-powers.md",
+    "source": "codex/problem131/pi-powers.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "fd193bf45d8b7f7789acd27ce041b379d0882d624d35313e9ec45a3a06f39f10",
+    "packaged_sha256": "3160f300fea5923ee12278f9a3b902e77d19dd800ddfd48ba5ce5968b8f7450d"
+  },
+  {
+    "file": "pi-powers-review.md",
+    "source": "codex/problem131/pi-powers-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "8156082103b57739868ad3e86a488249e5ab82a4357b4f5570dcf29faa4b2f09",
+    "packaged_sha256": "8156082103b57739868ad3e86a488249e5ab82a4357b4f5570dcf29faa4b2f09"
+  },
+  {
+    "file": "shared-coefficients-exp-pi-zeta.md",
+    "source": "codex/problem131/shared-coefficients-exp-pi-zeta.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "c0f37100c329985df749b4c9187773f8edfb51f13ed8afe2cbdc8a6925c7f05c",
+    "packaged_sha256": "3e1ac0d744465ec241403ed3aaff0061fdf57f9ad97e822ef275ec5566937b3e"
+  },
+  {
+    "file": "shared-coefficients-review.md",
+    "source": "codex/problem131/shared-coefficients-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "8887cebb2068f7f601d3eaf45ef7eb1f798b21fe4632c07c13f41211b40f6c81",
+    "packaged_sha256": "0bfd53696b9b4debe9065009df95d822b5cfd9854b73ef25bfacb164a2cd50b2"
+  },
+  {
+    "file": "computations/check_pi_square_inverse.py",
+    "source": "codex/computations/check_pi_square_inverse.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "75c91a567d2d200659cc60d65bca2245775358072b9f575fff344f5e134b9463",
+    "packaged_sha256": "75c91a567d2d200659cc60d65bca2245775358072b9f575fff344f5e134b9463"
+  },
+  {
+    "file": "computations/check_pi_powers.py",
+    "source": "codex/computations/check_pi_powers.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "27cd5fb2ebe2f98a7f27ea5f12be8f752d0cd4c9e2b1a11847efae5c4ce32d18",
+    "packaged_sha256": "27cd5fb2ebe2f98a7f27ea5f12be8f752d0cd4c9e2b1a11847efae5c4ce32d18"
+  },
+  {
+    "file": "computations/check_framework.py",
+    "source": "codex/computations/check_framework.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "62656c7d7a2396cd7324c0465457f65d12d0175d3fcc250ca14e81d899f694c1",
+    "packaged_sha256": "62656c7d7a2396cd7324c0465457f65d12d0175d3fcc250ca14e81d899f694c1"
+  }
+]

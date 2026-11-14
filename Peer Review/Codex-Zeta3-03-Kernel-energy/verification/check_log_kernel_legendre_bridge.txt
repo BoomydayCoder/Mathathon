@@ -1,0 +1,7 @@
+Kernel PDE, scalar ODE, and endpoint flux: exact.
+Legendre ladder identities and final tail integral: n=1,...,16.
+Newton intertwining, inverse transform, 18 independent moment checks, 81 Hilbert entries: exact.
+Polynomial operator division, ordinary-coefficient annihilator, and orthogonality: n=0,...,10.
+All-index bridge formula checked on 121 pairs, with independent exact logarithmic integrals.
+Reciprocal Legendre differential-operator conjugacy: exact.
+All checks passed.

@@ -1,0 +1,3 @@
+PASS:40 adjacent-Legendre norms, 780 lower-degree orthogonalities,
+     40 exact deletion identities and Pythagorean cubic corrections,
+     820 exact logarithmic projection orthogonalities.

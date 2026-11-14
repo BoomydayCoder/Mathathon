@@ -1,0 +1,4 @@
+PASS: exact finite Chebyshev factors N1..6 and hyperbolic normalization N1..12
+PASS: rational kernel factorization and differentiated integral constant
+PASS: exact tanh/Bernoulli coefficient and half-shift identities e1..10
+PASS numerical corroboration:15 finite-product identities and4 positive resolvents

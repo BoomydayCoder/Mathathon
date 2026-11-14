@@ -1,0 +1,2 @@
+PASS 40 exact mode eigenvalues/norms and 225 independent weighted-Hilbert pairings
+PASS direct dilogarithm positive integral for 2*zeta(5), error 0.0

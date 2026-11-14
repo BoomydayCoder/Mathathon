@@ -1,0 +1,4 @@
+PASS: 49 generic difference certificates and Hilbert-Gram identities
+PASS: 11 associated numerators, Legendre norms, exact arithmetic formulas
+PASS: 11480 even-integer denominator checks; exact exponential comparison
+PASS: 5 Hurwitz resolvents and 6 positive Padé error quadratures

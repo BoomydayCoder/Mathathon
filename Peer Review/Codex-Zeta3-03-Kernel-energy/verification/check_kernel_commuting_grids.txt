@@ -1,0 +1,6 @@
+Anticommutator identity and cubic Legendre action: exact.
+Free-index commutator, adjacent elimination, and diagonal closure: exact.
+Exact logarithmic integrals, both grids, commutators, balances, and initial sources: {'grids': 900, 'commutators': 450, 'adjacent': 30, 'diagonal': 30}
+Rational-pole numerators, exact factor 2, cubic-lcm integrality, and B source: n=0,...,15.
+Strict exponential comparison: exact integer inequality.
+All checks passed.

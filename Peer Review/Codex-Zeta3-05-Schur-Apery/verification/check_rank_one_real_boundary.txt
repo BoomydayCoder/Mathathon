@@ -1,0 +1,13 @@
+M 1 all permitted degree pairs passed.
+M 2 all permitted degree pairs passed.
+M 3 all permitted degree pairs passed.
+M 4 all permitted degree pairs passed.
+M 5 all permitted degree pairs passed.
+M 6 all permitted degree pairs passed.
+M 7 all permitted degree pairs passed.
+M 8 all permitted degree pairs passed.
+M 9 all permitted degree pairs passed.
+M 10 all permitted degree pairs passed.
+M 11 all permitted degree pairs passed.
+M 12 all permitted degree pairs passed.
+Passed 364 finite-grid boundary checks plus symbolic balance/source identities.

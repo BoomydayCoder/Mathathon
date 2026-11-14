@@ -1,0 +1,40 @@
+{
+  "checked_at_utc": "2026-11-14",
+  "checks": [
+    {
+      "script": "computations/check_kernel_energy_independent.py",
+      "exit_code": 0,
+      "seconds": 0.1
+    },
+    {
+      "script": "computations/check_kernel_commuting_grids.py",
+      "exit_code": 0,
+      "seconds": 1.78
+    },
+    {
+      "script": "computations/check_reciprocal_legendre_kernel_design.py",
+      "exit_code": 0,
+      "seconds": 1.04
+    },
+    {
+      "script": "computations/check_christoffel_legendre_deletion.py",
+      "exit_code": 0,
+      "seconds": 2.46
+    },
+    {
+      "script": "computations/check_uniform_gibbs_zeta.py",
+      "exit_code": 0,
+      "seconds": 1.64
+    },
+    {
+      "script": "computations/check_uniform_gibbs_modes.py",
+      "exit_code": 0,
+      "seconds": 3.4
+    },
+    {
+      "script": "computations/check_log_kernel_legendre_bridge.py",
+      "exit_code": 0,
+      "seconds": 8.07
+    }
+  ]
+}

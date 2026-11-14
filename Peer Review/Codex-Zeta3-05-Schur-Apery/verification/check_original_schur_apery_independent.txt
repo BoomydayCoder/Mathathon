@@ -1,0 +1,2 @@
+PASS:10 independent original rational Gram minimizers, endpoint values, exact Apéry quotients, and8 full polynomial RII relations
+PASS:independently solved free-index endpoint system, nonzero determinant and exact adjacent-Apéry recurrence transformation

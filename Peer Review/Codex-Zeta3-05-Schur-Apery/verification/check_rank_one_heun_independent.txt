@@ -1,0 +1,9 @@
+Independent Laurent-coefficient eigenvalue and direct x=0,1 endpoint values: exact.
+Free-h endpoint determinant, independently solved coefficients, and factorial/Apéry elimination: exact.
+h= 1 direct pole Gram, root signs, interpolation, original-node RII, and scalar factors: passed.
+h= 2 direct pole Gram, root signs, interpolation, original-node RII, and scalar factors: passed.
+h= 3 direct pole Gram, root signs, interpolation, original-node RII, and scalar factors: passed.
+h= 4 direct pole Gram, root signs, interpolation, original-node RII, and scalar factors: passed.
+h= 5 direct pole Gram, root signs, interpolation, original-node RII, and scalar factors: passed.
+h= 6 direct pole Gram, root signs, interpolation, original-node RII, and scalar factors: passed.
+All independent exact audit checks passed.

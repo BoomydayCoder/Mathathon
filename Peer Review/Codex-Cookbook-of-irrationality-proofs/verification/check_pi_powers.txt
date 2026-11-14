@@ -1,0 +1,1 @@
+PASS: finite pi-power endpoint congruences; exact zeta2 lcm-rate inequality

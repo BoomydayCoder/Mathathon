@@ -1,0 +1,45 @@
+{
+  "checked_at_utc": "2026-11-14",
+  "checks": [
+    {
+      "script": "computations/check_original_schur_apery_independent.py",
+      "exit_code": 0,
+      "seconds": 1.02
+    },
+    {
+      "script": "computations/check_rank_one_heun_rii_bridge.py",
+      "exit_code": 0,
+      "seconds": 3.39
+    },
+    {
+      "script": "computations/check_rank_one_heun_independent.py",
+      "exit_code": 0,
+      "seconds": 1.35
+    },
+    {
+      "script": "computations/check_rank_one_real_boundary.py",
+      "exit_code": 0,
+      "seconds": 15.76
+    },
+    {
+      "script": "computations/check_rank_one_original_error_tail.py",
+      "exit_code": 0,
+      "seconds": 0.59
+    },
+    {
+      "script": "computations/check_rank_two_pell_independent.py",
+      "exit_code": 0,
+      "seconds": 0.11
+    },
+    {
+      "script": "computations/check_rank_two_apery_formula.py",
+      "exit_code": 0,
+      "seconds": 1.42
+    },
+    {
+      "script": "computations/check_zeta3_rank_q_heun.py",
+      "exit_code": 0,
+      "seconds": 1.73
+    }
+  ]
+}

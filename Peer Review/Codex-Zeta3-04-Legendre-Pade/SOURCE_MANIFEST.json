@@ -1,0 +1,100 @@
+[
+  {
+    "file": "resolvent-legendre-pade-proof.md",
+    "source": "codex/problem131/resolvent-legendre-pade-proof.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "413b38007b5c2cb621e128bd92f2befc737ec1bec98a93b57f38e2c202766677",
+    "packaged_sha256": "7b98d047a42c9b82272ea31b1055d2134d8480a74f8149097709fe02296f87c9"
+  },
+  {
+    "file": "resolvent-legendre-pade-independent-review.md",
+    "source": "codex/problem131/resolvent-legendre-pade-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "9064c6d77a040fbee7b7c142df3ed087b735db6147c7a5009251c19e6d860077",
+    "packaged_sha256": "429e328486fec199230e4210b932848260a0acbbd76bfadddf1c4c4f72b96f46"
+  },
+  {
+    "file": "designing-the-apery-measure.md",
+    "source": "codex/problem131/designing-the-apery-measure.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "7d339d44ef2c3bfa49d34cf52ba202f6a19f0ac9b7b0b369f6cfd38d7dad2d50",
+    "packaged_sha256": "194e6397543e864727e3e9802602525d475f1732bae74b7e97d1b9468096a36d"
+  },
+  {
+    "file": "half-shift-elementary-resolvent-proof.md",
+    "source": "codex/problem131/half-shift-elementary-resolvent-proof.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "d2c992fb320e47eba9a1763b2fe72258ee2d026c37620133687812d063f3cfe5",
+    "packaged_sha256": "da9ed84d7ba9ab693400fa05a52f25bf7792ed0f76102ee508f85218f0ef3bbb"
+  },
+  {
+    "file": "half-shift-elementary-independent-review.md",
+    "source": "codex/problem131/half-shift-elementary-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "4b19b765d839e294582999dcbb52e24980e3c73aaec7696c3f3a12809fea508d",
+    "packaged_sha256": "b411a96a3f17948aa2f1c75f77f118bb7767764caccbd901ad856892c9e812d5"
+  },
+  {
+    "file": "cubic-wilson-real-kernel-model.md",
+    "source": "codex/problem131/cubic-wilson-real-kernel-model.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "d6ea34aeca668b7d9741bbd80dda8d509c93cf0044a2fed168328a6f4fe9e9b4",
+    "packaged_sha256": "dc48ab30b09f7ed9cd20cf082def8982a98bfe70dd213f0699cf3e59faaf16dc"
+  },
+  {
+    "file": "cubic-wilson-real-independent-review.md",
+    "source": "codex/problem131/cubic-wilson-real-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "91b2640236be00809c227c9f99e0edfa36bbdecd57036c5ad41d963afbd9a09b",
+    "packaged_sha256": "91b2640236be00809c227c9f99e0edfa36bbdecd57036c5ad41d963afbd9a09b"
+  },
+  {
+    "file": "cubic-balanced-adjacent-apery-identity.md",
+    "source": "codex/problem131/cubic-balanced-adjacent-apery-identity.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "5098b6284b13c5c56cf253c2acc08aceb0f2e511a570bee140c0a550083a28a7",
+    "packaged_sha256": "4626a8ee364951caf5cc768b6d5b7b540b81161b93652e35004fd951185ce871"
+  },
+  {
+    "file": "cubic-balanced-apery-independent-review.md",
+    "source": "codex/problem131/cubic-balanced-apery-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "1e7414e8045c5e216cd23411cbcf9d9fc1018d7862dba64bc405c036992b8f01",
+    "packaged_sha256": "1e7414e8045c5e216cd23411cbcf9d9fc1018d7862dba64bc405c036992b8f01"
+  },
+  {
+    "file": "computations/check_cubic_balanced_apery_bridge.py",
+    "source": "codex/computations/check_cubic_balanced_apery_bridge.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "2ab6c010f085e4a6a195604addfc79525621ebd41574df8146f3fddae9486516",
+    "packaged_sha256": "2ab6c010f085e4a6a195604addfc79525621ebd41574df8146f3fddae9486516"
+  },
+  {
+    "file": "computations/check_elementary_resolvent_independent.py",
+    "source": "codex/computations/check_elementary_resolvent_independent.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "1b49805d65af0d75d66ead370b77fc9cf2ea815bd5a04e08c5be3b42d6a18106",
+    "packaged_sha256": "1b49805d65af0d75d66ead370b77fc9cf2ea815bd5a04e08c5be3b42d6a18106"
+  },
+  {
+    "file": "computations/check_half_shift_elementary_resolvent.py",
+    "source": "codex/computations/check_half_shift_elementary_resolvent.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "e58bbeca5e430179d30364c687d17ae92f10e5d12d04ee92f6dacef9636c71d0",
+    "packaged_sha256": "e58bbeca5e430179d30364c687d17ae92f10e5d12d04ee92f6dacef9636c71d0"
+  },
+  {
+    "file": "computations/check_resolvent_pade_independent.py",
+    "source": "codex/computations/check_resolvent_pade_independent.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "b5fe66625a533ca669b18201f2e4f9f9f2ad6e707f0a6c1d8f5b796e9b0ed360",
+    "packaged_sha256": "b5fe66625a533ca669b18201f2e4f9f9f2ad6e707f0a6c1d8f5b796e9b0ed360"
+  },
+  {
+    "file": "computations/check_resolvent_legendre_pade.py",
+    "source": "codex/computations/check_resolvent_legendre_pade.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "ec21e1287763665f9dfc9f81947e1787e7052e3ec219fdb8d7cce5829931c8a7",
+    "packaged_sha256": "ec21e1287763665f9dfc9f81947e1787e7052e3ec219fdb8d7cce5829931c8a7"
+  }
+]

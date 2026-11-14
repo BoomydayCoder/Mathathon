@@ -1,0 +1,37 @@
+[
+  {
+    "file": "short-elementary-hybrid-proof.md",
+    "source": "codex/problem131/short-elementary-hybrid-proof.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "c5d21f22c2b08269bdcc342fd873a2e2b70063d781fb788cc4aa995f5804c986",
+    "packaged_sha256": "386dfe9cfcc53a7c0f7476cd1e744375becf3241fef060207c1594d6218e153a"
+  },
+  {
+    "file": "short-hybrid-independent-review.md",
+    "source": "codex/problem131/short-hybrid-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "517b095da4b47c9de55f4c6e97c0d14baf94316c557cbad874cf10fdaf02941c",
+    "packaged_sha256": "517b095da4b47c9de55f4c6e97c0d14baf94316c557cbad874cf10fdaf02941c"
+  },
+  {
+    "file": "beukers-explained.md",
+    "source": "codex/problem131/beukers-explained.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "d047a65eadd8d0cdaab2467df73eac6a46254cc5ba8eaf2720d9002a40586090",
+    "packaged_sha256": "d047a65eadd8d0cdaab2467df73eac6a46254cc5ba8eaf2720d9002a40586090"
+  },
+  {
+    "file": "reciprocal-region-beukers.md",
+    "source": "codex/problem131/reciprocal-region-beukers.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "5e28db3567af702672d1fab00d28a1fd61424d3a03f7d42ec9b259955e952943",
+    "packaged_sha256": "7b561b2a8d7ade11efd3dd04c46d3e6ca1bdd5b989bc3f82055c106e2478f382"
+  },
+  {
+    "file": "computations/check_beukers.py",
+    "source": "codex/computations/check_beukers.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "245f24dae432c99bb34af395b149865090af34cd0cbd8f82005082c145053b6d",
+    "packaged_sha256": "245f24dae432c99bb34af395b149865090af34cd0cbd8f82005082c145053b6d"
+  }
+]

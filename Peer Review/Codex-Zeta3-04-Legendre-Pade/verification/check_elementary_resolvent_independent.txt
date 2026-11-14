@@ -1,0 +1,3 @@
+PASS: 60 exact Chebyshev square factorizations and monic/constant normalizations
+PASS: 21 independent ODE/Bernoulli coefficients and rational moment simplifications
+PASS: rational kernel constants, equal-parameter limits and derivative bounds

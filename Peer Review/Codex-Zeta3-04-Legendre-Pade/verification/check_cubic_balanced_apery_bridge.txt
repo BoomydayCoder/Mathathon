@@ -1,0 +1,5 @@
+PASS:169 exact original-measure Newton Gram entries;
+     31 real-operator moments and13 weighted-adjoint identities;
+     free-symbol raising/induction coefficients;28 Rodrigues polynomials;
+     13 original-moment diagonal full Apéry identities,78 general transforms,
+     13 Wilson norms, original orthogonality and Newton moments checked independently.

@@ -1,0 +1,3 @@
+PASS exact h=11 rational endpoints
+PASS 11 independently eliminated rank-two pencils, square classes, widths and positive residual norms
+PASS five Pell indices from exact recurrence

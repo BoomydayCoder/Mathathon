@@ -1,0 +1,386 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype,booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Why Apery's proof works},pdfauthor={Codex research exposition for the Mathathon team}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{Understanding Ap\'ery's proof}\fancyhead[R]{Peer review draft}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,d}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\DeclareMathOperator{\lcm}{lcm}
+\newtheorem{theorem}{Theorem}
+\title{Why Ap\'ery's proof works\\[3mm]\large From orthogonal polynomials to a logarithmic kernel,\\positive energy, and the mysterious recurrence}
+\author{Codex research exposition for Adavya Goyal's Mathathon team}
+\date{Peer review draft --- 14 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The central problem is to construct a rational linear form in $\zeta(3)$ that is nonzero, exceptionally small, and arithmetically controlled. A shifted Legendre polynomial explains the zeros of Zudilin's auxiliary rational function. A logarithmic kernel connects that rational function to both an energy estimate and Beukers' integral. Two compatible index recurrences then explain the coefficients $17$ and $5$ in Ap\'ery's recurrence. This exposition gives a complete kernel-energy irrationality argument and the structural recurrence derivation, followed by an integral supplement and a guide to further connections.
+\end{abstract}
+\noindent\textbf{Status and attribution.} The underlying theorem, Ap\'ery sequences, Legendre polynomials, and rational and integral constructions are classical. This document is a newly typeset synthesis of Codex notes that received internal AI-agent checks; it is submitted for human peer review. It makes no historical novelty claim. The longer companion notes supply alternative routes and source comparisons. This is a reconstruction of mathematical motivation, not an account of the historical thought processes of Ap\'ery or Zudilin.
+{\small\setcounter{tocdepth}{1}\tableofcontents}
+\newpage
+\section{The target: a positive integer that becomes too small}
+If $\xi=a/b$ is rational and $u_n,v_n$ are integers, then
+\[
+ b(u_n\xi-v_n)=a u_n-bv_n\in\Z.
+\]
+Consequently, a nonzero sequence of such linear forms cannot tend to zero. This elementary observation is the engine of many irrationality proofs. For $\zeta(3)$ the useful form is
+\begin{equation}\label{target}
+ I_n=2(A_n\zeta(3)-B_n),\qquad A_n\in\Z,
+ \qquad d_n^3B_n\in\Z,\quad d_n=\lcm(1,\ldots,n).
+\end{equation}
+Our task has three parts: establish the arithmetic in \eqref{target}, prove $I_n>0$, and show $d_n^3I_n\to0$. Smallness alone is insufficient: clearing denominators must not destroy it.
+
+\textbf{Why use several representations?} A formula that exposes denominators need not expose sign. A formula that exposes sign need not expose integer coefficients. The useful discovery is that a rational function, a double integral, a differential equation, and a positive triple integral describe the same $I_n$.
+
+\section{Orthogonality designs Zudilin's rational product}
+Put
+\[
+ C_{nj}=\binom nj\binom{n+j}j,\qquad
+ L_n(x)=\frac1{n!}\frac{d^n}{dx^n}[x^n(1-x)^n]
+       =\sum_{j=0}^n(-1)^jC_{nj}x^j.
+\]
+The endpoint zeros of $x^n(1-x)^n$ kill every boundary term in $n$ integrations by parts. Therefore
+\begin{equation}\label{orth}
+ \int_0^1 L_n(x)p(x)\dd x=0\quad(\deg p<n),\qquad
+ \int_0^1L_n(x)^2\dd x=\frac1{2n+1}.
+\end{equation}
+For the norm, the $n$th derivative of $L_n$ is $(-1)^n n!\binom{2n}n$; the same integration by parts and the beta integral
+$\int_0^1x^n(1-x)^n\dd x=(n!)^2/(2n+1)!$ give the second formula.
+
+Take a Mellin transform, initially at $s>n$:
+\begin{equation}\label{mellin}
+ \int_0^1x^{s-1}L_n(x)\dd x=(-1)^nP_n(s),\qquad
+ P_n(s)=\frac{(s-1)\cdots(s-n)}{s(s+1)\cdots(s+n)}.
+\end{equation}
+Again this is Rodrigues integration by parts followed by the beta integral. Both sides are rational functions of $s$, so equality extends to every $s>0$.
+
+\textbf{What has been explained?} A polynomial of degree $n$ has a Mellin transform with possible poles only at $0,-1,\ldots,-n$. Orthogonality forces zeros at $1,\ldots,n$. These conditions force the product in \eqref{mellin} up to normalization. It is no longer an unexplained guess.
+
+Pair two copies of this transform. Squaring supplies double zeros, double poles, and squared integer residues. Differentiation raises the pole order to three, naturally producing $\zeta(3)$. Set
+\begin{equation}\label{series}
+ I_n=-\sum_{s=1}^{\infty}\frac{d}{ds}P_n(s)^2.
+\end{equation}
+The derivative is evaluated at each positive integer; this is not a derivative of a discrete sequence. Multiplication of the two Mellin integrals and summation of the geometric series yield
+\begin{equation}\label{kernel}
+ I_n=\int_0^1\!\int_0^1L_n(x)L_n(y)K(xy)\dd x\dd y,
+ \qquad K(v)=\frac{-\log v}{1-v},\quad K(1)=1.
+\end{equation}
+The logarithm is precisely the effect of differentiation in Mellin space. All interchanges follow from boundedness of the fixed polynomials and integrability of $K(xy)$: its double integral is $2\zeta(3)$. Positivity of $K$ does \emph{not} yet prove positivity of \eqref{kernel}, because $L_n$ changes sign.
+
+\section{The arithmetic: only the diagonal contains zeta}
+Write $H_i^{(r)}=\sum_{k=1}^i k^{-r}$, with $H_0^{(r)}=0$. Expanding the kernel gives
+\begin{equation}\label{matrix}
+ \int_0^1\!\int_0^1x^iy^jK(xy)\dd x\dd y=
+ \begin{cases}
+ 2(\zeta(3)-H_i^{(3)}),&i=j,\\[1mm]
+ (H_j^{(2)}-H_i^{(2)})/(j-i),&i\ne j.
+ \end{cases}
+\end{equation}
+Indeed its $r$th geometric-series term integrates to
+\[
+ \frac1{(r+i+1)^2(r+j+1)}+
+ \frac1{(r+i+1)(r+j+1)^2}.
+\]
+For distinct $i,j$, this is the difference of two reciprocal squares divided by $j-i$; its sum telescopes. On the diagonal it is a cubic reciprocal. This distinction explains why only one irrational constant remains.
+
+Let $c_i=(-1)^iC_{ni}$. Expansion in \eqref{matrix} proves \eqref{target}, with
+\begin{align}
+ A_n&=\sum_{i=0}^n c_i^2=\sum_{i=0}^n\binom ni^2\binom{n+i}i^2,\label{A}\\
+ B_n&=\sum_{i=0}^n c_i^2H_i^{(3)}+
+ \sum_{i=0}^n c_iH_i^{(2)}
+          \sum_{\substack{0\le j\le n\\j\ne i}}\frac{c_j}{j-i}.
+ \label{B}
+\end{align}
+Every nonzero $j-i$ has absolute value at most $n$. One factor $d_n$ clears these differences, and two more clear the quadratic harmonic sums. The cubic harmonic sums need exactly the same budget. Hence $d_n^3B_n\in\Z$.
+
+In Zudilin's partial-fraction language, the residues of $P_n$ are integers, the double-pole coefficients of $P_n^2$ are their squares, and the sum of the simple-pole coefficients is zero because $P_n(s)^2=O(s^{-2})$. That last cancellation eliminates the possible $\zeta(2)$ term. Equation \eqref{matrix} makes the same cancellation visible entry by entry.
+
+\section{Positivity from a differential equation}
+\subsection{The logarithm has a unit boundary flux}
+Define
+\[
+ k_n(x)=\int_0^1L_n(y)K(xy)\dd y,\qquad
+ J=-\frac d{dx}\left[x(1-x)\frac d{dx}\right],\qquad
+ H=-\frac d{dx}\left[x^2(1-x)\frac d{dx}\right]+x.
+\]
+The Legendre equation says $JL_n=\lambda_nL_n$, where $\lambda_n=n(n+1)$. Direct differentiation of $K$ gives
+\[
+ (v^2-v)K''+(3v-1)K'+K=0,
+ \qquad (H_x+J_y)K(xy)=0.
+\]
+Move $J_y$ from $K$ to $L_n$ by integration by parts. The boundary bracket is
+\[
+ [-L_n(y)y(1-y)\partial_yK(xy)
+       +y(1-y)L_n'(y)K(xy)]_0^1=-1.
+\]
+At $y=1$ it vanishes; at $y=0$ its value is $+1$, since
+$y\partial_yK(xy)\to-1$ and $L_n(0)=1$. Thus
+\begin{equation}\label{forcing}
+ (H+\lambda_n)k_n=1.
+\end{equation}
+This is the key mechanism: the singular logarithm becomes a simple constant forcing term. Dropping this endpoint contribution would give the wrong equation and the wrong recurrence initialization.
+
+\subsection{A polynomial remainder forces the Ap\'ery integer}
+We want to replace the constant forcing in \eqref{forcing} by $L_n$. Since
+\begin{equation}\label{monomial}
+ Hx^j=(j+1)^2x^{j+1}-j(j+1)x^j,
+\end{equation}
+comparison from the highest coefficient down gives a unique polynomial $r_n$ of degree less than $n$ and a constant $A$ such that
+\[
+ L_n=(H+\lambda_n)r_n+A.
+\]
+There is no need to calculate $r_n$. Define a linear functional on degree at most $n$ by $E_n(x^j)=(-1)^jC_{nj}$. The binomial ratio
+\[
+ (j+1)^2C_{n,j+1}=(n-j)(n+j+1)C_{nj}
+\]
+shows that $E_n((H+\lambda_n)x^j)=0$ for $j<n$. Since $E_n(1)=1$, applying $E_n$ forces
+\[
+ A=E_n(L_n)=\sum_j C_{nj}^2=A_n.
+\]
+The arithmetic coefficient and the differential normalization are therefore the same number for a structural reason.
+
+Put $g_n=r_n+A_nk_n$. Then $(H+\lambda_n)g_n=L_n$, and orthogonality gives $\ip{L_n}{g_n}=A_nI_n$. Integration by parts now yields
+\begin{equation}\label{energy}
+ A_nI_n=\int_0^1x^2(1-x)(g_n')^2\dd x+
+           \int_0^1(x+\lambda_n)g_n^2\dd x>0.
+\end{equation}
+Strictness follows because $g_n$ has nonzero forcing $L_n$. This is the sign argument that the double integral alone did not provide.
+
+For completeness, as $x\downarrow0$, direct differentiation under the integral gives
+$k_n=O_n(1+|\log x|)$ and $k_n'=O_n(x^{-1}+|\log x|)$. At $x=1$ both are bounded. These estimates imply finite energies and vanishing boundary products $x^2(1-x)g_n'g_n$, justifying \eqref{energy} by first integrating on truncated intervals.
+
+For $n\ge1$, Cauchy--Schwarz and \eqref{orth} imply
+\[
+ \lambda_n\|g_n\|_2^2\le A_nI_n
+   =\ip{L_n}{g_n}\le\|L_n\|_2\|g_n\|_2.
+\]
+Dividing and substituting once more proves
+\begin{equation}\label{bound}
+ \boxed{0<I_n\le\frac1{n(n+1)(2n+1)A_n}.}
+\end{equation}
+A large arithmetic coefficient has made the analytic error small.
+
+\section{Two growth estimates finish the irrationality proof}
+\subsection{The binomial sum is large enough}
+Let $S_n=\sum_jC_{nj}$ and $\alpha=3+2\sqrt2$. Summing
+$C_{nj}=\binom{2j}j\binom{n+j}{2j}$ as formal power series gives
+\[
+ \sum_{n\ge0}S_nz^n=(1-6z+z^2)^{-1/2}
+ =(1-\alpha z)^{-1/2}(1-\alpha^{-1}z)^{-1/2}.
+\]
+Both factors have positive coefficients. Taking just one contribution to the coefficient gives
+\[
+ S_n\ge\alpha^n\frac{\binom{2n}n}{4^n}\ge\frac{\alpha^n}{2n+1}.
+\]
+The last inequality uses the largest of the $2n+1$ binomial coefficients that sum to $4^n$. Cauchy--Schwarz gives $A_n\ge S_n^2/(n+1)$. With $\Lambda=\alpha^2=17+12\sqrt2$, \eqref{bound} becomes
+\begin{equation}\label{decay}
+ A_n\ge\frac{\Lambda^n}{(n+1)(2n+1)^2},\qquad
+ 0<I_n\le\frac{2n+1}{n}\Lambda^{-n}\le3\Lambda^{-n}.
+\end{equation}
+
+\subsection{An elementary denominator budget}
+We need an lcm bound strong enough for three powers. Define $\psi(x)=\log d_{\lfloor x\rfloor}$, with $d_0=d_1=1$, and
+\[
+ V(x)=\log(\lfloor x\rfloor!)-\log(\lfloor x/2\rfloor!)
+       -2\log(\lfloor x/3\rfloor!)+\log(\lfloor x/6\rfloor!).
+\]
+Counting prime powers in factorials gives
+\[
+ V(x)=\sum_{p\text{ prime},\ a\ge1}h(x/p^a)\log p,\quad
+ h(u)=\lfloor u\rfloor-\lfloor u/2\rfloor-2\lfloor u/3\rfloor+\lfloor u/6\rfloor.
+\]
+The step function $h$ has period six and successive values $0,1,1,0,0,1$. It is nonnegative and equals one on $[1,3)$; hence
+$\psi(x)-\psi(x/3)\le V(x)$. Comparing a sum with the integral of $\log t$ gives $\log(m!)=m\log m-m+O(\log(m+2))$, and therefore
+\[
+ V(x)=\left(\frac{\log2}3+\frac{\log3}2\right)x+O(\log(x+2)).
+\]
+Sum this inequality at $x,x/3,x/9,\ldots$ until the argument is below one:
+\begin{equation}\label{lcm}
+ \log d_n\le cn+O(\log^2(n+2)),\qquad
+ c=\frac{\log2}2+\frac{3\log3}4.
+\end{equation}
+There is a strict margin $e^{3c}<\Lambda$. An exact check is
+\[
+ \Lambda>\frac{169}5,\qquad
+ e^{12c}=64\cdot3^9=1259712<\frac{169^4}{5^4}.
+\]
+Equations \eqref{decay}--\eqref{lcm} prove $0<d_n^3I_n\to0$, without the prime number theorem. If $\zeta(3)=a/b$ with positive integers $a,b$, then
+\[
+ b d_n^3I_n=2a d_n^3A_n-2b d_n^3B_n
+\]
+is a positive integer tending to zero. This contradiction proves:
+\begin{theorem}[Ap\'ery]
+$\zeta(3)$ is irrational.
+\end{theorem}
+
+\section{Where the recurrence comes from}
+The irrationality proof above did not require a recurrence. But explaining the recurrence is the project's central structural question. The essential move is to keep two indices before restricting to the diagonal.
+
+\subsection{A quadratic eigenvalue and a linear shift produce cubes}
+Let $p_n=2n+1$, $\lambda_n=n(n+1)$ and
+\[
+ I_{nm}=\iint L_n(x)L_m(y)K(xy)\dd x\dd y=I_{mn}.
+\]
+The operator identity and Legendre multiplication formula are
+\[
+ H=\tfrac12(xJ+Jx)+\tfrac12,\qquad
+ xL_n=\tfrac12L_n-\frac{n+1}{2p_n}L_{n+1}-\frac n{2p_n}L_{n-1}.
+\]
+Consequently
+\begin{equation}\label{tri}
+ 2p_nHL_n=-(n+1)^3L_{n+1}+p_n(\lambda_n+1)L_n-n^3L_{n-1}.
+\end{equation}
+The factor $(n+1)^3$ is a linear shift coefficient multiplied by
+$(\lambda_n+\lambda_{n+1})/2=(n+1)^2$. The cubes are forced by the eigenvalues.
+
+Integrate \eqref{tri} against $k_m$ and use $(H+\lambda_m)k_m=1$. This gives
+\begin{equation}\label{grid}
+ (n+1)^3I_{n+1,m}-p_n(\lambda_n+2\lambda_m+1)I_{nm}
+       +n^3I_{n-1,m}=-2\delta_{n0}.
+\end{equation}
+Symmetry supplies the second equation, in $m$. Here $\delta_{n0}$ is one for $n=0$ and zero otherwise; negative-index terms with zero coefficients are omitted.
+
+\subsection{The denominator grid must be proved separately}
+We cannot infer a recurrence for $A_n$ by separating coefficients of an as-yet unknown irrational number. Instead define
+\[
+ Q_j(t)=\frac{\prod_{r=0}^{j-1}(t+r(r+1))}{(j!)^2},\quad
+ U(x^j)=Q_j(t),\quad \Phi_n=UL_n.
+\]
+The monomial formula \eqref{monomial} gives $UH=tU$. Also
+$Q_j(-\lambda_m)=(-1)^jC_{mj}$ (zero for $j>m$). Therefore
+\[
+ T_{nm}:=\Phi_n(-\lambda_m)=\sum_jC_{nj}C_{mj}=T_{mn},\qquad T_{nn}=A_n.
+\]
+Apply $U$ to \eqref{tri} and evaluate at $-\lambda_m$. The result is \eqref{grid} for $T$, now with zero source. Both symmetric arrays thus satisfy the same pair of grid equations, with different boundary forcing.
+
+\subsection{Compatibility forces the factor six}
+Write $X$ for either array, and $\varepsilon=2$ for $I$, $0$ for $T$. Define
+\[
+ (\mathcal D_nX)_{nm}=(n+1)^3(X_{n+1,m}-X_{nm})
+                   +n^3(X_{n-1,m}-X_{nm}).
+\]
+Since $(n+1)^3+n^3=p_n(\lambda_n+1)$, the equations are
+\[
+ \mathcal D_nX=2p_n\lambda_mX-\varepsilon\delta_{n0},\qquad
+ \mathcal D_mX=2p_m\lambda_nX-\varepsilon\delta_{m0}.
+\]
+Operators in different coordinates commute. Apply $\mathcal D_m$ to the first equation and $\mathcal D_n$ to the second, then subtract. Constants are killed by $\mathcal D$, and $\lambda_n\delta_{n0}=0$. After cancellation,
+\[
+ p_n[\mathcal D_m,\lambda_m]X=p_m[\mathcal D_n,\lambda_n]X,
+\]
+where $[A,B]=AB-BA$. As $\lambda_{n+1}-\lambda_n=2(n+1)$, this is
+\begin{equation}\label{compat}
+ p_n[(m+1)^4X_{n,m+1}-m^4X_{n,m-1}]
+ =p_m[(n+1)^4X_{n+1,m}-n^4X_{n-1,m}].
+\end{equation}
+Set $m=n-1$, and abbreviate $d=X_{nn}$, $d_-=X_{n-1,n-1}$, $e=X_{n,n-1}$, $a=3n^2-n+1$, $b=3n^2+n+1$. The original grids give
+\begin{align*}
+ (n+1)^3X_{n+1,n-1}&=p_n a e-n^3d_-,\\
+ (n-1)^3X_{n,n-2}&=p_{n-1}b e-n^3d-\varepsilon\delta_{n1}.
+\end{align*}
+Insert these in \eqref{compat}. They are multiplied by $n+1$ and $n-1$ respectively, so the exceptional source vanishes even at $n=1$. Cancellation leaves
+\[
+ n^3(d+d_-)=[(n+1)a+(n-1)b]e=6n^3e.
+\]
+Thus, at every $n\ge1$,
+\begin{equation}\label{six}
+ \boxed{X_{nn}+X_{n-1,n-1}=6X_{n,n-1}.}
+\end{equation}
+This is stronger than symmetry. It is a compatibility condition forced by both grid equations.
+
+\subsection{Seventeen and five are now inevitable}
+Let $u_n=X_{nn}$. Set $m=n$ in the original grid and use \eqref{six}:
+\[
+ \frac{(n+1)^3}{6}(u_{n+1}+u_n)
+ -p_n(3\lambda_n+1)u_n+\frac{n^3}{6}(u_n+u_{n-1})
+ =-\varepsilon\delta_{n0}.
+\]
+The middle coefficient simplifies because
+\[
+ 6p_n(3\lambda_n+1)-p_n(\lambda_n+1)
+       =p_n(17\lambda_n+5).
+\]
+We obtain
+\begin{equation}\label{apery}
+ \boxed{(n+1)^3u_{n+1}-(2n+1)(17n^2+17n+5)u_n+n^3u_{n-1}
+ =-6\varepsilon\delta_{n0}.}
+\end{equation}
+Thus $17=6\cdot3-1$ and $5=6\cdot1-1$. Neither was guessed from initial values. For $A_n$ the equation is homogeneous even at zero. For $I_n$ it has source $-12\delta_{n0}$. Since $I_0=2\zeta(3)$, it gives $I_1=10\zeta(3)-12$. Using the separately proved recurrence for $A_n$ in $I_n=2(A_n\zeta(3)-B_n)$ gives $B_0=0$, $B_1=6$, and the homogeneous recurrence for $B$ at $n\ge1$.
+
+The leading-coefficient equation for a trial exponential $u_n\approx\rho^n$ is $\rho^2-34\rho+1=0$, with roots $17\pm12\sqrt2$. Their appearance agrees with the exact growth budget above. This heuristic alone is not a proof of asymptotics; the irrationality proof already has rigorous sufficient bounds.
+
+\section{Supplement: how Beukers' positive integral fits}
+A second route to sign and smallness starts from the elementary identity
+\[
+ K(v)=\int_0^\infty\frac{\dd t}{(1+t)(v+t)}.
+\]
+Insert it in \eqref{kernel}, use Rodrigues in $x$, substitute $t=yu$, then use Rodrigues in $y$. The carefully ordered steps produce
+\[
+ I_n=\int_0^1\!\int_0^1\!\int_0^\infty
+ \frac{x^n(1-x)^n y^n(1-y)^n u^n}
+ {(1+yu)^{n+1}(x+u)^{n+1}}\dd u\dd y\dd x.
+\]
+The substitution $u=(1-z)/(yz)$ gives Beukers' integral:
+\begin{equation}\label{beukers}
+ I_n=\iiint_{(0,1)^3}
+ \frac{[x(1-x)y(1-y)z(1-z)]^n}{(1-z+xyz)^{n+1}}
+ \dd x\dd y\dd z>0.
+\end{equation}
+Endpoint zeros justify the integrations by parts. For the absolute convergence between them, set $M_n=\max|L_n|$. The first inner integral after integration by parts is nonnegative and at most $M_n\int_0^1(xy+t)^{-1}\dd x$. Multiplying by $|L_n(y)|/(1+t)$ bounds its integral by $2M_n^2\zeta(3)$. The substitution preserves convergence; the second integration by parts then yields a positive integrand, to which Tonelli applies. The companion hybrid note gives the full intermediate algebra.
+
+The decay is an AM--GM calculation. Substitute $x=X/(1+X)$, $y=Y/(1+Y)$, $z=Z/(1+Z)$, and put
+\[
+ \mathcal L=(1+X)(1+Y)(1+Z)
+       \frac{(1+X)(1+Y)+XYZ}{XYZ}.
+\]
+Then $I_n=\int_{(0,\infty)^3}\mathcal L^{-n-1}\dd X/X\dd Y/Y\dd Z/Z$. Write $p=(1+X)(1+Y)$, $r=\sqrt{XY}$ and $q=p^2/(XY)$. We have
+\[
+ \mathcal L=pZ+p+q+q/Z\ge(\sqrt p+\sqrt q)^2
+ \ge(3+2r+r^{-1})^2\ge(3+2\sqrt2)^2=\Lambda.
+\]
+The middle inequality uses $\sqrt p\ge1+r$. Since $I_0=2\zeta(3)$,
+\[
+ 0<I_n\le2\zeta(3)\Lambda^{-n}.
+\]
+Together with the same arithmetic and lcm bound, this is a second complete route to irrationality. The integral and energy arguments explain the same exponentially small error in different ways.
+
+\section{A cookbook, and what survives for other odd zeta values}
+The reusable sequence of decisions is:
+\begin{enumerate}
+ \item Start with the desired integer contradiction and write the denominator budget explicitly.
+ \item Force endpoint zeros or moment cancellation. Orthogonal polynomials package these constraints efficiently.
+ \item Transform to a representation where the arithmetic is visible: poles, integer coefficients, or boundary derivatives.
+ \item Find a positive remainder, an energy identity, or another rigorous nonvanishing argument.
+ \item Compare exponential decay with denominator growth before pursuing elaborate generalizations.
+\end{enumerate}
+For $e^r$, $r\in\mathbb Q\setminus\{0\}$, polynomial endpoint vanishing and repeated integration by parts give a factorial budget. For $\pi^2$, polynomial differential operators and sine boundary values give a related construction. Statements about $\pi^r$ require the exponent domain to be specified; the cookbook treats nonzero rational $r$, with the stronger transcendence machinery identified explicitly.
+
+The unexpected links here are exact, not numerical coincidences: endpoint zeros become Mellin zeros; the same binomial vector supplies both an arithmetic coefficient and a differential remainder; commuting grids turn a partial differential identity into Ap\'ery's recurrence. A further companion note interprets cubic zeta tails as squared orthogonal-projection errors. A stationary random process then realizes $4\zeta(2r+3)$ as a lag-$r$ kernel correlation. That identity yields an interpretation of all these odd values, not their irrationality: the available truncation error does not beat its denominator cost.
+
+One should also distinguish isolated-value proofs from linear forms involving several odd zeta values. A small form involving $1,\zeta(3),\zeta(5),\ldots$ does not on its own isolate $\zeta(5)$. The present document proves irrationality of $\zeta(3)$ only. No elementary proof of $\zeta(5)$ or theorem covering all odd zeta values is claimed here.
+
+\section*{Sources and review map}
+\addcontentsline{toc}{section}{Sources and review map}
+The main source notes are listed below (the third is in the Beukers package).
+\begin{itemize}
+\item \path{short-kernel-energy-zeta3-proof.md}
+\item \path{kernel-commuting-grids-apery-recurrence.md}
+\item \path{short-elementary-hybrid-proof.md}
+\end{itemize}
+ They were frozen from research commit \texttt{03cc75d}; the package manifest records the full commit and hashes. The energy and grid review notes are internal AI audits, not human referee reports. The PDF's typesetting and synthesis are a fresh draft.
+
+For peer review, prioritize the boundary flux sign, arithmetic factor of two, polynomial remainder normalization, all improper-integral interchanges, and the grid source at zero. The local exact checkers test the arithmetic and grid identities on finite ranges. Such checks support debugging, not all-index proof validity.
+
+\begin{thebibliography}{9}
+\bibitem{zudilin} W. Zudilin, \emph{An elementary proof of Ap\'ery's theorem} (2002), \href{https://arxiv.org/abs/math/0202159}{arXiv:math/0202159}. The companion Zudilin package explains the paper's lemmas and rational telescoping certificates individually.
+\bibitem{beukers} F. Beukers, \emph{A note on the irrationality of $\zeta(2)$ and $\zeta(3)$}, Bull. London Math. Soc. \textbf{11} (1979), 268--272. The classical integral is derived explicitly above; the source notes document which primary versions were retrieved.
+\bibitem{bez} P. Borwein, T. Erd\'elyi and W. Zhang, \emph{Orthogonality and Irrationality}, author-hosted text, printed version dated 3 November 2013, \url{https://people.tamu.edu/~terdelyi/papers-online/zeta.pdf}. See the package's primary comparison for the classical logarithmic-form and Beukers connections.
+\bibitem{arvesu} J. Arves\'u, \emph{Orthogonal forms: a simple tool for proving the irrationality of $\zeta(3)$}, retrieved institutional draft dated 24 August 2009. The package's primary comparison records the version and exact scope of comparison.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,6 @@
+PASS: 62 Bernoulli symmetry identities; 16 real-functional pullbacks
+PASS: 81 full difference/isometry certificates
+PASS: 81 off-diagonal associated numerators and error cancellations
+PASS: 37820 even integer terms; 6843 prime cutoff/parity edges
+PASS: 200 exact factorial/lcm divisibilities; period-six profile; Delannoy series
+PASS: exact strict exponential inequality needed for irrationality

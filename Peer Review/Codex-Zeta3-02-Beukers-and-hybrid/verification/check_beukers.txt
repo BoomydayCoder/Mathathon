@@ -1,0 +1,1 @@
+PASS: arithmetic/Mellin coefficient agreement n=0..12; square identities; substitution n=0..5

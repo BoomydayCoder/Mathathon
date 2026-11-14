@@ -1,0 +1,1 @@
+PASS: n=0..8 Legendre coefficients, rational Mellin identity, Padé contact and leading error; endpoint arithmetic for three rational endpoints

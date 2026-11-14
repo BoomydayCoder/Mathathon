@@ -1,0 +1,12 @@
+h 2 both original roots and residual norm match Apéry formulas.
+h 3 both original roots and residual norm match Apéry formulas.
+h 4 both original roots and residual norm match Apéry formulas.
+h 5 both original roots and residual norm match Apéry formulas.
+h 6 both original roots and residual norm match Apéry formulas.
+h 7 both original roots and residual norm match Apéry formulas.
+h 8 both original roots and residual norm match Apéry formulas.
+h 9 both original roots and residual norm match Apéry formulas.
+h 10 both original roots and residual norm match Apéry formulas.
+h 11 both original roots and residual norm match Apéry formulas.
+h 12 both original roots and residual norm match Apéry formulas.
+All symbolic endpoint/bilinear and11 original-pencil formula tests passed.

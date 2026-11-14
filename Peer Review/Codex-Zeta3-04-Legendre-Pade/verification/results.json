@@ -1,0 +1,30 @@
+{
+  "checked_at_utc": "2026-11-14",
+  "checks": [
+    {
+      "script": "computations/check_resolvent_legendre_pade.py",
+      "exit_code": 0,
+      "seconds": 4.1
+    },
+    {
+      "script": "computations/check_resolvent_pade_independent.py",
+      "exit_code": 0,
+      "seconds": 0.63
+    },
+    {
+      "script": "computations/check_half_shift_elementary_resolvent.py",
+      "exit_code": 0,
+      "seconds": 1.84
+    },
+    {
+      "script": "computations/check_elementary_resolvent_independent.py",
+      "exit_code": 0,
+      "seconds": 0.39
+    },
+    {
+      "script": "computations/check_cubic_balanced_apery_bridge.py",
+      "exit_code": 0,
+      "seconds": 2.39
+    }
+  ]
+}

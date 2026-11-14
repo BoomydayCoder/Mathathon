@@ -1,0 +1,10 @@
+{
+  "checked_at_utc": "2026-11-14",
+  "checks": [
+    {
+      "script": "computations/check_beukers.py",
+      "exit_code": 0,
+      "seconds": 2.23
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+[
+  {
+    "file": "schur-heun-apery-design-guide.md",
+    "source": "codex/problem131/schur-heun-apery-design-guide.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "39a252c227293c0211351deb3a8704dc0225d3b98672897aef194ccc146fbcea",
+    "packaged_sha256": "39a252c227293c0211351deb3a8704dc0225d3b98672897aef194ccc146fbcea"
+  },
+  {
+    "file": "rank-one-original-apery-heun-rii-proof.md",
+    "source": "codex/problem131/rank-one-original-apery-heun-rii-proof.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "cc648d5398c38dbebf0b17dfcf88d950f8ffe095ad4e5117134ba67fa33260fb",
+    "packaged_sha256": "cc648d5398c38dbebf0b17dfcf88d950f8ffe095ad4e5117134ba67fa33260fb"
+  },
+  {
+    "file": "original-schur-apery-root-review.md",
+    "source": "codex/problem131/original-schur-apery-root-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "9cda63ef82e229656be1f272d9a48f1c97f4a2adef318ce4979d8f28b432a86e",
+    "packaged_sha256": "9cda63ef82e229656be1f272d9a48f1c97f4a2adef318ce4979d8f28b432a86e"
+  },
+  {
+    "file": "rank-one-heun-rii-second-independent-review.md",
+    "source": "codex/problem131/rank-one-heun-rii-second-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "a8def63f458e0cb3857a48c5d0eb64552b1cd12275f15d51141aeda70a3299bc",
+    "packaged_sha256": "240cf0dd912a66f9d4cd5ae8b1c67f663e940208588971f8cccdb31280c9146f"
+  },
+  {
+    "file": "rank-one-real-boundary-proof.md",
+    "source": "codex/problem131/rank-one-real-boundary-proof.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "8450c7b4b60e99651f2cb95f85412832c94a61d8f5f0079f374a39b4b3518fa5",
+    "packaged_sha256": "8450c7b4b60e99651f2cb95f85412832c94a61d8f5f0079f374a39b4b3518fa5"
+  },
+  {
+    "file": "rank-one-real-boundary-independent-review.md",
+    "source": "codex/problem131/rank-one-real-boundary-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "efa1d2766fa34070e5f5a91799a53f3f5fb5be4274607514805f8625e939282d",
+    "packaged_sha256": "efa1d2766fa34070e5f5a91799a53f3f5fb5be4274607514805f8625e939282d"
+  },
+  {
+    "file": "rank-one-real-boundary-second-independent-review.md",
+    "source": "codex/problem131/rank-one-real-boundary-second-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "7648bee53709069d004290862ca0a8bb8518a03a867976c29dcf3db8b028bbbc",
+    "packaged_sha256": "7648bee53709069d004290862ca0a8bb8518a03a867976c29dcf3db8b028bbbc"
+  },
+  {
+    "file": "rank-one-zeta-subspace-approximants.md",
+    "source": "codex/problem131/rank-one-zeta-subspace-approximants.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "ed45b04f2ce740ae949158badb3f1717afd7c827c3ff3be9cedb8c43ad14a77c",
+    "packaged_sha256": "ed45b04f2ce740ae949158badb3f1717afd7c827c3ff3be9cedb8c43ad14a77c"
+  },
+  {
+    "file": "rank-one-zeta-independent-review.md",
+    "source": "codex/problem131/rank-one-zeta-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "6fb390031e214bc35dfced3e02eaab672ee80cf61d5ba31633c0746b56ed48e4",
+    "packaged_sha256": "e47d66021944a6105ae9ce5b97f59644d8d9eba79afca15ed62d0410832f60d0"
+  },
+  {
+    "file": "rank-one-loewner-quadratic-lattice.md",
+    "source": "codex/problem131/rank-one-loewner-quadratic-lattice.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "0e7f9c789ab4d02627666b444f1757d153a499889d3f46212e50b50277a5c3c4",
+    "packaged_sha256": "0e7f9c789ab4d02627666b444f1757d153a499889d3f46212e50b50277a5c3c4"
+  },
+  {
+    "file": "rank-one-original-error-tail-and-rate.md",
+    "source": "codex/problem131/rank-one-original-error-tail-and-rate.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "dfd4dd37c8b5c29a278195209c083811c646302938600406787e61143b9b323e",
+    "packaged_sha256": "dfd4dd37c8b5c29a278195209c083811c646302938600406787e61143b9b323e"
+  },
+  {
+    "file": "rank-one-original-error-independent-review.md",
+    "source": "codex/problem131/rank-one-original-error-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "21eed558e7d6dab388854889212696e63d003bc543c042556eb06efc95145c1c",
+    "packaged_sha256": "21eed558e7d6dab388854889212696e63d003bc543c042556eb06efc95145c1c"
+  },
+  {
+    "file": "zeta3-rank-q-heun-reduction.md",
+    "source": "codex/problem131/zeta3-rank-q-heun-reduction.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "a3f04be99debbb4c1d948c48949cdd6ef5808031ac61f15f184140cd63632a7a",
+    "packaged_sha256": "a3f04be99debbb4c1d948c48949cdd6ef5808031ac61f15f184140cd63632a7a"
+  },
+  {
+    "file": "zeta3-rank-q-independent-review.md",
+    "source": "codex/problem131/zeta3-rank-q-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "91b0e01bd1eea5b5f135319b62c17e23d1a0c75f1b0929ad61235aaa0d35452c",
+    "packaged_sha256": "91b0e01bd1eea5b5f135319b62c17e23d1a0c75f1b0929ad61235aaa0d35452c"
+  },
+  {
+    "file": "zeta3-schur-final-status-and-provenance.md",
+    "source": "codex/problem131/zeta3-schur-final-status-and-provenance.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "51cf411f203afa8dceb9ebc0ebac8e6dd5198f56dcaaf8dc02c33ecc37ef09ff",
+    "packaged_sha256": "4b3b80681de89399f2e2257199b8bb014c825937df0c8d015bd83dfe3d3ffd04"
+  },
+  {
+    "file": "rank-one-primary-source-context.md",
+    "source": "codex/problem131/rank-one-primary-source-context.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "a35387ba3fe58766e5f43afef0b71cc7750b54f2bf186fb016a4d12c10c645ed",
+    "packaged_sha256": "5685e1c979ac15183d380d227f59f3611d52d886e3a86e0c6d70d08cfbc2e122"
+  },
+  {
+    "file": "computations/check_zeta3_rank_q_heun.py",
+    "source": "codex/computations/check_zeta3_rank_q_heun.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "9b1c4c860bd847d45147859a1f3a78803e67a230d7517d90df68aca9541f63ea",
+    "packaged_sha256": "9b1c4c860bd847d45147859a1f3a78803e67a230d7517d90df68aca9541f63ea"
+  },
+  {
+    "file": "computations/check_rank_two_apery_formula.py",
+    "source": "codex/computations/check_rank_two_apery_formula.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "96e06fcae97dcd4f484cd04da8c75a6d431cc20512f263c5f4fd0761d06249a6",
+    "packaged_sha256": "96e06fcae97dcd4f484cd04da8c75a6d431cc20512f263c5f4fd0761d06249a6"
+  },
+  {
+    "file": "computations/check_rank_two_pell_independent.py",
+    "source": "codex/computations/check_rank_two_pell_independent.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "b5d533d0a467b4f5b73aaa89c9c24f6f55f69d614d720e22e5ecc96d7bb6c132",
+    "packaged_sha256": "b5d533d0a467b4f5b73aaa89c9c24f6f55f69d614d720e22e5ecc96d7bb6c132"
+  },
+  {
+    "file": "computations/check_rank_one_original_error_tail.py",
+    "source": "codex/computations/check_rank_one_original_error_tail.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "ee88e3679ff4c145852e6dcf37460aac4f876686b90cc96cad2e10256fa455de",
+    "packaged_sha256": "ee88e3679ff4c145852e6dcf37460aac4f876686b90cc96cad2e10256fa455de"
+  },
+  {
+    "file": "computations/check_rank_one_real_boundary.py",
+    "source": "codex/computations/check_rank_one_real_boundary.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "bda8048e0319b5abed41a87ca62f6d41d55f14f5fb1c47702d9c4c163a803d23",
+    "packaged_sha256": "bda8048e0319b5abed41a87ca62f6d41d55f14f5fb1c47702d9c4c163a803d23"
+  },
+  {
+    "file": "computations/check_rank_one_heun_independent.py",
+    "source": "codex/computations/check_rank_one_heun_independent.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "654a5910fa52722d9478c25a3634262c441b40223250deb94792d0986d69397c",
+    "packaged_sha256": "654a5910fa52722d9478c25a3634262c441b40223250deb94792d0986d69397c"
+  },
+  {
+    "file": "computations/check_rank_one_heun_rii_bridge.py",
+    "source": "codex/computations/check_rank_one_heun_rii_bridge.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "548c8b29923e3a6f0dbdb8519444266996109a4dd62cfac3819afc1c7ac7de5d",
+    "packaged_sha256": "548c8b29923e3a6f0dbdb8519444266996109a4dd62cfac3819afc1c7ac7de5d"
+  },
+  {
+    "file": "computations/explore_rank_one_subspaces.py",
+    "source": "codex/computations/explore_rank_one_subspaces.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "73b4ca55471ed3b6743cc7e9f2cf5fa7ec739916d155c9542704448f001831b8",
+    "packaged_sha256": "73b4ca55471ed3b6743cc7e9f2cf5fa7ec739916d155c9542704448f001831b8"
+  },
+  {
+    "file": "computations/check_original_schur_apery_independent.py",
+    "source": "codex/computations/check_original_schur_apery_independent.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "0005dff03f76bfdcd2dc6b38e135f775375a9a2150a030c1bbfbbfd537e91cb3",
+    "packaged_sha256": "0005dff03f76bfdcd2dc6b38e135f775375a9a2150a030c1bbfbbfd537e91cb3"
+  }
+]

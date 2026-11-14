@@ -1,0 +1,13 @@
+Endpoint system determinant: 3*h**6*(h + 1)**4*(12*h**2 - 15*h + 5)/8
+All symbolic-in-h endpoint, recurrence, and Apéry-elimination identities passed.
+h 1 original Gram, Heun equation, endpoints, RII pair, and Apéry formula passed.
+h 2 original Gram, Heun equation, endpoints, RII pair, and Apéry formula passed.
+h 3 original Gram, Heun equation, endpoints, RII pair, and Apéry formula passed.
+h 4 original Gram, Heun equation, endpoints, RII pair, and Apéry formula passed.
+h 5 original Gram, Heun equation, endpoints, RII pair, and Apéry formula passed.
+h 6 original Gram, Heun equation, endpoints, RII pair, and Apéry formula passed.
+h 7 original Gram, Heun equation, endpoints, RII pair, and Apéry formula passed.
+h 8 original Gram, Heun equation, endpoints, RII pair, and Apéry formula passed.
+h 9 original Gram, Heun equation, endpoints, RII pair, and Apéry formula passed.
+h 10 original Gram, Heun equation, endpoints, RII pair, and Apéry formula passed.
+All exact bridge checks passed. Independent proof audit remains separate.

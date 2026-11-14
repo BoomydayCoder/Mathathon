@@ -1,0 +1,4 @@
+Reciprocal conjugacy, product-kernel reduction, unique regular unit-flux solution: exact.
+General quadratic-coefficient divided-difference commutator: exact.
+Both Mellin operator identities and 13 rational interpolation solutions: exact.
+All checks passed.

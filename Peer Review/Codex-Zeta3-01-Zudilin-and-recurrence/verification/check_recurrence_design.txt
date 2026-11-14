@@ -1,0 +1,3 @@
+PASS Legendre polynomial recurrence, zero mean, integrality, denominator bound, Casoratian and growth
+Finite search d= 2 survivors through U_13: []
+Finite search d= 3 survivors through U_13: [(17, 5)]

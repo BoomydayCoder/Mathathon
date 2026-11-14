@@ -1,0 +1,128 @@
+[
+  {
+    "file": "short-kernel-energy-zeta3-proof.md",
+    "source": "codex/problem131/short-kernel-energy-zeta3-proof.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "e5cc7d65436fc6079023b90f8c0ea8c45eeb14e7bb0eff76ba50f709bbc870ae",
+    "packaged_sha256": "f257186e89758a3c8c53c818010774835a8750a2fff4e577079faea2d3aa1be4"
+  },
+  {
+    "file": "kernel-commuting-grids-apery-recurrence.md",
+    "source": "codex/problem131/kernel-commuting-grids-apery-recurrence.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "f66c6c2f39faa919b826eca5d7b21d84f4273cf9296ad203d734aaaa8749b8d1",
+    "packaged_sha256": "1feffb4a5736c240e59983d4cec268c4b9f56d10f9d38ba8cc75b51e57fd81c0"
+  },
+  {
+    "file": "kernel-energy-independent-review.md",
+    "source": "codex/problem131/kernel-energy-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "55df544245a28d56bdcd7c35404763269d17021e4279b81bce944bbf186f72f6",
+    "packaged_sha256": "55df544245a28d56bdcd7c35404763269d17021e4279b81bce944bbf186f72f6"
+  },
+  {
+    "file": "kernel-grids-independent-review.md",
+    "source": "codex/problem131/kernel-grids-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "aa9b55c8dc1ddc7a49a1bc4530ffe5c259cf0d01608b3e8e984e61c4a3f28712",
+    "packaged_sha256": "aa9b55c8dc1ddc7a49a1bc4530ffe5c259cf0d01608b3e8e984e61c4a3f28712"
+  },
+  {
+    "file": "reciprocal-legendre-kernel-design.md",
+    "source": "codex/problem131/reciprocal-legendre-kernel-design.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "dc6552529c4d21a85257f77ba9164f420ba8125b89fd323e30366d7e5840aadf",
+    "packaged_sha256": "dc6552529c4d21a85257f77ba9164f420ba8125b89fd323e30366d7e5840aadf"
+  },
+  {
+    "file": "kernel-energy-primary-comparison.md",
+    "source": "codex/problem131/kernel-energy-primary-comparison.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "90095d0388f7b6c0f5d3354a9516282235230f347b2b3b11955167fde9096141",
+    "packaged_sha256": "90095d0388f7b6c0f5d3354a9516282235230f347b2b3b11955167fde9096141"
+  },
+  {
+    "file": "legendre-christoffel-cubic-tail.md",
+    "source": "codex/problem131/legendre-christoffel-cubic-tail.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "f22ee9519b5911ef2e1a8129205a03e3b4bea17be179702200974b8161e169a9",
+    "packaged_sha256": "a36917916498f46ca734ba60259cbb4bba1449be0a524ef29ae588a22407af09"
+  },
+  {
+    "file": "legendre-christoffel-independent-review.md",
+    "source": "codex/problem131/legendre-christoffel-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "f67087e298c60c801e835625a969628f15f2261f7683ee6e0fc65e8491c517c8",
+    "packaged_sha256": "f67087e298c60c801e835625a969628f15f2261f7683ee6e0fc65e8491c517c8"
+  },
+  {
+    "file": "uniform-gibbs-zeta-correlations.md",
+    "source": "codex/problem131/uniform-gibbs-zeta-correlations.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "012e7ce20dfac7bc86c2487a85ff92dcf6cc4571aa53b94501c47471b1a96086",
+    "packaged_sha256": "c881e56d8bdb96c9ced87a0e8f30bfeee00487143bd89d9ed34795ddc05ec5a5"
+  },
+  {
+    "file": "uniform-gibbs-zeta-independent-review.md",
+    "source": "codex/problem131/uniform-gibbs-zeta-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "5da8f0c7d4e041748e0739ae17c41bbe6c3c2390500e7f6b46b6cc46d5870b25",
+    "packaged_sha256": "5da8f0c7d4e041748e0739ae17c41bbe6c3c2390500e7f6b46b6cc46d5870b25"
+  },
+  {
+    "file": "log-kernel-legendre-resolvent-bridge.md",
+    "source": "codex/problem131/log-kernel-legendre-resolvent-bridge.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "c8a1f273f524cbb907f1052bd84ce5a58220645af4b93a0b995f3920cbb9d10d",
+    "packaged_sha256": "c87b60bc2205f1d086d4f4953af8bc8a94af5550193a86437ad64ae656de6938"
+  },
+  {
+    "file": "computations/check_log_kernel_legendre_bridge.py",
+    "source": "codex/computations/check_log_kernel_legendre_bridge.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "8509310661dd529abe60ea6341ba117db4ac19c8a45272727783b1e09843fa68",
+    "packaged_sha256": "8509310661dd529abe60ea6341ba117db4ac19c8a45272727783b1e09843fa68"
+  },
+  {
+    "file": "computations/check_uniform_gibbs_modes.py",
+    "source": "codex/computations/check_uniform_gibbs_modes.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "3fb25d2a3dcf1a9b5b4ce648514622de9c670cde2a93b4341a30566db5c05e99",
+    "packaged_sha256": "3fb25d2a3dcf1a9b5b4ce648514622de9c670cde2a93b4341a30566db5c05e99"
+  },
+  {
+    "file": "computations/check_uniform_gibbs_zeta.py",
+    "source": "codex/computations/check_uniform_gibbs_zeta.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "db4998508ff7bb6d13791e4112feed671135d182f222510f71f8f04de7983126",
+    "packaged_sha256": "db4998508ff7bb6d13791e4112feed671135d182f222510f71f8f04de7983126"
+  },
+  {
+    "file": "computations/check_christoffel_legendre_deletion.py",
+    "source": "codex/computations/check_christoffel_legendre_deletion.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "153b379120e50fa068bb18d817d6aff417864400bf1abc03f72b5ae00e62fcdc",
+    "packaged_sha256": "153b379120e50fa068bb18d817d6aff417864400bf1abc03f72b5ae00e62fcdc"
+  },
+  {
+    "file": "computations/check_reciprocal_legendre_kernel_design.py",
+    "source": "codex/computations/check_reciprocal_legendre_kernel_design.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "3d4183fef9759f2caecf1bc6645c681de07a5e0389de87ff38c9f38ed8e9bf14",
+    "packaged_sha256": "3d4183fef9759f2caecf1bc6645c681de07a5e0389de87ff38c9f38ed8e9bf14"
+  },
+  {
+    "file": "computations/check_kernel_commuting_grids.py",
+    "source": "codex/computations/check_kernel_commuting_grids.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "708c818ec3c8168911c581351fff31ae1d8c7510bd77317ead4237cb7c3955bc",
+    "packaged_sha256": "708c818ec3c8168911c581351fff31ae1d8c7510bd77317ead4237cb7c3955bc"
+  },
+  {
+    "file": "computations/check_kernel_energy_independent.py",
+    "source": "codex/computations/check_kernel_energy_independent.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "e597a47d9daa4b6782e1831a8a258be7b4472aa278c749e769095d22407c7ccc",
+    "packaged_sha256": "e597a47d9daa4b6782e1831a8a258be7b4472aa278c749e769095d22407c7ccc"
+  }
+]

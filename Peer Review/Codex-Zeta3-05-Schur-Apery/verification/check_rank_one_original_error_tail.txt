@@ -1,0 +1,6 @@
+Passed81 bracket identities,80 increments/Casoratians, and4 finite tails.
+h 10 upper/lower 6.9156098481484 normalized upper constant 1.1139780472072
+h 20 upper/lower 6.3576541334379 normalized upper constant 1.0560971760403
+h 40 upper/lower 6.0895064413024 normalized upper constant 1.0278325982377
+h 80 upper/lower 5.9580902590287 normalized upper constant 1.0138631897142
+Asymptotic target ratio 5.8284271247462 constant 21.279344163817

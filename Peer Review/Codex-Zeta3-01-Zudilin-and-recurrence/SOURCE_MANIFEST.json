@@ -1,0 +1,86 @@
+[
+  {
+    "file": "zudilin-explained.md",
+    "source": "codex/problem131/zudilin-explained.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "2bd199d37915cdb71399951be0177d074b804b967d1bf1301ada28807caeebd3",
+    "packaged_sha256": "cc4a333e2cd780ebee69279a34c5dad9507793d302718f65d702cfab961639fd"
+  },
+  {
+    "file": "discovery-guide.md",
+    "source": "codex/problem131/discovery-guide.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "cf1e41cd2feedfc7337507d94bdd4ac253cc03d93a828c5933148e2396f81cd6",
+    "packaged_sha256": "72694ed33487fcfc1bedbacdba2cbb24bdccc9f9867edd561a6789f3cd83362f"
+  },
+  {
+    "file": "recurrence.md",
+    "source": "codex/problem131/recurrence.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "35adc07846e3919918c4956a5e59e02d39889a5912eb39e83be3e34c8eb9a4f4",
+    "packaged_sha256": "0b5beb304a7fe05f8ad9c501cb0defb1dfc3bd8bd0f857bdfc7557ffc18025ff"
+  },
+  {
+    "file": "recurrence-design.md",
+    "source": "codex/problem131/recurrence-design.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "4ccefcc17355ce795c10742040bd9c0d1952b43e3b1692eff0d377f4549ec410",
+    "packaged_sha256": "4ccefcc17355ce795c10742040bd9c0d1952b43e3b1692eff0d377f4549ec410"
+  },
+  {
+    "file": "simplification.md",
+    "source": "codex/problem131/simplification.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "d1a78583ff283c912d24e16d9d396766099a66e1ada232a0f2941fcf2e00ba1a",
+    "packaged_sha256": "d1a78583ff283c912d24e16d9d396766099a66e1ada232a0f2941fcf2e00ba1a"
+  },
+  {
+    "file": "apery-asymptotics.md",
+    "source": "codex/problem131/apery-asymptotics.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "18b6c40b3f24d297d32c9567357d09770716d6072a5600c02f739cf3c7c343e7",
+    "packaged_sha256": "18b6c40b3f24d297d32c9567357d09770716d6072a5600c02f739cf3c7c343e7"
+  },
+  {
+    "file": "denominator-design.md",
+    "source": "codex/problem131/denominator-design.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "a30023e539395efc59f666a7ee288d36e6eeff317e74ac9f4009272abde1cb64",
+    "packaged_sha256": "4911732bce103047b5607518d0dca0c2fab16f13a3c33e0083e441a7a5d4f44e"
+  },
+  {
+    "file": "independent-review.md",
+    "source": "codex/problem131/independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "cf36ce7ff40bc6efc6c6da5a9e2769ae263ecd6d881153099a77f5b3469a458c",
+    "packaged_sha256": "cf36ce7ff40bc6efc6c6da5a9e2769ae263ecd6d881153099a77f5b3469a458c"
+  },
+  {
+    "file": "apery-mixed-numerator-balance.md",
+    "source": "codex/problem131/apery-mixed-numerator-balance.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "e70beef7a3dd89c96ed89a34650874a4b50d5da60ac3a6c96f2ddfdafacfba87",
+    "packaged_sha256": "0a467e5d0c22b62a3bdc030145171cb7128c6b059bd3ebe8cd92ffaf9fb7332b"
+  },
+  {
+    "file": "apery-mixed-numerator-independent-review.md",
+    "source": "codex/problem131/apery-mixed-numerator-independent-review.md",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "3a3c0749ff1c3d2af61f79ccd8589a56820a9b45a000e32ab13217de641150df",
+    "packaged_sha256": "ebf53eb004d265a8339d5738d6d6dd06f9d912e966baf620576eb7fd87a9ae5b"
+  },
+  {
+    "file": "computations/check_apery_asymptotics.py",
+    "source": "codex/computations/check_apery_asymptotics.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "c601cd97c8974fe00635d452ad374649beae6e314f3293faf628e592389289b9",
+    "packaged_sha256": "c601cd97c8974fe00635d452ad374649beae6e314f3293faf628e592389289b9"
+  },
+  {
+    "file": "computations/check_recurrence_design.py",
+    "source": "codex/computations/check_recurrence_design.py",
+    "source_commit": "03cc75d694220d0fba888c637e573a29799e6d5b",
+    "source_sha256": "e552044915ea83065e419e46804ea4e207b496f9b4a0d86bbcc4c8af7b3da7cb",
+    "packaged_sha256": "e552044915ea83065e419e46804ea4e207b496f9b4a0d86bbcc4c8af7b3da7cb"
+  }
+]
