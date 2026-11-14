@@ -15,6 +15,16 @@ research archive and, at the user's request, revised the cookbook. See
 Suggested reading order: `zeta3-proofs.pdf` Part I straight through, then Part II; then the
 cookbook Part I quickly, Part III slowly.
 
+## Later notes (Claude)
+
+Written after the two main PDFs. Same caveat: checked by AI agents only.
+
+| file | pages | content |
+|---|---|---|
+| `max-principle-proof.pdf` | 10 | A complete proof of the irrationality of ζ(3) using only sums of rational functions, written for motivation. The recurrence is derived (one partial fraction and one identity with the constant 6), and sign and size come from a maximum principle for the recurrence satisfied by the linear forms themselves. Sections 7 and 8 explain the decomposition (n+1)³ + n³ + 4(2n+1)³ of the middle coefficient: its meaning (a random walk with killing; a chain of resistors), how each piece arises, and in what sense it is special. The idea is known (Mingarelli; Mahboubi and Sibut-Pinote); see the note's Section 9. |
+| `fifth-proof.pdf` | 7 | Record of the search for a further proof: the maximum principle, a congruence that gives non-vanishing without a sign, a sketched sign-free proof, and what the other attempts found. |
+| `operator-picture.pdf` | 4 | A map of the same proof in the language of operators: the Hamiltonian H is the chain of resistors 1/n³ and also the Laplacian of the hyperbolic plane; rows and diagonal of the table are resolvents; the commutator relations. Each statement is labelled verified / agent-reported / quoted from memory. |
+
 ## How the PDFs were checked
 
 1. **Sources.** Claude read the main proof documents of every package in full and verified the
