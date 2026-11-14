@@ -5,6 +5,11 @@ state and HANDOFF.md for remaining work. No historical novelty is claimed.
 
 ## Start here
 
+For a coherent first read: **problem131/discovery-guide.md**. For precise new
+constructions and limits: **problem131/research-results.md**. The following
+notes contain expanded proofs and experiments.
+
+
 1. problem131/zudilin-explained.md — original paper explained step by step,
    including motivations, exact certificates, and a self-contained lcm estimate.
 2. problem131/beukers-explained.md — integral proof and the exact Mellin bridge.

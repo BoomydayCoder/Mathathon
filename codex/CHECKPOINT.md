@@ -44,3 +44,17 @@ Third checkpoint:
 - Remote now also has main and research-claude branches. Read-only tree search
   found no published HANDOFF.md on research-claude at e364df8; no Claude draft
   contents read and no Claude files changed.
+
+Fourth checkpoint (continuing, not final):
+- discovery-guide.md now provides the standalone rendered-math recurrence proof;
+  research-results.md gives precise reviewed theorem statements.
+- Partial truncation at the binomial saddle restores the Apéry rate for every
+  fixed odd derivative; exact contour limit is an even-pi multiple of F_n.
+- Crossing geometry, exact finite failures for all305 testedcuts, low-prime
+  fifth-power criteria, positive-weight cones, and Hardy/Hilbert connections
+  developed and reviewed. No higher-zeta irrationality theorem claimed.
+- New live lead: explicit equilibrium/balayage measure could simplify Fauzan's
+  real determinant estimate. Algebra reviewed; numericobjective about−1.38551
+  versus source certificate−1.3669955. Endpoint and energy certification pending.
+- No usage/balance tool exists in discovered tool list. Execution remains active;
+  user authorized remaining credits and no automatic resets.

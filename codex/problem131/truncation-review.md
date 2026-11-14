@@ -2,7 +2,7 @@
 
 Reviewed: `truncated-derivative.md`. Reviewer: independent integral/symmetric-square research agent.
 
-**Audit result:** the moving-boundary recurrence, mixed denominator upper bound, prime-denominator obstruction and maximum-principle proof of exponential decay are valid. I reran `check_truncated_derivative.py`; all exact checks passed. The stronger asymptotic in Part II below is newly derived in this session and requests an additional independent review before being labelled independently checked. Historical novelty has not been assessed.
+**Audit result:** the moving-boundary recurrence, mixed denominator upper bound, prime-denominator obstruction and maximum-principle proof of exponential decay are valid. I reran `check_truncated_derivative.py`; all exact checks passed. The stronger asymptotic in Part II was separately reproduced by the Zudilin/exposition agent, including the exact forcing and comparison argument; their Section 5 in the main truncation note agrees. Historical novelty has not been assessed.
 
 ## I. Audit of the construction
 

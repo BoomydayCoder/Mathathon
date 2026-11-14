@@ -57,6 +57,14 @@ def row(n):
     term=(2*t+n)*((t+F(n,2))**2+lam)*H
     partial=sum((p[j]/(t+k)**j for k,p in enumerate(parts) for j in range(1,7)),F(0))
     assert term==partial
+    # Exact lower certificate from positive terms; no zeta approximation.
+    lower=F(0)
+    for tt in range(n+1,2*n+11):
+        hh=F(factorial(n)**2)
+        for j in range(1,n+1): hh*=((tt-j)*(tt+n+j))**2
+        for j in range(n+1): hh/=F((tt+j)**6)
+        lower+=scale*(2*tt+n)*((F(tt)+F(n,2))**2+lam)*hh
+    assert lower>1
     precision=max(len(str(A)),len(str(Bp)))+80
     with mp.workdps(precision):
         err=mp.mpf(A)*mp.zeta(5)-Bp
@@ -69,12 +77,12 @@ def row(n):
     with mp.workdps(precision+60):
         err2=mp.mpf(A)*mp.zeta(5)-Bp
         assert abs(mp.log(abs(err2))-mp.mpf(outlog))<mp.mpf('1e-35')
-    return dict(n=n,lambda_exact=str(lam),zeta5_coefficient=str(Z),rational_coefficient=str(B),primitive_A=str(A),primitive_B=str(Bp),primitive_scale=str(scale),log_primitive_form=outlog,log_primitive_form_over_n=le,log_primitive_A_over_n=la,log_scale_over_n=scale_rate,working_decimal_precision=precision)
+    return dict(n=n,lambda_exact=str(lam),zeta5_coefficient=str(Z),rational_coefficient=str(B),primitive_A=str(A),primitive_B=str(Bp),primitive_scale=str(scale),exact_positive_partial_sum_lower_bound=str(lower),lower_bound_last_t=2*n+10,log_primitive_form=outlog,log_primitive_form_over_n=le,log_primitive_A_over_n=la,log_scale_over_n=scale_rate,working_decimal_precision=precision)
 
 if __name__=='__main__':
     rows=[row(n) for n in range(1,26)]
     Path(__file__).with_suffix('.json').write_text(json.dumps(rows,indent=2)+'\n')
-    print('PASS exact coefficient cancellations, partial fractions, primitive gcd, and two-precision evaluations n=1..25')
+    print('PASS exact coefficient cancellations, partial fractions, primitive gcd, exact positive-sum lower bounds >1, and two-precision evaluations n=1..25')
     for n in [1,2,3,4,5,10,15,20,25]:
         q=rows[n-1]
         print(n,'logA/n',q['log_primitive_A_over_n'],'log|form|/n',q['log_primitive_form_over_n'],'logscale/n',q['log_scale_over_n'])

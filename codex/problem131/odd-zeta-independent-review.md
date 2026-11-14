@@ -99,3 +99,46 @@ not the previously displayed formula with exponent 2 on the first binomial. At n
 Thus the repair is a real algebraic construction, with a conditional positivity mechanism and an exact finite check, but its full parameter sign, actual normalization, and limiting performance remain unresolved. It must not be described as either a completed ζ(5) proof or an impossibility theorem for the family.
 
 The author subsequently extended the exact λ computation to n<=40. This review independently reran only n<=4; the larger finite scan is author-reported evidence, not an independently repeated check here.
+
+## 6. Review of actual primitive arithmetic follow-up
+
+Reviewed `weighted-family-arithmetic.md` and its complete exact-arithmetic script. The simple-pole contribution is correctly included as sum_k C_(1,k)H_k, after the divergent common harmonic term cancels through sum_k C_(1,k)=0. Omitting this rational contribution would have changed the primitive pair, but the code retains it.
+
+The lcm-and-gcd reduction gives positive rational scale s=D/g and coprime positive integers U=-sZ,V=-sR. Equation Uζ(5)-V=-s sum T(t) has the correct sign. Because λ>0 in each checked case, every term t>n is positive, so an exact positive partial sum exceeding1 really proves |Uζ(5)-V|>1 for that case. This stronger conclusion does not use a numerical approximation to ζ(5).
+
+Independently recomputed the rational partial-sum certificates and primitive normalization at n=1,5,25 directly from the saved data and original product formula; all three matched exactly and exceeded1. Also reviewed the general logarithmic-Taylor coefficient derivation. The author's full n=1,...,25 scan was not independently repeated in its entirety here. The finite result is substantially stronger than upper-bound budget failure, but still supplies no asymptotic impossibility theorem.
+
+## 7. Audit of the universal logarithmic-kernel indefiniteness theorem
+
+Read `kernel-positivity-obstruction.md` in full. Its two-by-two matrix, telescoping off-diagonal entry1, rational ζ(3) bound, ζ(4) bound, monotonicity estimate for higher s, and explicit q=1 negative example all check out. The determinant argument establishes indefiniteness for every integer q>=1, while q=0 retains the geometric-series Gram representation. This is a correct general warning that pointwise positivity is weaker than positive definiteness; it does not negate the specific transformed-integral proof for Legendre polynomials.
+
+## 8. Independent contour audit of partial truncation
+
+Read `partial-truncation-analysis.md` in full and reconstructed its contour calculation independently. No substantive error found. In particular:
+
+* The upward vertical line closed to the right has clockwise orientation, giving the minus sign in the integer residue sum.
+* Gamma reflection gives P_n(z)=(-1)^n sin(πz)U_n(z)/π, so squaring removes the shift sign.
+* K'=−π²csc²(πz) and K'''=−2π⁴csc²(πz)(3cot²(πz)+1). Three integrations by parts yield the displayed sign and factor.
+* On c=k+1/2, cot(π(c+iy))=−i tanh(πy), leading exactly to
+
+      E_(n,k)=−(π²/6)F_n+(π/8)integral sech²(πy)U_n(c+iy)²dy.
+
+The factors of π cannot be dropped: F_n=(1/(2π))integral U_n(c+iy)²dy. The contour rectangle argument is valid for fixed n by taking right edges and heights tending together to infinity. The rational derivatives decay uniformly on those edges and cot stays bounded away from its poles. After transformation, U_n(c+iy)² is absolutely integrable: it equals π² csc²(π(c+iy))R_n(c+iy), with exponential decay from csc² and rational decay from R_n. This explicitly justifies the unweighted vertical integral as well as the sech-weighted one.
+
+Both beta factors in U=B(z,z)B(n+1−z,2z) converge precisely when 0<c<n+1, as used. Taking absolute values gives |U(c+iy)|<=U(c). Hölder proves log convexity in c. These facts supply the exact envelope inequality without a saddle estimate.
+
+The integer-point Stirling constant, the critical point a=1/sqrt2, and the local three-dimensional Beukers lower bound all check out. The latter only needs a small ball and stationary gradient, not a full Laplace expansion. Consequently E/F=−ζ(2)+O(n^-1/2) is justified.
+
+The more precise fixed-proportion correction also checks: the gamma ratio phase is exp(−iby), b=log((1−a²)/a²); squaring gives exp(−2iby). The Fourier integral of sech²(πy) is 2b/(π sinh b), so the coefficient is b/(4 sinh b). Uniform beta domination justifies dominated convergence for fixed limiting a in (0,1). This proves the asserted positive correction away from the central negative region. These are full analytic results, not an extrapolation from numerical errors.
+
+## 9. Independent check of the extended positive-weight finite improvement
+
+Reviewed `weighted-family-extension.md`. The half-line quadratic positivity criterion and saturated two-dimensional lattice basis are correct. Independently recomputed the full principal parts at n=2 directly with symbolic expansion for weight (147,165,38): unwanted pole-order sums vanish, and primitive reduction gives exactly 12544ζ(5)−13007. Independently checked the rational M=20 integral-tail enclosure: its lower endpoint is positive and its upper endpoint is below1.
+
+For n=1, substituted the displayed inverse map into C and q(25/4), confirming the two necessary slope bounds. The rational comparisons placing ζ(5) strictly between them also check exactly. Thus the fixed-n positive cone cannot yield slopes arbitrarily near ζ(5), although an unrestricted invertible coefficient map can encode any rational pair. The lower gap is a statement at n=1 only. No audit claim is made here about every row of the bounded numerical search.
+
+## 10. Subsequent uniform extensions checked
+
+The all-m contour identity in `partial-truncation-analysis.md` Section8 was added after the initial audit and has now also been independently checked. Differentiating csc^(2j) twice gives the stated coefficient recurrence; c_(m,1)=(-1)^m4^(m-1) yields exactly a_m=(-1)^(m+1)(2π)^(2m-2)/(2m)!. The remainder has only integrable positive powers of sech multiplied by U², so the uniform beta envelope bounds it by C_m U(c)². The saddle ratio and alternating eventual sign follow for every **fixed** m. No uniformity for growing m is asserted.
+
+Also checked the rational sampling lemma in `weighted-family-extension.md` Section6a. Interpolation at d+1 distinct summation nodes, nonnegative sampled values, and positivity of all remaining summands give |Z(q)|<=M S(q) exactly. Nonzero Z as a functional guarantees M>0 because the Lagrange polynomials form a basis. Multiplication by the positive scale used in primitive normalization, followed by absolute values if Z<0, proves |Uζ(5)-V|>=U/M>=1/M. This is a valid fixed-n, fixed-degree obstruction across all rational coefficient choices, including those outside the finite search. The constant depends on n and degree, so it supplies no uniform asymptotic obstruction.
