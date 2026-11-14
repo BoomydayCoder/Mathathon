@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype,booktabs,enumitem}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
-\hypersetup{pdftitle={Three proofs that zeta(3) is irrational},pdfauthor={Mathathon peer-review digest}}
+\hypersetup{pdftitle={Why zeta(3) is irrational},pdfauthor={Mathathon peer-review digest}}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\dd}{\,\mathrm d}
@@ -12,617 +12,724 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}[lemma]{Proposition}
-\theoremstyle{definition}
-\newtheorem*{why}{Why this step}
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 \setlist{itemsep=1pt,topsep=3pt}
-\title{Three proofs that $\zeta(3)$ is irrational\\[2mm]
-\large one sequence of numbers, three ways to show it is positive and small}
+\newcommand{\q}[1]{\medskip\noindent\textbf{#1}}
+\newcommand{\forced}{\medskip\noindent\textbf{Forced or chosen?}\ }
+\title{Why $\zeta(3)$ is irrational\\[2mm]
+\large the proof, built one need at a time}
 \author{Mathathon peer-review digest\\
 \small written by Claude from the Claude and Codex submissions in \texttt{Peer Review/}}
-\date{14 November 2026}
+\date{14 November 2026 (rewritten for motivation)}
 \begin{document}
 \maketitle
 
-\begin{abstract}
-\noindent The proofs of Ap\'ery's theorem discussed here all study the same numbers
-$I_n=2(a_n\zeta(3)-b_n)$. Showing that they are rational combinations of $1$ and $\zeta(3)$ with
-controlled denominators is easy and is done once (Section~3). The work is to show that $I_n$ is
-\emph{positive} and \emph{exponentially small}. We give three complete, independent arguments for
-that: Beukers' integral (Section~4), a recurrence argument that simplifies Zudilin's proof to a
-single polynomial identity (Section~5), and an energy inequality for a differential operator
-(Section~6). Each fits on about two pages, uses only undergraduate analysis, and needs no prime
-number theorem. Section~7 compares them and explains where the numbers $17$ and $5$ in Ap\'ery's
-recurrence come from.
-\end{abstract}
+\noindent\textbf{How this document is written.} Every proof of Ap\'ery's theorem contains
+objects that look as if they fell from the sky: a kernel $\frac{-\log(xy)}{1-xy}$, the polynomial
+$\frac1{n!}\frac{d^n}{dx^n}[x^n(1-x)^n]$, the integers $\sum_k\binom nk^2\binom{n+k}k^2$, the
+numbers $17$ and $(\sqrt2-1)^4$. Here nothing is introduced until a difficulty demands it. Each
+section has the same shape: a \emph{question}; the \emph{obvious attempt} and the precise way it
+fails; the \emph{construction} that the failure points to; and a note on what was \emph{forced} and
+what was a choice. Whenever we reject an alternative we give the numbers.
 
-\noindent\textbf{Status.} The theorem and its main constructions are classical (Ap\'ery 1978,
-Beukers 1979, Zudilin 2002). Nothing here is claimed to be new. Every step of Sections 2--6 was re-derived by the AI author for this digest and then checked
-formula by formula by a second AI reader with independent computations; the statements of Section~7 were verified exactly for small indices, and its telescoping
-identity symbolically for $n\le6$. \emph{No human has refereed
-any of this}. Sources and a list of what was checked
-are in Section~8.
+Part I (Sections 1--8) is one complete proof, due in essence to Beukers. Part II (Sections 9--11)
+shows the same objects in the language of Zudilin's paper, where they are sums instead of
+integrals, and explains where Ap\'ery's recurrence comes from. No symbol is used before it is
+defined. The prerequisites are integration by parts, geometric series and the AM--GM inequality.
 
-\section{What has to be shown}
+\smallskip\noindent\textbf{Status.} The theorem and constructions are classical (Ap\'ery,
+Beukers, Zudilin); nothing here is claimed to be new, and when we say an object is ``forced'' we
+mean forced by the stated requirement, not that no other proof could exist. All statements were
+checked by AI agents only; \emph{no human has refereed this}. Details are in Section~12.
 
-Suppose $\zeta(3)=p/q$ with positive integers $p,q$. If $A$ and $B$ are integers, then
-$q\,(A\zeta(3)-B)=Ap-Bq$ is an integer, so it is either $0$ or at least $1$ in absolute value.
-A sequence of integer combinations $A_n\zeta(3)-B_n$ that is \emph{never zero} but \emph{tends to
-zero} is therefore impossible, and $\zeta(3)$ is irrational.
+\part*{Part I. One proof, from the beginning}
 
-Natural constructions give rational, not integer, coefficients, so one must multiply by a
-common denominator $\Delta_n$ first. The whole problem is the competition between the size of
-$\Delta_n$ and the smallness of the combination. We need numbers $I_n$ with three properties:
-\begin{center}
-\begin{tabular}{@{}lll@{}}
-\toprule
-(A) arithmetic & $I_n=2(a_n\zeta(3)-b_n)$ with $a_n\in\Z$ and $D_n^3b_n\in\Z$ & Section 3\\
-(B) sign and size & $0<I_n\le C\,\theta^{\,n}$ for some $\theta<1/27$ & Sections 4, 5, 6\\
-(C) balance & $D_n<3^n$ for infinitely many $n$ & Section 2\\
-\bottomrule
-\end{tabular}
-\end{center}
-Here $D_n=\lcm(1,2,\dots,n)$ and $D_0=1$. Given (A)--(C), the number $q\,D_n^3I_n$ is a positive
-integer that tends to zero along a sequence of $n$, which is absurd.
+\section{What does any irrationality proof have to do?}
 
-It will turn out that the true rate is $\rho=(\sqrt2-1)^4=17-12\sqrt2=0.02944\ldots$ (Proofs
-A and C reach $\theta=\rho$; Proof B reaches $\theta=1/28$), that is, $I_n$ shrinks by a
-factor of about $34$ at each step. Since $D_n$ grows roughly like $e^n$, the cost $D_n^3$ grows
-like $e^{3n}\approx20.1^n$. The proof works because $20.1<34$. The margin is real but not large:
-with $D_n^4$ in place of $D_n^3$ the same construction would fail.
+The number in question is $\zeta(3)=1+\frac1{2^3}+\frac1{3^3}+\cdots=1.2020569\ldots$
 
-\paragraph{Notation.} $H_k^{(r)}=\sum_{l=1}^k l^{-r}$, with $H_0^{(r)}=0$. Throughout,
-$\lambda_n=n(n+1)$ and $\Lambda=(\sqrt2+1)^4=17+12\sqrt2=33.97\ldots=1/\rho$.
+\q{Question.} How can one possibly prove that a number is not a fraction?
 
-\section{The denominator estimate}
+A number given by an infinite series has no visible reason to be irrational: $\sum_{m\ge1}2^{-m}=1$.
+What we can use is the one rigid fact about fractions: \emph{there is a gap between $0$ and the
+next integer.} Suppose $\zeta(3)=p/q$ with positive integers $p,q$. Then for any integers $A,B$,
+\[
+q\cdot\bigl(A\,\zeta(3)-B\bigr)=Ap-Bq\quad\text{is an integer, so it is $0$ or at least $1$ in size.}
+\]
+Hence $|A\zeta(3)-B|$ is either $0$ or at least $1/q$. So:
 
-For the true rate $\rho$ we need $D_n^3\rho^{\,n}\to0$, that is, $D_n<C^n$ for some
-$C<\Lambda^{1/3}=3.238\ldots$; we shall use $C=3$. The
-prime number theorem gives $D_n=e^{n+o(n)}$, which is far more than enough, but it is a deep theorem.
-Because our numbers $I_n$ will be positive for \emph{every} $n$, it suffices to have a good bound
-for \emph{infinitely many} $n$, and that follows from one exact identity.
+\begin{lemma}[The criterion]\label{lem:crit}
+If there are integers $A_n,B_n$ with $A_n\zeta(3)-B_n\ne0$ for all $n$ and
+$A_n\zeta(3)-B_n\to0$, then $\zeta(3)$ is irrational.
+\end{lemma}
 
-\begin{lemma}\label{lem:fact}
-For every positive integer $N$,\quad $\displaystyle N!=\prod_{k=1}^{N}D_{\lfloor N/k\rfloor}$.
+\forced Forced. This is not one trick among many: for \emph{any} real $\theta$, irrationality is
+equivalent to the existence of such integers. (If $\theta$ is irrational, look at the $N+1$
+fractional parts of $0,\theta,2\theta,\dots,N\theta$; two of them lie in the same interval of length
+$1/N$, and their difference gives integers with $0<|A\theta-B|<1/N$.) So every proof, whatever it
+looks like, must in the end produce integers $A_n,B_n$ making $A_n\zeta(3)-B_n$ small and
+non-zero. The only question is how to find them.
+
+Notice what is being asked. It is not that $B_n/A_n$ be close to $\zeta(3)$; that is easy. It is
+that the error \emph{multiplied by the denominator $A_n$} be small. That is a much stronger demand.
+
+\section{The obvious attempt, and the lesson it teaches}
+
+\q{Attempt.} Cut the series off: $s_n=\sum_{m=1}^n\frac1{m^3}$. This is a fraction close to
+$\zeta(3)$.
+
+\emph{Its denominator.} To write $s_n$ as $B/A$ we need a common denominator for
+$1,\frac18,\dots,\frac1{n^3}$. The cheapest is the cube of
+\[
+D_n=\lcm(1,2,\dots,n),\qquad\text{the smallest positive integer divisible by each of }1,\dots,n .
+\]
+($D_1,\dots,D_{10}=1,2,6,12,60,60,420,840,2520,2520$.) Why $D_n$ and not $n!$? Both work, but $n!$
+contains each prime many times over, while $D_n$ contains each prime only to the highest power
+that fits below $n$. The difference is enormous: $n!$ grows faster than any exponential, whereas
+$D_n$ grows roughly like $e^n$, with $e=2.718\ldots$ (this is the prime number theorem; we shall
+need, and prove, much less in Section~7).
+
+\emph{Its error.} $\zeta(3)-s_n=\sum_{m>n}m^{-3}\ge\frac1{2(n+1)^2}$. So with $A=D_n^3$ and
+$B=D_n^3s_n$:
+\[
+A\,\zeta(3)-B=D_n^3\bigl(\zeta(3)-s_n\bigr)\ \ge\ \frac{D_n^3}{2(n+1)^2}\ \to\ \infty .
+\]
+Numerically this is $3541$ at $n=5$, $7\cdot10^7$ at $n=10$ and $10^{22}$ at $n=20$.
+
+\q{Lesson.} The error of the partial sum is only \emph{polynomially} small ($\approx n^{-2}$), but
+the price of clearing denominators is \emph{exponentially} large ($D_n^3\approx e^{3n}\approx20^n$).
+This sets the target for everything that follows:
+
+\begin{quote}
+\emph{Find combinations $a\,\zeta(3)-b$ whose denominators are still cleared by $D_n^3$, but which
+are smaller than $20^{-n}$ --- and not zero.}
+\end{quote}
+
+\noindent So we need three things at once: (A) cheap denominators; (B) a value that is non-zero and
+exponentially small; (C) a guarantee that $D_n^3$ really costs less than the smallness gained.
+Partial sums have (A) and fail (B). We keep their arithmetic and look for more cancellation.
+
+\section{A machine that produces combinations with cheap denominators}
+
+\q{Question.} Partial sums are the only combinations $a\zeta(3)-b$ we know. How do we get a large
+supply of others, all with denominator $D_n^3$, among which to search for a small one?
+
+\q{Idea.} Write $\frac1{m^3}$ as an integral; then we can put a polynomial inside the integral,
+and every polynomial gives a new combination. Integration manufactures reciprocals of integers:
+\[
+\int_0^1x^{m}\dd x=\frac1{m+1},\qquad\int_0^1x^{m}(-\log x)\dd x=\frac1{(m+1)^2}
+\]
+(the second by integration by parts). We need \emph{three} factors of $m+1$. Two variables give
+two, and one logarithm gives the third:
+$\iint(xy)^m(-\log x)\dd x\dd y=\frac1{(m+1)^3}$. Summing over $m\ge0$ with the geometric series
+$\sum_m(xy)^m=\frac1{1-xy}$, and using $-\log x-\log y=-\log(xy)$ to make the expression symmetric
+in $x$ and $y$, we arrive at the \emph{kernel}
+\begin{equation}\label{kernel}
+K(x,y)=\frac{-\log(xy)}{1-xy},\qquad\int_0^1\!\!\int_0^1K(x,y)\dd x\dd y=2\,\zeta(3).
+\end{equation}
+The factor $2$ is there because $-\log(xy)$ consists of two equal pieces, $-\log x$ and $-\log y$.
+We keep it rather than carry a $\frac12$ through every formula. (All terms are positive, so
+exchanging sum and integral is legitimate.)
+
+\q{What happens when a polynomial is inserted?} It is enough to insert monomials $x^ry^s$. Write
+$H_k^{(j)}=1+\frac1{2^j}+\cdots+\frac1{k^j}$ for the partial sums of $\zeta(j)$, with $H_0^{(j)}=0$.
+
+\begin{lemma}[Moments of the kernel]\label{lem:moments}
+For integers $r,s\ge0$,
+\[
+\int_0^1\!\!\int_0^1x^ry^sK(x,y)\dd x\dd y=
+\begin{cases}
+2\bigl(\zeta(3)-H_r^{(3)}\bigr)&\text{if }r=s,\\[3pt]
+\dfrac{H_r^{(2)}-H_s^{(2)}}{r-s}&\text{if }r\ne s.
+\end{cases}
+\]
 \end{lemma}
 \begin{proof}
-Fix a prime $p$. The exponent of $p$ in $D_m$ is the number of $a\ge1$ with $p^a\le m$. So the
-exponent of $p$ on the right is the number of pairs $(k,a)$ with $p^a\le\lfloor N/k\rfloor$, that
-is, with $k\le N/p^a$. Counting by $a$ first gives $\sum_{a\ge1}\lfloor N/p^a\rfloor$, which is the
-exponent of $p$ in $N!$ (Legendre's formula).
+Expanding as above, the integral is $\sum_{m\ge0}\bigl[\frac1{(m+r+1)^2(m+s+1)}+
+\frac1{(m+r+1)(m+s+1)^2}\bigr]$.
+If $r=s$ each bracket is $\frac2{(m+r+1)^3}$: the series for $2\zeta(3)$ with its first $r$ terms
+missing. If $r>s$, put $u=m+s+1$ and $d=r-s$; the bracket is
+$\frac{2u+d}{u^2(u+d)^2}=\frac1d\bigl[\frac1{u^2}-\frac1{(u+d)^2}\bigr]$, and the sum over $u>s$
+telescopes, leaving $\frac1d\sum_{u=s+1}^{r}\frac1{u^2}$.
+\end{proof}
+\noindent\emph{Why this is the heart of the arithmetic.} On the diagonal $r=s$ both variables are
+shifted by the same amount, and we just get $\zeta(3)$ with a few terms removed. Off the diagonal
+the two shifts differ, the sum collapses, and only a \emph{rational number} survives. So $\zeta(3)$
+enters only through the diagonal, and no other irrational constant enters at all.
+
+Now let $P(x)=\sum_{j=0}^nc_jx^j$ have integer coefficients, and define
+\[
+J(P)=\int_0^1\!\!\int_0^1P(x)P(y)K(x,y)\dd x\dd y .
+\]
+\begin{proposition}[Cheap denominators]\label{prop:arith}
+$J(P)=2\bigl(\sum_jc_j^2\bigr)\zeta(3)-\beta(P)$, where $\beta(P)$ is a rational number and
+$D_n^3\,\beta(P)$ is an integer.
+\end{proposition}
+\begin{proof}
+Multiply out $P(x)P(y)$ and use Lemma~\ref{lem:moments}. The diagonal terms give
+$2\sum c_j^2(\zeta(3)-H_j^{(3)})$; the denominators in $H_j^{(3)}$ are $k^3$ with $k\le n$. The
+off-diagonal terms are integer multiples of $\frac1{(r-s)u^2}$ with $|r-s|\le n$ and $u\le n$.
+All of these divide $D_n^3$.
+\end{proof}
+
+\q{The crucial observation.} The price $D_n^3$ depends only on the \emph{degree} of $P$, not on the
+size of its coefficients. So we have $n+1$ integers $c_0,\dots,c_n$ to choose, as large as we like,
+at a fixed price. For instance $P=1$ gives $J=2\zeta(3)$, and $P=1-2x$ gives
+$J=10\,\zeta(3)-12=0.0206$. This is the supply of combinations we wanted.
+
+\forced The exponent $3$ in $D_n^3$ is forced by the three factors in $\frac1{m^3}$. The kernel
+is one natural way to produce those factors symmetrically; Part~II reaches the same combinations
+with no integral at all. What we must not do is waste degree: Section~8 shows that even one extra
+factor of $D_n$ would be fatal.
+
+\section{Which polynomial? The cancellation requirement}
+
+\q{Question.} Among all integer polynomials of degree $n$, which one makes $J(P)$ small?
+
+\q{Attempt.} Take something simple of degree $n$ that is small on most of the square, say
+$P(x)=(1-x)^n$. Its coefficients are integers, the price is $D_n^3$. But
+$J\bigl((1-x)^n\bigr)=0.138,\ 0.050,\ 0.017$ at $n=5,10,20$: it decreases like a power of $n$, no
+faster than the partial sums did. Multiplied by $D_n^3$ it is $8\cdot10^{8}$ at $n=10$. Worse, for
+a carelessly chosen polynomial the sign is not even under control: $P=2-5x$ gives
+$J=58\zeta(3)-70=-0.28$, although the kernel is positive.
+
+\q{Lesson.} A polynomial that is merely small does not give exponential smallness. We must use the
+freedom in the coefficients to make things \emph{cancel}.
+
+\q{Idea.} Think of one variable at a time: we want $\int_0^1P(x)f(x)\dd x$ small, where $f$ is a
+smooth function (the kernel with $y$ fixed, or a piece of it). Smooth functions are well
+approximated by polynomials of low degree. So if $P$ gives integral $0$ against \emph{every}
+polynomial $g$ of degree less than $n$, then
+\[
+\int_0^1P\,f=\int_0^1P\,(f-g)\qquad\text{for all such }g,
+\]
+and the integral only ``sees'' the part of $f$ that polynomials of degree $<n$ cannot reproduce,
+which is tiny. This is a design requirement, and it is the most we can ask:
+
+\begin{proposition}[The polynomial is forced]\label{prop:forced}
+Fix $n$. Among polynomials of degree at most $n$, those satisfying
+$\int_0^1P(x)\,x^j\dd x=0$ for $j=0,1,\dots,n-1$ form a line: there is a non-zero one, it has degree
+exactly $n$, and any two are proportional. No non-zero polynomial of degree at most $n$ satisfies one
+more condition $\int_0^1P\,x^n=0$.
+\end{proposition}
+\begin{proof}
+These are $n$ linear equations in $n+1$ unknown coefficients, so a non-zero solution exists. If $P$
+is a solution and $g$ is any polynomial of degree less than $n$, then $\int Pg=0$. If $P$ itself
+had degree less than $n$ we could take $g=P$ and get $\int P^2=0$, so $P=0$. Hence a non-zero
+solution has degree exactly $n$; and given two solutions, a combination of them has degree less than
+$n$ and is again a solution, so it vanishes. The last sentence is the same argument with $g=P$.
+\end{proof}
+
+So \emph{once we decide to spend our $n+1$ coefficients on cancelling everything of lower degree,
+there is no further choice}. It remains to find this polynomial and to check that it can be scaled
+to have integer coefficients.
+
+\q{Construction.} We need an operation that kills polynomials of degree less than $n$:
+differentiating $n$ times does. Integration by parts moves derivatives from one factor to the
+other, at the cost of boundary terms. So take a ``seed'' $F$ whose boundary terms all vanish, that
+is, $F$ and its first $n-1$ derivatives vanish at both $0$ and $1$. The polynomial of least degree
+with this property is $x^n(1-x)^n$. Its $n$-th derivative has degree $n$, as required. Define
+\begin{equation}\label{legendre}
+P_n(x)=\frac1{n!}\frac{\dd^n}{\dd x^n}\bigl[x^n(1-x)^n\bigr]
+=\sum_{k=0}^n(-1)^k\binom nk\binom{n+k}k x^k ,
+\end{equation}
+where the formula comes from expanding $(1-x)^n$ and differentiating term by term. The division by
+$n!$ is exactly what makes the coefficients integers with no common factor ($P_n(0)=1$):
+\[
+P_1=1-2x,\qquad P_2=1-6x+6x^2,\qquad P_3=1-12x+30x^2-20x^3 .
+\]
+These are called shifted Legendre polynomials; no knowledge of them is assumed. Integrating by parts
+$n$ times, with no boundary terms, gives the formula on which everything rests: for any $f$ with
+$n$ continuous derivatives on $[0,1]$,
+\begin{equation}\label{ibp}
+\int_0^1P_n(x)f(x)\dd x=\frac{(-1)^n}{n!}\int_0^1x^n(1-x)^n\,f^{(n)}(x)\dd x .
+\end{equation}
+If $f$ is a polynomial of degree less than $n$, then $f^{(n)}=0$: so $P_n$ is the polynomial of
+Proposition~\ref{prop:forced}.
+
+\q{Why not use the seed itself?} The seed $x^n(1-x)^n$ is positive and at most $4^{-n}$, so
+$J$ of it is positive and at most $2\zeta(3)\,16^{-n}$. That looks like everything we want. But
+its degree is $2n$, so the price is $D_{2n}^3$, about $e^{6n}\approx400^n$. At $n=10$:
+$J=1.3\cdot10^{-13}$, $D_{20}^3=1.3\cdot10^{25}$, product $10^{12}$. In general it cannot work: the
+binomial coefficient $\binom{2n}n\ge\frac{4^n}{2n+1}$ divides $D_{2n}$ (a classical fact about binomial coefficients), so $D_{2n}^3$ is at least
+about $64^n$, while $J$ of the seed is not smaller than about $16^{-n}$ (the seed is close to
+$4^{-n}$ near $x=\frac12$). Differentiating $n$ times is what brings the degree, and the price,
+back down, while formula \eqref{ibp} keeps the seed available whenever we need it.
+
+\q{The numbers we shall study.} From now on
+\[
+I_n=J(P_n)=2\bigl(a_n\zeta(3)-b_n\bigr),\qquad
+a_n=\sum_{k=0}^n\binom nk^2\binom{n+k}k^2,\qquad D_n^3\,b_n\in\Z,
+\]
+by Proposition~\ref{prop:arith}: $a_n$ is the sum of the squares of the coefficients of $P_n$, and
+$b_n=\frac12\beta(P_n)$. The first values are $a_n=1,5,73,1445$ and
+$b_n=0,\,6,\,\frac{351}4,\,\frac{62531}{36}$:
+\[
+I_0=2\zeta(3),\quad I_1=10\zeta(3)-12=0.0206,\quad I_2=146\zeta(3)-\tfrac{351}2=0.00031,\quad
+I_3=5.7\cdot10^{-6}.
+\]
+Compare $n=10$: the careless $(1-x)^{10}$ gave $0.05$; $P_{10}$ gives $I_{10}=2.2\cdot10^{-17}$,
+at the same price. The integers $a_n$ (the Ap\'ery numbers) were not guessed: they are the
+diagonal of $P_n(x)P_n(y)$, and only the diagonal carries $\zeta(3)$.
+
+\forced The decision to cancel all lower degrees is a choice (it is the natural way to use
+$n+1$ coefficients, and it is what makes the next section possible). Given that decision, $P_n$
+is forced up to sign by Proposition~\ref{prop:forced} and the requirement of integer coefficients
+without common factor; and then $a_n$, $b_n$, $I_n$ are forced too.
+
+\section{Why is $I_n$ not zero? Making the sign visible}
+
+\q{Question.} The numbers above suggest that $I_n$ is small and positive. But $P_n(x)P_n(y)$
+changes sign all over the square, and we saw with $2-5x$ that positivity of the kernel proves
+nothing. How can we see the sign of $I_n$?
+
+\q{Idea.} Formula \eqref{ibp} trades the oscillating $P_n$ for the positive seed $x^n(1-x)^n$,
+\emph{provided} we can differentiate the other factor $n$ times and control its sign. For one very
+simple function this is easy: if $f(x)=\frac1{x+t}$ with $t>0$, then
+$f^{(n)}(x)=\frac{(-1)^nn!}{(x+t)^{n+1}}$, and the signs and factorials in \eqref{ibp} cancel
+exactly:
+\begin{equation}\label{onevar}
+\int_0^1\frac{P_n(x)}{x+t}\dd x=\int_0^1\frac{x^n(1-x)^n}{(x+t)^{n+1}}\dd x>0 .
+\end{equation}
+(With $t=1$ this already proves a theorem: the left side is an integer combination of $1$ and
+$\log2$ with denominator $D_n$, the right side is positive and tiny, and $\log2$ is irrational.)
+
+\q{Obstacle.} Our kernel $\frac{-\log(xy)}{1-xy}$ is not of this simple form, and its $n$-th
+derivatives are a mess with no visible sign.
+
+\q{Construction.} Write the kernel as a \emph{mixture of products of simple fractions}. A logarithm
+is an integral of a reciprocal: for $a,b>0$, splitting into partial fractions,
+$\int_0^\infty\frac{\dd t}{(t+a)(t+b)}=\frac{\log b-\log a}{b-a}$. We want the numerator
+$-\log(xy)$ and the denominator $1-xy$; taking $a=x$ and $b=\frac1y$ gives both, and
+\begin{equation}\label{sep}
+K(x,y)=\int_0^\infty\frac{\dd t}{(x+t)(1+yt)}\qquad(0<x,y<1).
+\end{equation}
+For each fixed $t$ the variables are now separated, each sitting in a simple fraction.
+
+\q{Carrying it out.} Insert \eqref{sep} into $I_n=\iint P_n(x)P_n(y)K$. For fixed $t$ the integral
+over $x$ and $y$ is a product of two one-variable integrals. The first is \eqref{onevar}. The
+second is the same computation with $f(y)=\frac1{1+yt}$, whose $n$-th derivative is
+$\frac{(-1)^nn!\,t^n}{(1+yt)^{n+1}}$. Therefore
+\begin{equation}\label{triple}
+\boxed{\;I_n=\int_0^\infty\!\!\int_0^1\!\!\int_0^1
+\frac{\bigl[x(1-x)\,y(1-y)\,t\bigr]^n}{\bigl[(x+t)(1+yt)\bigr]^{n+1}}\dd x\dd y\dd t\ >\ 0 .\;}
+\end{equation}
+Every factor is positive. So $I_n>0$ for every $n$: the cancellation has been converted into a
+positive integral \emph{before} any estimate is made. (The order of integration may be changed
+because $|P_n(x)P_n(y)|/((x+t)(1+yt))$ has total integral at most $\max|P_n|^2\cdot2\zeta(3)$.)
+
+\forced The extra variable $t$ is the price of making the kernel differentiable in closed form.
+The substitution $t=\frac{1-z}{yz}$ turns \eqref{triple} into Beukers' original integral over the
+cube, $\int_{[0,1]^3}\frac{[x(1-x)y(1-y)z(1-z)]^n}{(1-z+xyz)^{n+1}}$; the two are the same.
+
+\section{How small is $I_n$? Where $\sqrt2$ comes from}
+
+\q{Question.} The integrand in \eqref{triple} is an $n$-th power. How fast does it shrink?
+
+Write it as $G^n\cdot\frac1Q$ with
+\[
+Q=(x+t)(1+yt),\qquad G=\frac{x(1-x)\,y(1-y)\,t}{Q}.
+\]
+If $G\le\rho$ everywhere, then $I_n\le\rho^n\iiint\frac1Q=\rho^n\iint K=2\zeta(3)\rho^n$. So the
+whole question is: \emph{what is the maximum of $G$?} It is a competition: the numerator wants $x$
+and $y$ near $\frac12$, the denominator wants them near $0$.
+
+\emph{Reduce to one variable.} Everything is symmetric, so the maximum should have $x=y$ and a
+balanced $t$. Put $s=\sqrt{xy}$. By AM--GM, $x+y\ge2s$, so
+$(1-x)(1-y)=1-(x+y)+xy\le(1-s)^2$; and $\frac Qt=1+xy+\frac xt+yt\ge1+s^2+2s=(1+s)^2$. Hence
+\[
+G\le\Bigl(\frac{s(1-s)}{1+s}\Bigr)^2 .
+\]
+\emph{One-variable maximum.} The function $\frac{s(1-s)}{1+s}$ has derivative zero where
+$s^2+2s-1=0$, that is, at $s=\sqrt2-1$. This is where $\sqrt2$ enters the subject. Its value there
+is $(\sqrt2-1)^2$, as the identity $\alpha^2(1+s)-s(1-s)=(s-\alpha)^2\ge0$ for $\alpha=\sqrt2-1$
+confirms. Therefore
+\begin{equation}\label{boundA}
+\boxed{\;0<I_n\le2\zeta(3)\,\rho^{\,n},\qquad\rho=(\sqrt2-1)^4=17-12\sqrt2=0.0294\ldots\;}
+\end{equation}
+So $I_n$ shrinks by a factor of about $34$ at each step. Since $G=\rho$ is attained (at
+$x=y=\sqrt2-1$, $t=1$), no better rate is possible for these numbers.
+
+\section{Is the price affordable? The size of $D_n$}
+
+\q{Question.} We must compare $D_n^3$ with $\rho^{-n}=33.97^n$. We need $D_n<C^n$ with
+$C^3<33.97$, that is $C<3.238$.
+
+\q{What is true.} $D_n$ grows like $e^n=2.718^n$ (for example $D_{12}^{1/12}=2.35$). That
+statement is the prime number theorem, which is deep. We need far less, for a reason worth
+noticing: since $I_n>0$ for \emph{every} $n$, it is enough to have a good bound on $D_n$ for
+\emph{infinitely many} $n$. And that follows from one exact identity.
+
+\begin{lemma}\label{lem:fact}
+For every positive integer $N$,\quad $N!=D_N\cdot D_{\lfloor N/2\rfloor}\cdot D_{\lfloor N/3\rfloor}
+\cdots D_{\lfloor N/N\rfloor}$.
+\end{lemma}
+\noindent Example: $6!=D_6D_3D_2D_1D_1D_1=60\cdot6\cdot2=720$.
+\begin{proof}
+Fix a prime $p$ and count how many times it divides each side. $D_m$ contains $p$ once for each
+power $p^a\le m$. So the right side contains $p$ once for each pair $(k,a)$ with
+$p^a\le\lfloor N/k\rfloor$, that is, with $k\le N/p^a$. For each $a$ there are $\lfloor N/p^a\rfloor$
+such $k$. And $\sum_a\lfloor N/p^a\rfloor$ is how many times $p$ divides $N!$ (count the multiples of
+$p$, then of $p^2$, and so on).
 \end{proof}
 
 \begin{lemma}\label{lem:lcm}
-For every real $C>e$ there are infinitely many $n$ with $D_n<C^n$. In particular $D_n<3^n$ for
+For every $C>e$ there are infinitely many $n$ with $D_n<C^n$. In particular $D_n<3^n$ for
 infinitely many $n$.
 \end{lemma}
+\noindent\emph{The idea.} By Lemma~\ref{lem:fact}, $N!$ is a product of the $D$'s at the scales
+$N,\frac N2,\frac N3,\dots$ If all of them were at least $C^{\text{(index)}}$, the product would be
+at least $C$ to the power $N+\frac N2+\frac N3+\cdots\approx N\log N$. But $N!\le N^N=e^{N\log N}$. So
+$C\le e$. The $D$'s cannot all be above the average that the factorial imposes.
 \begin{proof}
-Suppose instead that $D_m\ge C^m$ for all $m\ge M$. Take $N\ge M$ and put $L=\lfloor N/M\rfloor$.
-For $k\le L$ we have $\lfloor N/k\rfloor\ge M$, so Lemma~\ref{lem:fact} gives
+Suppose the lemma fails for some $C>e$: then $D_m\ge C^m$ for all $m\ge M$, for some $M$. Take $N$
+large and let $L=\lfloor N/M\rfloor$. For $k\le L$ the index $\lfloor N/k\rfloor$ is at least $M$, so
 \[
 N\log N\ \ge\ \log N!\ \ge\ \log C\sum_{k=1}^{L}\Bigl\lfloor\frac Nk\Bigr\rfloor
-\ \ge\ \log C\,\bigl(N H_L^{(1)}-L\bigr).
+\ \ge\ \log C\,\Bigl(N\bigl(1+\tfrac12+\cdots+\tfrac1L\bigr)-L\Bigr).
 \]
-Now $H^{(1)}_L\ge\log(L+1)>\log N-\log M$ and $L/N\le1/M$. Dividing by $N$:
-$\log N\ge\log C\,(\log N-\log M-1/M)$. Since $\log C>1$, this fails for large $N$.
-For the last sentence, $e<3$.
+Since $1+\frac12+\cdots+\frac1L\ge\log(L+1)>\log N-\log M$ and $L\le N/M$, dividing by $N$ gives
+$\log N\ge\log C\,(\log N-\log M-\frac1M)$. As $\log C>1$ and $M$ is fixed, this is false for large
+$N$.
 \end{proof}
 
-\begin{remark}
-A bound for \emph{all} $n$ of the right strength is also elementary: a Chebyshev-type argument
-with the period-$6$ function $\lfloor y\rfloor-\lfloor y/2\rfloor-2\lfloor y/3\rfloor+\lfloor
-y/6\rfloor$ gives $\log D_n\le cn+O(\log^2 n)$ with $c=\tfrac12\log2+\tfrac34\log3=1.1705$, and
-$e^{3c}=33.50<\Lambda$. The proof is in the Codex notes cited in Section~8. We do not need it.
-\end{remark}
+\section{The proof, and how little room there is}
 
-\section{The numbers \texorpdfstring{$I_n$}{I\_n} and their arithmetic}
+\begin{theorem}[Ap\'ery]
+$\zeta(3)$ is irrational.
+\end{theorem}
+\begin{proof}
+Suppose $\zeta(3)=p/q$. By Proposition~\ref{prop:arith},
+$q\,D_n^3I_n=2\bigl(D_n^3a_n\,p-D_n^3b_n\,q\bigr)$ is an integer. By \eqref{triple} it is positive.
+By \eqref{boundA} and Lemma~\ref{lem:lcm}, for infinitely many $n$ it is less than
+$2q\zeta(3)\,(27\rho)^n$. Since $\rho=\frac1{17+12\sqrt2}<\frac1{32}$ (because $\sqrt2>\frac54$),
+this is less than $2q\zeta(3)(\frac{27}{32})^n$, which is below $1$ for large $n$. A positive
+integer below $1$ does not exist.
+\end{proof}
 
-\subsection{A polynomial designed to cancel}
-\begin{why}
-We want an integral against a polynomial to be small. A polynomial of degree $n$ has $n+1$ free
-coefficients; the most cancellation it can offer is to be orthogonal to all polynomials of
-lower degree. Up to scale there is exactly one such polynomial, and integration by parts produces it.
-\end{why}
-Define the \emph{shifted Legendre polynomial}
-\begin{equation}\label{legendre}
-P_n(x)=\frac1{n!}\frac{\dd^n}{\dd x^n}\bigl[x^n(1-x)^n\bigr]
-=\sum_{k=0}^n(-1)^k\binom nk\binom{n+k}k x^k .
-\end{equation}
-(Expand $(1-x)^n$ and differentiate term by term.) Its coefficients are integers and $P_n(0)=1$.
-Because $x^n(1-x)^n$ vanishes to order $n$ at both endpoints, $n$ integrations by parts have no
-boundary terms: for every $f$ with $n$ continuous derivatives on $[0,1]$,
-\begin{equation}\label{ibp}
-\int_0^1P_n(x)f(x)\dd x=\frac{(-1)^n}{n!}\int_0^1x^n(1-x)^nf^{(n)}(x)\dd x .
-\end{equation}
-In particular $\int_0^1P_n\,g=0$ for every polynomial $g$ of degree less than $n$. Taking $f=P_n$,
-whose $n$-th derivative is the constant $(-1)^n(2n)!/n!$, and using
-$\int_0^1x^n(1-x)^n\dd x=n!^2/(2n+1)!$, gives
-\begin{equation}\label{norm}
-\int_0^1P_n(x)^2\dd x=\frac1{2n+1}.
-\end{equation}
+\noindent For orientation, here are the actual values of $D_n^3I_n$:
+\begin{center}\small
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+$n$ & 1 & 2 & 4 & 6 & 8 & 10\\
+$D_n^3\,I_n$ & $0.021$ & $0.0025$ & $2.0\cdot10^{-4}$ & $1.3\cdot10^{-5}$ & $2.1\cdot10^{-5}$ &
+$3.6\cdot10^{-7}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+They are not monotone ($D_n$ jumps when $n$ is a prime power) but they decay.
 
-\subsection{The same polynomial as a rational function}
-Integrate $P_n$ against a power $x^{t-1}$, $t>0$. From \eqref{legendre},
+\q{What did what.}
+\begin{center}\small
+\begin{tabular}{@{}p{43mm}p{52mm}p{52mm}@{}}
+\toprule
+object & the need it answers & forced or chosen\\
+\midrule
+criterion (Lemma~\ref{lem:crit}) & a rigid property of fractions & forced: equivalent to
+irrationality\\
+$D_n$ instead of $n!$ & cheapest common denominator & forced\\
+kernel $\frac{-\log(xy)}{1-xy}$ & three factors $\frac1{m+1}$; only $\zeta(3)$ appears &
+natural; Part~II avoids it\\
+degree $n$ in each variable & price $D_n^3$ and no more & forced: degree $2n$ fails
+(Section~4)\\
+$P_n$ & cancel everything of lower degree & a choice of principle; then forced
+(Proposition~\ref{prop:forced})\\
+$a_n=\sum\binom nk^2\binom{n+k}k^2$ & nothing: it is the diagonal of $P_n(x)P_n(y)$ & forced by
+$P_n$\\
+identity \eqref{sep} & a kernel that can be differentiated $n$ times & one device; Part~II has
+others\\
+$(\sqrt2-1)^4$ & maximum of the integrand & forced: it is the exact rate\\
+subsequence of $n$ & avoid the prime number theorem & available because $I_n>0$ for all $n$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\q{How little room there is.} The proof closes because $e^3=20.1<33.97$. Change any one thing and
+it does not:
+\begin{itemize}
+\item one more factor of $D_n$ (price $D_n^4\approx54.6^n$): fails, since $54.6>33.97$;
+\item degree $2n$ instead of $n$: fails (Section~4);
+\item $n!$ instead of $D_n$: fails at once, $n!$ grows faster than any exponential;
+\item the cube of the logarithm in the kernel, which would give $\zeta(5)$ with denominators
+$D_n^5$: the cancellation is then lost, and the combinations are only of size $n^{-4}\log n$
+(reported in the companion document).
+\end{itemize}
+This is why $\zeta(3)$ is special for this method, and why every economy above was necessary.
+
+\part*{Part II. The same objects without integrals}
+
+Zudilin's paper proves the theorem starting from a rational function,
+$\bigl(\frac{(t-1)\cdots(t-n)}{t(t+1)\cdots(t+n)}\bigr)^2$, with no explanation of where it comes
+from. Part~II shows that it is $P_n$ in disguise, so that nothing new has to be guessed; and that
+this second language explains the famous recurrence and gives a second proof of positivity and
+smallness.
+
+\section{The polynomial $P_n$ seen as a rational function}
+
+\q{Question.} The series $\zeta(3)=\sum\frac1{t^3}$ is a sum over integers $t$. Can we describe
+$I_n$ as a sum over $t$ as well?
+
+\q{Idea.} Look at all the moments of $P_n$ at once: integrate it against $x^{t-1}$, where the
+exponent $t>0$ is a variable. Term by term, from \eqref{legendre},
 \[
 \int_0^1x^{t-1}P_n(x)\dd x=\sum_{k=0}^n\frac{(-1)^k\binom nk\binom{n+k}k}{t+k}.
 \]
-This is a rational function of $t$ with simple poles at $0,-1,\dots,-n$ and numerator of degree at
-most $n$. By orthogonality it vanishes at $t=1,2,\dots,n$. That determines it up to a constant, and
-the residue $1$ at $t=0$ fixes the constant:
+What kind of function of $t$ is this? Three facts determine it completely:
+\begin{itemize}
+\item it is a rational function with simple poles at $t=0,-1,\dots,-n$ (because $P_n$ has degree
+$n$) and numerator of degree at most $n$;
+\item it vanishes at $t=1,2,\dots,n$ (because $P_n$ is orthogonal to $1,x,\dots,x^{n-1}$);
+\item its residue at $t=0$ is $P_n(0)=1$.
+\end{itemize}
+A numerator of degree at most $n$ with $n$ prescribed zeros is determined up to a constant, and
+the third fact fixes the constant. Hence
 \begin{equation}\label{mellin}
 \int_0^1x^{t-1}P_n(x)\dd x=(-1)^n r_n(t),\qquad
 r_n(t)=\frac{(t-1)(t-2)\cdots(t-n)}{t(t+1)\cdots(t+n)} .
 \end{equation}
-So \emph{zeros of $r_n$ at $1,\dots,n$ are the orthogonality of $P_n$; poles at $0,\dots,-n$ are
-its degree.} Comparing the two displays, the partial fractions of $r_n$ are
+\emph{The zeros of $r_n$ are the orthogonality of $P_n$; its poles are the degree of $P_n$.}
+Comparing the two displays also gives the partial fractions of $r_n$:
 \begin{equation}\label{pf}
 r_n(t)=\sum_{k=0}^n\frac{c_k}{t+k},\qquad c_k=(-1)^{n-k}\binom nk\binom{n+k}k\in\Z .
 \end{equation}
 
-\subsection{Definition of \texorpdfstring{$I_n$}{I\_n}}
-\begin{why}
-To reach $\zeta(3)=\sum t^{-3}$ from simple poles $1/(t+k)$ we need to raise the order of the pole
-by two. Squaring raises it by one and differentiating by one more. Squaring also makes the zeros
-at $1,\dots,n$ double, so they survive one differentiation.
-\end{why}
-Put $R_n(t)=r_n(t)^2$ and
+\q{Why the square, and why a derivative?} Since $I_n$ contains $P_n(x)P_n(y)$, the transform
+appears twice: $\iint(xy)^{t-1}P_n(x)P_n(y)=r_n(t)^2$. Differentiating $(xy)^{t-1}$ with respect to
+$t$ produces $\log(xy)$, and summing $(xy)^{t-1}$ over $t\ge1$ produces $\frac1{1-xy}$. So, with
+$R_n(t)=r_n(t)^2$,
 \begin{equation}\label{defI}
-I_n=-\sum_{t=1}^\infty R_n'(t)
-=\int_0^1\!\!\int_0^1P_n(x)P_n(y)\,K(x,y)\dd x\dd y,\qquad K(x,y)=\frac{-\log(xy)}{1-xy}.
+I_n=-\sum_{t=1}^\infty R_n'(t).
 \end{equation}
-The series converges absolutely since $R_n'(t)=O(t^{-3})$. The two expressions agree: by
-\eqref{mellin}, $R_n(t)=\iint(xy)^{t-1}P_n(x)P_n(y)$, so $-R_n'(t)=\iint(xy)^{t-1}(-\log xy)
-P_n(x)P_n(y)$ (for $t\ge1$ the $t$-derivative of the integrand is dominated by the integrable
-function $|\log(xy)|\max|P_n|^2$), and $\sum_{t\ge1}(xy)^{t-1}=1/(1-xy)$. The interchange of sum and integral is
-justified by domination: $P_n$ is bounded and $K\ge0$ is integrable, with $\iint K=
-\sum_{t\ge1}2t^{-3}=2\zeta(3)$.
+(The interchanges are justified because $P_n$ is bounded and $K$ is positive and integrable.) This
+is exactly Zudilin's starting formula. From the point of view of sums one can also see directly
+why this combination is the right one:
+\begin{itemize}
+\item we need poles of order $3$ to reach $\sum\frac1{t^3}$: squaring $r_n$ gives order $2$, and
+one differentiation gives order $3$;
+\item squaring makes the zeros at $t=1,\dots,n$ double, so they survive the differentiation: the
+first $n$ terms of \eqref{defI} vanish;
+\item the alternative with poles of order $3$, the cube $r_n^3$, fails: its sum also contains
+$\zeta(2)$, with a coefficient that does not vanish (it is $18$ for $n=1$), so it would be a
+combination of two unknown constants. With the derivative of a square, $\zeta(2)$ cancels by itself,
+as we now check.
+\end{itemize}
 
-The left form is Zudilin's (and Nesterenko's) starting point; the right form is Beukers'. They
-are the same number. Note that $K>0$ does not make $I_n$ positive, because $P_n$ changes sign.
-
-\subsection{Arithmetic}
-\begin{lemma}[Property (A)]\label{lem:arith}
-$I_n=2\bigl(a_n\zeta(3)-b_n\bigr)$, where
-\[
-a_n=\sum_{k=0}^n\binom nk^2\binom{n+k}k^2\in\Z\qquad\text{and}\qquad D_n^3\,b_n\in\Z .
-\]
-\end{lemma}
-\begin{proof}
-Square \eqref{pf}. For $j\ne k$ write
-$\frac1{(t+k)(t+j)}=\frac1{j-k}\bigl(\frac1{t+k}-\frac1{t+j}\bigr)$. This gives
+\q{The arithmetic again, in this language.} Squaring \eqref{pf} and using
+$\frac1{(t+k)(t+j)}=\frac1{j-k}\bigl(\frac1{t+k}-\frac1{t+j}\bigr)$,
 \[
 R_n(t)=\sum_{k=0}^n\Bigl[\frac{c_k^2}{(t+k)^2}+\frac{e_k}{t+k}\Bigr],\qquad
 e_k=2c_k\sum_{j\ne k}\frac{c_j}{j-k}.
 \]
-Two facts about the $e_k$: first, $D_ne_k\in\Z$, because $|j-k|\le n$. Second, $\sum_ke_k=0$,
-because the terms for $(j,k)$ and $(k,j)$ cancel. Differentiate and sum over $t\ge1$, using
-$\sum_{t\ge1}(t+k)^{-r}=\zeta(r)-H_k^{(r)}$:
+Then $-R_n'(t)=\sum_k\bigl[\frac{2c_k^2}{(t+k)^3}+\frac{e_k}{(t+k)^2}\bigr]$, and summing over
+$t\ge1$ with $\sum_{t\ge1}(t+k)^{-j}=\zeta(j)-H_k^{(j)}$:
 \[
-I_n=\sum_k\Bigl[2c_k^2\bigl(\zeta(3)-H_k^{(3)}\bigr)+e_k\bigl(\zeta(2)-H^{(2)}_k\bigr)\Bigr]
-=2\Bigl(\sum_kc_k^2\Bigr)\zeta(3)-\sum_k\bigl[2c_k^2H_k^{(3)}+e_kH_k^{(2)}\bigr].
+I_n=2\Bigl(\sum_kc_k^2\Bigr)\zeta(3)+\Bigl(\sum_ke_k\Bigr)\zeta(2)
+-\sum_k\bigl[2c_k^2H_k^{(3)}+e_kH_k^{(2)}\bigr].
 \]
-The $\zeta(2)$ term has disappeared because $\sum e_k=0$. So $a_n=\sum c_k^2$ and
-$b_n=\sum_k\bigl[c_k^2H_k^{(3)}+\tfrac12e_kH_k^{(2)}\bigr]$. Since $\tfrac12e_k\cdot D_n\in\Z$ and
-$D_n^2H_k^{(2)},\,D_n^3H_k^{(3)}\in\Z$ for $k\le n$, we get $D_n^3b_n\in\Z$.
-\end{proof}
-\noindent First values: $a_n=1,5,73,1445,33001$ and $b_n=0,\ 6,\ \tfrac{351}4,\
-\tfrac{62531}{36},\ \tfrac{11424695}{288}$. So $I_0=2\zeta(3)$, $I_1=10\zeta(3)-12=0.0206$,
-$I_2=146\zeta(3)-\tfrac{351}2=0.000308$. The two terms are large and nearly cancel; nothing so far
-explains why, or shows that the difference is not zero.
+Now $\sum_ke_k=0$, because in the double sum the terms $(j,k)$ and $(k,j)$ cancel. So $\zeta(2)$
+disappears, $a_n=\sum c_k^2$ as before, and since $D_ne_k$ is an integer the rational part has
+denominator dividing $D_n^3$. This re-proves Proposition~\ref{prop:arith} for $P_n$, and gives the
+explicit formula $b_n=\sum_k\bigl[c_k^2H_k^{(3)}+\tfrac12e_kH_k^{(2)}\bigr]$.
 
-\medskip\noindent\textbf{What remains.} Property (B): $0<I_n\le C\theta^{\,n}$ with
-$\theta<1/27$. The next three sections prove it in three independent ways.
+\section{The recurrence: how to find it, and what it gives}
 
-\section{Proof A: Beukers' integral}
-\begin{why}
-Formula \eqref{ibp} converts an integral against the oscillating $P_n$ into an integral against the
-positive function $x^n(1-x)^n$, provided we can differentiate the other factor $n$ times explicitly.
-That is easy for $1/(x+t)$ and hopeless for $K(x,y)$ directly. So we first write $K$ as a
-superposition of products of such simple factors.
-\end{why}
-\noindent\textbf{Step 1: separate the variables.} For $a,b>0$, partial fractions give
-$\int_0^\infty\frac{\dd t}{(t+a)(t+b)}=\frac{\log b-\log a}{b-a}$. With $a=x$ and $b=1/y$:
-\begin{equation}\label{sep}
-K(x,y)=\int_0^\infty\frac{\dd t}{(x+t)(1+yt)}\qquad(0<x,y<1).
-\end{equation}
-
-\noindent\textbf{Step 2: integrate by parts in $x$ and in $y$.} Insert \eqref{sep} into
-\eqref{defI}. For fixed $t>0$ the integrand is a function of $x$ times a function of $y$, so the inner
-double integral is a product of two single integrals. Apply \eqref{ibp} to each: with $f(x)=1/(x+t)$, where
-$f^{(n)}=(-1)^nn!/(x+t)^{n+1}$, and with $f(y)=1/(1+yt)$, where $f^{(n)}=(-1)^nn!\,t^n/(1+yt)^{n+1}$.
-The signs and factorials cancel:
-\begin{equation}\label{triple}
-I_n=\int_0^\infty\!\!\int_0^1\!\!\int_0^1
-\frac{\bigl[x(1-x)\,y(1-y)\,t\bigr]^n}{\bigl[(x+t)(1+yt)\bigr]^{n+1}}\dd x\dd y\dd t\ >0 .
-\end{equation}
-(Fubini applies before the integrations by parts because $|P_n(x)P_n(y)|/((x+t)(1+yt))$ has
-integral at most $\max|P_n|^2\cdot2\zeta(3)$; afterwards the integrand is positive.) Positivity is
-now visible. The substitution $t=(1-z)/(yz)$ turns \eqref{triple} into Beukers' original
-$\int_{[0,1]^3}\frac{[x(1-x)y(1-y)z(1-z)]^n}{(1-z+xyz)^{n+1}}$; we do not need it.
-
-\noindent\textbf{Step 3: bound the integrand.} Write the integrand as $G^n/Q$ with
-$Q=(x+t)(1+yt)$ and $G=x(1-x)y(1-y)t/Q$. Let $s=\sqrt{xy}$. By the inequality of arithmetic and
-geometric means, $(1-x)(1-y)=1-(x+y)+xy\le(1-s)^2$ and $Q/t=1+xy+\frac xt+yt\ge(1+s)^2$. Hence
+\q{Question.} Ap\'ery's original proof rested on the fact that $a_n$ and $b_n$ both satisfy
 \[
-G\le\Bigl(\frac{s(1-s)}{1+s}\Bigr)^2\le(\sqrt2-1)^4=\rho ,
+(n+1)^3u_{n+1}-(2n+1)(17n^2+17n+5)\,u_n+n^3u_{n-1}=0 .
 \]
-where the last step is the identity $\alpha^2(1+s)-s(1-s)=(s-\alpha)^2$ for $\alpha=\sqrt2-1$
-(it uses only $\alpha^2+2\alpha=1$). Since $\iiint\frac1Q=\iint K=2\zeta(3)$,
-\begin{equation}\label{boundA}
-\boxed{\;0<I_n\le2\zeta(3)\,\rho^{\,n},\qquad\rho=(\sqrt2-1)^4=17-12\sqrt2 .\;}
-\end{equation}
-Equality in the bound for $G$ holds at $x=y=\sqrt2-1$, $t=1$. Since $G$ is continuous and
-$1/Q>0$, integrating over a small box around that point gives $I_n\ge c_\varepsilon(\rho-\varepsilon)^n$,
-so $I_n^{1/n}\to\rho$: this is the true exponential rate.
+Where could such a thing come from, and what is it good for?
 
-\noindent\textbf{Conclusion.} $\rho=1/(17+12\sqrt2)<1/32$ because $\sqrt2>\tfrac54$. If
-$\zeta(3)=p/q$, then for the infinitely many $n$ with $D_n<3^n$ (Lemma~\ref{lem:lcm}),
+\q{What it is good for.} Two different solutions of one second-order recurrence are tied together
+by a simple identity (below), and that identity will give the sign and the size of $I_n$ with no
+integral at all. So it is a second, independent route to Sections~5 and~6.
+
+\q{How to find it.} Both $a_n$ and $I_n$ are obtained from $R_n$ by an operation that kills any
+function of the form $S(t+1)-S(t)$: for $I_n$ the operation is ``differentiate and sum over
+$t\ge1$'', which telescopes. So we look for constants $A,B,C$ and a function $S$ with
 \[
-0<q\,D_n^3I_n<2q\,\zeta(3)\,(27\rho)^n<2q\,\zeta(3)\bigl(\tfrac{27}{32}\bigr)^n ,
+A\,R_{n+1}(t)+B\,R_n(t)+C\,R_{n-1}(t)=S(t+1)-S(t).
 \]
-and $q\,D_n^3I_n=2\bigl(D_n^3a_n\,p-D_n^3b_n\,q\bigr)$ is an integer by Lemma~\ref{lem:arith}.
-This is impossible for large $n$.
-\hfill$\blacksquare$
-
-\begin{center}\small
-\begin{tabular}{@{}ll@{}}
-\toprule
-step & what it contributed\\
-\midrule
-orthogonal polynomial $P_n$ & cancellation, with integer coefficients and degree only $n$\\
-identity \eqref{sep} & a form of the kernel that can be differentiated $n$ times\\
-integration by parts & cancellation turned into a positive integrand\\
-AM--GM & the rate $(\sqrt2-1)^4$\\
-\bottomrule
-\end{tabular}
-\end{center}
-
-\section{Proof B: one polynomial identity (Zudilin's proof, simplified)}
-This proof never leaves the rational function $R_n$. It uses no integral at all.
-\begin{why}
-The quantities $a_n$ and $I_n$ are both obtained from $R_n$ by a linear operation
-(sum of double-pole coefficients; minus the sum of derivatives at $t=1,2,\dots$). If we can find a
-linear relation between $R_{n+1},R_n,R_{n-1}$ up to a term of the form $S(t+1)-S(t)$, both operations
-will turn it into a recurrence, because both kill differences of this form. Two solutions of
-one second-order recurrence are tied together by a Wronskian-type identity, and that will give sign
-and size for free.
-\end{why}
-
-\noindent\textbf{Step 1: the identity.} Let $\beta_n=(2n+1)(17n^2+17n+5)$ and
-$s_n(t)=4(2n+1)\bigl(-2t^2+t+(2n+1)^2\bigr)$. For $n\ge1$,
-\begin{equation}\label{cert}
-(n+1)^3R_{n+1}(t)-\beta_nR_n(t)+n^3R_{n-1}(t)=s_n(t+1)R_n(t+1)-s_n(t)R_n(t).
-\end{equation}
-\begin{proof}
-From the product formula for $r_n$,
+The simplest guess is $S=s\cdot R_n$ with $s$ a polynomial. Its degree can be at most $2$: since
+$R_n(t)\approx t^{-2}$, a polynomial of degree $2$ makes $sR_n$ tend to a constant, which the
+difference kills, while degree $3$ would leave something that does not tend to $0$. Dividing by
+$R_n(t)$, all the ratios are explicit,
 \[
 \frac{R_{n+1}(t)}{R_n(t)}=\Bigl(\frac{t-n-1}{t+n+1}\Bigr)^2,\quad
 \frac{R_{n-1}(t)}{R_n(t)}=\Bigl(\frac{t+n}{t-n}\Bigr)^2,\quad
-\frac{R_n(t+1)}{R_n(t)}=\frac{t^4}{(t-n)^2(t+n+1)^2}.
+\frac{R_n(t+1)}{R_n(t)}=\frac{t^4}{(t-n)^2(t+n+1)^2},
 \]
-Divide \eqref{cert} by $R_n(t)$ and multiply by $(t-n)^2(t+n+1)^2$. It becomes the polynomial
-identity
+and after multiplying by $(t-n)^2(t+n+1)^2$ the requirement becomes an identity between polynomials
+of degree $4$ in $t$:
 \begin{multline}\label{poly}
-(n+1)^3(t-n-1)^2(t-n)^2-\beta_n(t-n)^2(t+n+1)^2+n^3(t+n)^2(t+n+1)^2\\
-=s_n(t+1)\,t^4-s_n(t)\,(t-n)^2(t+n+1)^2 .
+A(t-n-1)^2(t-n)^2+B(t-n)^2(t+n+1)^2+C(t+n)^2(t+n+1)^2\\
+=s(t+1)\,t^4-s(t)\,(t-n)^2(t+n+1)^2 .
 \end{multline}
-The left side has degree $4$. On the right the terms in $t^6$ and $t^5$ cancel (both products
-begin $-2t^6-3t^5$ up to the factor $4(2n+1)$), so it also has degree at most $4$. A polynomial
-of degree at most $4$ with five zeros, counted with multiplicity, vanishes identically. We check
-five. Write $\mu=2n+1$ and $u(t)=-2t^2+t+\mu^2$, so $s_n=4\mu u$; note $u(n+1)=n\mu$, $u(-n)=(n+1)\mu$,
-$u'(n+1)=-(4n+3)$, $u'(-n)=4n+1$.
+(On the right the terms of degree $6$ and $5$ cancel automatically.) That is $5$ linear equations,
+one for each coefficient, in $6$ unknowns: $A,B,C$ and the three coefficients of $s$. We solved this
+system with $n$ as a symbol: it has rank $5$, so \emph{the solution is unique up to a common
+factor}. It is
+\begin{gather*}
+A=(n+1)^3,\qquad B=-(2n+1)(17n^2+17n+5),\qquad C=n^3,\\
+s_n(t)=4(2n+1)\bigl(-2t^2+t+(2n+1)^2\bigr).
+\end{gather*}
+So the cubes and the number $17$ are not guesses and not a miracle: they are the unique solution of
+a small linear system that anyone can write down.
+
+\begin{proposition}\label{prop:cert}
+With these values, for $n\ge1$,
+\begin{equation}\label{cert}
+(n+1)^3R_{n+1}(t)-\beta_nR_n(t)+n^3R_{n-1}(t)=s_n(t+1)R_n(t+1)-s_n(t)R_n(t),
+\end{equation}
+where $\beta_n=(2n+1)(17n^2+17n+5)$.
+\end{proposition}
+\begin{proof}
+We must verify \eqref{poly}. Both sides have degree at most $4$, so it is enough to find five zeros
+of the difference, counted with multiplicity. Write $\mu=2n+1$ and $u(t)=-2t^2+t+\mu^2$, so
+$s_n=4\mu u$; note $u(n+1)=n\mu$, $u(-n)=(n+1)\mu$, $u'(n+1)=-(4n+3)$, $u'(-n)=4n+1$.
 \begin{itemize}
 \item $t=n$: left $=n^3(2n)^2\mu^2=4n^5\mu^2$; right $=4\mu\,u(n+1)\,n^4=4n^5\mu^2$.
-\item $t=-n-1$: left $=(n+1)^3(2n+2)^2\mu^2=4(n+1)^5\mu^2$; right $=4\mu\,u(-n)(n+1)^4$, the same.
-\item $t=0$: left $=n^2(n+1)^2\bigl[(n+1)^3+n^3-\beta_n\bigr]$, right $=-4\mu^3n^2(n+1)^2$. They
-agree because $(n+1)^3+n^3=\mu\,(n^2+n+1)$ and $17n^2+17n+5-(n^2+n+1)=4(2n+1)^2$.
-\item derivative at $t=n$: only terms without the factor $(t-n)^2$ contribute. Left:
-$n^3\cdot2(2n)(\mu)(4n+1)=4n^4\mu\,(4n+1)$. Right: $4\mu\bigl[u'(n+1)n^4+4u(n+1)n^3\bigr]=4\mu n^4(4n+1)$.
-\item derivative at $t=-n-1$: left: $(n+1)^3\cdot2(-2n-2)(-\mu)(-4n-3)=-4(n+1)^4\mu\,(4n+3)$. Right:
-$4\mu\bigl[u'(-n)(n+1)^4-4u(-n)(n+1)^3\bigr]=-4\mu\,(n+1)^4(4n+3)$.\qedhere
+\item $t=-n-1$: left $=(n+1)^3(2n+2)^2\mu^2$; right $=4\mu\,u(-n)(n+1)^4$; both are
+$4(n+1)^5\mu^2$.
+\item $t=0$: left $=n^2(n+1)^2[(n+1)^3+n^3-\beta_n]$, right $=-4\mu^3n^2(n+1)^2$. They agree because
+$(n+1)^3+n^3=\mu(n^2+n+1)$ and $17n^2+17n+5-(n^2+n+1)=4\mu^2$.
+\item derivative at $t=n$ (only terms without the factor $(t-n)^2$ contribute): left
+$=n^3\cdot2(2n)\mu(4n+1)$; right $=4\mu[u'(n+1)n^4+4u(n+1)n^3]$; both are $4n^4\mu(4n+1)$.
+\item derivative at $t=-n-1$: left $=(n+1)^3\cdot2(-2n-2)(-\mu)(-4n-3)$; right
+$=4\mu[u'(-n)(n+1)^4-4u(-n)(n+1)^3]$; both are $-4(n+1)^4\mu(4n+3)$.\qedhere
 \end{itemize}
 \end{proof}
-\noindent How one \emph{finds} \eqref{cert}: ask for constants $A,B,C$ and a polynomial $s$ with
-$AR_{n+1}+BR_n+CR_{n-1}=s(t+1)R_n(t+1)-s(t)R_n(t)$. Degree $2$ is the largest for which
-$(sR_n)'\to0$ at infinity. Then the five conditions above are five linear equations for the six
-unknowns ($A,B,C$ and the three coefficients of $s$), and the solution turns out to be unique up to scale. The cubes
-$(n+1)^3,n^3$ and the number $17$ are outputs of this small linear system, not guesses.
 
-\noindent\textbf{Step 2: two recurrences from one identity.} For a sequence $X$ write
+\q{From the identity to two recurrences.} Write
 $\mathcal L[X]_n=(n+1)^3X_{n+1}-\beta_nX_n+n^3X_{n-1}$.
 \begin{itemize}
 \item \emph{$\mathcal L[I]_n=0$ for $n\ge1$.} Differentiate \eqref{cert} and sum over
-$t=1,\dots,T$. The right side telescopes to $(s_nR_n)'(T+1)-(s_nR_n)'(1)$. The second term is $0$
-because $R_n$ has a double zero at $t=1$ when $n\ge1$. The first tends to $0$ because $s_nR_n$ is a
-rational function with a finite limit at infinity, so its derivative is $O(T^{-2})$.
-\item \emph{$\mathcal L[a]_n=0$ for $n\ge1$.} For a rational function $f$, write its unique partial-fraction decomposition, polynomial part
-included, and let $\delta(f)$ be the sum over all poles $p$ of the coefficients of $(t-p)^{-2}$.
-By uniqueness $\delta$ is linear, and it is unchanged by $t\mapsto t+1$, which only moves the poles.
-Hence $\delta\bigl(s_n(t+1)R_n(t+1)\bigr)=\delta\bigl(s_n(t)R_n(t)\bigr)$ and $\delta$ of the right
-side of \eqref{cert} is $0$. By the proof of Lemma~\ref{lem:arith}, $\delta(R_n)=\sum c_k^2=a_n$.
+$t=1,\dots,T$. The right side telescopes to $(s_nR_n)'(T+1)-(s_nR_n)'(1)$. The last term is $0$
+because $R_n$ has a double zero at $t=1$. The other tends to $0$ because $s_nR_n$ tends to a
+constant, so its derivative is $O(T^{-2})$.
+\item \emph{$\mathcal L[a]_n=0$ for $n\ge1$.} Recall $a_n=\sum c_k^2$ is the sum of the
+coefficients of the double poles of $R_n$. For any rational function $f$, let $\delta(f)$ be the
+sum of all its double-pole coefficients (in its partial fractions, which are unique). This
+operation is linear and does not notice a shift $t\mapsto t+1$, which only moves the poles. So
+$\delta$ of the right side of \eqref{cert} is $0$, and $\delta(R_n)=a_n$.
 \end{itemize}
-Note that we do not obtain $\mathcal L[a]=0$ by reading off ``the coefficient of $\zeta(3)$'' in
-$\mathcal L[I]=0$: that would need $1$ and $\zeta(3)$ to be linearly independent over $\Q$, which is
-what we are proving.
+(We do not get the recurrence for $a_n$ by ``reading off the coefficient of $\zeta(3)$'' in the
+recurrence for $I_n$: that would assume $1$ and $\zeta(3)$ are independent over the rationals,
+which is what we are proving.)
 
-\noindent\textbf{Step 3: the Casoratian.} Let $\Omega_n=a_nI_{n-1}-a_{n-1}I_n$. Using both
-recurrences,
+\q{The identity that ties two solutions together.} For a differential equation $y''=\dots$, two
+solutions $y_1,y_2$ have a Wronskian $y_1y_2'-y_1'y_2$ that obeys a first-order equation. The same
+happens for recurrences. Put $\Omega_n=a_nI_{n-1}-a_{n-1}I_n$. Using both recurrences,
 \[
-(n+1)^3\Omega_{n+1}=(\beta_na_n-n^3a_{n-1})I_n-a_n(\beta_nI_n-n^3I_{n-1})=n^3\Omega_n .
+(n+1)^3\Omega_{n+1}=(\beta_na_n-n^3a_{n-1})I_n-a_n(\beta_nI_n-n^3I_{n-1})=n^3\,\Omega_n .
 \]
-Since $\Omega_1=5\cdot2\zeta(3)-(10\zeta(3)-12)=12$, we get $\Omega_n=12/n^3$, that is,
+So $n^3\Omega_n$ is constant; and $\Omega_1=a_1I_0-a_0I_1=5\cdot2\zeta(3)-(10\zeta(3)-12)=12$.
+Dividing by $a_{n-1}a_n$:
 \begin{equation}\label{cas}
-\frac{I_{n-1}}{a_{n-1}}-\frac{I_n}{a_n}=\frac{12}{n^3a_{n-1}a_n}>0\qquad(n\ge1).
+\frac{I_{n-1}}{a_{n-1}}-\frac{I_n}{a_n}=\frac{12}{n^3\,a_{n-1}a_n}>0\qquad(n\ge1).
 \end{equation}
-This is the discrete analogue of the Wronskian of two solutions of a differential equation.
+\emph{The sequence $I_n/a_n$ decreases, by an amount we know exactly.} If it also tends to $0$, then
+every term is positive and equals the sum of all later decrements.
 
-\noindent\textbf{Step 4: a crude bound.} For integers $t>n\ge1$ we have $0<r_n(t)<1/t$, since each
-factor $\frac{t-j}{t+j}$ is less than $1$. Also $R_n'=2R_n\varphi_n$ with
+\q{Second proof that $I_n$ is positive and small.}
+\begin{enumerate}
+\item \emph{$I_n/a_n\to0$.} A crude bound suffices. For integers $t>n\ge1$: $0<r_n(t)<\frac1t$
+(each factor $\frac{t-j}{t+j}$ is less than $1$), so $R_n(t)<t^{-2}$; and $R_n'=2R_n\varphi_n$ with
 $\varphi_n(t)=\sum_{j=1}^n\frac1{t-j}-\sum_{j=0}^n\frac1{t+j}$, a difference of two positive numbers
-each at most $H_n^{(1)}$. And $R_n'(t)=0$ for $t=1,\dots,n$. Therefore
-\[
-|I_n|\le\sum_{t>n}|R_n'(t)|\le2H_n^{(1)}\sum_{t>n}\frac1{t^2}<\frac{2H_n^{(1)}}n\le2\qquad(n\ge1).
-\]
-
-\noindent\textbf{Step 5: sign and size.} The $a_n$ are positive, increasing and unbounded (each term
-$\binom nk^2\binom{n+k}k^2$ is non-decreasing in $n$, and the term $k=1$ is $n^2(n+1)^2$). By Step~4, $I_n/a_n\to0$. Summing \eqref{cas} from
-$n+1$ to infinity,
-\[
-\frac{I_n}{a_n}=\sum_{m>n}\frac{12}{m^3a_{m-1}a_m}>0,\qquad\text{so}\qquad
-0<I_n\le\sum_{m>n}\frac{12}{m^3a_m}<\frac{6}{n^2\,a_{n+1}},
-\]
-using $a_{m-1}\ge a_n$, then $a_m\ge a_{n+1}$, and $\sum_{m>n}m^{-3}<\int_n^\infty x^{-3}\dd x=
-1/(2n^2)$ for $n\ge1$. At $n=0$ the first formula reads
+each at most $1+\frac12+\dots+\frac1n\le n$. As the first $n$ terms of \eqref{defI} vanish,
+$|I_n|\le2n\sum_{t>n}t^{-2}<2$. And $a_n\to\infty$, since it contains the term $n^2(n+1)^2$.
+\item \emph{Sign.} Summing \eqref{cas} from $n+1$ to infinity:
+$\displaystyle\frac{I_n}{a_n}=\sum_{m>n}\frac{12}{m^3a_{m-1}a_m}>0$.
+\item \emph{Size.} The $a_n$ increase with $n$ (each term $\binom nk^2\binom{n+k}k^2$ does not
+decrease). So $a_{m-1}\ge a_n$ and $a_m\ge a_{n+1}$ for $m>n$, and
+$I_n\le\frac{12}{a_{n+1}}\sum_{m>n}\frac1{m^3}<\frac6{n^2a_{n+1}}$. \emph{All the smallness of $I_n$
+is the largeness of the integer $a_n$.}
+\item \emph{Growth of $a_n$.} From the recurrence and $a_{n-1}\le a_n$,
+$\frac{a_{n+1}}{a_n}\ge\frac{\beta_n-n^3}{(n+1)^3}=33-\frac{48n^2+72n+28}{(n+1)^3}>33-\frac{48}{n+1}
+\ge28$ for $n\ge9$. So $a_n\ge c_0\,28^n$ for some $c_0>0$, and $0<I_n<\frac6{c_0}28^{-n}$.
+\end{enumerate}
+Since $28>27$, the proof of the Theorem in Section~8 goes through word for word with this in place
+of \eqref{triple} and \eqref{boundA}. Taking $n=0$ in step~2 gives a series for the constant itself:
 $\zeta(3)=6\sum_{m\ge1}\frac1{m^3a_{m-1}a_m}$.
 
-\noindent\textbf{Step 6: growth of $a_n$.} From $\mathcal L[a]_n=0$ and $a_{n-1}\le a_n$,
-\[
-\frac{a_{n+1}}{a_n}\ge\frac{\beta_n-n^3}{(n+1)^3}=33-\frac{48n^2+72n+28}{(n+1)^3}>33-\frac{48}{n+1}
-\ge28\qquad(n\ge9).
-\]
-So $a_n\ge c_0\cdot28^n$ for some $c_0>0$ and all $n$, and Step~5 gives $0<I_n<(6/c_0)\,28^{-n}$.
-
-\noindent\textbf{Conclusion.} If $\zeta(3)=p/q$, then along the $n$ with $D_n<3^n$ the positive
-integer $q\,D_n^3I_n$ is less than $(6q/c_0)(27/28)^n$, which tends to $0$. \hfill$\blacksquare$
-
-\begin{remark}[Zudilin's original route]
-Zudilin's paper (arXiv:math/0202159) proves (A) as above and \eqref{cert} with the recurrence for
-$I_n$. For (B) it introduces a second series, due to Ball,
-$\widetilde I_n=\sum_{t\ge1}n!^2(2t+n)\frac{(t-1)\cdots(t-n)\,(t+n+1)\cdots(t+2n)}{(t(t+1)\cdots(t+n))^4}$,
-whose terms are visibly positive and can be bounded by a Stirling-type estimate, giving
-$0<\widetilde I_n<20(n+1)^4\rho^{\,n}$. It then proves $\widetilde I_n=I_n$ by showing that
-$\widetilde I_n$ satisfies the same recurrence (a second telescoping identity, whose certificate has a numerator of
-degree $6$ in $t$) and has the same first two values. Steps 3--6 above replace Ball's
-series, the estimate and the second certificate. The price is that the rate obtained is $28$
-rather than the true $33.97$; that is still enough.
+\begin{remark}[What Zudilin's paper does instead]
+Zudilin proves the arithmetic and identity \eqref{cert} as above. For positivity and size he
+introduces a second series (due to Ball) whose terms are visibly positive, bounds it term by term,
+and then proves it equals $I_n$ by showing that it satisfies the same recurrence, which needs a
+second identity of the type \eqref{cert} with a much longer polynomial. Steps 1--4 above replace
+all of that. The price is the rate $28^{-n}$ instead of the true $33.97^{-n}$, which is still
+enough.
 \end{remark}
 
-\section{Proof C: an energy inequality (from the Codex submission)}
-This proof uses neither the triple integral nor a recurrence. It shows directly that
-\begin{equation}\label{boundC}
-\boxed{\;0<I_n\le\frac{1}{n(n+1)(2n+1)\,a_n}\qquad(n\ge1).\;}
-\end{equation}
-\emph{A large integer coefficient forces a small linear form.} Numerically the right side
-exceeds $I_n$ by a factor that decreases from $1.62$ at $n=1$ to $1.42$ at $n=8$; the Casoratian
-identity \eqref{cas} suggests the limit $\sqrt2$. So the bound is sharp up to a bounded factor.
-\begin{why}
-$P_n$ is an eigenfunction of the Legendre operator. If the kernel $K(xy)$ intertwines that operator
-in $y$ with some operator $\mathcal H$ in $x$, then $k_n(x)=\int_0^1P_n(y)K(xy)\dd y$ satisfies an ordinary
-differential equation in $x$, and $I_n=\ip{P_n}{k_n}$ can be estimated by multiplying that equation
-by the right function and integrating by parts, as one does for energy estimates.
-\end{why}
-Write $\ip fg=\int_0^1fg$, $\|f\|^2=\ip ff$, and $K(v)=\frac{-\log v}{1-v}$, so that the kernel of
-Section~3 is $K(x,y)=K(xy)$. Define the operators
-\[
-Jf=-\bigl(x(1-x)f'\bigr)',\qquad \mathcal Hf=-\bigl(x^2(1-x)f'\bigr)'+xf .
-\]
+\section{A third view: why the same integer measures arithmetic and size}
 
-\noindent\textbf{Step 1: three facts, each a direct computation.}
-\begin{enumerate}[label=(\roman*)]
-\item $JP_n=\lambda_nP_n$ with $\lambda_n=n(n+1)$. (Legendre's equation: by two integrations by
-parts $\ip{JP_n}{g}=\ip{P_n}{Jg}=0$ when $\deg g<n$, since $J$ does not raise degree, so
-$JP_n$ is a multiple of $P_n$; compare leading coefficients.)
-\item $(v^2-v)K''+(3v-1)K'+K=0$, and consequently $(\mathcal H_x+J_y)K(xy)=0$.
-\item $\mathcal Hx^j=(j+1)^2x^{j+1}-j(j+1)x^j$.
-\end{enumerate}
+Step~3 above says $I_n\,a_n$ is only polynomially small. There is a direct reason, which needs
+neither the triple integral nor the recurrence. We include it because it explains the role of
+$a_n$; it can be skipped.
 
-\noindent\textbf{Step 2: the equation for $k_n$.} Let $k_n(x)=\int_0^1P_n(y)K(xy)\dd y$, so that
-$I_n=\ip{P_n}{k_n}$. By (ii), $\mathcal Hk_n=-\int_0^1P_n(y)\,J_yK(xy)\dd y$ for $0<x<1$ (differentiation under the integral
-sign is legitimate because $yK'(xy)$ and $y^2K''(xy)$ are bounded for $y\in(0,1]$, uniformly for $x$
-in compact subsets of $(0,1)$). Integrate by parts twice to move
-$J_y$ onto $P_n$ and use (i):
+\q{Idea.} $P_n$ is characterised by a differential equation: with $Jf=-(x(1-x)f')'$ one has
+$JP_n=n(n+1)P_n$. (Reason: $J$ does not raise degrees and $\int(Jf)g=\int f(Jg)$, so $JP_n$ is again
+orthogonal to all lower degrees, hence a multiple of $P_n$.) The kernel, as a function $K(v)$ of
+$v=xy$, also satisfies a differential equation. Together they give an equation for the function
 \[
-\int_0^1P_n\,J_yK\dd y=\Bigl[-P_n\,y(1-y)\,\partial_yK(xy)+y(1-y)P_n'\,K(xy)\Bigr]_{y=0}^{y=1}
-+\lambda_nk_n(x).
+k_n(x)=\int_0^1P_n(y)\,K(xy)\dd y,\qquad\text{for which}\quad I_n=\int_0^1P_n(x)k_n(x)\dd x .
 \]
-At $y=1$ the bracket is $0$. At $y=0$ the second term tends to $0$, but the first does not:
-$vK'(v)=-\frac1{1-v}-\frac{v\log v}{(1-v)^2}\to-1$ as $v\to0$, so $y\,\partial_yK(xy)=vK'(v)
-\big|_{v=xy}\to-1$, and $P_n(0)=1$; the bracket tends to $+1$. Hence
-the boundary contribution is $0-1=-1$, and
+Write $\lambda_n=n(n+1)$ and $\mathcal Hf=-(x^2(1-x)f')'+xf$. Three direct computations:
+(i) $(v^2-v)K''+(3v-1)K'+K=0$, which implies $\mathcal H_xK(xy)=-J_yK(xy)$;
+(ii) $\mathcal Hx^j=(j+1)^2x^{j+1}-j(j+1)x^j$;
+(iii) $vK'(v)\to-1$ as $v\to0$.
+
+\q{Step 1: an equation for $k_n$.} By (i), $\mathcal Hk_n=-\int_0^1P_n(y)J_yK(xy)\dd y$. Move $J_y$
+onto $P_n$ by two integrations by parts. This gives $\lambda_nk_n$ plus boundary terms; the only one
+that survives is at $y=0$, where $P_n(0)=1$ and $y\,\partial_yK(xy)\to-1$ by (iii). The result is
 \begin{equation}\label{kn}
 (\mathcal H+\lambda_n)\,k_n=1 .
 \end{equation}
-The logarithmic singularity of the kernel has become a constant source term.
 
-\noindent\textbf{Step 3: replace the source $1$ by $P_n$.} By (iii), $\mathcal H+\lambda_n$ maps $x^j$ to a
-polynomial of exact degree $j+1$. So every polynomial of degree at most $n$ is uniquely
-$(\mathcal H+\lambda_n)w+\kappa$ with $\deg w<n$ and $\kappa$ a constant. Apply this to $P_n$:
+\q{Step 2: where $a_n$ comes from.} By (ii), $\mathcal H+\lambda_n$ raises the degree of a
+polynomial by exactly one. So $P_n$ can be written uniquely as $(\mathcal H+\lambda_n)w+\kappa$ with
+$w$ a polynomial of degree less than $n$ and $\kappa$ a constant. To find $\kappa$, apply the linear
+functional $E(x^j)=(-1)^j\binom nj\binom{n+j}j$: by (ii) and the ratio
+$\binom n{j+1}\binom{n+j+1}{j+1}\big/\binom nj\binom{n+j}j=\frac{(n-j)(n+j+1)}{(j+1)^2}$ it kills
+$(\mathcal H+\lambda_n)x^j$ for $j<n$, and $E(1)=1$. Hence
+$\kappa=E(P_n)=\sum_j\binom nj^2\binom{n+j}j^2=a_n$: the coefficients of $P_n$ are paired with
+themselves.
+
+\q{Step 3: an energy identity.} Let $g=w+a_nk_n$. Then $(\mathcal H+\lambda_n)g=P_n$ by
+\eqref{kn}, and $\int P_ng=a_nI_n$ because $w$ has degree less than $n$. Multiply
+$(\mathcal H+\lambda_n)g=P_n$ by $g$ and integrate by parts once (the boundary terms vanish):
 \[
-P_n=(\mathcal H+\lambda_n)\,w_n+\kappa .
+a_nI_n=\int_0^1x^2(1-x)\,g'^2\dd x+\int_0^1(x+\lambda_n)\,g^2\dd x\ >\ 0 .
 \]
-To find $\kappa$ without computing $w_n$, define a linear functional on polynomials of degree at most
-$n$ by $E(x^j)=(-1)^j\binom nj\binom{n+j}j$. By (iii) and the ratio
-$\binom n{j+1}\binom{n+j+1}{j+1}\big/\binom nj\binom{n+j}j=\frac{(n-j)(n+j+1)}{(j+1)^2}$,
+So $I_n>0$. And by Cauchy--Schwarz with $\int_0^1P_n^2=\frac1{2n+1}$:
+$\lambda_n\!\int g^2\le a_nI_n=\int P_ng\le\bigl(\frac1{2n+1}\int g^2\bigr)^{1/2}$, which gives
 \[
-E\bigl((\mathcal H+\lambda_n)x^j\bigr)=(-1)^j\tbinom nj\tbinom{n+j}j\bigl[-(n-j)(n+j+1)+\lambda_n-j(j+1)\bigr]=0
-\qquad(j<n).
+\boxed{\;0<I_n\le\frac1{n(n+1)(2n+1)\,a_n}\qquad(n\ge1).\;}
 \]
-Since $E(1)=1$, applying $E$ gives $\kappa=E(P_n)=\sum_j\binom nj^2\binom{n+j}j^2=a_n$. The Ap\'ery
-number appears here for a structural reason: the coefficients of $P_n$ and the values of $E$ are the
-same signed binomial products.
+With step~4 of Section~10 (or a direct lower bound for $a_n$) this is a third complete proof of
+(B). The full details of the boundary terms are in the Codex kernel-energy note cited below.
 
-\noindent\textbf{Step 4: the energy identity.} Put $g=r_n^*+a_nk_n$. Then $(\mathcal H+\lambda_n)g=P_n$ by
-\eqref{kn}, and $\ip{P_n}{g}=a_n\ip{P_n}{k_n}=a_nI_n$ because $\deg r_n^*<n$. Multiply
-$(\mathcal H+\lambda_n)g=P_n$ by $g$ and integrate by parts once, on $[\varepsilon,1-\varepsilon]$ with
-$\varepsilon\to0$:
-\begin{equation}\label{energy}
-a_nI_n=\ip{P_n}{g}=\int_0^1x^2(1-x)\,g'^2\dd x+\int_0^1(x+\lambda_n)\,g^2\dd x .
-\end{equation}
-The boundary term $[x^2(1-x)g'g]_0^1$ vanishes: at $x=1$ because $k_n$ is smooth there ($K$ is
-analytic at $v=1$), and at $x=0$ because $k_n=O(1+|\log x|)$ and $k_n'=O(1/x)$ (differentiate under
-the integral; $vK'(v)$ is bounded on $(0,1]$ by the formula in Step~2). These bounds also show that
-both integrals in \eqref{energy} converge. The right side is positive because $g\not\equiv0$
-(otherwise $P_n=(\mathcal H+\lambda_n)g=0$). So $I_n>0$.
+\section{Status, sources, checks}
 
-\noindent\textbf{Step 5: the bound.} From \eqref{energy}, Cauchy--Schwarz and \eqref{norm}, for
-$n\ge1$:
-\[
-\lambda_n\|g\|^2\le a_nI_n=\ip{P_n}{g}\le\|P_n\|\,\|g\|=\frac{\|g\|}{\sqrt{2n+1}} .
-\]
-So $\|g\|\le\frac1{\lambda_n\sqrt{2n+1}}$, and then $a_nI_n\le\frac{\|g\|}{\sqrt{2n+1}}\le
-\frac1{\lambda_n(2n+1)}$. This is \eqref{boundC}.
+\paragraph{What is proved here.} Part~I is a complete proof. Section~10 is a second complete
+proof of positivity and smallness. Section~11 is complete except that the vanishing of two boundary
+terms is asserted and not written out.
 
-\noindent\textbf{Step 6: $a_n$ is large.} Let $S_n=\sum_k\binom nk\binom{n+k}k$. Since
-$\binom nk\binom{n+k}k=\binom{2k}k\binom{n+k}{2k}$ and $\sum_n\binom{n+k}{2k}z^n=z^k/(1-z)^{2k+1}$,
-\[
-\sum_{n\ge0}S_nz^n=\frac1{1-z}\Bigl(1-\frac{4z}{(1-z)^2}\Bigr)^{-1/2}=(1-6z+z^2)^{-1/2}
-=(1-\gamma z)^{-1/2}(1-\gamma^{-1}z)^{-1/2},
-\]
-with $\gamma=3+2\sqrt2=(\sqrt2+1)^2$. Both factors have positive coefficients and constant term $1$, so the coefficient of $z^n$ in the
-product is at least that in the first factor, which is $\binom{2n}n(\gamma/4)^n\ge\gamma^n/(2n+1)$
-(the largest of the $2n+1$ binomial coefficients summing to $4^n$ is at least their average). So $S_n\ge\gamma^n/(2n+1)$, and
-by Cauchy--Schwarz $a_n\ge S_n^2/(n+1)\ge\Lambda^n/\bigl((n+1)(2n+1)^2\bigr)$. With \eqref{boundC},
-\[
-0<I_n\le\frac{2n+1}{n}\,\Lambda^{-n}\le3\,\rho^{\,n}.
-\]
+\paragraph{Sources.} Part~I follows the Codex manuscript in
+\texttt{Zeta3-4-Motivated-proof-Codex/}, which is a motivated account of Beukers' proof; the
+comparison numbers in Sections~2, 4 and~8 were computed for this document. Section~9 is the
+dictionary found by both agents. Section~10 is Claude's simplification of Zudilin's proof
+(\texttt{Zeta3-2-Elementary-proof/}), with the search for \eqref{cert} as in the Codex note
+\texttt{simplification.md}. Section~11 is from \texttt{Codex-Zeta3-03-Kernel-energy/}. Of the
+original papers only Zudilin's (arXiv:math/0202159) was retrieved and read; attributions to Ap\'ery,
+Beukers and Ball are as given there.
 
-\noindent\textbf{Conclusion.} As in Proof A: $0<q\,D_n^3I_n<3q\,(27\rho)^n\to0$ along the $n$ of
-Lemma~\ref{lem:lcm}. \hfill$\blacksquare$
-
-\section{Comparison, and where 17 and 5 come from}
-
-\begin{center}\small
-\begin{tabular}{@{}p{22mm}p{36mm}p{39mm}p{39mm}@{}}
-\toprule
- & A: integral & B: recurrence & C: energy\\
-\midrule
-why $I_n>0$ & positive integrand after integration by parts & Casoratian $=12/n^3>0$ and
-$I_n/a_n\to0$ & positive quadratic form\\
-why $I_n$ is small & maximum of one explicit function & $I_n<6/(n^2a_{n+1})$ and growth of $a_n$
-from the recurrence & $I_n\le1/(n(n+1)(2n+1)a_n)$ and a lower bound for $a_n$\\
-rate obtained & $\rho^{\,n}$, sharp & $28^{-n}$ & $\rho^{\,n}$, sharp\\
-hardest step & finding identity \eqref{sep} & identity \eqref{cert} & boundary term in
-\eqref{kn}\\
-uses $a_n$? & no & yes & yes\\
-generalises to & $\zeta(2)$, $\log2$ (same method) & any construction with a short recurrence
-& other kernels with an intertwining operator (open)\\
-\bottomrule
-\end{tabular}
-\end{center}
-
-\noindent Proof A is the shortest self-contained route. Proof B explains the recurrence and gives
-the series $\zeta(3)=6\sum1/(m^3a_{m-1}a_m)$. Proof C explains why the \emph{same} integer $a_n$
-measures both the arithmetic and the size. In B and C the pattern is the same: $I_n\cdot a_n$ is
-only polynomially small, so all the exponential smallness of $I_n$ is the exponential growth of the
-integer $a_n$.
-
-\paragraph{Where the recurrence coefficients come from (after the Codex notes).}
-Keep two indices. Put $I_{n,m}=\iint P_n(x)P_m(y)K(xy)$, so $I_{n,n}=I_n$, and
-$T_{n,m}=\sum_j\binom nj\binom{n+j}j\binom mj\binom{m+j}j$, so $T_{n,n}=a_n$. The operator $\mathcal H$ of Section~6 satisfies the three-term relation
-\[
-2(2n+1)\,\mathcal HP_n=-(n+1)^3P_{n+1}+(2n+1)(\lambda_n+1)P_n-n^3P_{n-1}.
-\]
-Apply to it either of two
-functionals that turn $\mathcal H$ into multiplication by $-\lambda_m$. For $X=I$: pairing with $k_m$ gives
-$\ip{\mathcal HP_n}{k_m}=\ip{P_n}{\mathcal Hk_m}=\ip{P_n}{1-\lambda_mk_m}=-\lambda_mI_{n,m}$ for $n\ge1$, by
-\eqref{kn} (boundary terms vanish as in Step~4 of Section~6). For $X=T$: $T_{n,m}=E_m(P_n)$ with
-$E_m(x^j)=(-1)^j\binom mj\binom{m+j}j$, and the computation in Step~3 of Section~6 gives
-$E_m(\mathcal Hf)=-\lambda_mE_m(f)$ for every polynomial $f$. In both cases, for $n\ge1$,
-\[
-(n+1)^3X_{n+1,m}-(2n+1)(\lambda_n+2\lambda_m+1)\,X_{n,m}+n^3X_{n-1,m}=0 ,
-\]
-and the same in $m$ by symmetry. The two relations together imply the diagonal identity
-\[
-X_{n,n}+X_{n-1,n-1}=6\,X_{n,n-1}\qquad(n\ge1).
-\]
-Here is a direct proof in the language of Section~5. By \eqref{mellin},
-$I_{n,m}=(-1)^{n+m}\bigl(-\sum_{t\ge1}(r_nr_m)'(t)\bigr)$ and $T_{n,m}=(-1)^{n+m}\delta(r_nr_m)$. For
-$n\ge1$ one has the telescoping identity
-\[
-r_n(t)^2+r_{n-1}(t)^2+6\,r_n(t)\,r_{n-1}(t)=g_n(t+1)-g_n(t),\qquad g_n(t)=\frac{4}{n^2}(t+n)^2r_n(t)^2 ,
-\]
-which becomes a polynomial identity after division by $r_n(t)^2$ (use $r_{n-1}/r_n=(t+n)/(t-n)$ and
-the ratio $r_n(t+1)/r_n(t)$ from Section~5). Both functionals kill the right side, exactly as in
-Step~2 of Section~5, and the sign $(-1)^{2n-1}$ of the cross term turns $+6$ into $-6$.
-
-Now set $m=n$ in the first relation and eliminate the off-diagonal terms with the second:
-\[
-(n+1)^3X_{n+1,n+1}-\bigl[6(2n+1)(3\lambda_n+1)-(n+1)^3-n^3\bigr]X_{n,n}+n^3X_{n-1,n-1}=0 .
-\]
-Since $(n+1)^3+n^3=(2n+1)(\lambda_n+1)$, the bracket is $(2n+1)(17\lambda_n+5)$. So
-$17=6\cdot3-1$ and $5=6\cdot1-1$: the cubes are the coefficients of the three-term relation,
-the $3$ is $\lambda_n+2\lambda_n$ on the diagonal, and the $6$ comes from compatibility of the two
-directions. (The Codex notes derive the diagonal identity in two ways: from compatibility of the two
-grid relations, and by the telescoping identity above.) The three-term relation was checked symbolically for $n\le7$; the two-index relation and the
-diagonal identity were checked exactly (as identities between rational numbers, separately for the
-coefficient of $\zeta(3)$ and the rational part) for $n,m\le7$.
-
-\paragraph{Why the method stops at $\zeta(3)$.} Replacing $-\log(xy)$ by $(-\log(xy))^3$ gives
-linear forms in $1$ and $\zeta(5)$ with denominators $D_n^5$, so the arithmetic is as good as one
-could wish. But the double zeros of $R_n$ do not survive three differentiations, and the forms are
-only of size $n^{-4}\log n$. The companion document discusses this and other attempts.
-
-\section{Notation, sources, and what was checked}
-
-\paragraph{Dictionary.}
-\begin{center}\small
-\begin{tabular}{@{}lll@{}}
-\toprule
-here & Zudilin (arXiv:math/0202159) & Beukers / Codex notes\\
-\midrule
-$I_n$ & $F_n$ & $J_n$, $I_n$\\
-$2a_n,\ 2b_n$ & $u_n,\ v_n$ & $2A_n,\ 2B_n$ ($2a_n$, $2b_n$)\\
-$r_n(t)$, $R_n(t)$ & $R_n(t)$ is the square & $P_n(s)$, $T_n(s)$ (Mellin transform)\\
-$\mathcal H$, $J$ (Section 6) & not used & $H$, $J$ in the Codex kernel-energy notes\\
-$P_n(x)$ & not used & $L_n(x)$, $P_n(x)$\\
-$\rho=(\sqrt2-1)^4$ & $\lambda$ & $\rho$, $\Lambda^{-1}$\\
-\bottomrule
-\end{tabular}
-\end{center}
-
-\paragraph{Where each part comes from.}
-\begin{itemize}
-\item Sections 2 and 4: the Codex manuscript in \texttt{Zeta3-4-Motivated-proof-Codex/}
-(Beukers' proof with the half-line kernel; Lemmas~\ref{lem:fact}--\ref{lem:lcm}). The period-6
-bound of the Remark is in the file \texttt{denominator-design.md} of the folder\\
-\texttt{Codex-Zeta3-01-Zudilin-and-recurrence/}.
-\item Section 3: \texttt{Zeta3-1-Zudilin-exposition/} (Lemma 1 of Zudilin's paper) and the Mellin
-dictionary found independently by both agents.
-\item Section 5: \texttt{Zeta3-2-Elementary-proof/} (Claude), with the lcm step replaced by
-Lemma~\ref{lem:lcm}, which shortens Step~6. The ``five zeros'' proof of \eqref{poly} follows
-\texttt{simplification.md} in the Codex Zudilin folder.
-\item Section 6 and the recurrence paragraph of Section 7:
-\texttt{Codex-Zeta3-03-Kernel-energy/}; the commuting-grid derivation is its file\\
-\texttt{kernel-commuting-grids-apery-recurrence.md}.
-\end{itemize}
-The original papers of Ap\'ery and Beukers were not retrieved in this project; Zudilin's was, and
-the Remark in Section~5 describes it from our line-by-line exposition. The Codex notes cite
-Pr\'evost (1996) and Borwein--Erd\'elyi--Zhang for related orthogonality proofs; we have not
-compared Proof~C with those sources, so we make no statement about its novelty.
-
-\paragraph{Checked for this digest.} Two AI passes, no human. The author re-derived every step of
-Sections 2--6. A second reader, given only the finished text, then redid each formula independently
-and reported 27 points (one wrong sentence about a numerical trend, several thin justifications,
-notation clashes); all are corrected in this version. Its computations: Lemma~\ref{lem:fact} exactly
-for $N\le200$; $D_n^3b_n\in\Z$ exactly for $n\le41$; identity \eqref{poly} with $n$ symbolic;
-the recurrence exactly for $a_n,b_n$ with $n<40$; $\Omega_n=12/n^3$ and
-$0<I_n<6/(n^2a_{n+1})$ for $n<40$; the triple integral \eqref{triple} by quadrature for $n=1,2$;
-facts (i)--(iii) symbolically; equation \eqref{kn} by quadrature at three points for $n=1,2,3$; the
-energy identity \eqref{energy} to 12 digits for $n=1,2$; the bounds of Step~6 of Section~6 for
-$n\le40$; Ball's series equal to $I_n$ numerically for $n\le3$. Attributions to Ap\'ery, Beukers,
-Nesterenko and Ball are as reported in Zudilin's paper or in the submissions, not checked against the
-original papers. \textbf{Not done:} no human has read any of this, and the proofs have not been
-formalised.
+\paragraph{Checks (AI only).} The mathematical content of Sections 3--11 is that of the previous
+version of this document, in which a second reader redid every formula independently and found no
+error. For this rewrite the following were computed afresh: all numerical values quoted; the
+moments and the forms $J(P)$ exactly; the rank of the linear system behind \eqref{poly} with $n$
+symbolic (rank $5$, solution as stated); the coefficient $18$ of $\zeta(2)$ for $r_1^3$. The new
+text was then read by a fresh reader for correctness and for whether each object is motivated
+before it is used. \textbf{No human has read this document.}
 
 \end{document}
