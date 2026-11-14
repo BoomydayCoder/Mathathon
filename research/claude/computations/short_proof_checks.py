@@ -107,7 +107,7 @@ for n in (1, 2, 3, 5, 10, 20, 40, 60):
 print("\n" + "=" * 72)
 print("A3. F_n = sum_{m>n} 24 u_n/(m^3 u_m u_{m-1});  0 < F_n < 12/(n^2 u_n)")
 print("=" * 72)
-mp.mp.dps = 120
+mp.mp.dps = 200  # (dps 120 loses ~30 digits to cancellation in u_n zeta3 - v_n at n=10)
 z3 = mp.zeta(3)
 
 
@@ -127,7 +127,7 @@ for n in range(0, 11):
     ser = sum(24 * Um[n] / (mp.mpf(m) ** 3 * Um[m] * Um[m - 1]) for m in range(n + 1, 81))
     rel = abs(Fn - ser) / abs(Fn)
     mx = max(mx, rel)
-check("A3a series identity for F_n, n=0..10 (rel err < 1e-100)", mx < mp.mpf(10) ** -100, f"max rel err = {mp.nstr(mx, 5)}")
+check("A3a series identity for F_n, n=0..10, m<=80 (rel err < 1e-100, dps 200)", mx < mp.mpf(10) ** -100, f"max rel err = {mp.nstr(mx, 5)}")
 mp.mp.dps = 220
 z3 = mp.zeta(3)
 bad = []
@@ -195,7 +195,8 @@ for n in (1, 2, 5, 10, 20, 40):
     S += Rn(n, mp.mpf(T))  # tail: R decreasing for large t, sum_{t>T}|R'| ~ R(T)
     b1 = 2 * float(H(n, 1)) / n
     b2 = 4 * (1 + mp.log(n)) / n
-    Fn = abs(mpq(U[n]) * mp.zeta(3) - mpq(V[n]))
+    with mp.workdps(250):
+        Fn = abs(mpq(U[n]) * mp.zeta(3) - mpq(V[n]))
     okS &= S < b1
     print(f"  {n:3d}   {mp.nstr(S, 12):>22}   {b1:.8f}   {mp.nstr(b2, 8):>10}   {mp.nstr(Fn, 5):>10}   {mp.nstr(S/b1, 6)}")
 check("S_n < 2H_n/n for n in {1,2,5,10,20,40}", okS)

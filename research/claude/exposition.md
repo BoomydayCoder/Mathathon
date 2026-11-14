@@ -519,7 +519,46 @@ $F_n=\widetilde F_n$ are in addition checked by the scripts listed in `computati
 
 ## 9. Dictionary with Beukers' integrals (series side)
 
-To be completed after reading the other agent's exposition of Beukers' proof (see `GOALS.md`,
-"Shared"). The series-side statement to be matched is: $F_n=u_n\zeta(3)-v_n$ with $u_n=2a_n$,
-$v_n=2b_n$ (Apéry's sequences), to be compared with Beukers'
-$\int_0^1\!\!\int_0^1\frac{-\log xy}{1-xy}P_n(x)P_n(y)\,dx\,dy$.
+Source status: Beukers' paper (doi:10.1112/blms/11.3.268) was **not retrieved** by us. The
+statement of his integral is taken from the other agent's exposition
+(`codex/problem131/beukers-explained.md` on `origin/codex/independent-research`, which itself
+worked from a Russian translation and Beukers' later survey). The derivation below is ours and is
+self-contained; a subagent also confirmed numerically that their triple integral equals
+$-\sum R_n'(t)$ for $n=1,2$.
+
+Let $P_n(x)=\frac1{n!}\frac{d^n}{dx^n}\bigl[x^n(1-x)^n\bigr]=\sum_{k=0}^n(-1)^k\binom nk\binom{n+k}kx^k$
+(shifted Legendre polynomial) and
+$$I_n=\int_0^1\!\!\int_0^1\frac{-\log(xy)}{1-xy}P_n(x)P_n(y)\,dx\,dy.$$
+
+> **Proposition (dictionary).** Let $M_n(t)=\int_0^1x^{t-1}P_n(x)\,dx$ (Mellin transform). Then
+> $M_n(t)=(-1)^nr_n(t)$, hence $M_n(t)^2=R_n(t)$, and $I_n=-\sum_{t\ge1}R_n'(t)=F_n$.
+
+Proof. (i) Termwise, $M_n(t)=\sum_k\frac{(-1)^k\binom nk\binom{n+k}k}{t+k}$. (ii) Integrating by parts
+$n$ times with the Rodrigues form (boundary terms vanish for $\operatorname{Re}t>n$, then continue
+analytically):
+$M_n(t)=\frac{(-1)^n(t-1)\cdots(t-n)}{n!}\int_0^1x^{t-1}(1-x)^n\,dx
+=\frac{(-1)^n(t-1)\cdots(t-n)}{t(t+1)\cdots(t+n)}$, using
+$\int_0^1x^{t-1}(1-x)^ndx=\frac{n!}{t(t+1)\cdots(t+n)}$. (iii) Expand $\frac1{1-xy}=\sum_{t\ge1}(xy)^{t-1}$
+and note $-\log(xy)\,(xy)^{t-1}=-\frac{d}{dt}(xy)^{t-1}$:
+$$I_n=-\sum_{t\ge1}\frac{d}{dt}\Bigl[\int_0^1x^{t-1}P_n(x)dx\int_0^1y^{t-1}P_n(y)dy\Bigr]=-\sum_{t\ge1}\frac{d}{dt}M_n(t)^2.$$
+(The interchange is justified by absolute convergence: $|P_n|$ is bounded and
+$\int\!\!\int\frac{-\log xy}{1-xy}dx\,dy=2\zeta(3)<\infty$.) $\square$
+
+| Beukers (integral side) | Zudilin (series side) |
+|---|---|
+| Legendre polynomial $P_n(x)$ | rational function $(-1)^nr_n(t)$, its Mellin transform |
+| coefficients $(-1)^k\binom nk\binom{n+k}k$ of $P_n$ | residues $a_k$ of $r_n$ at $t=-k$ (up to the sign $(-1)^n$) |
+| orthogonality $\int x^{j-1}P_n=0$, $j=1..n$ | zeros of $r_n$ at $t=1,\dots,n$ |
+| Rodrigues formula + integration by parts | product formula for $r_n$ |
+| kernel $\frac1{1-xy}$ | summation over $t\ge1$ |
+| factor $-\log xy$ | $-\frac{d}{dt}$ |
+| product $P_n(x)P_n(y)$ | square $R_n=r_n^2$ |
+| $\int\!\!\int x^ry^s\frac{-\log xy}{1-xy}$: $2(\zeta(3)-H_r^{(3)})$ if $r=s$, rational with denominator $\mid D_n^3$ otherwise | double-pole terms $A_{2k}$ / cross terms giving $A_{1k}$ in Lemma 1 |
+| positivity and size from the triple integral $\int\!\!\int\!\!\int\bigl[\frac{x(1-x)y(1-y)w(1-w)}{1-(1-xy)w}\bigr]^n\frac{dx\,dy\,dw}{1-(1-xy)w}$, max of the bracket $=(\sqrt2-1)^4$ | positivity and size from Ball's series (Lemma 4), $e^{\max f}=(\sqrt2-1)^4$; or from the Casoratian (`short-proof.md`) |
+
+So Lemma 1 *is* Beukers' evaluation of the double integral, read through the Mellin transform; the
+two proofs differ only in how they establish (B): Beukers transforms the double integral into a
+manifestly positive triple integral by integration by parts (using orthogonality), Zudilin
+transforms the series into Ball's manifestly positive series (using the recurrence, or Bailey's
+identity). Whether Ball's series is literally the Mellin-side image of Beukers' triple integral
+is a natural question we have not settled.

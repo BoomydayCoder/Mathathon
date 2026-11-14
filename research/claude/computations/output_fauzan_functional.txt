@@ -1,0 +1,75 @@
+============================================================================
+B1. Moments int_0^oo y^{2e} w_s(y) dy, s=3,5,7, e=0..6 (dps 40)
+============================================================================
+[PASS] w_s closed form (Eulerian polynomials) = series definition
+   w_s(0+) = 1/pi for every s (paper: w -> 1/pi): ['0.3183098862', '0.3183098862', '0.3183098862'] 0.3183098862
+[PASS] s=3: int y^(2e) w_s = 2(2e+s)! zeta(2e+2)/((s-1)!(2pi)^(2e+2)), e=0..6  max rel err 2.3e-41
+[PASS] s=3: ... = (-1)^e B_(2e+2) (2e+s)!/((s-1)!(2e+2)!)  (exact rational)  max rel err 2.3e-41
+     s=3: moments e=0..4 = ['1/4', '1/12', '1/12', '3/20', '5/12']
+[PASS] s=5: int y^(2e) w_s = 2(2e+s)! zeta(2e+2)/((s-1)!(2pi)^(2e+2)), e=0..6  max rel err 3.44e-41
+[PASS] s=5: ... = (-1)^e B_(2e+2) (2e+s)!/((s-1)!(2e+2)!)  (exact rational)  max rel err 4.59e-41
+     s=5: moments e=0..4 = ['5/12', '7/24', '1/2', '11/8', '65/12']
+[PASS] s=7: int y^(2e) w_s = 2(2e+s)! zeta(2e+2)/((s-1)!(2pi)^(2e+2)), e=0..6  max rel err 4.59e-41
+[PASS] s=7: ... = (-1)^e B_(2e+2) (2e+s)!/((s-1)!(2e+2)!)  (exact rational)  max rel err 3.44e-41
+     s=7: moments e=0..4 = ['7/12', '7/10', '11/6', '143/20', '455/12']
+[PASS] s=5 agrees with paper (2.2): (-1)^e B_{2e+2}(2e+3)(2e+4)(2e+5)/24, e=0..29
+
+============================================================================
+B2. int_0^oo w_s(y)/(y^2+a^2) dy  vs  a^{s-1} zeta(s,a) - 1/(2a) - c_s  (dps 40)
+============================================================================
+   s=3: residual  I - a^(s-1) zeta(s,a) + 1/(2a)  (should be -c_s):
+        a= 1.0: I = 0.2020569031595942853997382, residual = -0.5
+        a= 2.0: I = 0.05822761263837714159895265, residual = -0.5
+        a= 3.0: I = 0.02684546176968190193097679, residual = -0.5
+        a= 7.0: I = 0.005068016724881889349074676, residual = -0.5
+        a= 2.5: I = 0.03813766138039813438669271, residual = -0.5
+        fitted c_3 = 0.5  ~ identify: (1/2)
+[PASS] s=3: residual independent of a (no 1/a^k corrections), spread 1.15e-41
+[PASS] s=3: c_s = 1/(s-1) = 1/2
+[PASS] s=3: at a=j: I = j^(s-1)(zeta(s)-H_j^(s)) + 1/(2j) - 1/(s-1), j=1,2,3,7
+   s=5: residual  I - a^(s-1) zeta(s,a) + 1/(2a)  (should be -c_s):
+        a= 1.0: I = 0.2869277551433699263313655, residual = -0.25
+        a= 2.0: I = 0.09084408229391882130184778, residual = -0.25
+        a= 3.0: I = 0.04323149994629736617393774, residual = -0.25
+        a= 7.0: I = 0.0083859529569426806914254, residual = -0.25
+        a= 2.5: I = 0.0606705721138205784105275, residual = -0.25
+        fitted c_5 = 0.25  ~ identify: (1/4)
+[PASS] s=5: residual independent of a (no 1/a^k corrections), spread 5.74e-42
+[PASS] s=5: c_s = 1/(s-1) = 1/4
+[PASS] s=5: at a=j: I = j^(s-1)(zeta(s)-H_j^(s)) + 1/(2j) - 1/(s-1), j=1,2,3,7
+   s=7: residual  I - a^(s-1) zeta(s,a) + 1/(2a)  (should be -c_s):
+        a= 1.0: I = 0.3416826107152561601731309, residual = -0.1666666666666666666666667
+        a= 2.0: I = 0.1176870857763942510803765, residual = -0.1666666666666666666666667
+        a= 3.0: I = 0.05797737808840743287908051, residual = -0.1666666666666666666666667
+        a= 7.0: I = 0.01162767763174839875953977, residual = -0.1666666666666666666666667
+        a= 2.5: I = 0.08024838173761501813468896, residual = -0.1666666666666666666666667
+        fitted c_7 = 0.1666666666666666666666667  ~ identify: (1/6)
+[PASS] s=7: residual independent of a (no 1/a^k corrections), spread 8.61e-42
+[PASS] s=7: c_s = 1/(s-1) = 1/6
+[PASS] s=7: at a=j: I = j^(s-1)(zeta(s)-H_j^(s)) + 1/(2j) - 1/(s-1), j=1,2,3,7
+   (Derivation: Hermite: zeta(s,a) = a^-s/2 + a^(1-s)/(s-1) + 2 int sin(s atan(y/a))(a^2+y^2)^(-s/2)/(e^(2pi y)-1) dy;
+    s-1 integrations by parts give I = 2 a^(s-1) int f(y) Im (a-iy)^(-s) dy, so c_s = 1/(s-1) exactly.)
+
+============================================================================
+B3. mu_X(R) direct  vs  tau_X(x^s R(-x^2)),  tau(P) = L(P^(s-2))/(s-1)!,  tau_X(1/(x-r)) = H_d(r) - X
+============================================================================
+[PASS] s=3: mu_direct == tau-pullback exactly on 23 test functions
+[PASS] s=3: mu_(zeta(s))(R) = int R(y^2) w_s(y) dy on all tests (dps 30)  max rel err 6.27e-32
+[PASS] s=5: mu_direct == tau-pullback exactly on 23 test functions
+[PASS] s=5: mu_(zeta(s))(R) = int R(y^2) w_s(y) dy on all tests (dps 30)  max rel err 6.73e-32
+[PASS] s=7: mu_direct == tau-pullback exactly on 23 test functions
+[PASS] s=7: mu_(zeta(s))(R) = int R(y^2) w_s(y) dy on all tests (dps 30)  max rel err 9.46e-32
+   example (s=5): mu_X(t^3(t+1)^2/((t+4)(t+9)(t+25))) = (Fraction(-16693920, 1), Fraction(358948226317, 20736))
+   General-s statement: with moments (-1)^e B_{2e+2}(2e+s)!/((s-1)!(2e+2)!), pole values
+   j^{s-1}(X-H_j^(s)) + 1/(2j) - 1/(s-1), tau_s(P)=L(P^(s-2))/(s-1)!, tau_X(1/(x-r)) = H^(s)_d(r) - X:
+   mu^(s)_X(R) = tau_{s,X}(x^s R(-x^2))  (no s-dependent sign or scale).
+
+============================================================================
+B4. mu_(zeta(s))(R) vs -(1/(s-1)!) sum'_{x>=1} g^(s-1)(x),  g = x^s R(-x^2)
+    (sum' : at a pole x=r>0 of g the term is replaced by the finite part, i.e. (g - c/(x-r))^(s-1)(r))
+============================================================================
+[PASS] s=3, R=t^0/((t+1)(t+4)(t+9)): deg g=-3; mu - (-(1/(s-1)!)sum') = 3.85185988877e-33 ; predicted boundary tau(poly part)=0
+[PASS] s=3, R=t^1/((t+1)(t+4)(t+9)): deg g=-1; mu - (-(1/(s-1)!)sum') = -1.97215226305e-31 ; predicted boundary tau(poly part)=0
+[PASS] s=3, R=t^2/((t+1)(t+4)(t+9)): deg g=1; mu - (-(1/(s-1)!)sum') = -0.5 ; predicted boundary tau(poly part)=-1/2
+[PASS] s=5, R=t^0/((t+1)(t+4)(t+9)): deg g=-1; mu - (-(1/(s-1)!)sum') = -6.54816181092e-32 ; predicted boundary tau(poly part)=0
+[PASS] s=5, R=t^1/((t+1)(t+4)(t+9)): deg g=1; mu - (-(1/(s-1)!)sum') = 1.05194293562e-30 ; predicted boundary tau(poly part)=0
