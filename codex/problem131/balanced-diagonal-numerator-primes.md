@@ -139,3 +139,34 @@ The positive Andrews sum proves the diagonal zeta coefficient is integral;
 it does not automatically prove (11) for the rational coefficient. The
 classical Krattenthaler–Rivoal denominator theorem is not being applied
 without an identification of its linear forms with (1).
+
+The finite pattern (11) is now reproducible with
+`codex/computations/check_balanced_diagonal_finite_patterns.py`, which constructs
+all 60 systems m=1,...,4, n=1,...,15 directly from the integer-node formula and
+computes the associated coefficient using the original Bernoulli moments.
+It checks both (11) and the proved multiplier, and records the reduced numerator
+denominators in `balanced_diagonal_finite_patterns.json`. These computations
+remain finite diagnostics, not a proof of (11).
+
+### A failed derivative-integrality shortcut
+
+One tempting sufficient ingredient would have been
+
+    (2m)! d_n^(2m-2) R_(m,n)^(2m-1)(j) in Z
+        for every integer j.
+
+This assertion is false. With the normalization R=F/(n!)^(2m+1), exact computation
+gives
+
+    R_(2,5)'''(1)=41180256/125,
+    24 d_5^2 R_(2,5)'''(1)=142318964736/5 not in Z.
+
+It also fails at an even index, within the positive-approximation subsequence:
+
+    R_(2,6)'''(1)=4833067603/6000,
+    24 d_6^2 R_(2,6)'''(1)=347980867416/5 not in Z.
+
+Both counterexamples are included in the same exact checker. They rule out this
+particular derivative lemma, not the sharper associated-numerator pattern (11).
+The latter can involve cancellations after the Bernoulli functional which are
+absent from the individual derivative values.

@@ -1,9 +1,10 @@
 # Primary-source context for the truncated rank-one zeta Hankel family
 
 Status: bounded primary-source comparison, after the independent construction.
-This identifies classical mechanisms and one exact Apéry/Wilson identity. It
-does not establish that the precise truncated family is new or that its
-conjectured adjacent-Apéry formula holds for all indices.
+This identifies classical mechanisms and one exact Apéry/Wilson identity. The
+original adjacent-Apéry formula is now proved for all indices in
+[the independently reviewed Heun–RII proof](rank-one-original-apery-heun-rii-proof.md).
+The source comparison does not establish that the precise truncated family is new.
 
 The construction being compared is
 [rank-one-zeta-subspace-approximants.md](rank-one-zeta-subspace-approximants.md):
@@ -103,8 +104,9 @@ The same page identifies these as Wilson polynomials with all four parameters
 B_n=H_n^(3)Π_(2n)(n)+Θ_(2n)(n)/2, using his associated polynomial Θ.
 His names for our A_n,B_n are b_n,a_n. This is exact prior attribution for
 the all-half Wilson evaluation; it is not a conjectural numerical analogy.
-The truncation's proposed formula involving 5A_h−A_(h−1) does not follow
-from these cited equations without further work.
+The truncation's formula involving 5A_h−A_(h−1) does not follow from these
+cited equations alone; the separate Heun–RII proof now supplies its identification
+with the original Schur root.
 
 ## 5. The negative-parameter Wilson expression is not an orthogonality theorem
 
@@ -129,15 +131,15 @@ additional-mass analysis; this gamma identity alone cannot supply it.
   explicit n<k identity, with the dictionary in §2.
 - The all-half Wilson evaluation of Apéry's A_n and associated numerator is
   explicitly in Prévost1996.
-- The exact all-h formula q_(h,3)=(5B_h−B_(h−1))/(5A_h−A_(h−1)) remains a
-  conjecture in the current construction note, checked through h=12. The
-  present source work neither proves it nor identifies an exact prior
-  occurrence of this transformed approximant.
+- The exact all-h formula q_(h,3)=(5B_h−B_(h−1))/(5A_h−A_(h−1)) is now
+  proved in [the original-measure bridge](rank-one-original-apery-heun-rii-proof.md),
+  accepted by two independent reviews. The present source work has not
+  identified an exact prior occurrence of this transformed approximant.
 
 Searches of the first fractions did not identify a primary occurrence.
-That search outcome provides no evidence of historical novelty. The useful
-next step is an exact orthogonality/Padé proof of the adjacent-Apéry identity;
-only then can its identity with a named historical family be assessed reliably.
+That search outcome provides no evidence of historical novelty. The completed
+identity now permits a precise comparison with named historical families; that
+remaining attribution question is separate from the mathematical proof.
 
 ## Reproducibility
 
@@ -176,9 +178,21 @@ Together with the independently proved denominator identity
  =\frac{5B_h-B_{h-1}}{5A_h-A_{h-1}}.
 \]
 
-Identifying this quotient with the truncated Schur root still requires a
-separate orthogonality or interpolation argument. The mixed-numerator theorem
-alone does not resolve that remaining conjecture. The source-dictionary checker
+Identifying this quotient with the truncated Schur root required a separate
+orthogonality and interpolation argument; this is now supplied by the accepted
+[Heun–RII proof](rank-one-original-apery-heun-rii-proof.md). The mixed-numerator
+theorem alone did not establish that identification. The source-dictionary checker
 records its original finite checks; the linked proof has its own symbolic
 rational certificates and independent pole-jet checks. The all-index proof has now been independently reviewed; see
 [apery-mixed-numerator-independent-review.md](apery-mixed-numerator-independent-review.md).
+
+
+## 8. Final status and further primary comparisons
+
+The compact [zeta(3) status and provenance note](zeta3-schur-final-status-and-provenance.md)
+records the accepted real boundary proof, original identity, exact error rate,
+rank-two Pell family, and all-rank Apéry endpoint basis. It also gives the
+explicit dictionary to Grünbaum–Vinet–Zhedanov's algebraic Heun operator
+(eq. (4.13), arXiv:1711.07862), and distinguishes that general operator framework
+from the boundary-defective zeta measure used here. Historical novelty remains
+unresolved.

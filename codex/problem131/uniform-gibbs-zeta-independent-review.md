@@ -45,3 +45,13 @@ Hence K_tau=K_0+sigma P K_tau pointwise on (0,1), and also in L²_w. The logarit
 Finally, direct differentiation of the same integral formula proves (J+1)Pf=f on polynomials, where J=-(1-x)^(-1)D[x(1-x)^2D]. It is an identity on explicitly given functions; the note does not overstate it as an unproved global-domain theorem.
 
 The primary paper is used only for the classical Gibbs/orthogonal-polynomial framework and provenance discussion. No mathematical claim above depends on an unverified identification of this exact triangular sampler in that paper.
+
+
+## Sampler determinant supplement
+
+Section 5 is also accepted. The finite determinant follows directly from the triangular monomial action, with diagonal entries 1/k² for k=1,...,N. Completeness of the orthogonal polynomial modes is justified by polynomial density for the finite weight measure. This identifies the whole bounded operator, not merely its restriction to a possibly proper invariant subspace. Its positive eigenvalues have finite sum, so the trace-class assertion and the absolutely convergent determinant product are valid. Euler's sine product gives the displayed entire expression, with no choice of square-root branch in its power series.
+
+The identity for A_n is just substitution of the finite product into its already established Newton weights. The two uniform limits retain exactly the closed disk |sigma|<=1/4 from the separately accepted asymptotic theorem. In particular the determinant interpretation does not justify extending those error asymptotics to a zero or pole elsewhere, and the note makes no such extension. The new connection adds no denominator-growth or irrationality assertion.
+
+
+The added dilogarithm illustration in Section 3 also has the stated normalization. Under the stationary triangle law, the latent density is 2t, so the unnormalized pairing is integral t Af(t)Ag(t)dt. Differentiating zeta(2)-Li_2(1-t) gives -log(t)/(1-t), and its value at t=0 is zero. Thus the integral of its square divided by t is exactly <K,PK>_w=2 zeta(5). Near zero the primitive is O(t(1+|log t|)), and near one it is bounded, so both endpoints converge. This is a consequence of the already reviewed correlation formula.

@@ -1,0 +1,1341 @@
+                                            ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING
+arXiv:1711.07862v1 [math-ph] 21 Nov 2017
+
+
+
+
+                                                     F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+                                                   Abstract. We introduce the algebraic Heun operator associated to any bis-
+                                                   pectral pair of operators. We show that these operators are natural generaliza-
+                                                   tions of the ordinary Heun operator. This leads to a simple construction of the
+                                                   operators commuting with the projection operators in problems of band-time
+                                                   limiting and it gives a way to adapt a construction first used by Perline in a
+                                                   purely finite setup to quite a few other situations. We also extend his algebraic
+                                                   construction to cover some purely finite cases where his proposal fails to give
+                                                   a useful commuting operator.
+
+
+
+
+                                                                                1. Introduction
+                                              The purpose of the present paper is twofold. First, we introduce a general al-
+                                           gebraic Heun operator which can be obtained from a pair of bispectral operators.
+                                           Second, we apply this approach to the construction of commuting differential oper-
+                                           ators in the theory of time and band limiting. This theory originated from seminal
+                                           works by Slepian, Landau and Pollak on determining an unknown function sup-
+                                           ported in [−T, T ] from (noisy) knowledge of its Fourier transform over a band of
+                                           frequencies [−W, W ] which involves the study of an integral operator and its eigen-
+                                           functions. Their work hinges on the existence of a differential operator commuting
+                                           with the integral one. This is crucial in order to compute accurately and efficiently
+                                           the eigenvectors of the integral operator, an otherwise impossible task numerically.
+                                              We shall expand on the observation made in [7] that the generic Heun operator
+                                           can be obtained by a special procedure from the hypergeometric operator and will
+                                           find many new examples of either differential operators or narrow-banded matrices
+                                           each with a simple spectrum that commute with the integral operators or full
+                                           matrices arising in versions of the time-band limiting problem. One can thus reduce
+                                           an intractable numerical problem to a very manageable one, since the new local
+                                           operators have a very spread out spectrum.
+                                              The main result of our paper is that all known examples of such commuting
+                                           operators belong to the class of algebraic Heun operators and can be explicitly
+                                           constructed by a the same procedure. This introduction is rather brief but each
+                                           section of the paper gives a fuller description of its contents.
+                                              The paper is organized as follows. In Section 2 we review the relation between
+                                           the hypergeometric operator and the Heun equation (i.e. the main result of [10]).
+                                           Section 3 can be considered as an introduction to the theory of time and band
+                                           limiting. In Section 4, algebraic Heun operators are introduced through a simple
+                                           bilinear Ansatz in terms of tridiagonal operators related to the Askey scheme. In
+                                           Section 5, an application of this bilinear Ansatz to the time and band limiting
+                                           of finite dimensional system is described. This goes back to [23]. In Section 6,
+                                           we consider differential operators instead of tridiagonal matrices and study the
+                                                                                          1
+2            F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+commuting properties of these operators with projectors onto an interval. Section
+7 is devoted to a reinterpretation of classical results by Slepian, Landau and Pollak
+in terms of algebraic Heun operators. This is the first of the instances where
+the ideas in [23] are extended to novel situations. In Section 8, we apply our
+approach to the case of classical orthogonal polynomials satisfying second order
+differential equation - i.e. to the Hermite, Laguerre and Jacobi polynomials. In
+Section 9, we consider an “exceptional” case of classical orthogonal polynomial on
+a finite set, that cannot be treated by the simple bilinear Ansatz of [23]. These
+polynomials are known as the Bannai-Ito polynomials [4], [38]. We show that the
+reason for this phenomenon is related to the nature of the spectrum of the operators
+corresponding to the Bannai-Ito polynomials. In Section 10, we show how it is
+possible to construct an appropriate commuting operator for the time and band
+limiting procedure corresponding to a special case of the Bannai-Ito polynomials
+- the so-called anti-Krawtchouk polynomials. This operator is constructed with
+the help of quadratic terms in the bispectral operators, thereby going beyond the
+treatment in [23]. Finally, in a section on conclusions (Section 11), we summarize
+our main results and formulate some open problems.
+
+                       2. What is the Heun operator?
+    The classical Heun equation can be written in the form [26]
+(2.1)                               M f (x) = 0,
+where M is a certain linear second order differential operator. It was shown in [7]
+that this operator can be expressed in the following form
+(2.2)                  M = τ1 LZ + τ2 ZL + τ3 L + τ4 Z + τ0 ,
+where the operator L is the ordinary hypergeometric operator
+(2.3)                     L = x(1 − x)∂x2 + (α1 x + α2 )∂x
+and Z is the multiplication by the argument x: Zf (x) = xf (x). In (2.2) the
+parameters τi can be arbitrary. The operator M is a second order linear differential
+operator such that the equation (2.1) is equivalent to the generic Heun equation. It
+is thus natural to refer to M as the Heun operator. This method for constructing
+the Heun operator M in terms of a bilinear combination of the operators L and Z
+is based on a procedure referred to as tridiagonalization [7], [15], [16].
+   The main property of the operators L and Z is that they form a bispectral pair.
+This means the following: the polynomial eigenfunctions of the hypergeometric
+operator L are the Jacobi polynomials Pn (x)
+(2.4)                           LPn (x) = λn Pn (x)
+with the eigenvalues
+(2.5)                           λn = n(1 + α1 − n).
+These polynomials are orthogonal and hence they also satisfy a three term recur-
+rence relation
+(2.6)               Pn+1 (x) + bn Pn (x) + un Pn−1 (x) = xPn (x)
+with certain coefficients un , bn .
+   In the basis of the Jacobi polynomials the operator L becomes the multiplication
+by λn while the operator Z becomes the three-diagonal operator given above. We
+               ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING                          3
+
+
+thus see that there are two possible representations of the operators L and Z:
+either L is differential operator and Z is a multiplication, or vice versa, L is a
+multiplication operator while Z is a tridiagonal operator.
+   The key idea of the present paper is to generalize the preceding definition of
+the Heun operator to several bispectral situations. Once again, these situations are
+defined as those where a set of functions of two variables, such as Pn (x) above, with
+x and n the variables, are eigenfunctions of two operators L and Z each acting on
+one of the variables and with eigenvalues depending solely on the other one.
+   In order to clarify the idea let us start with the finite-dimensional case, i.e. both
+operators L and Z can be presented by finite square matrices of the same size. We
+assume that these operators form a Leonard pair [37]. This means that there exist
+two bases en and dn with n = 0, 1, . . . , N such that L is diagonal and Z is irreducible
+tridiagonal in the basis en while Z is diagonal and L is irreducible tridiagonal in the
+basis dn . Tridiagonal irreducible means that all off-diagonal entries are nonzero.
+   Now one can ask: what is the most general operator M which has the property
+to be tridiagonal with respect to both bases en and dn ? The answer was found
+by Nomura and Terwilliger [21]: this operator can be represented by the following
+bilinear combination (2.2)
+(2.7)                  M = τ1 LZ + τ2 ZL + τ3 L + τ4 Z + τ0 I,
+where τi are arbitrary coefficients and I is the identity operator. The sufficiency
+of this statement is obvious: any operator having the form (2.7) is tridiagonal with
+respect to either basis en or basis dn as follows from the definition of a Leonard
+pair. The nontrivial part of the statement is the necessity - there are no other
+operators with this property apart from those described by (2.2).
+   In the case when L is the hypergeometric operator it has already been proved
+[10] that the resulting operator M is the generic Heun operator. It is thus natural
+to say that for any bispectral pair L and Z the corresponding bilinear combina-
+tion (2.2) defines the algebraic Heun operator. This definition reduces the study
+of possible (continuous or discrete) Heun operators to the classification of basic
+bispectral pairs L, Z. In other words, any such pair L and Z generates a corre-
+sponding algebraic Heun operator M . We thus obtain in particular an algebraic
+Heun operator for each entry in the Askey table. For example, starting with the
+Krawtchouk polynomials one can obtain a finite-dimensional Krawtchouk-Heun op-
+erator, starting from the Hahn polynomials one can obtain a Hahn-Heun operator
+etc. The ordinary Heun operator is thus equivalent to the Heun-Jacobi operator.
+Developing this perspective on algebraic Heun operators is the first motivation for
+the present paper.
+   There is another motivation for considering such Heun operators. From the
+so called “time and band limiting” problems (see details in the next sections), it
+is known that all explicit examples of commuting operators (for the differential
+case) are special cases of the Heun operator. For example in the original work
+on time and band limiting for the Fourier transform, the corresponding commut-
+ing operator coincides with the degenerate case of the Heun operator that arises
+when the Helmholtz equation in three dimensions is separated in prolate spheroidal
+coordinates [35]. This observation looks like a miracle and has so far remained ill-
+understood. In the present paper we are going to show that a possible explanation
+is connected with our definition of the algebraic Heun operator. Indeed, one of
+the main results of our paper is that the operator of type (2.2) can be taken as
+4            F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+a corresponding commuting operator. The concrete choice of the operators L, Z
+and M will depend on the specific band-time limiting problem at hand. The basic
+idea in this method goes back to Perline [23]. Our method can be considered as a
+generalization of Perline’s Ansatz and as an embedding of this Ansatz into a generic
+algebraic Heun operator approach.
+
+
+                         3. Some background material
+   In this paper we address a problem of wide applied interest and with this in mind,
+we give in this section a review of some background material. These applications
+range from some very old ones such as “limited angle tomography”, see [9], to more
+recent ones in geodesy, see [29]. In all cases one runs into two kinds of “restrictions”
+on an unknown function: some apriori knowledge on its support and the fact that
+one knows only a piece of its Fourier transform. The archetype of this situation was
+studied in great detail in some celebrated work of Slepian, Landau and Pollak at
+Bell Labs in the 1960’s. For a very nice and friendly presentation of this material,
+see [35, 36]. For all the details see [30, 31, 32, 33, 34].
+   Their work in turn was motivated by Shannon’s question, see [28], in laying the
+mathematical foundations of Information Theory: if you have an unknown signal
+of finite duration and you are given (noisy) measurements of its Fourier transform
+over a limited range of frequencies, what is the best use you can make of this
+information?
+   Phrased in mathematical terms the answer is that you should aim at recovering
+the projection of your unkown signal over the subspace of the Hilbert space spanned
+by a finite number of eigenfunctions of a certain integral operator. Trying anything
+else will suffer from the curse of numerical instability.
+   This raises the issue of computing these eigenfunctions accurately and economi-
+cally to assess the quality of your best possible reconstruction scheme. If you find
+out that this set of eigenfunctions does not span a large enough subspace to give you
+the resolution that you are aiming at, then you ought to measure the Fourier trans-
+form over a larger band of frequencies. This changes the integral operator whose
+eigenfunctions have to be computed anew to ascertain the improvement brought
+about by a larger set of measurements.
+   The need to compute these eigenfunctions numerically is a serious bottleneck
+for which Slepian, Landau and Pollak found an amazing solution: they could write
+down analytically a second order differential operator whose eigenfunctions are
+automatically the eigenfunctions of the integral operator alluded to above. The
+numerical computation of the eigenfunctions of this differential operator reduces
+the problem from a global one to a local one. Moreover the eigenvalues of the
+differential operator are nicely spread apart, whereas those of the integral operator
+are (except for a few ones) all lumped together. For the numerical aspect of this
+problem, look at [22]. From a numerical point of view it is hard to imagine a better
+situation than that found by these Bell Labs workers. This motivates one to ask
+for ways to understand and extend this miracle to other scenarios.
+   Here is a framework, which imitates the one of Shannon and in which we can ask
+this type of question: suppose you have a set of functions φn (x) with n = 0, 1, ..
+which are orthonormal with respect to a certain measure µ(dx) over a set R. Assume
+further that they are complete in the corresponding L2 space. By expanding an
+              ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING                         5
+
+
+arbitrary function g as a linear combination of these φn , we get what we refer to
+as the Fourier coefficients of g.
+   Consider an unknown function f supported in a subset W of R and let F stands
+for the generalized Fourier transform operator just described. Assume that this
+Fourier transform can only be known for a range N of frequencies. We will argue
+below that our data consists of
+                                   Ef = χN F χW f,
+where χW is the time limiting operator and χN is the band limiting operator.
+   Above, χN acts by simply setting to zero all the components with index larger
+than N and χW acts by multiplication by the characteristic function of W . Typ-
+ical choices of the set W are the interval [−W, W ] or the interval [0, W ]. This
+terminology is borrowed from that of [35], and should not be taken too literally.
+   The apriori information on f is χW f = f and the data is χN F f . Combining
+these two pieces gives us the expression above defining E. The practical solution
+of the problem
+                                  Ef = known
+leads us to study the eigenvectors of the operators
+          E ∗ E = χW F −1 χN F χW          and          EE ∗ = χN F χW F −1 χN .
+The operator E ∗ E, is just a finite dimensional matrix M , given by
+                          Z W
+(3.1)         (M )m,n =          φm (x)φ∗n (x)µ(dx),   0 ≤ m, n ≤ N
+                              −W
+                          ∗
+and the operator S = EE acts by means of the integral kernel
+                                           N
+                                           X
+(3.2)                          k(x, y) =         φ∗n (x)φn (y).
+                                           n=0
+
+   This is entirely analogous to the situation dealt with by the Bell Labs team, or to
+be more accurate, if the index n runs over a continuous set as in the case of Slepian,
+Landau and Pollak, one has the kernel of an integral operator, as mentioned above,
+namely the celebrated “sinc kernel”
+                                                Z W
+                     sin(W (x − y))/(x − y) =        eikx e−iky dk.
+                                                      −W
+                                       ikx −iky
+obtained by integrating the product e e        over values of k in the range [−W, W ].
+In this simple and celebrated case, since the functions eikx are symmetric in (x, k)
+the operators EE ∗ and E ∗ E have the same appearance. Note that the functions
+eikx give a trivial bispectral situation, with L, Z being the second derivatives (or
+in this very simple case even the first ones) with respect to x or k respectively.
+   Returning now to the set-up above, we ask for those situations where these full
+symmetric matrices (or integral operators), would allow for a set of commuting
+tridiagonal ones (or second order differential operators) with a simple spectrum.
+This last condition on the spectrum would guarantee that the eigenvectors of the
+tridiagonal matrices are automatically eigenfunctions of the full matrices in ques-
+tion.
+   We are interested in situations where we can find a commuting tridiagonal op-
+erator for each value of the parameter N and “size” of the set W . For the purpose
+6            F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+of applications, the set W will either go from the left end of R to some place before
+its right end or it may be a symmetrically placed piece inside R.
+   It should be clear that we are looking for a miracle that in general will not hold.
+But even if this local object exists, the question of finding it remains a challenging
+problem. In this paper we will consider a number of concrete situations where
+the miracle holds and for which we can moreover write down explicitly the local
+operator in question.
+
+                         4. Algebraic Heun operator
+   Let L and Z be a bispectral pair of operators. This means that there exists a
+set of eigenfunctions of the operator L
+(4.1)                          Lψ(x, k) = λ(k)ψ(x, k)
+with eigenvalues λ(k) depending on the parameter k. Here it is understood that
+the operator L acts on the space of functions of the argument x. The point of
+bispectrality is that same functions serve as the eigenfunctions of the operator Z
+(4.2)                          Zψ(x, k) = ω(x)ψ(x, k)
+with eigenvalues ω(x). It is assumed that the operator Z acts on the space of
+functions of the argument k.
+   In the case considered by Slepian, Landau and Pollak we have
+                      L = −(d/dx)2 , λ(k) = k 2 ,
+(4.3)                 Z = −(d/dk)2 , ω(x) = x2 ,     ψ(x, k) = eikx .
+The bispectral classification problem, that is the search for all situations of the
+type we just described, was first considered in [5] in the case when L is a second
+order differential operator in Schrödinger’s form and Z is a differential operator of
+arbitrary order. As indicated in that paper, the motivation for raising this question
+came from the issues and results in signal processing that we have discussed and
+that have been explored in several publications, for a sample see [3, 11, 12, 13].
+   The bispectrality property mentioned above can be understood as follows: in
+the x-representation the operator Z acts as a multiplication by the function ω(x)
+while the operator L is (typically) a differential or difference operator of the second
+order. Conversely, in the k-representation, the operator L acts as a multiplication
+by the function λ(k) while the operator Z is (typically) a second order differential
+or difference operator.
+   It is good to take a second look at expression (2.7) and remark that in forming
+a product such as LZ one needs to stick to one representation, either the x or the
+k one.
+   The operators L and Z may be either differential or difference (discrete) oper-
+ators. There is also an important finite-dimensional subclass of these operators.
+In this case the operators L and Z are both finite-dimensional square matrices.
+The case when both of them are symmetric tridiagonal matrices as it happens for
+classical orthogonal polynomials on finite sets was discussed in [25], where a con-
+struction in [8] was adapted to this situation. The problem was revisited by Perline,
+see [23], who came up with a very nice general expression for a tridiagonal matrix
+that commutes with the corresponding full matrix.
+   The main point of the present paper is to explore several situations where the
+construction in [23] can de adapted beyond its original framework. We also show
+              ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING                          7
+
+
+that, as remarked by Perline, his construction can, at times, fail to give a tridiagonal
+matrix with simple spectrum. This will be illustrated in an example involving the
+Bannai-Ito polynomials.
+   We display two important examples that lie beyond the situation considered in
+[23]. One of the standard examples is the hypergeometric operator
+(4.4)                      L = x(1 − x)∂x2 + (ν1 x + ν2 )∂x
+while Z is the multiplication by x:
+(4.5)                               Zf (x) = xf (x)
+for any function f (x). The set of the eigenfunctions is formed by the Jacobi poly-
+nomials
+(4.6)                        LPn(α,β) (x) = λn Pn(α,β) (x).
+In the dual representation, we have an infinite-dimensional vector
+                           P~ = (P0 (x), P1 (x), P2 (x), . . . ),
+where the argument x plays the role of a parameter. In this representation the
+operator Z is a bispectral tridiagonal (Jacobi) matrix. Indeed, it is well known that
+for any set of orthogonal polynomials (in particular, for the Jacobi polynomials)
+one has the 3-term recurrence relation
+                                (α,β)                               (α,β)
+(4.7)          xPn(α,β) (x) = Pn+1 (x) + bN Pn(α,β) (x) + un Pn−1 (x).
+The operator L in this representation is the multiplication of the vector P~ by the
+coefficient λn .
+  Another example arises from the Heisenberg-Weyl algebra [a, a† ] = 1. The stan-
+dard quantum-mechanical representation is
+(4.8)               a = 2−1/2 (∂x + x) ,     a† = 2−1/2 (−∂x + x) .
+The operator L is defined as
+                                     1           1
+(4.9)                       L = a† a = −∂x2 + x2 −
+                                     2             2
+which coincides with the Hamiltonian of the harmonic oscillator. We define the
+operator Z as the coordinate operator:
+                            Z = 2−1/2 a† + a = x.
+                                             
+(4.10)
+The eigenfunctions of the operator L are the Hermite functions
+(4.11)                            Lψn (x) = nψn (x),
+where
+(4.12)                       ψn (x) = exp(−x2 /2) Hn (x)
+and Hn (x) are the Hermite polynomials.
+   We now define the algebraic Heun operator M as the generic bilinear combination
+of the pair of bispectral operators L and Z:
+(4.13)                 M = τ1 LZ + τ2 ZL + τ3 L + τ4 Z + τ0 I,
+where I is the identity operator.
+   The main property of the operator M is that it exhibits a certain (generalized)
+bispectrality. In order to clarify this statement consider first the finite-dimensional
+8            F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+case of a Leonard pair. We assume the existence of two bases en and dn , such that
+the operator L is diagonal in the basis en while the operator Z is tridiagonal:
+(4.14)    Len = λn en ;    Zen = ξn+1 en+1 + ηn en + ξn en−1 ,          n = 0, 1, 2, . . . , N.
+Similarly, the operator Z is diagonal in the dual basis dn while the operator L is
+tridiagonal:
+(4.15)   Zdn = µn dn ;     Ldn = an+1 dn+1 + bn dn + an dn−1 ,          n = 0, 1, 2, . . . , N.
+The only restriction on the operators L and Z is that the off-diagonal coefficients
+are nonzero: ξn ζn 6= 0, an cn 6= 0, n = 1, 2, . . . . This leads to the conclusion that
+the eigenvalues of L and Z are nondegenerate λi 6= λj and µi 6= µj if i 6= j.
+   It is then clear that the operator M is tridiagonal with respect to both bases
+en and dn (it was proven in [21] that the bilinear combination (4.13) exhausts all
+possible operators M with this property for the finite-dimensional case).
+   This observation can be generalized to the infinite-dimensional case where the
+operators L and Z can be either difference or differential operators of second order.
+   Consider, e.g. the case when L is a second order differential operator having
+orthogonal polynomial solutions
+(4.16)                    LPn (x) = λn Pn (x),     n = 0, 1, 2, . . .
+This means that the operator L should belong to one of three types: Jacobi, La-
+guerre or Hermite. In this case Z is the operator of multiplication by the argument
+x. Then the operator M is again a differential operator of second order. Now in
+the basis corresponding to the orthogonal polynomials Pn (x), the operator L is di-
+agonal (multiplication by λn ) while the operator Z becomes a tridiagonal operator
+equivalent to the three term recurrence relation for the polynomials Pn (x)
+(4.17)         ZPn (x) = xPn (x) = Pn+1 (x) + bn Pn (x) + un Pn−1 (x)
+It is obvious, that in the basis Pn (x) the operator M is tridiagonal:
+(4.18)           M Pn (x) = A(+)       (0)         (−)
+                             n Pn+1 + An Pn (x) + An Pn−1 (x),
+                          (+)   (0)     (i)
+where the coefficients An , An , An are easily expressed in terms of un , bn and λn .
+This construction of the operator M is closely related with the tridiagonalization
+procedure described in [14], [15], [16] and developed in [10].
+   Finally, one can have the situation where the operator M is a second-order
+differential operator in two different representations. One of these representations
+corresponds to the case when the operator L is a second-order differential operator
+in the argument x while Z is a multiplication by a function φ(x)
+(4.19)                                Zf (x) = φ(x)f (x)
+The dual representation corresponds to the choice of the operator L as a multipli-
+cation by a function χ(k)
+(4.20)                                Lf (k) = χ(k)f (k)
+while the operator Z becomes a second order differential operator in k. Roughly
+speaking, the algebraic Heun operator M remains generalized tridiagonal in two
+different representations of the operators L and Z. By “generalized tridiagonal” we
+mean either ordinary tridiagonal operators or differential operators of second order
+(Sturm-Liouville operators).
+               ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING                           9
+
+
+   The name “algebraic Heun operator” is related with the observation that in the
+case when L is the hypergeometric operator and Z is the multiplication by x, the
+equation
+(4.21)                              M f (x) = λf (x)
+becomes the generic Heun equation [10]. An equivalent interpretation of this state-
+ment is the following property: the solution f (x) of the Heun equation (4.21) can
+be expressed as a linear combination of Jacobi polynomials
+                                            ∞
+                                            X
+(4.22)                            f (x) =         cs Ps (x),
+                                            s=0
+
+where the coefficients cs satisfy a three term recurrence relation (see [10] for details).
+   In contrast to the classical bispectral operators L and Z, the algebraic Heun
+operator M does not allow in general, an explicit solution f (x) of the eigenvalue
+problem (4.21). Indeed, it is well known, that the ordinary Heun equation, in
+distinction to the hypergeometric equation, cannot be “exactly” solved [26]. Only
+approximate and numerical methods can be applied to find properties of solutions
+of the Heun equation. Nevetheless the “tridiagonal property” of the algebraic Heun
+operator M still allows to apply simple algebraic methods (e.g. from the theory of
+orthogonal polynomials) in order to analyze solutions of the Heun equation.
+   Our definition of the algebraic Heun operator M allows to extend the notion of
+Heun operator to all cases of the Askey scheme thus obtaining finite-dimensional,
+difference or q-difference analogs of the Heun equation. In all these cases it is
+natural to introduce the following nomenclature of the algebraic Heun operators:
+we say that the operator M belongs to the “Heun-X” type where X stands for the
+name of the corresponding entry in the Askey scheme. We have thus introduced
+the Heun-Krawtchouk, the Heun-Hahn operators etc, up to the highest level of the
+Heun-Askey-Wilson operator.
+   We postpone the detailed analysis of the properties and applications of the al-
+gebraic Heun operators for a future publication. Instead, in the present paper we
+shall concentrate on only one (but important) application of the algebraic Heun
+operator M . Namely, we shall see that local operators of the form (4.13) yield
+operators that commute with important global operators that arise naturally in
+“band-time” limiting.
+
+          5. Band and time limiting, the finite-dimensional case
+   As explained earlier, the procedure of time-band limiting consists in the restric-
+tion of the operators L and Z to specific subspaces. Recall that this leads eventually
+to some integral operators whose eigenfunctions one needs to compute. No analytic
+solutions are available and accurate numerical solution of such problems is highly
+problematic. Nevertheless, in some cases it is possible to find differential or differ-
+ence operators of second order which commute with these integral operators. This
+gives a numerical problem that can be handled successfully.
+   The problem of constructing the corresponding tridiagonal (or second order dif-
+ferential) operator T which commutes with these integral operators can be solved
+in terms of algebraic Heun operators.
+   In this section we demonstrate how this scheme works for the finite-dimensional
+case. Consider a pair of finite-dimensional operators L and Z defined by (4.14) and
+10           F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+(4.15). These operators are assumed to be irreducible, i.e. all off-diagonal entries an
+and ξn are nonzero. This means, in particular, that the spectra are nondegenerate
+(5.1)                    λn 6= λm ,    µn 6= µm ,    if   n 6= m.
+Let us introduce the orthonormal orthogonal polynomials ϕn (x), n = 0, 1, . . . , N
+by the recurrence relation
+(5.2)     an+1 ϕn+1 (x) + bn ϕn (x) + an ϕn−1 (x) = xϕn (x),        ϕ−1 = 0, ϕ0 = 1.
+These polynomials are orthogonal on a grid λs with some weights ws > 0:
+                            N
+                            X
+(5.3)                             ws ϕn (λs )ϕm (λs ) = δnm .
+                            s=0
+
+The eigenvectors en of the operator Ln are expressed as
+                                      N
+                                      X √
+(5.4)                          es =      ws ϕn (λs )dn .
+                                      n=0
+
+The reciprocal expansion of the basis vectors dn in terms of the en looks as follows
+                                      N
+                                      X √
+(5.5)                          dn =      ws ϕn (λs )es .
+                                      s=0
+
+In a similar way we can introduce the orthonormal polynomials χn (x) which satisfy
+the recurrence relation
+(5.6)     ξn+1 χn+1 (x) + ηn χn (x) + ξn χn−1 (x) = xχn (x),        χ−1 = 0, χ0 = 1.
+These polynomials are orthogonal with respect to another set of positive weights
+w̃s :
+                            N
+                            X
+(5.7)                             w̃s χn (µs )χm (µs ) = δnm .
+                            s=0
+
+Due to the obvious duality between the operators L and Z, we can write down two
+other interbasis expansions:
+                                      N p
+                                      X
+(5.8)                          ds =      w̃s χn (µs )en
+                                      n=0
+
+and
+                                      N p
+                                      X
+(5.9)                          en =      w̃s χn (µs )ds .
+                                      s=0
+
+Relations (5.4)-(5.5) and (5.8)-(5.9) should give identical results. This is so if and
+only if the compatibility relation
+                  √               p
+(5.10)              ws ϕn (λs ) = w̃n χs (µn ), n, s = 0, 1, . . . , N
+holds. Relation (5.10) is known as the Leonard duality condition [19].
+   Introduce two projection operators π1 and π2 as follows
+                                                    
+                       en , if n ≤ J1                  dn , if n ≤ J2
+(5.11)       π1 en =                    ,   π2 dn =                    .
+                        0, if n > J1                    0, if n > J2
+              ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING                                      11
+
+
+The operator π1 restricts the operator L to a subspace of dimension J1 + 1, and
+similarly the operator π2 restricts the operator Z to a subspace of dimension J2 + 1.
+Note that obviously
+(5.12)                                π12 = π1 ,    π22 = π2
+which is equivalent to the statement that both π1 and π2 are projection operators.
+Simultaneous restriction to eigensubspaces of the operators L and Z with these
+projectors leads to the following self-adjoint operators
+(5.13)                        V1 = π1 π2 π1 ,      V2 = π2 π1 π2 .
+The operator π1 is not narrow-banded in the basis dn and likewise the operator π2
+is not narrow-banded in the basis en . Hence both operators V1 and V2 have rather
+complicated nonlocal structures. In order to throw light on these, let us consider
+the action of the projection operator π2 on the basis en . We have
+                                N                  J2
+                                X √                X  √
+(5.14)             π2 en = π2      ws ϕn (λs )ds =     ws ϕn (λs )ds
+                                s=0                        s=0
+where we used (5.4) and (5.11). Expanding now the basis ds in terms of the basis
+en by using (5.8), we arrive at the expression
+                                J2 X
+                                   N
+                                X    √
+(5.15)                  π2 en =       wn wt ϕs (λn )ϕs (λt )et .
+                                  s=0 t=0
+Now the operator V1 = π1 π2 π1 acts on the basis en as follows,
+                   J2 X
+                      J1                             J1
+                   X     √                           X   (1)
+(5.16)   V1 en =          wn wt ϕs (λn )ϕs (λt )et =    Ktn et ,         n = 0, 1, . . . , J1 ,
+                   s=0 t=0                                   t=0
+
+i.e. the operator V1 can be represented in the basis en by the matrix K (1) of
+dimension (J1 + 1) × (J1 + 1) with entries
+                                       J2
+                              (1)
+                                       X  √
+(5.17)                       Ktn =         wn wt ϕs (λn )ϕs (λt ).
+                                       s=0
+Using the Leonard duality relation (5.10), we can express this matrix in an equiv-
+alent form:
+                                   J2
+                             (1)
+                                  X
+(5.18)                    Ktn =       w̃s χn (µs )χt (µs ).
+                                         s=0
+Assume that J2 = N (this means that the projection operator π2 becomes the
+identity operator). Then by the orthogonality relation (5.7), we see that
+                                (1)
+(5.19)                       Ktn = δtn         t, n = 0, 1, . . . , J1
+i.e. in this case, V1 = π1 as follows from the definition (5.13) if π2 is the identity
+operator. For J2 < N the operator V1 is “nonlocal” in the basis en (i.e.a priori all
+           (1)
+entries Ktn are nonzero).
+                                         (1)
+    We can also express the matrix Ktn in a third form using the Christoffel-
+Darboux identity for orthonormal polynomials
+                 n                                                       
+                X                         ϕn+1 (x)ϕn (y) − ϕn+1 (y)ϕn (x)
+(5.20)              ϕk (x)ϕk (y) = an+1                                     .
+                                                       x−y
+               k=0
+12           F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+With the help of (5.20) expression (5.17) can be converted to the form
+                 √wn wt aJ +1 ϕJ2 +1 (λn )ϕJ2 (λt )−ϕJ2 +1 (λt )ϕJ2 (λn ) , n 6= t
+                                                                        
+          (1)                2                      λn −λt
+(5.21) Ktn =                                                               
+                 aJ2 +1 wn ϕ′                          ′
+                               J2 +1 (λn )ϕJ2 (λn ) − ϕJ2 (λn )ϕJ2 +1 (λn ) , n=t
+                                                (1)        (1)
+Note that the operator V1 is symmetric: Ktn = Knt in the basis en . By duality,
+the operator V2 has a similar expression and we shall not write it down here.
+   We have thus arrived at the problem of diagonalizing of the operators V1 or V2 .
+This is a nontrivial problem because of the nonlocality of the matrices representing
+the operators V1 and V2 . Nevertheless, with hindsight, one can hope to find an
+operator T which commutes with both operators V1 and V2 . We can demand
+that this operator T be “as simple as possible”. This means that we can try to
+search for a tridiagonal operator T commuting with V1 and V2 . Such a program
+was successfully carried out in [25] for operators belonging to the Askey scheme of
+classical orthogonal polynomials [18]. Pursuing this, Perline (see [23]) has proposed
+a general method for constructing the operator T in the finite dimensional case.
+We here use the idea in [23] to construct a wide family of commuting operators T .
+   The basic idea of the method is to choose the operator T in the form of what we
+have called the algebraic Heun operator (4.13). If the operator M commutes with
+the projection operators
+(5.22)                           [M, π1 ] = [M, π2 ] = 0.
+then obviously, the operator M commutes with the restriction operators V1 and V2 .
+Thus (5.22) are sufficient conditions for the commutativity
+(5.23)                           [M, V1 ] = [M, V2 ] = 0
+and (5.23) will be satisfied if we choose the parameters τi , i = 0, 1, . . . , 4 such that
+the operator M satisfies conditions (5.22).
+   First, notice the following elementary fact.
+Lemma 1. The tridiagonal operator M1 given by
+                                  (1)
+(5.24)                 M1 en = An+1 en+1 + Bn(1) en + Cn(1) en−1
+commutes with the projector π1 in (5.11) if and only if
+                                     (1)      (1)
+(5.25)                             AJ+1 = CJ+1 = 0.
+Similarly, the tridiagonal operator M2 given by
+                                  (2)
+(5.26)                 M2 dn = An+1 dn+1 + Bn(2) dn + Cn(2) dn−1
+commutes with the projector π2 in (5.11) if and only if
+                                    (2)       (2)
+(5.27)                            AK+1 = CK+1 = 0.
+   Consider now the operator M given by 4.13. In the basis en this operator is
+tridiagonal (5.24) with the coefficients:
+
+           A(1)
+            n = (τ1 λn + τ2 λn−1 + τ4 )ξn ,         Cn(1) = (τ1 λn−1 + τ2 λn + τ4 )ξn ,
+(5.28)     Bn(1) = (τ1 + τ2 )ηn λn + τ3 λn + τ4 ηn + τ0 .
+              ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING                           13
+
+
+In the basis dn the operator M is tridiagonal as well with the coefficients
+           A(2)
+            n = (τ1 µn−1 + τ2 µn + τ3 )an ,      Cn(2) = (τ1 µn + τ2 µn−1 + τ3 )an ,
+(5.29)     Bn(2) = (τ1 + τ2 )bn µn + τ3 bn + τ4 µn + τ0 .
+Now the conditions (5.25) read as follows
+(5.30)          τ1 λJ+1 + τ2 λJ + τ4 = 0,      τ1 λJ + τ2 λJ+1 + τ4 = 0.
+Because of the nondegeneracy of the eigenvalues λJ 6= λJ+1 , it follows from (5.30)
+that
+(5.31)                                   τ2 = τ1 .
+Assuming that condition (5.31) holds, we only have the restriction
+(5.32)                         τ1 (λJ + λJ+1 ) + τ4 = 0.
+Similarly, associated to the other basis, we have the condition
+(5.33)                         τ1 (µK + µK+1 ) + τ3 = 0.
+From (5.32)-(5.33), it follows that given τ1 = τ2 , it is always possible to choose the
+parameters τ3 and τ4 in order to satisfy the commutation relations (5.22).
+   Note that the condition τ1 = τ2 means that we can express the operator M in
+the form
+(5.34)                     M = τ1 {L, Z} + τ3 L + τ4 Z + τ0 ,
+where {L, Z} = LZ + ZL is the anticommutator. In turn, this condition is very
+naturally related to the Hermitian properties of the operators L, Z. Indeed, the
+operators L and Z are both self-adjoint in the bases en and dn . In view of that,
+the operator M in the form (5.34) will also be self-adjoint. This is basically the
+result obtained by Perline [23] who started with the prescribed form (5.34) for the
+operator M in the finite-dimensional case.
+   Summing up, if we want the Heun operator M to commute with the projectors
+π1 and π2 , we should choose the restricted form of this operator that arises from
+(5.31). It is then always possible to choose the parameters τ3 and τ4 in order to
+satisfy conditions (5.22).
+   The only caution, as already pointed out in [23], should be made regarding a
+possible “strange” behavior of the eigenvalues λn , µn . Indeed, suppose for instance
+that
+(5.35)                           λn + λn+1 = β1 (−1)n
+with some constant β1 . In this case condition (5.32) leads to a degeneration: for
+every even J we have the same solution of equation (5.32). The same is true for
+condition (5.33) if the dual eigenvalues satisfy the condition
+(5.36)                           µn + µn+1 = β2 (−1)n
+with some constant β2 .
+   Thus in the two exceptional cases corresponding to (5.35) and (5.36) Perline’s
+Ansatz needs to be changed. These conditions for the spectrum correspond to
+the case of the Bannai-Ito polynomials [4], [38]. We will construct a more general
+commuting operator M in the last section.
+14           F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+   In all other cases corresponding to the finite-dimensional entries of the Askey
+tableau (e.g. Krawtchouk, Hahn, q-Racah polynomials), the algebraic Heun op-
+erator M (more exactly, its special Hermitian form with the symmetric condition
+(5.31)), yields a useful solution to our problem of computing the eigenvectors of a
+full matrix.
+   An interesting open problem is the following: is it true that every operator T
+commuting with the restriction operators V1 , V2 (5.13) should also commute with
+the projectors π1 and π2 ?
+
+
+
+
+        6. Band and time limiting in case of differential operators
+   Consider now the case when the operator L is a differential operator of second
+order acting on functions defined on the real line, while Z is the multiplication
+operator, i.e.
+(6.1)             L = a(x)∂x2 + b(x)∂x + c(x),       Zf (x) = φ(x)f (x)
+with some functions A(x), B(x), C(x), φ(x). In this case the operator M will be a
+second order differential operator as well:
+(6.2)                        M = A(x)∂x2 + B(x)∂x + C(x)
+We wish to satisfy the commutation property
+(6.3)                                [M, πα ] = 0,
+where the operator πα is the projection to the interval [−∞, α] of the real axis
+−∞ < x < ∞. In other words, the operator πα can be presented as a multiplication
+by the characteristic function of the interval [−∞, α]:
+(6.4)                             πα = 1 − θ(x − α)
+where
+                                         
+                                             0   if x < 0
+(6.5)                           θ(x) =
+                                             1   if x ≥ 0
+is the Heavyside function.
+Lemma 2. The operator M (6.2) commutes with the projection operator πα if and
+only if
+(6.6)                         A(α) = 0,      B(α) = A′ (α).
+   Similarly, if one considers the projection on the finite interval [α, β] then the pro-
+jection operator π[α,β] is defined as the multiplication by the characteristic function
+(6.7)                        π[α,β] = θ(x − β) − θ(x − α).
+Then we have:
+Lemma 3. The operator M (6.2) commutes with the projection operator π[α,β] if
+and only if
+(6.8)           A(α) = A(β) = 0,      B(α) = A′ (α),        B(β) = A′ (β).
+              ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING                         15
+
+
+The proof of these lemmas is elementary and can be found in [41].
+  Consider now the algebraic Heun operator M , where L and Z are given by (6.1).
+Because the parameters α and β for the projection operators can be chosen inde-
+pendently of the operator L, we shall assume that the coefficients a(x), b(x), c(x)
+do not take special values when x = α or x = β. We then have:
+Proposition 1. The algebraic Heun operator M commutes with the projector πα
+if and only if
+(6.9)                             τ2 = τ1 ,   τ3 + 2τ1 φ(α) = 0.
+Similarly, we have:
+Proposition 2. The algebraic Heun operator M commutes with the projector π[α,β]
+if and only if
+(6.10)                τ2 = τ1 ,      τ3 + 2τ1 φ(α) = 0,   φ(β) = φ(α).
+As in the discrete case, the Heun operator which is useful for time-and-band limiting
+can be given in the form
+(6.11)                      M = τ1 {L, Z} + τ3 L + τ4 Z + τ0 .
+In the dual picture we can distinguish two possibilities:
+    (i) either the operator Z is a differential operator while the operator L is mul-
+tiplication by a function. This is the “continuous-continuous” case, and will be
+illustrated in the next section.
+    (ii) or the operator Z can be represented by an (infinite) tridiagonal matrix while
+the operator L is a diagonal matrix in the same representation. This will be called
+the continuous-discrete or the discrete-continuous case, and will be considered in
+Section 8.
+    In both cases the time and band limiting operators can be constructed in a
+manner similar to the finite-dimensional case. The only difference is that in one
+picture the finite-dimensional operator V1 is replaced with an integral operator
+while in the dual picture the operator V2 may be either an integral operator (in the
+case (i)) or a tridiagonal matrix (in the case (ii)).
+    In the next section we consider briefly the first possibility.
+
+   7. The best known examples coming from signal processing and
+                       Random Matrix Theory
+    We consider first the most famous example of an integral operator that allows
+for a commuting differential operator, namely the case of the integral operator with
+the sinc kernel commuting with the prolate spheroidal differential operator. This
+case is at core of the work of Slepian, Landau and Pollak in the 1960’s and goes
+along with the classical problem of time-band limiting for the Fourier transform
+[30, 31, 32, 33, 34].
+    From the point of view of quantum mechanics this is also the simplest case,
+i.e. free motion in dimension one corresponding to the potential V (x) = 0 in the
+expression for the Hamiltonian
+                                    H = −(d/dx)2 + V (x).
+In the notation used earlier we have
+                L = −(d/dx)2 , λ(k) = k 2 , Z = −(d/dk)2 , ω(x) = x2 .
+16            F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+     The integral operator has its kernel given by
+                                                Z W
+                      sin(W (x − y))/(x − y) =      eikx e−iky dk
+                                                  −W
+
+and the corresponding commuting differential operator acting on (an appropriate
+subspace of functions in [−T, T ]) is given by
+(7.1)                        M = ∂x (T 2 − x2 )∂x − W 2 x2 .
+It is a matter of a simple computation to see that this operator can be written in
+the Perline fashion
+                         M = s1 {L, Z} + s2 L + s3 Z + s4 I
+if one chooses
+                        s1 = 1/2, s2 = −T 2 , s3 = −W 2 , s4 = 1.
+In the expression above we follow the usual rule of replacing Z by ω, as remarked in
+section 4. Regarding the domain of the differential operator M given above, which
+amounts to a careful discussion of the appropriate boundary conditions, see [17].
+   We now turn to the case of the radially symmetric Fourier transform, i.e. the
+Bessel transform dealt with by Slepian in [33]. The quantum mechanical Hamil-
+tonian in this case (normally written with r and not x as the variable) is given
+by
+                          L = −(d/dx)2 + (ν 2 − 1/4)/x2
+and once again the operator Z or ω(x) is x2 . The commuting differential operator
+given in [33] is
+(7.2)              M = −∂x (G2 − x2 )∂x + T 2 x2 + G2 (ν 2 − 1/4)/x2
+and it is again possible to express this operator in the form
+                          M = s1 {L, Z} + s2 L + s3 Z + s4 I
+if one chooses
+                    s1 = −1/2, s2 = G2 , s3 = T 2 , s4 = (ν 2 − 5/4).
+where once again we are replacing Z by ω(x).
+   In the work of Tracy and Widom in Random Matrix Theory, see [20, 39, 40]
+one finds three integral kernels obtained by considering either the “bulk” of the
+spectrum and either “hard” or “soft” edges of it. The two explicit examples above
+are among the ones that play a role in Random Matrix Theory but had appeared
+earlier in the work of Slepian, Landau and Pollak. Actually the Fourier case was
+being considered at about the same time by these authors at Bell Labs and by
+Mehta at Princeton U. in the early 1960’s. The Airy case, considered by Tracy and
+Widom in connection with the soft edge of the spectrum, can also be seen to fit
+within the Perline formalism.
+
+        8. Band and time limiting in a continuous-discrete setup: the
+                      classical orthogonal polynomials
+   In this section we consider the classical polynomials of Hermite, Laguerre and
+Jacobi. These polynomials are known to enjoy the “time-band-limiting” commu-
+tation property, see [8]. We show here how the commuting local operators can be
+expressed in terms of the “Perline Ansatz”.
+              ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING                      17
+
+
+  In each case we denote by ρn (x) the weight of the corresponding orthogonal
+polynomials
+                          2
+                     e−x /2
+              ρ(x) = √       −∞<x<∞                            (Hermite)
+                        2π
+              ρ(x) = e−x x−α 0 ≤ x                            (Laguerre)
+                              α        β
+              ρ(x) = (1 − x) (1 + x)       −1≤x≤1               (Jacobi).
+
+Using the notation in [8], in each case we have
+
+                                     Dpn = Λn ρn
+
+with
+                                                       
+                                      1 d             d
+                              D=                p(x)
+                                     ρ(x) dx         dx
+and where the function p(x) is given by p(x) = ρ(x), p(x) = xρ(x) and p(x) =
+(1 − x2 )ρ(x) in the Hermite, Laguerre and Jacobi cases, respectively. This operator
+is symmetric in L2 (ρ(x)dx). Furthermore, we have
+
+                      Λn = −2n                         (Hermite)
+                      Λn = −n                         (Laguerre)
+                      Λn = −n(n + α + β + 1)            (Jacobi).
+
+We first recast the explicit results in [8] in terms of the “Perline Ansatz”. Pick
+N ≥ 0 and let W be a point inside the support of the measure ρ(x). This gives rise
+to the kernel
+                                          XN
+                             kN (x, y) ≡      pi (x)pi (y)
+                                           0
+
+which acts as an integral operator in the respective intervals
+                                  (−∞, W ) (Hermite)
+                                    (0, W ) (Laguerre)
+                                  (−1, W ) (Jacobi).
+
+The main result in [8] states that the differential operator
+                               1 d                   d
+                    D̃W,N =           ((x − W )ρ(x)    + AN x)
+                              ρ(x) dx               dx
+commutes with the corresponding integral operator for an appropriate choice of the
+constant AN , namely
+                      AN = 2N                          (Hermite)
+                      AN = N                           (Laguerre)
+                      AN = N (N + α + β + 2)             (Jacobi).
+
+We observe that these are all instances where the “Perline Ansatz” holds.
+18           F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+   In terms of the differential operator D given above and with X being the mul-
+tiplication by x, the following equivalent expressions hold
+       1
+D̃W,N =  {D, X} − W D + (2N + 1)X                                                    (Hermite)
+       2                      
+       1                  α+1
+D̃W,N = {D, X} − W D +           I                                                  (Laguerre)
+       2                   2
+                                              
+       1                              1               α−β
+D̃W,N = {D, X} − W D + (N + 1)2 + N +     (α + β) X +     I                           (Jacobi).
+       2                              2                2
+In [8], one is dealing with an integral operator with kernel kN (x, y) and a differential
+one, D̃N,W . By reversing the role of the “time and frequency” variables, one could
+consider a full matrix KN,W with entries
+                                         Z W
+(8.1)                     (KN,W )i,j =       ρ(x)pi (x)pj (x)dx
+                                         s
+
+0 ≤ i, j ≤ N . The lower limit of integration is, in each of the three cases, the left
+end of the support of ρ(x).
+   One can see that the “Perline Ansatz” works in this case too. The role of D is
+taken up by the symmetric tridiagonal matrix L that satisfies
+                                                    
+                                 p0 (x)         p0 (x)
+                              p1 (x)       p1 (x)
+                            L p2 (x) = x p2 (x)
+                                                    
+                                    ..             ..
+                                                    
+                                     .              .
+and the role of the operator X is taken up by the diagonal matrix Λ
+                                                  
+                                     Λ0
+                              Λ=
+                                        Λ1        .
+                                                   
+                                              ..
+                                                 .
+
+If LN and ΛN denote the matrices of size (N + 1) × (N + 1) obtained by keeping
+only the first N + 1 rows and columns of L and Λ, we can see that the matrix
+                            1
+                              {LN , ΛN } − W ΛN + σN LN
+                            2
+commutes with MN,W . The appropriate choice of the constant σN is given by
+                 σN = 2N + 1                                 (Hermite)
+                      2N + 1
+                 σN =         = (N + 1/2)                   (Laguerre)
+                         2
+                 σN = (N + 1)2 + (N + 1/2)(α + β)             (Jacobi).
+In all three cases above (Hermite, Laguerre and Jacobi) the corresponding com-
+muting operator D̃W,N belongs to the class of algebraic Heun operators. It is easily
+verified that for the Jacobi case one obtains the ordinary Heun operator while for
+the Laguerre and Hermite case some degenerate versions of the Heun operator arise,
+as expected. This can be considered as an additional justification of the nomen-
+clature “algebraic Heun operators”. It should be noted, nevertheless, that in the
+              ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING                        19
+
+
+Jacobi case the commuting operator D̃W,N is more restricted than the generic Heun
+operator. Indeed, the most general Heun operator is the linear combination [10]
+
+(8.2)                     M = τ1 LZ + τ2 ZL + τ3 L + τ4 Z
+
+with arbitrary parameters τi . The commuting operator D̃W,N of Jacobi-type nev-
+ertheless, has the restriction
+
+(8.3)                                  τ2 = τ1
+
+This restriction leads to special types of the Heun equation
+
+(8.4)                             M ψ(x) = λψ(x).
+
+Indeed, one can always assume that τ1 + τ2 = 1 (because all coefficients τi are
+defined up to a nonessential common factor). For the special case (8.3) we have
+τ1 = τ2 = 1/2.
+   The generic Heun equation (8.4) has the form [26]
+                                       
+            ′′       γ      δ       ε                  αβx − q
+(8.5)      ψ (x) +     +       +          ψ ′ (x) +                 ψ(x) = 0
+                     x x−1 x−d                      x(x − 1)(x − d)
+
+where α, β, γ, δ, ε are parameters of the equation.
+  Comparing this equation with the equation arising from (8.2) (when L is the
+hypergeometric operator) we have the parameter correspondence [10]
+
+                        γ = ν2 , δ = −ν1 − ν2 , ε = 2τ2 , d = −τ4
+(8.6)                   αβ = −τ3 − ν1 τ2 , q = λ − τ2 ν2 .
+
+It is clear that for the special case of the Heun operator where τ1 = τ2 = 1/2, there
+is the restriction
+
+(8.7)                                  ε = 1.
+
+This means, for instance, that the Lamé equation cannot be obtained via the Ansatz
+with τ1 = τ2 because for the Lamé case the parameters are [26]
+
+(8.8)                             γ = δ = ε = 1/2.
+
+Thus, the operator M (8.2) with τ1 = τ2 (which corresponds to commuting opera-
+tors in the band and time limiting restrictions for the Jacobi polynomials) leads to
+some special cases of the generic Heun equations.
+   The case of the Lamé equation was considered by Perline, see [24]. He observed
+that indeed, this “elliptic” case is very different from its rational or trigonometric
+limiting cases. It is also seen to violate the necessary conditions for bispectrality
+discussed in [5] thus giving extra evidence of a strong connection between bispec-
+trality and the existence of a local operator commuting with the global one that
+appears naturally.
+   Note finally, that the projection of classical orthogonal polynomials of type (8.1)
+where N = ∞ (i.e. there is no “time” restriction, only the “band” restriction is
+performed) was considered recently in [2] in connection with probabilistic models.
+20           F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+                     9. A look at Bannai-Ito polynomials
+   In this section we concentrate on a documented case of classical finite orthogonal
+polynomials known as the Bannai-Ito polynomials [4]. We shall adopt the nota-
+tion of [38]. These polynomials are covered by the theory developed in [23], but
+something worth noticing happens here.
+   The Bannai-Ito polynomials are supported on a set of N + 1 points, and we shall
+here take N even. In this case the polynomials are determined by three arbitrary
+positive constants, r1 , e and d, see [38]. These polynomials, being classical, satisfy
+a three term recursion relation as well as a three term difference equation. The
+tridiagonal matrices L and Z are symmetric. Hence there exist orthogonal matrices
+T and T ∗ of size N + 1 × N + 1 that diagonalize the matrices L and Z:
+(9.1)                                   LT = T Λ
+and
+(9.2)                                 ZT ∗ = T ∗ Ω
+for appropriate diagonal matrices Λ, Ω. The entries Ti,j are constructed from pi (xj )
+where xj are the points where the orthogonality measure lives.
+   To perform our time-band limiting procedure we pick two constants N1 , N2 both
+not larger than N and form the matrices π1 T π2 and its adjoint π2 T ∗ π1 as well as
+their products π1 T π2 T ∗ π1 and π2 T ∗ π1 T π2 of sizes N1 ×N1 and N2 ×N2 respectively.
+The theory tells us that for an appropriate choice of the coefficients the matrix
+(9.3)                          M = {Z, Λ} + t1 Z + t2 Λ
+“chopped off” to size N2 × N2 will commute with the second of the two matrices
+above. The same theory tells us that for an appropriate linear combination, the
+matrix
+(9.4)                         M = {L, Ω} + s1 L + s2 Ω,
+“chopped off” to size N1 × N1 will commute with the first of these two matrices.
+   While these results hold true, each of the resulting tridiagonal matrices fail to
+have a simple spectrum, making them of little use for the problem of computing
+the eigenvectors of π1 T π2 T ∗ π1 or π2 T ∗ π1 T π2 . Recall that this was the motivation
+for the entire enterprise.
+   It is interesting to point out that the phenomenon described above was an-
+ticipated by Perline in [23] where he gives a general sufficient condition for the
+matrices constructed out of (L, Ω) or (Z, Λ) to have simple spectrum. In the case
+of the Bannai-Ito polynomials, which were not widely known at the time when
+[25, 23] were written, it is easy to see that these sufficient conditions are violated.
+Indeed, from the representations of the Bannai-Ito algebra [38], it follows that the
+spectrum of the operators L and Z have expressions of the form
+(9.5)                 λn = (−1)n (n + α) + β,        n = 0, 1, . . . , N
+with parameters α, β related to parameters of the Bannai-Ito polynomials. Expres-
+sion (9.5) leads to some “catastrophe” in the properties of the operator M .
+   Indeed, using concrete parameters for some finite-dimensional version of the
+Bannai-Ito polynomials [38], we have that the diagonal matrix Ω consists of two
+simple interlacing sequences, giving for the entries the values
+                         0, −d − 2, 1, −d − 3, 2, −d − 4, 3, .....
+              ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING                         21
+
+
+The diagonal matrix Λ is also made up of two simple interlacing sequences yielding
+the following entries
+               r1 + 3/2, −r1 − 5/2, r1 + 5/2, −r1 − 7/2, r1 + 7/2, .....
+  The condition in [23] that would guarantee simple spectra requires looking at
+                                        Λi + Λi+1
+and being able to identify the index i from this information. But, in this example,
+the values of this sum sequence are
+                     −d − 2, −d − 1, −d − 2, −d − 1, −d − 2, ...
+making it impossible to achieve the task of determining the index.
+   Similarly, for the sequence Ωi +Ωi+1 we get −1, 0, −1, 0, −1, ...... In both cases we
+have an extreme violation of Perline’s condition. It is remarkable that it is violated
+in this important example. This phenomenon follows from the general expression
+(9.5) because
+(9.6)                          λn + λn+1 = 2β − (−1)n
+that is, λn + λn+1 has only two different values for all n = 0, 1, . . . , N . It should
+be stressed, that for all the other entries of the Askey scheme (Racah, q-Racah,
+Hahn, etc) the spectrum has no such degeneration and the case of the Bannai-Ito
+is therefore the only exception.
+    This result, while disappointing, has a practical solution. One can produce sym-
+metric pentadiagonal matrices with simple spectra that commute with the matrices
+of interest. We present an illustration of this construction in the next section.
+
+                    10. The anti-Krawtchouk polynomials
+   Here we consider another example where we also have the phenomenon that
+we just presented with the Bannai-Ito polynomials. In this situation we can go
+one step furher and produce an explicit expression for a pentadiagonal matrix
+that commutes with the appropriate time-band limited matrix and has moreover a
+simple spectrum. One can prove that no tridiagonal matrix can have this property.
+   This situation occurs for the so-called anti-Krawtchouk that have been discussed
+in [6]. These polynomials can be considered as just one of the simplest special cases
+of the Bannai-Ito polynomials [6]. Let us simply recall that we have a measure that
+lives on points
+                                  xi , i = 0, 1, ..., N.
+There is a tridiagonal matrix L1 that has the anti-Krawtchouk polynomials as
+its eigenfunctions and a diagonal matrix Λ = L2 which arises from a three term
+difference equation satisfied by these polynomials and which happens to coincide
+with the diagonal matrix of the three term recursion relation.
+   Algebraically, the anti-Krawtchouk polynomials arise through representations of
+the anti-spin algebra with three generators L1 , L2 , L3 satisfying the commutation
+relations [6]
+(10.1)                   {Li , Lj } = εijk Lk ,   i, j, k = 1, 2, 3,
+where {X, Y } = XY + Y X stands for the anticommutator and where εijk is the
+totally antisymmetric tensor taking values 1, −1 depending on parity of the triple
+i, j, k (and which vanishes if there are coinciding entries). Relations (10.1) resemble
+22           F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+the commutation relations of the Lie algebra su(2) with the only difference that all
+the commutators are replaced by anticommutators.
+    Consider an irreducible finite-dimensional representation of the anti-spin algebra
+[6]. Let en be the basis in which the matrix L2 is diagonal:
+(10.2)                       L2 en = xn en ,   n = 0, 1, . . . , N
+and where the eigenvalues xn (i.e. the grid points) are
+(10.3)                            xn = (−1)n (n + 1/2).
+The matrix L1 is symmetric and tridiagonal in the canonical basis en
+(10.4)                    L1 en = an+1 en+1 + bn en + an en−1
+with coefficients given by, see [6],
+                           (N + 1)2 − n2
+                     a2n =               , n = 1, 2, . . . , N,
+                                 4
+(10.5)               b0 = (−1)N (N + 1)/2, bn = 0, n = 1, 2, . . . , N.
+Note that the anti-Krawtchouk polynomials are self-dual [6]. This means in par-
+ticular, that the operators L1 and L2 have the same spectrum xi given by (10.3).
+Moreover, there exists the dual basis dn in which the operator L1 is diagonal while
+the operator L2 is tridiagonal
+(10.6)          L1 dn = xn dn ,     L2 dn = an+1 dn+1 + bn dn + an dn−1
+with the same expressions as above for an , bn , xn .
+   The anti-spin algebra has the following Casimir operator
+(10.7)               Q = L21 + L22 + L23 = L21 + L22 + ({L1 , L2 })2
+which commutes with all the generators
+(10.8)                            [Q, Li ] = 0, i = 1, 2, 3.
+Given the (N + 1)-dimensional representation (10.3)-(10.4), the Casimir takes the
+value
+(10.9)                         Q = (N + 1/2)(N + 3/2).
+Because the anti-Krawtchouk polynomials belong to the Bannai-Ito family of poly-
+nomials, the bilinear Perline’s Ansatz
+(10.10)                 M = τ1 L1 L2 + τ2 L2 L1 + τ3 L1 + τ4 L2
+leads to an operator M commuting with the time and band limiting operator, but
+with a degenerate spectrum.
+   It is therefore natural to try to construct M as a polynomial of higher degree in
+the operators L1 , L2 in order to remedy this situation. If we expect the operator M
+to be pentadiagonal with respect to the bases en and dn we should restrict ourselves
+to taking expressions where the powers of the operators L1 and L2 do not exceed
+2.
+   If we denote by N1 and N2 the parameters specifying the time and band limiting
+operations respectively, we can see that the following operator
+                       M = {L21 , L22 } + α1 {L21 , L2 } + α2 {L22 , L1 } +
+(10.11)                α3 L21 + α4 L22 + α5 L1 + α6 L2
+will do the job once the coefficients αi are appropriately determined.
+               ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING                         23
+
+
+   In order to find these coefficients, we observe that the operator M is a five-
+diagonal symmetric matrix which acts on the basis en according to
+(10.12)        M en = Gn en−2 + Fn en−1 + Hn en + Fn+1 en+1 + Gn+2 en+2 ,
+where
+                Gn = an an−1 x2n + x2n−2 + α1 (xn + xn−2 ) + α3 ,
+                                                               
+(10.13)                                                                    n≥2
+and
+                       Fn = an α2 (x2n + x2n−1 ) + α5 ,
+                                                     
+(10.14)                                                    n≥2
+(the explicit expression of the diagonal coefficient Hn in (10.12) is not needed for
+our purposes).
+   Let πN1 be the projection operator defined by
+                                       
+                                         en , n ≤ N1
+(10.15)                       πN1 en =                 .
+                                          0, n > N1
+The operator M commutes with πN1 if and only if
+(10.16)                     GN1 +1 = GN1 +2 = FN1 +1 = 0.
+   Using the explicit expressions (10.13)-(10.14), we have the following three equiv-
+alent conditions
+                     x2N1 + x2N1 +2 + α1 (xN1 + xN1 +2 ) + α3 = 0,
+(10.17)              x2N1 −1 + x2N1 +1 + α1 (xN1 −1 + xN1 +1 ) + α3 = 0,
+                     α2 x2N1 + x2N1 +1 + α5 = 0.
+                                        
+
+Consider now under what circumstances will [M, πN2 ] = 0 with πN2 the projector
+defined by
+                                   
+                                     dn , n ≤ N2
+(10.18)                   πN2 dn =                .
+                                      0, n > N2
+Because the operators L1 and L2 have the same spectrum xn and the same coef-
+ficients an , bn in their three-diagonal representation, it is sufficient to note that in
+the basis dn the operator M looks similar to (10.12). The explicit expressions of the
+coefficients Gn , Fn in the basis dn are obtained from the corresponding expressions
+(10.13)-(10.14) by the simple transpositions α1 ⇄ α2 , α3 ⇄ α4 and α5 ⇄ α6 .
+    We thus find another set of conditions similar to (10.17):
+                     x2N2 + x2N2 +2 + α2 (xN2 + xN2 +2 ) + α4 = 0,
+(10.19)              x2N2 −1 + x2N2 +1 + α2 (xN2 −1 + xN2 +1 ) + α4 = 0,
+                     α1 x2N2 + x2N2 +1 + α6 = 0.
+                                        
+
+We can now solve the system consisting of the six linear equations (10.17) -(10.19)
+with respect to the six unknowns αi , i = 1, 2, . . . , 6. The solution is unique and
+given by:
+                     α1 = (−1)N1 , α2 = (−1)N2 , α3 = −1 − κ1 ,
+(10.20)              α4 = −1 − κ2 , α5 = (−1)N2 κ1 , α6 = (−1)N1 κ2
+where
+(10.21)         κ1 = 2N1 2 + 4N1 + 5/2,      κ2 = 2N2 2 + 4N2 + 5/2.
+24          F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+This settles in a definite way the band and time limit problem for the
+anti-Krawtchouk polynomials. A simple check shows that the spectrum of this
+operator M is (in general) nondegenerate. The simplest commuting operator M
+that is of practical use hence requires a polynomial of degree 2 with respect to both
+operators L1 and L2 . As was already mentioned, the Perline’s type Ansatz with
+bilinear polynomial in L1 and L2 leads to a degeneration of the spectrum of the
+resulting operator M .
+   A remark should be made concerning the choice (10.11) of the operator M . In
+general, such an operator should include all symmetric terms of total degree 4,3,2
+and 1. All possible symmetric terms of degree four (and hence of degree two with
+respect to both operators L1 and L2 ) are
+(10.22)          {L21 , L22 }, (L1 L2 )2 + (L2 L1 )2 , L1 L22 L1 , L2 L21 L2 .
+It is clear however from the defining relations of the algebra (10.1) and the Casimir
+operator (10.7), that among these four terms only one is linearly independent.
+All other terms can be expressed in terms of total degree three and lower. We
+have chosen the term {L21 , L22 } because of its symmetric form with respect to the
+transposition L1 ⇄ L2 .
+All possible symmetric cubic terms are
+(10.23)                {L21 , L2 }, {L22 , L1 }, L1 L2 L1 , L2 L1 L2 .
+Again, from the relations (10.1) it follows that only two terms among these four
+are independent. We can choose these independent terms as the anticommutators
+{L21 , L2 } and {L22 , L1 }.
+   Finally, there are three possible symmetric terms of total degree 2:
+(10.24)                             {L1 , L2 }, L21 , L22 .
+It follows from the expression (10.7) of the Casimir element that the square of the
+anticommutator {L1 , L2 } is expressible as a linear combination of L21 and L22 . This
+means that we can restrict ourselves to the quadratic terms L21 and L22 .
+   The fact that we have some linear dependence allows one to propose other com-
+muting operators instead of the M given above. One such choice is the polynomial
+          M = 2L2 L21 L2 + (−1)N1 +1 {L2 , L21 } + (−1)N2 +1 {L22 , L1 }
+          (2N2 + 1)(2N2 + 3)/2L22 + (−1)N1 ((2N2 + 1)(2N2 + 3)/2 + 1)L2 −
+(10.25)   (4N12 + 8N1 − 1)/2L21 + (−1)N2 ((4N12 + 8N1 − 1)/2 + 3)L1 .
+This candidate has, once again, a nondegenerate spectrum.
+
+
+                                   11. Conclusions
+   The main results obtained in the present paper are:
+   (i) An algebraic Heun operator can be introduced for any bispectral pair of
+operators L and Z as an operator that generalizes the ordinary Heun operator.
+   (ii) It has been seen that the bilinear Perline’s Ansatz provides a construction
+of the commuting operator M for all entries of the Askey table apart from the
+case of the Bannai-Ito polynomials (which are not usually included into the Askey
+classification).
+   (iii) In a special case of the Bannai-Ito class, namely, for the anti-Krawtchouk
+polynomials, we have shown that certain pentadiagonal operators built from terms
+              ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING                       25
+
+
+of degree no higher than two in the basic operators, provide commuting operators
+for the band-time limiting with simple spectra.
+   (iv) We have indicated that Perline’s operator is a special case of algebraic Heun
+operator. In particular, it was observed that it coincides with the ordinary Heun
+operator (with particular sets of parameters) in the case of the band and time
+limiting of the Jacobi polynomials. This can be seen as an explanation of the
+previously known fact that all commuting operators in the time and band limiting
+procedure are related to the Heun equation or its degenerate forms.
+   As a conjecture we can suggest that all possible commuting operators in the time
+and band limiting scheme can be constructed as a generalization of Perline’s Ansatz.
+This would mean that any such commuting operator (with a simple spectrum)
+would be a symmetric polynomials in two operators L and Z that form a bispectral
+pair. Proving this remains as a challenge.
+
+  Acknowledgments
+   F. Alberto Grünbaum and Alexei Zhedanov are thankful to the Centre de Recher-
+ches Mathématiques (CRM) in Montréal, Canada, for hospitality while this project
+was being pursued. The work of L. Vinet is supported in part by the Natural
+Sciences and Engineering Research Council (NSERC) of Canada. The work of F.A.
+Grünbaum is partially supported by AFOSR, through FA9550-16-1-0175. The three
+authors are thankful to Prof. Satoshi Tsujimoto, Graduate School of Informatics,
+Kyoto University for making it possible to make progress on this paper during a
+visit to Kyoto.
+26            F.ALBERTO GRÜNBAUM, LUC VINET, AND ALEXEI ZHEDANOV
+
+
+                                         References
+ [1] R. Askey and J.A. Wilson, Some basic hypergeometric orthogonal polynomials that generalize
+     Jacobi polynomials. Memoirs of the American Mathematical Society 319, Providence, Rhode
+     Island, 1985.
+ [2] A.Borodin and G.Olshanski, The ASEP and determinantal point processes, arXiv:1608.01564.
+ [3] Castro, M., Grünbaum, F. A., The Darboux process and time-and-band limiting for matrix
+     orthogonal polynomials. Linear Algebra Appl. 487 (2015), 328-341.
+ [4] E. Bannai and T. Ito, Algebraic Combinatorics I: Association Schemes. 1984. Benjamin &
+     Cummings, Mento Park, CA.
+ [5] Duistermaat, J. J. and Grünbaum, F. A., Differential equations in the spectral parameter,
+     Commun. Math. Phys. 103 (1986), 177–240.
+ [6] V. Genest, L. Vinet, Guo-Fu Yu and A.Zhedanov, Supersymmetry of the quantum rotor,
+     arXiv:1607.06967v1.
+ [7] V. Genest, M.E.H. Ismail, L. Vinet, A. Zhedanov Tridiagonalization of the hypergeometric
+     operator and the Racah-Wilson algebra, Proc. Amer. Math. Soc. 144 (2016), 4441–4454,
+     arXiv:1506.07803.
+ [8] F.A.Grünbaum, A new property of reproducing kernels for classical orthogonal polynomials,
+     J.Math.Anal.Appl. 95, (1983), 491-500.
+ [9] F.A. Grünbaum, The limited angle reconstruction problem in computed tomography, Proc.
+     Symp. Applied Math., 27 , AMS, L. Shepp editor, (1982), 43–61.
+[10] F.A.Grünbaum, L.Vinet and A.Zhedanov, Tridiagonalization and the Heun equation,
+     J.Math.Physics 58, 031703 (2017), arXiv:1602.04840.
+[11] Grünbaum F. A., Band-time-band limiting integral operators and commuting differential
+     operators, Algebra i Analiz 8 (1996), 122–126.
+[12] Grünbaum, F. A., Pacharoni I., Zurrian, I., Time and band limiting for matrix valued func-
+     tions: an integral and a commuting differential operator, arXiv:1604.06510, (2016), Inverse
+     Problems, 33 2017.
+[13] Grünbaum F. A., Yakimov M., The prolate spheroidal phenomenon as a consequence of
+     bispectrality. Superintegrability in classical and quantum systems, CRM Proc. Lecture Notes,
+     vol 37, Amer. Math. Soc., Providence, RI, 2004, 301–312.
+[14] M.E.H.Ismail, Classical and Quantum orthogonal polynomials in one variable. Encyclopedia
+     of Mathematics and its Applications (No. 98), Cambridge, 2005.
+[15] M. E. H. Ismail and E. Koelink. Spectral analysis of certain Schrödinger operators. SIGMA,
+     8: 61-79, 2012.
+[16] M. E. H. Ismail and E. Koelink. The J-matrix method. Adv.Appl.Math., 56, 379–395, 2011.
+[17] Katsnelson V., Selfadjoint boundary conditions for the prolate spheroidal differential opera-
+     tor, arXiv:1603.07542, (2016).
+[18] R. Koekoek, P.A. Lesky, and R.F. Swarttouw. Hypergeometric orthogonal polynomials and
+     their q-analogues. Springer, 1-st edition, 2010.
+[19] D.Leonard, Orthogonal Polynomials, Duality and Association Schemes, SIAM J. Math.
+     Anal., 13 (1982), 656-663.
+[20] M. L. Mehta, Random Matrices, 3nd ed., Elsevier Inc. 2004.
+[21] K.Nomura and P.Terwilliger, Linear transformations that are tridiagonal with respect to both
+     eigenbases of a Leonard pair, Lin.Alg.Appl. 420 (2007), 198–207. arXiv:math/0605316.
+[22] Osipov A., Rokhlin V., Xiao H., Prolate spheroidal wave functions of order zero, Mathematical
+     tools for bandlimited approximation, Springer 2014.
+[23] R.K.Perline, Discrete Time-Band Limiting Operators and Commuting Tridiagonal Matrices,
+     SIAM. J. on Algebraic and Discrete Methods, 8(2), 192-195 (1987).
+[24] R.K. Perline, Time-band limiting matrices and Lame’s equation Numerical functional analysis
+     and Optimization, 9 (11-12), pp 1139–1175, (1987-88)
+[25] M.Perlstadt, A Property of Orthogonal Polynomial Families with Polynomial Duals, SIAM
+     J. Math. Anal., 15(5), 1043-1054 (1984).
+[26] A. Ronveaux (Ed.), Heun’s Differential Equations, Oxford University Press, Oxford, 1995.
+[27] O. Roos, Position-dependent effective masses in semiconductor theory, Phys. Rev. B 27
+     (1983), 7547–7552.
+[28] Shannon C., A mathematical theory of communication, Bell Tech. J., vol 27, 1948, 379–423
+     (July) and 623–656 (Oct).
+                ALGEBRAIC HEUN OPERATOR AND BAND-TIME LIMITING                                27
+
+
+[29] F.J. Simons, F. A. Dahlen, Spherical Slepian functions on the polar cap in geodesy Geophys.
+     J. Int., 166, 1039–1062, 2006.
+[30] D. Slepian and H. O. Pollak, Prolate spheroidal wave functions, Fourier Analysis and Un-
+     certainty, I, Bell System Tech. Journal, Vol. 40, No. 1 (1961), 43–64.
+[31] H. J. Landau and H. O. Pollak, Prolate spheroidal wave functions, Fourier Analysis and
+     Uncertainty, II, Bell System Tech. Journal, Vol. 40, No. 1 (1961), 65–84.
+[32] H. J. Landau and H. O. Pollak, Prolate spheroical wave functions, Fourier Analysis and
+     Uncertainty, III, Bell System Tech. Journal, Vol. 41, No. 4 (1962), 1295–1336.
+[33] D. Slepian, Prolate spheroidal wave functions, Fourier Analysis and Uncertainty, IV, Bell
+     System Tech. Journal, Vol. 43, No. 6 (1964), 3009–3058.
+[34] D. Slepian, Prolate spheroidal wave functions, Fourier Analysis and Uncertainty, V, Bell
+     System Tech. Journal, Vol. 57, No. 5 (1978), 1371–1430.
+[35] D. Slepian, Some comments on Fourier analysis, uncertainty and modeling , SIAM Review,
+     vol 25, 3 , July 1983, pp 379–393.
+[36] H.Landau, An overview on time and frequency limiting J.F. Price (editor), Fourier Techniques
+     and Applications, Plenum Press, New York 1985. pp 201–220.
+[37] P.Terwilliger, Two linear transformations each tridiagonal with respect to an eigenbasis of
+     the other, Lin.Alg.Appl. 330 (2001), 149-203.
+[38] S.Tsujimoto, L.Vinet and A.Zhedanov Dunkl shift operators and Bannai-Ito polynomials,
+     Advances in Mathematics 229, (2012), 2123-2158.
+[39] C. A. Tracy and H. Widom, Level spacing distribution and the Airy kernel, Phys. Lett. B
+     305 (1993), 115–118.
+[40] C. A. Tracy and H. Widom, Level spacing distribution and the Bessel kernel, Commun. Math.
+     Phys. 161, (1994) pp 289–309
+[41] G.Walter, Differential operators which commute with characteristic functions with applica-
+     tions to a lucky accident, Complex Variables (1992), 18, 7–12.
+
+
+   Department of Mathematics, University of California, Berkeley CA 94705
+
+   Centre de recherches, mathématiques, Université de Montréal, P.O. Box 6128, Centre-
+ville Station, Montréal (Québec), H3C 3J7
+
+   Department of Mathematics, School of Information, Renmin University of China,
+Beijing 100872,CHINA
+

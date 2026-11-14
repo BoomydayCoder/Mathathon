@@ -3,9 +3,10 @@
 Status: the exact inverse-form identity has passed its [independent audit](rank-one-remainder-isometry-independent-review.md), without
 assuming a selfadjoint differential-operator closure. It applies to the
 original positive measure and every integer denominator D_M. Its specialization
-to M=2h gives a new concrete finite Cauchy-kernel minimization problem for the
-unproved adjacent-Apéry identification. This note does not claim that last
-identification or historical novelty.
+to M=2h gives a concrete finite Cauchy-kernel minimization problem. The
+adjacent-Apéry identification is now independently proved in the accepted
+[Heun–RII bridge](rank-one-original-apery-heun-rii-proof.md); the isometry here
+is a separate result. No historical novelty claim is made.
 
 ## 1. The base Newton isometry
 

@@ -48,3 +48,30 @@ User also authorized three extra-high-level agents through08:00LA. Spawned three
 GPT-6 Astra agents with extra-high reasoning for the original Schur/Apery identity,
 balanced multiple orthogonal polynomial construction, and higher-zeta arithmetic.
 No usage balance is available through the tools.
+
+## Final read-only comparison, 2026-11-14 15:52 UTC
+
+After completing the independent kernel, Schur/Heun/Pell, sampler, and balanced
+arithmetic work, fetched research-claude at668fad0d17b636e4629d24ae15e3136821706de3
+and read research/claude/SUMMARY.md. No HANDOFF.md is listed on that branch.
+No Claude files were checked out or edited. The source summary labels itself
+16:05UTC; this log uses the root clock tool, and does not infer chronology
+from that differing source timestamp.
+
+Claude reports a classical elementary recurrence proof, an exact Hankel
+zeta3 energy constant, an improved application range of a Fauzan local
+valuation bound, and scoped higher-zeta limitations. These remain attributed
+claims here; this final consultation was not an independent audit of those
+new statements. Claude also reports no errors in the older Codex results it
+checked and explicitly says its checks do not yet cover commits after13:55UTC.
+That is not external validation of the later kernel, Schur/Pell or sampler
+proofs, whose independent workspace audits are documented separately.
+
+The summary again notes that our PNT-free arithmetic cost requires a stronger
+real analytic bound than Fauzan's original constant. Our completed assembly
+already uses our separately reviewed stronger analytic certificate; the
+source's description of that bound as unaudited means unaudited by Claude,
+not absence of our recorded independent audits. No source result was silently
+imported into the completed proofs after this consultation. Potential combination
+with Claude's newer local-prime improvement is a future comparison task, with
+parameter compatibility still to be proved.

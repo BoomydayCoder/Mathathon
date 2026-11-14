@@ -1,0 +1,1165 @@
+                                        Available online at www.sciencedirect.com
+
+                                                    ScienceDirect
+
+                                        Indagationes Mathematicae xxx (xxxx) xxx
+                                                                                                           www.elsevier.com/locate/indag
+
+
+
+
+                    Orthogonality of very well-poised series
+             Mourad E.H. Ismaila ,∗,1 , Eric M. Rainsb ,2 , Dennis Stantonc ,3
+      a Department of Mathematics, University of Central Florida, Orlando, FL, 32816, United States of America
+   b Department of Mathematics, California Institute of Technology, Pasadena, CA 91125, United States of America
+          c School of Mathematics, University of Minnesota, Minneapolis, MN 55455, United States of America
+
+
+
+
+                                        Dedicated to Tom Koornwinder on his 80th Birthday
+
+
+
+
+Abstract
+   Rodrigues formulas for very well-poised basic hypergeometric series of any order are given.
+Orthogonality relations are found for rational functions with an arbitrary number of parameters which
+generalize the Askey–Wilson polynomials and Rahman’s 10 φ9 biorthogonal rational functions. A pair
+of orthogonal rational functions of type R I I is identified. Elliptic analogues of some of these results are
+also included.
+© 2024 Published by Elsevier B.V. on behalf of Royal Dutch Mathematical Society (KWG).
+
+
+Keywords: Rodrigues type formula; Biorthogonal rational functions; Rahman functions; Very well-poised series;
+Asymptotics; Elliptic rational functions
+
+
+
+1. Introduction
+   The Askey–Wilson polynomials are classical orthogonal polynomials which depend on five
+parameters. These polynomials lie at the top of the Askey scheme of classical orthogonal
+polynomials, and have an expression as a balanced basic hypergeometric series. An alternative
+representation is given by a very well-poised basic hypergeometric series. Although they
+have been generalized to polynomials in several variables, in one variable, the only known
+  ∗ Corresponding author.
+     E-mail addresses: mourad.eh.ismail@gmail.com (M.E.H. Ismail), rains@caltech.edu (E.M. Rains),
+stanton@math.umn.edu (D. Stanton).
+   1 Research supported by a grant from DSFP program at King Saud University and by the National Plan for Science,
+Technology and Innovation (MAARIFAH), King Abdelaziz City for Science and Technology, Kingdom of Saudi
+Arabia, Award number 14-MAT623-02.
+   2 Research supported by National Science Foundation grant DMS-1001645.
+   3 Research supported by National Science Foundation grant DMS-1148634.
+
+
+https://doi.org/10.1016/j.indag.2024.09.007
+0019-3577/© 2024 Published by Elsevier B.V. on behalf of Royal Dutch Mathematical Society (KWG).
+
+
+
+Please cite this article as: M.E.H. Ismail, E.M. Rains and D. Stanton, Orthogonality of very well-poised series, Indagationes Mathematicae (2024),
+https://doi.org/10.1016/j.indag.2024.09.007.
+M.E.H. Ismail, E.M. Rains and D. Stanton                     Indagationes Mathematicae xxx (xxxx) xxx
+
+basic hypergeometric generalization is to a set of biorthogonal rational functions given by
+Rahman [12], which has six parameters. An elliptic version due to Spiridonov [20] has seven
+parameters.
+   This work started as an attempt to understand the Rahman biorthogonal rational functions,
+where they live, and what is the correct level of generality. Our efforts led to a biorthogonal
+system of very-well poised series with an arbitrary number of parameters. The orthogonality
+relation, Theorem 4.2, contains the Askey–Wilson and Rahman results as special cases. We
+also give an elliptic version of Theorem 4.2 in Theorem 8.9.
+   The key idea is the realization that a general set of very well-poised basic hypergeometric
+series always have Rodrigues formulas. The Rodrigues formula plays an important role in the
+theory of classical orthogonal polynomials [16,22]. By a Rodrigues-type representation of a
+sequence of functions f n (x), we mean representing f n as
+                  cn
+       f n (x) =        T n gn (x), n = 0, 1, . . . ,                                      (1.1)
+                 g0 (x)
+where the cn ’s are constants and T is a linear operator which does not depend on n.
+   In [10] it is shown that Watson’s transformation of a balanced terminating 4 φ3 to a very well-
+poised 8 φ7 is the Rodrigues formula for the Askey–Wilson polynomials. This transformation
+gives two possible expressions of the Askey–Wilson polynomials. This motivated us to explore
+Rodrigues type formulas for the 10 φ9 biorthogonal rational functions Rn and Sn of [12], and
+consider orthogonality relations for higher order very well-poised series.
+   In Theorem 3.4 we give a Rodrigues formula of the type (1.1) for a 2m+8 W2m+7 function
+(see Definition 3.3) which generalizes Rahman’s rational functions Rn and Sn . We then provide
+a general orthogonality relation for a 2m+8 W2m+7 , Theorem 4.2, which generalizes Rahman’s
+biorthogonality relation. A polynomial orthogonality for a 10 W9 is given in Theorem 6.5. Our
+analysis is completely analogous to polynomials orthogonal with respect to varying weights.
+There is extensive literature in this area, a sample of which is in [18].
+   Rahman and Suslov [14] have a Rodrigues type formula for a 10 φ9 function, but their
+formulas do not resemble the classical Rodrigues formula. Indeed instead of T n the Rahman–
+Suslov formulas involve Tn Tn−1 · · · T1 , where T j is linear but depends on j. In [9] Ismail and
+Rahman gave a three term recurrence relation of type R I I for the Rahman functions.
+   The paper is organized as follows. After preliminary material is introduced in §2, in §3
+we define the rational functions and give the Rodrigues formula. The orthogonality relation is
+established in §4. The polynomial behaviour of our rational functions is determined in §5. The
+special case of 10 φ9 ’s is considered in §6, where Rahman’s biorthogonality results are reproven.
+Asymptotics are given in §7. The elliptic generalizations of our main results are given in §8.
+Section 9 establishes a three term recurrence relation for a system of polynomials {Un (x; t)}
+we introduce in §6.
+   The recurrence relations for the biorthogonal rational functions in this work are of the
+type R I I and are associated with R I I continued fractions introduced by Ismail and Masson
+in [8]. Zhedanov [23] pointed out that they arise in a generalized eigenvalue problem and the
+biorthogonality is between solutions to adjoint generalized eigenvalue problems.
+
+2. Preliminaries
+   We shall use the notation and terminology in [1,6], and [7] for basic hypergeometric series.
+In this section we collect the results to be used in the rest of the paper.
+                                                2
+M.E.H. Ismail, E.M. Rains and D. Stanton                                    Indagationes Mathematicae xxx (xxxx) xxx
+
+   We shall use the inner product associated with the Chebyshev weight (1−x 2 )−1/2 on (−1, 1),
+namely
+                 ∫ 1
+                                   dx
+      ⟨ f, g⟩ :=     f (x) g(x) √        .
+                  −1              1 − x2
+   The operator we iterate for the Rodrigues formulas is the Askey–Wilson operator Dq ,
+(see [7])
+                           f˘(q 1/2 z) − f˘(q −1/2 z)
+      (Dq f )(x) = 2
+                         (q 1/2 − q −1/2 )(z − 1/z)
+where x = (z + 1/z)/2 = cos θ, f (x) = f˘(z), z = eiθ . It must be noted that x = (z + 1/z)/2
+makes z and 1/z interchangeable. However to specify which branch of the Riemann surface
+we assume that |z| ≥ |1/z|. Indeed |z| = |1/z| if and only if x ∈ [−1, 1], in which case we
+put x = cos θ for a unique θ ∈ [0, π] and z = eiθ . The operator Dq was
+                                                                      ⏐ first introduced
+                                                                                ⏐         in [2].
+   Observe that the definition of Dq requires f˘(z) to be defined for ⏐q ±1/2 z ⏐ = 1 as well as
+for |z| = 1. In particular Dq is well-defined on H1/2 , where
+       Hν := f : f ((z + 1/z)/2) is analytic for q ν ≤ |z| ≤ q −ν .
+              {                                                  }
+
+  The key fact of Cooper [4, Prop. 1q] which we shall use is that the nth iterate of the
+Askey–Wilson operator may be expanded via very well-poised series.
+
+Proposition 2.1.        The nth iterate of the Askey–Wilson operator Dq satisfies
+
+                             (−2/z)n q 2 (2)
+                                         1 n           n
+                                                      ∑  (q −n , z 2 q −n ; q)k 1 − z 2 q −n+2k nk ˘ (2k−n)/2
+      Dqn f (x) =                                                                              q f (q         z).
+                      (q 1/2 − q −1/2 )n (1/z 2 ; q)n k=0 (qz 2 , q; q)k          1 − z 2 q −n
+   The right side of Proposition 2.1 is invariant under z → 1/z, this is reversing the finite
+series.
+
+3. Rodrigues formulas and very well-poised series
+
+   In this section we give in Theorem 3.4 a Rodrigues formula for the general very well-poised
+basic hypergeometric series
+
+      2m+8 W2m+7 (q        z ; q −n , a1 z, · · · , am+4 z, q 1−n z/b1 , . . . , q 1−n z/bm ; q, Z 1 ),
+                        −n 2
+
+
+where
+        Z 1 = q 2−n b1 · · · bm /a1 · · · am+4 .
+   The first application of Proposition 2.1 uses
+                        m
+                        ∏ (bi z, bi /z; q)∞
+        f˘(z; a, b) =                             ,
+                        i=1
+                              (ai z, ai /z; q)∞
+where a = (a1 , . . . , am ) and b = (b1 , . . . , bm ). Note that
+                                                        m
+                                                        ∏ (ai z; q)k (ai /z; q)n−k
+        f˘(q k−n/2 z; q n/2 a, q n/2 b) = f˘(z; a, b)                                    .
+                                                        i=1
+                                                              (bi z; q)k (bi /z; q)n−k
+                                                              3
+M.E.H. Ismail, E.M. Rains and D. Stanton                                    Indagationes Mathematicae xxx (xxxx) xxx
+
+Proposition 3.1.        The functions
+                               (−2/z)n q 2 (2)
+                                           1 n           m
+                                                        ∏   (ai /z; q)n
+       rn (x; a, b) =
+                        (q 1/2 − q −1/2 )n (1/z 2 ; q)n i=1 (bi /z; q)n
+                     × 2m+4 W2m+3 (q −n z 2 ; q −n , a1 z, . . . , am z, q 1−n z/b1 , . . . , q 1−n z/bm ; q, Z 2 ),
+where
+               b1 . . . bm n
+        Z2 =                q
+               a1 . . . am
+satisfy the Rodrigues formula
+                               1
+       rn (x; a, b) =                 Dqn ( f˘(z; q n/2 a, q n/2 b)).
+                           ˘
+                          f (z; a, b)
+
+Proof. First we use Proposition 2.1
+                                            (−2/z)n q 2 (2)
+                                                       1 n
+
+       Dqn ( f˘(z; q n/2 a,q n/2 b)) =
+                                    (q 1/2 − q −1/2 )n (1/z 2 ; q)n
+                           n
+                          ∑   (q , z q ; q)k 1 − z 2 q −n+2k nk ˘ k−n/2 n/2
+                                −n 2 −n
+                        ×           2 , q; q)             2 q −n
+                                                                  q f (zq ; q a, q n/2 b).
+                          k=0
+                                (qz           k   1  −  z
+This is
+                                       (−2/z)n q 2 (2)
+                                                  1 n
+
+       Dqn ( f˘(z; q n/2 a, q n/2 b)) =
+                               (q 1/2 − q −1/2 )n (1/z 2 ; q)n
+             n
+            ∑ (q , z q ; q)k 1 − z 2 q −n+2k        m
+                −n   2 −n
+                                               nk
+                                                   ∏   (ai z; q)k (ai /z; q)n−k ˘
+          ×                                  q                                  f (z; a, b),
+            k=0
+                (qz , q; q)k
+                   2           1−z q  2  −n
+                                                   i=1
+                                                       (bi z; q)k (bi /z; q)n−k
+which, when rewritten as a basic hypergeometric series, is what we need to prove,
+     Dqn ( f˘(z; q n/2 a, q n/2 b)) = f˘(z; a, b)rn (x; a, b). □
+   The next application of Proposition 2.1 incorporates an Askey–Wilson weight into ğ.
+
+Definition 3.2. Let
+                      2i(z 2 , q/z 2 ; q)∞ i=1  (bi z, bi /z; q)∞
+                                          ∏m
+      ğ(z; a, b) =                                               ,
+                                z i=1 (ai z, ai /z; q)∞
+                                 ∏m+4
+
+where a = (a1 , . . . , am+4 ) and b = (b1 , . . . , bm ).
+  Note thatp ğ(z; a, b) involves theta products, θ (a) :=   (a, q/a; q)∞ , which satisfy θ (aq p ) =
+(−a)− p q ( 2 ) θ (a), for all p ∈ Z, see Section 8. Here 2 = p( p − 1)/2 for all p ∈ Z.
+         −                                                 p
+                                                         (   )
+  Observe that
+                                                     ∏m+4
+                                                             (ai z; q)k (ai /z; q)n−k 2n−4k
+                                                                                            (−1)n q −( 2 ) q n/2−k .
+                                                                                                      2k−n
+        ğ(q k−n/2 z; q n/2 a, q n/2 b) = ğ(z; a, b) ∏i=1
+                                                        m                            z
+                                                        i=1 (bi z; q)k (bi /z; q)n−k
+
+Definition 3.3.      For a non-negative integer n define
+                            (2z)n q − 2 ( 2 )
+                                      1 n+1
+                                                               (ai /z; q)n
+                                                      ∏m+4
+        pn (x; a, b) = 1/2                            ∏i=1
+                       (q − q −1/2 )n (1/z 2 ; q)n i=1   m
+                                                              (bi /z; q)n
+                     × 2m+8 W2m+7 (q −n z 2 ; q −n , a1 z, . . . , am+4 z, q 1−n z/b1 , . . . , q 1−n z/bm ; q, Z 1 ),
+                                                             4
+M.E.H. Ismail, E.M. Rains and D. Stanton                                    Indagationes Mathematicae xxx (xxxx) xxx
+
+where
+                b1 . . . bm 2−n
+        Z1 =                 q .
+               a1 . . . am+4
+  The next result for m = 0 generalizes the                       8 W7   version of the Rodrigues formula for
+Askey–Wilson polynomials, see [10].
+
+Theorem 3.4.        The functions pn (x; a, b) satisfy the Rodrigues formula
+                              1
+        pn (x; a, b) =              Dn (ğ(z; q n/2 a, q n/2 b)).
+                         ğ(z; a, b) q
+
+Proof. We follow the proof of Proposition 3.1 with ğ replacing f˘. The above functional
+equation for ğ inserts the factors
+                                         m+4
+      z 2n−4k (−1)n q −( 2 ) q n/2−k
+                          2k−n           ∏
+                                                (ai z; q)k (ai /z; q)n−k
+                                        i=m+1
+
+into the k-sum of the proof of Proposition 3.1. Using
+        m+4                                 m+4
+        ∏                                   ∏                        (ai z; q)k          1
+               (ai z; q)k (ai /z; q)n−k =           (ai /z; q)n
+      i=m+1                                 i=m+1
+                                                                  (q z/ai ; q)k a (−z)−k q (n−1)k−(k2)
+                                                                    1−n          k
+                                                                                 i
+
+we do obtain Theorem 3.4 because the exponents of q are
+       ( )         (       )                ( )
+     1 n            2k − n                    k
+            + nk −           − 4(n − 1)k + 4      + n/2 − k
+     2 2               2                      2
+                                 (      )                                          □
+                               1 n+1
+                          =−              + (2 − n)k.
+                               2     2
+   It must be noted that ğ(z; a, b) is not symmetric in z → 1/z but is antisymmetric. Moreover
+if h(z) satisfies h(1/z) = −h(z) the so does the quotient
+        h(q 1/2 z) − h(q −1/2 z)
+                                 .
+                z − 1/z
+and its iterates. This implies that the functions pn (x; a, b) are symmetric in z and 1/z, hence
+they are functions of x.
+
+
+
+4. Orthogonality of very-well poised series
+
+   In this section we use Theorem 3.4 and q-integration by parts to give an orthogonality
+relation for pn (x; a, b) in Theorem 4.2. When m = 0 Theorem 4.2 is the orthogonality relation
+for Askey–Wilson polynomials.
+   To derive orthogonality from a Rodrigues formula we need an appropriate integration by
+parts formula. Brown, Evans and Ismail proved the following analogue of q-integration by
+parts in [3, (1.12)].
+                                                           5
+M.E.H. Ismail, E.M. Rains and D. Stanton                                  Indagationes Mathematicae xxx (xxxx) xxx
+
+Theorem 4.1.    The Askey–Wilson operator Dq satisfies
+                    √ [ (
+                  π q
+                                             )         (               )  ]
+                            1 ( 1/2                         1(
+                               q + q −1/2 g(1) − f − q 1/2 + q −1/2 g(−1)
+                                           )                         )
+      ⟨Dq f, g⟩ =        f
+                  1−q       2                               2
+                                √           (             )−1/2 )
+                         − < f, 1 − x 2 Dq g(x) 1 − x   2
+                                                                  >,
+                                                  (
+
+for f , g ∈ H1/2 .
+
+   Let
+                ∞
+                ∏
+      h(x, a) =   (1 − 2axq k + a 2 q 2k ) = (aeiθ , ae−iθ ; q)∞ ,              x = cos θ,
+                  k=0
+
+and
+                                ∏m
+                  h(2x 2 − 1, 1) i=1  h(x, bi )
+      w(x; a, b) = √            ∏ m+4
+                                                .
+                      1 − x2     i=1 h(x, ai )
+
+If m = 0, w(x; a, ∅) is the Askey–Wilson weight function.
+
+Theorem 4.2. Assume that |a j | < 1, 1 ≤ j ≤ m + 4, the a j ’s are real or appear in conjugate
+pairs. Then for any polynomial π (x) of degree at most n − 1,
+      ∫ 1
+          pn (x, a, b)π (x)w(x; a, b)d x = 0.
+         −1
+
+
+Proof. Note that w(x; a, b) = ğ(z; a, b). We first assume that |a j q −n/2 | < 1 for 1 ≤ j ≤ m +4.
+Use Theorems 3.4 and 4.1 n times. Each boundary √       term in the formula for q-integration by
+parts is 0 because of the presence of the factor 1 − x 2 . The action of Dq on products of factors
+of the type 1/ h(x, a) produces products of factors of the type 1/ h(x, q −1/2 a). The analyticity
+assumptions in Theorem 4.1 are satisfied since ğ(z; a, b) = 0 if z = q j/2 for any integer j. The
+restriction |a j q −n/2 | < 1 can be removed by analytic continuation since 1/ h(x, a) is analytic
+in a in the open unit disc and for all x ∈ [−1, 1]. □
+
+
+5. Polynomial nature of pn (x; a, b)
+
+   From Definition 3.3 it would appear that
+                        m
+                        ∏
+      qn (x; a, b) :=         (b j z, b j /z; q)n pn (x; a, b)
+                        j=1
+
+has poles at the zeros of (1/z 2 ; q)n . However these singularities are removable. The main result
+of this section is Corollary 5.7 which establishes the polynomial character of qn (x; a, b).
+   We shall use the Rodrigues formula to give an inductive proof of this fact. First we
+reformulate the Rodrigues formula as a recursive procedure.
+
+Proposition 5.1.       For any positive integer n we have
+                               1
+      qn (x; a, b) =                    Dq (ğ(z; q 1/2 a, q n−1/2 b)qn−1 (x; q 1/2 a, q 1/2 b)).
+                        ğ(z; a, q n b)
+                                                           6
+M.E.H. Ismail, E.M. Rains and D. Stanton                            Indagationes Mathematicae xxx (xxxx) xxx
+
+Proof. The case n = 1 is the case n = 1 of Theorem 3.4. The inductive step follows from
+                             1
+                                    Dqn+1 ğ(z; q (n+1)/2 a, q (n+1)/2 b)
+                                           [                                ]
+      pn+1 (x; a, b) =
+                        ğ(z; a, b)
+             1
+                    Dq ğ(z; q 1/2 a, q 1/2 b) pn (x; q 1/2 a, q 1/2 b)
+                       [                                                ]
+     =
+        ğ(z; a, b)
+             1
+                    Dq ğ(z; q 1/2 a, q n+1/2 b)qn (x; q 1/2 a, q 1/2 b) .
+                       [                                                  ]
+     =
+        ğ(z; a, b)
+Multiplying both sides by mj=1 (b j z, b j /z; q)n+1 gives the desired result for n + 1. □
+                             ∏
+
+   In Theorems 5.3 and 5.6 we find the leading term of qn (x; a, b) and the next lemma enables
+us to do this.
+   We denote the coefficient of z m in a Laurent polynomial c(z) by [z m ]c(z).
+
+Lemma 5.2. Let c(z) be a Laurent polynomial with degrees bounded between −m − 2 and
+m + 2, and let f˘(z) be a symmetric Laurent polynomial of degree k. Then
+       c(z) f˘(q 1/2 z) − c(1/z) f˘(q −1/2 z)
+                       z − 1/z
+is a symmetric Laurent polynomial of degree m + 1 + k, with leading coefficient
+      (q k/2 [z m+2 ]c(z) − q −k/2 [z −m−2 ]c(z))[z k ] f˘(z).
+
+Proof. The poles at z = 1 and z = −1 are cancelled by zeros of the numerator (since
+ f˘(±q 1/2 ) = f˘(±q −1/2 ) by the symmetry of f˘), and thus the result is a Laurent polynomial,
+the symmetry of which follows from the symmetry of f˘. The claim about the leading coefficient
+follows by dividing by z m+1+k and taking the limit z → ∞. □
+
+Theorem 5.3. For any a, b, qn (x; a, b) is a polynomial in x of degree at most (m + 1)n. The
+inequality on the degree is strict if and only if
+      b1 · · · bm = q n−1+s a1 · · · am+4 ,
+for some 0 ≤ s ≤ n − 1.
+
+Proof. First it is useful to note that
+               ğ(zq 1/2 ; aq 1/2 , bq n−1/2 )
+      c(z) =                                   ,
+                       ğ(z; a, bq n )
+implies that
+                  ğ(zq −1/2 ; aq 1/2 , bq n−1/2 )
+      c(1/z) =                                     .
+                          ğ(z; a, bq n )
+A straightforward induction using Proposition 5.1 and Lemma 5.2 with
+                        m                    m+4
+                 q −1/2 ∏                    ∏
+      c(z) = −             (1 − bi q n−1
+                                         /z)     (1 − a j z),
+                   z 2 i=1                   j=1
+
+       f˘(z) = qn−1 (x; q 1/2 a, q 1/2 b),         k = (n − 1)(m + 1)
+                                                        7
+M.E.H. Ismail, E.M. Rains and D. Stanton                                         Indagationes Mathematicae xxx (xxxx) xxx
+
+shows that qn (x; a, b) has degree ≤ (m + 1)n, with leading coefficient
+                              n−1
+        2n (−1)n(m−1) m (n) ∏
+                          q 2     (a1 · · · am+4 q n−1+s − b1 · · · bm ),
+       (q 1/2 − q −1/2 )n     s=0
+
+and the result follows. □
+   If one experiments with the special cases when the degree bound is not attained, one finds
+that for otherwise generic parameters such that
+      b1 · · · bm = q n−1+s a1 · · · am+4
+for some 0 ≤ s ≤ n − 1, qn (x; a, b) has degree nm + s. Unfortunately, the above inductive
+argument does not suffice to give this stronger bound, though it does allow one to reduce to the
+case s = 0. To resolve this case, we need a stronger version of Proposition 5.1. This requires
+an operator identity satisfied by the Askey–Wilson operator, which we now state.
+
+Lemma 5.4.       Let
+      φ̆n (z; a) = (az, a/z; q)n .
+For any parameter v, the Askey–Wilson operator satisfies the operator identity in x
+                           1                                                      1
+      Dql+m =                          Dql φ̆l+m (z; q −(l+m)/2 v)Dqm                       .
+                 φ̆m   (z; q −m/2 v)                                    φ̆l (z; q −l/2 v)
+
+Proof. We verify that both sides give the same result when applied to φ̆s (z; q −l/2 v). We use
+                        2a(1 − q n )                                    1             2a(1 − q n )     1
+      Dq φ̆n (z; a) =                φ̆n−1 (z; aq 1/2 ),       Dq                =                                ,
+                          q −1                                      φ̆n (z; a)          1 − q φ̆n+1 (z; aq −1/2 )
+and
+      φ̆l (z; q −l/2 v)φ̆s (z; q l/2 v) = φ̆s+l (z; q −l/2 v),
+        φ̆l+m (z; q −(l+m)/2 v)                   1
+                                     =
+      φ̆l+m+s (z; q   −(l+m)/2  v)      φ̆s (z; q (l+m)/2 v)
+      φ̆s+l (z; q v)φ̆m (z; q
+                  m/2               −m/2
+                                         v) = φ̆s+l+m (z; q −m/2 v).
+After treating the cases s ≥ l and s < l separately one completes the proof.                          □
+
+Remark 5.5. Apply Lemma 5.4 to a function f . Comparing coefficients of f (q j−(l+m)/2 ) on
+both sides of Proposition 2.1 gives a special case of Jackson’s 8 φ7 summation, [6, (II.22)].
+  This allows us to prove the following result, from which the claim about qn (x; a, b) follows
+immediately.
+
+Theorem 5.6.       Let f (z) be a symmetric Laurent polynomial of degree k, and define
+                                1
+      h n (z; a, b) =                   Dn (ğ(z; q n/2 a, q n/2 b) f (z)).
+                         ğ(z; a, q n b) q
+Then h n (z; a, b) is a symmetric Laurent polynomial of degree at most (m + 1)n + k. Moreover,
+if for some s with 0 ≤ s ≤ n − 1,
+                                                           8
+M.E.H. Ismail, E.M. Rains and D. Stanton                                          Indagationes Mathematicae xxx (xxxx) xxx
+
+
+       b1 b2 · · · bm = q n−1+s+k a1 a2 · · · am+4 .
+then h n (z; a, b) has degree at most mn + s + k.
+
+Proof. If s ̸= 0, the claim follows by the argument of the previous induction. Proposition 5.1
+holds with qn (x; a, b) replaced by h n (z; a, b). Thus the leading term of h n (z; a, b) is a nonzero
+multiple of a1 · · · am+4 q n+1 − b1 · · · bm times the leading term of h n−1 (z; q 1/2 a, q 1/2 b). If a and
+b satisfy the hypothesized restriction with parameters n and s, then q 1/2 a and q 1/2 b satisfy the
+same relation with parameters n − 1 and s − 1. Thus by induction h n−1 (z; q 1/2 a, q 1/2 b) has
+degree at most m(n − 1) + s − 1 + k. Lemma 5.2 implies h n (z; a, b) has degree at most
+       m(n − 1) + s − 1 + k + m + 1 = mn + s + k.
+   It remains only to establish the s = 0 case, namely to show that if
+       b1 b2 · · · bm = q n−1+k a1 a2 · · · am+4 ,
+then h n (z; a, b) has degree at most mn + k.
+   We shall use Lemma 5.4 to derive another recurrence for h n (z; a, b)
+                                                        1
+                        h n+1 (z; a, b) =
+                                           ğ(z; (q a1 , a′ ), q n+1 b)
+                                                   n
+                                                                                                                            (5.1)
+      ×Dq (ğ(z; (q  n+1/2
+                           a1 , q a ), q
+                                 1/2 ′    n+1/2
+                                                b)h n (z; (q −1/2 a1 , q 1/2 a′ ), q 1/2 b)),
+where a = (a1 , a′ ) = (a1 , a2 , . . . , am+4 ). It must be noted that (5.1) is a raising operator relation
+for h n .
+   To prove (5.1) apply Lemma 5.4 with (l, m) = (1, n) and v = q n/2 a1 to give the operator
+identity
+               1
+                        Dn+1 ğ(z; q n/2+1/2 a, q n/2+1/2 b)
+       ğ(z; a, q n+1 b) q
+                           (                                                                                )
+                                           1
+                        =                                 D  q ğ(z; (q n+1/2
+                                                                               a 1 , q 1/2
+                                                                                           a), q n+1/2
+                                                                                                         b)
+                             ğ(z; (q n a1 , a), q n+1 b)
+                           (                                                                                                   )
+                                                 1
+                                                                       D n
+                                                                           ğ(z;  (q n/2−1/2
+                                                                                               a 1 , q n/2+1/2
+                                                                                                               a), q n/2+1/2
+                                                                                                                             b)  .
+                             ğ(z; (q −1/2 a1 , q 1/2 a), q n+1/2 b) q
+   Suppose by induction that h n (z; A, B) has degree mn + k whenever
+       B1 B2 · · · Bm = q n−1+k A1 A2 · · · Am+4 .
+Suppose that
+       b1 b2 · · · bm = q n−1+k a1 a2 · · · am+4 .
+holds. We must show that h n+1 (z; a, b) has degree at most m(n + 1) + k.
+   We now use Lemma 5.2 with
+                                 m+4            m
+              q −1/2             ∏             ∏
+      c(z) = − 2 (1 − a1 q n z)      (1 − ai z) (1 − b j q n /z)
+                z                i=2           j=1
+
+        f˘(z) = h n (z; (q −1/2 a1 , q 1/2 a′ ), q 1/2 b)
+to conclude that h n+1 (z; a, b) has degree at most m+1 more than h n (z; (q −1/2 a1 , q 1/2 a′ ), q 1/2 b).
+Moreover the leading term of h n+1 (z; a, b) is a multiple of b1 . . . bm − q n+k a1 · · · am+4 , which
+is zero. So the degree of h n+1 (z; a, b) is at most m more than h n (z; (q −1/2 a1 , q 1/2 a′ ), q 1/2 b).
+                                                                9
+M.E.H. Ismail, E.M. Rains and D. Stanton                                                  Indagationes Mathematicae xxx (xxxx) xxx
+
+We see that (A, B) = ((q −1/2 a1 , q 1/2 a′ ), q 1/2 b) satisfies the hypothesized relation for n. So by
+induction the degree of h n (z; (q −1/2 a1 , q 1/2 a′ ), q 1/2 b) is at most mn + k, and the degree of
+h n+1 (z; a, b) has degree at most mn + k + m = m(n + 1) + k. □
+
+Corollary 5.7. If b1 b2 · · · bm = q n−1+s a1 a2 · · · am+4 for some s, 0 ≤ s ≤ n−1, then qn (x; a, b)
+is a polynomial in x of degree at most mn + s.
+
+
+6. Rahman’s biorthogonal 10 φ9 ’s
+
+     In this section we derive Rodrigues formulas and the biorthogonality relation [12, §3] for
+Rahman’s very-well poised 10 φ9 ’s from Theorems 3.4 and 4.2. We also give a polynomial
+orthogonality in Theorem 6.5.
+     Rahman’s [12] biorthogonal rational functions which depend upon five parameters t =
+(t1 , t2 , t3 , t4 , t5 ). The functions are denoted by Rn and Sn and given by
+       Rn (x; t | q) = 10 W9 (t12 t2 t3 t4 t5 /q; t1 t3 t4 t5 , t1 t2 t4 t5 , t1 t2 t3 t5 , t1 z, t1 /z, t1 t2 t3 t4 q n−1 , q −n ; q; q),
+       Sn (x; t | q) = 10 W9 (t1 /t5 ; q/t2 t5 , q/t3 t5 , q/t4 t5 , t1 z, t1 /z, t1 t2 t3 t4 q n−1 , q −n ; q; q).
+   First we rewrite Rahman’s functions as another                                10 W9 function, our             pn (x; a, b). Bailey’s
+10 φ9 transformation [6, (III.28)] is
+
+                A, q A1/2 , −q A1/2 , B, C, D, E, F, λAq n+1 /E F, q −n ⏐⏐
+                  (                                                                  ⏐      )
+          10 φ9                                                                        q, q
+                A1/2 , −A1/2 , q A/B, q A/C, q A/D, q A/E, q A/F, E Fq −n /λ, Aq n+1 ⏐
+                                     (q A, q A/E F, qλ/E, qλ/F; q)n
+                                   =
+                                     (q A/E, q A/F, qλ/E F, qλ; q)n
+               λ, qλ1/2 , −qλ1/2 , λB/A, λC/A, λD/A, E, F, λAq n+1 /E F, q −n ⏐⏐
+             (                                                                         ⏐      )
+      ×10 φ9                                                                             q, q   ,
+                 λ1/2 , −λ1/2 , q A/B, q A/C, q A/D, qλ/E, qλ/F, E Fq −n /A, λq n+1 ⏐
+                                                                                                                                         (6.1)
+where λ = q A2 /BC D.
+
+Proposition 6.1.           The Rahman functions are given by
+       Rn (x; t | q) =cn pn (x; a, b1 ), a = (t1 , t2 , t3 , t4 , t5 q 1−n ), b1 = t1 t2 t3 t4 t5 = T,
+                         q − 1 n 1 (n)
+                       (        )
+                                                           (t1 T ; q)n
+                  cn =              q2 2                                               tn
+                           2                (t1 t2 , t1 t3 , t1 t4 , q 1−n t1 t5 ; q)n 1
+       Sn (x; t | q) =dn (x) pn (x; a, b1 ), a = (t1 , t2 , t3 , t4 , t5 q −n ), b1 = t1 t2 t3 t4 t5 /q = T /q,
+                         q − 1 n 1 (n) (T z/q, T /qz; q)n                             (q −n t5 /t1 ; q)n
+                       (        )
+              dn (x) =              q 2 2 −n                                                             tn.
+                           2               (q zt5 , q −n t5 /z; q)n (t1 t2 , t1 t3 , t1 t4 , T /qt1 ; q)n 1
+
+Proof. Both assertions follow from two applications of (6.1).
+  It must be noted that one of the parameters in a in Proposition 6.1 depends on n.
+  For Rn use A = t12 t2 t3 t4 t5 /q, B = t1 /z, C = t1 t3 t4 t5 , D = t1 t2 t3 t5 followed by A = t1 t2 t4 z/q,
+B = q n−1 t1 t2 t3 t4 , C = 1/t3 t5 , D = t1 t2 t4 t5 .
+  For Sn use A = t1 /t5 , B = t1 /z, C = q/t2 t5 , D = q/t3 t5 followed by A = t1 t2 t3 z/q,
+B = q/t4 t5 , C = q n−1 /t1 t2 t3 t4 , D = t1 t2 t3 t5 /q. □
+
+   Thus we have Rodrigues formulas for the Rahman functions.
+                                                                     10
+M.E.H. Ismail, E.M. Rains and D. Stanton                                    Indagationes Mathematicae xxx (xxxx) xxx
+
+Theorem 6.2.        The Rahman functions have the Rodrigues formulas
+                                  1
+       cn−1 Rn (x; t | q) =                  Dn (ğ(z; q n/2 a, q n/2 b1 )),
+                            ğ(z; a, b1 ) q
+                        a =(t1 , t2 , t3 , t4 , t5 q 1−n ), b1 = t1 t2 t3 t4 t5
+                                       1
+       dn−1 (x)Sn (x; t | q) =                    Dn (ğ(z; q n/2 a, q n/2 b1 )),
+                                ğ(z; a, b1 ) q
+                           a =(t1 , t2 , t3 , t4 , t5 q −n ), b1 = t1 t2 t3 t4 t5 /q
+   We next show that Rahman’s biorthogonality follows from Theorem 4.2.
+
+Theorem 6.3. If n ̸= m, T = t1 t2 t3 t4 t5 , then
+     ∫ 1
+         w(x; (t1 , t2 , t3 , t4 , t5 ), T )Rn (x; t | q)Sm (x; t | q)d x = 0,
+        −1
+
+holds for |t j | < 1, 1 ≤ j < 5, and max{|t5 q −m |, |t5 q −n |} < 1.
+
+Proof. First assume that n > m. Then from Theorem 4.2 and Proposition 6.1 we have
+         ∫ 1
+     0=       w(x; (t1 , t2 , t3 , t4 , t5 q 1−n ), T )Rn (x; t | q)π (x)d x
+           −1
+                                                                            π (x)
+         ∫ 1
+       =      w(x; (t1 , t2 , t3 , t4 , t5 ), T )Rn (x; t | q) 1−n            1−n t /z; q)
+                                                                                               dx
+           −1                                                  (q    t 5 z, q      5       n−1
+for any polynomial π(x) of degree at most n − 1. By Corollary 5.7 with m = 1 and s = 0, we
+can choose π(x) to be a multiple of
+       pm (x; (t1 , t2 , t3 , t4 , q −m t5 ), T /q)(T z/q, T /qz; q)m (q 1−n t5 z, q 1−n t5 /z; q)n−1−m
+which by Proposition 6.1 is a multiple of
+       Sm (x; t | q)(q 1−n t5 z, q 1−n t5 /z; q)n−1 .
+   Next suppose that n < m. From Theorem 4.2 and Proposition 6.1 we have
+                                                                       (q −m zt5 , q −m t5 /z; q)m
+          ∫ 1
+     0=       w(x; (t1 , t2 , t3 , t4 , t5 q −m ), T /q)Sm (x; t | q)                              π (x)d x
+           −1                                                             (T z/q, T /qz; q)m
+                                                                     π (x)
+          ∫ 1
+       =      w(x; (t1 , t2 , t3 , t4 , t5 ), T )Sm (x; t | q)                      dx
+           −1                                                  (T z, T /z; q)m−1
+for any polynomial π (x) of degree at most m − 1. This time use Corollary 5.7 with m = 1 and
+s = 0, and choose π (x) to be a multiple of
+       pn (x; (t1 , t2 , t3 , t4 , q 1−n t5 ), T )(T z, T /z; q)n (T zq n , T q n /z; q)m−1−n
+which by Proposition 6.1 is a multiple of
+       Rn (x; t | q)(T z, T /z; q)m−1 ,
+and the proof is complete.          □
+   Rahman [13] gave the orthogonality relation when the parameters are not necessarily small,
+and in general the orthogonality relation has a discrete part. One can derive such a relation
+using contour integration instead of integration on [−1, 1].
+                                                           11
+M.E.H. Ismail, E.M. Rains and D. Stanton                                    Indagationes Mathematicae xxx (xxxx) xxx
+
+   One may ask for a polynomial orthogonality relation for a                           10 W9 . We provide one for
+polynomials in x of degree n (see Theorem 6.5).
+
+Definition 6.4.     Let
+                                           5
+                           (T zq n−1 ; q)n ∏
+      Un (x; t | q) =z n                     (ti /z; q)n
+                            (1/z 2 ; q)n i=1
+                     ×10 W9 (q −n z 2 ; t1 z, t2 z, t3 z, t4 z, t5 z, zq 2−2n /T, q −n ; q; q)
+   Note that Definition 6.4 is equivalent to
+      Un (x; t | q) = αn pn (x; t, q n−1 T )(T zq n−1 , T q n−1 /z; q)n ,            T = t1 t2 t3 t4 t5 ,
+where αn is a non-zero constant. Thus Corollary 5.7 with m = 1 and s = 0 shows that
+Un (x; t | q) is a polynomial in x of degree n.
+
+Theorem 6.5. Assume that |t j | < 1, 1 ≤ j ≤ 5, the t j ’s are real or appear in conjugate
+pairs. Then the polynomials Un (x; t | q) of degree n satisfy the orthogonality relation
+                                              w(x; t, T )
+      ∫ 1
+           Un (x; t | q)Um (x; t | q) ∏2n−2                     d x = 0, n > m.
+                                                       k  2 2k
+        −1                             k=0 (1 − 2T xq + T q )
+
+
+Proof. This follows directly from Theorem 4.2 using
+                                w(x; t, T )                                                 Un (x; t | q)
+      w(x; t, T q n−1 ) =                      ,          αn pn (x; t, q n−1 T ) =                               .
+                             (T z, T /z; q)n−1                                       (T q n−1 z, T q n−1 /z; q)n
+This completes the proof. □
+  The polynomials Un are symmetric in the parameters ti . If t5 = 0 (and thus T = 0)
+Theorem 6.5 is the orthogonality relation for Askey–Wilson polynomials. We note that t5 = 0
+does give the Askey–Wilson polynomials with the symmetric normalization
+      Un (x; (t1 , t2 , t3 , t4 , 0), 0) = pn (x; t|q).
+   A three-term relation for Un , generalizing the Askey–Wilson three-term recurrence, is given
+in §9.
+
+7. Asymptotics
+   In this section we give in Theorem 7.2 the large n asymptotics of the polynomials
+Un (x; t, T ). Although these polynomials are not, strictly speaking, orthogonal polynomials, we
+show that orthogonal polynomial techniques can lead one to guess an orthogonality relation
+such as Theorem 6.5.
+   The following theorem relates the asymptotics of orthonormal polynomials to the weight
+function, see [22, Chapter 12].
+
+Theorem 7.1. Assume
+                ∫1       that { pn (x)} are orthonormal with√ respect to a weight function w on
+[−1, 1] and that −1 | ln f (cos θ )|dθ < ∞, f (x) = w(x) 1 − x 2 . Let
+                 [ ∫ π
+                                       1 + ze−iθ
+                                                    ]
+                  1
+      D(z) = exp          ln f (cos θ)           dθ   , |z| < 1.
+                  4 −π                  1 − zeiθ
+                                                            12
+M.E.H. Ismail, E.M. Rains and D. Stanton                                            Indagationes Mathematicae xxx (xxxx) xxx
+
+Then
+                                        1
+       lim z −n pn (x) = √           ,
+       n→∞                 2π D(1/z)
+where x ∈ C \ [−1, 1] and x = (z + 1/z)/2, |z| > 1. Moreover the radial limit exists,
+                                                      2
+limr →1− D(r eiθ ) = D(eiθ ) and w(cos θ ) = |D(eiθ )| / sin θ .
+   It must be noted that Theorem 7.1 contains information only on the absolutely continuous
+component of the orthogonality measure and gives no information on the discrete part.
+   When we do not know the weight function w but do know asymptotics of pn (x), Theo-
+rem 7.1 will provide a good candidate for the weight function.
+   First we transform Un (x; t, T ) using (6.1) with A = q −n z 2 , B = t1 z, C = t2 z, and D = t3 z.
+The resulting expression may be written as
+                                     z n (q, t1 t2 , t1 t3 , t2 t3 , t4 t5 , q n t1 t2 t3 /z, T q n−1 /z; q)n
+                  Un (x; t, T ) =
+                                                                (t1 t1 t3 /qz; q)2n
+          n
+         ∑   (t1 /z, t2 /z, t3 /z, t1 t2 t3 /qz, q T /t4 , q n−1 T /t5 ; q)n−k t1 t2 t3 − zq 1−2n+2k
+                                                         n−1
+       ×
+         k=0
+                   (q, t1 t2 , t1 t3 , t2 t3 , q n t1 t2 t3 /z, T q n−1 /z; q)n−k                   t1 t2 t3 − zq 1−2n
+                                    (t4 z, t5 z; q)k
+                                              ×      (qz)−2k .
+                                     (q, t4 t5 ; q)k
+Therefore for |z| > 1 we have the limiting relation
+                                                  3
+                                                  ∏
+       lim z −n Un (x; t) = (t4 t5 ; q)∞                 (t j /z; q)∞ 2 φ1 (t4 z, t5 z; t4 t5 ; q, 1/z 2 )
+       n→∞
+                                                   j=1
+
+Applying the q-analogue of Gauss’s theorem [6] we establish the following theorem.
+
+Theorem 7.2.     The large n asymptotics of Un for |z| > 1 is given by
+                           ∏5
+                             j=1 (t j /z; q)∞
+             −n
+        lim z Un (x; t) =                     .
+       n→∞                   (1/z 2 ; q)∞
+   If the Un ’s were orthogonal polynomials Theorem 7.1 would give
+               (1/z 2 ; q)∞
+       D(z) = ∏5
+               j=1 (t j /z; q)∞
+one would expect the weight function to be
+             (e2iθ , e−2iθ ; q)∞
+            ∏5                             ,         θ ∈ [0, π].                                                         (7.1)
+       sin θ j=1 (t j eiθ , t j e−iθ ; q)∞
+This agrees with Theorem 6.5 except for the part of the weight function which depends on
+n. In fact the weight function in Theorem 6.5 is exactly analogous to the problem of varying
+weights in orthogonal polynomials, see for example [18]. If we let n → ∞ in the weight
+function in Theorem 6.5 we indeed get the quantity in (7.1). So the asymptotics seems to give
+the n independent part of the weight function.
+
+8. Elliptic analogues
+    In this section we give elliptic analogues of the main results of the previous sections. An
+elliptic version of the iterated Askey–Wilson operator is given in Proposition 8.1. An elliptic
+                                                                 13
+M.E.H. Ismail, E.M. Rains and D. Stanton                            Indagationes Mathematicae xxx (xxxx) xxx
+
+analogue of the polynomials qn (x; a, b) is given in Definition 8.4, and their orthogonality
+relation is Theorem 8.9.
+   The operator identity, Lemma 5.4, satisfied by the Askey–Wilson operator, is a limiting
+case of an identity satisfied by a family of elliptic difference operators. We recall the elliptic
+analogue of the infinite q-shifted factorials, the elliptic Gamma function of [17]
+                    ∏ 1 − p j+1 q k+1 /z
+      Γp,q (z) =                                ,
+                    j,k≥0
+                               1 − p j qk z
+
+which satisfies the recurrence
+      Γp,q (qz) = θ p (z)Γp,q (z),
+where
+                  ∏
+      θ p (z) =    (1 − p j+1 /z)(1 − p j z).
+                  j≥0
+
+This function, in turn, satisfies the following quasiperiodicity property:
+       θ p ( pz) = −z −1 θ p (z),
+                      √                                                 √
+making θ p (exp(2π −1z)) a theta function for the lattice ⟨1, log( p)/2π −1⟩. We also define
+finite elliptic shifted factorial by
+                      Γp,q (q m z)    ∏
+       θ p (z; q)m =               =        θ p (q j z).
+                       Γp,q (z)      0≤ j<m
+
+    The analogue of a polynomial of degree n in the elliptic context is a “symmetric theta
+function” of degree n, a holomorphic function f such that f (1/z) = f (z) and f ( pz) =
+( pz 2 )−n f (z). As with polynomials, these form a vector space of dimension n + 1.
+    The most natural analogue of the Askey–Wilson operator is the operator Dq; p which acts
+by
+                            f (q 1/2 z)   f (q −1/2 z)
+      (Dq; p f )(z) =                   +              ,
+                             θ p (z 2 )   θ p (1/z 2 )
+which manifestly preserves the space of functions invariant under z ↦→ 1/z. This is not quite a
+direct analogue, in so far as the limit as p → 0 is not quite the same operator (the coefficients
+differ by powers of z), but is more convenient for dealing with questions of orthogonality. The
+key point is that this operator is formally self-adjoint with respect to the density
+                        ( p; p)∞ (q; q)∞            1               dz
+      ∆(z; p, q) =                                                  √    ,
+                                2        Γp,q (z 2 )Γp,q (1/z 2 ) 2π −1z
+the fixed part of the density of the elliptic beta integral [19]. To be precise, if f and g are
+invariant under z ↦→ 1/z, then the integral
+      ∫
+          (Dq; p f )(z)g(z)∆(z)
+        S1
+is, by symmetry, equal to
+        ∫
+      2    f (q 1/2 z)g(z)θ p (z 2 )−1 ∆(z).
+          S1
+                                                           14
+M.E.H. Ismail, E.M. Rains and D. Stanton                                               Indagationes Mathematicae xxx (xxxx) xxx
+
+The change of variables z ↦→ q −1/2 /z makes this equal to
+       ∫
+     2          f (z)g(q 1/2 z)θ p (z 2 )−1 ∆(z).
+           |z|=q −1/2
+Moving the contour back to the unit circle and symmetrizing gives
+    ∫
+         f (z)(Dq; p g)(z)∆(z),
+        S1
+assuming that there are no poles for 1 ≤ |z| ≤ q −1/2 . (The possibility of poles is why we refer
+to this as “formal” self-adjointness above.)
+   Unlike the Askey–Wilson operator, however, the powers of this operator are not well-
+behaved; if we try to square the operator, we find that the two contributions to the constant term
+are quasiperiodic, but with different multipliers, and thus the sum is not even a (meromorphic)
+theta functions. However, in [15, §9], the second author introduced a family of multivariate
+operators satisfying an analogue of Lemma 5.4; in the univariate case, this is the operator
+identity
+                           Γp,q (q −m/2 vz)Γp,q (q −m/2 v/z)            Γp,q (q (l+m)/2 vz)Γp,q (q (l+m)/2 v/z)
+       Dl+m (q; p) =                                         Dl (q; p)
+                          Γp,q (q m/2 vz)Γp,q (q m/2 v/z)              Γp,q (q −(l+m)/2 vz)Γp,q (q −(l+m)/2 v/z)
+                                   Γp,q (q −l/2 vz)Γp,q (q −l/2 v/z)
+                        ×Dm (q; p)                                   ,
+                                    Γp,q (q l/2 vz)Γp,q (q l/2 v/z)
+where D1 (q; p) = Dq; p . The above identity is not explicitly stated in [15].
+   From this, it is straightforward to deduce the analogue of Proposition 2.1. Indeed, when
+m = 1, the simple fact that the right-hand side is independent of v means that the residue at
+v = q 1/2 z must be 0, but this gives a first-order recurrence for the coefficients of Dl (q; p). The
+leading coefficient is also straightforward to compute.
+
+Proposition 8.1.         The operator Dn (q; p) has the expansion
+                              ∑                                       θ p (q n−2 j z 2 )          θ p (q; q)n
+       (Dn (q; p) f )(z) =            (−1) j q − j( j−1)/2 z 2 j                                                      f (q n/2− j z)
+                                                                   θ p (q − j z 2 ; q)n+1 θ p (q; q) j θ p (q; q)n− j
+                             0≤ j≤n
+
+   As remarked after Lemma 5.4, this expression turns the operator identity into a (Zariski
+dense) special case of the Frenkel–Turaev summation [5], the elliptic analogue of Jackson
+summation.
+   Note that just as for n = 1, Dn (q; p) is formally self-adjoint with respect to the density
+∆(z; p, q).
+
+Theorem 8.2. Let f be a symmetric theta function of degree k, and let a be a sequence of
+length 2m + 4 satisfying
+       q (m+1)(n−1)+k a1 · · · a2m+4 = p m+1 .
+Then
+                       1                                 ∏
+                                            Dn (q; p)          Γp,q (q n/2 ai z)Γp,q (q n/2 ai /z) f (z)
+                                        /z)
+       ∏
+           1≤i≤2m+4 Γp,q (ai z)Γp,q (ai               1≤i≤2m+4
+
+is a symmetric theta function of degree mn + k.
+
+Proof. As before, this reduces easily to the case n = 1. In that case, we verify that the resulting
+function has the correct symmetry and quasi-periodicity, so the only obstruction to being a theta
+                                                                    15
+M.E.H. Ismail, E.M. Rains and D. Stanton                                           Indagationes Mathematicae xxx (xxxx) xxx
+
+function is the potential poles coming from zeros of θ p (z 2 ). By symmetry, however, the function
+must have even order at such points, and thus the apparent simple poles are in fact removable
+singularities as required. □
+
+Remark 8.3. To relate this to Theorem 5.6, note that the elliptic Gamma function satisfies the
+reflection principle Γp,q (x)Γp,q ( pq/x) = 1, and thus we can write a ratio of elliptic Gamma
+functions as a product. Moreover, we can shift one of the parameters by a factor of p at the cost
+of introducing some powers of q and z to the coefficients of the operator (as Γp,q ( px)/Γp,q (x)
+is quasiperiodic under q-shifts!).
+
+   Applying the operator when k = 0 in Theorem 8.2 to 1 gives a symmetric theta function of
+degree mn.
+
+Definition 8.4.        Let
+                                           1                                      ∏
+      qn (z; a; p) = ∏                                            Dn (q; p)              Γp,q (q n/2 ai z)Γp,q (q n/2 ai /z)(1)
+                             1≤i≤2m+4 Γp,q (ai z)Γp,q (ai /z)                 1≤i≤2m+4
+
+   Note that Proposition 8.1 implies that qn (z; a; p) has an expression as a “very-well-poised
+balanced” elliptic hypergeometric series.
+   If we take m = −1, then we find that the operator decreases the degree. Since theta functions
+of negative degree do not exist, we obtain the following result.
+
+Corollary 8.5.  If f (z) is a symmetric theta function of degree n − 1, then for any a,
+                   [            ]
+                      f (z)
+      Dn (q; p)                   = 0.
+                θq (az)θq (a/z)
+   Together with self-adjointness of Dn (q; p), Corollary 8.5 allows us to prove orthogonality
+results. The simplest interesting case is a Rodrigues formula for the biorthogonal functions of
+Spiridonov and Spiridonov–Zhedanov, which are now defined.
+
+Definition 8.6. For parameters satisfying t0 t1 t2 t3 u 0 u 1 = pq, let
+
+      f n (z; t0 , t1 , t2 , t3 ; u 0 , u 1 )
+            3
+          ∏               1                                    1
+      =
+               Γ (t z, t j /z) Γp,q (u 0 z)Γp,q (u 0 /z)Γp,q ( pu 1 q 1−n z)Γp,q ( pu 1 q 1−n /z)
+           j=0 p,q j
+      ×Dn (q; p)H (z),
+
+where
+        H (z) = Γp,q (q −n/2 u 0 z)Γp,q (q −n/2 u 0 /z)Γp,q (( pu 1 q 1−n/2 )z)Γp,q (( pu 1 q 1−n/2 )/z)
+                                          3
+                                          ∏                                                                                (8.1)
+                                      ×         Γp,q (q n/2 t j z)Γp,q (q n/2 t j /z).
+                                          j=0
+
+   Also, define a family of densities by
+                    ∏
+      ∆(z; a) :=          Γp,q (ai z)Γp,q (ai /z)∆(z).
+                       1≤i≤2m+4
+                                                                 16
+M.E.H. Ismail, E.M. Rains and D. Stanton                                                      Indagationes Mathematicae xxx (xxxx) xxx
+
+Lemma 8.7. The function
+        θ p (( pq/u 0 )z; q)n θ p (( pq/u 0 )/z; q)n f n (z; t0 , t1 , t2 , t3 ; u 0 , u 1 )
+is a symmetric theta function of degree n, so that f n (z; t0 , t1 , t2 , t3 ; u 0 , u 1 ) is a symmetric elliptic
+function. Next, suppose |t0 |, |t1 |, |t2 |, |t3 |, |q −n u 0 |, |q 1−n u 1 | < 1. Then for any symmetric elliptic
+function g such that
+        θ p (( pq/u 1 )z; q)n−1 θ p (( pq/u 1 )/z; q)n−1 g(z)
+is holomorphic,
+      ∫
+         f n (z; t0 , t1 , t2 , t3 ; u 0 , u 1 )g(z)∆(z; t0 , t1 , t2 , t3 , u 0 , u 1 ) = 0.
+          S1
+In particular, f n (z; t0 , t1 , t2 , t3 ; u 0 , u 1 ) is proportional to the elliptic biorthogonal function
+of [20].
+
+Proof. We have
+        θ p (( pq/u 0 )z; q)n θ p (( pq/u 0 )/z; q)n f n (z; t0 , t1 , t2 , t3 ; u 0 , u 1 ) = qn (z; t0 , t1 , t2 , t3 , q −n u 0 , q 1−n pu 1 ; p),
+
+which is indeed a symmetric theta function of degree n. We can also write
+     ∫
+            f n (z; t0 , t1 , t2 , t3 ; u 0 , u 1 )g(z)∆(z; t0 , t1 , t2 , t3 , u 0 , u 1 )
+       S 1∫
+                                                      Γp,q (u 1 z)Γp,q (u 1 /z)
+     =          [Dn (q; p)H (z)]                                                            g(z)∆(z),
+            S 1                          Γ p,q ((  pu 1 /q n−1 )z)Γp,q (( pu 1 /q n−1 )/z)
+where H (z) is given by (8.1).
+   The conditions on the parameters ensure that the residue terms in the formal self-adjointness
+do not appear (i.e., the integrand has no poles between the shifted contour and the unit circle),
+so the integrand is
+                                         Γp,q (u 1 z)Γp,q (u 1 /z)
+        ∆(z)Dn (q; p)                                                         g(z).
+                              Γp,q (( pu 1 /q n−1 )z)Γp,q (( pu 1 /q n−1 )/z)
+may be rewritten as
+                               Γp,q (u 1 z)Γp,q (u 1 /z)
+        ∆(z)Dn (q; p)                                       θ p (( pq/u 1 )z; q)n−1 θ p (( pq/u 1 )/z; q)n−1 g(z).
+                              Γp,q ( pu 1 z)Γp,q ( pu 1 /z)
+Because
+       Γp,q (u 1 z)Γp,q (u 1 /z)               1
+                                   =                       ,
+     Γp,q ( pu 1 z)Γp,q ( pu 1 /z)   θq (u 1 z)θq (u 1 /z)
+the integrand vanishes by Corollary 8.5. □
+    We note that the work [21] contains discrete orthogonality for a family of biorthogonal
+rational functions.
+
+Remark 8.8. The constant can be recovered from the fact that when z = t0 , only one of the
+n + 1 terms in the Rodrigues formula is nonzero, so that
+                                                       θ p (t0 t1 , t0 t2 , t0 t3 , 1/t0 u 1 ; q)n
+         f n (t0 ; t0 , t1 , t2 , t3 ; u 0 , u 1 ) =                                               .
+                                                                 θ p ( pqt0 /u 0 ; q)n
+                                                                          17
+M.E.H. Ismail, E.M. Rains and D. Stanton                                      Indagationes Mathematicae xxx (xxxx) xxx
+
+  Essentially the same argument gives the following more general orthogonality result. When
+m = 1, this recovers the above orthogonality (for the numerator of f n , to be precise).
+
+                     Let q (m+1)(n−1)                            m
+                                         ∏
+Theorem 8.9.                                 0≤i<2m+4 ai = p         , so that the function
+       qn (z; pa0 , a1 , . . . , a2m+3 ; p)
+is a symmetric theta function of degree mn, and suppose |a0 |, . . . , |a2m+3 | < 1. Then for any
+symmetric theta function g of degree n − 1,
+      ∫
+         qn (z; pa0 , a1 , . . . , a2m+3 ; p)g(z)∆(z; a0 , . . . , a2m+3 ) = 0.
+         S1
+   Note that since the function
+     θq (bz)θq (b/z)
+     θq (az)θq (a/z)
+is periodic in q, it follows from Proposition 8.1 that the operator
+                                                  [                 ]
+                                                           1
+      a −n θq (q −n/2 az)θq (q −n/2 a/z)Dn (q; p)
+                                                    θq (az)θq (a/z)
+is independent of a.
+    In fact, the same theta functions satisfy a number of different orthogonality relations, arising
+from the fact that
+       a0n qn (z; pa0 , a1 , . . . , a2m+3 ; p) = a1n qn (z; a0 , pa1 , . . . , a2m+3 ; p),
+which in turn follows immediately from the above observation that
+                                                 [                 ]
+                                                          1
+     a −n θq (q −n/2 az)θq (q −n/2 a/z)Dn (q; p)
+                                                   θq (az)θq (a/z)
+is independent of a. It seems likely that these orthogonality relations determine qn (indeed, it
+should typically be enough to take the first m such relations), though to prove this in general
+requires the computation of a fairly complicated determinant. The orthogonality relations
+impose linear conditions on qn , so for qn to be uniquely determined requires that the restriction
+of these equations to some complement of ⟨qn ⟩ has a minor of full rank.
+    We also have the following analogue of Theorem 6.5.
+
+Corollary 8.10. Let Un (z; t1 , t2 , t3 , t4 , t5 ; p) := qn (z; t1 , t2 , t3 , t4 , t5 , p 2 q 2−2n /t1 t2 t3 t4 t5 ). Then
+for m < n, and |t j | < 1 for all j, 1 ≤ j ≤ 6, we have
+      ∫
+         Un (z)Um (z)θ p (az, a/z; q)n−1−m ∆(z; t1 , t2 , t3 , t4 , t5 , pq 2−2n /t1 t2 t3 t4 t5 ) = 0.
+         S1
+
+
+Remark 8.11. Note here that the density depends on m in a crucial way, via the factor
+θ p (az, a/z; q)n−1−m as part of the density. Of course, in the limit p → 0, one may as well take
+a = 0, and thus recover Theorem 6.5.
+
+9. A recursion relation
+   Ismail and Masson [8] proved that R I I rational functions are biorthogonal. They also proved
+that the biorthogonality implies that {Un (z)} satisfies a three term recurrence relation. We now
+proceed to determine the coefficients in the recurrence relation.
+                                                            18
+M.E.H. Ismail, E.M. Rains and D. Stanton                                                  Indagationes Mathematicae xxx (xxxx) xxx
+
+Proposition 9.1. The polynomial Un (x) = Un (xn ; t|q) satisfies the following 3-term recurrence
+relation
+      Un+1 − An+1 (1 − q 2n−2 T z)(1 − q 2n−2 T /z)(1 − q 2n−3 T z)(1 − q 2n−3 T /z)Un−1
+                                                                                                                            (9.1)
+                                     − (Bn (1 − t1 /z)(1 − t1 z) + Cn ) Un = 0,
+where
+               4 5                                                            5
+               ∏ ∏                                                            ∏                         N
+        An =                 (1 − ti t j q n−2 )(1 − q n−1 )(−q 8 )/              (1 − e5 q n−2 /ti )     , where
+                                                                                                        D
+             i=1 j=i+1                                        i=1
+                  10      4   8n
+            N =(q − e5 q + e5 (q    2    3n+5  −q 5n+5  ) − e4 q 2n+8 + e52 e4 (q 6n+3 − q 5n+3 ) + e5 e3 q 3n+6
+                 + e53 e1 q 6n+2 − e52 e2 q 5n+4 + e5 e1 (q 3n+7 − q 2n+7 ))
+            D =(q 18 − e54 q 8n + e52 (q 3n+10 − q 5n+8 ) − e4 q 2n+14 + e52 e4 (q 6n+5 − q 5n+6 )
+                 + e5 e3 q 3n+11 + e53 e1 q 6n+4 − e52 e2 q 5n+7 + e5 e1 (q 3n+12 − q 2n+13 ));
+
+               5
+               ∏                         (1 − q 2n−1 t2 t3 t4 t5 )(1 − q 2n t2 t3 t4 t5 )
+      Cn =           (1 − q n t1 t j )
+               j=2
+                                                 t1 (1 − q n−1 t2 t3 t4 t5 )
+                           (1 − t12 t2 t3 t4 t5 q 2n−2 )(1 − t12 t2 t3 t4 t5 q 2n−3 )(1 − t2 t3 t4 t5 q n−2 )t1
+               − An+1                                   ∏5                                                      .
+                                                                         n−1 t t )
+                                                          j=2 (1 − q            1 j
+                                     5
+                                 n
+                                     ∏                          (1 − q 2n−1 t1 t3 t4 t5 )(1 − q 2n t1 t3 t4 t5 )
+                                            (1 − q n t2 t j )
+               (
+        Bn = (1 − t1 t2 q )
+                                      j=3
+                                                                        (1 − q n−1 t1 t3 t4 t5 )t2
+                      (1 − t1 t22 t3 t4 t5 q 2n−2 )(1 − t1 t22 t3 t4 t5 q 2n−3 )(1 − t1 t3 t4 t5 q n−2 )t2      )
+               − An+1                    ∏5                                                                − Cn
+                                                        n−1                       n−1
+                                             j=3 (1 − q      t2 t j )(1 − t1 t2 q )
+               /(1 − t1 /t2 )(1 − t1 t2 ).
+and e j is the elementary symmetric function of t1 , t2 , t3 , t4 , t5 of degree j.
+
+   This was found inspection, and was verified using computer algebraic techniques by
+Christoph Koutschan [11]. We do not know a human only proof.
+   It must be noted that Eq. (9.1) when written in x, x = (z + 1/z)/2 is of the form of a
+recurrence relation of an R I I fraction, [8, (3.1)]. In the notation of §3 of [8], the interpolation
+points are
+
+      an+1 = [T q 2n−2 + q 2−2n /T ]/2,                     bn+1 = [T q 2n−3 + q 3−2n /T ]/2.
+
+The interpolation points are also manifested in the orthogonality relation in Theorem 6.5.
+Moreover Un (x; t|q) can be evaluated at these special points. To see this use the symmetry
+of Un in z and 1/z to put 1/z = T q 2n−2 in 6.4. Indeed we have
+                                             5
+                             q 2n(n−1) ∏                                             1
+      Un (xn ; t|q) =                    (T q n−1 /t j ; q)n ,               xn =      [T q 2n−2 + q 2−2n /T ].
+                                T n j=1                                              2
+
+Similarly we may just set z = T q 2n−3 in 6.4 and the 8 W7 is now a sum of two terms, so we
+can find a closed form expression for Un (yn ; t|q), where yn = [T q 2n−3 + q 3−2n /T ]/2.
+                                                                       19
+M.E.H. Ismail, E.M. Rains and D. Stanton                                Indagationes Mathematicae xxx (xxxx) xxx
+
+Acknowledgements
+  The authors gratefully acknowledge the hospitality of Department of Mathematics at City
+University of Hong Kong where this research project began.
+
+References
+ [1] G.E. Andrews, R.A. Askey, R. Roy, Special Functions, Cambridge University Press, Cambridge, 1999.
+ [2] R. Askey, J. Wilson, Some basic hypergeometric orthogonal polynomials that generalize Jacobi polynomials,
+     Memoirs Amer. Math. Soc. Number 317 (1985).
+ [3] B.M. Brown, W.D. Evans, M.E.H. Ismail, The Askey–Wilson polynomials and q-Sturm–Liouville problems,
+     Math. Proc. Cambridge Philo. Soc. 119 (1996) 1–16.
+ [4] S. Cooper, The Askey–Wilson operator and the 6 φ5 summation formula, South East Asian J. Math. Math.
+     Sci. 1 (2002) 71–82.
+ [5] I.B. Frenkel, V.G. Turaev, Elliptic solutions of the Yang–Baxter equation and modular hypergeometric
+     functions, in: The Arnold-Gelfand Mathematical Seminars, Birkhäuser Boston, Boston, MA, 1997, pp.
+     171–204.
+ [6] G. Gasper, M. Rahman, Basic Hypergeometric Series, second ed., Cambridge University Press, Cambridge,
+     2004.
+ [7] M.E.H. Ismail, Classical and Quantum Orthogonal Polynomials in One Variable, paperback ed., Cambridge
+     University Press, Cambridge, 2009.
+ [8] M.E.H. Ismail, D.R. Masson, Generalized orthogonality and continued fractions, J. Approx. Theory 83 (1995)
+     1–40.
+ [9] M.E.H. Ismail, M. Rahman, Diophantine properties of orthogonal polynomials and rational functions, Proc.
+     Amer. Math. Soc. 145 (2017) 2427–2440.
+[10] M.E.H. Ismail, D. Stanton, Some combinatorial and analytical identities, Ann. Combinaorics 16 (2012)
+     755–771.
+[11] C. Koutschan, Personal communication, 2013.
+[12] M. Rahman, An integral representation of a 10 ϕ9 and continuous bi-orthogonal 10 ϕ9 rational functions, Canad.
+     J. Math. 38 (3) (1986) 605–618.
+[13] M. Rahman, Biorthogonality of a system of rational functions with respect to a positive measure, SIAM J.
+     Math. Anal. 22 (1991) 1430–1441.
+[14] M. Rahman, S.K. Suslov, Classical biorthogonal rational functions, in: Methods of Approximation Theory in
+     Complex Analysis and Mathematical Physics, in: Lecture Notes in Math., vol. 1550, Springer, Berlin, pp.
+     131–146.
+[15] E.M. Rains, Transformations of elliptic hypergeometric integrals, Ann. Math. 171 (2) (2010) 169–243.
+[16] E.D. Rainville, Special Functions, Macmillan, New York, 1960.
+[17] S.N.M. Ruijsenaars, First order analytic difference equations and integrable quantum systems, J. Math. Phys.
+     38 (1997) 1069–1146.
+[18] E.B. Saff, V. Totik, Logarithmic Potentials with External Fields, Springer, New York, 1997.
+[19] V.P. Spiridonov, On the elliptic beta function, Uspekhi Mat. Nauk 56 (2001) 181–182.
+[20] V. Spiridonov, Theta hypergeometric integrals, St. Petersburg Math. J. 15 (2004) 929–967.
+[21] V. Spiridonov, A. Zhedanov, Spectral transformation chains and some new biorthogonal rational functions,
+     Comm. Math. Phys. 210 (2000) 49–83.
+[22] G. Szegő, Orthogonal Polynomials, fourth ed., American Mathematical Society, Providence, 1975.
+[23] A. Zhedanov, Biorthogonal rational functions and the generalized eigenvalue problem, J. Approx. Theory 101
+     (1999) 303–329.
+
+
+
+
+                                                        20
+

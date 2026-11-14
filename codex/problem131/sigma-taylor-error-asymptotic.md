@@ -3,8 +3,8 @@
 Status: proof developed from the root agent's uniform-parameter proposal.
 The proof below depends on the all-index associated-numerator recurrence in
 [deformed-associated-pearson-symmetry.md](deformed-associated-pearson-symmetry.md),
-which has a full written proof and is awaiting its separate independent audit.
-The present analytic argument also awaits independent review. No historical
+which has a full written proof accepted in its independent audit.
+The present analytic argument is accepted in [sigma-taylor-independent-review.md](sigma-taylor-independent-review.md). No historical
 novelty or higher-odd irrationality claim is made.
 
 The denominator family and recurrence have an exact Askey–Wilson (1984)

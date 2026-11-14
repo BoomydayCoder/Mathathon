@@ -1,6 +1,6 @@
 # Irrationality recipes and unexpected connections
 
-Status: the elementary lemmas, integral arguments, and Mellin/Legendre identities below are independently derived and proved here. Classical theorems are explicitly identified as inputs. This is not a novelty claim. Work is aligned with the user's revised research program; the official Mathathon problem statement has not been retrieved.
+Status: the elementary lemmas, integral arguments, and Mellin/Legendre identities below are independently derived and proved here. Classical theorems are explicitly identified as inputs. This is not a novelty claim. Work is aligned with the user's revised research program; the exact official Mathathon statement is archived in [problem131-official.md](../sources/problem131-official.md).
 
 ## 1. The arithmetic target comes before the auxiliary function
 
@@ -59,7 +59,9 @@ If exp(r)=p/q, then q I_n is a positive integer tending to zero, contradiction. 
 
 **Why the standard proof for e does not automatically handle all r.** Multiplying the Taylor tail of exp(a/b) by n! b^n produces terms involving a^(n+j), and the simple estimate used for e need not tend to zero. Symmetric endpoint vanishing repairs the construction. This is a useful example of an auxiliary polynomial solving an arithmetic defect, not just accelerating convergence.
 
-## 3. The same polynomial proves pi irrational through a different ODE
+## 3. Sine equations, pi², and nonzero rational powers pi^r
+
+The newer [direct pi² proof](pi-powers.md) uses a finite inverse on the fixed interval(0,1), with an independently checked integer boundary identity. The classical pi argument below motivates the same mechanism.
 
 Suppose pi=a/b with positive integers a,b and use the same f_n on [0,pi]. Let
 

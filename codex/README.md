@@ -4,6 +4,8 @@ Work in progress on `codex/independent-research`. Read [CHECKPOINT.md](CHECKPOIN
 for the latest state and [HANDOFF.md](HANDOFF.md) for remaining work. Results derived
 in this session are not claims of historical novelty.
 
+Start with [START_HERE.md](START_HERE.md) for the prioritized checked results and current gaps.
+
 ## Three reading routes
 
 A concise [common proof-design principle](problem131/polynomial-inverses-and-boundary-pairings.md) compares the finite derivative inverses for exp(r) and pi² with the one-dimensional polynomial obstruction that forces Apéry's binomial sum.

@@ -484,3 +484,14 @@ Twenty-first checkpoint, 2026-11-14 15:35 UTC, continuing:
 - Actual primitive denominator question remains open. Consecutive-pole extension
   and explicit rank-two Apéry formula under development; no new irrationality.
 - Continuing to16:00UTC with unchanged one-higher/two-zeta3 agent allocation.
+
+Twenty-second checkpoint, 2026-11-14 15:50 UTC, final verification continuing:
+- START_HERE.md prioritizes checked results;40-hour map now excludes newFuss work.
+- All-rank Apéry endpoint basis and explicit rank-two arithmetic accepted.
+- Full cubic balanced numerator identity and all-real Wilson/Dirichlet model
+  accepted; explanatory sign correction documented and tested.
+- Sampler determinant interpretation of existing sinc-square asymptotic accepted.
+- Consecutive-pole approximation, arithmetic and exact rates audited; supplied
+  multiplier fails for every higherodd index, primitive arithmetic still open.
+- Exact primary Rodrigues degeneration documented and independently checked.
+- Finishing active checks and provenance, then final branch save by16:00UTC.

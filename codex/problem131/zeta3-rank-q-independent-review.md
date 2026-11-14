@@ -65,3 +65,41 @@ matrices. It verifies all rank-two widths h=2,...,12 and both exact rational
 endpoints at h=11, plus the Pell recurrence. These checks corroborate the
 all-index proof above. Their denominators do not supply an asymptotic
 irrationality inequality for the Pell subsequence.
+
+## Subsequently added explicit Apéry formula, independently accepted
+
+Section4 is accepted. Both U=R_h and V=(z-(2h-1)²)R_(h-1) are in the
+same rank-two complement: converting the first test to the next measure
+raises its degree by1, while the second cancels its final denominator factor
+with a minus sign. The endpoint determinant is h²d_h/2, strictly positive,
+so U,V form a basis including h=2. The Heun equation at zero forces the
+stated endpoint ratio for each eigenline. The constructed F has value equal
+to the nonzero endpoint determinant at zero, and cannot have degree<h-1
+because the quotient operator raises the lower direction with coefficient-2.
+
+Z=L_(h-1)U-L_hV cancels the leading term and is nonzero. Since it is in
+the positive-measure complement it cannot have degree<=h-3; hence its degree
+is exactlyh-2. At q_h and q_(h-1), the corresponding ORIGINAL rank-one
+polynomials annihilate the entire appropriate Gram space, not merely lower
+degrees. Multiplying Z by (2h)²-z stays within that space. The two affine
+pairing identities therefore have their stated roots and slopes kL_h and
+kL_(h-1), with no extra constant. Simultaneous eigenline diagonalization makes
+these pairings vanish at the desired rank-two root. The denominator in the
+resulting quotient is the nonzero leading coefficient of F, as required.
+
+Substitution of the factorial scaling yields exactly a_sigma,b_sigma in(6).
+The root order agrees with the eigenvalue order since the centralizer gives
+slope u/2>0. Independently subtracting the two Möbius expressions gives the
+residual norm formula: a0*b1-a1*b0=2h(h-1)²d_h, and the adjacent Apéry
+Casoratian is -72d_h/[h²(h-1)³]. The result is
+u_h=-288d_h²/[h³(h-1)(U_h²-Delta_h V_h²)], including its sign.
+The field norm is therefore negative by the previously proved u_h>0.
+
+At Pell indices the square root and a_sigma,b_sigma are integers of polynomial
+size in h. Thus the existing lcm-cube denominator theorem clears both forms,
+and their nonzero errors are bounded by polynomial factors times the known
+Apéry small solutions. The elementary denominator/error comparison remains
+valid on the unbounded Pell subsequence. This is an arithmetic transfer from
+classical Apéry inputs, not an independent new irrationality proof or a new
+denominator theorem. It resolves the earlier paragraph's missing arithmetic
+for this explicit subsequence.

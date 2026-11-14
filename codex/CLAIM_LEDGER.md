@@ -4,6 +4,19 @@ All 'proved' labels refer to arguments written and checked in this workspace,
 not historical novelty. Standard external inputs are identified in each note.
 Finite computation is supplementary evidence only.
 
+## Latest reviewed additions — 15:50 UTC
+
+| Result | Proof / independent review | Exact scope |
+|---|---|---|
+| Every rank-q zeta3 pencil uses two Apéry endpoints in a finite rank-one basis | zeta3-all-rank-apery-endpoint-basis.md; zeta3-all-rank-independent-review.md | Algebraic eigenfields and nonzero denominator proved; no new arbitrary-field arithmetic |
+| Explicit rank-two Apéry formulas and Pell lcm-cube transfer | zeta3-rank-q-heun-reduction.md §4; zeta3-rank-q-independent-review.md | Inherits classical denominator theorem; not an independent new irrationality argument |
+| Cubic balanced diagonal equals the full adjacent Apéry remainder | cubic-balanced-adjacent-apery-identity.md; cubic-balanced-apery-independent-review.md | Includes rational numerator, all n and positivity; corrected Newton sign recorded |
+| Real cubic Wilson construction and Dirichlet Gram isometry | cubic-wilson-real-kernel-model.md; cubic-wilson-real-independent-review.md | Removes the separate contour/Rodrigues input; real resolvent and finite moments remain explicit inputs |
+| Sampler determinant explains the sinc-squared deformation factor | uniform-gibbs-zeta-correlations.md §5; uniform-gibbs-zeta-independent-review.md | Classical Euler product; existing asymptotic range abs(sigma)<=1/4 unchanged |
+| Positive consecutive-pole pure-zeta forms and explicit exponential normalizer | balanced-consecutive-pole-transport.md; balanced-consecutive-pole-independent-review.md | Even-n positivity; no favorable primitive arithmetic theorem |
+| Exact consecutive-pole rate and failure of the supplied multiplier for all m>=2 | balanced-consecutive-pole-rate.md; balanced-consecutive-rate-independent-review.md | Factorial/binomial costs suffice; no actual primitive-denominator obstruction |
+| Balanced raising operator is a concrete degeneration of known Rodrigues machinery | balanced-rodrigues-primary-source-comparison.md; balanced-rodrigues-primary-independent-review.md | Exact Ismail–Rains–Stanton2024 operator match; simultaneous weights and arithmetic require separate proofs |
+
 ## Latest reviewed additions — 15:35 UTC
 
 | Result | Proof / independent review | Exact scope |

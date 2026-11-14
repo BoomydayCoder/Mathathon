@@ -1,6 +1,6 @@
 # Consecutive-pole transport and a second pure odd-zeta approximation
 
-Status: exact proof draft for independent review. This extends the accepted
+Status: accepted in [the independent review](balanced-consecutive-pole-independent-review.md). This extends the accepted
 balanced Rodrigues and positive moving-pole identities. It supplies explicit
 positive rational approximations and an exponential-size integer normalizer;
 no irrationality inequality or historical novelty is claimed.
@@ -137,3 +137,6 @@ or successful irrationality estimate is claimed here.
 The derivations of (3) and (6) are algebraic and remain valid for odd n as
 well. Positivity and the explicit S-transport in (2), (4), and (5) are asserted
 only for even n.
+
+The exact minimal-pole decay rate and the scope of the fifth-zeta normalizer
+limitation are proved separately in `balanced-consecutive-pole-rate.md`.

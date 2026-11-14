@@ -205,3 +205,36 @@ The paper is archived in codex/sources/diaconis-khare-saloff-coste-2008.pdf
 with URL and SHA256 metadata. All mathematics needed for(1) is proved here
 using the previously reviewed finite Christoffel identity. This connection
 organizes the odd-zeta values; it provides no new irrationality theorem.
+
+
+## 5. The same sampler supplies the determinant in the deformation
+
+This optional operator interpretation uses polynomial density; the correlation proof above does not. The Q_k span all polynomials, which are dense in L²_w by continuous-function density and Weierstrass approximation. Thus the normalized modes sqrt(k/2)Q_k form an orthonormal basis. Since their eigenvalues are 1/k² and sum_k k^-2 is finite, P is a positive trace-class operator.
+
+Let P_N be its restriction to polynomials of degree below N. Its finite determinant is already visible from the triangular monomial formula(3):
+\[
+ \Delta_N(\sigma):=\det(I-\sigma P_N)
+       =\prod_{k=1}^N(1-\sigma/k^2),\qquad \Delta_0=1.
+\]
+The trace-class determinant is the locally uniformly convergent product
+\[
+ \boxed{\Delta_\infty(\sigma)=\det(I-\sigma P)
+ =\prod_{k=1}^\infty(1-\sigma/k^2)
+ =\frac{\sin(\pi\sqrt\sigma)}{\pi\sqrt\sigma}.}          \tag{9}
+\]
+The last equality is the classical Euler sine product; the displayed expression is interpreted as an entire function of sigma, including its value 1 at zero.
+
+Now the already established deformation denominator can be written
+\[
+ A_n(\sigma)=\sum_{k=0}^n
+       \frac{[\binom nk\binom{n+k}k]^2}{\Delta_k(\sigma)}.
+\]
+Thus its Newton weights are reciprocals of the sampler's finite polynomial determinants. The [independently reviewed parameter asymptotic](sigma-taylor-independent-review.md), with E_n(sigma)=Z(sigma)-b_n(sigma)/A_n(sigma), says precisely
+\[
+ \frac{A_n(\sigma)}{A_n(0)}\longrightarrow\Delta_\infty(\sigma)^{-1},
+ \qquad
+ \boxed{\frac{E_n(\sigma)}{E_n(0)}
+              \longrightarrow\det(I-\sigma P)^2,}
+ \qquad |\sigma|\le\tfrac14,                            \tag{10}
+\]
+uniformly on that closed disk. This adds an interpretation of the previously proved sinc-squared factor, not a new asymptotic proof or a larger validity range for(10). It does not improve the arithmetic cost of extracting parameter coefficients.

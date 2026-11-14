@@ -1,4 +1,4 @@
-# Research handoff — 2026-11-14 15:35 UTC
+# Research handoff — 2026-11-14 15:50 UTC
 
 Continue autonomous research in `codex/` on `codex/independent-research` in the
 exact private repository `BoomydayCoder/Mathathon`. User authorizes continued
@@ -21,6 +21,39 @@ that exactly ONE should focus on zeta5 and higher odd zeta values. Current alloc
 - xhigh_irrationality: redirected from zeta5 to a simpler direct bridge between
   Zudilin rational interpolation, Legendre–Pade and Beukers integrals.
 Root continues verification and checkpointing; no automatic resets or balance claims.
+
+## Newest continuation — 2026-11-14 15:50 UTC
+
+Twenty-second checkpoint. The prioritized guide is now START_HERE.md, and
+RESEARCH_MAP.md is rewritten for a current40-hour #131 project with no Fuss
+allocation. It recommends one coherent kernel/recurrence proof and one extension.
+
+Further accepted results since21st checkpoint:
+- All-rank zeta3 complement has an explicit basis of original rank-one
+  polynomials. Every Heun root is a Möbius combination of the two Apéry
+  endpoints h andh-q+1. Rank-two formulas are fully explicit; Pell-index
+  classical lcm-cube arithmetic transfers. Both proofs independently audited.
+- Cubic balanced diagonal equals(n+1)²(epsilon_(n+1)+epsilon_n)/6 exactly,
+  including its rational numerator. An isolated explanatory Newton-sign typo
+  was corrected and tested. A new all-real kernel/moment construction removes
+  its prior Wilson Rodrigues dependency and proves the full Dirichlet Gram
+  isometry; normalized norm is(n+1)/4. Accepted in separate root audits.
+- Uniform sampler's finite determinants are product(1-sigma/k²); its positive
+  trace-class determinant is the classical sine product. The already reviewed
+  sinc-squared error limit is therefore the squared sampler determinant.
+- Consecutive-pole Rodrigues transport gives a second positive pure odd-zeta
+  approximation with explicit normalizer. Exact positive-saddle rate is proved,
+  and factorial/binomial costs alone defeat the supplied multiplier for every
+  m>=2. Actual primitive cancellation remains open.
+- Primary comparison now identifies the balanced raising operator as a precise
+  finite q->1 degeneration of Ismail–Rains–Stanton2024. Root checked the source
+  formulas and scaling. Scalar source orthogonality does NOT automatically
+  provide the simultaneous hyperbolic conditions or arithmetic; those keep
+  their separate proofs. Historical novelty remains unresolved.
+
+Latest pushed commit before this checkpoint:50f6ed1. All three agents have completed their latest proofs, checks and provenance.
+The reading guide received an independent final review; REPRODUCE.md supplies
+selected exact checks. Root is saving final artifacts through16:00UTC. No new major research branches; no resets or usage claims.
 
 ## Newest continuation — 2026-11-14 15:35 UTC
 

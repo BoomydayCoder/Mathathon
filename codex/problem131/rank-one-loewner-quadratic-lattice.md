@@ -1,5 +1,11 @@
 # The original Schur root is a Loewner singularity and a quadratic-lattice Riccati problem
 
+**Later resolution:** the original Schur–Apéry identity is now proved for
+every h, with two independent audits, in [the Heun–RII proof](rank-one-original-apery-heun-rii-proof.md).
+That proof uses the interpolation theorem below and proves the formerly
+conjectural leading coefficient of N_h in its final corollary. Open labels
+below describe the earlier investigation only.
+
 Status: constructive bounded investigation. The determinant, interpolation,
 and Riccati identities below are proved for every h. Exact checks through h=6
 pass. The desired original-root/adjacent-Apéry identification remains open;
