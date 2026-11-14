@@ -125,3 +125,47 @@ Seventh checkpoint, 2026-11-14 approximately08:40UTC (00:40LA), continuing:
   and claude/HANDOFF.md; no Claude draft contents read or files changed.
 - OfficialSAIR statements still unverified; currentcustomresearch scope does
   not justify attributing any derived theorem to those exact problem statements.
+
+Source-access update,2026-11-14 08:46UTC:
+- Exactoriginal#131/#137statements retrievedsuccessfully frompublicAPI endpoints
+  /api/competitions/mathathon/problems/by-number/{131,137} after inspecting
+  thepublicclientbundle and usingbrowserUser-Agent. RawJSON, normalizedMarkdown,
+  timestamps andSHA256savedunder sources/. Earlieraccesslimits resolved.
+- #131exactdesiredoutcome recurrenceintuitionmatchesourNewton/balanceguide.
+- #137explicitlyprime-powerarity andKonvalinka'sdivisibility-vs-exactnessgap.
+  Our independentlydevelopedtypedSylowproof matches thisscope; readingKonvalinka
+  primarypaper andseekingcombinatorialreplacementforGoodinversion nowactive.
+
+Eighth checkpoint, 2026-11-14 09:28UTC (01:28LA), continuing:
+- Exact official problem statements and raw provenance are now saved. Primary
+  Konvalinka comparison confirms #137's precise combinatorial exactness target.
+- The #137 proof now replaces multivariable Lagrange inversion with an explicit
+  reversible cycle-splicing bijection. An independent enumeration checks all
+  24,242 labelled configurations in the test cases. A standalone discovery guide
+  gives the valuation and leading-unit congruence; novelty remains unresolved.
+- Common Newton interpolation and finite insertion balance now derive the ζ2
+  coefficients11,3 as well as the ζ3 coefficients17,5. A low-degree balance
+  classification singles out the log2/ζ2/ζ3 examples within its stated family.
+- The same coefficients also construct exponential Padé approximants, the π²
+  sine-integral proof and Lambert tangent fractions. Exact independent checks
+  passed; no unsupported extension to all real powers ofπ is claimed.
+- The monomial zeta-kernel theorem has been independently audited: diagonal
+  coefficient pairing isolatesζ(s), while off-diagonal terms are rational with
+  D_n^s denominator bound. Periodic-L extensions are separately marked for review.
+- The elementary Apéry digit-polynomial character rule is independently reviewed,
+  including small primes and all boundary cases. The optional CM interpretation
+  is not needed for its proof.
+- New positive half-reflected W companion has an exact finite factorial sum,
+  reflected recurrence, and finite-exception prime-denominator criteria. Fresh
+  checks cover2579 finite-field sums and705 reflection/boundary congruences.
+  No varying-prime density conclusion is inferred.
+- New actual ζ7 local-functional kernel improves on generic row-weight reasoning:
+  a degree-four polynomial annihilates a six-by-seven leading block. Parent's
+  parity/CRT review derives a small potential arithmetic saving1/25200; another
+  adversarial review remains active. It does not close theζ7 budget.
+- Current independent discovery tasks: reciprocal Laurent-polynomial explanation
+  of Apéry growth and Beukers decay; doubled-Rodrigues higher-zero constructions;
+  local-block global review and geometric recurrence certificate. Draft claims
+  retain their individual status labels until checked.
+- Target remains16:00UTC/08:00LA; no usage-meter API is available. Autonomous
+  work continues with remaining authorized usage and no automatic resets.

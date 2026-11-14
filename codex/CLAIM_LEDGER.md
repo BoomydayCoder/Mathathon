@@ -66,3 +66,60 @@ with our independent mathematical results above.
 | Fixed-pole optimized rational bounds and actual denominator failure | one-pole-schur-structure.md | one-pole-independent-review.md | Does not rule out all fixed-denominator constructions |
 | General Lucas factorization and square/Delta-square digit polynomial | apery-digit-arithmetic.md | apery-digit-square-review.md | Character choice final review ongoing |
 | Prime-power arity group valuation and leading unit | problem137/prime-power-sylow-audit.md | problem137/prime-power-orbit-review.md | Uses multivariable Lagrange inversion; arbitraryarityoutside theorem |
+
+
+## Current status and corrections — eighth checkpoint
+
+This addendum supersedes conflicting access or pending-review labels above.
+Earlier entries are retained as a record of what had been checked at that time,
+not as the current verdict. All proof paths below are relative to `codex/`.
+
+- Exact official statements are now saved in
+  [problem131-official.md](sources/problem131-official.md) and
+  [problem137-official.md](sources/problem137-official.md), with raw JSON and
+  provenance. Application-shell downloads are not statements.
+- The local arithmetic and full simplified zeta-five assembly are no longer
+  pending. [The end-to-end audit](problem131/fauzan-simplified-proof-audit.md)
+  found no unresolved bridge in the alternative derivation. It retains
+  Fauzan's determinant/local construction and named standard inputs; this is
+  not external acceptance, historical novelty, a local Lean build, or formal
+  verification of every claim in the original preprint.
+- The plain-rank route uses a **new normalizer** \(\widetilde m\), with outer
+  lower exponent \(v_p(S_K)+2\sum w_i-r_p\). The earlier source normalizer with
+  the refined zero-weight correction is not interchangeable with it.
+- The character rule is no longer an experimental Legendre-symbol proposal.
+  Its elementary differential-involution proof has completed independent review.
+  The older limited CM review is not the current boundary of verification.
+- The #137 counting proof no longer needs Lagrange–Good inversion. An explicit
+  cycle-splicing bijection and inverse replace that step. Algebraic counting
+  audits remain independent checks. The exact official problem matches the
+  prime-power theorem; arbitrary arity and weighted extensions remain outside it.
+
+| Current claim | Proof and review | Exact scope / remaining limit |
+|---|---|---|
+| Rational-only equilibrium certificate \(J<-2771/2000\), with exact outward enclosure \([-1.385510140104,-1.385509421992]\) | [Certificate](problem131/rational-energy-certificate.md); [independent primitive and assembly review](problem131/rational-energy-review.md) | Standard-library integer/dyadic arithmetic; shares the proved endpoint enclosure and potential formulas. Removes Arb from this scalar certificate, not advanced inputs from the whole proof. |
+| Same simplified integer polynomials satisfy \(0<\widetilde Q_{40n}(\zeta(5))<e^{-13n^2}\) eventually | [Complete assembly](problem131/fauzan-simplified-proof-audit.md) plus [stronger certificate](problem131/rational-energy-certificate.md) | Arithmetic budget \(2203747/1600000\); exact margin \(13053/1600000\), giving rate \(13.053n^2\) before lower-order errors. No explicit starting index, new irrationality measure, or all-odd theorem. |
+| The same finite coefficients give endpoint-polynomial proofs for \(e^r\), \(\pi^2\), and a tangent construction | [Shared coefficients](problem131/shared-coefficients-exp-pi-zeta.md); [independent review](problem131/shared-coefficients-review.md); [tangent consequence](problem131/shared-coefficients-tangent.md) | \(r\ne0\) rational for exponential/tangent claims. Tangent nonvanishing uses the Casoratian, not a false positivity assertion. The elementary \(\pi^2\) argument alone does not prove all nonzero rational powers of \(\pi\) irrational. |
+| Mixed Newton/binomial kernel gives the zeta-two recurrence with coefficients 11 and 3; common finite balance gives the zeta-three closure | [Balance construction](problem131/zeta2-zeta3-balance-unification.md); [independent review](problem131/zeta-balance-independent-review.md); [Newton closure review](problem131/newton-symmetric-square-review.md) | The degree-at-most-two classification is exactly for the stated single balance polynomial and yields pairs \((1,1),(2,1),(2,2)\); it does not classify every possible recurrence or auxiliary family. |
+| For every fixed positive \(r,s\), binomial-weight modes are \(Nx_*+O(1)\) and logarithmic growth is \(N\log[(1+x_*)^s/(1-x_*)^r]+O(\log N)\), where \((1-x_*)^r(1+x_*)^s=x_*^{r+s}\) | [General theorem and proof](problem131/zeta-balance-independent-review.md), Section 3 | No restriction \(s\le r\) is needed. This concerns denominator-sequence growth, not identification or decay of a companion linear form. |
+| For \(s\ge2\), the monomial logarithmic pairing of integer polynomials isolates \((s-1)(\sum p_kq_k)\zeta(s)\) with rational remainder cleared by \(D_n^s\) | [Monomial-kernel theorem](problem131/monomial-kernel-design.md) | [Independent review complete](problem131/monomial-kernel-review.md), including finite-partial-sum cancellation for s=2. Arbitrary-partner positivity and sufficiently fast decay are not claimed. |
+| For \(p\ge5\), \(P_p=\Delta^{(1-(\frac{-6}{p}))/2}Q_p^2\), where \(\Delta=1-34t+t^2\), \(Q_p(0)=1\), \(Q_p\) is squarefree and coprime to \(\Delta\) | [Character construction](problem131/apery-cm-character.md); [completed independent review](problem131/apery-cm-independent-review.md); [root-multiplicity proof](problem131/apery-digit-square-review.md) | Main proof uses finite sums, the exact differential pullback, and a deck involution; CM is optional interpretation with standard geometric inputs. No historical novelty assertion. |
+| Exact prime-power Fuss–Catalan valuation and leading unit by finite group action and a bijection | [Standalone guide](problem137/discovery-guide.md); [orbit review](problem137/prime-power-orbit-review.md); [cycle splicing](problem137/cyclic-type-cycle-splicing.md) | \(q=p^e\), \(L=(q-1)n+1=\sum d_jp^j\), \(D=(\sum d_j-1)/(p-1)\); \(v_p(T_q(n))=D\) and \(p^{-D}T_q(n)\equiv(-1)^D/\prod d_j!\pmod p\). No factorial-valuation theorem or inversion formula in the final proof. |
+| The typed skeleton count is \(\prod_i(pk_i)!/[\prod_i k_i!\prod_jd_j!]\), including zero internal-type cases | [Explicit forward/inverse bijection](problem137/cyclic-type-cycle-splicing.md); [independent algebraic check](problem137/typed-count-matrix-tree-audit.md) | Fixed missing-parent name in arbitrary assignments corresponds to a variable root name in trees. Exact checks cover 24,242 assignments and surjectivity; a separate depth-profile computation covers 234 cases, 28 with zero internal types. These checks supplement the universal proof. |
+| The #137 proof addresses the exactness step distinguished in Konvalinka's primary paper | [Primary-source comparison](problem137/konvalinka-comparison.md); [official statement](sources/problem137-official.md) | Proposition 2 gives arithmetic exactness; Proposition 7 gives tree-action divisibility. Deutsch–Sagan owns the established binary orbit argument. This comparison does not establish historical novelty of the prime-power refinement. |
+
+### Active questions, not established results
+
+- **Actual local nullvectors:** odd-zeta agent is deriving leading local-block
+  nullvectors to test determinant-specific valuation gains. A failure of a
+  sufficient entrywise budget is not a lower bound on the actual normalizer.
+- **Half-reflected \(W_n\) sums:** connections agent is seeking useful positive
+  representations. A signed identity or finite nonvanishing tests do not prove
+  positivity or nonvanishing modulo a varying prime.
+- **Monomial extensions:** the original pairing theorem's independent review is
+  complete. Periodic-weight and mixed-partner constructions are being developed
+  separately; their review status does not follow from the original theorem.
+
+No proof of irrationality for all odd zeta values, weighted Fuss–Catalan
+extension, historical novelty claim, or guaranteed usage/runtime budget follows
+from this ledger.

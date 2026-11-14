@@ -1,0 +1,1323 @@
+                                                       ARITHMETIC OF WEIGHTED CATALAN NUMBERS
+
+                                                                              YIBO GAO AND ANDREW GU
+arXiv:1908.03914v1 [math.CO] 11 Aug 2019
+
+
+
+
+                                                   Abstract. In this paper, we study arithmetic properties of weighted Catalan numbers.
+                                                   Previously, Postnikov and Sagan found conditions under which the 2-adic valuations of
+                                                   the weighted Catalan numbers are equal to the 2-adic valutations of the Catalan numbers.
+                                                   We obtain the same result under weaker conditions by considering a map from a class
+                                                   of functions to 2-adic integers. These methods are also extended to q-weighted Catalan
+                                                   numbers, strengthening a previous result by Konvalinka. Finally, we prove some results
+                                                   on the periodicity of weighted Catalan numbers modulo an integer and apply them to the
+                                                   specific case of the number of combinatorial types of Morse links. Many open questions
+                                                   are mentioned.
+
+
+
+
+                                                                                     1. Introduction
+                                              The sequence of Catalan numbers {Cn }n≥0 is one of the      most well-studied sequences in
+                                           combinatorics. They have a product formula Cn = 2n           n /(n + 1) and count Dyck paths,
+                                           binary trees, triangulations and many more classical combinatorial objects [10]. In this
+                                           paper, we focus on weighted Catalan numbers, one of the many generalizations of Catalan
+                                           numbers, and their arithmetic.
+                                              Recall that a Dyck path of semilength n is a sequence of points {(xk , yk )}2n k=0 that starts
+                                           at (x0 , y0 ) = (0, 0) and ends at (x2n , y2n ) = (2n, 0) in the upper half-plane of the integer
+                                           lattice Z2 such that each step sk = (xk − xk−1 , yk − yk−1 ) is either (1, −1) or (1, 1). For
+                                           a fixed sequence of integers b = (b(0), b(1), b(2), . . .), define the weight of a step sk to be
+                                           b(yk−1 ) if sk has the form (1, 1) and 1 if sk has the form (1, −1). For a Dyck path P ,
+                                           define its weight wtb (P ) to be the product of the weights of its steps. See Figure 1 for an
+                                           example.
+
+                                                                                                       •
+                                                                                                b(2)
+                                                                                     •          •          •
+                                                                              b(1)       b(1)
+                                                                              •          •                     •
+                                                                       b(0)
+                                                                       •                                            •
+
+                                                                Figure 1. A Dyck path with weight b(0)b(1)2 b(2).
+
+
+                                             Date: August 13, 2019.
+                                                                                                1
+2                                  YIBO GAO AND ANDREW GU
+
+Definition 1.1. For b : Z≥0 → Z, the weighted Catalan numbers Cnb are defined as
+                                         X
+                                   Cnb =    wtb (P )
+                                                P
+where the sum is over all Dyck paths P of semilength n and the weight of a Dyck path,
+wtb (P ), is explained as above.
+   The weighted Catalan numbers have a beautiful generating function, illustrated in the
+following proposition, which is left as a simple exercise for the reader, whose proof can be
+found in the book of Goulden and Jackson [5].
+Proposition 1.2. The weighted Catalan numbers have the following generating function:
+                               X                   1
+                                   Cnb xn =                    .
+                               n≥0
+                                                   b(0)x
+                                            1−
+                                                     b(1)x
+                                               1−
+                                                        b(2)x
+                                                  1−
+                                                       1 − ···
+    Specializations of weighted Catalan numbers count many interesting combinatorial ob-
+jects. We provide some examples here. When b ≡ 1, we recover the usual Catalan numbers.
+When b(k) = k + 1, Cnb = (2n − 1)!! counts the number of matchings of 2n objects. When
+b(k) = (k + 1)2 , Cnb counts the number of alternating permutations of size 2n and when
+b(k) = (k + 1)(k + 2), Cnb counts the number of alternating permutations of size 2n + 1 [5].
+Finally, when b(k) = (2k + 1)2 , Cnb counts the number of combinatorial types Morse links
+of order n [8].
+    The divisibility of Catalan numbers by powers of 2 has been determined both arith-
+metically and combinatorially (see for example [4] and [3]). For a positive integer q ≥ 2
+and for n ∈ Z>0 , let ξq (n) be the unique m ∈ Z≥0 such that q m | n and q m+1 ∤ n and
+let sq (n) be the sum of digits in the q-ary expansion of n. It is then well-known that
+ξ2 (Cn ) = s2 (n + 1) − 1.
+    Postnikov and Sagan [9] provided a sufficient condition on b : Z≥0 → Z for ξ2 (Cnb ) =
+ξ2 (Cn ). For any function f : Z≥0 → Z, let ∆f : Z≥0 → Z be defined as (∆f )(x) =
+f (x + 1) − f (x).
+Theorem 1.3 ([9]). If b : Z≥0 → Z satisfies
+    (1) b(0) is odd,
+    (2) 2n+1 | (∆n b)(x) for all x ∈ Z≥0 ,
+then ξ2 (Cnb ) = ξ2 (Cn ) = s2 (n + 1) − 1 for all n.
+    In the case where b is a polynomial function, a necessary and sufficient condition for
+ξ2 (Cnb ) = ξ2 (Cn ) for all n was conjectured by Konvalinka [6] and resolved by An [1] arith-
+metically. A generalization of Theorem 1.3 to weighted q-Catalan numbers, for a prime
+power q, is given by Konvalinka [6].
+    In this paper, we relax conditions of Theorem 1.3 and also arrive at the conclusion that
+ξ2 (Cnb ) = ξ2 (Cn ). Our main theorem is stated and proved in Section 2 using combinatorial
+                         ARITHMETIC OF WEIGHTED CATALAN NUMBERS                              3
+
+arguments on binary trees. In Section 3, we show that a similar approach can be used to
+generalize our results to weighted q-Catalan numbers. In addition, in a different setting,
+we discuss modulo arithmetic of weighted Catalan numbers in Section 4, resolving some
+periodicity conjectures by Postnikov [8]. Many intriguing conjectures will be mentioned
+along the way.
+
+                                     2. The main theorem
+Theorem 2.1. If b : Z≥0 → Z satisfies
+    (1) b(0) is odd,
+    (2) 4 | (∆b)(x) for all x ∈ Z≥0 ,
+    (3) 2n | (∆n b)(x) for all n ≥ 2 and x ∈ Z≥0 ,
+then ξ2 (Cnb ) = ξ2 (Cn ) = s2 (n + 1) − 1.
+  To prove the main theorem, we modify the approach of Postnikov and Sagan with average
+weight functions rb (O; x) attached to orbits of binary trees. Under their conditions, these
+functions were always odd-valued, whereas they are only integer-valued under the weaker
+conditions of Theorem 2.1. We develop a method of analyzing their parity and show via
+induction that we have an odd number of minimal orbits with odd-valued average weight
+functions, which will prove the theorem.
+
+2.1. Binary trees and minimal orbits. In this section we reprove some important facts
+about binary trees.
+Definition 2.2. A binary tree is a rooted tree where each vertex has a left child, a right
+child, both children, or no children.
+   Let Tn denote the set of binary trees on n vertices. One of the interpretations of Catalan
+numbers is that Cn = |Tn |. There is a symmetry group Gn acting on Tn , generated by
+reflections about a vertex which switch the left and right subtrees. An orbit of trees refers
+to an orbit under the action of Gn , which groups together binary trees which are isomorphic
+when the distinction between left and right is disregarded.
+   The following lemma was shown by Deutsch and Sagan [3].
+Lemma 2.3. Let O be an orbit of the symmetry group Gn on Tn . Then |O| is of the
+form 2t for a nonnegative integer t. Furthermore, t ≥ s = s2 (n + 1) − 1, with equality for
+(2s − 1)!! orbits.
+   We will use minimal orbit to refer to an orbit of the minimum possible size, which is 2s .
+The set of all orbits of Tn under Gn is denoted Un , and the set of minimal orbits is denoted
+Unmin .
+Definition 2.4. The complete binary tree of depth k is the binary tree of 2k − 1 vertices
+where each vertex in layer 0, 1, . . . , k − 2 has two children and each vertex in layer k − 1
+has no children.
+4                               YIBO GAO AND ANDREW GU
+
+   Note that complete binary trees are exactly the trees whose orbit consist of just one
+tree.
+   Now we have the following key result which describes the structure of minimal orbits of
+trees on n vertices. (Recall that these are orbits of size 2s2 (n+1)−1 .) This was done more
+generally for q-ary trees by Konvalinka [6].
+Theorem 2.5 (Structure of minimal orbits). Let s = s(n+1)−1 and n+1 = 2k1 +· · ·+2ks+1
+be the binary expansion of n + 1. Then all trees in an orbit of Unmin may be constructed in
+the following manner: construct an arbitrary binary tree with s vertices, and then attach
+completely symmetric trees of depth k1 , . . . , ks+1 to the s + 1 endpoints.
+  See Figure 2 for an example. In constructing these minimal orbits, the s vertices of the
+“arbitrary binary tree” will be marked black while the other vertices will be marked white.
+
+
+
+
+           Figure 2. An example for n = 54, n + 1 = 25 + 24 + 22 + 21 + 20 .
+
+   Furthermore, this mapping can be reversed in the following way: for every vertex, color
+it white if the left and right subtrees at that vertex are isomorphic, and otherwise color
+it black. The black vertices are the original s vertices and all white vertices are part of
+complete binary trees.
+   The symmetries of such trees are generated precisely by reflections about the original s
+vertices (the ones marked in black).
+Remark 2.6. In Theorem 2.5, the term 20 may appear in the binary expansion of n + 1.
+This corresponds to an empty tree. In the example of Figure 2, all the black vertices have
+two children except for the third one from the left, which has only a right child. This is
+because the empty tree was assigned to its left child.
+2.2. Mapping F to 2-adic integers. Let F denote the set of functions f : Z≥0 → Z
+such that 2n | (∆n f )(x) for all n ≥ 0 and x ∈ Z≥0 . Define the shift operator S by
+                                   (Sf )(x) = f (x + 1).
+                            ARITHMETIC OF WEIGHTED CATALAN NUMBERS                                                5
+
+Lemma 2.7. The product rule
+                                               n  
+                                               X  n                  
+                               ∆n (f · g) =              ∆n−k S k (f ) ∆k (g)
+                                                     k
+                                               k=0
+holds, which can be extended to multiple functions as
+                                                   
+                        X                 n
+∆n (f1 · · · fm ) =                                   ∆a1 (S a2 +···+am f1 )·∆a2 (S a3 +···+am f2 ) · · · ∆am (fm ).
+                    a +···+a =n
+                                  a 1 , . . . , a m
+                      1      m
+
+Lemma 2.8. The set F is closed under the following operations:
+                                                          f (x + 1)g(x) + f (x)g(x + 1)
+     f 7→ Sf,      (f, g) 7→ f · g,      and      (f, g) 7→ hf, gi =                    .
+                                                                         2
+Proof. Closure under S is clear. For multiplication, we may use the product rule: each
+individual term in the expansion of ∆n (f · g) will be divisible by 2n . Likewise, by writing
+                                         ∆(f ) · g + f · ∆(g)
+                                   hf, gi = f · g +
+                                                   2
+and expanding with the product rule, we can show that hf, gi ∈ F if f, g ∈ F.                                   
+  Next, observe that for f ∈ F and any nonnegative integer n, we have (∆n f )(x) ≡
+0 (mod 2n ) by definition and also (∆n+1 f )(x) ≡ 0 (mod 2n+1 ). Then ∆n f is constant
+modulo 2n+1 and must be equal to either 2n or 0. Define a mapping
+                                               ε : F → {0, 1}N
+by sending f to (εf0 , εf1 , . . . ) where
+                                       (
+                                   f     0     if ∆n f ≡ 0 (mod 2n+1 )
+                                 εn =                                   .
+                                         1     if ∆n f ≡ 2n (mod 2n+1 )
+   Define the weight of a binary tree T by
+                                                         Y
+                                          wb (T ; x) =         b(x + lv )
+                                                         v∈T
+where the product is over all vertices v of T and lv the number of left-edges in the path
+from the root to v. Evaluating this weight at x = 0 and summing over all binary trees
+gives Cnb . For each orbit O, define a total weight function wO (x) by
+                                               X
+                                     wO (x) =      wb (T )
+                                                         T ∈O
+
+and the average weight function rb (O; x) by
+                                                           wb (O; x)
+                                             rb (O; x) =             .
+                                                              |O|
+We have the recursive formula
+                                 rb (O; x) = b(x) · hrb (OL ; x), rb (OR ; x)i
+6                                     YIBO GAO AND ANDREW GU
+
+(see Postnikov and Sagan [9]) where OL and OR are the orbits associated to the left and
+right subtrees of the root. By Lemma 2.8 and induction, all functions rb (O; x) are in F.
+                                                          f
+Definition 2.9. For an orbit O of binary trees, let εO
+                                                     m = εm for f = rb (O) ∈ F.
+
+    From now on, we will also let εk = εbk for all k, i.e. the superscript b will be omitted.
+Lemma 2.10. For an orbit O with left and right orbits OL , OR , the following formula
+holds:
+               X  m 
+         O
+        εm ≡                  εk (εO L OR
+                                   i εj   + εO L OR
+                                             i+1 εj + εO L OR
+                                                       i εj+1 ) (mod 2).
+                      i, j, k
+                     i+j+k=m
+
+Proof. We make use of the identity
+                                           ∆(f ) · g + f · ∆(g)
+                                 hf, gi = f · g +                 .
+                                                     2
+By expanding with the product rule, we have
+               X  m h                     
+ m
+∆ rb (O; x) =                 ∆k (S i+j b) · ∆i (S j rb (OL ; x)) · ∆j (rb (OR ; x))+
+                      i, j, k
+                  i+j+k=m
+
+                     ∆i+1 (S j rb (OL ; x)) · ∆j (rb (OR ; x)) + ∆i (S j rb (OL ; x)) · ∆j+1 (rb (OR ; x)) i
+                                                                                                              .
+                                                                 2
+We may now break this up into three sums, each of which will correspond to a term in the
+statement in the lemma. The first term is
+                 X  m 
+                                ∆k (S i+j b) · ∆i (S j rb (OL ; x)) · ∆j (rb (OR ; x))
+                       i, j, k
+                  i+j+k=m
+
+As b, rb (OL ; x), rb (OR ; x) ∈ F, each term in this summation is divisible by 2k · 2i · 2j = 2m .
+This term is not divisible by 2m+1 if and only if all of the following hold:
+           m 
+      • i,j,k    is odd.
+      • ∆ (S b) ≡ 2k (mod 2k+1 ).
+           k    i+j
+
+      • ∆i (S j rb (OL ; x)) ≡ 2i (mod 2i+1 ).
+      • ∆j (rb (OR ; x)) ≡ 2j (mod 2j+1 ).
+Therefore the residue modulo 2m+1 is equal to the residue of
+                                X  m  O O
+                                                εk εi L εj R
+                                        i, j, k
+                                      i+j+k=m
+
+modulo 2, multiplied by 2m .
+    Similarly, the second term in the expansion is
+                                  
+               1 X           m
+                                    ∆k (S i+j b) · ∆i+1 (S j rb (OL ; x)) · ∆j (rb (OR ; x)).
+               2           i, j, k
+                  i+j+k=m
+                       ARITHMETIC OF WEIGHTED CATALAN NUMBERS                                  7
+
+The summation without the factor of 21 is always a multiple of 2m+1 , and will not be a
+                                  m 
+multiple of 2m+2 if and only if i,j,k is odd and εbk = εO      OR
+                                                        i+1 = εj
+                                                          L
+                                                                  = 1. The third term can
+be handled similarly. Summing all the equations yields the lemma.
+   In the case where OL or OR is empty, the associated function is rb = 1 with εr0b = 1 and
+ rb
+εk = 0 for k ≥ 1. The proof of the lemma works the same in this case.                     
+Lemma 2.11. Let O be an orbit of binary trees on n vertices, and suppose that for some
+vertex v, the subtree with root v is a complete binary tree of depth k. Let O′ be the same
+orbit of trees with the subtree at v replaced by a single vertex at v. Then
+                                                  k        ′
+                                        εO    2 −2 O
+                                         m = ε0   εm .
+Proof. We prove this lemma by induction. If v is not the root vertex, then we use lemma
+2.10 to expand. Exactly one of the left and right subtrees contains v, so the inductive
+                                        k
+hypothesis applies to factor out ε02 −2 . Hence we can reduce to the base case where v is
+the root, i.e. we have a complete binary tree of depth k. To prove this case, we induct on
+k.
+   For k = 1 the lemma follows because rb (O; x) = b(x). For the inductive step, we use
+Lemma 2.10 where OL and OR are complete binary trees of depth k − 1. Note that by
+symmetry of i and j, the εO    L OR       OL OR
+                             i+1 εj + εi εj+1 term cancels out in the sum, and εi εj
+                                                                                      OL OR
+                                                                                            also
+cancels out forall terms
+                        i+jwhere   i 6= j. Finally,  note that if i = j > 0, then the binomial
+              m
+                  = m                          2i
+                             
+coefficient i,j,k    k    i    is divisible by  i  , which is even. Therefore the only remaining
+term in the summation is the i = j = 0 term. By the inductive hypothesis, we have
+                                        ′   2(2k−1 −1)         k   ′
+                               εO    O
+                                m ≡ εm ε0                = ε02 −2 εO
+                                                                   m
+as desired.                                                                                   
+   The recursive formula illustrated in Lemma 2.10 enables us to explicitly write down εO m
+in an elegant way. This combinatorial description gives another quick proof to Lemma 2.11
+but is not used in other places of the paper. Readers are free to skip to the proof of the
+main theorem.
+   We view an orbit O as a rooted binary tree. Traditionally, we say that a vertex v is a
+descendant of another vertex w in O if the unique path connecting v and the root passes
+through w. Similarly, we say that a vertex v is a descendant of an edge e in O if the
+unique path connecting v and the root contains e. In addition, we say that an edge e of
+O connecting two vertices u and v originates from u if v is a descendant of e (or of u).
+Consequently, two edges e and e′ are called siblings if they originate from the same vertex.
+Definition 2.12. A coin-configuration C on O of order m consists of the following data:
+      • a subset of edges E of O such that no siblings are simultaneously selected,
+      • a distribution of distinct coins {1, . . . , m} ∪ E to all vertices of O such that each
+        coin ce labeled by an edge e ∈ E is assigned to a descendent of e.
+For such Q a coin-configuration C, let Cv denote the set of coins at v. Define its weight
+wt(C) = v∈O ε|Cv | where the product is over all vertices v in O. Moreover, let Cm     O denote
+
+the set of all coin-configurations on O of order m.
+8                                      YIBO GAO AND ANDREW GU
+
+   See Figure 3 for an example of a coin-configuration of order 9 on an orbit O which is a
+rooted binary tree on 8 vertices, where the selected edges in E are highlighted as thick line
+segments and the distribution of coins is written underneath the vertices. This particular
+example has weight (ε0 )2 (ε1 )(ε2 )4 (ε3 ).
+
+                                        •
+                                   e1 {2, 8}
+                               •                       •
+                            {e1 , 4}                 {5, 6} e2
+                    •                      •                     •
+                    ∅                     {7}                    ∅    e3
+                                                       •                   •
+                                                     {3, 9}           {1, e2 , e3 }
+
+Figure 3. An example of a coin-configuration of order 9 with weight (ε0 )2 (ε1 )(ε2 )4 (ε3 ).
+
+
+Proposition 2.13. We have the following explicit formula for an orbit O:
+                                       X
+                                 εO
+                                  m =       wt(C)
+                                                     O
+                                                  C∈Cm
+
+where the sum is over all coin-configurations C on O of order m.
+Proof. The proposition is a direct consequence of Lemma 2.10 and induction on the number
+of vertices of O. For the base case where O is a single vertex, by definition, εO        m equals εm .
+At the same time, we have exactly 1 coin-configuration with weight εm since there are no
+edges and all m coins must be assigned to the unique vertex in O.
+   Now assume that our proposition is true for all orbits with less than n vertices and
+consider an orbit O with n vertices. Similarly as in Lemma 2.10, let OL and OR be the left
+and right subtrees of the root respectively and letPeL and eR be the left and right edges
+originating from the root respectively. Consider C∈Cm        O wt(C), which is the RHS of the
+
+proposition. For a coin-configuration C with a chosen subset E of the edges, we cannot
+have both eL and eR lie in E. Then there are 3 possibilities:            (1) eL ∈ E, eR ∈     / E; (2)
+                                                         m
+                                                           
+eL ∈/ E, eR ∈ E; (3) eL , eR ∈/ E. For (1), we have i,j,k    ways to assign k coins to the root,
+i + 1 total coins to the left subtree (i original coins in {1, . . . , m} and a new coin from eL ),
+and j total coins to the right subtree. This provides a sum of
+           X  m              X             X                   X  m  O O
+                           εk       wt(C)          wt(C) =                         εk εi+1
+                                                                                         L
+                                                                                           εj R
+                   i, j, k                                                 i, j, k
+        i+j+k=m                  O L
+                              C∈Ci+1
+                                               O
+                                                C∈Cj R           i+j+k=m
+
+                                                                        P
+by induction. Similarly handle case (2) and (3) and take the total sum C∈Cm   O wt(C),
+                                                                      O
+which is the exact same expression as RHS of Lemma 2.10 so it equals εm as desired. 
+                      ARITHMETIC OF WEIGHTED CATALAN NUMBERS                                9
+
+  From the description of εO   m using coin-configurations (Definition 2.12), Lemma 2.11
+becomes immediate: if a vertex v of O has isomorphic left and right subtrees, we can pair
+up coin-configurations with nontrivial coin assignments to descendents of v by switching
+the left and right subtrees of v and each pair of coin-configurations have the same weight.
+2.3. Proof of the Main Theorem. Now we are ready to prove Theorem 2.1.
+Proof of Theorem 2.1. We write
+                                          X
+                                  Cnb =          |O| · rb (O; 0).
+                                          O∈Un
+
+From Lemma 2.3, |O| is always a power of two with exponent at least s = s2 (n + 1) − 1.
+We also know that rb (O; 0) is always an integer and by definition, rb (O; 0) is odd if and
+only if εO
+         0 = 1. Then              X         
+                           Cnb ≡          εO
+                                           0 2
+                                               s
+                                                  (mod 2s+1 ),
+                                    O∈Unmin
+
+so it is equivalent to show that O∈Unmin εO
+                                P
+                                             0 is odd.
+   We use Theorem 2.5 to construct all minimal orbits of trees on n vertices. By Corollary
+2.11, if we replace each complete binary tree of depth greater than 0 by a single vertex, we
+get a new orbit of binary trees (on fewer vertices) which has the same sequence εO   m , only
+reduced by a power of ε0 . This operation will be referred to as “reduction.” In Figure 4,
+have reduced the tree from Figure 2 and obtained a new tree. Note that we have preserved
+the colors of the vertices, as we will need to refer to them later.
+
+
+
+
+       Figure 4. The example tree from Figure 2, and its reduction on the right.
+
+   We first consider the number of vertices remaining after reduction. If n + 1 is odd, then
+there are 2s vertices remaining because there are s nonempty complete binary trees being
+attached to s vertices. If n + 1 is even, then the number of remaining vertices is 2s + 1.
+10                                       YIBO GAO AND ANDREW GU
+
+In either case, let k be the number of vertices of the trees of the minimal orbits after the
+reduction. With Uk as the set of orbits on k vertices, let f (O) denote the number of times
+an orbit O appears after reduction. Then we have
+                                        X                   X
+                                                εO    n−k
+                                                 0 = ε0            f (O)εO
+                                                                         0 .
+                                      O∈Unmin               O∈Uk
+
+
+We want to determine the left hand side modulo 2, so we can ignore all orbits for which
+f (O) is even.
+   In fact, we claim that those trees which remain (appear an odd number of times) are
+those representing minimal orbits of trees on k vertices. Recall with Theorem 2.5 we
+assigned certain vertices as white and others as black, and we maintain this color scheme.
+After the reduction, we always have s or s + 1 white leaves attached to s black vertices.
+See Table 1 for an example, with all minimal orbits of trees on 14 vertices shown with their
+reductions. In Table 2, the counts of the resulting trees on 6 vertices are recorded, and we
+can see that only three of them remain.
+   Let M be the size of the orbit of a tree on k vertices obtained by reduction. In the case
+where k = 2s, we claim that the number of times a given orbit O appears is given by s!M  2s .
+We can prove this by counting the number of trees on n vertices to which this corresponds:
+we have s! ways of placing complete binary trees on the s white vertices and M different
+ways to determine the underlying structure, which will count every corresponding tree on
+n vertices 2s times because each such tree has 2s symmetries.
+   Now we determine when this quantity is odd. We have
+                   
+              s!M
+     ξ2                 = ξ2 (s!) + ξ2 (M ) − ξ2 (2s ) = s − s2 (s) + ξ2 (M ) − s = ξ2 (M ) − s2 (s).
+               2s
+
+This is odd if and only if ξ2 (M ) = s2 (s). Since s2 (s) = s2 (2s + 1) − 1 = s2 (k) − 1, this
+occurs if and only if we have a minimal orbit.
+   Similarly, when k = 2s + 1, the number of times that a tree appears is given by (s+1)!M 2s  ,
+which is odd only when we have a minimal orbit for the same reason.
+   Up to now, we have shown that if f (O) ≥ 1, i.e. an orbit of trees on k vertices actually
+appears after the reduction operation, then f (O) is even if O 6∈ Ukmin . If O ∈ Ukmin , then O
+will be counted an odd number of times if we know how to assign the nodes as white/black
+to “expand” the tree back to the original size, though this still leaves out the possibility
+of multiple or no white/black assignments for O. To finish the claim, we show that if
+O ∈ Ukmin , then there is a unique assignment of black and white nodes to O so that some
+orbits in Unmin reduce to O with that color assignment. We know that nodes with no
+children after reduction must be white and those with at least one child must be black
+after reduction, which shows uniqueness. Using Theorem 2.5, we may directly verify that
+trees in an orbit of Ukmin will always have a number of white nodes which is equal to or one
+more than the number of black nodes, so this coloring is always valid.
+                      ARITHMETIC OF WEIGHTED CATALAN NUMBERS                       11
+
+Original tree        Reduction   Original Tree Reduction    Original Tree   Reduction
+
+
+
+
+    Table 1. Reduction of minimal orbits of trees on 14 vertices to orbits of
+    trees on 6 vertices.
+
+With the claim, we now have
+              X              X                X
+                         n−k              n−k
+                   εO
+                    0 = ε0     f (O)εO
+                                     0 ≡ ε0     εO
+                                                 0            (mod 2)
+                O∈Unmin          O∈Uk             O∈Ukmin
+12                               YIBO GAO AND ANDREW GU
+
+                              Reduced Tree Count (=f (O))
+
+                                                          3! · 4
+                                                     3=
+                                                           23
+
+
+                                                          3! · 4
+                                                     3=
+                                                           23
+
+
+                                                          3! · 4
+                                                     3=
+                                                           23
+
+
+                                                   3! · 8
+                                                     6=
+                                                    23
+                     Table 2. Counts of the resulting reduced trees.
+
+
+so we may reduce to the case of k vertices. We always have k < n if n ≥ 2 because
+n + 1 ≥ 3, meaning that minimal orbits contain complete binary trees of depth greater
+than 1 and the reduction operation always removes a positive number of vertices.
+   For our base cases, we will eventually reduce to n = 1 or n = 2, where the statement is
+directly verified. Specifically, we have
+                                     X
+                                         εO
+                                          0 = ε0 ,
+                                  O∈U1min
+                                    X
+                                            εO
+                                             0 = ε0 (ε0 + ε1 ).
+                                  O∈U2min
+
+The assumptions on b are precisely that ε0 = 1 and ε1 = 0, so this is odd, as desired.
+   Note that the reduction to a smaller case preserves parity, so we reduce to the n = 1
+or n = 2 case according to the parity of n at the start. Thus we actually get a stronger
+result: if we relax the condition 4 | ∆b to 2 | ∆b, then ξ2 (Cnb ) = ξ2 (Cn ) holds for odd n,
+while ξ2 (Cnb ) > ξ2 (Cn ) for even n if 4 ∤ ∆b.                                            
+   An [1] previously determined necessary and sufficient conditions, conjectured by Kon-
+valinka [6], under which a polynomial weight function b(x) = b0 + b1 x + b2 x2 + · · · ∈ Z[x]
+satisfies ξ2 (Cnb ) = ξ2 (Cn ). Inspired by his results, we make the following conjecture.
+Conjecture 2.14. If b : Z≥0 → Z satisfies
+  (1) b(0) is odd,
+  (2) 2n−s2 (n) | (∆n b)(x) for all n ≥ 2 and x ∈ Z≥0 ,
+                          ARITHMETIC OF WEIGHTED CATALAN NUMBERS                            13
+
+    (3) b(0) ≡ b(1) (mod 4),
+then ξ2 (Cnb ) = ξ2 (Cn ) = s2 (n + 1) − 1.
+   We would be particularly interested in seeing a combinatorial proof of Conjecture 2.14
+as An’s overall strategy was very computational in nature.
+
+                            3. Generalizations to prime powers
+  Catalan numbers may be generalized to q-Catalan numbers, which have the formula
+                                                 
+                                          1       qn
+                            Cn(q) =                  .
+                                    (q − 1)n + 1 n
+                                (q)                                             (q)
+In this section, we will use Cn to denote q-Catalan numbers and Cn (b) to denote weighted
+q-Catalan numbers.
+   These count the number of paths from (0, 0) to (qn, 0) with steps (1, q − 1) and (1, −1)
+which never go below the x-axis and the number of q-ary trees on n vertices (each vertex
+has q distinguishable branches). Similarly, there are the weighted q-Catalan numbers. For
+a q-ary tree T , weight each vertex v by b(i) where i is the number of non-right edges on
+the path from the root to v, and let the weight of T be the product of the weights of its
+vertices. The weighted q-Catalan numbers are the sums of the weights of all q-ary trees on
+n vertices:                                     X
+                                    Cn(q) (b) =   wt(T ).
+                                                  T
+The weighted q-Catalan numbers have generating function
+                   X                                          1
+                         Cn(q) (b)xn =                                                  .
+                   n≥0
+                                                              b(0)x
+                                         1−                                     q−1
+                                                             b(1)x               
+                                           1 −
+                                                                                 
+                                                                             q−1 
+                                                              b(2)x
+                                                                                
+                                                  1−
+                                                           (1 − · · · )q−1
+As before, there is a symmetry group Gn on q-ary trees of depth n, generated by permuting
+the subtrees at any vertex. The complete q-ary trees are fixed under all symmetries and
+consist of layers of 1, q, q 2 , . . . , q k−1 vertices.
+  Konvalinka [6] generalized Postnikov and Sagan’s result to divisibility of q-Catalan num-
+bers when q is a power of a prime. Similarly, we may extend the techniques for the case
+q = 2 to prove the following result:
+Theorem 3.1. Let q = pk be a prime power. If b : Z≥0 → Z satisfies
+  (1) b(0) ≡ 1 (mod q)
+  (2) q 2 | (∆b)(x) for all x ∈ Z≥0 ,
+  (3) q n | (∆n b)(x) for all n ≥ 2 and x ∈ Z≥0 ,
+14                                           YIBO GAO AND ANDREW GU
+
+         (q)           (q)
+then Cn (b)) ≡ Cn            (mod pξ+k ) where
+                                            sp ((q − 1)n + 1) − 1
+                                      ξ=                          = ξp (Cn(q) ).
+                                                    p−1
+   The proof is similar so we will show the main claims and only give brief details of
+the proofs. Define F as the set of functions satisfying q n | ∆n f for all n, and the map
+f 7→ (εf0 , εf1 , . . . ) ∈ (Z/qZ)N so that ∆n f ≡ εfn q n (mod q n+1 ).
+Lemma 3.2. The set F is closed under the following operations:
+                          f 7→ Sf,        (f, g) 7→ f · g,             and
+                                                                             q
+                                                                       1X            Y
+                          (f1 , . . . , fq ) 7→ hf1 , . . . , fq i =      fi (x + 1)   fj (x).
+                                                                       q
+                                                                         i=1            j6=i
+
+Proof. Closure under S is clear, and closure under products follows from Lemma 2.7 (the
+product rule). Closure under h· · · i follows by writing
+                                                                q
+                                                           1X            Y
+                                      hf1 , . . . , fq i =   (fi + ∆fi )   fj ,
+                                                           q
+                                                               i=1               j6=i
+
+expanding, and using the product rule.                                                                             
+   We define average weight functions rb (O; x) for orbits as before, and these weight func-
+tions are in F. Now we give the analog of Lemma 2.10.
+Lemma 3.3. Let O be an orbit of q-ary trees and let the orbits of the subtrees of the root
+vertex be O1 , . . . , Oq . Then
+                                             
+          X                       m                            Oq                Oq                   Oq
+εO
+ m ≡                                            εk (εO              O1                      O1
+                                                     i1 · · · εiq +εi1 +1 · · · εiq +· · ·+εi1 · · · εiq +1 ) (mod q).
+                                                       1
+                          i1 , . . . , iq , k
+        i1 +···+iq +k=m
+
+(The expression inside the parentheses contains q +1 terms, one term with indices i1 , . . . , iq
+while the other q have exactly one index incremented.)
+Proof. We use the recursive formula
+                                   rb (O) = b · hrb (O1 ), . . . , rb (Oq )i.
+By expanding hf1 , . . . , fq i = 1q qi=1 (fi + ∆fi ) j6=i fj , we arrive at the given formula. 
+                                    P                 Q
+
+     Before stating the analog of Lemma 2.11, we first have the following proposition:
+Proposition 3.4. Let q be a positive integer and i1 , . . . , iq be nonnegative integers, not
+all zero. Suppose that the distinct elements of the set {i1 , . . . , iq } are j1 , . . . , jt and these
+elements appear with multiplicity k1 , . . . , kt . Then q divides
+                                                                    
+                                 i1 + . . . + iq              q
+                                                                         .
+                                   i1 , . . . , iq     k1 , . . . , kt
+                             ARITHMETIC OF WEIGHTED CATALAN NUMBERS                                                  15
+
+Proof. The binomial expression given counts the number of ways to assign i1 + · · · + iq
+distinguishable people into q distinguishable rooms so that the distribution of the number
+of people in the rooms is a permutation of i1 , . . . , iq . Since there is at least one person, we
+can group valid assignments with cyclic shifts (move each person down one room), so the
+number of assignments it a multiple of q.                                                         
+Lemma 3.5. Let O be an orbit of q-trees on n vertices, and suppose that for some vertex
+v, the subtree with root v is a complete q-ary tree of depth k. Let O′ be the same orbit of
+trees with the subtree at v replaced by a single vertex at v. Then
+                                                             q k −1
+                                                           −1 O ′
+                                                εO
+                                                 m = ε0
+                                                       q−1
+                                                             εm .
+Proof. Like the proof of Lemma 2.11, it suffices to analyze the case where O is a complete
+q-ary tree and v is its root. We expand with Lemma 3.3. Since the orbits O1 , . . . , Oq are
+the same, we have
+                                        
+           X                 m                               Oq                      Oq
+                                           εk (εO                          O1
+                                                i1 +1 · · · εiq + · · · + εi1 · · · εiq +1 ) = 0 (mod q).
+                                                  1
+                     i1 , . . . , iq , k
+       i1 +···+iq +k=m
+
+The remaining term is
+                                                                       
+                                    X                       m
+                      εO
+                       m ≡                                                εk εO         O1
+                                                                              i1 · · · εiq
+                                                                                1
+                                                                                             (mod q).
+                                                    i1 , . . . , iq , k
+                              i1 +···+iq +k=m
+
+(We have replaced all Oi with O1 .) Given a multiset of indices {i1 , . . . , iq }, with distinct
+elements j1 , . . . , jt that appear k1 , . . . , kt times, the number of times the term εO             i1 · · · εiq
+                                                                                                           1          O1
+
+                                         q
+                                                                                  m
+                                                                                                         i1 +···+iq 
+appears in the above sum is k1 ,...,k       t
+                                                , and  it is  multiplied  by  i1 ,...,iq ,k  .  Since       i1 ,...,iq
+             m         
+divides i1 ,...,i q ,k
+                         , by Proposition  3.4,   these  terms   cancel  out unless       i1   = · · · =    iq = 0.
+Hence we are left with
+                                                             O1 q
+                                               εO m = εm (ε0 )
+and the statement of the lemma follows from there.                                                                     
+  The proof of Theorem 3.1 is quite similar to the proof of Theorem 2.1 from here. We
+construct all minimal orbits on n vertices according to the analog of Theorem 2.5, and
+each one may be reduced using Lemma 3.5 to get orbits of trees on a smaller number of
+vertices. This will reduce to the case of trees on a smaller number of vertices until we have
+reduced to n ≤ q. In these cases, we directly verify that ε0 = 1 and ε1 = 0 is sufficient to
+have the sum of εO 0 equal to 1 (mod q).
+
+                         4. Periodicity of weighted Catalan numbers
+  In this section we examine the periodicity of the weighted Catalan numbers modulo
+a positive integer m. In Section 4.1, we prove the main result which determines if {Cnb
+(mod m)} is periodic. In Section 4.2, we analyze the specific case of Morse link numbers
+previously studied by Postnikov and compute periods modulo 7, 11, and 3r . Finally, in
+Section 4.3 we suggest some conjectures on Morse link numbers to be further explored.
+16                                YIBO GAO AND ANDREW GU
+
+4.1. Determining when periodicity exists. We begin with the following lemma on
+finite continued fractions of the form in Proposition 1.2.
+
+Lemma 4.1. For integers u, v, let Sk (u, v) denote the set of all sequences u ≤ i1 <
+i2 < . . . < ik ≤ v of integers such that im+1 − im ≥ 2 for all m. For a sequence
+b(0), b(1), . . . , b(n), we have
+
+                                     1               P (x)
+                                                   =
+                                     b(0)x           Q(x)
+                            1−
+                                       b(1)x
+                               1−
+                                         b(2)x
+                                  1−
+                                             ···
+                                     1−
+                                         1 − b(n)x
+
+where P (x) and Q(x) are defined as follows:
+                                                                                  
+                             X           X
+                 P (x) = 1 +                                      b(i1 ) · · · b(ik ) (−x)k
+                                k≥1       (i1 ,...,ik )∈Sk (1,n)
+                                                                                  
+                                X                 X
+                  Q(x) = 1 +                                      b(i1 ) · · · b(ik ) (−x)k .
+                                k≥1       (i1 ,...,ik )∈Sk (0,n)
+
+                                                     1        1
+Proof. We induct on n. For n = 0 the equality is 1−b(0)x = 1−b(0)x , which is clearly true.
+For the inductive step, assume the lemma is true for some n. Then
+
+                   1                        1                   Q1 (x)
+                                   =           P1 (x)
+                                                      =
+                   b(0)x             1 − b(0)x Q1 (x)   Q 1 (x) − b(0)xP1 (x)
+         1−
+                     b(1)x
+            1−
+                       b(2)x
+               1−
+                           ···
+                  1−
+                     1 − b(n + 1)x
+
+where
+                                                                                    
+                                X                  X
+                 P1 (x) = 1 +                                       b(i1 ) · · · b(ik ) (−x)k ,
+                                k≥1   (i1 ,...,ik )∈Sk (2,n+1)
+                                                                                    
+                                X                  X
+                Q1 (x) = 1 +                                        b(i1 ) · · · b(ik ) (−x)k
+                                k≥1   (i1 ,...,ik )∈Sk (1,n+1)
+                       ARITHMETIC OF WEIGHTED CATALAN NUMBERS                                        17
+
+by the inductive hypothesis. Now we have
+                                                                                      
+                                     X                X
+          Q1 (x) − b(0)xP1 (x) = 1 +                                   b(i1 ) · · · b(ik ) (−x)k
+                                       k≥1   (i1 ,...,ik )∈Sk (0,n+1)
+
+because the P1 (x) term accounts for all sequences in Sk (0, n + 1) which have i1 = 0 and
+the Q1 (x) term accounts for all sequences in Sk (0, n + 1) which have i1 6= 0. This proves
+the inductive step.                                                                      
+ We now have the following key theorem which describes when Cnb is eventually periodic
+modulo a positive integer m.
+Theorem 4.2. Let m be a positive integer. The sequence {Cnb (mod m)} is eventually
+periodic if and only if m | b(0) · · · b(k) for some positive integer k.
+Proof. Using the Dyck path interpretation of Catalan numbers, suppose that n | b(0) · · · b(k)
+for some positive integer k. Then all paths which exceed height k have a weight that is 0
+(mod m), so they can be ignored. This means we may truncate the continued fraction for
+the weighted Catalan numbers at b(k), so by Lemma 4.1, the weighted Catalan numbers
+have a rational generating function modulo m, i.e.
+                              X            P (x)
+                                  Cnb xn ≡         (mod m)
+                                           Q(x)
+                                n≥0
+
+for some polynomials P, Q. Furthermore, the constant term of Q(x) is 1 so this implies a
+linear recurrence relation Cnb ≡ a1 Cn−1 b         b
+                                             + a2 Cn−2               b
+                                                       + · · · + ak Cn−k (mod m) for sufficiently
+large n. This proves eventual periodicity because there are only finitely many possibilities
+       b
+for (Cn−1             b
+           , . . . , Cn−k ) (mod m), so the sequence eventually repeats.
+   In the other direction, it suffices to only consider the case where m = pr for a prime
+number p and positive integer r. We prove the claim by induction on r. Suppose that
+Cnb = Cn+kb        for some period k and sufficiently large integers n. Then the generating
+                                                                 P (x)
+function of Cnb is congruent modulo pr to a function of the form Q(x)  for polynomials P, Q
+with constant term 1, as we may take Q(x) = 1 − xk and choose P appropriately. (The
+choice of P has constant term 1 because C0b = 1.)
+  In the base case r = 1, meaning m = p is a prime, assume for the sake of contradiction
+that no b(i) is a multiple of p. We have
+                      1             X            P (x)   1 + xP1 (x)
+                                  =     Cnb xn =       =               (mod p)
+                      b(0)x                      Q(x)    1 + xQ1 (x)
+             1−                     n≥0
+                        b(1)x
+                1−
+                           b(2)x
+                     1−
+                          1 − ···
+for some polynomials P1 , Q1 as P, Q both have constant term 1. By taking the reciprocal,
+subtracting both sides from 1, and dividing by b(0)x (recall that we are assuming that b(0)
+18                                YIBO GAO AND ANDREW GU
+
+is not a multiple of p), we get
+
+           1                    P1 (x) − Q1 (x)   b(0)−1 (P1 (x) − Q1 (x))
+                       = b(0)−1                 =                                   (mod p).
+           b(1)x                 1 + xP1 (x)               P (x)
+     1−
+             b(2)x
+        1−
+                b(3)x
+           1−
+               1 − ···
+
+The constant term of b(0)−1 (P1 (x) − Q1 (x)) must be 1 because the constant term of the
+left hand side is 1, so we may repeat this procedure. Define {Uk }, {Vk } by R0 = P, S0 = Q
+and
+                                                                   
+                                                −1       U k − Vk
+                                  Uk+1 = b(k)
+                                                             x
+                                  Vk+1 = Uk .
+
+Following the above argument, Uk and Vk are always polynomials with constant term 1
+and
+                                1             Uk (x)
+                                            =                       (mod p).
+                                b(k)x         Vk (x)
+                         1−
+                                b(k + 1)x
+                            1−
+                                  b(k + 2)x
+                               1−
+                                    1 − ···
+
+If deg Uk < deg Vk , then deg Uk+1 = deg Vk − 1 and deg Vk+1 = deg Uk < deg Vk , so
+max(deg Uk+1 , deg Vk+1 ) < max(deg Uk , deg Vk ). Otherwise, if deg Uk ≥ deg Vk , then
+deg Uk+1 ≤ deg Uk − 1 < deg Vk+1 . Therefore the quantity max(deg Uk+1 , deg Vk+1 ) is
+nonincreasing and cannot remain constant twice in a row, so eventually we must have
+Uk = 0. This is a contradiction as the continued fraction on the left has constant term 1.
+   Now for r > 1, we proceed similarly, starting with
+
+                          1             X            P (x)
+                                      =     Cnb xn =                    (mod pr )
+                          b(0)x                      Q(x)
+                    1−                  n≥0
+                            b(1)x
+                       1−
+                               b(2)x
+                          1−
+                              1 − ···
+
+for some polynomials P, Q with constant term 1. By the same argument as before, there
+must be some b(i) which is a multiple of p. Suppose that νp (b(i)) = α, and let b(i) = pα ℓ
+                      ARITHMETIC OF WEIGHTED CATALAN NUMBERS                                  19
+
+with gcd(ℓ, p) = 1. Then
+                           pα ℓ             Ui (x) − Vi (x)
+(1)                                       =                       (mod pr ).
+                          b(i + 1)x              Ui (x)
+                  1−
+                            b(i + 2)x
+                      1−
+                                b(i + 3)x
+                          1−
+                                 1 − ···
+We may multiply out to obtain
+               pα ℓUi (x) = (Ui (x) − Vi (x))(1 − b(i + 1)x + · · · ) (mod pr )
+                                      b(i+1)x
+where the term on the right is 1 −              .   Every coefficient on the left hand side is a
+                                     1− b(i+2)x
+                                         1−···
+multiple of pα , and we may argue inductively that every coefficient of Ui − Vi must be a
+multiple of pα as well, as the constant term of the other factor is 1. Therefore we may
+divide (1) by pα ℓ to get
+                              1              Ui+1 (x)
+                                           =                  (mod pr−α )
+                            b(i + 1)x        Vi+1 (x)
+                      1−
+                              b(i + 2)x
+                         1−
+                                 b(i + 3)x
+                            1−
+                                  1 − ···
+for some new polynomials Ui+1 , Vi+1 . By the inductive hypothesis, we must have pr−α |
+b(i + 1)b(i + 2) · · · b(k) for some k, so that pr | b(0)b(1) · · · b(k) as desired. 
+
+4.2. Periodicity of Morse link numbers. Morse curves and links were defined by Post-
+nikov [8], who showed that if Ln is the number of combinatorial types of Morse links of
+order n, then Ln = Cnb for weight function b(x) = (2x + 1)2 .
+   The proof of Theorem 4.2 shows how to compute the period when it exists, as we may
+truncate the generating function to find a linear recurrence which can be solved with known
+tools. We will demonstrate (Example 4.3 and Example 4.4) by solving some conjectures
+by Postnikov on the periods of {Ln (mod 7)} and {Ln (mod 11)}.
+Example 4.3. Since b(3) = 72 is divisible by 7, the generating function of {Ln (mod 7)}
+is given by
+                         1                1 − 34x         1+x
+                                   =                2
+                                                      ≡           (mod 7).
+                           x          1 − 35x + 25x      1 + 4x2
+                  1−
+                            32 x
+                      1−
+                          1 − 52 x
+This is a linear recurrence L0 = L1 = 1, Ln+2 = −4Ln for n ≥ 0. The explicit solution is
+                                                     
+                                1 − r2    n     r1 − 1
+                       Ln =              r1 +             r2n (mod 7)
+                               r1 − r2          r1 − r2
+20                               YIBO GAO AND ANDREW GU
+
+where r1 , r2 ∈ F49 are the roots of the characteristic equation 4x2 +1 = 0. These are square
+roots of 5, so r112 ≡ 56 ≡ 1 (mod 7) and they have order 12. This is the minimal period of
+Ln (mod 7).
+Example 4.4. Since b(5) = 112 is divisible by 11, the generating function of {Ln (mod 11)}
+is
+                            1                  1 + x + 5x2
+                                           ≡                   (mod 11).
+                              x              1 + 6x2 + 10x3
+                1−
+                               32 x
+                    1−
+                                  52 x
+                         1−
+                                     72 x
+                             1−
+                                  1 − 92 x
+The denominator factors as (1 − 5x)(1 − 3x)2 and the solution is
+                         Ln = 6 · 3n + 10 · n3n + 6 · 5n    (mod 11).
+The orders of 3 and 5 modulo 11 are both 5, while n (mod 11) has period 11. Hence Ln
+(mod 11) has period 55 and it is not hard to verify that this is the minimal period.
+  In general, under the conditions of Theorem 4.2, we can only say that {Cnb (mod m)} is
+eventually periodic. However, under certain circumstances we can prove pure periodicity
+with Lemma 4.1 by using the following proposition:
+Proposition 4.5. Let m be a positive integer and P, Q be polynomials such that deg P <
+deg Q, and the constant and leading coefficients of Q are coprime to m. Then the sequence
+                               P
+{an } with generating function Q is purely periodic modulo m.
+Proof. By reading off the coefficients of Q we get a linear recurrence
+                         an+k ≡ c1 an+k−1 + · · · + ck an   (mod m)
+which is valid for all n because deg P < deg Q. As we have seen, this implies eventual
+periodicity. Furthermore, ck is coprime to m so this linear recurrence can be extended
+backwards, so eventual periodicity implies pure periodicity in this case.            
+Corollary 4.6. For any prime p ≡ 3 (mod 4), the sequence {Ln (mod p)} is purely peri-
+odic.
+Proof. Let k = p−3
+                2 . Then {Ln (mod p)} has generating function
+
+                                     1               P (x)
+                                                   =
+                                     b(0)x           Q(x)
+                            1−
+                                       b(1)x
+                               1−
+                                         b(2)x
+                                  1−
+                                             ···
+                                     1−
+                                         1 − b(k)x
+                        ARITHMETIC OF WEIGHTED CATALAN NUMBERS                                   21
+
+
+for the polynomials P, Q given by Lemma 4.1. The degree of P is k2 = p−3
+                                                                             
+                                                                                       4 while the
+                k+1     p+1
+degree of Q is 2 = 4 . Therefore deg P < deg Q. Also, the constant term of Q is 1
+and the leading coefficient is (−1)k/2 b(0)b(2) · · · b(k), which is not a multiple of p. Therefore
+we may apply Proposition 4.5.                                                                    
+   Analyzing the period modulo prime powers is more difficult in general. The last result in
+this section will be to bound the period of {Ln (mod 3r )}, partially resolving this conjecture
+by Postnikov:
+Conjecture 4.7 (Postnikov [8]). Let r ≥ 3 be a positive integer. The sequence {Ln
+(mod 3r )} is purely periodic with period 2 · 3r−3 .
+  Our result is the following:
+Theorem 4.8. Let r ≥ 3 be a positive integer. The sequence {Ln (mod 3r )} is eventually
+periodic with period dividing 2 · 3r−3 .
+  The strategy of the proof is to classify Dyck paths of semilength n based on edges with
+weight divisible by 3. We show that within each class of paths, the sum of weights is
+eventually periodic in n with period dividing 2 · 3r−3 (except for a small exception). Before
+proving Theorem 4.8, we have two technical lemmas:
+Lemma     4.9. Let p be a prime and m be a positive integer. The period of the sequence
+  n
+{ m   (mod p)} divides the least prime power pk such that pk > m.
+                                                    n
+                                                      
+Proof. This follows from Lucas’s theorem, because m     only depends on the digits of n in
+base p for which the corresponding digit in m is nonzero.                               
+Lemma 4.10. Let {an } be a sequence satisfying a linear recurrence
+                                  an = c1 an−1 + · · · + ck an−k
+with initial conditions a1 = a2 = · · · = ak−1 = 0, ak = 1. This sequence is eventually
+periodic modulo any positive integer m; let λ(m) denote the period. Then for any prime p
+and positive integer r, the period λ(pr ) divides pr−1 λ(p).
+  The proof is given in Theorem 3 of [2].
+Proof of Theorem 4.8. For any Dyck path P of semilength n, define its 3-power path α(P )
+as the Dyck path obtained by only considering all edges to or from y = k where k ≡ 1
+(mod 3), and also marking all vertices for which the two adjacent edges are in opposite
+directions and were adjacent in P .
+   See Figure 5 for an example. Visually, we shade in all levels for which the weight is
+a multiple of three and reduce only to steps which fall within the shaded regions. The
+marked vertices (white vertices) indicate when the path stayed in a shaded region for two
+consecutive steps.
+   If α(P ) has semilength k, then the weight of P is divisible by 32k because each upward
+edge of α(P ) corresponds to an upward edge of P with weight divisible by 32 . We may
+22                                     YIBO GAO AND ANDREW GU
+
+                                                            •
+
+                                                     •           •
+                                                92
+                                                •                        •
+
+                                            •                                •
+
+                        •          •                                             •
+                  32          32
+                  •           •                                                      •
+
+            •                                                                             •
+                                                            •
+
+                                                     •           •
+
+                                   •                                     •
+
+        Figure 5. A Dyck path for n = 7, and its 3-power path. The white vertices
+        are marked because P stays within the gray region.
+
+write                                  X               X        X
+                               Ln =         wt(P ) =                    wt(P )
+                                        P                β P :α(P )=β
+where the first sum is over all Dyck paths P of semilength n, the second sum is over all
+3-power paths β, and the third sum is over all P of semilength n such         that α(P ) = β.
+Modulo 3r , we only need to consider β of semilength at most r−1           2     because otherwise
+                        r
+wt(P ) is divisible by 3 .          P
+   Next we develop a formula for P :α(P )=β wt(P ) when β is fixed. Let β have semilength
+k. Consider a vertex v of β and let eL and eR be the edges to the left and right. These two
+edges correspond to some edges e′L and e′R of the original path P . Let G(v) be the edges
+between e′L and e′R . (If v is the first or last vertex of β, then G(v) consists of the first or
+last segment of P that does not touch a gray region.)
+   Note that by definition, G(v) is empty whenever v is a marked vertex. Furthermore,
+G(v) is always nonempty whenever v is not marked, because if e1 and e2 are in the same
+direction then e′L and e′R cannot be adjacent in P because they are at different levels, and
+if they are not in the same direction then e′L and e′R cannot be adjacent in P because v
+was not marked.
+   Enumerating the vertices of β as v0 , v1 , . . . , v2k and the edges as e1 , e2 , . . . , e2k the path
+P may be written as the union
+                            P = G(v0 ) ∪ e1 ∪ G(v1 ) ∪ · · · ∪ e2k ∪ G(v2k ).
+We have already observed that from β alone, we can determine if G(v) is empty or not.
+Let V0 be the set of vertices for which G(v) is empty, and V1 be the set of vertices for which
+                         ARITHMETIC OF WEIGHTED CATALAN NUMBERS                                     23
+
+G(v) is nonempty. Furthermore, the parity of |G(v)| is also always determined: it is even
+except when v is the first or last vertex because the start and endpoints of G(v) are at the
+same height or distance 2.
+   To create all paths P with α(P ) = β, we will choose the tuple (|G(v0 )|, . . . , |G(v2k |) first,
+and then for each v determine what the edges of G(v) are conditioned on |G(v)|. We know
+some elements of (|G(v0 )|, . . . , |G(v2k |) are zero, while the rest are 1 + 2m or 2 + 2m where
+m can be any nonnegative integer. The weight of P can be written as the product of the
+weights of G(vi ) and the edges ei associated with β.
+   Consider a vertex v ∈ V1 . First consider the case where v is a start or end vertex and
+G(v) has 1 + 2m edges. Clearly there is only one possibility for G(v), which is to alternate
+between y = 0 and y = 1.
+   Now suppose v is not a start or end vertex and G(v) has 2 + 2m edges. In the case where
+the edges eL , eR to the left and right of v go upward and downward respectively, G(v) must
+go up from the top of a gray strip, at the line y = 3j + 2 for some k. The first edge of G(v)
+must go from y = 3j + 2 to y = 3j + 3, while the last edge of G(v) must go from y = 3j + 3
+to y = 3j + 2. The 2m edges in between can be partitioned into pairs: the second and third
+edge either follow the path 3j + 3 → 3j + 2 → 3j + 3 or 3j + 3 → 3j + 4 → 3j + 3, the same
+is true for the fourth and fifth edges, etc. There are 2m possibilities for G(v), and the sum
+of the weights of G(v) over all possibilities is given by b(3j + 2)2 (b(3j + 2) + b(3j + 3))m .
+   Likewise, if eL and eR are downward and upward respectively, the sum of the weights of
+G(v) over all possibilities is given by b(3j + 3)2 (b(3j + 2) + b(3j + 3))m for some j. (There
+is the exception where v is at y = 0 in β, which will be similar to the case where v is at the
+ends and the total weight will be 1.) If eL and eR are in opposite directions, then the sum of
+the weights of G(v) over all possibilities is given by b(3j + 2)b(3j + 3)(b(3j + 2)+ b(3j + 3))m
+for some j.
+   These results can be summarized as follows: for each v ∈ V1 , we may assign a nonnegative
+integer mv so that G(v) has 1 + 2mv or 2 + 2mv edges depending   P               on whether v is at the
+ends. TheP   total number of edges is 2k + 2|V1 | − 2 + 2 v∈V1 mv = 2n so we have the
+constraint     mv = n − k − |V1 | + 1. For each v ∈ V1 , we may independently determine
+G(v), and the sum of the weights across the possible G(v) is of the form dv am            v
+                                                                                            v
+                                                                                              for some
+constants dv , av . A key property here is that av is never a multiple of 3, because it is either
+1 or b(3j + 2)+ b(3j + 3) ≡ 2 (mod 3). (Recall that our weight function is b(x) = (2x+ 1)2 .)
+   In summary, for a given path 3-power path β, we have
+
+                                                                 ai11 · · · aiℓℓ
+                             X                           X
+                                     wt(P ) = Dβ
+                          P :α(P )=β                 i1 +···+iℓ =n−cβ
+
+where
+                                         ℓ = |V1 |
+                                       cβ = k + |V1 | − 1
+                                            Y          Y
+                                       Dβ =    wt(e)      dv
+                                             e∈β           v∈V1
+24                               YIBO GAO AND ANDREW GU
+
+are some constants depending only on β, and the ai are constants depending only on β
+which are also not multiples of 3. Denote
+                                               ai11 · · · aiℓℓ .
+                                          X
+                              f (n) =
+                                        i1 +···+iℓ =n−cβ
+
+We have the generating function
+                                                                                 xc β
+                                                ai11 · · · aiℓℓ xn =
+          X             X       X
+             f (n)xn =                                                                             .
+                                                                       (1 − a1 x) · · · (1 − aℓ x)
+           n≥0           n≥0 i1 +···+iℓ =n−cβ
+                                       cβ
+Modulo 3, this takes the form (1−x)xa (1+x)b for some a, b with a + b = ℓ. It is known that
+this implies with this generating function may be written as
+                                     a−1       b−1  
+                                     X     n     X    n
+                             f (n) ≡           +          (−1)n
+                                           i          i
+                                       i=0              i=0
+for n ≥ cβ (see [7]). By Lemma 4.9, the period of the above sequence modulo 3 is a divisor
+of 2 · 3m where 3m is the least power of 3 which is greater than max(a, b).
+   For now we will assume that β goes above the line y = 1. This implies several things:
+first ℓ ≥ 4 because at least four vertices are in V1 : the start and end, and the two vertices
+where the path must cross the line y = 1. It also implies that Dβ is a multiple of 32k+2
+because one of the edges has weight 92 .
+   Note that ℓ ≤ 2k + 1. Then we can say that m ≤ ℓ − 1 ≤ 2k as 3ℓ−1 > ℓ ≥ max(a, b)
+for ℓ ≥ 4. The period of the sequence modulo 3 will divide 2 · 32k . We also have the
+initial conditions f (cβ ) = 1 and f (n) = 0 for all n < cβ . By Lemma 4.10, the period
+of f (n) (mod 3r−2k−2 ) is a divisor of 2 · 3r−3 . As Dβ is divisible by 32k+2 , the period of
+                             r                     r−3 .
+P
+   P :α(P )=β wt(P ) (mod 3 ) is a divisor of 2 · 3
+   Now we consider cases where β does not go above y = 1. Such paths must zigzag
+between
+P    P y = 0 and y = 1. We also assume that β is not the empty path, as that path has
+   β    P :α(P )=β wt(P ) = 1 which is periodic. The generating function takes the form
+                                              xc β
+                                      (1 − x)a (1 − 74x)b
+for some a, b (here 74 = 52 + 72 ). We also have the condition a ≥ 2, because the start
+and end vertices of β always have av = 1. Let 3m be the least power of 3 greater than
+max(a, b) − 1. Then the period of this sequence modulo 3 is divides 2 · 3m . If m ≤ ℓ − 3 =
+a + b − 3, then the period of f (n) (mod 3r−2k ) divides 2 · 3r−3 which will be enough. We
+can directly check that this rules out all cases with max(a, b) ≥ 5, and further verification
+of the finitely many remaining cases leaves the following pairs:
+                              (a, b) = (2, 0), (3, 0), (4, 0), (2, 1).
+In the case (a, b) = (4, 0), the period of f (n) (mod 3r−2k ) divides 3r−2k+1 . Therefore we
+only need to consider when the semilength k is at most 1. In fact, there is no path with
+(a, b) = (4, 0) and semilength at most 1, so we can eliminate this case.
+                           ARITHMETIC OF WEIGHTED CATALAN NUMBERS                                         25
+
+  In the other three cases, the period of f (n) (mod 3r−2k ) divides 2 · 3r−2k and again it
+suffices to only consider k ≤ 1. This leaves the following two paths β1 , β2 :
+                                                 •
+
+                                       •                • •            •
+
+We will group these paths together. With all the factors included, we have
+                 X                                   X                           n−3
+                                                                                 X
+                         wt(P ) = 9 · 25 ·                     74i2 = 9 · 25 ·           (n − 2 − k)74k
+           P :α(P )=β1                       i1 +i2 +i3 =n−3                     k=0
+
+                                                 74n−1
+                                                                      
+                                                         n   72
+                                = 9 · 25 ·             −   +               .
+                                                  732    73 732
+                 X
+                         wt(P ) = 9(n − 1).
+           P :α(P )=β2
+
+
+
+The sum of these two is
+                                                                                
+                                              25           48   3529
+                               g(n) = 9           · 74n−1 + n −                      .
+                                              732          73    732
+We claim that T = 2 · 3r−3 is a period of this function of n modulo 3r . It suffices to show
+                           25     n−1 + 48 n− 3529 (mod 3r−2 ). However, this is easy because
+that 2·3r−3 is a period of 732 ·74      73     732
+                                                         48
+74n has period 2 · 3r−3 (since ϕ(3r−2 ) = 2 · 3r−3 ) and 73  n has period 3r−3 because 48 is
+divisible by 3.
+   We finish the argument as follows: any β with semilength greater than r−1
+                                                                                   
+                                                                                  2   may be
+ignored, so we only have finitely many β to consider in the summation
+                                         X X
+                                   Ln =              wt(P ).
+                                                     β P :α(P )=β
+                           P
+For each β, the sum      P :α(P )=β wt(P ) is eventually periodic in n with period dividing
+2·3 r−3 (aside from the two paths which we grouped together). As there are finitely many
+β, we conclude that Ln (mod 3r ) is eventually periodic with period dividing 2 · 3r−3 . 
+
+4.3. Further Morse link number conjectures. Postnikov also stated some conjectures
+regarding 2 and 5-adic valuations of sequences related to Ln . We rephrase some below and
+provide some further conjectures.
+Conjecture 4.11 ([8]). There exists a 2-adic integer α = . . . 0101112 such that
+                                ξ2 (Ln − Cn ) = s2 (n) + ξ2 (n − α) + 2
+for all n ≥ 2.
+  We generalize this conjecture as follows:
+26                                   YIBO GAO AND ANDREW GU
+
+                                                                  (k)
+Conjecture 4.12. Let k be a positive integer and Ln denote the weighted Catalan
+numbers with weight b(x) = (2x + 1)2k . There exists a 2-adic integer αk and nonnegative
+integer ck such that
+                       ξ2 (L(k)
+                            n − Cn ) = s2 (n) + ξ2 (n − αk ) + ck
+for all n ≥ 2.
+   Similar phenomena were not observed for other polynomial weight functions b which
+satisfy the conditions of Theorem 1.3, suggesting that there is something special here.
+Conjecture 4.13 ([8]). If α is the 5-adic integer . . . 1111111205 , then for n ≥ 4 we have
+                                  (
+                                   2                   if n is even
+                       ξ5 (Ln ) =                                   .
+                                   ξ5 (n − α) + 3 if n is odd
+  Note that the original conjecture in [8] contains some typos.
+  From computational evidence, it appears that ξ3 (Ln − 1) also follows a type of pattern
+but it may not be as simple as the one given in Conjecture 4.13. We suggest the following:
+Conjecture 4.14. There exists a 3-adic integer α such that for odd n ≥ 3, the quantity
+ξ3 (Ln − 1) depends only on ξ3 (n − α) and the last digit of 3ξ3n−α
+                                                                 (n−α) , which is 1 or 2.
+
+     If Conjecture 4.14 were true, then for n ≥ 3 we would have
+                                      
+                                      
+                                       2 n even
+                                      
+                                      6 n ≡ 1 (mod 6)
+                                      
+                                      
+                                      
+                              ξ3 (n) = 4 n ≡ 3 (mod 6)          .
+                                        5   n ≡ 5, 11 (mod  18)
+                                      
+                                      
+                                      
+                                      
+                                      ..
+                                      
+                                      
+                                        .
+
+                                       Acknowledgements
+  This research was carried out as part of the 2019 Summer Program in Undergraduate
+Research (SPUR) of the MIT Mathematics Department. We would like to thank Prof. Alex
+Postnikov for suggesting the project and Prof. Richard Stanley, Prof. Ankur Moitra and
+Prof. David Jerison for helpful conversations.
+
+                                             References
+ [1] Junkyu An. Combinatorial enumeration of weighted Catalan numbers. PhD thesis, Massachusetts In-
+     stitute of Technology, 2010.
+ [2] Curtis Bright. Modular periodicity of linear recurrence sequences. preprint, 2008. available at
+     https://cs.uwaterloo.ca/~ cbright/reports/PM434Project.pdf.
+ [3] Emeric Deutsch and Bruce E. Sagan. Congruences for Catalan and Motzkin numbers and related
+     sequences. J. Number Theory, 117(1):191–215, 2006.
+ [4] Leonard Eugene Dickson. History of the theory of numbers. Vol. I: Divisibility and primality. Chelsea
+     Publishing Co., New York, 1966.
+ [5] Ian P. Goulden and David M. Jackson. Combinatorial enumeration. Dover Publications, Inc., Mineola,
+     NY, 2004. With a foreword by Gian-Carlo Rota, Reprint of the 1983 original.
+                         ARITHMETIC OF WEIGHTED CATALAN NUMBERS                                      27
+
+ [6] Matjaž Konvalinka. Divisibility of generalized Catalan numbers. J. Combin. Theory Ser. A,
+     114(6):1089–1100, 2007.
+ [7] R. G. E. Pinch. Recurrent sequences modulo prime powers. In Cryptography and coding, III (Cirences-
+     ter, 1991), volume 45 of Inst. Math. Appl. Conf. Ser. New Ser., pages 297–310. Oxford Univ. Press,
+     New York, 1993.
+ [8] Alexander Postnikov. Counting morse curves and links. preprint, 2010. available at
+     https://math.mit.edu/~ apost/papers/morse-brief.pdf.
+ [9] Alexander Postnikov and Bruce E. Sagan. What power of two divides a weighted Catalan number? J.
+     Combin. Theory Ser. A, 114(5):970–977, 2007.
+[10] Richard P. Stanley. Catalan numbers. Cambridge University Press, New York, 2015.
+
+  Department of Mathematics, Massachusetts Institute of Technology, Cambridge, MA 02139
+  E-mail address: gaoyibo@mit.edu
+
+  Department of Mathematics, Massachusetts Institute of Technology, Cambridge, MA 02139
+  E-mail address: agu1@mit.edu
+

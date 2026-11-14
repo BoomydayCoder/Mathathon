@@ -1,0 +1,382 @@
+                                                What power of two divides a weighted Catalan
+arXiv:math/0601339v2 [math.CO] 16 Jan 2006
+
+
+
+
+                                                                 number?
+                                                                             Alexander Postnikov
+                                                      Department of Mathematics, Massachusetts Institute of Technology,
+                                                               Cambridge, MA 02139, apost@math.mit.edu
+
+                                                                                 Bruce E. Sagan
+                                                             Department of Mathematics, Michigan State University,
+                                                                 East Lansing, MI 48824, sagan@math.msu.edu
+
+                                                                                January 10, 2006
+                                             Key Words: difference operator, divisibility, group actions, Morse links, orbits, power
+                                             of two, shift operator, weighed Catalan numbers.
+                                             AMS subject classification (2000): Primary 05A10; Secondary 11A55, 11B75.
+
+
+
+                                                                                       Abstract
+                                                       Given a sequence of integers b = (b0 , b1 , b2 , . . .) one gives a Dyck path P
+                                                   of length 2n the weight
+
+                                                                                wt(P ) = bh1 bh2 · · · bhn ,
+
+                                                   where hi is the height of the ith ascent of P . The corresponding weighted
+                                                   Catalan number is                   X
+                                                                                 Cnb =    wt(P ),
+                                                                                            P
+
+                                                   where the sum is over all Dyck paths of length 2n. So, in particular, the
+                                                   ordinary Catalan numbers Cn correspond to bi = 1 for all i ≥ 0. Let ξ(n)
+                                                   stand for the base two exponent of n, i.e., the largest power of 2 dividing n.
+                                                   We give a condition on b which implies that ξ(Cnb ) = ξ(Cn ). In the special
+                                                   case bi = (2i + 1)2 , this settles a conjecture of Postnikov about the number
+                                                   of plane Morse links. Our proof generalizes the recent combinatorial proof
+                                                   of Deutsch and Sagan of the classical formula for ξ(Cn ).
+
+
+
+
+                                                                                             1
+1     Introduction
+The Catalan numbers                             
+                                           1     2n
+                                  Cn =
+                                         n+1 n
+have many interesting arithmetic properties. For example, the following result
+which essentially dates back to Kummer (see Dickson’s book [3] for details) de-
+scribes their divisibility by powers of 2. Let s(n) be the sum of digits in the binary
+expansion of n. Also, let ξ(n) denote the base two exponent of n, i.e., the largest
+power of two dividing n.
+Theorem 1.1. We have
+                                   ξ(Cn ) = s(n + 1) − 1.
+    A combinatorial proof of this result was recently given by Deutsch and Sagan [2]
+using group actions. In this paper, we extend this result and their proof to various
+weighted Catalan numbers. Note that, unlike the Catalan numbers, weighted
+Catalan numbers need not have simple multiplicative formulas. So determining
+their divisibility properties is more subtle than for the usual Catalan numbers.
+    Let b = (b0 , b1 , b2 , . . . ) be a fixed infinite sequence of integers. Define the
+weighted Catalan numbers, Cnb , as the coefficients of the expansion of the continued
+fraction:
+                                         1                X
+                                                        =     Cnb xn .               (1)
+                                          b0 x
+                             1−                           n≥0
+                                            b1 x
+                                  1−
+                                               b2 x
+                                      1−
+                                                 b3 x
+                                           1−
+                                               1−···
+                                  b
+If b = (1, 1, 1, . . . ), then Cn is the usual Catalan number Cn .
+    Combinatorially, the Cnb count Dyck paths with certain weights. Recall that a
+Dyck path P of length 2n is a sequence of points in the upper half-plane of the
+integer lattice
+                 (x0 , y0 ) = (0, 0), (x1 , y1 ), . . . , (x2n , y2n ) = (2n, 0),
+such that each step si = [xi − xi−1 , yi − yi−1 ] has the form [1, 1] or [1, −1]. Let us
+say that step si has height yi−1 . Define the weight of a Dyck path P to be the
+product
+                              wt(P ) = bh1 bh2 · · · bhn ,
+where h1 , . . . , hn are the heights of its steps of the form [1, 1]. Then the following
+proposition is well known and easy to prove, i.e., see the book of Goulden and
+Jackson [4, Ch. 5].
+
+                                                2
+Proposition 1.2. We have                     X
+                                     Cnb =           wt(P ),
+                                             P
+
+where the sum is over all Dyck paths of length 2n.
+
+   For example, we have
+
+                 C3b = b0 b0 b0 + b0 b0 b1 + b0 b1 b0 + b0 b1 b1 + b0 b1 b2 ,
+
+where the five terms correspond to the five Dyck paths of length 6. As another
+example, if b = (1, q, q 2, q 3 , . . . ), then the weighted Catalan number Cnb is equal to
+the q-Catalan number                              X
+                                         Cn (q) =    q area(P ) ,
+                                                 P
+
+where the sum is over Dyck paths P of length 2n and area(P ) denotes the area
+between P and the lowest possible path. The continued fraction (1) with bi = q i
+is know as the Ramanujan continued fraction.
+    Our main result, Theorem 2.1 below, gives a necessary condition on the se-
+quence b so that
+                        ξ(Cnb ) = ξ(Cn ) = s(n + 1) − 1.
+As a special case, we obtain a conjecture of Postnikov [5] about plane Morse links.
+A plane Morse curve is a simple curve f : S 1 → R2 (i.e., a smooth injective
+map) such that, for the height function h : (x, y) → y, the map h ◦ f has a finite
+number of isolated nondegenerate critical points with distinct values. All curves
+are oriented clockwise. See, for example, Figure 1. As one goes around a Morse
+curve, the sequence formed by the critical values is alternating and returns to
+where it started. So the number of critical values must be an even integer 2n, and
+n is called the order of the curve. The combinatorial type of a Morse curve is its
+connected component in the space of all Morse curves. So Figure 1(a) depicts the
+four plane Morse curves of order 2 up to combinatorial type.
+    A plane Morse link is a disjoint union of plane Morse curves. All our definitions
+for Morse curves carry over in the natural way to links. In particular, the order
+of a link is the sum of the orders of its components. Figure 1(b) shows the six
+disconnected Morse links of order 2, again up to combinatorial type. Let Ln be
+the number of combinatorial types of plane Morse links of order n. Then we have
+just seen that L2 = 4 + 6 = 10. The connection with weighted Catalan numbers is
+made by the following theorem.
+
+
+
+
+                                              3
+         (a) Connected links (curves)                      (b) Disconnected links
+                    Figure 1: All plane Morse links of order 2
+
+Theorem 1.3 ([5]). The numbers Ln satisfy
+                        X                      1
+                              Ln xn =
+                                                12 x
+                        n≥0             1−
+                                                  32 x
+                                           1−
+                                                     52 x
+                                              1−
+                                                       72 x
+                                                  1−
+                                                        ···
+and so
+                                           2       2   2   2
+                                Ln = Cn(1 , 3 , 5 , 7 , ...) .
+
+    An easy corollary of our main theorem will be a proof of Conjecture 3.1 from [5].
+It can also be found listed as Problem 6.C5(c) in the Catalan Addendum to the
+second volume of Stanley’s Enumerative Combinatorics [7].
+
+Conjecture 1.4 ([5, 7]). We have
+                       ξ(Ln ) = ξ(Cn ) = s(n + 1) − 1.
+
+
+2    The main theorem
+Let Z≥0 denote the nonnegative integers. The difference operator , ∆, acts on
+functions f : Z≥0 → Z by
+
+                              (∆f )(x) = f (x + 1) − f (x).
+
+Note that we can regard our sequence b as such a function where b(x) = bx . We
+can now state our main result, using c | d as usual to mean that c divides evenly
+into d.
+
+Theorem 2.1. Assume that the sequence b satisfies
+
+                                               4
+  1. b(0) is odd, and
+
+  2. 2n+1 | (∆n b)(x) for all n ≥ 1 and x ∈ Z≥0 .
+
+Then
+                               ξ(Cnb ) = ξ(Cn ) = s(n + 1) − 1.
+
+   To prove this, we will also have to consider the shift operator , S, acting on
+functions f : Z≥0 → Z by
+                              (Sf )(x) = f (x + 1).
+It is well known and easy to verify that we have the product rule
+
+                            ∆(f · g) = ∆(f ) · g + S(f ) · ∆(g).
+
+which generalizes to
+                                    n  
+                        n
+                                   X   n
+                       ∆ (f · g) =       ∆n−k (S k (f )) · ∆k (g).                        (2)
+                                   k=0
+                                       k
+
+   Let F be the set of functions f : Z≥0 → Z such that
+
+ (a) f (x) is odd for all x ∈ Z≥0 , and
+
+ (b) 2n+1 | (∆n f )(x) for all n ≥ 1 and x ∈ Z≥0 .
+
+Note that because of (b), we can replace (a) by the seemingly weaker condition
+that f (0) is odd. We will need the following lemma.
+
+Lemma 2.2. The set F is closed under the three operations
+                                                             f (x + 1) g(x) + f (x) g(x + 1)
+f 7→ Sf,    (f, g) 7→ f · g,     and (f, g) 7→ hf, gi :=                                     .
+                                                                            2
+    Proof. Closure under S is obvious. Now assume that f (x), g(x) ∈ F . Then
+the value (f · g)(x) is clearly odd. And (2) shows that the divisibility criterion is
+satisfied. Thus f · g ∈ F .
+    We can write the second operation as
+                                               ∆(f ) · g + f · ∆(g)
+                            hf, gi = f · g +                        .
+                                                         2
+Since ∆(f ) and ∆(g) are divisible by 4 and (f · g)(x) is odd, we deduce that
+hf, gi (x) is odd. By (2), ∆n (∆(f ) · g) and ∆n (f · ∆(g)) are divisible by 2n+2 . Thus
+hf, gi ∈ F .
+
+                                                5
+   Deutsch and Sagan used the interpretation of Cn in terms of binary trees to
+prove Theorem 1.1. So we will need to review this method and translate our weight
+function into this setting. A binary tree, T , is a rooted tree where every vertex
+has a right child, a left child, both children, or no children. We also consider the
+empty tree to be a binary tree. Let Tn be the set of binary trees with n vertices.
+Then one of the standard interpretations of the Catalan numbers is that
+
+                                     Cn = #Tn .                                    (3)
+
+    Let Gn be the group of symmetries of the binary tree which is complete to
+depth n (having all of its leaves at distance n from the root). The group Gn is
+generated by reflections which exchange the left and right subtrees associated with
+a vertex. Then Gn acts on Tn with two trees being in the same orbit if they are
+isomorphic as rooted trees if we forget about the information concerning left and
+right children. Deutsch and Sagan show in [2, Section 2] that #Gn is a power of
+2, so the cardinality of any Gn -orbit is as well. They also show that the minimal
+size of a Gn -orbit is 2s where s = s(n + 1) − 1. Moreover, orbits of the minimal
+size can be identified with binary total partitions on the set {1, 2, . . . , s}, whose
+number is (2s − 1)!! = 1 · 3 · 5 · · · (2s − 1) as shown by Schröder [6], see also [8,
+Example 5.2.6]. For ease of reference, we summarize these facts in the following
+lemma.
+
+Lemma 2.3 ([2]). Let O be an orbit of Gn acting on Tn and let s = s(n + 1) − 1.
+Then
+
+  1. #O = 2t for some t ≥ s, and
+
+  2. #O = 2s for exactly (2s − 1)!! orbits.
+
+   It is now easy to prove Theorem 1.1 using this lemma and equation (3). To
+generalize the proof, consider any fixed function b ∈ F and define the corresponding
+weight of a binary tree T to be the function
+                                                 Y
+                          wb (T ) = wb (T ; x) =   b(x + lv ),
+                                               v∈T
+
+where the product is over all vertices v of T , and lv is the number of left edges
+on the unique path from the root of T to v. If binary tree T corresponds to Dyck
+path P under the usual depth-first search bijection, then it is easy to see that
+                                    Y
+                         wt(P ) =      b(lv ) = wb (T ; 0).                      (4)
+                                     v∈T
+
+
+
+                                           6
+    We need one last lemma for the proof of Theorem 2.1. If O is an orbit of Gn
+acting on Tn then we define it’s weight to be
+                                              X
+                         wb (O) = wb (O; x) =   wb (T ).                     (5)
+                                                       T ∈O
+
+Lemma 2.4. For any b ∈ F and any orbit O we have
+                                 wb (O; x) = #O · rb (O; x),
+where rb (O; x) ∈ F .
+   Proof. Write
+                                            wb (O; x)
+                                    rb (O; x) =       .                           (6)
+                                               #O
+We induct on n, the number of vertices in a tree of O. If n = 0 then rb (O; x) = 1
+for all x which is clearly in F .
+    Now suppose n ≥ 1 so that O contains a nonempty tree T . Let T1 be the
+subtree of T consisting of the left child of the root and all its descendents. (So T1
+may be empty.) Similarly, define T2 for the right child. Suppose T1 and T2 are in
+orbits O1 and O2 , respectively. If O1 = O2 then #O = #O1 · #O2 and
+                             wb (T ) = b(x) · wS(b) (T1 ) · wb (T2 ).
+If O1 6= O2 , then #O = 2 · #O1 · #O2 and
+                wb (T ) = b(x) [wS(b) (T1 ) · wb (T2 ) + wb (T1 ) · wS(b) (T2 )].
+In the both cases, it follows from equations (5) and (6) that
+                      rb (O1 ; x + 1) · rb (O2 , x) + rb (O1 ; x) · rb (O2 ; x + 1)
+        rb (O; x) = b(x) ·                                                          .
+                                                    2
+So by Lemma 2.2 and induction we have rb (O; x) ∈ F as desired.
+   Proof of Theorem 2.1. Combining Proposition 1.2, the previous lemma,
+and equations (4) and (5) gives
+                    X            X              X
+              Cnb =     wt(P ) =   wb (T ; 0) =   #O · rb (O; 0)    (7)
+                         P              T ∈Tn                 O
+
+where the integers rb (O; 0) are all odd since rb (O) ∈ F . So ξ(#O · rb (O; 0)) =
+ξ(#O) for all orbits O. It now follows from Lemma 2.3 that ξ = s for an odd
+number (namely (2s − 1)!!) of summands in the last summation in (7) and that
+ξ > s for the rest. We conclude that ξ(Cnb ) = s = ξ(Cn ).
+    As corollaries, we can prove Conjecture 1.4 and give information about divisi-
+bility of the q-Catalan numbers.
+
+                                                7
+Corollary 2.5. 1. The number of combinatorial types of plane Morse links of
+order n satisfies
+                      ξ(Ln ) = ξ(Cn ) = s(n + 1) − 1.
+2. If q ≡ 1 (mod 4) then the q-Catalan numbers satisfy
+
+                         ξ(Cn (q)) = ξ(Cn ) = s(n + 1) − 1.
+
+    Proof. For the first assertion, it suffices to show that the function b(x) =
+(2x + 1)2 is in F . Clearly b(x) is odd for all x ∈ Z≥0 . Furthermore ∆b = 8(x + 1),
+∆2 b = 8, and ∆n b = 0 for n ≥ 3. So the divisibility condition also holds.
+    For the second statement, we need the function b(x) = q x to be in F . Since q
+is odd, so is b(x). Also ∆n b = (q − 1)n q x for n ≥ 1. So the hypothesis on q implies
+that ∆n b is divisible by 4n = 22n which is more than needed.
+
+
+3     An open problem
+Consider the Catalan sequence
+
+                                C = (C0 , C1 , C2 , . . .).
+
+Theorem 1.1 implies immediately that Cn is odd if and only if n = 2k − 1 for some
+k ≥ 0. It follows that the kth block of zeros in the sequence C taken modulo
+2 has length 2k − 1 (where we start numbering with the first block). Alter and
+Kubota [1] have generalized this result to arbitrary primes and prime powers. One
+of their main theorems is as follows.
+
+Theorem 3.1 ([1]). Let p ≥ 3 be a prime and let q = (p + 1)/2. The length of
+the kth block of zeros in C modulo p is
+
+                                   pξq (k)+δ3,p +1 − 3
+                                            2
+where ξq (k) is the largest power of q dividing k and δ3,p is the Kronecker delta.
+
+    Deutsch and Sagan [2] have improved on this theorem when p = 3 by giving
+a complete characterization of the residues in C modulo 3. However, the demon-
+strations of all these results rely heavily on the expression for Cn as a product. It
+would be interesting to find analogous theorems for Cnb , but new proof techniques
+would have to be found.
+
+
+
+                                            8
+References
+[1] Ronald Alter and K. K. Kubota. Prime and prime power divisibility of Catalan
+    numbers. J. Combinatorial Theory Ser. A, 15:243–256, 1973.
+
+[2] Emeric Deutsch and Bruce Sagan. Congruences for Catalan and Motzkin numbers
+    and related sequences. Preprint available at http://www.math.msu.edu/~sagan.
+
+[3] Leonard Eugene Dickson. History of the theory of numbers. Vol. I: Divisibility and
+    primality. Chelsea Publishing Co., New York, 1966.
+
+[4] Ian P. Goulden and David M. Jackson. Combinatorial enumeration. Dover Publica-
+    tions Inc., Mineola, NY, 2004. With a foreword by Gian-Carlo Rota, Reprint of the
+    1983 original.
+
+[5] Alexander Postnikov. Counting Morse curves. Preprint dated December 4, 2000,
+    available at http://math.mit.edu/~apost/papers.html.
+
+[6] E. Schröder. Vier combinatorische Probleme. Z. für Math. Phys., 15:361–376, 1870.
+
+[7] Richard Stanley. Catalan addendum. New problems for Enumerative Combinatorics.
+    Vol. 2 , available at http://math.mit.edu/~rstan/ec/catadd.pdf.
+
+[8] Richard P. Stanley. Enumerative combinatorics. Vol. 2, volume 62 of Cambridge
+    Studies in Advanced Mathematics. Cambridge University Press, Cambridge, 1999.
+    With a foreword by Gian-Carlo Rota and appendix 1 by Sergey Fomin.
+
+
+
+
+                                          9
+

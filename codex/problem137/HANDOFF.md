@@ -1,11 +1,37 @@
-# Secondary project checkpoint
+# Problem #137 checkpoint
 
-Read valuation.md first. It contains complete proofs of forced-carry cancellation and the full-ary-tree cycle quotient, a p-unit corollary, explicit limitations, and concrete construction directions. No historical novelty claim. Official problem #137 exact wording remains blocked/unverified; these results must not be described as answering its precise requirements yet.
+The exact official statement is retrieved in ../sources/problem137-official.md (raw JSON/provenance nearby). It asks precisely for a combinatorial exact-valuation proof at prime-power arity, beyond Konvalinka's orbit divisibility bound. Initial access failures are resolved.
 
-Run `python codex/problem137/check_valuations.py` from repository root: 36,120 exact checks cover valuation, forced carry, and finite-transducer formulas. Source lead: Raney (1960), DOI verified via Crossref, full text not read. No Claude files read or modified. This agent made no commit.
+## Current mathematical result
 
-Next priority: obtain exact statement and primary literature, then judge whether a tree action proving valuation is required. Current proof is elementary arithmetic plus a separate combinatorial integrality proof; the missing bridge is explicitly identified.
+For q=p^e, L=(q-1)n+1=sum_j d_j p^j and D=(sum_j d_j-1)/(p-1), the developed proof gives
 
-Follow-up: prime-power-arity.md gives a complete classification: for q=p^e, p-unit full q-ary tree counts occur exactly at base-q repunit indices (including zero). check_valuations.py now verifies this as well. The broader Apéry bridge, polynomial Lucas factorization and reflection symmetry, plus formal transducer audit are in ../problem131/apery-digit-arithmetic.md and ../computations/check_apery_digits.py.
+v_p(T_q(n))=D,
+p^{-D}T_q(n) congruent (-1)^D/product_j d_j! modulo p.
 
-Tree-action follow-up: tree-pgroup-proof.md proves the p-unit classification by finite wreath-product fixed points and gives an exact prime-arity orbit proof plus a cyclic-q4 counterexample. prime-power-sylow-audit.md audits the parent-derived full Sylow extension: exact valuations for all q=p^e via depth-constrained skeletons and the explicitly specialized Lagrange–Good coefficient theorem. The latter theorem is stated as machinery rather than silently assumed proved. check_tree_orbits.py supplies recursive small-size orbit enumerations and the q4,n28 counterexample.
+The construction expands q-vertices into perfect p-blocks, acts by the full Sylow p-group, and counts minimum orbits using depth-constrained digit-labeled skeletons. cyclic-type-cycle-splicing.md supplies an explicit type-preserving functional-digraph bijection for their enumeration, eliminating the initial Lagrange–Good machinery. prime-power-orbit-review.md and prime-power-sylow-audit.md give independent proof audits, including zero-type and single-leaf cases. typed-count-matrix-tree-audit.md independently verifies the same enumeration by Matrix–Tree.
+
+A useful simpler entry is tree-pgroup-proof.md: fixed points prove the unit-index classification, and a cyclic-four-child counterexample at n=28 explains why the full Sylow action is needed. prime-power-arity.md gives an independent arithmetic check. valuation.md contains the earlier forced-carry formula and finite-state transducer, now background rather than the endpoint of the project. discovery-guide.md is the concise project-facing route.
+
+## Literature status
+
+konvalinka-comparison.md reads the primary paper and pinpoints Proposition2's arithmetic exactness versus Proposition7's orbit bound. The binary wreath-action argument is established Deutsch–Sagan literature, explicitly attributed. bounded-literature-comparison.md covers five further promising sources/chains: four full texts read in relevant parts and one MIT thesis record whose PDF returned429. Gao–Gu2021 gives substantial weighted prime-power congruences. No historical novelty claim is justified for the current proof assembly; its status remains unresolved.
+
+Primary PDFs/text and hashes are recorded in ../sources/tree-primary-provenance.md. No Claude-owned files were read or modified by this agent.
+
+## Proven weighted special case
+
+depth-weighted-extension.md proves that ordinary-depth weights b_h=u modulo p, with u a p-unit, preserve valuation D and multiply the leading unit by u^n. This differs from the cited left-/non-right-edge path-weight models; those weights generally vary within symmetry orbits and require averaging/difference hypotheses.
+
+## Reproducible checks already passed
+
+* check_valuations.py:36,120 carry/transducer checks plus1,812 prime-power unit-index checks.
+* check_tree_orbits.py:recursive cyclic/Sylow examples and the q4,n28 counterexample.
+* check_prime_power_sylow.py:3,216 exact valuation/leading-unit checks and exact minimum-orbit enumeration for small q2,3,4,8,9 trees.
+* check_prime_power_orbit_review.py:independent depth-profile skeleton counts, including zero internal types (connections agent).
+* check_cycle_splicing.py:24,242 slot configurations plus inverse/surjectivity checks (connections agent).
+* check_depth_weights.py:254 independent weighted-recursion checks.
+
+Apéry connections are in ../problem131/apery-digit-arithmetic.md and its computation script: carries kill cross-digit binomial terms, yielding Lucas factorization, while tree quotients/orbits explain a different digit-sum mechanism here.
+
+Next useful work is exposition, a bounded specialist novelty check, or a carefully defined weighted extension. Do not reopen a claim of incompleteness merely because the early notes originally stopped at integrality; the later cycle-splicing proof completes the required enumeration. This agent has not committed changes; the parent manages the shared branch and root checkpoint.

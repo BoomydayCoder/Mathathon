@@ -1,6 +1,6 @@
 # Independent audit of the prime-power tree-orbit theorem
 
-**Verdict.** The proposed argument is valid, with the zero-internal-type cases and the ambient group specified as below. It gives a combinatorial p-group proof of the exact p-adic valuation for full p^e-ary tree counts. The enumeration step uses multivariable Lagrange inversion; no factorial-valuation formula or Kummer theorem is used to establish the valuation. No historical-novelty claim is made, and the exact official problem statement remains a separate access issue.
+**Verdict.** The proposed argument is valid, with the zero-internal-type cases and the ambient group specified as below. It gives a p-group proof of the exact p-adic valuation for full p^e-ary tree counts. The original enumeration audit below uses multivariable Lagrange inversion; the subsequent `cyclic-type-cycle-splicing.md` replaces that step by an explicit combinatorial bijection. Neither route uses a factorial-valuation formula or Kummer theorem to establish the valuation. No historical-novelty claim is made. The exact official statement has now been retrieved in `codex/sources/problem137-official.md` and explicitly requests this prime-power-arity scope.
 
 ## 1. Precise theorem
 
@@ -123,4 +123,4 @@ No gap was found in expansion stability, the equality classification, contractio
 
 The script `check_prime_power_orbit_review.py` independently counts plane p-ary skeletons by depth-residue leaf profiles, compares their labelled counts with(6), and checks the leading-unit congruence against exact Fuss–Catalan integers. Its dynamic program does not use the factorial skeleton formula to generate the skeleton counts. The finite tests supplement the general argument.
 
-This theorem concerns p dividing the arity in the special form q=p^e. It does not establish a full orbit proof of valuations for arbitrary arity q and arbitrary prime p. The source problem's exact requirements must be checked when access becomes available.
+This theorem concerns p dividing the arity in the special form q=p^e, which matches the now-retrieved official problem's requested scope. It does not establish a full orbit proof of valuations for arbitrary arity q and arbitrary prime p. The later cycle-splicing bijection removes the algebraic enumeration dependency recorded in this original audit; see that note for the resulting fully combinatorial route and its additional checks.

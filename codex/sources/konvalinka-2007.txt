@@ -1,0 +1,708 @@
+     Divisibility of generalized Catalan numbers
+                             Matjaž Konvalinka
+
+
+                                    Abstract
+        We define a q generalization of weighted Catalan numbers studied by
+     Postnikov and Sagan, and prove a result on the divisibility by p of such
+     numbers when p is a prime and q its power.
+
+
+1    Introduction
+The n-th Catalan number                      µ ¶
+                                         1     2n
+                                Cn =
+                                       n+1 n
+is equal to the number of binary trees on n vertices, of lattice paths from (0, 0)
+to (2n, 0) with steps (1, 1) and (1, −1) that stay above the y-axis (Dyck paths),
+and of many other objects (see [S99]). If b : N → Z is a function and {bi } = b(i)
+is the corresponding sequence, we weight a vertex of a binary tree T by bi , where
+i is the number of left edges on the unique path from the vertex to the root of
+the tree, and we define the weight w(T ) of the tree to be the product of the
+weights of its vertices. Then the weighted n-th Catalan number is
+                                          X
+                                Cn (b) =     w(T ),
+                                            T
+
+where the sum is over all binary trees on n points. We weight each step (1, 1)
+of a Dyck path by bi , where i is the y-coordinate of the starting point, and we
+weight a Dyck path by the product of weights of its up steps; then
+                                         X
+                               Cn (b) =     w(P),
+                                            P
+
+where the sum is over all Dyck paths from (0, 0) to (2n, 0).
+
+The divisibility of Catalan numbers Cn by powers of 2 has been determined
+both arithmetically and combinatorially (see for example [AK73], [E83], [SU91],
+[D99], [DS06]); if we denote the maximal ξ for which q ξ |m by ξq (m), and the
+sum of the digits in the q-ary expansion of m by sq (m), then
+                            ξ2 (Cn ) = s2 (n + 1) − 1.                          (1)
+A natural question arises: under what conditions on b do we have ξ2 (Cn (b)) =
+ξ2 (Cn )? Postnikov and Sagan ([SP06, Theorem 2.1]) found the following suffi-
+cient condition. Here the operator ∆ is defined by ∆f (x) = f (x + 1) − f (x).
+
+                                        1
+Theorem 1 Assume that b satisfies b(0) = 1 (mod 2) and 2n+1 |∆n b(x) for
+all n ≥ 1 and x ∈ N. Then ξ2 (Cn ) = ξ2 (Cn (b)).
+
+In this paper, we will define a generalization of weighted Catalan numbers and
+prove an analogous theorem.
+
+
+2    Generalized Catalan numbers
+For q ≥ 1 and n ≥ 0, define
+                                                       µ ¶
+                                                 1      qn
+                                 Cn(q) =                   .
+                                           (q − 1)n + 1 n
+
+It is well known that this counts the number of lattice paths P in the plane
+from (0, 0) to (qn, 0) using steps (1, q − 1) and (1, −1) that never go below the
+y axis, and the number of q-ary trees on n vertices (recall that a rooted tree is
+q-ary if every vertex has q distinguishable possibly empty branches). If F (q) (x)
+                                            (q)
+is the ordinary generating function for Cn , then obviously
+                                             ³        ´q
+                           F (q) (x) = 1 + x F (q) (x) ,
+
+                           (q)
+and so the numbers Cn            are the coefficients in the Taylor expansion of the
+continued fraction
+                                               1
+                                                                 .
+                      1−                          x      q−1
+                                          x           
+                             1 − ³               ´q−1 
+                                           x
+                                   1 − (1−...)q−1
+
+
+
+
+The following is a generalization of (1).
+
+Proposition 2 Assume that q = pk where p is a prime and k ≥ 1. Then we
+have
+                                 sp ((q − 1)n + 1) − 1
+                   ξp (Cn(q) ) =                                    (2)
+                                         p−1
+for any n.
+
+Proof: The exponent of p in the prime factorization of m! is
+                         ¹ º ¹ º ¹ º
+                           m       m       m
+                               + 2 + 3 + ...
+                           p       p       p
+
+In                                     µ ¶
+                                 1      qn         (qn)!
+                 Cn(q) =                   =
+                           (q − 1)n + 1 n    n!((q − 1)n + 1)!
+
+                                               2
+                                                            ¥    ¦ ¥      ¦
+the numerator contains pk−1 n¥+ pk−2
+                                   ¦ n+
+                                      ¥ . . . +¦ n + bn/pc + n/p2 + n/p3 + . . .
+p factors, n! contains bn/pc + n/p2 + n/p3 + . . . p factors, and ((q − 1)n + 1)!
+contains
+(a1 + a2 p + . . . + at pt−1 ) + (a2 + a3 p + . . . + at pt−1 ) + . . . + (at−1 + at p) + at =
+                                                               a1 (p − 1) + . . . + at (pt − 1)
+  = a1 + a2 (1 + p) + . . . + at (1 + . . . + pt−1 ) =                                          =
+                                                                           p−1
+                                   (q − 1)n + 1 − a0 − a1 − . . . − at
+                             =
+                                                 p−1
+p factors, where (q −1)n+1 = a0 +a1 p+. . .+at pt is the expansion of (q −1)n+1
+                       (q)
+in base p. But then Cn contains
+       (q − 1)n (q − 1)n + 1 − sp ((q − 1)n + 1)   sp ((q − 1)n + 1) − 1
+               −                                 =
+         p−1                 p−1                           p−1
+p factors.
+
+Remark 3 It is possible (but cumbersome) to calculate explicitly the residue
+     (q)                          (q)
+of Cn /pξ modulo q (with ξ = ξp (Cn )). For example, if q = p is a prime, then
+this residue is
+              Pt
+               i=0 ai −1 +
+                             Pt
+       (−1)     p−1            i=0 (ai −1)   (p − a0 − 1)!(p − a1 − 1)! · · · (p − at − 1)!;
+we get a much more complicated formula for general q.
+
+For a q-ary tree T on n vertices, weight the vertex v by bi = b(i) where i is the
+number of non-right edges on the unique path from the root of T to v, and let
+wb (T ), the weight of T , be the product of the weights of its vertices (see Figure
+1).
+
+
+
+
+                    Figure 1: A ternary tree with weight b30 b41 b42 b33
+
+                             (q)       (q)
+Obviously we have Cn = Cn (b) for the constant function b(x) = 1.
+                                                 (q)
+Define the weighted analogues of Cn by
+                                       X
+                           Cn(q) (b) =   wb (T ),
+                                                           T
+
+
+                                                       3
+where the sum is over all q-ary trees on n-vertices. For example,
+              (q)                    (q)                        (q)
+            C0 (b) = 1,             C1     = b0 ,             C2      = (q − 1)b0 b1 + b20 ,
+               (q)                          ¡ ¢ 2
+             C3        = (q − 1)2 b0 b1 b2 + q−1                 2       3
+                                              2 b0 b1 + 3(q − 1)b0 b1 + b0 .
+
+The same proof as in the non-weighted case shows that
+              X                                                    1
+                    Cn(q) (b)xn =                                                        .
+                                    1−                             b0 x
+             n≥0                                                                  q−1
+                                                                     b1 x         
+                                           1 − ³                             ´q−1 
+                                                                   b2 x
+                                                            1 − (1−...) q−1
+
+
+
+Proposition 4 For each path P from (0, 0) to (qn, 0) using steps (1, q − 1)
+and (1, −1), weight the step (x, y) → (x + 1, y − 1) by 1 and the step (x, y) →
+(x + 1, y + q − 1) by bi where i is the number of points (x0 , y 0 ) on P satisfying
+x0 < x and y 0 < y 00 for any (x00 , y 00 ) ∈ P , x0 < x00 ≤ x. Let wb (P ) denote the
+product of the weights of the steps of P . Then
+                                              X
+                              Cn(q) (b) =         wb (P ),
+                                                        P
+
+Sketch of proof: Consider a depth-first search of a weighted tree T . If a branch
+is empty, do a (1, −1) step (and backtrack if it is the right-most branch of a
+vertex); otherwise do a (1, q − 1) step. It is easy to see that this gives a bijection
+
+       b0
+
+
+                  b0
+                                                              b2
+                                                    b1
+      b1          b1                                                               b1
+                               b0           b0
+       b2
+
+
+                     Figure 2: A tree and the corresponding path
+
+between q-ary trees and paths, and that the weights of the paths are as described
+above. See Figure 2 for an example.
+
+Our main result is the following generalization of Theorem 1.
+
+
+
+
+                                                    4
+Theorem 5 Let q = pk for p prime and k ≥ 1, and let a function b : N → Z
+satisfy b(0) = 1 (mod q) and q n+1 |∆n b(x) for all x. Then
+
+                                Cn(q) (b) = Cn(q) (mod pξ+k )
+
+where
+                                       sp ((q − 1)n + 1) − 1
+                                 ξ=                          ,
+                                               p−1
+                                          (q)           (q)         (q)          (q)
+i.e. the same powers of p divide Cn (b) and Cn , and Cn (b)/pξ and Cn /pξ
+have the same remainder modulo q.
+
+
+3        Proof of Theorem 5
+For any i, define
+     (q)
+    Fi     = {f : N → Z : f (0) = i (mod q), q n+1 |∆n f (x) for all n ≥ 1 and all x}.
+
+The following generalization of [SP06, Lemma 2.2] is true for any q, although
+we will only need it for q a prime power.
+
+Proposition 6 We have:
+                  (q)                   (q)
+ (1) If f ∈ Fi          then ∆f /q ∈ F0 .
+                  (q)            (q)                   (q)
+ (2) If f ∈ Fi          and g ∈ Fj     then f + g ∈ Fi+j .
+                  (q)            (q)                 (q)
+ (3) If f ∈ Fi          and g ∈ Fj then f · g ∈ Fij .
+                                  ³P          Q                ´
+                           (q)                                         (q)
+ (4) If f1 , . . . , fq ∈ F1 then      f
+                                      i i (x)       f
+                                                j6=i j (x + 1)   /q ∈ F1 .
+
+Proof: The first two claims are obvious, and (3) follows from
+                                Xn µ ¶
+                                    n
+                   ∆n (f · g) =        ∆n−k (S k (f )) · ∆k (g)
+                                j=0
+                                    k
+
+where S is the shift operator, Sf (x) = f (x+1). For (4), note that the right-hand
+side can be written as
+            P          Q
+              i fi (x)   j6=i (fj (x) + ∆fj (x))
+                                                                         X
+                                                 = f1 (x) · · · fq (x) +   Fl ,
+                               q
+                                                                          l
+
+                                                              (q)
+where each Fl is a product of some elements of F1 and (by (1)) at least one
+            (q)                (q)                 (q)
+element of F0 . By (3), Fl ∈ F0 and f1 · · · fq ∈ F1 , so (4) holds by (2).
+                                                                                       (q)
+As in [DS06] and [SP06], we will need to study the orbits of the action of Gn
+             (q)                                 (q)
+on the set Tn of q-ary trees on n points, where Gn is the group of symmetries
+of the complete q-ary tree of depth n.
+
+                                                5
+Proposition 7 Let q = pk , and let O be an orbit of Gn acting on Tn . Then pξ
+divides |O| where
+                             sp ((q − 1)n + 1) − 1
+                        ξ=                         .
+                                     p−1
+Let us postpone the proof.
+
+Note that the proposition is a combinatorial proof of only a part of Proposition
+                               (q)
+2: it shows that pξ divides Cn , but not that it is the highest power of p that
+divides it. However, this is enough to prove the main result.
+
+                                                                                                    (q)
+Proof (of Theorem 5): As in [SP06, Lemma 2.4] let O denote an orbit of Gn
+            (q)
+acting on Tn , and define
+                                                      wb (O)(x)
+                                   rb (O)(x) =
+                                                         |O|
+                             P                                         Q
+where wb (O)(x) = T ∈O wb (T )(x) and wb (T )(x) = v∈T b(x + iv ) with iv
+the number of non-right edges on the unique path from the vertex v to the root.
+                                            (q)
+In particular, wb (O)(0) = Cn (b). We will prove by induction on n that for
+                                     (q)
+any orbit O, rb (O) ∈ F1 .
+                                                                     (q)
+If n = 0, O is empty, rb (O)(x) = 1 and rb (O) ∈ F1 . Suppose n ≥ 1, pick
+a tree T in O, and let T1 , . . . , Tq be the branches of the root of T . Some of
+the corresponding orbits Oi can be the same; assume that there are l different
+orbits ¡V1 , . . . ¢, Vl , and that they appear q1 , . . . , ql times in O1 , . . . , Oq . Then
+            q
+|O| = q1 ,...,q  l
+                      |V1 |q1 · · · |Vl |ql and wb (O)(x) is equal to
+                                                                                             
+       X l                                                             Y
+             ¡                      ¢                            qi −1                      q
+b(x)                  q−1
+               q1 ,...,qi −1...,ql wb (Vi )(x) (wb (Vi )(x + 1))         (wb (Vj )(x + 1)) j  ;
+        i=1                                                             j6=i
+
+hence
+                    Pl                                           qi −1 Q                       qj
+                       i=1 qi rb (Vi )(x) (rb (Vi )(x + 1))             j6=i (rb (Vj )(x + 1))
+rb (O)(x) = b(x)·                                                                                   =
+                                                             q
+                                Pq                     Q
+                                   i=1 rb (Oi )(x)         j6=i rb (Oj )(x + 1)
+                     = b(x) ·
+                                                        q
+                         (q)
+and this function is in F1 by induction, (4) and (3).
+Since                                         X
+                                Cn(q) (b) =       |O| · rb (O)(0),
+                                              O
+                                                                                             (q)
+|O| is divisible by pξ by Proposition 7 and rb (O)(0) ∈ Z, we have pξ |Cn (b),
+and, modulo q,
+                   Cn (b) X |O|               X |O|
+                     (q)                                                       (q)
+                                                     Cn
+                       ξ
+                         =    ξ
+                                · rb (O)(0) =       = ξ .
+                     p       p                   pξ   p
+                                  O                              O
+
+
+
+                                                  6
+In order to prove Proposition 7, we will have to explore the structure of the
+                                  (q)     (q)
+minimal orbits of the action of Gn on Tn , i.e. the orbits whose cardinalities
+have the lowest power of p in their prime factorization.
+
+Color a vertex of T black if all its branches are equivalent, and white otherwise.
+
+The number of trees in the orbit of a q-ary tree T is the product of
+                               µ                  ¶
+                                        pk            (pk )!
+                         Pv = v                 v   =
+                                 q 1 , . . . , ql      Qv
+over all white vertices v of T , where q1v , . . . , qlv are the sizes of equivalence classes
+of the children of v. Note that Pv = 1 for a black vertex and p|Pv for a white
+vertex.
+
+Lemma 8 If T is a tree in a minimal orbit O, then no black vertex of T can
+have a white child.
+
+Proof: If a black vertex v of T ∈ O has white children, and a child of v has
+branches T1 , . . . , Tq , we can form a tree T 0 with at least q − 1 fewer p factors by
+attaching all q copies of T1 to the first child of v, all q copies of T2 to the second
+child of v, etc.
+
+
+
+                                                          ···
+        ···
+
+                                                                  ···
+                ···
+
+                                                                                 ···
+                               ···
+
+                                                       T1 · · · T1 T2 · · · T2         Tq · · · Tq
+     T1 · · · Tq T1 · · · Tq         T1 · · · Tq
+
+
+                                Figure 3: Transforming a tree
+
+See Figure 3 for an example.
+Therefore a minimal orbit must have the following structure: there are some
+(white) vertices forming a q-ary tree, and there are some complete q-ary trees
+(containing black vertices) attached – see the left drawing of Figure 4. We can
+visualize such an orbit as a plane q-ary tree with each endpoint denoted by a
+non-negative integer (see the right drawing on Figure 4) indicating the depth
+of the attached complete q-ary P tree. If T has b white vertices and Ai complete
+q-ary
+ P     trees of depth  i, then    Ai = (q − 1)b + 1, in other words, the tree has
+( Ai − 1)/(q − 1) white vertices. We will call complete q-ary trees of depth i
+i-trees, and if an i-tree is the child of a white vertex, we will call it an i-child.
+
+                                                   7
+                                                                                    2
+
+
+                                              0 1 0 0    0 0 3 0      0 1 0 0
+
+
+
+
+          Figure 4: A tree in which no black vertex has a white child
+
+Lemma 9 If T is a tree in a minimal orbit O and Ai is the number of complete
+q-ary trees of depth i in T , then Ai < q.
+
+Proof: Assume Ai ≥ q = pk for some i and write the number of i-children of
+                       v
+a white vertex v as rk−1    · · · r1v r0v in base p. Pick the vertex v with the highest
+                                                               0
+r0v , and assume that there is another vertex v 0 with r0v > 0. Since the number
+of children of v is divisible by p, there must be a j-child or a white vertex so
+that the number of equivalent children of v is not divisible by p. Switching
+this j-tree or white vertex (together with its successors) with one of the i-trees
+among the children of v 0 does not decrease the number of p factors in Qv or Qv0
+and increases r0v . But if the new r0v is p, the number of p factors in Qv actually
+increases, which contradicts the minimality of O. Therefore we can assume that
+there is only one vertex v with a positive r0v .
+We can repeat the same process for r1v : if there are two vertices with non-zero
+r1v , we can exhange p i-trees of one with p j-trees or equivalent white children
+of the other and repeat this until only one r1v (which must remain smaller than
+p) is non-zero. Continue with r2v , . . . , rk−2v
+                                                    . When we do the same procedure
+       v
+for rk−1 , we will get a complete q-ary tree of depth i + 1 (after at most p − 1
+exchanges), and we will strictly decrease the number of p factors in |O|, which
+contradicts its minimality.
+Since a complete q-ary tree of depth l has 1 + q + . . . + q l−1 = (q l − 1)/(q − 1)
+vertices and since
+                               1−1      q−1      q2 − 1
+                  n = b + A0       + A1     + A2        + ...
+                               q−1      q−1      q−1
+implies (q − 1)n + 1 = A0 + A1 q + A2 q 2 + . . ., the number of white points in a
+minimal orbit is
+                            sq ((q − 1)n + 1) − 1
+                                                     .
+                                    q−1
+
+                                          8
+Lemma 10 If T is a tree in a minimal orbit O, then the number of white
+children of a (white) vertex v with equivalent subtrees is strictly smaller than p.
+
+Proof: Assume that pl is the highest power of p that is smaller than or equal to
+the number of equivalent white children of v.
+Assume that the pl equivalent white children of v have qi copies of Ti , q1 + . . . +
+qt = q. Note that qi must be smaller than pk−l by Lemma 9, and each white
+child contributes
+                    X µ¹ qi º ¹ qi º           ¹
+                                                   qi
+                                                         º¶
+                               + 2 + . . . + k−l−1
+                     i
+                           p       p             p
+
+p factors to the denominator of |O|.
+Write qi = ci0 + ci1 p + . . . + cik−l−1 pk−l−1 in base p, and split the qi pl equivalent
+children in ci0 + ci1 + . . . + cik−l−1 groups of size pl (ci0 times), pl+1 (ci1 times)
+etc. and attach each group to one of the chosen pl children of v. Note that we
+can do that for all i simultaneously: first attach groups of size pk−1 to the first,
+second etc. child of v. After we run out of groups of size pk−1 , we repeat the
+same process with pk−2 , pk−3 etc.
+We get a new orbit with a different number of p factors. The vertex v has pl
+fewer children of some equivalent class; since l is maximal, the new Qv has at
+most 1 + p + . . . + pl−1 fewer p factors.
+The new grandchildren of v contribute
+   X¡                                                                                       ¢
+       ci0 (1 + . . . + pl−1 ) + ci1 (1 + . . . + pl ) + . . . + cik−l−1 (1 + . . . + pk−2 ) =
+    i
+
+           Xµ                            ¹ º ¹ º
+                                          qi     qi
+                                                            ¹
+                                                                 qi
+                                                                      º¶
+                                  l−1
+         =      (1 + p + . . . + p )qi +       + 2 + . . . + k−l−1       =
+            i
+                                          p      p            p
+                                      X µ¹ qi º ¹ qi º        ¹
+                                                                   qi
+                                                                       º¶
+                              l−1 k
+          = (1 + p + . . . + p )p +             + 2 + . . . + k−l−1
+                                       i
+                                             p     p            p
+p factors. Since
+X µ¹ qi º           ¹      º¶ ¹ P º           ¹ P    º
+                        qi        qi              qi
+           + . . . + k−l−1   ≤       + . . . + k−l−1 = pl+1 + . . . + pk−1 ,
+ i
+        p             p          p             p
+
+the difference between the old and the new number of p factors in |O| is at least
+                    Ã                           º¶!
+                     X µ¹ qi º           ¹
+                                             qi
+              l−1 k
+(1 + . . . + p )p −             + . . . + k−l−1     (pl − 1) − (1 + . . . + pl−1 ) ≥
+                      i
+                            p              p
+
+        ≥ (1 + . . . + pl−1 )pk − (pl+1 + . . . + pk−1 )(pl − 1) − (1 + . . . + pl−1 ) =
+= (pk +. . .+pk+l−1 )−(p2l+1 +. . .+pk+l−1 )+(pl+1 +. . .+pk−1 )−(1+. . .+pl−1 ) =
+         = (pl+1 + . . . + p2l ) − (1 + . . . + pl−1 ) = (pl+1 − 1)(1 + . . . + pl−1 ),
+which is strictly positive and hence contradicts the minimality of |O| unless
+l = 0.
+
+                                               9
+Now it is easy to prove the proposition. We have determined the number of
+white points in a minimal orbit; they contribute
+
+                                 sq ((q − 1)n + 1) − 1 q − 1   sq ((q − 1)n + 1) − 1
+ b · (1 + p + . . . + pk−1 ) =                        ·      =
+                                         q−1            p−1            p−1
+
+p factors to the numerator of |O|. There are Ai = aik + a1 p + . . . + aik+k−1 pk−1
+complete trees of depth i, and they contribute at most
+                                    Ai − aik − aik+1 − . . . − aik+k−1
+                      ξp (Ai !) =
+                                                  p−1
+
+p factors to the denominator of |O|. The white vertices do not contribute any
+p factors to the denominator of |O| by Lemma 10. That means that the prime
+factorization of the cardinality of the minimal orbit has at least (and, by Propo-
+sition 2, exactly)
+
+          sq ((q − 1)n + 1) − 1 sq ((q − 1)n + 1) − sp ((q − 1)n + 1)
+                               −                                      =
+                  p−1                           p−1
+
+                                        sp ((q − 1)n + 1) − 1
+                                    =
+                                                p−1
+p factors.
+
+Note that in the case q = p both Lemma 9 and Lemma 10 are trivial.
+
+
+4     Concluding remarks
+It is natural to ask whether the results extend to arbitrary q.
+
+Question 1 Let q = pk q 0 for p prime, k ≥ 1 and gcd(p, q 0 ) = 1, and let a
+function b : N → Z satisfy b(0) = 1 (mod q) and q n+1 |∆n b(x) for all x. Is it
+true then that
+                          Cn(q) (b) = Cn(q) (mod pξ+k )
+                                                     (q)
+where ξ is the highest power of p dividing Cn ; i.e. do the same powers of p divide
+ (q)            (q)            (q)               (q)
+Cn (b) and Cn , and do Cn (b)/pξ and Cn /pξ have the same remainder
+         k
+modulo p ?
+
+The answer is negative. The author wrote a program in C++ that generated
+                                                                            (q)
+random b’s satisfying the hypothesis, and checked the condition Cn (b) =
+  (q)
+Cn (mod pξ+k ) for low n’s (n ≤ 250). It appears that the equality fails to be
+satisfied for sporadic n’s whenever q is not a prime power; when q = 6 and p = 2,
+the equality is not necessarily satisfied for n = 22, 43, 86, 107, 150, 171, 214, 235.
+For example, we have
+                (6)
+              C22 = 5.643274... · 1022 = 1011111100...1011000000[2]
+
+
+                                                10
+and
+              (6)
+           C22 (b) = 1.071965... · 1071 = 1111100010...0100000000[2] .
+for b(x) = 36x + 1. What about the following?
+
+Question 2 Let q be arbitrary, and let a function b : N → Z satisfy b(0) =
+1 (mod q) and q n+1 |∆n b(x) for all x. Is it true that
+
+                            Cn(q) (b) = Cn(q) (mod q ξ+1 )
+                                                (q)
+where ξ is the highest power of q dividing Cn ; i.e. do the same powers of q divide
+ (q)            (q)            (q)               (q)
+Cn (b) and Cn , and do Cn (b)/q ξ and Cn /q ξ have the same remainder
+modulo q?
+
+The answer, again, is no, although the computation that proves this is con-
+siderably harder. A Maple program showed that (again for b(x) = 36x + 1)
+  (6)     (6)                                                           (6)
+Cn = Cn (b) (mod 6ξ+1 ) (where ξ is the highest power of 6 dividing Cn )
+holds for n ≤ 202, while
+                (6)
+              C203 = 6.506438... · 10233 = 2155553502...5211200000[6] ,
+
+and
+              (6)
+          C203 (b) = 9.873449... · 10878 = 2521223211...3050000000[6] .
+
+It is interesting to explore necessary conditions for the conclusion of Theorem 5
+to hold for low n. The following is a sample, and it suggests that the conditions
+of the theorem are too strong.
+
+Proposition 11 Let q = pk for p prime, and let b : N → Z. Then the following
+statements are equivalent:
+ (a) For n ≤ q + 2 we have
+
+                               Cn(q) (b) = Cn(q) (mod pξ+k )
+
+      where
+                                     sp ((q − 1)n + 1) − 1
+                                ξ=
+                                             p−1
+
+ (b) b(0) = 1(mod q), q|∆b(q −1) and q 2 |∆b(x) for x = 0, 1, . . . , q −3, q −2, q.
+
+Sketch of proof: We will prove that the conditions are necessary, and it will
+                                                                        (q)
+be clear from the proof that they are also sufficient. We have C1 (b) = b0
+      (q)
+and C1 = 1, so b(0) = 1 (mod q). It is easy to see either directly or using
+Proposition 2 that for n = 2, 3, . . . , q pk is the highest power of p that divides
+  (q)                                                  (q)
+Cn , and it is obvious from the definition of Cn (b) that the only term in
+  (q)
+Cn (b) that contains bn−1 is
+
+                               (q − 1)n b0 b1 · · · bn−1 .
+
+                                           11
+If we assume by induction that b0 = . . . = bn−2 (mod q 2 ) and if n ≤ q, then we
+get (modulo q 2 )
+
+     Cn(q) (b) − Cn(q) = (q − 1)n bn−2
+                                   0   bn−1 + (Cn(q) − (q − 1)n )bn−1
+                                                                  0   − Cn(q) =
+
+                   = (q − 1)n bn−2
+                               0   (bn−1 − b0 ) + Cn(q) (bn−1
+                                                          0   − 1).
+                                                                                 (q)
+Since (q − 1)n , b0n−2 are invertible in Zq2 and since q|bn−1
+                                                          0   − 1 and q|Cn , we
+get that bn−1 = b0 (mod q 2 ).
+        (q)
+Since Cq+1 is not divisible by p and b0 = . . . = bq−1 = 1 (mod q),
+
+             (q)                         (q)                   (q)
+           Cq+1 (b) = (q − 1)q bq + (Cq+1 − (q − 1)q ) = Cq+1 (mod q)
+
+implies bq = 1 (mod q).
+                         (q)
+The Catalan number Cq+2 is divisible by q and not by q 2 . A careful considera-
+tion of q-ary trees of depth at least q on q + 2 vertices gives
+
+ (q)                                 1
+Cq+2 (b) = (q − 1)q+1 bq0 bq bq+1 + q(q − 1)q bq0 b2q + (2 − q + q 2 )(q − 1)q bq+1
+                                                                                0   bq +
+                                     2
+         µ                                                               ¶
+            (q)                    1
+      + Cq+2 − (q − 1)      q+1
+                                − q(q − 1) − (2 − q + q )(q − 1) bq+2
+                                           q                2          q
+                                                                            0   ,
+                                   2
+                           (q)
+if we set this equal to Cq+2 and do some elementary arithmetic in Zq2 , we get
+bq+1 = bq (mod q 2 ). This concludes the proof.
+
+For example, when b is a polynomial, this gives q + 1 conditions on the coeffi-
+cients. It is interesting that for q = 2 these conditions appear to be sufficient as
+well.
+
+Conjecture Let b(x) = c0 + c1 x + . . . + cd xd . Then ξ2 (Cn (b)) = ξ2 (Cn ) for
+all n if and only if
+
+ (1) 2|c0 − 1,
+ (2) 4|c1 + c2 + c3 + . . .,
+ (3) 2|c3 + c5 + c7 + . . .
+
+The conjecture was verified with a C++ program for a large number of b’s and
+for n ≤ 250.
+
+Acknowledgment
+I would like to thank A. Postnikov for suggesting the problem.
+
+
+
+
+                                          12
+References
+[AK73] R. Alter and K. K. Kubota, Prime and prime power divisibility of Cata-
+      lan numbers. J. Combinatorial Theory Ser. A 15 (1973), 243–256.
+[D99] E. Deutsch, An involution on Dyck paths and its consequences. Discrete
+      Math. 204 (1999), no. 1-3, 163–166.
+[DS06] E. Deutsch, B. E. Sagan, Congruences for Catalan and Motzkin numbers
+       and related sequences. J. Number Theory 117 (2006), no. 1, 191–215.
+
+[E83] Ö. Eğecioğlu, The parity of the Catalan numbers via lattice paths. Fi-
+      bonacci Quart. 21 (1983), no. 1, 65–66.
+[SP06] A. Postnikov, B. E. Sagan, What power of two divides a weighted Cata-
+       lan number? to appear in J. Combinatorial Theory Ser. A
+[SU91] R. Simion, D. Ullman, On the structure of the lattice of noncrossing
+       partitions. Discrete Math. 98 (1991), no. 3, 193–206.
+[S99]   R. P. Stanley, Enumerative combinatorics. Vol. 2. Cambridge Studies
+        in Advanced Mathematics, 62. Cambridge University Press, Cambridge,
+        1999.
+
+
+
+
+                                      13
+

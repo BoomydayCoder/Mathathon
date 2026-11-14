@@ -1,0 +1,805 @@
+                                                 DWORK CONGRUENCES AND REFLEXIVE POLYTOPES
+
+                                                                    KIRA SAMOL AND DUCO VAN STRATEN
+
+                                                 Abstract. We show that the coefficients of the power series expansion of the prin-
+                                                 cipal period of a Laurent polynomial satisfy strong congruence properties. These
+                                                 congruences play key role in the explicit p-adic analytic continuation of the unit-root.
+                                                 The methods we use are completely elementary.
+arXiv:0911.0797v1 [math.AG] 4 Nov 2009
+
+
+
+
+                                                                            1. Dwork congruences
+                                         Definition 1.1. Let (a(n))n∈N0 be a sequence of integers with a(0) = 1 and let p
+                                         be a prime number. We say that (a(n))n satisfies the Dwork congruences if for all
+                                         s, m, n ∈ N0 one has
+                                             D1
+                                                                             a(n)
+                                                                                    ∈ Zp
+                                                                          a(⌊n/p⌋)
+                                             D2
+                                                               a(n + mps+1 )       a(n)
+                                                                           s
+                                                                              ≡            mod ps+1
+                                                              a(⌊n/p⌋ + mp )     a(⌊n/p⌋)
+                                         In fact, the validity of these congruences is implied by those for which n < ps+1 , as one
+                                         sees by writing n = n′ + mps+1 with n′ < ps+1 . By cross-multiplication, D2 becomes
+                                             D3
+                                                                            n              n
+                                                           a(n + mps+1 )a(⌊ ⌋) ≡ a(n)a(⌊ ⌋ + mps ) mod ps+1 .
+                                                                            p              p
+                                         The congruences for s = 0 say that for 0 ≤ n0 ≤ p − 1 one has
+                                                                        a(n0 + mp) ≡ a(n0 )a(m)          mod p
+                                         So if we write n in base p
+                                                                  n = n0 + pn1 + . . . + nr pr , 0 ≤ ni ≤ p − 1,
+                                         we find by repeated application that
+                                                                       a(n) ≡ a(n0 )a(n1 ) . . . a(nr ) mod p
+                                         In fact, this is easily seen to be equivalent to D3 for s = 0.
+                                         Similarly, for higher s the congruences D3 are equivalent to
+                                                                  a(n0 + ... + ns+1 ps+1 )a(n1 + ... + ns ps−1 ) ≡
+
+                                         (1.1)                 a(n0 + ... + ns ps )a(n1 + ... + ns+1 ps ) mod ps+1 .
+                                         The congruences express a strong p-adic analyticity property of the function
+                                                                                 n 7→ a(n)/a(⌊n/p⌋)
+
+                                           This work is entirely supported by DFG Sonderforschungsbereich/Transregio 45.
+                                                                                            1
+2                               KIRA SAMOL AND DUCO VAN STRATEN
+
+and play a key role in the p-adic analytic continuation of the series
+                                                     ∞
+                                                     X
+                                         F (t) =             a(n)tn
+                                                     n=0
+
+to points on the closed p-adic unit disc. More precisely, one has the following theorem
+(see [Dw], Theorem 3.)
+Theorem 1.2. Let (a(n))n be a Zp −valued sequence satisfying the Dwork congruences
+D1 and D2 . Let
+                                       X∞
+                               F (t) =     a(n)tn
+                                                     n=0
+and
+                                                     ps −1
+                                                     X
+                                          s
+                                        F (t) =              a(n)tn .
+                                                     n=0
+Let D be the region in Zp
+                                   D := {x ∈ Zp , |F 1 (x)| = 1}.
+Then F (t)/F (tp ) is the restriction to pZp of an analytic element f of support D:
+                                   f (x) = lim F s+1 (x)/F s (xp ).
+                                              s→∞
+
+The congruences were used in [SvS] to determine Frobenius polynomials associated to
+Calabi-Yau motives coming from fourth order operators of Calabi-Yau type from the list
+[AESZ]. Although there are many examples of sequences that satisfy these congruences,
+the true cohomological meaning remains obscure at present. For a recent interpretation
+in terms of formal groups, see [Yu]. In this paper we will give a completely elementary
+proof of the congruences D3 for sequences (a(n))n that arise as constant term of the
+powers of a fixed Laurent polynomial with integral coefficients and whose Newton
+polyhedron contains a unique interior point. These include the series that come from
+reflexive polytopes.
+
+                                   2. Laurent polynomials
+We will use the familiar multi-index notation for monomials and exponents
+                      X a = X1a1 X2a2 . . . Xnan ,    a = (a1 , a2 , . . . , an ) ∈ Zn
+to write a general Laurent-polynomial as
+                      X
+                  f=      ca X a ∈ Z[X1 , X1−1 , X2 , X2−1 , . . . , Xn , Xn−1 ].
+                            a
+
+The support of f is the set of exponents a occuring in f , i.e.
+                                   supp(f ) := {a ∈ Zn | ca 6= 0}
+The Newton polyhedron ∆(f ) ⊂ Rn of f is defined as the convex hull of its support
+                                    ∆(f ) := convex(supp(f ))
+When the support of f consists of m monomials, we can put the information of the
+polyhedron ∆ := ∆(f ) in an n × m matrix A ∈ Mat(m × n, Z), whose columns aj ,
+                    DWORK CONGRUENCES AND REFLEXIVE POLYTOPES                                 3
+
+j = 1, 2, . . . , m are the exponents of f ;
+                                                    a1,1 a1,2 . . . a1,m
+                                                                        
+
+                     A = (a1 , a2 , . . . , am ) =  ...              .. 
+                                                                       .
+                                                    an,1 a1,2 . . . an,m
+so that we can write
+                                    m
+                                    X                     m
+                                                          X          n
+                                                                     Y
+                               f=         cj X   aj
+                                                      =         cj         X ai,j
+                                    j=1                   j=1        i=1
+
+The polyhedron ∆ is the image of the standard simplex ∆m under the map
+                                                      A
+                                              Rm −→ Rn
+The following theorem will play a key role in the sequel.
+Theorem 2.1. Let ∆ be an integral polyhedron with 0 as unique interior           point. Then
+for all non-negative integral vectors (ℓ1 , ℓ2 , . . . , ℓm ) ∈ Zm such that m
+                                                                            P
+                                                                             i=1 i,j ℓj 6= 0 for
+                                                                                a
+some 1 ≤ i ≤ n, one has
+                                       Xm                   X m
+                                 gcd (       ai,j ℓj ) ≤        ℓj
+                                  i=1,...,n
+                                              j=1                    j=1
+
+                                                                                     m
+          Pm that there exists a non-negative integral vector ℓ = (ℓ1 , ..., ℓm ) ∈ Z
+Proof. Assume
+such that i=1 ai,j ℓj 6= 0 for some 1 ≤ i ≤ n and
+                                                 m
+                                                 X                    m
+                                                                      X
+                               g := gcd (              ai,j ℓj ) >           ℓj .
+                                     i=1,...,n
+                                                 j=1                   j=1
+
+We have
+                                                   Pm                
+                                             ℓ1               a    ℓ
+                                                 
+                                                        j=1    1,j   j
+                   a1 ℓ1 + ... + am ℓm = A  ...  =      ..
+                                                                       .
+                                                                      
+                                                       Pm .
+                                             ℓm         j=1 an,j ℓj
+
+The components of the vector at the right hand side are all divisible by g, so that after
+division by g we obtain a non-zero lattice point
+                                       ℓ1           ℓm
+                                v :=      a1 + ... + am ∈ Zn
+                                       g             g
+of ∆ with
+                                              X ℓj
+                                                          <1
+                                                 j
+                                                      g
+
+The interior points of ∆ (i.e. the points that do not lie on the boundary) consist of
+the combinations
+                                       α1 a1 + ... + αm am
+                            Pm
+of the columns of A with j=1 αj < 1. As 0 was assumed to be the only interior lattice
+point of ∆ we arrive at a contradiction.                                           
+
+We remark that the above statement applies in particular to reflexive polyhedra.
+4                         KIRA SAMOL AND DUCO VAN STRATEN
+
+                            3. The fundamental period
+Notation 3.1. For a Laurent-polynomial we denote by [f ]0 the constant term, that is,
+the coefficient of the monomial X 0 .
+Definition 3.2. The fundamental period of f is the series
+                                     ∞
+                                     X
+                           Φ(t) :=          a(k)tk ,      a(k) := [f k ]0
+                                      k=0
+
+Note that the function Φ(t) can be interpreted as the period of a holomorphic differ-
+ential form on the hypersurface Xt := {t.f = 1} ⊂ (C∗ )n , as one has
+                                     P∞ k k
+                            Φ(t) =      k=0 [f ]0 t
+                                     P∞        1
+                                                    R k k
+                                 =      k=0 (2πi)n T f t Ω
+                                       1
+                                            R P∞ k k
+                                 = (2πi)  n  T     k=0 f t Ω
+                                       1         1
+                                            R
+                                 = (2πi)  n  T 1−tf
+                                                     Ω
+                                     R
+                                 = γt ωt
+Here Ω := dX 1 dX2
+           X1 X2
+                   . . . dX
+                         Xn
+                            n
+                              , T is the cycle given by |Xi | = ǫi and homologous to the
+Leray coboundary of γt ∈ Hn−1(Xt ) and
+                                                        1
+                                  ωt = ResXt (               Ω)
+                                                      1 − tf
+In particular, Φ(t) is a solution of a Picard-Fuchs equation; the coefficients a(k) satisfy
+a linear recursion relation.
+Theorem 3.3. Let f ∈ Z[X1 , X1−1 , . . . , Xn , Xn−1 ] with integral coefficients. Assume
+that the Newton polyhedron ∆(f ) has 0 as its unique interior lattice point.
+Then the coefficients a(n) = [f n ]0 of the fundamental period satisfy for each prime
+number p and s ∈ N the congruence
+                       a(n0 + ... + ns ps )a(n1 + ... + ns−1 ps−2) ≡
+
+(3.1)             a(n0 + ... + ns−1 ps−1 )a(n1 + ... + ns ps−1 ) mod ps .
+where 0 ≤ ni ≤ p − 1 for 0 ≤ i ≤ s − 1.
+We remark that already for the simplest cases where the the Newton polyhedron con-
+tains more than one lattice point, like f = X 2 + X −1 , the coefficients a(n) do not
+satisfy such simple congruences.
+
+                      4. Proof for the congruence                          mod p
+For s = 1 we have to show that for all n0 ≤ p − 1
+                           a(n0 + n1 p) ≡ a(n0 )a(n1 ) mod p,
+The proof we will give is completely elementary; the key ingredient is theorem 2.1,
+which states that for all non-negative integral ℓ = (ℓ1 , ..., ℓm ) one has,
+                                            m
+                                            X                   m
+                                                                X
+                                 gcd (            ai,j ℓj ) ≤         ℓj
+                                i=1,...,n
+                                            j=1                 j=1
+                  DWORK CONGRUENCES AND REFLEXIVE POLYTOPES                              5
+
+Proposition 4.1. Let f be a Laurent polynomial as above and n0 < p. Then
+                            [f n0 f n1 p ]0 ≡ [f n0 ]0 [f n1 ]0         mod p.
+Proof. As f has integral coefficients, we have f n1 p (X) ≡ f n1 (X p ) mod p. So the
+congruence is implied by the equality
+                       [f n0 (X)f n1 (X p )]0 = [f n0 (X)]0 [f n1 (X)]0 ,
+which means: the product of a monomial from f n0 (X) and a monomial from f n1 (X p )
+can never be constant, unless the two monomials are constant themselves. It is this
+statement that we will prove now.
+For the product of a non-constant monomial from f n0 (X) and a non-constant monomial
+from f n1 (X p ) to be constant, the monomial coming from f n0 (X) has to be a monomial
+in X1p , ..., Xnp , since all monomials in f n1 (X p ) are monomials in X1p , ..., Xnp .
+A monomial
+                                                            m
+                                                               a ℓ
+                                                            Y
+                                  ℓ1 a1 +ℓ2 a2 +...+ℓm am
+                          M := X                          =   X1 1,j j ...Xnan,j ℓj
+                                                                j=1
+
+appearing in f n0 (X) corresponds to a partition
+                                        n0 = ℓ1 + ... + ℓm
+of n0 in non-negative integers ℓi . If M were a monomial in X1p , ..., Xnp , then we would
+have the divisibility
+                                   Xm
+                              p|       ai,j ℓj for 1 ≤ i ≤ n,
+                                       j=1
+
+and hence
+                                                         m
+                                                         X
+                                       p | gcd (               ai,j ℓj ).
+                                             i=1,...,n
+                                                         j=1
+
+On the other hand, by 2.1 we have
+                                       m
+                                       X                   m
+                                                           X
+                            gcd (            ai,j ℓj ) ≤          ℓj = n0 < p.
+                           i=1,...,n
+                                       j=1                 j=1
+
+So we conclude that m
+                   P
+                     i=1 ai,j ℓj = 0 for 1 ≤ j ≤ n and that the monomial M is the
+                   0
+constant monomial X . Hence it follows that
+                       [f n0 (X)f n1 (X p )]0 = [f n0 (X)]0 [f n1 (X p )]0 ,
+and since
+                                   [f n1 (X p )]0 = [f n1 (X)]0 ,
+the proposition follows.                                                                
+We remark that the congruence has the following interpretation. By a result of [DvK]
+(Theorem 4.) one can compactify the map f : (C∗ )n −→ C given by the Laurent
+polynomial to a map φ : X −→ P1 such that the differential form Ω extends to a form
+in Ωn ((X \ φ−1 ({∞}))). In the case ∆(f ) is reflexive one has
+                                         deg(π∗ ωX/S ) = 1
+see [DK], (8.3). On the other hand, from this and under an additional condition (R),
+it follows from [Yu] corollary 3.7 that the mod p Dwork-congruences hold.
+6                                               KIRA SAMOL AND DUCO VAN STRATEN
+
+                                                       5. Strategy for higher s
+The idea for the higher congruences is basically the same as for s = 1, but is combina-
+torically more involved. Surprisingly, one does not need any statements stronger than
+2.1. To prove the congruence 3.1, we have to show that
+            " s           # "s−1            #   "s−1          # " s            #
+                        k               k−1                 k              k−1
+              Y              Y                   Y               Y
+(5.1)            f nk p          f nk p       ≡      f nk p         f nk p       mod ps .
+                        k=0                 0     k=1                   0           k=0             0     k=1                    0
+                                                                                                  nps
+To do this, we will use the following expansion of f                                                    (X):
+Proposition 5.1. We can write
+                                                                             s
+                                                           nps                                      s−k
+                                                                             X
+                                                       f         (X) =              pk gn,k (X p          ),
+                                                                             k=0
+
+where gn,k is a polynomial of degree npk in the monomials of f , independent of s,
+defined inductively by gn,0 (X) = f n (X) and
+                                                                                      k−1
+                                                                                k                              k−1−j
+                                                                                      X
+(5.2)                                     pk gn,k (X) := f (X)np −                           pj gn,j (X p               ).
+                                                                                      j=0
+
+Proof. We have to prove that the right-hand side of equation 5.2 is divisible by pk .
+This is proved by induction on k and an application of the congruence
+                                                                 m                    m−1
+(5.3)                                                 f (X)p ≡ f (X p )p                      mod pm .
+For k = 1, the divisibility follows directly by (5.3). Assume that the statement is true
+                                k−1   Pk−1 j            k−1−j            Pk−1 j           k−j
+for m ≤ k − 1. Write f (X)np        = j=0   p gn,j (X p       ). Then, j=0     p gn,j (X p ) =
+           k−1          k                            k        k−1 j          k−j
+f (X p )np     ≡ f (X)np mod pn , and thus f (X)np − j=0          p gn,j (X p ) ≡ 0 mod pn .
+                                                          P
+                                                                                              
+The congruences involve constant term expressions of the form
+             " b           #   " b k                     #
+                         k                           k−j
+              Y                 YX
+                  f nk p     =         pj gnk ,j (X p )
+                            k=a                   0              k=a j=0
+                                                                       " b 0                  #
+                                                         X X Pb         Y               k−ik
+(5.4)                                                  =  ... p k=a ik     gnk ,ik (X p      ) .
+                                                                ia ≤a       ib ≤b                 k=a                                0
+
+Thus, equation (5.1) translates into
+                                                                                      " s                           # " s−1                     #
+                                                            Ps          Ps−1
+                                                                                                           pk−ik                       pk−1−jk
+        X             XX                    X                                          Y                                Y
+                ...                 ...                 p    k=0 ik +        k=1 jk          gnk ,ik (X            )        gnk ,jk (X         )
+        i0 ≤0         is ≤s j1 ≤0         js−1 ≤s−2                                   k=0                               0    k=1                    0
+    ≡                                                                                     " s−1                          # " s                     #
+                                                                Ps−1         Ps
+                                                                                                                pk−ik                     pk−1−jk
+        X                X          X              X                                        Y                               Y
+                ...                         ...             p     k=0 ik +      k=1 jk            gnk ,ik (X            )      gnk ,jk (X         )
+        i0 ≤0         is−1 ≤s−1 j1 ≤0             js ≤s−1                                   k=0                              0   k=1                    0
+                         s
+    (5.5) mod p
+
+                                                   s
+Since this congruence
+                Ps is supposed
+                         Ps−1 to hold modulo p , on the left-hand side, only the
+summands with k=0 ik + k=1 lk ≤ s − 1 contribute, and on the right-hand side, only
+            Ps−1
+                 ik + sk=1 lk ≤ s − 1 play a role.
+                      P
+those with k=0
+                           DWORK CONGRUENCES AND REFLEXIVE POLYTOPES                                        7
+
+Now, we proceed by comparing these summands on both sides of equation 5.1. We will
+prove that each summand on the right-hand side is equal to exactly one summand on
+the left-hand side and vice versa.
+                                              6. Splitting positions
+So we are led to study for a ≤ b expressions of the type
+                                         " b                     #
+                                                          k−ik
+                                          Y
+                           G(a, b; I) :=     gnk ,ik (X p      )
+                                                            k=a                        0
+where the 0 ≤ nk ≤ p − 1 are fixed for a ≤ k ≤ b and I := (ia , ..., ib ) is a sequence with
+0 ≤ ik ≤ k.
+Definition 6.1. We say that G(a, b; I) splits at ℓ if
+                                    G(a, b; I) = G(a, ℓ − 1; I)G(ℓ, b; I)
+The number of entries of I is determined implicitly by a and b, so that by G(a, ℓ − 1; I)
+we mean the expression corresponding to the sequence (ia , ..., iℓ−1 ), while by G(ℓ, b; I),
+we mean the expression corresponding to (iℓ , ..., ib ). Note that ℓ = a represents a trivial
+splitting, but splitting at ℓ = b is a non-trivial property.
+Proposition 6.2. If k − ik ≥ ℓ for all k ≥ ℓ, then G(a, b; I) splits at ℓ.
+Proof. A monomial m           pk−ik aj βj,k                         k−i
+                                            occuring in gnk ,ik (X p k ) corresponds to a par-
+                    Q
+                       j=1 (X      )
+tition
+                         β1,k + ... + βm,k = pik nk ≤ pik +1 − pik
+of the number pik nk in non-negative integers β1,k , ..., βm,k . So we have
+                                    pk−ik (β1,k + ... + βm,k ≤ pk+1 − pk .
+It follows from the assumptions that the product G(ℓ, b; I) = bk=ℓ gnk ,ik (X p k ) is a
+                                                                Q              k−i
+
+
+Laurent-polynomial in X p . As a consequence, the product of a monomial in G(a, ℓ −
+         Qℓ−1             k−i
+1; I) = k=a   gnk ,ik (X p k ) and a monomial of G(ℓ, b; I) can be constant only if the
+sum
+                                   m
+                                   X                                 m
+                                                                     X
+                           mi :=         pa−ia ai,j βj,a + ... +           pℓ−1−iℓ−1 ai,j βj,ℓ−1
+                                   j=1                               j=1
+                       ℓ
+is divisible by p for 1 ≤ i ≤ n.
+Set
+                           γj := pa−ia βj,a + ... + pℓ−1−iℓ−1 βj,ℓ−1
+so that                                 m
+                                      X
+                                           ai,j γj = mi
+                                                      j=1
+It follows that
+m
+X            m
+             X                          m
+                                        X
+      γj =         pa−ia βj,a + ... +         pℓ−1−iℓ−1 βj,ℓ−1 ≤ pa+1 − pa + ... + pℓ − pℓ−1 = pℓ − pa < pℓ .
+j=1          j=1                        j=1
+
+Hence, it follows that
+                                                      m
+                                                      X                   m
+                                                                          X
+                                   pℓ | gcd (               ai,j γj ) ≤         γ j < pℓ ,
+                                          i=1,...,n
+                                                      j=1                 j=1
+8                          KIRA SAMOL AND DUCO VAN STRATEN
+                                                                  Pm
+where the first inequality follows from Theorem 2.1. This implies  j=1 ai,j γj = 0
+                                                       Qs−1        pk−ik
+for 1 ≤ i ≤ n. But this means that the monomial in k=t gnk ,ik (X        ) is itself
+constant.                                                                         
+Now that we know that we can split up expressions G(a, b; I) satisfying the condition
+given in Proposition 6.2, we proceed by proving that all the summands on both sides of
+equation 5.5 that do not have a coefficient divisible by ps satisfy this splitting condition.
+
+
+                          7. Three combinatorical Lemmas
+In this section, we prove three simple combinatorical lemmas which will be applied to
+split up expressions G(0, s; I)G(1, s − 1; J + 1) that occur in the congruence (5.1).
+Definition 7.1. Let a ≤ b and I = (ia , ia+1 , . . . , ib ) a sequence with 0 ≤ ik ≤ k for all
+k with a ≤ k ≤ b. We say that ℓ is a splitting index for I if ℓ > a and for k ≥ ℓ one
+has
+                                      ik ≤ k − ℓ.
+Remark that for a splitting index ℓ one can apply 6.2 and that iℓ = 0.
+Lemma 7.2. Let I as above and assume that
+                              Xb
+                                  ik ≤ b − a − 1.
+                                        k=a
+
+Then there exists at least one splitting index for I.
+Proof. Let N := {k |ik = 0} be the set of all indices k such that the corresponding ik
+is zero. Since the sum has b − a + 1 summands ik , the set N has at least two elements.
+So there exists at least one index k 6= a such that ik = 0.
+We will show by contradiction that one of these zero-indices is a splitting index.
+We say that ν > k is a violating index with respect to k ∈ N if iν > ν − k. Assume
+now that all k ∈ N posses a violating index.
+It follows directly that for each violating index ν, iν ≥ 2. Furthermore, if ν is a violating
+index for m different zero-indices k1 < ... < km , it follows that iν ≥ m + 1.
+Now assume that we have µ different violating indices ν1 , ..., νµ and that νj is a violating
+index for all j ∈ Nj , where we partition N into disjoint subsets
+                                     N = N1 ∪ N2 ∪ ... ∪ Nµ .
+       Pµ            Pµ
+Then     j=1 iνj ≥    j=1 (#Nj + 1) = #N + µ, and
+
+        b                      µ
+        X                      X
+               ik ≥ #N · 0 +         iνj + (b − a − (#N + µ)) · 1 = b − a > b − a − 1,
+       k=a+1                   j=1
+a contradiction.                                                                            
+We can sharpen lemma 7.2 to:
+Lemma 7.3. Let I be as above and assume that
+                              Xb
+                                 ik = b − a − m.
+                                       k=a
+
+Then there exist at least m different splitting indices for I
+                     DWORK CONGRUENCES AND REFLEXIVE POLYTOPES                                       9
+
+Proof. We proceed by induction on m. The case m = 1 is just Lemma 7.2. Assume
+              ≤ m, we have proven the statement.
+that for all nP
+Now assume bk=a ik = b − a − (m + 1). Since m + 1 > 1, there exists a splitting index
+ν. We can split up the set of indices {ia , ..., ib } = {ia , ..., iν−1 } ∪ {iν , ..., ib } in position
+             Pν−1
+                   ik = Nν and bk=ν ik = b − a − m − 1 − Nν . Depending on Nν , we
+                                P
+ν such that k=a
+have to distinguish between the following cases:
+    (1) Nν > (ν−1)−a−1. It follows that b−a−m−1−Nν < b−a−m−((ν−1)−a−1) =
+        b − m − (ν − 1), and thus bk=ν ik ≤ b − ν − m. By induction, there exists at
+                                        P
+        least m splitting indices in (iν , ..., ib ), and thus for the whole (ia , ..., ib ), there
+        exist at least m + 1 such indices.
+    (2) The case Nν ≤ (ν − 1) − a − 1 splits up in two cases:
+         (a) Nν ≤ (ν − 1) − a − m. By induction, (ia , ..., iν−1 ) has at least m splitting
+             indices, and the whole (ia , ..., ib ) has at least m + 1 such indices.
+                                                                    Pν−1
+         (b) Nν = (ν −1) −a−n, where 1 ≤ n ≤ m. Since k=a                 ik = (ν −1) −a−n, by
+             induction for (ia , ..., iν−1 ) exist at least n splitting indices. Since bk=ν ik =
+                                                                                      P
+             b − ν − (m − n), for (iν , ..., ib ), there exist at least m − n splitting indices.
+             Thus, for the whole (ia , ..., ib ) exist at least n+(m−n)+1 = m+1 splitting
+             indices.
+                                                                                                    
+Lemma 7.4.           (1) Let I = (i0 , ..., is ) and J = (j1 , ..., js−1 ) with
+                                     s
+                                     X             s−1
+                                                   X
+                                            ik +         jk ≤ s − 1.
+                                      k=0          k=1
+
+         Let SI be the set of splitting indices of I and SJ be the set of splitting indices
+         of J. Then,
+                                   SI ∩ (SJ ∪ {1, s}) 6= ∅.
+    (2) Let I = {i0 , ..., is−1 } and J = (j1 , ..., js ) with
+                                     s−1
+                                     X             s
+                                                   X
+                                            ik +         jk ≤ s − 1.
+                                      k=0          k=1
+
+         Let SI be the set of splitting indices of I and SJ be the set of splitting indices
+         of J. Then,
+                               (SI ∪ {s}) ∩ (SJ ∪ {1}) 6= ∅.
+Proof.     (1) Note that since SI ∪ SPJ ∪ {1, s} ⊂ {1, 2, ..., s}, it follows that #(SI ∪
+        SJ ∪ {1, s}) ≤ s. Note that sk=0 ik ≥ s − #SI by Lemma 7.3. This implies
+             Ps−1
+        that k=1   jk ≤ s − 2 − (s − (#SI + 1)), and hence that #SJ ≥ s − (#SI + 1)
+        by Lemma 7.3. But #SI + #SJ + 2 = #SI + s − (#SI + 1) + 2 = s + 1 > s,
+        which implies #(SI ∩ (SJ ∪ {1, s})) ≥ 1, and thus the statement follows.
+    (2) Note that since (SI ∪ {s}) ∪ (SJ ∪ {1}) ⊂ {1, ..., s}, it follows that #(SI ∪
+                                     Ps−1
+                                           ik ≥ s − 1 − #SI , which implies sk=1 jk ≤
+                                                                                P
+        {s}) ∪ (SJ ∪ {1}) ≤ s. Now k=0
+        s − 1 − (s − #SI − 1), and #SJ ≥ s − #SI − 1. But #SI + 1 + #SJ + 1 ≥
+        #SI +1+s−#SI = s+1 > s, which implies that #((SI ∪{s})∩(SJ ∪{1})) ≥ 1,
+        and the statement follows.
+                                                                                        
+10                             KIRA SAMOL AND DUCO VAN STRATEN
+
+                                     8. Proof for higher s
+We will use the combinatorical lemmas on splitting indices from the last section to
+prove the congruence (5.1) modulo ps .
+For a sequence I = (ia , ..., ib ), we write
+                                                       Pb
+                                             pI := p    k=a ik   .
+For a sequence J = (ja , ..., jb ), we define J + 1 := (ja + 1, ..., jb + 1).
+Note that if k − jk > 0 for a ≤ k ≤ b, then we have
+(8.1)                                G(a, b; J + 1) = G(a, b; J),
+since the constant term of a Laurent-polynomial f (X) is the same as the constant term
+of the Laurent-polynomial f (X p ).
+Let
+                                    pI+J G(0, s; I)G(1, s − 1; J + 1)
+be a summand on the left-hand side of (5.5) defined by the tuple (I, J) with sk=0 ik +
+                                                                               P
+Ps−1
+   k=1 jk ≤ s − 1, and let 1 ≤ ν ≤ s be such that G(0, s; I) splits in position ν and
+either G(1, s − 1; J + 1) splits in position ν or ν ∈ {1, s}. Such a ν exists by Lemma
+(7.4). Define I ′ = (i′0 , ..., i′s−1 ) and J ′ = (j1′ , ..., js′ ) by
+                                       i′k   =   ik for k ≤ ν − 1
+                                       i′k   =   jk for k ≥ ν
+                                       jk′   =   jk for k ≤ ν − 1
+                                       jk′   =   ik for k ≥ ν.
+                     ′   ′
+To show that pI +J G(0, s − 1; I ′)G(1, s; J ′ + 1) is in fact a summand on the right-hand
+side of (5.5), we have to explain why i′k ≤ k and jk′ ≤ k − 1. Note that jk ≤ k − 1 for
+1 ≤ k ≤ s − 1 and ik ≤ k for 0 ≤ k ≤ s. Furthermore, we have ik ≤ k − 1 for k ≥ ν
+since iν = 0 and G(0, s; I) splits in position ν, which means that k − ik ≥ ν ≥ 1 for
+k ≥ ν.
+By definition of jk′ and i′k , it now follows that jk′ ≤ k − 1 for 1 ≤ k ≤ s, and i′k ≤ k for
+0 ≤ k ≤ s − 1.
+                               ′    ′
+Now that we know that pI +J G(0, s − 1; I ′ )G(1, s; J ′ + 1) is in fact a summand on the
+right-hand side of congruence (5.5), we prove the following Proposition. Remark that
+                                  ′   ′
+obviously, we have pI+J = pI +J .
+Proposition 8.1. Let I, J, I ′ and J ′ be defined as above. Then,
+                   G(0, s, I)G(1, s − 1; J + 1) = G(0, s − 1; I ′)G(1, s; J ′ + 1).
+Thus, we can identify each summand on the left-hand side of (5.5) with a summand
+on the right-hand side.
+Proof. By a direct computation:
+         G(0, s; I)G(1, s − 1; J + 1)
+     =   G(0, ν − 1; I)G(ν, s; I)G(1, ν − 1; J + 1)G(ν, s − 1; J + 1) by lemma 7.4
+     =   G(0, ν − 1; I)G(ν, s; I + 1)G(1, ν − 1; J + 1)G(ν, s − 1; J) by (8.1)
+     =   G(0, ν − 1; I)G(ν, s − 1; J)G(1, ν − 1; J + 1)G(ν, s; I + 1) (commutation)
+     =   G(0, ν − 1; I ′)G(ν, s − 1; I ′ )G(1, ν − 1; J ′ + 1)G(ν, s; J ′ + 1) by definition of I ′ , J ′
+     =   G(0, s − 1; I ′ )G(1, s; J ′ + 1) by lemma 7.4,
+                    DWORK CONGRUENCES AND REFLEXIVE POLYTOPES                           11
+
+the statement follows. Note that the last equality follows since by definition of I ′ and
+J ′ , i′ν = jν′ = 0, k − i′k ≥ ν and k − jk′ ≥ ν for k > ν. Thus, G(0, s − 1; I ′) and
+G(1, s; J ′ + 1) both split at ν.                                                       
+Since by Proposition 8.1, we can identify every summand on the left-hand side of equa-
+tion (5.5) satisfying I + J ≤ s − 1 with a summand on the right-hand side, both sides
+are equal modulo ps and the proof of Theorem 3.3 is complete.
+
+Remark: The above arguments to prove the congruence D3 can be slightly simplified,
+as was shown to us by A. Mellit.
+
+                                       9. An Example
+Let f be the Laurent-polynomial
+f : = 1/X4 + X2 + 1/X1 X4 + 1/X1X3 X4 + 1/X1 X2 X3 X4 + 1/X3 + X1 /X3
+    + X2 /X3 X4 + X1 /X3 X4 + X1 X2 /X3 X4 + X2 /X4 + 1/X2 X4 + 1/X1 X2 X4 + 1/X1 X2
+    + 1/X1 + 1/X2X3 X4 + X4 + 1/X2 + X1 + X1 /X4 + 1/X3 X4 + X3 + 1/X2 X3 .
+It is No. 24 in the list of Batyrev and Kreuzer [BK], so ∆(f ) is a reflexive polytope
+and our theorem 3.3 applies: the coefficients a(n) := [f n ]0
+  a(0) = 1, a(1) = 0, a(2) = 18, a(3) = 168, a(4) = 2430, a(5) = 37200, a(6) = 605340
+satisfy the congruence D3Pmodulo ps for arbitrary s.
+The power series Φ(t) = ∞            n
+                           n=0 a(n)t is solution to a fourth order linear differential
+equation P F = 0, where the differential operator P is of Calabi-Yau type
+         P := 88501054θ4 + t(912382θ(−291 − 1300θ − 2018θ2 + 1727θ3 ) + ...
+           + t11 (3461674786667136(θ + 1)(θ + 2)(θ + 3)(θ + 4)),
+(where θ := t∂/∂t) that was determined in [PM].
+
+                           10. Behaviour under Covering
+Let f be a Laurent-polynomial corresponding to a reflexive polyhedron, let A be the
+exponent matrix corresponding to f , and consider the vectors with integral entries in
+the kernel of A. If there exists a positive integer k such that
+                               ℓ1
+                                 
+
+                      ℓ :=  ...  ∈ ker(A) ⇒ k|(ℓ1 + ... + ℓm ),
+                               ℓm
+then it follows that
+                                   a(n) := [f n ]0 6= 0 ⇒ k|n,
+since for l ∈ N,                                                                
+                               l
+                                            X                           l
+                            [f ]0 =                                               ,
+                                                               ℓ1 , ℓ2 , ..., ℓm
+                                      (ℓ1 ,...,ℓm )∈Af,l
+where
+                Af,l := ker(A) ∩ {(ℓ1 , ..., ℓm ) ∈ Nm
+                                                     0 , ℓ1 + ... + ℓm = l.}.
+
+We are interested in the congruences
+                   a(k(n0 + ... + ns ps ))a(k(n1 + ... + ns−1 ps−2 )) ≡
+(10.1)             a(k(n0 + ... + ns−1 ps−1 ))a(k(n1 + ... + ns ps−1 )) mod ps ,
+12                               KIRA SAMOL AND DUCO VAN STRATEN
+
+which we will prove in general for s = 1, and which we will prove for one example by
+proving that the following condition is satisfied:
+Condition 1. For a tuple (ℓ1 , ..., ℓm ) with
+                                      ℓ1 + ... + ℓm = kµ ≤ k(p − 1),
+it follows that
+                      m
+                      X                      m
+                                             X                   m
+                                                                 X                       m
+                                                                                         X
+            p| gcd(         ai,1 ℓ1 , ...,         aj,n ℓj ) ⇒         ai,1 ℓj = ... =         aj,n ℓj = 0.
+                      j=1                    j=1                 j=1                     j=1
+
+Note that the proof is simliar for many other examples which we will not treat in here.
+First of all, before we come to the example, we give a general proof of (10.1) for s = 1.
+Proposition 10.1. Let a(n), n ∈ N be an integral sequence satisfying
+                                   a(n0 + n1 p) ≡ a(n0 )a(n1 )               mod p
+for 0 ≤ n0 ≤ p − 1 and a(n) 6= 0 iff k|n. Then
+
+                              a(k(n0 + n1 p)) ≡ a(kn0 )a(kn1 ) mod p.
+Proof. If kn0 < p, then the proposition follows directly. Hence assume that kn0 =
+n′0 + n′′0 p > p − 1. Then
+                       a(k(n0 + n1 p)) = a(n′0 + (kn1 + n′′0 )p)
+                                       ≡ a(n′0 )a(kn1 + n′′0 ) mod p.
+Since k 6 |n′0 and a(n′0 ) = 0 by assumption, it follows that
+                                        a(k(n0 + n1 p)) ≡ 0 mod p.
+On the other hand, a(kn0 ) = a(n′0 + n′′0 p) ≡ a(n′0 )a(n′′0 ) mod p where a(n′0 ) = 0, and
+thus a(kn0 ) ≡ 0 mod p and
+                                         a(kn0 )a(kn1 ) ≡ 0              mod p
+and the proposition follows.                                                                                  
+10.1. An Example. Let f be the Laurent-polynomial No. 62 in the list of Batyrev
+and Kreuzer [BK], which is given by
+                                     1     1       1          1
+        f := X1 + X2 + X3 + X4 +         +     +      + 2             .
+                                    X1 X2 X1 X3 X1 X4 X1 X2 X3 X4
+Then, the coefficients a(n) are given by a(n) = 0 if n 6= 0 mod 3 and
+                                          n  2          
+                                    (3n)! X n        n+k
+                           a(3n) =                          .
+                                     n!3 k=0 k          k
+The Newton polyhedron ∆(f ) is reflexive (see [BK]), and hence by Theorem 3.3, the
+coefficients a(n) satisfy the
+                            Pcongruence D3 modulo ps for arbitrary s.
+                              ∞       n
+The power series Φ(t) = n=0 a(3n)t is solution to a fourth order linear differential
+equation P F = 0, where the differential operator P is of Calabi-Yau type and is given
+by
+                       P := θ4 − 3t(3θ + 2)(3θ + 1)(11θ2 + 11θ + 3)
+                         − 9t2 (3θ + 5)(3θ + 2)(3θ + 4)(3θ + 1).
+                   DWORK CONGRUENCES AND REFLEXIVE POLYTOPES                                       13
+
+In this example, the exponent matrix is
+                                                                                  
+                             1 0 0 0 −1 −1 −1                                   −2
+                            0 1 0 0 −1 0   0                                   −1 
+                      A := 
+                            0 0 1 0 0 −1 0
+                                                                                   .
+                                                                                −1 
+                             0 0 0 1 0  0 −1                                    −1
+A basis of ker(A) is given by
+                                    1     1     1     2
+                                           
+                                   1   0   0   1 
+                                   0   1   0   1 
+                                         
+                                   0   0   1   1 
+                                         
+                                 {  ,   ,   ,  },
+                                   1   0   0   0 
+                                   0   1   0   0 
+                                         
+                                   0   0   1   0 
+                                    0     0     0     1
+and thus it follows that [f n ]0 6= 0 ⇒ 3|n and k = 3. We prove that Condition 1 is
+satisfied in this example. Assume that p 6= 3 and that
+                       8
+                       X                      8
+                                              X
+             p| gcd(         a1,j ℓj , ...,         a4,j ℓj ) for ℓ1 + ... + ℓ8 = 3µ ≤ 3(p − 1).
+                       j=1                    j=1
+
+This means that there exist x1 , x2 , x3 , x4 ∈ Z such that
+                                     ℓ1       =     ℓ5 + ℓ6 + ℓ7 + 2ℓ8 + x1 p
+                                     ℓ2       =     ℓ5 + ℓ8 + x2 p
+                                     ℓ3       =     ℓ6 + ℓ8 + x3 p
+                                     ℓ4       =     ℓ7 + ℓ8 + x4 p,
+which implies
+              3(ℓ5 + ℓ6 + ℓ7 + 2ℓ8 ) + (x1 + x2 + x3 + x4 )p = 3µ ≤ 3(p − 1).
+Thus, it follows that (x1 + ... + x4 ) = 3z for some z ∈ Z and that
+                                 ℓ5 + ℓ6 + ℓ7 + 2ℓ8 + zp = µ ≤ p − 1.
+Since ℓ5 , ..., ℓ8 are nonnegative integers, it follows directly that z ≤ 0. Now, consider
+the following cases:
+   (1) z = 0: Then,
+(10.2)                                    ℓ5 + ℓ6 + ℓ7 + 2ℓ8 ≤ p − 1
+         Assume that xi < 0, i.e. xi ≤ −1 for some 1 ≤ i ≤ 4. Since ℓ1 , ..., ℓ4 are
+         nonnegative integers, it follows that either ℓ5 + ℓ6 + ℓ7 + 2ℓ8 ≥ p or ℓj + ℓ8 ≥ p
+         for some 5 ≤ j ≤ 7, a contradiction to (10.2). Thus, since x1 + x2 + x3 + x4 = 0,
+         it follows that x1 = x2 = x3 = x4 = 0 and that
+                                      8
+                                      X                         8
+                                                                X
+                                              a1,j ℓj = ... =         a4,j ℓj = 0
+                                      j=1                       j=1
+
+         in this example.
+14                         KIRA SAMOL AND DUCO VAN STRATEN
+
+   (2) z < 0: Assume that ℓ5 + ℓ6 + ℓ7 + 2ℓ8 < (−z + 1)p. Since ℓ1 ≥ 0, it follows that
+       x1 > z − 1, and since x1 is integral, that x1 ≥ z. Since x1 + x2 + x3 + x4 = 3z,
+       it follows that x2 + x3 + x4 ≤ 2z. Now assume that xi ≥ z for 2 ≤ i ≤ 4.
+       Then x2 + x3 + x4 ≥ 3z,a contradiction. Hence there exists an index i such
+       that xi < z, and hence xi ≤ z − 1. Since ℓi ≥ 0, it follows that ℓi+2 + ℓ8 ≥
+       (−z + 1)p, a contradiction since ℓi+2 + ℓ8 ≤ ℓ5 + ℓ6 + ℓ7 + 2ℓ8 < (−z + 1)p
+       by assumption. Thus, we have ℓ5 + ℓ6 + ℓ7 + 2ℓ8 ≥ (−z + 1)p, which implies
+       p ≤ ℓ5 + ℓ6 + ℓ7 + 2ℓ8 + zp ≤ p − 1, a contradiction.
+Thus, it follows that the only possible case is z = 0, and x1 = x2 = x3 = x4 = 0, which
+proves that Condition 1 is satisfied in this example.
+                                 11. The statement D1
+For the proof of congruence (3.1), the coefficients ca of
+                                           X
+                                   f (X) =      ca X a
+                                                 a
+did not play a role. This is different if one is interested in the proof of part D1 of the
+Dwork congruences. Let n ∈ N, and write n = n0 + pn1 , where n0 ≤ p − 1. Then, to
+prove D1 for the sequence a(n) := [f n ]0 means that one has to prove that
+                                    [f n0 +n1 p ]0
+(11.1)                                             ∈ Zp .
+                                       [f n1 ]0
+Sticking to the notation of the previous sections, we write
+(11.2)             f n0 +n1 p (X) = f n0 (X)f n1 (X p ) + pf n0 (X)gn−1,1(X).
+Assume that pk |[f n1 ]0 . To prove (11.1), one has to prove that pk |[f n0 +n1 p ]0 . By (11.2),
+this is equivalent to proving that pk−1|[f n0 gn1 ,1 (X)]0 . Thus, the proof of part D1 of the
+Dwork congruences requires an investigation in the p−adic orders of the constant terms
+of f n1 and gn1 ,1 for arbitrary n1 , and requires methods that are completely different
+from the methods we applied to prove the congruence D3.
+
+Acknowledgement. We thank A. Mellit for his comments. The work of the first
+author was funded by the SFB Transregio 45.
+                                        References
+[AESZ] G. Almkvist, C. van Enckevort, D. van Straten, W. Zudilin, Tables of Calabi-Yau
+     Equations, arXiv:math/0507430.
+[BK] Batyrev, Kreuzer, Constructing new Calabi-Yau 3-folds and their mirrors via conifold tran-
+     sitions arXiv:0802.3376v2
+[DK] C. Doran, M. Kerr, Algebraic K-theory of toric hypersurfaces, ArXiv 0809.4669v1.
+[DvK] J. Duistermaat, W. van der Kallen, Constant terms in powers of a Laurent polynomial, Inda-
+     gationes Math. 9, (1998), 221-231.
+[Dw] B. Dwork, p-adic cycles, Publications mathématiques de l’I.H.E.S., tome 37, 1969, 27-115.
+[PM] P. Metelytsin, in preparation.
+[SvS] K. Samol, D. van Straten, Frobenius Polynomials for Calabi-Yau equations, Communications in
+     Number Theory and Physics, vol 2, no 3, (2008)
+[Yu] Jeng-Daw Yu, Notes on Calabi-Yau ordinary differential equations arXiv:0810.4040v1
+

@@ -1,0 +1,1014 @@
+                                                 pq -Catalan Numbers and Squarefree Binomial
+arXiv:math/0010148v1 [math.NT] 15 Oct 2000
+
+
+
+
+                                                                 Coefficients
+                                                                                  Pantelimon Stănică ∗
+                                                               Auburn University Montgomery, Department of Mathematics
+                                                                             Montgomery, AL 36117, USA,
+                                                                   (334) 244-3321, e-mail: stanpan@strudel.aum.edu
+
+                                                                                   November 4, 2018
+
+
+
+
+                                                 Running Head:
+                                                 pq -Catalan Numbers
+
+
+
+
+                                             ∗
+                                                 On leave from the Institute of Mathematics of Romanian Academy, Bucharest, Romania
+
+
+                                                                                             1
+                                          Abstract
+
+                                                                             1    sn
+                                                                                    
+    In this paper we consider the generalized Catalan numbers F (s, n) = (s−1)n+1 n ,
+
+ which we call s-Catalan numbers. We find all natural numbers n such that for p prime,
+
+ pq divides F (pq , n), q ≥ 1 and all distinct residues of F (pq , n) (mod pq ), q = 1, 2. As a
+
+ byproduct we settle a question of Hough and the late Simion on the divisibility of the
+                                                    pq n+1
+                                                          
+ 4-Catalan numbers by 4. We also prove that            n   , pq ≤ 99999, is squarefree for n
+
+ sufficiently large (explicit), and with the help of the generalized Catalan numbers we
+                                                                            4n+1     9n+1
+                                                                                        
+ find the set of possible exceptions. As consequences, we obtain that         n  ,     n     are
+
+ squarefree for n ≥ 21518 , respectively n ≥ 3956 , with at most 218.2 , respectively 315.3
+
+ possible exceptions.
+
+
+
+
+Keywords.    Binomial Coefficients, Divisibility, Congruences, Residues
+
+
+
+
+                                               2
+                                                                                              3
+
+
+    pq -Catalan Numbers and Squarefree Binomial Coefficients
+
+1    Introduction
+
+Problems involving binomial coefficients were considered by many mathematicians for over
+
+two centuries. R.K. Guy in [6] mentions several problems on divisibility of binomial coef-
+
+ficients (see B31, B33). Erdös conjectured that for n > 4, 2n
+                                                               
+                                                            n is never squarefree. This
+
+was proved by Sárközy in [12], for sufficiently large n, and by Granville and Ramaré in [5]
+
+for any n > 4.
+
+    Many people (see, for instance, [1, 2, 7, 8, 9, 11, 15]) proposed and studied the following
+                                                 1   2n
+generalization of classical Catalan numbers n+1       n , which we will call s-Catalan numbers,
+
+               1     sn
+                        
+F (s, n) = (s−1)n+1   n . There are many interpretations of this sequence [2, 7, 9, 11, 15], for
+
+instance: the number of s-ary trees with n source-nodes, the number of ways of associating
+
+n applications of a given s-ary operator, the number of ways of dividing a convex polygon
+
+into n disjoint (s + 1)-gons with nonintersecting diagonals, and the number of s-good paths
+
+(below the line y = sx) from (0, −1) to (n, (s − 1)n − 1).
+
+    Naturally, some of the questions proposed by Erdös on the classical Catalan numbers,
+
+may be asked here as well, as Hough and the late Simion proposed [8]: (a) When p is
+
+prime, for what values of n is F (p, n) divisible by p? (b)∗ For what values of n is F (4, n)
+
+divisible by 4? (c)∗ What can you say when s takes on the other composite values? There
+
+are no known answers for (b), (c). In this paper we give a simple proof to (a), and we show
+
+that F (p2 , n) is divisible by p2 , unless (p2 − 1)n + 1 is an even power of p, or a sum of odd
+
+powers of p (with the numbers of distinct powers summing to p), thereby proving (b), and
+                                     q
+(c) for s = p2 . We also prove that p n+1
+                                          q
+                                       n  , p ≤ 99999, is squarefree for n sufficiently large
+
+(explicit), and with the help of the generalized Catalan numbers we find the set of possible
+                                                                                                 4
+
+                                                     4n+1     9n+1
+exceptions. As consequences, we obtain that            n   ,     n   are squarefree for n ≥ 21518 ,
+
+respectively n ≥ 3956 , with at most 218.2 , respectively 315.3 possible exceptions.
+
+
+2    Preliminary Results
+
+Let [x] be the largest integer smaller than x. In this section we state a few results which
+
+will be needed later. Lucas (1878) (see [3]) found a simple method to find m
+                                                                               
+                                                                             n (mod p).
+
+
+                                                  m      [m/p] m0 
+Theorem 1 (Lucas). If p is prime, then            n ≡     [n/p]  n0 (mod p), where m0 , n0 are
+
+the least non-negative residues modulo p of m, respectively n.
+
+
+    Define n!p to be the product of all integers ≤ n, that are not divisible by p. We see that
+            n!
+n!p =                . Granville in [4] proves the following beautiful generalization of Lucas’
+        [n/p]!p[n/p]
+Theorem.
+
+
+Theorem 2 (Granville). Suppose that the prime power pq and positive integers m = n+r
+
+are given. Let Nj be the least positive residue of [n/pj ] (mod pq ) for each j ≥ 0 (that
+
+is, Nj = nj + nj+1 p + · · · + nj+q−1 pq−1 ): also make the corresponding definitions for
+
+mj , Mj , rj , Rj . Let ej be the number of indices i ≥ j for which mi < ni (that is, the
+
+number of carries, when adding n and r in base p, on or beyond the jth digit). Then
+                  
+               1 m               M0 !p       M1 !p           Md !p
+                     ≡ (±1)eq−1                         ···                 (mod pq ),
+              pe0 n             N0 !p R0 !p N1 !p R1 !p     Nd !p Rd !p
+
+where (±) is (−1) except if p = 2 and q ≥ 3.
+
+
+    In 1808 Legendre showed that the exact power of p dividing n ! is
+
+
+                                 [n/p] + [n/p2 ] + [n/p3 ] + · · · .                           (1)
+                                                                                                                    5
+
+
+We define (see [4]) the sum of digits function σp (n) = n0 + n1 + · · · + nd , if n = n0 + n1 p +
+
+· · · + nd pd . Then, using σ, (1) transforms into
+
+                                                       n − σp (n)
+                                                                  .                                                (2)
+                                                         p−1
+
+We will need the following result which belongs to Kummer
+
+
+Theorem 3 (Kummer). The power to which the prime p divides the binomial coefficient
+ m           m
+ n , say vp ( n ), is given by the number of carries when we add n and m − n in base p.
+
+
+   Our first result gives a complete answer to the first posed question (a), generalizing
+
+the well-known result on Catalan numbers, or equivalently, on middle binomial coefficients
+
+(see [6]), which states that 4 | 2n               k
+                                    
+                                  n , unless n = 2 .
+
+                                                                                                               k
+Theorem 4. Let p be a prime. Then, p divides F (p, n), unless n is of the form pp−1
+                                                                                 −1
+                                                                                    , k∈
+
+N, in which case F (p, n) ≡ 1 (mod p).
+                                                            
+                                    1      pn     1      pn + 1
+Proof. We re-write F (p, n) =                 =                  . We shall find the
+                              (p − 1)n + 1 n    pn + 1     n
+values n such that p 6 |F (p, n). Since p 6 |F (p, 0), we assume n 6= 0. Applying Lucas’
+
+Theorem repeatedly for the base p representations (0 ≤ mi , ni ≤ p − 1), m = m0 + m1 p +
+
+· · · + md pd and n = n0 + n1 p + · · · + nd pd , we obtain m   m0  m1      md 
+                                                              
+                                                            n ≡ n0   n1 · · · nd (mod p). For
+
+m = pn + 1 ≡ 1 (mod p), we get
+                                                                  
+                             pn + 1               1         n0      nd−1
+            F (p, n) ≡                    ≡                     ···              (mod p),       nd 6= 0.
+                               n                  n0        n1       nd
+
+                                                             ni−1 
+                                                                    6= 0, then p 6 | nni−1
+                                                                                           
+Let n−1 = 1. Since for any j, nj < p, if                      ni                        i
+                                                                                            .   Thus, the numbers
+
+n with p 6 | F (p, n) are those positive integers n with nni−1
+                                                               
+                                                            i
+                                                                 6= 0, i = 0, 1, . . . , d, or n = 0.
+
+From ni−1 ≥ ni , n−1 = 1, nd 6= 0, and nni−1
+                                                   
+                                                 i
+                                                     6= 0, we obtain ni−1 = ni . Thus, n =
+                   d+1                                                                                     k
+1+p+· · ·+pd = p p−1−1 . Therefore, if p is prime, p|F (p, n) for any number n 6= pp−1
+                                                                                    −1
+                                                                                       , k ∈ N.
+                                                                                                      6
+
+                                                            k
+Using Lucas’ Theorem we easily see that for n = pp−1
+                                                  −1
+                                                     , the least residue of F (p, n) modulo
+
+p is 1.
+
+
+The following lemma will be extensively used throughout the paper
+
+
+Lemma 5. We have
+
+                                                 σp ((pq − 1)n + 1) − 1
+                             vp (F (pq , n)) =                          .
+                                                          p−1
+
+                                           1   pq n+1
+Proof. We use the identity F (pq , n) = pq n+1
+                                                     
+                                                  n    . Using (2) we get that the power of p
+
+dividing m
+          
+         n is
+
+                                
+                                 m     σp (n) + σp (m − n) − σp (m)
+                            vp       =                              .                               (3)
+                                 n                  p−1
+
+Let m = pq n + 1. Thus, (3) becomes
+
+                         σp (n) + σp ((pq − 1)n + 1) − σp (pq n + 1)   σp ((pq − 1)n + 1) − 1
+     vp (F (pq , n)) =                                               =                        ,
+                                            p−1                                 p−1
+
+since σp (pq n + 1) = σp (n) + 1.
+
+
+3    Scarce squarefree p2-Catalan numbers
+
+Denote by n = (ab . . . )p the base p representation of n, a being the most significant bit.
+
+Our next result refers to the third question of Hough and Simion.
+
+                                                                                p2t − 1
+Theorem 6. Given a prime p, p2 divides F (p2 , n), unless n is of the form                  , t ∈ N,
+                                                                                 p2 − 1
+                                                       c1 p2i1 +1 + · · · + cs p2is +1 − 1
+in which case F (p2 , n) ≡ 1 (mod p2 ), or of the form                                         , i1 <
+                                                                    p2 − 1
+                  s                                                                                   
+                  X
+                                                                    2                      p
+· · · < is , with   ci = p, s ∈ N, 0 ≤ ci < p, in which case F (p , n) ≡
+                                                                                  c1 , c2 , . . . , cs
+                 i=1
+(mod p2 ) (the multinomial coefficient).
+                                                                                                            7
+
+                                 1   p2 n+1
+Proof. As before F (p2 , n) = p2 n+1
+                                           
+                                        n    . A number n, which does not satisfy the divisi-
+
+bility, must satisfy (see Lemma 5)
+
+                                               σp ((p2 − 1)n + 1) − 1
+                           vp (F (p2 , n)) =                          ≤ 1,                                (4)
+                                                        p−1
+
+which implies σp ((p2 − 1)n + 1) ≤ p.
+
+     Assume first that σp ((p2 − 1)n + 1) = 1. Therefore, (p2 − 1)n + 1 = pk ≡ (−1)k
+                                                                             p2t − 1
+(mod p2 − 1), therefore k must be even, say k = 2t, so n =                           .
+                                                                             p2 − 1
+     Assume now that σp ((p2 − 1)n + 1) = l, and 1 < l ≤ p. It follows that (p2 − 1)n + 1 =
+
+pα1 + · · · + pαl , α1 ≤ α2 ≤ · · · ≤ αl . Therefore, (p2 − 1)n + 1 ≡ l ≡ 1 (mod p − 1), and since
+
+1 < l ≤ p, we get that l = p. Then, (p2 − 1)n + 1 = pα1 + · · · + pαp , α1 ≤ α2 ≤ · · · ≤ αp .
+
+It follows that
+
+                                                        X           X
+                          (p2 − 1)n ≡ −1 + p                  1+             1
+                                                     αi odd        αi even
+                                                                      X
+                                                    2
+                                       ≡ −1 + p − (p − 1)                     1
+                                                                    αi even
+                                                         X
+                                       ≡ −(p − 1)                 1 (mod p2 − 1),
+                                                        αi even
+      X                                                           X                           X
+so             1 must be divisible by p + 1. Since 0 ≤                  1 ≤ p, we see that             1 must
+     αi even                                                  αi even                        αi even
+                                                            p2i1 +1 + · · · + p2ip +1 − 1
+be an empty sum. Therefore, all αj = 2ij + 1. We obtain n =                               ,
+                                                                      p2 − 1
+i1 ≤ i2 ≤ · · · ≤ ip , and the first claim is proved.
+                                        p2t − 1
+     Let n−1 = 0. Consider n =                  . It follows that n = (1010 · · · 101)p and p2 n + 1
+                                        p2 − 1
+attaches to this string the block 01 to the right, so it is of the same form. Since Mi = Ni−2
+
+and Ri = 1, except for R2t−1 = p, we get, using Granville’s theorem,
+                      2          2   
+              1       p n      1   p n+1               M0 !p M1 !p
+           2
+                           ≡ 2            ≡ pe0 (−1)e1                                   (mod p2 ).       (5)
+         (p − 1)n + 1 n     p n+1     n                 R2t−1 !p
+                                                                                                           8
+
+
+Now, M0 = m0 + m1 p = m0 + n−1 p = 1, M1 = m1 + m2 p = n−1 + n0 p = p and R2t−1 = p,
+
+implies M0 !p = 1, M1 !p = p!p = (p − 1)! and R2t−1 !p = (p − 1)!. Thus, (5) becomes
+
+F (p2 , n) ≡ pe0 (−1)e1 ≡ 1 (mod p2 ), since e0 = e1 = 0.
+                       c1 p2i1 +1 + · · · + cs p2is +1 − 1
+   Consider n =                                            , i1 < · · · < is and c1 + c2 + · · · + cs = p.
+                                    p2 − 1
+Observe that s ≥ 2. It follows that
+
+                   cs (p2is +1 − p) + · · · + c1 (p2i1 +1 − p) + p2 − 1
+         n =                                                                                           (6)
+                                           p2 − 1
+               = cs (p2is −1 + p2is −3 + · · · + 1) + · · · + c1 (p2i1 −1 + p2i1 −3 + · · · + 1) + 1   (7)
+
+               = cs p2is −1 + cs p2is −3 + · · · + (cs + cs−1 )p2is−1 −1 + · · · + 1.                  (8)
+
+But p2 n + 1 attaches the block 01 to the right of the base p representation of n, and
+
+since there is a carry in this case, we get e0 = e1 = 1. Also, n0 = 1, M0 !p = 1, M1 !p =
+                                                             (ck p)!
+(p − 1)!, Ri !p = 1 except for R2ik !p = (ck p)!p =                  and R2ik +1 !p = (ck )!p = ck !, for
+                                                             ck !pck
+k = 1, 2, . . . , s. Now, applying Granville’s theorem we get
+                                                M0 !p M1 !p                (p − 1)!
+                    F (p2 , n) ≡ pe0 (−1)e1                       ≡ (−1)p Y
+                                              R0 !p · · · Rd+2 !p          (ck p)!p ck !
+                                                                     k
+                                                             p+1                                       (9)
+                                      (p − 1)!          (−1)p (p − 1)!                  2
+                              ≡ (−1)p Q (c p)! ≡             Y                 (mod p ),
+                                           k
+                                             k   p ck         (ck p)!
+                                                              k
+        s
+        X
+since         ck = p. We prove that the last expression is the multinomial coefficient (this was
+        k=1
+observed by one of our referees, whom we thank). First, assume p = 2. Since s = 2 in this
+
+case, we get c1 = c2 = 1 and the claim is trivially satisfied. Let p > 2. We observe that
+                                       p−1                        p−1
+  (mp + 1) · · · (mp + p − 1)   Y      mp            X1
+                              =   (1 +    ) ≡ 1 + mp                       (mod p2 ) ≡ 1      (mod p2 ),
+          (p − 1)!                      j             j
+                                       j=1                        j=1
+
+                            1
+since in the last sum 1j + p−j ≡ 0 (mod p) for p > 2. Therefore,
+
+                                  (ck p)!
+                                          ≡ ck ! (p − 1)!   (mod p2 ).
+                                   pc k
+                                                                                                           9
+
+                      s                            s                s
+                        (ck p)!
+                                     ≡ (p − 1)!p                          ck !, since (p − 1)!p ≡ −1 (mod p),
+                      Y                            Y                Y
+Taking the product                                       ck ! ≡ −
+                            pc k
+                      k=1                          k=1              k=1
+which replaced in (9) produces the claim. The theorem is proved.
+
+
+    The following corollary gives a complete answer to the second question of Hough and
+
+Simion.
+
+                                                                                     22t − 1
+Corollary 7. F (4, n) is divisible by 4, unless n is of the form                             , in which case
+                                                                                        3
+                                            22t+1 + 22j+1 − 1
+F (4, n) ≡ 1 (mod 4), or of the form                          , for t > j, in which case F (4, n) ≡ 2
+                                                    3
+(mod 4).
+
+
+    We include here the base 2 representations of the above numbers ≤ 60, namely 1, 3,
+
+5, 11, 13, 21, 43, 45, 53 since it suggests a recursive construction of the sequence,
+
+
+                                                   12 , 112 ,
+
+                                           1012 , 10112 , 11012 ,
+
+                                   101012 , 1010112 , 1011012 , 1101012 .
+
+
+We see that on each row, we start with 1010 . . . 1, obtaining the rest of the strings by
+
+inserting the bit 1 to the right of an already existent bit 1, starting with the rightmost one.
+
+  What are the possible least distinct residues of the p2 -Catalan numbers modulo p2 ?
+                                                                    2 
+                                                            1       p n
+We give the following table, with the least residues of 2                (mod p2 ), for
+                                                       (p − 1)n + 1 n
+p = 2, 3, 5, 7, computed easily by hand, using Theorem 6. We listed the partitions of
+
+p, and we computed the residue modulo p2 of the multinomial coefficient corresponding
+
+to each partition, eliminating duplicates. For instance, if p = 5, the partitions of 5 are:
+
+{{5}, {4, 1}, {3, 2}, {3, 1, 1}, {2, 2, 1}, {2, 1, 1, 1}, {1, 1, 1, 1, 1}}, so by Theorem 6 the least
+
+residues of F (52 , n) modulo 52 are: 0 and 55 = 1, 4,1             5           5           5
+                                                                                            
+                                                                        = 5, 3,2    = 10, 3,1,1  = 20,
+                                                                                                 10
+
+   5                             5                                 5    
+ 2,2,1 = 30 ≡ 5 (mod 25),      2,1,1,1 = 60 ≡ 10 (mod 25),       1,1,1,1,1 = 120 ≡ 20 (mod 25)
+
+                           p    least residues modulo p2 of F (p2 , n)
+                           2    0, 1, 2
+                           3    0, 1, 3, 6
+                           5    0, 1, 5, 10, 20
+                           7    0, 1, 7, 14, 21, 35, 42
+
+    We provide here the following weak bound.
+
+
+Corollary 8. The number of distinct residues of p2 -Catalan numbers (mod p2 ) is less
+
+than or equal to π(p) + 1, where π(p) is the number of partitions of p.
+
+
+Proof. Straightforward.
+
+
+Remark 9. If we denote by as the number of distinct residues of s2 -Catalan numbers
+
+(mod s2 ), then {as }s is the sequence A053991 in [14].
+
+
+4    Divisibility of pq -Catalan numbers
+
+Now we attempt to find all natural numbers for which pq divides F (pq , n), q ≥ 3. Denote
+
+by ji the least non negative residue of αi (mod q). We prove the result
+
+
+Theorem 10. When p is an odd prime and q ≥ 3, then pq divides F (pq , n), unless n is of
+         ptq − 1                                  pqt1 +j1 + · · · + pqtm(p−1)+1 +jm(p−1)+1 − 1
+the form         , for some t ∈ N, or of the form                                               ,
+          pq − 1                                                      pq − 1
+                                                     X
+for some ti ∈ N, 1 ≤ m ≤ q − 1, 0 ≤ ji ≤ q − 1, and       pji ≡ 1 (mod pq − 1).
+                                                             i
+
+Proof. By Lemma 5, if pq 6 | F (pq , n), then
+
+                                          σp ((pq − 1)n + 1) − 1
+                      vp (F (pq , n)) =                          ≤ q − 1,
+                                                   p−1
+
+so σp ((pq − 1)n + 1) ≤ (p − 1)(q − 1) + 1. If σp ((pq − 1)n + 1) = 1, then (pq − 1)n + 1 = ptq+i ,
+                                                                                 ptq − 1
+for some 0 ≤ i ≤ q − 1. Working modulo pq − 1 implies i = 0. Thus, n =                   . Assume
+                                                                                 pq − 1
+                                                                                               11
+
+
+σp ((pq −1)n+1) = l, 1 < l ≤ (p−1)(q −1)+1. We obtain (pq −1)n+1 = pα1 +· · ·+pαl , α1 ≤
+
+· · · ≤ αl . Modulo (p − 1), this transforms into
+
+
+                             (pq − 1)n ≡ −1 + l ≡ 0      (mod p − 1),
+
+
+which will imply l = m(p − 1) + 1, for some m. Since 1 < l ≤ (q − 1)(p − 1) + 1, we get
+
+0 < m ≤ q − 1. We obtain, for αi = qti + ji , 0 ≤ ji ≤ q − 1,
+
+                          pqt1 +j1 + · · · + pqtm(p−1)+1 +jm(p−1)+1 − 1
+                     n=                                                 , m ∈ N,
+                                              pq − 1
+                     X
+with the condition        pji ≡ 1 (mod pq − 1).
+                      i
+
+We use in the next section the following
+
+                              p q n                      q
+                        1
+Corollary 11. pq | (pq −1)n+1        if and only if pq | p n+1
+                                                              
+                               n                            n  .
+
+
+5    Squarefree Binomial Coefficients
+                                                                       q
+In this section we study squarefree binomial coefficients of the form p n+1
+                                                                           
+                                                                         n  , with the help of
+
+generalized Catalan numbers. Thus, in order to study these squarefree binomial coefficients,
+                                           pqt1 +j1 + · · · + pqtm(p−1)+1 +jm(p−1)+1 − 1
+it suffices to consider only n of the form                                               , ti ∈ N,
+                                                               pq − 1
+                                         X
+1 ≤ m ≤ q − 1, 0 ≤ ji ≤ q − 1, such that       pji ≡ 1 (mod pq − 1).
+                                       i
+                                       n
+   In [5], the authors proved that if        is squarefree, then n or n − k must be small.
+                                       k                                       
+                                                                                2n
+Finding explicit bounds is a much more difficult task. They showed that              is squarefree
+                                                                                 n
+for n > 21617 , and used some arguments to simplify the computer’s work, in checking the
+
+possible exceptions n = 2r . However, our job is not as hard; we rely on [5] and use
+                                                             P
+some estimates on the Chebyshev’s function ψ(x) =                d≤x Λ(d), where Λ(d) is the Von
+
+Mangoldt’s function, Λ(d) = log r, if d = r s , r prime and Λ(d) = 0, otherwise, to show our
+                                                                                                        12
+
+
+results. Define e(x) = ex and ψ(x) = 0, if x is an integer, and ψ(x) = {x} − 12 , otherwise,
+
+where {x} is the fractional part of x.
+
+   The following lemma proves to be very useful
+
+Lemma 12. If pq ≤ 99999, the inequality
+                 p                      p
+       0.9999975 pq n + 1 − 1.0000025 (pq − 1)n + 1 >
+                        23q    23                                 11   11                              (10)
+             21.683 p    48   n 48 (log (256((pq − 1)n + 1)))) 4 +        (3 log n + 2q log p).
+                                                                       8
+is true for n ≥ τ0 sufficiently large.
+
+                          √         √               √
+Proof. First we prove that 1 + x + 1 + x − n ≤ 2 x, 2 ≤ n ≤ x + 1. By squaring we
+                  p
+get 2x + 2 − n + 2 (x + 1)(x + 1 − n) ≤ 4x, which is equivalent to 4(x + 1)(x + 1 − n) ≤
+
+(n + 2x − 2)2 . The last inequality is equivalent to n2 − 16x + 8nx ≥ 0, which is certainly
+
+true if n ≥ 2. Now, let x′ = 1 + x. We evaluate
+         √               √            (1 − α)2 x′ − (1 + α)2 (x′ − n)
+  (1 − α) 1 + x − (1 + α) 1 + x − n =        √              √
+                                      (1 − α) x′ + (1 + α) x′ −   n 2               
+                                                                   (1−α)      4α
+                   2
+           n(1 + α) − 4αx ′                      2
+                                      n(1 + α) − 4αx    ′       n    1+α  − n(1+α) x
+   =        √            √       ≥         √       √         ≥            √            .
+               ′            ′
+     (1 − α) x + (1 + α) x − n                 ′
+                                   (1 + α)( x + x − n)′                  2 x
+
+Therefore,
+
+                    √               √                         (1 − α)2
+                                                                                     
+                                                                          4α x             n
+             (1 − α) 1 + x − (1 + α) 1 + x − n ≥                       −                   √ .         (11)
+                                                               1+α       1+α n            2 x
+                              1
+Taking x = pq n, α =               , in (11), we get
+                           4 · 105
+                                       p                       p
+                          0.9999975 pq n + 1 − 1.0000025 (pq − 1)n + 1
+                              
+                                0.99999752           1
+                                                              
+                                                                 1    1
+                                                                                                       (12)
+                                                            q
+                           ≥                  −           p      √ q n2.
+                                 1.0000025      100000.25       2 p
+If pq ≤ 99999, then (12) implies our claim that the inequality (10) is true for n ≥ τ0
+                                                              1                                   23
+sufficiently large, since, by (12), the left side is O(n 2 ) and the right side is O(n 48 ).
+
+
+   Our main result of this section is stated in the next
+                                                                                                       13
+
+                                                 q
+Theorem 13. Assume pq ≤ 99999. Then, p n+1
+                                                       
+                                                   n     is not squarefree for n ≥ τ1 =
+     60                 
+       e − 1 10 5q
+max            , 5 p , τ0 . Moreover, the exceptions, for n < τ1 , if they exist, are of the
+        pq − 1
+      ptq − 1                                 pqt1 +j1 + · · · + pqtm(p−1)+1 +jm(p−1)+1 − 1
+form q        , for any t ∈ N, or of the form                                               , for
+       p −1                                                       pq − 1
+                                               X
+any ti ∈ N, 1 ≤ m ≤ q − 1, 0 ≤ ji ≤ q − 1, and      pji ≡ 1 (mod pq − 1).
+                                                                  i
+
+      We proceed to the proof of the theorem. Let P = n(pq n − n + 1)(pq n + 1). Corollary
+
+3.2 (p. 82) of [5] implies
+
+                                        pq n+1
+Lemma 14. Suppose that                     n    is squarefree. Then,
+                                 q    
+                          X      p n+1          X n
+                              ψ          Λ(d) +      ψ   Λ(d)
+                                    d                  d
+                          d∈I                    d∈I
+                                                                                                      (13)
+                            X  (pq − 1)n + 1         1   X
+                          +     ψ               Λ(d) ≥                                   Λ(d),
+                                       d               2
+                              d∈I                                         d∈I,(d,P )=1
+                                                           p                              √ q
+where I is the set of integers d in the range                  (pq − 1)n + 1 < d ≤         p n + 1.
+
+
+      An immediate consequence of Lemma 7.1 of [5] (see also [16]) is
+                                                         
+       X X                1    X             X                      X x
+                                                       ± 
+          ψ      Λ(d) ≤             Λ(d) +          |ar |    max      e    Λ(d) ,
+             d           2R + 2                             X≤x≤XR       d
+       d∈I                                     d∈I             0<|r|≤R                      d∈I
+
+                                                        
+                                                                                
+                   i                         |r|       |r|      πr1           |r|
+where a±
+       r =                         π 1−cot          +        ±           1−          .
+               2π(R + 1)                    R+1         r      R+1
+                                                               2R + 2        R+1
+                                                          X                    86
+      Taking R = 10 and using Mathematica1 we obtained         |a±
+                                                                 r | ∼ 0.868 ≤    , which
+                                                                               99
+                                                                           0<|r|≤10
+implies
+
+
+Lemma 15.
+                                 
+                X             X                 1 X        86         X x
+                      ψ               Λ(d) ≤        Λ(d) +     max     e    Λ(d) .
+                              d                22          99 X≤x≤10X    d
+                d∈I                                  d∈I                        d∈I
+  1
+      A Trademark of Wolfram Research
+                                                                                                          14
+
+
+   Using (13) and the previous lemma we get
+                                                        q    
+               1         X                  X           p n+1          X n
+                                   Λ(d) ≤            ψ          Λ(d) +  ψ    Λ(d)
+               2                                           d              d
+                   d∈I, (d,P )=1             d∈I                                      d∈I
+
+                                                             (pq − 1)n + 1
+                                                                             
+                                            X                                                3 X
+                                        +            ψ                            Λ(d) ≤         Λ(d)
+                                                                   d                         22
+                                             d∈I                                                   d∈I
+
+                                            86                     X x
+                                        +             max           e    Λ(d)
+                                            99 pq n+1≤x≤10(pq n+1)    d
+                                                                              d∈I
+
+                                            86                             X x
+                                        +                 max               e    Λ(d)
+                                            99 (pq −1)n+1≤x≤10((pq −1)n+1)    d
+                                                                                       d∈I
+
+                                            86         X x
+                                        +       max     e    Λ(d)
+                                            99 n≤x≤10n    d
+                                                                   d∈I
+
+                                             3 X                     86                X x
+                                        ≤                Λ(d) +             max         e    Λ(d) .
+                                            22                       33 n≤x≤10(pq n+1)    d
+                                                 d∈I                                         d∈I
+               X
+Since,                     Λ(d) ≤ log n + log ((pq − 1)n + 1) + log (pq n + 1) ≤ 3 log n + 2q log p, for
+         d∈I, (d,P )>1
+n ≥ 2, we obtain
+
+                   X               43                X x       11
+                         Λ(d) ≤           max         e    Λ(d) + (3 log n + 2q log p).                  (14)
+                                    6 n≤x≤10(pq n+1)    d         8
+                   d∈I                                   d∈I
+
+   Schoenfeld [13], obtained, for x ≥ e30 , (see also [10])
+
+                                            X                               1
+                                                     Λ(d) − x <                  x.
+                                                                         4 · 105
+                                            d≤x
+         X                    X                          X
+Since          Λ(d) =                  Λ(d) −                        Λ(d), we obtain
+         d∈I
+                             √                       √ q
+                           d≤ pq n+1            d≤    (p −1)n+1
+
+               p                 1 p q             p                       1 p q
+                   pq n + 1−           p n +  1 −    (p q − 1)n + 1 −           (p − 1)n + 1
+                              4 · 105                                   4 · 105
+                              11                                   p
+                             − (3 log n + 2q log p) = 0.9999975 pq n + 1 −
+                               8
+                                        p                     11                                         (15)
+                              1.0000025 (pq − 1)n + 1 − (3 log n + 2q log p)
+                                                               8
+                                  43                X       x 
+                               <         max             e       Λ(d) ,
+                                   6 n≤x≤10(pq n+1)          d
+                                                             d∈I
+                                                                                                           15
+
+
+          e60 − 1
+for n ≥           .
+          pq − 1
+   Now, we apply Theorem 9 of [5], a consequence of some very important bounds on
+
+exponential sums.
+
+Theorem 16 (Granville-Ramaré). If k > 0 integer and y ≤ 15 x3/5 , then
+                                                                     !       1
+                                   x                                    4(2k −1)
+                        X                  50                  x                               11
+                                e   Λ(d) ≤    y                k+3                   (log 16y) 4 ,
+                                  d         3              y    2
+                      y≤d≤y   ′
+
+
+for any y ≤ y ′ ≤ 2y.
+
+           √ q         p
+   Since    p n + 1 ≤ 2 (pq − 1)n + 1, using the above theorem of Granville and Ramaré
+
+we get, for n > 510 p5q (to have the bound y ≤ 15 x3/5 ),
+
+                             X x                                   50 p q
+                  max            e       Λ(d) ≤         max                 (p − 1)n + 1 ·
+             n≤x≤10(pq n+1)         d              n≤x≤10(pq n+1) 3
+                             d∈I
+                                    ! k1
+                         x            4(2 −1)                                 11
+                                                              q − 1)n + 1) 4
+                                                        p
+                                k+3
+                                                log  (16   (p
+                ((pq − 1)n + 1) 4
+                                                               ! k1
+                 50 p q                      10(pq n + 1)         4(2 −1)
+             =        (p − 1)n + 1                        k+3
+                                                                          ·
+                  3                     ((pq − 1)n + 1) 4
+                                        11     50 4(2k1−1) 4(2kq−1)
+                                           4
+                      p
+                           q
+               log (16 (p − 1)n + 1)          ≤     11          p         ·
+                                                  3
+                  1                      1
+                                             − 2 k+3       11                                        11
+             n 4(2k −1) ((pq − 1)n + 1) 2         k
+                                              4 (2 −1)   2− 4 (log (256(pq − 1)n + 1)) 4 ≤
+                                                  
+             50 − 11 4(2k1−1) q 12 − 42 (2k−1      1
+                                                     − k−1                                11
+                2 4 11       p             k −1)
+                                                 n 2 42 (2k −1) (log (256((pq − 1)n + 1))) 4 .
+              3
+
+   We obtain (by taking k = 2 - that will suffice for our purpose)
+
+                     X x        50 − 11    1  23q   23                           11
+            max       e    Λ(d) ≤    2 4 11 12 p 48 n 48 (log (256((pq − 1)n + 1))) 4
+      n≤x≤10(pq n+1)    d          3
+                        d∈I
+
+   By combining (15) and the previous inequality, we get
+                   p                      p
+         0.9999975 pq n + 1 − 1.0000025 (pq − 1)n + 1 ≤
+                      23q     23                                     11       11                          (16)
+             21.683 p 48 n 48 (log (256((pq − 1)n + 1))) 4 +                     (3 log n + 2q log p),
+                                                                               8
+                                                                                                       16
+
+
+which is certainly false for n sufficiently large by Lemma 12. Thus the assumption in
+
+Lemma 14 is false, which implies our Theorem 13.
+
+
+Remark 17. The inequality (10) provides explicit bounds for n for any choice of p and q,
+
+with pq ≤ 99999. We can increase the bound for pq , by using a weaker result of Schoenfeld
+
+[13]. However, in doing that we increase the bound on n as well, so we preferred a better
+
+bound on n.
+
+
+                   4n+1
+Theorem 18.          n   is squarefree for n       ≥ 21518 , and if n < 21518 there are at most
+              761
+289, 179 =     2   ∼ 218.2 possible exceptions.
+                                                                             60          
+                                                                             e −1 10 10
+Proof. If (p, q) = (2, 2), the inequality (10), valid for n ≥ max              3 ,5 2         changes into
+                                   √                         √
+                     0.9999975          4n + 1 − 1.0000025       3n + 1 >
+                                   23                  11    33                                       (17)
+                     42.1311 n 48 (log (768n + 1)) 4 +          log n + 1.65566,
+                                                              8
+which is certainly true for n ≥ 21518 . Theorem 6 and Corollary 11 imply that the exceptions
+                                  22t+1 + 22j+1 − 1
+(if they exist) are of the form                     , j ≤ t. Therefore, since the number of
+                                          3
+pairs (j, t), giving different numbers of the above form, is less than 761    ∼ 218.2 , we get
+                                                                            
+                                                                          2
+
+the theorem.
+
+
+                   4n+1
+Theorem 19.          n     is squarefree for n ≥ 3956 , and if n < 3956 , there are at most
+               478
+18088476 =      3   ∼ 315.3 possible exceptions.
+                                                                         60              
+                                                                             e −1 10 10
+Proof. If (p, q) = (3, 2), the inequality (10), valid for n ≥ max              8 ,5 3      , changes into
+                                    √                        √
+                      0.9999975         9n + 1 − 1.0000025       8n + 1 >
+                              23                      11     33                                       (18)
+                      26.04 n 48 (log (2048n + 1)) 4 +          log n + 2.62417,
+                                                             8
+                                                                                              17
+
+
+which is true for n ≥ 3956 . As in the previous proof, we get that the exceptions (if they
+                            22t+1 + 22j+1 + 22i+1 − 1
+exist) are of the form                                , i ≤ j ≤ t. Therefore, since the number
+                                        8
+of triples (i, j, t), giving different numbers of the above form, is less than 478   ∼ 315.3 , we
+                                                                                   
+                                                                                 3
+
+get the result.
+
+
+   Although, there are not that many possible exceptions, because of their size, to check
+
+each value in acceptable time, is beyond any computer’s capability at this moment, and
+
+we were not able to decrease the complexity. However, we conjecture
+
+                                              4n+1
+Conjecture 20. Except for 1, 3 and 45,          n   is not squarefree. Except for 1, 4 and 10,
+ 9n+1
+     
+   n   is not squarefree.
+
+
+
+Acknowledgements.          The author would like to thank the anonymous referee for his
+
+helpful comments, which improved significantly the presentation of the paper.
+
+
+References
+
+  [1] M. Bernstein, N.J.A. Sloane, Some Canonical Sequences of Integers, Linear Algebra
+
+      and Its Applications, 226-228 (1995), pp. 57-72.
+
+
+  [2] W. Chu, A new combinatorial interpretation for generalized Catalan numbers, Dis-
+
+      crete Mathematics 65 (1987), pp. 91-94.
+
+
+  [3] L.E. Dickson, History of the Theory of Numbers, vol. I, Chap. XI, Chelsea, New York,
+
+      1919.
+
+
+  [4] A. Granville, Binomial coefficients modulo prime powers, Canadian Mathematical
+
+      Soc. Conf. Proceed. 20 (1997), pp. 253-275.
+                                                                                      18
+
+
+ [5] A. Granville, O. Ramaré, Explicit bounds on the exponential sums and the scarcity
+
+    of squarefree binomial coefficients, Mathematika 43 (1996), pp. 73-107.
+
+
+ [6] R.K. Guy, Unsolved Problems in Number Theory, Springer-Verlag, New York, pp.
+
+    47-50, 1981.
+
+
+ [7] P. Hilton, J. Pederson, Catalan numbers, their generalization, and their uses, Math.
+
+    Intelligencer 13 (1991), pp. 64-75.
+
+
+ [8] D.S. Hough, R.E. Simion, Problem P10794, The American Mathematical Monthly,
+
+    vol.107, Number 3, March 2000.
+
+
+ [9] D.A. Klarner, Correspondences between plane trees and binary sequences, J. Combin.
+
+    Theory Ser. A, 9 (1970), pp. 401-411.
+
+
+[10] N.C. Pereira, Estimates for the Chebyshev Function ψ(x) − θ(x), Math. of Comput.
+
+    440 (1985), pp. 211-221.
+
+
+[11] A.D. Sands, On generalized Catalan numbers, Discrete Mathematics 22 (1978), pp.
+
+    218-221.
+
+
+[12] A. Sàrközy, On divisors of binomial coefficients I, Journal of Number Theory 20
+
+    (1985), pp. 70-80.
+
+
+[13] L. Schoenfeld, Sharper Bounds for the Chebyshev Functions θ(x) and ψ(x), Math. of
+
+    Comput. 30 (1976), pp. 337-360.
+
+
+[14] N.J.A. Sloane, Online Encyclopedia of Integer Sequences, AT&T Research Labs,
+
+    http://www.research.att.com/˜njas/sequences/index.html.
+                                                                                     19
+
+
+[15] R. Stanley, Enumerative Combinatorics, vol. 2, Cambridge University Press, 1999.
+
+
+[16] J.D. Vaaler, Some extremal functions in Fourier analysis, Bull. Amer. Math. Soc. 12
+
+    (1985), pp. 183-216.
+
