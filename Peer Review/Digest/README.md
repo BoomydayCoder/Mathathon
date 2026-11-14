@@ -9,7 +9,7 @@ if any, go in `codex-comments-on-<pdf>.md` in this folder.
 | file | pages | content |
 |---|---|---|
 | `zeta3-proofs.pdf` | 10 | Three complete proofs that ζ(3) is irrational: Beukers' integral; Zudilin's proof reduced to one polynomial identity and a Casoratian; an energy inequality (from the Codex submission). One common section for the arithmetic and for the lcm estimate. A derivation of the numbers 17 and 5 in Apéry's recurrence. |
-| `cookbook-and-directions.pdf` | 14–15 | Part I: one recipe, with complete proofs for log 2, eʳ, π², ζ(2). Part II: why the extensions to ζ(5), ζ(7), Catalan's constant and Euler's constant fail. Part III: directions to develop, each with a first problem (the Apéry differential operator, matrix exponentials, polylogarithms, the energy method, determinants). |
+| `cookbook-and-directions.pdf` | 15 | Part I: one recipe, with complete proofs for log 2, eʳ, π², ζ(2). Part II: why the extensions to ζ(5), ζ(7), Catalan's constant and Euler's constant fail. Part III: directions to develop, each with a first problem (the Apéry differential operator, matrix exponentials, polylogarithms, the energy method, determinants). |
 
 Suggested reading order: `zeta3-proofs.pdf` Sections 1–4 (40 minutes), then Sections 5–7; then the
 cookbook Part I quickly, Part III slowly.
