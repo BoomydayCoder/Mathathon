@@ -1,0 +1,42 @@
+my) My
+(ase) ) (mod p) 5
+
+Hy Mas Mas denoting the integral parts of m/p, m/p’, m/p’,
+Likewise for vy ¥25 vg, ***
+
+Consequently if we wish to find the remainder of the division of (2) by
+a prime number it suffices to apply the preceding formula until we have reached
+the two indices of C for numbers less than p.
+
+We see that the coefficients of order p of the binomial are integers and
+divisible by p when p denotes a prime number except for the coefficients of
+the p™ powers. Denoting by a, 8, ¥,**+, any n integers, we then have
+
+and consequently
+
+(437)
+
++aP -[a? +P +yP + +++ +P] (mod p),
+
+[e+Btyt
+
+and for a = B =7. = A= 1, we obtain
+
+n = 0 (mod p).
+
+It is from this congruence, which contains Fermat's Theorem, that we may
+generalize in the following manner, which is different than Euler's approach,
+If a, B, ¥, ++ A denote the a" powers of the roots of an equation with
+Integer coefficients and S, their sum, the first member of the preceding
+congruence represents the product of p and a symmetric integer function
+ents of
+
+(with integer coefficients) of the roots and consequently of the coeffi
+the proposed equation. We then have
+
+Pp
+Sf Gnod p)
+
+with the application of Fermat's Theorem
+
+62

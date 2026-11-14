@@ -1,6 +1,6 @@
 # Why a cubic recurrence hides a second-order differential equation
 
-Status: all displayed identities below proved algebraically and independently checked by `codex/computations/check_symmetric_square.py`. The generating-function symmetric-square connection is established classical mathematics, explicitly discussed in F. Beukers's retrieved *Consequences of Apéry's work on ζ(3)*, pp. 2–3, https://webspace.science.uu.nl/~beuke106/caen.pdf. Our contribution here is a reproducible derivation, not a novelty claim. A modular interpretation is mentioned as a further direction but is not used or proved here.
+Status: all displayed identities below proved algebraically and independently checked by `codex/computations/check_symmetric_square.py`. The generating-function symmetric-square connection is established classical mathematics, explicitly discussed in F. Beukers's retrieved *Consequences of Apéry's work on ζ(3)*, pp. 2–3, https://webspace.science.uu.nl/~beuke106/caen.pdf. Our contribution here is a reproducible derivation, not a novelty claim. The modular and explicit elliptic parametrizations are now proved in the companion [apery-modular-elliptic.md](apery-modular-elliptic.md); they are not required for the differential-algebra argument here.
 
 ## 1. Translate the recurrence into an operator
 
@@ -116,4 +116,4 @@ Equation (6) lowers the differential order and gives a systematic test for hidde
 
 However, a symmetric-square factorization alone does not prove ζ(3) irrational. It supplies neither integral coefficients nor denominator bounds for the companion rational approximations, and it does not identify an approximation limit as ζ(3). Those arithmetic and identification steps remain essential. Nor does it automatically yield a ζ(5) construction. A serious advanced simplification should retain these requirements rather than replacing a complete elementary proof with a suggestive differential equation.
 
-Beukers's source proceeds to a modular description involving Γ_1(6). Deriving that parametrization from scratch and showing exactly how it enforces integrality would be a valuable next task. The present note stops at the fully checked differential reduction.
+The companion [apery-modular-elliptic.md](apery-modular-elliptic.md) now proves the eta-product parametrization by two holomorphic weight-4 identities and a justified finite vanishing check. It also gives an explicit hypergeometric pullback and elliptic quartic period, and explains integrality and least-common-multiple denominators in the modular parameter. The present note remains the prerequisite differential reduction.

@@ -161,7 +161,105 @@ The initial values are
 
 The arithmetic half of the proof is now complete. We have not assumed irrationality or positivity.
 
-## 4. Discover the recurrence by matching poles
+## 4. Discover the recurrence from the coefficients, then certify it for the linear form
+
+### A quadratic interpolation grid explains the cubic coefficients
+
+The absolute values of the residues in (2) are
+
+\[
+\phi_k(n)=\binom nk\binom{n+k}{k}
+ =\frac1{(k!)^2}\prod_{j=0}^{k-1}\bigl[n(n+1)-j(j+1)\bigr].
+\]
+
+So they are Newton interpolation polynomials on the quadratic grid \(0,2,6,12,\ldots\). Multiplication by \(z=n(n+1)\) adds the next zero:
+
+\[
+z\phi_k=k(k+1)\phi_k+(k+1)^2\phi_{k+1}.
+\]
+
+We want a symmetric kernel \(\sum_k\phi_k(n)\phi_k(m)\). Multiplication on one factor will match a **transposed** rule on the other if we find an operator with
+
+\[
+\mathcal L\phi_k=k(k+1)\phi_k+k^2\phi_{k-1}.
+\]
+
+Look for nearest-neighbor differences
+\(\mathcal Lf=\alpha(n)[f(n+1)-f(n)]+\beta(n)[f(n-1)-f(n)]\).
+Imposing the desired rule on just \(\phi_1=z\) and \(\phi_2=z(z-2)/4\) gives two linear equations. For \(n\ge1\) their unique solution is
+
+\[
+(\mathcal Lf)(n)=
+\frac{(n+1)^3[f(n+1)-f(n)]+n^3[f(n-1)-f(n)]}{2(2n+1)}.
+\]
+
+At zero the backward coefficient is zero. The candidate works on every \(\phi_k\): substitute
+\(\phi_k(n+1)/\phi_k(n)=(n+k+1)/(n-k+1)\) and
+\(\phi_k(n-1)/\phi_k(n)=(n-k)/(n+k)\), then cancel. The resulting polynomial identity remains valid at the apparent exceptional indices and includes \(k=0\), where the lowering term is absent.
+
+Define
+
+\[
+K(n,m)=\sum_{k=0}^{\min(n,m)}\phi_k(n)\phi_k(m),
+\qquad A_n=K(n,n).
+\]
+
+For fixed \(m\), write the sum through \(m\); it is one polynomial in \(n\), so no moving summation boundary is lost. The transposed rule proves
+\(\mathcal L_nK(n,m)=m(m+1)K(n,m)\), or
+
+\[
+(n+1)^3K(n+1,m)+n^3K(n-1,m)
+=(2n+1)[n(n+1)+2m(m+1)+1]K(n,m).
+\]
+
+This explains the cubes. It does not yet give a diagonal recurrence: \(K(n+1,n)\) is not \(A_{n+1}\). We need one more identity, and it explains the integers \(17\) and \(5\).
+
+### A finite balance law explains the coefficient six
+
+For \(n\ge1\), set
+
+\[
+c_k=\frac{n\phi_k(n)}{n+k},\qquad w_k=c_k^2\quad(0\le k\le n),
+\qquad w_{n+1}=0.
+\]
+
+The factorial ratio gives the exact edge balance
+
+\[
+w_k(n^2-k^2)^2=(k+1)^4w_{k+1}.
+\]
+
+Sum over \(k=0,\ldots,n\) and shift the finite index on the right. The terms in \(k^4\) cancel, leaving
+
+\[
+\sum_{k=0}^n k^2w_k=\frac{n^2}{2}\sum_{k=0}^n w_k.
+\]
+
+No probability theorem is needed. If desired, this is detailed balance for a finite birth–death chain, whose stationary weights are \(w_k\). Its exact mean square index is \(n^2/2\), explaining the location \(n/\sqrt2\) that also appears in saddle calculations.
+
+Now \(\phi_k(n)=c_k(1+k/n)\) and \(\phi_k(n-1)=c_k(1-k/n)\). Therefore
+
+\[
+A_n+A_{n-1}=3\sum_kw_k,
+\qquad K(n,n-1)=\frac12\sum_kw_k,
+\qquad
+\boxed{A_n+A_{n-1}=6K(n,n-1).}
+\]
+
+Apply the two-variable recurrence at \((n,n)\), and replace its two adjacent-diagonal terms using this identity and symmetry. The middle coefficient becomes
+
+\[
+\begin{aligned}
+&6(2n+1)[3n(n+1)+1]-(n+1)^3-n^3\\
+&\hspace{2em}=(2n+1)[17n(n+1)+5].
+\end{aligned}
+\]
+
+Thus the Apéry recurrence for \(A_n\) follows directly from its integer residues. The constants are \(17=6\cdot3-1\) and \(5=6\cdot1-1\): the coefficient six comes from finite balance, and the subtraction comes from removing the diagonal contributions in a difference operator. The [Newton-basis derivation](newton-bispectral-motivation.md) and [independent review](newton-symmetric-square-review.md) give further details and a Legendre-polynomial connection.
+
+### Match poles to transfer the recurrence to the entire linear form
+
+Knowing the recurrence for \(A_n\) does not prove it for \(B_n\) or identify their limiting ratio. The following short rational certificate supplies that missing connection.
 
 The three adjacent functions \(R_{n-1},R_n,R_{n+1}\) differ by only a few factors. We look for a relation whose right side is a difference in \(t\), because summing such a difference leaves only endpoints:
 
@@ -239,7 +337,7 @@ Differentiating and summing proves
 
 The upper endpoint vanishes because \(S_n'=O(t^{-2})\). The lower one vanishes because \(R_n\), and hence \(S_n\), has a double zero at \(t=1\).
 
-A logical point matters here: we cannot yet equate the rational and \(\zeta(3)\) coefficients of (13). That would assume the irrationality we are trying to prove. Instead, take the double-pole coefficient of (12) at each integer pole and sum. If the double-pole coefficients of \(S_n\) are \(d_k\), those of \(S_n(t+1)-S_n(t)\) are \(d_{k-1}-d_k\), whose sum is zero. Thus \(A_n\) satisfies (13) separately. Equation (7) then shows that \(B_n\) does too.
+A logical point matters here: we cannot yet equate the rational and \(\zeta(3)\) coefficients of (13). That would assume the irrationality we are trying to prove. The Newton argument above already proves the recurrence for \(A_n\) independently. There is also a direct certificate check: take the double-pole coefficient of (12) at each integer pole and sum. If the double-pole coefficients of \(S_n\) are \(d_k\), those of \(S_n(t+1)-S_n(t)\) are \(d_{k-1}-d_k\), whose sum is zero. Thus \(A_n\) satisfies (13) separately. Equation (7) then shows that \(B_n\) does too.
 
 ## 5. A rough estimate is enough to identify the limit
 
@@ -474,12 +572,13 @@ If \(\zeta(3)=p/q\), multiplying by \(q\) produces a positive integer tending to
 \boxed{\zeta(3)\text{ is irrational}.}
 \]
 
-No saddle-point theorem, prime number theorem, or special-function identity was used in this proof. Its analytic inputs were convergence of elementary series and the integral comparison for \(\log(m!)\). Its central new organizational choice was to identify the limit cheaply, then use the recurrence to obtain the strong error bound.
+No saddle-point theorem, prime number theorem, or special-function identity was used in this proof; the supplementary gamma-function notation below plays no role in it. Its analytic inputs were convergence of elementary series and the integral comparison for \(\log(m!)\). Its central new organizational choice was to identify the limit cheaply, then use the recurrence to obtain the strong error bound.
 
 ```mermaid
 flowchart TD
   A[Integer residues and double zeros] --> B[Arithmetic linear form]
-  A --> C[Short certificate from pole matching]
+  A --> N[Newton grid and finite balance explain the recurrence]
+  N --> C[Short certificate from pole matching]
   C --> D[Recurrences for A, B and F]
   D --> E[Growth of A]
   B --> F[Bounded F identifies the limit]
@@ -633,8 +732,10 @@ The lesson is more specific than “choose small denominators.” The zeros, pol
 
 ## 11. What to retain for a presentation
 
-The proof can be told as a sequence of necessities. Start with the integer contradiction. Choose poles where sums become zeta values. Choose zeros where the sum should disappear. Use the saturated double-zero constraints to force the square. Differentiate once to reach cubic poles. Discover a recurrence by matching the few poles in adjacent ratios. Identify the limit with a deliberately rough bound. Use the Casoratian to convert growth into positive reciprocal error. Finally compare that growth with a proved denominator estimate.
+The proof can be told as a sequence of necessities. Start with the integer contradiction. Choose poles where sums become zeta values. Choose zeros where the sum should disappear. Use the saturated double-zero constraints to force the square. Differentiate once to reach cubic poles. Transpose multiplication on the quadratic Newton grid to discover the cubic operator; a finite balance identity gives the constants 17 and 5. Match the few poles in adjacent rational-function ratios to certify that the full linear form obeys the same recurrence. Identify the limit with a deliberately rough bound. Use the Casoratian to convert growth into positive reciprocal error. Finally compare that growth with a proved denominator estimate.
 
 The strongest connections are exact, not analogies: polynomial orthogonality becomes zeros of a Mellin transform; its coefficients become residues; a discrete Wronskian is the constant current of a resistor chain and measures approximation error; and a factorial valuation table pays the arithmetic cost of the approximation. The higher-derivative obstruction shows which part of this architecture is special to the successful construction.
 
-The [claim ledger](../CLAIM_LEDGER.md) records proof and review status. The [source provenance](../sources/odd-zeta-provenance.md) also matters for current higher-zeta claims: this project retrieved Fauzan’s September 2026 preprint and inspected formalization reports, but has not locally built Lean or independently audited that entire preprint. No historical novelty is asserted for the reorganizations or derived lemmas here.
+For a different advanced explanation, [the modular and elliptic construction](apery-modular-elliptic.md), with [its completed review](apery-modular-review.md), realizes the generating series as the square of an elliptic period and uses Fricke symmetry to remove its nearest branch singularity. Standard modular-form and covering theorems are explicit inputs; the elementary argument above does not require them.
+
+The [claim ledger](../CLAIM_LEDGER.md) records proof and review status. The separate [zeta-five guide](fauzan-equilibrium-guide.md) now links an [end-to-end reviewed computer-assisted derivation](fauzan-simplified-proof-audit.md) retaining Fauzan’s determinant and local arithmetic construction while simplifying its quantitative estimates. This is not a claim of a newly invented construction, an elementary zeta-five proof, formal verification, or external mathematical consensus. No proof for all odd zeta values has resulted. No historical novelty is asserted for the reorganizations or derived lemmas here.

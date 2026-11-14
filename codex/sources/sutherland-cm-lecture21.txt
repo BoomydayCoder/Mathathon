@@ -1,0 +1,636 @@
+18.783 Elliptic Curves                                                                          Fall 2023
+Lecture #21                                                                                   11/28/2023
+
+21      Ring class fields and the CM method
+Let O be an imaginary quadratic order with discriminant D, and let
+
+                               EllO (C) := {j(E) ∈ C : End(E) = O}.
+
+In the previous lecture we proved that the Hilbert class polynomial
+                                                 Y              
+                         HD (X) := HO (X) :=            X − j(E)
+                                                      j(E)∈EllO (C)
+
+
+        √ coefficients. We then defined L to be the splitting field of HD (X) over the field
+has integer
+K = Q( D), and showed that there is an injective group homomorphism
+
+                                         Ψ : Gal(L/K) ,→ cl(O)
+
+that commutes with the group actions of Gal(L/K) and cl(O) on the set EllO (C) = EllO (L)
+of roots of HD (X). To complete the proof of the First Main Theorem of Complex Multipli-
+cation, which asserts that Ψ is an isomorphism, we just need to show that Ψ is surjective,
+equivalently, that HD (X) is irreducible over K.
+    To do this we need to introduce the Artin map (named after Emil Artin), which allows us
+to associate to each O-ideal p of prime norm satisfying certain constraints an automorphism
+σp ∈ Gal(L/K) whose action on EllO (C) corresponds to the action of [p]. In order to define
+the Artin map we need to briefly delve into a bit of algebraic number theory. We will restrict
+our attention to the absolute minimum that we need. Those who would like to know more
+may wish to consult one of [7, 8] or these 18.785 lecture notes; those who do not may treat
+the Artin map as a black box.
+
+21.1     The Artin map
+Let L be a finite Galois extension of a number field K. Nonzero prime ideals p of the ring
+of integers OK are called “primes of K”.1 The OL -ideal pOL is typically not a prime ideal,
+but it can be uniquely factored as
+
+                                             pOL = q1 · · · qn
+
+where the qi are not-necessarily-distinct primes of L (prime ideals of OL ) that are character-
+ized by the property qi ∩ OK = p. The primes qi are said to “lie above” the prime p, and it is
+standard to write qi |p as shorthand for qi |pOL and use {q|p} to denote the set {q1 , . . . , qn }.
+    We should note that the ring OL is typically not a unique factorization domain, but it
+is a Dedekind domain, and this implies unique factorization of ideals.2
+    When the qi are distinct, we say that p is unramified in L, which is true for all but
+finitely many primes p. If we apply an automorphism σ ∈ Gal(L/K) to both sides of the
+equation above, the LHS must remain the same: σ fixes every element of p ⊆ K, and it
+maps algebraic integers to algebraic integers, so it preserves the set OL . For the RHS, it is
+   1
+     This is an abuse of terminology: as a ring, K does not have any nonzero prime ideals (it is a field).
+   2
+     There are several equivalent definitions of Dedekind domains: it is an integral domain with unique
+factorization of ideals, and it also an integral domain in which every nonzero fractional ideal is invertible.
+We have seen that the latter applies to rings of integers in number fields (at least for imaginary quadratic
+fields), so the former must as well (this equivalence is a standard result from commutative algebra).
+
+
+                                                                               Lecture by Andrew Sutherland
+clear that σ must map OL -ideals to OL -ideals, and since the qi are all prime ideals, σ must
+permute them. Thus the Galois group Gal(L/K) acts on the set {q1 , . . . , qn } = {q|p}; one
+can show that this action is transitive, but it is typically not faithful.
+    For each q|p, the stabilizer of q under this action is a subgroup
+
+                        Dq := {σ ∈ Gal(L/K) : qσ = q} ⊆ Gal(L/K)
+
+known as the decomposition group of q. Each σ ∈ Dq fixes q and therefore induces an
+automorphism σ̄ of the quotient Fq := OL /q defined by σ̄(x̄) = σ(x), where x 7→ x̄ is the
+quotient map OL → OL /q. The quotient OL /q is a field (in a Dedekind domain every
+nonzero prime ideal is maximal), and q has finite index Nq := [OL : q] in OL , so it is a finite
+field of cardinality Nq (which must be a prime power). The image of OK under the quotient
+map OL → OL /q = Fq is OK /(q ∩ OK ) = OK /p = Fp , thus the finite field Fp is a subfield
+of Fq (and necessarily has the same characteristic). It follows that σ̄ ∈ Gal(Fq /Fp ), and we
+have a group homomorphism
+
+                                      Dq → Gal(Fq /Fp )
+                                        σ 7→ σ̄.
+
+This homomorphism is surjective [8, Prop. I.9.4], and when p is unramified it is also injective
+[8, Prop. I.9.5], and therefore an isomorphism, which we now assume.
+    The group Gal(Fq /Fp ) is cyclic, generated by the Frobenius automorphism x → xNp ,
+where Np = [OK : p] = #Fp . The unique σq ∈ Dq for which σ̄q is the Frobenius automor-
+phism is called the Frobenius element of Gal(L/K) at q. In general the Frobenius element
+σq depends on our choice of q, but the σq for q|p are all conjugate, since if τ (qi ) = qj then
+we must have σqj = τ −1 σqi τ . This implies that the σ̄q all have the same order, hence the
+extensions Fq /Fp all have the same degree and are thus isomorphic.
+    In the case we are interested in, Gal(L/K) ,→ cl(O) is abelian, so conjugacy implies
+equality, and the σq are all the same. Thus when Gal(L/K) is abelian, each prime p of K
+determines a unique Frobenius element that we denote σp . The map
+
+                                            p 7→ σp
+
+is known as the Artin map (it extends multiplicatively to all OK -ideals that are products of
+unramified primes ideals, but this is not relevant to us). The automorphism σp is uniquely
+characterized by the fact that
+                                     σp (x) ≡ xNp mod q,                                  (1)
+for all x ∈ OL and primes q|p.
+    If E/C has CM by O then j(E) ∈ L, and this implies that (up to isomorphism) E can
+be defined by a Weierstrass equation y 2 = x3 + Ax + B with A, B ∈ OL . Indeed, as in
+the proof of Theorem 13.12, for j(E) ̸= 0, 1728 we can take A = 3j(E)(1728 − j(E)) and
+B = 2j(E)(1728 − j(E))2 .
+    For each prime q of L, so long as the discriminant ∆(E) := −16(4A3 +27B 2 ) does not lie
+in q, equivalently, the image of ∆(E) under the quotient map OL → OL /q = Fq is nonzero,
+reducing modulo q yields an elliptic curve Ē/Fq defined by y 2 = x3 + Āx + B̄. We then say
+that E has good reduction modulo q. This holds for all but finitely many primes q of L,
+since the principal ideal (∆(E)) is divisible by only finitely many prime ideals.
+
+
+
+                                                             18.783 Fall 2023, Lecture #21, Page 2
+21.2    The First Main Theorem of Complex Multiplication
+With the Artin map in hand, we can now complete our proof of the First Main Theorem of
+Complex Multiplication.
+
+Theorem 21.1. Let O be an imaginary   √ quadratic order of discriminant D and let L be the
+splitting field of HD (X) over K := Q( D). The map Ψ : Gal(L/K) → cl(O) that sends each
+σ ∈ Gal(L/K) to the unique ασ ∈ cl(O) such that j(E)σ = ασ j(E) for all j(E) ∈ EllO (L)
+is a group isomorphism compatible with the actions of Gal(L/K) and cl(O) on EllO (L).
+
+Proof. In the previous lecture we showed that Ψ is well-defined, injective, and commutes with
+the group actions of Gal(L/K) and cl(O); see Theorem 20.14 and the discussion preceding it.
+It remains only to show that Ψ is surjective.
+    Fix α ∈ cl(O), and let p be a prime of K such that the following hold:
+
+  (i) p ∩ O is a proper O-ideal of prime norm p such that [p] = α;
+ (ii) p is unramified in K and p is unramified in L;
+ (iii) Each j(E) ∈ EllO (L) is the j-invariant of an elliptic curve E/L that has good reduction
+       modulo every prime q|p (prime ideals q of OL dividing pOL ).
+ (iv) The j(E) ∈ EllO (L) are distinct modulo every prime q|p.
+
+By Theorem 20.11, there are infinitely many p for which (i) holds, and conditions (ii)-(iv)
+prohibit only finitely many primes, so such a p exists. To ease the notation, we will also
+use p to denote the O-ideal p ∩ O; it will be clear from context whether we are viewing p as
+an OK -ideal as an O-ideal (in particular, anytime we write [p] we must mean [p ∩ O], since
+we are using [ · ] to denote equivalence classes of O-ideals).
+    Let us now consider a particular prime q|p and curve E/L with CM by O that has good
+reduction modulo q, defined by E : y 2 = x3 + Ax + B with A, B ∈ OL and q ∤ ∆(E). Put
+Fq := OL /q, and let E/Fq be the reduction of E modulo q, defined by E : y 2 = x3 + Āx + B̄.
+The Frobenius element σp induces the p-power Frobenius automorphism σ p ∈ Gal(Fq /Fp ),
+since Np = p, and we have a corresponding isogeny
+                                                      σ̄p        (p)
+                                   π : E → E σp = E         =E
+                                         p
+defined by (x, y) 7→ (xp , y p ), where E is the curve y 2 = x3 + Āp x + B̄ p . The isogeny π is
+purely inseparable of degree p.
+    The CM action of the proper O-ideal p ∩ O corresponds to an isogeny ϕp : E → pE
+of degree Np = p, with pE of good reduction modulo q, by (iii), which we can assume is
+defined by a rational map ( u(x)       s(x)
+                                v(x) , t(x) y) where u, v, s, t ∈ OL [x], with u monic and v nonzero
+modulo q. The isogeny ϕ : E → pE obtained by reducing the coefficients of u, v, s, t modulo q
+has the same degree p as the isogeny π (we can assume deg v < deg u and u is monic so
+its degree doesn’t change when it is reduced). The composition of ϕ with its dual ϕ̂ is
+the multiplication-by-p map on E, which is inseparable since Fq has characteristic p. This
+implies that at least one of ϕ and ϕ̂ is inseparable. Without loss of generality we may assume
+ϕ is inseparable: if not, we can replace E by pE and p by its complex conjugate p̄, which
+also satisfies (i)-(iv) and induces the dual isogeny ϕ̂p : pE → E (up to an isomorphism),
+since the ideal p̄p = (Np) = (p) induces the multiplication-by-p map on E, and reducing the
+rational maps defining ϕ̂p yields the dual isogeny ϕ̂ : pE → E.
+
+
+                                                                   18.783 Fall 2023, Lecture #21, Page 3
+   By Corollary 5.4, we can decompose the inseparable isogeny ϕ of degree p as ϕ = ϕsep ◦π,
+where ϕsep has degree 1 and must be an isomorphism. Thus pE ≃ E σp and therefore
+j(pE) = j(E σp ), and (iv) implies j(pE) = j(E σp ). It follows that Ψ(σp ) = [p] = α, since each
+element of cl(O) is determined by its action on any element of the cl(O)-torsor EllO (L).
+
+Corollary 21.2. Let O be an imaginary quadratic√order with discriminant D. The Hilbert
+class polynomial HD (x) is irreducible over K = Q( D) and for any elliptic curve E/C with
+CM by O the field K(j(E)) is a finite abelian extension of K with Gal(K(j(E))/K) ≃ cl(O).
+
+Proof. Let L be the splitting field of HD (X) over K. The class group cl(O) acts transitively
+on the roots of HD (X) (the set EllO (C)), hence by Theorem 21.1, the Galois group Gal(L/K)
+also acts transitively on the roots of HD (X), which implies that HD (X) is irreducible over K
+and is the minimal polynomial of each of its roots. The degree of HD is equal to the class
+number h(D) = # cl(O) = #Gal(L/K) = [L : K], so we L = K(j(E)) for every root
+j(E) of HD (X), equivalently, every j(E) ∈ EllO (C) = {j(E) : End(E) = O}. We have
+Gal(L/K) ≃ cl(O) by Theorem 21.1, which is abelian.
+
+21.3     The ring class field of an imaginary quadratic order
+Definition 21.3. Let O be an imaginary quadratic order with√ discriminant D. The splitting
+field of the Hilbert class polynomial of HD (X) over K = Q( D), equivalently, the extension
+of K generated by the j-invariant of any elliptic curve E/C with CM by O, is known as the
+ring class field of the imaginary quadratic order O with discriminant D.
+
+    We say that an integer prime p is unramified in a number field L if the ideal pOL factors
+into distinct prime ideals q in OL , and we say that p splits completely in L if the prime
+ideals q|p are distinct and have minimal norm Nq = p.
+    For an imaginary quadratic field K of discriminant D there are three possibilities for the
+factorization of the ideal pOK in OK : it either splits (completely into two distinct prime
+ideals), ramifies (is the square of a prime ideal), or remains inert (the ideal pOK is already
+prime). These are distinguished by the Kronecker symbol D    p , which is 1, 0, -1, respectively,
+in these three cases (as proved in Lemma 21.8 below).
+
+Definition 21.4. Let p be a prime and D an integer. For p > 2 the Kronecker symbol is
+                            
+                             D
+                                  := #{x ∈ Fp : x2 = D} − 1.
+                             p
+
+For p = 2, we define D
+                       
+                     p to be 1 for D ≡ ±1 mod 8, zero if p|D, and −1 for D ≡ ±3 mod 8.
+
+Theorem 21.5. Let O be an imaginary quadratic order with discriminant D and ring class
+field L. Let p ∤ D be an odd prime unramified in L.3 The following are equivalent:
+
+  (i) p is the norm of a principal O-ideal;
+ (ii) D
+         
+       p = 1 and HD (X) splits into linear factors in Fp [X];
+ (iii) p splits completely in L;
+ (iv) 4p = t2 − v 2 D for some integers t and v with t ̸≡ 0 mod p.
+    3
+      If p does not divide D then it must be unramified in L, but we have not proved this yet, so we include
+it as a hypothesis which will be removed in Corollary 21.10.
+
+
+
+                                                                    18.783 Fall 2023, Lecture #21, Page 4
+                     √
+Proof. Let K := Q( D), let OK = [1, ω] be the ring of integers of K. By Theorem 17.18,
+we may write D = u2 DK , where u = [OK : O] and DK = disc OK is a fundamental
+discriminant, and we then have O = [1, uω].
+    (i)⇒(iv): Let (λ) be a principal O-ideal  of norm  p. Then [1, λ] is a suborder of O with
+               2  2         2                                                       2
+discriminant v u DK = v D, where v = O : [1, λ] . Let t := λ + λ̄ so that x − tx + p is
+the minimal polynomial of λ, with discriminant disc[1, λ] = t2 − 4p = v 2 D. Then (iv) holds
+with t ̸≡ 0 mod p because p ∤ D (if p|t then p|v and p2 |4p, a contradiction for p ̸= 2).
+    (iv)⇒(i): If 4p = t2 − v 2 D then the polynomial x2 − tx + p with discriminant v 2 D has a
+root λ ∈ OK ; the order [1, λ] has discriminant v 2 D and therefore lies in O, by Theorem 17.18,
+so λ ∈ O, and (λ) is a principal O-ideal of norm λλ̄ = p.
+    (i)⇒(ii): Since (i)⇒(iv) we have 4p = t2 − v 2 D for some t, v ∈ Z with t ̸≡ 0 mod p, and
+                                 2   2                  
+                                D        v D          t − 4p
+                                     =          =              = 1,
+                                p          p             p
+
+since t2 ̸≡ 0 mod p. If p is a principal O-ideal of norm p, then p is unramified in L (since
+p = pp is unramified in L), and p is principal, so [p] and therefore σp acts trivially on the
+roots of HD (X), by Theorem 21.1. The roots of HD (X) mod p must therefore lie in Fp = Fp
+and HD (X) splits into  linear factors in Fp [X].
+    (ii)⇒(iii): If D p = 1, then pOK = pp̄ splits into distinct primes of norm p in K, by
+Lemma 21.8, and if HD (X) splits into linear factors in Fp [x], then its roots are all fixed
+by σp . This implies [Fq : Fp ] = 1, and therefore Nq = [OL : q] = [OK : p] = p for every
+prime q|p, so p splits completely in L (it must be unramified, since p is). If pOL = q1 · · · qn ,
+then p̄OL = q̄1 · · · q̄n (note that ŌL = OL ), and pOL = pp̄OL = q1 · · · qn q̄1 · · · q̄n splits
+completely in L (the qi and q̄i must all be distinct since p is unramified in L).
+    (iii)⇒(i): If pOL = q1 · · · qn with the Nq1 = · · · Nqn = p then Fq := [OL : q] = Fp for
+all primes q dividing pOL . If p is a prime of K dividing pOK , then pOL divides pOL must
+be divisible by some prime ideal q dividing pOL . The inclusions pZ ⊆ p ⊆ q imply the
+inclusions Fp ⊆ Fp ⊆ Fq = Fp , where Fp := [OK : p], so Fp = Fp , and p has norm p. The
+extension Fq /Fp is trivial, so the Frobenius element σp ∈ Gal(L/K) is the identity, and so is
+[p ∩ O] ∈ cl(O), by Theorem 21.1 (note: p ∩ O is a proper O-ideal because Np = p does not
+divide D = u2 DK ). Thus p ∩ O is a principal O-ideal of norm [O : p ∩ O] = [OK : p] = p.
+
+Corollary 21.6. Let O ⊆ O′ be imaginary quadratic orders and let L and L′ be their
+respective ring class fields. Then L′ ⊆ L.
+
+Proof. We first note that L′ ⊆ L if and only if every prime p that splits completely in L also
+splits completely in L′ . This follows from Theorem 21.18 in the lecture notes for 18.785 (note
+that L/Q is a Galois extension of Q because it     √ is the compositum of the splitting field of
+HD (X) over Q and the quadratic field K = Q( D), both of which are Galois, and similarly
+for L′ /Q). Let D and D′ be the discriminants of O and O′ , respectively. Then D = u2 D′
+with u = [O′ : O] and every prime p that splits completely in L also splits completely in L′ ,
+since 4p = t2 − v 2 D implies 4p = t2 − (v ′ )2 D′ for v ′ = uv, thus L′ ⊆ L.
+
+Remark 21.7. The converse of Corollary 21.6 does not hold because we can have L ⊆ L′
+even when L and L′ are√ring class
+                               √ fields of orders in different imaginary ′quadratic fields. This
+happens when L′ = Q( −15)( 5) is the ring    √class field of the order O of discriminant −15,
+        ′
+since L contains the ring class field L = Q( −3) of the order O of discriminant −3, which
+is not a suborder of O′ (note that O′ does not contain ζ3 ∈ O, for example).
+
+
+                                                               18.783 Fall 2023, Lecture #21, Page 5
+Lemma 21.8. Let K be an imaginary quadratic field of discriminant D with ring of integers
+OK = [1, ω] and let p be prime. Every OK -ideal of norm p is of the form p = [p, ω − r],
+where r ∈ Z is a root of the minimal polynomial of ω modulo p. The number of such ideals
+p is 1 + D
+         p ∈ {0, 1, 2} and the factorization of the principal OK -ideal into prime ideals is
+
+                                                       D
+                                                       
+                                         pp
+                                                 if   p = 1,
+                                                       D
+                                    (p) = p2
+                                                         
+                                         
+                                                  if   p = 0,
+                                                       D
+                                                         
+                                          (p)     if   p = −1.
+                                         
+
+                   D
+                       
+with p ̸= p when   p       = 1.
+
+Proof. Let f (x) = x2 − (ω + ω)x + ωω ∈ Z[x] be the minimal polynomial of ω and let p
+be an OK -ideal of norm p. Every nonzero OK -ideal is invertible, so by Theorem 17.10 we
+have pp = (Np) = (p). Thus p ∈ p, and every integer n ∈ p must be a multiple of p because
+otherwise gcd(n, p) = 1 ∈ p would imply p = OK has norm 1 ̸= p. Therefore p ∩ Z = pZ.
+   We can thus write p = [p, aω − r] for some a, r ∈ Z, and [OK : p] = p then implies a = 1.
+The ideal p is closed under multiplication by OK , so in particular it must contain
+
+                            (ω − r)(ω − r) = ωω − (ω + ω)r + r2 = f (r),
+
+which is both an integer and an element of p, hence a multiple of p. Thus r must be a root
+of f (x) mod p. Conversely, if r is any root of f (x) mod p, then [p, ω − r] is an OK -ideal of
+norm p, and if f (x) mod p has roots r and s that are distinct modulo p, then the OK -ideals
+[p, ω − r] and [p, ω − s] are clearly distinct.
+     It follows that the number of OK -ideals of prime norm p is equal to the number of
+distinct roots of f (x) mod p. The discriminant of f (x) is
+
+                             (ω + ω)2 − 4ωω = (ω − ω)2 = disc OK = D,                          (2)
+
+and when p is odd it follows   from the quadratic equation that the number of distinct roots
+of f (x) mod p is 1 + D
+                        
+                      p   , since this is the number of distinct square-roots of D modulo p.
+    For p = 2, we first note that  if D ≡ 0 mod 4 then (2) implies that ω + ω is even, so
+f (x) ≡ x2 mod 2 has 1 = 1 + D   2 distinct roots. If D ≡ 1 mod 4 then ω + ω must be odd. If
+D ≡ 1 mod 8 then (2) implies that ωω                                   2
+          2                          D
+                                        must be even (since (ω + ω) ≡ 1 mod 8), and then
+f (x) ≡ x + x mod 2 has 2 = 1 + 2 distinct roots. If D ≡ 5 mod 8 then ωω must be odd,
+and then f (x) ≡ x2 + x + 1 mod 2 has 0 = 1 + D
+                                                     
+                                                    2 distinct roots.
+
+Corollary 21.9. Let O be an order of discriminant D in an imaginary quadratic field K,
+
+                                    D
+                                       conductor [O : OK ] there are no proper O-ideals of
+and let p be a prime. When p divides the
+norm p and otherwise there are 1 + p = 0, 1, 2, depending on whether p is inert, ramified,
+or split in K, respectively
+
+21.4    Class field theory
+The theory of complex multiplication was originally motivated not by the study of elliptic
+curves, but as a way to construct abelian extensions of imaginary quadratic fields. A cele-
+brated theorem of Kronecker and Weber states that every finite abelian extension of Q lies
+in a cyclotomic field (a field of the form Q(ζn ), for some nth root of unity ζn ). The effort
+to generalize this result led to the development of class field theory, a branch of algebraic
+number theory that was one of the major advances of early 20th century number theory.
+
+                                                              18.783 Fall 2023, Lecture #21, Page 6
+     In 1898 Hilbert conjectured that every number field K has a unique maximal abelian
+extension L/K that is unramified at every prime4 of K, for which Gal(L/K) ≃ cl(OK ). This
+conjecture was proved shortly thereafter by Furtwängler, and the field L is now known as the
+Hilbert class field of K. While its existence was quickly proved, the problem of explicitly
+constructing L, say by specifying a generator for L in terms of its minimal polynomial
+over K, remained an open problem (and for general K it still is).
+     The field Q has no nontrivial unramified extensions (let alone abelian ones), so its Hilbert
+class field is not interesting (it is just Q). After Q, the simplest fields K to consider are
+imaginary quadratic fields. For an imaginary quadratic field K of discriminant D, the
+splitting field L of the Hilbert class polynomial HD (X) over K; it is a Galois extension of
+K with Galois group Gal(L/K) ≃ cl(OK ). It follows from class field theory that L must be
+the Hilbert class field of K. The Hilbert class field of an imaginary quadratic field K can
+also be characterized as the minimal extension L/K over which there exists an elliptic curve
+E with CM by OK ; in other words, L = K(j(E)).                                              √
+     What about the splitting field L of a Hilbert class polynomial HD (X) over K = Q( D)
+when D is the discriminant of a non-maximal order O ⊊ OK ? These are called ring class
+fields. They are abelian extensions of K with Galois group Gal(L/K) ≃ cl(O), but unlike
+the Hilbert class field of K, they are necessarily ramified at some primes. It follows from
+class field theory that ramified primes are not proper O-ideals.
+     The ring class field L is characterized by the infinite set SL/Q of primes that split com-
+pletely in L, and with finitely many exceptions, these are precisely the primes p that satisfy
+the equation 4p = t2 − v 2 D for some t, v ∈ Z, with D = disc(O); see [4, Thm. 9.2, Ex. 9.3].
+Any extension M/K for which the set SM/Q matches SL/Q with only finitely many excep-
+tions must in fact be equal to L, by [4, Thm. 8.19]. We thus have the following corollary of
+Theorem 21.5, which removes the assumption that p is unramified in L.
+Corollary 21.10. Let O be order of discriminant D in an imaginary quadratic field K.
+The splitting field L of HD (X) over K is unramified at all primes that do not divide the
+conductor of O. In particular, every rational prime p ∤ D is unramified in L.
+     Ring class fields allow us to explicitly construct infinitely many abelian extensions of a
+given imaginary quadratic field K. One might ask whether every abelian extension of K is
+contained in a ring class field. This is not the case, but by extending the ring class field of
+on order O by adjoining the x-coordinates of the n-torsion points of an elliptic curve with
+CM by O (or powers of them, when disc O ∈ {−3, −4}), one obtains what are known as
+ray class fields, which depend on the choice of both O and n. These are analogs of the
+cyclotomic extensions of Q (which is its own Hilbert class field because it has no unramified
+extensions). An analog of the Kronecker-Weber theorem then holds: every abelian extension
+of an imaginary quadratic field is contained in a ray class field. One can define ring class
+fields and ray class fields for arbitrary number fields, and obtain a similar result (this was
+started by Weber and finished by Takagi around 1920), but the constructions are not nearly
+as explicit as they are in the imaginary quadratic case.
+
+21.5     The CM method
+The equation
+                                              4p = t2 − v 2 D
+   4
+    This includes not only all prime OK -ideals, but also “infinite primes” of K, corresponding to embeddings
+of K into C. For imaginary quadratic fields K this imposes no additional restrictions.
+
+
+                                                                     18.783 Fall 2023, Lecture #21, Page 7
+in part (iv) of Theorem 21.5 is known as the norm equation; it arises from the principal
+O-ideal (λ) of norm p given by part (i), generated by a root λ ∈ O ⊆ OK of x2 − tx + p,
+which has norm p and trace t. By the quadratic equation
+                                     p                   √
+                                −t ± t2 − 4p      −t ± v D
+                           λ=                   =            .
+                                       2               2
+Clearing denominators and taking norms yields the equation N(2λ) = 4λλ̄ = 4p = t2 − v 2 D.
+    Let us assume this equation holds with p ∤ D odd and D < −4. The prime p splits
+completely in the ring class field L for the order O of discriminant D, and we can completely
+factor HD (X) in both OL [x] and Fp [x]. If we now fix a prime q lying above p, then Nq = p,
+by Theorem 21.5, we have a reduction map OL → OL /q ≃ Fp that we can apply to the
+roots of HD (X), equivalently, to the set EllO (C) = {j(E) ∈ C : End(E) ≃ O}.
+    It follows that the j-invariant j(E) of any elliptic curve E/C with CM by O can be
+reduced (modulo q) to the j-invariant of an elliptic curve E/Fp that is the reduction of E:
+we can always pick a model y 2 = x3 + Ax + B for E with A, B ∈ OL such that q ∤ ∆(E)
+because p is odd and the denominator of j(E) has to be nonzero modulo q. Now we know
+that End(E) ≃ O, but what about End(E)?
+    If φ ∈ End(E) ≃ O is a nonzero endomorphism of E, then we can reduce the coefficients
+of the rational functions defining φ modulo q to obtain a corresponding endomorphism
+φ̄ ∈ End(E). The endomorphism φ̄ is nonzero because it must satisfy the characteristic
+equation x2 − [tr φ]x + [deg φ] = 0 in End(E): multiplication-by-n maps [n] can always be
+reduced to from End(E) to End(E), so [tr φ] and [deg φ] reduce to maps [tr φ̄] and [deg φ̄]
+that represent multiplication by the same integers. It follows that the reduction map induces
+an injective ring homomorphism
+
+                                           End(E) ,→ End(E).                                          (3)
+
+In fact this map is an isomorphism (see §21.6), but for the moment we will content our-
+selves with showing that it at least induces an isomorphism of endomorphism algebras. By
+Corollary 13.20 we know that End0 (E) is either an imaginary quadratic field or a quaternion
+algebra, depending on whether E is ordinary or supersingular.
+
+Corollary 21.11. Let O be an imaginary quadratic order with discriminant D and ring
+class field L, and let p ∤ D be an odd prime satisfying 4p = t2 − v 2 D. Every j(E) ∈ EllO (C)
+is the j-invariant of an elliptic curve E/L with good reduction E modulo a prime q of L
+lying above p. Provided j(E) ̸= 0, 1728, we have tr πE = ±t ̸≡ 0 mod p and E is ordinary.5
+
+Proof. By Theorem 21.5 and its proof, p is the norm of a principal O-ideal p := (λ), where
+λ has norm p and trace t. As in the proof of Theorem 21.1, one of the isogenies ϕp : E → pE
+                                                                               (p)
+and ϕp̄ : E → p̄E induces a purely inseparable isogeny ϕ : E → E = E, which up to an
+automorphism, must be the Frobenius endomorphism πE . We have tr ϕ = tr ϕp = tr ϕp̄ = t,
+with t ̸≡ 0 mod p by part (iv) of Theorem 21.5. For j(E) ̸= 0, 1728 the only automorphisms
+of E are ±1, so tr πE = ± tr ϕ = ±t ̸≡ 0 mod p and E is ordinary.
+
+     Corollary 21.11 gives us an explicit method for constructing elliptic curves over finite
+fields with a prescribed number of rational points. Let D < −4 be an imaginary quadratic
+discriminant and let p ∤ D be an odd prime. In this case the norm equation 4p = t2 − v 2 D
+  5
+      In fact E is also ordinary when j(E) ∈ {0, 1728}, but this takes more work to prove.
+
+
+                                                                     18.783 Fall 2023, Lecture #21, Page 8
+determines t (and v) up to a sign, and we can efficiently compute a solution (t, v) using
+Cornacchia’s algorithm (see Problem Set 2). Given the Hilbert class polynomial HD (X),
+we can efficiently compute a root j0 of HD (X) over Fp (using a randomized root-finding
+algorithm) and then write down the equation y 2 = x3 + Ax + B of an elliptic curve E with
+j(E) = j0 , using A = 3j(1728 − j) and B = 2j(1728 − j)2 (assuming j0 ̸= 0, 1728).
+    The Frobenius endomorphism πE then satisfies tr πE = ±t, and by Hasse’s theorem,
+
+                                     #E(Fp ) = p + 1 − tr(πE ).
+
+The sign of tr πE depends can be explicitly determined using the formulas in [9]. Alterna-
+tively, one can simply pick a random point P ∈ E(Fp ) and check whether (p + 1 − t)P = 0
+or (p + 1 + t)P = 0 both hold (at least one must); if only one of these equations is satisfied,
+then tr π is determined (for large p this will almost always happen with the first P we try).
+Note that we can always change the sign of tr π be replacing E with its quadratic twist.
+    Now suppose that wish to construct an elliptic curve E over some finite field Fp such
+that #E(Fp ) = N , for some positive integer N . Provided we can factor N (typically N is
+prime and this is easy), we can use Cornacchia’s algorithm to find a solution (a, v) to
+
+                                           4N = a2 − v 2 D
+
+for any particular imaginary quadratic discriminant D, whenever such a solution exists.6
+Given a solution (a, v), we put t := a + 2 and check whether p := N − 1 + t is prime. If not,
+or if no solution (a, v) can be found, we just try a different discriminant D. In practice this
+will happen quite quickly; see [3] for a heuristic complexity analysis.
+    Once we have p = N − 1 + t prime, we then observe that
+
+          4p = 4N − 4 + 4t = a2 − v 2 D − 4 + 4a + 8 = (a + 2)2 − v 2 D = t2 − v 2 D,
+
+so the norm equation is satisfied, and we can construct an elliptic curve E/Fp with tr πE = ±t
+using the Hilbert class polynomial HD (X) as described above, taking a quadratic twist if
+necessary to get tr πE = t. We then have #E(Fp ) = p + 1 − t = N as desired.
+    This method of constructing an elliptic curve E/Fp is known as the CM method. The
+CM method has many applications, one of which is an improved version of elliptic curve
+primality proving developed by Atkin and Morain [1]; see Problem Set 11.
+
+Remark 21.12. It can happen that HD (X) has roots in Fp even when p does not split
+completely in the ring class field L. These roots cannot be j-invariants of elliptic curves
+E/Fp with End(E) = O, we must have O ⊊ End(E), and in fact the fraction field K of O
+must be properly contained in End0 (E). This means that End0 (E) has to be a quaternion
+algebra that contains the imaginary quadratic       field K. This cannot happen when p = pp
+                                           D
+                                             
+splits in K (which occurs exactly when p = 1), because L/K is Galois and the residue field
+extensions Fq /Fp all have the same degree (so HD mod p either has no roots at all or splits
+completely and in the latter case p must split completely in the ring class field for O). But
+if p is inert in K then HD (X) can easily have roots modulo p that must be j-invariants of
+supersingular elliptic curves. This actually provides a very efficient method for constructing
+supersingular elliptic curves; see [2] for details.
+  6
+    We need to be able to factor N because Cornacchia’s algorithm requires a square root of D modulo N ;
+computing square roots modulo primes is easy, and if we know the factorization of N we can use the CRT
+to reduce to this case; in general, computing square roots modulo N is as hard as factoring N .
+
+
+
+                                                                  18.783 Fall 2023, Lecture #21, Page 9
+Remark 21.13. We have restricted our attention to prime fields Fp in order to simplify
+the exposition, but everything we have done generalizes to arbitrary finite fields Fq of prime
+power order q. If O is an imaginary quadratic order of discriminant
+                                                                   D with ring class field L,
+in Theorem 21.5 we can replace p ∤ D with q ⊥ D, replace D       p = 1 with the requirement
+that D is a square in Fq (automatic when q is a square), and rather than requiring p to split
+completely in L we require q to be the norm of a prime ideal q in OL . The norm equation
+then becomes 4q = t2 − v 2 D with t ⊥ q, and if it is satisfied with D < −4 the Hilbert class
+polynomial HD (X) splits completely in Fq [x] and its roots are j-invariants of elliptic curves
+E/Fq with tr πE = ±t (which in fact have End(E) = O).
+
+    The main limitation of the CM method is that it requires computing the Hilbert class
+polynomial HD (X), which becomes
+                              p       very difficult when |D| is large. The degree of HD (X)
+is the class number h(D) ≈ |D|, and the size of its largest coefficient is on the order of
+p
+   |D| log |D| bits.7 Thus the total size of HD (X) is on the order of |D| log |D| bits, which
+makes it impractical to even write down if |D| is large. An efficient algorithm for computing
+HD (X) is outlined in Problem Set 11, and with a suitably optimized implementation, it
+can practically handle discriminants with |D| as large as 1013 , for which the size of HD (X)
+is several terabytes [11]. Using class polynomials associated to other modular functions
+discriminants up to |D| ≈ 1015 can be readily addressed [5], and with more advanced
+techniques, even |D| ≈ 1016 is feasible [12].
+
+21.6       The Deuring lifting theorem
+As noted in the previous section, the injective ring homomorphism End(E) ,→ End(E) given
+by (3), where E/Fp is the reduction of an elliptic curve E/L with CM by O over its ring
+class field L modulo an unramified prime q of norm p, is actually an isomorphism. Moreover,
+every elliptic curve over Fp with CM by O arises as the reduction of an elliptic curve E/L,
+and this correspondence is a bijective at the level of j-invariants. These facts follow from
+results of Deuring that we won’t take the time to prove, but record here for reference.
+
+Theorem 21.14 (Deuring). Let O be an imaginary quadratic order of discriminant D with
+ring class field L, and let q be the norm of a prime ideal in OL with q ⊥ D. Then HD (X)
+splits into distinct linear factors in Fq [X] and its roots form the set
+
+                                EllO (Fq ) := {j(E) ∈ Fq : End(E) ≃ O}.
+
+of j-invariants of elliptic curves E/Fq with CM by O.
+
+Proof. This follows from [6, Thm. 13].
+
+Theorem 21.15 (Deuring lifting theorem). Let E/Fq be an elliptic curve over a finite field
+and let ϕ ∈ End(E) be nonzero. There exists an elliptic curve E ∗ over a number field L with
+an endomorphism ϕ∗ ∈ End(E ∗ ) such that E ∗ has good reduction modulo a prime q of L
+with residue field OL /q ≃ Fq , and E and ϕ are the reductions modulo q of E ∗ and ϕ∗ .
+
+Proof. See [6, Thm. 14].
+  7
+      Under the Generalized Riemann Hypothesis, these bounds are accurate to within an O(log log |D|) factor.
+
+
+
+
+                                                                    18.783 Fall 2023, Lecture #21, Page 10
+21.7     Summing up the theory of complex multiplication
+Let O be an imaginary quadratic order of discriminant D.
+
+        E                        L                         a               ax2 + bxy + cy 2
+
+  isomorphism                homethety            mod principal ideals      SL2 (Z)-equivalence
+
+
+       j(E)                    j(L)                       [a]                reduced form
+
+
+
+
+   EllO (C)             {j(L) : O(L) = O}               cl(O)                     cl(D)
+
+The figure above illustrates four different objects that have been our focus of study for the
+last several weeks:
+
+  1. Elliptic curves E/C with CM by O.
+  2. Lattices L (which define tori C/L that correspond to elliptic curves).
+  3. Proper O-ideals a (which may be viewed as lattices).
+  4. Reduced primitive positive definite binary quadratic forms of discriminant D (which
+     correspond to proper O-ideals of norm a).
+
+    In each case we defined a notion of equivalence: isomorphism, homethety, equivalence
+modulo principal ideals, and equivalence modulo an SL2 (Z)-action, respectively. Modulo
+this equivalence, we obtain a finite set of objects with the cardinality h(O) = h(D) in each
+case. The two sets on the right, cl(O) and cl(D), are finite abelian groups that act on the
+two sets on the left, both of which are equal to EllO (C). This action is free and transitive,
+so that EllO (C) is a cl(O)-torsor.
+
+
+References
+[1] A.O.L. Atkin and François. Morain, Elliptic curves and primality proving, Mathematics
+    of Computation 61 (1993), 29–68.
+
+[2] Reinier Bröker, Constructing supersingular elliptic curves, Journal of Combinatorics and
+    Number Theory 1 (2009), 269–273.
+
+[3] Reinier Bröker and Peter Stevenhagen, Efficient CM-constructions of elliptic curves over
+    finite fields, Mathematics of Computation 76 (2007), 2161–2179.
+
+[4] David A. Cox, Primes of the form x2 + ny 2 : Fermat, class field theory, and complex
+    multiplication, Wiley, 1989.
+
+[5] Andreas Enge and Andrew V. Sutherland, Class invariants by the CRT method , ANTS
+    IX, LNCS 6197, Springer, 2010, pp. 142-156.
+
+[6] Serge Lang, Elliptic functions, Springer, 1987.
+
+
+                                                            18.783 Fall 2023, Lecture #21, Page 11
+[7] J. S. Milne, Algebraic number theory, course notes, 2020.
+
+[8] Jürgen Neukirch, Algebraic number theory, Springer, 1999.
+
+[9] Karl Rubin and Alice Silverberg, Choosing the correct elliptic curve in the CM method ,
+    Mathematics of Computation 79 (2010), 545–561.
+
+[10] Joseph H. Silverman, Advanced topics in the arithmetic of elliptic curves, Springer,
+    1994.
+
+[11] Andrew V. Sutherland, Computing Hilbert class polynomials with the Chinese Remain-
+    der Theorem, Mathematics of Computation 80 (2011), 501–538.
+
+[12] Andrew V. Sutherland, Accelerating the CM method , LMS Journal of Computation and
+    Mathematics 15 (2012), 172–204.
+
+
+
+
+                                                         18.783 Fall 2023, Lecture #21, Page 12
+

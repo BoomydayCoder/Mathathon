@@ -1,0 +1,451 @@
+18.783 Elliptic Curves                                                                  Fall 2023
+Lecture #22                                                                           11/28/2023
+
+22     Isogeny volcanoes
+We now want to shift our focus from elliptic curves over C to elliptic curves other fields,
+finite fields in particular. As noted in Lecture 20, the moduli interpretation of the modular
+polynomial X0 (N ) parameterizing cyclic isogenies of degree N is valid over any field whose
+characteristic does not divide N ; see Theorem 20.4. We can thus use the modular equation
+ΦN ∈ Z[X, Y ] to identify pairs of N -isogenous elliptic curves using j-invariants in any field k.
+When k is not algebraically closed this determines the elliptic curves only up to a twist, but
+for finite fields there are generally only two twists to consider (assuming j ̸= 0, 1728), and
+in many applications it suffices to work with k̄ isomorphism classes of elliptic curves defined
+over k, equivalently the set of j-invariants of elliptic curves E/k, which by Theorem 13.12,
+is just the set k itself.
+    We are particularly interested in the case where N is a prime ℓ ̸= char(k). Every isogeny
+of degree ℓ is necessarily cyclic (since ℓ is prime), and for any fixed j-invariant j1 := j(E1 ),
+the k-rational roots of the polynomial
+
+                                        ϕℓ (Y ) = Φℓ (j1 , Y )
+
+are the j-invariants of the elliptic curves E2 /k that are ℓ-isogenous to E. More precisely,
+there is a bijection between the Gal(k̄/k)-invariant roots of ϕℓ (Y ) in k and the Gal(k̄/k)-
+invariant order-ℓ cyclic subgroups of E[ℓ], provided we count roots of ϕℓ (Y ) with multiplicity.
+Over k̄ there are deg ϕℓ = ℓ + 1 (not necessarily distinct) roots of ϕℓ corresponding to
+ℓ + 1 (necessarily distinct) cyclic subgroups of E[ℓ] ≃ Z/ℓZ ⊕ Z/ℓ of order ℓ. Recall from
+Theorem 5.11 that every finite subgroup of E(k̄) is the kernel of a separable isogeny that
+is uniquely determined up to composition with isomorphisms. As we are only interested in
+isogenies up to isomorphism, we consider separable isogenies to be distinct only when their
+kernels differ.
+    Throughout this lecture we assume ℓ ̸= char(k), so all the isogenies we will shall consider
+are separable.
+Definition 22.1. The ℓ-isogeny graph Gℓ (k) is the directed graph with vertex set k and
+edges (j1 , j2 ) present with multiplicity equal to the multiplicity of j2 as a root of Φℓ (j1 , Y ).
+    As noted in Remark 20.6, if j1 = j(E1 ) and j2 = j(E2 ) are the j-invariants of a pair of
+ℓ-isogenous elliptic curves, the ordered pair (j1 , j2 ) does not uniquely determine an ℓ-isogeny
+φ : E1 → E2 ; their may be multiple ℓ-isogenies from E1 to E2 with distinct kernels. The
+existence of the dual isogeny guarantees that (j1 , j2 ) is an edge in Gℓ (k) if and only (j2 , j1 )
+is also an edge; provided that j1 , j2 ̸= 0, 1728 these edges have the same multiplicity, but in
+the exceptional case where one of j1 and j2 is 0 or 1728, this need not hold.
+Remark 22.2. The exceptions for j-invariants 0 = j(ρ) and 1728 = j(i) arise from the fact
+that the corresponding elliptic curves y 2 = x3 + B and y 2 = x3 + Ax have automorphisms
+ρ : (x, y) 7→ (ρx, y) and i : (x, y) 7→ (−x, iy), respectively, where ρ and i denote third and
+fourth roots of unity, respectively, in both End(E) and k̄. The automorphism −1 does not
+pose a problem because it fixes every cyclic subgroup of E[ℓ], so for any ℓ-isogeny φ : E1 → E2
+the isogeny φ ◦ [−1] = [−1] ◦ φ has the same kernel as φ; this does not apply to ρ and i,
+which fix only two cyclic subgroups of E[ℓ]. If j(E1 ) = 0 and j(E2 ) ̸= 0 then we cannot
+write “φ ◦ ρ = ρ ◦ φ” (the RHS does not even make sense, ρ ̸∈ End(E2 )) and the isogenies
+φ, φ ◦ ρ, φ ◦ ρ2 all have different kernels, but the corresponding dual-isogenies all have the
+same kernel. In this situation the edge (j(E1 ), j(E2 ) has multiplicity 3 in Gℓ (k) but the
+
+                                                                        Lecture by Andrew Sutherland
+edge (j(E2 ), j(E1 )) has multiplicity 1. The case where j(E1 ) = 1728 and j(E2 ) ̸= 1728 is
+similar, except now (j(E1 ), j(E2 ) has multiplicity 2.
+
+    Our objective in this lecture is to elucidate the structure of the graph Gℓ (k) in the case
+that k = Fq is a finite field. Recall from Lecture 14 that elliptic curves over finite fields
+may be classified according to their endomorphism algebras and are either ordinary (meaning
+End0 (E) is an imaginary quadratic field) or supersingular (meaning End0 (E) is a quaternion
+algebra). Whether E is ordinary or supersingular is an isogeny invariant (by Theorem 13.2),
+so the graph Gℓ (Fq ) can always be partitioned into ordinary and supersingular components.
+Since most elliptic curves are ordinary, we will focus on the ordinary components; you will
+have an opportunity to investigate the supersingular components on Problem Set 12.
+
+22.1     Isogenies between elliptic curves with complex multiplication
+Theorem 22.3. Let φ : E → E ′ be an ℓ-isogeny of elliptic curves defined over a field k.
+Then End0 (E ′ ) ≃ End0 (E), and if End0 (E) = K is an imaginary quadratic field then
+End(E) = O and End(E ′ ) = O′ are orders in K such that one of the following holds:
+
+                     (i) O = O′ ,        (ii) [O : O′ ] = ℓ,          (iii) [O′ : O] = ℓ.
+
+Proof. Let φ̂ : E ′ → E be the dual isogeny. If ϕ ∈ End(E), the isogeny φ ◦ ϕ ◦ φ̂ : E ′ → E ′
+is an endomorphism ϕ′ ∈ End(E ′ ) with
+
+       Tϕ′ = ϕ′ + ϕ̂′ = φ ◦ ϕ ◦ φ̂ + φ ◦ ϕ̂ ◦ φ̂ = φ ◦ [Tϕ] ◦ φ̂ = φ ◦ φ̂ ◦ [Tϕ] = ℓ Tϕ,
+       Nϕ′ = ϕ′ ◦ ϕ̂′ = φ ◦ ϕ ◦ φ̂ ◦ φ ◦ ϕ̂ ◦ φ̂ = φ ◦ ϕ ◦ [ℓ] ◦ ϕ̂ ◦ φ̂ = φ ◦ [ℓ Nϕ] ◦ φ̂ = ℓ2 Nϕ,
+
+and ϕ′ is a root of x2 − (Tϕ′ )x + Nϕ′ = x2 − (Tϕ)(ℓx) + ℓ2 Nϕ = 0. Thus ϕ′ /ℓ ∈ End0 (E ′ )
+is a root of x2 − (Tϕ)x + Nϕ, and it follows that the characteristic polynomial of every
+ϕ ∈ End(E) has a root in End0 (E ′ ) and therefore End(E) ⊆ End0 (E ′ ). Applying the
+same argument in the reverse direction shows that End(E ′ ) ⊆ End0 (E), so we must have
+End0 (E ′ ) = End0 (E).
+    Assume End0 (E ′ ) ≃ End0 (E) is an imaginary quadratic field, with End(E) = O = [1, τ ]
+and End(E ′ ) = O′ = [1, τ ′ ]. Then φ ◦ τ ◦ φ̂ ∈ End(E ′ ) = O′ has the same characteristic
+polynomial as ℓτ ∈ O, which implies ℓτ ∈ O′ (since O and O′ lie in the same field K). We
+similarly find that ℓτ ′ ∈ O. Thus [1, ℓτ ] ⊆ [1, τ ′ ], and [1, ℓτ ′ ] ⊆ [1, τ ], and therefore
+
+                                       [1, ℓ2 τ ] ⊆ [1, ℓτ ′ ] ⊆ [1, τ ].
+
+The index of [1, ℓ2 τ ] in [1, τ ] is ℓ2 , so the index of [1, ℓτ ′ ] in [1, τ ] must be 1, ℓ, or ℓ2 . These
+correspond to cases (iii), (i), and (ii) of the theorem, respectively.
+
+Definition 22.4. Theorem 22.3 allows us to distinguish ℓ-isogenies φ : E → E ′ of elliptic
+curves with CM by an imaginary quadratic field as follows:
+
+  (i) when O = O′ we say that φ is horizontal ;
+ (ii) when [O : O′ ] = ℓ we say that φ is descending;
+ (iii) when [O′ : O] = ℓ we say that φ is ascending.
+
+We collectively refer to ascending and descending isogenies as vertical isogenies.
+
+
+                                                                            18.783 Fall 2023, Lecture #22, Page 2
+Theorem 22.5. Let E/C be an elliptic curve with CM by an order O of discriminant D
+in an imaginary quadratic field K, and let ℓ be prime. If ℓ ∤ [OK : O] then E admits
+1 + Dℓ horizontal, ℓ − Dℓ descending, and no ascending ℓ-isogenies. Otherwise E admits
+no horizontal, ℓ descending, and one ascending ℓ-isogenies.
+Proof. We know that there are always ℓ + 1 ℓ-isogenies in total, so it suffices to prove that
+the counts of horizontal and ascending ℓ-isogenies given in the theorem are correct.
+    Let us first consider the special case in which E corresponds to a torus C/L with L := ℓO
+homothetic to O. As explained in Lecture 17 (see §17.5), every ℓ-isogeny φ : E → E ′ arises
+from a lattice inclusion L ⊆ L′ of index ℓ. The lattices L′ containing L = ℓO with index ℓ
+are precisely the index-ℓ sublattices of O. We then have
+                   End(E ′ ) ≃ End(C/L′ ) = O(L′ ) := {α ∈ C : αL′ ⊆ L′ },
+and the inclusion L ⊆ L′ gives rise to a horizontal ℓ-isogeny if and only if O(L′ ) = O, in
+                                   ′
+other words,
+           D
+              precisely when L is a proper O-ideal. By Corollary 21.9, if ℓ ∤ [OK : O] there
+are 1 + ℓ proper O-ideals of norm ℓ, and otherwise there are none, which matches the
+claimed count of horizontal ℓ-isogenies.
+    When ℓ ∤ [OK : O] there can be no ascending ℓ-isogenies, so it remains only to show that
+when ℓ divides [OK : O] there is exactly one ascending ℓ-isogeny. In this case O is an index-ℓ
+suborder of some order O′ in OK , and we want to show that exactly one of the index ℓ
+sublattices L′ of O (each of which contain L = ℓO with index ℓ) satisfies O(L′ ) = O′ . Let
+O′ = [1, ω]. We can assume O = [1, ℓω], since this is clearly an index-ℓ suborder of O′ and
+there is exactly one such suborder (by Theorem 17.18). The index-ℓ sublattices of O are
+Li := [ℓ, ℓω + i] for 0 ≤ i < ℓ and Lℓ := [1, ℓ2 ω], by Lemma 20.2. Note that L0 is homothetic
+to O′ , and we claim it is the unique index-ℓ sublattice L′ for which O(L′ ) = O′ , equivalently,
+for which the inclusion L ⊆ L′ induces an ascending ℓ-isogeny φ : E → E ′ .
+    We have O′ L0 = O′ ℓO′ = ℓO′ = L0 , so O′ ⊆ O(L0 ), and O(L0 ) cannot be larger than O′ ,
+since O′ is the largest order possible for End(E ′ ), by Theorem 22.3, thus O(L0 ) = O′
+and the inclusion L ⊆ L0 induces an ascending ℓ-isogeny. For 0 < i < ℓ the element
+ω(ℓω + i) = ℓω 2 + iω ≡ iω mod ℓ ̸∈ [1, ℓω] = O is not an element of Li , so O′ ̸⊆ O(Li ), and
+for i = ℓ the element ω · 1 = ω ̸∈ [1, ℓω] = O is not an element of Li and again O′ ̸⊆ O(Li ).
+Thus φ is an ascending ℓ-isogeny if and only if L′ = L0 and there is exactly one such φ.
+    We now consider the general case, in which L is homothetic to a proper O-ideal a, which
+we can assume has prime norm p ⊥ ℓ[OK : O] (by Theorem 20.11, every ideal class in
+cl(O) contains infinitely ideals of prime norm). The CM action of a is a horizontal p-isogeny
+φa : E → E0 , with E0 ≃ C/O. Let φ : E → E ′ be an ℓ-isogeny, let O′ = End(E ′ ), and define
+                                     
+                                     a
+                                                if φ is horizontal,
+                                 ′        ′
+                                a := aO          if φ is ascending,
+                                     
+                                            ′
+                                       a ∩ O if φ is descending.
+We must have [O′ : a′ ] = [OK : a′ OK ] = [OK : aOK ] = [O : a] = p, since p does divide
+[OK : O] or [OK : O′ ]; it follows that a′ is a proper O′ -ideal of norm p, and we have a
+horizontal p-isogeny φa′ : E ′ → E0′ with E ′ ≃ C/a and E0′ ≃ C/O′ . Up to isomorphism,
+there is a unique ℓ-isogeny φ0 : E0 → E0′ for which the diagram
+                                              φa
+                                        E         → E0
+                                              ←
+                                        ←
+
+
+
+                                                    ←
+
+
+
+
+                                          φ           ∃!φ0
+                                        →
+
+
+
+                                                     →
+
+
+
+
+                                              φa′
+                                        E′        → E0′
+                                              ←
+
+
+                                                             18.783 Fall 2023, Lecture #22, Page 3
+commutes, namely the isogeny with kernel φa (ker(φa′ ◦ φ)) given by Theorem 5.11. Since
+φa and φa′ are both horizontal, the ℓ-isogeny φ0 must be of the same type (horizontal,
+descending, or ascending) as φ. This reduces the general case to the special case above.
+
+    Theorem 22.5 extends to any field whose characteristic is not ℓ (provided that one takes
+into rationality into account: ℓ-isogenies admitted by E over k̄ need not be defined over k).
+We won’t prove this in full generality, but we can use Deuring’s lifting theorem to address
+the case where k is a finite field Fq .
+    For an imaginary quadratic order O with discriminant D and any field k we define
+
+                            EllO (k) := {j(E) ∈ k : End(E) = O},
+
+the set of j-invariants of elliptic curves over k with CM by O; for k = C this is the same as
+the set of roots of the Hilbert class polynomial HD (X), whose cardinality is the class number
+h(D) := #Cl(O), and a result of Deuring noted in the previous lecture (see Theorem 21.14
+yields a similar statement for finite fields.
+
+Lemma 22.6. Let O be an imaginary quadratic order of discriminant D and let Fq be a
+finite field with q ⊥ D. The set EllO (Fq ) is either empty or has cardinality h(D). If EllO (Fq )
+is nonempty, so is Ell′O (Fq ) for every imaginary quadratic order O′ containing O.
+
+Proof. If EllO (Fq ) is nonempty then there is an elliptic curve E/Fq with CM by O. Its
+Frobenius endomorphism πE is an element of End(E) = O with trace t = tr πE and norm q,
+and we must have t ⊥ q, since E is ordinary, by Corollary 13.20. The discriminant of the
+                                                                                           √
+characteristic polynomial x2 − tx + q has a root πE ∈ O that is not in Z (because t ̸= ±2 q),
+so its discriminant t2 − 4q is a square in O − Z, hence of the form v 2 D for some v ∈ Z. We
+then have 4q = t2 − v 2 D with t ̸≡ 0 mod p = char Fq , and it follows from Theorem 21.5 and
+Remark 21.13 that q is the norm of a prime ideal in OL , where L is the ring class field of O.
+By Theorem 21.14, the Hilbert class polynomial HD (X) of degree h(D) splits into distinct
+linear factors in Fq [X] and its roots form the set EllO (Fq ) of cardinality h(D).
+     If O′ is an order of discriminant D′ that contains O with index u, then D = u2 D′ and
+4q = t2 − u2 v 2 D′ , so q is also the norm of a prime ideal in OL′ , where L′ is the ring class
+field of O′ , and we have q ⊥ D′ , since D′ |D. This implies that EllO′ (Fq ) is nonempty and
+has cardinality h(D′ ), by the same argument used above for O.
+
+Corollary 22.7. Let E/Fq be an elliptic curve with CM by an order O of discriminant D ⊥ q
+in an imaginary quadratic field K, and let ℓ ∤ q be prime. If ℓ ∤ [OK : O] then E admits
+1 + Dℓ horizontal ℓ-isogenies and no ascending ℓ-isognies, and if ℓ | [OK : O] then E admits
+no horizontal ℓ-isogenies and one ascending ℓ-isogeny. The number of descending ℓ-isogenies
+admitted by E over Fq is either zero or ℓ − Dℓ , depending on whether EllO′ (Fq ) is empty or
+                                              
+
+not, where O′ is the order of index ℓ in O.
+
+Proof. This follows from Theorem 22.5, Lemma 22.6, and the Deuring lifting theorem (see
+Theorem 21.15). If φ : E → E ′ is an ℓ-isogeny of CM elliptic curves over C with End(E) = O
+and End(E ′ ) = O′ and Fq is a finite field for which the sets EllO (Fq ) and EllO′ (Fq ) are both
+nonempty, then we can view φ : E → E ′ as an isogeny of elliptic curves L, where L the larger
+of the two ring class fields for O and O′ (one must contain the other since either O ⊆ O′ or
+O′ ⊆ O and in both cases we can apply Corollary 21.6), and q the norm of a prime ideal q
+in OL . We can use the reduction map OL → OL /q = Fq to reduce integral equations for
+                                                                              ′
+E, E ′ , and φ modulo q to obtain a corresponding ℓ-isogeny φ : E → E of elliptic curves
+
+                                                              18.783 Fall 2023, Lecture #22, Page 4
+                                                 ′
+over Fq with End(E) = End(E) = O, End(E ) = End(E ′ ) = O′ , and deg φ = deg φ = ℓ
+(the degree of φ cannot change because ℓ ∤ q, so E[ℓ] ≃ E[ℓ], which implies ker φ ≃ ker φ,
+and φ must be separable).
+                             ′                                                                ′
+    Conversely, if φ : E → E is an ℓ-isogeny of elliptic curves over Fq , we can lift E and E
+                                                                               ′
+to elliptic curves over L with End(E) = End(E) = O and End(E ′ ) = End(E ) = O′ . There
+is then a corresponding ℓ-isogeny φ : E → E ′ whose kernel reduces to the kernel of φ (as
+above, the reduction map gives a bijection E[ℓ] ≃ E[ℓ] for ℓ ∤ q).
+
+   If E/Fq is an elliptic curve with CM by an imaginary quadratic order O and a is a proper
+O-ideal, then as in Definition 17.13 we have an a-torsion subgroup
+
+                        E[a] := {P ∈ E(Fq ) : α(P ) = 0 for all α ∈ a}.
+
+Provided the norm of a is prime to q, there is a corresponding separable isogeny φa : E → E ′
+with ker φa = E[a] and deg φa = Na uniquely determined up to isomorphism, by Theo-
+rem 5.11. As in the proof above we can lift the isogeny φa : E → E ′ to a number field
+L ⊆ C where it corresponds to the CM action of cl(O), which implies that we must have
+End(E ′ ) = End(E) = O; if Na is a prime ℓ this means that φa is a horizontal ℓ-isogeny. By
+Theorem 20.11, every ideal class in cl(O) contains infinitely many ideals of prime norm, and
+in particular, an ideal whose norm is prime to q. This allows us to define the CM action
+of cl(O) on the set EllO (Fq ) in terms of horizontal ℓ-isogenies for various primes ℓ ∤ q. As
+with the CM action on EllO (C), the action of the inverse of an ideal a is given by the dual
+isogeny φ̂a . We thus have the following corollary.
+
+Corollary 22.8. Let O be an imaginary quadratic order of discriminant D and let Fq be a
+finite field with q ⊥ D. If the set EllO (Fq ) is nonempty then it is a cl(O)-torsor in which the
+action of the ideal class of any proper O-ideal of prime norm ℓ ∤ q is given by a horizontal
+ℓ-isogeny, and the inverse of this action is given by the dual isogeny.
+
+Remark 22.9. As noted above, every ideal class in cl(O) contains infinitely many proper
+O-ideals of prime norm ℓ. This means that if we want to compute the action of a given
+proper O-ideal l1 of prime norm ℓ1 , we can compute this action using any other proper
+O-ideal l2 of prime norm ℓ2 that lies is in the same ideal class. This has many practical
+applications: when ℓ1 is large it allows us to use a much smaller ℓ2 . Indeed, under the
+Generalized Riemann Hypothesis, we can always find a prime ℓ2 bounded by O(log2 |D|).
+
+22.2    Isogeny volcanoes
+Having determined the exact number of horizontal, ascending, and descending ℓ-isogenies
+that arise for an ordinary elliptic curve over a finite field, we can now completely determine
+the structure of the ordinary components of Gℓ (Fp ). Figures 1 and 2 show top and side
+views of a typical example — with a bit of imagination, one can see a volcano.
+
+Definition 22.10. An ℓ-volcano V is a connected undirected graph whose vertices are
+partitioned into one or more levels V0 , . . . , Vd such that the following hold:
+
+   1. The subgraph on V0 (the surface) is a regular graph of degree at most 2.
+   2. For i > 0, each vertex in Vi has exactly one neighbor in level Vi−1 , and this accounts
+      for every edge not on the surface.
+   3. For i < d, each vertex in Vi has degree ℓ + 1.
+
+                                                             18.783 Fall 2023, Lecture #22, Page 5
+Figure 1: An ordinary component of G3 (Fp ).
+
+
+
+
+     Figure 2: A 3-volcano of depth 2.
+
+
+
+
+                                  18.783 Fall 2023, Lecture #22, Page 6
+Level Vd is called the floor of the volcano; the floor and surface coincide when d = 0.
+
+    As with Gℓ (k), an ℓ-volcano may have multiple edges and self-loops, but it is an undi-
+rected graph. If the surface of an ℓ-volcano has more than two vertices, it must be a simple
+cycle. Two vertices may be connected by 1 or 2 edges, and a single vertex may have 0, 1,
+or 2 self-loops. As an abstract graph, an ℓ-volcano is determined by the integers ℓ, d, |V0 |.
+    If we ignore components that contain the two exceptional j-invariants 0 and 1728, the
+ordinary components of Gℓ (Fp ) are all ℓ-volcanoes. This was proved by David Kohel in his
+Ph.D. thesis [6], although the term “volcano” was coined later by Fouquet and Morain in [3].
+
+Theorem 22.11 (Kohel). Let Fq be a finite field, let ℓ ∤ q be a prime, and let V be an
+ordinary component of Gℓ (Fq ) that does not contain the j-invariants 0 or 1728. Then V is
+an ℓ-volcano for which the following hold:
+
+   (i) The vertices in level Vi all have the same endomorphism ring Oi .
+  (ii) The subgraph on V0 has degree 1 + Dℓ0 , where D0 = disc(O0 ).
+                                                 
+
+ (iii) If Dℓ0 ≥ 0, then |V0 | is the order of [l] in cl(O0 ); otherwise |V0 | = 1.
+             
+
+ (iv) The depth of V is d, where 4q = t2 − ℓ2d v 2 D0 with ℓ ∤ v, t2 = (tr πE )2 , for j(E) ∈ V .
+ (v) ℓ ∤ [OK : O0 ] and [Oi : Oi+1 ] = ℓ for 0 ≤ i < d.
+
+Proof. Let V be an ordinary component of Gℓ (Fq ) that does not contain 0 or 1728. The
+only automorphisms admitted by elliptic curves E with j(E) ̸= 0, 1728 are ±1 ∈ End(E),
+thus as explained in Remark 22.2, every edge (j1 , j2 ) in V occurs with the same multiplicity
+as the edge (j2 , j1 ), allowing us to view V as an undirected graph.
+    Since V is an ordinary component, every vertex is the j-invariant of an ordinary elliptic
+curves whose endomorphism ring is an order O in an imaginary quadratic field, by Corol-
+lary 13.20. It follows from Theorem 22.3 that the order O arising for elliptic curves with
+j(E) ∈ V all lie in the same quadratic field K and differ only in the ℓ-adic valuation νℓ of
+the conductor of [OK : O]. By Corollary 22.7, every j(E) ∈ V for which End(E) = O has
+conductor divisible by ℓ admits an ascending ℓ-isogeny, and it follows that we can partition
+V into levels V0 , . . . , Vd with j(E) ∈ Vi if and only if vℓ ([OK : O]) = i; the set V is finite so
+d is bounded; this proves (i) and (v), and Corollary 22.7 also implies (ii) and that V is an
+ℓ-volcanoas claimed.
+    If Dℓ0 = −1 then V0 has degree 0 and we must have |V0 | = 1. Otherwise there exists a
+proper O0 -ideal l of norm ℓ, and its ideal class [l] ∈ cl(O) acts on V0 via horizontal ℓ-isogenies,
+by Corollary 22.8. This proves (iii).
+    Part (iv) follows from Theorem 21.5 and Remark 21.13. If 4q = t2 − v 2 ℓ2d D0 with ℓ ∤ v,
+then the sets EllOi (k) must be non-empty for 0 ≤ i ≤ d, but the set EllOd+1 (k) must be
+empty since ℓd+1 does not divide v.
+
+Remark 22.12. Theorem 22.11 can be extended to the case where V contains 0 or 1728
+following Remark 22.2. Parts (i)-(v) still hold, the only necessary modification is the claim
+that V is an ℓ-volcano. When V contains 0, if V1 is non-empty then it contains 13 ℓ − −3
+                                                                                            
+                                                                                          ℓ
+vertices, and each vertex in V1 has three incoming edges from 0 but only one outgoing    edge
+to 0. When V contains 1728, if V1 is non-empty then it contains 21 ℓ − −1
+                                                                                  
+                                                                                ℓ
+                                                                                     vertices,
+and each vertex in V1 has two incoming edges from 1728 but only one outgoing edge to
+1728. This 3-to-1 (resp. 2-to-1) discrepancy arises from the action of Aut(E) on the cyclic
+subgroups of E[ℓ] when j(E) = 0 (resp. 1728). Otherwise, V satisfies all the requirements
+
+                                                                18.783 Fall 2023, Lecture #22, Page 7
+of an ℓ-volcano, and most of the algorithms designed for ℓ-volcanoes work just as well on
+ordinary components of Gℓ (Fq ) that contain 0 or 1728.
+
+22.3       Finding the floor
+The vertices that lie on the floor of an ℓ-volcano V are distinguished by their degree.
+
+Lemma 22.13. Let v be a vertex in an ordinary component V of depth d in Gℓ (Fq ). Either
+deg v ≤ 2 and v ∈ Vd , or deg v = ℓ + 1 and v ̸∈ Vd .
+
+Proof. If d = 0 then V = V0 = Vd is a regular graph of degree at most 2 and v ∈ Vd .
+Otherwise, either v ∈ Vd and v has degree 1, or v ̸∈ Vd and v has degree ℓ + 1.
+
+     Given an arbitrary vertex v ∈ V , we would like to find a vertex on the floor of V . Our
+strategy is very simple: if v0 = j(E) is not already on the floor then we will construct a
+random path from v0 to a vertex vs on the floor. By a path, we mean a sequence of vertices
+v0 , v1 , . . . , vs such that each pair (vi−1 , vi ) is an edge and vi ̸= vi−2 (no backtracking).
+Algorithm FindFloor
+Given an ordinary vertex v0 ∈ Gℓ (Fq ), find a vertex on the floor of its component.
+   1. If deg v0 ≤ 2 then output v0 and terminate.
+   2. Pick a random neighbor v1 of v0 and set s ← 1.
+   3. While deg vs > 1: pick a random neighbor vs+1 ̸= vs−1 of vs and increment s.
+   4. Output vs .
+
+Remark 22.14 (Removing known roots). As a minor optimization, rather than picking
+vs+1 as a root of ϕ(Y ) = Φℓ (vs , Y ) in step 3 of the FindFloor algorithm, we may use
+ϕ(Y )/(Y − vs−1 )e , where e is the multiplicity of vs−1 as a root of ϕ(Y ). This is slightly
+faster and eliminates the need to check that vs+1 ̸= vs−1 .
+
+    Notice that once FindFloor picks a descending edge (one leading closer to the floor),
+every subsequent edge must also be descending, because it is not allowed to backtrack along
+the single ascending edge and there are no horizontal edges below the surface. It follows that
+the expected length of the path chosen by FindFloor is δ + O(1), where δ is the distance
+from v0 to the floor along a shortest path. With a bit more effort we can find a path of
+exactly length δ, a shortest path to the floor. The key to doing so is observe that all but
+at most two of the ℓ + 1 edges incident to any vertex above the floor must be descending
+edges. Thus if we construct three random paths from v0 that all start with a different initial
+edge, then one of the initial edges must be a descending edge, which necessarily leads to a
+shortest path to the floor.
+Algorithm FindShortestPathToFloor
+Given an ordinary v0 ∈ Gℓ (Fq ), find a shortest path to the floor of its component.
+   1. Let v0 = j(E). If deg v0 ≤ 2 then output v0 and terminate.
+   2. Pick three neighbors of v0 and extend paths from each of these neighbors in parallel,
+      stopping as soon as any of them reaches the floor.1
+   3. Output a path that reached the floor.
+  1
+      If v0 does not have three distinct neighbors then just pick all of them.
+
+
+                                                                       18.783 Fall 2023, Lecture #22, Page 8
+     The main virtue of FindShortestPathToFloor is that it allows us to compute δ,
+which tells us the level Vd−δ of j(E) relative to the floor Vd . It effectively gives us an
+“altimeter” δ(v) that we may use to navigate V . We can determine whether a given edge
+(v1 , v2 ) is horizontal, ascending, or descending, by comparing δ(v1 ) to δ(v2 ), and we can
+determine the exact level of any vertex.2
+     There are many practical applications of isogeny volcanoes, some of which you will
+explore on Problem Set 12. See the survey paper [8] for further details and references.
+
+
+References
+[1] Reinier Bröker, Kristin Lauter, and Andrew V. Sutherland, Modular polynomials via
+    isogeny volcanoes, Mathematics of Computation 81, 2012, 1201–1231.
+
+[2] David A. Cox, Primes of the form x2 + ny 2 : Fermat, class field theory, and complex
+    multiplication, Wiley, 1989.
+
+[3] Mireille Fouquet and François Morain, Isogeny volcanoes and the SEA algorithm, Algo-
+    rithmic Number Theory Fifth International Symposium (ANTS V), LNCS 2369, Spring
+    2002, 276–291.
+
+[4] Sorina Ionica and Antoine Joux, Pairing the volcano, Mathematics of Computation 82
+    (2013), 581–603.
+
+[5] Serge Lang, Elliptic functions, second edition, Springer, 1987.
+
+[6] David Kohel, Endomorphism rings of elliptic curves over finite fields, PhD thesis, Uni-
+    versity of California at Berkeley, 1996.
+
+[7] Joseph H. Silverman, The arithmetic of elliptic curves, second edition, Springer, 2009.
+
+[8] Andrew V. Sutherland, Isogeny volcanoes, Algorithmic Number Theory 10th Interna-
+    tional Symposium (ANTS X), Open Book Series 1, MSP 2013, 507–530.
+
+
+
+
+   2
+     A more sophisticated approach that uses the Weil pairing (to be discussed in Lecture 23) can be found
+in [4]; the pairing based approach is more efficient when d is large, but in practice d is usually small.
+
+
+                                                                   18.783 Fall 2023, Lecture #22, Page 9
+

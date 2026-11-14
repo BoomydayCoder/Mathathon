@@ -1,0 +1,45 @@
+THE THEORY OF SIMPLY PERIODIC NUMERICAL FUNCTIONS*
+Edouard Lucas, Lycée Charlemagne, Paris
+
+‘Translated from the French by Sidney Kravitz, Dover, N. J.
+Translation Edited by
+Douglas Lind, University of Virginia, Charlottesville, Va.
+
+INTRODUCTION
+
+This is a translation of the first part of Lucas' memoire, "Théorie des
+Fonctions Numériques Simplement Périodiques, " which appeared in the Amer-
+ican Journal of Mathematics, Volume 1 (1878), pp. 184-240, The second half
+of the paper, published in pages 289-321 of the same volume, investigates per-
+iodicity of second-order recurring sequences modulo a prime, and applies this
+to the study of large primes.
+
+‘The decision to publish a translation of Lucas! memoire was made for two
+reasons, First, although it is the first lengthy paper containing fundamental
+results about recurring sequences, the original is difficult to lay one's hands
+on. Secondly, the relationships and identities in the paper are constantly being
+rediscovered. Thus in order to help avoid needless duplication, it was decided
+to publish the first part of the paper in full, It is our hope that this will become
+a standard reference for such relationships and identities.
+
+This translation diverges from the original only in a few places. Where
+an error has been detected in an equation, the corrected version of that equa-
+tion has been used, together with a (*) to the left of the equation, We have also
+used more modern terminology where appropriate. For example, we have re-
+placed n(n 1)+++ + 2+1 by nf, V-1 byi, Log. nép. by log, and Cr by
+
+ee IEC IFIE 72) 16)
+‘The purpose of this paper is to study the symmetric functions of the roots
+
+of a quadratic equation, and their application to the theory of prime numbers.
+We indicate, at the start, the complete analogy of these symmetric functions
+with the circular and hyperbolic functions. We then show the relationship that
+exists between these symmetric functions and the theories of determinants,
+combinatorial analysis, continued fractions, divisibility, quadratic divisors,
+continued radicals, division of the circumference of a circle, quadratic dio-
+phantine analysis, quadratic residues, the decomposition of large numbers into
+prime factors, etc. This presentation is the starting point for a more complete
+
+* First published in the American Journal of Mathematics, Vol, 1 (1878),
+pp. 184-240, 289-3217, SSS
+

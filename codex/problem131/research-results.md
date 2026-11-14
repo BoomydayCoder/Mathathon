@@ -1,6 +1,6 @@
 # Research results: constructions, obstructions, and unexpected links
 
-This is a compact record of independently derived results from the ongoing investigation. “Proved” means that a complete argument is written in the linked note; review status is stated where relevant. It does **not** mean historically novel. These results do not constitute a new irrationality proof for a higher odd zeta value.
+This is a compact record of independently derived results from the ongoing investigation. “Proved” means that a complete argument is written in the linked note; review status is stated where relevant. It does **not** mean historically novel. The completed zeta-five assembly is a reviewed computer-assisted alternative derivation retaining Fauzan’s construction, not a newly invented irrationality construction or evidence of external consensus. No all-odd irrationality proof has resulted.
 
 The main exposition is [the discovery guide](discovery-guide.md). The results here test its mechanism by changing the derivative, the summation range, the arithmetic normalization, and the representation of the auxiliary function.
 
@@ -280,7 +280,7 @@ The next useful work has explicit mathematical targets:
 3. Quantify the rational Gram comparison for the positive odd-zeta moment matrices. The proposed estimate separates an exact rational determinant from a one-variable weighted maximum; its cancellation on the relevant large-parameter scale remains unproved.
 4. Find a growing-dimensional positive auxiliary space whose primitive arithmetic error tends to zero. Fixed-dimensional coefficient tuning can be arithmetically equivalent to rescaling, and fixed positive cones have their own lower-gap obstructions.
 
-The original [Zudilin paper](https://arxiv.org/abs/math/0202159) remains the primary starting point. Current claims concerning Fauzan’s 2026 \(\zeta(5)\) work are documented separately in [source provenance](../sources/odd-zeta-provenance.md); this project has not independently certified that complete preprint or locally built its Lean formalizations. No claim here depends on treating an unreviewed research proposal as an established theorem.
+The original [Zudilin paper](https://arxiv.org/abs/math/0202159) remains the primary starting point. Current claims concerning Fauzan’s 2026 \(\zeta(5)\) work are documented separately in [source provenance](../sources/odd-zeta-provenance.md); the [assembled alternative derivation](fauzan-simplified-proof-audit.md) has now passed an end-to-end mathematical review, without locally building Lean or certifying every claim in the original preprint. No claim here depends on treating an unreviewed research proposal as an established theorem.
 
 ## 9. An analytic equilibrium construction replaces Fauzan’s sixteen-component measure
 
@@ -342,7 +342,7 @@ Retaining the preprint’s separate moment, integrality, and arithmetic-normaliz
 0<Q_{40n,200}(\zeta(5))<e^{-48n^2}
 \]
 
-for all sufficiently large \(n\), improving the source’s stated exponent \(139/5=27.8\). This concerns an eventual rate, not a certified starting index or unchanged finite-error constants. It remains conditional on the retained parts of the preprint, which have not received a complete independent audit here.
+for all sufficiently large \(n\), improving the source’s stated exponent \(139/5=27.8\). This concerns an eventual rate, not a certified starting index or unchanged finite-error constants. This quantitative comparison retains the source’s original refined normalizer. The completed assembled alternative below uses a different plain-rank normalizer and the weaker but sufficient eventual exponent 4.
 
 The [equilibrium guide](fauzan-equilibrium-guide.md) explains the construction and exact scope. The [endpoint proof](equilibrium-endpoint-certificate.md), [Carlson energy certificate](../computations/certify_equilibrium_energy.py), and [virial energy certificate](../computations/certify_equilibrium_energy_elementary.py) make the local analytic claim reproducible. The main gain is that the sign of the field’s charge distribution replaces sixteen trial components and many separate potential comparisons.
 
@@ -433,7 +433,7 @@ Combining with the certified analytic budget gives the exact positive margin
  =\frac{1621}{320000}>\frac1{200}.
 \]
 
-The [exact rational script](../computations/check_table_free_arithmetic.py) passes, but it checks the concluding algebra, not the source's local prime-adic lemmas. Those premises and integrality are separate from this calculation; they have now been independently reconstructed in [the local arithmetic review](fauzan-local-arithmetic-review.md), including the small-prime bound. Full assembly is still under review. The larger cutoff also retains the source's very large threshold \(K\ge200{,}000{,}000\). This is a simpler sufficient asymptotic arithmetic estimate for the source's zeta-five construction, not a proven arithmetic transfer to all odd indices. See [the guide](fauzan-equilibrium-guide.md#11-a-table-free-arithmetic-budget-for-the-sources-zeta-five-construction) for the combined interpretation.
+The [exact rational script](../computations/check_table_free_arithmetic.py) passes, but it checks the concluding algebra, not the source's local prime-adic lemmas. Those premises and integrality are separate from this calculation; they have now been independently reconstructed in [the local arithmetic review](fauzan-local-arithmetic-review.md), including the small-prime bound. The alternative assembly, with the modified normalizer below, has now [passed end-to-end review](fauzan-simplified-proof-audit.md). The larger cutoff also retains the source's very large threshold \(K\ge200{,}000{,}000\). This is a simpler sufficient asymptotic arithmetic estimate for the source's zeta-five construction, not a proven arithmetic transfer to all odd indices. See [the guide](fauzan-equilibrium-guide.md#11-a-table-free-arithmetic-budget-for-the-sources-zeta-five-construction) for the combined interpretation.
 
 
 ## 13. The rational square is forced within its minimal interpolation ansatz
@@ -472,7 +472,19 @@ A_{\mathrm{plain}}\le\frac{2203747}{1600000},
 \frac{69}{50}-A_{\mathrm{plain}}\ge\frac{4253}{1600000}>0.
 \]
 
-Together with the positive determinant's analytic budget, this leaves an eventual \(e^{-4n^2}\) bound for \(K=40n\), **subject to the full assembly now under review**. The mathematical gain is that the improved analytic estimate buys a simpler arithmetic proof. The degree remains linear; no new higher-odd normalization follows. The enormous source threshold \(K\ge20{,}000{,}000{,}000\) and unspecified onset of the asymptotic bound make this a proof-design result rather than a practical approximation algorithm.
+Dropping the refined correction changes the normalizer. Define \(\widetilde m_{K,M}=\prod_{p\le2h}p^{-\widetilde L_p}\), retaining the source’s small-prime and inner exponents but replacing each outer exponent by \(v_p(S_K)+2\sum_iw_{p,i}-r_p\); for \(p>K\), the determinant exponent is zero. The exact piecewise definition and local bases are in [the assembly audit](fauzan-simplified-proof-audit.md). Put
+
+\[
+\widetilde Q_K=\widetilde m_{K,10000}S_K\Delta_{K,5}.
+\]
+
+The **completed end-to-end review** establishes coefficientwise integrality, degree \(37n\), strict positivity at \(\zeta(5)\), and eventually
+
+\[
+0<\widetilde Q_{40n}(\zeta(5))<e^{-4n^2}.
+\]
+
+A hypothetical rational value \(a/b\) makes \(b^{37n}\widetilde Q_{40n}(a/b)\) a positive integer tending to zero. This is a complete reviewed computer-assisted alternative derivation of the preprint’s claimed theorem, retaining its determinant and local arithmetic engine. It is not a newly invented construction, an elementary proof, formal verification, or external acceptance. The enormous sufficient local threshold \(K\ge20{,}000{,}000{,}000\) and unspecified asymptotic onset make this a proof-design result rather than a practical approximation algorithm. No higher-odd normalization follows.
 
 ## 15. Positive moments force real roots and locate the target between them
 
@@ -529,3 +541,101 @@ L(g)=\lim_{m\to\infty}\frac1{p^m}\sum_{a=0}^{p^m-1}g(a).
 Residue-class subdivision gives the arithmetic distribution law. For primes \(p>s\), its rational extension has parameter change \(Y=p^sX+C_{p,s}\), with \(C_{p,s}\in p^s\mathbb Z_p\). This constant is p-adic, not asserted rational. Continuity is established on restricted analytic power series; no boundedness claim on all continuous functions is needed.
 
 The [dictionary](bernoulli-local-global-dictionary.md) and [independent review](bernoulli-dictionary-review.md) prove these identities and their domains. This is an exact bridge between real positivity and local divisibility, not an analogy. It still leaves the difficult task of designing a determinant basis with sufficient local valuation gains for each higher odd index.
+
+
+## 17. Newton interpolation and finite balance derive the numbers 17 and 5
+
+Write \(\phi_k(n)=\binom nk\binom{n+k}{k}\). As a polynomial in \(z=n(n+1)\), it is the normalized Newton basis on the grid \(j(j+1)\). Multiplication by \(z\) raises its index. Transposing that rule leads to the nearest-neighbor operator
+
+\[
+(\mathcal Lf)(n)=\frac{(n+1)^3(f_{n+1}-f_n)+n^3(f_{n-1}-f_n)}{2(2n+1)},
+\qquad
+\mathcal L\phi_k=k(k+1)\phi_k+k^2\phi_{k-1}.
+\]
+
+Its coefficients are discovered by imposing this rule on \(\phi_1\) and \(\phi_2\); the contiguous-ratio calculation then proves it for all \(k\). The symmetric kernel \(K(n,m)=\sum_k\phi_k(n)\phi_k(m)\) satisfies \(\mathcal L_nK=m(m+1)K\), with \(A_n=K(n,n)\).
+
+The nontrivial diagonal closure is
+
+\[
+A_n+A_{n-1}=6K(n,n-1).
+\]
+
+For \(w_k=[n\phi_k(n)/(n+k)]^2\), the finite balance relation
+\(w_k(n^2-k^2)^2=(k+1)^4w_{k+1}\) gives
+\(\sum k^2w_k=(n^2/2)\sum w_k\). Expanding the two adjacent Newton factors proves the closure. Substitution in the kernel equation gives the Apéry middle coefficient
+\((2n+1)[17n(n+1)+5]\), with \(17=6\cdot3-1\) and \(5=6\cdot1-1\).
+
+This proof does not assume the Apéry recurrence and does not illegally replace an off-diagonal kernel value by a diagonal one. It is explained in [the Newton note](newton-bispectral-motivation.md), proved and audited in [the closure review](newton-symmetric-square-review.md), and integrated into [the discovery guide](discovery-guide.md). Its birth–death interpretation also identifies the exact root-mean-square summation index \(n/\sqrt2\), but does not by itself prove concentration. Integrality and the zeta-valued limiting ratio still require their separate arguments.
+
+## 18. The modular explanation is now checked through the global continuation step
+
+Let \(\mathcal A(t)=\sum A_nt^n\), \(H(z)={}_2F_1(1/3,2/3;1;z)\),
+\(T(x)=x(1-9x)/(1-x)\), and \(Z(x)=27x^2(1-x)/(1-3x)^3\). The exact analytic-germ identity is
+
+\[
+\mathcal A(T(x))=\frac{1-x}{(1-3x)^2}H(Z(x))^2.
+\]
+
+A contour integral realizes \(H(27w^3)\) as a period of the elliptic curve
+\(Y^2=X^2(1-wX)^2-4w^2X\). Its square explains the third-order differential equation and cubic recurrence coefficients. Eta products then provide the integral generating series; a triple primitive provides cubic lcm denominator control.
+
+The decisive analytic step is Fricke symmetry. A direct three-moment calculation identifies the constant as \(\zeta(3)\) and removes the nearest branch value \(\rho=(\sqrt2-1)^4\). The covering argument proves continuation to the larger disk \(|t|<\rho^{-1}\); it is not inferred from finite coefficient matching. [The completed modular review](apery-modular-review.md) checks the global branching, nonpolynomiality, arithmetic, and constant normalization in [the full construction](apery-modular-elliptic.md), retaining explicit standard modular-form and covering-theory inputs.
+
+The same review proves a restricted weight-six failure: in the specified four-dimensional level-six Eisenstein span, the compatible fifth primitive has a nonremovable extra moment. Even the best scalar correction leaves a cubic local defect. This excludes that particular branch-cancellation attempt, not all modular approaches to \(\zeta(5)\).
+
+## 19. Wilson orthogonality solves the one-pole model—and proves its arithmetic failure
+
+For the zeta-three positive functional, take the size-\(m\) matrices
+\(\mu_{3,X}(t^{i+j}/(t+1))\) and
+\(\mu_{3,X}(t^{i+j+1}/(t+1))\). Their common positive-definite interval has exact endpoints
+
+\[
+L_m=H_m^{(3)}+\frac{m-1}{2m^3},\qquad
+U_m=H_m^{(3)}+\frac1{2m(m+1)}.
+\]
+
+The Schur-complement minimizers are normalized Wilson polynomials. Their classical orthogonality norms make the endpoint increments telescope, proving these formulas for every size. In particular,
+
+\[
+\zeta(3)-L_m\sim U_m-\zeta(3)\sim\frac1{4m^4}.
+\]
+
+This alone would only show slow approximation. The stronger fact concerns the **actual reduced denominators** \(d_m^-\), \(d_m^+\). For every prime \(m/2<p<m\), \(p\ge3\),
+
+\[
+v_p(L_m)=v_p(U_m)=-3.
+\]
+
+The unique \(1/p^3\) term cannot be canceled by the endpoint corrections. The prime number theorem gives \(\log d_m^\pm\ge(3/2+o(1))m\). Therefore both cleared errors tend to \(+\infty\). No smaller integer multiplier, including one exploiting all rational cancellation, can make either endpoint sequence prove irrationality by a positive-integer-below-one argument. The [all-size Wilson proof and exact obstruction](one-pole-schur-structure.md) distinguish this verified failure from a merely pessimistic denominator upper bound. Other pole families are not ruled out.
+
+## 20. Carry cancellation produces digit products and an algebraic series modulo p
+
+For positive integers \(a,b\), let
+\(B_n^{a,b}(T)=\sum_{k=0}^n\binom nk^a\binom{n+k}{k}^bT^k\).
+For every prime \(p\), \(n\ge0\), and \(0\le r<p\),
+
+\[
+B_{pn+r}^{a,b}(T)=B_n^{a,b}(T^p)B_r^{a,b}(T)
+\quad\text{in }\mathbb F_p[T].
+\]
+
+Lucas factorization separates the digits unless the low digits of \(n+k\) carry; in that case the second binomial vanishes modulo \(p\), on both sides of the identity. Consequently \(A_n\equiv\prod_iA_{n_i}\pmod p\), where \(n_i\) are the base-\(p\) digits. For example, a zeta-three Apéry number is a \(5\)-unit exactly when every base-five digit belongs to \(\{0,2,4\}\).
+
+With \(P_p(t)=\sum_{r=0}^{p-1}A_rt^r\), the generating series satisfies
+
+\[
+\mathcal A(t)=P_p(t)\mathcal A(t^p),\qquad
+P_p(t)\mathcal A(t)^{p-1}=1\quad\text{in }\mathbb F_p[[t]].
+\]
+
+Thus it becomes algebraic after reduction modulo \(p\). A sharper [independently proved identity](apery-digit-square-review.md), for \(p\ge5\), is
+
+\[
+P_p(t)=Q_p(t)^2\quad\text{or}\quad
+P_p(t)=(1-34t+t^2)Q_p(t)^2.
+\]
+
+Here \(Q_p(0)=1\), its roots are simple, and it is coprime to \(1-34t+t^2\). The proof reduces an exact characteristic-zero differential first integral and analyzes root multiplicities; deriving only a zero derivative in characteristic \(p\) would be insufficient. The rule deciding which case occurs is not proved in that review.
+
+[The digit-factorization proof](apery-digit-arithmetic.md) connects this to the Fuss–Catalan project: carries are removed by a quotient there, while carry terms vanish under summation here. These are complete finite-digit mechanisms, not claims of historical novelty or stronger prime-power congruences.

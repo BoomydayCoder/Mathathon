@@ -53,4 +53,16 @@ with our independent mathematical results above.
 | Bernoulli boundary-rule and general odd distribution dictionary | bernoulli-local-global-dictionary.md | bernoulli-dictionary-review.md | Does not imply determinant valuation bound |
 | All-real roots and exact inertia of zeta pencils | real-rooted-zeta-pencils.md | editorial proof review; deeper localizing review active | No denominator control or convergence rate |
 | Fixed odd-index arithmetic envelope obstruction | odd-inner-prime-shift.md | exact checks; proof review pending | Obstruction to sufficient estimate, not actual normalizers |
-| Fuss-Catalan forced carries and finite digit transducer | ../problem137/valuation.md |36120 exact cases; proof review pending | Official problem statement unverified |
+| Fuss-Catalan forced carries and finite digit transducer | problem137/valuation.md |36120 exact cases; proof review pending | Official problem statement unverified |
+
+## Seventh-stage proof status
+
+| Claim | Proof | Review | Limit |
+|---|---|---|---|
+| Full simplified computer-assisted zeta5 derivation | fauzan-simplified-proof-audit.md | end-to-end review and all certificates rerun | Retains Fauzan construction; not novelty or external consensus |
+| Exact rational-only energy upper bound -2771/2000 | rational-energy-certificate.md | rational-energy-review.md; independent primitive/rerun checks | Shares proved equilibrium formulas/endpoint box |
+| Direct derivation of17and5 from kernel closure | newton-bispectral-motivation.md | newton-symmetric-square-review.md | Identification/denominators remain separate proof steps |
+| Fully motivated modular/elliptic zeta3 route | apery-modular-elliptic.md | apery-modular-review.md | Standard modular-curve facts explicit |
+| Fixed-pole optimized rational bounds and actual denominator failure | one-pole-schur-structure.md | one-pole-independent-review.md | Does not rule out all fixed-denominator constructions |
+| General Lucas factorization and square/Delta-square digit polynomial | apery-digit-arithmetic.md | apery-digit-square-review.md | Character choice final review ongoing |
+| Prime-power arity group valuation and leading unit | problem137/prime-power-sylow-audit.md | problem137/prime-power-orbit-review.md | Uses multivariable Lagrange inversion; arbitraryarityoutside theorem |

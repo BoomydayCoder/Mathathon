@@ -1,0 +1,39 @@
+Pa FE
+
+we obtain for example
+
+Uy = 423, Um = -26 4721893121 ;
+
+and as a result
+
+-7 X23 X 11087 X 148303 .
+
+0
+
+Un
+
+We will later show that the prime divisors of 4U;y /7U;1 have the linear forms
+77q #1. Consequently the number 11087 is prime without the need to test
+these divisors since the first of the numbers of the indicated linear form is
+greater than the square root of 11087. For the factor 148303 only the divisor
+307 need be tested. We also have, in the same series
+
+Us = -1, Up = -384 17168 38057 ,
+and as a result
+Ust = -7X 712711 X 70041.
+
+The last two factors are prime. There were but two divisors to test. We thus
+
+understand how it is possible to apply the preceding theorem in the direct
+
+search for large prime numbers from the consideration of the series of the
+
+third kind,
+
+XXL ON THE CONGRUENCES OF PASCAL'S ARITHMETIC TRIANGLE AND
+ON A GENERALIZATION OF FERMAT'S THEOREM
+
+Denoting by (:) the number of combinations of m things taken n at
+a time we have the two findamental formulas
+
+60

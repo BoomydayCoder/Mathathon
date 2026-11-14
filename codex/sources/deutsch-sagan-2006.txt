@@ -1,0 +1,988 @@
+                                                 Congruences for Catalan and Motzkin numbers
+arXiv:math/0407326v1 [math.CO] 19 Jul 2004
+
+
+
+
+                                                            and related sequences
+                                                                              Emeric Deutsch
+                                                                          Department of Mathematics
+                                                                            Polytechnic University
+                                                                          Brooklyn, NY 11201, USA
+                                                                           deutsch@duke.poly.edu
+
+                                                                                      and
+                                                                              Bruce E. Sagan
+                                                                         Department of Mathematics
+                                                                          Michigan State University
+                                                                      East Lansing, MI 48824-1027, USA
+                                                                            sagan@math.msu.edu
+
+                                                                             October 25, 2018
+
+                                                                                   Abstract
+                                                      We prove various congruences for Catalan and Motzkin numbers as well
+                                                  as related sequences. The common thread is that all these sequences can be
+                                                  expressed in terms of binomial coefficients. Our techniques are combinatorial
+                                                  and algebraic: group actions, induction, and Lucas’ congruence for binomial
+                                                  coefficients come into play. A number of our results settle conjectures of
+                                                  Benoit Cloitre and Reinhard Zumkeller. The Thue-Morse sequence appears
+                                                  in several contexts.
+
+
+                                             1    Introduction
+                                             Let N denote the nonnegative integers. The divisibility of the Catalan numbers
+                                                                                  
+                                                                              1    2n
+                                                                     Cn =              ,     n ∈ N,
+                                                                            n+1 n
+                                             by primes and prime powers has been completely determined by Alter and Kub-
+                                             ota [4] using arithmetic techniques. In particular, the fact that Cn is odd precisely
+
+                                                                                       1
+when n = 2h − 1 for some h ∈ N has attracted the attention of several authors
+including Deutsch [9], Eğecioğlu [13], and Simion and Ullman [24] who found com-
+binatorial explanations of this result. In the next section we will derive the theorem
+which gives the largest power of 2 dividing any Catalan number by using group
+actions. In addition to its generality, this technique has the advantage that when
+n = 2h − 1 there is exactly one fixed point with all the other orbits having size
+divisible by 2. For other congruences which can be proven using the action of a
+group, see Sagan’s article [21].
+    By contrast, almost nothing is known about the residues of the Motzkin num-
+bers
+                                  Xn 
+                          Mn =               Ck ,    n ∈ N.
+                                         2k
+                                  k≥0
+
+In fact, the only two papers dealing with this matter of which we are aware are
+the recent articles of Luca [19] about prime factors of Mn and of Klazar and
+Luca [17] about the periodicity of Mn modulo a positive integer. In section 3
+we will characterize the parity of the Motzkin numbers as well as three related
+sequences. Surprisingly, the characterizations involve a sequence which encodes
+the lengths of the blocks in the Thue-Morse sequence. The block-length sequence
+was first studied by Allouche et. al. [2]. For more information about the Thue-
+Morse sequence in general, the reader is referred to the survey article of Allouche
+and Shallit [3].
+    Section 4 is devoted to congruences for the central binomial and trinomial
+coefficients. We are able to use these results to describe the Motzkin numbers and
+their relatives modulo 3. They also prove various conjectures of Benoit Cloitre [8]
+and Reinhard Zumkeller [25]. The Thue-Morse sequence appears again. Our main
+tool in this section is Lucas’ congruence for multinomial coefficients [20].
+    Our final section is a collection of miscellaneous results and conjectures about
+sequences related to binomial coefficients. These include the Apéry numbers, the
+central Delannoy and Eulerian numbers, Gould’s sequence, and the sequence enu-
+merating noncrossing graphs.
+
+
+2    Catalan numbers
+If n, m ∈ N with m ≥ 2 then the order of n modulo m is
+
+                      ωm (n) = largest power of m dividing n.
+
+If the base m expansion of n is
+
+                            n = n0 + n1 m + n2 m2 + · · ·                         (1)
+
+                                          2
+then let
+                              ∆m (n) = {i : ni = 1}
+and
+                                 δm (n) = |∆m (n)|
+where the absolute value signs denotes cardinality. We will also use a pound sign
+for this purpose. If a subscript m is not used then we are assuming m = 2 and in
+this case δ(n) is also the sum of the digits in the base 2 expansion of n.
+    We wish to prove the following theorem.
+Theorem 2.1 For n ∈ N we have
+
+                               ω(Cn ) = δ(n + 1) − 1.
+
+Note as an immediate corollary that Cn is odd if and only if n = 2h − 1 for some
+h ∈ N. It is easy to prove this theorem from Kummer’s result about the order of
+a binomial coefficient [18] (or see [10, pp. 270–271]). However, we wish to give a
+combinatorial proof.
+    We will use a standard interpretation of Cn using binary trees. A binary tree
+T is a tree with a root r where every vertex has a left child, or a right child, or
+both, or neither. Note that this differs from the convention where a vertex in a
+binary tree must have no children or both children. It will also be convenient to
+consider T = ∅ as a binary tree. With this convention, any nonempty tree can be
+written as T = (T ′ , T ′′) where T ′ and T ′′ are the subtrees generated by the left
+child and by the right child of r, respectively. (The subtree generated by a vertex
+v of T consists of v and all its descendants.) Let Tn be the set of all binary trees
+on n vertices. Then it is well-known that |Tn | = Cn for all n ∈ N.
+    The height of a vertex v is the length of the unique path from the root r to v.
+A complete binary tree Th has all 2i possible vertices at height i for 0 ≤ i ≤ h and
+no other vertices. Let Gh be the group of automorphisms of Th as a rooted tree.
+We will need some facts about Gh .
+Lemma 2.2 We have the following
+ (1) If h = 0 then G0 = {e} where e is the identity element, and if h ≥ 1 then
+
+                                     Gh = Z2 ≀ Gh−1
+
+      where Z2 is the cyclic group of order 2 and ≀ is wreath product.
+                h
+ (2) #Gh = 22 −1 .
+
+ (3) If Gh acts on a set and O is an orbit of the action then #O is a power of 2.
+
+                                         3
+Proof The proof of (1) follows by noting that Th = (Th−1 , Th−1 ) for h ≥ 1. Then
+(2) is an easy induction on h using (1). Finally, (3) is a consequence of (2) and
+the fact that for any group action the size of an orbit always divides the order of
+the group.
+    Now Gn acts on Tn in the obvious way. It is this action which will permit us
+to calculate ω(Cn ). Recall the double factorial
+
+                          (2d)!! = (2d − 1)(2d − 3) · · · 3 · 1.
+
+Lemma 2.3 For n ∈ N, let d = δ(n + 1) − 1. Then given any orbit O of Gn acting
+on Tn we have
+                               ω(#O) ≥ d
+with equality for exactly (2d)!! orbits.
+
+Proof We will induct on n with the result being trivial for n = 0. For n ≥ 1 let
+T = (T ′ , T ′′ ) ∈ Tn . We also let n′ and n′′ be the number of vertices of T ′ and T ′′
+respectively, as well as setting d′ = δ(n′ + 1) − 1 and d′′ = δ(n′′ + 1) − 1. Clearly
+n + 1 = (n′ + 1) + (n′′ + 1). It follows that
+
+                                    d ≤ d′ + d′′ + 1                                 (2)
+
+with equality if and only if we have a disjoint union ∆(n+1) = ∆(n′ +1)⊎∆(n′′ +1).
+   Let O(T ) denote the orbit of T . Then
+
+                                  |O(T ′)|2           if T ′ ∼
+                                                             = T ′′ ,
+                                (
+                     |O(T )| =                                                 (3)
+                                  2|O(T ′)||O(T ′′ )| otherwise.
+
+Also we have, by induction, ω(#O(T ′)) ≥ d′ and ω(#O(T ′′ )) ≥ d′′ .
+   First consider the case when T ′ ∼
+                                    = T ′′ . Then n′ = n′′ and so equation (2) gives
+d < 2d′ + 1. Now from (3) we obtain
+
+                        ω(#O(T )) = 2ω(#O(T ′)) ≥ 2d′ ≥ d
+
+as desired for the first half of the lemma. If we actually have ω(#O(T )) = d then
+this forces 2d′ = d. But since n′ = n′′ we also have n + 1 = 2(n′ + 1) and so d = d′ .
+This can only happen if d = d′ = 0 and consequently n = 2h − 1 for some h. But
+by the third part of the previous lemma, Th is the unique tree with 2h − 1 vertices
+and ω(#O(T )) = 0. Since in this case (2d)!! = 0!! = 1, we have proven the present
+lemma when T ′ ∼ = T ′′ .
+
+
+                                            4
+   Now consider what happens when T ′ ∼
+                                      6= T ′′ . Using equations (2) and (3) as
+before gives
+
+          ω(#O(T )) = ω(#O(T ′ )) + ω(#O(T ′ )) + 1 ≥ d′ + d′′ + 1 ≥ d
+
+and again the first half of the lemma follows. When ω(#O(T )) = d then we must
+have ω(#O(T ′ )) = d′ , ω(#O(T ′′ )) = d′′ , and ∆(n + 1) = ∆(n′ + 1) ⊎ ∆(n′′ + 1).
+Using (3) to count orbits and induction it follows that we will be done if we can
+show
+                                 d         
+                              1X d+1
+                    (2d)!! =                  (2k − 2)!!(2d − 2k)!!             (4)
+                              2 k=1   k
+for d ≥ 1. Rewriting this equation in hypergeometric series form we obtain the
+equivalent identity                           
+                                −d − 1, −1/2
+                         2 F1                ;1 = 0
+                                   1/2 − d
+which is true by Vandermonde’s convolution.
+   We can now prove Theorem 2.1. Since the orbits of a group action partition
+the set acted on, we can use Lemma 2.2 (3) and Lemma 2.3 to write
+
+                           Cn = #Tn = (2d)!!2d + k2d+1
+
+for some k ∈ N. Since (2d)!! is odd we can conclude ω(Cn ) = d = δ(n + 1) − 1 as
+desired.
+    The reader may not be happy with the last step in the proof of Lemma 2.3
+since its appeal to the theory of hypergeometric series is not combinatorial. So we
+wish to give a bijective proof of equation (4). For this, we will interpret the double
+factorial in terms of binary total partitions, an object introduced and enumerated
+by Schröder [22]. Given a set S then a binary total partition of S is an unordered
+rooted tree B satisfying the following restrictions.
+
+  1. Every vertex of B has 0 or 2 children.
+
+  2. Every vertex of B is labeled with a subset of S in such a way that
+
+       (a) the root is labeled with S and the leaves with the 1-element subsets of
+           S,
+      (b) if a vertex is labeled with A and its children with A′ , A′′ then A =
+          A′ ⊎ A′′ .
+
+
+
+                                          5
+                                                  1234
+                                                    ✉
+                                                    ❅
+                                                      ❅
+                                                       ❅
+                                      134 ✉             ❅✉
+                                           ❅          2
+                                             ❅
+                                              ❅
+                                  ✉            ❅✉14
+                                 3              ❅
+                                                  ❅
+                                                    ❅
+                                           ✉         ❅✉
+                                          1                 4
+
+                          Figure 1: A total binary partition
+
+
+    For example, if S = {1, 2, 3, 4} then one possible total binary partition is dis-
+played in Figure 1. Let bd be the number of total binary partitions on set S with
+|S| = d. Then
+                                    bd+1 = (2d)!!
+For proofs of this fact, including a combinatorial one, see the text of Stanley [26,
+Example 5.2.6].
+    It is now easy to prove (4) combinatorially. The left side counts total binary
+partitions B of a set S with |S| = d + 1. For the right side, note that each such
+B can be formed uniquely by writing S = S ′ ⊎ S ′′ , letting S ′ and S ′′ label the
+children of the root, and then forming total binary        partitions on S ′ and S ′′ to
+create the rest of B. If #S ′ = k then there are d+1     choices for S ′ (after which, S ′′
+                                                      
+                                                  k
+is uniquely determined). The factors (2k − 2)!! and (2d − 2k)!! count the number
+of ways to put total binary partitions on S ′ and S ′′ , respectively. Finally, we must
+sum over all possible k and divide by 2 since the tree is unordered. This completes
+the combinatorial proof of (4).
+
+
+3     Motzkin numbers and related sequences
+To find the parity of Mn we must first introduce a related sequence. Define c =
+(c0 , c1 , c2 , . . .) = (1, 3, 4, 5, 7, . . .) inductively by c0 = 1 and for n ≥ 0
+                                             
+                                                 cn + 1 if (cn + 1)/2 6∈ c,
+                                 cn+1 =                                             (5)
+                                                 cn + 2 otherwise.
+Equivalently, c is the lexicographically least sequence of positive integers such that
+                             m ∈ c if and only if m/2 6∈ c.                            (6)
+
+                                              6
+It follows that c contains all the positive odd integers m since in this case m/2 is
+not integral.
+     The sequence c is intimately connected with the Thue-Morse sequence t =
+(t0 , t1 , t2 , . . .) = (0, 1, 1, 0, 1, 0, 0, 1, . . .) which is the 0-1 sequence defined induc-
+tively by t0 = 0 and for n ≥ 1
+                                           
+                                               tn/2           if n even,
+                                    tn =
+                                               1 − t(n−1)/2 if n odd.
+
+A block of a sequence is a maximal subsequence of consecutive, equal elements.
+One can show [2] that cn − cn−1 is the length of the nth block of t (where we start
+with the 0th block and set c−1 = 0).
+   Given a sequence s = (s0 , s1 , s2 , . . .) and integers k, l we let
+
+                          ks + l = (ks0 + l, ks1 + l, ks2 + l, . . .).                       (7)
+
+To simplify our notation, we will also write k ≡ l (mod m) as k ≡m l with the usual
+convention that if the modulus is omitted then m = 2. We can now characterize
+the parity of Mn .
+Theorem 3.1 The Motzkin number Mn is even if and only if either n ∈ 4c − 2
+or n ∈ 4c − 1.
+Proof To prove this result we will need a combinatorial interpretation of Mn . A
+0-1-2 tree is an ordered tree where each vertex has at most two children (but a
+single child is not distinguished by being either left or right). It is known that Mn
+is the number of 0-1-2 trees with n edges. See the articles of Donaghey [11] and
+Donaghey and Shapiro [12] for details. The four 0-1-2 trees with three edges are
+shown in Figure 2
+    Now let Sn be the number of symmetric 0-1-2 trees which are those with n
+edges for which reflection in a vertical line containing the root is an automorphism
+of the tree. Only the first two trees in Figure 2 are symmetric. Clearly
+
+                                           Mn ≡ Sn                                           (8)
+
+for all n ∈ N. Furthermore,
+                                         S2n+1 = S2n                                         (9)
+since if a symmetric 0-1-2 tree has 2n + 1 edges then the root must have a single
+child and the subtree generated by that child must be a symmetric 0-1-2 tree with
+2n edges. So to prove the theorem, it suffices to show that
+
+                          S2n is even if and only if 2n ∈ 4c − 2.
+
+                                               7
+         ✉                    ✉                      ✉                     ✉
+                                                     ❅                     ❅
+                                                       ❅                     ❅
+                                                        ❅                     ❅
+         ✉                    ✉                ✉         ❅✉        ✉           ❅✉
+                              ❅
+                                ❅
+                                 ❅
+         ✉          ✉             ❅✉           ✉                                   ✉
+
+
+         ✉
+
+                    Figure 2: The 0-1-2 trees with three edges
+
+
+This can be restated that S2n−2 is even iff 2n ∈ 4c which is equivalent to n ∈ 2c.
+So, by (6), it suffices to prove
+
+                          S2n−2 is even if and only if n 6∈ c.                  (10)
+
+    To prove (10), we will need a recursion involving S2n−2 . Let T be a symmetric
+0-1-2 tree with 2n − 2 edges. If the root of T has one child then the subtree
+generated by that child is a symmetric 0-1-2 tree with 2n − 3 edges. If the root
+has two children then the subtree generated by one child can be any 0-1-2 tree
+with n − 2 edges as long as the subtree generated by the other is its reflection. So
+using (8) and (9)
+
+                        S2n−2 = S2n−3 + Mn−2 ≡ S2n−4 + Sn−2 .                   (11)
+
+    We now prove (10) by induction, where the case n = 1 is trivial. Suppose
+first that n 6∈ c. Then by (5) we have n − 1 ∈ c and by induction it follows
+that S2n−4 = S2(n−1)−2 is odd. Also, since n 6∈ c we must have that n is even.
+Furthermore, by (6) we have n/2 ∈ c. By induction again, Sn−2 = S2(n/2)−2 is odd.
+So S2n−4 + Sn−2 is even and we are done with this direction.
+    When n ∈ c, one can use similar reasoning to show that S2n−4 + Sn−2 is odd.
+One needs to consider the cases when n is even and odd separately (and the latter
+case breaks into two subcases depending on whether n − 1 is in c or not). But
+there are no really new ideas to the demonstration, so we omit the details.
+    We should note that Theorem 3.1 can also be derived from the results in [17],
+although it is not explicitly stated there. This theorem also permits us to determine
+the parity of various related sequences which we will now proceed to do.
+    A Motzkin path of length n is a lattice path in the lattice N × N with steps
+(1, 1), (1, −1), and (1, 0) starting at (0, 0) and ending at (n, 0). It is well known
+
+                                           8
+that Mn is the number of Motzkin paths of length n. (Note that we do not need
+any condition about staying above the x-axis since we are working in N × N.)
+Define a Motzkin prefix of length n to be a lattice path which forms the first n
+steps of a Motzkin path of length m ≥ n. Equivalently, a Motzkin prefix is exactly
+like a Motzkin path except that the endpoint is not specified. Let Pn , n ≥ 0, be
+the number of Motzkin prefixes of length n. This is sequence A005773 in Sloane’s
+Encyclopedia [25]. The Pn also count directed rooted animals with n + 1 vertices
+as proved by Gouyou-Beauchamps and Viennot [15].
+
+Corollary 3.2 The number Pn is even if and only if n ∈ 2c − 1.
+
+Proof Let sn be the number of Motzkin paths of length n which are symmetric
+with respect to reflection in the vertical line x = n/2. Clearly Mn ≡ sn for
+all n ≥ 0. There is also a bijection between Motzkin prefixes of length n and
+symmetric Motzkin paths of length 2n gotten by concatenating the prefix with
+its reflection in the line x = n. So Pn = s2n . Combining this with the previous
+congruence and Theorem 3.1 completes the proof.
+    Next we consider the Riordan numbers [25, A005043] γn which count the num-
+ber of ordered trees with n edges where every nonleaf has at least two children.
+These are called short bushes by Bernhart [7]. If we relax the degree restriction so
+that the root can have any number of children then the resulting trees are called
+bushes. It is known [11, 12] that Mn is the number of bushes with n + 1 edges. It
+follows that
+                                  Mn = γn+1 + γn                                (12)
+since every bush with n + 1 edges is either a short bush or has a root with one
+child which generates a short bush with n edges.
+
+Corollary 3.3 The number γn is even if and only if n ∈ 2c − 1.
+
+Proof Given the previous corollary, it suffices to show that γn and Pn have the
+same parity. So it suffices to show that the two sequences satisfy the same recursion
+and boundary condition modulo 2. Now γ0 = 1 = P0 and we have just seen that
+
+                                 γn+1 ≡ γn + Mn .
+
+    So consider the prefixes p counted by Pn+1 . If p goes through (n, 0) then there
+are two possible last steps for p and so such paths need not be considered modulo
+2. If p goes through (n, m) where m > 0 then those p ending with a (1, 1) step
+can be paired with those ending with a (1, −1) step and ignored. So we are left
+with prefixes going through (n, m) and (n + 1, m) where m > 0. Such prefixes are
+
+                                         9
+equinumerous with those ending at (n, m). And since m > 0, this is precisely the
+set of Motzkin prefixes which are not Motzkin paths. So
+
+                            Pn+1 ≡ Pn − Mn ≡ Pn + Mn
+
+as desired.
+    Finally, consider the sequence counting restricted hexagonal polyominos [25,
+A002212]. The reader can find the precise definition of these objects in the paper
+of Harary and Read [16]. We will use an equivalent definition in terms of trees
+which can be obtained from the polyomino version by connecting the centers of
+adjacent hexagons. A ternary tree is a rooted tree where every vertex has some
+subset of three possible children: a left child, a middle child, or a right child. Just
+as with our definition of binary trees, this differs from the all or none convention
+for ternary trees. A hex tree is a ternary tree where no node can have two adjacent
+children. (A middle child would be adjacent to either a left or a right child but left
+and right children are not adjacent.) Let Hn , n ≥ 0, be the number of hex trees
+having n edges.
+
+Corollary 3.4 The number Hn is even if and only if n ∈ 4c − 2 or n ∈ 4c − 1.
+
+Proof In view of Theorem 3.1, it suffices to show that Hn and Mn have the same
+parity. Call a hex tree symmetric if the reflection in a line containing the root
+leaves it invariant, and let hn be the number of such trees with n edges. There is
+an obvious bijection between symmetric hex trees and symmetric 0-1-2 trees. So
+
+                                Hn ≡ hn = Sn ≡ Mn
+
+as desired.
+
+
+4     Central binomial and trinomial coefficients
+Our main tool in this section will be the following famous congruence of Lucas. If
+the base p expansion of n is
+
+                             n = n0 + n1 p + n2 p2 + · · ·
+
+then it will be convenient to denote the sequence of digits by
+
+                           (n)p = (n0 , n1 , n2 , . . .) = (ni ).
+
+
+                                            10
+Theorem 4.1 (Lucas [20]) Let p be a prime and let (n)p = (ni ) and (k)p = (ki ).
+Then                     
+                         n       Y ni 
+                             ≡p           .                               (13)
+                         k        i
+                                       ki
+
+   The following corollary will be useful as well. It is also a special case of the
+theorem of Kummer cited in the discussion following the statement of Theorem 2.1.
+But this result will be sufficient for our purposes.
+
+Corollary 4.2 Let p be prime. If there is a carry when adding k to n − k in base
+p then                             
+                                    n
+                                        ≡p 0.
+                                    k
+Proof Using the notation of the previous
+                                        theorem, if there is a carry out of the
+                                    ni
+ith place then we have ni < ki . So ki = 0 and thus the product side of (13) is
+zero.
+    Most of our results in this section will have to do with congruences modulo 3
+so it will be useful to have the following notation. Given i, j distinct integers in
+{0, 1, 2} we let
+
+           T (ij) = {n ∈ N : (n)3 contains only digits equal to i or j}.
+
+    We begin with the central binomial coefficients. Recall that δ3 (n) is the number
+of ones in the base three expansion of n. The next result settles conjectures of
+Benoit Cloitre and Reinhard Zumkeller [25, A074938–40].
+
+Theorem 4.3 The central binomial coefficients satisfy
+
+                              (−1)δ3 (n) if n ∈ T (01),
+                          
+                   2n
+                         ≡3
+                    n         0           otherwise.
+
+Proof If n has a 2 in its ternary expansion then there is a carry when adding (n)3
+to itself. So the second half of the theorem follows from the previous corollary. On
+the other hand, if n ∈ T (01) then 2n ∈ T (02) and (2n)3 has twos exactly where
+(n)3 has ones. So by Lucas’ Theorem
+                                    δ3 (n)
+                              2n      2
+                                  ≡3           ≡3 (−1)δ3 (n)
+                              n       1
+
+giving the first half.
+
+
+                                          11
+    It is easy to generalize the previous theorem to arbitrary prime modulus. To
+state the result, we need to define
+                   δp,j (n) = number of elements of (n)p equal to j                      (14)
+where 0 ≤ j < p. Since the proof of the general case is the same as the one just
+given, we omit it.
+Theorem 4.4 Let p be prime and let S be the set of all n ∈ N such that all
+elements of (n)p are less than or equal to p/2. Then
+                               Y 2j δp,j (n)
+                             
+                                                if n ∈ S,
+                           
+                             
+                   2n        
+                                     j
+                         ≡p     j
+                    n        
+                             
+                               0                otherwise.
+                             
+
+    It turns out that there is a connection between the central binomial coefficients
+modulo 3 and the Thue-Morse sequence t. This may seem surprising because t
+is essentially a modulo
+                       2 object. However, Theorem 4.3 will allow us to reduce
+                   2n
+questions about n mod 3 to questions about bit strings. We will need another
+one of the many definitions of t for the proof, namely
+                                       tn = ρ(δ(n))                                      (15)
+where ρ(k) is the remainder of k on division by 2. We will also need the notation
+that a ≡m b as sequences if and only if an ≡m bn for all n ∈ N. The next result is
+again a conjecture of Cloitre [25, A074939].
+Theorem 4.5 We have
+                                          
+                                      2n
+                                 n :     ≡3 1 ≡3 t.
+                                      n
+Proof Let us call the sequence on the left of the previous congruence a. Then
+from Theorem 4.3 we have that n ∈ a exactly when n ∈ T (01) and (n)3 has an
+even number of ones. From this it follows by an easy induction that n = ai if
+and only if (n)3 = (n0 , n1 , n2 , . . .) where (i)2 = (n1 , n2 , . . .) and n0 is zero or one
+depending on whether δ(i) is even or odd, respectively. So by (15) we have
+                               ai = n ≡3 n0 = ρ(δ(i)) = ti
+for all i ≥ 0.
+    There is an analogous conjecture of Cloitre for those central binomial coeffi-
+cients with residue −1 modulo 3 [25, A074938]. Since the proof is much the same
+as the previous one, we omit it.
+
+                                             12
+Theorem 4.6 We have
+                             
+                        2n
+                   n :     ≡3 −1 ≡3 1 − t.
+                        n
+
+    We next consider the central trinomial coefficients [25, A002426]. Let Tn be
+the largest coefficient in the expansion of (1 + x + x2 )n . It is easy [6] to express Tn
+in terms of trinomial coefficients
+                                    X          n
+                                                       
+                               Tn =                                                  (16)
+                                         k, k, n − 2k
+                                    k≥0
+
+where we use the convention that if any multinomial coefficient has a negative
+number on the bottom then the coefficient is zero. Lucas’ Theorem and its corollary
+generalize in the expected way to multinomial coefficients. So now we can find the
+residue of Tn modulo 3.
+Theorem 4.7 The central trinomial coefficients satisfy
+                              
+                                 1 if n ∈ T (01),
+                        Tn ≡3
+                                 0 otherwise.
+Proof Modulo 3 we can restrict the sum in (16) to those k such that there is no
+carry in doing the triple addition k + k + (n − 2k) in base 3. So, in particular, we
+can restrict to k ∈ T (01) since if (k)3 = (ki ) contains a 2 then we will have such a
+carry. Furthermore, if ki = 1 for some i then k + k has a two in the ith place, and
+to have no carry this forces ni = 2.
+    Now let (n − 2k)3 = (li ) and let S be the set of indices i such that ni = 2. So
+we have shown that ∆3 (k) ⊆ S. Furthermore, for every i 6∈ ∆3 (k) we must have
+li = ni since k ∈ T (01). So the nonzero terms in the sum correspond to subsets
+R ⊆ S and each such subset contributes
+                                          |R|
+                                      2
+                                                 = 2|R| .
+                                   1, 1, 0
+Hence, by the binomial theorem, the total contribution is
+                                         
+                       X
+                            |R|   |S|       1 if S = ∅,
+                           2 = 3 ≡3
+                                            0 if S 6= ∅.
+                          R⊆S
+
+But S = ∅ precisely when n ∈ T (01), so we are done.
+   Since the Tn are related to a number of the other sequences which we have
+been studying, we can use the previous result to determine their behavior modulo
+3. We will apply linear operations to sets the same way we do to sequences (7).
+
+                                           13
+Corollary 4.8 The Motzkin numbers satisfy
+                    
+                     −1 if n ∈ 3T (01) − 1,
+              Mn ≡3     1 if n ∈ 3T (01) or n ∈ 3T (01) − 2,
+                        0 otherwise.
+                    
+
+Proof Barcucci, Pinzani, and Sprugnoli [6] have shown that
+
+                        2Mn = 3Tn + 2Tn+1 − Tn+2 .                          (17)
+
+Reducing this equation modulo 3 and applying the previous theorem finishes the
+proof.
+
+Corollary 4.9 The Motzkin prefix numbers satisfy
+                    
+                     1 if n ∈ 3T (01),
+              Pn ≡3   −1 if n ∈ 3T (01) + 1 or 3T (01) − 1,
+                        0 otherwise.
+                    
+
+Proof If p is a Motzkin prefix of length n going through (n−1, m) for some m > 0
+then there are three ways to end the prefix and so they cancel out modulo 3. If p
+goes through (n−1, 0) then the first n−1 steps of p form a Motzkin path and there
+are two possible last steps. So Pn ≡3 2Mn−1 . Now apply the previous corollary to
+finish.
+
+Corollary 4.10 The Riordan numbers satisfy
+                            
+                              1 if n ∈ T (01) − 1,
+                      γn ≡3
+                              0 otherwise.
+
+Proof Using the recursions (12) and (17) it is easy to prove inductively that
+γn ≡3 Tn+1 . Theorem 4.7 now completes the proof.
+
+
+5    Miscellaneous results and conjectures
+We end with various results and conjectures related to what we have done in the
+previous sections.
+
+
+
+
+                                       14
+5.1    Catalan numbers to other moduli
+Theorem 2.1 implies that the kth block of zeros in the sequence of Catalan numbers
+modulo 2 has length 2k − 1 (where we start numbering with the first block). Alter
+and Kubota [4] have generalized this result to arbitrary primes and prime powers.
+One of their main theorems is as follows.
+Theorem 5.1 (Alter and Kubota) Let p ≥ 3 be a prime and let q = (p + 1)/2.
+The length of the kth block of zeros of the Catalan sequence modulo p is
+
+                                 pωq (k)+δ3,p +1 − 3 /2
+                                                    
+
+where δ3,p is the Kronecker delta.
+
+   We can improve on this theorem in several regards. First of all, when p = 3
+we can use our results to give a complete characterization of the residue of Cn and
+not just say when it is zero. Suppose (n)3 = (ni ). Then we let
+
+                     T ∗ (01) = {n : ni = 0 or 1 for all i ≥ 1}
+
+and
+                        δ3∗ (n) = number of ni = 1 for i ≥ 1.
+Theorem 5.2 The Catalan numbers satisfy
+
+                         (−1)δ3 (n+1) if n ∈ T ∗ (01) − 1,
+                             ∗
+
+                Cn ≡3
+                         0            otherwise.
+
+Proof The result is easy to verify for n ≤ 1 so we assume n ≥ 2. Directly from
+our definition of Cn we have
+                                        4n − 2
+                                 Cn =          Cn−1
+                                         n+1
+If n ≡3 0 or 1 then n + 1 is invertible modulo 3 and in fact (4n − 2)/(n + 1) ≡3 1.
+So for k ≥ 1 we have C3k−1 ≡3 C3k ≡3 C3k+1 . Thus it suffices to prove the theorem
+for n ≡3 0. Notice that in this case Cn ≡3 2nn
+                                                . Furthermore n + 1 ∈ T ∗ (01) if and
+only if n ∈ T (01). And lastly δ3∗ (n + 1) = δ3 (n). Applying Theorem 2.1 finishes
+the proof.
+    We should verify that we can derive the p = 3 block lengths in Theorem 5.1
+from Theorem 5.2. First from the latter result it follows that the kth block must
+start at an integer 3a − 1 and end at 3b − 1 for a, b ∈ N. To simplify notation, let
+ω = ω2 (k). Now (a)3 must contain a 2 and (a − 1)3 does not. It follows that (a)3 =
+
+                                         15
+(a0 , a1 , a2 , . . .) where a0 = 2 and (a1 , a2 , . . .) = (k − 1)2 . Furthermore, since b + 1 is
+the smallest integer larger than a whose expansion contains no twos, the first ω + 1
+elements of (b)3 must all equal 2 and the rest must agree with the corresponding
+entries of (a)3 . By the same token, we must have a1 = a2 = . . . = aω = 1. Now one
+calculates the number of integers in the kth block by considering the first ω + 1
+digits of a and b to get a count of
+
+    3(a − b + 1) = 3[(3ω+1 − 1) − (3ω + 3ω−1 + · · · + 3 + 2) + 1] = (3ω+2 − 3)/2
+
+as desired. Note that not only have we been able to determine the length and start-
+ing and ending points of the block (which was also done by Alter and Kubota) but
+our demonstration is combinatorial as opposed to the original proof of Theorem 5.1
+which is arithmetic. We had to use Lucas’ Theorem to get to this result, but that
+theorem also has a combinatorial demonstration using group actions [21].
+    When p ≥ 5, the residues of Cn become more complicated, but one could use
+the same techniques in principle to compute them. In particular, if one is only
+interested in divisibility then one can derive Theorem 5.1 from Theorem 4.4 as we
+did for the p = 3 case above.
+    It is also interesting another setting where a congruence involving the Cata-
+lan numbers has arisen. Albert, Atkinson, and Klazar [1] have studied simple
+permutations which are those permutations of {1, 2, . . . , n} mapping no nontrivial
+subinterval of this set onto an interval. Then the number of such simple permuta-
+tions is 2(−1)n+1 − Comn where Com                               n
+                                      Pn is the ncoefficient of x in the compositional
+inverse of the formal power series n≥1 n!x [25, A059372]. One of the results
+in [1] is that
+                                   Comn ≡3 Cn−1 .
+Their proof of this result uses generating functions, so it would be interesting to
+find a combinatorial one. Also, one would like to know the behavior of Comn
+modulo other odd primes. (Albert et. al. have results for powers of two.)
+    The careful reader will note that we have not yet derived the residues of the
+hex tree numbers Hn modulo three. It is time to fill that lacuna.
+Theorem 5.3 The hex tree numbers satisfy
+
+                 (−1)δ3 (m+1) if n = 2m where m ∈ T ∗ (01) − 1,
+                      ∗
+
+         Hn ≡3
+                 0            otherwise.
+
+Proof Suppose T is a hex tree which has a vertex with a single child. Finding the
+first such vertex, say in depth-first order, one can associate with T the two other
+hex trees which differ from T only by moving the child into the two other possible
+positions. So modulo 3, Hn is congruent to the number of hex tree with n edges
+
+                                               16
+where every vertex has 0 or 2 children. So to be nonzero modulo 3, we must have
+n = 2m and the resulting trees are in bijection with binary trees on m vertices
+(merely remove the m leaves of the hex tree). Thus Hn ≡3 Cm and we are now
+done by Theorem 5.2.
+
+
+5.2    Motzkin numbers to other moduli
+For the Motzkin numbers, nothing has been proved for moduli other than 2 and
+3. However, there are some conjectures. To put them in the context of Theo-
+rem 3.1, note that the Thue-Morse block sequence c can also be described [2] as
+the increasing sequence of all numbers of the form
+                             (2i + 1)4j where i, j ∈ N.
+The following conjecture is due in part to Tewodros Amdeberhan [5].
+Conjecture 5.4 (Amdeberhan) We have Mn ≡4 0 if and only if
+           n = (4i + 1)4j+1 − 1 or n = (4i + 3)4j+1 − 2 where i, j ∈ N.
+Furthermore we never have Mn ≡8 0.
+Amdeberhan also has a conjecture about some of the values of n for which Mn is
+zero modulo 5, although it is complicated.
+
+5.3    Gould’s sequence
+Gould’s sequence [25, A001316] consists of the numbers Gn which count the number
+of odd entries in the nth row of Pascal’s triangle. More generally, we can calculate
+Gn (p) which is the number of entries in the nth row of Pascal’s triangle which are
+not zero modulo the prime p. Recall the definition of δp,j (n) in (14).
+Theorem 5.5 Let p be prime. Then
+                                        Y
+                            Gn (p) =        (j + 1)δp,j (n) .
+                                       1≤j<p
+
+Furthermore, every entry of the nth row of Pascal’s triangle is nonzero modulo p
+if and only if
+                                  n = qpk − 1
+where 1 ≤ q < p and k ∈ N. In particular
+                                    Gn = 2δ(n)
+and every entry of the nth row of Pascal’s triangle is odd if and only if n = 2k − 1
+where k ∈ N.
+
+                                          17
+Proof Suppose nk 6≡p 0 where (n)p = (ni ) and (k)p = (ki ). If ni = j then we
+                     
+
+will not have a carry in the ith place if and only if 0 ≤ ki ≤ j. So there are j + 1
+choices for ki and taking the product of the number of choices for each i gives the
+first statement of the theorem.
+    Now suppose that every entry of the nth row is nonzero modulo p. Since there
+are no carries for all k, all the elements of (n)p must equal p − 1 except for possibly
+the last (leading) one nl . Since there can never be a carry out of n’s last place, we
+have the desired characterization of those n under consideration.
+
+
+5.4    Sums of central binomial coefficients
+The partial sums of central binomial coefficients [25, A006134] also have nice con-
+gruence properties. The proof of the next result is easily obtained by using The-
+orem 4.3 and induction on n, so we omit it. In conjunction with Theorem 4.5, it
+settles a conjecture of Cloitre [25, A083096].
+Theorem 5.6 We have
+              X 2k                    (−1)δ3 (n) if n ∈ 3T (01),
+                                    
+                               ≡3
+                          k             0          otherwise.
+                    k≥0
+
+
+5.5    Apéry numbers and central Delannoy numbers
+We can generalize our results about the central trinomial numbers as follows. Given
+positive integers r, s we define a sequence with the following entries
+                                       X nr n + k s
+                           an (r, s) =                    .
+                                           k        k
+                                         k≥0
+
+Note that since r, s are positive, each term in this sum will have a factor of
+                                                    
+                           n n+k                n+k
+                                         =                 .
+                           k       k         k, k, n − k
+Using this fact we can prove the following result. Since the demonstration is similar
+to that of Theorem 4.7, it is omitted. Again, this settles a conjecture of Cloitre [8].
+Theorem 5.7 Let r, s be positive integers. Then
+                        
+                         (−1)δ3 (n) if s is even,
+           an (r, s) ≡3        1      if s is odd and n ∈ T (02),
+                               0      otherwise.
+                        
+
+
+                                               18
+    The central Delannoy numbers [25, A001850] are Dn = an (1, 1). Also, the
+Apéry numbers [25, A005258] are An = an (2, 1). So we immediately have the
+following corollary.
+Theorem 5.8 The central Delannoy numbers and Apéry numbers satisfy
+                               
+                                  1 if n ∈ T (02),
+                  Dn ≡3 An ≡3
+                                  0 otherwise.
+
+5.6    Central Eulerian numbers
+The Eulerian numbers [25, A008292] are denoted A(n, k) and count the number of
+permutations in the symmetric group Sn which have k − 1 descents. They can be
+written as
+                                 k                    
+                                                 n n+1
+                                X
+                                        i
+                      A(n, k) =     (−1) (k − i)         .
+                                i=0
+                                                    i
+Since the odd numbered rows have an odd number of elements, we define the
+central Eulerian numbers to be
+                                      n                    
+                                                      2n−1 2n
+                                     X
+                                             i
+                 En = A(2n − 1, n) =     (−1) (n − i)         .
+                                     i=0
+                                                            i
+We have the following congruence for these numbers.
+Theorem 5.9 The central Eulerian numbers satisfy
+                            
+                               1 if n ∈ T (01) + 1,
+                     En ≡3
+                               0 otherwise.
+Proof Note that k 2n−1 = k for k = 0, ±1. So we have
+                                 n                
+                                X
+                                        i         2n
+                         En ≡3      (−1) (n − i)     .
+                                i=0
+                                                   i
+Applying the binomial recursion to this sum twice yields, after massive cancella-
+tion,
+                                       n−1 2n − 2
+                                                  
+                            En ≡3 (−1)              .
+                                             n−1
+Now Theorem 4.3 will finish the proof provided n + δ3 (n) is always even. But this
+is easy to show by induction on n, so we are done.
+    Rows in the Eulerian triangle are symmetric, so even numbered rows have
+two equal elements in the middle. We will call these elements bicentral. Cloitre
+conjectured the residues of these elements modulo 3. Since the proof of this result
+is similar to the one just given, we will omit it.
+
+                                        19
+Theorem 5.10 The bicentral Eulerian numbers satisfy
+                        
+                         1 if n ∈ 3T (01) + 1,
+            A(2n, n) ≡3    −1 if n ∈ 3T (01) or 3T (01) + 2,
+                            0 otherwise.
+                        
+
+
+5.7    Noncrossing connected graphs
+Noncrossing set partitions are an important object of study in combinatorics. An
+excellent survey of the area can be found in the article of Simion [23]. Noncrossing
+graphs are a generalization of noncrossing partitions which have been studied by
+Flajolet and Noy [14]. Consider vertices labeled 1, . . . , n and arranged clockwise in
+this order around a circle. A graph on this vertex set is noncrossing if, when the
+edges are drawn with straight line segments between the vertices, none of the edges
+cross. Let Nn be the number on noncrossing connected graphs on n vertices [25,
+A007287]. Then it can be shown that
+                                       
+                                          3n − 3
+                                                             
+                               1 X                          k
+                       Nn =                                      .
+                             n − 1 k≥0 n + k + 1 n − 2
+
+We have the following conjecture about the residue of Nn modulo 3.
+
+Conjecture 5.11 The number of noncrossing connected graphs satisfies
+                 
+                  1 if n = 3i or n = 2 · 3i for some i ∈ N,
+           Nn ≡3    −1 if n = 3i + 3j for two distinct i, j ∈ N,
+                     0 otherwise.
+                 
+
+    In the first two cases, it is not hard to show that the congruence holds using
+Lucas’ Theorem because of the very specific form of (n)3 . However, we have been
+unable to prove that for all remaining n one always has Nn divisible by 3. It
+would be even more interesting to give a combinatorial proof of this result based
+on symmetries of the graphs involved.
+    Acknowledgements We would like to thank Neil Sloane for maintaining the
+On-Line Encyclopedia of Integer Sequences. It has been invaluable to us in helping
+to form conjectures about various sequences.
+
+
+References
+ [1] M. Albert, M. Atkinson, and M. Klazar, The enumeration of simple permu-
+     tations, J. Integer Sequences 6 (2003), Article 03.4.4, 18 pp.
+
+                                          20
+ [2] J.-P. Allouche, A. Arnold, J. Berstel, S. Brlek, W. Jockusch, S. Plouffe, and B.
+     E. Sagan, A relative of the Thue-Morse sequence, Discrete Math. 139 (1995),
+     455–461.
+ [3] J.-P. Allouche and J. Shallit, The ubiquitous Prouhet-Thue-Morse sequence,
+     in “Sequences and their applications, Proceedings of SETA’98,” C. Ding, T.
+     Helleseth, and H. Niederreiter eds., Springer-Verlag, 1999, 1–16.
+ [4] R. Alter and K. Kubota, Prime and prime power divisibility of Catalan num-
+     bers, J. Combin. Theory Ser. A 15 (1973), 243–256.
+ [5] T. Amdeberhan, personal communication.
+ [6] E. Barcucci, R. Pinzani, R. Sprugnoli, The Motzkin family, Pure Math. Appl.
+     Ser. A 2 No. 3–4 (1991), 249–279.
+ [7] F. Bernhart, Catalan, Motzkin, and Riordan numbers, Discrete Math. 204
+     (1999), 73–112.
+ [8] B. Cloitre, personal communication.
+ [9] E. Deutsch, An involution on Dyck paths and its consequences, Discrete Math.
+     204 (1999), 163–166.
+[10] L. E. Dickson, “History of the Theory of Numbers, Vol. 1,” Chelsea, New
+     York, NY, 1952.
+[11] R. Donaghey, Restricted plane tree representations of four Motzkin-Catalan
+     equations, J. Combin. Theory, Ser. B 22 (1977), 114–121.
+[12] R. Donaghey and L. W. Shapiro, Motzkin numbers, J. Combin. Theory, Ser.
+     A 23 (1977), 291–301.
+[13] Ö. Eğecioğlu, The parity of the Catalan numbers via lattice paths, Fibonacci
+     Quart. 21 (1983) 65–66.
+[14] P. Flajolet and M. Noy, Analytic combinatorics of non-crossing configurations,
+     Discrete Math. 204 (1999), 203–229.
+[15] D. Gouyou-Beauchamps and G. Viennot, Equivalence of the two-dimensional
+     directed animal problem to a one-dimensional path problem, Adv. Appl. Math.
+     9 (1988), 334–357.
+[16] F. Harary and R. C. Read, The enumeration of tree-like polyhexes, Proc.
+     Edinburgh Math. Soc. 17 (1970), 1–13.
+
+                                         21
+[17] M. Klazar and F. Luca, On integrality and periodicity of the Motzkin numbers,
+     preprint.
+
+[18] E. E. Kummer Über die Ergänzungssätze zu den allgemeinen Reciproci-
+     tätsgesetzen, J. Reine Angew. Math. 44 (1852) 93–146.
+
+[19] F. Luca, Prime factors of Motzkin numbers, preprint.
+
+[20] E. Lucas, Sur les congruences des nombres eulériens et des coefficients
+     différentiels des fonctions trigonométriques suivant un module premier, Bull.
+     Soc. Math. France 6 (1877–1878), 49–54.
+
+[21] B. E. Sagan, Congruences via Abelian groups, J. Number Theory 20 (1985),
+     210–237.
+
+[22] E. Schröder, Vier combinatorische Probleme, Z. für Math. Phys. 15 (1870),
+     361–376.
+
+[23] R. Simion, Noncrossing partitions, Discrete Math. 217 (2000), 367–409.
+
+[24] R. Simion and D. Ullman, On the structure of the lattice of noncrossing
+     partitions, Discrete Math. 98 (1991), 193–206.
+
+[25] N. J. A. Sloane, “The On-Line Encyclopedia of Integer Sequences,” available
+     at http://www.research.att.com/˜njas/sequences/.
+
+[26] R. P. Stanley, “Enumerative Combinatorics, Volume 2,” Cambridge University
+     Press, Cambridge, 1999.
+
+
+
+
+                                        22
+

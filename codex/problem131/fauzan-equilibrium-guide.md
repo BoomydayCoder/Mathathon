@@ -1,8 +1,10 @@
 # Simplifying the analytic and arithmetic estimates in Fauzan’s construction
 
-This note explains a concrete simplification of the analytic part of Fauzan’s 2026 \(\zeta(5)\) construction. An explicitly constructed equilibrium measure replaces the preprint’s mixture of sixteen arcsine measures and its many potential comparisons. A one-sign-change argument proves the global inequality; rigorous interval computations certify the two endpoint equations and the remaining energy bound. A separate elementary estimate removes the source’s arithmetic integration tables, conditional on its local valuation envelope. The analytic construction also extends to every fixed odd index, with a clearly identified arithmetic gap.
+This note explains a concrete simplification of the analytic part of Fauzan’s 2026 \(\zeta(5)\) construction. An explicitly constructed equilibrium measure replaces the preprint’s mixture of sixteen arcsine measures and its many potential comparisons. A one-sign-change argument proves the global inequality; rigorous interval computations certify the two endpoint equations and the remaining energy bound. A separate elementary estimate removes the source’s arithmetic integration tables, and a plain-rank estimate removes one local optimization. The analytic construction also extends to every fixed odd index, with a clearly identified arithmetic gap.
 
-The construction and certificates were developed and independently checked within this session. Historical novelty has not been established. This is **not an independent audit of the complete Fauzan preprint**. The moment and local arithmetic arguments now have separate independent reconstructions, including the small-prime estimate. The combined final proof is still undergoing assembly review; this guide does not promote the entire preprint to an independently audited theorem. The source is [Fauzan’s preprint, version 1](https://doi.org/10.5281/zenodo.22826419), Sections 6–7 and Appendix A; detailed derivations are in [fauzan-analytic-simplification.md](fauzan-analytic-simplification.md).
+The [end-to-end audit](fauzan-simplified-proof-audit.md) has now checked the assembled argument, finding no unresolved mathematical bridge. It gives a complete **computer-assisted alternative derivation of the preprint’s claimed irrationality theorem**, retaining Fauzan’s determinant and local arithmetic construction. This is not a new independently invented zeta-five construction, an elementary proof, formal verification, or evidence of external acceptance. Historical novelty has not been established. Standard prime-number, Bernoulli, and Hermite-integral theorems and validated interval arithmetic remain explicit inputs.
+
+The source is [Fauzan’s preprint, version 1](https://doi.org/10.5281/zenodo.22826419). Sections 1–8 below explain the new analytic measure; Sections 9–10 delimit the higher-odd extension; Sections 11–12 simplify the arithmetic and complete the assembled argument. The plain-rank option in Section 12 uses a **new normalizer** \(\widetilde m\), whereas the earlier quantitative comparisons retain the source’s original normalizer. Detailed analytic derivations are in [fauzan-analytic-simplification.md](fauzan-analytic-simplification.md).
 
 ## 1. Start from the quantity that actually needs to be bounded
 
@@ -500,7 +502,7 @@ The scope matters. This rules out a cost-free transfer by one universal simple-p
 
 ## 11. A table-free arithmetic budget for the source's zeta-five construction
 
-There is a second simplification, separate from equilibrium theory. It reduces the integration of the source's arithmetic envelope to variance bounds and fractional-part identities. Its precise status matters: the envelope and the passage from local prime valuations to its integral are separate from this integration calculation. The [local arithmetic reconstruction](fauzan-local-arithmetic-review.md) now checks the local inputs, including small primes and coefficientwise integrality, while [a separate review](fauzan-arithmetic-simplification-review.md) checks the envelope integration. The full assembly remains under review. Neither component extends the arithmetic normalization to every odd index.
+There is a second simplification, separate from equilibrium theory. It reduces the integration of the source's arithmetic envelope to variance bounds and fractional-part identities. Its precise status matters: the envelope and the passage from local prime valuations to its integral are separate from this integration calculation. The [local arithmetic reconstruction](fauzan-local-arithmetic-review.md) now checks the local inputs, including small primes and coefficientwise integrality, while [a separate review](fauzan-arithmetic-simplification-review.md) checks the envelope integration. The [completed assembly audit](fauzan-simplified-proof-audit.md) checks their combination with the positive moment and real determinant arguments. Neither component extends the arithmetic normalization to every odd index.
 
 For the source normalizer \(m_{K,M}\), take the fixed cutoff \(M=1000\). The [arithmetic note](fauzan-arithmetic-simplification.md) derives
 
@@ -561,7 +563,7 @@ The analytic and arithmetic constants then leave the exact margin
 
 Thus, retaining the source's moment identities, local arithmetic envelope, prime-sum conversion, and integrality proposition, these two replacements give a negative quadratic exponent for its normalized zeta-five determinant. The tradeoff for the simpler arithmetic estimate is a larger fixed cutoff: the source requirement \(K\ge200M^2\) becomes \(K\ge200{,}000{,}000\). This is acceptable for an asymptotic argument but not a useful small-approximant computation.
 
-The result is a substantial simplification of two quantitative components, with their dependencies exposed. It is not a complete independent audit of the source proof, and it does not remove the arithmetic gate in Section 9 for higher odd zeta values.
+The result is a substantial simplification of two quantitative components, with their dependencies exposed. The completed alternative derivation uses the further plain-rank modification in Section 12; the calculation here does not remove the arithmetic gate in Section 9 for higher odd zeta values.
 
 
 ## 12. Spend a little analytic margin to simplify the local arithmetic too
@@ -587,6 +589,28 @@ The [local arithmetic review](fauzan-local-arithmetic-review.md) reconstructs th
 \tag{30}
 \]
 
+For clarity, this is a different normalizer from the original \(m\). Set \(F_K=S_K\Delta_{K,5}\), and define
+
+\[
+\widetilde m_{K,M}=\prod_{p\le2h}p^{-\widetilde L_p},
+\qquad
+\widetilde Q_K(X)=\widetilde m_{K,M}F_K(X),
+\]
+
+where
+
+\[
+\widetilde L_p=
+\begin{cases}
+-6h\lfloor\log_p(5K)\rfloor-hv_p(24),&p\le K/M,\\
+v_p(S_K)+\gamma_p^{\rm in},&K/M<p\le K/3,\\
+v_p(S_K)+2\sum_iw_{p,i}-r_p,&K/3<p\le K,\\
+v_p(S_K),&K<p\le2h.
+\end{cases}
+\]
+
+Here \(\gamma_p^{\rm in}\) and the outer weights \(w_{p,i}\) are those of the checked local bases, and \(r_p=\max(0,K+4N-2p+2)\). The [assembly audit, Section 4](fauzan-simplified-proof-audit.md#4-coefficientwise-local-arithmetic-and-the-new-normalizer), supplies the full definitions and proves all exponents integral. The outer line is the plain-rank lower bound; it does not retain the source’s stronger \(\min(r_p,\text{zero-weight count})\) correction.
+
 The normalizer retains signed prime exponents: positive local divisibility permits division by a prime power. Taking only denominator-clearing exponents would discard useful arithmetic savings and would require a new budget calculation.
 
 The exact remaining margin is
@@ -597,6 +621,29 @@ The exact remaining margin is
 \tag{31}
 \]
 
-For \(K=40n\), this corresponds to a leading negative exponent at most \(-4.253n^2\). Once the analytic, normalization, and positivity statements are assembled with their stated hypotheses, lower-order terms can be absorbed to give an eventual bound \(0<\widetilde m S_K\Delta_{K,5}(\zeta(5))<e^{-4n^2}\). The degree is \(37n\), so this decay is strong enough to beat the factor \(q^{37n}\) arising from a hypothetical rational value with denominator \(q\).
+For \(K=40n\), the [completed assembly audit](fauzan-simplified-proof-audit.md) verifies every bridge between the real and arithmetic estimates, with the same scalar \(S_K\). It proves
 
-That last paragraph describes the assembly implication, which is being independently reviewed; it is not a declaration that every component of the source preprint has been certified. The source threshold is now \(K\ge200M^2=20{,}000{,}000{,}000\), and no explicit practical starting index for the final decay is supplied. The quantitative goal is eventual decay; the conceptual gain is that stronger real-variable control can pay for simpler local arithmetic.
+\[
+\widetilde Q_K\in\mathbb Z[X],\qquad
+\deg\widetilde Q_K=37n,\qquad
+\widetilde Q_K(\zeta(5))>0,
+\]
+
+and
+
+\[
+\limsup_{n\to\infty}n^{-2}\log\widetilde Q_{40n}(\zeta(5))
+ \le-\frac{4253}{1000}=-4.253.
+\]
+
+The strict margin absorbs lower-order terms, so eventually
+
+\[
+0<\widetilde Q_{40n}(\zeta(5))<e^{-4n^2}.
+\]
+
+If \(\zeta(5)=a/b\), with integers \(a\) and \(b>0\), then
+\(b^{37n}\widetilde Q_{40n}(a/b)\) is a positive integer bounded above by
+\(\exp(37n\log b-4n^2)\), which tends to zero. This contradiction completes the reviewed computer-assisted alternative derivation.
+
+The source’s sufficient local threshold is \(K\ge200M^2=20{,}000{,}000{,}000\); asymptotic prime estimates may require a still larger unspecified threshold. No practical starting index is supplied. The gain is conceptual rather than computational efficiency: stronger real-variable control pays for simpler local arithmetic. The full local proofs remain in linked notes, so this guide is a readable assembly, not yet a self-contained publication. External acceptance and formal verification are separate questions. The higher-odd arithmetic gate remains unresolved.

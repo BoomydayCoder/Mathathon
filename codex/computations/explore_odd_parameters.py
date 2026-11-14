@@ -9,29 +9,64 @@ import json
 from scipy.integrate import quad
 from scipy.optimize import root
 
-def outer_integral(s, r, alpha):
-    lam = 1-alpha
-    upper = 2*lam
+def outer_integral(s, r, alpha, lam=None, refined=False):
+    lam = 1-alpha if lam is None else lam
+    assert 0 < lam <= 1-alpha
+    upper = max(F(1),2*lam)
     points = {F(1,3), upper, F(1)}
     for k in range(1,7):
         points.update((F(1,k),F(2,k),(1-alpha)/k,(1+alpha)/k,2*lam/k))
-    points.add((1+(r-2)*alpha)/F(s-1,2))
+    points.add((r*alpha+2*lam-1)/F(s-1,2))
+    points.add((r*alpha+lam-1)/F(s-1,2))
     points = sorted(t for t in points if F(1,3) <= t <= upper)
-    def value(y):
+    def masses(y):
         x=1/y
         zpoints={F(0),F(1,2)}
         fx=x-floor(x)
         zpoints.update(t for t in (fx,1-fx,alpha*x) if 0<t<F(1,2))
         zpoints=sorted(zpoints)
-        cost=F(0)
+        out={}
         for za,zb in zip(zpoints,zpoints[1:]):
             z=(za+zb)/2
             ell=floor(x-z)+floor(x+z)+1
             delta=int(z<alpha*x)
-            cost += (zb-za)*sum(max(0,ell+s-1-r*delta-2*i) for i in range(max(0,ell-2)))
-        rank=max(0,1+(r-2)*alpha-F(s-1,2)*y)
+            for i in range(ell-delta):
+                cost=max(0,ell+s-1-r*delta-2*i) if i<ell-2 else 0
+                out[cost]=out.get(cost,F(0))+y*(zb-za)
+        assert sum(out.values()) == 1-alpha
+        return out
+    # Within each base interval every cost-level mass is affine in y.
+    # Insert roots where the total mass of the largest costs reaches lam.
+    newpoints=set(points)
+    for a,b in zip(points,points[1:]):
+        ya=(3*a+b)/4;yb=(a+3*b)/4
+        ma=masses(ya);mb=masses(yb)
+        ca=cb=F(0)
+        for level in sorted(set(ma)|set(mb),reverse=True):
+            ca+=ma.get(level,F(0));cb+=mb.get(level,F(0))
+            if ca!=cb:
+                crossing=ya+(lam-ca)*(yb-ya)/(cb-ca)
+                if a<crossing<b:newpoints.add(crossing)
+        if refined:
+            va=min(lam,max(0,r*alpha+2*lam-1-F(s-1,2)*ya))+sum(v for k,v in ma.items() if k>0)-lam
+            vb=min(lam,max(0,r*alpha+2*lam-1-F(s-1,2)*yb))+sum(v for k,v in mb.items() if k>0)-lam
+            if va!=vb:
+                crossing=ya-va*(yb-ya)/(vb-va)
+                if a<crossing<b:newpoints.add(crossing)
+    points=sorted(newpoints)
+    def value(y):
+        available=lam;cost=F(0)
+        for level,mass in sorted(masses(y).items(),reverse=True):
+            chosen=min(available,mass)
+            cost+=level*chosen
+            available-=chosen
+        assert available==0
+        rank=min(lam,max(0,r*alpha+2*lam-1-F(s-1,2)*y))
+        if refined:
+            zeros=max(0,lam-sum(v for k,v in masses(y).items() if k>0))
+            rank=min(rank,zeros)
         scalar=-2*lam*floor(1/y)+sum(max(0,2*lam-j*y) for j in range(1,7))
-        return y*cost+rank+scalar
+        return cost+rank+scalar
     result=F(0)
     for a,b in zip(points,points[1:]):
         mid=(a+b)/2

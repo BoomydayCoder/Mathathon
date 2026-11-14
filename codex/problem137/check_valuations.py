@@ -52,6 +52,25 @@ def main():
                 assert value == sum(j >= a for j in cs)
                 assert value == transducer(m, n, p)
                 checked += 1
+    prime_power_checks = 0
+    for p in (2, 3, 5, 7):
+        for e in (1, 2, 3):
+            q = p**e
+            repunits = {0}
+            r = 0
+            while r <= 150:
+                repunits.add(r)
+                r = q*r + 1
+            for n in range(151):
+                C = comb(q*n,n)//((q-1)*n+1)
+                assert (vp(C,p) == 0) == (n in repunits)
+                x, ds = (q-1)*n, 0
+                while x:
+                    ds += x % p
+                    x //= p
+                assert vp(C,p) == ds//(p-1)-vp((q-1)*n+1,p)
+                prime_power_checks += 1
+    print(f'Passed {prime_power_checks} prime-power-arity classification checks.')
     print(f'Passed {checked} exact valuation/carry/transducer checks.')
 
 

@@ -1,0 +1,16 @@
+{
+  "arithmetic": "exact outward dyadic intervals, integer square roots, bounded atanh series",
+  "bits": 120,
+  "objective_dyadic_lo": -1841658866669854867914644477336356258,
+  "objective_dyadic_hi": -1841657912135772705086994463170950614,
+  "objective_enclosure": "[-1.385510140104, -1.385509421992]",
+  "integral_V_rho_enclosure": "[1.915868444229, 1.915869572215]",
+  "claimed_upper_bound": "-2771/2000",
+  "log_terms": 42,
+  "tail_terms": 14,
+  "simpson_panels": [
+    384,
+    384,
+    192
+  ]
+}

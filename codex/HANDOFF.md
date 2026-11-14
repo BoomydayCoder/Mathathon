@@ -62,3 +62,23 @@ Integral agent developed primary-source modular/elliptic route; exposition
 agent now independently auditing it. Simplify agent developing localizing pencils
 and exact enclosing intervals; odd-zeta agent exploring changed proportions.
 No new all-odd irrationality theorem. No historical novelty claim.
+
+## Seventh-stage strongest results and continuation
+
+- discovery-guide now derives17and5 fromNewton interpolation and detailedbalance.
+- fauzan-simplified-proof-audit.md is the completed assembly; no unresolved
+  bridge found at mathematical-review level, not formal verification/consensus.
+- rational-energy-certificate.md and rational-energy-review.md replace the
+  numerical package dependency with a standard-library certificate and give
+  eventualexp(-13n²) for the simplified normalizer.
+- one-pole-schur-structure.md + independentreview: exactWilson endpoint formulas
+  and a genuine reduced-denominator obstruction.
+- apery-modular-elliptic.md + review: complete advanced alternative proof using
+  standardmodular-curve facts, and a precise restrictedhigher-weight obstruction.
+- apery-cm-character.md now uses an elementary ODE deck-symmetry proof as main
+  route; CM is optional interpretation. Independentfinalreview inprogress.
+- problem137/prime-power-sylow-audit.md and prime-power-orbit-review.md contain
+  the fully reviewedgroup proof, typedcounting andleading-unit formula.
+
+Runtime is still active. User authorizes remaining credits, no automatic resets;
+no usage meter API exists. Keep bounded discovery/review tasks substantive.

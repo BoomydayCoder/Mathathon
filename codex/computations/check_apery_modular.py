@@ -60,6 +60,22 @@ for an in a:
     At=add(At,scale(power,an));power=mul(power,t)
 assert At==E
 
+# The modular-curve coordinate has one simple pole. This divisor statement,
+# plus the q^1..q^3 check, proves the rational relation to t in the note.
+x0=eta_product({1:4,2:-8,3:-4,6:8})
+xs=[F(0)]+x0[:-1]
+Tx=mul(mul(xs,add(one,scale(xs,-9))),inv(add(one,scale(xs,-1))))
+assert Tx==t
+from math import gcd
+for exponents,expected in [({1:12,2:-12,3:-12,6:12},[1,-1,-1,1]),({1:-5,2:7,3:7,6:-5},[0,1,1,0]),({1:4,2:-8,3:-4,6:8},[0,-1,0,1])]:
+    orders=[sum((F(6*gcd(c,d)**2*r,24*gcd(c,6//c)*c*d) for d,r in exponents.items()),F(0)) for c in (1,2,3,6)]
+    assert orders==expected
+    assert sum(d*r for d,r in exponents.items())%24==0
+    assert sum((6//d)*r for d,r in exponents.items())%24==0
+qbound=F(1,8)
+assert 8*qbound**2/(1-qbound**2)**2+4*qbound**3/(1-qbound**3)**2<F(1,4)
+print('Coordinate x, all three cusp-order tables, and the critical-value bound checked.')
+
 # Exact rational pullback of the second-order Apéry equation.
 x=s.symbols('x');T=x*(1-9*x)/(1-x)
 p=lambda z:(2*z*z-51*z+1)/(z*(z*z-34*z+1))
@@ -83,3 +99,19 @@ print('Both rational ODE pullbacks proved identically.')
 # Elliptic curve smoothness away from w=0 and 27w^3=1.
 X,w=s.symbols('X w');quartic=X**2*(1-w*X)**2-4*w*w*X
 print('Elliptic quartic discriminant:',s.factor(s.discriminant(quartic,X)))
+
+# Explicit weight-six obstruction: Fricke compatibility and critical factors.
+a6={1:5,2:-248,3:-837,6:1080}
+assert sum(a6.values())==0
+assert all(a6[6//d]*d**6==216*a6[d] for d in a6)
+P4=sum((F(a,d**4) for d,a in a6.items()),F(0))
+P5=sum((F(a,d**5) for d,a in a6.items()),F(0))
+assert P4==-20 and P5==F(-109,18)
+assert -504*P4*F(-1,12)==-840 # coefficient of zeta(4)
+assert -504*P5*F(-1,2)==-1526 # coefficient of zeta(5)
+v,C,L,c=s.symbols('v C L c')
+M3=-s.Rational(7,2); M1=21
+defect=L*(1-36*v**4)+C*(-4*v*M3-4*v**3*M1)
+assert s.expand(defect-(L*(1-36*v**4)+14*C*v*(1-6*v*v)))==0
+assert s.Poly(defect-c*(1-36*v**4),v).coeff_monomial(v)==14*C
+print('Weight-six scalar-correction obstruction checked exactly.')

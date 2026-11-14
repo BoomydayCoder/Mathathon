@@ -35,9 +35,10 @@ The leading energy is independent of fixed odd s, but not of r,α,λ.
 
 The full-pole outer arithmetic basis below assumes λ=1−α, so h=K−N.
 The inner algebra does not need this relation. If λ changes independently,
-one cannot silently reuse the source's outer basis of K−N rows. Positivity
-and a degree bound at most h still hold, but the outer valuation argument
-must be redesigned. Exact degree h is unnecessary for the basic polynomial
+one cannot silently reuse the source's outer basis of K−N rows. A subsequent
+restriction/minor lemma now supplies a sufficient bound; see
+[`outer-subspace-minors.md`](outer-subspace-minors.md). Positivity and a degree
+bound at most h still hold. Exact degree h is unnecessary for the basic polynomial
 irrationality criterion if one already has nonzero values and degree ≤h.
 
 ## 2. General small/inner envelope
@@ -207,9 +208,11 @@ certificate or an irrationality claim.
 
 Two changes would actually escape the identified constraint:
 
-1. Take λ<1−α and develop a rectangular-pole or selected-subspace outer
-   valuation argument. The analytic equilibrium and inner cancellation already
-   accommodate independent λ, but the current outer CRT basis does not.
+1. Take λ<1−α and test a genuinely different local estimate. The subsequent
+   `outer-subspace-minors.md` proves a sufficient bound using the worst-weight
+   minors, but its bounded experiment still produces no successful budget.
+   Its Hermite-interpolation lemma also proves that a worst-weight minor is
+   always a unit here: the embedding pattern alone cannot improve that bound.
 2. Improve ordinary pole-class valuations before determinant expansion, using
    cancellation not captured by the independent row weights. Increasing r only
    buys arithmetic improvement by paying the proved positive real cost.

@@ -1,0 +1,399 @@
+18.783 Elliptic Curves                                                                         Fall 2023
+Lecture #13                                                                                  10/26/2023
+
+13      Ordinary and supersingular elliptic curves
+Let E/k be an elliptic curve over a field of positive characteristic p. In Lecture 6 we proved
+that for any nonzero integer n, the multiplication-by-n map [n] is separable if and only if n
+is not divisible by p. This implies that the separable degree of the multiplication-by-p map
+cannot be p2 = deg[p], it must be either p or 1, meaning that its kernel E[p] is either cyclic
+of order p or trivial. The terms ordinary and supersingular distinguish these two cases:
+
+                             E is ordinary            ⇐⇒       E[p] ≃ Z/pZ.
+                             E is supersingular       ⇐⇒       E[p] = {0}.
+
+   We now want to explore this distinction further, and relate it to our classification of
+endomorphism algebras. In the previous lecture we showed that End0 (E) := End(E) ⊗Z Q
+has dimension 1, 2, or 4 as a Q-vector space, depending on whether End0 (E) is isomorphic
+to Q, an imaginary quadratic field, or a quaternion algebra.
+   Before we begin, let us recall some facts about isogenies proved in Lectures 5 and 6. We
+assume throughout that we are working in a field k of positive characteristic p.
+
+   1. Any isogeny α can be decomposed as α = αsep ◦ π n , where αsep is separable, and π is
+      the (purely inseparable) p-power Frobenius map π : (x : y : z) 7→ (xp : y p : z p ).
+   2. If α = αsep ◦ π n then degs α := deg αsep , degi α := pn , and deg α = (degs α)(degi α).
+   3. We have # ker α = degs α (so E is supersingular if and only if degs [p] = 1).
+   4. We have deg(α ◦ β) = (deg α)(deg β), and similarly for degs and degi .
+   5. A sum of inseparable isogenies is inseparable and the sum of a separable and an
+      inseparable isogeny is separable (a sum of separable isogenies need not be separable).
+   6. The multiplication-by-n map [n] is inseparable if and only if p|n.
+
+    Recall that an isogeny α is purely inseparable when degs α = 1, equivalently, when
+ker α = {0}. Thus an elliptic curve is supersingular if and only if the multiplication-by-p
+map [p] is purely inseparable. This makes it clear that the property of being ordinary or
+supersingular is invariant under base change: if E/k is an elliptic curve over k and L/k is
+any field extension, the separable degree of [p] on EL does not depend on L.
+
+Warning 13.1. As noted in the previous lecture, in this course the ring End(E) consists of
+endomorphisms defined over k; if we wish to refer to endomorphisms defined over k̄ we will
+write End(Ek̄ ) or refer to the geometric endomorphism ring (or algebra). Many authors use
+End(E) to denote End(Ek̄ ), but this distinction is important.1
+
+     The property of being ordinary or supersingular is an isogeny invariant.
+
+Theorem 13.2. Let φ : E1 → E2 be an isogeny of elliptic curves. Then E1 is supersingular
+if and only if E2 is supersingular (and E1 is ordinary if and only if E2 is ordinary).
+   1
+     For example, there are algorithms that apply to any elliptic curve E/Fq for which End(E) is an imaginary
+quadratic field, but one often finds them written under the strictly stronger assumption that E is ordinary.
+
+
+
+
+                                                                              Lecture by Andrew Sutherland
+Proof. Let p1 ∈ End(E1 ) and p2 ∈ End(E2 ) denote the multiplication-by-p maps on E1
+and E2 , respectively. We have p2 ◦ φ = φ + · · · + φ = φ ◦ p1 , thus
+
+                                         p2 ◦ φ = φ ◦ p1
+                                  degs (p2 ◦ φ) = degs (φ ◦ p1 )
+                             degs (p2 ) degs (φ) = degs (φ) degs (p1 )
+                                      degs (p2 ) = degs (p1 ).
+
+The elliptic curve Ei is supersingular if and only if degs (pi ) = 1; the theorem follows.
+
+    In what follows we will often want to refer to the image of E under the p-power Frobenius
+isogeny (x : y : z) 7→ (xp : y p : z p ) which will shall denote E (p) . When E is defined over Fp
+we will have E (p) = E and π will be the Frobenius endomorphism πE , but in general E (p)
+is the elliptic curve obtained by taking an equation for E and raising each coefficient to the
+pth power (it does not matter which equation we pick, the curve E (p) is well-defined up to
+isomorphism). We similarly define E (q) to be the image of the q-power Frobenius isogeny.
+Note that [p] = ππ̂ is purely inseparable if and only if π̂ is purely inseparable (since π is
+always purely inseparable), thus E is supersingular if and only if π̂ is purely inseparable.
+    In order to simplify the presentation we will often assume p > 3 and use short Weierstrass
+equations y 2 = x3 + Ax + B to define our elliptic curves, but except for where explicitly
+noted otherwise, all results in this lecture also hold in characteristic 2 and 3. An advantage
+of using
+       short Weierstrass
+                             equations is that it allows us to put isogenies in our standard
+        u(x) s(x)
+form v(x) , t(x) y , with u, v, s, t ∈ k[x] chosen so that u ⊥ v and s ⊥ t.
+    We also note that [p] = ππ̂, where π̂ is the dual of the p-power Frobenius isogeny π. The
+multiplicativity of separable degrees implies that [p] is purely inseparable if and only if π̂ is
+(since π is always purely inseparable) and deg π̂ = p is prime, so π̂ is purely inseparable if
+and only if it is inseparable. Thus E is supersingular if and only if π̂ is inseparable, a fact
+we will use to shorten the proofs that follow.
+
+13.1    Ordinary/supersingular elliptic curves over finite fields
+Theorem 13.3. An elliptic curve E/Fq is supersingular if and only if tr πE ≡ 0 mod p.
+
+Proof. If E is supersingular then [p] = ππ̂ is purely inseparable, in which case π̂ is insepa-
+rable, as are π̂ n = π
+                     cn = π̂E and πE = π n . Their sum [tr πE ] = πE + π̂E is then inseparable,
+so p must divide tr πE , equivalently, tr πE ≡ 0 mod p.
+    Conversely, if tr πE ≡ 0 mod p, then [tr πE ] is inseparable, as is π̂E = [tr πE ] − πE . This
+means that π̂ n and therefore π̂ is inseparable which implies that E is supersingular.
+
+Corollary 13.4. Let E/Fp be an elliptic curve over a field of prime order p > 3. Then E
+is supersingular if and only if tr πE = 0, equivalently, if and only if #E(Fp ) = p + 1.
+                                         √         √
+Proof. By Hasse’s theorem, | tr πE | ≤ 2 p, and 2 p < p for p > 3.
+
+Warning 13.5. Corollary 13.4 does not hold for p ≤ 3; there are supersingular curves over
+F2 and F3 with nonzero Frobenius traces.
+                                                                                      √
+   This should convince you that supersingular curves over Fp are rare: there are ≈ 4 p
+possible values for tr πE , all but one of which correspond to ordinary curves.
+
+
+                                                                 18.783 Fall 2023, Lecture #13, Page 2
+Theorem 13.6. Let E be
+    0
+                         √ an elliptic curve over a finite field Fq and suppose πE2 6∈ Z. Then
+End (E) = Q(πE ) ≃ Q( D) is an imaginary quadratic field with D = (tr πE ) − 4q. This
+applies in particular whenever q is prime, and also whenever E is ordinary.
+
+Proof. The Frobenius endomorphism πE is a root of its characteristic polynomial
+
+                                      x2 − (tr πE )x + deg πE ,
+                                                                                 √
+with discriminant D = (tr πE )2 − 4 deg π = (tr πE )2 − 4q, so Q(πE ) ≃ Q( D). The
+assumption πE 6∈ Z implies πE 6∈ Q, since πE is an algebraic integer, and that tr(πE )2 6= 4q,
+so D < 0 (by the Hasse bound) and Q(πE ) is an imaginary quadratic field.
+   We can write any α ∈ End0 (E) as α = sφ with s ∈ Q and φ ∈ End(E). Writing φ as
+φ(x, y) = (r1 (x), r2 (x)y) in standard form, we have
+
+            (φπE )(x, y) = (r1 (xq ), r2 (xq )y q ) = (r1 (x)q , r2 (x)q y q ) = (πE φ)(x, y),
+
+thus φ, and therefore α, commutes with πE . Therefore α ∈ Q(πE ), by Lemma 12.18, so
+End0 (E) = Q(πE ) as claimed.
+
+Corollary 13.7. Let E be an√   elliptic curve over Fq with q = pn . If n is odd or E is ordinary,
+         0
+then End (E) = Q(πE ) ≃ Q( D) is an imaginary quadratic field with D = (tr πE )2 − 4q.
+                                                                √
+Proof. If πE ∈ Z then D = (tr πE )2 − 4 deg πE = 0 and 2 q = ± tr πE ∈ Z, which is
+possible only if q is a square and tr πE is a multiple of p, in which case n is even and E is
+supersingular. The corollary then follows from Theorem 13.6.
+
+    If E/Fq is an ordinary elliptic curve, or more generally, whenever πE 6∈ Z, the subring
+Z[πE ] of End(E) generated by πE is a lattice of rank 2. It follows that Z[πE ] is an order
+in the imaginary quadratic field K := End0 (E), and is therefore contained in the maximal
+order OK (the ring of integers of K). The endomorphism ring End(E) need not equal Z[πE ],
+but the fact that it contains Z[πE ] and is contained in OK constrains End(E) to a finite set
+of possibilities. Recall from Theorem 12.27 that every order O in K is characterized by its
+conductor [OK : O].
+
+Theorem 13.8. Let E/Fq be an elliptic curve for which End0 (E) is an imaginary quadratic
+field K with ring of integers OK . Then
+
+                                     Z[πE ] ⊆ End(E) ⊆ OK ,
+
+and the conductor of End(E) divides [OK : Z[πE ]].
+
+Proof. Immediate from the discussion above.
+
+Remark 13.9. Theorem 13.8 implies that once we know tr π (which we can compute      √ in
+                                                                     0
+polynomial time using Schoof’s algorithm), which determines End (E) ≃ K = Q( D)
+and the orders OK and Z[πE ], we can constrain End(E) to a finite set of possibilities
+distinguished by the conductor f := [OK : End(E)]. No polynomial-time algorithm is known
+for computing the integer f , but there is a Las Vegas algorithm that has a heuristically
+subexponential expected running time [1]. This makes it feasible to compute f even when q
+is of cryptographic size (say q ≈ 2256 ).
+
+
+                                                                    18.783 Fall 2023, Lecture #13, Page 3
+Remark 13.10. It will often be convenient to identify End0 (E) with K and End(E) with an
+order O in K. But we should remember that we are actually speaking of isomorphisms. In
+the case of an imaginary quadratic field, there are two distinct choices for this isomorphism.
+This choice can be made canonically, see [3, Thm. II.1.1], however this is not particularly
+relevant to us, as we are going to be working in finite fields where we cannot distinguish the
+square roots of D in any case. We thus accept the fact that we are making an arbitrary√choice
+when we fix an isomorphism
+                     √         of End0 (E) with K by identifying πE with, say, (t + D)/2
+(as opposed to (t − D)/2).
+     Before leaving the topic of of ordinary and supersingular curves, we want to prove a
+remarkable fact: while over any algebraically closed field there are always infinitely many
+non-isomorphic elliptic curves, only a finite number can be supersingular. To prove this we
+first introduce the j-invariant, which will play a critical role in the lectures to come.
+
+13.2       The j-invariant of an elliptic curve
+As usual, we shall assume we are working over a field k whose characteristic is not 2 or 3,
+so that we can put our elliptic curves E/k in short Weierstrass form y 2 = x3 + Ax + B.
+Definition 13.11. The j-invariant of the elliptic curve E : y 2 = x3 + Ax + B is
+                                                                    4A3
+                                    j(E) = j(A, B) = 1728                    .
+                                                                 4A3 + 27B 2
+Note that the denominator of j(E) is nonzero, since it is the discriminant of the cubic
+x3 + Ax + B, which has no repeated roots. There are two special cases worth noting: if
+A = 0 then j(A, B) = 0, and if B = 0 then j(A, B) = 1728 (note that A and B cannot both
+be zero). The j-invariant can also be defined for elliptic curves in general Weierstrass form,
+which is necessary to address fields of characteristic 2 and 3; see [2, III.1].2
+    The key property of the j-invariant j(E) is that it characterizes E up to isomorphism
+over k̄. Before proving this we first note that every element of the field k is the j-invariant
+of an elliptic curve defined over k.
+Theorem 13.12. For every j0 ∈ k there is an elliptic curve E/k with j-invariant j(E) = j0 .
+Proof. We assume char(k) 6= 2, 3; see [2, III.1.4.c] for a general proof. If j0 is 0 or 1728 we
+may take E to be y 2 = x3 + 1 or y 2 = x3 + x, respectively. Otherwise, let E/k be the elliptic
+curve defined by y 2 = x3 + Ax + B where
+                                              A = 3j0 (1728 − j0 ),
+                                              B = 2j0 (1728 − j0 )2 .
+We claim that j(A, B) = j0 . We have
+                                            4A3
+                      j(A, B) = 1728
+                                       4A3 + 27B 2
+                                                    4 · 33 j03 (1728 − j0 )3
+                                = 1728
+                                       4 · 3 j0 (1728 − j0 )3 + 27 · 22 j02 (1728 − j0 )4
+                                            3 3
+
+                                              j0
+                                = 1728
+                                       j0 + 1728 − j0
+                                = j0 .
+  2
+      As noted in the errata, there is a typo on p. 42 of [2]; the equation b2 = a21 −4a4 should read b2 = a21 −4a2 .
+
+
+                                                                           18.783 Fall 2023, Lecture #13, Page 4
+    We now give a necessary and sufficient condition for two elliptic curves to be isomorphic.
+An isomorphism φ of elliptic curves is an invertible isogeny, equivalently, an isogeny of
+degree 1 (the dual isogeny gives an inverse isomorphism, since φφ̂ = φ̂φ = 1). Recall from
+Lecture 5 that an isogeny between elliptic curves that are defined over k is assumed to be
+defined over k (hence representable by rational functions with coefficients in k), and we say
+that two elliptic curves are isogenous over an extension L of k to indicate that the isogeny
+is defined over L (strictly speaking, it is an isogeny between the base changes of the elliptic
+curves to L). As we saw in problem 3 of Problem Set 1, elliptic curves that are isomorphic
+over k̄ need not be isomorphic over k.
+
+Theorem 13.13. Elliptic curves E : y 2 = x3 + Ax + B and E 0 : y 2 = x3 + A0 x + B 0 defined
+over k are isomorphic (over k) if and only if A0 = µ4 A and B 0 = µ6 B, for some µ ∈ k × .
+
+Proof. Let φ : E → E 0 be an isomorphism in standard form φ(x, y) = (r1 (x), r2 (x)y) with
+r1 , r2 ∈ k(x). Since φ is an isomorphism, its kernel is trivial, so r1 and r2 must be polyno-
+mials, by Lemma 4.27 and Corollary 4.28. Thus r1 (x) = ax + b for some a, b ∈ k with a 6= 0.
+Substituting into the curve equation for E 0 , we have
+
+                                     r2 (x)2 y 2 = (ax + b)3 + A0 (ax + b) + B 0
+                     r2 (x)2 (x3 + Ax + B) = (ax + b)3 + A0 (ax + b) + B 0 .
+
+By comparing the degrees of the polynomials on both sides, we see that r2 (x) must be
+constant, say r2 (x) = c. Comparing coefficients of x2 shows that b = 0, and comparing
+coefficients of x3 shows that c2 = a3 ; thus a = (c/a)2 and c = (c/a)3 . If we let µ = c/a ∈ k ×
+then we have
+                          µ6 (x3 + Ax + B) = µ6 x3 + A0 (µ2 x) + B 0 ,
+and it follows that A0 = µ4 A and B 0 = µ6 B as claimed.
+    Conversely, if A0 = µ4 A and B 0 = µ6 B for some µ ∈ k ∗ , then the map φ : E → E 0
+defined by φ(x, y) = (µ2 x, µ3 y) is an isomorphism, since it is an isogeny of degree 1.
+
+   We are now ready to prove the theorem stated at the beginning of this section.
+
+Theorem 13.14. Let E and E 0 be elliptic curves over k. Then E and E 0 are isomorphic
+over k̄ if and only if j(E) = j(E 0 ). If j(E) = j(E 0 ) and the characteristic of k is not 2
+or 3 then there is a field extension K/k of degree at most 6, 4, or 2, depending on whether
+j(E) = 0, j(E) = 1728, or j(E) 6= 0, 1728, such that E and E 0 are isomorphic over K.
+
+Remark 13.15. The first statement is true in characteristic 2 and 3 (see [2, III.1.4.b]),
+but the second statement is not; one may need to take K/k of degree up to 12 when k has
+characteristic 2 or 3.
+
+Proof. We assume char(k) 6= 2, 3. Suppose E : y 2 = x3 + Ax + B and E 0 : y 2 = x3 + A0 x + B 0
+are isomorphic over k̄. For some µ ∈ k̄ ∗ we have A0 = µ4 A and B 0 = µ6 B, by Theorem 13.13.
+We then have
+                                        4(µ4 A)3                 4A3
+            j(A0 , B 0 ) = 1728                        = 1728             = j(A, B).
+                                  4(µ4 A)3 + 27(µ6 B)2        4A3 + 27B 2
+
+   For the converse, suppose that j(A, B) = j(A0 , B 0 ) = j0 . If j0 = 0 then A = A0 = 0 and
+we may choose µ ∈ K × , where K/k is an extension of degree at most 6, so that B 0 = µ6 B
+
+
+                                                                 18.783 Fall 2023, Lecture #13, Page 5
+(and A0 = µ4 A = 0). Similarly, if j0 = 1728 then B = 0 and we may choose µ ∈ K × , where
+K/k is an extension of degree at most 4, so that A0 = µ4 A (and B 0 = µ6 B = 0). We may
+then apply Theorem 13.13 to show that E and E 0 are isomorphic over K (by extending the
+field of definition of E and E 0 from k to K).
+     We now assume j0 6= 0, 1728. Let A00 = 3j0 (1728−j0 ) and B 00 = 2j0 (1728−j0 )2 , as in the
+proof of Theorem 13.12, so that j(A00 , B 00 ) = j0 . Plugging in j0 = 1728 · 4A3 /(4A3 + 27B 2 ),
+we have
+                                         4A3                        4A3
+                                                                           
+                       00
+                    A = 3 · 1728 3                 1728 − 1728 3
+                                     4A + 27B 2                 4A + 27B 2
+                                           3     2
+                                                                      2
+                                                            27 35 AB
+                                                        
+                                    2 4A · 27B
+                          = 3 · 1728                  =                  A,
+                                      (4A3 + 27B 2 )2     4A3 + 27B 2
+                                                                            2
+                                         4A3                        4A3
+                                                 
+                    B 00 = 2 · 1728 3              1728 −  1728
+                                     4A + 27B 2                 4A3 + 27B 2
+                                          3    2 4
+                                                         7 5         3
+                                    3 4A · 27 B             2 3 AB
+                          = 2 · 1728                  =                  B.
+                                      (4A3 + 27B 2 )3     4A3 + 27B 2
+    Plugging in j0 = 1728 · 4A03 /(4A03 + 27B 02 ) yields analogous expressions for A00 and B 00
+in terms of A0 and B 0 . If we let
+                                                 03
+                                                    4A + 27B 02
+                                  7 5                               
+                                    2 3 AB
+                             u=                                        ,
+                                   4A3 + 27B 2        2 7 3 5 A0 B 0
+then A0 = u2 A and B 0 = u3 B. We now choose µ ∈ K × , where K/k is an extension of degree
+at most 2, so that we have µ2 = u. Then A0 = µ4 A and B 0 = µ6 B and Theorem 13.13
+implies that E and E 0 are isomorphic over K.
+
+   Note that while j(E) = j(A, B) always lies in the minimal field k containing A and B,
+the converse is not necessarily true. It could be that j(A, B) lies in a proper subfield of k
+(squares in A can cancel cubes in B, for example). In this case we can construct an elliptic
+curve E 0 that is defined over the minimal subfield of k that contains j(E) such that E 0 is
+isomorphic to E over k̄ (but not necessarily over k).
+
+13.3    Supersingular elliptic curves
+Theorem 13.16. Let E be a supersingular elliptic curve over a field k of characteristic
+p > 0. Then j(E) lies in Fp2 (and possibly in Fp ).
+Proof. Since E is supersingular, π̂ is purely inseparable, so π̂ = π̂sep π with deg π̂sep = 1. We
+                                                                 2
+thus have [p] = π̂π = π̂sep π 2 , so π̂sep is an isomorphism E (p ) → E. By Theorem 13.13,
+                                  2          2    2              2         2
+                    j(E) = j(E (p ) ) = j(Ap , B p ) = j(A, B)p = j(E)p .
+                                                                           2
+Thus j(E) is fixed by the p2 -power Frobenius automorphism σ : x 7→ xp of k. It follows that
+j(E) lies in the subfield of k fixed by σ, which is either Fp2 or Fp , depending on whether k
+contains a quadratic extension of its prime field or not; in either case, j(E) lies in Fp2 .
+
+Remark 13.17. Note that this theorem applies to any field k of characteristic p, not just
+finite fields. Thus in any field k of positive characteristic, the number of k̄-isomorphism
+classes of supersingular elliptic curves is finite (it certainly cannot exceed #Fp2 = p2 ). In
+                          p
+fact, there are at most b 12 c + 11; see [2, Thm. V.4.1].
+
+                                                              18.783 Fall 2023, Lecture #13, Page 6
+Theorem 13.18. Let E be a supersingular elliptic curve over a field k of characteristic p.
+Then End0 (Ek̄ ) is a quaternion algebra.
+Proof. Without loss of generality we can assume k = k̄, so that End(Ek̄ ) = End(E). Let
+us suppose for the sake of contradiction that End0 (E) is not a quaternion√algebra. Then
+End(E) is isomorphic to Z or an order in an imaginary quadratic field Q( D), where we
+may assume D < 0 is squarefree. We claim there are infinitely many odd primes ` that are
+not the degree of any φ ∈ End(E). This√is obvious if End(E) ≃ Z, since deg[n] = n2 is a
+square , and if End(E) is an order in Q( D) √and ` is the degree of φ then the polynomial
+ 2                                0
+x − (tr φ)x + ` has a root in End (E) ≃ Q( D), which implies
+                                       tr(φ)2 − 4` = v 2 D
+for some integer v, and D must be a square modulo `. There are infinitely many primes
+` 6=√p for which this is not true (these are the primes that do not split in the quadratic field
+Q( D)). So let `1 , `2 , . . . be an infinite sequence of odd primes different from p that are not
+the degree of any φ ∈ End(E).
+     For each `i we may construct a separable isogeny φi : E → Ei of degree `i defined over
+k̄ whose kernel is a cyclic subgroup of order `i contained in E[`i ] using Vélu’s formulas
+(see Theorem 5.15). The elliptic curves Ei are all supersingular, by Theorem 13.2, and
+Theorem 13.16 implies that only finitely many of them have distinct j-invariants. By The-
+                                                                  ∼
+orem 13.14, over k̄ we must have an isomorphism ι : Ei −→ Ej for some distinct i and j.
+Let us now consider the endomorphism φ := φ̂j ◦ ι ◦ φi ∈ End(E) of degree `i `j . The    √ degree
+of this endomorphism is not a square, so End(E) 6≃ Z and we have End0 (E) ≃ Q( D). As
+above we must have
+                                         tr(φ)2 − 4`i `j = v 2 D,
+for some integer v, which implies that D is a square modulo `i (and `j ), a contradiction.
+    When k is a finite field, the converse of Theorem 13.18 is implied by Theorem 13.6, but
+in fact the converse holds in general.
+Theorem 13.19. Let E be an elliptic curve over a field k of characteristic p for which
+End0 (Ek̄ ) is a quaternion algebra. Then E is supersingular.
+Proof. Without loss of generality, we may assume k is algebraically closed, since the property
+of being supersingular, defined by E[p] = {0}, is invariant under base change, as is End0 (Ek̄ ).
+Let α, β ∈ End(E) by nonzero endomorphisms that satisfy αβ = −βα so that αβ + βα = 0
+(such α, β exist because End(E) is a quaternion algebra).
+    Now suppose E is ordinary. Then E[pn ] = hP i ≃ Z/pn Z for some point P ∈ E(k) of
+order pn . We then have α(P ) = aP and β(P ) = bP for some integers a and b. If we choose
+n > vp (deg α) + vp (deg β) + 1 where vp denotes the p-adic valuation (the exponent of the
+largest p-power divisor), then ab + ba = 2ab must be nonzero modulo p, since α must send P
+to a point of order at least pn−vp (α) and similarly for β (and we handled p = 2 by adding 1).
+But this contradicts αβ + βα = 0, so E cannot be ordinary.
+Corollary 13.20. Let E be an elliptic curve over a finite field Fq of characteristic p. Ei-
+ther E is supersingular, tr πE ≡ 0 mod p, and End0 (EFq ) is a quaternion algebra, or E is
+ordinary, tr πE 6≡ 0 mod p, and End0 (EFq ) = End0 (EFq ) is an imaginary quadratic field.
+Warning 13.21. If E is a superingular elliptic curve over Fp (or any odd degree extension),
+then End0 (E) is an imaginary quadratic field (by Corollary 13.1), even though End0 (EFp )
+is a quaternion algebra.
+
+                                                              18.783 Fall 2023, Lecture #13, Page 7
+References
+[1] Gaetan Bisson and Andrew V. Sutherland, Computing the endomorphism ring of an
+    ordinary elliptic curve over a finite field , Journal of Number Theory 131 (2011), 815–
+    831.
+
+[2] Joseph H. Silverman, The arithmetic of elliptic curves, second edition, Springer 2009.
+
+[3] Joseph H. Silverman, Advanced topics in the arithmetic of elliptic curves, Springer, 1994.
+
+
+
+
+                                                           18.783 Fall 2023, Lecture #13, Page 8
+

@@ -96,3 +96,32 @@ Sixth checkpoint, 2026-11-14 approximately08:05UTC (midnightLA), continuing:
 - Secondary Fuss-Catalan project: forced-carry cancellation, tree/cycle lemma and
   finite digit transducer saved;36120 exact checks pass. ExactSAIR wording remains
   inaccessible (latestllms.txt and.mdrequests403).
+
+Seventh checkpoint, 2026-11-14 approximately08:40UTC (00:40LA), continuing:
+- Full assembly audit found no remaining mathematical bridge in the simplified
+  computer-assisted derivation of Fauzan's claimed zeta5 theorem. Explicit new
+  plain-rank normalizer fixes a notation issue; retained core construction and
+  external standard theorems are identified. No external-consensus/novelty claim.
+- NEW independent standard-library-only energy certificate passes:
+  objective[-1.385510140104,-1.385509421992] < -2771/2000. It uses exact dyadic
+  intervals, integer square roots, bounded logarithm series and Simpson jets.
+  Independent rerun/review passed; raw dyadic JSON saved. This eliminates Arb
+  from the minimal certificate dependency and permits eventual exp(-13n²)
+  with the simpler arithmetic normalizer. Earlier exp(-4n²) remains valid.
+- Most directly relevant Zudilin discovery: Newton-grid bispectral kernel plus
+  finite detailed balance proves A_n+A_(n-1)=6K(n,n-1), deriving17=6*3-1 and
+  5=6*1-1 before the rational telescoping certificate. Independent audit passed.
+- Modular/elliptic proof now has a reviewed explicit covering argument and
+  precise level-six zeta5 obstruction; no general Eichler theorem is needed.
+- One-pole determinant bounds identified exactly via Wilson polynomials; true
+  reduced denominators prove their direct irrationality squeeze fails.
+- Lucas digit symmetry and symmetric-square invariant prove square/discriminant
+  factorization modulo everyp>=5. Elementary character-rule proof is under
+  independent final review; complex multiplication is an optional interpretation.
+- Prime-power arity Fuss-Catalan valuations now have a fully reviewed Sylow-group
+  proof and leading-unit congruence, using multivariable Lagrange inversion for
+  typed-skeleton counts. Binary case explicitly attributed to Deutsch-Sagan.
+- Read-only connected-GitHub check of research-claude found404 at HANDOFF.md
+  and claude/HANDOFF.md; no Claude draft contents read or files changed.
+- OfficialSAIR statements still unverified; currentcustomresearch scope does
+  not justify attributing any derived theorem to those exact problem statements.

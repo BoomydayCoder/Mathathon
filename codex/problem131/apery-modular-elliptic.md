@@ -1,6 +1,6 @@
 # Apéry's recurrence from an elliptic period and two modular identities
 
-Status: the eta-product identity and the algebraic hypergeometric pullback below are proved, with exact reproducible checks. The concluding modular irrationality proof uses explicitly identified primary-source results on analytic continuation and Eichler integrals. It is an advanced explanation of classical structure, not a claim of historical novelty or a new proof of an open odd-zeta case.
+Status: the eta-product identity and the algebraic hypergeometric pullback below are proved, with exact reproducible checks. The concluding modular irrationality proof is reconstructed from the primary source using an explicit covering argument and a direct three-integration calculation, with its standard modular-form inputs identified. It is an advanced explanation of classical structure, not a claim of historical novelty or a new proof of an open odd-zeta case.
 
 Primary source: F. Beukers, *Irrationality proofs using modular forms*, Astérisque 147–148 (1987), 271–283, especially Propositions 1.1, 1.2, 2.1 and Theorem 1. [Original PDF](https://www.numdam.org/item/AST_1987__147-148__271_0.pdf); downloaded as `../sources/beukers-modular-1987.pdf` with text extraction beside it. The earlier author survey `../sources/beukers-caen.txt`, pp. 2–3, motivates the quadratic change of variable. A visual check of the original printed p. 275 confirms a small typographical error: its definition of F prints E₄(36τ), but E₄(6τ) is required by the immediately following Dirichlet series, the claimed level, and the Fricke transformation law. We use the corrected E₄(6τ) throughout and independently verify the relevant identities; this is not merely an OCR inference.
 
@@ -176,7 +176,7 @@ The three integrations explain both the denominator exponent 3 and the eventual 
 
 ## 7. The analytic step: cancel the nearest singularity
 
-Here we use Beukers's primary-source analytic results explicitly rather than claiming to reprove the full uniformization theory.
+The background facts used here are that the compact modular curve X₀(6) adds its four cusps to the quotient of the upper half-plane, and that the quotient is unramified away from elliptic points and cusps. We spell out the relevant covering and continuation argument, following the mechanism of Beukers's Proposition 2.1, rather than importing its picture as an unexplained assertion.
 
 The Dirichlet series of F factors as
 
@@ -190,15 +190,35 @@ t(−1/(6τ))=t(τ),   E(−1/(6τ))=−6τ²E(τ),
 
 F(−1/(6τ))=−36τ⁴F(τ).
 
-Beukers's Proposition 1.2, applied to the triple primitive f, supplies
+The following special case of Beukers's Proposition 1.2 has a direct proof by three integrations, provided in [apery-modular-review.md](apery-modular-review.md), Section 4; no general Eichler-integral transformation theorem is necessary. It gives
 
 6τ²[f(−1/(6τ))−ζ(3)]=−[f(τ)−ζ(3)].
 
-Multiplying by E shows that W=E(f−ζ(3)) is invariant under this involution. Proposition 2.1 identifies the relevant consecutive nonzero branching values of t as
+Multiplying by E shows that W=E(f−ζ(3)) is invariant under this involution. It is also invariant under τ↦τ+1, from its q-series. We do **not** assume that W is invariant under all of Γ₀(6).
+
+Here is an explicit proof that these two invariances give the required enlarged disk. Define
+
+x(τ)=η₁⁴η₆⁸/(η₂⁸η₃⁴).
+
+The eta criterion makes x a modular function whose cusp orders, in the order c=1,2,3,6, are (0,−1,0,1). It has no interior poles. A meromorphic function with exactly one simple pole has degree 1 as a map from the compact curve to the sphere; thus x is a global coordinate on X₀(6). The divisor of t then forces t, as a rational function of x, to have the shape x(1−a x)/(1−b x): its poles are the cusp x=∞ and one other simple finite pole, and one of its zeros is x=0. The leading coefficient is fixed by t∼x∼q. The expansions
+
+x=q−4q²+10q³+⋯,   t=q−12q²+66q³+⋯
+
+give b−a=−8 and 74−8b=66, hence a=9,b=1. Therefore t=T(x)=x(1−9x)/(1−x), exactly the quadratic substitution already used in the period calculation.
+
+The quotient Γ₀(6)/{±1} is torsion free: an order-2 elliptic point would require a square root of −1 modulo 3, while an order-3 elliptic point would require a root of X²+X+1 modulo 2. Neither exists. Consequently the inverse τ(x) has no interior branching; its only excluded points are the four cusps. Under T those cusps map to 0 and ∞. The two remaining finite branch values are the critical values of T:
 
 ρ=(√2−1)⁴,   ρ⁻¹=(√2+1)⁴.
 
-The invariance makes the first branch removable for W, whereas it is present for E itself. Beukers's continuation argument proves that W is analytic for |t|<ρ⁻¹. Nonpolynomiality can be justified carefully as follows. The coefficients Fₙ/n³ are bounded, since σ₃(n)/n³≤ζ(3), so f(τ)=O(1/Im τ) as Im τ decreases to zero. If W were a polynomial in t, modularity of t and E would force g=f−ζ(3) to transform with weight −2 on Γ₀(6). At every cusp, g|₋₂σ then has at most polynomial growth in Im τ (the preceding bound gives O((Im τ)³)). A holomorphic periodic function with such growth has no negative Fourier powers, so it is holomorphic at the cusp. Thus g would be a holomorphic modular form of negative weight, hence zero by the valence bound. This contradicts g(i∞)=−ζ(3). Therefore W is not a polynomial. Its coefficients Bₙ−ζ(3)Aₙ consequently satisfy exponential bounds with any rate greater than ρ, and infinitely many are nonzero.
+The first is the value at the Fricke fixed point τ₀=i/√6. To select the sign without numerical approximation, note that x(τ₀)>0 and x(τ₀)<1. Indeed q=e^{−2π/√6}<1/8, and the product gives
+
+x≤q exp[8q²/(1−q²)²+4q³/(1−q³)²]<q e^{1/4}<1/4.
+
+Fricke invariance of t forces t'(τ₀)=0; x'(τ₀)≠0 by the unramified quotient. Thus x(τ₀) is the smaller critical point 1−2√2/3, and T(x(τ₀))=ρ.
+
+On the disk |t|<ρ⁻¹ with 0 and ρ removed, the inverse continues along every path by this covering description. Loops around the two punctures generate its fundamental group. Starting from small positive t, a loop around 0 acts by the cusp translation τ↦τ+1, and a loop around ρ acts by the Fricke involution, with the lift reached along the imaginary axis. Both preserve W. The monodromy theorem therefore makes W single valued on the punctured disk. It extends over 0 by its convergent q-series. Near τ₀, the coordinate v=(τ−τ₀)/(τ+τ₀) changes sign under Fricke; both t−ρ and W are even analytic functions of v, and t−ρ has a nonzero quadratic leading term. Hence W is analytic in t at ρ as well.
+
+This proves W is analytic throughout |t|<ρ⁻¹. Nonpolynomiality can be justified carefully as follows. The coefficients Fₙ/n³ are bounded, since σ₃(n)/n³≤ζ(3), so f(τ)=O(1/Im τ) as Im τ decreases to zero. If W were a polynomial in t, modularity of t and E would force g=f−ζ(3) to transform with weight −2 on Γ₀(6). At every cusp, g|₋₂σ then has at most polynomial growth in Im τ (the preceding bound gives O((Im τ)³)). A holomorphic periodic function with such growth has no negative Fourier powers, so it is holomorphic at the cusp. Thus g would be a holomorphic modular form of negative weight, hence zero by the valence bound. This contradicts g(i∞)=−ζ(3). Therefore W is not a polynomial. Its coefficients Bₙ−ζ(3)Aₙ consequently satisfy exponential bounds with any rate greater than ρ, and infinitely many are nonzero.
 
 If ζ(3)=a/b were rational, bLₙ³(Bₙ−ζ(3)Aₙ) would be integers tending to zero along those nonzero coefficients. This is impossible using the elementary estimate log Lₙ≤c n+o(n), c≈1.10555043, proved in the companion Zudilin exposition: 3c+log ρ<0. The simpler bound Lₙ≤4ⁿ would not suffice. Thus the modular argument can avoid the prime number theorem at its final denominator-growth step, although Beukers's original presentation uses Lₙ=exp(n+o(n)).
 
@@ -206,8 +226,53 @@ The exact reason the error is small is now visible: a special constant, determin
 
 ## 8. Scope and pedagogical recommendation
 
-For a first complete proof of ζ(3) irrationality, the positive Beukers integral remains less demanding. The modular route substantially simplifies the conceptual explanation of the recurrence and denominator bounds, at the cost of modular transformations, the valence bound, and the Eichler-integral continuation theorem.
+For a first complete proof of ζ(3) irrationality, the positive Beukers integral remains less demanding. The modular route substantially simplifies the conceptual explanation of the recurrence and denominator bounds, at the cost of modular transformations, the valence bound, and elementary covering theory for the modular curve. The particular triple-primitive transformation is proved directly in the independent review.
 
 For the team's project, a manageable advanced module is Sections 2–5: prove the explicit hypergeometric identity by rational substitution, realize its hypergeometric function as an elliptic period, and prove the two weight-4 identities using the small vanishing bound. This produces concrete theorems and reproducible calculations, rather than only discussing a possible geometric connection.
 
 For higher odd zeta values, merely replacing the triple primitive by a higher primitive changes the transformation's period polynomial: several critical L-values generally appear, and the simple scalar cancellation need not survive. The method therefore suggests a research question—find modular data with unusually sparse period polynomials and adequate denominator/decay balance—but does not prove ζ(5), or all odd zeta values, irrational.
+
+## 9. A concrete obstruction to the direct ζ(5) analogue
+
+The warning about extra moments can be made exact. Keep the same parameter t(τ) and try the weight-four prefactor E(τ)², so that its Fricke factor is 36τ⁴. The compatible weight-six Eisenstein input, with zero constant term at infinity, is unique up to scale in the span of E₆(dτ), d=1,2,3,6:
+
+F₆=5E₆(τ)−248E₆(2τ)−837E₆(3τ)+1080E₆(6τ).
+
+Here E₆=1−504Σσ₅(n)qⁿ. Its coefficients add to zero, and the exact Fricke permutation gives F₆(−1/(6τ))=216τ⁶F₆(τ). The four E₆(dτ) are linearly independent: inspect successively their q, q², q³ and q⁶ coefficients. The compatible Fricke eigenspace has dimension two, with a₆=216a₁ and a₃=(27/8)a₂. Zero constant term imposes the nonzero linear equation 217a₁+(35/8)a₂=0, leaving exactly one dimension and forcing the displayed vector. Thus the nonzero fourth critical value cannot be removed by retuning coefficients within this span. This is not a uniqueness assertion among all modular forms or all irrationality constructions.
+
+Let f₆=Σ(F₆)ₙqⁿ/n⁵ and C=(2π)⁵/24. The same absolutely convergent integral argument gives, for v>0,
+
+f₆(iv)=C∫ᵥ^∞(u−v)⁴F₆(iu)du.
+
+Define Mⱼ=∫₀^∞uʲF₆(iu)du. Fricke substitution yields
+
+Mⱼ=−6^{2−j}M₄₋ⱼ,   hence M₂=0, M₁=−6M₃, M₀=−36M₄.
+
+The Dirichlet factorization is
+
+L(F₆,s)=−504(5−248·2^{−s}−837·3^{−s}+1080·6^{−s})ζ(s)ζ(s−5).
+
+Its two relevant values are
+
+L(F₆,5)=−1526ζ(5),   L(F₆,4)=−840ζ(4)=−(28/3)π⁴.
+
+Mellin integration therefore gives CM₄=−1526ζ(5), M₃=−7/2 and M₁=21. Substituting u↦1/(6u) into the fifth primitive and combining the two integration intervals proves the exact transformation defect
+
+f₆(iv)−36v⁴f₆(i/(6v))
+ =−1526ζ(5)(1−36v⁴)+14C v(1−6v²).                 (5)
+
+The second term is nonzero. Subtracting the ζ(5) constant therefore does not produce Fricke invariance of E²(f₆+1526ζ(5)). In fact **no scalar constant c makes E²(f₆−c) Fricke invariant**: its defect is
+
+(−1526ζ(5)−c)(1−36v⁴)+14C(v−6v³),
+
+and these two polynomials are linearly independent. Since analyticity in the local coordinate t at the Fricke fixed point requires invariance under the local involution, no choice of c removes that branch completely. A suitable c can cancel its first odd Taylor coefficient, but cannot cancel all the odd coefficients; the radius cannot jump past the first branch by this scalar correction.
+
+This is a proved obstruction for the most direct weight-six Eisenstein analogue. It isolates the precise extra quantity: the fourth critical L-value, here an explicit nonzero multiple of π⁴. It does not rule out adding other modular forms, using several linear forms or constants, choosing another modular group, or changing the approximation construction. Even a hypothetical scalar cancellation with the same radius and fifth-power lcm denominator would not by itself give the ζ(3) balance: the available inverse radius ρ⁻¹≈33.97 is smaller than e⁵≈148.41. That last comparison only diagnoses insufficiency of this naive estimate; it is not a lower bound excluding stronger arithmetic cancellation.
+
+## 10. A finite-field consequence with an elementary proof
+
+The same quadratic substitution T=x(1−9x)/(1−x) has involution M(x)=(x−1/9)/(x−1). This symmetry also determines the square factor of the Apéry digit polynomial modulo every prime p≥5:
+
+Σₙ₌₀ᵖ⁻¹Aₙtⁿ = (1−34t+t²)^{(1−(−6/p))/2} Qₚ(t)².
+
+A complete elementary proof is given in [apery-cm-character.md](apery-cm-character.md). It uses the second-order equation, a central-binomial sequence, Lucas congruences and two special values; the CM interpretation is optional. The character (−6/p) arises as the product of the involution's two signs, (2/p) and (−3/p), at its fixed points. Geometrically, those fixed points correspond to elliptic curves with CM discriminant −24. This is a concrete connection among the same recurrence, its elliptic reduction and prime arithmetic, rather than a conjectural analogy.
