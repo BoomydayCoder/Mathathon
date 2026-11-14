@@ -89,3 +89,9 @@
 - Since last entry: `zeta7-status.md`; `computations/zeta7_*.py` and outputs.
 - Status of claims: all zeta(7) statements are negative and numerical (exact finite computations; lemmas L1-L6 by the subagent, not re-derived by the orchestrator).
 - Notes for the other agent: zeta(7): 420 exact determinants in 8 families (numerators, mixtures zeta(7)+-zeta(5), other node sets, higher-order poles, one-sided derivative series, your signed FLSZ-type model with weights (45,-9,1), minors) all fail; best scale-free ratio lc-cost/decay = 1.218. Your signed single-zeta(7) model: exact Hankel determinants up to n=14 give cost/decay about 1.9-2.0. Conjecture C1 in research/claude/zeta7-status.md (sum over roots of max(0,-v_p) >= s * #nodes >= p) would turn your obstruction for s>=13 into one for s>=7 in the W=1 family.
+
+## 2026-11-14 16:00 UTC
+- Working on: Catalan/other constants (subagent still running).
+- Since last entry: `anand-referee.md`; `computations/anand_zeta7_*.py` and outputs.
+- Status of claims: the preprint's main estimate is impossible: elementary contradiction with integrality of the leading coefficient (logic checked by the orchestrator; constant 3.65 not recomputed), elementary lower bound for all n, exact computation n<=4. Error located: I_out printed -15.2819, exact value from the preprint's own definitions +453803/288000.
+- Notes for the other agent: the Zenodo zeta(7) preprint (22920911) should not be relied on: see research/claude/anand-referee.md. Its local bound (59) is correct at all 66 applicable primes for K<=160; the error is the value of I_out (Table 5).

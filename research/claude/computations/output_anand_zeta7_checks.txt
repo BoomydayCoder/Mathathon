@@ -1,0 +1,36 @@
+=== 1. Prop. 2.4: the functional at X = zeta(7) against the weight w_7 ===
+  moments e=0..6: max relative error vs (5): 2.5e-41
+  j=1: integral = 0.34168261071525616017313088318313
+        (6) with -1/6 = 0.34168261071525616017313088318313   diff 0.0;   variant with -1/2: diff 0.333333
+  j=2: integral = 0.11768708577639425108037652372033
+        (6) with -1/6 = 0.11768708577639425108037652372033   diff -1.82e-40;   variant with -1/2: diff 0.333333
+  poles j=1..8: max |integral - (6)| = 1.77e-36
+  Gram moments of D_N^8 t^e/D_K (K=5,N=1, e=0..6) vs exact alpha_e + beta_e zeta(7): max rel. error 4.22e-29
+     (cancellation in alpha_e + beta_e zeta(7) limits this comparison; 40-digit arithmetic)
+=== 2. Real side: Lemma 6.1 / Table 1, and the true equilibrium constant ===
+  mass of rho = 0.925000 (lam = 0.925)
+  I(rho) by (110) = -3.143325089380   [preprint: -3.143325089379538]
+  C_* (95)        = 3.649335128752   [preprint:  3.649335128751705]
+  sup_t [2U^rho - V] on a grid of 2000003 points in (0,400]: -6.613017 at t = 0.21435   [preprint: about -5.4719 at t ~ 0.2648; M_0 = -5.45]
+  lam*M_0 - I(rho) + C_* with M_0 = -5.45: 1.751410218   [preprint: 1.751410218131243 <= U = 1.76]
+  same with the grid supremum in place of M_0: 0.675620
+  equilibrium problem (a=8, al=3/40, lam=37/40), 800 cells: E* = 4.411274, Robin const = 6.88634, support t <= 0.8662;  true real constant C_* - E* = -0.761938
+  equilibrium problem (a=8, al=3/40, lam=37/40), 1600 cells: E* = 4.411274, Robin const = 6.88634, support t <= 0.8662;  true real constant C_* - E* = -0.761938
+  exact values log F_K(zeta7)/K^2 (anand_zeta7_exact.py): K=40: -0.655371, 80: -0.707302, 120: -0.725215, 160: -0.734284
+=== 3. Elementary lower bound for Delta_K(zeta7)/|lead Delta_K| (hence for P_K(zeta7)) ===
+  c(a,b) at (a,b)=(0.05556,0.33333): 7.507938
+  c(a,b) at (a,b)=(0.07500,0.20000): 7.170797
+   n |    K | lower bound for log P_K(zeta7) | claimed upper bound -19000 n^2 | exact log(Delta(zeta7)/|lead|) | exact log P_K(zeta7)
+        1 |       40 |         -11704.2 |         -19000.0 |        -5759.5 |      +1274.4
+        2 |       80 |         -46406.2 |         -76000.0 |       -23135.2 |      +5575.8
+        3 |      120 |        -104074.1 |        -171000.0 |       -52126.0 |     +12727.9
+        4 |      160 |        -184701.2 |        -304000.0 |       -92732.0 |     +22660.5
+        5 |      200 |        -288284.1 |        -475000.0 |        .       |       .     
+        6 |      240 |        -414821.1 |        -684000.0 |        .       |       .     
+      100 |     4000 |     -114772888.4 |     -190000000.0 |        .       |       .     
+     1000 |    40000 |   -11473762406.4 |   -19000000000.0 |        .       |       .     
+    10000 |   400000 | -1147333308701.5 | -1900000000000.0 |        .       |       .     
+  1000000 | 40000000 | -11473276660754534.0 | -19000000000000000.0 |        .       |       .     
+  min over 1 <= n < 200000 of (lower bound + 19000 n^2)/n^2 = 7295.82 > 0;  for larger n the difference is >= (11.875 - 7.1708) K^2 - K(2 + log(2K)) > 0
+  => for every n >= 1 the lower bound exceeds the claimed upper bound: True
+  3b. K=40: all leading principal minors of G_K(zeta7) positive and every d_k >= its lower bound: True; min slack in log d_k: 99.51;  log det G_K(zeta7) = -579.094698

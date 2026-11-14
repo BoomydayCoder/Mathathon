@@ -1,0 +1,247 @@
+=== n=1: K=40 N=3 h=37   (exact Delta_K(X) loaded from cache of an earlier run of this script; first runs took 0s, 5s, 34s, 157s for n=1..4)
+  degree = 37 (h = 37);  leading coefficient equals formula (10): True
+  sign Delta_K(zeta(7)) = +   (arb precision 132000 bits, log-radius 6.4e-58)
+  log Delta_K(zeta7)        = -579.094698
+  log S_K                   = -469.499397
+  log F_K(zeta7)      /K^2  = -0.655371      [preprint (108): <= U = +1.76 (+ lower order)]
+  log cont(F_K)       /K^2  = -1.451854      [= -log m_true/K^2; preprint claims m_K,M <= exp(A_M K^2), A_200 = -13.7529]
+  log |lead F_K|      /K^2  = +2.944310      [m * lead(F_K) must be a nonzero integer => log m >= -this]
+  log P_K(zeta7)      /K^2  = +0.796483      [P_K primitive; any Q in Z[X] prop. to Delta_K has |Q(zeta7)| >= P_K(zeta7)]
+  log P_K(zeta7)            = +1274.373    vs  claimed bound -19000 n^2 = -19000   (= -11.8750 K^2)
+  log(Delta_K(zeta7)/|lead Delta_K|) = -5759.491  >=  elementary lower bound -11704.177  >  -19000 n^2 : True
+  content of Delta_K fully explained by primes <= 131: True
+     p   range | v_p(Delta) true | gamma_out (59) | true-gamma | v_p(S_K) | v_p(F_K) true | crude (41) | p*Gamma(K/p) [continuum form (66),(70) of gamma_in; heuristic: K is outside the range K>=200M^2 of Prop. 4.4]
+      2 p^2<=5K |      526        |       .        |       .    |    -192  |      334      |   -2220
+      3 p^2<=5K |      143        |       .        |       .    |    -454  |     -311      |   -1258
+      5 p^2<=5K |      -47        |       .        |       .    |      90  |       43      |    -925
+      7 p^2<=5K |       -5        |       .        |       .    |      -4  |       -9      |    -592
+     11 p^2<=5K |     -121        |       .        |       .    |      12  |     -109      |    -592
+     13 p^2<=5K |     -144        |       .        |       .    |      50  |      -94      |    -592
+     17 outer   |     -138        |    -146        |       8    |      24  |     -114      |    -296
+     19 outer   |     -123        |    -129        |       6    |      42  |      -81      |    -296
+     23 outer   |     -130        |    -130        |       0    |      -8  |     -138      |    -296
+     29 outer   |      -76        |     -76        |       0    |      14  |      -62      |    -296
+     31 outer   |      -58        |     -58        |       0    |      20  |      -38      |    -296
+     37 outer   |       -4        |      -4        |       0    |      38  |       34      |    -296
+     41 K<p<=2h |        0        |       .        |       .    |     -32  |      -32      |    -296
+     43 K<p<=2h |        0        |       .        |       .    |     -30  |      -30      |    -296
+     47 K<p<=2h |        0        |       .        |       .    |     -26  |      -26      |    -296
+     53 K<p<=2h |        0        |       .        |       .    |     -20  |      -20      |    -296
+     59 K<p<=2h |        0        |       .        |       .    |     -14  |      -14      |    -296
+     61 K<p<=2h |        0        |       .        |       .    |     -12  |      -12      |    -296
+     67 K<p<=2h |        0        |       .        |       .    |      -6  |       -6      |    -296
+     71 K<p<=2h |        0        |       .        |       .    |      -2  |       -2      |    -296
+  Prop 4.6 formula (59) violated (true v_p(Delta_K) < gamma_out) at primes satisfying (52): none
+  (41) violated (true v_p(F_K) < crude bound): none
+  'v_p(Delta_K) >= 0 for p > K' violated: none
+  sum_p v_p(F_K) log p / K^2 over ALL primes (= log cont F_K / K^2)      : -1.451854
+  outer primes K/3<p<=K with (52): sum (v_p(S_K)+true v_p(Delta)) log p/K^2: -0.756673
+  outer primes, preprint's exponents L_p = v_p(S_K)+gamma_out : sum/K^2     : -0.781881
+  primes K<p<=2h: sum v_p(S_K) log p / K^2  (gamma_out := 0 there)          : -0.344593
+  # time 0s
+=== n=2: K=80 N=6 h=74   (exact Delta_K(X) loaded from cache of an earlier run of this script; first runs took 0s, 5s, 34s, 157s for n=1..4)
+  degree = 74 (h = 74);  leading coefficient equals formula (10): True
+  sign Delta_K(zeta(7)) = +   (arb precision 516000 bits, log-radius 6.4e-58)
+  log Delta_K(zeta7)        = 799.028885
+  log S_K                   = -5325.761703
+  log F_K(zeta7)      /K^2  = -0.707302      [preprint (108): <= U = +1.76 (+ lower order)]
+  log cont(F_K)       /K^2  = -1.578523      [= -log m_true/K^2; preprint claims m_K,M <= exp(A_M K^2), A_200 = -13.7529]
+  log |lead F_K|      /K^2  = +2.907567      [m * lead(F_K) must be a nonzero integer => log m >= -this]
+  log P_K(zeta7)      /K^2  = +0.871221      [P_K primitive; any Q in Z[X] prop. to Delta_K has |Q(zeta7)| >= P_K(zeta7)]
+  log P_K(zeta7)            = +5575.815    vs  claimed bound -19000 n^2 = -76000   (= -11.8750 K^2)
+  log(Delta_K(zeta7)/|lead Delta_K|) = -23135.163  >=  elementary lower bound -46406.198  >  -19000 n^2 : True
+  content of Delta_K fully explained by primes <= 199: True
+     p   range | v_p(Delta) true | gamma_out (59) | true-gamma | v_p(S_K) | v_p(F_K) true | crude (41) | p*Gamma(K/p) [continuum form (66),(70) of gamma_in; heuristic: K is outside the range K>=200M^2 of Prop. 4.4]
+      2 p^2<=5K |     3664        |       .        |       .    |   -3416  |      248      |   -5032
+      3 p^2<=5K |     1546        |       .        |       .    |   -2126  |     -580      |   -3108
+      5 p^2<=5K |      516        |       .        |       .    |    -858  |     -342      |   -1850
+      7 p^2<=5K |      195        |       .        |       .    |     148  |      343      |   -1776
+     11 p^2<=5K |       75        |       .        |       .    |      94  |      169      |   -1184
+     13 p^2<=5K |       -4        |       .        |       .    |     124  |      120      |   -1184
+     17 p^2<=5K |     -152        |       .        |       .    |      24  |     -128      |   -1184
+     19 p^2<=5K |     -194        |       .        |       .    |      92  |     -102      |   -1184
+     23 <=K/3   |     -270        |       .        |       .    |      42  |     -228      |    -592   |    -290.0
+     29 outer   |     -344        |    -347        |       3    |      -6  |     -350      |    -592
+     31 outer   |     -323        |    -327        |       4    |      16  |     -307      |    -592
+     37 outer   |     -251        |    -255        |       4    |      76  |     -175      |    -592
+     41 outer   |     -264        |    -264        |       0    |     -48  |     -312      |    -592
+     43 outer   |     -278        |    -278        |       0    |     -36  |     -314      |    -592
+     47 outer   |     -250        |    -250        |       0    |     -12  |     -262      |    -592
+     53 outer   |     -196        |    -196        |       0    |      12  |     -184      |    -592
+     59 outer   |     -142        |    -142        |       0    |      30  |     -112      |    -592
+     61 outer   |     -124        |    -124        |       0    |      36  |      -88      |    -592
+     67 outer   |      -70        |     -70        |       0    |      54  |      -16      |    -592
+     71 outer   |      -34        |     -34        |       0    |      66  |       32      |    -592
+     73 outer   |      -16        |     -16        |       0    |      72  |       56      |    -592
+     79 outer   |       -2        |      -2        |       0    |      80  |       78      |    -592
+     83 K<p<=2h |        0        |       .        |       .    |     -64  |      -64      |    -592
+     89 K<p<=2h |        0        |       .        |       .    |     -58  |      -58      |    -592
+     97 K<p<=2h |        0        |       .        |       .    |     -50  |      -50      |    -592
+    101 K<p<=2h |        0        |       .        |       .    |     -46  |      -46      |    -592
+    103 K<p<=2h |        0        |       .        |       .    |     -44  |      -44      |    -592
+    107 K<p<=2h |        0        |       .        |       .    |     -40  |      -40      |    -592
+    109 K<p<=2h |        0        |       .        |       .    |     -38  |      -38      |    -592
+    113 K<p<=2h |        0        |       .        |       .    |     -34  |      -34      |    -592
+    127 K<p<=2h |        0        |       .        |       .    |     -20  |      -20      |    -592
+    131 K<p<=2h |        0        |       .        |       .    |     -16  |      -16      |    -592
+    137 K<p<=2h |        0        |       .        |       .    |     -10  |      -10      |    -592
+    139 K<p<=2h |        0        |       .        |       .    |      -8  |       -8      |    -592
+  Prop 4.6 formula (59) violated (true v_p(Delta_K) < gamma_out) at primes satisfying (52): none
+  (41) violated (true v_p(F_K) < crude bound): none
+  'v_p(Delta_K) >= 0 for p > K' violated: none
+  sum_p v_p(F_K) log p / K^2 over ALL primes (= log cont F_K / K^2)      : -1.578523
+  outer primes K/3<p<=K with (52): sum (v_p(S_K)+true v_p(Delta)) log p/K^2: -1.111227
+  outer primes, preprint's exponents L_p = v_p(S_K)+gamma_out : sum/K^2     : -1.117208
+  primes K<p<=2h: sum v_p(S_K) log p / K^2  (gamma_out := 0 there)          : -0.308997
+  # time 2s
+=== n=3: K=120 N=9 h=111   (exact Delta_K(X) loaded from cache of an earlier run of this script; first runs took 0s, 5s, 34s, 157s for n=1..4)
+  degree = 111 (h = 111);  leading coefficient equals formula (10): True
+  sign Delta_K(zeta(7)) = +   (arb precision 1156000 bits, log-radius 5.1e-57)
+  log Delta_K(zeta7)        = 6390.223805
+  log S_K                   = -16833.324460
+  log F_K(zeta7)      /K^2  = -0.725215      [preprint (108): <= U = +1.76 (+ lower order)]
+  log cont(F_K)       /K^2  = -1.609096      [= -log m_true/K^2; preprint claims m_K,M <= exp(A_M K^2), A_200 = -13.7529]
+  log |lead F_K|      /K^2  = +2.894645      [m * lead(F_K) must be a nonzero integer => log m >= -this]
+  log P_K(zeta7)      /K^2  = +0.883881      [P_K primitive; any Q in Z[X] prop. to Delta_K has |Q(zeta7)| >= P_K(zeta7)]
+  log P_K(zeta7)            = +12727.882    vs  claimed bound -19000 n^2 = -171000   (= -11.8750 K^2)
+  log(Delta_K(zeta7)/|lead Delta_K|) = -52125.988  >=  elementary lower bound -104074.132  >  -19000 n^2 : True
+  content of Delta_K fully explained by primes <= 281: True
+     p   range | v_p(Delta) true | gamma_out (59) | true-gamma | v_p(S_K) | v_p(F_K) true | crude (41) | p*Gamma(K/p) [continuum form (66),(70) of gamma_in; heuristic: K is outside the range K>=200M^2 of Prop. 4.4]
+      2 p^2<=5K |     9661        |       .        |       .    |  -10156  |     -495      |   -8436
+      3 p^2<=5K |     4342        |       .        |       .    |   -5910  |    -1568      |   -4662
+      5 p^2<=5K |     1864        |       .        |       .    |   -1324  |      540      |   -2775
+      7 p^2<=5K |      851        |       .        |       .    |   -1348  |     -497      |   -2664
+     11 p^2<=5K |      546        |       .        |       .    |       0  |      546      |   -1776
+     13 p^2<=5K |      320        |       .        |       .    |     170  |      490      |   -1776
+     17 p^2<=5K |       73        |       .        |       .    |     222  |      295      |   -1776
+     19 p^2<=5K |       -6        |       .        |       .    |     150  |      144      |   -1776
+     23 p^2<=5K |     -161        |       .        |       .    |     152  |       -9      |   -1776
+     29 <=K/3   |     -316        |       .        |       .    |     150  |     -166      |    -888   |    -343.0
+     31 <=K/3   |     -366        |       .        |       .    |     -16  |     -382      |    -888   |    -391.0
+     37 <=K/3   |     -434        |       .        |       .    |     114  |     -320      |    -888   |    -454.0
+     41 outer   |     -493        |    -500        |       7    |     -48  |     -541      |    -888
+     43 outer   |     -493        |    -520        |      27    |     -18  |     -511      |    -888
+     47 outer   |     -480        |    -484        |       4    |      28  |     -452      |    -888
+     53 outer   |     -408        |    -412        |       4    |      88  |     -320      |    -888
+     59 outer   |     -385        |    -389        |       4    |     134  |     -251      |    -888
+     61 outer   |     -396        |    -396        |       0    |     -76  |     -472      |    -888
+     67 outer   |     -406        |    -406        |       0    |     -40  |     -446      |    -888
+     71 outer   |     -370        |    -370        |       0    |     -16  |     -386      |    -888
+     73 outer   |     -352        |    -352        |       0    |      -4  |     -356      |    -888
+     79 outer   |     -298        |    -298        |       0    |      16  |     -282      |    -888
+     83 outer   |     -262        |    -262        |       0    |      28  |     -234      |    -888
+     89 outer   |     -208        |    -208        |       0    |      46  |     -162      |    -888
+     97 outer   |     -136        |    -136        |       0    |      70  |      -66      |    -888
+    101 outer   |     -100        |    -100        |       0    |      82  |      -18      |    -888
+    103 outer   |      -82        |     -82        |       0    |      88  |        6      |    -888
+    107 outer   |      -46        |     -46        |       0    |     100  |       54      |    -888
+    109 outer   |      -28        |     -28        |       0    |     106  |       78      |    -888
+    113 outer   |       -8        |      -8        |       0    |     114  |      106      |    -888
+    127 K<p<=2h |        0        |       .        |       .    |     -94  |      -94      |    -888
+    131 K<p<=2h |        0        |       .        |       .    |     -90  |      -90      |    -888
+    137 K<p<=2h |        0        |       .        |       .    |     -84  |      -84      |    -888
+    139 K<p<=2h |        0        |       .        |       .    |     -82  |      -82      |    -888
+    149 K<p<=2h |        0        |       .        |       .    |     -72  |      -72      |    -888
+    151 K<p<=2h |        0        |       .        |       .    |     -70  |      -70      |    -888
+    157 K<p<=2h |        0        |       .        |       .    |     -64  |      -64      |    -888
+    163 K<p<=2h |        0        |       .        |       .    |     -58  |      -58      |    -888
+    167 K<p<=2h |        0        |       .        |       .    |     -54  |      -54      |    -888
+    173 K<p<=2h |        0        |       .        |       .    |     -48  |      -48      |    -888
+    179 K<p<=2h |        0        |       .        |       .    |     -42  |      -42      |    -888
+    181 K<p<=2h |        0        |       .        |       .    |     -40  |      -40      |    -888
+    191 K<p<=2h |        0        |       .        |       .    |     -30  |      -30      |    -888
+    193 K<p<=2h |        0        |       .        |       .    |     -28  |      -28      |    -888
+    197 K<p<=2h |        0        |       .        |       .    |     -24  |      -24      |    -888
+    199 K<p<=2h |        0        |       .        |       .    |     -22  |      -22      |    -888
+    211 K<p<=2h |        0        |       .        |       .    |     -10  |      -10      |    -888
+  Prop 4.6 formula (59) violated (true v_p(Delta_K) < gamma_out) at primes satisfying (52): none
+  (41) violated (true v_p(F_K) < crude bound): none
+  'v_p(Delta_K) >= 0 for p > K' violated: none
+  sum_p v_p(F_K) log p / K^2 over ALL primes (= log cont F_K / K^2)      : -1.609096
+  outer primes K/3<p<=K with (52): sum (v_p(S_K)+true v_p(Delta)) log p/K^2: -1.193392
+  outer primes, preprint's exponents L_p = v_p(S_K)+gamma_out : sum/K^2     : -1.205555
+  primes K<p<=2h: sum v_p(S_K) log p / K^2  (gamma_out := 0 there)          : -0.319013
+  # time 6s
+=== n=4: K=160 N=12 h=148   (exact Delta_K(X) loaded from cache of an earlier run of this script; first runs took 0s, 5s, 34s, 157s for n=1..4)
+  degree = 148 (h = 148);  leading coefficient equals formula (10): True
+  sign Delta_K(zeta(7)) = +   (arb precision 2052000 bits, log-radius 2.0e-56)
+  log Delta_K(zeta7)        = 17452.852075
+  log S_K                   = -36250.534740
+  log F_K(zeta7)      /K^2  = -0.734284      [preprint (108): <= U = +1.76 (+ lower order)]
+  log cont(F_K)       /K^2  = -1.619459      [= -log m_true/K^2; preprint claims m_K,M <= exp(A_M K^2), A_200 = -13.7529]
+  log |lead F_K|      /K^2  = +2.888061      [m * lead(F_K) must be a nonzero integer => log m >= -this]
+  log P_K(zeta7)      /K^2  = +0.885175      [P_K primitive; any Q in Z[X] prop. to Delta_K has |Q(zeta7)| >= P_K(zeta7)]
+  log P_K(zeta7)            = +22660.469    vs  claimed bound -19000 n^2 = -304000   (= -11.8750 K^2)
+  log(Delta_K(zeta7)/|lead Delta_K|) = -92732.047  >=  elementary lower bound -184701.189  >  -19000 n^2 : True
+  content of Delta_K fully explained by primes <= 353: True
+     p   range | v_p(Delta) true | gamma_out (59) | true-gamma | v_p(S_K) | v_p(F_K) true | crude (41) | p*Gamma(K/p) [continuum form (66),(70) of gamma_in; heuristic: K is outside the range K>=200M^2 of Prop. 4.4]
+      2 p^2<=5K |    18749        |       .        |       .    |  -19114  |     -365      |  -11248
+      3 p^2<=5K |     8658        |       .        |       .    |  -10376  |    -1718      |   -7400
+      5 p^2<=5K |     3780        |       .        |       .    |   -3592  |      188      |   -4884
+      7 p^2<=5K |     2060        |       .        |       .    |   -1802  |      258      |   -3552
+     11 p^2<=5K |     1033        |       .        |       .    |   -1978  |     -945      |   -2368
+     13 p^2<=5K |      937        |       .        |       .    |     214  |     1151      |   -2368
+     17 p^2<=5K |      444        |       .        |       .    |     236  |      680      |   -2368
+     19 p^2<=5K |      284        |       .        |       .    |     216  |      500      |   -2368
+     23 p^2<=5K |       71        |       .        |       .    |      24  |       95      |   -2368
+     29 <=K/3   |     -172        |       .        |       .    |     120  |      -52      |   -1184   |    -210.0
+     31 <=K/3   |     -238        |       .        |       .    |     216  |      -22      |   -1184   |    -271.0
+     37 <=K/3   |     -388        |       .        |       .    |     152  |     -236      |   -1184   |    -414.0
+     41 <=K/3   |     -483        |       .        |       .    |     -32  |     -515      |   -1184   |    -513.0
+     43 <=K/3   |     -532        |       .        |       .    |      18  |     -514      |   -1184   |    -563.0
+     47 <=K/3   |     -565        |       .        |       .    |     102  |     -463      |   -1184   |    -588.0
+     53 <=K/3   |     -641        |       .        |       .    |     206  |     -435      |   -1184   |    -664.0
+     59 outer   |     -685        |    -689        |       4    |       0  |     -685      |   -1184
+     61 outer   |     -661        |    -665        |       4    |      20  |     -641      |   -1184
+     67 outer   |     -589        |    -593        |       4    |      80  |     -509      |   -1184
+     71 outer   |     -541        |    -545        |       4    |     120  |     -421      |   -1184
+     73 outer   |     -517        |    -521        |       4    |     140  |     -377      |   -1184
+     79 outer   |     -517        |    -520        |       3    |     180  |     -337      |   -1184
+     83 outer   |     -542        |    -542        |       0    |     -92  |     -634      |   -1184
+     89 outer   |     -544        |    -544        |       0    |     -56  |     -600      |   -1184
+     97 outer   |     -472        |    -472        |       0    |      -8  |     -480      |   -1184
+    101 outer   |     -436        |    -436        |       0    |       8  |     -428      |   -1184
+    103 outer   |     -418        |    -418        |       0    |      14  |     -404      |   -1184
+    107 outer   |     -382        |    -382        |       0    |      26  |     -356      |   -1184
+    109 outer   |     -364        |    -364        |       0    |      32  |     -332      |   -1184
+    113 outer   |     -328        |    -328        |       0    |      44  |     -284      |   -1184
+    127 outer   |     -202        |    -202        |       0    |      86  |     -116      |   -1184
+    131 outer   |     -166        |    -166        |       0    |      98  |      -68      |   -1184
+    137 outer   |     -112        |    -112        |       0    |     116  |        4      |   -1184
+    139 outer   |      -94        |     -94        |       0    |     122  |       28      |   -1184
+    149 outer   |      -12        |     -12        |       0    |     150  |      138      |   -1184
+    151 outer   |      -10        |     -10        |       0    |     152  |      142      |   -1184
+    157 outer   |       -4        |      -4        |       0    |     158  |      154      |   -1184
+    163 K<p<=2h |        0        |       .        |       .    |    -132  |     -132      |   -1184
+    167 K<p<=2h |        0        |       .        |       .    |    -128  |     -128      |   -1184
+    173 K<p<=2h |        0        |       .        |       .    |    -122  |     -122      |   -1184
+    179 K<p<=2h |        0        |       .        |       .    |    -116  |     -116      |   -1184
+    181 K<p<=2h |        0        |       .        |       .    |    -114  |     -114      |   -1184
+    191 K<p<=2h |        0        |       .        |       .    |    -104  |     -104      |   -1184
+    193 K<p<=2h |        0        |       .        |       .    |    -102  |     -102      |   -1184
+    197 K<p<=2h |        0        |       .        |       .    |     -98  |      -98      |   -1184
+    199 K<p<=2h |        0        |       .        |       .    |     -96  |      -96      |   -1184
+    211 K<p<=2h |        0        |       .        |       .    |     -84  |      -84      |   -1184
+    223 K<p<=2h |        0        |       .        |       .    |     -72  |      -72      |   -1184
+    227 K<p<=2h |        0        |       .        |       .    |     -68  |      -68      |   -1184
+    229 K<p<=2h |        0        |       .        |       .    |     -66  |      -66      |   -1184
+    233 K<p<=2h |        0        |       .        |       .    |     -62  |      -62      |   -1184
+    239 K<p<=2h |        0        |       .        |       .    |     -56  |      -56      |   -1184
+    241 K<p<=2h |        0        |       .        |       .    |     -54  |      -54      |   -1184
+    251 K<p<=2h |        0        |       .        |       .    |     -44  |      -44      |   -1184
+    257 K<p<=2h |        0        |       .        |       .    |     -38  |      -38      |   -1184
+    263 K<p<=2h |        0        |       .        |       .    |     -32  |      -32      |   -1184
+    269 K<p<=2h |        0        |       .        |       .    |     -26  |      -26      |   -1184
+    271 K<p<=2h |        0        |       .        |       .    |     -24  |      -24      |   -1184
+    277 K<p<=2h |        0        |       .        |       .    |     -18  |      -18      |   -1184
+    281 K<p<=2h |        0        |       .        |       .    |     -14  |      -14      |   -1184
+    283 K<p<=2h |        0        |       .        |       .    |     -12  |      -12      |   -1184
+    293 K<p<=2h |        0        |       .        |       .    |      -2  |       -2      |   -1184
+  Prop 4.6 formula (59) violated (true v_p(Delta_K) < gamma_out) at primes satisfying (52): none
+  (41) violated (true v_p(F_K) < crude bound): none
+  'v_p(Delta_K) >= 0 for p > K' violated: none
+  sum_p v_p(F_K) log p / K^2 over ALL primes (= log cont F_K / K^2)      : -1.619459
+  outer primes K/3<p<=K with (52): sum (v_p(S_K)+true v_p(Delta)) log p/K^2: -1.058938
+  outer primes, preprint's exponents L_p = v_p(S_K)+gamma_out : sum/K^2     : -1.062723
+  primes K<p<=2h: sum v_p(S_K) log p / K^2  (gamma_out := 0 there)          : -0.349148
+  # time 13s

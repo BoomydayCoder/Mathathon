@@ -414,6 +414,14 @@ def partC(K=320000, M=40, I_out=None, I320=None, tail=None):
             pred = 8 * lamf / M + float(Iin) + float(I_out)
             print(f"  asymptotic value by the preprint's own argument with recomputed integrals: 8 lam/M + int_3^M R/x^3 + I_out = "
                   f"{8 * lamf / M:+.6f} {float(Iin):+.6f} {float(I_out):+.6f} = {pred:+.6f}")
+        I200, _ = int_R_over_x3(Fr(3), Fr(200))
+        print(f"  corrected constant for M=200 (same formula): 8 lam/200 + int_3^200 R/x^3 + I_out = {8 * lamf / 200:+.6f} {float(I200):+.6f} {float(I_out):+.6f}"
+              f" = {8 * lamf / 200 + float(I200) + float(I_out):+.6f}     [preprint: A_200 = -13.752854]")
+        if I320 is not None and tail is not None:
+            print(f"  corrected constant for M -> infinity: int_3^inf R/x^3 + I_out = {I320 + tail:+.6f} {float(I_out):+.6f} = {I320 + tail + float(I_out):+.6f}"
+                  f"     [preprint: B_0 = -13.794084]")
+            print(f"  with the preprint's real constant U = +1.76: corrected A_200 + U = {8 * lamf / 200 + float(I200) + float(I_out) + 1.76:+.4f} > 0;"
+                  f"  with the numerical equilibrium value -0.7619: {8 * lamf / 200 + float(I200) + float(I_out) - 0.7619:+.4f} > 0")
     print(f"  necessary condition for Prop. 5.1 (Q in Z[X]):  L_p <= v_p(S_K) + v_p(lead Delta_K) for every p <= 2h")
     print(f"    number of primes violating it: {len(viol)}  (of {len(P)} primes <= 2h)")
     by = {}

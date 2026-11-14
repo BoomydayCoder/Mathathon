@@ -58,4 +58,4 @@ Zenodo 22920911 (Sept 2026; PDF retrieved): same architecture as Fauzan with $D_
 integer polynomials with $0<Q_n(\zeta(7))<\exp(-19000n^2)$. Our exact computations for this family give
 (cost + log det)/$K^2\ge+0.7$ for $s=7$ at $K\le80$, which would make such polynomials impossible, not
 merely unproved. A dedicated referee subagent is checking the preprint against exact computations;
-until it reports, **we neither endorse nor refute the claim**.
+the report is now in `anand-referee.md`: **the preprint's main estimate is impossible** (its claimed normaliser contradicts integrality of the leading coefficient; exact computations for $n\le4$ give values $\ge e^{1274}$ where it claims $<e^{-19000n^2}$); the error is a wrong numerical value of the outer prime integral (Table 5).

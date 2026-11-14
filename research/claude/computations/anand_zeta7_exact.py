@@ -28,6 +28,8 @@ from hankel_lib import (primes_upto, moments_F1, hankel, det_poly_affine, conten
                         eval_poly_at_zeta, log_abs_arb, log_abs_fmpq)
 import gmpy2
 from flint import fmpq, fmpz, arb, ctx
+from fractions import Fraction as Fr
+from anand_zeta7_constants import Gamma
 
 S_ZETA, A_EXP = 7, 8
 
@@ -95,12 +97,14 @@ def run(n, cache_dir):
         with open(cf, 'rb') as f:
             raw = pickle.load(f)
         cs = [fmpq(fmpz(a), fmpz(b)) for a, b in raw]
+        how = "exact Delta_K(X) loaded from cache of an earlier run of this script"
     else:
         al, be = moments_F1(S_ZETA, K, N, A_EXP, h)
         cs = det_poly_affine(hankel(al, h), hankel(be, h))
         with open(cf, 'wb') as f:
             pickle.dump([(int(c.p), int(c.q)) for c in cs], f)
-    print(f"=== n={n}: K={K} N={N} h={h}   (Delta_K computed exactly, {time.time()-t0:.0f}s)")
+        how = f"Delta_K(X) computed exactly in {time.time()-t0:.0f}s"
+    print(f"=== n={n}: K={K} N={N} h={h}   ({how}; first runs took 0s, 5s, 34s, 157s for n=1..4)")
     deg = max(k for k, c in enumerate(cs) if c != 0)
     # Lemma 2.3 leading coefficient
     lead = fmpz(1)
@@ -135,6 +139,11 @@ def run(n, cache_dir):
     print(f"  log |lead F_K|      /K^2  = {(lS + loglead) / K2:+.6f}      [m * lead(F_K) must be a nonzero integer => log m >= -this]")
     print(f"  log P_K(zeta7)      /K^2  = {logP / K2:+.6f}      [P_K primitive; any Q in Z[X] prop. to Delta_K has |Q(zeta7)| >= P_K(zeta7)]")
     print(f"  log P_K(zeta7)            = {logP:+.3f}    vs  claimed bound -19000 n^2 = {-19000 * n * n}   (= {-19000 / 1600:.4f} K^2)")
+    # elementary lower bound (see anand_zeta7_checks.py part 3), (a,b) = (3/40, 1/5)
+    a_, b_, al_, lam_ = 3 / 40, 1 / 5, 3 / 40, 37 / 40
+    cG = lam_ * (-8 * al_ * math.log(a_) + math.log(1 + b_) + 2 * math.pi * math.sqrt(b_)) - lam_ ** 2 * math.log((b_ - a_) / 4)
+    lb = -cG * K2 + h * (math.log((2 * math.pi) ** 6 / 720) + 3 * math.log(a_) + 2 * math.log(2) - math.log(2 * h))
+    print(f"  log(Delta_K(zeta7)/|lead Delta_K|) = {logdet - loglead:+.3f}  >=  elementary lower bound {lb:+.3f}  >  -19000 n^2 : {logdet - loglead >= lb > -19000 * n * n}")
     # prime table
     rest = cont
     rows = []
@@ -154,14 +163,17 @@ def run(n, cache_dir):
         if p > K and v < 0:
             viol_big.append((p, v))
     print(f"  content of Delta_K fully explained by primes <= {P[-1]}: {rest == 1 or rest == -1}")
-    print("     p   range | v_p(Delta) true | gamma_out (59) | true-gamma | v_p(S_K) | v_p(F_K) true | crude (41)")
+    print("     p   range | v_p(Delta) true | gamma_out (59) | true-gamma | v_p(S_K) | v_p(F_K) true | crude (41) | p*Gamma(K/p) [continuum form (66),(70) of gamma_in; heuristic: K is outside the range K>=200M^2 of Prop. 4.4]")
     rng = lambda p: 'p^2<=5K' if p * p <= 5 * K else ('<=K/3' if 3 * p <= K else ('outer' if p <= K else ('K<p<=2h' if p <= 2 * h else '>2h')))
     for (p, v, vS, vF, go, c41) in rows:
         if v == 0 and vS == 0 and go is None:
             continue
         g = '      .' if go is None else f"{go:7d}"
         d = '      .' if go is None else f"{v - go:7d}"
-        print(f"  {p:5d} {rng(p):8s}| {v:8d}        | {g}        | {d}    | {vS:7d}  | {vF:8d}      | {c41:7d}")
+        gi = ''
+        if p * p > 5 * K and 3 * p <= K:
+            gi = f"   | {float(p * Gamma(Fr(K, p))):9.1f}"
+        print(f"  {p:5d} {rng(p):8s}| {v:8d}        | {g}        | {d}    | {vS:7d}  | {vF:8d}      | {c41:7d}{gi}")
     print(f"  Prop 4.6 formula (59) violated (true v_p(Delta_K) < gamma_out) at primes satisfying (52): {viol_out if viol_out else 'none'}")
     print(f"  (41) violated (true v_p(F_K) < crude bound): {viol_41 if viol_41 else 'none'}")
     print(f"  'v_p(Delta_K) >= 0 for p > K' violated: {viol_big if viol_big else 'none'}")

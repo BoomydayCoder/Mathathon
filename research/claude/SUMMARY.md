@@ -136,3 +136,12 @@ in mo271's repo (it is just not used in that range). Also: a model-level no-go f
 claiming ζ(7)∉Q ($D_N^8$, $K=40n$), the primitive integer polynomial is $\ge e^{1274},e^{5576},e^{12728}$ at ζ(7)
 for $n=1,2,3$, increasing. Mechanism: analytic decay is independent of $s$, arithmetic cost grows like $s$.
 All negative results are finite/numerical evidence plus a few lemmas not re-derived by the orchestrator.
+
+## Addendum (16:00 UTC): referee report on the claimed ζ(7) proof
+
+`anand-referee.md`. The Zenodo preprint "ζ(7) is irrational" (P. Anand) is refuted as a proof: (a) its
+claimed normaliser size contradicts integrality of the leading coefficient (elementary); (b) an elementary
+lower bound shows the claimed estimate is false for every $n$; (c) exact computation for $n\le4$; and the
+error is located in the printed value of one integral over primes ($-15.28$ instead of $+1.58$). The local
+$p$-adic bounds of the preprint were not found wrong. AI-refereed; the orchestrator checked the logic of
+(a), (b) but not the constants.

@@ -87,7 +87,7 @@ def part2():
         tot = np.zeros_like(t)
         for Lj, cj in zip(L, c):
             inside = np.log(Lj / 4) * np.ones_like(t)
-            with np.errstate(invalid='ignore'):
+            with np.errstate(invalid='ignore', divide='ignore'):
                 outside = np.log((t - Lj / 2 + np.sqrt(np.maximum(t * (t - Lj), 0))) / 2)
             tot += cj * np.where(t <= Lj, inside, outside)
         return tot
@@ -141,6 +141,34 @@ def part3():
     print(f"  => for every n >= 1 the lower bound exceeds the claimed upper bound: {ok}")
 
 
+def part3b(n=1):
+    """step-by-step check of the bound at K=40: d_k = det G_{k+1}/det G_k >= rho_min (B-A)^{2k+1} (k!)^4/((2k)!^2 (2k+1))."""
+    from hankel_lib import moments_F1
+    from flint import arb, arb_mat, ctx
+    K, N, h = 40 * n, 3 * n, 37 * n
+    al, be = moments_F1(7, K, N, 8, h)
+    ctx.prec = 4000 + 80 * K * K
+    z = arb(7).zeta()
+    mom = [arb(a.p) / arb(a.q) + z * arb(b.p) / arb(b.q) for a, b in zip(al, be)]
+    a_, b_ = 3 / 40, 1 / 5
+    A, B = a_ * K * K, b_ * K * K
+    log_rho = (8 * N * math.log(A) - 2 * K * math.log(K) - K * math.log(1 + b_) + math.log((2 * math.pi) ** 6 / 720)
+               + 3 * math.log(A) - 2 * math.pi * K * math.sqrt(b_))
+    prev = arb(1)
+    worst, ok = 1e99, True
+    for k in range(h):
+        M = arb_mat(k + 1, k + 1, [mom[i + j] for i in range(k + 1) for j in range(k + 1)])
+        d = M.det()
+        ok = ok and bool(d > 0)
+        ldk = float((d / prev).log().mid())
+        prev = d
+        lb = log_rho + (2 * k + 1) * math.log(B - A) + 4 * math.lgamma(k + 1) - 2 * math.lgamma(2 * k + 1) - math.log(2 * k + 1)
+        ok = ok and ldk >= lb
+        worst = min(worst, ldk - lb)
+    print(f"  3b. K={K}: all leading principal minors of G_K(zeta7) positive and every d_k >= its lower bound: {ok};"
+          f" min slack in log d_k: {worst:.2f};  log det G_K(zeta7) = {float(prev.log().mid()):.6f}")
+
+
 if __name__ == '__main__':
     what = sys.argv[1:] or ['1', '2', '3']
     if '1' in what:
@@ -149,3 +177,4 @@ if __name__ == '__main__':
         part2()
     if '3' in what:
         part3()
+        part3b(1)
