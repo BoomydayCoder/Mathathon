@@ -1,0 +1,5 @@
+max over 2<=n<=100000 of log(D_n)/n = 1.038821 at n=113
+log 3 = 1.098612 ; needed constant (4/3)log(1+sqrt2) = 1.175165
+CHECK D_n < 3^n for 1<=n<=100000: PASS
+CHECK log D_n < 1.1752 n     : PASS
+psi(N)/N at N=100000: 1.000516 (PNT predicts -> 1)

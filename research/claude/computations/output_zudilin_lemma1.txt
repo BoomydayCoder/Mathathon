@@ -1,0 +1,123 @@
+========================================================================
+Lemma 1: partial fractions of R_n(t), n = 0..12
+========================================================================
+[PASS] n=0: partial-fraction expansion equals R_n(t) (sympy cancel)
+[PASS] n=0: A2k = C(n+k,n)^2 C(n,k)^2 for all k
+[PASS] n=0: sum_k A1k = 0
+[PASS] n=0: D_n * A1k in Z for all k  (lcm of denominators of A1k = 1, D_n = 1)
+[PASS] n=0: A1k = 2 A2k (2H_k - H_(n+k) - H_(n-k))
+[PASS] n=0: u_n in Z and u_n = 2 a_n (Apery)  u_n = 2
+[PASS] n=0: D_n^3 v_n in Z  v_n = 0;  denom(v_n) = 1, D_n^3 = 1, D_n^3/denom = 1
+[PASS] n=1: partial-fraction expansion equals R_n(t) (sympy cancel)
+[PASS] n=1: A2k = C(n+k,n)^2 C(n,k)^2 for all k
+[PASS] n=1: sum_k A1k = 0
+[PASS] n=1: D_n * A1k in Z for all k  (lcm of denominators of A1k = 1, D_n = 1)
+[PASS] n=1: A1k = 2 A2k (2H_k - H_(n+k) - H_(n-k))
+[PASS] n=1: u_n in Z and u_n = 2 a_n (Apery)  u_n = 10
+[PASS] n=1: D_n^3 v_n in Z  v_n = 12;  denom(v_n) = 1, D_n^3 = 1, D_n^3/denom = 1
+[PASS] n=2: partial-fraction expansion equals R_n(t) (sympy cancel)
+[PASS] n=2: A2k = C(n+k,n)^2 C(n,k)^2 for all k
+[PASS] n=2: sum_k A1k = 0
+[PASS] n=2: D_n * A1k in Z for all k  (lcm of denominators of A1k = 1, D_n = 2)
+[PASS] n=2: A1k = 2 A2k (2H_k - H_(n+k) - H_(n-k))
+[PASS] n=2: u_n in Z and u_n = 2 a_n (Apery)  u_n = 146
+[PASS] n=2: D_n^3 v_n in Z  v_n = 351/2;  denom(v_n) = 2, D_n^3 = 8, D_n^3/denom = 4
+[PASS] n=3: partial-fraction expansion equals R_n(t) (sympy cancel)
+[PASS] n=3: A2k = C(n+k,n)^2 C(n,k)^2 for all k
+[PASS] n=3: sum_k A1k = 0
+[PASS] n=3: D_n * A1k in Z for all k  (lcm of denominators of A1k = 3, D_n = 6)
+[PASS] n=3: A1k = 2 A2k (2H_k - H_(n+k) - H_(n-k))
+[PASS] n=3: u_n in Z and u_n = 2 a_n (Apery)  u_n = 2890
+[PASS] n=3: D_n^3 v_n in Z  v_n = 62531/18;  denom(v_n) = 18, D_n^3 = 216, D_n^3/denom = 12
+[PASS] n=4: partial-fraction expansion equals R_n(t) (sympy cancel)
+[PASS] n=4: A2k = C(n+k,n)^2 C(n,k)^2 for all k
+[PASS] n=4: sum_k A1k = 0
+[PASS] n=4: D_n * A1k in Z for all k  (lcm of denominators of A1k = 3, D_n = 12)
+[PASS] n=4: A1k = 2 A2k (2H_k - H_(n+k) - H_(n-k))
+[PASS] n=4: u_n in Z and u_n = 2 a_n (Apery)  u_n = 66002
+[PASS] n=4: D_n^3 v_n in Z  v_n = 11424695/144;  denom(v_n) = 144, D_n^3 = 1728, D_n^3/denom = 12
+[PASS] n=5: partial-fraction expansion equals R_n(t) (sympy cancel)
+[PASS] n=5: A2k = C(n+k,n)^2 C(n,k)^2 for all k
+[PASS] n=5: sum_k A1k = 0
+[PASS] n=5: D_n * A1k in Z for all k  (lcm of denominators of A1k = 15, D_n = 60)
+[PASS] n=5: A1k = 2 A2k (2H_k - H_(n+k) - H_(n-k))
+[PASS] n=5: u_n in Z and u_n = 2 a_n (Apery)  u_n = 1638010
+[PASS] n=5: D_n^3 v_n in Z  v_n = 35441662103/18000;  denom(v_n) = 18000, D_n^3 = 216000, D_n^3/denom = 12
+[PASS] n=6: A2k = C(n+k,n)^2 C(n,k)^2 for all k
+[PASS] n=6: sum_k A1k = 0
+[PASS] n=6: D_n * A1k in Z for all k  (lcm of denominators of A1k = 5, D_n = 60)
+[PASS] n=6: A1k = 2 A2k (2H_k - H_(n+k) - H_(n-k))
+[PASS] n=6: u_n in Z and u_n = 2 a_n (Apery)  u_n = 42921650
+[PASS] n=6: D_n^3 v_n in Z  v_n = 20637706271/400;  denom(v_n) = 400, D_n^3 = 216000, D_n^3/denom = 540
+[PASS] n=7: A2k = C(n+k,n)^2 C(n,k)^2 for all k
+[PASS] n=7: sum_k A1k = 0
+[PASS] n=7: D_n * A1k in Z for all k  (lcm of denominators of A1k = 35, D_n = 420)
+[PASS] n=7: A1k = 2 A2k (2H_k - H_(n+k) - H_(n-k))
+[PASS] n=7: u_n in Z and u_n = 2 a_n (Apery)  u_n = 1168614730
+[PASS] n=7: D_n^3 v_n in Z  v_n = 963652602684713/686000;  denom(v_n) = 686000, D_n^3 = 74088000, D_n^3/denom = 108
+[PASS] n=8: A2k = C(n+k,n)^2 C(n,k)^2 for all k
+[PASS] n=8: sum_k A1k = 0
+[PASS] n=8: D_n * A1k in Z for all k  (lcm of denominators of A1k = 70, D_n = 840)
+[PASS] n=8: A1k = 2 A2k (2H_k - H_(n+k) - H_(n-k))
+[PASS] n=8: u_n in Z and u_n = 2 a_n (Apery)  u_n = 32735824850
+[PASS] n=8: D_n^3 v_n in Z  v_n = 43190915887542721/1097600;  denom(v_n) = 1097600, D_n^3 = 592704000, D_n^3/denom = 540
+[PASS] n=9: A2k = C(n+k,n)^2 C(n,k)^2 for all k
+[PASS] n=9: sum_k A1k = 0
+[PASS] n=9: D_n * A1k in Z for all k  (lcm of denominators of A1k = 630, D_n = 2520)
+[PASS] n=9: A1k = 2 A2k (2H_k - H_(n+k) - H_(n-k))
+[PASS] n=9: u_n in Z and u_n = 2 a_n (Apery)  u_n = 937381698010
+[PASS] n=9: D_n^3 v_n in Z  v_n = 1502663969043851254939/1333584000;  denom(v_n) = 1333584000, D_n^3 = 16003008000, D_n^3/denom = 12
+[PASS] n=10: A2k = C(n+k,n)^2 C(n,k)^2 for all k
+[PASS] n=10: sum_k A1k = 0
+[PASS] n=10: D_n * A1k in Z for all k  (lcm of denominators of A1k = 630, D_n = 2520)
+[PASS] n=10: A1k = 2 A2k (2H_k - H_(n+k) - H_(n-k))
+[PASS] n=10: u_n in Z and u_n = 2 a_n (Apery)  u_n = 27314872806146
+[PASS] n=10: D_n^3 v_n in Z  v_n = 43786938951280269198311/1333584000;  denom(v_n) = 1333584000, D_n^3 = 16003008000, D_n^3/denom = 12
+[PASS] n=11: A2k = C(n+k,n)^2 C(n,k)^2 for all k
+[PASS] n=11: sum_k A1k = 0
+[PASS] n=11: D_n * A1k in Z for all k  (lcm of denominators of A1k = 6930, D_n = 27720)
+[PASS] n=11: A1k = 2 A2k (2H_k - H_(n+k) - H_(n-k))
+[PASS] n=11: u_n in Z and u_n = 2 a_n (Apery)  u_n = 807352167576250
+[PASS] n=11: D_n^3 v_n in Z  v_n = 13780864457900933987428453/14200002432;  denom(v_n) = 14200002432, D_n^3 = 21300003648000, D_n^3/denom = 1500
+[PASS] n=12: A2k = C(n+k,n)^2 C(n,k)^2 for all k
+[PASS] n=12: sum_k A1k = 0
+[PASS] n=12: D_n * A1k in Z for all k  (lcm of denominators of A1k = 6930, D_n = 27720)
+[PASS] n=12: A1k = 2 A2k (2H_k - H_(n+k) - H_(n-k))
+[PASS] n=12: u_n in Z and u_n = 2 a_n (Apery)  u_n = 24146730021129458
+[PASS] n=12: D_n^3 v_n in Z  v_n = 51520703555193710949642777493/1775000304000;  denom(v_n) = 1775000304000, D_n^3 = 21300003648000, D_n^3/denom = 12
+
+A1k for n = 1, 2, 3:
+  n=1: A2 = ['1', '4'], A1 = ['-4', '4']
+  n=2: A2 = ['1', '36', '36'], A1 = ['-6', '-60', '66']
+  n=3: A2 = ['1', '144', '900', '400'], A1 = ['-22/3', '-456', '-510', '2920/3']
+Paper: R_1(t) = 1/t^2 + 4/(t+1)^2 - 4/t + 4/(t+1)
+[PASS] R_1 partial fractions match paper
+
+Denominator table: n, denom(v_n), D_n^3, ratio D_n^3/denom(v_n), denom(2 v_n)
+  n= 0: denom(v_n) =              1, D_n^3 =              1, ratio = 1, denom(2v_n) = 1
+  n= 1: denom(v_n) =              1, D_n^3 =              1, ratio = 1, denom(2v_n) = 1
+  n= 2: denom(v_n) =              2, D_n^3 =              8, ratio = 4, denom(2v_n) = 1
+  n= 3: denom(v_n) =             18, D_n^3 =            216, ratio = 12, denom(2v_n) = 9
+  n= 4: denom(v_n) =            144, D_n^3 =           1728, ratio = 12, denom(2v_n) = 72
+  n= 5: denom(v_n) =          18000, D_n^3 =         216000, ratio = 12, denom(2v_n) = 9000
+  n= 6: denom(v_n) =            400, D_n^3 =         216000, ratio = 540, denom(2v_n) = 200
+  n= 7: denom(v_n) =         686000, D_n^3 =       74088000, ratio = 108, denom(2v_n) = 343000
+  n= 8: denom(v_n) =        1097600, D_n^3 =      592704000, ratio = 540, denom(2v_n) = 548800
+  n= 9: denom(v_n) =     1333584000, D_n^3 =    16003008000, ratio = 12, denom(2v_n) = 666792000
+  n=10: denom(v_n) =     1333584000, D_n^3 =    16003008000, ratio = 12, denom(2v_n) = 666792000
+  n=11: denom(v_n) =    14200002432, D_n^3 = 21300003648000, ratio = 1500, denom(2v_n) = 7100001216
+  n=12: denom(v_n) =  1775000304000, D_n^3 = 21300003648000, ratio = 12, denom(2v_n) = 887500152000
+
+========================================================================
+Numerical check of F_n = -sum_{t>=1} R_n'(t) = u_n zeta(3) - v_n  (mp.dps = 70)
+========================================================================
+[PASS] n=0: F_n numeric = u_n zeta(3) - v_n  F_n = 2.40411380631918857079947632302, |diff| = 0.0
+[PASS] n=1: F_n numeric = u_n zeta(3) - v_n  F_n = 0.0205690315959428539973816151145, |diff| = 8.18e-71
+[PASS] n=2: F_n numeric = u_n zeta(3) - v_n  F_n = 0.000307861300765668361771580671699, |diff| = 1.21e-70
+[PASS] n=3: F_n numeric = u_n zeta(3) - v_n  F_n = 0.00000568678304036079884232364602887, |diff| = 1.9e-69
+[PASS] n=4: F_n numeric = u_n zeta(3) - v_n  F_n = 0.000000117319802731295913856500068248, |diff| = 2.74e-67
+[PASS] n=5: F_n numeric = u_n zeta(3) - v_n  F_n = 0.00000000259098318066149292575492851075, |diff| = 1.36e-65
+[PASS] n=6: F_n numeric = u_n zeta(3) - v_n  F_n = 5.99276714600379274961179738946e-11, |diff| = 1.86e-64
+[PASS] F_0 = 2 zeta(3), F_1 = 10 zeta(3) - 12 (exact u,v)
+
+SUMMARY: 93/93 checks PASS

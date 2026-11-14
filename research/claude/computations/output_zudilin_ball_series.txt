@@ -1,0 +1,147 @@
+========================================================================
+(a) Reduced identity of Lemma 5 (symbolic in n, t)
+========================================================================
+  R~_(n+1)/R~_n = (n+1)^2 (2t+n+1)(t-n-1)(t+2n+1)(t+2n+2) / ((2t+n)(t+n+1)^5)
+  R~_(n-1)/R~_n = (2t+n-1)(t+n)^5 / (n^2 (2t+n)(t-n)(t+2n-1)(t+2n))
+  R~_n(t+1)/R~_n(t) = (2t+n+2) t^5 (t+2n+1) / ((2t+n)(t-n)(t+n+1)^5)
+[PASS]   ratio formulas match product definition at n=3, t=7/2 (exact)
+[PASS]   ratio formulas match product definition at n=1, t=5/3 (exact)
+[PASS]   ratio formulas match product definition at n=2, t=-7/11 (exact)
+[PASS]   ratio formulas match product definition at n=5, t=13/2 (exact)
+[PASS]   ratio formulas match product definition at n=4, t=9 (exact)
+[PASS]   ratio formulas match as rational functions of t, n=1
+[PASS]   ratio formulas match as rational functions of t, n=2
+[PASS]   ratio formulas match as rational functions of t, n=3
+[PASS]   ratio formulas match as rational functions of t, n=4
+[PASS]   ratio formulas match as rational functions of t, n=5
+[PASS] reduced identity (14)/R~_n holds identically in (n,t)
+[PASS]   identity (14) exact as rational function of t, n=1
+[PASS]   identity (14) exact as rational function of t, n=2
+[PASS]   identity (14) exact as rational function of t, n=3
+[PASS]   identity (14) exact as rational function of t, n=4
+[PASS]   identity (14) exact as rational function of t, n=5
+[PASS]   identity (14) exact as rational function of t, n=6
+
+========================================================================
+(b) S~_n(1) = 0 for n>=1, S~_n(t) = O(t^-2), R~_n(t) = O(t^-5)
+========================================================================
+[PASS] n=1: S~_n(1) = 0, ord_inf S~_n = -2 (<= -2), ord_inf R~_n = -5 (<= -5)
+[PASS] n=2: S~_n(1) = 0, ord_inf S~_n = -4 (<= -2), ord_inf R~_n = -7 (<= -5)
+[PASS] n=3: S~_n(1) = 0, ord_inf S~_n = -6 (<= -2), ord_inf R~_n = -9 (<= -5)
+[PASS] n=4: S~_n(1) = 0, ord_inf S~_n = -8 (<= -2), ord_inf R~_n = -11 (<= -5)
+[PASS] n=5: S~_n(1) = 0, ord_inf S~_n = -10 (<= -2), ord_inf R~_n = -13 (<= -5)
+[PASS] n=6: S~_n(1) = 0, ord_inf S~_n = -12 (<= -2), ord_inf R~_n = -15 (<= -5)
+[PASS] n=7: S~_n(1) = 0, ord_inf S~_n = -14 (<= -2), ord_inf R~_n = -17 (<= -5)
+[PASS] n=8: S~_n(1) = 0, ord_inf S~_n = -16 (<= -2), ord_inf R~_n = -19 (<= -5)
+  info: S~_0(t) = -(t**4 - 5*t**2 - 5*t - 2)/t**4, S~_0(1) = 11
+
+========================================================================
+(e)/(c) Exact partial fractions R~_n = sum_{j=1..4} sum_k C_jk/(t+k)^j
+========================================================================
+  R~_0(t) = 2/t**3
+  R~_1(t) = 5/(t + 1)**2 + 5/(t + 1)**3 + 2/(t + 1)**4 - 5/t**2 + 5/t**3 - 2/t**4
+[PASS] R~_1 = -2/t^4 + 2/(t+1)^4 + 5/t^3 + 5/(t+1)^3 - 5/t^2 + 5/(t+1)^2 (paper's Lemma 7 display)
+[PASS] R~_0 = 2/t^3
+[PASS] n=0: partial fractions reproduce R~_n (sympy cancel)
+[PASS] n=0: sum_k C1k = 0, zeta(2)-coeff sum_k C2k = 0, zeta(4)-coeff sum_k C4k = 0  (sums: C1=0, C2=0, C4=0)
+[PASS] n=0: u~_n = sum_k C3k equals u_n = 2 a_n  u~_n = 2
+[PASS] n=0: v~_n = sum_jk C_jk H_k^(j) equals v_n exactly (=> F~_n = F_n exactly)
+     denominators: lcm denom(C_1k..C_4k) = [1, 1, 1, 1];  denom(u~_n) = 1;  denom(v~_n) = 1;  D_n = 1, D_n^3 = 1, D_n^4 = 1;  D_n^3 v~_n in Z: True;  D_n^4 v~_n in Z: True
+     D_n^(4-j) C_jk in Z for all j,k: True
+[PASS] n=1: partial fractions reproduce R~_n (sympy cancel)
+[PASS] n=1: sum_k C1k = 0, zeta(2)-coeff sum_k C2k = 0, zeta(4)-coeff sum_k C4k = 0  (sums: C1=0, C2=0, C4=0)
+[PASS] n=1: u~_n = sum_k C3k equals u_n = 2 a_n  u~_n = 10
+[PASS] n=1: v~_n = sum_jk C_jk H_k^(j) equals v_n exactly (=> F~_n = F_n exactly)
+     denominators: lcm denom(C_1k..C_4k) = [1, 1, 1, 1];  denom(u~_n) = 1;  denom(v~_n) = 1;  D_n = 1, D_n^3 = 1, D_n^4 = 1;  D_n^3 v~_n in Z: True;  D_n^4 v~_n in Z: True
+     D_n^(4-j) C_jk in Z for all j,k: True
+[PASS] n=2: partial fractions reproduce R~_n (sympy cancel)
+[PASS] n=2: sum_k C1k = 0, zeta(2)-coeff sum_k C2k = 0, zeta(4)-coeff sum_k C4k = 0  (sums: C1=0, C2=0, C4=0)
+[PASS] n=2: u~_n = sum_k C3k equals u_n = 2 a_n  u~_n = 146
+[PASS] n=2: v~_n = sum_jk C_jk H_k^(j) equals v_n exactly (=> F~_n = F_n exactly)
+     denominators: lcm denom(C_1k..C_4k) = [1, 2, 1, 1];  denom(u~_n) = 1;  denom(v~_n) = 2;  D_n = 2, D_n^3 = 8, D_n^4 = 16;  D_n^3 v~_n in Z: True;  D_n^4 v~_n in Z: True
+     D_n^(4-j) C_jk in Z for all j,k: True
+[PASS] n=3: partial fractions reproduce R~_n (sympy cancel)
+[PASS] n=3: sum_k C1k = 0, zeta(2)-coeff sum_k C2k = 0, zeta(4)-coeff sum_k C4k = 0  (sums: C1=0, C2=0, C4=0)
+[PASS] n=3: u~_n = sum_k C3k equals u_n = 2 a_n  u~_n = 2890
+[PASS] n=3: v~_n = sum_jk C_jk H_k^(j) equals v_n exactly (=> F~_n = F_n exactly)
+     denominators: lcm denom(C_1k..C_4k) = [4, 6, 1, 1];  denom(u~_n) = 1;  denom(v~_n) = 18;  D_n = 6, D_n^3 = 216, D_n^4 = 1296;  D_n^3 v~_n in Z: True;  D_n^4 v~_n in Z: True
+     D_n^(4-j) C_jk in Z for all j,k: True
+[PASS] n=4: partial fractions reproduce R~_n (sympy cancel)
+[PASS] n=4: sum_k C1k = 0, zeta(2)-coeff sum_k C2k = 0, zeta(4)-coeff sum_k C4k = 0  (sums: C1=0, C2=0, C4=0)
+[PASS] n=4: u~_n = sum_k C3k equals u_n = 2 a_n  u~_n = 66002
+[PASS] n=4: v~_n = sum_jk C_jk H_k^(j) equals v_n exactly (=> F~_n = F_n exactly)
+     denominators: lcm denom(C_1k..C_4k) = [27, 36, 1, 1];  denom(u~_n) = 1;  denom(v~_n) = 144;  D_n = 12, D_n^3 = 1728, D_n^4 = 20736;  D_n^3 v~_n in Z: True;  D_n^4 v~_n in Z: True
+     D_n^(4-j) C_jk in Z for all j,k: True
+[PASS] n=5: sum_k C1k = 0, zeta(2)-coeff sum_k C2k = 0, zeta(4)-coeff sum_k C4k = 0  (sums: C1=0, C2=0, C4=0)
+[PASS] n=5: u~_n = sum_k C3k equals u_n = 2 a_n  u~_n = 1638010
+[PASS] n=5: v~_n = sum_jk C_jk H_k^(j) equals v_n exactly (=> F~_n = F_n exactly)
+     denominators: lcm denom(C_1k..C_4k) = [72, 24, 2, 1];  denom(u~_n) = 1;  denom(v~_n) = 18000;  D_n = 60, D_n^3 = 216000, D_n^4 = 12960000;  D_n^3 v~_n in Z: True;  D_n^4 v~_n in Z: True
+     D_n^(4-j) C_jk in Z for all j,k: True
+[PASS] n=6: sum_k C1k = 0, zeta(2)-coeff sum_k C2k = 0, zeta(4)-coeff sum_k C4k = 0  (sums: C1=0, C2=0, C4=0)
+[PASS] n=6: u~_n = sum_k C3k equals u_n = 2 a_n  u~_n = 42921650
+[PASS] n=6: v~_n = sum_jk C_jk H_k^(j) equals v_n exactly (=> F~_n = F_n exactly)
+     denominators: lcm denom(C_1k..C_4k) = [18000, 300, 5, 1];  denom(u~_n) = 1;  denom(v~_n) = 400;  D_n = 60, D_n^3 = 216000, D_n^4 = 12960000;  D_n^3 v~_n in Z: True;  D_n^4 v~_n in Z: True
+     D_n^(4-j) C_jk in Z for all j,k: True
+[PASS] n=7: sum_k C1k = 0, zeta(2)-coeff sum_k C2k = 0, zeta(4)-coeff sum_k C4k = 0  (sums: C1=0, C2=0, C4=0)
+[PASS] n=7: u~_n = sum_k C3k equals u_n = 2 a_n  u~_n = 1168614730
+[PASS] n=7: v~_n = sum_jk C_jk H_k^(j) equals v_n exactly (=> F~_n = F_n exactly)
+     denominators: lcm denom(C_1k..C_4k) = [18000, 6300, 15, 1];  denom(u~_n) = 1;  denom(v~_n) = 686000;  D_n = 420, D_n^3 = 74088000, D_n^4 = 31116960000;  D_n^3 v~_n in Z: True;  D_n^4 v~_n in Z: True
+     D_n^(4-j) C_jk in Z for all j,k: True
+[PASS] n=8: sum_k C1k = 0, zeta(2)-coeff sum_k C2k = 0, zeta(4)-coeff sum_k C4k = 0  (sums: C1=0, C2=0, C4=0)
+[PASS] n=8: u~_n = sum_k C3k equals u_n = 2 a_n  u~_n = 32735824850
+[PASS] n=8: v~_n = sum_jk C_jk H_k^(j) equals v_n exactly (=> F~_n = F_n exactly)
+     denominators: lcm denom(C_1k..C_4k) = [61740, 1176, 7, 1];  denom(u~_n) = 1;  denom(v~_n) = 1097600;  D_n = 840, D_n^3 = 592704000, D_n^4 = 497871360000;  D_n^3 v~_n in Z: True;  D_n^4 v~_n in Z: True
+     D_n^(4-j) C_jk in Z for all j,k: True
+
+========================================================================
+(c)/(d) Numerics: F~_n = sum_{t>=n+1} R~_n(t) vs u_n zeta(3) - v_n   (mp.dps = 90)
+========================================================================
+[PASS] n=0: F~_n = u_n zeta(3) - v_n (rel err 0.0)  F~_n = 2.404113806319188570799476
+[PASS] n=0: 0 < F~_n < 20(n+1)^4 (sqrt2-1)^(4n)  (bound = 20.0, F~/bound = 0.120206)
+[PASS] n=1: F~_n = u_n zeta(3) - v_n (rel err 9.4e-89)  F~_n = 0.02056903159594285399738162, F~_n/F~_(n-1) = 0.00855576451576
+[PASS] n=1: 0 < F~_n < 20(n+1)^4 (sqrt2-1)^(4n)  (bound = 9.4199205, F~/bound = 0.00218357)
+[PASS] n=2: F~_n = u_n zeta(3) - v_n (rel err 1.0e-86)  F~_n = 0.0003078613007656683617715807, F~_n/F~_(n-1) = 0.0149672238739
+[PASS] n=2: 0 < F~_n < 20(n+1)^4 (sqrt2-1)^(4n)  (bound = 1.4038139, F~/bound = 0.000219304)
+[PASS] n=3: F~_n = u_n zeta(3) - v_n (rel err 5.65e-83)  F~_n = 0.000005686783040360798842323646, F~_n/F~_(n-1) = 0.0184718996061
+[PASS] n=3: 0 < F~_n < 20(n+1)^4 (sqrt2-1)^(4n)  (bound = 0.13060558, F~/bound = 4.35417e-5)
+[PASS] n=4: F~_n = u_n zeta(3) - v_n (rel err 7.04e-80)  F~_n = 0.0000001173198027312959138565001, F~_n/F~_(n-1) = 0.0206302582495
+[PASS] n=4: 0 < F~_n < 20(n+1)^4 (sqrt2-1)^(4n)  (bound = 0.0093863998, F~/bound = 1.24989e-5)
+[PASS] n=5: F~_n = u_n zeta(3) - v_n (rel err 9.47e-77)  F~_n = 2.590983180661492925754929e-9, F~_n/F~_(n-1) = 0.0220847897826
+[PASS] n=5: 0 < F~_n < 20(n+1)^4 (sqrt2-1)^(4n)  (bound = 0.00057295602, F~/bound = 4.52213e-6)
+[PASS] n=6: F~_n = u_n zeta(3) - v_n (rel err 4.31e-74)  F~_n = 5.992767146003792749611797e-11, F~_n/F~_(n-1) = 0.0231293170513
+[PASS] n=6: 0 < F~_n < 20(n+1)^4 (sqrt2-1)^(4n)  (bound = 3.1246812e-5, F~/bound = 1.91788e-6)
+[PASS] n=7: F~_n = u_n zeta(3) - v_n (rel err 1.01e-70)  F~_n = 1.433172344291651146210331e-12, F~_n/F~_(n-1) = 0.0239150347306
+[PASS] n=7: 0 < F~_n < 20(n+1)^4 (sqrt2-1)^(4n)  (bound = 1.5691727e-6, F~/bound = 9.1333e-7)
+[PASS] n=8: F~_n = u_n zeta(3) - v_n (rel err 8.88e-68)  F~_n = 3.515174123758412632976996e-14, F~_n/F~_(n-1) = 0.0245272254782
+[PASS] n=8: 0 < F~_n < 20(n+1)^4 (sqrt2-1)^(4n)  (bound = 7.3990865e-8, F~/bound = 4.75082e-7)
+  (sqrt2-1)^4 = 0.02943725152285941438
+[PASS] F~_0 = 2 zeta(3) and F~_1 = 10 zeta(3) - 12 numerically
+
+========================================================================
+(f) Lemma 4 analysis
+========================================================================
+  tau^5(tau+2) - (tau-1)(tau+1)^5 = -2*tau**5 - 5*tau**4 + 5*tau**2 + 4*tau + 1   (degree 5, not 6)
+[FAIL] user's candidate  -[2(tau+1/2)^4 - 5(tau+1/2)^2 - 7/8]  equals it
+[PASS] corrected identity: tau^5(tau+2)-(tau-1)(tau+1)^5 = -(tau+1/2)[2(tau+1/2)^4 - 5(tau+1/2)^2 - 7/8]
+  factorization: -(2*tau + 1)*(tau**4 + 2*tau**3 - tau**2 - 2*tau - 1)
+[PASS] tau0 = -1/2 + sqrt(5/4 + sqrt2) is a root (exact)
+  real roots: [-2.1322418823119001957, -0.50000000000000000000, 1.1322418823119001957];  tau0 = 1.132241882311900195655072
+[PASS] tau0 is the unique real root > 1
+[PASS] f'(tau0) = 0  f'(tau0) = 4.6673e-61
+[PASS] f'(tau) = numeric derivative of f at tau=2.7
+[PASS] f(tau0) = 2log(tau0+2) + log(tau0-1) - 5log(tau0+1)
+[PASS] f(tau0) = 4 log(sqrt2 - 1)  f(tau0) = -3.52549434807817210093043729992, 4log(sqrt2-1) = -3.52549434807817210093043729992
+[PASS] sup_{tau>1} f = f(tau0) (grid tau in (1,21))
+  e^2 (2zeta5 + 5zeta4 + 2zeta3) = 73.074701945029497182
+[FAIL] literal constant claim e^2(2zeta(5)+5zeta(4)+2zeta(3)) < 20
+  20(n+1)^2 - e^2(2zeta5 + 5n zeta4 + 2n^2 zeta3) = 2.2358682 n^2 + 0.013264545 n + 4.6761653
+[PASS] all coefficients positive => e^2(2zeta5+5n zeta4+2n^2 zeta3) < 20(n+1)^2 for all n>=0
+[PASS] swapped version e^2(2zeta3+5n zeta4+2n^2 zeta5) < 20(n+1)^2 for all n>=0 (coefficients positive)
+[PASS] (2t+n)(t+2n)/(t^4(t+n)) < 2/t^3+5n/t^4+2n^2/t^5, n=1..30, t=n+1..20n (exact)
+[PASS] (2t+n)(t+2n)/(t^4(t+n)) <= 2/t^5+5n/t^4+2n^2/t^3 (paper's printed order), n=1..30, t=n+1..20n (exact)
+  27(sqrt2-1)^4 = 0.79480579111720418825
+[PASS] 27(sqrt2-1)^4 = 0.7948... < 1
+[PASS] inequality (12): R~_n(t) t^4(t+n)/((2t+n)(t+2n)) < e^2(n+1)^2(sqrt2-1)^(4n), n=1..30, t=n+1..20n  (max LHS/RHS = 0.042568664 at (n,t) = (1, 2))
+[PASS] intermediate bound (11): LHS < (1+1/n)^(2n) e^(n f(t/n)), n=1..30, t=n+1..20n
+
+SUMMARY: 93/95 checks PASS  -- SOME FAILED (see above; some FAILs are expected findings)
