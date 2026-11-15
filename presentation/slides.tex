@@ -269,19 +269,18 @@
 \section{Part II: from integrals to sums, and Zudilin's route}
 
 \begin{frame}{Zudilin's rational function is our Legendre polynomial}
-  Read Beukers' integral as a sum. The moments of $P_n$ give $r_n$, the two copies of $P_n$
-  give the square $R_n=r_n^2$, and the logarithm gives the derivative $R_n'$.
+  Zudilin's proof begins with the rational function
+  $\frac{(1-t)(2-t)\cdots(n-t)}{t(t+1)\cdots(t+n)}$ and gives no reason for it. Where does it come from?
 
-  Collect all the moments of $P_n$ in one function:
-  \[
-    r_n(t)=\int_0^1x^{t-1}P_n(x)\dd x\qquad(t>0).
-  \]
+  In Beukers' proof, $P_n$ only ever enters through its moments $\int_0^1x^mP_n(x)\dd x$. So we
+  collect all of them in one function, \ $r_n(t)=\int_0^1x^{t-1}P_n(x)\dd x$ \ ($t>0$).
   \pause
-  Integrate by parts $n$ times, as in Step 2:
+  Integrating by parts $n$ times, as in Step 2, gives exactly Zudilin's function:
   \[
     \boxed{\;r_n(t)=\frac{(1-t)(2-t)\cdots(n-t)}{t\,(t+1)\cdots(t+n)}\;}
   \]
   \pause
+  Its zeros and poles are the ones we built into $P_n$ ourselves:
   \centering
   \begin{tikzpicture}[x=1.15cm,>=stealth,font=\small]
     \draw[->,thick,mDarkTeal] (-5,0)--(5.9,0) node[right] {$t$};
@@ -298,17 +297,14 @@
 \end{frame}
 
 \begin{frame}{The square and the derivative}
-  Expand $\frac1{1-xy}=\sum_{t\ge1}(xy)^{t-1}$ in Beukers' integral:
+  Zudilin works with $J_n=-\sum_{t\ge1}R_n'(t)$, $R_n=r_n^2$. Why a square, and why a derivative?
+  Expand Beukers' kernel as a geometric series:
   \ $J_n=\sum_{t\ge1}\iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr)$.
-  \medskip
 
   \pause
   There are two copies of $P_n$, one in $x$ and one in $y$, and $\frac1{1-xy}$ gives them the same
   exponent. So, without the logarithm, each integral is a square:
-  \[
-    \iint P_n(x)P_n(y)\,x^{t-1}y^{t-1}=r_n(t)^2=:R_n(t).
-  \]
-  The zeros of $R_n$ at $1,\dots,n$ are double, so they survive a derivative.
+  \ $\iint P_n(x)P_n(y)\,x^{t-1}y^{t-1}=r_n(t)^2=:R_n(t)$. \ The zeros of $R_n$ at $1,\dots,n$ are double, so they survive a derivative.
   \pause
   The logarithm is a derivative in the exponent, \ $\frac{\dd}{\dd t}(xy)^{t-1}=\log(xy)\,(xy)^{t-1}$, \ so
   \[
@@ -414,39 +410,57 @@
 \end{frame}
 
 \begin{frame}{The equation we want}
-  Suppose \qquad $B\,(J_{n+1}-J_n)-A\,(J_n-J_{n-1})=\lambda J_n$, \qquad $A,B,\lambda>0$.
-  \pause
-  \begin{columns}[c]
-    \begin{column}{0.5\textwidth}
-      \centering
-      \begin{tikzpicture}[scale=0.8]
-        \draw[gray] (-0.3,0)--(3.3,0);
-        \foreach \x/\y in {0/-0.4,1.5/-1.2,3/-0.6} \fill (\x,\y) circle (2.5pt);
-        \draw (0,-0.4)--(1.5,-1.2)--(3,-0.6);
-        \node[below,font=\small] at (1.5,-1.2) {$J_n<0$};
-        \node[above,font=\small] at (1.5,0) {negative valley};
-      \end{tikzpicture}
-      \\ left side $\ge0$, right side $<0$
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \centering
-      \begin{tikzpicture}[scale=0.8]
-        \draw[gray] (-0.3,0)--(3.3,0);
-        \foreach \x/\y in {0/0.6,1.5/1.2,3/0.4} \fill (\x,\y) circle (2.5pt);
-        \draw (0,0.6)--(1.5,1.2)--(3,0.4);
-        \node[above,font=\small] at (1.5,1.2) {$J_n>0$};
-        \node[below,font=\small] at (1.5,0) {positive peak};
-      \end{tikzpicture}
-      \\ left side $\le0$, right side $>0$
-    \end{column}
-  \end{columns}
-  \pause
+  We know $J_0>0$ and $J_n\to0$, but the sum tells us nothing about the sign of $J_n$ or how fast
+  it decays. We would like an equation linking $J_n$ to its two neighbours that forces both.
   \medskip
-  Neither can happen. If $J_n$ is positive and decreasing, then
+
+  A natural shape is
   \[
-    A(J_{n-1}-J_n)>\lambda J_n\quad\Longrightarrow\quad J_n<\frac{A}{A+\lambda}\,J_{n-1},
+    B\,\underbrace{(J_{n+1}-J_n)}_{\text{step after }n}\;-\;A\,\underbrace{(J_n-J_{n-1})}_{\text{step before }n}\;=\;\lambda J_n,
+    \qquad A,\,B,\,\lambda>0 .
   \]
-  so a large $\lambda/A$ gives fast decay.
+  The left side measures how the sequence bends at $n$: it is positive where the graph turns
+  upward and negative where it turns downward. The right side has the sign of $J_n$.
+  \medskip
+
+  So the equation says: \emph{where $J_n<0$ the graph must bend down, and where $J_n>0$ it must
+  bend up.} The next slide shows what that rules out.
+\end{frame}
+
+\begin{frame}{No negative valley, no positive peak}
+  \centering
+  \begin{tikzpicture}[x=1.2cm,y=0.85cm,>=stealth,font=\small]
+    % titles
+    \node[font=\normalsize\bfseries] at (1,0.7) {a negative valley};
+    \node[font=\normalsize\bfseries] at (6,0.7) {a positive peak};
+    % valley: axis at y=0, points below
+    \draw[gray!60] (-0.4,0)--(2.4,0) node[right,text=gray] {$0$};
+    \draw[thick,mDarkTeal] (0,-0.5)--(1,-1.6)--(2,-0.7);
+    \foreach \p in {(0,-0.5),(1,-1.6),(2,-0.7)} \fill[mDarkTeal] \p circle (2.6pt);
+    \node[left] at (0,-0.5) {$J_{n-1}$}; \node[below=2pt] at (1,-1.6) {$J_n<0$}; \node[right] at (2,-0.7) {$J_{n+1}$};
+    \node[text=mLightBrown,left] at (0.45,-1.15) {down};
+    \node[text=mLightBrown,right] at (1.55,-1.25) {up};
+    % peak: axis at y=-1.6, points above
+    \draw[gray!60] (4.6,-1.6)--(7.4,-1.6) node[right,text=gray] {$0$};
+    \draw[thick,mDarkTeal] (5,-1.0)--(6,0.0)--(7,-1.1);
+    \foreach \p in {(5,-1.0),(6,0.0),(7,-1.1)} \fill[mDarkTeal] \p circle (2.6pt);
+    \node[left] at (5,-1.0) {$J_{n-1}$}; \node[above right] at (6,0.0) {$J_n>0$}; \node[right] at (7,-1.1) {$J_{n+1}$};
+    \node[text=mLightBrown,left] at (5.45,-0.45) {up};
+    \node[text=mLightBrown,right] at (6.55,-0.5) {down};
+    % captions
+    \node[align=center] at (1,-2.9) {$B\cdot(\text{up})-A\cdot(\text{down})\ \ge0$\\ but $\lambda J_n<0$};
+    \node[align=center] at (6,-2.9) {$B\cdot(\text{down})-A\cdot(\text{up})\ \le0$\\ but $\lambda J_n>0$};
+  \end{tikzpicture}
+  \medskip
+
+  \raggedright
+  In each picture the two sides of $B(J_{n+1}-J_n)-A(J_n-J_{n-1})=\lambda J_n$ have opposite
+  signs, so neither can occur.
+  \pause
+
+  Once we know $J_n$ is positive and decreasing, the step after $n$ is negative, so
+  $A(J_{n-1}-J_n)>\lambda J_n$, i.e.\ $J_n<\frac{A}{A+\lambda}J_{n-1}$: the larger $\lambda/A$,
+  the faster the decay.
 \end{frame}
 
 \begin{frame}{A guess}
