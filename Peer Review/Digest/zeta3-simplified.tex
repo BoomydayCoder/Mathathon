@@ -11,22 +11,27 @@
 \setlist{itemsep=1pt,topsep=3pt}
 \title{$\zeta(3)$ is irrational: the maximum-principle proof, simplified}
 \author{Mathathon peer-review digest (Claude)}
-\date{15 November 2026 \quad(draft 2)}
+\date{15 November 2026 \quad(draft 3, after independent reading)}
 \begin{document}
 \maketitle
 
 \noindent\textbf{The destination.} We construct numbers
 \[
-I_n=2\bigl(a_n\zeta(3)-b_n\bigr),\qquad a_n\in\Z,\qquad D_n^3b_n\in\Z,\qquad D_n=\lcm(1,\dots,n),
+I_n=2\bigl(a_n\zeta(3)-b_n\bigr),\qquad a_n\in\Z,\qquad D_n^3b_n\in\Z,\qquad D_n=\lcm(1,\dots,n)\quad(D_0=1).
 \]
-which tend to zero. A difference equation, read as a law for currents in a chain, forces
-$0<I_n\le2\zeta(3)\,33^{-n}$. If $\zeta(3)$ were a fraction $P/Q$, the positive integer
-$\frac Q2D_n^3I_n$ would be at least $1$, so $D_n^3\ge33^n/P$ for every $n$. But an identity for
-$N!$ caps the growth rate of $D_n$ at $e$, and $e^3=20.1<33$.
+If $\zeta(3)$ were a fraction $P/Q$, then $\frac Q2D_n^3I_n$ would be an integer. So the whole point
+is to show that $I_n$ is \emph{not zero} and is \emph{small compared with $D_n^{-3}$}, which is about
+$20^{-n}$. The sum that defines $I_n$ gives much less: only that $I_n\to0$, about as fast as $1/n$,
+and nothing about its sign. That alone proves nothing; the error $\zeta(3)-\sum_{k\le n}k^{-3}$ of the
+partial sums also tends to zero, with the same denominators. A difference equation, read as a law
+for currents in a chain, turns the weak fact into the strong one: $0<I_n\le2\zeta(3)\,33^{-n}$. Then
+$D_n^3\ge33^n/P$ for every $n$. But an identity for $N!$ caps the growth rate of $D_n$ at $e$, and
+$e^3=20.1<33$.
 
 \smallskip\noindent Each section has one idea. \textbf{1:} poles for the arithmetic, zeros for the
-size. \textbf{2:} one telescope gives Ohm's and Kirchhoff's laws. \textbf{3:} a sequence that tends
-to zero and cannot have a peak must fall all the way. \textbf{4:} count prime powers in $N!$.
+size. \textbf{2:} one telescope turns the sum into a chain with a current law. \textbf{3:} a
+sequence that tends to zero and cannot have a peak must fall all the way. \textbf{4:} count prime
+powers in $N!$.
 
 \section{The linear forms}
 
@@ -56,23 +61,30 @@ $H^{(3)}_k$, and $D_n\cdot D_n^2$ clears $\frac1{j-k}\,H^{(2)}$.
 
 \q{The only estimate we take from the sum.} Write $r_n=\frac1t\,\varphi_1\cdots\varphi_n$ with
 $\varphi_j=\frac{j-t}{j+t}$. For $t>0$ we have $|\varphi_j|<1$ and
-$|\varphi_j'|=\frac{2j}{(j+t)^2}\le\frac1{2t}$, because $(j+t)^2\ge4jt$. By the product rule,
-$|r_n|\le\frac1t$ and $|r_n'|\le\frac1{t^2}+\frac n{2t^2}$, hence $|(r_n^2)'|\le\frac{n+2}{t^3}$. As
+$|\varphi_j'|=\frac{2j}{(j+t)^2}\le\frac1{2t}$, because $(j+t)^2\ge4jt$. So $|r_n|\le\frac1t$. By the
+product rule, $r_n'$ is a sum of $n+1$ terms, in each of which one factor of
+$\frac1t\,\varphi_1\cdots\varphi_n$ is differentiated; so
+$|r_n'|\le\frac1{t^2}+n\cdot\frac1t\cdot\frac1{2t}$, and $|(r_n^2)'|=2\,|r_n|\,|r_n'|\le\frac{n+2}{t^3}$. As
 $(r_n^2)'$ vanishes at $t=1,\dots,n$,
 \begin{equation}\label{bdd}
 |I_n|\le(n+2)\sum_{t>n}\frac1{t^3}<(n+2)\sum_{t>n}\frac1{(t-1)\,t\,(t+1)}=\frac{n+2}{2n(n+1)}\qquad(n\ge1).
 \end{equation}
-In particular $I_n\to0$. (The same bound shows that all the sums below converge.) The terms of the
-sum are not of one sign, and we control neither their cancellation nor the sign of the total.
-Sections 2 and 3 supply both.
+(The last sum telescopes: $\frac1{(t-1)t(t+1)}=\frac12\bigl[\frac1{(t-1)t}-\frac1{t(t+1)}\bigr]$.) In
+particular $I_n\to0$. But this is all: the bound decays only like $\frac1{2n}$, the terms of the sum
+are not of one sign, and we control neither their cancellation nor the sign of the total. Sections
+2 and 3 supply both.
 
 \section{The recurrence: Ohm and Kirchhoff}
 
-\q{The only tool.} Write $\Delta g(t)=g(t+1)-g(t)$. If $g$ is a rational function with no pole at
-$1,2,3,\dots$, a zero of order at least two at $t=1$, and a finite limit at infinity, then
+\q{The only tool.} Write $\Delta g(t)=g(t+1)-g(t)$. Let $g$ be a rational function with no pole at
+$1,2,3,\dots$ and a zero of order at least two at $t=1$ (so $g'(1)=0$), and suppose that
+$g'(t)\to\kappa$ as $t\to\infty$. Since $(\Delta g)'(t)=g'(t+1)-g'(t)$, the sum that defines
+$\T(\Delta g)$ telescopes:
 \begin{equation}\label{tel}
-\T(\Delta g)=\lim_{N\to\infty}\bigl(g'(1)-g'(N+1)\bigr)=0 .
+\T(\Delta g)=\lim_{N\to\infty}\bigl(g'(1)-g'(N+1)\bigr)=-\kappa .
 \end{equation}
+(Every sum $\T(f)$ below converges absolutely: $f$ is always a rational function with no pole at
+$1,2,3,\dots$ and a finite limit at infinity, so $f'(t)=O(t^{-2})$.)
 
 \q{Step 1: the drop lives on the link.} Picture $0,1,2,\dots$ as the nodes of a chain, with $I_n$
 at node $n$. Neighbouring functions differ by one factor, $r_n=\frac{n-t}{n+t}\,r_{n-1}$, so both
@@ -120,22 +132,23 @@ so $s_n=(n+t)\,r_n$ and $s_{n+1}=(n+1-t)\,r_n$, and Step~2 gives
 $t^2v_n(t)=-(t+n+1)\,r_n(t+1)$ and $t^2v_{n+1}(t)=(t-n)\,r_n(t+1)$. Both prices are therefore
 multiples of the same function:
 \begin{equation}\label{node}
-t^3(t+2n^2)\,v_n^2-t^3\bigl(t+2(n+1)^2\bigr)\,v_{n+1}^2=\frac{P(t)}t\,r_n(t+1)^2=(2n+1)^3\,r_n(t+1)^2 ,
+t^3(t+2n^2)\,v_n^2-t^3\bigl(t+2(n+1)^2\bigr)\,v_{n+1}^2=\frac{W(t)}t\,r_n(t+1)^2=(2n+1)^3\,r_n(t+1)^2 ,
 \end{equation}
-where $P(t)=(t+2n^2)(t+n+1)^2-\bigl(t+2(n+1)^2\bigr)(t-n)^2$. For the last step: the terms $t^3$
-cancel, so $P$ has degree at most two, and three values determine it. At $t=0$ the two products
-are equal. At $t=n$ only the first survives, at $t=-n-1$ only the second. So $P(0)=0$,
-$P(n)=n(2n+1)^3$, $P(-n-1)=-(n+1)(2n+1)^3$, and hence $P(t)=(2n+1)^3\,t$.
+where $W(t)=(t+2n^2)(t+n+1)^2-\bigl(t+2(n+1)^2\bigr)(t-n)^2$. For the last step: the terms $t^3$
+cancel, so $W$ has degree at most two, and its values at the three distinct points $0$, $n$,
+$-n-1$ determine it. At $t=0$ the two products are equal. At $t=n$ only the first survives, at
+$t=-n-1$ only the second. So $W(0)=0$, $W(n)=n(2n+1)^3$, $W(-n-1)=-(n+1)(2n+1)^3$, and hence
+$W(t)=(2n+1)^3\,t$.
 
-\q{Step 5: Kirchhoff's law.} Subtract \eqref{link} for the link $n+1$ from \eqref{link} for the link
-$n$, and use \eqref{node}:
+\q{Step 5: Kirchhoff's law.} Apply $\T$ to \eqref{link}. The function $t\,s_n^2$ has a double zero
+at $t=1$, and its derivative tends to $1$, because $s_n^2=1+O(1/t)$. So \eqref{tel} gives $-1$ on
+the left, and
 \[
-n^4\,t\,v_n^2-(n+1)^4\,t\,v_{n+1}^2=(2n+1)^3\,r_n(t+1)^2-\Delta\bigl[t\,(s_n^2-s_{n+1}^2)\bigr]
-=(2n+1)^3\,r_n^2+\Delta g_n ,
+4\,\T\bigl(t^3(t+2n^2)\,v_n^2\bigr)=J_n-4 .
 \]
-with $g_n=(2n+1)^3r_n^2-t\,(s_n^2-s_{n+1}^2)=(2n+1)\bigl[(2n+1)^2+t-2t^2\bigr]r_n^2$. For $n\ge1$ this
-$g_n$ has its poles at $0,\dots,-n$, a double zero at $t=1$, and the limit $-2(2n+1)$. Apply $\T$
-and use \eqref{tel}:
+Every link pays the same toll $4$. Now apply $\T$ to \eqref{node}. On the right,
+$\T\bigl(r_n(t+1)^2\bigr)=-\sum_{t\ge2}(r_n^2)'(t)=I_n$, because $(r_n^2)'(1)=0$ for $n\ge1$. On the
+left the two tolls cancel:
 \begin{equation}\label{K}
 \boxed{\;J_n-J_{n+1}=4\,(2n+1)^3\,I_n\qquad(n\ge1).\;}
 \end{equation}
@@ -143,17 +156,16 @@ The current entering node $n$ either continues or is lost. Written out, this is 
 $(n+1)^3(I_{n+1}-I_n)-n^3(I_n-I_{n-1})=4(2n+1)^3I_n$.
 
 \q{Where the coefficients come from.} The conductance $n^3$ is $n^4/n$: $n^4$ is the constant term
-of $(n^2-t^2)^2$, and $n$ comes from $(n+t)^2-(n-t)^2=4nt$. The loss $(2n+1)^3$ is read at the two
-poles $t=n$ and $t=-n-1$: one factor from $t+2n^2=n(2n+1)$, two from the distance $2n+1$ between
-the poles.
+of $(n^2-t^2)^2$, and $n$ comes from $(n+t)^2-(n-t)^2=4nt$. The loss $(2n+1)^3$ is read off at the two
+points $t=n$ and $t=-n-1$ where one of the two products in $W$ vanishes: at $t=n$, one factor $2n+1$
+comes from $t+2n^2=n(2n+1)$ and two from $(t+n+1)^2$, the square of the distance between the two
+points.
 
-\q{The same law seen from the middle of a link (not needed).} The telescope without the factor $t$
-gives $\T\bigl([(n^2+m^2)t^2-n^2m^2]\,v_nv_m\bigr)=0$ for any two links. For $m=n$ it says that
-$e_n=\T(r_nr_{n-1})$ satisfies $I_{n-1}+I_n=6\,e_n$; for $m=n+1$ it gives
-$n^3e_n+(n+1)^3e_{n+1}=(2n+1)\bigl(3n(n+1)+1\bigr)I_n$. Eliminating the $e$'s gives \eqref{K} again.
-This is the route of the final version of the exposition by Codex. It explains the constants in
-the usual form of the recurrence, $(2n+1)(17n(n+1)+5)$ with $17=6\cdot3-1$ and $5=6\cdot1-1$, and it
-shows why the loss is positive: $4(2n+1)^3=12\,n(n+1)(2n+1)+4n^3+4(n+1)^3$ is a sum of three losses.
+\q{The same law seen from the middle of a link (not needed).} The final version of the exposition
+by Codex reaches \eqref{K} through one more number on each link, $E_n=\T(r_nr_{n-1})$, using the
+telescope of the products $s_ns_m$ without the factor $t$. There $I_{n-1}+I_n=6\,E_n$, and this $6$
+explains the constants in the usual form $(2n+1)\bigl(17n(n+1)+5\bigr)$ of the middle coefficient:
+$17=6\cdot3-1$ and $5=6\cdot1-1$.
 
 \section{The maximum principle}
 
@@ -164,7 +176,7 @@ F_n=n^3\,(X_n-X_{n-1})\quad(n\ge1),\qquad \ell_n=4(2n+1)^3 .
 \]
 Then the recurrence is the pair of rules
 \begin{equation}\label{rules}
-\boxed{\;F_{n+1}=F_n+\ell_nX_n,\qquad X_{n+1}=X_n+\frac{F_{n+1}}{(n+1)^3}\;}
+\boxed{\;F_{n+1}=F_n+\ell_nX_n,\qquad X_{n+1}=X_n+\frac{F_{n+1}}{(n+1)^3}\qquad(n\ge1)\;}
 \end{equation}
 $X_n$ is a \emph{height} and $F_n$ its \emph{weighted slope}. A positive height increases the next
 slope. A positive next slope increases the next height. If both are negative, the same feedback
@@ -191,18 +203,22 @@ negative valley is impossible. Only the signs of the weights were used.
 \end{tikzpicture}
 \end{center}
 
-\q{A sequence that tends to zero attains its extremes.} This is all we have to add, and Section~1
-provides it: $I_n\to0$ and $I_0>0$.
+\q{A sequence that tends to zero attains every extreme other than $0$.} If one of its terms is
+negative, say equal to $-\eta$, then only finitely many terms lie below $-\eta/2$, and the least of
+these is the least term of the whole sequence. In the same way a positive term implies a largest
+term. This is all we have to add, and Section~1 provides the two facts we need: $I_n\to0$ and
+$I_0>0$.
 \begin{enumerate}[label=(\alph*)]
-\item \emph{No $I_n$ is negative.} Otherwise the least value of the sequence would be negative. It
-would be attained, because $I_n\to0$, and at some $n\ge1$, because $I_0>0$: a negative valley.
+\item \emph{No $I_n$ is negative.} Otherwise there is a least term, and it is negative. It is
+$I_n$ for some $n\ge1$, because $I_0>0$. Then $I_n<0$, $I_n\le I_{n-1}$ and $I_n\le I_{n+1}$: a
+negative valley.
 \item \emph{No $I_n$ is zero.} If $I_n=0$ with $n\ge1$, the recurrence reads
 $(n+1)^3I_{n+1}+n^3I_{n-1}=0$, and both neighbours are $\ge0$ by (a); so both vanish, and going back
 we reach $I_0=0$.
-\item \emph{The sequence decreases.} Suppose $I_n\ge I_{n-1}$ for some $n\ge1$. The largest of
-$I_n,I_{n+1},\dots$ is attained, because these numbers are positive and tend to zero; say at
-$m\ge n$. Then $I_m\ge I_{m+1}$, and $I_m\ge I_{m-1}$ (by the choice of $m$ if $m>n$, by assumption
-if $m=n$): a positive peak.
+\item \emph{The sequence decreases.} Suppose $I_n\ge I_{n-1}$ for some $n\ge1$. The numbers
+$I_n,I_{n+1},\dots$ are positive by (a) and (b) and tend to zero, so one of them is the largest; say
+$I_m$ with $m\ge n$. Then $I_m>0$, $I_m\ge I_{m+1}$, and $I_m\ge I_{m-1}$ (by the choice of $m$ if
+$m>n$, by assumption if $m=n$): a positive peak at $m\ge1$.
 \end{enumerate}
 Therefore
 \[
@@ -251,8 +267,9 @@ that the loss is more than $32$ times the conductance.
 
 \q{What about the other solutions? (not needed).} In the plane of the pairs $(X_n,F_n)$ the two
 quadrants where height and slope have the same sign are traps. If $X_n\ge0$ and $F_n\ge0$, not both
-zero, the rules \eqref{rules} keep them so, and $X_{n+1}\ge\bigl(1+\ell_n/(n+1)^3\bigr)X_n\ge5X_n$: the
-solution explodes.
+zero, the rules \eqref{rules} make both positive at the next step, and from then on
+$X_{n+1}\ge\bigl(1+\ell_n/(n+1)^3\bigr)X_n>14X_n$, because $\frac{2n+1}{n+1}\ge\frac32$: the solution
+explodes.
 \begin{center}
 \begin{tikzpicture}[x=1cm,y=0.72cm]
 \fill[red!14] (0,0) rectangle (5.6,2.1); \fill[red!14] (0,0) rectangle (-5.6,-2.1);
@@ -264,24 +281,28 @@ solution explodes.
 \node[align=center] at (-2.8,1.05) {\small $X<0,\ F>0$\\ \small the mirror image};
 \end{tikzpicture}
 \end{center}
-A solution with $X_0=0$ and $X_1\ne0$ starts in a trap, since $X_1F_1=X_1^2>0$. So every bounded
-solution is a multiple of $(I_n)$: the solutions form a plane, and all of them except one line
-explode. That is why so little information about the sum was enough.
+A solution with $X_0=0$ and $X_1\ne0$ starts in a trap, since $F_1=X_1$; so it is unbounded. Now
+let $(X_n)$ be any bounded solution. Then $X_n-\frac{X_0}{I_0}I_n$ is a bounded solution that
+vanishes at $n=0$; so it vanishes at $n=1$ too, and hence for all $n$. So every bounded solution is
+a multiple of $(I_n)$: the solutions form a plane, and all of them except one line explode. That is
+why so little information about the sum was enough.
 
 \section{The denominator cost, and the contradiction}
 
 \q{An identity.} $N!=\prod_{k=1}^ND_{\lfloor N/k\rfloor}$. Both sides are the product of $p$ over all
-pairs $(k,q)$ with $q=p^a$ a prime power and $kq\le N$: on the left because each $m\le N$ is the
+pairs $(k,q)$ with $k\ge1$, $q=p^a$ a prime power ($a\ge1$) and $kq\le N$: on the left because each $m\le N$ is the
 product of $p$ over the prime powers $q$ dividing it (write $m=kq$), on the right because $D_M$ is
 the product of $p$ over the prime powers $q\le M$.
 
 \q{The growth rate of $D_n$ is at most $e$.} Suppose $D_m\ge c\,\lambda^m$ for all $m\ge1$, with
-$c>0$ and $\lambda\ge1$. Since $\sum_{k\le N}\lfloor N/k\rfloor>N\bigl(\sum_{k\le N}\frac1k-1\bigr)>N(\log N-1)$,
-the identity gives
+$c>0$ and $\lambda\ge1$. The identity has $N$ factors, each with an index $\lfloor N/k\rfloor\ge1$, so
+$N!\ge c^N\lambda^{S}$ with $S=\sum_{k\le N}\lfloor N/k\rfloor$. Now
+$S>N\bigl(\sum_{k\le N}\frac1k-1\bigr)>N(\log N-1)$, and $\lambda\ge1$; hence
 \[
-N^N\ge N!\ge c^N\lambda^{N(\log N-1)},\qquad\text{that is,}\qquad N\ge\frac c\lambda\,N^{\log\lambda}\quad\text{for every }N .
+N^N\ge N!\ge c^N\lambda^{N(\log N-1)}\qquad\text{for every }N\ge1 .
 \]
-So $\log\lambda\le1$.
+Take $N$-th roots and use $\lambda^{\log N}=N^{\log\lambda}$: this is $N\ge\frac c\lambda\,N^{\log\lambda}$.
+If $\log\lambda>1$, it fails for large $N$. So $\log\lambda\le1$.
 
 \q{The contradiction.} Suppose $\zeta(3)=P/Q$ with positive integers $P,Q$. Then
 $\frac Q2D_n^3I_n=P\,D_n^3a_n-Q\,D_n^3b_n$ is an integer, and it is positive, so it is at least $1$. By
@@ -297,33 +318,35 @@ Hence $\zeta(3)$ is irrational.
 The bound $33^{-n}$ threw away the continuing current. Keep it. With $g_n=I_n/I_{n-1}\in(0,1)$,
 dividing $J_n=J_{n+1}+\ell_nI_n$ by $n^3I_n$ gives
 \[
-\frac1{g_n}=1+4\Bigl(2+\frac1n\Bigr)^3+\Bigl(1+\frac1n\Bigr)^3(1-g_{n+1})=34-g_{n+1}+\delta_n,\qquad
-0<\delta_n<\frac{83}n .
+\frac1{g_n}=1+4\Bigl(2+\frac1n\Bigr)^3+\Bigl(1+\frac1n\Bigr)^3(1-g_{n+1})=34-g_{n+1}+\delta_n,
 \]
+where $\delta_n=4\bigl[(2+\frac1n)^3-8\bigr]+\bigl[(1+\frac1n)^3-1\bigr](1-g_{n+1})$. The two brackets
+are positive and at most $\frac{19}n$ and $\frac7n$, and $0<1-g_{n+1}<1$; so $0<\delta_n<\frac{83}n$.
 The number $34$ is $1+32+1$: the present voltage, the limiting local loss, and the continuing
 current. With the increasing function $f(x)=\frac1{34-x}$ this says $g_n=f(g_{n+1}-\delta_n)$.
 
-\emph{The largest ratio reproduces itself.} Let $s=\sup_ng_n\le1$. Then
-$g_n<f(g_{n+1})\le f(s)$ for every $n$, so $s\le f(s)$, that is, $s^2-34s+1\ge0$. The roots are
-$\rho=17-12\sqrt2=0.0294$ and $1/\rho>1$, so $s\le\rho$, and
+\emph{The largest ratio reproduces itself.} Let $\sigma=\sup_ng_n\le1$. Then
+$g_n<f(g_{n+1})\le f(\sigma)$ for every $n$, so $\sigma\le f(\sigma)$, that is,
+$\sigma^2-34\sigma+1\ge0$. The roots are $\rho=17-12\sqrt2=0.0294$ and $1/\rho>1$, so
+$\sigma\le\rho$, and
 $0<I_n\le2\zeta(3)\,(17-12\sqrt2)^n$ for all $n$.
 
 \emph{So does the smallest limit.} Let $L=\liminf g_n$ and $\varepsilon>0$. For all large $n$,
-$g_{n+1}>L-\varepsilon$ and $\delta_n<\varepsilon$, hence $g_n>f(L-2\varepsilon)$. So $L\ge f(L)$,
+$g_{n+1}>L-\varepsilon$ and $\delta_n<\varepsilon$, hence $g_n>f(L-2\varepsilon)$. As $f$ is continuous, $L\ge f(L)$,
 that is, $L^2-34L+1\le0$, that is, $L\ge\rho$. Together: $I_n/I_{n-1}\to17-12\sqrt2$.
 
 \bigskip
-\noindent\textbf{Status and sources.} Draft; checked by AI agents only, and no human has read it.
-The identities of Section~2 were verified in exact arithmetic for $n\le7$ and the polynomial steps
-with $n$ symbolic; the bound \eqref{bdd} pointwise in exact arithmetic for $n\le12$ and against the
-exact values of $I_n$ for $n<30$; the factorial identity for $N<200$. Section~3 in this form
-(attained extremes) has not yet had an independent read. Who found what: the link and node
-identities of Section~2, the bound \eqref{bdd} and its use in Section~3, and the form of Section~4
-are due to three AI agents asked to simplify the exposition; the midpoint route and the constants
-$6$ and $17$ are from the final version of the exposition by Codex, whose height, slope and
-current language and pictures are kept here. The proof is a rearrangement of known ideas: the
-series is that of W.~Zudilin's elementary proof (arXiv:math/0202159); $g_n$ in Section~2 is the
-classical certificate for Ap\'ery's recurrence; that Ap\'ery's linear forms are the bounded
-solution of a recurrence with dominant middle coefficient is in A.~Mingarelli (arXiv:math/0608577),
-and the constant $33$ in Mahboubi and Sibut-Pinote (arXiv:1912.06611).
+\noindent\textbf{Status and sources.} Checked by AI agents only; no human has read it. An
+independent AI reader went through draft~2 line by line and by computer (exact arithmetic for the
+identities of Section~2 up to $n=14$, the recurrence on the linear forms up to $n=39$, the bounds of
+Sections 1 and 3 up to $n=80$, the factorial identity up to $N=600$). It found no mathematical
+error; its corrections are incorporated, among them the present form of Step~5. Who found what:
+the link and node identities of Section~2, the bound \eqref{bdd} and its use in Section~3, and the
+form of Section~4 are due to AI agents asked to simplify the exposition; the midpoint route and
+the constants $6$ and $17$ are from the final version of the exposition by Codex, whose height,
+slope and current language and pictures are kept here. The proof is a rearrangement of known
+ideas: the series is that of W.~Zudilin's elementary proof (arXiv:math/0202159), and adding up the
+pieces of Step~5 gives one quarter of the certificate used there; that Ap\'ery's linear forms are
+the bounded solution of a recurrence with dominant middle coefficient is in A.~Mingarelli
+(arXiv:math/0608577), and the constant $33$ in Mahboubi and Sibut-Pinote (arXiv:1912.06611).
 \end{document}
