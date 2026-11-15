@@ -440,6 +440,32 @@
   To check it, expand a polynomial identity in $t$ and $n$. To find it, use a computer.
 \end{frame}
 
+\begin{frame}{It gets worse}
+  \textbf{The ``Stirling-type estimate''.} Put $t=\tau n$. The terms of Ball's series are at most
+  $e^2e^{nf(\tau)}$ (times a polynomial factor), with
+  {\small
+  \[
+    f(\tau)=\log\frac{\tau^{5\tau}(\tau+2)^{\tau+2}}{(\tau-1)^{\tau-1}(\tau+1)^{5(\tau+1)}},
+    \qquad
+    f'(\tau)=\log\frac{\tau^5(\tau+2)}{(\tau-1)(\tau+1)^5}.
+  \]
+  The critical point solves a quintic, which factors after $x=\tau+\tfrac12$:
+  \[
+    -x\bigl(2x^4-5x^2-\tfrac78\bigr)=0,
+    \qquad
+    \tau_0=-\tfrac12+\sqrt{\tfrac54+\sqrt2}=1.1322\ldots
+  \]}%
+  \pause
+  A few more lines of algebra, and $e^{f(\tau_0)}=(\sqrt2-1)^4$: the number we met in Step 4.
+
+  \pause
+  \medskip
+  \textbf{The bridge, without the recurrence.} Zudilin notes that $J_n=\widetilde F_n$ is the case
+  $a=3n+2$, $b=c=d=e=f=n+1$ of Bailey's transformation between a very-well-poised ${}_7F_6(1)$ and a Barnes-type integral.
+  \pause
+  We have not checked that one.
+\end{frame}
+
 \begin{frame}{The end of Zudilin's proof}
   Zudilin finishes ``using a trivial bound $\Dn<3^n$''. Our Step 5 is enough for this:
   we only need $\Dn<3^n$ for infinitely many $n$, because $\widetilde F_n>0$ for every $n$:
