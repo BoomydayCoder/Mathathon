@@ -87,8 +87,10 @@ the order of the report:
 \begin{enumerate}
   \item \emph{Where Zudilin's rational function comes from.} The function
     $r_n(t)=\frac{(1-t)\cdots(n-t)}{t(t+1)\cdots(t+n)}$ is the Mellin transform of the
-    Legendre polynomial that Beukers' integral proof is built on. Its zeros, its poles, the square
-    and the derivative in $J_n=-\sum_tR_n'(t)$, $R_n=r_n^2$, all have reasons (\cref{part:beukers,sec:zudilin}).
+    Legendre polynomial that Beukers' integral proof is built on. The zeros at $1,\dots,n$ say that
+    $P_n$ kills small monomials, the square $R_n=r_n^2$ comes from the product $P_n(x)P_n(y)$, and
+    the derivative in $J_n=-\sum_tR_n'(t)$ comes from the logarithm in Beukers' kernel
+    (\cref{part:beukers,sec:zudilin}).
   \item \emph{Which equation we want.} An equation of the form
     $B(J_{n+1}-J_n)-A(J_n-J_{n-1})=\lambda J_n$ with $A,B,\lambda>0$ forbids peaks and valleys,
     and a large $\lambda/A$ forces fast decay (\cref{sec:wish}). Ap\'ery's recurrence is such an equation.
@@ -96,11 +98,9 @@ the order of the report:
     degree at most four, and five Taylor coefficients at $t=0$ determine the unknowns one at a time
     (\cref{sec:guess}).
   \item \emph{What its coefficients mean.} In the difference form
-    $(n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n$, the weights $n^3$ and $(n+1)^3$ come from
-    the two neighbours and $4(2n+1)^3$ is an extra positive term; the $17$ of \eqref{eq:apery-rec} is
-    $1+16$, one part from the neighbours and sixteen from the extra term. Without the extra term the
-    same equation is solved by the tails $\zeta(3)-s_n$ of the partial sums, which decay far too
-    slowly.
+    $(n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n$, the left side is the equation satisfied
+    by the tails of $\sum k^{-3}$, and the right side is an extra positive term; the $17$ of
+    \eqref{eq:apery-rec} is $1+16$ accordingly (\cref{sec:wish}, \eqref{eq:rec}).
   \item \emph{What the recurrence does.} On its own, with $J_0>0$ and $J_n\to0$, it gives the sign and
     the exponential decay of $J_n$. This yields a short proof with one series and no integrals in
     the size estimate (\cref{part:ours}), which to our knowledge is new.
@@ -286,7 +286,7 @@ $\Dn^3b_n\in\Z$.
 The kernel $K(x,y)$ mixes the two variables (and is singular along the axes), so the
 one-variable identity \eqref{eq:recip} cannot be applied to it directly. We borrow a trick that
 is common in differential equations: separation of variables, where a function of two variables is
-written as a superposition of products, $u(x,t)=\sum_kv_k(x)w_k(t)$. Here we write $K$ as an integral,
+written as a superposition of products, $u(x,y)=\sum_kv_k(x)w_k(y)$. Here we write $K$ as an integral,
 over a parameter $t$, of products $v_t(x)w_t(y)$ in which each factor is a reciprocal linear
 function, to which \eqref{eq:recip} applies. Such a representation exists because $K$ is a divided
 difference of the logarithm, $K(x,y)=\frac1y\cdot\frac{\log(1/y)-\log x}{1/y-x}$, and divided differences of
@@ -466,8 +466,9 @@ only state the outcomes; the details are in the team's notes~\cite{codexnotes}, 
   \item $\pi$: a related argument with $\int_0^1P_n(x)\sin(\pi x)\dd x$, assuming $\pi=a/b$ to control
     the arithmetic (\cite{codexnotes}, Section~15.4).
 \end{itemize}
-In each case the kernel decides the arithmetic, its $n$-th derivative decides the positivity, and the
-maximum decides whether the size beats the denominators. The direct extension to $\zeta(5)$, with
+The pattern is the same each time. The kernel's moments fix the denominators, the sign comes from
+moving the $n$ derivatives of $P_n$ onto the kernel, and the proof works exactly when the
+maximum of the resulting integrand is small enough to beat those denominators. The direct extension to $\zeta(5)$, with
 the logarithm replaced by its cube, fails for a quantifiable reason (\cite{codexnotes}, Section~16).
 
 % ======================================================================
@@ -487,11 +488,11 @@ arbitrary.
 
 \subsection{The Mellin transform of \texorpdfstring{$P_n$}{P\_n}}
 
-Collect all the moments of $P_n$ in a single function, its Mellin transform, which interpolates
-them: $r_n(j+1)=\int_0^1x^jP_n$.
+Collect all the moments of $P_n$ in a single function, its Mellin transform
 \[
-  r_n(t)=\int_0^1x^{t-1}P_n(x)\dd x,\qquad t>0 .
+  r_n(t)=\int_0^1x^{t-1}P_n(x)\dd x,\qquad t>0 ,
 \]
+which interpolates them: $r_n(j+1)=\int_0^1x^jP_n$.
 
 \begin{proposition}\label{prop:mellin}
 For $t>0$,
@@ -610,7 +611,7 @@ of the type used by Ball and Rivoal~\cite{ballrivoal,rivoal},
 Its terms vanish for $t\le n$ and are \emph{positive} for $t>n$, so $\widetilde F_n>0$, and a
 Stirling-type estimate of the terms gives $\widetilde F_n<20(n+1)^4(\sqrt2-1)^{4n}$. But its
 arithmetic is weaker: on its own it needs $\Dn^4$ instead of $\Dn^3$, which is too expensive.
-So each series has one of the two properties and lacks the other.
+Each series thus has one of the two properties and lacks the other.
 
 \paragraph{The size estimate.} To get that bound, Zudilin puts $t=\tau n$ and bounds the terms of
 Ball's series by $e^2e^{nf(\tau)}$ times a polynomial factor, where
@@ -679,37 +680,43 @@ We prove that $J_n>0$ and that $J_n$ decays exponentially, using only the sum of
   \item $J_0=2\zeta(3)>0$ (since $r_0=\frac1t$);
   \item $J_n\to0$ (\cref{lem:crude}).
 \end{itemize}
-What is missing is the \emph{sign} and the \emph{rate of decay}. We look for an equation
-linking each $J_n$ to its neighbours, of a shape that makes
-negative values and slow decay impossible.
-
-(What is new here is discussed in \cref{sec:novelty}.)
+What is missing is the sign and the rate of decay, and these are what the rest of this part
+supplies.
 
 \subsection{Which equation would we like?}\label{sec:wish}
 
-Suppose we had, for every $n\ge1$,
+Start from the simplest series we know, the one defining $\zeta(3)$. Its tails
+$T_n=\zeta(3)-\sum_{k\le n}k^{-3}$ satisfy $T_n-T_{n-1}=-n^{-3}$, so
+\[
+  (n+1)^3(T_{n+1}-T_n)-n^3(T_n-T_{n-1})=-1+1=0 .
+\]
+They are positive and decrease, but only like $1/(2n^2)$, far too slowly to beat $\Dn^3$. The tails
+are a second-order equation with nothing on the right-hand side; we look for a perturbation of it
+by a positive multiple of the sequence itself. Suppose we had, for every $n\ge1$,
 \begin{equation}\label{eq:wish}
   B\,(J_{n+1}-J_n)-A\,(J_n-J_{n-1})=\lambda J_n,
 \end{equation}
 with coefficients $A,B,\lambda>0$ that may depend on $n$. This is the discrete analogue of
 $(pu')'=qu$ with $p,q>0$: like $u''=u$, such an equation allows no positive maximum and no negative
-minimum, and its decaying solutions decay at a rate set by the size of $q$ relative to $p$.
+minimum, and when $p,q$ are constant its decaying solutions decay like $e^{-\sqrt{q/p}\,x}$.
+In the discrete setting a large ratio $\lambda/A$ plays the role of a large $q/p$.
 Look at a \emph{negative valley}: an index with $J_n<0$, $J_{n-1}\ge J_n$ and $J_{n+1}\ge J_n$. Then
 $J_{n+1}-J_n\ge0$ and $J_n-J_{n-1}\le0$, so the left side of \eqref{eq:wish} is $\ge0$, while the
-right side is negative. So there are no negative valleys, and in the same way no positive peaks.
+right side is negative. Hence there are no negative valleys, and in the same way no positive peaks.
 Moreover, if the sequence is positive and decreasing, then $J_{n+1}-J_n<0$ and
 \eqref{eq:wish} gives $A(J_{n-1}-J_n)>\lambda J_n$, that is
 \[
   J_n<\frac{A}{A+\lambda}\,J_{n-1}.
 \]
-So a large ratio $\lambda/A$ means fast decay. This is the equation we want; a calculation has to
+A large ratio $\lambda/A$ therefore means fast decay. This is the equation we want; a calculation has to
 decide whether $J_n$ satisfies one with positive coefficients and a large $\lambda/A$.
 
 \subsection{A guess}\label{sec:guess}
 
 Since $J_j=-\sum_tR_j'(t)$, it is natural to look for the identity at the level of the rational
 functions, allowing an error term that disappears after summation. Fix $n\ge1$ and look for
-numbers $A,B,\lambda$ (depending on $n$) and a polynomial $W(t)$ with
+numbers $A,B,\lambda$ (depending on $n$ but not on $t$, since they must pass through the sum over
+$t$) and a polynomial $W(t)$ with
 \begin{equation}\label{eq:ansatz}
   B\,(R_{n+1}-R_n)-A\,(R_n-R_{n-1})=\lambda R_n+W(t+1)R_n(t+1)-W(t)R_n(t).
 \end{equation}
@@ -747,13 +754,14 @@ Multiply by $(n-t)^2(n+1+t)^2$. The left side becomes a polynomial of degree at 
 right, $(n-t)^2(n+1+t)^2W(t)$ and $t^4W(t+1)$ are polynomials of degree six with the same two
 leading terms (both begin $w_2t^6+(2w_2+w_1)t^5$), so the right side has degree at most four.
 The identity therefore amounts to five linear equations in six unknowns, and a nonzero solution
-exists. This count is the reason a recurrence exists at all: three neighbouring $R_j$ together with
-a telescoping correction have more freedom than the five conditions they must meet.
+exists. This count is why a recurrence must exist: three neighbouring $R_j$ together with a
+telescoping correction have more freedom than the five conditions they must meet. The solution is
+not degenerate, because $A=B=0$ forces everything else to vanish (see the $t^3$ step below).
 
 To find it we use a shortcut. Both sides of \eqref{eq:star} are regular at $t=0$, and the factor
 $(n-t)^2(n+1+t)^2$ equals $n^2(n+1)^2\ne0$ there. If the Taylor expansions of the two sides at $0$
 agree up to $t^4$, then after multiplying by this factor the difference is a polynomial of degree
-at most four that vanishes to order five at $0$, hence is zero. So it is enough to match five
+at most four that vanishes to order five at $0$, hence is zero. It is therefore enough to match five
 Taylor coefficients.
 
 \subsection{Solving it, one coefficient at a time}
@@ -767,7 +775,8 @@ and the right side is $\lambda-W(t)+\frac{W(1)}{n^2(n+1)^2}t^4+O(t^5)$. Each coe
 determines one unknown.
 \begin{itemize}
   \item[$t^3$:] the right side has no cubic term, so $A/n^3=B/(n+1)^3$. This common value cannot
-    be zero (otherwise the remaining equations force everything to vanish), so we normalise
+    be zero (if $A=B=0$, the $t^1,t^2$ equations give $w_1=w_2=0$ and $w_0=\lambda$, and the $t^4$
+equation gives $W(1)=\lambda=0$), so we normalise
     \[A=n^3,\qquad B=(n+1)^3.\]
     With these values the left side is
     $-4(2n+1)t+8(2n+1)t^2+\frac{16(2n+1)}{n(n+1)}t^4+O(t^5)$, using $n^2-(n+1)^2=-(2n+1)$ and
@@ -797,7 +806,7 @@ Write
   C_n=n^3(J_{n-1}-J_n).
 \]
 Then \eqref{eq:rec} reads
-\begin{equation}\label{eq:kirchhoff}
+\begin{equation}\label{eq:flux}
   C_n-C_{n+1}=4(2n+1)^3J_n .
 \end{equation}
 So $C_n$ is $n^3$ times the drop in $J$, and the drop in $C$ from one index to the next is a cube
@@ -825,7 +834,7 @@ $J_{n-1}\le J_n$ and $J_{n+1}\le J_n$.
 
 \begin{proof}
 At a negative valley, $C_n=n^3(J_{n-1}-J_n)\ge0$ and $C_{n+1}=(n+1)^3(J_n-J_{n+1})\le0$, so
-$C_n-C_{n+1}\ge0$, while $4(2n+1)^3J_n<0$. This contradicts \eqref{eq:kirchhoff}. At a positive peak
+$C_n-C_{n+1}\ge0$, while $4(2n+1)^3J_n<0$. This contradicts \eqref{eq:flux}. At a positive peak
 all the signs reverse.
 \end{proof}
 
@@ -861,7 +870,7 @@ For every $n\ge1$, \ $J_{n-1}/J_n>33$. Hence $0<J_n\le2\zeta(3)\,33^{-n}$ for al
 \end{theorem}
 
 \begin{proof}
-By \cref{prop:decreasing}, $C_{n+1}>0$, so \eqref{eq:kirchhoff} gives $n^3(J_{n-1}-J_n)=C_n>4(2n+1)^3J_n$.
+By \cref{prop:decreasing}, $C_{n+1}>0$, so \eqref{eq:flux} gives $n^3(J_{n-1}-J_n)=C_n>4(2n+1)^3J_n$.
 Dividing by $n^3J_n$,
 \[
   \frac{J_{n-1}}{J_n}>1+\frac{4(2n+1)^3}{n^3}=1+4\Bigl(2+\frac1n\Bigr)^3>1+4\cdot8=33 .
@@ -870,12 +879,12 @@ Iterating from $J_0=2\zeta(3)$ gives the bound.
 \end{proof}
 
 The argument loses very little. The actual ratios $J_{n-1}/J_n$ for $n=1,\dots,5$ are about
-$116.9,\ 66.8,\ 54.1,\ 48.5,\ 45.3$, and numerically they approach $17+12\sqrt2\approx33.97$, the rate found in
-\cref{thm:decay}.
-This limit is forced by the recurrence itself. Dividing \eqref{eq:apery-rec} by $n^3$ and letting
-$n\to\infty$ gives the characteristic equation $x^2-34x+1=0$, whose roots are $17\pm12\sqrt2$; by
-Poincar\'e's theorem on linear recurrences, $J_n/J_{n-1}$ tends to one of the roots, and since
-$J_n$ decreases it is the smaller one. So the $17=1+16$ of the remark above also fixes the rate.
+$116.9,\ 66.8,\ 54.1,\ 48.5,\ 45.3$. They tend to $17+12\sqrt2\approx33.97$, and the recurrence
+forces this. Dividing \eqref{eq:apery-rec} by $n^3$ gives the limiting characteristic equation
+$x^2-34x+1=0$, whose roots $17\pm12\sqrt2$ have distinct moduli. Since $J_n\ne0$
+(\cref{prop:decreasing}), Poincar\'e's theorem shows that $J_n/J_{n-1}$ converges to one of the
+roots, and since $J_n$ decreases it is $17-12\sqrt2$. This is the tool used in~\cite{rajkumar}; it
+gives the limit but neither the sign nor an explicit bound, so the proof above does not use it.
 
 \paragraph{Without the extra term.} Then $C_n$ would be constant, $C_n=C$, so
 $J_{n-1}-J_n=C/n^3$, and since $J_n\to0$,
@@ -884,7 +893,7 @@ $J_{n-1}-J_n=C/n^3$, and since $J_n\to0$,
 \]
 a multiple of the tail of the series for $\zeta(3)$. This is the failed approximation by
 partial sums from \cref{sec:strategy}, which decays only like $\frac1{2n^2}$. The failed
-approximation and the successful one satisfy the same equation \eqref{eq:kirchhoff} apart from the
+approximation and the successful one satisfy the same equation \eqref{eq:flux} apart from the
 extra term. That term turns polynomial decay into exponential decay, since $4(2n+1)^3J_n$ exceeds
 $32\,n^3J_n$ at every $n$.
 
@@ -909,12 +918,12 @@ a contradiction.
 
 \subsection{What is new}\label{sec:novelty}
 
-To our knowledge, the argument of this part is new. We obtain the
+This part follows the team's notes~\cite{maxnotes}. To our knowledge, its argument is new. We obtain the
 positivity, the monotonicity and the exponential decay of Ap\'ery's linear forms $J_n$ directly from
 Ap\'ery's recurrence, written in the difference form \eqref{eq:rec}, by a discrete maximum
 principle that uses only $J_0>0$ and $J_n\to0$ (the latter from a crude bound on the sum), and nothing
 about the integers $a_n$. Combined with \cref{lem:lcm}, this gives a complete proof with one series,
-one recurrence, no integral and no prime number theorem; \cref{part:ours} may take
+one recurrence and no integral; \cref{part:ours} may take
 $J_n:=-\sum_tR_n'(t)$ as its definition, and \cref{prop:sum} is then not needed. The idea of using a
 maximum principle was first proposed by an AI tool (Claude; see \cref{sec:ai}). Its core, that the
 small solution of a three-term recurrence with positive coefficients of this kind is positive, is
@@ -936,8 +945,7 @@ arguments we found obtain the sign and the size in other ways:
 The ingredients are classical: the recurrence is Ap\'ery's, and the polynomial $W$ that makes it
 telescope is the one Zudilin found with a computer (his $s_n$, Lemma~2 of~\cite{zudilin}). Our claim
 is based on a search of the literature cited here (November 2026); the characterizations of van der
-Poorten's and Cohen's accounts above rely on~\cite{mahboubi,mingarelli}. We follow the team's
-notes~\cite{maxnotes}.
+Poorten's and Cohen's accounts above rely on~\cite{mahboubi,mingarelli}.
 
 % ======================================================================
 \section{Why the direct generalization fails for \texorpdfstring{$\zeta(5)$}{zeta(5)}}\label{sec:zeta5}
@@ -975,7 +983,7 @@ $n$ & $J_n^{[1]}$ (for $\zeta(3)$) & $J_n^{[3]}$ (for $\zeta(5)$)\\
 \bottomrule
 \end{tabular}
 \end{center}
-So this particular generalization fails; we do not claim that it explains the general obstruction.
+This particular generalization fails; we do not claim that it explains the general obstruction.
 Raising $r_n$ to higher powers restores the vanishing of the first terms but brings in other zeta
 values; that is the route of Ball and Rivoal~\cite{ballrivoal,rivoal} and of Zudilin~\cite{zudilinodd},
 which shows that one of $\zeta(5),\zeta(7),\zeta(9),\zeta(11)$ is irrational without singling out
@@ -1003,9 +1011,9 @@ denominators & $\Dn<3^n$ i.o., $27(\sqrt2-1)^4<1$ & $\Dn<3^n$ i.o. & $\Dn<3^n$ i
 \label{tab:comparison}
 \end{table}
 
-For the question of this report, our proof has two advantages. Compared with Beukers', it uses no
-integrals. More importantly, Beukers' proof never uses Ap\'ery's recurrence, so it cannot
-explain it, whereas ours is built around the recurrence. Compared with Zudilin's, it uses one series
+For the question of this report, the main advantage over Beukers' proof is that his never uses
+Ap\'ery's recurrence, so it cannot explain it, whereas ours is built around the recurrence (and
+needs no integrals). Compared with Zudilin's, it uses one series
 instead of two, one recurrence found by hand instead of two certificates found by computer (one of
 degree six), no Stirling-type estimates, and no appeal to the bound $\Dn<3^n$ for all $n$.
 
@@ -1019,11 +1027,11 @@ coefficients ($n^3$, $(n+1)^3$, and $17$) through the difference form \eqref{eq:
 
 The team's notes~\cite{opnotes} contain a further reformulation of \cref{part:ours} in terms of differential
 operators, which we record as a direction for further work. Write $X$ for multiplication by $x$ on
-$[0,1]$ and $\Lambda f=-(x(1-x)f')'$, so that $\Lambda P_n=n(n+1)P_n$. The first item below we checked ourselves
-with SymPy (the operator identity in general, the tridiagonal formula for $n\le6$, the energy
-identity on random polynomials); the others are as marked:
+$[0,1]$ and $\Lambda f=-(x(1-x)f')'$, so that $\Lambda P_n=n(n+1)P_n$. Each item says whether we
+checked it ourselves (with SymPy, \texttt{check\_operator.py}) or take it from the notes.
 \begin{itemize}
-  \item The operator $H=\frac12(X\Lambda+\Lambda X)+\frac12$, that is $Hf=-(x^2(1-x)f')'+xf$, is tridiagonal in
+  \item (Checked: in general, the tridiagonal formula for $n\le6$, the quadratic form on random
+    polynomials.) The operator $H=\frac12(X\Lambda+\Lambda X)+\frac12$, that is $Hf=-(x^2(1-x)f')'+xf$, is tridiagonal in
     the Legendre basis:
     \[
       2(2n+1)\,HP_n=-(n+1)^3P_{n+1}+\bigl((n+1)^3+n^3\bigr)P_n-n^3P_{n-1}.
@@ -1032,7 +1040,7 @@ identity on random polynomials); the others are as marked:
     of $\Lambda$. In Legendre coordinates $\psi_n=\langle P_n,f\rangle$ one has
     $\langle f,Hf\rangle=\frac12\sum_{n\ge1}n^3(\psi_n-\psi_{n-1})^2$: $H$ is the quadratic form of the
     difference equation without the extra term.
-  \item Beukers' kernel intertwines the two operators: with $K(u)=\frac{-\log u}{1-u}$,
+  \item (Checked.) Beukers' kernel intertwines the two operators: with $K(u)=\frac{-\log u}{1-u}$,
     \[
       \bigl(H_x+\Lambda_y\bigr)K(xy)=0,
     \]
@@ -1043,14 +1051,14 @@ identity on random polynomials); the others are as marked:
     \[
       [\Lambda,Z]=2(\Lambda X+X\Lambda)-2\Lambda,\qquad [Z,X]=2X^2-2X .
     \]
-    (We checked these with SymPy as well.)
-  \item The notes report that $\langle1,(H+m(m+1))^{-1}1\rangle=2\sum_{k>m}k^{-3}$, so that
-    $\zeta(3)=\frac12\langle1,H^{-1}1\rangle$ in this sense. We checked that the
-    right side equals $\int_0^1\!\int_0^1P_m(y)K(xy)\dd x\dd y$ for $m\le3$; the identification of
-    that integral with the resolvent is the notes' argument.
-  \item With $\Psi=\sum_n(2n+1)J_nP_n$, Ap\'ery's recurrence together with its equation at $n=0$ is
+  \item (Partly checked.) The notes report that
+    \[\langle1,(H+m(m+1))^{-1}1\rangle=2\sum_{k>m}k^{-3},\qquad\text{so that}\qquad
+      \zeta(3)=\tfrac12\langle1,H^{-1}1\rangle\]
+    in this sense. For $m\le3$ we checked that the right side of the first identity equals $\int_0^1\!\int_0^1P_m(y)K(xy)\dd x\dd y$; the identification of that
+    integral with the resolvent is the notes' argument.
+  \item (From the notes.) With $\Psi=\sum_n(2n+1)J_nP_n$, Ap\'ery's recurrence together with its equation at $n=0$ is
     equivalent, according to the notes, to $(H+8\Lambda+2)\Psi=6$. Here $8\Lambda+2$ accounts for the extra term $4(2n+1)^3$.
-  \item The analogous operators of degree $0$ and $1$ in $\Lambda$, namely $X$ and $\frac12(1+[\Lambda,X])$, are
+  \item (From the notes.) The analogous operators of degree $0$ and $1$ in $\Lambda$, namely $X$ and $\frac12(1+[\Lambda,X])$, are
     tridiagonal with weights $(n+1,n)$ and $(-(n+1)^2,n^2)$; the notes report that they reproduce
     the classical recurrences for $\log2$ and $\zeta(2)$.
 \end{itemize}
