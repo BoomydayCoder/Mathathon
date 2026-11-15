@@ -295,21 +295,54 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Why a square, and why a derivative?}
-  Two copies of $P_n$, and $\frac1{1-xy}=\sum(xy)^m$ forces equal exponents:
+\begin{frame}{Why a square? Expand the geometric series}
+  Expand the kernel's denominator, indexing the terms by $t=1,2,3,\dots$:
   \[
-    R_n(t)=r_n(t)^2=\iint(xy)^{t-1}P_n(x)P_n(y)\dd x\dd y .
+    \frac1{1-xy}=1+xy+(xy)^2+(xy)^3+\cdots=\sum_{t=1}^\infty(xy)^{t-1}.
   \]
   \pause
-  The logarithm becomes a derivative: $\frac{\dd}{\dd t}(xy)^{t-1}=\log(xy)\,(xy)^{t-1}$.
-  Summing over $t=1,2,3,\dots$ as in Step 1:
+  Then Beukers' integral becomes a sum of integrals:
+  \[
+    J_n=\iint P_n(x)P_n(y)\,\frac{-\log(xy)}{1-xy}
+    =\sum_{t=1}^\infty\iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr).
+  \]
+  \pause
+  Ignore the logarithm for a moment. Since $(xy)^{t-1}=x^{t-1}\,y^{t-1}$, with the \alert{same}
+  exponent on $x$ and $y$, each integral splits into two equal factors:
+  \[
+    \iint P_n(x)P_n(y)\,x^{t-1}y^{t-1}
+    =\Bigl(\int_0^1x^{t-1}P_n\Bigr)\Bigl(\int_0^1y^{t-1}P_n\Bigr)=r_n(t)^2=:R_n(t).
+  \]
+\end{frame}
+
+\begin{frame}{Why a derivative? The logarithm}
+  The logarithm is what we ignored. It comes from differentiating in the exponent:
+  \[
+    \frac{\dd}{\dd t}(xy)^{t-1}=\log(xy)\,(xy)^{t-1}.
+  \]
+  \pause
+  So the $t$-th term of the sum is
+  \[
+    \iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr)
+    =-\frac{\dd}{\dd t}\iint P_n(x)P_n(y)\,(xy)^{t-1}=-R_n'(t).
+  \]
+  \pause
+  Adding up all the terms:
   \[
     \boxed{\;J_n=-\sum_{t=1}^\infty R_n'(t)\;}
   \]
-  \pause
-  \textbf{Read without integrals:}
-  poles $\to$ arithmetic; \ zeros $\to$ the first $n$ terms vanish;
-  \ square $\to$ the zeros survive the derivative; \ derivative $\to$ cubes, so $\zeta(3)$.
+\end{frame}
+
+\begin{frame}{The same recipe, read without integrals}
+  \[
+    J_n=-\sum_{t=1}^\infty R_n'(t),\qquad R_n(t)=\Bigl(\frac{(1-t)(2-t)\cdots(n-t)}{t\,(t+1)\cdots(t+n)}\Bigr)^2
+  \]
+  \begin{itemize}
+    \item \textbf{Poles} at $0,-1,\dots,-n$ $\to$ shifted zeta values with controlled denominators.
+    \item \textbf{Zeros} at $1,\dots,n$ $\to$ the first $n$ terms of the sum vanish.
+    \item \textbf{The square} $\to$ the zeros are double, so they survive the derivative.
+    \item \textbf{The derivative} $\to$ every pole gains a power: cubes, so $\zeta(3)$.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{The arithmetic, straight from partial fractions}
