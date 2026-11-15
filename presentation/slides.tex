@@ -39,8 +39,8 @@
   \]
   \begin{itemize}
     \item Ap\'ery (1978) proved that it is not. Beukers (1979) did it with integrals, Zudilin (2002) with sums.
-    \item Today we go through Beukers' proof, see how it leads to Zudilin's, and then give a simpler proof of our own.
-    \item Neither the series nor the decimal expansion tells us anything.
+    \item We present Beukers' proof, show how it leads to Zudilin's, and give a shorter proof of our own.
+    \item The series and the decimal expansion do not decide this.
     \item We need an \alert{obstruction} to rationality.
   \end{itemize}
 \end{frame}
@@ -93,17 +93,17 @@
   \[
     \int_0^1\!\!\int_0^1-(xy)^m\log x\dd x\dd y=\frac1{(m+1)^3}.
   \]
-  Symmetrise: $-\log x-\log y=-\log(xy)$, so
-  $\displaystyle\iint-(xy)^m\log(xy)\dd x\dd y=\frac2{(m+1)^3}$.
+  Since $-\log x-\log y=-\log(xy)$, by symmetry
+  $\iint-(xy)^m\log(xy)\dd x\dd y=\frac2{(m+1)^3}$.
 
-  Now sum over $m\ge0$, using $\sum_m(xy)^m=\frac1{1-xy}$:
+  Sum over $m\ge0$, using $\sum_m(xy)^m=\frac1{1-xy}$:
   \[
     \iint_{[0,1]^2}\frac{-\log(xy)}{1-xy}\dd x\dd y=2\zeta(3).
   \]
 \end{frame}
 
 \begin{frame}{Step 1: monomials and polynomials}
-  Call $K(x,y)=\frac{-\log(xy)}{1-xy}$ the \alert{kernel}. What happens if we multiply it by a monomial?
+  Call $K(x,y)=\frac{-\log(xy)}{1-xy}$ the \alert{kernel}. Multiply it by a monomial.
   \begin{itemize}
     \item With $x^ry^r$ the sum starts later:
       \[
@@ -124,7 +124,7 @@
   $\displaystyle\iint P(x)P(y)K(x,y)\dd x\dd y$ \alert{small}.
   \medskip
 
-  Start with one variable: how do we make $\int_0^1P(x)f(x)\dd x$ small? Expand $f$ in a Taylor series,
+  Start with one variable. We want $\int_0^1P(x)f(x)\dd x$ small. Expand $f$ in a Taylor series,
   \[
     f(x)=a_0+a_1x+\dots+a_{n-1}x^{n-1}+(\text{higher order terms}).
   \]
@@ -144,7 +144,7 @@
     \int_0^1P_nf=\frac{(-1)^n}{n!}\int_0^1x^n(1-x)^nf^{(n)} .
   \]
   $P_n=\sum_k(-1)^k\binom nk\binom{n+k}kx^k$ has integer coefficients (shifted Legendre polynomial).
-  Take $P=P_n$:\quad
+  With $P=P_n$,\quad
   $J_n=\iint P_n(x)P_n(y)K\dd x\dd y=2a_n\zeta(3)-2b_n$.
   \medskip
 
@@ -159,10 +159,10 @@
   $K(x,y)$ mixes $x$ and $y$.
   \medskip
 
-  Borrow an idea from differential equations: write a function of two variables as a
+  In differential equations one writes a function of two variables as a
   superposition of products, $u(x,t)=\sum_kv_k(x)w_k(t)$.
 
-  Here we write $K$ as an integral, over a parameter $t$, of products $v_t(x)\,w_t(y)$:
+  We do the same for $K$, with an integral over a parameter $t$ of products $v_t(x)\,w_t(y)$:
   \[
     K(x,y)=\int_0^\infty\underbrace{\frac1{x+t}}_{v_t(x)}\cdot\underbrace{\frac1{1+yt}}_{w_t(y)}\dd t .
   \]
@@ -208,21 +208,21 @@
   which vanishes at $u=\alpha=\sqrt2-1$.
   \medskip
 
-  Using $1-\alpha=\sqrt2\,\alpha$ and $1+\alpha=\sqrt2$:\quad $g(\alpha)=\alpha^2$.
+  Since $1-\alpha=\sqrt2\,\alpha$ and $1+\alpha=\sqrt2$, we get $g(\alpha)=\alpha^2$.
 \end{frame}
 
-\begin{frame}{Step 4: why $(u-\alpha)^2$?}
+\begin{frame}{Step 4: the square $(u-\alpha)^2$}
   We can also check the maximum without calculus. We want $\alpha^2(1+u)-u(1-u)\ge0$.
   \medskip
 
   This quadratic in $u$ would then be $\ge0$ and vanish at $u=\alpha$, so $\alpha$ would be a
-  double root, and the quadratic a perfect square. Indeed:
+  double root, and the quadratic a perfect square. Indeed,
   \[
     \alpha^2(1+u)-u(1-u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
   \]
-  and this is true because $1-\alpha^2=2\alpha$, i.e.\ $\alpha^2+2\alpha-1=0$.
+  because $1-\alpha^2=2\alpha$, i.e.\ $\alpha^2+2\alpha-1=0$.
   \begin{block}{Result}
-    $G\le\alpha^4=(\sqrt2-1)^4=17-12\sqrt2\approx\frac1{34}$, \ equality at $x=y=\alpha$, $t=1$:
+    $G\le\alpha^4=(\sqrt2-1)^4=17-12\sqrt2\approx\frac1{34}$, \ with equality at $x=y=\alpha$, $t=1$. Hence
     \[
       0<J_n\le2\zeta(3)\,(17-12\sqrt2)^n,\qquad\lim J_n^{1/n}=17-12\sqrt2.
     \]
@@ -230,19 +230,21 @@
 \end{frame}
 
 
-\begin{frame}{Step 5: least common multiples, without the prime number theorem}
-  \begin{block}{Identity}
-    \[
-      N!=\prod_{k=1}^ND_{\lfloor N/k\rfloor}
-    \]
-    (compare the exponent of each prime $p$ on both sides).
-  \end{block}
-  \begin{itemize}
-    \item If $D_m\ge\mu^m$ for all large $m$, then $\log N!\gtrsim\log\mu\cdot N\log N$.
-      But $\log N!\le N\log N$, so $\log\mu\le1$, that is, $\mu\le e$.
-    \item So for every $\mu>e$ we have $\Dn<\mu^n$ for \alert{infinitely many} $n$.
-    \item Since $3>e$, take $\mu=3$. This suffices, because $J_n>0$ for every $n$.
-  \end{itemize}
+\begin{frame}{Step 5: how fast does $\lcm(1,\dots,n)$ grow?}
+  We need $\Dn^3J_n\to0$, so we need an upper bound for $\Dn=\lcm(1,\dots,n)$. The usual
+  route is the prime number theorem, but much less is needed.
+  \[
+    N!=\prod_{k=1}^ND_{\lfloor N/k\rfloor}
+  \]
+  Both sides contain each prime $p$ to the power $\sum_{a\ge1}\lfloor N/p^a\rfloor$.
+  \medskip
+
+  If $D_m\ge\mu^m$ for all large $m$, the product is at least about $\mu^{N\log N}$, while
+  $N!\le N^N$. So $\mu\le e$.
+  \medskip
+
+  Hence $\Dn<3^n$ for \alert{infinitely many} $n$, since $3>e$. Infinitely many $n$ is enough,
+  because $J_n>0$ for every $n$.
 \end{frame}
 
 \begin{frame}{The contradiction}
@@ -329,7 +331,7 @@
 \end{frame}
 
 \begin{frame}{The terms have both signs}
-  The first $n$ terms vanish, so $J_n=-\sum_{t>n}R_n'(t)$. The easy bound
+  The first $n$ terms vanish, so $J_n=-\sum_{t>n}R_n'(t)$. The bound
   $|R_n'(t)|\le\frac{n+2}{t^3}$ gives
   \[
     |J_n|\le(n+2)\sum_{t>n}\frac1{t^3}<\frac{n+2}{2n(n+1)} .
@@ -471,8 +473,8 @@
     \item We take consecutive indices because $r_{n\pm1}$ differs from $r_n$ by a single factor.
     \item The error telescopes, so after $-\sum_t\frac{\dd}{\dd t}$ it leaves only boundary terms,
       which vanish (double zero of $R_n$ at $t=1$; finite limit at $\infty$).
-    \item We take $W$ a polynomial of degree $\le2$: no new poles, and $R_n\sim t^{-2}$ keeps
-      $WR_n$ bounded.
+    \item We take $W$ a polynomial of degree $\le2$, so that there are no new poles and
+      $WR_n$ stays bounded ($R_n\sim t^{-2}$).
   \end{itemize}
   \pause
   The six unknowns are $A$, $B$, $\lambda$ and the coefficients of $W(t)=w_0+w_1t+w_2t^2$.
@@ -486,8 +488,8 @@
     \frac{R_{n+1}}{R_n}=\Bigl(\frac{t-n-1}{t+n+1}\Bigr)^2,\quad
     \frac{R_n(t+1)}{R_n(t)}=\frac{t^4}{(n-t)^2(n+1+t)^2}.
   \]}%
-  After clearing denominators, the guess is a polynomial identity in $t$ of degree $\le4$:
-  five equations for six unknowns. Match Taylor coefficients at $t=0$, one at a time:
+  After clearing denominators, the guess is a polynomial identity in $t$ of degree $\le4$,
+  which gives five equations for six unknowns. Match Taylor coefficients at $t=0$, one at a time:
   \[
     t^3:\ \tfrac A{n^3}=\tfrac B{(n+1)^3}
     \qquad\quad t^0,t^1,t^2:\ w_0,w_1,w_2
@@ -556,19 +558,46 @@
 \end{frame}
 
 \begin{frame}{$J_n$ decreases to zero}
-  A sequence tending to $0$ attains its minimum if it has a negative term, and attains its
-  maximum if its terms are positive.
+  We know $J_0>0$ and $J_n\to0$, and the recurrence allows no negative valley and no positive peak.
   \pause
-  \begin{enumerate}
-    \item[(a)] \textbf{Never negative.} Otherwise the minimum is negative, attained at some $n\ge1$
-      (as $J_0>0$), which is a negative valley.
-    \pause
-    \item[(b)] \textbf{Never zero.} If $J_n=0$, then $(n+1)^3J_{n+1}+n^3J_{n-1}=0$ with both terms
-      $\ge0$, so both vanish, and going down we reach $J_0=0$.
-    \pause
-    \item[(c)] \textbf{Decreasing.} If $J_n\ge J_{n-1}$, the largest of $J_n,J_{n+1},\dots$ is
-      attained at some $k\ge n$, which is a positive peak.
-  \end{enumerate}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.75cm,y=0.9cm,font=\small]
+        \draw[gray] (-0.3,0)--(6.6,0);
+        \draw[mDarkTeal,thick] (0,0.8)--(1,0.3)--(2,-0.5)--(3,-0.9)--(4,-0.45)--(5,-0.2)--(6,-0.08);
+        \foreach \x/\y in {0/0.8,1/0.3,2/-0.5,4/-0.45,5/-0.2,6/-0.08} \fill[mDarkTeal] (\x,\y) circle (2pt);
+        \fill[mLightBrown] (3,-0.9) circle (3pt);
+        \node[above] at (0,0.8) {$J_0$};
+        \node[below,text=mLightBrown] at (3,-0.95) {lowest point};
+      \end{tikzpicture}
+
+      If some $J_n<0$, the sequence must come back up towards $0$. Its lowest point is a
+      negative valley.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.75cm,y=0.9cm,font=\small]
+        \draw[gray] (-0.3,0)--(6.6,0);
+        \draw[mDarkTeal,thick] (0,1.0)--(1,0.55)--(2,0.8)--(3,1.15)--(4,0.7)--(5,0.35)--(6,0.15);
+        \foreach \x/\y in {0/1.0,1/0.55,2/0.8,4/0.7,5/0.35,6/0.15} \fill[mDarkTeal] (\x,\y) circle (2pt);
+        \fill[mLightBrown] (3,1.15) circle (3pt);
+        \node[below] at (1,0.5) {$J_{n-1}$}; \node[below right] at (2,0.8) {$J_n$};
+        \node[above,text=mLightBrown] at (3,1.2) {highest point};
+      \end{tikzpicture}
+
+      If $J_n\ge J_{n-1}>0$, the sequence must come back down towards $0$. The highest of
+      $J_n,J_{n+1},\dots$ is a positive peak.
+    \end{column}
+  \end{columns}
+  \pause
+  \medskip
+
+  {\small These points exist: if $J_n\to0$ and some term is negative, only finitely many terms lie
+  below half of it. The same holds for the highest point.}
+
+  If $J_n=0$, then $(n+1)^3J_{n+1}+n^3J_{n-1}=0$ with both terms $\ge0$, so both vanish, and
+  going down we reach $J_0=0$.
   \pause
   \[
     0<J_n<J_{n-1}\qquad\text{for all }n\ge1 .
@@ -737,7 +766,7 @@
     J_n=\iint P_n(x)P_n(y)\,\frac{-\log(xy)}{1-xy}
     =\sum_{t=1}^\infty\iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr).
   \]
-  Ignore the logarithm for a moment. Since $(xy)^{t-1}=x^{t-1}\,y^{t-1}$, with the same
+  First leave out the logarithm. Since $(xy)^{t-1}=x^{t-1}\,y^{t-1}$, with the same
   exponent on $x$ and $y$, each integral splits into two equal factors:
   \[
     \iint P_n(x)P_n(y)\,x^{t-1}y^{t-1}
@@ -746,7 +775,7 @@
 \end{frame}
 
 \begin{frame}{The derivative comes from the logarithm}
-  Now put the logarithm back. It appears when we differentiate in the exponent:
+  The logarithm appears when we differentiate in the exponent:
   \[
     \frac{\dd}{\dd t}(xy)^{t-1}=\log(xy)\,(xy)^{t-1}.
   \]
@@ -755,7 +784,7 @@
     \iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr)
     =-\frac{\dd}{\dd t}\iint P_n(x)P_n(y)\,(xy)^{t-1}=-R_n'(t).
   \]
-  Adding up all the terms:
+  Summing over $t$,
   \[
     \boxed{\;J_n=-\sum_{t=1}^\infty R_n'(t)\;}
   \]
@@ -808,8 +837,8 @@
 \end{frame}
 
 \begin{frame}{The end of Zudilin's proof}
-  Zudilin finishes ``using a trivial bound $\Dn<3^n$''. Our Step 5 is enough for this:
-  we only need $\Dn<3^n$ for infinitely many $n$, because $\widetilde F_n>0$ for every $n$:
+  Zudilin finishes ``using a trivial bound $\Dn<3^n$''. Our Step 5 is enough.
+  We only need $\Dn<3^n$ for infinitely many $n$, because $\widetilde F_n>0$ for every $n$:
   \[
     0<q\,\Dn^3J_n<20q\,(n+1)^4\bigl[27(\sqrt2-1)^4\bigr]^n\longrightarrow0
     \quad\text{along those }n .
@@ -821,7 +850,7 @@
 \end{frame}
 
 \begin{frame}{Six unknowns, five equations}
-  Divide by $R_n$. All the ratios are simple:
+  Divide by $R_n$. The ratios are short:
   \[
     \frac{R_{n-1}}{R_n}=\Bigl(\frac{t+n}{t-n}\Bigr)^2,\quad
     \frac{R_{n+1}}{R_n}=\Bigl(\frac{t-n-1}{t+n+1}\Bigr)^2,\quad

@@ -728,8 +728,12 @@ Each choice in this guess has a reason.
       -\sum_{t=1}^N\frac{\dd}{\dd t}\bigl[g(t+1)-g(t)\bigr]=g'(1)-g'(N+1)\longrightarrow0 .
     \end{equation}
     We apply this to $g=WR_n$, which has a double zero at $t=1$ because $R_n$ does.
-  \item \emph{$W$ is a polynomial of degree at most two.} A polynomial adds no poles, and since
-    $R_n(t)\sim t^{-2}$, degree two is the largest that keeps $WR_n$ bounded at infinity.
+  \item \emph{$W$ is a polynomial of degree at most two.} A polynomial adds no poles. Since
+    $R_n(t)\sim t^{-2}$, degree two is the largest that keeps $WR_n$ bounded at infinity, which is
+    what \eqref{eq:telescope} needs; with degree three, $WR_n$ would grow like $t$ and a nonzero
+    boundary term would survive. Degree two is also the least that can work: it gives six unknowns
+    for the five equations found below, so a nonzero solution must exist, whereas with degree one
+    there would be five unknowns for five equations, and indeed the solution has $w_2\ne0$.
 \end{itemize}
 Writing $W(t)=w_0+w_1t+w_2t^2$, this gives six unknowns: $A$, $B$, $\lambda$, $w_0$, $w_1$, $w_2$.
 
