@@ -978,7 +978,7 @@ The team's notes~\cite{opnotes} contain a further reformulation of \cref{part:ou
 operators, which we record as a direction for further work. Write $X$ for multiplication by $x$ on
 $[0,1]$ and $Jf=-(x(1-x)f')'$, so that $JP_n=n(n+1)P_n$. The first item below we checked ourselves
 with SymPy (the operator identity in general, the tridiagonal formula for $n\le6$, the energy
-identity on random polynomials); the other two are checked in the notes, not by us:
+identity on random polynomials); the others are as marked:
 \begin{itemize}
   \item The operator $H=\frac12(XJ+JX)+\frac12$, that is $Hf=-(x^2(1-x)f')'+xf$, is tridiagonal in
     the Legendre basis:
@@ -989,6 +989,22 @@ identity on random polynomials); the other two are checked in the notes, not by 
     of $J$. In Legendre coordinates $\varphi_n=\langle P_n,f\rangle$ one has
     $\langle f,Hf\rangle=\frac12\sum_{n\ge1}n^3(\varphi_n-\varphi_{n-1})^2$: $H$ is the chain of
     conductances $n^3$ without the leak.
+  \item Beukers' kernel intertwines the two operators: with $K(u)=\frac{-\log u}{1-u}$,
+    \[
+      \bigl(H_x+J_y\bigr)K(xy)=0,
+    \]
+    where the subscript says which variable the operator acts on. After the substitution
+    $y=\frac2x-1$ and $f(x)=\frac1xg(y)$ one has $Hf=\frac1x\,Lg$ with
+    $Lg=-\frac{d}{dy}\bigl((y^2-1)\frac{dg}{dy}\bigr)$, the radial part of the Laplacian of the
+    hyperbolic plane, while $J$ is the Legendre operator of the sphere. With $Z=[J,X]$,
+    \[
+      [J,Z]=2(JX+XJ)-2J,\qquad [Z,X]=2X^2-2X .
+    \]
+    (We checked these with SymPy as well.)
+  \item The notes report that $\langle1,(H+m(m+1))^{-1}1\rangle=2\sum_{k>m}k^{-3}$, so that
+    $\zeta(3)=\frac12\langle1,H^{-1}1\rangle$ is the resistance of the chain. We checked that the
+    right side equals $\int_0^1\!\int_0^1P_m(y)K(xy)\dd x\dd y$ for $m\le3$; the identification of
+    that integral with the resolvent is the notes' argument.
   \item With $\Psi=\sum_n(2n+1)J_nP_n$, Ap\'ery's recurrence together with its equation at $n=0$ is
     equivalent, according to the notes, to $(H+8J+2)\Psi=6$. In the chain, $8J+2$ is the leak $4(2n+1)^3$.
   \item The analogous operators of degree $0$ and $1$ in $J$, namely $X$ and $\frac12(1+[J,X])$, are
