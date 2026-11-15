@@ -881,6 +881,27 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}{The crude bound in detail}
+  \textbf{Claim.} For $n\ge1$, \ $|J_n|\le\frac{n+2}{2n(n+1)}$; in particular $J_n\to0$.
+
+  Write $r_n(t)=\frac1t\,\varphi_1(t)\cdots\varphi_n(t)$ with $\varphi_j(t)=\frac{j-t}{j+t}$. For $t>0$:
+  \[
+    |\varphi_j|<1,\qquad |\varphi_j'|=\frac{2j}{(j+t)^2}\le\frac1{2t}\quad\text{since }(j+t)^2\ge4jt .
+  \]
+  \pause
+  So $|r_n|\le\frac1t$, and the product rule gives
+  \[
+    |r_n'|\le\frac1{t^2}+n\cdot\frac1t\cdot\frac1{2t}=\frac{n+2}{2t^2},
+    \qquad |R_n'|=2|r_n||r_n'|\le\frac{n+2}{t^3}.
+  \]
+  \pause
+  The first $n$ terms vanish, and the tail telescopes:
+  \[
+    |J_n|\le(n+2)\sum_{t>n}\frac1{t^3}<(n+2)\sum_{t>n}\frac1{(t-1)t(t+1)}=\frac{n+2}{2n(n+1)},
+  \]
+  because $\frac1{(t-1)t(t+1)}=\frac12\bigl[\frac1{(t-1)t}-\frac1{t(t+1)}\bigr]$.
+\end{frame}
+
 \begin{frame}{Six unknowns, five equations}
   Divide by $R_n$. The ratios are short:
   \[
