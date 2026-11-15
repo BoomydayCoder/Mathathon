@@ -46,7 +46,8 @@
 \maketitle
 
 \begin{abstract}
-We give two complete, self-contained proofs that $\zeta(3)=\sum_{m\ge1}m^{-3}$ is irrational
+We answer the Mathathon question of where Ap\'ery's recurrence comes from and why it works. We give
+two complete, self-contained proofs that $\zeta(3)=\sum_{m\ge1}m^{-3}$ is irrational
 (Ap\'ery's theorem), built around the same sequence of numbers $J_n=2a_n\zeta(3)-2b_n$, with
 $a_n\in\Z$ and $\Dn^3b_n\in\Z$, where $\Dn=\lcm(1,\dots,n)$.
 
@@ -63,6 +64,42 @@ replaces the prime number theorem.
 \end{abstract}
 
 \tableofcontents
+
+% ======================================================================
+\section{The problem, and what this report answers}\label{sec:problem}
+
+Ap\'ery proved in 1978 that $\zeta(3)$ is irrational using the recurrence
+\begin{equation}\label{eq:apery-rec}
+  (n+1)^3u_{n+1}-(2n+1)(17n^2+17n+5)u_n+n^3u_{n-1}=0 .
+\end{equation}
+The proof works, but the recurrence arrives without explanation, and the method does not extend to
+$\zeta(5)$. In Zudilin's elementary proof~\cite{zudilin}, the reference for this problem, the
+recurrence is found by computer and serves only as a bridge between two different series. The task
+is to give a satisfying motivation for the proof and to find the intuition behind the recurrence.
+Our answers, in the order of the report:
+\begin{enumerate}
+  \item \emph{Where Zudilin's rational function comes from.} The function
+    $r_n(t)=\frac{(1-t)\cdots(n-t)}{t(t+1)\cdots(t+n)}$ is the moment generating function of the
+    Legendre polynomial that Beukers' integral proof is built on. Its zeros, its poles, the square
+    and the derivative in $J_n=-\sum_tR_n'(t)$, $R_n=r_n^2$, all have reasons (\cref{part:beukers,sec:zudilin}).
+  \item \emph{Which equation we want.} An equation of the form
+    $B(J_{n+1}-J_n)-A(J_n-J_{n-1})=\lambda J_n$ with $A,B,\lambda>0$ forbids peaks and valleys,
+    and a large $\lambda/A$ forces fast decay (\cref{sec:wish}). Ap\'ery's recurrence is exactly such
+    an equation.
+  \item \emph{How to find it.} A telescoping guess with six unknowns reduces to a polynomial identity of
+    degree at most four, and five Taylor coefficients at $t=0$ determine the unknowns one at a time
+    (\cref{sec:guess}).
+  \item \emph{What its coefficients mean.} In the difference form
+    $(n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n$, the weights $n^3$ and $(n+1)^3$ come from
+    the two neighbours and $4(2n+1)^3$ is a ``leak''; the $17$ of \eqref{eq:apery-rec} is $1+16$, one
+    part from the neighbours and sixteen from the leak. Without the leak the same equation describes
+    the partial sums of $\zeta(3)$, which converge far too slowly.
+  \item \emph{What the recurrence does.} On its own, with $J_0>0$ and $J_n\to0$, it gives the sign and
+    the exponential decay of $J_n$. This yields a short proof with one series and no integrals
+    (\cref{part:ours}), which to our knowledge is new.
+  \item \emph{Why it stops at $\zeta(3)$.} The double zeros of $r_n^2$ survive one derivative but not
+    three (\cref{sec:zeta5}).
+\end{enumerate}
 
 % ======================================================================
 \section{The strategy: an integer between 0 and 1}\label{sec:strategy}
@@ -868,6 +905,32 @@ infinitely many $n$ with $\Dn<3^n$, \cref{thm:decay2} gives
 \]
 a contradiction.
 \end{proof}
+
+% ======================================================================
+\section{Why the method stops at \texorpdfstring{$\zeta(3)$}{zeta(3)}}\label{sec:zeta5}
+
+The construction seems to invite a generalization: replace the logarithm in Beukers' kernel by its
+$k$-th power,
+\[
+  J_n^{[k]}=\int_0^1\!\!\int_0^1P_n(x)P_n(y)\,\frac{(-\log(xy))^k}{1-xy}\dd x\dd y,
+\]
+so that $J_n=J_n^{[1]}$. The arithmetic extends perfectly: the moments give
+$\Dn^{k+2}J_n^{[k]}\in\Z+\Z\zeta(k+2)$, so $k=3$ isolates $\zeta(5)$ with no lower zeta value in the
+way. The failure is analytic, and the sum form of \cref{sec:zudilin} shows exactly where it happens.
+Exactly as in \cref{prop:sum}, each power of the logarithm becomes one derivative in $t$:
+\[
+  J_n^{[k]}=(-1)^k\sum_{t\ge1}R_n^{(k)}(t),\qquad R_n=r_n^2 .
+\]
+For $\zeta(3)$ ($k=1$) the double zeros of $R_n$ at $t=1,\dots,n$ survive the single derivative, so
+the first $n$ terms of the sum vanish; this was the reason for the square. For $\zeta(5)$ ($k=3$) they
+do not survive three derivatives, and the first term alone is of size about $\frac{\log n}{n^4}$. The
+team's notes prove (\cite{codexnotes}, Section~16 and Appendix~A) that in fact
+\[
+  J_n^{[3]}=\frac{12\,(H_{n-1}+H_{n+1})}{n^2(n+1)^2}+O\Bigl(\frac{\log n}{n^8}\Bigr),
+\]
+which is only polynomially small, so $\Dn^5J_n^{[3]}\ge n^5J_n^{[3]}$ grows. Numerically, at $n=80$ one
+has $J_n^{[1]}\approx7\cdot10^{-126}$ but $J_n^{[3]}\approx3\cdot10^{-6}$. In this precise sense
+$\zeta(3)$ is the one case in which the square of Zudilin's rational function does its job.
 
 % ======================================================================
 \section{Comparison}\label{sec:comparison}
