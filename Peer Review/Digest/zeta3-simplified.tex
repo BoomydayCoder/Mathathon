@@ -7,161 +7,153 @@
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\T}{\mathcal T}
 \DeclareMathOperator{\lcm}{lcm}
-\newtheorem*{lemma*}{Lemma}
 \newcommand{\q}[1]{\medskip\noindent\textbf{#1}}
 \setlist{itemsep=1pt,topsep=3pt}
 \title{$\zeta(3)$ is irrational: the maximum-principle proof, simplified}
 \author{Mathathon peer-review digest (Claude)}
-\date{15 November 2026 \quad(draft)}
+\date{15 November 2026 \quad(draft 2)}
 \begin{document}
 \maketitle
 
-\noindent\textbf{The destination.} We construct bounded numbers
+\noindent\textbf{The destination.} We construct numbers
 \[
-I_n=2\bigl(a_n\zeta(3)-b_n\bigr),\qquad a_n\in\Z,\qquad D_n^3b_n\in\Z,\qquad D_n=\lcm(1,\dots,n).
+I_n=2\bigl(a_n\zeta(3)-b_n\bigr),\qquad a_n\in\Z,\qquad D_n^3b_n\in\Z,\qquad D_n=\lcm(1,\dots,n),
 \]
-A difference equation forces $0<I_n\le2\zeta(3)\,33^{-n}$. An elementary argument gives $D_n<3^n$
-infinitely often. Since $27<33$, clearing denominators contradicts rationality.
+which tend to zero. A difference equation, read as a law for currents in a chain, forces
+$0<I_n\le2\zeta(3)\,33^{-n}$. If $\zeta(3)$ were a fraction $P/Q$, the positive integer
+$\frac Q2D_n^3I_n$ would be at least $1$, so $D_n^3\ge33^n/P$ for every $n$. But an identity for
+$N!$ caps the growth rate of $D_n$ at $e$, and $e^3=20.1<33$.
 
-This is the proof of the exposition ``Why the maximum-principle proof of $\zeta(3)$ works'', with its
-pictures kept and its calculations shortened. Section~2 is new: the recurrence comes from one
-telescope, used twice, with no second index. Section~3 keeps the height, slope and current
-language and is reorganised so that each idea is used exactly once. Checked by AI agents only.
+\smallskip\noindent Each section has one idea. \textbf{1:} poles for the arithmetic, zeros for the
+size. \textbf{2:} one telescope gives Ohm's and Kirchhoff's laws. \textbf{3:} a sequence that tends
+to zero and cannot have a peak must fall all the way. \textbf{4:} count prime powers in $N!$.
 
 \section{The linear forms}
 
-\q{The numbers.} Poles at $0,-1,\dots,-n$ produce shifted zeta sums with controlled denominators,
-because $\sum_{t\ge1}(t+k)^{-3}=\zeta(3)-H^{(3)}_k$ with $H^{(3)}_k=\sum_{l\le k}l^{-3}$. Zeros at
-$1,\dots,n$ remove the first $n$ terms. So let
+\q{The numbers.} Poles at $0,-1,\dots,-n$ produce shifted zeta sums with controlled denominators.
+Zeros at $1,\dots,n$ remove the first $n$ terms. So let
 \[
 r_n(t)=\frac{(1-t)(2-t)\cdots(n-t)}{t\,(t+1)\cdots(t+n)},\qquad \T(f)=-\sum_{t\ge1}f'(t),\qquad
 I_n=\T(r_n^2).
 \]
 The square makes the zeros survive the differentiation; the derivative produces the cubic poles.
-Here $r_0=1/t$, so $I_0=2\zeta(3)>0$. The sums converge because $(r_n^2)'=O(t^{-3})$.
+Here $r_0=1/t$, so $I_0=\sum2t^{-3}=2\zeta(3)>0$.
 
-\q{Arithmetic.} Partial fractions give $r_n(t)=\sum_{k=0}^n\frac{c_k}{t+k}$ with
-$c_k=(-1)^k\binom nk\binom{n+k}k\in\Z$. Hence $I_n=\sum_{k,j}c_kc_jK_{kj}$, where
-$K_{kj}=\T\bigl(\frac1{(t+k)(t+j)}\bigr)$ and
+\q{Arithmetic.} Write $e_k=\frac1{t+k}$ and $H^{(s)}_k=\sum_{l\le k}l^{-s}$. Then
+$\T(e_k^2)=2\bigl(\zeta(3)-H^{(3)}_k\bigr)$ and $\T(e_k)=\zeta(2)-H^{(2)}_k$. Partial fractions give
+$r_n=\sum_{k=0}^nc_ke_k$ with
 \[
-K_{kk}=2\bigl(\zeta(3)-H^{(3)}_k\bigr),\qquad
-K_{kj}=\frac1{j-k}\sum_{t\ge1}\Bigl[\frac1{(t+k)^2}-\frac1{(t+j)^2}\Bigr]=\frac1{j-k}\sum_{l=k+1}^{j}\frac1{l^2}\quad(k<j).
+c_k=\Bigl[(t+k)\,r_n\Bigr]_{t=-k}=(-1)^k\frac{(n+k)!}{k!\,k!\,(n-k)!}\in\Z
 \]
-The mixed terms telescope to rational numbers. So $I_n=2(a_n\zeta(3)-b_n)$ with
+(a multinomial coefficient). Since $e_ke_j=\frac{e_k-e_j}{j-k}$ for $k\ne j$, the constant $\zeta(2)$
+cancels in every mixed term:
 \[
-a_n=\sum_kc_k^2\in\Z,\qquad b_n=\sum_kc_k^2H^{(3)}_k-\sum_{k<j}c_kc_jK_{kj},\qquad D_n^3b_n\in\Z .
+I_n=\sum_kc_k^2\,\T(e_k^2)+2\sum_{k<j}c_kc_j\,\frac{\T(e_k)-\T(e_j)}{j-k}
+=2\Bigl(\sum_kc_k^2\Bigr)\zeta(3)-2\Bigl(\sum_kc_k^2H^{(3)}_k-\sum_{k<j}c_kc_j\frac{H^{(2)}_j-H^{(2)}_k}{j-k}\Bigr).
 \]
+So $I_n=2(a_n\zeta(3)-b_n)$ with $a_n=\sum c_k^2\in\Z$, and $D_n^3b_n\in\Z$: $D_n^3$ clears
+$H^{(3)}_k$, and $D_n\cdot D_n^2$ clears $\frac1{j-k}\,H^{(2)}$.
 
-\q{The only estimate we take from the sum.} For integers $t>n\ge1$ we have $0<r_n(t)^2<t^{-2}$, and
-$(r_n^2)'=2r_n^2\bigl[\sum_{j=1}^n\frac1{t-j}-\sum_{j=0}^n\frac1{t+j}\bigr]$, where each of the two
-sums lies between $0$ and $n$. As $(r_n^2)'$ vanishes at $1,\dots,n$,
+\q{The only estimate we take from the sum.} Write $r_n=\frac1t\,\varphi_1\cdots\varphi_n$ with
+$\varphi_j=\frac{j-t}{j+t}$. For $t>0$ we have $|\varphi_j|<1$ and
+$|\varphi_j'|=\frac{2j}{(j+t)^2}\le\frac1{2t}$, because $(j+t)^2\ge4jt$. By the product rule,
+$|r_n|\le\frac1t$ and $|r_n'|\le\frac1{t^2}+\frac n{2t^2}$, hence $|(r_n^2)'|\le\frac{n+2}{t^3}$. As
+$(r_n^2)'$ vanishes at $t=1,\dots,n$,
 \begin{equation}\label{bdd}
-|I_n|<2n\sum_{t>n}\frac1{t^2}<2n\sum_{t>n}\frac1{t(t-1)}=2\qquad(n\ge1).
+|I_n|\le(n+2)\sum_{t>n}\frac1{t^3}<(n+2)\sum_{t>n}\frac1{(t-1)\,t\,(t+1)}=\frac{n+2}{2n(n+1)}\qquad(n\ge1).
 \end{equation}
-The terms of the sum are not all of one sign, and we control neither their cancellation nor the
-sign of the total. Sections 2 and 3 supply both.
+In particular $I_n\to0$. (The same bound shows that all the sums below converge.) The terms of the
+sum are not of one sign, and we control neither their cancellation nor the sign of the total.
+Sections 2 and 3 supply both.
 
-\section{The recurrence, from one telescope}
+\section{The recurrence: Ohm and Kirchhoff}
 
-\q{The one analytic fact.} If $g$ is a rational function with no pole at $1,2,3,\dots$, a zero of
-order at least two at $t=1$, and a finite limit at infinity, then
+\q{The only tool.} Write $\Delta g(t)=g(t+1)-g(t)$. If $g$ is a rational function with no pole at
+$1,2,3,\dots$, a zero of order at least two at $t=1$, and a finite limit at infinity, then
 \begin{equation}\label{tel}
-\T\bigl(g(t+1)-g(t)\bigr)=0,
+\T(\Delta g)=\lim_{N\to\infty}\bigl(g'(1)-g'(N+1)\bigr)=0 .
 \end{equation}
-because the sum up to $N$ is $g'(1)-g'(N+1)$, and both terms vanish in the limit.
 
-\q{Neighbours share a factor.} From the products, $r_n=\frac{n-t}{n+t}\,r_{n-1}$. So the functions at
-the two ends of the link from $n-1$ to $n$ are multiples of one function, which belongs to the
-link:
+\q{Step 1: the drop lives on the link.} Picture $0,1,2,\dots$ as the nodes of a chain, with $I_n$
+at node $n$. Neighbouring functions differ by one factor, $r_n=\frac{n-t}{n+t}\,r_{n-1}$, so both
+are multiples of a function that belongs to the link between them:
 \[
-r_{n-1}=(n+t)\,v_n,\qquad r_n=(n-t)\,v_n,\qquad v_n=\frac{r_{n-1}+r_n}{2n}
-=\frac{(1-t)\cdots(n-1-t)}{t\,(t+1)\cdots(t+n)} .
+r_{n-1}=(n+t)\,v_n,\qquad r_n=(n-t)\,v_n,\qquad v_n=\frac{(1-t)\cdots(n-1-t)}{t\,(t+1)\cdots(t+n)}\qquad(n\ge1).
 \]
-Besides the values $I_{n-1}$, $I_n$ at the ends we shall need one number in the middle of the link:
-$e_n=\T(r_n\,r_{n-1})$.
 \begin{center}
 \begin{tikzpicture}[x=2.6cm,y=1cm]
 \draw[thick] (0,0)--(4,0);
 \foreach \x/\lab in {0/$I_{n-1}$,2/$I_n$,4/$I_{n+1}$} {\fill (\x,0) circle (2.4pt); \node[above=3pt] at (\x,0) {\lab};}
-\foreach \x/\lab in {1/$e_n$,3/$e_{n+1}$} {\draw[fill=white] (\x,0) circle (2.4pt); \node[above=3pt] at (\x,0) {\lab};}
-\node[below=4pt] at (1,0) {\small link $n$, function $v_n$};
-\node[below=4pt] at (3,0) {\small link $n+1$, function $v_{n+1}$};
-\node[below=18pt] at (2,0) {\small $r_n=(n-t)\,v_n=(n+1+t)\,v_{n+1}$};
+\node[below=4pt] at (1,0) {\small link $n$: \ $v_n$};
+\node[below=4pt] at (3,0) {\small link $n+1$: \ $v_{n+1}$};
+\node[below=4pt] at (2,0) {\small $r_n$};
 \end{tikzpicture}
 \end{center}
-
-\q{The telescope.} To use \eqref{tel} we need a function with a finite limit. The link function
-decays like $t^{-2}$; multiplying it by $n^2-t^2$ restores the balance:
-\[
-s_n(t)=(n^2-t^2)\,v_n(t)=\frac{(1-t)(2-t)\cdots(n-t)}{t\,(t+1)\cdots(t+n-1)} ,
-\]
-with $n$ zeros, at $1,\dots,n$, over $n$ poles, at $0,\dots,-(n-1)$. Shifting $t$ by one moves the
-zeros to $0,\dots,n-1$ and the poles to $-1,\dots,-n$, and that is again a multiple of $v_n$:
-\[
-s_n(t+1)=\frac{(-t)(1-t)\cdots(n-1-t)}{(t+1)\cdots(t+n)}=-t^2\,v_n(t).
-\]
-So for any two links $n,m\ge1$ the product $g=s_ns_m$ has
-$g(t+1)-g(t)=\bigl[t^4-(n^2-t^2)(m^2-t^2)\bigr]v_nv_m$. It has a double zero at $t=1$, no pole at a
-positive integer, and the limit $\pm1$. By \eqref{tel},
-\begin{equation}\label{star}
-\boxed{\;\T\Bigl(\bigl[(n^2+m^2)\,t^2-n^2m^2\bigr]\,v_n\,v_m\Bigr)=0\qquad(n,m\ge1).\;}
+Since $(n+t)^2-(n-t)^2=4nt$, the drop across the link is
+\begin{equation}\label{drop}
+I_{n-1}-I_n=4n\,\T\bigl(t\,v_n^2\bigr).
 \end{equation}
-This is the only telescope. We use it for a link with itself and for two links that meet at a node.
 
-\q{A link with itself ($m=n$): why six.} \eqref{star} says
-\[
-\T(t^2v_n^2)=\frac{n^2}2\,\T(v_n^2):
-\]
-against $v_n^2$, the telescope lets us replace $t^2$ by $n^2/2$. Consequently
-\[
-I_{n-1}+I_n=2\,\T\bigl((n^2+t^2)\,v_n^2\bigr)=3n^2\,\T(v_n^2),\qquad
-e_n=\T\bigl((n^2-t^2)\,v_n^2\bigr)=\frac{n^2}2\,\T(v_n^2),
-\]
-and therefore
-\begin{equation}\label{six}
-I_{n-1}+I_n=6\,e_n .
+\q{Step 2: a function whose shift stays on the link.} To telescope we need a multiple of $v_n$ whose
+shift is again a multiple of $v_n$. Shifting $t$ by one moves every zero and pole one step to the
+left. So give $v_n$ one more zero on the right and one pole fewer on the left:
+\begin{align*}
+s_n(t)&=(n^2-t^2)\,v_n(t)=\frac{(1-t)\cdots(n-t)}{t\,(t+1)\cdots(t+n-1)},\\
+s_n(t+1)&=\frac{(-t)(1-t)\cdots(n-1-t)}{(t+1)\cdots(t+n)}=-t^2\,v_n(t).
+\end{align*}
+
+\q{Step 3: the link identity.} The drop \eqref{drop} carries a factor $t$, so put a factor $t$ on
+$s_n^2$:
+\begin{equation}\label{link}
+\Delta\bigl[t\,s_n^2\bigr]=\bigl[(t+1)\,t^4-t\,(n^2-t^2)^2\bigr]v_n^2=t^3\,(t+2n^2)\,v_n^2-n^4\,t\,v_n^2 .
 \end{equation}
-The value in the middle of a link is one sixth of the sum of the values at its ends; the six is
-$3$ divided by $\frac12$.
+The last term is $n^4$ times what stands under $\T$ in \eqref{drop}. So the natural quantity on a
+link is the \emph{current}
+\[
+J_n=n^3\,(I_{n-1}-I_n)=4\,\T\bigl(n^4\,t\,v_n^2\bigr):
+\]
+Ohm's law, with conductance $n^3$.
 
-\q{Two links at a node ($m=n+1$): why cubes.} Put $p=n+1$. The links $n$ and $p$ meet at the node
-$n$, where $r_n=(n-t)\,v_n=(p+t)\,v_p$. The three products around the node have the common factor
-$v_nv_p$:
-\[
-r_{n-1}r_n=(n+t)(p+t)\,v_nv_p,\qquad r_nr_{n+1}=(n-t)(p-t)\,v_nv_p,\qquad r_n^2=(n-t)(p+t)\,v_nv_p .
-\]
-\eqref{star} says $\T(Q\,v_nv_p)=0$ with $Q(t)=(n^2+p^2)\,t^2-n^2p^2$. Three values determine a
-quadratic, so we can write $Q$ through the three quadratics above by looking at three points.
-At $t=n$ only the first is non-zero, with value $2n(n+p)$, and $Q(n)=n^4$. At $t=-p$ only the second
-is non-zero, with value $2p(n+p)$, and $Q(-p)=p^4$. At $t=0$ all three equal $np$, and
-$Q(0)=-n^2p^2$. Hence, without expanding anything,
-\[
-2(n+p)\,Q(t)=n^3\,(n+t)(p+t)+p^3\,(n-t)(p-t)-C\,(n-t)(p+t),\qquad C=n^3+p^3+2np(n+p).
-\]
-Multiply by $v_nv_p$ and apply $\T$:
+\q{Step 4: the node identity.} The first term on the right of \eqref{link} is the price of the
+telescope, and it is paid at the node. The two links at node $n$ share $r_n=(n-t)\,v_n=(n+1+t)\,v_{n+1}$,
+so $s_n=(n+t)\,r_n$ and $s_{n+1}=(n+1-t)\,r_n$, and Step~2 gives
+$t^2v_n(t)=-(t+n+1)\,r_n(t+1)$ and $t^2v_{n+1}(t)=(t-n)\,r_n(t+1)$. Both prices are therefore
+multiples of the same function:
 \begin{equation}\label{node}
-n^3\,e_n+p^3\,e_{n+1}=C\,I_n .
+t^3(t+2n^2)\,v_n^2-t^3\bigl(t+2(n+1)^2\bigr)\,v_{n+1}^2=\frac{P(t)}t\,r_n(t+1)^2=(2n+1)^3\,r_n(t+1)^2 ,
 \end{equation}
-\emph{The cubes:} a fourth power at an endpoint, divided by the linear factor $2n$ or $2p$ that
-survives there.
+where $P(t)=(t+2n^2)(t+n+1)^2-\bigl(t+2(n+1)^2\bigr)(t-n)^2$. For the last step: the terms $t^3$
+cancel, so $P$ has degree at most two, and three values determine it. At $t=0$ the two products
+are equal. At $t=n$ only the first survives, at $t=-n-1$ only the second. So $P(0)=0$,
+$P(n)=n(2n+1)^3$, $P(-n-1)=-(n+1)(2n+1)^3$, and hence $P(t)=(2n+1)^3\,t$.
 
-\q{Removing the middles.} Put $6e_n=I_{n-1}+I_n$ and $6e_{n+1}=I_n+I_{n+1}$ into \eqref{node}:
-$n^3I_{n-1}+p^3I_{n+1}=\bigl(6C-n^3-p^3\bigr)I_n$. With the current $J_n=n^3(I_{n-1}-I_n)$ this reads
-\begin{equation}\label{K}
-J_n-J_{n+1}=\bigl(6C-2n^3-2p^3\bigr)I_n=4\bigl(n^3+p^3+3np(n+p)\bigr)I_n=4\,(n+p)^3\,I_n=4(2n+1)^3\,I_n
-\end{equation}
-for $n\ge1$, by the binomial theorem. Written out, this is Ap\'ery's recurrence
-$(n+1)^3(I_{n+1}-I_n)-n^3(I_n-I_{n-1})=4(2n+1)^3I_n$. (The usual middle coefficient is
-$6C-n^3-p^3=(2n+1)\bigl(17n(n+1)+5\bigr)$: with $C=(n+p)(3np+1)$ and $n^3+p^3=(n+p)(np+1)$, the $17$ is
-$6\cdot3-1$ and the $5$ is $6\cdot1-1$.)
-
-\q{Why the right side is a sum of positive pieces.} With differences, \eqref{six} and \eqref{node}
-read
+\q{Step 5: Kirchhoff's law.} Subtract \eqref{link} for the link $n+1$ from \eqref{link} for the link
+$n$, and use \eqref{node}:
 \[
-(I_{n-1}-e_n)-(e_n-I_n)=4\,e_n,\qquad n^3(e_n-I_n)-p^3(I_n-e_{n+1})=2np(n+p)\,I_n .
+n^4\,t\,v_n^2-(n+1)^4\,t\,v_{n+1}^2=(2n+1)^3\,r_n(t+1)^2-\Delta\bigl[t\,(s_n^2-s_{n+1}^2)\bigr]
+=(2n+1)^3\,r_n^2+\Delta g_n ,
 \]
-So there is a loss at every middle and at every node. Removing the middles hands their losses to
-the nodes: $4(2n+1)^3=12\,np(n+p)+4n^3+4p^3$.
+with $g_n=(2n+1)^3r_n^2-t\,(s_n^2-s_{n+1}^2)=(2n+1)\bigl[(2n+1)^2+t-2t^2\bigr]r_n^2$. For $n\ge1$ this
+$g_n$ has its poles at $0,\dots,-n$, a double zero at $t=1$, and the limit $-2(2n+1)$. Apply $\T$
+and use \eqref{tel}:
+\begin{equation}\label{K}
+\boxed{\;J_n-J_{n+1}=4\,(2n+1)^3\,I_n\qquad(n\ge1).\;}
+\end{equation}
+The current entering node $n$ either continues or is lost. Written out, this is Ap\'ery's recurrence
+$(n+1)^3(I_{n+1}-I_n)-n^3(I_n-I_{n-1})=4(2n+1)^3I_n$.
+
+\q{Where the coefficients come from.} The conductance $n^3$ is $n^4/n$: $n^4$ is the constant term
+of $(n^2-t^2)^2$, and $n$ comes from $(n+t)^2-(n-t)^2=4nt$. The loss $(2n+1)^3$ is read at the two
+poles $t=n$ and $t=-n-1$: one factor from $t+2n^2=n(2n+1)$, two from the distance $2n+1$ between
+the poles.
+
+\q{The same law seen from the middle of a link (not needed).} The telescope without the factor $t$
+gives $\T\bigl([(n^2+m^2)t^2-n^2m^2]\,v_nv_m\bigr)=0$ for any two links. For $m=n$ it says that
+$e_n=\T(r_nr_{n-1})$ satisfies $I_{n-1}+I_n=6\,e_n$; for $m=n+1$ it gives
+$n^3e_n+(n+1)^3e_{n+1}=(2n+1)\bigl(3n(n+1)+1\bigr)I_n$. Eliminating the $e$'s gives \eqref{K} again.
+This is the route of the final version of the exposition by Codex. It explains the constants in
+the usual form of the recurrence, $(2n+1)(17n(n+1)+5)$ with $17=6\cdot3-1$ and $5=6\cdot1-1$, and it
+shows why the loss is positive: $4(2n+1)^3=12\,n(n+1)(2n+1)+4n^3+4(n+1)^3$ is a sum of three losses.
 
 \section{The maximum principle}
 
@@ -178,82 +170,49 @@ $X_n$ is a \emph{height} and $F_n$ its \emph{weighted slope}. A positive height 
 slope. A positive next slope increases the next height. If both are negative, the same feedback
 acts downward. The recurrence is a feedback rule, not just a formula for the next term.
 
-\q{The local maximum principle is the first rule.} If $X_n>0$ and $F_n\ge0$, the first rule gives
-$F_{n+1}>0$: a positive height that has not just gone down must go up at the next step. So a
-positive peak is impossible, and so is a negative valley.
+\q{No positive peak, no negative valley.} If $X_n>0$ and $F_n\ge0$, the first rule gives
+$F_{n+1}>0$: a positive height that has not just gone down must go up at the next step. So for
+$n\ge1$ it is impossible that $X_n>0$, $X_n\ge X_{n-1}$ and $X_n\ge X_{n+1}$. In the same way a
+negative valley is impossible. Only the signs of the weights were used.
 \begin{center}
 \begin{tikzpicture}[x=1cm,y=1cm]
 \draw[gray] (-0.2,0)--(3.6,0) node[right] {\small $0$};
 \draw[thick] (0.5,0.9)--(1.7,1.8)--(2.9,1.0);
 \foreach \p in {(0.5,0.9),(1.7,1.8),(2.9,1.0)} \fill \p circle (2pt);
 \node[below] at (0.5,0.85) {\small $X_{n-1}$}; \node[above] at (1.7,1.85) {\small $X_n>0$}; \node[below] at (2.9,0.95) {\small $X_{n+1}$};
-\node[align=center] at (1.7,-0.75) {\small positive peak: forbidden};
+\node[align=center] at (1.7,-0.6) {\small positive peak: forbidden};
 \begin{scope}[xshift=6.6cm]
 \draw[gray] (-0.2,1.9)--(3.6,1.9) node[right] {\small $0$};
 \draw[thick] (0.5,1.1)--(1.7,0.2)--(2.9,1.0);
 \foreach \p in {(0.5,1.1),(1.7,0.2),(2.9,1.0)} \fill \p circle (2pt);
 \node[above] at (0.5,1.15) {\small $X_{n-1}$}; \node[below] at (1.7,0.15) {\small $X_n<0$}; \node[above] at (2.9,1.05) {\small $X_{n+1}$};
-\node[align=center] at (1.7,-0.75) {\small negative valley: forbidden};
+\node[align=center] at (1.7,-0.6) {\small negative valley: forbidden};
 \end{scope}
 \end{tikzpicture}
 \end{center}
-Only the signs of the weights were used. This is not yet a proof: a bounded sequence can rise for
-ever toward a finite limit and never form a peak. To exclude that we need the second rule as well,
-and one fact about sizes: $\ell_n\ge(n+1)^3$.
 
-\begin{center}
-\begin{tikzpicture}[x=1cm,y=0.85cm]
-\fill[red!14] (0,0) rectangle (5.6,2.3); \fill[red!14] (0,0) rectangle (-5.6,-2.3);
-\fill[blue!10] (0,0) rectangle (5.6,-2.3); \fill[blue!10] (0,0) rectangle (-5.6,2.3);
-\draw[->] (-5.8,0)--(5.9,0) node[right] {$X$}; \draw[->] (0,-2.5)--(0,2.6) node[above] {$F$};
-\node[align=center] at (2.8,1.15) {\small $X>0,\ F>0$\\ \small height and slope reinforce:\\ \small upward escape};
-\node[align=center] at (-2.8,-1.15) {\small $X<0,\ F<0$\\ \small height and slope reinforce:\\ \small downward escape};
-\node[align=center] at (2.8,-1.15) {\small $X>0,\ F<0$\\ \small a bounded positive\\ \small solution must stay here};
-\node[align=center] at (-2.8,1.15) {\small $X<0,\ F>0$\\ \small the mirror image};
-\end{tikzpicture}
-\end{center}
-
-\begin{lemma*}[the trap]
-Let $X$ be a bounded solution of \eqref{rules}, not identically zero. Then for every $n\ge1$
-\begin{equation}\label{sign}
-X_nF_n<0,\qquad\text{or equivalently}\qquad X_n^2<X_nX_{n-1}.
-\end{equation}
-\end{lemma*}
-\begin{proof}
-Suppose $X_n\ge0$ and $F_n\ge0$ for some $n\ge1$ (a red quadrant). The first rule gives
-$F_{n+1}\ge\ell_nX_n\ge0$, and then the second rule gives
-\[
-X_{n+1}\ge\Bigl(1+\frac{\ell_n}{(n+1)^3}\Bigr)X_n\ge2X_n\ge0 .
-\]
-So the same two inequalities hold at $n+1$, hence at every later index: from $n$ on, $X$ is
-non-negative and at least doubles at each step. A bounded sequence can do that only if $X_m=0$ for
-all $m\ge n$. But two consecutive zeros force $X\equiv0$, since the recurrence can be solved for
-$X_{k+1}$ and for $X_{k-1}$. If $X_n\le0$ and $F_n\le0$, apply the same argument to $-X$.
-\end{proof}
-The single inequality \eqref{sign} says both things we wanted: $X_n$ and $X_{n-1}$ have the same
-sign, and $|X_n|<|X_{n-1}|$. Since $I_0=2\zeta(3)>0$ and $(I_n)$ is bounded by \eqref{bdd},
+\q{A sequence that tends to zero attains its extremes.} This is all we have to add, and Section~1
+provides it: $I_n\to0$ and $I_0>0$.
+\begin{enumerate}[label=(\alph*)]
+\item \emph{No $I_n$ is negative.} Otherwise the least value of the sequence would be negative. It
+would be attained, because $I_n\to0$, and at some $n\ge1$, because $I_0>0$: a negative valley.
+\item \emph{No $I_n$ is zero.} If $I_n=0$ with $n\ge1$, the recurrence reads
+$(n+1)^3I_{n+1}+n^3I_{n-1}=0$, and both neighbours are $\ge0$ by (a); so both vanish, and going back
+we reach $I_0=0$.
+\item \emph{The sequence decreases.} Suppose $I_n\ge I_{n-1}$ for some $n\ge1$. The largest of
+$I_n,I_{n+1},\dots$ is attained, because these numbers are positive and tend to zero; say at
+$m\ge n$. Then $I_m\ge I_{m+1}$, and $I_m\ge I_{m-1}$ (by the choice of $m$ if $m>n$, by assumption
+if $m=n$): a positive peak.
+\end{enumerate}
+Therefore
 \[
 0<I_n<I_{n-1}\qquad(n\ge1).
 \]
-\emph{Why a weak bound was enough.} For a given $X_0$ there is at most one bounded solution: the
-difference of two would be a bounded solution with $X_0=0$, which \eqref{sign} at $n=1$ forbids
-unless it vanishes. The crude estimate $|I_n|<2$ identifies this exceptional solution; we never
-estimate the cancellation in the sum.
+This is the maximum principle in its plainest form: what vanishes at infinity and cannot have a
+peak must fall all the way.
 
-\q{The same principle as an average with ground.} Solved for the middle value, the recurrence says
-\[
-X_n=\frac{n^3X_{n-1}+(n+1)^3X_{n+1}+\ell_n\cdot0}{n^3+(n+1)^3+\ell_n}:
-\]
-each value is a weighted average of its two neighbours and of ground, and since
-$\ell_n>n^3+(n+1)^3$ more than half of the weight is on ground. So if $M=\sup_jX_j$ were larger
-than both $X_0$ and $0$, every $X_j$ with $j\ge1$ would be at most $M/2$, and $M$ could not be the
-supremum. Hence a bounded solution stays between $0$ and $X_0$, and from any index $n$ on it stays
-between $0$ and $X_n$. This is the classical maximum principle, and it works even though no
-maximum need be attained. It is an alternative to the lemma: the lemma looks at height and slope,
-this looks at the three weights.
-
-\q{Why decrease becomes exponential decay.} Positivity and decrease let us replace the negative
-slope by a positive \emph{current}, $J_n=-F_n=n^3(I_{n-1}-I_n)>0$. The first rule is \eqref{K} again:
+\q{Why decrease becomes exponential decay.} Positivity and decrease say that the current
+$J_n=-F_n=n^3(I_{n-1}-I_n)$ is positive. The first rule is \eqref{K} again:
 \[
 J_n=J_{n+1}+\ell_nI_n .
 \]
@@ -282,37 +241,56 @@ Therefore
 \boxed{\;0<I_n\le2\zeta(3)\,33^{-n}\;}
 \end{equation}
 The $33$ has a meaning: one copy of $I_n$ remains, and the local loss requires more than $32$
-further copies in the preceding voltage. The loss term was used twice, against its two neighbours:
-$\ell_n\ge(n+1)^3$, the next conductance, made the trap; and $\ell_n>32\,n^3$, the previous
-conductance, makes the decay.
+further copies in the preceding voltage.
 
 \q{What happens without the loss?} Then $J_n$ is constant and the drops are constant multiples of
-$1/n^3$. The trap disappears (constants are bounded solutions), and the solution that tends to
-zero is a multiple of $\sum_{k>n}k^{-3}$, which decays only like $n^{-2}$. That is the approximation
-of $\zeta(3)$ by its partial sums. The successful and the failed approximation obey the same
-current law; what turns polynomial decay into exponential decay is that the loss is more than $32$
-times the conductance.
+$1/n^3$. The solution that tends to zero is a multiple of $\sum_{k>n}k^{-3}$, which decays only like
+$n^{-2}$: the approximation of $\zeta(3)$ by its partial sums. The successful and the failed
+approximation obey the same current law. What turns polynomial decay into exponential decay is
+that the loss is more than $32$ times the conductance.
+
+\q{What about the other solutions? (not needed).} In the plane of the pairs $(X_n,F_n)$ the two
+quadrants where height and slope have the same sign are traps. If $X_n\ge0$ and $F_n\ge0$, not both
+zero, the rules \eqref{rules} keep them so, and $X_{n+1}\ge\bigl(1+\ell_n/(n+1)^3\bigr)X_n\ge5X_n$: the
+solution explodes.
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=0.72cm]
+\fill[red!14] (0,0) rectangle (5.6,2.1); \fill[red!14] (0,0) rectangle (-5.6,-2.1);
+\fill[blue!10] (0,0) rectangle (5.6,-2.1); \fill[blue!10] (0,0) rectangle (-5.6,2.1);
+\draw[->] (-5.8,0)--(5.9,0) node[right] {$X$}; \draw[->] (0,-2.3)--(0,2.4) node[above] {$F$};
+\node[align=center] at (2.8,1.05) {\small $X>0,\ F>0$\\ \small height and slope reinforce:\\ \small upward escape};
+\node[align=center] at (-2.8,-1.05) {\small $X<0,\ F<0$\\ \small height and slope reinforce:\\ \small downward escape};
+\node[align=center] at (2.8,-1.05) {\small $X>0,\ F<0$\\ \small the sequence $I_n$\\ \small stays here};
+\node[align=center] at (-2.8,1.05) {\small $X<0,\ F>0$\\ \small the mirror image};
+\end{tikzpicture}
+\end{center}
+A solution with $X_0=0$ and $X_1\ne0$ starts in a trap, since $X_1F_1=X_1^2>0$. So every bounded
+solution is a multiple of $(I_n)$: the solutions form a plane, and all of them except one line
+explode. That is why so little information about the sum was enough.
 
 \section{The denominator cost, and the contradiction}
 
-We need only $D_n<3^n$ for infinitely many $n$. The identity
-\[
-N!=\prod_{k=1}^ND_{\lfloor N/k\rfloor}
-\]
-counts prime powers in two ways: for a prime $p$, the power $p^a$ contributes one factor $p$ to
-$D_{\lfloor N/k\rfloor}$ exactly when $kp^a\le N$, so the exponent of $p$ in the product is
-$\sum_{a\ge1}\lfloor N/p^a\rfloor$, as in $N!$. Suppose $D_m\ge3^m$ for every $m\ge M$. Then
-$D_m\ge3^{m-M}$ for every $m\ge1$, and
-\[
-N\log N\ge\log N!\ge\log3\sum_{k=1}^N\Bigl(\Bigl\lfloor\frac Nk\Bigr\rfloor-M\Bigr)\ge N\log3\,(\log N-1-M),
-\]
-using $\lfloor x\rfloor\ge x-1$ and $\sum_{k\le N}\frac1k>\log N$ (sum $\log(1+\frac1k)<\frac1k$). Since
-$\log3>1$, this is impossible for large $N$.
+\q{An identity.} $N!=\prod_{k=1}^ND_{\lfloor N/k\rfloor}$. Both sides are the product of $p$ over all
+pairs $(k,q)$ with $q=p^a$ a prime power and $kq\le N$: on the left because each $m\le N$ is the
+product of $p$ over the prime powers $q$ dividing it (write $m=kq$), on the right because $D_M$ is
+the product of $p$ over the prime powers $q\le M$.
 
-\q{The final integer.} If $\zeta(3)=P/Q$ with positive integers $P,Q$, then
-$\frac Q2D_n^3I_n=P\,D_n^3a_n-Q\,D_n^3b_n$ is an integer. For the infinitely many $n$ with $D_n<3^n$,
-\eqref{decay} places it strictly between $0$ and $Q\,\zeta(3)\,(27/33)^n$, which is less than $1$
-for large $n$. So $\zeta(3)$ is irrational.
+\q{The growth rate of $D_n$ is at most $e$.} Suppose $D_m\ge c\,\lambda^m$ for all $m\ge1$, with
+$c>0$ and $\lambda\ge1$. Since $\sum_{k\le N}\lfloor N/k\rfloor>N\bigl(\sum_{k\le N}\frac1k-1\bigr)>N(\log N-1)$,
+the identity gives
+\[
+N^N\ge N!\ge c^N\lambda^{N(\log N-1)},\qquad\text{that is,}\qquad N\ge\frac c\lambda\,N^{\log\lambda}\quad\text{for every }N .
+\]
+So $\log\lambda\le1$.
+
+\q{The contradiction.} Suppose $\zeta(3)=P/Q$ with positive integers $P,Q$. Then
+$\frac Q2D_n^3I_n=P\,D_n^3a_n-Q\,D_n^3b_n$ is an integer, and it is positive, so it is at least $1$. By
+\eqref{decay},
+\[
+D_n^3\ge\frac2{Q\,I_n}\ge\frac{33^n}{Q\,\zeta(3)}=\frac{33^n}P\qquad\text{for every }n .
+\]
+So $D_n\ge P^{-1/3}\,(33^{1/3})^n$ for all $n$, and therefore $33^{1/3}\le e$. But $e^3=20.08\ldots<33$.
+Hence $\zeta(3)$ is irrational.
 
 \section*{Further intuition: the exact rate}
 
@@ -327,25 +305,25 @@ current. With the increasing function $f(x)=\frac1{34-x}$ this says $g_n=f(g_{n+
 
 \emph{The largest ratio reproduces itself.} Let $s=\sup_ng_n\le1$. Then
 $g_n<f(g_{n+1})\le f(s)$ for every $n$, so $s\le f(s)$, that is, $s^2-34s+1\ge0$. The roots are
-$\rho=17-12\sqrt2=0.0294$ and $1/\rho>1$, so $s\le\rho$. Hence
-\[
-0<I_n\le2\zeta(3)\,(17-12\sqrt2)^n\qquad\text{for all }n .
-\]
+$\rho=17-12\sqrt2=0.0294$ and $1/\rho>1$, so $s\le\rho$, and
+$0<I_n\le2\zeta(3)\,(17-12\sqrt2)^n$ for all $n$.
+
 \emph{So does the smallest limit.} Let $L=\liminf g_n$ and $\varepsilon>0$. For all large $n$,
 $g_{n+1}>L-\varepsilon$ and $\delta_n<\varepsilon$, hence $g_n>f(L-2\varepsilon)$. So $L\ge f(L)$,
 that is, $L^2-34L+1\le0$, that is, $L\ge\rho$. Together: $I_n/I_{n-1}\to17-12\sqrt2$.
 
 \bigskip
-\noindent\textbf{Status and sources.} Draft. In Section~2 the single telescope is the author's;
-the replacement of $t^2$ by $n^2/2$, the three-point interpolation and the remark on $17$ are taken
-from the final version of the exposition by Codex. The identity \eqref{star} was checked in exact
-arithmetic for $1\le n,m\le7$, the recurrence for $n\le12$, and the interpolation with $n$
-symbolic. Section~3 and the last page follow the recommendations of an independent AI reader who
-verified the original on 4000 random exact solutions; the paragraph on averages is from the
-exposition's final version. Sections 1 and 4 are as in the exposition. No human has read this.
-The proof is a rearrangement of known ideas: the series is that of W.~Zudilin's elementary proof
-(arXiv:math/0202159); that Ap\'ery's linear forms are the bounded solution of a recurrence with
-dominant middle coefficient is in A.~Mingarelli (arXiv:math/0608577), and the comparison $27<33$
-in Mahboubi and Sibut-Pinote (arXiv:1912.06611). The height, slope and current language and the
-pictures follow the exposition by Codex.
+\noindent\textbf{Status and sources.} Draft; checked by AI agents only, and no human has read it.
+The identities of Section~2 were verified in exact arithmetic for $n\le7$ and the polynomial steps
+with $n$ symbolic; the bound \eqref{bdd} pointwise in exact arithmetic for $n\le12$ and against the
+exact values of $I_n$ for $n<30$; the factorial identity for $N<200$. Section~3 in this form
+(attained extremes) has not yet had an independent read. Who found what: the link and node
+identities of Section~2, the bound \eqref{bdd} and its use in Section~3, and the form of Section~4
+are due to three AI agents asked to simplify the exposition; the midpoint route and the constants
+$6$ and $17$ are from the final version of the exposition by Codex, whose height, slope and
+current language and pictures are kept here. The proof is a rearrangement of known ideas: the
+series is that of W.~Zudilin's elementary proof (arXiv:math/0202159); $g_n$ in Section~2 is the
+classical certificate for Ap\'ery's recurrence; that Ap\'ery's linear forms are the bounded
+solution of a recurrence with dominant middle coefficient is in A.~Mingarelli (arXiv:math/0608577),
+and the constant $33$ in Mahboubi and Sibut-Pinote (arXiv:1912.06611).
 \end{document}
