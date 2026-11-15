@@ -38,9 +38,9 @@
     \qquad\text{Is it rational?}
   \]
   \begin{itemize}
-    \item Ap\'ery (1978): \alert{no}. Beukers (1979): integrals. Zudilin (2002): sums.
-    \item Today: Beukers' proof, the bridge to Zudilin's, and \alert{our simpler proof}.
-    \item An infinite series or an irregular decimal expansion proves nothing.
+    \item Ap\'ery (1978) proved that it is not. Beukers (1979) did it with integrals, Zudilin (2002) with sums.
+    \item Today we go through Beukers' proof, see how it leads to Zudilin's, and then give a simpler proof of our own.
+    \item Neither the series nor the decimal expansion tells us anything.
     \item We need an \alert{obstruction} to rationality.
   \end{itemize}
 \end{frame}
@@ -49,14 +49,14 @@
   If $\zeta(3)=p/q$ and $A,B\in\Z$, then $q(A\zeta(3)-B)\in\Z$.
   \medskip
 
-  So it suffices to build numbers $J_n$ with
+  So it is enough to find numbers $J_n$ with
   \begin{enumerate}
     \item $\Dn^3J_n\in\Z+\Z\zeta(3)$, \quad $\Dn=\lcm(1,\dots,n)$ \hfill(arithmetic)
     \item $J_n>0$ \hfill(nonzero)
     \item $\Dn^3J_n\to0$ along some sequence of $n$ \hfill(small)
   \end{enumerate}
   \medskip
-  Partial sums fail: $\Dn^3\bigl(\zeta(3)-\sum_{m\le n}m^{-3}\bigr)\ge\frac{n^3}{2(n+1)^2}\to\infty$.
+  The partial sums are not good enough: $\Dn^3\bigl(\zeta(3)-\sum_{m\le n}m^{-3}\bigr)\ge\frac{n^3}{2(n+1)^2}\to\infty$.
 \end{frame}
 
 % ----------------------------------------------------------------------
@@ -69,30 +69,30 @@
     \int_0^1-x^m\log x\dd x=\frac1{(m+1)^2}\quad\text{(integrate by parts).}
   \]
   \pause
-  \textbf{Multiply} the two, using a second variable $y$:
+  Multiply the two, using a second variable $y$:
   \[
     \int_0^1\!\!\int_0^1-(xy)^m\log x\dd x\dd y=\frac1{(m+1)^3}.
   \]
   \pause
-  \textbf{Symmetrise}: $-\log x-\log y=-\log(xy)$, so
+  Symmetrise: $-\log x-\log y=-\log(xy)$, so
   $\displaystyle\iint-(xy)^m\log(xy)\dd x\dd y=\frac2{(m+1)^3}$.
   \pause
 
-  \textbf{Sum over $m\ge0$}, using $\sum_m(xy)^m=\frac1{1-xy}$:
+  Now sum over $m\ge0$, using $\sum_m(xy)^m=\frac1{1-xy}$:
   \[
     \iint_{[0,1]^2}\frac{-\log(xy)}{1-xy}\dd x\dd y=2\zeta(3).
   \]
 \end{frame}
 
-\begin{frame}{Step 1 continued: play with the integral}
-  Call $K(x,y)=\frac{-\log(xy)}{1-xy}$ the \alert{kernel}. What if we put more in front of it?
+\begin{frame}{Step 1 continued: playing with the integral}
+  Call $K(x,y)=\frac{-\log(xy)}{1-xy}$ the \alert{kernel}. What happens if we multiply it by a monomial?
   \pause
   \begin{itemize}
-    \item Insert $x^ry^r$: the sum just starts later,
+    \item With $x^ry^r$ the sum starts later:
       \[
         \iint x^ry^rK=2\sum_{m>r}\frac1{m^3}=2\zeta(3)-2\Bigl(1+\frac1{2^3}+\dots+\frac1{r^3}\Bigr).
       \]
-    \item Insert $x^ry^s$ with $r\ne s$: the sum telescopes and $\zeta(3)$ disappears,
+    \item With $x^ry^s$, $r\ne s$, the sum telescopes and $\zeta(3)$ drops out:
       \[
         \iint x^ry^sK=\frac1{r-s}\sum_{j=s+1}^{r}\frac1{j^2}\in\mathbb Q .
       \]
@@ -102,29 +102,29 @@
     For an integer polynomial $P$ of degree $\le n$:\quad
     $\Dn^3\iint P(x)P(y)K\in\Z+\Z\zeta(3)$.
     \\[2pt]
-    Example: $P=1-2x$ gives $10\zeta(3)-12\approx0.0206$. \ Small! Can we do better?
+    For example, $P=1-2x$ gives $10\zeta(3)-12\approx0.0206$, which is already small. Can we do better?
   \end{block}
 \end{frame}
 
 \begin{frame}{Step 2: making the integral small, one variable first}
-  \textbf{Goal:} choose integer polynomials $P,Q$ of degree $n$ with
-  $\displaystyle\iint P(x)Q(y)K(x,y)\dd x\dd y$ \alert{small}.
+  We want an integer polynomial $P$ of degree $n$ that makes
+  $\displaystyle\iint P(x)P(y)K(x,y)\dd x\dd y$ \alert{small}.
   \pause
   \medskip
 
-  \textbf{1D version:} make $\int_0^1P(x)f(x)\dd x$ small. Expand $f$ in a Taylor series:
+  Start with one variable: how do we make $\int_0^1P(x)f(x)\dd x$ small? Expand $f$ in a Taylor series,
   \[
     f(x)=a_0+a_1x+\dots+a_{n-1}x^{n-1}+(\text{higher order terms}).
   \]
   \pause
-  \textbf{Kill the small monomials:} ask
+  and ask $P$ to kill the low-degree monomials:
   \[
     \int_0^1x^jP(x)\dd x=0\qquad\text{for } j=0,1,\dots,n-1.
   \]
   Then $\int Pf$ only sees the higher-order part of $f$.
   \pause
-  \begin{block}{This forces $P$ (up to scale)}
-    $n$ conditions on $n+1$ coefficients $\Rightarrow$ a unique solution up to scale.
+  \begin{block}{This determines $P$ up to scale}
+    There are $n$ conditions on $n+1$ coefficients, so the solution is unique up to scale.
   \end{block}
 \end{frame}
 
@@ -137,32 +137,32 @@
   \]
   \pause
   $P_n=\sum_k(-1)^k\binom nk\binom{n+k}kx^k$ has integer coefficients (shifted Legendre polynomial).
-  Take $P=Q=P_n$:\quad
+  Take $P=P_n$:\quad
   $J_n=\iint P_n(x)P_n(y)K\dd x\dd y=2a_n\zeta(3)-2b_n$.
   \medskip
 
   \pause
-  \textbf{Example:} $f(x)=\frac1{x+t}$. Since
-  $\frac{\dd^n}{\dd x^n}\frac1{x+t}=\frac{(-1)^nn!}{(x+t)^{n+1}}$ and
+  For example, take $f(x)=\frac1{x+t}$. Since
+  $\frac{\dd^n}{\dd x^n}\frac1{x+t}=\frac{(-1)^nn!}{(x+t)^{n+1}}$,
   \[
     \int_0^1\frac{P_n(x)}{x+t}\dd x=\int_0^1\frac{[x(1-x)]^n}{(x+t)^{n+1}}\dd x\;>\;0 .
   \]
 \end{frame}
 
 \begin{frame}{Step 3: separation of variables}
-  But $K(x,y)$ mixes $x$ and $y$. How do we use the 1D trick?
+  But $K(x,y)$ mixes $x$ and $y$, so how do we use the one-variable trick?
   \pause
   \medskip
 
-  \textbf{A trick from differential equations:} write a function of two variables as a
-  superposition of products, $u(x,t)=\sum v(x)w(t)$.
+  Borrow an idea from differential equations: write a function of two variables as a
+  superposition of products, $u(x,t)=\sum_kv_k(x)w_k(t)$.
   \pause
 
-  \textbf{Here:} write $K$ as an integral over a parameter $t$ of products $v_t(x)\,w_t(y)$:
+  Here we write $K$ as an integral, over a parameter $t$, of products $v_t(x)\,w_t(y)$:
   \[
     K(x,y)=\int_0^\infty\underbrace{\frac1{x+t}}_{v_t(x)}\cdot\underbrace{\frac1{1+yt}}_{w_t(y)}\dd t .
   \]
-  {\footnotesize (Partial fractions: $\int_0^\infty\frac{\dd t}{(t+a)(t+b)}=\frac{\log b-\log a}{b-a}$ with $a=x$, $b=1/y$.)}
+  {\footnotesize (Partial fractions: $\int_0^\infty\frac{\dd t}{(t+a)(t+b)}=\frac{\log b-\log a}{b-a}$ with $a=x$, $b=1/y$, after writing $1+yt=y(t+b)$.)}
   \pause
   \[
     J_n=\int_0^\infty\Bigl(\int_0^1\frac{P_n(x)}{x+t}\dd x\Bigr)\Bigl(\int_0^1\frac{P_n(y)}{1+yt}\dd y\Bigr)\dd t
@@ -175,10 +175,10 @@
     J_n=\int_0^\infty\!\!\iint_{[0,1]^2}
     \frac{[x(1-x)\,y(1-y)\,t]^n}{[(x+t)(1+yt)]^{n+1}}\dd x\dd y\dd t\;>\;0.
   \]
-  \alert{Cancellation has become a positive integral}, before any estimate.
+  The cancellation inside $P_n$ has turned into a positive integrand, and we have not estimated anything yet.
 \end{frame}
 
-\begin{frame}{Step 4: exponential decay, the goal}
+\begin{frame}{Step 4: exponential decay}
   $J_n=\displaystyle\int\frac{G^n}{Q}$ \ with \ $Q=(x+t)(1+yt)$ \ and \ $G=\dfrac{x(1-x)\,y(1-y)\,t}{Q}$.
   \medskip
 
@@ -186,7 +186,7 @@
   \pause
   \medskip
 
-  \textbf{Two applications of AM--GM} reduce three variables to one. Put $u=\sqrt{xy}$.
+  AM--GM, used twice, reduces three variables to one. Put $u=\sqrt{xy}$.
   \begin{itemize}
     \item Denominator: $\dfrac Qt=1+xy+\underbrace{yt+\dfrac xt}_{\ge2\sqrt{xy}}\ge(1+u)^2$
       \newline\mbox{}\hfill{\small equality when $t=\sqrt{x/y}$ balances $yt$ and $x/t$}
@@ -200,7 +200,7 @@
     G=\frac{xy\,(1-x)(1-y)}{Q/t}\le\Bigl(\underbrace{\frac{u(1-u)}{1+u}}_{g(u)}\Bigr)^2 .
   \]
   \pause
-  \textbf{Find the maximum by calculus:} the numerator of $g'(u)$ is
+  Maximise $g$ by calculus. The numerator of $g'(u)$ is
   \[
     (1-2u)(1+u)-u(1-u)=1-2u-u^2,
   \]
@@ -212,15 +212,15 @@
 \end{frame}
 
 \begin{frame}{Step 4 continued: why $(u-\alpha)^2$?}
-  \textbf{Certify the maximum without calculus.} We want $q(u)=\alpha^2(1+u)-u(1-u)\ge0$.
+  We can also check the maximum without calculus. We want $h(u)=\alpha^2(1+u)-u(1-u)\ge0$.
   \medskip
 
-  If true, $q\ge0$ and $q(\alpha)=0$, so $\alpha$ is a minimum with value $0$: a
-  \alert{double root}. So $q$ must be a perfect square:
+  If this holds, then $h\ge0$ and $h(\alpha)=0$, so $\alpha$ is a minimum with value $0$, that is,
+  a double root. So $h$ has to be a perfect square:
   \[
-    q(u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
+    h(u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
   \]
-  which holds exactly because $1-\alpha^2=2\alpha$, i.e.\ $\alpha^2+2\alpha-1=0$.
+  and this is true because $1-\alpha^2=2\alpha$, i.e.\ $\alpha^2+2\alpha-1=0$.
   \pause
   \begin{block}{Result}
     $G\le\alpha^4=(\sqrt2-1)^4=17-12\sqrt2\approx\frac1{34}$, \ equality at $x=y=\alpha$, $t=1$:
@@ -238,9 +238,9 @@
     (compare the exponent of each prime $p$ on both sides).
   \end{block}
   \begin{itemize}
-    \item If $D_m\ge C^m$ for all large $m$, then $\log N!\gtrsim\log C\cdot N\log N$.
-    \item So for every $C>e$: \ $\Dn<C^n$ for \alert{infinitely many} $n$.
-    \item Take $C=3$. This is all we need, because $J_n>0$ for every $n$.
+    \item If $D_m\ge\mu^m$ for all large $m$, then $\log N!\gtrsim\log\mu\cdot N\log N$.
+    \item So for every $\mu>e$ we have $\Dn<\mu^n$ for \alert{infinitely many} $n$.
+    \item Take $\mu=3$. This is all we need, because $J_n>0$ for every $n$.
   \end{itemize}
 \end{frame}
 
@@ -258,7 +258,7 @@
   \end{alertblock}
 \end{frame}
 
-\begin{frame}{The small numbers in action}
+\begin{frame}{The first few values}
   \centering
   \begin{tabular}{@{}rrll@{}}
     \toprule
@@ -271,7 +271,7 @@
   \end{tabular}
   \medskip
 
-  Both terms are large; their difference is tiny but, by Step 3, \alert{never zero}.
+  Both terms are large and their difference is tiny, but by Step 3 it is never zero.
 \end{frame}
 
 % ======================================================================
@@ -283,19 +283,19 @@
     r_n(t)=\int_0^1x^{t-1}P_n(x)\dd x\qquad(t>0).
   \]
   \pause
-  Integrate by parts $n$ times, exactly as in Step 2:
+  Integrate by parts $n$ times, as in Step 2:
   \[
     \boxed{\;r_n(t)=\frac{(1-t)(2-t)\cdots(n-t)}{t\,(t+1)\cdots(t+n)}\;}
   \]
   \pause
-  Nothing in this formula is arbitrary:
+  We can see where the zeros and the poles come from:
   \begin{itemize}
-    \item \textbf{zeros} at $t=1,\dots,n$: the vanishing moments $\int_0^1x^jP_n=0$ we asked for;
-    \item \textbf{poles} at $t=0,-1,\dots,-n$: integrating the monomials $x^k$, $k\le n$.
+    \item the zeros at $t=1,\dots,n$ are the vanishing moments $\int_0^1x^jP_n=0$ we asked for;
+    \item the poles at $t=0,-1,\dots,-n$ come from integrating the monomials $x^k$, $k\le n$.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Why a square? Expand the geometric series}
+\begin{frame}{Why a square?}
   Expand the kernel's denominator, indexing the terms by $t=1,2,3,\dots$:
   \[
     \frac1{1-xy}=1+xy+(xy)^2+(xy)^3+\cdots=\sum_{t=1}^\infty(xy)^{t-1}.
@@ -307,7 +307,7 @@
     =\sum_{t=1}^\infty\iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr).
   \]
   \pause
-  Ignore the logarithm for a moment. Since $(xy)^{t-1}=x^{t-1}\,y^{t-1}$, with the \alert{same}
+  Ignore the logarithm for a moment. Since $(xy)^{t-1}=x^{t-1}\,y^{t-1}$, with the same
   exponent on $x$ and $y$, each integral splits into two equal factors:
   \[
     \iint P_n(x)P_n(y)\,x^{t-1}y^{t-1}
@@ -315,8 +315,8 @@
   \]
 \end{frame}
 
-\begin{frame}{Why a derivative? The logarithm}
-  The logarithm is what we ignored. It comes from differentiating in the exponent:
+\begin{frame}{The derivative comes from the logarithm}
+  Now put the logarithm back. It appears when we differentiate in the exponent:
   \[
     \frac{\dd}{\dd t}(xy)^{t-1}=\log(xy)\,(xy)^{t-1}.
   \]
@@ -333,19 +333,19 @@
   \]
 \end{frame}
 
-\begin{frame}{The same recipe, read without integrals}
+\begin{frame}{The same recipe, without integrals}
   \[
     J_n=-\sum_{t=1}^\infty R_n'(t),\qquad R_n(t)=\Bigl(\frac{(1-t)(2-t)\cdots(n-t)}{t\,(t+1)\cdots(t+n)}\Bigr)^2
   \]
   \begin{itemize}
-    \item \textbf{Poles} at $0,-1,\dots,-n$ $\to$ shifted zeta values with controlled denominators.
-    \item \textbf{Zeros} at $1,\dots,n$ $\to$ the first $n$ terms of the sum vanish.
-    \item \textbf{The square} $\to$ the zeros are double, so they survive the derivative.
-    \item \textbf{The derivative} $\to$ every pole gains a power: cubes, so $\zeta(3)$.
+    \item The poles at $0,-1,\dots,-n$ give shifted zeta values with controlled denominators.
+    \item The zeros at $1,\dots,n$ make the first $n$ terms of the sum vanish.
+    \item Because of the square the zeros are double, so they survive the derivative.
+    \item With the derivative every pole gains a power, which gives cubes and hence $\zeta(3)$.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{The arithmetic, straight from partial fractions}
+\begin{frame}{The arithmetic, from partial fractions}
   \[
     r_n(t)=\sum_{k=0}^n\frac{c_k}{t+k},\qquad c_k=(-1)^k\frac{(n+k)!}{k!^2\,(n-k)!}\in\Z .
   \]
@@ -353,13 +353,13 @@
   \begin{itemize}
     \item Squares: $\;-\sum_t\frac{\dd}{\dd t}\frac1{(t+k)^2}=2\Bigl(\zeta(3)-1-\frac1{2^3}-\dots-\frac1{k^3}\Bigr)$.
     \item Mixed terms: $\frac1{(t+k)(t+j)}=\frac1{j-k}\bigl(\frac1{t+k}-\frac1{t+j}\bigr)$, so $\zeta(2)$
-      \alert{cancels}.
+      cancels.
   \end{itemize}
   \pause
   \[
     J_n=2a_n\zeta(3)-2b_n,\qquad \Dn^3b_n\in\Z,\qquad a_n=\sum_kc_k^2 .
   \]
-  $a_n=1,5,73,1445,\dots$ are Ap\'ery's numbers, and $J_1=10\zeta(3)-12$, the same as before.
+  The $a_n=1,5,73,1445,\dots$ are Ap\'ery's numbers, and $J_1=10\zeta(3)-12$ as before.
 \end{frame}
 
 \begin{frame}{The catch: the terms have both signs}
@@ -388,7 +388,7 @@
   \pause
   \medskip
 
-  Beukers: the positive integral does both. \ Without the integral, what?
+  For Beukers the positive integral gives both. What can we use without it?
 \end{frame}
 
 % ======================================================================
@@ -398,18 +398,18 @@
   \centering
   \begin{tikzpicture}[box/.style={draw,rounded corners,align=center,inner sep=6pt,font=\small},
                       >=stealth]
-    \node[box] (F) at (-4,0) {$F_n=-\sum R_n'(t)$\\[2pt] arithmetic \alert{\checkmark}\\ size \alert{?}};
+    \node[box] (F) at (-4,0) {$J_n=-\sum R_n'(t)$\\[2pt] arithmetic \alert{\checkmark}\\ size \alert{?}};
     \node[box] (G) at (4,0) {Ball's series $\widetilde F_n=\sum\widetilde R_n(t)$\\[2pt]
       size \alert{\checkmark} (positive terms)\\ arithmetic \alert{?} (needs $\Dn^4$)};
     \node[box] (L) at (0,-2.3) {same recurrence\\ $(n+1)^3u_{n+1}-(2n+1)(17n^2+17n+5)u_n+n^3u_{n-1}=0$\\
       $+$ same values at $n=0,1$};
     \draw[->,thick] (F) -- (L);
     \draw[->,thick] (G) -- (L);
-    \node[font=\small] at (0,0.3) {$F_n=\widetilde F_n$ ?};
+    \node[font=\small] at (0,0.3) {$J_n=\widetilde F_n$ ?};
   \end{tikzpicture}
   \medskip
 
-  Each series has \alert{one} of the two properties. A recurrence glues them together.
+  Each series has one of the two properties. A common recurrence shows that they are equal.
 \end{frame}
 
 \begin{frame}{Ball's series}
@@ -418,12 +418,12 @@
     \frac{(t-1)\cdots(t-n)\cdot(t+n+1)\cdots(t+2n)}{\bigl(t(t+1)\cdots(t+n)\bigr)^4}
   \]
   \begin{itemize}
-    \item Zero for $t\le n$, \alert{positive} for $t>n$; a Stirling-type estimate gives
+    \item It is zero for $t\le n$ and positive for $t>n$, and a Stirling-type estimate gives
       $\widetilde F_n<20(n+1)^4(\sqrt2-1)^{4n}$.
-    \item Why should it equal $J_n$? There is no obvious reason.
+    \item There is no obvious reason why it should equal $J_n$.
   \end{itemize}
   \pause
-  \textbf{Checking $n=1$, a small miracle:}
+  For $n=1$ we can check by hand that it does:
   \[
     \widetilde R_1(t)=-\frac2{t^4}+\frac2{(t+1)^4}+\frac5{t^3}+\frac5{(t+1)^3}-\frac5{t^2}+\frac5{(t+1)^2}
   \]
@@ -443,14 +443,14 @@
     &+n(153n^5+183n^4+50n^3-30n^2-22n-4).
   \end{align*}}
   \pause
-  Checking it: expand a polynomial identity in $t$ and $n$. \quad Finding it: a computer.
+  To check it, expand a polynomial identity in $t$ and $n$. To find it, use a computer.
 \end{frame}
 
-\begin{frame}{Zudilin's proof in total}
-  Zudilin finishes ``using a trivial bound $\Dn<3^n$''. Our Step 5 is all he needs:
-  $\Dn<3^n$ for \alert{infinitely many} $n$ is enough, because $\widetilde F_n>0$ for \emph{every} $n$:
+\begin{frame}{The end of Zudilin's proof}
+  Zudilin finishes ``using a trivial bound $\Dn<3^n$''. Our Step 5 is enough for this:
+  we only need $\Dn<3^n$ for infinitely many $n$, because $\widetilde F_n>0$ for every $n$:
   \[
-    0<q\,\Dn^3F_n<20q\,(n+1)^4\bigl[27(\sqrt2-1)^4\bigr]^n\longrightarrow0
+    0<q\,\Dn^3J_n<20q\,(n+1)^4\bigl[27(\sqrt2-1)^4\bigr]^n\longrightarrow0
     \quad\text{along those }n .
   \]
   \pause
@@ -472,12 +472,12 @@
   \end{itemize}
   \pause
   \medskip
-  Missing: the \alert{sign} and the \alert{speed}.
+  We are still missing the \alert{sign} of $J_n$ and its \alert{rate of decay}.
   \pause
   \medskip
 
-  \textbf{Idea:} no second series. Let the sequence police itself, through an equation linking
-  each $J_n$ to its neighbours.
+  Instead of a second series, we look for an equation relating each $J_n$ to its
+  neighbours, and let that equation control the sequence.
 \end{frame}
 
 \begin{frame}{Which equation would we like?}
@@ -509,32 +509,32 @@
   \end{columns}
   \pause
   \medskip
-  Both are \alert{forbidden}. And once $J_n$ is positive and decreasing,
+  Neither can happen. And once $J_n$ is positive and decreasing,
   \[
-    A(J_{n-1}-J_n)>\lambda J_n\quad\Longrightarrow\quad J_n<\frac{A}{A+\lambda}\,J_{n-1}:
+    A(J_{n-1}-J_n)>\lambda J_n\quad\Longrightarrow\quad J_n<\frac{A}{A+\lambda}\,J_{n-1},
   \]
-  a large $\lambda/A$ means fast decay. \ Does such an equation exist?
+  so a large $\lambda/A$ means fast decay. \ Is there such an equation?
 \end{frame}
 
 \begin{frame}{A guess}
-  Look for it at the level of the rational functions $R_j=r_j^2$ (fix $n$, put $m=n+1$):
+  Look for it among the rational functions $R_j=r_j^2$ themselves (fix $n$, put $m=n+1$):
   \[
     B(R_m-R_n)-A(R_n-R_{n-1})=\lambda R_n+\underbrace{W(t+1)R_n(t+1)-W(t)R_n(t)}_{\text{a telescoping error}}
   \]
   \pause
   \begin{itemize}
-    \item \textbf{Consecutive indices:} $r_{n\pm1}$ differs from $r_n$ by a single factor.
-    \item \textbf{The error telescopes:} after $-\sum_t\frac{\dd}{\dd t}$ it leaves only boundary terms,
+    \item We take consecutive indices because $r_{n\pm1}$ differs from $r_n$ by a single factor.
+    \item The error telescopes, so after $-\sum_t\frac{\dd}{\dd t}$ it leaves only boundary terms,
       which vanish (double zero of $R_n$ at $t=1$; finite limit at $\infty$).
-    \item \textbf{$W$ a polynomial of degree $\le2$:} no new poles, and $R_n\sim t^{-2}$ keeps
+    \item We take $W$ a polynomial of degree $\le2$: no new poles, and $R_n\sim t^{-2}$ keeps
       $WR_n$ bounded.
   \end{itemize}
   \pause
-  Unknowns: $A$, $B$, $\lambda$, and three coefficients of $W$. \alert{Six.}
+  That leaves six unknowns: $A$, $B$, $\lambda$ and the coefficients of $W(t)=w_0+w_1t+w_2t^2$.
 \end{frame}
 
 \begin{frame}{Six unknowns, five equations}
-  Divide by $R_n$; every ratio is short:
+  Divide by $R_n$. All the ratios are simple:
   \[
     \frac{R_{n-1}}{R_n}=\Bigl(\frac{t+n}{t-n}\Bigr)^2,\quad
     \frac{R_m}{R_n}=\Bigl(\frac{t-m}{t+m}\Bigr)^2,\quad
@@ -546,11 +546,11 @@
     \frac{4Ant}{(n-t)^2}-\frac{4Bmt}{(m+t)^2}=\lambda-W(t)+\frac{t^4}{p(t)^2}\,W(t+1).\tag{$\star$}
   \]
   \pause
-  Times $p^2$: degree $\le4$ on both sides (the $t^6,t^5$ terms cancel). So \alert{five}
-  equations, six unknowns: a solution exists.
+  Multiplied by $p^2$, both sides have degree $\le4$ (the $t^6$ and $t^5$ terms cancel). That makes
+  five equations for six unknowns, so a solution exists.
   \medskip
 
-  \textbf{Shortcut:} $p(0)\ne0$, so it is enough to match Taylor coefficients at $t=0$ up to $t^4$.
+  Since $p(0)\ne0$, it is enough to match Taylor coefficients at $t=0$ up to $t^4$.
 \end{frame}
 
 \begin{frame}{Solving it, one coefficient at a time}
@@ -564,21 +564,21 @@
     \midrule
     $t^3$ & $12\bigl(\frac A{n^3}-\frac B{m^3}\bigr)=0$ & $A=n^3$, \ $B=(n+1)^3$\\[3pt]
     \pause
-    $t^0,t^1,t^2$ & $0=\lambda-W(0)$, \ $-4c=-w_1$, \ $8c=-w_2$ & $W(t)=\lambda+4ct-8ct^2$\\[3pt]
+    $t^0,t^1,t^2$ & $0=\lambda-w_0$, \ $-4c=-w_1$, \ $8c=-w_2$ & $W(t)=\lambda+4ct-8ct^2$\\[3pt]
     \pause
     $t^4$ & $\frac{16c}{nm}=\frac{W(1)}{(nm)^2}=\frac{\lambda-4c}{(nm)^2}$ & $\lambda=4c(1+4nm)=4c^3$\\
     \bottomrule
   \end{tabular}
   \pause
   \medskip
-  \begin{block}{The guess works}
+  \begin{block}{The solution}
     \centering
-    $A=n^3,\qquad B=(n+1)^3,\qquad \lambda=4(2n+1)^3$ \qquad --- \ all positive!
+    $A=n^3,\qquad B=(n+1)^3,\qquad \lambda=4(2n+1)^3$, \qquad all positive.
   \end{block}
 \end{frame}
 
 \begin{frame}{The current law}
-  Apply $-\sum_t\frac{\dd}{\dd t}$; the telescoping error disappears:
+  Apply $-\sum_t\frac{\dd}{\dd t}$. The telescoping error disappears, and we get
   \[
     (n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n .
   \]
@@ -600,10 +600,10 @@
   \raggedright
   \pause
 
-  Voltage $J_n$; wires of conductance $n^3$; leak of conductance $\ell_n=4(2n+1)^3$;
-  current $C_n=n^3(J_{n-1}-J_n)$. \ Kirchhoff at node $n$:
+  Read $J_n$ as a voltage, with wires of conductance $n^3$, a leak of conductance $\ell_n=4(2n+1)^3$
+  and current $C_n=n^3(J_{n-1}-J_n)$. \ Kirchhoff's law at node $n$ says
   \[
-    C_n=C_{n+1}+\ell_nJ_n:\qquad\text{what flows in either flows on or leaks away.}
+    C_n=C_{n+1}+\ell_nJ_n,\qquad\text{what flows in either flows on or leaks away.}
   \]
 \end{frame}
 
@@ -627,19 +627,19 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{What tends to zero and has no peaks must fall all the way}
-  \textbf{Key fact:} if a sequence tends to $0$ and has a negative term, its minimum is attained;
-  if its terms are positive, its maximum is attained.
+\begin{frame}{No valleys, no peaks: $J_n$ decreases to zero}
+  A sequence tending to $0$ attains its minimum if it has a negative term, and attains its
+  maximum if its terms are positive.
   \pause
   \begin{enumerate}
     \item[(a)] \textbf{Never negative.} Otherwise the minimum is negative, attained at some $n\ge1$
-      (as $J_0>0$): a negative valley.
+      (as $J_0>0$), which is a negative valley.
     \pause
-    \item[(b)] \textbf{Never zero.} If $J_n=0$: \ $(n+1)^3J_{n+1}+n^3J_{n-1}=0$ with both terms
-      $\ge0$, so both vanish; going down we reach $J_0=0$.
+    \item[(b)] \textbf{Never zero.} If $J_n=0$, then $(n+1)^3J_{n+1}+n^3J_{n-1}=0$ with both terms
+      $\ge0$, so both vanish, and going down we reach $J_0=0$.
     \pause
     \item[(c)] \textbf{Decreasing.} If $J_n\ge J_{n-1}$, the largest of $J_n,J_{n+1},\dots$ is
-      attained at some $k\ge n$: a positive peak.
+      attained at some $k\ge n$, which is a positive peak.
   \end{enumerate}
   \pause
   \[
@@ -648,7 +648,7 @@
 \end{frame}
 
 \begin{frame}{From falling to falling fast}
-  Decreasing means $C_{n+1}>0$, so the incoming current beats the leak:
+  Since $J_n$ decreases, $C_{n+1}>0$, so the incoming current is larger than the leak:
   \[
     n^3(J_{n-1}-J_n)>\ell_nJ_n\quad\Longrightarrow\quad
     \frac{J_{n-1}}{J_n}>1+4\Bigl(2+\frac1n\Bigr)^3>33 .
@@ -667,7 +667,7 @@
   \end{tabular}
   \medskip
 
-  The maximum principle \alert{loses almost nothing}: 33 against the true 33.97.
+  The maximum principle loses very little: 33 against the true 33.97.
 \end{frame}
 
 \begin{frame}{What if there were no leak?}
@@ -676,12 +676,12 @@
     J_n=C\sum_{k>n}\frac1{k^3}.
   \]
   \pause
-  This is the tail of $\zeta(3)$: the \alert{partial sums} from the very first slide, which decay
-  only like $\frac1{2n^2}$.
+  This is the tail of $\zeta(3)$, that is, the partial sums we rejected at the start, and it
+  decays only like $\frac1{2n^2}$.
   \pause
   \begin{block}{}
-    The failed approximation and the successful one obey the same current law.\\
-    The only difference is the leak, more than $32$ times the conductance at every node.
+    The approximation that fails and the one that works satisfy the same current law.\\
+    The only difference is the leak, which is more than $32$ times the conductance at every node.
   \end{block}
 \end{frame}
 
@@ -689,17 +689,17 @@
   The same identity as in Part I: \quad $N!=\prod_{k=1}^ND_{\lfloor N/k\rfloor}$.
   \pause
   \begin{block}{Uniform version}
-    If $D_m\ge c\,\mu^m$ for \emph{all} $m\ge1$ (with $c>0$, $\mu\ge1$), then $\mu\le e$.
+    If $D_k\ge\kappa\,\mu^k$ for \emph{all} $k\ge1$ (with $\kappa>0$, $\mu\ge1$), then $\mu\le e$.
   \end{block}
   \pause
   \textbf{Proof.} Each index $\lfloor N/k\rfloor\ge1$ and $\sum_k\lfloor N/k\rfloor>N(\log N-1)$, so
   \[
-    N^N\ge N!\ge c^N\mu^{N(\log N-1)}\quad\Longrightarrow\quad N\ge\frac c\mu\,N^{\log\mu}\ \text{ for all }N
+    N^N\ge N!\ge\kappa^N\mu^{N(\log N-1)}\quad\Longrightarrow\quad N\ge\frac\kappa\mu\,N^{\log\mu}\ \text{ for all }N
     \quad\Longrightarrow\quad\log\mu\le1 .
   \]
 \end{frame}
 
-\begin{frame}{The end}
+\begin{frame}{The contradiction again}
   Suppose $\zeta(3)=p/q$. Then $\frac q2\Dn^3J_n=\Dn^3(pa_n-qb_n)$ is a \alert{positive integer}, so
   \[
     \Dn^3\ge\frac2{qJ_n}\ge\frac{33^n}{q\,\zeta(3)}=\frac{33^n}{p}\qquad\text{for every }n.
@@ -730,8 +730,8 @@
   \medskip
 
   \raggedright\normalsize
-  The ingredients are classical: the recurrence is Ap\'ery's and the certificate is Zudilin's.
-  What we offer is the arrangement, in which every step is motivated.
+  None of the ingredients is new: the recurrence is Ap\'ery's and the certificate is Zudilin's.
+  What is ours is the way they are put together, so that each step has a reason.
 \end{frame}
 
 % ======================================================================
@@ -754,7 +754,7 @@
   \medskip
 
   \raggedright\normalsize
-  The bridge between them: the moment generating function of the Legendre polynomial is
+  The two are linked because the moment generating function of the Legendre polynomial is
   Zudilin's rational function.
 \end{frame}
 
