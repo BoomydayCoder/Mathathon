@@ -297,12 +297,12 @@ Together, $G\le g(u)^2$ with $g(u)=\dfrac{u(1-u)}{1+u}$, $0<u<1$.
 vanishes at $u=\alpha:=\sqrt2-1$. Since $1-\alpha=\sqrt2\,\alpha$ and $1+\alpha=\sqrt2$, the
 maximum value is $g(\alpha)=\alpha^2$.
 
-\emph{Certifying it.} To prove $g(u)\le\alpha^2$ without calculus, consider the quadratic
-$h(u)=\alpha^2(1+u)-u(1-u)$. If the claim is true, $h\ge0$ and $h(\alpha)=0$, so $\alpha$ is a
-minimum of $h$ with value $0$: a double root. A monic quadratic with a double root at $\alpha$ is
-$(u-\alpha)^2$, and indeed
+\emph{Certifying it.} To prove $g(u)\le\alpha^2$ without calculus, we need the quadratic
+$\alpha^2(1+u)-u(1-u)$ to be nonnegative. If it is, it vanishes at its minimum $u=\alpha$, so
+$\alpha$ is a double root. A monic quadratic with a double root at $\alpha$ is $(u-\alpha)^2$, and
+indeed
 \[
-  h(u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
+  \alpha^2(1+u)-u(1-u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
 \]
 because $1-\alpha^2=2\alpha$, that is, $\alpha^2+2\alpha-1=0$, which is the equation that defined
 $\alpha$. Therefore $g(u)\le\alpha^2$ and $G\le\alpha^4=(\sqrt2-1)^4=17-12\sqrt2$. All the
@@ -539,10 +539,10 @@ For $J_n$ it follows from the telescoping identity
   (n+1)^3R_{n+1}-(2n+1)(17n^2+17n+5)R_n+n^3R_{n-1}=S_n(t+1)-S_n(t),
 \]
 with $S_n=4(2n+1)\bigl(-2t^2+t+(2n+1)^2\bigr)R_n$.
-For $\widetilde F_n$ it needs a second identity of the same kind, with
-$\widetilde S_n=\frac{\widetilde R_n(t)\,p_n(t)}{(2t+n)(t+2n-1)(t+2n)}$ and
+For $\widetilde F_n$ it needs a second identity of the same kind, in which the role of $S_n$ is
+played by $\frac{\widetilde R_n(t)}{(2t+n)(t+2n-1)(t+2n)}$ times the polynomial
 \begin{align*}
-p_n(t)={}&-t^6-(8n-1)t^5+(4n^2+27n+5)t^4+2n(67n^2+71n+15)t^3\\
+&-t^6-(8n-1)t^5+(4n^2+27n+5)t^4+2n(67n^2+71n+15)t^3\\
 &+(358n^4+339n^3+76n^2-7n-3)t^2+(384n^5+396n^4+97n^3-29n^2-17n-2)t\\
 &+n(153n^5+183n^4+50n^3-30n^2-22n-4).
 \end{align*}
@@ -612,11 +612,10 @@ with positive coefficients and a large $\lambda/A$, is something a calculation h
 \subsection{A guess}\label{sec:guess}
 
 Since $J_j=-\sum_tR_j'(t)$, it is natural to look for the identity at the level of the rational
-functions, allowing an error term that disappears after summation. Fix $n\ge1$, put $m=n+1$, and
-look for constants $A,B,\lambda$ and a polynomial $W(t)$ with
+functions, allowing an error term that disappears after summation. Fix $n\ge1$ and look for
+constants $A,B,\lambda$ and a polynomial $W(t)$ with
 \begin{equation}\label{eq:ansatz}
-  B\,(R_m-R_n)-A\,(R_n-R_{n-1})=\lambda R_n+\Delta\bigl(W R_n\bigr),
-  \qquad \Delta g(t):=g(t+1)-g(t).
+  B\,(R_{n+1}-R_n)-A\,(R_n-R_{n-1})=\lambda R_n+W(t+1)R_n(t+1)-W(t)R_n(t).
 \end{equation}
 Each choice in this guess has a reason.
 \begin{itemize}
@@ -625,58 +624,59 @@ Each choice in this guess has a reason.
   \item \emph{The error is a difference.} A difference telescopes. If $g$ is a rational function
     with no poles at $1,2,3,\dots$, a double zero at $t=1$ and a finite limit at infinity, then
     \begin{equation}\label{eq:telescope}
-      -\sum_{t=1}^N\frac{\dd}{\dd t}\Delta g(t)=g'(1)-g'(N+1)\longrightarrow0 .
+      -\sum_{t=1}^N\frac{\dd}{\dd t}\bigl[g(t+1)-g(t)\bigr]=g'(1)-g'(N+1)\longrightarrow0 .
     \end{equation}
-    Since $R_n$ has a double zero at $t=1$, so does $WR_n$.
+    We apply this to $g=WR_n$, which has a double zero at $t=1$ because $R_n$ does.
   \item \emph{$W$ is a polynomial of degree at most two.} A polynomial adds no poles, and since
     $R_n(t)\sim t^{-2}$, degree two is the largest that keeps $WR_n$ bounded at infinity.
 \end{itemize}
-This gives six unknowns: $A$, $B$, $\lambda$ and the three coefficients of $W$.
+Writing $W(t)=w_0+w_1t+w_2t^2$, this gives six unknowns: $A$, $B$, $\lambda$, $w_0$, $w_1$, $w_2$.
 
 \subsection{Six unknowns, five equations}
 
 Divide \eqref{eq:ansatz} by $R_n$. Cancelling common factors,
 \[
   \frac{R_{n-1}}{R_n}=\Bigl(\frac{t+n}{t-n}\Bigr)^2,\qquad
-  \frac{R_m}{R_n}=\Bigl(\frac{t-m}{t+m}\Bigr)^2,\qquad
-  \frac{R_n(t+1)}{R_n(t)}=\frac{t^4}{p(t)^2},\quad p(t)=(n-t)(m+t).
+  \frac{R_{n+1}}{R_n}=\Bigl(\frac{t-n-1}{t+n+1}\Bigr)^2,\qquad
+  \frac{R_n(t+1)}{R_n(t)}=\frac{t^4}{(n-t)^2(n+1+t)^2}.
 \]
 Since $1-\bigl(\frac{t+n}{t-n}\bigr)^2=-\frac{4nt}{(n-t)^2}$ and
-$\bigl(\frac{t-m}{t+m}\bigr)^2-1=-\frac{4mt}{(m+t)^2}$, the identity we want is
+$\bigl(\frac{t-n-1}{t+n+1}\bigr)^2-1=-\frac{4(n+1)t}{(n+1+t)^2}$, the identity we want is
 \begin{equation}\label{eq:star}
-  \frac{4Ant}{(n-t)^2}-\frac{4Bmt}{(m+t)^2}=\lambda-W(t)+\frac{t^4}{p(t)^2}\,W(t+1).
+  \frac{4Ant}{(n-t)^2}-\frac{4B(n+1)t}{(n+1+t)^2}=\lambda-W(t)+\frac{t^4\,W(t+1)}{(n-t)^2(n+1+t)^2}.
 \end{equation}
-Multiply by $p(t)^2$. The left side becomes a polynomial of degree at most three. On the right,
-$p(t)^2W(t)$ and $t^4W(t+1)$ are polynomials of degree six with the same two leading terms (if
-$W=w_2t^2+w_1t+w_0$, both begin $w_2t^6+(2w_2+w_1)t^5$), so the right side has degree at most four.
+Multiply by $(n-t)^2(n+1+t)^2$. The left side becomes a polynomial of degree at most three. On the
+right, $(n-t)^2(n+1+t)^2W(t)$ and $t^4W(t+1)$ are polynomials of degree six with the same two
+leading terms (both begin $w_2t^6+(2w_2+w_1)t^5$), so the right side has degree at most four.
 The identity therefore amounts to five linear equations in six unknowns, and a nonzero solution
 exists.
 
-To find it we use a shortcut. Both sides of \eqref{eq:star} are regular at $t=0$, and $p(0)=nm\ne0$.
-If their Taylor expansions at $0$ agree up to $t^4$, then after multiplying by $p^2$ the difference
-is a polynomial of degree at most four that vanishes to order five at $0$, hence is zero. So it is
-enough to match five Taylor coefficients.
+To find it we use a shortcut. Both sides of \eqref{eq:star} are regular at $t=0$, and the factor
+$(n-t)^2(n+1+t)^2$ equals $n^2(n+1)^2\ne0$ there. If the Taylor expansions of the two sides at $0$
+agree up to $t^4$, then after multiplying by this factor the difference is a polynomial of degree
+at most four that vanishes to order five at $0$, hence is zero. So it is enough to match five
+Taylor coefficients.
 
 \subsection{Solving it, one coefficient at a time}
 
-Put $c=2n+1=n+m$. Expanding with $(1-x)^{-2}=1+2x+3x^2+4x^3+\cdots$, the left side of
-\eqref{eq:star} is
+Expanding with $(1-x)^{-2}=1+2x+3x^2+4x^3+\cdots$, the left side of \eqref{eq:star} is
 \[
-  4\Bigl(\frac An-\frac Bm\Bigr)t+8\Bigl(\frac A{n^2}+\frac B{m^2}\Bigr)t^2
-  +12\Bigl(\frac A{n^3}-\frac B{m^3}\Bigr)t^3+16\Bigl(\frac A{n^4}+\frac B{m^4}\Bigr)t^4+O(t^5),
+  4\Bigl(\frac An-\frac B{n+1}\Bigr)t+8\Bigl(\frac A{n^2}+\frac B{(n+1)^2}\Bigr)t^2
+  +12\Bigl(\frac A{n^3}-\frac B{(n+1)^3}\Bigr)t^3+16\Bigl(\frac A{n^4}+\frac B{(n+1)^4}\Bigr)t^4+O(t^5),
 \]
-and the right side is $\lambda-W(t)+\frac{W(1)}{(nm)^2}t^4+O(t^5)$. Each coefficient now
+and the right side is $\lambda-W(t)+\frac{W(1)}{n^2(n+1)^2}t^4+O(t^5)$. Each coefficient now
 determines one unknown.
 \begin{itemize}
-  \item[$t^3$:] the right side has no cubic term, so $A/n^3=B/m^3$. This common value cannot be
-    zero (otherwise the remaining equations force everything to vanish), so we normalise
-    \[A=n^3,\qquad B=m^3=(n+1)^3.\]
-    With these values the left side is $-4ct+8ct^2+\frac{16c}{nm}t^4+O(t^5)$, using
-    $n^2-m^2=-c$ and $\frac1n+\frac1m=\frac c{nm}$.
-  \item[$t^0,t^1,t^2$:] matching gives $W(0)=\lambda$, then the linear and quadratic
-    coefficients of $W$: \ $W(t)=\lambda+4c\,t-8c\,t^2$.
-  \item[$t^4$:] $\frac{W(1)}{(nm)^2}=\frac{16c}{nm}$, and $W(1)=\lambda-4c$, so
-    $\lambda=4c(1+4nm)=4c^3$, because $1+4n(n+1)=(2n+1)^2$.
+  \item[$t^3$:] the right side has no cubic term, so $A/n^3=B/(n+1)^3$. This common value cannot
+    be zero (otherwise the remaining equations force everything to vanish), so we normalise
+    \[A=n^3,\qquad B=(n+1)^3.\]
+    With these values the left side is
+    $-4(2n+1)t+8(2n+1)t^2+\frac{16(2n+1)}{n(n+1)}t^4+O(t^5)$, using $n^2-(n+1)^2=-(2n+1)$ and
+    $\frac1n+\frac1{n+1}=\frac{2n+1}{n(n+1)}$.
+  \item[$t^0,t^1,t^2$:] matching gives $w_0=\lambda$, $w_1=4(2n+1)$ and $w_2=-8(2n+1)$, so
+    $W(t)=\lambda+4(2n+1)(t-2t^2)$.
+  \item[$t^4$:] $\frac{W(1)}{n^2(n+1)^2}=\frac{16(2n+1)}{n(n+1)}$, and $W(1)=\lambda-4(2n+1)$, so
+    $\lambda=4(2n+1)\bigl(1+4n(n+1)\bigr)=4(2n+1)^3$, because $1+4n(n+1)=(2n+1)^2$.
 \end{itemize}
 The guess succeeds, with
 \[
@@ -694,22 +694,22 @@ contributes nothing, and we obtain, for $n\ge1$,
 \end{equation}
 It has a physical reading. Think of $J_n$ as the voltage at node $n$ of a chain, joined to node
 $n-1$ by a wire of conductance $n^3$, and to the ground by a leak of conductance
-$\ell_n=4(2n+1)^3$. The current flowing from node $n-1$ to node $n$ is
+$4(2n+1)^3$. The current flowing from node $n-1$ to node $n$ is
 \[
   C_n=n^3(J_{n-1}-J_n),
 \]
 and \eqref{eq:rec} is Kirchhoff's law at node $n$: what flows in either flows on or leaks away,
 \begin{equation}\label{eq:kirchhoff}
-  C_n=C_{n+1}+\ell_nJ_n .
+  C_n=C_{n+1}+4(2n+1)^3J_n .
 \end{equation}
 
 \begin{remark}[Where the $17$ comes from]
 Expanding \eqref{eq:rec} gives Ap\'ery's recurrence in its usual form, with middle coefficient
-$(n+1)^3+n^3+4(2n+1)^3$. With $p=n+1$, $q=n$ we have $p^3+q^3=(p+q)(pq+1)$ and
-$(p+q)^2=4pq+1$, because $p-q=1$. So the middle coefficient is
+$(n+1)^3+n^3+4(2n+1)^3$. Both parts contain the factor $2n+1$:
 \[
-  (p+q)\bigl[(pq+1)+4(4pq+1)\bigr]=(2n+1)\bigl(17n(n+1)+5\bigr).
+  (n+1)^3+n^3=(2n+1)(n^2+n+1),\qquad 4(2n+1)^3=(2n+1)(16n^2+16n+4),
 \]
+so the middle coefficient is $(2n+1)(17n^2+17n+5)$.
 The $17$ is $1+16$: one from the two wires and sixteen from the leak. The difference form
 \eqref{eq:rec} keeps the three contributions visible.
 \end{remark}
@@ -725,7 +725,7 @@ $J_{n-1}\le J_n$ and $J_{n+1}\le J_n$.
 
 \begin{proof}
 At a negative valley, $C_n=n^3(J_{n-1}-J_n)\ge0$ and $C_{n+1}=(n+1)^3(J_n-J_{n+1})\le0$, so
-$C_n-C_{n+1}\ge0$, while $\ell_nJ_n<0$. This contradicts \eqref{eq:kirchhoff}. At a positive peak
+$C_n-C_{n+1}\ge0$, while $4(2n+1)^3J_n<0$. This contradicts \eqref{eq:kirchhoff}. At a positive peak
 all the signs reverse.
 \end{proof}
 
@@ -761,7 +761,7 @@ For every $n\ge1$, \ $J_{n-1}/J_n>33$. Hence $0<J_n\le2\zeta(3)\,33^{-n}$ for al
 \end{theorem}
 
 \begin{proof}
-By \cref{prop:decreasing}, $C_{n+1}>0$, so \eqref{eq:kirchhoff} gives $n^3(J_{n-1}-J_n)=C_n>\ell_nJ_n$.
+By \cref{prop:decreasing}, $C_{n+1}>0$, so \eqref{eq:kirchhoff} gives $n^3(J_{n-1}-J_n)=C_n>4(2n+1)^3J_n$.
 Dividing by $n^3J_n$,
 \[
   \frac{J_{n-1}}{J_n}>1+\frac{4(2n+1)^3}{n^3}=1+4\Bigl(2+\frac1n\Bigr)^3>1+4\cdot8=33 .
