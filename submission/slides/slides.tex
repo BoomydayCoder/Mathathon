@@ -392,6 +392,25 @@
   Each series has one of the two properties. A common recurrence shows that they are equal.
 \end{frame}
 
+\begin{frame}{Ball's series}
+  \[
+    \widetilde R_n(t)=n!^2\,(2t+n)\,
+    \frac{(t-1)\cdots(t-n)\cdot(t+n+1)\cdots(t+2n)}{\bigl(t(t+1)\cdots(t+n)\bigr)^4}
+  \]
+  \begin{itemize}
+    \item It is zero for $t\le n$ and positive for $t>n$, and a Stirling-type estimate gives
+      $\widetilde F_n<20(n+1)^4(\sqrt2-1)^{4n}$.
+    \item There is no obvious reason why it should equal $J_n$.
+  \end{itemize}
+  For $n=1$ we can check by hand that it does:
+  \[
+    \widetilde R_1(t)=-\frac2{t^4}+\frac2{(t+1)^4}+\frac5{t^3}+\frac5{(t+1)^3}-\frac5{t^2}+\frac5{(t+1)^2}
+  \]
+  \[
+    \widetilde F_1=-2\zeta(4)+2(\zeta(4)-1)+5\zeta(3)+5(\zeta(3)-1)-5\zeta(2)+5(\zeta(2)-1)=10\zeta(3)-12 .
+  \]
+\end{frame}
+
 \begin{frame}{The certificate for Ball's series}
   The recurrence for $\widetilde F_n$ comes from a telescoping identity whose certificate is
   $\dfrac{\widetilde R_n(t)}{(2t+n)(t+2n-1)(t+2n)}$ times
@@ -421,6 +440,19 @@
     \tau_0=-\tfrac12+\sqrt{\tfrac54+\sqrt2}=1.1322\ldots
   \]}%
   After a few more lines of algebra, $e^{f(\tau_0)}=(\sqrt2-1)^4$, the number from Step 4.
+\end{frame}
+
+\begin{frame}{The end of Zudilin's proof}
+  Zudilin finishes ``using a trivial bound $\Dn<3^n$''. Our Step 5 is enough.
+  We only need $\Dn<3^n$ for infinitely many $n$, because $\widetilde F_n>0$ for every $n$:
+  \[
+    0<q\,\Dn^3J_n<20q\,(n+1)^4\bigl[27(\sqrt2-1)^4\bigr]^n\longrightarrow0
+    \quad\text{along those }n .
+  \]
+  \begin{block}{Zudilin's proof in total}
+    one series for arithmetic $+$ one series for size $+$ two recurrences
+    $+$ two certificates $+$ a bridge $+$ Stirling-type estimates.
+  \end{block}
 \end{frame}
 
 % ======================================================================
@@ -847,38 +879,6 @@
     \item Because of the square the zeros are double, so they survive the derivative.
     \item With the derivative every pole gains a power, which gives cubes and hence $\zeta(3)$.
   \end{itemize}
-\end{frame}
-
-\begin{frame}{Ball's series}
-  \[
-    \widetilde R_n(t)=n!^2\,(2t+n)\,
-    \frac{(t-1)\cdots(t-n)\cdot(t+n+1)\cdots(t+2n)}{\bigl(t(t+1)\cdots(t+n)\bigr)^4}
-  \]
-  \begin{itemize}
-    \item It is zero for $t\le n$ and positive for $t>n$, and a Stirling-type estimate gives
-      $\widetilde F_n<20(n+1)^4(\sqrt2-1)^{4n}$.
-    \item There is no obvious reason why it should equal $J_n$.
-  \end{itemize}
-  For $n=1$ we can check by hand that it does:
-  \[
-    \widetilde R_1(t)=-\frac2{t^4}+\frac2{(t+1)^4}+\frac5{t^3}+\frac5{(t+1)^3}-\frac5{t^2}+\frac5{(t+1)^2}
-  \]
-  \[
-    \widetilde F_1=-2\zeta(4)+2(\zeta(4)-1)+5\zeta(3)+5(\zeta(3)-1)-5\zeta(2)+5(\zeta(2)-1)=10\zeta(3)-12 .
-  \]
-\end{frame}
-
-\begin{frame}{The end of Zudilin's proof}
-  Zudilin finishes ``using a trivial bound $\Dn<3^n$''. Our Step 5 is enough.
-  We only need $\Dn<3^n$ for infinitely many $n$, because $\widetilde F_n>0$ for every $n$:
-  \[
-    0<q\,\Dn^3J_n<20q\,(n+1)^4\bigl[27(\sqrt2-1)^4\bigr]^n\longrightarrow0
-    \quad\text{along those }n .
-  \]
-  \begin{block}{Zudilin's proof in total}
-    one series for arithmetic $+$ one series for size $+$ two recurrences
-    $+$ two certificates $+$ a bridge $+$ Stirling-type estimates.
-  \end{block}
 \end{frame}
 
 \begin{frame}{Six unknowns, five equations}
