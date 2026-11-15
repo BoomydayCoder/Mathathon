@@ -88,6 +88,10 @@ arithmetic kept under control.
 % ======================================================================
 \part{Beukers' integral proof}\label{part:beukers}
 
+This part follows Beukers~\cite{beukers79}, with the Legendre-polynomial point of view of~\cite{beukers80},
+in the motivated form of the team's notes~\cite{codexnotes}. Ap\'ery's theorem itself is from~\cite{apery};
+see~\cite{vdp,cohen} for contemporary accounts and~\cite{fischler} for a survey.
+
 % ======================================================================
 \section{A kernel with the right arithmetic}\label{sec:kernel}
 
@@ -335,8 +339,11 @@ For every positive integer $N$, \ $N!=\prod_{k=1}^ND_{\lfloor N/k\rfloor}$.
 \begin{proof}
 Fix a prime $p$. The exponent of $p$ in $D_m$ is the number of $a\ge1$ with $p^a\le m$, so its
 exponent on the right is $\sum_{a\ge1}\#\{k:\lfloor N/k\rfloor\ge p^a\}=\sum_{a\ge1}\lfloor N/p^a\rfloor$,
-which is Legendre's formula for its exponent in $N!$.
+which is Legendre's formula~\cite{legendre} for its exponent in $N!$.
 \end{proof}
+
+Taking logarithms, and writing $\psi(x)=\log D_{\lfloor x\rfloor}$, the lemma is Chebyshev's identity
+$\log N!=\sum_{k\le N}\psi(N/k)$~\cite{chebyshev}.
 
 \begin{lemma}\label{lem:lcm}
 For every real $\mu>e$ there are infinitely many $n$ with $\Dn<\mu^n$.
@@ -355,7 +362,7 @@ $\log N\ge\log\mu\,(\log N-\log M-1/M)$. Since $\log\mu>1$, this fails for large
 Since $e=\sum_k1/k!<1+\sum_{k\ge1}2^{1-k}=3$, we may take $\mu=3$: $\Dn<3^n$ for infinitely many $n$.
 
 \begin{remark}
-Beukers used the prime number theorem, $\Dn=e^{n+o(n)}$. Any $\mu$ with $e<\mu<\rho^{-1/3}\approx3.24$
+Beukers used the prime number theorem~\cite{hadamard,dlvp}, in the form $\Dn=e^{n+o(n)}$. Any $\mu$ with $e<\mu<\rho^{-1/3}\approx3.24$
 would do here; the analytic estimate is what makes this interval nonempty.
 \end{remark}
 
@@ -400,7 +407,7 @@ $N!=\prod D_{\lfloor N/k\rfloor}$ & infinitely many indices with $\Dn<3^n$\\
 \section{From Beukers' integral to Zudilin's series}\label{sec:zudilin}
 
 Ap\'ery's original proof, and Zudilin's elementary version of it~\cite{zudilin}, never mention
-an integral. They work with sums of values of a rational function. In this section we show that
+an integral; the series form below goes back to Nesterenko~\cite{nesterenko}. They work with sums of values of a rational function. In this section we show that
 this rational function is the Legendre polynomial of \cref{sec:legendre} in disguise, and that the
 sum is the same number $J_n$. Once the translation is made, nothing in Zudilin's starting point is
 arbitrary.
@@ -519,8 +526,8 @@ the positive integral did both jobs at once. Without the integral, something els
 Zudilin's solution~\cite{zudilin} is ingenious, and also the most laborious part of his paper. We
 summarise it here to show what our proof in \cref{part:ours} replaces. Throughout, $J_n$ is the sum of \cref{prop:sum}.
 
-\paragraph{A second series.} Zudilin introduces a different rational function, of the type used by
-Ball and Rivoal,
+\paragraph{A second series.} Zudilin introduces a different rational function, which he attributes to K.~Ball,
+of the type used by Ball and Rivoal~\cite{ballrivoal,rivoal},
 \[
   \widetilde R_n(t)=n!^2\,(2t+n)\,\frac{(t-1)\cdots(t-n)\cdot(t+n+1)\cdots(t+2n)}{\bigl(t(t+1)\cdots(t+n)\bigr)^4},
   \qquad \widetilde F_n=\sum_{t=1}^\infty\widetilde R_n(t).
@@ -546,7 +553,8 @@ played by $\frac{\widetilde R_n(t)}{(2t+n)(t+2n-1)(t+2n)}$ times the polynomial
 &+(358n^4+339n^3+76n^2-7n-3)t^2+(384n^5+396n^4+97n^3-29n^2-17n-2)t\\
 &+n(153n^5+183n^4+50n^3-30n^2-22n-4).
 \end{align*}
-Verifying it is a polynomial expansion; finding it is a job for a computer.\footnote{We checked
+Verifying it is a polynomial expansion; finding it is a job for a computer, using Zeilberger's
+creative telescoping~\cite{zeilberger} (the name goes back to van der Poorten~\cite{vdp}).\footnote{We checked
 both identities symbolically for small $n$, and the values $\widetilde F_1=10\zeta(3)-12$,
 $\widetilde F_2=146\zeta(3)-\frac{351}2$ numerically.}
 
@@ -558,7 +566,7 @@ they agree at $n=0$ and $n=1$. For $n=1$ this can be checked by hand:
 so $\widetilde F_1=-2\zeta(4)+2(\zeta(4)-1)+5\zeta(3)+5(\zeta(3)-1)-5\zeta(2)+5(\zeta(2)-1)=10\zeta(3)-12=J_1$.
 
 \paragraph{Denominators.} Finally, Zudilin concludes ``using a trivial bound $\Dn<3^n$'', without
-proof. \Cref{lem:lcm} is all that is needed. Since $\widetilde F_n>0$ for \emph{every} $n$, it is enough
+proof (the bound holds for all $n$, by Hanson~\cite{hanson}, but that is not trivial). \Cref{lem:lcm} is all that is needed. Since $\widetilde F_n>0$ for \emph{every} $n$, it is enough
 that $\Dn<3^n$ for infinitely many $n$; along those $n$,
 \[
   0<q\,\Dn^3J_n<20q\,(n+1)^4\bigl[27(\sqrt2-1)^4\bigr]^n\longrightarrow0,
@@ -588,8 +596,11 @@ The missing ingredients are the \emph{sign} and the \emph{speed}. The idea is to
 police itself: we look for an equation linking each $J_n$ to its neighbours, of a shape that makes
 negative values and slow decay impossible.
 
-We make no claim of novelty. The recurrence is Ap\'ery's, the certificate we find is Zudilin's
-$S_n$, and deducing positivity from a recurrence is a known idea. What we offer is an arrangement
+We make no claim of novelty, and follow the team's notes~\cite{maxnotes}. The recurrence is Ap\'ery's, the certificate we find is Zudilin's
+$S_n$, and deducing positivity from a recurrence is a known idea: Mingarelli~\cite{mingarelli} treats
+Ap\'ery's linear forms as the recessive solution of a disconjugate recurrence, Mahboubi and
+Sibut-Pinote~\cite{mahboubi} use the constant $33$ and the comparison $27<33$ in their formal
+proof (see also~\cite{cmst}), and Rajkumar~\cite{rajkumar} obtains the rate from the recurrence. What we offer is an arrangement
 in which every step is motivated and nothing beyond the material above is needed.
 
 \subsection{Which equation would we like?}\label{sec:wish}
@@ -692,7 +703,7 @@ contributes nothing, and we obtain, for $n\ge1$,
 \begin{equation}\label{eq:rec}
   (n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n .
 \end{equation}
-It has a physical reading. Think of $J_n$ as the voltage at node $n$ of a chain, joined to node
+It has a physical reading, in the spirit of~\cite{doylesnell}. Think of $J_n$ as the voltage at node $n$ of a chain, joined to node
 $n-1$ by a wire of conductance $n^3$, and to the ground by a leak of conductance
 $4(2n+1)^3$. The current flowing from node $n-1$ to node $n$ is
 \[
@@ -842,18 +853,69 @@ positive integral and an AM--GM estimate, or a discrete maximum principle and a 
 coefficients ($n^3$, $(n+1)^3$, and $17$) as the conductances and the leak of a chain.
 
 % ======================================================================
-\begin{thebibliography}{9}
-\bibitem{apery} R.~Ap\'ery, Irrationalit\'e de $\zeta(2)$ et $\zeta(3)$, \emph{Ast\'erisque}
-  \textbf{61} (1979), 11--13.
+\begin{thebibliography}{99}
+\bibitem{apery} R.~Ap\'ery, Irrationalit\'e de $\zeta2$ et $\zeta3$, \emph{Ast\'erisque} \textbf{61}
+  (1979), 11--13.
+\bibitem{ballrivoal} K.~Ball and T.~Rivoal, Irrationalit\'e d'une infinit\'e de valeurs de la
+  fonction z\^eta aux entiers impairs, \emph{Invent.\ Math.} \textbf{146} (2001), 193--207.
+  \href{https://doi.org/10.1007/s002220100168}{doi:10.1007/s002220100168}.
 \bibitem{beukers79} F.~Beukers, A note on the irrationality of $\zeta(2)$ and $\zeta(3)$,
   \emph{Bull.\ London Math.\ Soc.} \textbf{11} (1979), 268--272.
   \href{https://doi.org/10.1112/blms/11.3.268}{doi:10.1112/blms/11.3.268}.
 \bibitem{beukers80} F.~Beukers, Legendre polynomials in irrationality proofs,
   \emph{Bull.\ Austral.\ Math.\ Soc.} \textbf{22} (1980), 431--438.
+  \href{https://doi.org/10.1017/S0004972700006742}{doi:10.1017/S0004972700006742}.
+\bibitem{chebyshev} P.~L.~Tchebichef, M\'emoire sur les nombres premiers, \emph{J.\ Math.\ Pures
+  Appl.}\ (1) \textbf{17} (1852), 366--390.
+\bibitem{cmst} F.~Chyzak, A.~Mahboubi, T.~Sibut-Pinote and E.~Tassi, A computer-algebra-based formal
+  proof of the irrationality of $\zeta(3)$, in \emph{Interactive Theorem Proving (ITP 2014)},
+  Lecture Notes in Comput.\ Sci.\ \textbf{8558}, Springer, 2014, 160--176.
+  \href{https://doi.org/10.1007/978-3-319-08970-6_11}{doi:10.1007/978-3-319-08970-6\_11}.
+\bibitem{cohen} H.~Cohen, D\'emonstration de l'irrationalit\'e de $\zeta(3)$ (d'apr\`es R.~Ap\'ery),
+  \emph{S\'eminaire de Th\'eorie des Nombres de Grenoble} \textbf{6} (1977--1978), expos\'e 6, 1--9.
+\bibitem{dlvp} C.-J.~de la Vall\'ee Poussin, Recherches analytiques sur la th\'eorie des nombres
+  premiers, \emph{Ann.\ Soc.\ Sci.\ Bruxelles} \textbf{20} (1896), 183--256.
+\bibitem{doylesnell} P.~G.~Doyle and J.~L.~Snell, \emph{Random Walks and Electric Networks}, Carus
+  Math.\ Monographs \textbf{22}, Math.\ Assoc.\ America, 1984.
+  \href{https://arxiv.org/abs/math/0001057}{arXiv:math/0001057}.
+\bibitem{fischler} S.~Fischler, Irrationalit\'e de valeurs de z\^eta (d'apr\`es Ap\'ery, Rivoal,
+  \dots), S\'eminaire Bourbaki, expos\'e 910, \emph{Ast\'erisque} \textbf{294} (2004), 27--62.
+  \href{https://arxiv.org/abs/math/0303066}{arXiv:math/0303066}.
+\bibitem{hadamard} J.~Hadamard, Sur la distribution des z\'eros de la fonction $\zeta(s)$ et ses
+  cons\'equences arithm\'etiques, \emph{Bull.\ Soc.\ Math.\ France} \textbf{24} (1896), 199--220.
+  \href{https://doi.org/10.24033/bsmf.545}{doi:10.24033/bsmf.545}.
+\bibitem{hanson} D.~Hanson, On the product of the primes, \emph{Canad.\ Math.\ Bull.}\ \textbf{15}
+  (1972), 33--37. \href{https://doi.org/10.4153/CMB-1972-007-7}{doi:10.4153/CMB-1972-007-7}.
+\bibitem{legendre} A.-M.~Legendre, \emph{Essai sur la th\'eorie des nombres}, 2nd ed., Courcier,
+  Paris, 1808.
+\bibitem{mahboubi} A.~Mahboubi and T.~Sibut-Pinote, A formal proof of the irrationality of
+  $\zeta(3)$, \emph{Log.\ Methods Comput.\ Sci.} \textbf{17}(1) (2021), 16:1--16:25.
+  \href{https://arxiv.org/abs/1912.06611}{arXiv:1912.06611}.
+\bibitem{mingarelli} A.~B.~Mingarelli, Principal solutions of recurrence relations and
+  irrationality questions in number theory, \emph{Mathematics} \textbf{11}(2) (2023), 262.
+  \href{https://doi.org/10.3390/math11020262}{doi:10.3390/math11020262};
+  \href{https://arxiv.org/abs/math/0608577}{arXiv:math/0608577}.
+\bibitem{nesterenko} Yu.~V.~Nesterenko, A few remarks on $\zeta(3)$, \emph{Mat.\ Zametki}
+  \textbf{59}:6 (1996), 865--880; English transl.\ \emph{Math.\ Notes} \textbf{59}:6 (1996), 625--636.
+\bibitem{rajkumar} K.~Rajkumar, A simplification of Ap\'ery's proof of the irrationality of
+  $\zeta(3)$, preprint, 2012. \href{https://arxiv.org/abs/1212.5881}{arXiv:1212.5881}.
+\bibitem{rivoal} T.~Rivoal, La fonction z\^eta de Riemann prend une infinit\'e de valeurs
+  irrationnelles aux entiers impairs, \emph{C.\ R.\ Acad.\ Sci.\ Paris S\'er.\ I Math.}\ \textbf{331}
+  (2000), 267--270. \href{https://arxiv.org/abs/math/0008051}{arXiv:math/0008051}.
 \bibitem{vdp} A.~van der Poorten, A proof that Euler missed\dots\ Ap\'ery's proof of the
-  irrationality of $\zeta(3)$, \emph{Math.\ Intelligencer} \textbf{1} (1979), 195--203.
-\bibitem{zudilin} W.~Zudilin, An elementary proof of Ap\'ery's theorem, 2002,
-  \href{https://arxiv.org/abs/math/0202159}{arXiv:math/0202159}.
+  irrationality of $\zeta(3)$. An informal report, \emph{Math.\ Intelligencer} \textbf{1} (1979),
+  195--203. \href{https://doi.org/10.1007/BF03028234}{doi:10.1007/BF03028234}.
+\bibitem{zeilberger} D.~Zeilberger, The method of creative telescoping, \emph{J.\ Symbolic Comput.}\
+  \textbf{11} (1991), 195--204.
+  \href{https://doi.org/10.1016/S0747-7171(08)80044-2}{doi:10.1016/S0747-7171(08)80044-2}.
+\bibitem{zudilin} W.~Zudilin, An elementary proof of Ap\'ery's theorem, preprint, 2002,
+  \href{https://arxiv.org/abs/math/0202159}{arXiv:math/0202159}; published as Ap\'ery's theorem.
+  Thirty years after, \emph{Int.\ J.\ Math.\ Comput.\ Sci.}\ \textbf{4} (2009), no.~1, 9--19.
+\bibitem{codexnotes} Mathathon team, \emph{Why $\zeta(3)$ is irrational: a proof built from its
+  requirements}, internal notes, November 2026
+  (\texttt{Peer Review/Zeta3-4-Motivated-proof-Codex/zeta3-motivated-proof.pdf}).
+\bibitem{maxnotes} Mathathon team, \emph{The irrationality of $\zeta(3)$: a maximum-principle
+  proof}, internal notes (guess-and-check edition), November 2026.
 \end{thebibliography}
 
 \end{document}
