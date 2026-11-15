@@ -58,18 +58,47 @@
 % ----------------------------------------------------------------------
 \section{The approach}
 
-\begin{frame}{Step 1: a kernel with the right arithmetic}
+\begin{frame}{Step 1: writing $\zeta(3)$ as an integral}
+  Integration turns powers into reciprocals of integers:
   \[
-    K(x,y)=\frac{-\log(xy)}{1-xy},\qquad \iint_{[0,1]^2}K=2\zeta(3).
+    \int_0^1x^m\dd x=\frac1{m+1},\qquad
+    \int_0^1-x^m\log x\dd x=\frac1{(m+1)^2}\quad\text{(integrate by parts).}
   \]
-  Expanding $\frac1{1-xy}=\sum(xy)^m$:
+  \pause
+  \textbf{Multiply} the two, using a second variable $y$:
   \[
-    \iint x^ry^rK=2\Bigl(\zeta(3)-\sum_{j\le r}\tfrac1{j^3}\Bigr),\qquad
-    \iint x^ry^sK=\frac{H^{(2)}_r-H^{(2)}_s}{r-s}\quad(r\ne s).
+    \int_0^1\!\!\int_0^1-(xy)^m\log x\dd x\dd y=\frac1{(m+1)^3}.
   \]
-  \begin{block}{Consequence}
-    For every integer polynomial $P$ of degree $\le n$:\quad
+  \pause
+  \textbf{Symmetrise}: $-\log x-\log y=-\log(xy)$, so
+  $\displaystyle\iint-(xy)^m\log(xy)\dd x\dd y=\frac2{(m+1)^3}$.
+  \pause
+
+  \textbf{Sum over $m\ge0$}, using $\sum_m(xy)^m=\frac1{1-xy}$:
+  \[
+    \iint_{[0,1]^2}\frac{-\log(xy)}{1-xy}\dd x\dd y=2\zeta(3).
+  \]
+\end{frame}
+
+\begin{frame}{Step 1 continued: play with the integral}
+  Call $K(x,y)=\frac{-\log(xy)}{1-xy}$ the \alert{kernel}. What if we put more in front of it?
+  \pause
+  \begin{itemize}
+    \item Insert $x^ry^r$: the sum just starts later,
+      \[
+        \iint x^ry^rK=2\sum_{m>r}\frac1{m^3}=2\zeta(3)-2\Bigl(1+\frac1{2^3}+\dots+\frac1{r^3}\Bigr).
+      \]
+    \item Insert $x^ry^s$ with $r\ne s$: the sum telescopes and $\zeta(3)$ disappears,
+      \[
+        \iint x^ry^sK=\frac1{r-s}\sum_{j=s+1}^{r}\frac1{j^2}\in\mathbb Q .
+      \]
+  \end{itemize}
+  \pause
+  \begin{block}{So every polynomial gives a linear combination of $\zeta(3)$ and $1$}
+    For an integer polynomial $P$ of degree $\le n$:\quad
     $\Dn^3\iint P(x)P(y)K\in\Z+\Z\zeta(3)$.
+    \\[2pt]
+    Example: $P=1-2x$ gives $10\zeta(3)-12\approx0.0206$. \ Small! Can we do better?
   \end{block}
 \end{frame}
 

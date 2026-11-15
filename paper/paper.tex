@@ -81,10 +81,32 @@ arithmetic kept under control.
 % ======================================================================
 \section{A kernel with the right arithmetic}\label{sec:kernel}
 
+\subsection{Writing \texorpdfstring{$\zeta(3)$}{zeta(3)} as an integral}
+
 Integration turns powers into reciprocals of integers:
-$\int_0^1x^m\dd x=\frac1{m+1}$ and $\int_0^1x^m(-\log x)\dd x=\frac1{(m+1)^2}$. One logarithm
-and two variables give three powers in a denominator, and a geometric series synchronises the
-exponents.
+\[
+  \int_0^1x^m\dd x=\frac1{m+1},\qquad \int_0^1-x^m\log x\dd x=\frac1{(m+1)^2},
+\]
+the second by integration by parts (or by differentiating the first with respect to $m$).
+Multiplying the two, with a second variable $y$, gives a cube:
+\[
+  \int_0^1\!\!\int_0^1-(xy)^m\log x\dd x\dd y=\frac1{(m+1)^3}.
+\]
+The roles of $x$ and $y$ are interchangeable, so we symmetrise: since $-\log x-\log y=-\log(xy)$,
+\[
+  \int_0^1\!\!\int_0^1-(xy)^m\log(xy)\dd x\dd y=\frac2{(m+1)^3}.
+\]
+Finally we sum over $m\ge0$, using $\sum_{m\ge0}(xy)^m=\frac1{1-xy}$ (all terms are nonnegative,
+so Tonelli's theorem allows the interchange):
+\begin{equation}\label{eq:zeta3int}
+  \int_0^1\!\!\int_0^1\frac{-\log(xy)}{1-xy}\dd x\dd y=2\zeta(3).
+\end{equation}
+
+\subsection{Modifying the integral}
+
+Having $\zeta(3)$ as an integral, we experiment: what happens if we put other functions in front of
+the integrand? Inserting monomials $x^ry^s$ produces linear combinations of $\zeta(3)$ and $1$
+(\cref{lem:moments}), and hence so does inserting any polynomial $P(x)P(y)$.
 
 \begin{definition}
 For $0<x,y<1$ let
@@ -111,7 +133,7 @@ nonnegative, so Tonelli's theorem allows termwise integration:
 \[
   M_{rs}=\sum_{m\ge0}\Bigl(\frac1{(m+r+1)^2(m+s+1)}+\frac1{(m+r+1)(m+s+1)^2}\Bigr).
 \]
-For $r=s$ this is $2\sum_{k>r}k^{-3}$. For $r>s$ put $d=r-s$ and $a=m+s+1$; the summand is
+For $r=s$ this is $2\sum_{k>r}k^{-3}$: the sum in \eqref{eq:zeta3int} simply starts later. For $r>s$ put $d=r-s$ and $a=m+s+1$; the summand is
 $\frac{2a+d}{a^2(a+d)^2}=\frac1d\bigl(\frac1{a^2}-\frac1{(a+d)^2}\bigr)$, and the sum telescopes to
 $\frac1d\bigl(H^{(2)}_r-H^{(2)}_s\bigr)$. The case $s>r$ follows by symmetry.
 \end{proof}
