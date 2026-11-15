@@ -1,0 +1,7 @@
+H = (XL+LX)/2 + 1/2: 0
+eigen + tridiagonal formulas, n=1..6: True
+quadratic form: 0
+intertwining: 0
+hyperbolic change of variables: 0
+[L,Z] = 2(LX+XL) - 2L: 0
+[Z,X] = 2X^2 - 2X: 0

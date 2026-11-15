@@ -1091,10 +1091,10 @@ theorem.
 minutes. No other work was done before Round~1 started.
 
 \paragraph{Night 1: literature review.} Overnight we ran two AI agents in parallel in our
-repository, under a shared written brief (\texttt{research/INSTRUCTIONS.md}): Codex (Astra~6) and
+repository, under a shared written brief (\texttt{supplementary/ai-brief/INSTRUCTIONS.md}): Codex (Astra~6) and
 Claude (Fable~5.2 and Opus~5.5). They retrieved and read the sources, wrote line-by-line expositions
-of Zudilin's and Beukers' proofs, and reviewed each other's work. Their output is in the folder
-\texttt{Peer Review/} of the repository, with the scripts they used to check identities.
+of Zudilin's and Beukers' proofs, and reviewed each other's work. The parts of their output that
+this report relies on are in \texttt{supplementary/team-notes/}.
 A second overnight session of Codex (Astra~6), run by one team member, wrote the motivated exposition of
 Beukers' proof (the team's notes~\cite{codexnotes}) that \cref{part:beukers} follows.
 
@@ -1112,8 +1112,8 @@ this report and the slides from the team's notes, under our direction: the struc
 motivation-first exposition, and what to include or cut were our decisions.
 
 \paragraph{How the AI output was checked.} The identities were checked by computer algebra and the
-numbers by high-precision numerics (\cref{sec:status}); the scripts and their outputs are in the
-repository. Each agent's documents were reviewed by the other agent. Bibliographic details were
+numbers by high-precision numerics (\cref{sec:status}); the scripts and their outputs are in
+\texttt{supplementary/checks/}. Each agent's documents were reviewed by the other agent. Bibliographic details were
 checked against publisher and archive records, and the papers closest to \cref{part:ours} were read
 in full for the novelty check.
 
@@ -1194,11 +1194,12 @@ through it in detail, which became \cref{part:ours}. Together this covers every 
   Thirty years after, \emph{Int.\ J.\ Math.\ Comput.\ Sci.}\ \textbf{4} (2009), no.~1, 9--19.
 \bibitem{codexnotes} Mathathon team, \emph{Why $\zeta(3)$ is irrational: a proof built from its
   requirements}, internal notes, November 2026
-  (\texttt{Peer Review/Zeta3-4-Motivated-proof-Codex/zeta3-motivated-proof.pdf}).
+  (\texttt{supplementary/team-notes/zeta3-motivated-proof.pdf}).
 \bibitem{maxnotes} Mathathon team, \emph{The irrationality of $\zeta(3)$: a maximum-principle
-  proof}, internal notes (guess-and-check edition), November 2026.
+  proof}, internal notes (guess-and-check edition), November 2026
+  (\texttt{supplementary/team-notes/zeta3-guess-and-check.pdf}).
 \bibitem{opnotes} Mathathon team, \emph{The operator picture of the proof that $\zeta(3)$ is
-  irrational}, internal notes, November 2026 (\texttt{Peer Review/Digest/operator-picture.tex}).
+  irrational}, internal notes, November 2026 (\texttt{supplementary/team-notes/operator-picture.pdf}).
 \end{thebibliography}
 
 \end{document}

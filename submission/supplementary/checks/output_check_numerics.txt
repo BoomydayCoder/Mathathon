@@ -1,0 +1,9 @@
+J_0 = 2.40411380631919   bound 2 zeta(3) 33^-n holds: True
+J_1 = 0.0205690315959429   bound 2 zeta(3) 33^-n holds: True
+J_2 = 0.000307861300765668   bound 2 zeta(3) 33^-n holds: True
+J_3 = 5.6867830403608e-6   bound 2 zeta(3) 33^-n holds: True
+J_4 = 1.17319802731296e-7   bound 2 zeta(3) 33^-n holds: True
+J_5 = 2.59098318066149e-9   bound 2 zeta(3) 33^-n holds: True
+ratios J_{n-1}/J_n: ['116.88', '66.8127', '54.1363', '48.4725', '45.28']  17+12 sqrt2 = 33.9706
+J_1 - (10 zeta(3) - 12) = 5.0223e-42
+J_2 - (146 zeta(3) - 351/2) = -8.4313e-40

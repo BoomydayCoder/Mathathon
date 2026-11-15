@@ -1,0 +1,5 @@
+n=1: residual 0
+n=2: residual 0
+n=3: residual 0
+F~_1 - (10 zeta(3) - 12) = 8.0119e-32
+F~_2 - (146 zeta(3) - 351/2) = -6.3894e-30
