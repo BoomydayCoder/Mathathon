@@ -155,13 +155,24 @@
   \]
 \end{frame}
 
-\begin{frame}{Step 3: separation of variables, and positivity}
-  $K(x,y)$ mixes $x$ and $y$. Write it as an integral, over a parameter $t$, of products:
+\begin{frame}{Step 3: separation of variables}
+  $K(x,y)$ mixes $x$ and $y$.
+  \medskip
+
+  Borrow an idea from differential equations: write a function of two variables as a
+  superposition of products, $u(x,t)=\sum_kv_k(x)w_k(t)$.
+
+  Here we write $K$ as an integral, over a parameter $t$, of products $v_t(x)\,w_t(y)$:
   \[
-    K(x,y)=\int_0^\infty\frac1{x+t}\cdot\frac1{1+yt}\dd t ,
-    \qquad
-    J_n=\int_0^\infty\Bigl(\int_0^1\frac{P_n(x)}{x+t}\dd x\Bigr)\Bigl(\int_0^1\frac{P_n(y)}{1+yt}\dd y\Bigr)\dd t .
+    K(x,y)=\int_0^\infty\underbrace{\frac1{x+t}}_{v_t(x)}\cdot\underbrace{\frac1{1+yt}}_{w_t(y)}\dd t .
   \]
+  {\footnotesize (Partial fractions: $\int_0^\infty\frac{\dd t}{(t+a)(t+b)}=\frac{\log b-\log a}{b-a}$ with $a=x$, $b=1/y$, after writing $1+yt=y(t+b)$.)}
+  \[
+    J_n=\int_0^\infty\Bigl(\int_0^1\frac{P_n(x)}{x+t}\dd x\Bigr)\Bigl(\int_0^1\frac{P_n(y)}{1+yt}\dd y\Bigr)\dd t
+  \]
+\end{frame}
+
+\begin{frame}{Step 3: positivity}
   Integrate by parts $n$ times in $x$ and in $y$; signs and factorials cancel:
   \[
     J_n=\int_0^\infty\!\!\iint_{[0,1]^2}
@@ -170,23 +181,54 @@
   The integrand is positive.
 \end{frame}
 
-\begin{frame}{Step 4: exponential decay}
+\begin{frame}{Step 4: exponential decay, AM--GM twice}
   $J_n=\displaystyle\int\frac{G^n}{Q}$ \ with \ $Q=(x+t)(1+yt)$ \ and \ $G=\dfrac{x(1-x)\,y(1-y)\,t}{Q}$.
-
-  If $G\le\rho$ everywhere, then $J_n\le\rho^n\int\frac1Q=2\zeta(3)\rho^n$.
   \medskip
 
-  AM--GM, used twice, with $u=\sqrt{xy}$: \quad $\dfrac Qt\ge(1+u)^2$ \ and \ $(1-x)(1-y)\le(1-u)^2$, \ so
+  If $G\le\rho$ everywhere, then $J_n\le\rho^n\displaystyle\int\frac1Q=2\zeta(3)\rho^n$.
+  \medskip
+
+  AM--GM, used twice, reduces three variables to one. Put $u=\sqrt{xy}$.
+  \begin{itemize}
+    \item Denominator: $\dfrac Qt=1+xy+\underbrace{yt+\dfrac xt}_{\ge2\sqrt{xy}}\ge(1+u)^2$
+      \newline\mbox{}\hfill{\small equality when $t=\sqrt{x/y}$ balances $yt$ and $x/t$}
+    \item Numerator: $(1-x)(1-y)=1-\underbrace{(x+y)}_{\ge2\sqrt{xy}}+xy\le(1-u)^2$
+      \newline\mbox{}\hfill{\small for fixed $xy$, equality when $x=y$}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Step 4: a one-variable problem}
   \[
-    G\le\Bigl(\frac{u(1-u)}{1+u}\Bigr)^2\le\alpha^4,\qquad\alpha=\sqrt2-1,
+    G=\frac{xy\,(1-x)(1-y)}{Q/t}\le\Bigl(\underbrace{\frac{u(1-u)}{1+u}}_{g(u)}\Bigr)^2 .
   \]
-  because \ $\alpha^2(1+u)-u(1-u)=(u-\alpha)^2\ge0$.
+  Maximise $g$ by calculus. The numerator of $g'(u)$ is
+  \[
+    (1-2u)(1+u)-u(1-u)=1-2u-u^2,
+  \]
+  which vanishes at $u=\alpha=\sqrt2-1$.
+  \medskip
+
+  Using $1-\alpha=\sqrt2\,\alpha$ and $1+\alpha=\sqrt2$:\quad $g(\alpha)=\alpha^2$.
+\end{frame}
+
+\begin{frame}{Step 4: why $(u-\alpha)^2$?}
+  We can also check the maximum without calculus. We want $\alpha^2(1+u)-u(1-u)\ge0$.
+  \medskip
+
+  This quadratic in $u$ would then be $\ge0$ and vanish at $u=\alpha$, so $\alpha$ would be a
+  double root, and the quadratic a perfect square. Indeed:
+  \[
+    \alpha^2(1+u)-u(1-u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
+  \]
+  and this is true because $1-\alpha^2=2\alpha$, i.e.\ $\alpha^2+2\alpha-1=0$.
   \begin{block}{Result}
+    $G\le\alpha^4=(\sqrt2-1)^4=17-12\sqrt2\approx\frac1{34}$, \ equality at $x=y=\alpha$, $t=1$:
     \[
-      0<J_n\le2\zeta(3)\,(\sqrt2-1)^{4n},\qquad(\sqrt2-1)^4=17-12\sqrt2\approx\tfrac1{34}.
+      0<J_n\le2\zeta(3)\,(17-12\sqrt2)^n,\qquad\lim J_n^{1/n}=17-12\sqrt2.
     \]
   \end{block}
 \end{frame}
+
 
 \begin{frame}{Step 5: least common multiples, without the prime number theorem}
   \begin{block}{Identity}
@@ -199,9 +241,7 @@
     \item If $D_m\ge\mu^m$ for all large $m$, then $\log N!\gtrsim\log\mu\cdot N\log N$.
       But $\log N!\le N\log N$, so $\log\mu\le1$, that is, $\mu\le e$.
     \item So for every $\mu>e$ we have $\Dn<\mu^n$ for \alert{infinitely many} $n$.
-    \item Take $\mu=3$, which is allowed because
-      $e=\sum_{k\ge0}\frac1{k!}<1+\sum_{k\ge1}2^{1-k}=3$.
-      This suffices, because $J_n>0$ for every $n$.
+    \item Since $3>e$, take $\mu=3$. This suffices, because $J_n>0$ for every $n$.
   \end{itemize}
 \end{frame}
 
@@ -686,80 +726,6 @@
 % Backup slides, not presented; in talk order.
 \appendix
 \section{Backup slides}
-
-\begin{frame}{Step 3 in detail: separation of variables}
-  $K(x,y)$ mixes $x$ and $y$.
-  \medskip
-
-  Borrow an idea from differential equations: write a function of two variables as a
-  superposition of products, $u(x,t)=\sum_kv_k(x)w_k(t)$.
-
-  Here we write $K$ as an integral, over a parameter $t$, of products $v_t(x)\,w_t(y)$:
-  \[
-    K(x,y)=\int_0^\infty\underbrace{\frac1{x+t}}_{v_t(x)}\cdot\underbrace{\frac1{1+yt}}_{w_t(y)}\dd t .
-  \]
-  {\footnotesize (Partial fractions: $\int_0^\infty\frac{\dd t}{(t+a)(t+b)}=\frac{\log b-\log a}{b-a}$ with $a=x$, $b=1/y$, after writing $1+yt=y(t+b)$.)}
-  \[
-    J_n=\int_0^\infty\Bigl(\int_0^1\frac{P_n(x)}{x+t}\dd x\Bigr)\Bigl(\int_0^1\frac{P_n(y)}{1+yt}\dd y\Bigr)\dd t
-  \]
-\end{frame}
-
-\begin{frame}{Step 3 in detail: positivity}
-  Integrate by parts $n$ times in $x$ and in $y$; signs and factorials cancel:
-  \[
-    J_n=\int_0^\infty\!\!\iint_{[0,1]^2}
-    \frac{[x(1-x)\,y(1-y)\,t]^n}{[(x+t)(1+yt)]^{n+1}}\dd x\dd y\dd t\;>\;0.
-  \]
-  The integrand is positive.
-\end{frame}
-
-\begin{frame}{Step 4 in detail: AM--GM twice}
-  $J_n=\displaystyle\int\frac{G^n}{Q}$ \ with \ $Q=(x+t)(1+yt)$ \ and \ $G=\dfrac{x(1-x)\,y(1-y)\,t}{Q}$.
-  \medskip
-
-  If $G\le\rho$ everywhere, then $J_n\le\rho^n\displaystyle\int\frac1Q=2\zeta(3)\rho^n$.
-  \medskip
-
-  AM--GM, used twice, reduces three variables to one. Put $u=\sqrt{xy}$.
-  \begin{itemize}
-    \item Denominator: $\dfrac Qt=1+xy+\underbrace{yt+\dfrac xt}_{\ge2\sqrt{xy}}\ge(1+u)^2$
-      \newline\mbox{}\hfill{\small equality when $t=\sqrt{x/y}$ balances $yt$ and $x/t$}
-    \item Numerator: $(1-x)(1-y)=1-\underbrace{(x+y)}_{\ge2\sqrt{xy}}+xy\le(1-u)^2$
-      \newline\mbox{}\hfill{\small for fixed $xy$, equality when $x=y$}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Step 4 in detail: a one-variable problem}
-  \[
-    G=\frac{xy\,(1-x)(1-y)}{Q/t}\le\Bigl(\underbrace{\frac{u(1-u)}{1+u}}_{g(u)}\Bigr)^2 .
-  \]
-  Maximise $g$ by calculus. The numerator of $g'(u)$ is
-  \[
-    (1-2u)(1+u)-u(1-u)=1-2u-u^2,
-  \]
-  which vanishes at $u=\alpha=\sqrt2-1$.
-  \medskip
-
-  Using $1-\alpha=\sqrt2\,\alpha$ and $1+\alpha=\sqrt2$:\quad $g(\alpha)=\alpha^2$.
-\end{frame}
-
-\begin{frame}{Step 4 in detail: why $(u-\alpha)^2$?}
-  We can also check the maximum without calculus. We want $\alpha^2(1+u)-u(1-u)\ge0$.
-  \medskip
-
-  This quadratic in $u$ would then be $\ge0$ and vanish at $u=\alpha$, so $\alpha$ would be a
-  double root, and the quadratic a perfect square. Indeed:
-  \[
-    \alpha^2(1+u)-u(1-u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
-  \]
-  and this is true because $1-\alpha^2=2\alpha$, i.e.\ $\alpha^2+2\alpha-1=0$.
-  \begin{block}{Result}
-    $G\le\alpha^4=(\sqrt2-1)^4=17-12\sqrt2\approx\frac1{34}$, \ equality at $x=y=\alpha$, $t=1$:
-    \[
-      0<J_n\le2\zeta(3)\,(17-12\sqrt2)^n,\qquad\lim J_n^{1/n}=17-12\sqrt2.
-    \]
-  \end{block}
-\end{frame}
 
 \begin{frame}{Why a square?}
   Expand the kernel's denominator, indexing the terms by $t=1,2,3,\dots$:
