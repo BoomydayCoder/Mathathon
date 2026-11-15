@@ -446,21 +446,17 @@
   Checking it: expand a polynomial identity in $t$ and $n$. \quad Finding it: a computer.
 \end{frame}
 
-\begin{frame}{And a ``trivial'' bound}
-  Zudilin finishes ``using a trivial bound $\Dn<3^n$''.
-  \pause
-  \medskip
-
-  What the proof needs: \ $\limsup\Dn^{1/n}<(\sqrt2+1)^{4/3}\approx3.24$.
-  \begin{itemize}
-    \item The bound that really is easy, $\prod_{p\le n}p<4^n$, gives $\Dn\le4^{n+o(n)}$,
-      and $4^3(\sqrt2-1)^4\approx1.88>1$. \alert{Not enough.}
-    \item One needs a Chebyshev-type estimate, or the prime number theorem.
-  \end{itemize}
+\begin{frame}{Zudilin's proof in total}
+  Zudilin finishes ``using a trivial bound $\Dn<3^n$''. Our Step 5 is all he needs:
+  $\Dn<3^n$ for \alert{infinitely many} $n$ is enough, because $\widetilde F_n>0$ for \emph{every} $n$:
+  \[
+    0<q\,\Dn^3F_n<20q\,(n+1)^4\bigl[27(\sqrt2-1)^4\bigr]^n\longrightarrow0
+    \quad\text{along those }n .
+  \]
   \pause
   \begin{block}{Zudilin's proof in total}
     one series for arithmetic $+$ one series for size $+$ two recurrences
-    $+$ two certificates $+$ a bridge $+$ Stirling $+$ prime numbers.
+    $+$ two certificates $+$ a bridge $+$ Stirling-type estimates.
   \end{block}
 \end{frame}
 
@@ -728,7 +724,7 @@
     recurrences & two (one certificate of degree 6) & one, from five coefficients\\
     positivity & positive terms of Ball's series & no negative valley\\
     size & Stirling-type estimates & leak $>32\times$ conductance\\
-    denominators & $\Dn<3^n$ (Chebyshev-strength) & $N!=\prod D_{\lfloor N/k\rfloor}$\\
+    denominators & $\Dn<3^n$ infinitely often (Step 5) & no uniform bound beyond $e^n$\\
     \bottomrule
   \end{tabular}
   \medskip

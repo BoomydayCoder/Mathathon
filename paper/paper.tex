@@ -55,10 +55,10 @@ $-\log(xy)/(1-xy)$, with the shifted Legendre polynomial chosen to cancel as muc
 gives $0<J_n\le2\zeta(3)(\sqrt2-1)^{4n}$. In \cref{part:sums} we show that the Mellin transform of
 the Legendre polynomial is Zudilin's rational function $\frac{(1-t)\cdots(n-t)}{t(t+1)\cdots(t+n)}$,
 so that $J_n$ is also a sum, and we summarise how Zudilin obtains the size of that sum. In
-\cref{part:ours} we replace Zudilin's second series, second recurrence and prime-number input by a
+\cref{part:ours} we replace Zudilin's second series, second recurrence and size estimates by a
 discrete maximum principle: Ap\'ery's recurrence, found by matching five coefficients and read as
-Kirchhoff's law for a leaky chain of conductors, forces $0<J_n\le2\zeta(3)\,33^{-n}$. In both
-proofs an identity between $N!$ and least common multiples replaces the prime number theorem.
+Kirchhoff's law for a leaky chain of conductors, forces $0<J_n\le2\zeta(3)\,33^{-n}$. Throughout,
+an identity between $N!$ and least common multiples replaces the prime number theorem.
 \end{abstract}
 
 \tableofcontents
@@ -558,15 +558,18 @@ they agree at $n=0$ and $n=1$. The case $n=1$ is a small miracle of cancellation
 \]
 so $\widetilde F_1=-2\zeta(4)+2(\zeta(4)-1)+5\zeta(3)+5(\zeta(3)-1)-5\zeta(2)+5(\zeta(2)-1)=10\zeta(3)-12=F_1$.
 
-\paragraph{Prime numbers.} Finally, Zudilin concludes ``using a trivial bound $\Dn<3^n$''. What is
-needed is $\limsup\Dn^{1/n}<(\sqrt2+1)^{4/3}\approx3.24$. The bound that really is easy,
-$\prod_{p\le n}p<4^n$, gives only $\Dn\le4^{n+o(n)}$, and $4^3(\sqrt2-1)^4\approx1.88>1$ is not
-enough. One needs a Chebyshev-type estimate or the prime number theorem.
+\paragraph{Denominators.} Finally, Zudilin concludes ``using a trivial bound $\Dn<3^n$'', without
+proof. \Cref{lem:lcm} is all that is needed. Since $\widetilde F_n>0$ for \emph{every} $n$, it is enough
+that $\Dn<3^n$ for infinitely many $n$; along those $n$,
+\[
+  0<q\,\Dn^3F_n<20q\,(n+1)^4\bigl[27(\sqrt2-1)^4\bigr]^n\longrightarrow0,
+\]
+because $27(\sqrt2-1)^4<1$ (\cref{sec:contradiction}). So Zudilin's proof, too, needs no prime number
+theorem.
 
 \medskip
 In total: one series for the arithmetic, a second series for the size, two recurrences with two
-certificates (one of degree six), a bridge lemma, Stirling-type estimates, and a prime number
-estimate. The next part keeps the first series and the first certificate, and replaces everything
+certificates (one of degree six), a bridge lemma, and Stirling-type estimates. The next part keeps the first series and the first certificate, and replaces everything
 else by about a page.
 
 % ======================================================================
@@ -827,7 +830,7 @@ arithmetic & moments of $K$ & partial fractions & partial fractions\\
 positivity & integration by parts & positive terms of Ball's series & no negative valley\\
 size & $\max G=(\sqrt2-1)^4$ & Stirling-type estimates & leak $>32\times$ conductance\\
 recurrences & none & two (one of degree six) & one, from five coefficients\\
-denominators & $\Dn<3^n$ infinitely often & $\Dn<3^n$ (Chebyshev) & uniform bound $\Rightarrow$ base $\le e$\\
+denominators & $\Dn<3^n$ infinitely often & $\Dn<3^n$ infinitely often & uniform bound $\Rightarrow$ base $\le e$\\
 \bottomrule
 \end{tabular}
 \caption{Three proofs of the same theorem with the same numbers $J_n$.}
@@ -835,8 +838,8 @@ denominators & $\Dn<3^n$ infinitely often & $\Dn<3^n$ (Chebyshev) & uniform boun
 \end{table}
 
 Beukers' proof and ours obtain the sign and the size of the same numbers in two different ways: a
-positive integral and an AM--GM estimate, or a discrete maximum principle and a leak. Both avoid
-the prime number theorem. Ours never leaves the world of sums, and it explains Ap\'ery's
+positive integral and an AM--GM estimate, or a discrete maximum principle and a leak. With
+\cref{lem:factorial}, none of the three proofs needs the prime number theorem. Ours never leaves the world of sums, and it explains Ap\'ery's
 coefficients ($n^3$, $(n+1)^3$, and $17$) as the conductances and the leak of a chain.
 
 % ======================================================================
