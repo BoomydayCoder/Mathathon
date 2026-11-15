@@ -401,6 +401,28 @@ $N!=\prod D_{\lfloor N/k\rfloor}$ & infinitely many indices with $\Dn<3^n$\\
 \label{tab:ingredients}
 \end{table}
 
+\subsection{The same polynomial proves more}\label{sec:relatives}
+
+The scheme of this part (an integral whose arithmetic is controlled, the Legendre polynomial $P_n$,
+integration by parts to make the integral positive, a maximum to bound its size, and
+\cref{lem:lcm} for the denominators) proves several classical results with almost no change. We
+only state the outcomes; the details are in the team's notes~\cite{codexnotes}, Section~15.
+\begin{itemize}
+  \item $\log2$: $L_n=\int_0^1\frac{P_n(x)}{1+x}\dd x$ satisfies $\Dn L_n\in\Z+\Z\log2$ and, after
+    integration by parts, $0<L_n=\int_0^1\frac{[x(1-x)]^n}{(1+x)^{n+1}}\dd x\le\log2\,(\sqrt2-1)^{2n}$.
+    Since $3(\sqrt2-1)^2<1$, $\log 2$ is irrational. Replacing $1+x$ by $a+x$ gives $\log\frac{a+1}a$.
+  \item $\zeta(2)$: with the kernel $\frac1{1-xy}$ and the product $P_n(x)(1-y)^n$, the integral is a
+    linear form in $1,\zeta(2)$ with denominator $\Dn^2$, positive after integrating by parts in $x$,
+    and at most $\zeta(2)\beta^{5n}$ with $\beta=\frac{\sqrt5-1}2$; and $9\beta^5<1$.
+  \item $e^a$ for a positive integer $a$: $W_n=\int_0^1P_n(x)e^{ax}\dd x$ has $a^{n+1}W_n\in\Z+\Z e^a$,
+    and Rodrigues' formula gives $0<a^{n+1}|W_n|\le ae^a\frac{(a^2/4)^n}{n!}$. Taking powers, $e^q$
+    is irrational for every rational $q\ne0$, and so is $\log r$ for every rational $r>0$, $r\ne1$.
+  \item $\pi$: the same argument with $\int_0^1P_n(x)\sin(\pi x)\dd x$.
+\end{itemize}
+In each case the kernel decides the arithmetic, its $n$-th derivative decides the positivity, and the
+maximum decides whether the size beats the denominators. The direct extension to $\zeta(5)$, with
+the logarithm replaced by its cube, fails for a quantifiable reason (\cite{codexnotes}, Section~16).
+
 % ======================================================================
 \part{From integrals to sums}\label{part:sums}
 
