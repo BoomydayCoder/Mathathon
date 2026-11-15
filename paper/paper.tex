@@ -270,10 +270,33 @@ $x=y=\sqrt2-1$, $t=1$.
 \end{lemma}
 
 \begin{proof}
-Let $s=\sqrt{xy}$. By the AM--GM inequality, $(1-x)(1-y)=1-x-y+xy\le(1-s)^2$ and
-$Q/t=1+xy+yt+x/t\ge1+s^2+2s=(1+s)^2$. Hence $G\le\bigl(s(1-s)/(1+s)\bigr)^2$. With
-$\alpha=\sqrt2-1$ one checks $\alpha^2(1+s)-s(1-s)=(s-\alpha)^2\ge0$ (using $\alpha^2+2\alpha=1$),
-so $s(1-s)/(1+s)\le\alpha^2$.
+We have $J_n=\int G^n/Q$, so if $G\le\rho$ everywhere then $J_n\le\rho^n\int1/Q$. The task is to
+maximise a function of three variables, and AM--GM reduces it to one. Put $u=\sqrt{xy}$ and write
+\[
+  G=\frac{xy\,(1-x)(1-y)}{Q/t},\qquad \frac Qt=\frac{(x+t)(1+yt)}t=1+xy+yt+\frac xt .
+\]
+\emph{Denominator.} By AM--GM, $yt+x/t\ge2\sqrt{xy}$, with equality when $t=\sqrt{x/y}$ balances
+the two terms. Hence $Q/t\ge1+u^2+2u=(1+u)^2$.
+
+\emph{Numerator.} For fixed $xy$, the product $(1-x)(1-y)=1-(x+y)+xy$ is largest when $x+y$ is
+smallest, and $x+y\ge2\sqrt{xy}$. Hence $(1-x)(1-y)\le1-2u+u^2=(1-u)^2$.
+
+Together, $G\le g(u)^2$ with $g(u)=\dfrac{u(1-u)}{1+u}$, $0<u<1$.
+
+\emph{Finding the maximum.} The numerator of $g'(u)$ is $(1-2u)(1+u)-u(1-u)=1-2u-u^2$, which
+vanishes at $u=\alpha:=\sqrt2-1$. Since $1-\alpha=\sqrt2\,\alpha$ and $1+\alpha=\sqrt2$, the
+maximum value is $g(\alpha)=\alpha^2$.
+
+\emph{Certifying it.} To prove $g(u)\le\alpha^2$ without calculus, consider the quadratic
+$q(u)=\alpha^2(1+u)-u(1-u)$. If the claim is true, $q\ge0$ and $q(\alpha)=0$, so $\alpha$ is a
+minimum of $q$ with value $0$: a double root. A monic quadratic with a double root at $\alpha$ is
+$(u-\alpha)^2$, and indeed
+\[
+  q(u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
+\]
+because $1-\alpha^2=2\alpha$, that is, $\alpha^2+2\alpha-1=0$, which is the equation that defined
+$\alpha$. Therefore $g(u)\le\alpha^2$ and $G\le\alpha^4=(\sqrt2-1)^4=17-12\sqrt2$. All the
+inequalities are equalities at $x=y=\alpha$, $t=\sqrt{x/y}=1$.
 \end{proof}
 
 \begin{theorem}\label{thm:decay}
@@ -359,6 +382,76 @@ $N!=\prod D_{\lfloor N/k\rfloor}$ & infinitely many indices with $\Dn<3^n$\\
 \caption{Which ingredient supplies which property.}
 \label{tab:ingredients}
 \end{table}
+
+% ======================================================================
+\section{From Beukers' integral to Ap\'ery and Zudilin}\label{sec:zudilin}
+
+The same numbers $J_n$ can be written as a sum of values of a rational function. This is the
+language of Ap\'ery's original proof and of Zudilin's elementary proof~\cite{zudilin}, and the
+starting point for deriving Ap\'ery's recurrence.
+
+\subsection{The moment generating function of \texorpdfstring{$P_n$}{P\_n}}
+
+Collect all the moments of $P_n$ in a single function (its Mellin transform):
+\[
+  T_n(s)=\int_0^1x^{s-1}P_n(x)\dd x,\qquad s>0 .
+\]
+
+\begin{proposition}\label{prop:mellin}
+For $s>0$,
+\[
+  T_n(s)=(-1)^n\,\frac{(s-1)(s-2)\cdots(s-n)}{s(s+1)\cdots(s+n)} .
+\]
+\end{proposition}
+
+\begin{proof}
+Integrate by parts $n$ times as in \cref{lem:ibp}, with $f(x)=x^{s-1}$. Each boundary term at $0$ is
+a product of a derivative of order $j<n$ of $x^n(1-x)^n$, which is $O(x^{n-j})$, and a derivative of
+order $n-1-j$ of $x^{s-1}$, which is $O(x^{s-n+j})$; the product is $O(x^s)\to0$. The boundary terms
+at $1$ vanish as before. Since $\frac{\dd^n}{\dd x^n}x^{s-1}=(s-1)(s-2)\cdots(s-n)\,x^{s-1-n}$,
+\[
+  T_n(s)=\frac{(-1)^n}{n!}(s-1)\cdots(s-n)\int_0^1x^{s-1}(1-x)^n\dd x
+  =(-1)^n\frac{(s-1)\cdots(s-n)}{s(s+1)\cdots(s+n)},
+\]
+using the beta integral $\int_0^1x^{s-1}(1-x)^n\dd x=\frac{n!}{s(s+1)\cdots(s+n)}$ (by induction on
+$n$, integrating by parts once).
+\end{proof}
+
+Every feature of this rational function has a meaning. The \emph{zeros} at $s=1,\dots,n$ are the
+vanishing moments $T_n(j+1)=\int_0^1x^jP_n=0$ for $j<n$ (the condition \eqref{eq:orth}). The
+\emph{poles} at $s=0,-1,\dots,-n$ come from integrating the monomials $x^k$, $k\le n$:
+$T_n(s)=\sum_kc_k/(s+k)$.
+
+\subsection{\texorpdfstring{$J_n$}{J\_n} as a sum of derivatives}
+
+Since $P_n(x)P_n(y)$ appears in $J_n$, the transform appears twice. Put
+\[
+  R_n(s)=T_n(s)^2=\Bigl(\frac{(s-1)(s-2)\cdots(s-n)}{s(s+1)\cdots(s+n)}\Bigr)^2
+  =\int_0^1\!\!\int_0^1(xy)^{s-1}P_n(x)P_n(y)\dd x\dd y .
+\]
+
+\begin{proposition}\label{prop:sum}
+\[
+  J_n=-\sum_{m=1}^\infty R_n'(m)=-\sum_{m=n+1}^\infty R_n'(m).
+\]
+\end{proposition}
+
+\begin{proof}
+Differentiating under the integral sign, with $\frac{\dd}{\dd s}(xy)^{s-1}=\log(xy)\,(xy)^{s-1}$,
+\[
+  -R_n'(s)=\int_0^1\!\!\int_0^1(xy)^{s-1}P_n(x)P_n(y)\bigl(-\log(xy)\bigr)\dd x\dd y .
+\]
+Now sum over $s=m+1$, $m\ge0$, exactly as in \cref{sec:kernel}: $\sum_{m\ge0}(xy)^m=\frac1{1-xy}$
+turns the right-hand side into $J_n$. The interchange of sum and integral is justified because the
+terms are dominated by $\|P_n\|_\infty^2\,(xy)^m(-\log(xy))$, whose sum $\|P_n\|_\infty^2K$ is
+integrable by \eqref{eq:zeta3int}. Finally, $R_n$ has double zeros at $1,\dots,n$, so $R_n'$
+vanishes there and the first $n$ terms are zero.
+\end{proof}
+
+The vanishing of the first $n$ terms explains part of the smallness of $J_n$, but not the
+exponential rate: the remaining terms have both signs, and it is the positive integral of
+\cref{prop:pos} that controls their cancellation. In the sum form, the same control comes instead
+from Ap\'ery's recurrence, which is where Zudilin's proof goes next.
 
 % ======================================================================
 \begin{thebibliography}{9}

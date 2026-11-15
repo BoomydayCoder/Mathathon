@@ -175,16 +175,54 @@
   \alert{Cancellation has become a positive integral}, before any estimate.
 \end{frame}
 
-\begin{frame}{Step 4: exponential decay}
-  With $G=\dfrac{x(1-x)y(1-y)t}{(x+t)(1+yt)}$ and $s=\sqrt{xy}$, AM--GM gives
+\begin{frame}{Step 4: exponential decay, the goal}
+  $J_n=\displaystyle\int\frac{G^n}{Q}$ \ with \ $Q=(x+t)(1+yt)$ \ and \ $G=\dfrac{x(1-x)\,y(1-y)\,t}{Q}$.
+  \medskip
+
+  If $G\le\rho$ everywhere, then $J_n\le\rho^n\displaystyle\int\frac1Q=2\zeta(3)\rho^n$.
+  \pause
+  \medskip
+
+  \textbf{Two applications of AM--GM} reduce three variables to one. Put $u=\sqrt{xy}$.
+  \begin{itemize}
+    \item Denominator: $\dfrac Qt=1+xy+\underbrace{yt+\dfrac xt}_{\ge2\sqrt{xy}}\ge(1+u)^2$
+      \newline\mbox{}\hfill{\small equality when $t=\sqrt{x/y}$ balances $yt$ and $x/t$}
+    \item Numerator: $(1-x)(1-y)=1-\underbrace{(x+y)}_{\ge2\sqrt{xy}}+xy\le(1-u)^2$
+      \newline\mbox{}\hfill{\small for fixed $xy$, equality when $x=y$}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Step 4 continued: a one-variable problem}
   \[
-    G\le\Bigl(\frac{s(1-s)}{1+s}\Bigr)^2\le(\sqrt2-1)^4=17-12\sqrt2\approx\frac1{34},
+    G=\frac{xy\,(1-x)(1-y)}{Q/t}\le\Bigl(\underbrace{\frac{u(1-u)}{1+u}}_{g(u)}\Bigr)^2 .
   \]
-  using $\alpha^2(1+s)-s(1-s)=(s-\alpha)^2$ for $\alpha=\sqrt2-1$.
+  \pause
+  \textbf{Find the maximum by calculus:} the numerator of $g'(u)$ is
+  \[
+    (1-2u)(1+u)-u(1-u)=1-2u-u^2,
+  \]
+  which vanishes at $u=\alpha=\sqrt2-1$.
+  \pause
+  \medskip
+
+  Using $1-\alpha=\sqrt2\,\alpha$ and $1+\alpha=\sqrt2$:\quad $g(\alpha)=\alpha^2$.
+\end{frame}
+
+\begin{frame}{Step 4 continued: why $(u-\alpha)^2$?}
+  \textbf{Certify the maximum without calculus.} We want $q(u)=\alpha^2(1+u)-u(1-u)\ge0$.
+  \medskip
+
+  If true, $q\ge0$ and $q(\alpha)=0$, so $\alpha$ is a minimum with value $0$: a
+  \alert{double root}. So $q$ must be a perfect square:
+  \[
+    q(u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
+  \]
+  which holds exactly because $1-\alpha^2=2\alpha$, i.e.\ $\alpha^2+2\alpha-1=0$.
+  \pause
   \begin{block}{Result}
+    $G\le\alpha^4=(\sqrt2-1)^4=17-12\sqrt2\approx\frac1{34}$, \ equality at $x=y=\alpha$, $t=1$:
     \[
-      0<J_n\le2\zeta(3)\,(17-12\sqrt2)^n,\qquad
-      \lim J_n^{1/n}=17-12\sqrt2.
+      0<J_n\le2\zeta(3)\,(17-12\sqrt2)^n,\qquad\lim J_n^{1/n}=17-12\sqrt2.
     \]
   \end{block}
 \end{frame}
@@ -231,6 +269,48 @@
   \medskip
 
   Both terms are large; their difference is tiny but, by Step 3, \alert{never zero}.
+\end{frame}
+
+% ----------------------------------------------------------------------
+\section{From Beukers to Ap\'ery and Zudilin}
+
+\begin{frame}{The moment generating function of $P_n$}
+  Collect all moments of $P_n$ in one function (a Mellin transform):
+  \[
+    T_n(s)=\int_0^1x^{s-1}P_n(x)\dd x,\qquad s>0 .
+  \]
+  \pause
+  Integrate by parts $n$ times as in Step 2, using
+  $\frac{\dd^n}{\dd x^n}x^{s-1}=(s-1)(s-2)\cdots(s-n)\,x^{s-1-n}$ and
+  $\int_0^1x^{s-1}(1-x)^n\dd x=\frac{n!}{s(s+1)\cdots(s+n)}$:
+  \[
+    \boxed{\;T_n(s)=(-1)^n\,\frac{(s-1)(s-2)\cdots(s-n)}{s(s+1)\cdots(s+n)}\;}
+  \]
+  \pause
+  \begin{itemize}
+    \item \textbf{Zeros} at $s=1,\dots,n$: the vanishing moments $\int x^jP_n=0$, $j<n$.
+    \item \textbf{Poles} at $s=0,-1,\dots,-n$: integrating the monomials $x^k$, $k\le n$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{$J_n$ as a sum: Zudilin's rational function}
+  Let $R_n(s)=T_n(s)^2=\Bigl(\frac{(s-1)\cdots(s-n)}{s(s+1)\cdots(s+n)}\Bigr)^2
+  =\displaystyle\iint(xy)^{s-1}P_n(x)P_n(y)\dd x\dd y$.
+  \pause
+  \medskip
+
+  \textbf{Differentiate in $s$:} \ $\frac{\dd}{\dd s}(xy)^{s-1}=\log(xy)\,(xy)^{s-1}$, so
+  \[
+    -R_n'(s)=\iint(xy)^{s-1}\,P_n(x)P_n(y)\,(-\log(xy))\dd x\dd y .
+  \]
+  \pause
+  \textbf{Sum over $s=1,2,3,\dots$} \ using $\sum_{m\ge0}(xy)^m=\frac1{1-xy}$, exactly as in Step 1:
+  \[
+    \boxed{\;J_n=-\sum_{m=1}^\infty R_n'(m)\;}
+  \]
+  \pause
+  Double zeros at $1,\dots,n$ $\Rightarrow$ the sum starts at $m=n+1$.
+  This is the starting point of \alert{Zudilin's proof} and of Ap\'ery's recurrence.
 \end{frame}
 
 % ----------------------------------------------------------------------
