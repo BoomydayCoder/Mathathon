@@ -59,8 +59,9 @@ so that $J_n$ is also a sum, and we summarise how Zudilin obtains the size of th
 \cref{part:ours} we replace Zudilin's second series, second recurrence and size estimates by a
 discrete maximum principle, which we believe to be new: Ap\'ery's recurrence, found by matching five
 coefficients and written in a difference form with positive coefficients, forces
-$0<J_n\le2\zeta(3)\,33^{-n}$. Throughout, an identity between $N!$ and least common multiples
-replaces the prime number theorem.
+$0<J_n\le2\zeta(3)\,33^{-n}$. The same sum form shows why the direct analogue for $\zeta(5)$
+fails. Throughout, an identity between $N!$ and least common multiples replaces the prime number
+theorem.
 \end{abstract}
 
 \tableofcontents
@@ -76,10 +77,16 @@ The proof works, but the recurrence arrives without explanation, and the method 
 $\zeta(5)$. In Zudilin's elementary proof~\cite{zudilin}, the reference for this problem, the
 recurrence is found by computer and serves only as a bridge between two different series. The task
 is to give a satisfying motivation for the proof and to find the intuition behind the recurrence.
-Our answers, in the order of the report:
+
+The report has three parts. \Cref{part:beukers} gives Beukers' integral proof, which explains
+Zudilin's starting point but never meets the recurrence. \Cref{part:sums} rewrites Beukers' $J_n$ as
+Zudilin's series and shows that the series alone gives neither the sign nor the size of $J_n$.
+\Cref{part:ours} asks which recurrence would supply both, finds Ap\'ery's by hand, and proves the
+theorem from it. We end with why $\zeta(5)$ resists and with an operator picture. Our answers, in
+the order of the report:
 \begin{enumerate}
   \item \emph{Where Zudilin's rational function comes from.} The function
-    $r_n(t)=\frac{(1-t)\cdots(n-t)}{t(t+1)\cdots(t+n)}$ is the moment generating function of the
+    $r_n(t)=\frac{(1-t)\cdots(n-t)}{t(t+1)\cdots(t+n)}$ is the Mellin transform of the
     Legendre polynomial that Beukers' integral proof is built on. Its zeros, its poles, the square
     and the derivative in $J_n=-\sum_tR_n'(t)$, $R_n=r_n^2$, all have reasons (\cref{part:beukers,sec:zudilin}).
   \item \emph{Which equation we want.} An equation of the form
@@ -92,14 +99,15 @@ Our answers, in the order of the report:
     $(n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n$, the weights $n^3$ and $(n+1)^3$ come from
     the two neighbours and $4(2n+1)^3$ is an extra positive term; the $17$ of \eqref{eq:apery-rec} is
     $1+16$, one part from the neighbours and sixteen from the extra term. Without the extra term the
-    same equation describes the partial sums of $\zeta(3)$, which converge far too slowly.
+    same equation is solved by the tails $\zeta(3)-s_n$ of the partial sums, which decay far too
+    slowly.
   \item \emph{What the recurrence does.} On its own, with $J_0>0$ and $J_n\to0$, it gives the sign and
     the exponential decay of $J_n$. This yields a short proof with one series and no integrals in
     the size estimate (\cref{part:ours}), which to our knowledge is new.
   \item \emph{Why the direct generalization fails for $\zeta(5)$.} The double zeros of $r_n^2$ survive
     one derivative but not three (\cref{sec:zeta5}).
 \end{enumerate}
-This matters because the resulting proof uses only sums and one recurrence, explains every coefficient
+The resulting proof uses only sums and one recurrence, explains every coefficient
 of Ap\'ery's recurrence, is short enough to formalize, and its maximum-principle argument can be
 tried on other Ap\'ery-like recurrences (\cref{sec:limits}).
 
@@ -107,17 +115,19 @@ tried on other Ap\'ery-like recurrences (\cref{sec:limits}).
 % ======================================================================
 \section{The strategy: an integer between 0 and 1}\label{sec:strategy}
 
-Suppose $\theta=p/q$ with $p\in\Z$ and $q\in\N$. For integers $A,B$ we have
-$q(A\theta-B)=Ap-qB\in\Z$, so if $A\theta-B\ne0$ then $|A\theta-B|\ge1/q$. Since $q$ is fixed, a
-sequence of \emph{nonzero} integer linear forms $A_n\theta-B_n$ tending to $0$ proves that $\theta$
+Suppose $\theta=p/q$ with $p\in\Z$ and $q\in\N$. For integers $u,v$ we have
+$q(u\theta-v)=up-qv\in\Z$, so if $u\theta-v\ne0$ then $|u\theta-v|\ge1/q$. Since $q$ is fixed, a
+sequence of \emph{nonzero} integer linear forms $u_n\theta-v_n$ tending to $0$ proves that $\theta$
 is irrational.
 
 We shall construct real numbers $J_n$ with three properties:
 \begin{align}
   &\Dn^3J_n\in\Z+\Z\zeta(3), \qquad \Dn=\lcm(1,2,\dots,n)\quad(D_0=1), \label{eq:arith}\\
   &J_n>0, \label{eq:pos}\\
-  &J_n\le C\rho^n \quad\text{with } \rho \text{ small enough.} \label{eq:small}
+  &J_n\le C\rho^n \quad\text{with } \rho \text{ small.} \label{eq:small}
 \end{align}
+Then $q\Dn^3J_n$ would be a positive integer. Since $\Dn=e^{n+o(n)}$, it tends to $0$ as soon as
+$\rho<e^{-3}$; we shall only use that $\Dn<3^n$ for infinitely many $n$, which needs $27\rho<1$.
 
 \begin{remark}
 The obvious candidates, the partial sums $s_n=\sum_{m\le n}m^{-3}$, have the right denominators
@@ -266,19 +276,21 @@ We take $P=P_n$.
 $J_n=J(P_n)=\displaystyle\int_0^1\!\!\int_0^1P_n(x)P_n(y)\,\frac{-\log(xy)}{1-xy}\dd x\dd y.$
 \end{definition}
 
-By \cref{prop:arith}, $J_n$ satisfies \eqref{eq:arith}: $J_n=2a_n\zeta(3)-2b_n$ with
-$a_n=\sum_k\binom nk^2\binom{n+k}k^2\in\Z$ and $\Dn^3b_n\in\Z$ (\cref{prop:arith} gives $\Dn^3\cdot2b_n\in\Z$;
-the sharper statement follows from the partial fractions in \cref{sec:zudilin}).
+By \cref{prop:arith}, $\Dn^3J_n\in\Z+\Z\zeta(3)$, with $\zeta(3)$-coefficient $2a_n$ where
+$a_n=\sum_k\binom nk^2\binom{n+k}k^2$. We write $J_n=2a_n\zeta(3)-2b_n$; \cref{sec:zudilin} shows that
+$\Dn^3b_n\in\Z$.
 
 % ======================================================================
 \section{Positivity}\label{sec:positivity}
 
-The kernel $K(x,y)$ mixes the two variables (and has a logarithmic singularity at $0$), so the
+The kernel $K(x,y)$ mixes the two variables (and is singular along the axes), so the
 one-variable identity \eqref{eq:recip} cannot be applied to it directly. We borrow a trick that
 is common in differential equations: separation of variables, where a function of two variables is
 written as a superposition of products, $u(x,t)=\sum_kv_k(x)w_k(t)$. Here we write $K$ as an integral,
 over a parameter $t$, of products $v_t(x)w_t(y)$ in which each factor is a reciprocal linear
-function, to which \eqref{eq:recip} applies.
+function, to which \eqref{eq:recip} applies. Such a representation exists because $K$ is a divided
+difference of the logarithm, $K(x,y)=\frac1y\cdot\frac{\log(1/y)-\log x}{1/y-x}$, and divided differences of
+$\log$ are integrals of $\frac1{(t+a)(t+b)}$.
 
 \begin{lemma}[Separating the variables]\label{lem:sep}
 For $0<x,y<1$,
@@ -317,7 +329,8 @@ Bounding $|P_n(x)P_n(y)|$ at the start would throw away the cancellation designe
 % ======================================================================
 \section{Exponential decay}\label{sec:decay}
 
-Write $Q=(x+t)(1+yt)$ and $G=x(1-x)y(1-y)t/Q$, so $J_n=\int G^n/Q$.
+Write $Q=(x+t)(1+yt)$ and $G=x(1-x)y(1-y)t/Q$, so $J_n=\int G^n/Q$. As in Laplace's method, the
+exponential rate of $J_n$ is the maximum of $G$: if $G\le\rho$ everywhere, then $J_n\le\rho^n\int1/Q$.
 
 \begin{lemma}\label{lem:max}
 On $(0,1)^2\times(0,\infty)$ we have $G\le\rho:=(\sqrt2-1)^4=17-12\sqrt2$, with equality at
@@ -325,8 +338,7 @@ $x=y=\sqrt2-1$, $t=1$.
 \end{lemma}
 
 \begin{proof}
-We have $J_n=\int G^n/Q$, so if $G\le\rho$ everywhere then $J_n\le\rho^n\int1/Q$. The task is to
-maximise a function of three variables, and AM--GM reduces it to one. Put $u=\sqrt{xy}$ and write
+We maximise a function of three variables; AM--GM reduces it to one. Put $u=\sqrt{xy}$ and write
 \[
   G=\frac{xy\,(1-x)(1-y)}{Q/t},\qquad \frac Qt=\frac{(x+t)(1+yt)}t=1+xy+yt+\frac xt .
 \]
@@ -461,18 +473,22 @@ the logarithm replaced by its cube, fails for a quantifiable reason (\cite{codex
 % ======================================================================
 \part{From integrals to sums}\label{part:sums}
 
+Part~I proves the theorem without ever meeting Ap\'ery's recurrence. To see the recurrence we move
+to the language of Ap\'ery and Zudilin: sums of values of a rational function.
+
 % ======================================================================
 \section{From Beukers' integral to Zudilin's series}\label{sec:zudilin}
 
-Ap\'ery's original proof, and Zudilin's elementary version of it~\cite{zudilin}, never mention
-an integral; the series form below goes back to Nesterenko~\cite{nesterenko}. They work with sums of values of a rational function. In this section we show that
+Ap\'ery worked with explicit binomial sums. Zudilin~\cite{zudilin}, following
+Nesterenko~\cite{nesterenko}, writes the same numbers as a sum of values of a rational function. In this section we show that
 this rational function is the Legendre polynomial of \cref{sec:legendre} in disguise, and that the
 sum is the same number $J_n$. Once the translation is made, nothing in Zudilin's starting point is
 arbitrary.
 
-\subsection{The moment generating function of \texorpdfstring{$P_n$}{P\_n}}
+\subsection{The Mellin transform of \texorpdfstring{$P_n$}{P\_n}}
 
-Collect all the moments of $P_n$ in a single function, its Mellin transform:
+Collect all the moments of $P_n$ in a single function, its Mellin transform, which interpolates
+them: $r_n(j+1)=\int_0^1x^jP_n$.
 \[
   r_n(t)=\int_0^1x^{t-1}P_n(x)\dd x,\qquad t>0 .
 \]
@@ -497,10 +513,11 @@ using the beta integral $\int_0^1x^{t-1}(1-x)^n\dd x=\frac{n!}{t(t+1)\cdots(t+n)
 $n$, integrating by parts once).
 \end{proof}
 
-Every feature of this rational function has a reason. The \emph{zeros} at $t=1,\dots,n$ are the
+The \emph{zeros} at $t=1,\dots,n$ are the
 vanishing moments $r_n(j+1)=\int_0^1x^jP_n=0$ for $j<n$: the condition \eqref{eq:orth} that we
 imposed in order to cancel. The \emph{poles} at $t=0,-1,\dots,-n$ come from integrating the
-monomials $x^k$ with $k\le n$. The numerator and denominator have the same degree budget as $P_n$.
+monomials $x^k$ with $k\le n$. As $t\to\infty$, $r_n(t)\sim P_n(1)/t=(-1)^n/t$, so $R_n(t)\sim t^{-2}$;
+this is used in \cref{sec:guess}.
 
 \subsection{Why a square, and why a derivative}
 
@@ -537,13 +554,13 @@ $\zeta(2)$.
 
 \subsection{The arithmetic, straight from partial fractions}
 
-The same arithmetic as in \cref{prop:arith} can be read off the rational function. Partial
-fractions give
+The same arithmetic as in \cref{prop:arith} can be read off the rational function, with no
+integrals. Since $\int_0^1x^{t+k-1}\dd x=\frac1{t+k}$, the definition of $r_n$ is already its partial
+fraction expansion:
 \[
-  r_n(t)=\sum_{k=0}^n\frac{c_k}{t+k},\qquad
-  c_k=\Bigl[(t+k)\,r_n(t)\Bigr]_{t=-k}=(-1)^k\frac{(n+k)!}{k!^2\,(n-k)!}\in\Z .
+  r_n(t)=\sum_{k=0}^n\frac{c_k}{t+k},\qquad c_k=(-1)^k\binom nk\binom{n+k}k\in\Z,
 \]
-Write $H^{(s)}_k=\sum_{l\le k}l^{-s}$. Then $-\sum_{t\ge1}\frac{\dd}{\dd t}\frac1{(t+k)^2}=2\bigl(\zeta(3)-H^{(3)}_k\bigr)$
+the coefficients of $P_n$. With $H^{(s)}_k$ as in \cref{sec:kernel}, $-\sum_{t\ge1}\frac{\dd}{\dd t}\frac1{(t+k)^2}=2\bigl(\zeta(3)-H^{(3)}_k\bigr)$
 and $-\sum_{t\ge1}\frac{\dd}{\dd t}\frac1{t+k}=\zeta(2)-H^{(2)}_k$. Squaring $r_n$ produces the
 squares $\frac{c_k^2}{(t+k)^2}$ and the mixed terms
 $\frac{2c_kc_j}{(t+k)(t+j)}=\frac{2c_kc_j}{j-k}\bigl(\frac1{t+k}-\frac1{t+j}\bigr)$, in which
@@ -601,15 +618,12 @@ Ball's series by $e^2e^{nf(\tau)}$ times a polynomial factor, where
   f(\tau)=\log\frac{\tau^{5\tau}(\tau+2)^{\tau+2}}{(\tau-1)^{\tau-1}(\tau+1)^{5(\tau+1)}},\qquad
   f'(\tau)=\log\frac{\tau^5(\tau+2)}{(\tau-1)(\tau+1)^5}.
 \]
-The critical point solves a quintic that factors after the substitution $x=\tau+\frac12$, as
-$-x\bigl(2x^4-5x^2-\frac78\bigr)=0$; it is $\tau_0=-\frac12+\sqrt{\frac54+\sqrt2}=1.1322\ldots$, and a few
+The critical point solves a quintic that factors after the substitution $z=\tau+\frac12$, as
+$-z\bigl(2z^4-5z^2-\frac78\bigr)=0$; it is $\tau_0=-\frac12+\sqrt{\frac54+\sqrt2}=1.1322\ldots$, and a few
 more lines give $e^{f(\tau_0)}=(\sqrt2-1)^4$, the number of \cref{lem:max}. (These formulas are
 taken from the team's line-by-line check of Zudilin's Lemma~4.)
 
-\paragraph{Two recurrences.} The bridge is Ap\'ery's recurrence
-\[
-  (n+1)^3u_{n+1}-(2n+1)(17n^2+17n+5)u_n+n^3u_{n-1}=0 .
-\]
+\paragraph{Two recurrences.} The bridge is Ap\'ery's recurrence \eqref{eq:apery-rec}.
 For $J_n$ it follows from the telescoping identity
 \[
   (n+1)^3R_{n+1}-(2n+1)(17n^2+17n+5)R_n+n^3R_{n-1}=S_n(t+1)-S_n(t),
@@ -651,6 +665,9 @@ else by about a page.
 % ======================================================================
 \part{Our proof: a maximum principle}\label{part:ours}
 
+Part~II left a sum with the right arithmetic but with no information on its sign or its size. We
+now ask which equation would supply both.
+
 % ======================================================================
 \section{A proof with one series}\label{sec:ours}
 
@@ -666,42 +683,17 @@ What is missing is the \emph{sign} and the \emph{rate of decay}. We look for an 
 linking each $J_n$ to its neighbours, of a shape that makes
 negative values and slow decay impossible.
 
-\paragraph{What is new.} To our knowledge, the argument of this part is new. We obtain the
-positivity, the monotonicity and the exponential decay of Ap\'ery's linear forms $J_n$ directly from
-Ap\'ery's recurrence, written in the difference form \eqref{eq:rec} below, by a discrete maximum
-principle that uses only $J_0>0$ and $J_n\to0$ (the latter from a crude bound on the sum), and nothing
-about the integers $a_n$. Combined with \cref{lem:lcm}, this gives a complete proof with one series,
-one recurrence, no integral and no prime number theorem; \cref{part:ours} may take
-$J_n:=-\sum_tR_n'(t)$ as its definition, and \cref{prop:sum} is then not needed. The idea of using a
-maximum principle was first proposed by an AI tool (Claude; see \cref{sec:ai}). Its core, that the
-small solution of a three-term recurrence with positive coefficients of this kind is positive, is
-classical discrete Sturm theory~\cite{hartman}; our claim concerns its use here. The published
-arguments we found obtain the sign and the size in other ways:
-\begin{itemize}
-  \item Ap\'ery's proof as presented by van der Poorten~\cite{vdp} and Cohen~\cite{cohen}, and the
-    formal proof of Mahboubi and Sibut-Pinote~\cite{mahboubi,cmst}, use the Casoratian identity
-    $a_nb_{n+1}-a_{n+1}b_n=6/(n+1)^3$: it gives $\zeta(3)-b_n/a_n=\sum_{k>n}6/(k^3a_{k-1}a_k)>0$,
-    and the size then comes from the growth of the integers $a_n$ (in the formal proof, from showing
-    that $a_{n+1}/a_n$ increases and computing that it exceeds $33$ at $n=51$);
-  \item Mingarelli~\cite{mingarelli} recasts this in the language of disconjugate recurrences and
-    principal solutions, with positivity from the same series and the growth of $a_n$ taken from
-    elsewhere, and calls it a restatement of Ap\'ery's proof;
-  \item Beukers~\cite{beukers79} uses a positive integral (\cref{part:beukers}); Zudilin~\cite{zudilin},
-    following Rivoal and Ball, uses a second series with positive terms (\cref{sec:zudilin-route});
-    Rajkumar~\cite{rajkumar} uses the Poincar\'e--Perron theorem.
-\end{itemize}
-The ingredients themselves are classical: the recurrence is Ap\'ery's, the polynomial $W$ that makes
-it telescope is the one Zudilin found with a computer (his $s_n$, Lemma~2 of~\cite{zudilin}), and sign properties of second-order difference equations with positive coefficients
-belong to discrete Sturm theory~\cite{hartman}. Our claim concerns the argument as a whole. It is
-based on a search of the literature cited here (November 2026); we follow the team's
-notes~\cite{maxnotes}.
+(What is new here is discussed in \cref{sec:novelty}.)
 
 \subsection{Which equation would we like?}\label{sec:wish}
 
 Suppose we had, for every $n\ge1$,
 \begin{equation}\label{eq:wish}
-  B\,(J_{n+1}-J_n)-A\,(J_n-J_{n-1})=\lambda J_n,\qquad A,B,\lambda>0 .
+  B\,(J_{n+1}-J_n)-A\,(J_n-J_{n-1})=\lambda J_n,
 \end{equation}
+with coefficients $A,B,\lambda>0$ that may depend on $n$. This is the discrete analogue of
+$(pu')'=qu$ with $p,q>0$: like $u''=u$, such an equation allows no positive maximum and no negative
+minimum, and its decaying solutions decay at a rate set by the size of $q$ relative to $p$.
 Look at a \emph{negative valley}: an index with $J_n<0$, $J_{n-1}\ge J_n$ and $J_{n+1}\ge J_n$. Then
 $J_{n+1}-J_n\ge0$ and $J_n-J_{n-1}\le0$, so the left side of \eqref{eq:wish} is $\ge0$, while the
 right side is negative. So there are no negative valleys, and in the same way no positive peaks.
@@ -710,18 +702,17 @@ Moreover, if the sequence is positive and decreasing, then $J_{n+1}-J_n<0$ and
 \[
   J_n<\frac{A}{A+\lambda}\,J_{n-1}.
 \]
-So a large ratio $\lambda/A$ means fast decay. This is the equation we want. A calculation decides whether one exists
-with positive coefficients and a large $\lambda/A$.
+So a large ratio $\lambda/A$ means fast decay. This is the equation we want; a calculation has to
+decide whether $J_n$ satisfies one with positive coefficients and a large $\lambda/A$.
 
 \subsection{A guess}\label{sec:guess}
 
 Since $J_j=-\sum_tR_j'(t)$, it is natural to look for the identity at the level of the rational
 functions, allowing an error term that disappears after summation. Fix $n\ge1$ and look for
-constants $A,B,\lambda$ and a polynomial $W(t)$ with
+numbers $A,B,\lambda$ (depending on $n$) and a polynomial $W(t)$ with
 \begin{equation}\label{eq:ansatz}
   B\,(R_{n+1}-R_n)-A\,(R_n-R_{n-1})=\lambda R_n+W(t+1)R_n(t+1)-W(t)R_n(t).
 \end{equation}
-Each choice in this guess has a reason.
 \begin{itemize}
   \item \emph{Consecutive indices.} Passing from $r_n$ to $r_{n\pm1}$ changes a single factor, so
     the ratios $R_{n\pm1}/R_n$ are simple.
@@ -734,9 +725,8 @@ Each choice in this guess has a reason.
   \item \emph{$W$ is a polynomial of degree at most two.} A polynomial adds no poles. Since
     $R_n(t)\sim t^{-2}$, degree two is the largest that keeps $WR_n$ bounded at infinity, which is
     what \eqref{eq:telescope} needs; with degree three, $WR_n$ would grow like $t$ and a nonzero
-    boundary term would survive. Degree two is also the least that can work: it gives six unknowns
-    for the five equations found below, so a nonzero solution must exist, whereas with degree one
-    there would be five unknowns for five equations, and the solution has $w_2\ne0$.
+    boundary term would survive. The solution found below has $w_2\ne0$, so degree two is also
+    needed.
 \end{itemize}
 Writing $W(t)=w_0+w_1t+w_2t^2$, this gives six unknowns: $A$, $B$, $\lambda$, $w_0$, $w_1$, $w_2$.
 
@@ -757,7 +747,8 @@ Multiply by $(n-t)^2(n+1+t)^2$. The left side becomes a polynomial of degree at 
 right, $(n-t)^2(n+1+t)^2W(t)$ and $t^4W(t+1)$ are polynomials of degree six with the same two
 leading terms (both begin $w_2t^6+(2w_2+w_1)t^5$), so the right side has degree at most four.
 The identity therefore amounts to five linear equations in six unknowns, and a nonzero solution
-exists.
+exists. This count is the reason a recurrence exists at all: three neighbouring $R_j$ together with
+a telescoping correction have more freedom than the five conditions they must meet.
 
 To find it we use a shortcut. Both sides of \eqref{eq:star} are regular at $t=0$, and the factor
 $(n-t)^2(n+1+t)^2$ equals $n^2(n+1)^2\ne0$ there. If the Taylor expansions of the two sides at $0$
@@ -767,7 +758,7 @@ Taylor coefficients.
 
 \subsection{Solving it, one coefficient at a time}
 
-Expanding with $(1-x)^{-2}=1+2x+3x^2+4x^3+\cdots$, the left side of \eqref{eq:star} is
+Expanding with $(1-z)^{-2}=1+2z+3z^2+4z^3+\cdots$, the left side of \eqref{eq:star} is
 \[
   4\Bigl(\frac An-\frac B{n+1}\Bigr)t+8\Bigl(\frac A{n^2}+\frac B{(n+1)^2}\Bigr)t^2
   +12\Bigl(\frac A{n^3}-\frac B{(n+1)^3}\Bigr)t^3+16\Bigl(\frac A{n^4}+\frac B{(n+1)^4}\Bigr)t^4+O(t^5),
@@ -881,6 +872,10 @@ Iterating from $J_0=2\zeta(3)$ gives the bound.
 The argument loses very little. The actual ratios $J_{n-1}/J_n$ for $n=1,\dots,5$ are about
 $116.9,\ 66.8,\ 54.1,\ 48.5,\ 45.3$, and numerically they approach $17+12\sqrt2\approx33.97$, the rate found in
 \cref{thm:decay}.
+This limit is forced by the recurrence itself. Dividing \eqref{eq:apery-rec} by $n^3$ and letting
+$n\to\infty$ gives the characteristic equation $x^2-34x+1=0$, whose roots are $17\pm12\sqrt2$; by
+Poincar\'e's theorem on linear recurrences, $J_n/J_{n-1}$ tends to one of the roots, and since
+$J_n$ decreases it is the smaller one. So the $17=1+16$ of the remark above also fixes the rate.
 
 \paragraph{Without the extra term.} Then $C_n$ would be constant, $C_n=C$, so
 $J_{n-1}-J_n=C/n^3$, and since $J_n\to0$,
@@ -912,8 +907,40 @@ infinitely many $n$ with $\Dn<3^n$, \cref{thm:decay2} gives
 a contradiction.
 \end{proof}
 
+\subsection{What is new}\label{sec:novelty}
+
+To our knowledge, the argument of this part is new. We obtain the
+positivity, the monotonicity and the exponential decay of Ap\'ery's linear forms $J_n$ directly from
+Ap\'ery's recurrence, written in the difference form \eqref{eq:rec}, by a discrete maximum
+principle that uses only $J_0>0$ and $J_n\to0$ (the latter from a crude bound on the sum), and nothing
+about the integers $a_n$. Combined with \cref{lem:lcm}, this gives a complete proof with one series,
+one recurrence, no integral and no prime number theorem; \cref{part:ours} may take
+$J_n:=-\sum_tR_n'(t)$ as its definition, and \cref{prop:sum} is then not needed. The idea of using a
+maximum principle was first proposed by an AI tool (Claude; see \cref{sec:ai}). Its core, that the
+small solution of a three-term recurrence with positive coefficients of this kind is positive, is
+classical discrete Sturm theory~\cite{hartman}; our claim concerns its use here. The published
+arguments we found obtain the sign and the size in other ways:
+\begin{itemize}
+  \item Ap\'ery's proof as presented by van der Poorten~\cite{vdp} and Cohen~\cite{cohen}, and the
+    formal proof of Mahboubi and Sibut-Pinote~\cite{mahboubi,cmst}, use the Casoratian identity
+    $a_nb_{n+1}-a_{n+1}b_n=6/(n+1)^3$: it gives $\zeta(3)-b_n/a_n=\sum_{k>n}6/(k^3a_{k-1}a_k)>0$,
+    and the size then comes from the growth of the integers $a_n$ (in the formal proof, from showing
+    that $a_{n+1}/a_n$ increases and computing that it exceeds $33$ at $n=51$);
+  \item Mingarelli~\cite{mingarelli} recasts this in the language of disconjugate recurrences and
+    principal solutions, with positivity from the same series and the growth of $a_n$ taken from
+    elsewhere, and calls it a restatement of Ap\'ery's proof;
+  \item Beukers~\cite{beukers79} uses a positive integral (\cref{part:beukers}); Zudilin~\cite{zudilin},
+    following Rivoal and Ball, uses a second series with positive terms (\cref{sec:zudilin-route});
+    Rajkumar~\cite{rajkumar} uses the Poincar\'e--Perron theorem.
+\end{itemize}
+The ingredients are classical: the recurrence is Ap\'ery's, and the polynomial $W$ that makes it
+telescope is the one Zudilin found with a computer (his $s_n$, Lemma~2 of~\cite{zudilin}). Our claim
+is based on a search of the literature cited here (November 2026); the characterizations of van der
+Poorten's and Cohen's accounts above rely on~\cite{mahboubi,mingarelli}. We follow the team's
+notes~\cite{maxnotes}.
+
 % ======================================================================
-\section{Why the method stops at \texorpdfstring{$\zeta(3)$}{zeta(3)}}\label{sec:zeta5}
+\section{Why the direct generalization fails for \texorpdfstring{$\zeta(5)$}{zeta(5)}}\label{sec:zeta5}
 
 A natural generalization replaces the logarithm in Beukers' kernel by its
 $k$-th power,
@@ -1047,8 +1074,8 @@ theorem.
     rely on the accounts in~\cite{mahboubi,mingarelli}. The papers of Zudilin, Mingarelli,
     Mahboubi--Sibut-Pinote, Rajkumar and Fischler were read in full.
   \item \emph{Scope.} The maximum principle needs a recurrence whose middle coefficient exceeds
-    the sum of the outer ones by a large margin, and a sequence known to tend to zero. For $\zeta(3)$
-    the margin is $4(2n+1)^3>32n^3$. We have not tried other Ap\'ery-like recurrences (for
+    the sum of the outer ones, and a sequence known to tend to zero. Positivity needs only a
+    positive excess; the decay rate needs a large one ($4(2n+1)^3>32n^3$ here). We have not tried other Ap\'ery-like recurrences (for
     $\zeta(2)$, Catalan's constant, or the ``sporadic'' sequences), and the method gives nothing for
     $\zeta(5)$, for which we know of no linear forms in $1$ and $\zeta(5)$ that satisfy such a recurrence
     and decay fast enough.
@@ -1075,7 +1102,7 @@ theorem.
   \item \emph{Cited, not proved here:} everything in \cref{sec:zudilin-route} about Zudilin's proof
     (Ball's series, its size estimate); the operator identities of
     \cref{sec:operator} other than the first; the results listed in
-    \cref{sec:relatives}, which are proved in~\cite{codexnotes}, Section~15; the prime number theorem.
+    \cref{sec:relatives}, which are proved in~\cite{codexnotes}, Section~15. The prime number theorem is mentioned only for comparison.
   \item \emph{Novelty} of the argument in \cref{part:ours}: a judgement based on the literature search
     described there, not a proof.
   \item No part of this work has been refereed by a human mathematician outside the team. Nothing
