@@ -59,6 +59,22 @@
   The partial sums are not good enough: $\Dn^3\bigl(\zeta(3)-\sum_{m\le n}m^{-3}\bigr)\ge\frac{n^3}{2(n+1)^2}\to\infty$.
 \end{frame}
 
+\begin{frame}{What is unsatisfying, and what we do}
+  The known proofs find such $J_n$, but each pays a price.
+  \begin{itemize}
+    \item \textbf{Beukers} needs integrals (and, originally, the prime number theorem).
+    \item \textbf{Zudilin} uses only sums, but needs a second series, two recurrences with
+      certificates (one of degree 6), Stirling-type estimates and a ``trivial'' bound $\Dn<3^n$.
+  \end{itemize}
+  \medskip
+  \begin{block}{Our proof}
+    One series and one recurrence. The sign and the size of $J_n$ come from a
+    \alert{maximum principle}. No integrals, no prime number theorem.
+    \\[3pt]
+    To our knowledge, the argument is new.
+  \end{block}
+\end{frame}
+
 % ----------------------------------------------------------------------
 \section{Part I: Beukers' integrals}
 
@@ -68,15 +84,12 @@
     \int_0^1x^m\dd x=\frac1{m+1},\qquad
     \int_0^1-x^m\log x\dd x=\frac1{(m+1)^2}\quad\text{(integrate by parts).}
   \]
-  \pause
   Multiply the two, using a second variable $y$:
   \[
     \int_0^1\!\!\int_0^1-(xy)^m\log x\dd x\dd y=\frac1{(m+1)^3}.
   \]
-  \pause
   Symmetrise: $-\log x-\log y=-\log(xy)$, so
   $\displaystyle\iint-(xy)^m\log(xy)\dd x\dd y=\frac2{(m+1)^3}$.
-  \pause
 
   Now sum over $m\ge0$, using $\sum_m(xy)^m=\frac1{1-xy}$:
   \[
@@ -86,7 +99,6 @@
 
 \begin{frame}{Step 1 continued: playing with the integral}
   Call $K(x,y)=\frac{-\log(xy)}{1-xy}$ the \alert{kernel}. What happens if we multiply it by a monomial?
-  \pause
   \begin{itemize}
     \item With $x^ry^r$ the sum starts later:
       \[
@@ -97,7 +109,6 @@
         \iint x^ry^sK=\frac1{r-s}\sum_{j=s+1}^{r}\frac1{j^2}\in\mathbb Q .
       \]
   \end{itemize}
-  \pause
   \begin{block}{So every polynomial gives a linear combination of $\zeta(3)$ and $1$}
     For an integer polynomial $P$ of degree $\le n$:\quad
     $\Dn^3\iint P(x)P(y)K\in\Z+\Z\zeta(3)$.
@@ -109,20 +120,17 @@
 \begin{frame}{Step 2: making the integral small, one variable first}
   We want an integer polynomial $P$ of degree $n$ that makes
   $\displaystyle\iint P(x)P(y)K(x,y)\dd x\dd y$ \alert{small}.
-  \pause
   \medskip
 
   Start with one variable: how do we make $\int_0^1P(x)f(x)\dd x$ small? Expand $f$ in a Taylor series,
   \[
     f(x)=a_0+a_1x+\dots+a_{n-1}x^{n-1}+(\text{higher order terms}).
   \]
-  \pause
   and ask $P$ to kill the low-degree monomials:
   \[
     \int_0^1x^jP(x)\dd x=0\qquad\text{for } j=0,1,\dots,n-1.
   \]
   Then $\int Pf$ only sees the higher-order part of $f$.
-  \pause
   \begin{block}{This determines $P$ up to scale}
     There are $n$ conditions on $n+1$ coefficients, so the solution is unique up to scale.
   \end{block}
@@ -135,13 +143,11 @@
     P_n(x)=\frac1{n!}\frac{\dd^n}{\dd x^n}\bigl[x^n(1-x)^n\bigr],\qquad
     \int_0^1P_nf=\frac{(-1)^n}{n!}\int_0^1x^n(1-x)^nf^{(n)} .
   \]
-  \pause
   $P_n=\sum_k(-1)^k\binom nk\binom{n+k}kx^k$ has integer coefficients (shifted Legendre polynomial).
   Take $P=P_n$:\quad
   $J_n=\iint P_n(x)P_n(y)K\dd x\dd y=2a_n\zeta(3)-2b_n$.
   \medskip
 
-  \pause
   For example, take $f(x)=\frac1{x+t}$. Since
   $\frac{\dd^n}{\dd x^n}\frac1{x+t}=\frac{(-1)^nn!}{(x+t)^{n+1}}$,
   \[
@@ -151,19 +157,16 @@
 
 \begin{frame}{Step 3: separation of variables}
   But $K(x,y)$ mixes $x$ and $y$, so how do we use the one-variable trick?
-  \pause
   \medskip
 
   Borrow an idea from differential equations: write a function of two variables as a
   superposition of products, $u(x,t)=\sum_kv_k(x)w_k(t)$.
-  \pause
 
   Here we write $K$ as an integral, over a parameter $t$, of products $v_t(x)\,w_t(y)$:
   \[
     K(x,y)=\int_0^\infty\underbrace{\frac1{x+t}}_{v_t(x)}\cdot\underbrace{\frac1{1+yt}}_{w_t(y)}\dd t .
   \]
   {\footnotesize (Partial fractions: $\int_0^\infty\frac{\dd t}{(t+a)(t+b)}=\frac{\log b-\log a}{b-a}$ with $a=x$, $b=1/y$, after writing $1+yt=y(t+b)$.)}
-  \pause
   \[
     J_n=\int_0^\infty\Bigl(\int_0^1\frac{P_n(x)}{x+t}\dd x\Bigr)\Bigl(\int_0^1\frac{P_n(y)}{1+yt}\dd y\Bigr)\dd t
   \]
@@ -180,52 +183,18 @@
 
 \begin{frame}{Step 4: exponential decay}
   $J_n=\displaystyle\int\frac{G^n}{Q}$ \ with \ $Q=(x+t)(1+yt)$ \ and \ $G=\dfrac{x(1-x)\,y(1-y)\,t}{Q}$.
+
+  If $G\le\rho$ everywhere, then $J_n\le\rho^n\int\frac1Q=2\zeta(3)\rho^n$.
   \medskip
 
-  If $G\le\rho$ everywhere, then $J_n\le\rho^n\displaystyle\int\frac1Q=2\zeta(3)\rho^n$.
-  \pause
-  \medskip
-
-  AM--GM, used twice, reduces three variables to one. Put $u=\sqrt{xy}$.
-  \begin{itemize}
-    \item Denominator: $\dfrac Qt=1+xy+\underbrace{yt+\dfrac xt}_{\ge2\sqrt{xy}}\ge(1+u)^2$
-      \newline\mbox{}\hfill{\small equality when $t=\sqrt{x/y}$ balances $yt$ and $x/t$}
-    \item Numerator: $(1-x)(1-y)=1-\underbrace{(x+y)}_{\ge2\sqrt{xy}}+xy\le(1-u)^2$
-      \newline\mbox{}\hfill{\small for fixed $xy$, equality when $x=y$}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Step 4 continued: a one-variable problem}
+  AM--GM, used twice, with $u=\sqrt{xy}$: \quad $\dfrac Qt\ge(1+u)^2$ \ and \ $(1-x)(1-y)\le(1-u)^2$, \ so
   \[
-    G=\frac{xy\,(1-x)(1-y)}{Q/t}\le\Bigl(\underbrace{\frac{u(1-u)}{1+u}}_{g(u)}\Bigr)^2 .
+    G\le\Bigl(\frac{u(1-u)}{1+u}\Bigr)^2\le\alpha^4,\qquad\alpha=\sqrt2-1,
   \]
-  \pause
-  Maximise $g$ by calculus. The numerator of $g'(u)$ is
-  \[
-    (1-2u)(1+u)-u(1-u)=1-2u-u^2,
-  \]
-  which vanishes at $u=\alpha=\sqrt2-1$.
-  \pause
-  \medskip
-
-  Using $1-\alpha=\sqrt2\,\alpha$ and $1+\alpha=\sqrt2$:\quad $g(\alpha)=\alpha^2$.
-\end{frame}
-
-\begin{frame}{Step 4 continued: why $(u-\alpha)^2$?}
-  We can also check the maximum without calculus. We want $\alpha^2(1+u)-u(1-u)\ge0$.
-  \medskip
-
-  This quadratic in $u$ would then be $\ge0$ and vanish at $u=\alpha$, so $\alpha$ would be a
-  double root, and the quadratic a perfect square. Indeed:
-  \[
-    \alpha^2(1+u)-u(1-u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
-  \]
-  and this is true because $1-\alpha^2=2\alpha$, i.e.\ $\alpha^2+2\alpha-1=0$.
-  \pause
+  because \ $\alpha^2(1+u)-u(1-u)=(u-\alpha)^2\ge0$.
   \begin{block}{Result}
-    $G\le\alpha^4=(\sqrt2-1)^4=17-12\sqrt2\approx\frac1{34}$, \ equality at $x=y=\alpha$, $t=1$:
     \[
-      0<J_n\le2\zeta(3)\,(17-12\sqrt2)^n,\qquad\lim J_n^{1/n}=17-12\sqrt2.
+      0<J_n\le2\zeta(3)\,(\sqrt2-1)^{4n},\qquad(\sqrt2-1)^4=17-12\sqrt2\approx\tfrac1{34}.
     \]
   \end{block}
 \end{frame}
@@ -275,7 +244,6 @@
 
   \raggedright
   Hence $e^q$ is irrational for every rational $q\ne0$, and $\log r$ for every rational $r>0$, $r\ne1$.
-  \pause
   \begin{block}{}
     The kernel decides the arithmetic, its $n$-th derivative decides positivity, and the
     maximum decides whether the size beats the denominators.
@@ -303,71 +271,21 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Why a square?}
-  Expand the kernel's denominator, indexing the terms by $t=1,2,3,\dots$:
+\begin{frame}{Why a square, and why a derivative?}
+  Expand $\frac1{1-xy}=\sum_{t\ge1}(xy)^{t-1}$ in Beukers' integral:
   \[
-    \frac1{1-xy}=1+xy+(xy)^2+(xy)^3+\cdots=\sum_{t=1}^\infty(xy)^{t-1}.
+    J_n=\sum_{t=1}^\infty\iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr).
   \]
   \pause
-  Then Beukers' integral becomes a sum of integrals:
+  Without the logarithm, each integral splits into two equal factors:
   \[
-    J_n=\iint P_n(x)P_n(y)\,\frac{-\log(xy)}{1-xy}
-    =\sum_{t=1}^\infty\iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr).
+    \iint P_n(x)P_n(y)\,x^{t-1}y^{t-1}=r_n(t)^2=:R_n(t).
   \]
   \pause
-  Ignore the logarithm for a moment. Since $(xy)^{t-1}=x^{t-1}\,y^{t-1}$, with the same
-  exponent on $x$ and $y$, each integral splits into two equal factors:
-  \[
-    \iint P_n(x)P_n(y)\,x^{t-1}y^{t-1}
-    =\Bigl(\int_0^1x^{t-1}P_n\Bigr)\Bigl(\int_0^1y^{t-1}P_n\Bigr)=r_n(t)^2=:R_n(t).
-  \]
-\end{frame}
-
-\begin{frame}{The derivative comes from the logarithm}
-  Now put the logarithm back. It appears when we differentiate in the exponent:
-  \[
-    \frac{\dd}{\dd t}(xy)^{t-1}=\log(xy)\,(xy)^{t-1}.
-  \]
-  \pause
-  So the $t$-th term of the sum is
-  \[
-    \iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr)
-    =-\frac{\dd}{\dd t}\iint P_n(x)P_n(y)\,(xy)^{t-1}=-R_n'(t).
-  \]
-  \pause
-  Adding up all the terms:
+  The logarithm is a derivative in the exponent, \ $\frac{\dd}{\dd t}(xy)^{t-1}=\log(xy)\,(xy)^{t-1}$, \ so
   \[
     \boxed{\;J_n=-\sum_{t=1}^\infty R_n'(t)\;}
   \]
-\end{frame}
-
-\begin{frame}{The same recipe, without integrals}
-  \[
-    J_n=-\sum_{t=1}^\infty R_n'(t),\qquad R_n(t)=\Bigl(\frac{(1-t)(2-t)\cdots(n-t)}{t\,(t+1)\cdots(t+n)}\Bigr)^2
-  \]
-  \begin{itemize}
-    \item The poles at $0,-1,\dots,-n$ give shifted zeta values with controlled denominators.
-    \item The zeros at $1,\dots,n$ make the first $n$ terms of the sum vanish.
-    \item Because of the square the zeros are double, so they survive the derivative.
-    \item With the derivative every pole gains a power, which gives cubes and hence $\zeta(3)$.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{The arithmetic, from partial fractions}
-  \[
-    r_n(t)=\sum_{k=0}^n\frac{c_k}{t+k},\qquad c_k=(-1)^k\frac{(n+k)!}{k!^2\,(n-k)!}\in\Z .
-  \]
-  \pause
-  \begin{itemize}
-    \item Squares: $\;-\sum_t\frac{\dd}{\dd t}\frac1{(t+k)^2}=2\Bigl(\zeta(3)-1-\frac1{2^3}-\dots-\frac1{k^3}\Bigr)$.
-    \item Mixed terms: $\frac1{(t+k)(t+j)}=\frac1{j-k}\bigl(\frac1{t+k}-\frac1{t+j}\bigr)$, so $\zeta(2)$
-      cancels.
-  \end{itemize}
-  \pause
-  \[
-    J_n=2a_n\zeta(3)-2b_n,\qquad \Dn^3b_n\in\Z,\qquad a_n=\sum_kc_k^2 .
-  \]
-  The $a_n=1,5,73,1445,\dots$ are Ap\'ery's numbers, and $J_1=10\zeta(3)-12$ as before.
 \end{frame}
 
 \begin{frame}{The catch: the terms have both signs}
@@ -417,26 +335,6 @@
   Each series has one of the two properties. A common recurrence shows that they are equal.
 \end{frame}
 
-\begin{frame}{Ball's series}
-  \[
-    \widetilde R_n(t)=n!^2\,(2t+n)\,
-    \frac{(t-1)\cdots(t-n)\cdot(t+n+1)\cdots(t+2n)}{\bigl(t(t+1)\cdots(t+n)\bigr)^4}
-  \]
-  \begin{itemize}
-    \item It is zero for $t\le n$ and positive for $t>n$, and a Stirling-type estimate gives
-      $\widetilde F_n<20(n+1)^4(\sqrt2-1)^{4n}$.
-    \item There is no obvious reason why it should equal $J_n$.
-  \end{itemize}
-  \pause
-  For $n=1$ we can check by hand that it does:
-  \[
-    \widetilde R_1(t)=-\frac2{t^4}+\frac2{(t+1)^4}+\frac5{t^3}+\frac5{(t+1)^3}-\frac5{t^2}+\frac5{(t+1)^2}
-  \]
-  \[
-    \widetilde F_1=-2\zeta(4)+2(\zeta(4)-1)+5\zeta(3)+5(\zeta(3)-1)-5\zeta(2)+5(\zeta(2)-1)=10\zeta(3)-12 .
-  \]
-\end{frame}
-
 \begin{frame}{The certificate for Ball's series}
   The recurrence for $\widetilde F_n$ comes from a telescoping identity whose certificate is
   $\dfrac{\widetilde R_n(t)}{(2t+n)(t+2n-1)(t+2n)}$ times
@@ -447,7 +345,6 @@
     &+(384n^5+396n^4+97n^3-29n^2-17n-2)t\\
     &+n(153n^5+183n^4+50n^3-30n^2-22n-4).
   \end{align*}}
-  \pause
   To check it, expand a polynomial identity in $t$ and $n$. To find it, use a computer.
 \end{frame}
 
@@ -466,22 +363,7 @@
     \qquad
     \tau_0=-\tfrac12+\sqrt{\tfrac54+\sqrt2}=1.1322\ldots
   \]}%
-  \pause
   A few more lines of algebra, and $e^{f(\tau_0)}=(\sqrt2-1)^4$: the number we met in Step 4.
-\end{frame}
-
-\begin{frame}{The end of Zudilin's proof}
-  Zudilin finishes ``using a trivial bound $\Dn<3^n$''. Our Step 5 is enough for this:
-  we only need $\Dn<3^n$ for infinitely many $n$, because $\widetilde F_n>0$ for every $n$:
-  \[
-    0<q\,\Dn^3J_n<20q\,(n+1)^4\bigl[27(\sqrt2-1)^4\bigr]^n\longrightarrow0
-    \quad\text{along those }n .
-  \]
-  \pause
-  \begin{block}{Zudilin's proof in total}
-    one series for arithmetic $+$ one series for size $+$ two recurrences
-    $+$ two certificates $+$ a bridge $+$ Stirling-type estimates.
-  \end{block}
 \end{frame}
 
 % ======================================================================
@@ -557,48 +439,18 @@
   That leaves six unknowns: $A$, $B$, $\lambda$ and the coefficients of $W(t)=w_0+w_1t+w_2t^2$.
 \end{frame}
 
-\begin{frame}{Six unknowns, five equations}
-  Divide by $R_n$. All the ratios are simple:
+\begin{frame}{The guess works}
   \[
-    \frac{R_{n-1}}{R_n}=\Bigl(\frac{t+n}{t-n}\Bigr)^2,\quad
-    \frac{R_{n+1}}{R_n}=\Bigl(\frac{t-n-1}{t+n+1}\Bigr)^2,\quad
-    \frac{R_n(t+1)}{R_n(t)}=\frac{t^4}{(n-t)^2(n+1+t)^2}.
+    A=n^3,\quad B=(n+1)^3,\quad\lambda=4(2n+1)^3,\quad
+    W(t)=4(2n+1)\bigl((2n+1)^2+t-2t^2\bigr).
   \]
-  \pause
-  The identity becomes
-  \[
-    \frac{4Ant}{(n-t)^2}-\frac{4B(n+1)t}{(n+1+t)^2}=\lambda-W(t)+\frac{t^4\,W(t+1)}{(n-t)^2(n+1+t)^2}.\tag{$\star$}
-  \]
-  \pause
-  Multiplied by $(n-t)^2(n+1+t)^2$, both sides have degree $\le4$ (the $t^6$ and $t^5$ terms
-  cancel). That makes five equations for six unknowns, so a solution exists.
-  \medskip
-
-  That factor is nonzero at $t=0$, so it is enough to match Taylor coefficients at $t=0$ up to $t^4$.
-\end{frame}
-
-\begin{frame}{Solving it, one coefficient at a time}
-  Expand both sides of $(\star)$ at $t=0$:
-  \medskip
-
-  \centering
-  \begin{tabular}{@{}ll@{}}
-    \toprule
-    power & matching the coefficients gives\\
-    \midrule
-    $t^3$ & $12\bigl(\frac A{n^3}-\frac B{(n+1)^3}\bigr)=0$, \ so \ $A=n^3$, \ $B=(n+1)^3$\\[4pt]
-    \pause
-    $t^0,t^1,t^2$ & $w_0=\lambda$, \ $w_1=4(2n+1)$, \ $w_2=-8(2n+1)$\\[4pt]
-    \pause
-    $t^4$ & $\dfrac{16(2n+1)}{n(n+1)}=\dfrac{W(1)}{n^2(n+1)^2}=\dfrac{\lambda-4(2n+1)}{n^2(n+1)^2}$,
-      \ so \ $\lambda=4(2n+1)^3$\\
-    \bottomrule
-  \end{tabular}
+  All of $A$, $B$, $\lambda$ are positive.
   \pause
   \medskip
-  \begin{block}{The solution}
-    \centering
-    $A=n^3,\qquad B=(n+1)^3,\qquad \lambda=4(2n+1)^3$, \qquad all positive.
+  \begin{block}{Why this is only a check}
+    Divide by $R_n$ and clear denominators: both sides are polynomials in $t$ of degree $\le4$.
+    So matching five Taylor coefficients at $t=0$ determines the unknowns and verifies the
+    identity. \ The certificate $W$ is Zudilin's.
   \end{block}
 \end{frame}
 
@@ -632,26 +484,6 @@
   the current drops at each $n$ by the leak $4(2n+1)^3J_n$, which is positive as long as $J_n>0$.
 \end{frame}
 
-\begin{frame}{Where does the 17 come from?}
-  Our current law, \ $(n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n$, \ grouped by $J_{n+1},J_n,J_{n-1}$:
-  \[
-    (n+1)^3J_{n+1}-\bigl[\underbrace{(n+1)^3+n^3}_{\text{two differences}}+\underbrace{4(2n+1)^3}_{\text{leak}}\bigr]J_n+n^3J_{n-1}=0 .
-  \]
-  Both parts of the middle coefficient contain the factor $2n+1$:
-  \[
-    \begin{aligned}
-      (n+1)^3+n^3&=(2n+1)\,(n^2+n+1)\\
-      4(2n+1)^3&=(2n+1)\,(16n^2+16n+4)\\
-      \text{sum}&=(2n+1)\,(17n^2+17n+5)
-    \end{aligned}
-  \]
-  which is Ap\'ery's recurrence:
-  \ $(n+1)^3J_{n+1}-(2n+1)(17n^2+17n+5)J_n+n^3J_{n-1}=0$.
-  \begin{block}{}
-    \centering $17=1+16$: \ one from the two differences, sixteen from the leak.
-  \end{block}
-\end{frame}
-
 \begin{frame}{No valleys, no peaks: $J_n$ decreases to zero}
   A sequence tending to $0$ attains its minimum if it has a negative term, and attains its
   maximum if its terms are positive.
@@ -683,21 +515,6 @@
   \]
   \pause
   The true ratios decrease to $17+12\sqrt2\approx33.97$, so the maximum principle loses very little.
-\end{frame}
-
-\begin{frame}{What if there were no leak?}
-  Then the current is constant: $C_n=C$, so $J_{n-1}-J_n=\dfrac C{n^3}$, and since $J_n\to0$,
-  \[
-    J_n=C\sum_{k>n}\frac1{k^3}.
-  \]
-  \pause
-  This is the tail of $\zeta(3)$, that is, the partial sums we rejected at the start, and it
-  decays only like $\frac1{2n^2}$.
-  \pause
-  \begin{block}{}
-    The approximation that fails and the one that works satisfy the same current law.\\
-    The only difference is the extra term $4(2n+1)^3J_n$, which exceeds $32n^3J_n$.
-  \end{block}
 \end{frame}
 
 \begin{frame}{The contradiction again}
@@ -765,6 +582,229 @@
   polynomial is Zudilin's rational function.
 \end{frame}
 
+\begin{frame}[standout]
+  Questions?
+\end{frame}
+
+% ======================================================================
+% Backup slides, not presented; in talk order.
+\appendix
+\section{Backup slides}
+
+\begin{frame}{Step 4 in detail: AM--GM twice}
+  $J_n=\displaystyle\int\frac{G^n}{Q}$ \ with \ $Q=(x+t)(1+yt)$ \ and \ $G=\dfrac{x(1-x)\,y(1-y)\,t}{Q}$.
+  \medskip
+
+  If $G\le\rho$ everywhere, then $J_n\le\rho^n\displaystyle\int\frac1Q=2\zeta(3)\rho^n$.
+  \medskip
+
+  AM--GM, used twice, reduces three variables to one. Put $u=\sqrt{xy}$.
+  \begin{itemize}
+    \item Denominator: $\dfrac Qt=1+xy+\underbrace{yt+\dfrac xt}_{\ge2\sqrt{xy}}\ge(1+u)^2$
+      \newline\mbox{}\hfill{\small equality when $t=\sqrt{x/y}$ balances $yt$ and $x/t$}
+    \item Numerator: $(1-x)(1-y)=1-\underbrace{(x+y)}_{\ge2\sqrt{xy}}+xy\le(1-u)^2$
+      \newline\mbox{}\hfill{\small for fixed $xy$, equality when $x=y$}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Step 4 in detail: a one-variable problem}
+  \[
+    G=\frac{xy\,(1-x)(1-y)}{Q/t}\le\Bigl(\underbrace{\frac{u(1-u)}{1+u}}_{g(u)}\Bigr)^2 .
+  \]
+  Maximise $g$ by calculus. The numerator of $g'(u)$ is
+  \[
+    (1-2u)(1+u)-u(1-u)=1-2u-u^2,
+  \]
+  which vanishes at $u=\alpha=\sqrt2-1$.
+  \medskip
+
+  Using $1-\alpha=\sqrt2\,\alpha$ and $1+\alpha=\sqrt2$:\quad $g(\alpha)=\alpha^2$.
+\end{frame}
+
+\begin{frame}{Step 4 in detail: why $(u-\alpha)^2$?}
+  We can also check the maximum without calculus. We want $\alpha^2(1+u)-u(1-u)\ge0$.
+  \medskip
+
+  This quadratic in $u$ would then be $\ge0$ and vanish at $u=\alpha$, so $\alpha$ would be a
+  double root, and the quadratic a perfect square. Indeed:
+  \[
+    \alpha^2(1+u)-u(1-u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
+  \]
+  and this is true because $1-\alpha^2=2\alpha$, i.e.\ $\alpha^2+2\alpha-1=0$.
+  \begin{block}{Result}
+    $G\le\alpha^4=(\sqrt2-1)^4=17-12\sqrt2\approx\frac1{34}$, \ equality at $x=y=\alpha$, $t=1$:
+    \[
+      0<J_n\le2\zeta(3)\,(17-12\sqrt2)^n,\qquad\lim J_n^{1/n}=17-12\sqrt2.
+    \]
+  \end{block}
+\end{frame}
+
+\begin{frame}{Why a square?}
+  Expand the kernel's denominator, indexing the terms by $t=1,2,3,\dots$:
+  \[
+    \frac1{1-xy}=1+xy+(xy)^2+(xy)^3+\cdots=\sum_{t=1}^\infty(xy)^{t-1}.
+  \]
+  Then Beukers' integral becomes a sum of integrals:
+  \[
+    J_n=\iint P_n(x)P_n(y)\,\frac{-\log(xy)}{1-xy}
+    =\sum_{t=1}^\infty\iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr).
+  \]
+  Ignore the logarithm for a moment. Since $(xy)^{t-1}=x^{t-1}\,y^{t-1}$, with the same
+  exponent on $x$ and $y$, each integral splits into two equal factors:
+  \[
+    \iint P_n(x)P_n(y)\,x^{t-1}y^{t-1}
+    =\Bigl(\int_0^1x^{t-1}P_n\Bigr)\Bigl(\int_0^1y^{t-1}P_n\Bigr)=r_n(t)^2=:R_n(t).
+  \]
+\end{frame}
+
+\begin{frame}{The derivative comes from the logarithm}
+  Now put the logarithm back. It appears when we differentiate in the exponent:
+  \[
+    \frac{\dd}{\dd t}(xy)^{t-1}=\log(xy)\,(xy)^{t-1}.
+  \]
+  So the $t$-th term of the sum is
+  \[
+    \iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr)
+    =-\frac{\dd}{\dd t}\iint P_n(x)P_n(y)\,(xy)^{t-1}=-R_n'(t).
+  \]
+  Adding up all the terms:
+  \[
+    \boxed{\;J_n=-\sum_{t=1}^\infty R_n'(t)\;}
+  \]
+\end{frame}
+
+\begin{frame}{The same recipe, without integrals}
+  \[
+    J_n=-\sum_{t=1}^\infty R_n'(t),\qquad R_n(t)=\Bigl(\frac{(1-t)(2-t)\cdots(n-t)}{t\,(t+1)\cdots(t+n)}\Bigr)^2
+  \]
+  \begin{itemize}
+    \item The poles at $0,-1,\dots,-n$ give shifted zeta values with controlled denominators.
+    \item The zeros at $1,\dots,n$ make the first $n$ terms of the sum vanish.
+    \item Because of the square the zeros are double, so they survive the derivative.
+    \item With the derivative every pole gains a power, which gives cubes and hence $\zeta(3)$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The arithmetic, from partial fractions}
+  \[
+    r_n(t)=\sum_{k=0}^n\frac{c_k}{t+k},\qquad c_k=(-1)^k\frac{(n+k)!}{k!^2\,(n-k)!}\in\Z .
+  \]
+  \begin{itemize}
+    \item Squares: $\;-\sum_t\frac{\dd}{\dd t}\frac1{(t+k)^2}=2\Bigl(\zeta(3)-1-\frac1{2^3}-\dots-\frac1{k^3}\Bigr)$.
+    \item Mixed terms: $\frac1{(t+k)(t+j)}=\frac1{j-k}\bigl(\frac1{t+k}-\frac1{t+j}\bigr)$, so $\zeta(2)$
+      cancels.
+  \end{itemize}
+  \[
+    J_n=2a_n\zeta(3)-2b_n,\qquad \Dn^3b_n\in\Z,\qquad a_n=\sum_kc_k^2 .
+  \]
+  The $a_n=1,5,73,1445,\dots$ are Ap\'ery's numbers, and $J_1=10\zeta(3)-12$ as before.
+\end{frame}
+
+\begin{frame}{Ball's series}
+  \[
+    \widetilde R_n(t)=n!^2\,(2t+n)\,
+    \frac{(t-1)\cdots(t-n)\cdot(t+n+1)\cdots(t+2n)}{\bigl(t(t+1)\cdots(t+n)\bigr)^4}
+  \]
+  \begin{itemize}
+    \item It is zero for $t\le n$ and positive for $t>n$, and a Stirling-type estimate gives
+      $\widetilde F_n<20(n+1)^4(\sqrt2-1)^{4n}$.
+    \item There is no obvious reason why it should equal $J_n$.
+  \end{itemize}
+  For $n=1$ we can check by hand that it does:
+  \[
+    \widetilde R_1(t)=-\frac2{t^4}+\frac2{(t+1)^4}+\frac5{t^3}+\frac5{(t+1)^3}-\frac5{t^2}+\frac5{(t+1)^2}
+  \]
+  \[
+    \widetilde F_1=-2\zeta(4)+2(\zeta(4)-1)+5\zeta(3)+5(\zeta(3)-1)-5\zeta(2)+5(\zeta(2)-1)=10\zeta(3)-12 .
+  \]
+\end{frame}
+
+\begin{frame}{The end of Zudilin's proof}
+  Zudilin finishes ``using a trivial bound $\Dn<3^n$''. Our Step 5 is enough for this:
+  we only need $\Dn<3^n$ for infinitely many $n$, because $\widetilde F_n>0$ for every $n$:
+  \[
+    0<q\,\Dn^3J_n<20q\,(n+1)^4\bigl[27(\sqrt2-1)^4\bigr]^n\longrightarrow0
+    \quad\text{along those }n .
+  \]
+  \begin{block}{Zudilin's proof in total}
+    one series for arithmetic $+$ one series for size $+$ two recurrences
+    $+$ two certificates $+$ a bridge $+$ Stirling-type estimates.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Six unknowns, five equations}
+  Divide by $R_n$. All the ratios are simple:
+  \[
+    \frac{R_{n-1}}{R_n}=\Bigl(\frac{t+n}{t-n}\Bigr)^2,\quad
+    \frac{R_{n+1}}{R_n}=\Bigl(\frac{t-n-1}{t+n+1}\Bigr)^2,\quad
+    \frac{R_n(t+1)}{R_n(t)}=\frac{t^4}{(n-t)^2(n+1+t)^2}.
+  \]
+  The identity becomes
+  \[
+    \frac{4Ant}{(n-t)^2}-\frac{4B(n+1)t}{(n+1+t)^2}=\lambda-W(t)+\frac{t^4\,W(t+1)}{(n-t)^2(n+1+t)^2}.\tag{$\star$}
+  \]
+  Multiplied by $(n-t)^2(n+1+t)^2$, both sides have degree $\le4$ (the $t^6$ and $t^5$ terms
+  cancel). That makes five equations for six unknowns, so a solution exists.
+  \medskip
+
+  That factor is nonzero at $t=0$, so it is enough to match Taylor coefficients at $t=0$ up to $t^4$.
+\end{frame}
+
+\begin{frame}{Solving it, one coefficient at a time}
+  Expand both sides of $(\star)$ at $t=0$:
+  \medskip
+
+  \centering
+  \begin{tabular}{@{}ll@{}}
+    \toprule
+    power & matching the coefficients gives\\
+    \midrule
+    $t^3$ & $12\bigl(\frac A{n^3}-\frac B{(n+1)^3}\bigr)=0$, \ so \ $A=n^3$, \ $B=(n+1)^3$\\[4pt]
+    $t^0,t^1,t^2$ & $w_0=\lambda$, \ $w_1=4(2n+1)$, \ $w_2=-8(2n+1)$\\[4pt]
+    $t^4$ & $\dfrac{16(2n+1)}{n(n+1)}=\dfrac{W(1)}{n^2(n+1)^2}=\dfrac{\lambda-4(2n+1)}{n^2(n+1)^2}$,
+      \ so \ $\lambda=4(2n+1)^3$\\
+    \bottomrule
+  \end{tabular}
+  \medskip
+  \begin{block}{The solution}
+    \centering
+    $A=n^3,\qquad B=(n+1)^3,\qquad \lambda=4(2n+1)^3$, \qquad all positive.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Where does the 17 come from?}
+  Our current law, \ $(n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n$, \ grouped by $J_{n+1},J_n,J_{n-1}$:
+  \[
+    (n+1)^3J_{n+1}-\bigl[\underbrace{(n+1)^3+n^3}_{\text{two differences}}+\underbrace{4(2n+1)^3}_{\text{leak}}\bigr]J_n+n^3J_{n-1}=0 .
+  \]
+  Both parts of the middle coefficient contain the factor $2n+1$:
+  \[
+    \begin{aligned}
+      (n+1)^3+n^3&=(2n+1)\,(n^2+n+1)\\
+      4(2n+1)^3&=(2n+1)\,(16n^2+16n+4)\\
+      \text{sum}&=(2n+1)\,(17n^2+17n+5)
+    \end{aligned}
+  \]
+  which is Ap\'ery's recurrence:
+  \ $(n+1)^3J_{n+1}-(2n+1)(17n^2+17n+5)J_n+n^3J_{n-1}=0$.
+  \begin{block}{}
+    \centering $17=1+16$: \ one from the two differences, sixteen from the leak.
+  \end{block}
+\end{frame}
+
+\begin{frame}{What if there were no leak?}
+  Then the current is constant: $C_n=C$, so $J_{n-1}-J_n=\dfrac C{n^3}$, and since $J_n\to0$,
+  \[
+    J_n=C\sum_{k>n}\frac1{k^3}.
+  \]
+  This is the tail of $\zeta(3)$, that is, the partial sums we rejected at the start, and it
+  decays only like $\frac1{2n^2}$.
+  \begin{block}{}
+    The approximation that fails and the one that works satisfy the same current law.\\
+    The only difference is the extra term $4(2n+1)^3J_n$, which exceeds $32n^3J_n$.
+  \end{block}
+\end{frame}
+
 \begin{frame}{References}
   \scriptsize
   \begin{columns}[T]
@@ -791,10 +831,6 @@
       \end{itemize}
     \end{column}
   \end{columns}
-\end{frame}
-
-\begin{frame}[standout]
-  Questions?
 \end{frame}
 
 \end{document}
