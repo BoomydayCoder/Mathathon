@@ -85,39 +85,74 @@
 
 \begin{frame}{Step 1: $\zeta(3)$ as an integral}
   Integration turns powers into reciprocals of integers:
-  \ $\int_0^1x^m\dd x=\frac1{m+1}$, \ $\int_0^1-x^m\log x\dd x=\frac1{(m+1)^2}$.
-
-  With a second variable $y$, and summing over $m\ge0$:
   \[
-    \iint_{[0,1]^2}K(x,y)\dd x\dd y=2\zeta(3),\qquad K(x,y)=\frac{-\log(xy)}{1-xy}\quad\text{(the \alert{kernel}).}
+    \int_0^1x^m\dd x=\frac1{m+1},\qquad
+    \int_0^1-x^m\log x\dd x=\frac1{(m+1)^2}\quad\text{(integrate by parts).}
   \]
-  Multiply the kernel by a monomial:
+  Multiply the two, using a second variable $y$:
   \[
-    \iint x^ry^rK=2\zeta(3)-2\Bigl(1+\frac1{2^3}+\dots+\frac1{r^3}\Bigr),\qquad
-    \iint x^ry^sK=\frac1{r-s}\sum_{j=s+1}^{r}\frac1{j^2}\quad(r>s).
+    \int_0^1\!\!\int_0^1-(xy)^m\log x\dd x\dd y=\frac1{(m+1)^3}.
   \]
-  Hence $\Dn^3\iint P(x)P(y)K\in\Z+\Z\zeta(3)$ for every integer polynomial $P$ of degree $\le n$.
+  Symmetrise: $-\log x-\log y=-\log(xy)$, so
+  $\displaystyle\iint-(xy)^m\log(xy)\dd x\dd y=\frac2{(m+1)^3}$.
 
-  For example, $P=1-2x$ gives $10\zeta(3)-12\approx0.0206$.
+  Now sum over $m\ge0$, using $\sum_m(xy)^m=\frac1{1-xy}$:
+  \[
+    \iint_{[0,1]^2}\frac{-\log(xy)}{1-xy}\dd x\dd y=2\zeta(3).
+  \]
 \end{frame}
 
-\begin{frame}{Step 2: the polynomial that kills monomials}
-  To make $\int_0^1P(x)f(x)\dd x$ small, ask $P$ to kill the low-degree monomials:
+\begin{frame}{Step 1: monomials and polynomials}
+  Call $K(x,y)=\frac{-\log(xy)}{1-xy}$ the \alert{kernel}. What happens if we multiply it by a monomial?
+  \begin{itemize}
+    \item With $x^ry^r$ the sum starts later:
+      \[
+        \iint x^ry^rK=2\sum_{m>r}\frac1{m^3}=2\zeta(3)-2\Bigl(1+\frac1{2^3}+\dots+\frac1{r^3}\Bigr).
+      \]
+    \item With $x^ry^s$, $r\ne s$, the sum telescopes and $\zeta(3)$ drops out:
+      \[
+        \iint x^ry^sK=\frac1{r-s}\sum_{j=s+1}^{r}\frac1{j^2}\in\mathbb Q .
+      \]
+  \end{itemize}
+  Hence $\Dn^3\iint P(x)P(y)K\in\Z+\Z\zeta(3)$ for every integer polynomial $P$ of degree $\le n$.
+
+  For example, $P=1-2x$ gives $10\zeta(3)-12\approx0.0206$, which is already small.
+\end{frame}
+
+\begin{frame}{Step 2: making the integral small}
+  We want an integer polynomial $P$ of degree $n$ that makes
+  $\displaystyle\iint P(x)P(y)K(x,y)\dd x\dd y$ \alert{small}.
+  \medskip
+
+  Start with one variable: how do we make $\int_0^1P(x)f(x)\dd x$ small? Expand $f$ in a Taylor series,
+  \[
+    f(x)=a_0+a_1x+\dots+a_{n-1}x^{n-1}+(\text{higher order terms}).
+  \]
+  and ask $P$ to kill the low-degree monomials:
   \[
     \int_0^1x^jP(x)\dd x=0\qquad\text{for } j=0,1,\dots,n-1.
   \]
-  Then $\int Pf$ only sees the higher-order part of the Taylor series of $f$.
-  This determines $P$ up to scale:
+  Then $\int Pf$ only sees the higher-order part of $f$.
+  There are $n$ conditions on $n+1$ coefficients, so $P$ is unique up to scale.
+\end{frame}
+
+\begin{frame}{Step 2: the polynomial that kills monomials}
+  The $n$-th derivative kills every polynomial of degree $<n$. Move it onto $P$ by integrating by
+  parts $n$ times, with no boundary terms:
   \[
     P_n(x)=\frac1{n!}\frac{\dd^n}{\dd x^n}\bigl[x^n(1-x)^n\bigr],\qquad
     \int_0^1P_nf=\frac{(-1)^n}{n!}\int_0^1x^n(1-x)^nf^{(n)} .
   \]
-  $P_n$ has integer coefficients (shifted Legendre polynomial). Take
-  \ $J_n=\iint P_n(x)P_n(y)K=2a_n\zeta(3)-2b_n$.
+  $P_n=\sum_k(-1)^k\binom nk\binom{n+k}kx^k$ has integer coefficients (shifted Legendre polynomial).
+  Take $P=P_n$:\quad
+  $J_n=\iint P_n(x)P_n(y)K\dd x\dd y=2a_n\zeta(3)-2b_n$.
   \medskip
 
-  For example, \
-  $\displaystyle\int_0^1\frac{P_n(x)}{x+t}\dd x=\int_0^1\frac{[x(1-x)]^n}{(x+t)^{n+1}}\dd x\;>\;0$.
+  For example, take $f(x)=\frac1{x+t}$. Since
+  $\frac{\dd^n}{\dd x^n}\frac1{x+t}=\frac{(-1)^nn!}{(x+t)^{n+1}}$,
+  \[
+    \int_0^1\frac{P_n(x)}{x+t}\dd x=\int_0^1\frac{[x(1-x)]^n}{(x+t)^{n+1}}\dd x\;>\;0 .
+  \]
 \end{frame}
 
 \begin{frame}{Step 3: separation of variables, and positivity}
@@ -208,6 +243,9 @@
 \section{Part II: from integrals to sums, and Zudilin's route}
 
 \begin{frame}{Zudilin's rational function is our Legendre polynomial}
+  Read Beukers' integral as a sum. The moments of $P_n$ give $r_n$, the two copies of $P_n$
+  give the square $R_n=r_n^2$, and the logarithm gives the derivative $R_n'$.
+
   Collect all the moments of $P_n$ in one function:
   \[
     r_n(t)=\int_0^1x^{t-1}P_n(x)\dd x\qquad(t>0).
@@ -540,24 +578,11 @@
 \end{frame}
 
 \begin{frame}{Why it stops at $\zeta(3)$}
-  Replace $-\log(xy)$ by its $k$-th power:\quad
-  $J_n^{[k]}=\iint P_n(x)P_n(y)\,\frac{(-\log(xy))^k}{1-xy}$, \quad $J_n^{[1]}=J_n$.
-  \begin{columns}[c]
-    \begin{column}{0.6\textwidth}
-      \begin{itemize}
-        \item $\Dn^{k+2}J_n^{[k]}\in\Z+\Z\zeta(k+2)$
-        \item $J_n^{[k]}=(-1)^k\sum_{t\ge1}R_n^{(k)}(t)$
-        \item The double zeros of $R_n$ at $1,\dots,n$ survive \alert{one} derivative,
-          but not three.
-      \end{itemize}
-      \[
-        J_n^{[3]}=\frac{12\,(H_{n-1}+H_{n+1})}{n^2(n+1)^2}+O\Bigl(\frac{\log n}{n^8}\Bigr),
-      \]
-      with $H_m=1+\frac12+\dots+\frac1m$, so $\Dn^5J_n^{[3]}$ grows.
-    \end{column}
-    \begin{column}{0.38\textwidth}
-      \centering
-      \begin{tikzpicture}[x=0.8cm,y=0.025cm,font=\footnotesize,>=stealth]
+  Replace $-\log(xy)$ by $(-\log(xy))^3$ to get $J_n^{[3]}$, with
+  $\Dn^5J_n^{[3]}\in\Z+\Z\zeta(5)$.
+
+  \centering
+      \begin{tikzpicture}[x=1.4cm,y=0.0215cm,font=\small,>=stealth]
         \draw[->,mDarkTeal] (0.6,0)--(4.6,0) node[right] {$n$};
         \draw[->,mDarkTeal] (0.6,-135)--(0.6,12);
         \foreach \x/\l in {1/10,2/20,3/40,4/80} \node[above] at (\x,0) {$\l$};
@@ -571,8 +596,10 @@
         \node[text=mLightBrown,below] at (3.2,-10) {$J_n^{[3]}$, for $\zeta(5)$};
         \node[text=mDarkTeal,left] at (3.25,-88) {$J_n^{[1]}$, for $\zeta(3)$};
       \end{tikzpicture}
-    \end{column}
-  \end{columns}
+
+  \raggedright
+  The double zeros of $R_n$ survive \alert{one} derivative, not three. For $\zeta(5)$ the
+  integral is only polynomially small, $J_n^{[3]}\approx24\log n/n^4$.
 
   {\footnotesize Source: the team's notes (Codex exposition, \S16; proof in its Appendix~A).}
 \end{frame}
@@ -625,6 +652,32 @@
   coefficients mean, and why $\zeta(5)$ is different.
 \end{frame}
 
+\begin{frame}{Outlook: an operator picture}
+  \small
+  \textbf{\color{mDarkTeal}Checked} \
+  $\Lambda f=-\bigl(x(1-x)f'\bigr)'$, so $\Lambda P_n=n(n+1)P_n$. \ $X$ is multiplication by $x$. \ $\varphi_n=\langle P_n,f\rangle$.
+
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{}l@{\quad}l@{}}
+    $H=\tfrac12(X\Lambda+\Lambda X)+\tfrac12$, \ $Hf=-\bigl(x^2(1-x)f'\bigr)'+xf$ & a Hamiltonian\\
+    $\langle f,Hf\rangle=\tfrac12\sum_{n\ge1}n^3(\varphi_n-\varphi_{n-1})^2$ & a chain with conductances $n^3$\\
+    $(H+8\Lambda+2)\Psi=6$, \ $\Psi=\sum_n(2n+1)J_nP_n$ & Ap\'ery's recurrence; the leak is $8\Lambda+2$\\
+    $(H_x+\Lambda_y)\,K(xy)=0$, \ $K(u)=\frac{-\log u}{1-u}$ & Beukers' kernel
+  \end{tabular}
+
+  \textbf{\color{mLightBrown}Reported$^\dagger$} \
+  $\zeta(3)=\tfrac12\langle1,H^{-1}1\rangle$. \ With $y=\frac2x-1$, $H$ becomes
+  $-\frac{\dd}{\dd y}(y^2-1)\frac{\dd}{\dd y}$, the radial hyperbolic Laplacian, with spectrum
+  $[\frac14,\infty)$.
+
+  \textbf{\color{mLightBrown}Open} \
+  Is there such an operator with positive weights for $\zeta(5)$? A search found none.
+  Does the singular point $x=-8$ of $H+8\Lambda+2$, or the hyperbolic geometry, explain $17+12\sqrt2$?
+
+  {\footnotesize Outlook, not results. $^\dagger$From the team's notes, not re-derived.
+  See arXiv:1108.5716 (Ismail--Koelink), arXiv:1506.07803.}
+\end{frame}
+
 \begin{frame}[standout]
   Questions?
 \end{frame}
@@ -633,83 +686,6 @@
 % Backup slides, not presented; in talk order.
 \appendix
 \section{Backup slides}
-
-\begin{frame}{Step 1 in detail: writing $\zeta(3)$ as an integral}
-  Integration turns powers into reciprocals of integers:
-  \[
-    \int_0^1x^m\dd x=\frac1{m+1},\qquad
-    \int_0^1-x^m\log x\dd x=\frac1{(m+1)^2}\quad\text{(integrate by parts).}
-  \]
-  Multiply the two, using a second variable $y$:
-  \[
-    \int_0^1\!\!\int_0^1-(xy)^m\log x\dd x\dd y=\frac1{(m+1)^3}.
-  \]
-  Symmetrise: $-\log x-\log y=-\log(xy)$, so
-  $\displaystyle\iint-(xy)^m\log(xy)\dd x\dd y=\frac2{(m+1)^3}$.
-
-  Now sum over $m\ge0$, using $\sum_m(xy)^m=\frac1{1-xy}$:
-  \[
-    \iint_{[0,1]^2}\frac{-\log(xy)}{1-xy}\dd x\dd y=2\zeta(3).
-  \]
-\end{frame}
-
-\begin{frame}{Step 1 in detail: playing with the integral}
-  Call $K(x,y)=\frac{-\log(xy)}{1-xy}$ the \alert{kernel}. What happens if we multiply it by a monomial?
-  \begin{itemize}
-    \item With $x^ry^r$ the sum starts later:
-      \[
-        \iint x^ry^rK=2\sum_{m>r}\frac1{m^3}=2\zeta(3)-2\Bigl(1+\frac1{2^3}+\dots+\frac1{r^3}\Bigr).
-      \]
-    \item With $x^ry^s$, $r\ne s$, the sum telescopes and $\zeta(3)$ drops out:
-      \[
-        \iint x^ry^sK=\frac1{r-s}\sum_{j=s+1}^{r}\frac1{j^2}\in\mathbb Q .
-      \]
-  \end{itemize}
-  \begin{block}{So every polynomial gives a linear combination of $\zeta(3)$ and $1$}
-    For an integer polynomial $P$ of degree $\le n$:\quad
-    $\Dn^3\iint P(x)P(y)K\in\Z+\Z\zeta(3)$.
-    \\[2pt]
-    For example, $P=1-2x$ gives $10\zeta(3)-12\approx0.0206$, which is already small.
-  \end{block}
-\end{frame}
-
-\begin{frame}{Step 2 in detail: making the integral small, one variable first}
-  We want an integer polynomial $P$ of degree $n$ that makes
-  $\displaystyle\iint P(x)P(y)K(x,y)\dd x\dd y$ \alert{small}.
-  \medskip
-
-  Start with one variable: how do we make $\int_0^1P(x)f(x)\dd x$ small? Expand $f$ in a Taylor series,
-  \[
-    f(x)=a_0+a_1x+\dots+a_{n-1}x^{n-1}+(\text{higher order terms}).
-  \]
-  and ask $P$ to kill the low-degree monomials:
-  \[
-    \int_0^1x^jP(x)\dd x=0\qquad\text{for } j=0,1,\dots,n-1.
-  \]
-  Then $\int Pf$ only sees the higher-order part of $f$.
-  \begin{block}{This determines $P$ up to scale}
-    There are $n$ conditions on $n+1$ coefficients, so the solution is unique up to scale.
-  \end{block}
-\end{frame}
-
-\begin{frame}{Step 2 in detail: the polynomial that kills monomials}
-  The $n$-th derivative kills every polynomial of degree $<n$. Move it onto $P$ by integrating by
-  parts $n$ times, with no boundary terms:
-  \[
-    P_n(x)=\frac1{n!}\frac{\dd^n}{\dd x^n}\bigl[x^n(1-x)^n\bigr],\qquad
-    \int_0^1P_nf=\frac{(-1)^n}{n!}\int_0^1x^n(1-x)^nf^{(n)} .
-  \]
-  $P_n=\sum_k(-1)^k\binom nk\binom{n+k}kx^k$ has integer coefficients (shifted Legendre polynomial).
-  Take $P=P_n$:\quad
-  $J_n=\iint P_n(x)P_n(y)K\dd x\dd y=2a_n\zeta(3)-2b_n$.
-  \medskip
-
-  For example, take $f(x)=\frac1{x+t}$. Since
-  $\frac{\dd^n}{\dd x^n}\frac1{x+t}=\frac{(-1)^nn!}{(x+t)^{n+1}}$,
-  \[
-    \int_0^1\frac{P_n(x)}{x+t}\dd x=\int_0^1\frac{[x(1-x)]^n}{(x+t)^{n+1}}\dd x\;>\;0 .
-  \]
-\end{frame}
 
 \begin{frame}{Step 3 in detail: separation of variables}
   $K(x,y)$ mixes $x$ and $y$.
@@ -916,6 +892,23 @@
     \centering
     $A=n^3,\qquad B=(n+1)^3,\qquad \lambda=4(2n+1)^3$, \qquad all positive.
   \end{block}
+\end{frame}
+
+\begin{frame}{Why it stops at $\zeta(3)$: details}
+  Replace $-\log(xy)$ by its $k$-th power:\quad
+  $J_n^{[k]}=\iint P_n(x)P_n(y)\,\frac{(-\log(xy))^k}{1-xy}$, \quad $J_n^{[1]}=J_n$.
+  \begin{itemize}
+    \item $\Dn^{k+2}J_n^{[k]}\in\Z+\Z\zeta(k+2)$
+    \item $J_n^{[k]}=(-1)^k\sum_{t\ge1}R_n^{(k)}(t)$
+    \item The double zeros of $R_n$ at $1,\dots,n$ survive \alert{one} derivative,
+      but not three.
+  \end{itemize}
+  \[
+    J_n^{[3]}=\frac{12\,(H_{n-1}+H_{n+1})}{n^2(n+1)^2}+O\Bigl(\frac{\log n}{n^8}\Bigr),
+  \]
+  with $H_m=1+\frac12+\dots+\frac1m$, so $\Dn^5J_n^{[3]}$ grows.
+
+  {\footnotesize Source: the team's notes (Codex exposition, \S16; proof in its Appendix~A).}
 \end{frame}
 
 \begin{frame}{References}
