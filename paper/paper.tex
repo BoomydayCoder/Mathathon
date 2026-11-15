@@ -84,8 +84,7 @@ Our answers, in the order of the report:
     and the derivative in $J_n=-\sum_tR_n'(t)$, $R_n=r_n^2$, all have reasons (\cref{part:beukers,sec:zudilin}).
   \item \emph{Which equation we want.} An equation of the form
     $B(J_{n+1}-J_n)-A(J_n-J_{n-1})=\lambda J_n$ with $A,B,\lambda>0$ forbids peaks and valleys,
-    and a large $\lambda/A$ forces fast decay (\cref{sec:wish}). Ap\'ery's recurrence is exactly such
-    an equation.
+    and a large $\lambda/A$ forces fast decay (\cref{sec:wish}). Ap\'ery's recurrence is such an equation.
   \item \emph{How to find it.} A telescoping guess with six unknowns reduces to a polynomial identity of
     degree at most four, and five Taylor coefficients at $t=0$ determine the unknowns one at a time
     (\cref{sec:guess}).
@@ -100,7 +99,7 @@ Our answers, in the order of the report:
   \item \emph{Why the direct generalization fails for $\zeta(5)$.} The double zeros of $r_n^2$ survive
     one derivative but not three (\cref{sec:zeta5}).
 \end{enumerate}
-Why this matters: the resulting proof uses only sums and one recurrence, explains every coefficient
+This matters because the resulting proof uses only sums and one recurrence, explains every coefficient
 of Ap\'ery's recurrence, is short enough to formalize, and its maximum-principle argument can be
 tried on other Ap\'ery-like recurrences (\cref{sec:limits}).
 
@@ -160,8 +159,7 @@ so Tonelli's theorem allows the interchange):
 
 \subsection{Modifying the integral}
 
-Having $\zeta(3)$ as an integral, we experiment: what happens if we put other functions in front of
-the integrand? Inserting monomials $x^ry^s$ produces linear combinations of $\zeta(3)$ and $1$
+Having $\zeta(3)$ as an integral, we put other functions in front of the integrand. Inserting monomials $x^ry^s$ produces linear combinations of $\zeta(3)$ and $1$
 (\cref{lem:moments}), and hence so does inserting any polynomial $P(x)P(y)$.
 
 \begin{definition}
@@ -189,7 +187,7 @@ nonnegative, so Tonelli's theorem allows termwise integration:
 \[
   M_{rs}=\sum_{m\ge0}\Bigl(\frac1{(m+r+1)^2(m+s+1)}+\frac1{(m+r+1)(m+s+1)^2}\Bigr).
 \]
-For $r=s$ this is $2\sum_{k>r}k^{-3}$: the sum in \eqref{eq:zeta3int} simply starts later. For $r>s$ put $d=r-s$ and $a=m+s+1$; the summand is
+For $r=s$ this is $2\sum_{k>r}k^{-3}$: the sum in \eqref{eq:zeta3int} starts later. For $r>s$ put $d=r-s$ and $a=m+s+1$; the summand is
 $\frac{2a+d}{a^2(a+d)^2}=\frac1d\bigl(\frac1{a^2}-\frac1{(a+d)^2}\bigr)$, and the sum telescopes to
 $\frac1d\bigl(H^{(2)}_r-H^{(2)}_s\bigr)$. The case $s>r$ follows by symmetry.
 \end{proof}
@@ -312,7 +310,7 @@ identically zero.
 \end{proof}
 
 \begin{remark}
-Bounding $|P_n(x)P_n(y)|$ at the start would throw away exactly the cancellation designed in
+Bounding $|P_n(x)P_n(y)|$ at the start would throw away the cancellation designed in
 \cref{sec:legendre}. The positive representation must come first.
 \end{remark}
 
@@ -524,7 +522,7 @@ Differentiating under the integral sign,
 \[
   -R_n'(t)=\int_0^1\!\!\int_0^1(xy)^{t-1}P_n(x)P_n(y)\bigl(-\log(xy)\bigr)\dd x\dd y .
 \]
-Sum over $t=1,2,3,\dots$, exactly as in \cref{sec:kernel}: $\sum_{t\ge1}(xy)^{t-1}=\frac1{1-xy}$
+Sum over $t=1,2,3,\dots$, as in \cref{sec:kernel}: $\sum_{t\ge1}(xy)^{t-1}=\frac1{1-xy}$
 turns the right-hand side into $J_n$. The interchange of sum and integral is justified because the
 terms are dominated by $\|P_n\|_\infty^2\,(xy)^{t-1}(-\log(xy))$, whose sum $\|P_n\|_\infty^2K$ is
 integrable by \eqref{eq:zeta3int}. Finally, $R_n$ has double zeros at $1,\dots,n$, so $R_n'$
@@ -533,8 +531,8 @@ vanishes there and the first $n$ terms are zero.
 
 Read without integrals, the recipe is short. The poles of $r_n$ at $0,-1,\dots,-n$ turn the sum
 into shifted zeta values with controlled denominators. The zeros at $1,\dots,n$ remove the first $n$
-terms of the sum. The square makes these zeros double, so that they survive the derivative. And
-the derivative raises the power of every pole by one, which is what produces $\zeta(3)$ rather than
+terms of the sum. The square makes these zeros double, so that they survive the derivative. The
+derivative raises the power of every pole by one, which produces $\zeta(3)$ instead of
 $\zeta(2)$.
 
 \subsection{The arithmetic, straight from partial fractions}
@@ -558,8 +556,8 @@ and $\Dn^3b_n\in\Z$. The integers $a_n=1,5,73,1445,33001,\dots$ are the Ap\'ery 
 
 \subsection{The catch: the terms have both signs}
 
-The sum is excellent for arithmetic and poor for size. Its terms change sign, and it is far from
-obvious how much they cancel. All we can easily extract is the following.
+The sum is good for arithmetic and poor for size. Its terms change sign, and it is not
+clear how much they cancel. The following bound is easy.
 
 \begin{lemma}[The only estimate the sum gives cheaply]\label{lem:crude}
 For $n\ge1$, \ $|J_n|\le\dfrac{n+2}{2n(n+1)}$. In particular $J_n\to0$.
@@ -576,7 +574,7 @@ Hence $|R_n'|=2|r_n||r_n'|\le\frac{n+2}{t^3}$, and by \cref{prop:sum}
 where the last sum telescopes because $\frac1{(t-1)t(t+1)}=\frac12\bigl[\frac1{(t-1)t}-\frac1{t(t+1)}\bigr]$.
 \end{proof}
 
-This is nowhere near enough. The contradiction needs $J_n>0$ and $J_n$ smaller than $\Dn^{-3}$,
+This is far from enough. The contradiction needs $J_n>0$ and $J_n$ smaller than $\Dn^{-3}$,
 which is about $20^{-n}$; the sum gives decay like $\frac1{2n}$ and no sign. In \cref{part:beukers}
 the positive integral did both jobs at once. Without the integral, something else must.
 
@@ -595,7 +593,7 @@ of the type used by Ball and Rivoal~\cite{ballrivoal,rivoal},
 Its terms vanish for $t\le n$ and are \emph{positive} for $t>n$, so $\widetilde F_n>0$, and a
 Stirling-type estimate of the terms gives $\widetilde F_n<20(n+1)^4(\sqrt2-1)^{4n}$. But its
 arithmetic is weaker: on its own it needs $\Dn^4$ instead of $\Dn^3$, which is too expensive.
-So each series has exactly one of the two properties.
+So each series has one of the two properties and lacks the other.
 
 \paragraph{The size estimate.} To get that bound, Zudilin puts $t=\tau n$ and bounds the terms of
 Ball's series by $e^2e^{nf(\tau)}$ times a polynomial factor, where
@@ -646,7 +644,7 @@ because $27(\sqrt2-1)^4<1$ (\cref{sec:contradiction}). So Zudilin's proof, too, 
 theorem.
 
 \medskip
-In total: one series for the arithmetic, a second series for the size, two recurrences with two
+In total, the proof uses one series for the arithmetic, a second series for the size, two recurrences with two
 certificates (one of degree six), a bridge lemma, and Stirling-type estimates. The next part keeps the first series and the first certificate, and replaces everything
 else by about a page.
 
@@ -656,16 +654,16 @@ else by about a page.
 % ======================================================================
 \section{A proof with one series}\label{sec:ours}
 
-We now prove that $J_n>0$ and that $J_n$ decays exponentially, using only the sum of
-\cref{prop:sum}. We use exactly three facts established so far:
+We prove that $J_n>0$ and that $J_n$ decays exponentially, using only the sum of
+\cref{prop:sum}. We use three facts established so far:
 \begin{itemize}
   \item the arithmetic: $J_n=2a_n\zeta(3)-2b_n$ with $a_n\in\Z$ and $\Dn^3b_n\in\Z$, read off from the
     partial fractions of $r_n$ in \cref{sec:zudilin}, with no integrals;
   \item $J_0=2\zeta(3)>0$ (since $r_0=\frac1t$);
   \item $J_n\to0$ (\cref{lem:crude}).
 \end{itemize}
-The missing ingredients are the \emph{sign} and the \emph{speed}. The idea is to let the sequence
-police itself: we look for an equation linking each $J_n$ to its neighbours, of a shape that makes
+What is missing is the \emph{sign} and the \emph{rate of decay}. We look for an equation
+linking each $J_n$ to its neighbours, of a shape that makes
 negative values and slow decay impossible.
 
 \paragraph{What is new.} To our knowledge, the argument of this part is new. We obtain the
@@ -707,13 +705,13 @@ Suppose we had, for every $n\ge1$,
 Look at a \emph{negative valley}: an index with $J_n<0$, $J_{n-1}\ge J_n$ and $J_{n+1}\ge J_n$. Then
 $J_{n+1}-J_n\ge0$ and $J_n-J_{n-1}\le0$, so the left side of \eqref{eq:wish} is $\ge0$, while the
 right side is negative. So there are no negative valleys, and in the same way no positive peaks.
-Moreover, if the sequence turns out to be positive and decreasing, then $J_{n+1}-J_n<0$ and
+Moreover, if the sequence is positive and decreasing, then $J_{n+1}-J_n<0$ and
 \eqref{eq:wish} gives $A(J_{n-1}-J_n)>\lambda J_n$, that is
 \[
   J_n<\frac{A}{A+\lambda}\,J_{n-1}.
 \]
-So a large ratio $\lambda/A$ means fast decay. This is the equation we want. Whether one exists,
-with positive coefficients and a large $\lambda/A$, is something a calculation has to decide.
+So a large ratio $\lambda/A$ means fast decay. This is the equation we want. A calculation decides whether one exists
+with positive coefficients and a large $\lambda/A$.
 
 \subsection{A guess}\label{sec:guess}
 
@@ -738,7 +736,7 @@ Each choice in this guess has a reason.
     what \eqref{eq:telescope} needs; with degree three, $WR_n$ would grow like $t$ and a nonzero
     boundary term would survive. Degree two is also the least that can work: it gives six unknowns
     for the five equations found below, so a nonzero solution must exist, whereas with degree one
-    there would be five unknowns for five equations, and indeed the solution has $w_2\ne0$.
+    there would be five unknowns for five equations, and the solution has $w_2\ne0$.
 \end{itemize}
 Writing $W(t)=w_0+w_1t+w_2t^2$, this gives six unknowns: $A$, $B$, $\lambda$, $w_0$, $w_1$, $w_2$.
 
@@ -792,7 +790,7 @@ The guess succeeds, with
 \[
   A=n^3,\qquad B=(n+1)^3,\qquad \lambda=4(2n+1)^3,\qquad W(t)=4(2n+1)\bigl((2n+1)^2+t-2t^2\bigr).
 \]
-All three coefficients are positive, exactly as \cref{sec:wish} hoped. The polynomial $W$ is the
+All three coefficients are positive, as \cref{sec:wish} requires. The polynomial $W$ is the
 one in Zudilin's Lemma~2 (his $s_n$), which he found with Zeilberger's algorithm; matching Taylor
 coefficients is a way to find it by hand.
 
@@ -807,7 +805,7 @@ Write
 \[
   C_n=n^3(J_{n-1}-J_n).
 \]
-Then \eqref{eq:rec} says exactly
+Then \eqref{eq:rec} reads
 \begin{equation}\label{eq:kirchhoff}
   C_n-C_{n+1}=4(2n+1)^3J_n .
 \end{equation}
@@ -827,7 +825,7 @@ The $17$ is $1+16$: one from the two differences and sixteen from the extra term
 
 \subsection{The maximum principle}
 
-We now forget the sum and use only \eqref{eq:rec}, $J_0>0$ and $J_n\to0$.
+From here on we use only \eqref{eq:rec}, $J_0>0$ and $J_n\to0$.
 
 \begin{lemma}[No negative valley, no positive peak]\label{lem:nopeak}
 There is no $n\ge1$ with $J_n<0$, $J_{n-1}\ge J_n$ and $J_{n+1}\ge J_n$, and none with $J_n>0$,
@@ -863,7 +861,7 @@ Then $J_k\ge J_{k+1}$, and $J_k\ge J_{k-1}$ (by the choice of $k$ if $k>n$, by a
 That is a positive peak.
 \end{proof}
 
-In words: a sequence that tends to zero and can have no peak must fall all the way.
+In words, a sequence that tends to zero and has no peak must decrease all the way.
 
 \subsection{From falling to falling fast}
 
@@ -884,15 +882,15 @@ The argument loses very little. The actual ratios $J_{n-1}/J_n$ for $n=1,\dots,5
 $116.9,\ 66.8,\ 54.1,\ 48.5,\ 45.3$, and numerically they approach $17+12\sqrt2\approx33.97$, the rate found in
 \cref{thm:decay}.
 
-\paragraph{What if the extra term were absent?} Then $C_n$ would be constant, $C_n=C$, so
+\paragraph{Without the extra term.} Then $C_n$ would be constant, $C_n=C$, so
 $J_{n-1}-J_n=C/n^3$, and since $J_n\to0$,
 \[
   J_n=C\sum_{k>n}\frac1{k^3},
 \]
-a multiple of the tail of the series for $\zeta(3)$. This is exactly the failed approximation by
+a multiple of the tail of the series for $\zeta(3)$. This is the failed approximation by
 partial sums from \cref{sec:strategy}, which decays only like $\frac1{2n^2}$. The failed
 approximation and the successful one satisfy the same equation \eqref{eq:kirchhoff} apart from the
-extra term. What turns polynomial decay into exponential decay is that term: $4(2n+1)^3J_n$ exceeds
+extra term. That term turns polynomial decay into exponential decay, since $4(2n+1)^3J_n$ exceeds
 $32\,n^3J_n$ at every $n$.
 
 \subsection{The end of the proof}
@@ -917,22 +915,22 @@ a contradiction.
 % ======================================================================
 \section{Why the method stops at \texorpdfstring{$\zeta(3)$}{zeta(3)}}\label{sec:zeta5}
 
-The construction seems to invite a generalization: replace the logarithm in Beukers' kernel by its
+A natural generalization replaces the logarithm in Beukers' kernel by its
 $k$-th power,
 \[
   J_n^{[k]}=\int_0^1\!\!\int_0^1P_n(x)P_n(y)\,\frac{(-\log(xy))^k}{1-xy}\dd x\dd y,
 \]
-so that $J_n=J_n^{[1]}$. The arithmetic extends perfectly: the moments give
+so that $J_n=J_n^{[1]}$. The arithmetic extends without change: the moments give
 $\Dn^{k+2}J_n^{[k]}\in\Z+\Z\zeta(k+2)$, so $k=3$ isolates $\zeta(5)$ with no lower zeta value in the
-way. The failure is analytic, and the sum form of \cref{sec:zudilin} shows exactly where it happens.
-Exactly as in \cref{prop:sum}, each power of the logarithm becomes one derivative in $t$:
+way. The failure is analytic, and the sum form of \cref{sec:zudilin} shows where it happens.
+As in \cref{prop:sum}, each power of the logarithm becomes one derivative in $t$:
 \[
   J_n^{[k]}=(-1)^k\sum_{t\ge1}R_n^{(k)}(t),\qquad R_n=r_n^2 .
 \]
 For $\zeta(3)$ ($k=1$) the double zeros of $R_n$ at $t=1,\dots,n$ survive the single derivative, so
 the first $n$ terms of the sum vanish; this was the reason for the square. For $\zeta(5)$ ($k=3$) they
 do not survive three derivatives, and the first term alone is of size about $\frac{\log n}{n^4}$. The
-team's notes prove (\cite{codexnotes}, Section~16 and Appendix~A) that in fact
+team's notes prove (\cite{codexnotes}, Section~16 and Appendix~A) that
 \[
   J_n^{[3]}=\frac{12\,(H_{n-1}+H_{n+1})}{n^2(n+1)^2}+O\Bigl(\frac{\log n}{n^8}\Bigr),
 \]
@@ -979,14 +977,14 @@ denominators & $\Dn<3^n$ i.o., $27(\sqrt2-1)^4<1$ & $\Dn<3^n$ i.o. & $\Dn<3^n$ i
 \end{table}
 
 For the question of this report, our proof has two advantages. Compared with Beukers', it uses no
-integrals, and, more to the point, Beukers' proof never uses Ap\'ery's recurrence, so it cannot
-explain it; ours is built around the recurrence. Compared with Zudilin's, it uses one series
+integrals. More importantly, Beukers' proof never uses Ap\'ery's recurrence, so it cannot
+explain it, whereas ours is built around the recurrence. Compared with Zudilin's, it uses one series
 instead of two, one recurrence found by hand instead of two certificates found by computer (one of
 degree six), no Stirling-type estimates, and no appeal to the bound $\Dn<3^n$ for all $n$.
 
 Beukers' proof and ours obtain the sign and the size of the same numbers in two different ways: a
 positive integral and an AM--GM estimate, or a discrete maximum principle and the extra term $4(2n+1)^3J_n$. With
-\cref{lem:factorial}, none of the three proofs needs the prime number theorem. Ours never leaves the world of sums, and it explains Ap\'ery's
+\cref{lem:factorial}, none of the three proofs needs the prime number theorem. Ours uses only sums, and it explains Ap\'ery's
 coefficients ($n^3$, $(n+1)^3$, and $17$) through the difference form \eqref{eq:rec}.
 
 % ======================================================================
