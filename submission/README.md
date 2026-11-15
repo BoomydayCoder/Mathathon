@@ -1,7 +1,7 @@
 # Mathathon submission: team "Still doing pure maths"
 
 Problem: the motivation of Apéry's proof that ζ(3) is irrational and the intuition behind its
-recurrence (reference: Zudilin, arXiv:math/0202159). Track: Algebra / Number Theory.
+recurrence (reference: Zudilin, arXiv:math/0202159). Track: Analysis.
 
 | Path | What it is |
 |---|---|
