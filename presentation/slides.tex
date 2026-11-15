@@ -315,14 +315,16 @@
 
 \begin{frame}{The square and the derivative}
   Expand $\frac1{1-xy}=\sum_{t\ge1}(xy)^{t-1}$ in Beukers' integral:
-  \[
-    J_n=\sum_{t=1}^\infty\iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr).
-  \]
+  \ $J_n=\sum_{t\ge1}\iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr)$.
+  \medskip
+
   \pause
-  Without the logarithm, each integral splits into two equal factors:
+  There are two copies of $P_n$, one in $x$ and one in $y$, and $\frac1{1-xy}$ gives them the same
+  exponent. So, without the logarithm, each integral is a square:
   \[
     \iint P_n(x)P_n(y)\,x^{t-1}y^{t-1}=r_n(t)^2=:R_n(t).
   \]
+  The zeros of $R_n$ at $1,\dots,n$ are double, so they survive a derivative.
   \pause
   The logarithm is a derivative in the exponent, \ $\frac{\dd}{\dd t}(xy)^{t-1}=\log(xy)\,(xy)^{t-1}$, \ so
   \[
@@ -472,12 +474,13 @@
   \begin{itemize}
     \item We take consecutive indices because $r_{n\pm1}$ differs from $r_n$ by a single factor.
     \item The error telescopes, so after $-\sum_t\frac{\dd}{\dd t}$ it leaves only boundary terms,
-      which vanish (double zero of $R_n$ at $t=1$; finite limit at $\infty$).
-    \item We take $W$ a polynomial of degree $\le2$, so that there are no new poles and
-      $WR_n$ stays bounded ($R_n\sim t^{-2}$).
+      which vanish at $t=1$ (double zero of $R_n$).
+    \item We take $\deg W\le2$. Then $WR_n$ stays bounded ($R_n\sim t^{-2}$) and the boundary term
+      at $\infty$ vanishes. For $\deg W=3$ it does not.
   \end{itemize}
   \pause
-  The six unknowns are $A$, $B$, $\lambda$ and the coefficients of $W(t)=w_0+w_1t+w_2t^2$.
+  This gives six unknowns $A,B,\lambda,w_0,w_1,w_2$ for five equations, so a nonzero solution
+  exists. With $\deg W\le1$ there is none: the solution has $w_2=-8(2n+1)\ne0$.
 \end{frame}
 
 \begin{frame}{Solving for the coefficients}
@@ -507,40 +510,24 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{The current law}
+\begin{frame}{The recurrence for $J_n$}
   Apply $-\sum_t\frac{\dd}{\dd t}$. The telescoping error disappears, and we get
   \[
     (n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n .
   \]
   \pause
-  \centering
-  \begin{tikzpicture}[x=3.2cm,>=stealth]
-    \draw[thick] (0,0)--(2,0);
-    \foreach \i/\lab in {0/{J_{n-1}},1/{J_n},2/{J_{n+1}}} {
-      \fill (\i,0) circle (2.5pt); \node[above=3pt] at (\i,0) {$\lab$}; }
-    \node[above=1pt,font=\small] at (0.5,0) {$n^3$};
-    \node[above=1pt,font=\small] at (1.5,0) {$(n+1)^3$};
-    \draw[->,thick,blue] (0.3,-0.3)--(0.7,-0.3) node[midway,below,font=\small] {$C_n$};
-    \draw[->,thick,blue] (1.4,-0.3)--(1.8,-0.3) node[midway,below,font=\small] {$C_{n+1}$};
-    \draw[thick] (1,0)--(1,-1.5);
-    \draw[thick] (0.94,-1.5)--(1.06,-1.5) (0.96,-1.57)--(1.04,-1.57) (0.985,-1.64)--(1.015,-1.64);
-    \draw[->,thick,blue] (1.04,-0.8)--(1.04,-1.3);
-    \node[right,font=\small] at (1.06,-1.05) {leak $4(2n+1)^3J_n$};
-  \end{tikzpicture}
-  \raggedright
-  \pause
-
-  Define the current $C_n=n^3(J_{n-1}-J_n)$. \ Then the recurrence reads
+  Put $C_n=n^3(J_{n-1}-J_n)$. \ Then the recurrence reads
   \[
     C_n-C_{n+1}=4(2n+1)^3J_n .
   \]
-  The current drops at each $n$ by the leak $4(2n+1)^3J_n$, which is positive when $J_n>0$.
+  $C_n$ is $n^3$ times the drop in $J$, and the drop in $C$ is a cube times $J_n$, which is
+  positive while $J_n>0$.
 \end{frame}
 
 \begin{frame}{The coefficient 17}
-  Our current law, \ $(n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n$, \ grouped by $J_{n+1},J_n,J_{n-1}$:
+  The recurrence, \ $(n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n$, \ grouped by $J_{n+1},J_n,J_{n-1}$:
   \[
-    (n+1)^3J_{n+1}-\bigl[\underbrace{(n+1)^3+n^3}_{\text{two differences}}+\underbrace{4(2n+1)^3}_{\text{leak}}\bigr]J_n+n^3J_{n-1}=0 .
+    (n+1)^3J_{n+1}-\bigl[\underbrace{(n+1)^3+n^3}_{\text{two differences}}+\underbrace{4(2n+1)^3}_{\text{extra term}}\bigr]J_n+n^3J_{n-1}=0 .
   \]
   Both parts of the middle coefficient contain the factor $2n+1$:
   \[
@@ -554,16 +541,16 @@
   \ $(n+1)^3J_{n+1}-(2n+1)(17n^2+17n+5)J_n+n^3J_{n-1}=0$.
   \medskip
 
-  So $17=1+16$, with $1$ from the two differences and $16$ from the leak.
+  So $17=1+16$, with $1$ from the two differences and $16$ from the term $4(2n+1)^3$.
 \end{frame}
 
 \begin{frame}{$J_n$ decreases to zero}
-  We know $J_0>0$ and $J_n\to0$, and the recurrence allows no negative valley and no positive peak.
+  $J_0>0$, \ $J_n\to0$, and the recurrence allows no negative valley and no positive peak.
   \pause
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
       \centering
-      \begin{tikzpicture}[x=0.75cm,y=0.9cm,font=\small]
+      \begin{tikzpicture}[x=0.75cm,y=0.45cm,font=\small]
         \draw[gray] (-0.3,0)--(6.6,0);
         \draw[mDarkTeal,thick] (0,0.8)--(1,0.3)--(2,-0.5)--(3,-0.9)--(4,-0.45)--(5,-0.2)--(6,-0.08);
         \foreach \x/\y in {0/0.8,1/0.3,2/-0.5,4/-0.45,5/-0.2,6/-0.08} \fill[mDarkTeal] (\x,\y) circle (2pt);
@@ -572,36 +559,34 @@
         \node[below,text=mLightBrown] at (3,-0.95) {lowest point};
       \end{tikzpicture}
 
-      If some $J_n<0$, the sequence must come back up towards $0$. Its lowest point is a
-      negative valley.
+      {\small A negative term forces a negative valley\\ at the lowest point.}
     \end{column}
     \begin{column}{0.48\textwidth}
       \centering
-      \begin{tikzpicture}[x=0.75cm,y=0.9cm,font=\small]
+      \begin{tikzpicture}[x=0.75cm,y=0.45cm,font=\small]
         \draw[gray] (-0.3,0)--(6.6,0);
-        \draw[mDarkTeal,thick] (0,1.0)--(1,0.55)--(2,0.8)--(3,1.15)--(4,0.7)--(5,0.35)--(6,0.15);
-        \foreach \x/\y in {0/1.0,1/0.55,2/0.8,4/0.7,5/0.35,6/0.15} \fill[mDarkTeal] (\x,\y) circle (2pt);
-        \fill[mLightBrown] (3,1.15) circle (3pt);
-        \node[below] at (1,0.5) {$J_{n-1}$}; \node[below right] at (2,0.8) {$J_n$};
-        \node[above,text=mLightBrown] at (3,1.2) {highest point};
+        \draw[mDarkTeal,thick] (0,1.7)--(1,1.2)--(2,1.5)--(3,2.0)--(4,1.3)--(5,0.7)--(6,0.3);
+        \foreach \x/\y in {0/1.7,1/1.2,2/1.5,4/1.3,5/0.7,6/0.3} \fill[mDarkTeal] (\x,\y) circle (2pt);
+        \fill[mLightBrown] (3,2.0) circle (3pt);
+        \node[below] at (1,1.15) {$J_{n-1}$}; \node[below right] at (2,1.5) {$J_n$};
+        \node[above,text=mLightBrown] at (3,2.05) {highest point};
       \end{tikzpicture}
 
-      If $J_n\ge J_{n-1}>0$, the sequence must come back down towards $0$. The highest of
-      $J_n,J_{n+1},\dots$ is a positive peak.
+      {\small A step up, $J_n\ge J_{n-1}$, forces a positive peak\\ at the highest of $J_n,J_{n+1},\dots$}
     \end{column}
   \end{columns}
   \pause
-  \medskip
+  \smallskip
 
-  {\small These points exist: if $J_n\to0$ and some term is negative, only finitely many terms lie
-  below half of it. The same holds for the highest point.}
+  {\small Both points exist because $J_n\to0$: only finitely many terms lie below half of a
+  negative term.
 
   If $J_n=0$, then $(n+1)^3J_{n+1}+n^3J_{n-1}=0$ with both terms $\ge0$, so both vanish, and
-  going down we reach $J_0=0$.
+  going down we reach $J_0=0$.}
   \pause
-  \[
-    0<J_n<J_{n-1}\qquad\text{for all }n\ge1 .
-  \]
+  \smallskip
+
+  \centering $\boxed{\;0<J_n<J_{n-1}\quad\text{for all }n\ge1\;}$
 \end{frame}
 
 \begin{frame}{The rate of decay}
@@ -617,8 +602,8 @@
   The true ratios decrease to $17+12\sqrt2\approx33.97$, so the maximum principle loses very little.
 \end{frame}
 
-\begin{frame}{Without the leak}
-  Without the leak the current is constant: $C_n=C$, so $J_{n-1}-J_n=\dfrac C{n^3}$, and since $J_n\to0$,
+\begin{frame}{Without the extra term}
+  Without the term $4(2n+1)^3J_n$, $C_n$ is constant, $C_n=C$, so $J_{n-1}-J_n=\dfrac C{n^3}$, and since $J_n\to0$,
   \[
     J_n=C\sum_{k>n}\frac1{k^3}.
   \]
@@ -721,6 +706,22 @@
   coefficients mean, and why $\zeta(5)$ is different.
 \end{frame}
 
+\begin{frame}{Why it matters, and what we did}
+  The proof uses only sums and one recurrence, and it explains every coefficient of Ap\'ery's
+  recurrence. It is short enough to formalize. The maximum-principle argument could be tried
+  on other Ap\'ery-like recurrences.
+
+  During the event we
+  \begin{itemize}
+    \item reviewed the literature overnight;
+    \item checked Zudilin's proof lemma by lemma, by hand;
+    \item worked through Beukers' proof as the motivation for $r_n$, $R_n$ and $R_n'$;
+    \item found and checked the maximum-principle proof, and derived the recurrence by hand;
+    \item checked the identities symbolically and searched the literature for novelty.
+  \end{itemize}
+  AI tools (Claude, Codex, ChatGPT) were used throughout; the report describes how.
+\end{frame}
+
 \begin{frame}{Outlook: an operator picture}
   \small
   \textbf{\color{mDarkTeal}Checked} \
@@ -728,9 +729,9 @@
 
   \renewcommand{\arraystretch}{1.2}
   \begin{tabular}{@{}l@{\quad}l@{}}
-    $H=\tfrac12(X\Lambda+\Lambda X)+\tfrac12$, \ $Hf=-\bigl(x^2(1-x)f'\bigr)'+xf$ & a Hamiltonian\\
-    $\langle f,Hf\rangle=\tfrac12\sum_{n\ge1}n^3(\varphi_n-\varphi_{n-1})^2$ & a chain with conductances $n^3$\\
-    $(H+8\Lambda+2)\Psi=6$, \ $\Psi=\sum_n(2n+1)J_nP_n$ & Ap\'ery's recurrence; the leak is $8\Lambda+2$\\
+    $H=\tfrac12(X\Lambda+\Lambda X)+\tfrac12$, \ $Hf=-\bigl(x^2(1-x)f'\bigr)'+xf$ & the operator $H$\\
+    $\langle f,Hf\rangle=\tfrac12\sum_{n\ge1}n^3(\varphi_n-\varphi_{n-1})^2$ & its quadratic form\\
+    $(H+8\Lambda+2)\Psi=6$, \ $\Psi=\sum_n(2n+1)J_nP_n$ & Ap\'ery's recurrence\\
     $(H_x+\Lambda_y)\,K(xy)=0$, \ $K(u)=\frac{-\log u}{1-u}$ & Beukers' kernel
   \end{tabular}
 
@@ -928,7 +929,6 @@
         \item A.~Mingarelli, \emph{Mathematics} 11 (2023), 262; arXiv:math/0608577.
         \item A.~Mahboubi, T.~Sibut-Pinote, A formal proof of the irrationality of $\zeta(3)$, \emph{LMCS} 17 (2021).
         \item K.~Rajkumar, A simplification of Ap\'ery's proof, arXiv:1212.5881 (2012).
-        \item P.~Doyle, J.~L.~Snell, \emph{Random Walks and Electric Networks}, MAA, 1984.
       \end{itemize}
     \end{column}
   \end{columns}
