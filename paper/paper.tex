@@ -1,0 +1,341 @@
+% Mathathon paper.
+% Build: latexmk -pdf paper.tex   (or upload to Overleaf; it compiles with pdfLaTeX)
+%
+% The proof below follows Sections 1--8 of the team's notes
+% "Why zeta(3) is irrational: a proof built from its requirements"
+% (Peer Review/Zeta3-4-Motivated-proof-Codex/zeta3-motivated-proof.pdf),
+% which develop Beukers' 1979 proof. Those notes have been checked by AI only.
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[capitalise,nameinlink]{cleveref}
+
+% ---------------------------------------------------------------- macros
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\Dn}{D_n}
+\DeclareMathOperator{\lcm}{lcm}
+
+% ---------------------------------------------------------------- theorems
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Why \texorpdfstring{$\zeta(3)$}{zeta(3)} is irrational: Beukers' proof}
+\author{Mathathon team}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give a complete, self-contained proof that $\zeta(3)=\sum_{m\ge1}m^{-3}$ is irrational
+(Ap\'ery's theorem), following the integral method of Beukers. A double integral against the
+kernel $-\log(xy)/(1-xy)$ turns every integer polynomial of degree $n$ into a linear form
+$A\zeta(3)-B$ whose denominators are cleared by $\Dn^3$, where $\Dn=\lcm(1,\dots,n)$. Choosing
+the shifted Legendre polynomial makes the form positive and smaller than
+$2\zeta(3)(\sqrt2-1)^{4n}$. A short identity between $N!$ and least common multiples shows that
+$\Dn<3^n$ for infinitely many $n$, which is enough to conclude; the prime number theorem is not
+needed.
+\end{abstract}
+
+\tableofcontents
+
+% ======================================================================
+\section{The strategy: an integer between 0 and 1}\label{sec:strategy}
+
+Suppose $\theta=p/q$ with $p\in\Z$ and $q\in\N$. For integers $A,B$ we have
+$q(A\theta-B)=Ap-qB\in\Z$, so if $A\theta-B\ne0$ then $|A\theta-B|\ge1/q$. Since $q$ is fixed, a
+sequence of \emph{nonzero} integer linear forms $A_n\theta-B_n$ tending to $0$ proves that $\theta$
+is irrational.
+
+We shall construct real numbers $J_n$ with three properties:
+\begin{align}
+  &\Dn^3J_n\in\Z+\Z\zeta(3), \qquad \Dn=\lcm(1,2,\dots,n)\quad(D_0=1), \label{eq:arith}\\
+  &J_n>0, \label{eq:pos}\\
+  &J_n\le C\rho^n \quad\text{with } \rho \text{ small enough.} \label{eq:small}
+\end{align}
+
+\begin{remark}
+The obvious candidates, the partial sums $s_n=\sum_{m\le n}m^{-3}$, have the right denominators
+but are far too poor approximations: $\zeta(3)-s_n\ge\int_{n+1}^\infty x^{-3}\dd x=\frac1{2(n+1)^2}$,
+so $\Dn^3(\zeta(3)-s_n)\ge n^3/(2(n+1)^2)\to\infty$. Much more cancellation is needed, with the
+arithmetic kept under control.
+\end{remark}
+
+% ======================================================================
+\section{A kernel with the right arithmetic}\label{sec:kernel}
+
+Integration turns powers into reciprocals of integers:
+$\int_0^1x^m\dd x=\frac1{m+1}$ and $\int_0^1x^m(-\log x)\dd x=\frac1{(m+1)^2}$. One logarithm
+and two variables give three powers in a denominator, and a geometric series synchronises the
+exponents.
+
+\begin{definition}
+For $0<x,y<1$ let
+\[
+  K(x,y)=\frac{-\log(xy)}{1-xy}.
+\]
+For a polynomial $P$ put $J(P)=\int_0^1\!\int_0^1P(x)P(y)K(x,y)\dd x\dd y$, and for integers
+$r,s\ge0$ put $M_{rs}=\int_0^1\!\int_0^1x^ry^sK(x,y)\dd x\dd y$.
+\end{definition}
+
+Write $H^{(q)}_j=\sum_{\ell=1}^j\ell^{-q}$, with $H^{(q)}_0=0$.
+
+\begin{lemma}[Moments]\label{lem:moments}
+$M_{rr}=2\bigl(\zeta(3)-H^{(3)}_r\bigr)$, and for $r\ne s$
+\[
+  M_{rs}=\frac{H^{(2)}_r-H^{(2)}_s}{r-s}\in\Q .
+\]
+In particular $\int\!\!\int K=M_{00}=2\zeta(3)$.
+\end{lemma}
+
+\begin{proof}
+Expand $\frac1{1-xy}=\sum_{m\ge0}(xy)^m$ and use $-\log(xy)=-\log x-\log y$. All terms are
+nonnegative, so Tonelli's theorem allows termwise integration:
+\[
+  M_{rs}=\sum_{m\ge0}\Bigl(\frac1{(m+r+1)^2(m+s+1)}+\frac1{(m+r+1)(m+s+1)^2}\Bigr).
+\]
+For $r=s$ this is $2\sum_{k>r}k^{-3}$. For $r>s$ put $d=r-s$ and $a=m+s+1$; the summand is
+$\frac{2a+d}{a^2(a+d)^2}=\frac1d\bigl(\frac1{a^2}-\frac1{(a+d)^2}\bigr)$, and the sum telescopes to
+$\frac1d\bigl(H^{(2)}_r-H^{(2)}_s\bigr)$. The case $s>r$ follows by symmetry.
+\end{proof}
+
+\begin{proposition}[Arithmetic]\label{prop:arith}
+If $P(x)=\sum_{j=0}^nc_jx^j$ has integer coefficients, then
+\[
+  J(P)=2\Bigl(\sum_{j=0}^nc_j^2\Bigr)\zeta(3)-b(P),\qquad \Dn^3\,b(P)\in\Z .
+\]
+\end{proposition}
+
+\begin{proof}
+$J(P)=\sum_{r,s}c_rc_sM_{rs}$, and only the diagonal moments contain $\zeta(3)$. For
+$r,s\le n$, each $j^3$ in $H^{(3)}_r$ divides $\Dn^3$, and each term of $M_{rs}$ with $r\ne s$ has
+denominator $(r-s)j^2$ with $j\le n$, so $\Dn^3/((r-s)j^2)=\frac{\Dn}{r-s}\bigl(\frac{\Dn}{j}\bigr)^2\in\Z$.
+\end{proof}
+
+\begin{remark}
+The denominator depends only on the \emph{degree} of $P$, not on the size of its coefficients.
+For example $J(1-2x)=M_{00}-4M_{01}+4M_{11}=10\zeta(3)-12\approx0.0206$.
+\end{remark}
+
+% ======================================================================
+\section{Designing the cancellation: Legendre polynomials}\label{sec:legendre}
+
+To make $\int_0^1P(x)f(x)\dd x$ small we ask $P$ to cancel every polynomial component of degree
+below $n$:
+\begin{equation}\label{eq:orth}
+  \int_0^1x^jP(x)\dd x=0,\qquad j=0,\dots,n-1.
+\end{equation}
+These are $n$ linear equations in $n+1$ unknown coefficients, so a nonzero solution of degree at
+most $n$ exists, and it is unique up to scale. An explicit solution comes from integration by parts,
+since the $n$-th derivative kills polynomials of degree below $n$.
+
+\begin{definition}
+The \emph{shifted Legendre polynomial} of degree $n$ is
+\[
+  P_n(x)=\frac1{n!}\frac{\dd^n}{\dd x^n}\bigl[x^n(1-x)^n\bigr]
+  =\sum_{k=0}^n(-1)^k\binom nk\binom{n+k}k x^k .
+\]
+\end{definition}
+
+So $P_n$ has integer coefficients and $P_n(0)=1$; for example $P_1=1-2x$, $P_2=1-6x+6x^2$,
+$P_3=1-12x+30x^2-20x^3$.
+
+\begin{lemma}[Integration by parts]\label{lem:ibp}
+For $f\in C^n[0,1]$,
+\[
+  \int_0^1P_n(x)f(x)\dd x=\frac{(-1)^n}{n!}\int_0^1x^n(1-x)^nf^{(n)}(x)\dd x .
+\]
+In particular $P_n$ satisfies \eqref{eq:orth}.
+\end{lemma}
+
+\begin{proof}
+$x^n(1-x)^n$ has zeros of order $n$ at both endpoints, so all its derivatives of order below $n$
+vanish there and every boundary term in $n$ integrations by parts is zero.
+\end{proof}
+
+The lemma is especially effective against reciprocal linear factors: for $t>0$,
+$\frac{\dd^n}{\dd x^n}\frac1{x+t}=\frac{(-1)^nn!}{(x+t)^{n+1}}$, so
+\begin{equation}\label{eq:recip}
+  \int_0^1\frac{P_n(x)}{x+t}\dd x=\int_0^1\frac{x^n(1-x)^n}{(x+t)^{n+1}}\dd x>0 .
+\end{equation}
+An integral of an oscillating polynomial has become a positive integral with an explicit $n$-th
+power.
+
+\begin{definition}
+$J_n=J(P_n)=\displaystyle\int_0^1\!\!\int_0^1P_n(x)P_n(y)\,\frac{-\log(xy)}{1-xy}\dd x\dd y.$
+\end{definition}
+
+By \cref{prop:arith}, $J_n$ satisfies \eqref{eq:arith}: $J_n=2a_n\zeta(3)-2b_n$ with
+$a_n=\sum_k\binom nk^2\binom{n+k}k^2\in\Z$ and $\Dn^3b_n\in\Z$.
+
+% ======================================================================
+\section{Positivity}\label{sec:positivity}
+
+\begin{lemma}[Separating the variables]\label{lem:sep}
+For $0<x,y<1$,
+\[
+  K(x,y)=\int_0^\infty\frac{\dd t}{(x+t)(1+yt)} .
+\]
+\end{lemma}
+
+\begin{proof}
+For $0<a<b$, $\int_0^\infty\frac{\dd t}{(t+a)(t+b)}=\frac{\log b-\log a}{b-a}$ (partial fractions;
+the logarithms cancel at infinity). Take $a=x$, $b=1/y$ and multiply numerator and denominator
+by $y$.
+\end{proof}
+
+\begin{proposition}[Positive representation]\label{prop:pos}
+\[
+  J_n=\int_0^\infty\!\!\int_0^1\!\!\int_0^1
+  \frac{\bigl[x(1-x)\,y(1-y)\,t\bigr]^n}{\bigl[(x+t)(1+yt)\bigr]^{n+1}}\dd x\dd y\dd t>0 .
+\]
+\end{proposition}
+
+\begin{proof}
+Since $|P_n|$ is bounded on $[0,1]$ and $\int\!\!\int\!\!\int\frac{\dd x\dd y\dd t}{(x+t)(1+yt)}=2\zeta(3)$,
+Fubini's theorem lets us integrate in $x$ and $y$ first for each fixed $t>0$. By
+\eqref{eq:recip}, the $x$-integral is $\int_0^1\frac{[x(1-x)]^n}{(x+t)^{n+1}}\dd x$, and since
+$\frac{\dd^n}{\dd y^n}\frac1{1+yt}=\frac{(-1)^nn!\,t^n}{(1+yt)^{n+1}}$, the $y$-integral is
+$t^n\int_0^1\frac{[y(1-y)]^n}{(1+yt)^{n+1}}\dd y$. The integrand is now nonnegative and not
+identically zero.
+\end{proof}
+
+\begin{remark}
+Bounding $|P_n(x)P_n(y)|$ at the start would throw away exactly the cancellation designed in
+\cref{sec:legendre}. The positive representation must come first.
+\end{remark}
+
+% ======================================================================
+\section{Exponential decay}\label{sec:decay}
+
+Write $Q=(x+t)(1+yt)$ and $G=x(1-x)y(1-y)t/Q$, so $J_n=\int G^n/Q$.
+
+\begin{lemma}\label{lem:max}
+On $(0,1)^2\times(0,\infty)$ we have $G\le\rho:=(\sqrt2-1)^4=17-12\sqrt2$, with equality at
+$x=y=\sqrt2-1$, $t=1$.
+\end{lemma}
+
+\begin{proof}
+Let $s=\sqrt{xy}$. By the AM--GM inequality, $(1-x)(1-y)=1-x-y+xy\le(1-s)^2$ and
+$Q/t=1+xy+yt+x/t\ge1+s^2+2s=(1+s)^2$. Hence $G\le\bigl(s(1-s)/(1+s)\bigr)^2$. With
+$\alpha=\sqrt2-1$ one checks $\alpha^2(1+s)-s(1-s)=(s-\alpha)^2\ge0$ (using $\alpha^2+2\alpha=1$),
+so $s(1-s)/(1+s)\le\alpha^2$.
+\end{proof}
+
+\begin{theorem}\label{thm:decay}
+For every $n\ge0$,
+\[
+  0<J_n\le2\zeta(3)\,(17-12\sqrt2)^n ,
+\]
+and in fact $\lim_{n\to\infty}J_n^{1/n}=17-12\sqrt2\approx0.0294$.
+\end{theorem}
+
+\begin{proof}
+Positivity is \cref{prop:pos}. By \cref{lem:max}, $J_n\le\rho^n\int1/Q=\rho^n\int\!\!\int K=2\zeta(3)\rho^n$
+(\cref{lem:sep,lem:moments}). For the limit, integrate only over a small box around
+$(\alpha,\alpha,1)$, where $G>\rho-\varepsilon$ and $1/Q$ is bounded below.
+\end{proof}
+
+% ======================================================================
+\section{Least common multiples without the prime number theorem}\label{sec:lcm}
+
+We only need $\Dn^3$ to be smaller than $\rho^{-n}$ along \emph{some} sequence of indices.
+
+\begin{lemma}\label{lem:factorial}
+For every positive integer $N$, \ $N!=\prod_{k=1}^ND_{\lfloor N/k\rfloor}$.
+\end{lemma}
+
+\begin{proof}
+Fix a prime $p$. The exponent of $p$ in $D_m$ is the number of $a\ge1$ with $p^a\le m$, so its
+exponent on the right is $\sum_{a\ge1}\#\{k:\lfloor N/k\rfloor\ge p^a\}=\sum_{a\ge1}\lfloor N/p^a\rfloor$,
+which is Legendre's formula for its exponent in $N!$.
+\end{proof}
+
+\begin{lemma}\label{lem:lcm}
+For every real $C>e$ there are infinitely many $n$ with $\Dn<C^n$.
+\end{lemma}
+
+\begin{proof}
+Suppose $D_m\ge C^m$ for all $m\ge M$, and let $L=\lfloor N/M\rfloor$. For $k\le L$ we have
+$\lfloor N/k\rfloor\ge M$, and all other factors in \cref{lem:factorial} are at least $1$, so
+\[
+  N\log N\ge\log N!\ge\log C\sum_{k=1}^L\Bigl\lfloor\frac Nk\Bigr\rfloor\ge\log C\,(NH_L-L),
+\]
+where $H_L=\sum_{k\le L}1/k\ge\log(L+1)>\log N-\log M$. Dividing by $N$,
+$\log N\ge\log C\,(\log N-\log M-1/M)$. Since $\log C>1$, this fails for large $N$.
+\end{proof}
+
+Since $e=\sum_k1/k!<1+\sum_{k\ge1}2^{1-k}=3$, we may take $C=3$: $\Dn<3^n$ for infinitely many $n$.
+
+\begin{remark}
+Beukers used the prime number theorem, $\Dn=e^{n+o(n)}$. Any $C$ with $e<C<\rho^{-1/3}\approx3.24$
+would do here; the analytic estimate is what makes this interval nonempty.
+\end{remark}
+
+% ======================================================================
+\section{The contradiction}\label{sec:contradiction}
+
+\begin{theorem}[Ap\'ery]\label{thm:apery}
+$\zeta(3)$ is irrational.
+\end{theorem}
+
+\begin{proof}
+Suppose $\zeta(3)=p/q$ with $p,q\in\N$. By \cref{prop:arith}, $q\Dn^3J_n\in\Z$, and by
+\cref{thm:decay} it is positive, hence at least $1$. For the infinitely many $n$ with $\Dn<3^n$,
+\[
+  1\le q\Dn^3J_n<2q\zeta(3)\bigl[27(17-12\sqrt2)\bigr]^n .
+\]
+Now $\rho=1/(17+12\sqrt2)<1/32$ because $\sqrt2>5/4$, so $27\rho<27/32<1$ and the right-hand side
+tends to $0$. This is a contradiction.
+\end{proof}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+Ingredient & What it provides\\
+\midrule
+Kernel $-\log(xy)/(1-xy)$ & only $\zeta(3)$ and rationals with denominator $\Dn^3$\\
+Legendre polynomial $P_n$ & degree $n$, integer coefficients, $n$ vanishing moments\\
+Separated kernel $+$ integration by parts & cancellation becomes a positive integral\\
+Maximum of $G$ & the rate $(17-12\sqrt2)^n$\\
+$N!=\prod D_{\lfloor N/k\rfloor}$ & infinitely many indices with $\Dn<3^n$\\
+\bottomrule
+\end{tabular}
+\caption{Which ingredient supplies which property.}
+\label{tab:ingredients}
+\end{table}
+
+% ======================================================================
+\begin{thebibliography}{9}
+\bibitem{apery} R.~Ap\'ery, Irrationalit\'e de $\zeta(2)$ et $\zeta(3)$, \emph{Ast\'erisque}
+  \textbf{61} (1979), 11--13.
+\bibitem{beukers79} F.~Beukers, A note on the irrationality of $\zeta(2)$ and $\zeta(3)$,
+  \emph{Bull.\ London Math.\ Soc.} \textbf{11} (1979), 268--272.
+  \href{https://doi.org/10.1112/blms/11.3.268}{doi:10.1112/blms/11.3.268}.
+\bibitem{beukers80} F.~Beukers, Legendre polynomials in irrationality proofs,
+  \emph{Bull.\ Austral.\ Math.\ Soc.} \textbf{22} (1980), 431--438.
+\bibitem{vdp} A.~van der Poorten, A proof that Euler missed\dots\ Ap\'ery's proof of the
+  irrationality of $\zeta(3)$, \emph{Math.\ Intelligencer} \textbf{1} (1979), 195--203.
+\bibitem{zudilin} W.~Zudilin, An elementary proof of Ap\'ery's theorem, 2002,
+  \href{https://arxiv.org/abs/math/0202159}{arXiv:math/0202159}.
+\end{thebibliography}
+
+\end{document}

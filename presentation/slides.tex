@@ -1,0 +1,188 @@
+% Mathathon presentation.
+% Build: latexmk -pdf slides.tex   (or upload to Overleaf; it compiles with pdfLaTeX)
+% Content: Beukers' proof, following Sections 1--8 of
+% Peer Review/Zeta3-4-Motivated-proof-Codex/zeta3-motivated-proof.pdf (checked by AI only).
+\documentclass[aspectratio=169,11pt]{beamer}
+\usetheme{metropolis}            % if metropolis is unavailable, use \usetheme{Madrid}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\Dn}{D_n}
+\DeclareMathOperator{\lcm}{lcm}
+
+\title{Why \texorpdfstring{$\zeta(3)$}{zeta(3)} is irrational}
+\subtitle{Beukers' proof, built from its requirements}
+\author{Mathathon team}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+% ----------------------------------------------------------------------
+\section{The problem}
+
+\begin{frame}{The problem}
+  \[
+    \zeta(3)=\sum_{m\ge1}\frac1{m^3}=1.2020569\ldots
+    \qquad\text{Is it rational?}
+  \]
+  \begin{itemize}
+    \item Ap\'ery (1978): \alert{no}. Beukers (1979): a short proof with integrals.
+    \item An infinite series or an irregular decimal expansion proves nothing.
+    \item We need an \alert{obstruction} to rationality.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The obstruction: no integer lies strictly between 0 and 1}
+  If $\zeta(3)=p/q$ and $A,B\in\Z$, then $q(A\zeta(3)-B)\in\Z$.
+  \medskip
+
+  So it suffices to build numbers $J_n$ with
+  \begin{enumerate}
+    \item $\Dn^3J_n\in\Z+\Z\zeta(3)$, \quad $\Dn=\lcm(1,\dots,n)$ \hfill(arithmetic)
+    \item $J_n>0$ \hfill(nonzero)
+    \item $\Dn^3J_n\to0$ along some sequence of $n$ \hfill(small)
+  \end{enumerate}
+  \medskip
+  Partial sums fail: $\Dn^3\bigl(\zeta(3)-\sum_{m\le n}m^{-3}\bigr)\ge\frac{n^3}{2(n+1)^2}\to\infty$.
+\end{frame}
+
+% ----------------------------------------------------------------------
+\section{The approach}
+
+\begin{frame}{Step 1: a kernel with the right arithmetic}
+  \[
+    K(x,y)=\frac{-\log(xy)}{1-xy},\qquad \iint_{[0,1]^2}K=2\zeta(3).
+  \]
+  Expanding $\frac1{1-xy}=\sum(xy)^m$:
+  \[
+    \iint x^ry^rK=2\Bigl(\zeta(3)-\sum_{j\le r}\tfrac1{j^3}\Bigr),\qquad
+    \iint x^ry^sK=\frac{H^{(2)}_r-H^{(2)}_s}{r-s}\quad(r\ne s).
+  \]
+  \begin{block}{Consequence}
+    For every integer polynomial $P$ of degree $\le n$:\quad
+    $\Dn^3\iint P(x)P(y)K\in\Z+\Z\zeta(3)$.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Step 2: choose $P$ to cancel as much as possible}
+  Ask $P$ to kill all lower-degree components: $\int_0^1x^jP(x)\dd x=0$ for $j<n$.
+  \[
+    P_n(x)=\frac1{n!}\frac{\dd^n}{\dd x^n}\bigl[x^n(1-x)^n\bigr]
+    =\sum_{k=0}^n(-1)^k\binom nk\binom{n+k}kx^k
+  \]
+  \begin{itemize}
+    \item Shifted Legendre polynomial: integer coefficients, degree $n$.
+    \item Integration by parts, no boundary terms:
+      $\displaystyle\int_0^1\frac{P_n(x)}{x+t}\dd x=\int_0^1\frac{[x(1-x)]^n}{(x+t)^{n+1}}\dd x>0.$
+  \end{itemize}
+  \[
+    J_n=\iint P_n(x)P_n(y)\,\frac{-\log(xy)}{1-xy}\dd x\dd y=2a_n\zeta(3)-2b_n.
+  \]
+\end{frame}
+
+\begin{frame}{Step 3: positivity}
+  Separate the variables:\quad
+  $\displaystyle K(x,y)=\int_0^\infty\frac{\dd t}{(x+t)(1+yt)}.$
+  \medskip
+
+  Integrate by parts $n$ times in $x$ and in $y$; signs and factorials cancel:
+  \[
+    J_n=\int_0^\infty\!\!\iint_{[0,1]^2}
+    \frac{[x(1-x)\,y(1-y)\,t]^n}{[(x+t)(1+yt)]^{n+1}}\dd x\dd y\dd t\;>\;0.
+  \]
+  \alert{Cancellation has become a positive integral}, before any estimate.
+\end{frame}
+
+\begin{frame}{Step 4: exponential decay}
+  With $G=\dfrac{x(1-x)y(1-y)t}{(x+t)(1+yt)}$ and $s=\sqrt{xy}$, AM--GM gives
+  \[
+    G\le\Bigl(\frac{s(1-s)}{1+s}\Bigr)^2\le(\sqrt2-1)^4=17-12\sqrt2\approx\frac1{34},
+  \]
+  using $\alpha^2(1+s)-s(1-s)=(s-\alpha)^2$ for $\alpha=\sqrt2-1$.
+  \begin{block}{Result}
+    \[
+      0<J_n\le2\zeta(3)\,(17-12\sqrt2)^n,\qquad
+      \lim J_n^{1/n}=17-12\sqrt2.
+    \]
+  \end{block}
+\end{frame}
+
+\begin{frame}{Step 5: least common multiples, without the prime number theorem}
+  \begin{block}{Identity}
+    \[
+      N!=\prod_{k=1}^ND_{\lfloor N/k\rfloor}
+    \]
+    (compare the exponent of each prime $p$ on both sides).
+  \end{block}
+  \begin{itemize}
+    \item If $D_m\ge C^m$ for all large $m$, then $\log N!\gtrsim\log C\cdot N\log N$.
+    \item So for every $C>e$: \ $\Dn<C^n$ for \alert{infinitely many} $n$.
+    \item Take $C=3$. This is all we need, because $J_n>0$ for every $n$.
+  \end{itemize}
+\end{frame}
+
+% ----------------------------------------------------------------------
+\section{Results}
+
+\begin{frame}{The contradiction}
+  Suppose $\zeta(3)=p/q$. Then $q\Dn^3J_n$ is a \alert{positive integer}, and for infinitely many $n$
+  \[
+    1\le q\Dn^3J_n<2q\zeta(3)\bigl[27(17-12\sqrt2)\bigr]^n\longrightarrow0,
+  \]
+  since $17+12\sqrt2>32$ gives $27(17-12\sqrt2)<\tfrac{27}{32}<1$.
+  \begin{alertblock}{Theorem (Ap\'ery)}
+    $\zeta(3)$ is irrational.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{The small numbers in action}
+  \centering
+  \begin{tabular}{@{}rrll@{}}
+    \toprule
+    $n$ & $a_n$ & $J_n=2a_n\zeta(3)-2b_n$ & value\\
+    \midrule
+    1 & 5 & $10\zeta(3)-12$ & $2.06\times10^{-2}$\\
+    2 & 73 & $146\zeta(3)-\tfrac{351}{2}$ & $3.08\times10^{-4}$\\
+    3 & 1445 & $2890\zeta(3)-\tfrac{62531}{18}$ & $5.69\times10^{-6}$\\
+    \bottomrule
+  \end{tabular}
+  \medskip
+
+  Both terms are large; their difference is tiny but, by Step 3, \alert{never zero}.
+\end{frame}
+
+% ----------------------------------------------------------------------
+\section{Conclusion}
+
+\begin{frame}{Conclusion: each ingredient has one job}
+  \centering
+  \begin{tabular}{@{}ll@{}}
+    \toprule
+    Ingredient & Provides\\
+    \midrule
+    Kernel $-\log(xy)/(1-xy)$ & arithmetic: denominators $\Dn^3$\\
+    Legendre polynomial $P_n$ & degree $n$, $n$ vanishing moments\\
+    Separated kernel $+$ integration by parts & positivity\\
+    Maximum of $G$ & rate $(17-12\sqrt2)^n$\\
+    $N!=\prod D_{\lfloor N/k\rfloor}$ & $\Dn<3^n$ infinitely often\\
+    \bottomrule
+  \end{tabular}
+  \medskip
+
+  The real insight is making all five jobs compatible.
+\end{frame}
+
+\begin{frame}[standout]
+  Questions?
+\end{frame}
+
+\end{document}
