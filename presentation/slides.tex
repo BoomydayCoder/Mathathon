@@ -102,27 +102,71 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{Step 2: choose $P$ to cancel as much as possible}
-  Ask $P$ to kill all lower-degree components: $\int_0^1x^jP(x)\dd x=0$ for $j<n$.
+\begin{frame}{Step 2: making the integral small, one variable first}
+  \textbf{Goal:} choose integer polynomials $P,Q$ of degree $n$ with
+  $\displaystyle\iint P(x)Q(y)K(x,y)\dd x\dd y$ \alert{small}.
+  \pause
+  \medskip
+
+  \textbf{1D version:} make $\int_0^1P(x)f(x)\dd x$ small. Expand $f$ in a Taylor series:
   \[
-    P_n(x)=\frac1{n!}\frac{\dd^n}{\dd x^n}\bigl[x^n(1-x)^n\bigr]
-    =\sum_{k=0}^n(-1)^k\binom nk\binom{n+k}kx^k
+    f(x)=a_0+a_1x+\dots+a_{n-1}x^{n-1}+(\text{higher order terms}).
   \]
-  \begin{itemize}
-    \item Shifted Legendre polynomial: integer coefficients, degree $n$.
-    \item Integration by parts, no boundary terms:
-      $\displaystyle\int_0^1\frac{P_n(x)}{x+t}\dd x=\int_0^1\frac{[x(1-x)]^n}{(x+t)^{n+1}}\dd x>0.$
-  \end{itemize}
+  \pause
+  \textbf{Kill the small monomials:} ask
   \[
-    J_n=\iint P_n(x)P_n(y)\,\frac{-\log(xy)}{1-xy}\dd x\dd y=2a_n\zeta(3)-2b_n.
+    \int_0^1x^jP(x)\dd x=0\qquad\text{for } j=0,1,\dots,n-1.
+  \]
+  Then $\int Pf$ only sees the higher-order part of $f$.
+  \pause
+  \begin{block}{This forces $P$ (up to scale)}
+    $n$ conditions on $n+1$ coefficients $\Rightarrow$ a unique solution up to scale.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Step 2 continued: the polynomial that kills monomials}
+  The $n$-th derivative kills every polynomial of degree $<n$. Move it onto $P$ by integrating by
+  parts $n$ times, with no boundary terms:
+  \[
+    P_n(x)=\frac1{n!}\frac{\dd^n}{\dd x^n}\bigl[x^n(1-x)^n\bigr],\qquad
+    \int_0^1P_nf=\frac{(-1)^n}{n!}\int_0^1x^n(1-x)^nf^{(n)} .
+  \]
+  \pause
+  $P_n=\sum_k(-1)^k\binom nk\binom{n+k}kx^k$ has integer coefficients (shifted Legendre polynomial).
+  Take $P=Q=P_n$:\quad
+  $J_n=\iint P_n(x)P_n(y)K\dd x\dd y=2a_n\zeta(3)-2b_n$.
+  \medskip
+
+  \pause
+  \textbf{Best case:} $f(x)=\frac1{x+t}$, since
+  $\frac{\dd^n}{\dd x^n}\frac1{x+t}=\frac{(-1)^nn!}{(x+t)^{n+1}}$ and
+  \[
+    \int_0^1\frac{P_n(x)}{x+t}\dd x=\int_0^1\frac{[x(1-x)]^n}{(x+t)^{n+1}}\dd x\;>\;0 .
   \]
 \end{frame}
 
-\begin{frame}{Step 3: positivity}
-  Separate the variables:\quad
-  $\displaystyle K(x,y)=\int_0^\infty\frac{\dd t}{(x+t)(1+yt)}.$
+\begin{frame}{Step 3: separation of variables}
+  But $K(x,y)$ mixes $x$ and $y$. How do we use the 1D trick?
+  \pause
   \medskip
 
+  \textbf{A trick from differential equations:} write a function of two variables as a
+  superposition of products, $u(x,t)=\sum v(x)w(t)$.
+  \pause
+
+  \textbf{Here:} write $K$ as an integral over a parameter $t$ of products $v_t(x)\,w_t(y)$:
+  \[
+    K(x,y)=\int_0^\infty\underbrace{\frac1{x+t}}_{v_t(x)}\cdot\underbrace{\frac1{1+yt}}_{w_t(y)}\dd t .
+  \]
+  {\footnotesize (Partial fractions: $\int_0^\infty\frac{\dd t}{(t+a)(t+b)}=\frac{\log b-\log a}{b-a}$ with $a=x$, $b=1/y$.)}
+  \pause
+  \[
+    J_n=\int_0^\infty\Bigl(\int_0^1\frac{P_n(x)}{x+t}\dd x\Bigr)\Bigl(\int_0^1\frac{P_n(y)}{1+yt}\dd y\Bigr)\dd t
+    \qquad\text{each factor is the 1D best case!}
+  \]
+\end{frame}
+
+\begin{frame}{Step 3 continued: positivity}
   Integrate by parts $n$ times in $x$ and in $y$; signs and factorials cancel:
   \[
     J_n=\int_0^\infty\!\!\iint_{[0,1]^2}

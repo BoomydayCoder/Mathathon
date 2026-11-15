@@ -159,14 +159,20 @@ For example $J(1-2x)=M_{00}-4M_{01}+4M_{11}=10\zeta(3)-12\approx0.0206$.
 % ======================================================================
 \section{Designing the cancellation: Legendre polynomials}\label{sec:legendre}
 
-To make $\int_0^1P(x)f(x)\dd x$ small we ask $P$ to cancel every polynomial component of degree
-below $n$:
+We want integer polynomials $P,Q$ of degree $n$ for which
+$\int_0^1\!\int_0^1P(x)Q(y)K(x,y)\dd x\dd y$ is small. We first solve the one-variable version:
+make $\int_0^1P(x)f(x)\dd x$ small for a given function $f$. If $f$ has a Taylor expansion
+$f(x)=a_0+a_1x+\dots+a_{n-1}x^{n-1}+(\text{higher order terms})$, we can make $P$ blind to the
+low-order monomials by asking
 \begin{equation}\label{eq:orth}
   \int_0^1x^jP(x)\dd x=0,\qquad j=0,\dots,n-1.
 \end{equation}
-These are $n$ linear equations in $n+1$ unknown coefficients, so a nonzero solution of degree at
-most $n$ exists, and it is unique up to scale. An explicit solution comes from integration by parts,
-since the $n$-th derivative kills polynomials of degree below $n$.
+Then $\int_0^1Pf$ sees only the higher-order part of $f$. These are $n$ linear equations in the
+$n+1$ coefficients of $P$, so a nonzero solution of degree at most $n$ exists. It is unique up to
+scale: the difference of two solutions with the same leading coefficient has degree below $n$ and
+is orthogonal to itself, so it vanishes. Thus the requirement \emph{forces} $P$. An explicit
+formula comes from integration by parts, since the $n$-th derivative kills every polynomial of
+degree below $n$.
 
 \begin{definition}
 The \emph{shifted Legendre polynomial} of degree $n$ is
@@ -200,6 +206,8 @@ $\frac{\dd^n}{\dd x^n}\frac1{x+t}=\frac{(-1)^nn!}{(x+t)^{n+1}}$, so
 An integral of an oscillating polynomial has become a positive integral with an explicit $n$-th
 power.
 
+We take $P=Q=P_n$.
+
 \begin{definition}
 $J_n=J(P_n)=\displaystyle\int_0^1\!\!\int_0^1P_n(x)P_n(y)\,\frac{-\log(xy)}{1-xy}\dd x\dd y.$
 \end{definition}
@@ -209,6 +217,13 @@ $a_n=\sum_k\binom nk^2\binom{n+k}k^2\in\Z$ and $\Dn^3b_n\in\Z$.
 
 % ======================================================================
 \section{Positivity}\label{sec:positivity}
+
+The kernel $K(x,y)$ mixes the two variables (and has a logarithmic singularity at $0$), so the
+one-variable identity \eqref{eq:recip} cannot be applied to it directly. We borrow a trick that
+is common in differential equations: separation of variables, where a function of two variables is
+written as a superposition of products, $u(x,t)=\sum v(x)w(t)$. Here we write $K$ as an integral,
+over a parameter $t$, of products $v_t(x)w_t(y)$ in which each factor is a reciprocal linear
+function, the best case for \eqref{eq:recip}.
 
 \begin{lemma}[Separating the variables]\label{lem:sep}
 For $0<x,y<1$,
