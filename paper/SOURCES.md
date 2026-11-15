@@ -39,7 +39,6 @@ marked **(content not re-read)** should be checked against the original before s
 | F. Chyzak, A. Mahboubi, T. Sibut-Pinote, E. Tassi, *A computer-algebra-based formal proof of the irrationality of ζ(3)*, ITP 2014, LNCS 8558, 160–176. [doi:10.1007/978-3-319-08970-6_11](https://doi.org/10.1007/978-3-319-08970-6_11) | Earlier conference version; recurrence certificates checked in Coq. |
 | K. Rajkumar, *A simplification of Apéry's proof of the irrationality of ζ(3)*, arXiv:[1212.5881](https://arxiv.org/abs/1212.5881) (2012). | Read. Two-dimensional recurrence tables from Ramanujan's continued fraction; decay rate by the vector Poincaré–Perron theorem; $d_n$ via the prime number theorem. |
 | P. Hartman, *Difference equations: disconjugacy, principal solutions, Green's functions, complete monotonicity*, Trans. AMS 246 (1978), 1–30. | Classical discrete Sturm theory (sign properties of second-order difference equations), cited as background for Part III. |
-| P. G. Doyle and J. L. Snell, *Random Walks and Electric Networks*, Carus Math. Monographs 22, MAA, 1984; arXiv:[math/0001057](https://arxiv.org/abs/math/0001057). | Standard reference for the voltage/current/Kirchhoff language used for the current law. |
 
 ## 3. Surveys and expositions (background, cited once)
 
