@@ -341,18 +341,10 @@ smallest, and $x+y\ge2\sqrt{xy}$. Hence $(1-x)(1-y)\le1-2u+u^2=(1-u)^2$.
 Together, $G\le g(u)^2$ with $g(u)=\dfrac{u(1-u)}{1+u}$, $0<u<1$.
 
 \emph{Finding the maximum.} The numerator of $g'(u)$ is $(1-2u)(1+u)-u(1-u)=1-2u-u^2$, which
-vanishes at $u=\alpha:=\sqrt2-1$. Since $1-\alpha=\sqrt2\,\alpha$ and $1+\alpha=\sqrt2$, the
-maximum value is $g(\alpha)=\alpha^2$.
+vanishes on $(0,1)$ only at $u=\alpha:=\sqrt2-1$; since $g(0)=g(1)=0$, this is the maximum. As
+$1-\alpha=\sqrt2\,\alpha$ and $1+\alpha=\sqrt2$, its value is $g(\alpha)=\alpha^2$.
 
-\emph{Certifying it.} To prove $g(u)\le\alpha^2$ without calculus, we need the quadratic
-$\alpha^2(1+u)-u(1-u)$ to be nonnegative. If it is, it vanishes at its minimum $u=\alpha$, so
-$\alpha$ is a double root. A monic quadratic with a double root at $\alpha$ is $(u-\alpha)^2$, and
-indeed
-\[
-  \alpha^2(1+u)-u(1-u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
-\]
-because $1-\alpha^2=2\alpha$, that is, $\alpha^2+2\alpha-1=0$, which is the equation that defined
-$\alpha$. Therefore $g(u)\le\alpha^2$ and $G\le\alpha^4=(\sqrt2-1)^4=17-12\sqrt2$. All the
+Therefore $G\le\alpha^4=(\sqrt2-1)^4=17-12\sqrt2$. All the
 inequalities are equalities at $x=y=\alpha$, $t=\sqrt{x/y}=1$.
 \end{proof}
 

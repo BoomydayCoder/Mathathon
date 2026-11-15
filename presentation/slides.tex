@@ -201,26 +201,8 @@
   \[
     G=\frac{xy\,(1-x)(1-y)}{Q/t}\le\Bigl(\underbrace{\frac{u(1-u)}{1+u}}_{g(u)}\Bigr)^2 .
   \]
-  Maximise $g$ by calculus. The numerator of $g'(u)$ is
-  \[
-    (1-2u)(1+u)-u(1-u)=1-2u-u^2,
-  \]
-  which vanishes at $u=\alpha=\sqrt2-1$.
-  \medskip
-
-  Since $1-\alpha=\sqrt2\,\alpha$ and $1+\alpha=\sqrt2$, we get $g(\alpha)=\alpha^2$.
-\end{frame}
-
-\begin{frame}{Step 4: the square $(u-\alpha)^2$}
-  We can also check the maximum without calculus. We want $\alpha^2(1+u)-u(1-u)\ge0$.
-  \medskip
-
-  This quadratic in $u$ would then be $\ge0$ and vanish at $u=\alpha$, so $\alpha$ would be a
-  double root, and the quadratic a perfect square. Indeed,
-  \[
-    \alpha^2(1+u)-u(1-u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
-  \]
-  because $1-\alpha^2=2\alpha$, i.e.\ $\alpha^2+2\alpha-1=0$.
+  Maximise $g$ on $(0,1)$: the numerator of $g'(u)$ is $(1-2u)(1+u)-u(1-u)=1-2u-u^2$, which
+  vanishes only at $u=\alpha=\sqrt2-1$, and $g(0)=g(1)=0$. Since $1-\alpha=\sqrt2\,\alpha$ and $1+\alpha=\sqrt2$, we get $g(\alpha)=\alpha^2$.
   \begin{block}{Result}
     $G\le\alpha^4=(\sqrt2-1)^4=17-12\sqrt2\approx\frac1{34}$, \ with equality at $x=y=\alpha$, $t=1$. Hence
     \[
@@ -228,6 +210,8 @@
     \]
   \end{block}
 \end{frame}
+
+
 
 
 \begin{frame}{Step 5: how fast does $\lcm(1,\dots,n)$ grow?}
@@ -756,6 +740,18 @@
 % Backup slides, not presented; in talk order.
 \appendix
 \section{Backup slides}
+
+\begin{frame}{Step 4 in detail: the maximum without calculus}
+  We can also check the maximum without calculus. We want $\alpha^2(1+u)-u(1-u)\ge0$.
+  \medskip
+
+  This quadratic in $u$ would then be $\ge0$ and vanish at $u=\alpha$, so $\alpha$ would be a
+  double root, and the quadratic a perfect square. Indeed,
+  \[
+    \alpha^2(1+u)-u(1-u)=u^2-(1-\alpha^2)u+\alpha^2=(u-\alpha)^2,
+  \]
+  because $1-\alpha^2=2\alpha$, i.e.\ $\alpha^2+2\alpha-1=0$.
+\end{frame}
 
 \begin{frame}{Why a square?}
   Expand the kernel's denominator, indexing the terms by $t=1,2,3,\dots$:
