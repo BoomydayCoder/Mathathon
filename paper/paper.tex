@@ -972,6 +972,39 @@ positive integral and an AM--GM estimate, or a discrete maximum principle and th
 coefficients ($n^3$, $(n+1)^3$, and $17$) through the difference form \eqref{eq:rec}.
 
 % ======================================================================
+\section{Outlook: an operator picture}\label{sec:operator}
+
+The team's notes~\cite{opnotes} contain a further reformulation of \cref{part:ours} in terms of differential
+operators, which we record as a direction for further work. Write $X$ for multiplication by $x$ on
+$[0,1]$ and $Jf=-(x(1-x)f')'$, so that $JP_n=n(n+1)P_n$. The first item below we checked ourselves
+with SymPy (the operator identity in general, the tridiagonal formula for $n\le6$, the energy
+identity on random polynomials); the other two are checked in the notes, not by us:
+\begin{itemize}
+  \item The operator $H=\frac12(XJ+JX)+\frac12$, that is $Hf=-(x^2(1-x)f')'+xf$, is tridiagonal in
+    the Legendre basis:
+    \[
+      2(2n+1)\,HP_n=-(n+1)^3P_{n+1}+\bigl((n+1)^3+n^3\bigr)P_n-n^3P_{n-1}.
+    \]
+    The cubes are the entries $n+1$ of $X$ times the mean $(n+1)^2$ of two neighbouring eigenvalues
+    of $J$. In Legendre coordinates $\varphi_n=\langle P_n,f\rangle$ one has
+    $\langle f,Hf\rangle=\frac12\sum_{n\ge1}n^3(\varphi_n-\varphi_{n-1})^2$: $H$ is the chain of
+    conductances $n^3$ without the leak.
+  \item With $\Psi=\sum_n(2n+1)J_nP_n$, Ap\'ery's recurrence together with its equation at $n=0$ is
+    equivalent, according to the notes, to $(H+8J+2)\Psi=6$. In the chain, $8J+2$ is the leak $4(2n+1)^3$.
+  \item The analogous operators of degree $0$ and $1$ in $J$, namely $X$ and $\frac12(1+[J,X])$, are
+    tridiagonal with weights $(n+1,n)$ and $(-(n+1)^2,n^2)$; the notes report that they reproduce
+    the classical recurrences for $\log2$ and $\zeta(2)$.
+\end{itemize}
+Two heuristic observations from the notes, not proved here: the operator $H+8J+2$ has a singular
+point at $x=-8$, and the general principle that Legendre coefficients decay at a rate fixed by the
+nearest singularity gives $17+\sqrt{17^2-1}=17+12\sqrt2$, the exact rate of $J_n$; and after the
+change of variables $y=\frac2x-1$, $H$ becomes the radial Laplacian of the hyperbolic plane. The
+operator $H$ is an instance of the tridiagonalization studied by Ismail and Koelink~\cite{ismailkoelink}
+and Genest, Ismail, Vinet and Zhedanov~\cite{givz}. The open question is whether an operator of this
+kind with positive weights exists for $\zeta(5)$; a search by AI agents found none, which is not a
+theorem.
+
+% ======================================================================
 \section{Limitations and next steps}\label{sec:limits}
 
 \begin{itemize}
@@ -1007,7 +1040,8 @@ coefficients ($n^3$, $(n+1)^3$, and $17$) through the difference form \eqref{eq:
     second identity (\cref{sec:zudilin-route}) for $n=1,2,3$, and $\widetilde F_1$, $\widetilde F_2$
     numerically.
   \item \emph{Cited, not proved here:} everything in \cref{sec:zudilin-route} about Zudilin's proof
-    (Ball's series, its size estimate, Bailey's identity); the results listed in
+    (Ball's series, its size estimate, Bailey's identity); the operator identities of
+    \cref{sec:operator} other than the first; the results listed in
     \cref{sec:relatives}, which are proved in~\cite{codexnotes}, Section~15; the prime number theorem.
   \item \emph{Novelty} of the argument in \cref{part:ours}: a judgement based on the literature search
     described there, not a proof.
@@ -1090,6 +1124,12 @@ through it in detail, which became \cref{part:ours}. Together this covers every 
   \href{https://doi.org/10.24033/bsmf.545}{doi:10.24033/bsmf.545}.
 \bibitem{hartman} P.~Hartman, Difference equations: disconjugacy, principal solutions, Green's
   functions, complete monotonicity, \emph{Trans.\ Amer.\ Math.\ Soc.}\ \textbf{246} (1978), 1--30.
+\bibitem{ismailkoelink} M.~E.~H.~Ismail and E.~Koelink, Spectral properties of operators using
+  tridiagonalisation, \emph{Anal.\ Appl.}\ \textbf{10} (2012), 327--343.
+  \href{https://arxiv.org/abs/1108.5716}{arXiv:1108.5716}.
+\bibitem{givz} V.~X.~Genest, M.~E.~H.~Ismail, L.~Vinet and A.~Zhedanov, Tridiagonalization of the
+  hypergeometric operator and the Racah--Wilson algebra, \emph{Proc.\ Amer.\ Math.\ Soc.}\
+  \textbf{144} (2016), 4441--4454. \href{https://arxiv.org/abs/1506.07803}{arXiv:1506.07803}.
 \bibitem{hanson} D.~Hanson, On the product of the primes, \emph{Canad.\ Math.\ Bull.}\ \textbf{15}
   (1972), 33--37. \href{https://doi.org/10.4153/CMB-1972-007-7}{doi:10.4153/CMB-1972-007-7}.
 \bibitem{legendre} A.-M.~Legendre, \emph{Essai sur la th\'eorie des nombres}, 2nd ed., Courcier,
@@ -1122,6 +1162,8 @@ through it in detail, which became \cref{part:ours}. Together this covers every 
   (\texttt{Peer Review/Zeta3-4-Motivated-proof-Codex/zeta3-motivated-proof.pdf}).
 \bibitem{maxnotes} Mathathon team, \emph{The irrationality of $\zeta(3)$: a maximum-principle
   proof}, internal notes (guess-and-check edition), November 2026.
+\bibitem{opnotes} Mathathon team, \emph{The operator picture of the proof that $\zeta(3)$ is
+  irrational}, internal notes, November 2026 (\texttt{Peer Review/Digest/operator-picture.tex}).
 \end{thebibliography}
 
 \end{document}
