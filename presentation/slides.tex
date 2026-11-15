@@ -258,45 +258,23 @@
   \end{alertblock}
 \end{frame}
 
-\begin{frame}{The first few values}
-  \centering
-  \begin{tabular}{@{}rrll@{}}
-    \toprule
-    $n$ & $a_n$ & $J_n=2a_n\zeta(3)-2b_n$ & value\\
-    \midrule
-    1 & 5 & $10\zeta(3)-12$ & $2.06\times10^{-2}$\\
-    2 & 73 & $146\zeta(3)-\tfrac{351}{2}$ & $3.08\times10^{-4}$\\
-    3 & 1445 & $2890\zeta(3)-\tfrac{62531}{18}$ & $5.69\times10^{-6}$\\
-    \bottomrule
-  \end{tabular}
-  \medskip
-
-  Both terms are large and their difference is tiny, but by Step 3 it is never zero.
-\end{frame}
-
 \begin{frame}{The same polynomial proves more}
   \centering
-  \footnotesize
-  \renewcommand{\arraystretch}{1.6}\setlength{\tabcolsep}{3pt}
-  \begin{tabular}{@{}llll@{}}
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{@{}l@{\qquad}l@{\qquad}l@{}}
     \toprule
-    constant & integral & arithmetic & size\\
+    irrational & integrate $P_n$ against & the size wins because\\
     \midrule
-    $\log2$ & $L_n=\int_0^1\frac{P_n(x)}{1+x}\dd x$ & $\Dn L_n\in\Z+\Z\log2$
-      & $0<L_n\le\log2\,(\sqrt2-1)^{2n}$, $3(\sqrt2-1)^2<1$\\
-    $\zeta(2)$ & $U_n=\iint\frac{P_n(x)(1-y)^n}{1-xy}\dd x\dd y$ & $\Dn^2U_n\in\Z+\Z\zeta(2)$
-      & $0<|U_n|\le\zeta(2)\,\beta^{5n}$, $\beta=\frac{\sqrt5-1}2$, $9\beta^5<1$\\
-    $e^a$ & $W_n=\int_0^1P_n(x)e^{ax}\dd x$ & $a^{n+1}W_n\in\Z+\Z e^a$
-      & $0<a^{n+1}|W_n|\le ae^a\,(a^2/4)^n/n!$\\
-    $\pi$ & $Z_n=\int_0^1P_n(x)\sin(\pi x)\dd x$ & $a^{n+1}Z_n\in\Z$ \ if $\pi=\frac ab$
-      & $0<a^{n+1}|Z_n|\le a\,(a\pi/4)^n/n!$ \ ($n$ even)\\
+    \alert{$\log2$} & $1/(1+x)$ & $3(\sqrt2-1)^2<1$\\
+    \alert{$\zeta(2)$} & $(1-y)^n/(1-xy)$ & $9\beta^5<1$, \ $\beta=\frac{\sqrt5-1}2$\\
+    \alert{$e^a$}, \ $a=1,2,3,\dots$ & $e^{ax}$ & it contains $1/n!$\\
+    \alert{$\pi$} & $\sin(\pi x)$ & it contains $1/n!$\\
     \bottomrule
   \end{tabular}
   \medskip
 
-  \raggedright\small
-  Also: $\log\frac{a+1}a$ for $a=1,2,3,\dots$; \ $e^q$ for rational $q\ne0$; \ $\log r$ for
-  rational $r>0$, $r\ne1$.
+  \raggedright
+  Hence $e^q$ is irrational for every rational $q\ne0$, and $\log r$ for every rational $r>0$, $r\ne1$.
   \pause
   \begin{block}{}
     The kernel decides the arithmetic, its $n$-th derivative decides positivity, and the
@@ -704,17 +682,7 @@
     \boxed{\;0<J_n\le2\zeta(3)\,33^{-n}\;}
   \]
   \pause
-  \centering
-  \begin{tabular}{@{}lcccccc@{}}
-    \toprule
-    $n$ & 1 & 2 & 3 & 4 & 5 & $\infty$\\
-    \midrule
-    $J_{n-1}/J_n$ & 116.9 & 66.8 & 54.1 & 48.5 & 45.3 & $17+12\sqrt2\approx33.97$\\
-    \bottomrule
-  \end{tabular}
-  \medskip
-
-  The maximum principle loses very little: 33 against the true 33.97.
+  The true ratios decrease to $17+12\sqrt2\approx33.97$, so the maximum principle loses very little.
 \end{frame}
 
 \begin{frame}{What if there were no leak?}
@@ -749,49 +717,52 @@
   \end{alertblock}
 \end{frame}
 
-\begin{frame}{Zudilin's route and ours}
-  \centering
-  \small
-  \begin{tabular}{@{}lll@{}}
-    \toprule
-     & Zudilin & Ours\\
-    \midrule
-    series & two ($J_n$ and Ball's) & one\\
-    recurrences & two (one certificate of degree 6) & one, from five coefficients\\
-    positivity & positive terms of Ball's series & no negative valley\\
-    size & Stirling-type estimates & $4(2n+1)^3J_n>32n^3J_n$\\
-    denominators & $\Dn<3^n$ infinitely often, \ $27(\sqrt2-1)^4<1$ & the same, \ $27<33$\\
-    \bottomrule
-  \end{tabular}
-  \medskip
-
-  \raggedright\normalsize
-  None of the ingredients is new: the recurrence is Ap\'ery's and the certificate is Zudilin's.
-  What is ours is the way they are put together, so that each step has a reason.
-\end{frame}
-
 % ======================================================================
 \section{Conclusion}
 
-\begin{frame}{Two proofs, one sequence of numbers}
+\begin{frame}{Three routes to one contradiction}
   \centering
-  \small
-  \begin{tabular}{@{}lll@{}}
-    \toprule
-     & Beukers (integrals) & Maximum principle (sums)\\
-    \midrule
-    $J_n$ & $\iint P_n(x)P_n(y)\,\frac{-\log(xy)}{1-xy}$ & $-\sum_t R_n'(t)$\\
-    arithmetic & moments of the kernel & partial fractions\\
-    positivity & integration by parts & no negative valley\\
-    size & $\max G=(\sqrt2-1)^4\approx\frac1{34}$ & $J_{n-1}/J_n>33$\\
-    denominators & $\Dn<3^n$ infinitely often, \ $27(\sqrt2-1)^4<1$ & the same, \ $27<33$\\
-    \bottomrule
-  \end{tabular}
+  \begin{tikzpicture}[>=stealth,
+      route/.style={draw=mDarkTeal,thick,rounded corners=4pt,align=center,inner sep=5pt,
+                    text width=3.9cm,minimum height=2.3cm,font=\small},
+      hub/.style={fill=mDarkTeal,text=white,rounded corners=4pt,inner sep=6pt,font=\small,
+                  minimum width=13.5cm},
+      lab/.style={font=\footnotesize,text=mDarkTeal,right}]
+    \node[hub] (top) at (0,3.15) {the numbers $J_n$, \ with \ $\Dn^3J_n\in\Z+\Z\zeta(3)$};
+    \node[route] (B) at (-4.6,0.3) {\textbf{Beukers}\\[3pt] a double integral\\
+      $>0$: integration by parts\\ small: AM--GM};
+    \node[route] (Z) at (0,0.3) {\textbf{Zudilin}\\[3pt] a second series (Ball's)\\
+      $>0$: its terms are positive\\ small: Stirling-type bound};
+    \node[route,draw=mLightBrown,very thick] (O) at (4.6,0.3) {\textbf{\alert{Ours}}\\[3pt]
+      one recurrence\\ $>0$: no negative valley\\ small: $J_{n-1}/J_n>33$};
+    \node[hub] (bot) at (0,-2.75) {Step 5: \ $\Dn<3^n$ infinitely often
+      \ $\Longrightarrow$ \ $\zeta(3)$ is irrational};
+    \foreach \n/\c in {B/mDarkTeal,Z/mDarkTeal,O/mLightBrown} {
+      \draw[->,thick,\c] (top.south -| \n) -- (\n.north);
+      \draw[->,thick,\c] (\n.south) -- (bot.north -| \n); }
+    \node[lab] at (-4.55,-1.65) {$27(\sqrt2-1)^4<1$};
+    \node[lab] at (0.05,-1.65) {$27(\sqrt2-1)^4<1$};
+    \node[lab,text=mLightBrown] at (4.65,-1.65) {$27<33$};
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{What is new}
+  To our knowledge, the argument of Part III is new: the sign and the exponential decay of $J_n$
+  come straight from Ap\'ery's recurrence by a maximum principle, using only $J_0>0$ and $J_n\to0$.
+  \pause
   \medskip
 
-  \raggedright\normalsize
-  The two are linked because the moment generating function of the Legendre polynomial is
-  Zudilin's rational function.
+  Earlier proofs get them from the Casoratian identity and the growth of $a_n$
+  (Ap\'ery, van der Poorten, Mahboubi--Sibut-Pinote, Mingarelli), from a positive integral
+  (Beukers), from a second series (Zudilin), or from the Poincar\'e--Perron theorem (Rajkumar).
+  \pause
+  \medskip
+
+  The ingredients, Ap\'ery's recurrence and Zudilin's certificate, are classical.
+  \medskip
+
+  Parts I and III are linked: the moment generating function of the Legendre
+  polynomial is Zudilin's rational function.
 \end{frame}
 
 \begin{frame}{References}
@@ -815,6 +786,7 @@
         \item D.~Hanson, On the product of the primes, \emph{Canad.\ Math.\ Bull.} 15 (1972), 33--37.
         \item A.~Mingarelli, \emph{Mathematics} 11 (2023), 262; arXiv:math/0608577.
         \item A.~Mahboubi, T.~Sibut-Pinote, A formal proof of the irrationality of $\zeta(3)$, \emph{LMCS} 17 (2021).
+        \item K.~Rajkumar, A simplification of Ap\'ery's proof, arXiv:1212.5881 (2012).
         \item P.~Doyle, J.~L.~Snell, \emph{Random Walks and Electric Networks}, MAA, 1984.
       \end{itemize}
     \end{column}
