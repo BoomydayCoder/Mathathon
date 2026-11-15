@@ -56,9 +56,10 @@ gives $0<J_n\le2\zeta(3)(\sqrt2-1)^{4n}$. In \cref{part:sums} we show that the M
 the Legendre polynomial is Zudilin's rational function $\frac{(1-t)\cdots(n-t)}{t(t+1)\cdots(t+n)}$,
 so that $J_n$ is also a sum, and we summarise how Zudilin obtains the size of that sum. In
 \cref{part:ours} we replace Zudilin's second series, second recurrence and size estimates by a
-discrete maximum principle: Ap\'ery's recurrence, found by matching five coefficients and read as
-Kirchhoff's law for a leaky chain of conductors, forces $0<J_n\le2\zeta(3)\,33^{-n}$. Throughout,
-an identity between $N!$ and least common multiples replaces the prime number theorem.
+discrete maximum principle, which we believe to be new: Ap\'ery's recurrence, found by matching five
+coefficients and written in a difference form with positive coefficients, forces
+$0<J_n\le2\zeta(3)\,33^{-n}$. Throughout, an identity between $N!$ and least common multiples
+replaces the prime number theorem.
 \end{abstract}
 
 \tableofcontents
@@ -596,12 +597,31 @@ The missing ingredients are the \emph{sign} and the \emph{speed}. The idea is to
 police itself: we look for an equation linking each $J_n$ to its neighbours, of a shape that makes
 negative values and slow decay impossible.
 
-We make no claim of novelty, and follow the team's notes~\cite{maxnotes}. The recurrence is Ap\'ery's, the certificate we find is Zudilin's
-$S_n$, and deducing positivity from a recurrence is a known idea: Mingarelli~\cite{mingarelli} treats
-Ap\'ery's linear forms as the recessive solution of a disconjugate recurrence, Mahboubi and
-Sibut-Pinote~\cite{mahboubi} use the constant $33$ and the comparison $27<33$ in their formal
-proof (see also~\cite{cmst}), and Rajkumar~\cite{rajkumar} obtains the rate from the recurrence. What we offer is an arrangement
-in which every step is motivated and nothing beyond the material above is needed.
+\paragraph{What is new.} To our knowledge, the argument of this part is new. We obtain the
+positivity, the monotonicity and the exponential decay of Ap\'ery's linear forms $J_n$ directly from
+Ap\'ery's recurrence, written in the difference form \eqref{eq:rec} below, by a discrete maximum
+principle that uses only $J_0>0$ and $J_n\to0$ (the latter from a crude bound on the sum), and nothing
+about the integers $a_n$. Combined with \cref{lem:lcm}, this gives a complete proof with one series,
+one recurrence, no integral and no prime number theorem. The published arguments we found obtain the
+sign and the size in other ways:
+\begin{itemize}
+  \item Ap\'ery's proof as presented by van der Poorten~\cite{vdp} and Cohen~\cite{cohen}, and the
+    formal proof of Mahboubi and Sibut-Pinote~\cite{mahboubi,cmst}, use the Casoratian identity
+    $a_nb_{n+1}-a_{n+1}b_n=6/(n+1)^3$: it gives $\zeta(3)-b_n/a_n=\sum_{k>n}6/(k^3a_{k-1}a_k)>0$,
+    and the size then comes from the growth of the integers $a_n$ (in the formal proof, from showing
+    that $a_{n+1}/a_n$ increases and computing that it exceeds $33$ at $n=51$);
+  \item Mingarelli~\cite{mingarelli} recasts this in the language of disconjugate recurrences and
+    principal solutions, with positivity from the same series and the growth of $a_n$ taken from
+    elsewhere, and calls it a restatement of Ap\'ery's proof;
+  \item Beukers~\cite{beukers79} uses a positive integral (\cref{part:beukers}); Zudilin~\cite{zudilin},
+    following Rivoal and Ball, uses a second series with positive terms (\cref{sec:zudilin-route});
+    Rajkumar~\cite{rajkumar} uses the Poincar\'e--Perron theorem.
+\end{itemize}
+The ingredients themselves are classical: the recurrence is Ap\'ery's, the certificate we find is
+Zudilin's $S_n$, and sign properties of second-order difference equations with positive coefficients
+belong to discrete Sturm theory~\cite{hartman}. Our claim concerns the argument as a whole. It is
+based on a search of the literature cited here (November 2026); we follow the team's
+notes~\cite{maxnotes}.
 
 \subsection{Which equation would we like?}\label{sec:wish}
 
@@ -703,16 +723,17 @@ contributes nothing, and we obtain, for $n\ge1$,
 \begin{equation}\label{eq:rec}
   (n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n .
 \end{equation}
-It has a physical reading, in the spirit of~\cite{doylesnell}. Think of $J_n$ as the voltage at node $n$ of a chain, joined to node
-$n-1$ by a wire of conductance $n^3$, and to the ground by a leak of conductance
-$4(2n+1)^3$. The current flowing from node $n-1$ to node $n$ is
+Write
 \[
-  C_n=n^3(J_{n-1}-J_n),
+  C_n=n^3(J_{n-1}-J_n).
 \]
-and \eqref{eq:rec} is Kirchhoff's law at node $n$: what flows in either flows on or leaks away,
+Then \eqref{eq:rec} says exactly
 \begin{equation}\label{eq:kirchhoff}
-  C_n=C_{n+1}+4(2n+1)^3J_n .
+  C_n-C_{n+1}=4(2n+1)^3J_n .
 \end{equation}
+We call $C_n$ the \emph{current} and $4(2n+1)^3J_n$ the \emph{leak}, borrowing the words from
+electrical networks~\cite{doylesnell}: $C_n$ decreases from one index to the next by the leak, and
+the leak is positive whenever $J_n>0$.
 
 \begin{remark}[Where the $17$ comes from]
 Expanding \eqref{eq:rec} gives Ap\'ery's recurrence in its usual form, with middle coefficient
@@ -721,7 +742,7 @@ $(n+1)^3+n^3+4(2n+1)^3$. Both parts contain the factor $2n+1$:
   (n+1)^3+n^3=(2n+1)(n^2+n+1),\qquad 4(2n+1)^3=(2n+1)(16n^2+16n+4),
 \]
 so the middle coefficient is $(2n+1)(17n^2+17n+5)$.
-The $17$ is $1+16$: one from the two wires and sixteen from the leak. The difference form
+The $17$ is $1+16$: one from the two differences and sixteen from the leak term. The difference form
 \eqref{eq:rec} keeps the three contributions visible.
 \end{remark}
 
@@ -791,25 +812,14 @@ $J_{n-1}-J_n=C/n^3$, and since $J_n\to0$,
 \]
 a multiple of the tail of the series for $\zeta(3)$. This is exactly the failed approximation by
 partial sums from \cref{sec:strategy}, which decays only like $\frac1{2n^2}$. The failed
-approximation and the successful one obey the same current law. What turns polynomial decay into
-exponential decay is the leak, which at every node is more than $32$ times the conductance of the
-incoming wire.
+approximation and the successful one satisfy the same equation \eqref{eq:kirchhoff} apart from the
+leak term. What turns polynomial decay into exponential decay is that term: $4(2n+1)^3J_n$ exceeds
+$32\,n^3J_n$ at every $n$.
 
-\subsection{Denominators, and the end of the proof}
+\subsection{The end of the proof}
 
-In \cref{sec:lcm} we only needed $\Dn<3^n$ for infinitely many $n$. Here we use the same identity
-in a uniform form, which is even simpler.
-
-\begin{lemma}\label{lem:uniform}
-If $D_k\ge\kappa\,\mu^k$ for all $k\ge1$, with $\kappa>0$ and $\mu\ge1$, then $\mu\le e$.
-\end{lemma}
-
-\begin{proof}
-By \cref{lem:factorial}, and since each index $\lfloor N/k\rfloor$ is at least $1$,
-$N^N\ge N!\ge\kappa^N\mu^S$ with $S=\sum_{k\le N}\lfloor N/k\rfloor>N\bigl(\sum_{k\le N}\frac1k-1\bigr)>N(\log N-1)$.
-Taking $N$-th roots, $N\ge\kappa\,\mu^{\log N-1}=\frac\kappa\mu N^{\log\mu}$ for every $N$, which forces
-$\log\mu\le1$.
-\end{proof}
+\Cref{lem:lcm} from \cref{part:beukers}, with $\mu=3$, is all we need: $\Dn<3^n$ for infinitely many
+$n$, and $27<33$.
 
 \begin{theorem}[Ap\'ery]\label{thm:apery2}
 $\zeta(3)$ is irrational.
@@ -817,12 +827,12 @@ $\zeta(3)$ is irrational.
 
 \begin{proof}
 Suppose $\zeta(3)=p/q$ with $p,q\in\N$. Then $\frac q2\Dn^3J_n=\Dn^3(pa_n-qb_n)$ is an integer,
-and it is positive by \cref{prop:decreasing}, so it is at least $1$. By \cref{thm:decay2},
+and it is positive by \cref{prop:decreasing}, so it is at least $1$ for every $n$. Along the
+infinitely many $n$ with $\Dn<3^n$, \cref{thm:decay2} gives
 \[
-  \Dn^3\ge\frac2{qJ_n}\ge\frac{33^n}{q\,\zeta(3)}=\frac{33^n}p\qquad\text{for every }n\ge1 .
+  1\le\frac q2\Dn^3J_n<\frac q2\cdot27^n\cdot2\zeta(3)\,33^{-n}=q\,\zeta(3)\Bigl(\frac{27}{33}\Bigr)^n\longrightarrow0 ,
 \]
-So $\Dn\ge p^{-1/3}\,(33^{1/3})^n$ for all $n$, and \cref{lem:uniform} gives $33^{1/3}\le e$, that
-is $33\le e^3$. But $e<3$, so $e^3<27<33$. This contradiction proves the theorem.
+a contradiction.
 \end{proof}
 
 % ======================================================================
@@ -838,19 +848,19 @@ is $33\le e^3$. But $e<3$, so $e^3<27<33$. This contradiction proves the theorem
 $J_n$ written as & $\iint P_nP_nK$ & two series & $-\sum R_n'(t)$\\
 arithmetic & moments of $K$ & partial fractions & partial fractions\\
 positivity & integration by parts & positive terms of Ball's series & no negative valley\\
-size & $\max G=(\sqrt2-1)^4$ & Stirling-type estimates & leak $>32\times$ conductance\\
+size & $\max G=(\sqrt2-1)^4$ & Stirling-type estimates & $4(2n+1)^3>32n^3$\\
 recurrences & none & two (one of degree six) & one, from five coefficients\\
-denominators & $\Dn<3^n$ infinitely often & $\Dn<3^n$ infinitely often & uniform bound $\Rightarrow$ base $\le e$\\
+denominators & $\Dn<3^n$ i.o., $27(\sqrt2-1)^4<1$ & $\Dn<3^n$ i.o. & $\Dn<3^n$ i.o., $27<33$\\
 \bottomrule
 \end{tabular}
-\caption{Three proofs of the same theorem with the same numbers $J_n$.}
+\caption{Three proofs of the same theorem with the same numbers $J_n$ (i.o.: for infinitely many $n$).}
 \label{tab:comparison}
 \end{table}
 
 Beukers' proof and ours obtain the sign and the size of the same numbers in two different ways: a
-positive integral and an AM--GM estimate, or a discrete maximum principle and a leak. With
+positive integral and an AM--GM estimate, or a discrete maximum principle and the leak term. With
 \cref{lem:factorial}, none of the three proofs needs the prime number theorem. Ours never leaves the world of sums, and it explains Ap\'ery's
-coefficients ($n^3$, $(n+1)^3$, and $17$) as the conductances and the leak of a chain.
+coefficients ($n^3$, $(n+1)^3$, and $17$) through the difference form \eqref{eq:rec}.
 
 % ======================================================================
 \begin{thebibliography}{99}
@@ -884,6 +894,8 @@ coefficients ($n^3$, $(n+1)^3$, and $17$) as the conductances and the leak of a 
 \bibitem{hadamard} J.~Hadamard, Sur la distribution des z\'eros de la fonction $\zeta(s)$ et ses
   cons\'equences arithm\'etiques, \emph{Bull.\ Soc.\ Math.\ France} \textbf{24} (1896), 199--220.
   \href{https://doi.org/10.24033/bsmf.545}{doi:10.24033/bsmf.545}.
+\bibitem{hartman} P.~Hartman, Difference equations: disconjugacy, principal solutions, Green's
+  functions, complete monotonicity, \emph{Trans.\ Amer.\ Math.\ Soc.}\ \textbf{246} (1978), 1--30.
 \bibitem{hanson} D.~Hanson, On the product of the primes, \emph{Canad.\ Math.\ Bull.}\ \textbf{15}
   (1972), 33--37. \href{https://doi.org/10.4153/CMB-1972-007-7}{doi:10.4153/CMB-1972-007-7}.
 \bibitem{legendre} A.-M.~Legendre, \emph{Essai sur la th\'eorie des nombres}, 2nd ed., Courcier,

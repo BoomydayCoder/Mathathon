@@ -239,8 +239,11 @@
   \end{block}
   \begin{itemize}
     \item If $D_m\ge\mu^m$ for all large $m$, then $\log N!\gtrsim\log\mu\cdot N\log N$.
+      But $\log N!\le N\log N$, so $\log\mu\le1$, that is, $\mu\le e$.
     \item So for every $\mu>e$ we have $\Dn<\mu^n$ for \alert{infinitely many} $n$.
-    \item Take $\mu=3$. This is all we need, because $J_n>0$ for every $n$.
+    \item Take $\mu=3$, which is allowed because
+      $e=\sum_{k\ge0}\frac1{k!}<1+\sum_{k\ge1}2^{1-k}=3$.
+      This is all we need, because $J_n>0$ for every $n$.
   \end{itemize}
 \end{frame}
 
@@ -269,6 +272,36 @@
   \medskip
 
   Both terms are large and their difference is tiny, but by Step 3 it is never zero.
+\end{frame}
+
+\begin{frame}{The same polynomial proves more}
+  \centering
+  \footnotesize
+  \renewcommand{\arraystretch}{1.6}\setlength{\tabcolsep}{3pt}
+  \begin{tabular}{@{}llll@{}}
+    \toprule
+    constant & integral & arithmetic & size\\
+    \midrule
+    $\log2$ & $L_n=\int_0^1\frac{P_n(x)}{1+x}\dd x$ & $\Dn L_n\in\Z+\Z\log2$
+      & $0<L_n\le\log2\,(\sqrt2-1)^{2n}$, $3(\sqrt2-1)^2<1$\\
+    $\zeta(2)$ & $U_n=\iint\frac{P_n(x)(1-y)^n}{1-xy}\dd x\dd y$ & $\Dn^2U_n\in\Z+\Z\zeta(2)$
+      & $0<|U_n|\le\zeta(2)\,\beta^{5n}$, $\beta=\frac{\sqrt5-1}2$, $9\beta^5<1$\\
+    $e^a$ & $W_n=\int_0^1P_n(x)e^{ax}\dd x$ & $a^{n+1}W_n\in\Z+\Z e^a$
+      & $0<a^{n+1}|W_n|\le ae^a\,(a^2/4)^n/n!$\\
+    $\pi$ & $Z_n=\int_0^1P_n(x)\sin(\pi x)\dd x$ & $a^{n+1}Z_n\in\Z$ \ if $\pi=\frac ab$
+      & $0<a^{n+1}|Z_n|\le a\,(a\pi/4)^n/n!$ \ ($n$ even)\\
+    \bottomrule
+  \end{tabular}
+  \medskip
+
+  \raggedright\small
+  Also: $\log\frac{a+1}a$ for $a=1,2,3,\dots$; \ $e^q$ for rational $q\ne0$; \ $\log r$ for
+  rational $r>0$, $r\ne1$.
+  \pause
+  \begin{block}{}
+    The kernel decides the arithmetic, its $n$-th derivative decides positivity, and the
+    maximum decides whether the size beats the denominators.
+  \end{block}
 \end{frame}
 
 % ======================================================================
@@ -614,17 +647,17 @@
   \raggedright
   \pause
 
-  Read $J_n$ as a voltage, with wires of conductance $n^3$, a leak of conductance $4(2n+1)^3$
-  and current $C_n=n^3(J_{n-1}-J_n)$. \ Kirchhoff's law at node $n$ says
+  Define the current $C_n=n^3(J_{n-1}-J_n)$. \ The recurrence says exactly
   \[
-    C_n=C_{n+1}+4(2n+1)^3J_n,\qquad\text{what flows in either flows on or leaks away.}
+    C_n-C_{n+1}=4(2n+1)^3J_n :
   \]
+  the current drops at each $n$ by the leak $4(2n+1)^3J_n$, which is positive as long as $J_n>0$.
 \end{frame}
 
 \begin{frame}{Where does the 17 come from?}
   Our current law, \ $(n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n$, \ grouped by $J_{n+1},J_n,J_{n-1}$:
   \[
-    (n+1)^3J_{n+1}-\bigl[\underbrace{(n+1)^3+n^3}_{\text{two wires}}+\underbrace{4(2n+1)^3}_{\text{leak}}\bigr]J_n+n^3J_{n-1}=0 .
+    (n+1)^3J_{n+1}-\bigl[\underbrace{(n+1)^3+n^3}_{\text{two differences}}+\underbrace{4(2n+1)^3}_{\text{leak}}\bigr]J_n+n^3J_{n-1}=0 .
   \]
   Both parts of the middle coefficient contain the factor $2n+1$:
   \[
@@ -637,7 +670,7 @@
   which is Ap\'ery's recurrence:
   \ $(n+1)^3J_{n+1}-(2n+1)(17n^2+17n+5)J_n+n^3J_{n-1}=0$.
   \begin{block}{}
-    \centering $17=1+16$: \ one from the two wires, sixteen from the leak.
+    \centering $17=1+16$: \ one from the two differences, sixteen from the leak.
   \end{block}
 \end{frame}
 
@@ -662,7 +695,7 @@
 \end{frame}
 
 \begin{frame}{From falling to falling fast}
-  Since $J_n$ decreases, $C_{n+1}>0$, so the incoming current is larger than the leak:
+  Since $J_n$ decreases, $C_{n+1}>0$, so $C_n>4(2n+1)^3J_n$:
   \[
     n^3(J_{n-1}-J_n)>4(2n+1)^3J_n\quad\Longrightarrow\quad
     \frac{J_{n-1}}{J_n}>1+4\Bigl(2+\frac1n\Bigr)^3>33 .
@@ -695,33 +728,22 @@
   \pause
   \begin{block}{}
     The approximation that fails and the one that works satisfy the same current law.\\
-    The only difference is the leak, which is more than $32$ times the conductance at every node.
+    The only difference is the extra term $4(2n+1)^3J_n$, which exceeds $32n^3J_n$.
   \end{block}
-\end{frame}
-
-\begin{frame}{Denominators, without prime numbers}
-  The same identity as in Part I: \quad $N!=\prod_{k=1}^ND_{\lfloor N/k\rfloor}$.
-  \pause
-  \begin{block}{Uniform version}
-    If $D_k\ge\kappa\,\mu^k$ for \emph{all} $k\ge1$ (with $\kappa>0$, $\mu\ge1$), then $\mu\le e$.
-  \end{block}
-  \pause
-  \textbf{Proof.} Each index $\lfloor N/k\rfloor\ge1$ and $\sum_k\lfloor N/k\rfloor>N(\log N-1)$, so
-  \[
-    N^N\ge N!\ge\kappa^N\mu^{N(\log N-1)}\quad\Longrightarrow\quad N\ge\frac\kappa\mu\,N^{\log\mu}\ \text{ for all }N
-    \quad\Longrightarrow\quad\log\mu\le1 .
-  \]
 \end{frame}
 
 \begin{frame}{The contradiction again}
-  Suppose $\zeta(3)=p/q$. Then $\frac q2\Dn^3J_n=\Dn^3(pa_n-qb_n)$ is a \alert{positive integer}, so
+  Suppose $\zeta(3)=p/q$. Then $\frac q2\Dn^3J_n=\Dn^3(pa_n-qb_n)$ is a \alert{positive integer}
+  for every $n$.
+  \pause
+
+  By Step 5, $\Dn<3^n$ for infinitely many $n$. Along those $n$,
   \[
-    \Dn^3\ge\frac2{qJ_n}\ge\frac{33^n}{q\,\zeta(3)}=\frac{33^n}{p}\qquad\text{for every }n.
+    1\le\frac q2\,\Dn^3J_n<\frac q2\cdot27^n\cdot2\zeta(3)\,33^{-n}
+    =q\,\zeta(3)\Bigl(\frac{27}{33}\Bigr)^n\longrightarrow0 ,
   \]
   \pause
-  So $\Dn\ge p^{-1/3}\bigl(33^{1/3}\bigr)^n$ for all $n$, hence $33^{1/3}\le e$, i.e.\ $33\le e^3$.
-  \pause
-  But $e<3$, so $e^3<27<33$.
+  which is impossible.
   \begin{alertblock}{Theorem (Ap\'ery)}
     $\zeta(3)$ is irrational.
   \end{alertblock}
@@ -737,8 +759,8 @@
     series & two ($J_n$ and Ball's) & one\\
     recurrences & two (one certificate of degree 6) & one, from five coefficients\\
     positivity & positive terms of Ball's series & no negative valley\\
-    size & Stirling-type estimates & leak $>32\times$ conductance\\
-    denominators & $\Dn<3^n$ infinitely often (Step 5) & no uniform bound beyond $e^n$\\
+    size & Stirling-type estimates & $4(2n+1)^3J_n>32n^3J_n$\\
+    denominators & $\Dn<3^n$ infinitely often, \ $27(\sqrt2-1)^4<1$ & the same, \ $27<33$\\
     \bottomrule
   \end{tabular}
   \medskip
@@ -761,8 +783,8 @@
     $J_n$ & $\iint P_n(x)P_n(y)\,\frac{-\log(xy)}{1-xy}$ & $-\sum_t R_n'(t)$\\
     arithmetic & moments of the kernel & partial fractions\\
     positivity & integration by parts & no negative valley\\
-    size & $\max G=(\sqrt2-1)^4\approx\frac1{34}$ & leak: ratio $>33$\\
-    denominators & $\Dn<3^n$ infinitely often & no uniform bound beyond $e^n$\\
+    size & $\max G=(\sqrt2-1)^4\approx\frac1{34}$ & $J_{n-1}/J_n>33$\\
+    denominators & $\Dn<3^n$ infinitely often, \ $27(\sqrt2-1)^4<1$ & the same, \ $27<33$\\
     \bottomrule
   \end{tabular}
   \medskip
