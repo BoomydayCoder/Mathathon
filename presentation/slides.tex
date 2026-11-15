@@ -721,20 +721,23 @@
   coefficients mean, and why $\zeta(5)$ is different.
 \end{frame}
 
-\begin{frame}{Why it matters, and what we did}
-  The proof uses only sums and one recurrence, and it explains every coefficient of Ap\'ery's
-  recurrence. It is short enough to formalize. The maximum-principle argument could be tried
-  on other Ap\'ery-like recurrences.
+\begin{frame}{Why our proof is better, and what we did}
+  \textbf{Compared with Beukers.} The proof uses no integrals. Beukers never uses Ap\'ery's
+  recurrence, so his proof cannot say where it comes from; ours is built around it.
 
-  During the event we
-  \begin{itemize}
-    \item reviewed the literature overnight;
-    \item checked Zudilin's proof lemma by lemma, by hand;
-    \item worked through Beukers' proof as the motivation for $r_n$, $R_n$ and $R_n'$;
-    \item found and checked the maximum-principle proof, and derived the recurrence by hand;
-    \item checked the identities symbolically and searched the literature for novelty.
-  \end{itemize}
-  AI tools (Claude, Codex, ChatGPT) were used throughout; the report describes how.
+  \textbf{Compared with Zudilin.} One series instead of two; one recurrence, found by hand,
+  instead of two computer-found certificates (one of degree six); no Stirling estimates; no
+  appeal to a ``trivial'' bound $D_n<3^n$.
+
+  \textbf{So} the proof explains every coefficient of Ap\'ery's recurrence ($n^3$, $(n+1)^3$,
+  $17=1+16$), is short enough to formalize, and its maximum principle can be tried on other
+  Ap\'ery-like recurrences.
+
+  {\footnotesize During the event we reviewed the literature overnight, checked Zudilin's proof lemma by
+  lemma by hand, worked through Beukers' proof as the motivation for $r_n$, $R_n$, $R_n'$, found
+  and checked the maximum-principle proof and derived the recurrence by hand, and checked the
+  identities symbolically. AI tools (Claude, Codex, ChatGPT) were used throughout; the report
+  describes how.\par}
 \end{frame}
 
 \begin{frame}{Outlook: an operator picture}
