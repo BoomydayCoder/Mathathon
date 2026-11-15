@@ -928,8 +928,20 @@ team's notes prove (\cite{codexnotes}, Section~16 and Appendix~A) that in fact
 \[
   J_n^{[3]}=\frac{12\,(H_{n-1}+H_{n+1})}{n^2(n+1)^2}+O\Bigl(\frac{\log n}{n^8}\Bigr),
 \]
-which is only polynomially small, so $\Dn^5J_n^{[3]}\ge n^5J_n^{[3]}$ grows. Numerically, at $n=80$ one
-has $J_n^{[1]}\approx7\cdot10^{-126}$ but $J_n^{[3]}\approx3\cdot10^{-6}$. In this precise sense
+which is only polynomially small, so $\Dn^5J_n^{[3]}\ge n^5J_n^{[3]}$ grows. The values computed in
+the team's notes show the difference:
+\begin{center}
+\begin{tabular}{@{}rll@{}}
+\toprule
+$n$ & $J_n^{[1]}$ (for $\zeta(3)$) & $J_n^{[3]}$ (for $\zeta(5)$)\\
+\midrule
+10 & $2.2354\cdot10^{-17}$ & $5.8008\cdot10^{-3}$\\
+20 & $4.0665\cdot10^{-33}$ & $4.8933\cdot10^{-4}$\\
+40 & $3.5245\cdot10^{-64}$ & $3.8176\cdot10^{-5}$\\
+80 & $7.1985\cdot10^{-126}$ & $2.8380\cdot10^{-6}$\\
+\bottomrule
+\end{tabular}
+\end{center} In this precise sense
 $\zeta(3)$ is the one case in which the square of Zudilin's rational function does its job.
 
 % ======================================================================

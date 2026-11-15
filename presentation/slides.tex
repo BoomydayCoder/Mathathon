@@ -45,7 +45,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{The obstruction: no integer lies strictly between 0 and 1}
+\begin{frame}{No integer lies strictly between 0 and 1}
   If $\zeta(3)=p/q$ and $A,B\in\Z$, then $q(A\zeta(3)-B)\in\Z$.
   \medskip
 
@@ -56,129 +56,83 @@
     \item $\Dn^3J_n\to0$ along some sequence of $n$ \hfill(small)
   \end{enumerate}
   \medskip
-  The partial sums are not good enough: $\Dn^3\bigl(\zeta(3)-\sum_{m\le n}m^{-3}\bigr)\ge\frac{n^3}{2(n+1)^2}\to\infty$.
+  The partial sums fail, since $\Dn^3\bigl(\zeta(3)-\sum_{m\le n}m^{-3}\bigr)\ge\frac{n^3}{2(n+1)^2}\to\infty$.
 \end{frame}
 
-\begin{frame}{What is unsatisfying, and what we do}
-  The known proofs find such $J_n$, but each pays a price.
-  \begin{itemize}
-    \item \textbf{Beukers} needs integrals (and, originally, the prime number theorem).
-    \item \textbf{Zudilin} uses only sums, but needs a second series, two recurrences with
-      certificates (one of degree 6), Stirling-type estimates and a ``trivial'' bound $\Dn<3^n$.
-  \end{itemize}
-  \medskip
-  \begin{block}{Our proof}
-    One series and one recurrence. The sign and the size of $J_n$ come from a
-    \alert{maximum principle}. No integrals, no prime number theorem.
-    \\[3pt]
-    To our knowledge, the argument is new.
-  \end{block}
+\begin{frame}{The question and our answers}
+  \centering
+  \begin{tikzpicture}[
+      hub/.style={fill=mDarkTeal,text=white,rounded corners=4pt,inner sep=6pt,align=center,
+                  minimum width=13.5cm,font=\small},
+      card/.style={draw=mDarkTeal,thick,rounded corners=4pt,align=center,inner sep=5pt,
+                   text width=4.15cm,minimum height=1.3cm,font=\small}]
+    \node[hub] (top) at (0,2.6) {Ap\'ery's recurrence \
+      $(n+1)^3u_{n+1}-(2n+1)(17n^2+17n+5)u_n+n^3u_{n-1}=0$\\[2pt]
+      appears from nowhere. For Zudilin it is a bridge between two series, found by computer.};
+    \foreach \x/\y/\k/\h/\b in {
+      -4.7/0.55/1/{Where $R_n$ comes from}/{Legendre in disguise},
+      0/0.55/2/{The equation we want}/{positive coefficients},
+      4.7/0.55/3/{How to find it}/{a guess, five coefficients},
+      -4.7/-1.45/4/{What it means}/{$17=1+16$},
+      0/-1.45/5/{What it gives}/{sign and size of $J_n$},
+      4.7/-1.45/6/{Where it stops}/{$\zeta(5)$ is different}}
+      \node[card] at (\x,\y) {\textbf{\alert{\k.}\ \h}\\[2pt] \b};
+  \end{tikzpicture}
 \end{frame}
 
 % ----------------------------------------------------------------------
 \section{Part I: Beukers' integrals}
 
-\begin{frame}{Step 1: writing $\zeta(3)$ as an integral}
+\begin{frame}{Step 1: $\zeta(3)$ as an integral}
   Integration turns powers into reciprocals of integers:
-  \[
-    \int_0^1x^m\dd x=\frac1{m+1},\qquad
-    \int_0^1-x^m\log x\dd x=\frac1{(m+1)^2}\quad\text{(integrate by parts).}
-  \]
-  Multiply the two, using a second variable $y$:
-  \[
-    \int_0^1\!\!\int_0^1-(xy)^m\log x\dd x\dd y=\frac1{(m+1)^3}.
-  \]
-  Symmetrise: $-\log x-\log y=-\log(xy)$, so
-  $\displaystyle\iint-(xy)^m\log(xy)\dd x\dd y=\frac2{(m+1)^3}$.
+  \ $\int_0^1x^m\dd x=\frac1{m+1}$, \ $\int_0^1-x^m\log x\dd x=\frac1{(m+1)^2}$.
 
-  Now sum over $m\ge0$, using $\sum_m(xy)^m=\frac1{1-xy}$:
+  With a second variable $y$, and summing over $m\ge0$:
   \[
-    \iint_{[0,1]^2}\frac{-\log(xy)}{1-xy}\dd x\dd y=2\zeta(3).
+    \iint_{[0,1]^2}K(x,y)\dd x\dd y=2\zeta(3),\qquad K(x,y)=\frac{-\log(xy)}{1-xy}\quad\text{(the \alert{kernel}).}
   \]
+  Multiply the kernel by a monomial:
+  \[
+    \iint x^ry^rK=2\zeta(3)-2\Bigl(1+\frac1{2^3}+\dots+\frac1{r^3}\Bigr),\qquad
+    \iint x^ry^sK=\frac1{r-s}\sum_{j=s+1}^{r}\frac1{j^2}\quad(r>s).
+  \]
+  Hence $\Dn^3\iint P(x)P(y)K\in\Z+\Z\zeta(3)$ for every integer polynomial $P$ of degree $\le n$.
+
+  For example, $P=1-2x$ gives $10\zeta(3)-12\approx0.0206$.
 \end{frame}
 
-\begin{frame}{Step 1 continued: playing with the integral}
-  Call $K(x,y)=\frac{-\log(xy)}{1-xy}$ the \alert{kernel}. What happens if we multiply it by a monomial?
-  \begin{itemize}
-    \item With $x^ry^r$ the sum starts later:
-      \[
-        \iint x^ry^rK=2\sum_{m>r}\frac1{m^3}=2\zeta(3)-2\Bigl(1+\frac1{2^3}+\dots+\frac1{r^3}\Bigr).
-      \]
-    \item With $x^ry^s$, $r\ne s$, the sum telescopes and $\zeta(3)$ drops out:
-      \[
-        \iint x^ry^sK=\frac1{r-s}\sum_{j=s+1}^{r}\frac1{j^2}\in\mathbb Q .
-      \]
-  \end{itemize}
-  \begin{block}{So every polynomial gives a linear combination of $\zeta(3)$ and $1$}
-    For an integer polynomial $P$ of degree $\le n$:\quad
-    $\Dn^3\iint P(x)P(y)K\in\Z+\Z\zeta(3)$.
-    \\[2pt]
-    For example, $P=1-2x$ gives $10\zeta(3)-12\approx0.0206$, which is already small. Can we do better?
-  \end{block}
-\end{frame}
-
-\begin{frame}{Step 2: making the integral small, one variable first}
-  We want an integer polynomial $P$ of degree $n$ that makes
-  $\displaystyle\iint P(x)P(y)K(x,y)\dd x\dd y$ \alert{small}.
-  \medskip
-
-  Start with one variable: how do we make $\int_0^1P(x)f(x)\dd x$ small? Expand $f$ in a Taylor series,
-  \[
-    f(x)=a_0+a_1x+\dots+a_{n-1}x^{n-1}+(\text{higher order terms}).
-  \]
-  and ask $P$ to kill the low-degree monomials:
+\begin{frame}{Step 2: the polynomial that kills monomials}
+  To make $\int_0^1P(x)f(x)\dd x$ small, ask $P$ to kill the low-degree monomials:
   \[
     \int_0^1x^jP(x)\dd x=0\qquad\text{for } j=0,1,\dots,n-1.
   \]
-  Then $\int Pf$ only sees the higher-order part of $f$.
-  \begin{block}{This determines $P$ up to scale}
-    There are $n$ conditions on $n+1$ coefficients, so the solution is unique up to scale.
-  \end{block}
-\end{frame}
-
-\begin{frame}{Step 2 continued: the polynomial that kills monomials}
-  The $n$-th derivative kills every polynomial of degree $<n$. Move it onto $P$ by integrating by
-  parts $n$ times, with no boundary terms:
+  Then $\int Pf$ only sees the higher-order part of the Taylor series of $f$.
+  This determines $P$ up to scale:
   \[
     P_n(x)=\frac1{n!}\frac{\dd^n}{\dd x^n}\bigl[x^n(1-x)^n\bigr],\qquad
     \int_0^1P_nf=\frac{(-1)^n}{n!}\int_0^1x^n(1-x)^nf^{(n)} .
   \]
-  $P_n=\sum_k(-1)^k\binom nk\binom{n+k}kx^k$ has integer coefficients (shifted Legendre polynomial).
-  Take $P=P_n$:\quad
-  $J_n=\iint P_n(x)P_n(y)K\dd x\dd y=2a_n\zeta(3)-2b_n$.
+  $P_n$ has integer coefficients (shifted Legendre polynomial). Take
+  \ $J_n=\iint P_n(x)P_n(y)K=2a_n\zeta(3)-2b_n$.
   \medskip
 
-  For example, take $f(x)=\frac1{x+t}$. Since
-  $\frac{\dd^n}{\dd x^n}\frac1{x+t}=\frac{(-1)^nn!}{(x+t)^{n+1}}$,
-  \[
-    \int_0^1\frac{P_n(x)}{x+t}\dd x=\int_0^1\frac{[x(1-x)]^n}{(x+t)^{n+1}}\dd x\;>\;0 .
-  \]
+  For example, \
+  $\displaystyle\int_0^1\frac{P_n(x)}{x+t}\dd x=\int_0^1\frac{[x(1-x)]^n}{(x+t)^{n+1}}\dd x\;>\;0$.
 \end{frame}
 
-\begin{frame}{Step 3: separation of variables}
-  But $K(x,y)$ mixes $x$ and $y$, so how do we use the one-variable trick?
-  \medskip
-
-  Borrow an idea from differential equations: write a function of two variables as a
-  superposition of products, $u(x,t)=\sum_kv_k(x)w_k(t)$.
-
-  Here we write $K$ as an integral, over a parameter $t$, of products $v_t(x)\,w_t(y)$:
+\begin{frame}{Step 3: separation of variables, and positivity}
+  $K(x,y)$ mixes $x$ and $y$. Write it as an integral, over a parameter $t$, of products:
   \[
-    K(x,y)=\int_0^\infty\underbrace{\frac1{x+t}}_{v_t(x)}\cdot\underbrace{\frac1{1+yt}}_{w_t(y)}\dd t .
+    K(x,y)=\int_0^\infty\frac1{x+t}\cdot\frac1{1+yt}\dd t ,
+    \qquad
+    J_n=\int_0^\infty\Bigl(\int_0^1\frac{P_n(x)}{x+t}\dd x\Bigr)\Bigl(\int_0^1\frac{P_n(y)}{1+yt}\dd y\Bigr)\dd t .
   \]
-  {\footnotesize (Partial fractions: $\int_0^\infty\frac{\dd t}{(t+a)(t+b)}=\frac{\log b-\log a}{b-a}$ with $a=x$, $b=1/y$, after writing $1+yt=y(t+b)$.)}
-  \[
-    J_n=\int_0^\infty\Bigl(\int_0^1\frac{P_n(x)}{x+t}\dd x\Bigr)\Bigl(\int_0^1\frac{P_n(y)}{1+yt}\dd y\Bigr)\dd t
-  \]
-\end{frame}
-
-\begin{frame}{Step 3 continued: positivity}
   Integrate by parts $n$ times in $x$ and in $y$; signs and factorials cancel:
   \[
     J_n=\int_0^\infty\!\!\iint_{[0,1]^2}
     \frac{[x(1-x)\,y(1-y)\,t]^n}{[(x+t)(1+yt)]^{n+1}}\dd x\dd y\dd t\;>\;0.
   \]
-  The cancellation inside $P_n$ has turned into a positive integrand, and we have not estimated anything yet.
+  The integrand is positive.
 \end{frame}
 
 \begin{frame}{Step 4: exponential decay}
@@ -212,7 +166,7 @@
     \item So for every $\mu>e$ we have $\Dn<\mu^n$ for \alert{infinitely many} $n$.
     \item Take $\mu=3$, which is allowed because
       $e=\sum_{k\ge0}\frac1{k!}<1+\sum_{k\ge1}2^{1-k}=3$.
-      This is all we need, because $J_n>0$ for every $n$.
+      This suffices, because $J_n>0$ for every $n$.
   \end{itemize}
 \end{frame}
 
@@ -244,10 +198,10 @@
 
   \raggedright
   Hence $e^q$ is irrational for every rational $q\ne0$, and $\log r$ for every rational $r>0$, $r\ne1$.
-  \begin{block}{}
-    The kernel decides the arithmetic, its $n$-th derivative decides positivity, and the
-    maximum decides whether the size beats the denominators.
-  \end{block}
+  \medskip
+
+  In each case the kernel gives the arithmetic, its $n$-th derivative gives positivity, and the
+  maximum of the integrand gives the size.
 \end{frame}
 
 % ======================================================================
@@ -264,14 +218,22 @@
     \boxed{\;r_n(t)=\frac{(1-t)(2-t)\cdots(n-t)}{t\,(t+1)\cdots(t+n)}\;}
   \]
   \pause
-  We can see where the zeros and the poles come from:
-  \begin{itemize}
-    \item the zeros at $t=1,\dots,n$ are the vanishing moments $\int_0^1x^jP_n=0$ we asked for;
-    \item the poles at $t=0,-1,\dots,-n$ come from integrating the monomials $x^k$, $k\le n$.
-  \end{itemize}
+  \centering
+  \begin{tikzpicture}[x=1.15cm,>=stealth,font=\small]
+    \draw[->,thick,mDarkTeal] (-5,0)--(5.9,0) node[right] {$t$};
+    \foreach \x/\l in {-4/{-n},-3/{\cdots},-2/{-1},-1/{0}} {
+      \draw[mLightBrown,very thick] (\x-0.11,-0.13)--(\x+0.11,0.13) (\x-0.11,0.13)--(\x+0.11,-0.13);
+      \node[below=5pt] at (\x,0) {$\l$}; }
+    \foreach \x/\l in {0.4/{1},1.4/{2},2.4/{\cdots},3.4/{n}} {
+      \fill[mDarkTeal] (\x,0) circle (3pt);
+      \node[below=5pt] at (\x,0) {$\l$}; }
+    \draw[mDarkTeal,thick] (4.4,-0.1)--(4.4,0.1); \node[below=5pt] at (4.4,0) {$n+1$};
+    \node[above=6pt,text=mLightBrown] at (-2.5,0) {poles, from $\int_0^1x^{t-1}x^k$, $k\le n$};
+    \node[above=6pt,text=mDarkTeal] at (2.4,0) {zeros, since $\int_0^1x^jP_n=0$, $j<n$};
+  \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{Why a square, and why a derivative?}
+\begin{frame}{The square and the derivative}
   Expand $\frac1{1-xy}=\sum_{t\ge1}(xy)^{t-1}$ in Beukers' integral:
   \[
     J_n=\sum_{t=1}^\infty\iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr).
@@ -288,7 +250,7 @@
   \]
 \end{frame}
 
-\begin{frame}{The catch: the terms have both signs}
+\begin{frame}{The terms have both signs}
   The first $n$ terms vanish, so $J_n=-\sum_{t>n}R_n'(t)$. The easy bound
   $|R_n'(t)|\le\frac{n+2}{t^3}$ gives
   \[
@@ -314,7 +276,7 @@
   \pause
   \medskip
 
-  For Beukers the positive integral gives both. What can we use without it?
+  For Beukers the positive integral gives both.
 \end{frame}
 
 \begin{frame}{Zudilin's plan: a second series for the same number}
@@ -345,7 +307,7 @@
     &+(384n^5+396n^4+97n^3-29n^2-17n-2)t\\
     &+n(153n^5+183n^4+50n^3-30n^2-22n-4).
   \end{align*}}
-  To check it, expand a polynomial identity in $t$ and $n$. To find it, use a computer.
+  It is checked by expanding a polynomial identity in $t$ and $n$. It was found by computer.
 \end{frame}
 
 \begin{frame}{It gets worse}
@@ -363,7 +325,7 @@
     \qquad
     \tau_0=-\tfrac12+\sqrt{\tfrac54+\sqrt2}=1.1322\ldots
   \]}%
-  A few more lines of algebra, and $e^{f(\tau_0)}=(\sqrt2-1)^4$: the number we met in Step 4.
+  After a few more lines of algebra, $e^{f(\tau_0)}=(\sqrt2-1)^4$, the number from Step 4.
 \end{frame}
 
 % ======================================================================
@@ -382,11 +344,10 @@
   \pause
   \medskip
 
-  Instead of a second series, we look for an equation relating each $J_n$ to its
-  neighbours, and let that equation control the sequence.
+  Instead of a second series, we look for an equation relating $J_n$ to its neighbours.
 \end{frame}
 
-\begin{frame}{Which equation would we like?}
+\begin{frame}{The equation we want}
   Suppose \qquad $B\,(J_{n+1}-J_n)-A\,(J_n-J_{n-1})=\lambda J_n$, \qquad $A,B,\lambda>0$.
   \pause
   \begin{columns}[c]
@@ -415,15 +376,15 @@
   \end{columns}
   \pause
   \medskip
-  Neither can happen. And once $J_n$ is positive and decreasing,
+  Neither can happen. If $J_n$ is positive and decreasing, then
   \[
     A(J_{n-1}-J_n)>\lambda J_n\quad\Longrightarrow\quad J_n<\frac{A}{A+\lambda}\,J_{n-1},
   \]
-  so a large $\lambda/A$ means fast decay. \ Is there such an equation?
+  so a large $\lambda/A$ gives fast decay.
 \end{frame}
 
 \begin{frame}{A guess}
-  Look for it among the rational functions $R_j=r_j^2$ themselves:
+  Try the rational functions $R_j=r_j^2$:
   \[
     B(R_{n+1}-R_n)-A(R_n-R_{n-1})=\lambda R_n+\underbrace{W(t+1)R_n(t+1)-W(t)R_n(t)}_{\text{a telescoping error}}
   \]
@@ -436,21 +397,33 @@
       $WR_n$ bounded.
   \end{itemize}
   \pause
-  That leaves six unknowns: $A$, $B$, $\lambda$ and the coefficients of $W(t)=w_0+w_1t+w_2t^2$.
+  The six unknowns are $A$, $B$, $\lambda$ and the coefficients of $W(t)=w_0+w_1t+w_2t^2$.
 \end{frame}
 
-\begin{frame}{The guess works}
+\begin{frame}{Solving for the coefficients}
+  Divide by $R_n$. All the ratios are short:
+  {\small
   \[
-    A=n^3,\quad B=(n+1)^3,\quad\lambda=4(2n+1)^3,\quad
-    W(t)=4(2n+1)\bigl((2n+1)^2+t-2t^2\bigr).
+    \frac{R_{n-1}}{R_n}=\Bigl(\frac{t+n}{t-n}\Bigr)^2,\quad
+    \frac{R_{n+1}}{R_n}=\Bigl(\frac{t-n-1}{t+n+1}\Bigr)^2,\quad
+    \frac{R_n(t+1)}{R_n(t)}=\frac{t^4}{(n-t)^2(n+1+t)^2}.
+  \]}%
+  After clearing denominators, the guess is a polynomial identity in $t$ of degree $\le4$:
+  five equations for six unknowns. Match Taylor coefficients at $t=0$, one at a time:
+  \[
+    t^3:\ \tfrac A{n^3}=\tfrac B{(n+1)^3}
+    \qquad\quad t^0,t^1,t^2:\ w_0,w_1,w_2
+    \qquad\quad t^4:\ \lambda
   \]
-  All of $A$, $B$, $\lambda$ are positive.
   \pause
-  \medskip
-  \begin{block}{Why this is only a check}
-    Divide by $R_n$ and clear denominators: both sides are polynomials in $t$ of degree $\le4$.
-    So matching five Taylor coefficients at $t=0$ determines the unknowns and verifies the
-    identity. This $W$ is the same polynomial Zudilin found by computer (his $s_n$ in Lemma~2).
+  \begin{block}{The solution}
+    \centering
+    $A=n^3,\quad B=(n+1)^3,\quad\lambda=4(2n+1)^3,\quad
+    W(t)=4(2n+1)\bigl((2n+1)^2+t-2t^2\bigr)$
+    \\[3pt]
+    \raggedright
+    $A$, $B$, $\lambda$ are all positive.
+    This $W$ is the same polynomial Zudilin found by computer (his $s_n$ in Lemma~2).
   \end{block}
 \end{frame}
 
@@ -477,14 +450,34 @@
   \raggedright
   \pause
 
-  Define the current $C_n=n^3(J_{n-1}-J_n)$. \ The recurrence says exactly
+  Define the current $C_n=n^3(J_{n-1}-J_n)$. \ Then the recurrence reads
   \[
-    C_n-C_{n+1}=4(2n+1)^3J_n :
+    C_n-C_{n+1}=4(2n+1)^3J_n .
   \]
-  the current drops at each $n$ by the leak $4(2n+1)^3J_n$, which is positive as long as $J_n>0$.
+  The current drops at each $n$ by the leak $4(2n+1)^3J_n$, which is positive when $J_n>0$.
 \end{frame}
 
-\begin{frame}{No valleys, no peaks: $J_n$ decreases to zero}
+\begin{frame}{The coefficient 17}
+  Our current law, \ $(n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n$, \ grouped by $J_{n+1},J_n,J_{n-1}$:
+  \[
+    (n+1)^3J_{n+1}-\bigl[\underbrace{(n+1)^3+n^3}_{\text{two differences}}+\underbrace{4(2n+1)^3}_{\text{leak}}\bigr]J_n+n^3J_{n-1}=0 .
+  \]
+  Both parts of the middle coefficient contain the factor $2n+1$:
+  \[
+    \begin{aligned}
+      (n+1)^3+n^3&=(2n+1)\,(n^2+n+1)\\
+      4(2n+1)^3&=(2n+1)\,(16n^2+16n+4)\\
+      \text{sum}&=(2n+1)\,(17n^2+17n+5)
+    \end{aligned}
+  \]
+  which is Ap\'ery's recurrence:
+  \ $(n+1)^3J_{n+1}-(2n+1)(17n^2+17n+5)J_n+n^3J_{n-1}=0$.
+  \medskip
+
+  So $17=1+16$, with $1$ from the two differences and $16$ from the leak.
+\end{frame}
+
+\begin{frame}{$J_n$ decreases to zero}
   A sequence tending to $0$ attains its minimum if it has a negative term, and attains its
   maximum if its terms are positive.
   \pause
@@ -504,7 +497,7 @@
   \]
 \end{frame}
 
-\begin{frame}{From falling to falling fast}
+\begin{frame}{The rate of decay}
   Since $J_n$ decreases, $C_{n+1}>0$, so $C_n>4(2n+1)^3J_n$:
   \[
     n^3(J_{n-1}-J_n)>4(2n+1)^3J_n\quad\Longrightarrow\quad
@@ -515,6 +508,18 @@
   \]
   \pause
   The true ratios decrease to $17+12\sqrt2\approx33.97$, so the maximum principle loses very little.
+\end{frame}
+
+\begin{frame}{Without the leak}
+  Without the leak the current is constant: $C_n=C$, so $J_{n-1}-J_n=\dfrac C{n^3}$, and since $J_n\to0$,
+  \[
+    J_n=C\sum_{k>n}\frac1{k^3}.
+  \]
+  This is the tail of $\zeta(3)$, that is, the partial sums we rejected at the start, and it
+  decays only like $\frac1{2n^2}$.
+  \medskip
+
+  The partial sums satisfy the same law without the term $4(2n+1)^3J_n$, which exceeds $32n^3J_n$.
 \end{frame}
 
 \begin{frame}{The contradiction again}
@@ -532,6 +537,44 @@
   \begin{alertblock}{Theorem (Ap\'ery)}
     $\zeta(3)$ is irrational.
   \end{alertblock}
+\end{frame}
+
+\begin{frame}{Why it stops at $\zeta(3)$}
+  Replace $-\log(xy)$ by its $k$-th power:\quad
+  $J_n^{[k]}=\iint P_n(x)P_n(y)\,\frac{(-\log(xy))^k}{1-xy}$, \quad $J_n^{[1]}=J_n$.
+  \begin{columns}[c]
+    \begin{column}{0.6\textwidth}
+      \begin{itemize}
+        \item $\Dn^{k+2}J_n^{[k]}\in\Z+\Z\zeta(k+2)$
+        \item $J_n^{[k]}=(-1)^k\sum_{t\ge1}R_n^{(k)}(t)$
+        \item The double zeros of $R_n$ at $1,\dots,n$ survive \alert{one} derivative,
+          but not three.
+      \end{itemize}
+      \[
+        J_n^{[3]}=\frac{12\,(H_{n-1}+H_{n+1})}{n^2(n+1)^2}+O\Bigl(\frac{\log n}{n^8}\Bigr),
+      \]
+      with $H_m=1+\frac12+\dots+\frac1m$, so $\Dn^5J_n^{[3]}$ grows.
+    \end{column}
+    \begin{column}{0.38\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.8cm,y=0.025cm,font=\footnotesize,>=stealth]
+        \draw[->,mDarkTeal] (0.6,0)--(4.6,0) node[right] {$n$};
+        \draw[->,mDarkTeal] (0.6,-135)--(0.6,12);
+        \foreach \x/\l in {1/10,2/20,3/40,4/80} \node[above] at (\x,0) {$\l$};
+        \foreach \y in {-40,-80,-120} {
+          \draw[mDarkTeal] (0.52,\y)--(0.6,\y);
+          \node[left] at (0.55,\y) {$10^{\y}$}; }
+        \draw[thick,mLightBrown] (1,-2.24)--(2,-3.31)--(3,-4.42)--(4,-5.55);
+        \foreach \x/\y in {1/-2.24,2/-3.31,3/-4.42,4/-5.55} \fill[mLightBrown] (\x,\y) circle (2pt);
+        \draw[thick,mDarkTeal] (1,-16.65)--(2,-32.39)--(3,-63.45)--(4,-125.14);
+        \foreach \x/\y in {1/-16.65,2/-32.39,3/-63.45,4/-125.14} \fill[mDarkTeal] (\x,\y) circle (2pt);
+        \node[text=mLightBrown,below] at (3.2,-10) {$J_n^{[3]}$, for $\zeta(5)$};
+        \node[text=mDarkTeal,left] at (3.25,-88) {$J_n^{[1]}$, for $\zeta(3)$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+  {\footnotesize Source: the team's notes (Codex exposition, \S16; proof in its Appendix~A).}
 \end{frame}
 
 % ======================================================================
@@ -564,8 +607,8 @@
 \end{frame}
 
 \begin{frame}{What is new}
-  To our knowledge, the argument of Part III is new: the sign and the exponential decay of $J_n$
-  come straight from Ap\'ery's recurrence by a maximum principle, using only $J_0>0$ and $J_n\to0$.
+  To our knowledge, the argument of Part III is new. The sign and the exponential decay of $J_n$
+  come from Ap\'ery's recurrence by a maximum principle, using only $J_0>0$ and $J_n\to0$.
   \pause
   \medskip
 
@@ -575,11 +618,11 @@
   \pause
   \medskip
 
-  What is not new: Ap\'ery's recurrence, and the polynomial $W$ that makes it telescope (Zudilin found it first).
+  Ap\'ery's recurrence and the polynomial $W$ are not new. Zudilin found $W$ first.
   \medskip
 
-  Parts I and III are linked: the moment generating function of the Legendre
-  polynomial is Zudilin's rational function.
+  For the recurrence, we now know which equation we wanted, how to find it, what its
+  coefficients mean, and why $\zeta(5)$ is different.
 \end{frame}
 
 \begin{frame}[standout]
@@ -590,6 +633,109 @@
 % Backup slides, not presented; in talk order.
 \appendix
 \section{Backup slides}
+
+\begin{frame}{Step 1 in detail: writing $\zeta(3)$ as an integral}
+  Integration turns powers into reciprocals of integers:
+  \[
+    \int_0^1x^m\dd x=\frac1{m+1},\qquad
+    \int_0^1-x^m\log x\dd x=\frac1{(m+1)^2}\quad\text{(integrate by parts).}
+  \]
+  Multiply the two, using a second variable $y$:
+  \[
+    \int_0^1\!\!\int_0^1-(xy)^m\log x\dd x\dd y=\frac1{(m+1)^3}.
+  \]
+  Symmetrise: $-\log x-\log y=-\log(xy)$, so
+  $\displaystyle\iint-(xy)^m\log(xy)\dd x\dd y=\frac2{(m+1)^3}$.
+
+  Now sum over $m\ge0$, using $\sum_m(xy)^m=\frac1{1-xy}$:
+  \[
+    \iint_{[0,1]^2}\frac{-\log(xy)}{1-xy}\dd x\dd y=2\zeta(3).
+  \]
+\end{frame}
+
+\begin{frame}{Step 1 in detail: playing with the integral}
+  Call $K(x,y)=\frac{-\log(xy)}{1-xy}$ the \alert{kernel}. What happens if we multiply it by a monomial?
+  \begin{itemize}
+    \item With $x^ry^r$ the sum starts later:
+      \[
+        \iint x^ry^rK=2\sum_{m>r}\frac1{m^3}=2\zeta(3)-2\Bigl(1+\frac1{2^3}+\dots+\frac1{r^3}\Bigr).
+      \]
+    \item With $x^ry^s$, $r\ne s$, the sum telescopes and $\zeta(3)$ drops out:
+      \[
+        \iint x^ry^sK=\frac1{r-s}\sum_{j=s+1}^{r}\frac1{j^2}\in\mathbb Q .
+      \]
+  \end{itemize}
+  \begin{block}{So every polynomial gives a linear combination of $\zeta(3)$ and $1$}
+    For an integer polynomial $P$ of degree $\le n$:\quad
+    $\Dn^3\iint P(x)P(y)K\in\Z+\Z\zeta(3)$.
+    \\[2pt]
+    For example, $P=1-2x$ gives $10\zeta(3)-12\approx0.0206$, which is already small.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Step 2 in detail: making the integral small, one variable first}
+  We want an integer polynomial $P$ of degree $n$ that makes
+  $\displaystyle\iint P(x)P(y)K(x,y)\dd x\dd y$ \alert{small}.
+  \medskip
+
+  Start with one variable: how do we make $\int_0^1P(x)f(x)\dd x$ small? Expand $f$ in a Taylor series,
+  \[
+    f(x)=a_0+a_1x+\dots+a_{n-1}x^{n-1}+(\text{higher order terms}).
+  \]
+  and ask $P$ to kill the low-degree monomials:
+  \[
+    \int_0^1x^jP(x)\dd x=0\qquad\text{for } j=0,1,\dots,n-1.
+  \]
+  Then $\int Pf$ only sees the higher-order part of $f$.
+  \begin{block}{This determines $P$ up to scale}
+    There are $n$ conditions on $n+1$ coefficients, so the solution is unique up to scale.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Step 2 in detail: the polynomial that kills monomials}
+  The $n$-th derivative kills every polynomial of degree $<n$. Move it onto $P$ by integrating by
+  parts $n$ times, with no boundary terms:
+  \[
+    P_n(x)=\frac1{n!}\frac{\dd^n}{\dd x^n}\bigl[x^n(1-x)^n\bigr],\qquad
+    \int_0^1P_nf=\frac{(-1)^n}{n!}\int_0^1x^n(1-x)^nf^{(n)} .
+  \]
+  $P_n=\sum_k(-1)^k\binom nk\binom{n+k}kx^k$ has integer coefficients (shifted Legendre polynomial).
+  Take $P=P_n$:\quad
+  $J_n=\iint P_n(x)P_n(y)K\dd x\dd y=2a_n\zeta(3)-2b_n$.
+  \medskip
+
+  For example, take $f(x)=\frac1{x+t}$. Since
+  $\frac{\dd^n}{\dd x^n}\frac1{x+t}=\frac{(-1)^nn!}{(x+t)^{n+1}}$,
+  \[
+    \int_0^1\frac{P_n(x)}{x+t}\dd x=\int_0^1\frac{[x(1-x)]^n}{(x+t)^{n+1}}\dd x\;>\;0 .
+  \]
+\end{frame}
+
+\begin{frame}{Step 3 in detail: separation of variables}
+  $K(x,y)$ mixes $x$ and $y$.
+  \medskip
+
+  Borrow an idea from differential equations: write a function of two variables as a
+  superposition of products, $u(x,t)=\sum_kv_k(x)w_k(t)$.
+
+  Here we write $K$ as an integral, over a parameter $t$, of products $v_t(x)\,w_t(y)$:
+  \[
+    K(x,y)=\int_0^\infty\underbrace{\frac1{x+t}}_{v_t(x)}\cdot\underbrace{\frac1{1+yt}}_{w_t(y)}\dd t .
+  \]
+  {\footnotesize (Partial fractions: $\int_0^\infty\frac{\dd t}{(t+a)(t+b)}=\frac{\log b-\log a}{b-a}$ with $a=x$, $b=1/y$, after writing $1+yt=y(t+b)$.)}
+  \[
+    J_n=\int_0^\infty\Bigl(\int_0^1\frac{P_n(x)}{x+t}\dd x\Bigr)\Bigl(\int_0^1\frac{P_n(y)}{1+yt}\dd y\Bigr)\dd t
+  \]
+\end{frame}
+
+\begin{frame}{Step 3 in detail: positivity}
+  Integrate by parts $n$ times in $x$ and in $y$; signs and factorials cancel:
+  \[
+    J_n=\int_0^\infty\!\!\iint_{[0,1]^2}
+    \frac{[x(1-x)\,y(1-y)\,t]^n}{[(x+t)(1+yt)]^{n+1}}\dd x\dd y\dd t\;>\;0.
+  \]
+  The integrand is positive.
+\end{frame}
 
 \begin{frame}{Step 4 in detail: AM--GM twice}
   $J_n=\displaystyle\int\frac{G^n}{Q}$ \ with \ $Q=(x+t)(1+yt)$ \ and \ $G=\dfrac{x(1-x)\,y(1-y)\,t}{Q}$.
@@ -769,39 +915,6 @@
   \begin{block}{The solution}
     \centering
     $A=n^3,\qquad B=(n+1)^3,\qquad \lambda=4(2n+1)^3$, \qquad all positive.
-  \end{block}
-\end{frame}
-
-\begin{frame}{Where does the 17 come from?}
-  Our current law, \ $(n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n$, \ grouped by $J_{n+1},J_n,J_{n-1}$:
-  \[
-    (n+1)^3J_{n+1}-\bigl[\underbrace{(n+1)^3+n^3}_{\text{two differences}}+\underbrace{4(2n+1)^3}_{\text{leak}}\bigr]J_n+n^3J_{n-1}=0 .
-  \]
-  Both parts of the middle coefficient contain the factor $2n+1$:
-  \[
-    \begin{aligned}
-      (n+1)^3+n^3&=(2n+1)\,(n^2+n+1)\\
-      4(2n+1)^3&=(2n+1)\,(16n^2+16n+4)\\
-      \text{sum}&=(2n+1)\,(17n^2+17n+5)
-    \end{aligned}
-  \]
-  which is Ap\'ery's recurrence:
-  \ $(n+1)^3J_{n+1}-(2n+1)(17n^2+17n+5)J_n+n^3J_{n-1}=0$.
-  \begin{block}{}
-    \centering $17=1+16$: \ one from the two differences, sixteen from the leak.
-  \end{block}
-\end{frame}
-
-\begin{frame}{What if there were no leak?}
-  Then the current is constant: $C_n=C$, so $J_{n-1}-J_n=\dfrac C{n^3}$, and since $J_n\to0$,
-  \[
-    J_n=C\sum_{k>n}\frac1{k^3}.
-  \]
-  This is the tail of $\zeta(3)$, that is, the partial sums we rejected at the start, and it
-  decays only like $\frac1{2n^2}$.
-  \begin{block}{}
-    The approximation that fails and the one that works satisfy the same current law.\\
-    The only difference is the extra term $4(2n+1)^3J_n$, which exceeds $32n^3J_n$.
   \end{block}
 \end{frame}
 
