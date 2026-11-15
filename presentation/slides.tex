@@ -612,16 +612,20 @@
 \end{frame}
 
 \begin{frame}{Where does the 17 come from?}
-  Expanding the current law gives Ap\'ery's recurrence in its usual form:
+  Our current law, \ $(n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n$, \ grouped by $J_{n+1},J_n,J_{n-1}$:
   \[
-    (n+1)^3J_{n+1}-\bigl[(n+1)^3+n^3+4(2n+1)^3\bigr]J_n+n^3J_{n-1}=0 .
+    (n+1)^3J_{n+1}-\bigl[\underbrace{(n+1)^3+n^3}_{\text{two wires}}+\underbrace{4(2n+1)^3}_{\text{leak}}\bigr]J_n+n^3J_{n-1}=0 .
   \]
-  \pause
-  With $p=n+1$, $q=n$ (so $p-q=1$): \ $p^3+q^3=(p+q)(pq+1)$ \ and \ $(p+q)^2=4pq+1$. So
+  Both parts of the middle coefficient contain the factor $2n+1$:
   \[
-    p^3+q^3+4(p+q)^3=(p+q)\bigl[(pq+1)+4(4pq+1)\bigr]=(2n+1)\bigl(17n(n+1)+5\bigr).
+    \begin{aligned}
+      (n+1)^3+n^3&=(2n+1)\,(n^2+n+1)\\
+      4(2n+1)^3&=(2n+1)\,(16n^2+16n+4)\\
+      \text{sum}&=(2n+1)\,(17n^2+17n+5)
+    \end{aligned}
   \]
-  \pause
+  which is Ap\'ery's recurrence:
+  \ $(n+1)^3J_{n+1}-(2n+1)(17n^2+17n+5)J_n+n^3J_{n-1}=0$.
   \begin{block}{}
     \centering $17=1+16$: \ one from the two wires, sixteen from the leak.
   \end{block}
