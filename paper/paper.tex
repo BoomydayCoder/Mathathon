@@ -6,7 +6,7 @@
 % (Peer Review/Zeta3-4-Motivated-proof-Codex/zeta3-motivated-proof.pdf),
 % which develop Beukers' 1979 proof. Part III follows the team's note
 % "The irrationality of zeta(3): a maximum-principle proof" (guess-and-check edition).
-% Both sources have been checked by AI only.
+% How each source was checked is described in the sections on claims and on AI use.
 \documentclass[11pt]{article}
 
 \usepackage[a4paper,margin=25mm]{geometry}
@@ -95,10 +95,10 @@ Our answers, in the order of the report:
     $1+16$, one part from the neighbours and sixteen from the extra term. Without the extra term the
     same equation describes the partial sums of $\zeta(3)$, which converge far too slowly.
   \item \emph{What the recurrence does.} On its own, with $J_0>0$ and $J_n\to0$, it gives the sign and
-    the exponential decay of $J_n$. This yields a short proof with one series and no integrals
-    (\cref{part:ours}), which to our knowledge is new.
-  \item \emph{Why it stops at $\zeta(3)$.} The double zeros of $r_n^2$ survive one derivative but not
-    three (\cref{sec:zeta5}).
+    the exponential decay of $J_n$. This yields a short proof with one series and no integrals in
+    the size estimate (\cref{part:ours}), which to our knowledge is new.
+  \item \emph{Why the direct generalization fails for $\zeta(5)$.} The double zeros of $r_n^2$ survive
+    one derivative but not three (\cref{sec:zeta5}).
 \end{enumerate}
 Why this matters: the resulting proof uses only sums and one recurrence, explains every coefficient
 of Ap\'ery's recurrence, is short enough to formalize, and its maximum-principle argument can be
@@ -269,7 +269,8 @@ $J_n=J(P_n)=\displaystyle\int_0^1\!\!\int_0^1P_n(x)P_n(y)\,\frac{-\log(xy)}{1-xy
 \end{definition}
 
 By \cref{prop:arith}, $J_n$ satisfies \eqref{eq:arith}: $J_n=2a_n\zeta(3)-2b_n$ with
-$a_n=\sum_k\binom nk^2\binom{n+k}k^2\in\Z$ and $\Dn^3b_n\in\Z$.
+$a_n=\sum_k\binom nk^2\binom{n+k}k^2\in\Z$ and $\Dn^3b_n\in\Z$ (\cref{prop:arith} gives $\Dn^3\cdot2b_n\in\Z$;
+the sharper statement follows from the partial fractions in \cref{sec:zudilin}).
 
 % ======================================================================
 \section{Positivity}\label{sec:positivity}
@@ -405,7 +406,9 @@ Since $e<3$, we may take $\mu=3$: $\Dn<3^n$ for infinitely many $n$.
 
 \begin{remark}
 Beukers used the prime number theorem~\cite{hadamard,dlvp}, in the form $\Dn=e^{n+o(n)}$. Any $\mu$ with $e<\mu<\rho^{-1/3}\approx3.24$
-would do here; the analytic estimate is what makes this interval nonempty.
+would do here. The prime number theorem gives the sharp threshold $e$; \cref{lem:lcm} reaches it
+without the prime number theorem, and the interval $(e,\rho^{-1/3})$ is nonempty because of the
+bound of \cref{lem:max}.
 \end{remark}
 
 % ======================================================================
@@ -458,7 +461,8 @@ only state the outcomes; the details are in the team's notes~\cite{codexnotes}, 
   \item $e^a$ for a positive integer $a$: $W_n=\int_0^1P_n(x)e^{ax}\dd x$ has $a^{n+1}W_n\in\Z+\Z e^a$,
     and Rodrigues' formula gives $0<a^{n+1}|W_n|\le ae^a\frac{(a^2/4)^n}{n!}$. Taking powers, $e^q$
     is irrational for every rational $q\ne0$, and so is $\log r$ for every rational $r>0$, $r\ne1$.
-  \item $\pi$: the same argument with $\int_0^1P_n(x)\sin(\pi x)\dd x$.
+  \item $\pi$: a related argument with $\int_0^1P_n(x)\sin(\pi x)\dd x$, assuming $\pi=a/b$ to control
+    the arithmetic (\cite{codexnotes}, Section~15.4).
 \end{itemize}
 In each case the kernel decides the arithmetic, its $n$-th derivative decides the positivity, and the
 maximum decides whether the size beats the denominators. The direct extension to $\zeta(5)$, with
@@ -676,8 +680,12 @@ positivity, the monotonicity and the exponential decay of Ap\'ery's linear forms
 Ap\'ery's recurrence, written in the difference form \eqref{eq:rec} below, by a discrete maximum
 principle that uses only $J_0>0$ and $J_n\to0$ (the latter from a crude bound on the sum), and nothing
 about the integers $a_n$. Combined with \cref{lem:lcm}, this gives a complete proof with one series,
-one recurrence, no integral and no prime number theorem. The published arguments we found obtain the
-sign and the size in other ways:
+one recurrence, no integral and no prime number theorem; \cref{part:ours} may take
+$J_n:=-\sum_tR_n'(t)$ as its definition, and \cref{prop:sum} is then not needed. The idea of using a
+maximum principle was first proposed by an AI tool (Claude; see \cref{sec:ai}). Its core, that the
+small solution of a three-term recurrence with positive coefficients of this kind is positive, is
+classical discrete Sturm theory~\cite{hartman}; our claim concerns its use here. The published
+arguments we found obtain the sign and the size in other ways:
 \begin{itemize}
   \item Ap\'ery's proof as presented by van der Poorten~\cite{vdp} and Cohen~\cite{cohen}, and the
     formal proof of Mahboubi and Sibut-Pinote~\cite{mahboubi,cmst}, use the Casoratian identity
@@ -880,7 +888,7 @@ Iterating from $J_0=2\zeta(3)$ gives the bound.
 \end{proof}
 
 The argument loses very little. The actual ratios $J_{n-1}/J_n$ for $n=1,\dots,5$ are about
-$116.9,\ 66.8,\ 54.1,\ 48.5,\ 45.3$, and they tend to $17+12\sqrt2\approx33.97$, the rate found in
+$116.9,\ 66.8,\ 54.1,\ 48.5,\ 45.3$, and numerically they approach $17+12\sqrt2\approx33.97$, the rate found in
 \cref{thm:decay}.
 
 \paragraph{What if the extra term were absent?} Then $C_n$ would be constant, $C_n=C$, so
@@ -948,8 +956,12 @@ $n$ & $J_n^{[1]}$ (for $\zeta(3)$) & $J_n^{[3]}$ (for $\zeta(5)$)\\
 80 & $7.1985\cdot10^{-126}$ & $2.8380\cdot10^{-6}$\\
 \bottomrule
 \end{tabular}
-\end{center} In this precise sense
-$\zeta(3)$ is the one case in which the square of Zudilin's rational function does its job.
+\end{center}
+So this particular generalization fails; we do not claim that it explains the general obstruction.
+Raising $r_n$ to higher powers restores the vanishing of the first terms but brings in other zeta
+values; that is the route of Ball and Rivoal~\cite{ballrivoal,rivoal} and of Zudilin~\cite{zudilinodd},
+which shows that one of $\zeta(5),\zeta(7),\zeta(9),\zeta(11)$ is irrational without singling out
+$\zeta(5)$.
 
 % ======================================================================
 \section{Comparison}\label{sec:comparison}
@@ -993,16 +1005,16 @@ identity on random polynomials); the others are as marked:
       2(2n+1)\,HP_n=-(n+1)^3P_{n+1}+\bigl((n+1)^3+n^3\bigr)P_n-n^3P_{n-1}.
     \]
     The cubes are the entries $n+1$ of $X$ times the mean $(n+1)^2$ of two neighbouring eigenvalues
-    of $\Lambda$. In Legendre coordinates $\varphi_n=\langle P_n,f\rangle$ one has
-    $\langle f,Hf\rangle=\frac12\sum_{n\ge1}n^3(\varphi_n-\varphi_{n-1})^2$: $H$ is the quadratic form of the
+    of $\Lambda$. In Legendre coordinates $\psi_n=\langle P_n,f\rangle$ one has
+    $\langle f,Hf\rangle=\frac12\sum_{n\ge1}n^3(\psi_n-\psi_{n-1})^2$: $H$ is the quadratic form of the
     difference equation without the extra term.
   \item Beukers' kernel intertwines the two operators: with $K(u)=\frac{-\log u}{1-u}$,
     \[
       \bigl(H_x+\Lambda_y\bigr)K(xy)=0,
     \]
     where the subscript says which variable the operator acts on. After the substitution
-    $y=\frac2x-1$ and $f(x)=\frac1xg(y)$ one has $Hf=\frac1x\,Lg$ with
-    $Lg=-\frac{d}{dy}\bigl((y^2-1)\frac{dg}{dy}\bigr)$, the radial part of the Laplacian of the
+    $s=\frac2x-1$ and $f(x)=\frac1xg(s)$ one has $Hf=\frac1x\,Lg$ with
+    $Lg=-\frac{d}{ds}\bigl((s^2-1)\frac{dg}{ds}\bigr)$, the radial part of the Laplacian of the
     hyperbolic plane, while $\Lambda$ is the Legendre operator of the sphere. With $Z=[\Lambda,X]$,
     \[
       [\Lambda,Z]=2(\Lambda X+X\Lambda)-2\Lambda,\qquad [Z,X]=2X^2-2X .
@@ -1020,8 +1032,7 @@ identity on random polynomials); the others are as marked:
 \end{itemize}
 Two heuristic observations from the notes, not proved here: the operator $H+8\Lambda+2$ has a singular
 point at $x=-8$, and the general principle that Legendre coefficients decay at a rate fixed by the
-nearest singularity gives $17+\sqrt{17^2-1}=17+12\sqrt2$, the exact rate of $J_n$; and after the
-change of variables $y=\frac2x-1$, $H$ becomes the radial Laplacian of the hyperbolic plane. The
+nearest singularity gives $17+\sqrt{17^2-1}=17+12\sqrt2$, the exact rate of $J_n$. The
 operator $H$ is an instance of the tridiagonalization studied by Ismail and Koelink~\cite{ismailkoelink}
 and Genest, Ismail, Vinet and Zhedanov~\cite{givz}. The open question is whether an operator of this
 kind with positive weights exists for $\zeta(5)$; a search by AI agents found none, which is not a
@@ -1035,7 +1046,9 @@ theorem.
     reviewed by AI tools; they have not been refereed by an outside mathematician.
   \item \emph{Novelty.} The claim in \cref{part:ours} rests on the literature we searched and read
     (\cref{part:ours}, ``What is new''). Van der Poorten's and Cohen's accounts of Ap\'ery's proof
-    and Beukers' original paper were not re-read in full during the event.
+    and Beukers' original paper were not re-read in full during the event; our descriptions of them
+    rely on the accounts in~\cite{mahboubi,mingarelli}. The papers of Zudilin, Mingarelli,
+    Mahboubi--Sibut-Pinote, Rajkumar and Fischler were read in full.
   \item \emph{Scope.} The maximum principle needs a recurrence whose middle coefficient exceeds
     the sum of the outer ones by a large margin, and a sequence known to tend to zero. For $\zeta(3)$
     the margin is $4(2n+1)^3>32n^3$. We have not tried other Ap\'ery-like recurrences (for
@@ -1061,9 +1074,9 @@ theorem.
     general $n$ after clearing denominators, and directly for $n=1,\dots,6$; the values $J_1,\dots,J_5$
     and the ratios $J_{n-1}/J_n$ quoted in \cref{sec:ours}, numerically with 40-digit arithmetic; Zudilin's
     second identity (\cref{sec:zudilin-route}) for $n=1,2,3$, and $\widetilde F_1$, $\widetilde F_2$
-    numerically.
+    numerically; the operator identities of \cref{sec:operator} marked as checked, with SymPy.
   \item \emph{Cited, not proved here:} everything in \cref{sec:zudilin-route} about Zudilin's proof
-    (Ball's series, its size estimate, Bailey's identity); the operator identities of
+    (Ball's series, its size estimate); the operator identities of
     \cref{sec:operator} other than the first; the results listed in
     \cref{sec:relatives}, which are proved in~\cite{codexnotes}, Section~15; the prime number theorem.
   \item \emph{Novelty} of the argument in \cref{part:ours}: a judgement based on the literature search
@@ -1150,6 +1163,9 @@ through it in detail, which became \cref{part:ours}. Together this covers every 
 \bibitem{givz} V.~X.~Genest, M.~E.~H.~Ismail, L.~Vinet and A.~Zhedanov, Tridiagonalization of the
   hypergeometric operator and the Racah--Wilson algebra, \emph{Proc.\ Amer.\ Math.\ Soc.}\
   \textbf{144} (2016), 4441--4454. \href{https://arxiv.org/abs/1506.07803}{arXiv:1506.07803}.
+\bibitem{zudilinodd} W.~Zudilin, Arithmetic of linear forms involving odd zeta values,
+  \emph{J.\ Th\'eor.\ Nombres Bordeaux} \textbf{16} (2004), 251--291.
+  \href{https://arxiv.org/abs/math/0206176}{arXiv:math/0206176}.
 \bibitem{hanson} D.~Hanson, On the product of the primes, \emph{Canad.\ Math.\ Bull.}\ \textbf{15}
   (1972), 33--37. \href{https://doi.org/10.4153/CMB-1972-007-7}{doi:10.4153/CMB-1972-007-7}.
 \bibitem{legendre} A.-M.~Legendre, \emph{Essai sur la th\'eorie des nombres}, 2nd ed., Courcier,
