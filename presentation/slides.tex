@@ -312,6 +312,23 @@
   \]
 \end{frame}
 
+\begin{frame}{The arithmetic, from partial fractions}
+  From now on we work only with the sum $J_n=-\sum_tR_n'(t)$, and we want its arithmetic without
+  integrals. Partial fractions give
+  $r_n(t)=\sum_{k=0}^n\frac{c_k}{t+k}$ with $c_k=(-1)^k\frac{(n+k)!}{k!^2(n-k)!}\in\Z$.
+  Square and apply $-\sum_t\frac{\dd}{\dd t}$ term by term.
+  \begin{itemize}
+    \item The squares give $2c_k^2\bigl(\zeta(3)-H_k^{(3)}\bigr)$, with $H_k^{(3)}=\sum_{l\le k}l^{-3}$; its
+      denominators divide $\Dn^3$.
+    \item In the mixed terms, $\frac1{(t+k)(t+j)}=\frac1{j-k}\bigl(\frac1{t+k}-\frac1{t+j}\bigr)$, so $\zeta(2)$
+      cancels and only $\frac{H_j^{(2)}-H_k^{(2)}}{j-k}$ is left, cleared by $\Dn\cdot\Dn^2$.
+  \end{itemize}
+  \[
+    J_n=2a_n\zeta(3)-2b_n,\qquad a_n=\sum_kc_k^2\in\Z,\qquad \Dn^3b_n\in\Z .
+  \]
+  The $a_n=1,5,73,1445,\dots$ are Ap\'ery's numbers.
+\end{frame}
+
 \begin{frame}{The terms have both signs}
   The first $n$ terms vanish, so $J_n=-\sum_{t>n}R_n'(t)$. The bound
   $|R_n'(t)|\le\frac{n+2}{t^3}$ gives
@@ -396,7 +413,7 @@
 \begin{frame}{What we have, and what we are missing}
   We keep only the first series, $J_n=-\sum_tR_n'(t)$. We already know:
   \begin{itemize}
-    \item arithmetic: $J_n=2a_n\zeta(3)-2b_n$, \ $\Dn^3b_n\in\Z$;
+    \item arithmetic, from partial fractions: $J_n=2a_n\zeta(3)-2b_n$, \ $\Dn^3b_n\in\Z$;
     \item $J_0=2\zeta(3)>0$;
     \item $J_n\to0$.
   \end{itemize}
@@ -811,21 +828,6 @@
     \item Because of the square the zeros are double, so they survive the derivative.
     \item With the derivative every pole gains a power, which gives cubes and hence $\zeta(3)$.
   \end{itemize}
-\end{frame}
-
-\begin{frame}{The arithmetic, from partial fractions}
-  \[
-    r_n(t)=\sum_{k=0}^n\frac{c_k}{t+k},\qquad c_k=(-1)^k\frac{(n+k)!}{k!^2\,(n-k)!}\in\Z .
-  \]
-  \begin{itemize}
-    \item Squares: $\;-\sum_t\frac{\dd}{\dd t}\frac1{(t+k)^2}=2\Bigl(\zeta(3)-1-\frac1{2^3}-\dots-\frac1{k^3}\Bigr)$.
-    \item Mixed terms: $\frac1{(t+k)(t+j)}=\frac1{j-k}\bigl(\frac1{t+k}-\frac1{t+j}\bigr)$, so $\zeta(2)$
-      cancels.
-  \end{itemize}
-  \[
-    J_n=2a_n\zeta(3)-2b_n,\qquad \Dn^3b_n\in\Z,\qquad a_n=\sum_kc_k^2 .
-  \]
-  The $a_n=1,5,73,1445,\dots$ are Ap\'ery's numbers, and $J_1=10\zeta(3)-12$ as before.
 \end{frame}
 
 \begin{frame}{Ball's series}
