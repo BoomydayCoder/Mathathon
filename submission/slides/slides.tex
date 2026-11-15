@@ -296,20 +296,36 @@
   \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{The square and the derivative}
+\begin{frame}{The square}
   Zudilin works with $J_n=-\sum_{t\ge1}R_n'(t)$, $R_n=r_n^2$. Why a square, and why a derivative?
+
+  \medskip
   Expand Beukers' kernel as a geometric series:
-  \ $J_n=\sum_{t\ge1}\iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr)$.
+  \[
+    J_n=\sum_{t\ge1}\iint P_n(x)P_n(y)\,(xy)^{t-1}\bigl(-\log(xy)\bigr)\dd x\dd y .
+  \]
 
   \pause
   There are two copies of $P_n$, one in $x$ and one in $y$, and $\frac1{1-xy}$ gives them the same
   exponent. So, without the logarithm, each integral is a square:
-  \ $\iint P_n(x)P_n(y)\,x^{t-1}y^{t-1}=r_n(t)^2=:R_n(t)$. \ The zeros of $R_n$ at $1,\dots,n$ are double, so they survive a derivative.
-  \pause
-  The logarithm is a derivative in the exponent, \ $\frac{\dd}{\dd t}(xy)^{t-1}=\log(xy)\,(xy)^{t-1}$, \ so
+  \[
+    \iint P_n(x)P_n(y)\,x^{t-1}y^{t-1}\dd x\dd y=r_n(t)^2=:R_n(t).
+  \]
+\end{frame}
+
+\begin{frame}{The derivative}
+  The logarithm is a derivative in the exponent:
+  \[
+    \frac{\dd}{\dd t}(xy)^{t-1}=\log(xy)\,(xy)^{t-1}.
+  \]
+  So the logarithm in Beukers' kernel turns $R_n$ into $-R_n'$:
   \[
     \boxed{\;J_n=-\sum_{t=1}^\infty R_n'(t)\;}
   \]
+
+  \pause
+  The zeros of $R_n$ at $t=1,\dots,n$ are double, because of the square, so they survive this one
+  derivative: the first $n$ terms of the sum are still zero.
 \end{frame}
 
 \begin{frame}{The arithmetic, from partial fractions}
