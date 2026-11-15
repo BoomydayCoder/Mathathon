@@ -1,11 +1,14 @@
 % Mathathon presentation.
 % Build: latexmk -pdf slides.tex   (or upload to Overleaf; it compiles with pdfLaTeX)
-% Content: Beukers' proof, following Sections 1--8 of
-% Peer Review/Zeta3-4-Motivated-proof-Codex/zeta3-motivated-proof.pdf (checked by AI only).
+% Part I: Beukers' proof, following Sections 1--8 of
+% Peer Review/Zeta3-4-Motivated-proof-Codex/zeta3-motivated-proof.pdf.
+% Part III: the team's maximum-principle proof (guess-and-check edition).
+% Both sources have been checked by AI only.
 \documentclass[aspectratio=169,11pt]{beamer}
 \usetheme{metropolis}            % if metropolis is unavailable, use \usetheme{Madrid}
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
+\usepackage{tikz}
 
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
@@ -14,7 +17,7 @@
 \DeclareMathOperator{\lcm}{lcm}
 
 \title{Why \texorpdfstring{$\zeta(3)$}{zeta(3)} is irrational}
-\subtitle{Beukers' proof, built from its requirements}
+\subtitle{From Beukers' integrals to a maximum principle}
 \author{Mathathon team}
 \date{\today}
 
@@ -35,7 +38,8 @@
     \qquad\text{Is it rational?}
   \]
   \begin{itemize}
-    \item Ap\'ery (1978): \alert{no}. Beukers (1979): a short proof with integrals.
+    \item Ap\'ery (1978): \alert{no}. Beukers (1979): integrals. Zudilin (2002): sums.
+    \item Today: Beukers' proof, the bridge to Zudilin's, and \alert{our simpler proof}.
     \item An infinite series or an irregular decimal expansion proves nothing.
     \item We need an \alert{obstruction} to rationality.
   \end{itemize}
@@ -56,7 +60,7 @@
 \end{frame}
 
 % ----------------------------------------------------------------------
-\section{The approach}
+\section{Part I: Beukers' integrals}
 
 \begin{frame}{Step 1: writing $\zeta(3)$ as an integral}
   Integration turns powers into reciprocals of integers:
@@ -242,7 +246,7 @@
 \end{frame}
 
 % ----------------------------------------------------------------------
-\section{Results}
+\section{Part I: the contradiction}
 
 \begin{frame}{The contradiction}
   Suppose $\zeta(3)=p/q$. Then $q\Dn^3J_n$ is a \alert{positive integer}, and for infinitely many $n$
@@ -271,67 +275,455 @@
   Both terms are large; their difference is tiny but, by Step 3, \alert{never zero}.
 \end{frame}
 
-% ----------------------------------------------------------------------
-\section{From Beukers to Ap\'ery and Zudilin}
+% ======================================================================
+\section{Part II: from integrals to sums}
 
-\begin{frame}{The moment generating function of $P_n$}
-  Collect all moments of $P_n$ in one function (a Mellin transform):
+\begin{frame}{Zudilin's rational function is our Legendre polynomial}
+  Collect all the moments of $P_n$ in one function:
   \[
-    T_n(s)=\int_0^1x^{s-1}P_n(x)\dd x,\qquad s>0 .
+    r_n(t)=\int_0^1x^{t-1}P_n(x)\dd x\qquad(t>0).
   \]
   \pause
-  Integrate by parts $n$ times as in Step 2, using
-  $\frac{\dd^n}{\dd x^n}x^{s-1}=(s-1)(s-2)\cdots(s-n)\,x^{s-1-n}$ and
-  $\int_0^1x^{s-1}(1-x)^n\dd x=\frac{n!}{s(s+1)\cdots(s+n)}$:
+  Integrate by parts $n$ times, exactly as in Step 2:
   \[
-    \boxed{\;T_n(s)=(-1)^n\,\frac{(s-1)(s-2)\cdots(s-n)}{s(s+1)\cdots(s+n)}\;}
+    \boxed{\;r_n(t)=\frac{(1-t)(2-t)\cdots(n-t)}{t\,(t+1)\cdots(t+n)}\;}
   \]
   \pause
+  Nothing in this formula is arbitrary:
   \begin{itemize}
-    \item \textbf{Zeros} at $s=1,\dots,n$: the vanishing moments $\int x^jP_n=0$, $j<n$.
-    \item \textbf{Poles} at $s=0,-1,\dots,-n$: integrating the monomials $x^k$, $k\le n$.
+    \item \textbf{zeros} at $t=1,\dots,n$: the vanishing moments $\int_0^1x^jP_n=0$ we asked for;
+    \item \textbf{poles} at $t=0,-1,\dots,-n$: integrating the monomials $x^k$, $k\le n$.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{$J_n$ as a sum: Zudilin's rational function}
-  Let $R_n(s)=T_n(s)^2=\Bigl(\frac{(s-1)\cdots(s-n)}{s(s+1)\cdots(s+n)}\Bigr)^2
-  =\displaystyle\iint(xy)^{s-1}P_n(x)P_n(y)\dd x\dd y$.
+\begin{frame}{Why a square, and why a derivative?}
+  Two copies of $P_n$, and $\frac1{1-xy}=\sum(xy)^m$ forces equal exponents:
+  \[
+    R_n(t)=r_n(t)^2=\iint(xy)^{t-1}P_n(x)P_n(y)\dd x\dd y .
+  \]
+  \pause
+  The logarithm becomes a derivative: $\frac{\dd}{\dd t}(xy)^{t-1}=\log(xy)\,(xy)^{t-1}$.
+  Summing over $t=1,2,3,\dots$ as in Step 1:
+  \[
+    \boxed{\;J_n=-\sum_{t=1}^\infty R_n'(t)\;}
+  \]
+  \pause
+  \textbf{Read without integrals:}
+  poles $\to$ arithmetic; \ zeros $\to$ the first $n$ terms vanish;
+  \ square $\to$ the zeros survive the derivative; \ derivative $\to$ cubes, so $\zeta(3)$.
+\end{frame}
+
+\begin{frame}{The arithmetic, straight from partial fractions}
+  \[
+    r_n(t)=\sum_{k=0}^n\frac{c_k}{t+k},\qquad c_k=(-1)^k\frac{(n+k)!}{k!^2\,(n-k)!}\in\Z .
+  \]
+  \pause
+  \begin{itemize}
+    \item Squares: $\;-\sum_t\frac{\dd}{\dd t}\frac1{(t+k)^2}=2\Bigl(\zeta(3)-1-\frac1{2^3}-\dots-\frac1{k^3}\Bigr)$.
+    \item Mixed terms: $\frac1{(t+k)(t+j)}=\frac1{j-k}\bigl(\frac1{t+k}-\frac1{t+j}\bigr)$, so $\zeta(2)$
+      \alert{cancels}.
+  \end{itemize}
+  \pause
+  \[
+    J_n=2a_n\zeta(3)-2b_n,\qquad \Dn^3b_n\in\Z,\qquad a_n=\sum_kc_k^2 .
+  \]
+  $a_n=1,5,73,1445,\dots$ are Ap\'ery's numbers, and $J_1=10\zeta(3)-12$, the same as before.
+\end{frame}
+
+\begin{frame}{The catch: the terms have both signs}
+  The first $n$ terms vanish, so $J_n=-\sum_{t>n}R_n'(t)$. The easy bound
+  $|R_n'(t)|\le\frac{n+2}{t^3}$ gives
+  \[
+    |J_n|\le(n+2)\sum_{t>n}\frac1{t^3}<\frac{n+2}{2n(n+1)} .
+  \]
+  \pause
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{The sum gives us}
+      \begin{itemize}
+        \item $J_n\to0$, but only like $\frac1{2n}$;
+        \item no information on the sign.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{We need}
+      \begin{itemize}
+        \item $J_n>0$;
+        \item $J_n$ smaller than $\Dn^{-3}\approx20^{-n}$.
+      \end{itemize}
+    \end{column}
+  \end{columns}
   \pause
   \medskip
 
-  \textbf{Differentiate in $s$:} \ $\frac{\dd}{\dd s}(xy)^{s-1}=\log(xy)\,(xy)^{s-1}$, so
-  \[
-    -R_n'(s)=\iint(xy)^{s-1}\,P_n(x)P_n(y)\,(-\log(xy))\dd x\dd y .
-  \]
-  \pause
-  \textbf{Sum over $s=1,2,3,\dots$} \ using $\sum_{m\ge0}(xy)^m=\frac1{1-xy}$, exactly as in Step 1:
-  \[
-    \boxed{\;J_n=-\sum_{m=1}^\infty R_n'(m)\;}
-  \]
-  \pause
-  Double zeros at $1,\dots,n$ $\Rightarrow$ the sum starts at $m=n+1$.
-  This is the starting point of \alert{Zudilin's proof} and of Ap\'ery's recurrence.
+  Beukers: the positive integral does both. \ Without the integral, what?
 \end{frame}
 
-% ----------------------------------------------------------------------
-\section{Conclusion}
+% ======================================================================
+\section{Part II: Zudilin's route}
 
-\begin{frame}{Conclusion: each ingredient has one job}
+\begin{frame}{Zudilin's plan: a second series for the same number}
   \centering
-  \begin{tabular}{@{}ll@{}}
+  \begin{tikzpicture}[box/.style={draw,rounded corners,align=center,inner sep=6pt,font=\small},
+                      >=stealth]
+    \node[box] (F) at (-4,0) {$F_n=-\sum R_n'(t)$\\[2pt] arithmetic \alert{\checkmark}\\ size \alert{?}};
+    \node[box] (G) at (4,0) {Ball's series $\widetilde F_n=\sum\widetilde R_n(t)$\\[2pt]
+      size \alert{\checkmark} (positive terms)\\ arithmetic \alert{?} (needs $\Dn^4$)};
+    \node[box] (L) at (0,-2.3) {same recurrence\\ $(n+1)^3u_{n+1}-(2n+1)(17n^2+17n+5)u_n+n^3u_{n-1}=0$\\
+      $+$ same values at $n=0,1$};
+    \draw[->,thick] (F) -- (L);
+    \draw[->,thick] (G) -- (L);
+    \node[font=\small] at (0,0.3) {$F_n=\widetilde F_n$ ?};
+  \end{tikzpicture}
+  \medskip
+
+  Each series has \alert{one} of the two properties. A recurrence glues them together.
+\end{frame}
+
+\begin{frame}{Ball's series}
+  \[
+    \widetilde R_n(t)=n!^2\,(2t+n)\,
+    \frac{(t-1)\cdots(t-n)\cdot(t+n+1)\cdots(t+2n)}{\bigl(t(t+1)\cdots(t+n)\bigr)^4}
+  \]
+  \begin{itemize}
+    \item Zero for $t\le n$, \alert{positive} for $t>n$; a Stirling-type estimate gives
+      $\widetilde F_n<20(n+1)^4(\sqrt2-1)^{4n}$.
+    \item Why should it equal $J_n$? There is no obvious reason.
+  \end{itemize}
+  \pause
+  \textbf{Checking $n=1$, a small miracle:}
+  \[
+    \widetilde R_1(t)=-\frac2{t^4}+\frac2{(t+1)^4}+\frac5{t^3}+\frac5{(t+1)^3}-\frac5{t^2}+\frac5{(t+1)^2}
+  \]
+  \[
+    \widetilde F_1=-2\zeta(4)+2(\zeta(4)-1)+5\zeta(3)+5(\zeta(3)-1)-5\zeta(2)+5(\zeta(2)-1)=10\zeta(3)-12 .
+  \]
+\end{frame}
+
+\begin{frame}{The certificate for Ball's series}
+  The recurrence for $\widetilde F_n$ comes from a telescoping identity whose certificate is
+  $\widetilde S_n=\frac{\widetilde R_n(t)\,p_n(t)}{(2t+n)(t+2n-1)(t+2n)}$, where
+  {\small
+  \begin{align*}
+    p_n(t)={}&-t^6-(8n-1)t^5+(4n^2+27n+5)t^4+2n(67n^2+71n+15)t^3\\
+    &+(358n^4+339n^3+76n^2-7n-3)t^2\\
+    &+(384n^5+396n^4+97n^3-29n^2-17n-2)t\\
+    &+n(153n^5+183n^4+50n^3-30n^2-22n-4).
+  \end{align*}}
+  \pause
+  Checking it: expand a polynomial identity in $t$ and $n$. \quad Finding it: a computer.
+\end{frame}
+
+\begin{frame}{And a ``trivial'' bound}
+  Zudilin finishes ``using a trivial bound $\Dn<3^n$''.
+  \pause
+  \medskip
+
+  What the proof needs: \ $\limsup\Dn^{1/n}<(\sqrt2+1)^{4/3}\approx3.24$.
+  \begin{itemize}
+    \item The bound that really is easy, $\prod_{p\le n}p<4^n$, gives $\Dn\le4^{n+o(n)}$,
+      and $4^3(\sqrt2-1)^4\approx1.88>1$. \alert{Not enough.}
+    \item One needs a Chebyshev-type estimate, or the prime number theorem.
+  \end{itemize}
+  \pause
+  \begin{block}{Zudilin's proof in total}
+    one series for arithmetic $+$ one series for size $+$ two recurrences
+    $+$ two certificates $+$ a bridge $+$ Stirling $+$ prime numbers.
+  \end{block}
+\end{frame}
+
+% ======================================================================
+\section{Part III: our proof, a maximum principle}
+
+\begin{frame}{What we have, and what we are missing}
+  We keep only the first series, $J_n=-\sum_tR_n'(t)$. We already know:
+  \begin{itemize}
+    \item arithmetic: $J_n=2a_n\zeta(3)-2b_n$, \ $\Dn^3b_n\in\Z$;
+    \item $J_0=2\zeta(3)>0$;
+    \item $J_n\to0$.
+  \end{itemize}
+  \pause
+  \medskip
+  Missing: the \alert{sign} and the \alert{speed}.
+  \pause
+  \medskip
+
+  \textbf{Idea:} no second series. Let the sequence police itself, through an equation linking
+  each $J_n$ to its neighbours.
+\end{frame}
+
+\begin{frame}{Which equation would we like?}
+  Suppose \qquad $B\,(J_{n+1}-J_n)-A\,(J_n-J_{n-1})=\lambda J_n$, \qquad $A,B,\lambda>0$.
+  \pause
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.8]
+        \draw[gray] (-0.3,0)--(3.3,0);
+        \foreach \x/\y in {0/-0.4,1.5/-1.2,3/-0.6} \fill (\x,\y) circle (2.5pt);
+        \draw (0,-0.4)--(1.5,-1.2)--(3,-0.6);
+        \node[below,font=\small] at (1.5,-1.2) {$J_n<0$};
+        \node[above,font=\small] at (1.5,0) {negative valley};
+      \end{tikzpicture}
+      \\ left side $\ge0$, right side $<0$
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.8]
+        \draw[gray] (-0.3,0)--(3.3,0);
+        \foreach \x/\y in {0/0.6,1.5/1.2,3/0.4} \fill (\x,\y) circle (2.5pt);
+        \draw (0,0.6)--(1.5,1.2)--(3,0.4);
+        \node[above,font=\small] at (1.5,1.2) {$J_n>0$};
+        \node[below,font=\small] at (1.5,0) {positive peak};
+      \end{tikzpicture}
+      \\ left side $\le0$, right side $>0$
+    \end{column}
+  \end{columns}
+  \pause
+  \medskip
+  Both are \alert{forbidden}. And once $J_n$ is positive and decreasing,
+  \[
+    A(J_{n-1}-J_n)>\lambda J_n\quad\Longrightarrow\quad J_n<\frac{A}{A+\lambda}\,J_{n-1}:
+  \]
+  a large $\lambda/A$ means fast decay. \ Does such an equation exist?
+\end{frame}
+
+\begin{frame}{A guess}
+  Look for it at the level of the rational functions $R_j=r_j^2$ (fix $n$, put $m=n+1$):
+  \[
+    B(R_m-R_n)-A(R_n-R_{n-1})=\lambda R_n+\underbrace{W(t+1)R_n(t+1)-W(t)R_n(t)}_{\text{a telescoping error}}
+  \]
+  \pause
+  \begin{itemize}
+    \item \textbf{Consecutive indices:} $r_{n\pm1}$ differs from $r_n$ by a single factor.
+    \item \textbf{The error telescopes:} after $-\sum_t\frac{\dd}{\dd t}$ it leaves only boundary terms,
+      which vanish (double zero of $R_n$ at $t=1$; finite limit at $\infty$).
+    \item \textbf{$W$ a polynomial of degree $\le2$:} no new poles, and $R_n\sim t^{-2}$ keeps
+      $WR_n$ bounded.
+  \end{itemize}
+  \pause
+  Unknowns: $A$, $B$, $\lambda$, and three coefficients of $W$. \alert{Six.}
+\end{frame}
+
+\begin{frame}{Six unknowns, five equations}
+  Divide by $R_n$; every ratio is short:
+  \[
+    \frac{R_{n-1}}{R_n}=\Bigl(\frac{t+n}{t-n}\Bigr)^2,\quad
+    \frac{R_m}{R_n}=\Bigl(\frac{t-m}{t+m}\Bigr)^2,\quad
+    \frac{R_n(t+1)}{R_n(t)}=\frac{t^4}{p(t)^2},\quad p=(n-t)(m+t).
+  \]
+  \pause
+  The identity becomes
+  \[
+    \frac{4Ant}{(n-t)^2}-\frac{4Bmt}{(m+t)^2}=\lambda-W(t)+\frac{t^4}{p(t)^2}\,W(t+1).\tag{$\star$}
+  \]
+  \pause
+  Times $p^2$: degree $\le4$ on both sides (the $t^6,t^5$ terms cancel). So \alert{five}
+  equations, six unknowns: a solution exists.
+  \medskip
+
+  \textbf{Shortcut:} $p(0)\ne0$, so it is enough to match Taylor coefficients at $t=0$ up to $t^4$.
+\end{frame}
+
+\begin{frame}{Solving it, one coefficient at a time}
+  Put $c=2n+1=n+m$. Expand both sides of $(\star)$ at $t=0$:
+  \medskip
+
+  \centering
+  \begin{tabular}{@{}lll@{}}
     \toprule
-    Ingredient & Provides\\
+    power & matching gives & so\\
     \midrule
-    Kernel $-\log(xy)/(1-xy)$ & arithmetic: denominators $\Dn^3$\\
-    Legendre polynomial $P_n$ & degree $n$, $n$ vanishing moments\\
-    Separated kernel $+$ integration by parts & positivity\\
-    Maximum of $G$ & rate $(17-12\sqrt2)^n$\\
-    $N!=\prod D_{\lfloor N/k\rfloor}$ & $\Dn<3^n$ infinitely often\\
+    $t^3$ & $12\bigl(\frac A{n^3}-\frac B{m^3}\bigr)=0$ & $A=n^3$, \ $B=(n+1)^3$\\[3pt]
+    \pause
+    $t^0,t^1,t^2$ & $0=\lambda-W(0)$, \ $-4c=-w_1$, \ $8c=-w_2$ & $W(t)=\lambda+4ct-8ct^2$\\[3pt]
+    \pause
+    $t^4$ & $\frac{16c}{nm}=\frac{W(1)}{(nm)^2}=\frac{\lambda-4c}{(nm)^2}$ & $\lambda=4c(1+4nm)=4c^3$\\
+    \bottomrule
+  \end{tabular}
+  \pause
+  \medskip
+  \begin{block}{The guess works}
+    \centering
+    $A=n^3,\qquad B=(n+1)^3,\qquad \lambda=4(2n+1)^3$ \qquad --- \ all positive!
+  \end{block}
+\end{frame}
+
+\begin{frame}{The current law}
+  Apply $-\sum_t\frac{\dd}{\dd t}$; the telescoping error disappears:
+  \[
+    (n+1)^3(J_{n+1}-J_n)-n^3(J_n-J_{n-1})=4(2n+1)^3J_n .
+  \]
+  \pause
+  \centering
+  \begin{tikzpicture}[x=3.2cm,>=stealth]
+    \draw[thick] (0,0)--(2,0);
+    \foreach \i/\lab in {0/{J_{n-1}},1/{J_n},2/{J_{n+1}}} {
+      \fill (\i,0) circle (2.5pt); \node[above=3pt] at (\i,0) {$\lab$}; }
+    \node[above=1pt,font=\small] at (0.5,0) {$n^3$};
+    \node[above=1pt,font=\small] at (1.5,0) {$(n+1)^3$};
+    \draw[->,thick,blue] (0.3,-0.3)--(0.7,-0.3) node[midway,below,font=\small] {$C_n$};
+    \draw[->,thick,blue] (1.4,-0.3)--(1.8,-0.3) node[midway,below,font=\small] {$C_{n+1}$};
+    \draw[thick] (1,0)--(1,-1.3);
+    \draw[thick] (0.94,-1.3)--(1.06,-1.3) (0.96,-1.37)--(1.04,-1.37) (0.985,-1.44)--(1.015,-1.44);
+    \draw[->,thick,blue] (1.04,-0.45)--(1.04,-0.95);
+    \node[right,font=\small] at (1.06,-0.7) {$\ell_nJ_n$};
+  \end{tikzpicture}
+  \raggedright
+  \pause
+
+  Voltage $J_n$; wires of conductance $n^3$; leak of conductance $\ell_n=4(2n+1)^3$;
+  current $C_n=n^3(J_{n-1}-J_n)$. \ Kirchhoff at node $n$:
+  \[
+    C_n=C_{n+1}+\ell_nJ_n:\qquad\text{what flows in either flows on or leaks away.}
+  \]
+\end{frame}
+
+\begin{frame}{Where does the 17 come from?}
+  Expanding the current law gives Ap\'ery's recurrence in its usual form:
+  \[
+    (n+1)^3J_{n+1}-\bigl[(n+1)^3+n^3+4(2n+1)^3\bigr]J_n+n^3J_{n-1}=0 .
+  \]
+  \pause
+  With $p=n+1$, $q=n$ (so $p-q=1$): \ $p^3+q^3=(p+q)(pq+1)$ \ and \ $(p+q)^2=4pq+1$. So
+  \[
+    p^3+q^3+4(p+q)^3=(p+q)\bigl[(pq+1)+4(4pq+1)\bigr]=(2n+1)\bigl(17n(n+1)+5\bigr).
+  \]
+  \pause
+  \begin{block}{}
+    \centering $17=1+16$: \ one from the two wires, sixteen from the leak.
+  \end{block}
+\end{frame}
+
+\begin{frame}{What tends to zero and has no peaks must fall all the way}
+  \textbf{Key fact:} if a sequence tends to $0$ and has a negative term, its minimum is attained;
+  if its terms are positive, its maximum is attained.
+  \pause
+  \begin{enumerate}
+    \item[(a)] \textbf{Never negative.} Otherwise the minimum is negative, attained at some $n\ge1$
+      (as $J_0>0$): a negative valley.
+    \pause
+    \item[(b)] \textbf{Never zero.} If $J_n=0$: \ $(n+1)^3J_{n+1}+n^3J_{n-1}=0$ with both terms
+      $\ge0$, so both vanish; going down we reach $J_0=0$.
+    \pause
+    \item[(c)] \textbf{Decreasing.} If $J_n\ge J_{n-1}$, the largest of $J_n,J_{n+1},\dots$ is
+      attained at some $k\ge n$: a positive peak.
+  \end{enumerate}
+  \pause
+  \[
+    0<J_n<J_{n-1}\qquad\text{for all }n\ge1 .
+  \]
+\end{frame}
+
+\begin{frame}{From falling to falling fast}
+  Decreasing means $C_{n+1}>0$, so the incoming current beats the leak:
+  \[
+    n^3(J_{n-1}-J_n)>\ell_nJ_n\quad\Longrightarrow\quad
+    \frac{J_{n-1}}{J_n}>1+4\Bigl(2+\frac1n\Bigr)^3>33 .
+  \]
+  \[
+    \boxed{\;0<J_n\le2\zeta(3)\,33^{-n}\;}
+  \]
+  \pause
+  \centering
+  \begin{tabular}{@{}lcccccc@{}}
+    \toprule
+    $n$ & 1 & 2 & 3 & 4 & 5 & $\infty$\\
+    \midrule
+    $J_{n-1}/J_n$ & 116.9 & 66.8 & 54.1 & 48.5 & 45.3 & $17+12\sqrt2\approx33.97$\\
     \bottomrule
   \end{tabular}
   \medskip
 
-  The real insight is making all five jobs compatible.
+  The maximum principle \alert{loses almost nothing}: 33 against the true 33.97.
+\end{frame}
+
+\begin{frame}{What if there were no leak?}
+  Then the current is constant: $C_n=C$, so $J_{n-1}-J_n=\dfrac C{n^3}$, and since $J_n\to0$,
+  \[
+    J_n=C\sum_{k>n}\frac1{k^3}.
+  \]
+  \pause
+  This is the tail of $\zeta(3)$: the \alert{partial sums} from the very first slide, which decay
+  only like $\frac1{2n^2}$.
+  \pause
+  \begin{block}{}
+    The failed approximation and the successful one obey the same current law.\\
+    The only difference is the leak, more than $32$ times the conductance at every node.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Denominators, without prime numbers}
+  The same identity as in Part I: \quad $N!=\prod_{k=1}^ND_{\lfloor N/k\rfloor}$.
+  \pause
+  \begin{block}{Uniform version}
+    If $D_m\ge c\,\mu^m$ for \emph{all} $m\ge1$ (with $c>0$, $\mu\ge1$), then $\mu\le e$.
+  \end{block}
+  \pause
+  \textbf{Proof.} Each index $\lfloor N/k\rfloor\ge1$ and $\sum_k\lfloor N/k\rfloor>N(\log N-1)$, so
+  \[
+    N^N\ge N!\ge c^N\mu^{N(\log N-1)}\quad\Longrightarrow\quad N\ge\frac c\mu\,N^{\log\mu}\ \text{ for all }N
+    \quad\Longrightarrow\quad\log\mu\le1 .
+  \]
+\end{frame}
+
+\begin{frame}{The end}
+  Suppose $\zeta(3)=p/q$. Then $\frac q2\Dn^3J_n=\Dn^3(pa_n-qb_n)$ is a \alert{positive integer}, so
+  \[
+    \Dn^3\ge\frac2{qJ_n}\ge\frac{33^n}{q\,\zeta(3)}=\frac{33^n}{p}\qquad\text{for every }n.
+  \]
+  \pause
+  So $\Dn\ge p^{-1/3}\bigl(33^{1/3}\bigr)^n$ for all $n$, hence $33^{1/3}\le e$, i.e.\ $33\le e^3$.
+  \pause
+  But $e<3$, so $e^3<27<33$.
+  \begin{alertblock}{Theorem (Ap\'ery)}
+    $\zeta(3)$ is irrational.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Zudilin's route and ours}
+  \centering
+  \small
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+     & Zudilin & Ours\\
+    \midrule
+    series & two ($J_n$ and Ball's) & one\\
+    recurrences & two (one certificate of degree 6) & one, from five coefficients\\
+    positivity & positive terms of Ball's series & no negative valley\\
+    size & Stirling-type estimates & leak $>32\times$ conductance\\
+    denominators & $\Dn<3^n$ (Chebyshev-strength) & $N!=\prod D_{\lfloor N/k\rfloor}$\\
+    \bottomrule
+  \end{tabular}
+  \medskip
+
+  \raggedright\normalsize
+  The ingredients are classical: the recurrence is Ap\'ery's and the certificate is Zudilin's.
+  What we offer is the arrangement, in which every step is motivated.
+\end{frame}
+
+% ======================================================================
+\section{Conclusion}
+
+\begin{frame}{Two proofs, one sequence of numbers}
+  \centering
+  \small
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+     & Beukers (integrals) & Maximum principle (sums)\\
+    \midrule
+    $J_n$ & $\iint P_n(x)P_n(y)\,\frac{-\log(xy)}{1-xy}$ & $-\sum_t R_n'(t)$\\
+    arithmetic & moments of the kernel & partial fractions\\
+    positivity & integration by parts & no negative valley\\
+    size & $\max G=(\sqrt2-1)^4\approx\frac1{34}$ & leak: ratio $>33$\\
+    denominators & $\Dn<3^n$ infinitely often & no uniform bound beyond $e^n$\\
+    \bottomrule
+  \end{tabular}
+  \medskip
+
+  \raggedright\normalsize
+  The bridge between them: the moment generating function of the Legendre polynomial is
+  Zudilin's rational function.
 \end{frame}
 
 \begin{frame}[standout]
