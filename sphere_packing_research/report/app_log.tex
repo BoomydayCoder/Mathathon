@@ -11,12 +11,14 @@
   \textbf{표기}: \(V\) := (covolume 1 격자에 대해 원점 외 격자점이 없는 열린 공의 부피) \(= 2^n\delta\). Minkowski--Hlawka: \(V\ge 2\zeta(n)\); Rogers/Ball: \(V\gtrsim n\); Venkatesh: \(V\gtrsim n\log\log n\) (희소 차원열); Klartag: \(V\ge cn^2\). 상한: Minkowski \(V\le 2^n\), KL \(V\le 2^{0.401n}\), (업로드된 OpenAI 논문) \(V\le 2^{(1-0.6044+o(1))n}\).
 \item
   \textbf{분류 규칙}: {[}증명됨{]} / {[}조건부{]} / {[}추측{]} / {[}수치관찰{]} / {[}휴리스틱{]} / {[}실패{]} 로 태그한다.
+\item
+  \textbf{읽는 법}: 이 로그는 종료된 기록이다(0--19회차, 기록 종료 10:39:49 UTC, 경과 255분). 회차들을 병렬로 실행했으므로 번호(시작 순서)와 기록 순서(종료 순서)가 일부 다르다(예: 11회차가 10회차보다 먼저 끝났다). 전체 요약과 회차 일람은 맨 끝의 "종료 정리" 에 있다. "증명됨" 은 모두 AI 에이전트 사이의 교차 검토 수준이며 사람의 검증은 없었다.
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{uxd68cuxcc28-uxc900uxbe44-06240650-utc-uxb450-uxb17cuxbb38-uxc815uxb3c5-uxbc0f-uxcd08uxae30-uxbd84uxc11d}{%
-\subsubsection*{0회차 (준비, 06:24--06:50 UTC): 두 논문 정독 및 초기 분석}\label{uxd68cuxcc28-uxc900uxbe44-06240650-utc-uxb450-uxb17cuxbb38-uxc815uxb3c5-uxbc0f-uxcd08uxae30-uxbd84uxc11d}}
+\hypertarget{uxd68cuxcc28-uxc900uxbe44-06240650-utc-uxacbduxacfc-26uxbd84-uxb450-uxb17cuxbb38-uxc815uxb3c5-uxbc0f-uxcd08uxae30-uxbd84uxc11d}{%
+\subsubsection*{0회차 (준비, 06:24--06:50 UTC, 경과 26분): 두 논문 정독 및 초기 분석}\label{uxd68cuxcc28-uxc900uxbe44-06240650-utc-uxacbduxacfc-26uxbd84-uxb450-uxb17cuxbb38-uxc815uxb3c5-uxbc0f-uxcd08uxae30-uxbd84uxc11d}}
 
 \hypertarget{uxc77duxc740-uxb0b4uxc6a9-uxc694uxc57d}{%
 \paragraph{읽은 내용 요약}\label{uxc77duxc740-uxb0b4uxc6a9-uxc694uxc57d}}
@@ -418,8 +420,8 @@
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{uxd68cuxcc28-08240920-utc-sl_2p-weil-uxaca9uxc790uxc758-uxc9c1uxc811-uxad6cuxc131uxacfc-uxc548uxc815uxc131-uxc2dcuxd5d8-p51317293761}{%
-\subsubsection*{\texorpdfstring{10회차 (08:24--09:20 UTC): \(SL_2(p)\) Weil 격자의 직접 구성과 안정성 시험 (\(p=5,13,17,29,37,61\))}{10회차 (08:24--09:20 UTC): SL\_2(p) Weil 격자의 직접 구성과 안정성 시험 (p=5,13,17,29,37,61)}}\label{uxd68cuxcc28-08240920-utc-sl_2p-weil-uxaca9uxc790uxc758-uxc9c1uxc811-uxad6cuxc131uxacfc-uxc548uxc815uxc131-uxc2dcuxd5d8-p51317293761}}
+\hypertarget{uxd68cuxcc28-08240920-utc-uxacbduxacfc-176uxbd84-sl_2p-weil-uxaca9uxc790uxc758-uxc9c1uxc811-uxad6cuxc131uxacfc-uxc548uxc815uxc131-uxc2dcuxd5d8-p51317293761}{%
+\subsubsection*{\texorpdfstring{10회차 (08:24--09:20 UTC, 경과 176분): \(SL_2(p)\) Weil 격자의 직접 구성과 안정성 시험 (\(p=5,13,17,29,37,61\))}{10회차 (08:24--09:20 UTC, 경과 176분): SL\_2(p) Weil 격자의 직접 구성과 안정성 시험 (p=5,13,17,29,37,61)}}\label{uxd68cuxcc28-08240920-utc-uxacbduxacfc-176uxbd84-sl_2p-weil-uxaca9uxc790uxc758-uxc9c1uxc811-uxad6cuxc131uxacfc-uxc548uxc815uxc131-uxc2dcuxd5d8-p51317293761}}
 
 \textbf{선택한 과제}: 5회차·11회차의 "첫 미해결 사례 \(p=37\)" 을 계산으로 결정한다. 독립 구현 3개: 빌더 A, 빌더 B(하위 에이전트), 그리고 본인(오케스트레이터)의 프로토타입 \texttt{rounds/R10\_weil\_lattices/orchestrator/} (\texttt{proto.py}, \texttt{run37.py}, \texttt{sub37.py}, \texttt{certify.py}).
 
@@ -569,7 +571,7 @@
 \item
   \(p=661\) (\(\log\varepsilon=14.4\)): Fix(\(C_{165}\))\(=\sqrt{165}E_8\), Fix(\(C_{55}\))\(=\sqrt{55}\times\)(근 144개 --- \(D_4^6\) 형으로 추정, \(|s'|\approx21\); 허용 \(\le25\)), Fix(\(C_{33}\)) 랭크 40 (근 없음); 모두 \(\log R_U=0\). \(t\)-원 탐색 불완전(열거 실패 31/58/70), \(s\) 값은 반올림 불안정(짝홀성이 어긋난 값이 섞임) ⇒ 참고용.
 \item
-  지금까지의 \(L_{24}(p)\): Leech (\(p=13,277,421,541\)), \(D_4^6\) (\(37,157\), 아마 \(661\)), \(E_8^3\) (\(61\)), 근 720개 (\(397,613\)). \(p=733,757\) 은 시간 내 완료되면 추가.
+  지금까지의 \(L_{24}(p)\): Leech (\(p=13,277,421,541\)), \(D_4^6\) (\(37,157\), 아마 \(661\)), \(E_8^3\) (\(61\)), 근 720개 (\(397,613\)). \(p=733,757\) 의 결과는 바로 아래 항목들에 있다.
 \item
   \(p=733\) (\(\log\varepsilon=3.3\)): \textbf{300표본으로도 표본 부족 재발} --- Fix(\(C_{183}\)) 의 생성 격자가 \(\log R_U=-\log4\) (지수 2, 근 112개의 \(D_8\) 형)로 나와 스크립트가 경고를 출력. 검증자의 제안대로 생성원에 \(\omega=(1+\sqrt p)/2\) 배를 추가하는 \textbf{\(O_F\)-폐포} 수정을 \texttt{scan.py} 에 반영(\(p=37\) 에서 기존 결과 재현 확인)하고 \(p=733\) 을 재실행(\texttt{log\_scan4\_p733.txt}).
 \item
@@ -958,3 +960,5 @@
 \end{enumerate}
 
 \textbf{기록 종료 시각}: 10:39:49 UTC (시작 06:24:15 UTC 로부터 255분 경과; 5시간 제한 이내).
+
+(덧붙임, 14:16 UTC: 사용자의 요청에 따라 연구를 더 진행하지 않고 두 파일을 그대로 마무리했다. 이때 한 일은 로그의 머리말에 읽는 법을 추가하고 0·10회차 제목에 경과 시간을 적는 등 서식 정리뿐이며, 연구 내용과 결과의 지위는 위의 기록 종료 시각 이후 바뀌지 않았다.)
