@@ -32,7 +32,7 @@ KKT 조건으로 최적점은 (i) $A_S\succ0$, (ii) $I\in\mathrm{cone}\{xx^T:x\i
 
 \subsection{세 가지 상수: 어디서 2 와 $e$ 를 잃는가}
 \begin{center}
-\begin{tabular}{@{}llll@{}}
+\begin{tabular}{@{}p{4.6cm}llp{7.2cm}@{}}
 \toprule
 방법 & $V$ & 상수 ($V=c\,n^2$) & 지위 \\
 \midrule
@@ -67,6 +67,10 @@ $n$ & $V_{LP}/N$ & 단순 꼭짓점 비율 & 비고\\\midrule
 \end{tabular}\end{center}
 (Poisson 예측: $V_{LP}/N=2$, $v_{LP}/N=0.736$, 단순 꼭짓점.) 실제 격자는 $n\le28$ 에서 모형과 다르다: 저차원에서는 root 격자의 뚱뚱한(비단체) Voronoi 영역이 지배하고($n\le8$ 에서는 $2N>V_n$ 이므로 예측 자체가 불가능), $n\ge14$ 에서 꼭짓점이 단순해진 뒤 $V_{LP}/N$ 이 차원당 $\approx0.04$ 씩 증가한다. $V_{LP}(L)/N\to2$ 인지는 \emph{결정되지 않았다}.
 \end{observation}
+\begin{figure}[H]\centering
+\includegraphics[width=0.86\textwidth]{figs/fig_VN.pdf}
+\caption{실제 랜덤 격자에서 $V/N$ ($N=n(n+1)/2$). 파랑: 대각합-LP 꼭짓점(9회차; $n\ge16$ 은 큰 소수의 Goldstein--Mayer 격자), 주황: Klartag 과정을 동결까지(2회차). 점선은 Poisson 모형의 값. $n=8$ 의 봉우리는 LP 가 대부분 $E_8$ 에 도달하기 때문이다. 수치는 본문의 표와 같다.}\label{fig:VN}
+\end{figure}
 \begin{conjecture}[LP 추측; 점근적 진술로만]\tagJ\ Haar-랜덤 격자 $L$ 에 대해 $n\to\infty$ 에서 $V_{LP}(L)=(1+o(1))n^2$. 특히 $V_n\ge(1-o(1))n^2$.\end{conjecture}
 이는 상수의 개선(현재 $\tfrac1{2e}$)일 뿐 차수의 개선이 아니다. 증명에는 ``한 타원체 위의 $N$ 개 격자벡터'' 통계가 필요하며 현재 기술 밖이다.
 

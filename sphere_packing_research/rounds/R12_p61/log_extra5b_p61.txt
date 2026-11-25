@@ -1,0 +1,84 @@
+[    1.8s] p=61 setup ok: kappa=-1, rounding residuals (np.float64(1.2789769243681803e-13), np.float64(1.0231815394945443e-12), np.float64(9.947598300641403e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    1.8s] loaded saved basis; float logdet(B)/(p-1) = 9.526974266 vs log D = 9.526974266
+[    2.9s] split torus C_60 (cyclic order 60): eigen-orders present with dims: {4: 8, 12: 16, 20: 32, 60: 64}
+[    2.9s] COMP p=61 split torus C_60: eigen-orders {4} dim   8  glue g=3^8*5^8  log R_U=+0.000000 R_U=1   [complement dim 112: log R=-13.9372]
+[    2.9s] COMP p=61 split torus C_60: eigen-orders {12} dim  16  glue g=3^8*5^16  log R_U=-2.301457 R_U=0.100113   [complement dim 104: log R=-19.6574]
+[    2.9s] COMP p=61 split torus C_60: eigen-orders {20} dim  32  glue g=3^32*5^8  log R_U=-5.734910 R_U=0.00323117   [complement dim 88: log R=-20.7375]
+[    2.9s] COMP p=61 split torus C_60: eigen-orders {60} dim  64  glue g=3^32*5^16  log R_U=-20.675646 R_U=1.04877e-09   [complement dim 56: log R=-18.2268]
+[    2.9s] COMP p=61 split torus C_60: eigen-orders {4,12} dim  24  glue g=5^24  log R_U=-0.000000 R_U=1   [complement dim 96: log R=-17.2047]
+[    2.9s] COMP p=61 split torus C_60: eigen-orders {4,20} dim  40  glue g=3^40  log R_U=+0.000000 R_U=1   [complement dim 80: log R=-11.5073]
+[    2.9s] COMP p=61 split torus C_60: eigen-orders {4,60} dim  72  glue g=3^40*5^24  log R_U=-45.791557 R_U=1.29712e-20   [complement dim 48: log R=-38.5890]
+[    2.9s] COMP p=61 split torus C_60: eigen-orders {12,20} dim  48  glue g=3^40*5^24  log R_U=-38.589046 R_U=1.74177e-17   [complement dim 72: log R=-45.7916]
+[    3.0s] COMP p=61 split torus C_60: eigen-orders {12,60} dim  80  glue g=3^40  log R_U=-11.507283 R_U=1.00566e-05   [complement dim 40: log R=+0.0000]
+[    3.0s] COMP p=61 split torus C_60: eigen-orders {20,60} dim  96  glue g=5^24  log R_U=-17.204729 R_U=3.3735e-08   [complement dim 24: log R=-0.0000]
+[    3.0s] COMP p=61 split torus C_60: eigen-orders {4,12,20} dim  56  glue g=3^32*5^16  log R_U=-18.226757 R_U=1.214e-08   [complement dim 64: log R=-20.6756]
+[    3.0s] COMP p=61 split torus C_60: eigen-orders {4,12,60} dim  88  glue g=3^32*5^8  log R_U=-20.737463 R_U=9.85903e-10   [complement dim 32: log R=-5.7349]
+[    3.0s] COMP p=61 split torus C_60: eigen-orders {4,20,60} dim 104  glue g=3^8*5^16  log R_U=-19.657417 R_U=2.9033e-09   [complement dim 16: log R=-2.3015]
+[    3.0s] COMP p=61 split torus C_60: eigen-orders {12,20,60} dim 112  glue g=3^8*5^8  log R_U=-13.937200 R_U=8.85423e-07   [complement dim 8: log R=+0.0000]
+[    8.7s]    saturated basis rank 40: float logdet 234.483977 vs log(g D^{k/2}) = 234.483977 ok=True exact=True; diag(B) min 900 max 2250
+[    8.7s]    t=-3.614 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 1.57e+06
+[    8.8s]    t=-3.514 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 3.14e+06
+[    8.9s]    t=-3.414 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 4.79e+06
+[    8.9s]    t=-3.314 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 6.50e+06
+[    9.0s]    t=-3.214 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 8.05e+06
+[    9.1s]    t=-3.114 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 9.81e+06
+[    9.2s]    t=-3.014 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 1.16e+07
+[    9.3s]    t=-2.914 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 1.38e+07
+[    9.3s]    t=-2.814 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 1.51e+07
+[    9.4s]    t=-2.714 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 1.64e+07
+[    9.5s]    t=-2.614 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 1.80e+07
+[    9.5s]    t=-2.514 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 2.00e+07
+[    9.7s]    t=-2.414 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 2.25e+07
+[    9.8s]    t=-2.314 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 2.58e+07
+[   10.0s]    t=-2.214 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 3.04e+07
+[   10.3s]    t=-2.114 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 3.71e+07
+[   10.3s]    t=-2.014 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 3.81e+07
+[   10.4s]    t=-1.914 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 3.83e+07
+[   10.5s]    t=-1.814 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 3.85e+07
+[   10.5s]    t=-1.714 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 3.88e+07
+[   10.5s]    t=-1.614 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 3.91e+07
+[   10.5s]    t=-1.514 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 3.95e+07
+[   10.5s]    t=-1.414 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 4.00e+07
+[   10.6s]    t=-1.314 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 4.07e+07
+[   10.6s]    t=-1.214 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 4.17e+07
+[   10.7s]    t=-1.114 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 4.32e+07
+[   10.8s]    t=-1.014 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 4.56e+07
+[   10.9s]    t=-0.914 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 4.92e+07
+[   11.1s]    t=-0.814 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 5.47e+07
+[   11.4s]    t=-0.714 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 6.38e+07
+[   11.5s]    t=-0.614 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 6.47e+07
+[   11.5s]    t=-0.514 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 6.55e+07
+[   11.5s]    t=-0.414 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 6.64e+07
+[   11.6s]    t=-0.314 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 6.75e+07
+[   11.7s]    t=-0.214 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 6.89e+07
+[   11.7s]    t=-0.114 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 7.06e+07
+[   11.8s]    t=-0.014 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 7.28e+07
+[   11.8s]    t=0.086 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 7.39e+07
+[   11.9s]    t=0.186 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 7.55e+07
+[   12.0s]    t=0.286 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 7.74e+07
+[   12.1s]    t=0.386 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 8.02e+07
+[   12.2s]    t=0.486 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 8.40e+07
+[   12.4s]    t=0.586 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 8.95e+07
+[   12.7s]    t=0.686 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 9.60e+07
+[   13.0s]    t=0.786 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 1.06e+08
+[   13.6s]    t=0.886 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 1.21e+08
+[   13.7s]    t=0.986 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 1.24e+08
+[   13.9s]    t=1.086 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 1.29e+08
+[   14.2s]    t=1.186 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 1.37e+08
+[   14.8s]    t=1.286 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 1.50e+08
+[   15.3s]    t=1.386 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 1.65e+08
+[   15.5s]    t=1.486 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 1.69e+08
+[   15.7s]    t=1.586 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 1.74e+08
+[   15.9s]    t=1.686 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 1.81e+08
+[   16.3s]    t=1.786 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 1.91e+08
+[   16.9s]    t=1.886 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 2.06e+08
+[   17.8s]    t=1.986 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 2.31e+08
+[   19.4s]    t=2.086 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 2.70e+08
+[   22.1s]    t=2.186 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 3.39e+08
+[   24.1s]    t=2.286 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 3.89e+08
+[   27.3s]    t=2.386 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 4.73e+08
+[   32.7s]    t=2.486 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 6.16e+08
+[   42.0s]    t=2.586 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 8.69e+08
+[   59.4s]    t=2.686 done: best so far Gamma/theta=1.00000, violator hits 0, complete=True, nodes 1.33e+09
+[   59.4s] p61 Fix(C_3) rank 40, t-points 0..64 rank 40: t-grid 64/74 complete=True minGamma=14.754098 theta=14.754098 ratio=1.000000 (b=900,e=0) violator hits=0 border hits=13 nodes=1.33e+09
+[   59.4s] DONE extra5

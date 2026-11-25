@@ -1,1 +1,28 @@
-(작성 중)
+모든 자료는 저장소의 \texttt{sphere\_packing\_research/} 아래에 있다(브랜치 \texttt{claude/laughing-allen-mobk2e}).
+\begin{center}\small
+\begin{longtable}{@{}p{5.6cm}p{10.4cm}@{}}
+\toprule
+경로 & 내용\\
+\midrule
+\endhead
+\texttt{research\_log.md} & 회차별 연구 로그(부록 \ref{app:log} 와 동일)\\
+\texttt{report/} & 이 보고서의 \LaTeX\ 원본과 \texttt{build.sh} (XeLaTeX + pandoc)\\
+\texttt{rounds/R1\_lit\_*/notes.md} & 1회차 문헌 조사 노트 4종; \texttt{R1\_lit\_perfect/best\_known\_lattices.csv}\\
+\texttt{rounds/R2\_klartag\_sim/} & Klartag 과정 시뮬레이터(\texttt{sim.py}), 결과표, 검증\\
+\texttt{rounds/R2\_voronoi\_descent/} & Voronoi 형 탐색(\texttt{voronoi.py}), C 열거기 \texttt{fp\_enum.c}\\
+\texttt{rounds/R3\_G\_klartag/}, \texttt{R3\_non\_free/}, \texttt{R3\_process/} & 이득 항등식, 텐서 안정성, no-go, Lemma N 의 증명 노트와 심사 보고\\
+\texttt{rounds/R4\_perceptron\_*/} & 퍼셉트론 모형의 이론 노트와 LP 실험; \texttt{referee/} 에 $\chi^2$ 법칙의 증명\\
+\texttt{rounds/R5\_leech13/} & Leech/$\Q(\sqrt{13})$ 의 정수 연산 계산(\texttt{stepA.py}--\texttt{stepF.py}), 심사자의 독립 재계산\\
+\texttt{rounds/R5\_sl2p\_theory/} & 일반 $p$ 의 보조정리(A$'$, B, 직선 기준)와 심사\\
+\texttt{rounds/R6\_quaternionic/} & \texttt{proof\_revised.md} (부록 \ref{app:proof}), 수치 검산 스크립트\\
+\texttt{rounds/R7\_gluing/} & GGS 접착 데이터의 LP 전수 탐색(\texttt{glue\_search.py})과 심사\\
+\texttt{rounds/R8\_equivariant/} & 등변 탐색(\texttt{eq.py}), 결과표, \texttt{best\_forms.json}, 검증\\
+\texttt{rounds/R9\_trace\_lp\_lattices/} & 실제 격자의 대각합-LP(\texttt{tracelp.py}), 결과표, 검증\\
+\texttt{rounds/R10\_weil\_lattices/} & $SL_2(p)$ Weil 격자: \texttt{orchestrator/} (\texttt{proto.py}, \texttt{run37.py}, \texttt{sub37.py}, \texttt{certify.py}, \texttt{roots37.py}), 빌더 \texttt{A/}, \texttt{B/}, 교차검증 \texttt{referee/}\\
+\texttt{rounds/R11\_mordell\_weil/} & Mordell--Weil 재정식화 검증(T1), 반박 시도(T2)\\
+\texttt{rounds/R12\_p61/} & $p=61$ 의 체계적 시험과 검증\\
+\bottomrule
+\end{longtable}
+\end{center}
+\paragraph{재현 예.} $p=37$ 의 불안정성: \texttt{cd rounds/R10\_weil\_lattices/orchestrator; python3 run37.py 37 9,3; python3 sub37.py 37 3; python3 sub37.py 37 9 40; python3 certify.py 37 9 3 "[...]"} (마지막 인자는 \texttt{sub37.py} 가 출력하는 위반 벡터의 좌표). 필요한 것은 Python 3, numpy/scipy, gcc(\texttt{fp\_enum.c} 컴파일)뿐이다.
+\paragraph{검증 수준에 대한 주의.} 이 보고서의 [증명됨] 은 ``하위 에이전트가 쓴 증명을 반박 담당 에이전트가 검토해 오류를 찾지 못했다'' 는 뜻이며 사람의 동료 심사를 거치지 않았다. 계산 결과 중 정수 연산으로 확정된 것([증명됨(계산기)])과 부동소수점 계산([수치관찰])을 구분해 표기했다. 인용 문헌 중 본문을 직접 확인하지 못한 것(Gross 1990, Nebe 1998, Dummigan, Watkins; Zassenhaus/Suzuki 의 구조정리)은 본문에 그 사실을 명시했다.

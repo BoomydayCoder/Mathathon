@@ -26,8 +26,10 @@ B3 & 행렬 블록이 있는 일반 나눗셈대수로의 확장(개정본 \S7) 
 \multicolumn{4}{@{}l}{\textbf{C. $SL_2(p)$ Weil 격자 텐서족 (유일하게 남은 차수 개선 후보)}}\\
 C1 & Leech 격자는 $\Delta_{13}=\HH\otimes\Q(\sqrt{13})$ 의 극대 order 위의 랭크 3 가군, $\mathrm{Aut}_\Delta=SL_2(13)$; 모든 $\Delta$-직선에서 $R_U\le1$, 등호는 정확히 1638개 직선; 평면은 $R_U\le0.1001$ & \tagPC & \S\ref{sec:leech}\\
 C2 & $(p+1)/2$ 가 합성수이면 unimodular Weil 격자는 텐서 불안정($p=17,29,41,\dots$); 소수이면 고정공간은 분리 토러스의 홀수 위수 부분군에서만 나오고 정확히 경계 & \tagP & \S\ref{sec:leech}\\
-C3 & $p=37,61,\dots$ 에 대한 직접 계산과 Mordell--Weil 재정식화 & \S\ref{sec:leech} 참조 & \S\ref{sec:leech}\\
-C4 & 양자택일 추측: 무한히 많은 $p$ 에서 경계 안정 $\Rightarrow$ (등변 Klartag 논증이 성립하면) $V_n\gtrsim n^{2+c}$; 아니면 Weil 격자에 ``불균형한 짧은 벡터'' 가 항상 존재 & \tagJ, \tagC & \S\ref{sec:leech}\\
+C3 & Mordell--Weil 재정식화: $W_p$ 는 $\mathrm{Hom}(\mathrm{Jac}(y^2=x^p-x),E)$ 에 뒤틀린 형식을 준 것; 직선 안정성 $\iff N_{F/\Q}(q_F(\phi))\ge((p-1)/4)^2$; 특히 모든 사상 $C_p\to E$ 의 차수 $\ge(p-1)/2$ 필요 & \tagP\ (일부 문헌 미열람) & \S\ref{sec:leech}\\
+C3$'$ & \textbf{$p=37$ 은 불안정}: 72차원 짝 unimodular Weil 격자의 $C_3$-고정격자는 $\sqrt3N(D_4^6)$ 이고 그 근에서 $N(\nu)=63<81$, $R_U\ge(9/7)^4$ & \tagPC\ (독립 구현 3개; 정수 인증서) & \S\ref{sec:weilcomp}\\
+C3$''$ & $p=61$ (120차원): 모든 부분군류의 isotypic 성분에서 $R_U\le1$ (정수 연산), 랭크 $\le40$ 인 모든 구조적 부분격자에서 위반 벡터 없음; $p=157,277,397$ 의 랭크 8·24 고정 부분격자도 통과. 전체 격자는 미결정 & \tagPC/\tagN & \S\ref{sec:p61}\\
+C4 & 수정된 양자택일: 무한히 많은 $p$ 에서 경계 안정 $\Rightarrow$ (텐서족의 등변 Klartag 정리가 $k\ge Cr\log n$ 에서 성립하면) $V_n\gtrsim n^{5/2}/\sqrt{\log n}$; 아니면 Weil 격자에 ``불균형한 짧은 벡터'' 가 존재($p=37$ 처럼). $k\approx r$ 에서는 호흡 모드 때문에 이득 없음 & \tagJ, \tagC & \S\ref{sec:leech}\\
 \midrule
 \multicolumn{4}{@{}l}{\textbf{D. 모형과 장벽}}\\
 D1 & Poisson 모형에서 대각합-LP 최적 타원체의 부피는 정확히 $\chi^2_{2N}$ (평균 $n(n+1)$); 가우스 모형의 임계값 $v^*=(2/e)N$ & \tagM & \S\ref{sec:perceptron}\\

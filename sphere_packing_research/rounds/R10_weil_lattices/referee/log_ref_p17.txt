@@ -1,0 +1,25 @@
+[   0.0s] A gram {"shape": [32, 32], "dtype": "int64", "symmetric": true, "posdef_exact_leading_minors": true, "det": "90170170959203891606593835341723521", "D": 153, "det_is_D_pow_p-1": true, "M=B^-1E_integral_exact(BM==E)": true, "M^2==pI_exact": true, "E B^-1 E == pB (follows)": true, "(I+M)/2 integral (O_F acts)": true, "B even diag": true, "min diag B": 36}
+[   0.0s] B gram not available/failed: FileNotFoundError(2, 'No such file or directory')
+[   0.0s] violator A/violator_p17.json {"b": 294, "e": 306, "N": 1375776, "THR": 39168, "violator": false, "Gamma": 132.23529411764707, "theta": 3.764705882352941, "ratio": "281/8", "m_plus": 184.10795063055895, "m_minus": 109.89204936944105, "RU_lower": 6.569535568965287e-07}
+[   0.0s] BasC shape (32, 8, 8)
+[   0.0s] kappa 1 |S^2+I| 4.81810852934404e-16 |(ST)^3-I| 2.4108862089956904e-15 |(ST)^3+I| 2.000000000000001
+[   0.0s] kappa -1 |S^2+I| 4.81810852934404e-16 |(ST)^3-I| 2.000000000000001 |(ST)^3+I| 2.4108862089956904e-15
+[   0.0s] rank of saved basis (real emb): 32 smallest sv 0.12385614069163024
+[   0.0s] max|B_num - B_saved|, max|E_num - E_saved| = [1.1013412404281553e-13, 3.019806626980426e-13]
+[   0.0s] S,T images of basis: integrality defect 3.197442310920451e-14 2.4424906541753444e-14  residual (in span) 1.1379786002407855e-14 2.1593837828959295e-14
+[   0.0s] exact integer checks of S,T on saved basis: {"S isometry B,E": true, "T isometry B,E": true, "S^2=-I": true, "(ST)^3=-I": true, "(ST)^3=+I": false, "T^p=I": true, "M^T (eta) commutes with S,T": true}
+[   0.0s] det_B(F_H) = 3595305184641  r^8 D^4 = 35912501231616  equal: False
+[   0.4s] no border vector among {-1,0,1} combos of F_H rows; using row 0 (X_j may be non-integral)
+[   0.5s] orbit sample rank 32 max coord 7
+[   0.5s] commutant elements X_j: integrality defect 1.2434497875801753e-14  exact (X_j commute with S,T; X_j(g v)=g u_j on sample): True
+[   0.6s] rank of span{X_j}: 8
+[   0.6s] sqrt(p)=M^T in Z-span{X_j}: (residual, integrality) (1.9539925233402755e-14, 2.220446049250313e-15)  (1+sqrt p)/2: (7.105427357601002e-15, 1.3322676295501878e-15)
+[   0.6s] Z-span{X_j} closed under multiplication: max defect 3.108624468950438e-14
+[   0.6s] trace form integrality defect 1.3766765505351941e-14
+[   0.6s] disc of order (det Tr_{F/Q} trd(x_i xbar_j)) = 83521  p^4 = 83521  MAXIMAL (disc == p^4): True
+[   0.6s] REFEREE O.w: det_B(O w) = 54665205560752102416  ((p/4)m+m-)^4 = (N/16)^4 = 54665205560752102416  equal: True  r^8D^4 = 35912501231616  R_U >= 6.569535568965288e-07
+[   0.6s]   rank of Delta*(O w) = 8 (8 => Delta-line)
+[   0.6s]   random w: det_B(O w) == (N/16)^4 : True  Gamma/theta = 3662.6875
+[   0.6s]   random w: det_B(O w) == (N/16)^4 : True  Gamma/theta = 1003.0
+[   0.6s]   random w: det_B(O w) == (N/16)^4 : True  Gamma/theta = 1468.9375
+[   0.6s] done

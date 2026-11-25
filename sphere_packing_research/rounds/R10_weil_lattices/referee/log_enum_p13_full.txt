@@ -1,0 +1,3 @@
+F ../referee/I13.npy (24, 24) gcd of sampled maximal minors = 1 (1 => primitive/saturated sublattice)
+p 13 period 2 log eps = 2.389526434574219 grid 25 points from -1.1947632172871094 to 1.2052367827128927 bound 36.0450094118263
+SUMMARY p=13 ../referee/I13.npy rank 24: t-points completed 25/25, vectors (with mult.) 19656, distinct +-pairs 19656, min N = 16848, THR = 16848, min Gamma/theta = 1.0, distinct violating +-pairs = 0, (N,b,e) histogram: {(16848, 42, 78): 6552, (16848, 36, 0): 6552, (16848, 42, -78): 6552}, time 1.2s, nodes 9352595

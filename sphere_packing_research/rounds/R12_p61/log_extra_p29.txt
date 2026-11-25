@@ -1,0 +1,23 @@
+[    0.9s] p=29 setup ok: kappa=-1, rounding residuals (np.float64(7.815970093361102e-14), np.float64(1.7053025658242404e-13), np.float64(4.263256414560601e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    0.9s] loaded saved basis; float logdet(B)/(p-1) = 7.259116128 vs log D = 7.259116128
+[    1.1s] modularity check: rounding residual 1.61e-10, exact B X B == r E: True, float log|det X| = -1.502e-13
+[    1.1s] non-split torus C_30 (cyclic order 30): eigen-orders present with dims: {6: 8, 10: 16, 30: 32}
+[    1.1s] COMP p=29 non-split torus C_30: eigen-orders {6} dim   8  glue g=5^8  log R_U=+2.691778 R_U=14.7579   [complement dim 48: log R=-5.4763]
+[    1.1s] COMP p=29 non-split torus C_30: eigen-orders {10} dim  16  glue g=3^16  log R_U=+2.466411 R_U=11.7801   [complement dim 40: log R=-4.1189]
+[    1.1s] COMP p=29 non-split torus C_30: eigen-orders {30} dim  32  glue g=3^16*5^8  log R_U=-12.545595 R_U=3.56055e-06   [complement dim 24: log R=-10.1182]
+[    1.1s] COMP p=29 non-split torus C_30: eigen-orders {6,10} dim  24  glue g=3^16*5^8  log R_U=-10.118151 R_U=4.03406e-05   [complement dim 32: log R=-12.5456]
+[    1.1s] COMP p=29 non-split torus C_30: eigen-orders {6,30} dim  40  glue g=3^16  log R_U=-4.118907 R_U=0.0162623   [complement dim 16: log R=+2.4664]
+[    1.1s] COMP p=29 non-split torus C_30: eigen-orders {10,30} dim  48  glue g=5^8  log R_U=-5.476271 R_U=0.00418491   [complement dim 8: log R=+2.6918]
+[    1.1s] split torus C_28 (cyclic order 28): eigen-orders present with dims: {4: 8, 28: 48}
+[    1.1s] COMP p=29 split torus C_28: eigen-orders {4} dim   8  glue g=7^8  log R_U=+0.000000 R_U=1   [complement dim 48: log R=-8.1680]
+[    1.2s] COMP p=29 split torus C_28: eigen-orders {28} dim  48  glue g=7^8  log R_U=-8.168049 R_U=0.000283571   [complement dim 8: log R=+0.0000]
+[    1.2s] SL_2(3): order 24, element orders {1: 1, 2: 1, 3: 8, 4: 6, 6: 8}
+[    1.2s]    operator relations (st)^2 = s^3 = t^3 = -1 verified exactly on Lambda
+[    1.2s] COMP p=29 SL_2(3): Hurwitz 2 (rational char) dim  24  glue g=2^8*3^16  log R_U=-2.787825 R_U=0.0615549   [complement dim 32: log R=-5.2153]
+[    1.2s] COMP p=29 SL_2(3): 2'+2'' (Q(omega))         dim  32  glue g=2^8*3^16  log R_U=-5.215269 R_U=0.00543297   [complement dim 24: log R=-2.7878]
+[    1.3s] SL_2(5): order 120, element orders {1: 1, 2: 1, 3: 20, 4: 30, 5: 24, 6: 20, 10: 24}
+[    1.3s]    operator relations (st)^2 = s^3 = t^5 = -1 verified exactly on Lambda
+[    1.3s] COMP p=29 SL_2(5): icosian 2a+2b (Q-irr dim 8) dim  16  glue g=2^8*3^8*5^4  log R_U=-0.727620 R_U=0.483057   [complement dim 40: log R=-7.3129]
+[    1.3s] COMP p=29 SL_2(5): degree-4 faithful         dim  16  glue g=3^8*5^8  log R_U=-1.620194 R_U=0.19786   [complement dim 40: log R=-8.2055]
+[    1.3s] COMP p=29 SL_2(5): degree-6 faithful         dim  24  glue g=2^8*5^12  log R_U=-4.523284 R_U=0.0108533   [complement dim 32: log R=-6.9507]
+[    1.3s] DONE extra 29 ns

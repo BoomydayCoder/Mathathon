@@ -1,0 +1,65 @@
+{
+ "A_gram": {
+  "shape": [
+   32,
+   32
+  ],
+  "dtype": "int64",
+  "symmetric": true,
+  "posdef_exact_leading_minors": true,
+  "det": "90170170959203891606593835341723521",
+  "D": 153,
+  "det_is_D_pow_p-1": true,
+  "M=B^-1E_integral_exact(BM==E)": true,
+  "M^2==pI_exact": true,
+  "E B^-1 E == pB (follows)": true,
+  "(I+M)/2 integral (O_F acts)": true,
+  "B even diag": true,
+  "min diag B": 36
+ },
+ "viol_A/violator_p17.json": {
+  "b": 294,
+  "e": 306,
+  "N": 1375776,
+  "THR": 39168,
+  "violator": false,
+  "Gamma": 132.23529411764707,
+  "theta": 3.764705882352941,
+  "ratio": "281/8",
+  "m_plus": 184.10795063055895,
+  "m_minus": 109.89204936944105,
+  "RU_lower": 6.569535568965287e-07
+ },
+ "A_gram_matches_embedding": [
+  1.1013412404281553e-13,
+  3.019806626980426e-13
+ ],
+ "A_G_structure_exact": {
+  "S isometry B,E": true,
+  "T isometry B,E": true,
+  "S^2=-I": true,
+  "(ST)^3=-I": true,
+  "(ST)^3=+I": false,
+  "T^p=I": true,
+  "M^T (eta) commutes with S,T": true
+ },
+ "A_G_integrality_defect": [
+  3.197442310920451e-14,
+  2.4424906541753444e-14,
+  1.1379786002407855e-14,
+  2.1593837828959295e-14
+ ],
+ "detB_FH": "3595305184641",
+ "detB_FH_equals_r8D4": false,
+ "commutant_integral_defect": 1.2434497875801753e-14,
+ "commutant_exact_ok": true,
+ "order_closed_defect": 3.108624468950438e-14,
+ "order_disc": "83521",
+ "order_maximal_by_disc": true,
+ "referee_Ow_A/violator_p17.json": {
+  "det": "54665205560752102416",
+  "formula": "54665205560752102416",
+  "equal": true,
+  "RU_lower": 6.569535568965288e-07
+ }
+}

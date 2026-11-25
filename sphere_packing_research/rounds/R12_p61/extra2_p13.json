@@ -1,0 +1,126 @@
+[
+ {
+  "p": 13,
+  "label": "SL_2(3): Hurwitz 2 (rational char)",
+  "dimU": 8,
+  "N": 12,
+  "glue_index": "6561",
+  "glue_factor": {
+   "3": 8
+  },
+  "glue_rest": "1",
+  "logR": 0.0,
+  "R": 1.0,
+  "logR_complement": -2.301456579614248,
+  "R_complement": 0.10011291503906243,
+  "delta_rank": 1.0,
+  "subgroup": "SL_2(3)",
+  "component": "Hurwitz 2 (rational char)"
+ },
+ {
+  "p": 13,
+  "label": "SL_2(3): 2'+2'' (Q(omega))",
+  "dimU": 16,
+  "N": 12,
+  "glue_index": "6561",
+  "glue_factor": {
+   "3": 8
+  },
+  "glue_rest": "1",
+  "logR": -2.301456579614248,
+  "R": 0.10011291503906243,
+  "logR_complement": 0.0,
+  "R_complement": 1.0,
+  "delta_rank": 2.0,
+  "subgroup": "SL_2(3)",
+  "component": "2'+2'' (Q(omega))"
+ },
+ {
+  "p": 13,
+  "label": "C_6<SL_2(3): eigen-orders {2}",
+  "dimU": 8,
+  "N": 6,
+  "glue_index": "6561",
+  "glue_factor": {
+   "3": 8
+  },
+  "glue_rest": "1",
+  "logR": 0.0,
+  "R": 1.0,
+  "logR_complement": -2.301456579614248,
+  "R_complement": 0.10011291503906243,
+  "delta_rank": 1.0,
+  "subgroup": "C_6<SL_2(3)",
+  "orders": [
+   2
+  ]
+ },
+ {
+  "p": 13,
+  "label": "C_6<SL_2(3): eigen-orders {6}",
+  "dimU": 16,
+  "N": 6,
+  "glue_index": "6561",
+  "glue_factor": {
+   "3": 8
+  },
+  "glue_rest": "1",
+  "logR": -2.301456579614248,
+  "R": 0.10011291503906243,
+  "logR_complement": 0.0,
+  "R_complement": 1.0,
+  "delta_rank": 2.0,
+  "subgroup": "C_6<SL_2(3)",
+  "orders": [
+   6
+  ]
+ },
+ {
+  "p": 13,
+  "label": "SL_2(3)>C_6: [Hurwitz 2 (rational char)] & [(6,)]",
+  "dimU": 8,
+  "N": 3,
+  "glue_index": "6561",
+  "glue_factor": {
+   "3": 8
+  },
+  "glue_rest": "1",
+  "logR": 0.0,
+  "R": 1.0,
+  "logR_complement": -2.301456579614248,
+  "R_complement": 0.10011291503906243,
+  "delta_rank": 1.0
+ },
+ {
+  "p": 13,
+  "label": "SL_2(3)>C_6: [2'+2'' (Q(omega))] & [(2,)]",
+  "dimU": 8,
+  "N": 3,
+  "glue_index": "6561",
+  "glue_factor": {
+   "3": 8
+  },
+  "glue_rest": "1",
+  "logR": 0.0,
+  "R": 1.0,
+  "logR_complement": -2.301456579614248,
+  "R_complement": 0.10011291503906243,
+  "delta_rank": 1.0
+ },
+ {
+  "p": 13,
+  "label": "SL_2(3)>C_6: [2'+2'' (Q(omega))] & [(6,)]",
+  "dimU": 8,
+  "N": 3,
+  "glue_index": "6561",
+  "glue_factor": {
+   "3": 8
+  },
+  "glue_rest": "1",
+  "logR": 0.0,
+  "R": 1.0,
+  "logR_complement": -2.301456579614248,
+  "R_complement": 0.10011291503906243,
+  "delta_rank": 1.0
+ }
+]

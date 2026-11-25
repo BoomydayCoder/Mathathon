@@ -1,0 +1,130 @@
+[
+ {
+  "p": 37,
+  "label": "SL_2(3): Hurwitz 2 (rational char)",
+  "dimU": 24,
+  "N": 12,
+  "glue_index": "72301961339136",
+  "glue_factor": {
+   "2": 8,
+   "3": 24
+  },
+  "glue_rest": "1",
+  "logR": -5.545177444479563,
+  "R": 0.0039062499999999974,
+  "logR_complement": -12.449547183322306,
+  "R_complement": 3.919497177942707e-06,
+  "delta_rank": 3.0,
+  "subgroup": "SL_2(3)",
+  "component": "Hurwitz 2 (rational char)"
+ },
+ {
+  "p": 37,
+  "label": "SL_2(3): 2'+2'' (Q(omega))",
+  "dimU": 48,
+  "N": 12,
+  "glue_index": "72301961339136",
+  "glue_factor": {
+   "2": 8,
+   "3": 24
+  },
+  "glue_rest": "1",
+  "logR": -12.449547183322306,
+  "R": 3.919497177942707e-06,
+  "logR_complement": -5.545177444479563,
+  "R_complement": 0.0039062499999999974,
+  "delta_rank": 6.0,
+  "subgroup": "SL_2(3)",
+  "component": "2'+2'' (Q(omega))"
+ },
+ {
+  "p": 37,
+  "label": "C_6<SL_2(3): eigen-orders {2}",
+  "dimU": 24,
+  "N": 6,
+  "glue_index": "282429536481",
+  "glue_factor": {
+   "3": 24
+  },
+  "glue_rest": "1",
+  "logR": 0.0,
+  "R": 1.0,
+  "logR_complement": -6.9043697388427425,
+  "R_complement": 0.0010033912775533336,
+  "delta_rank": 3.0,
+  "subgroup": "C_6<SL_2(3)",
+  "orders": [
+   2
+  ]
+ },
+ {
+  "p": 37,
+  "label": "C_6<SL_2(3): eigen-orders {6}",
+  "dimU": 48,
+  "N": 6,
+  "glue_index": "282429536481",
+  "glue_factor": {
+   "3": 24
+  },
+  "glue_rest": "1",
+  "logR": -6.9043697388427425,
+  "R": 0.0010033912775533336,
+  "logR_complement": 0.0,
+  "R_complement": 1.0,
+  "delta_rank": 6.0,
+  "subgroup": "C_6<SL_2(3)",
+  "orders": [
+   6
+  ]
+ },
+ {
+  "p": 37,
+  "label": "SL_2(3)>C_6: [Hurwitz 2 (rational char)] & [(6,)]",
+  "dimU": 24,
+  "N": 6,
+  "glue_index": "72301961339136",
+  "glue_factor": {
+   "2": 8,
+   "3": 24
+  },
+  "glue_rest": "1",
+  "logR": -5.545177444479563,
+  "R": 0.0039062499999999974,
+  "logR_complement": -12.449547183322306,
+  "R_complement": 3.919497177942707e-06,
+  "delta_rank": 3.0
+ },
+ {
+  "p": 37,
+  "label": "SL_2(3)>C_6: [2'+2'' (Q(omega))] & [(2,)]",
+  "dimU": 24,
+  "N": 3,
+  "glue_index": "282429536481",
+  "glue_factor": {
+   "3": 24
+  },
+  "glue_rest": "1",
+  "logR": 0.0,
+  "R": 1.0,
+  "logR_complement": -6.9043697388427425,
+  "R_complement": 0.0010033912775533336,
+  "delta_rank": 3.0
+ },
+ {
+  "p": 37,
+  "label": "SL_2(3)>C_6: [2'+2'' (Q(omega))] & [(6,)]",
+  "dimU": 24,
+  "N": 6,
+  "glue_index": "72301961339136",
+  "glue_factor": {
+   "2": 8,
+   "3": 24
+  },
+  "glue_rest": "1",
+  "logR": -5.545177444479563,
+  "R": 0.0039062499999999974,
+  "logR_complement": -12.449547183322306,
+  "R_complement": 3.919497177942707e-06,
+  "delta_rank": 3.0
+ }
+]

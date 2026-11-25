@@ -1,0 +1,1 @@
+[    0.3s] p=13: det-1 member at t=log(eps)=1.1948: det=1.000000; vectors (pairs) with norm <= 4.0: 98280 (flag 0, nodes 2335526); min norm 3.999999999999858; count at min: 98280

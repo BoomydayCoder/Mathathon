@@ -6,6 +6,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 lat = ctypes.CDLL(os.path.join(HERE, 'lat.so'))
 fpl = ctypes.CDLL(os.path.join(HERE, 'fp_enum.so'))
 fpl.fp_enum.restype = ctypes.c_long
+_vp = ctypes.c_void_p
+fpl.fp_enum.argtypes = [ctypes.c_int, _vp, ctypes.c_double, ctypes.c_long, _vp, _vp, ctypes.c_long,
+                        ctypes.POINTER(ctypes.c_int), ctypes.POINTER(ctypes.c_long)]
+lat.lll_c.restype = ctypes.c_int
+lat.lll_c.argtypes = [ctypes.c_int, ctypes.c_int, _vp, _vp, ctypes.c_double, _vp, _vp]
+lat.bkz_c.restype = ctypes.c_int
+lat.bkz_c.argtypes = [ctypes.c_int, ctypes.c_int, _vp, _vp, ctypes.c_int, ctypes.c_int, ctypes.c_double, ctypes.c_long, _vp]
 T0 = time.time()
 def log(*a):
     print(f'[{time.time()-T0:7.1f}s]', *a, flush=True)

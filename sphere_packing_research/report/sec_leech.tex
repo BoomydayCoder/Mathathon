@@ -3,7 +3,7 @@
 자유 작용의 한계(정리 \ref{thm:fpf})를 넘으려면 ``고정점을 가진 원소는 모두 정칙형(경계)이고, 고정점 없는 순환부분군이 아주 많은'' 군이 필요하다. 3회차에서 살아남은 유일한 후보를 5·10·11·12회차에서 조사했다. 결론을 먼저 적는다.
 
 \begin{center}\fbox{\begin{minipage}{0.93\textwidth}
-\textbf{현황.} $p=5$ ($E_8$): 안정. $p=13$ (Leech): 정확히 경계 \tagPC. $(p+1)/2$ 합성수($p=17,29,41,\dots$): 불안정 \tagP. \textbf{$p=37$: 불안정} --- 72차원 짝 unimodular Weil 격자에 $N(\nu)=63<81$ 인 노름 6 벡터가 존재(독립 구현 3개 일치, 부동소수점 계산) \tagN. \textbf{$p=61$ (120차원)}: \S\ref{sec:p61} 참조. 성립하더라도 고정된 $p$ 는 상수 이득일 뿐이고, 차수 개선에는 무한히 많은 $p$ 와 아직 증명되지 않은 해석적 정리가 필요하다.
+\textbf{현황.} $p=5$ ($E_8$): 안정. $p=13$ (Leech): 정확히 경계 \tagPC. $(p+1)/2$ 합성수($p=17,29,41,\dots$): 불안정 \tagP. \textbf{$p=37$: 불안정} --- 72차원 짝 unimodular Weil 격자에 $N(\nu)=63<81$ 인 노름 6 벡터가 존재(독립 구현 3개 일치, 정수 인증서) \tagPC. \textbf{$p=61$ (120차원)}: \S\ref{sec:p61} 참조. 성립하더라도 고정된 $p$ 는 상수 이득일 뿐이고, 차수 개선에는 무한히 많은 $p$ 와 아직 증명되지 않은 해석적 정리가 필요하다.
 \end{minipage}}\end{center}
 
 \subsection{후보족과 그것이 특별한 이유}
@@ -74,16 +74,21 @@ $p$ & 랭크 & $D$ & $\theta_p$ & $\min\Gamma/\theta_p$ (찾은 값) & 판정 & 
 \end{tabular}
 \end{center}
 
-\begin{observation}[$p=37$]\label{obs:p37}\tagN\ (부동소수점 계산, 정수성 잔차 $\le2\times10^{-9}$; 독립 구현 일치)\
-(i) $\Lambda$ 는 랭크 72, $D=2997=81\cdot37$; $t=\pm\log\varepsilon$ ($\varepsilon=6+\sqrt{37}$) 에서 $Q_t/\sqrt D$ 는 정수 형식 --- 72차원 짝 unimodular $SL_2(37)$-격자 $W_{37}$. (ii) 분리 토러스 $C_9$ 의 고정 직선은 $\log R_U=0.000000$, $\min\Gamma=\theta$ (보정). (iii) $C_3$-고정 부분격자(랭크 24, 전체로는 $R_U=1$)는 $\sqrt3\,\times$(근이 144개인 unimodular 랭크 24 격자 --- 즉 뿌리계가 $D_4^6$ 또는 $A_5^4D_4$ 인 Niemeier 격자). 그 근에 대응하는 $W_{37}$ 의 노름 6 벡터 72쌍은 모두 $s=\pm9$:
+\begin{observation}[$p=37$]\label{obs:p37}\tagPC\ (독립 구현 3개 일치; 두 빌더는 정수 Gram 행렬 위에서 정확한 정수 연산으로 인증 --- 격자 구성의 첫 단계인 Weil 행렬만 부동소수점 후 반올림)\
+(i) $\Lambda$ 는 랭크 72, $D=2997=81\cdot37$; $t=\pm\log\varepsilon$ ($\varepsilon=6+\sqrt{37}$) 에서 $Q_t/\sqrt D$ 는 정수 형식 --- 72차원 짝 unimodular $SL_2(37)$-격자 $W_{37}$. (ii) 분리 토러스 $C_9$ 의 고정 직선은 $\log R_U=0.000000$, $\min\Gamma=\theta$ (보정). (iii) $C_3$-고정 부분격자(랭크 24, 전체로는 $R_U=1$)는 $\sqrt3\,\times N(D_4^6)$: 근이 144개이고 뿌리계가 $D_4^6$ (24근·랭크 4 인 성분 6개)인 \emph{Niemeier 격자}의 $\sqrt3$ 배다(직접 계산; \texttt{roots37.py}). 그 근에 대응하는 $W_{37}$ 의 노름 6 벡터 72쌍은 모두 $s=\pm9$:
 \[
 N(\nu(w))=\frac{37\cdot6^2}{16}-\frac{9^2}4=63\ <\ 81=r^2 .
 \]
-(iv) 직접 인증: commutant order 의 작용으로 만든 랭크 8 부분격자 $O\cdot w\subset\Lambda\cap\Delta w$ 의 Gram 행렬식이 $((p/4)m_+m_-)^4$ 과 일치하고 $R_U\ge r^8D^4/\det(O\cdot w)=2.7326$. 이 하계는 $O$ 의 극대성을 가정하지 않으며, 같은 족의 모든 격자 $\Lambda I$ (모든 ideal 류)로 전이된다.
+(iv) 정수 인증서: $b=w^TBw=1026$, $e=w^TEw=5994$ ($E$ 는 $B(\cdot,\eta\,\cdot)$ 의 Gram 행렬)에 대해 $N=37b^2-e^2=3020976<D(p-1)^2=3884112$; commutant order 의 작용으로 만든 랭크 8 부분격자 $O\cdot w\subset\Lambda\cap\Delta w$ 는 포화이고 $\det_B(O\cdot w)=188811^4=(N/16)^4$ (정확), 따라서 \textbf{$R_U=(9/7)^4=6561/2401$ 정확히}. 이 불안정성은 같은 족의 모든 격자 $\Lambda I$ (모든 ideal 류)로 전이된다(행렬식 비가 불변). $C_3$-고정 부분격자에서의 전수 열거로 그 안의 $\min\Gamma/\theta=7/9$ 는 정확하지만, 전체 랭크 72 격자의 전역 최소가 $7/9$ 인지는 증명되지 않았다.
 \end{observation}
-따라서 $p=37$ 에서는 양자택일의 (b) 쪽이 성립한다: Weil 격자에 ``불균형한 짧은 벡터'' 가 있다. 구조적으로는 $p=13$ 의 $\sqrt3E_8$ (근의 $s$ 값이 허용 범위 안)이 $p=37$ 에서는 근을 가진 Niemeier 격자(근의 $s$ 값이 허용 범위 밖)로 바뀐 것이다. 이는 11회차 휴리스틱(위반 궤도 약 3개 예상; 발견된 것은 $703\times144=2|G|$ 개 벡터)과도 부합한다.
+따라서 $p=37$ 에서는 양자택일의 (b) 쪽이 성립한다: Weil 격자에 ``불균형한 짧은 벡터'' 가 있다. 구조적으로는 $p=13$ 의 $C_3$-고정격자 $\sqrt3E_8$ (근의 $s$ 값이 허용 범위 안)이 $p=37$ 에서는 $\sqrt3N(D_4^6)$ (근의 $s$ 값이 허용 범위 밖)로 바뀐 것이다. 일반적으로 분리 토러스 $C_m$ 의 고정격자는 $\sqrt m\times$(종수 $(p-1)/(2m)$ 인 몫곡선 $Y^2=X^{(p-1)/m+1}-X$ 의 같은 유형의 unimodular 격자)이고, 그 격자가 ``Leech 형''(근이 없거나 근의 $s$ 가 작음)인지 ``Niemeier 형''인지가 안정성을 가른다. 이는 11회차 휴리스틱(위반 궤도 약 3개 예상; 발견된 것은 $703\times144=2|G|$ 개 벡터)과도 부합한다.
 
-\subsection{$p=61$: 다음 사례 (10·12회차)}\label{sec:p61}
+\begin{figure}[H]\centering
+\includegraphics[width=0.86\textwidth]{figs/fig_tcircle.pdf}
+\caption{$G$-불변 형식의 원 $\{Q_t\}$ 위에서의 최소값 $\min_wQ_t(w)$ 를 임계값 $2\sqrt{\theta_pD}$ 로 나눈 것(가로축은 $t/\log\varepsilon_p$). $p=13$ (Leech 전체)은 세 점에서 정확히 1 에 닿고(경계), $p=37$ 의 $C_3$-고정 부분격자는 unimodular 점 근처에서 $\sqrt{7/9}$ 까지 내려가며(위반), $p=61$ 의 $C_5$-고정 부분격자는 Mordell--Weil 점에서만 1 에 닿는다.}\label{fig:tcircle}
+\end{figure}
+
+\subsection{$p\ge61$: 다음 사례들 (10·12·13회차)}\label{sec:p61}
 \input{sec_p61}
 
 \subsection{조건부 주장의 올바른 형태 (11회차 T2 의 반박 시도 반영)}

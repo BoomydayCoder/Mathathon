@@ -1,0 +1,27 @@
+[    0.5s] p=37 setup ok: kappa=-1, rounding residuals (np.float64(1.6342482922482304e-13), np.float64(3.410605131648481e-13), np.float64(5.684341886080802e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    0.5s] loaded saved basis; float logdet(B)/(p-1) = 8.005367067 vs log D = 8.005367067
+[    0.5s] unimodular member at t=+log eps: integrality residual 5.68e-14, even diagonal: True, float logdet 1.09e-10
+[    0.5s]    diag of unimodular Gram in saved (B-reduced) basis: min 36 max 132
+[    0.5s] SL_2(3): order 24, element orders {1: 1, 2: 1, 3: 8, 4: 6, 6: 8}
+[    0.5s] COMP p=37 SL_2(3): Hurwitz 2 (rational char) dim  24  glue g=2^8*3^24  log R_U=-5.545177 R_U=0.00390625   [complement dim 48: log R=-12.4495]
+[    0.5s] COMP p=37 SL_2(3): 2'+2'' (Q(omega))         dim  48  glue g=2^8*3^24  log R_U=-12.449547 R_U=3.9195e-06   [complement dim 24: log R=-5.5452]
+[    0.5s] split torus C_36 (cyclic order 36): eigen-orders present with dims: {4: 8, 12: 16, 36: 48}
+[    0.5s] COMP p=37 split torus C_36: eigen-orders {4} dim   8  glue g=3^16  log R_U=+0.000000 R_U=1   [complement dim 64: log R=-10.0397]
+[    0.5s] COMP p=37 split torus C_36: eigen-orders {12} dim  16  glue g=3^24  log R_U=-2.301457 R_U=0.100113   [complement dim 56: log R=-12.2931]
+[    0.5s] COMP p=37 split torus C_36: eigen-orders {36} dim  48  glue g=3^24  log R_U=-6.904370 R_U=0.00100339   [complement dim 24: log R=+0.0000]
+[    0.5s] COMP p=37 split torus C_36: eigen-orders {4,12} dim  24  glue g=3^24  log R_U=+0.000000 R_U=1   [complement dim 48: log R=-6.9044]
+[    0.5s] COMP p=37 split torus C_36: eigen-orders {4,36} dim  56  glue g=3^24  log R_U=-12.293087 R_U=4.58332e-06   [complement dim 16: log R=-2.3015]
+[    0.5s] COMP p=37 split torus C_36: eigen-orders {12,36} dim  64  glue g=3^16  log R_U=-10.039682 R_U=4.36336e-05   [complement dim 8: log R=+0.0000]
+[    1.0s]    saturated basis rank 8: float logdet 49.599265 vs log(g D^{k/2}) = 49.599265 ok=True exact=True; diag(B) min 324 max 1620
+[    1.1s] UNIMOD-SUB {'label': 'split torus C_36: eigen-orders {4}', 'rank': 8, 't_sign': 1, 'note': 'no vector of unimodular norm <= 14 found (or overflow)'}
+[    1.1s] UNIMOD-SUB {'label': 'split torus C_36: eigen-orders {4}', 'rank': 8, 't_sign': -1, 'note': 'no vector of unimodular norm <= 14 found (or overflow)'}
+[    1.5s]    saturated basis rank 16: float logdet 90.409631 vs log(g D^{k/2}) = 90.409631 ok=True exact=True; diag(B) min 648 max 810
+[    1.6s] UNIMOD-SUB {'label': 'split torus C_36: eigen-orders {12}', 'rank': 16, 't_sign': 1, 'bound': 12, 'min_norm': 11.999999999999961, 'n_pairs_at_bound': 360, 'nodes': 3930, 'hist_q_abs_s': {'(12, 0.0)': 288, '(12, 30.0)': 72}, 'min_gamma_over_theta': 1.3333333333332815, 's_integrality': 1.3500311979441904e-13}
+[    1.7s] UNIMOD-SUB {'label': 'split torus C_36: eigen-orders {12}', 'rank': 16, 't_sign': -1, 'bound': 12, 'min_norm': 11.999999999999961, 'n_pairs_at_bound': 360, 'nodes': 3905, 'hist_q_abs_s': {'(12, 0.0)': 288, '(12, 30.0)': 72}, 'min_gamma_over_theta': 1.3333333333332815, 's_integrality': 1.3500311979441904e-13}
+[    1.8s]    saturated basis rank 24: float logdet 127.976277 vs log(g D^{k/2}) = 127.976277 ok=True exact=True; diag(B) min 432 max 702
+[    2.1s] UNIMOD-SUB {'label': 'SL_2(3): Hurwitz 2 (rational char)', 'rank': 24, 't_sign': 1, 'bound': 8, 'min_norm': 5.999999999999975, 'n_pairs_at_bound': 24, 'nodes': 1719, 'hist_q_abs_s': {'(6, 9.0)': 24}, 'min_gamma_over_theta': 0.7777777777777645, 's_integrality': 8.348877145181177e-14}
+[    2.7s] UNIMOD-SUB {'label': 'SL_2(3): Hurwitz 2 (rational char)', 'rank': 24, 't_sign': -1, 'bound': 8, 'min_norm': 5.999999999999975, 'n_pairs_at_bound': 24, 'nodes': 5726, 'hist_q_abs_s': {'(6, 9.0)': 24}, 'min_gamma_over_theta': 0.7777777777777645, 's_integrality': 8.348877145181177e-14}
+[    3.1s]    saturated basis rank 24: float logdet 122.431100 vs log(g D^{k/2}) = 122.431100 ok=True exact=True; diag(B) min 324 max 594
+[    3.4s] UNIMOD-SUB {'label': 'split torus C_36: eigen-orders {4,12}', 'rank': 24, 't_sign': 1, 'bound': 8, 'min_norm': 5.999999999999975, 'n_pairs_at_bound': 72, 'nodes': 19179, 'hist_q_abs_s': {'(6, 9.0)': 72}, 'min_gamma_over_theta': 0.7777777777777645, 's_integrality': 8.348877145181177e-14}
+[    3.7s] UNIMOD-SUB {'label': 'split torus C_36: eigen-orders {4,12}', 'rank': 24, 't_sign': -1, 'bound': 8, 'min_norm': 5.999999999999975, 'n_pairs_at_bound': 72, 'nodes': 17903, 'hist_q_abs_s': {'(6, 9.0)': 72}, 'min_gamma_over_theta': 0.7777777777777645, 's_integrality': 8.348877145181177e-14}
+[    3.7s] DONE extra3 37

@@ -1,0 +1,172 @@
+[
+ {
+  "label": "split torus C_60: eigen-orders {4}",
+  "rank": 8,
+  "t_sign": 1,
+  "note": "no vector of unimodular norm <= 14 found (or overflow)"
+ },
+ {
+  "label": "split torus C_60: eigen-orders {4}",
+  "rank": 8,
+  "t_sign": -1,
+  "note": "no vector of unimodular norm <= 14 found (or overflow)"
+ },
+ {
+  "label": "SL_2(5): icosian 2a+2b (Q-irr dim 8)",
+  "rank": 16,
+  "t_sign": 1,
+  "bound": 12,
+  "min_norm": 12.000000000000014,
+  "n_pairs_at_bound": 60,
+  "nodes": 222,
+  "hist_q_abs_s": {
+   "(12, 0.0)": 60
+  },
+  "min_gamma_over_theta": 2.440000000000006,
+  "s_integrality": 5.202671410957641e-14
+ },
+ {
+  "label": "SL_2(5): icosian 2a+2b (Q-irr dim 8)",
+  "rank": 16,
+  "t_sign": -1,
+  "bound": 12,
+  "min_norm": 12.000000000000014,
+  "n_pairs_at_bound": 60,
+  "nodes": 217,
+  "hist_q_abs_s": {
+   "(12, 0.0)": 60
+  },
+  "min_gamma_over_theta": 2.440000000000006,
+  "s_integrality": 5.202671410957641e-14
+ },
+ {
+  "label": "split torus C_60: eigen-orders {12}",
+  "rank": 16,
+  "t_sign": 1,
+  "note": "no vector of unimodular norm <= 14 found (or overflow)"
+ },
+ {
+  "label": "split torus C_60: eigen-orders {12}",
+  "rank": 16,
+  "t_sign": -1,
+  "note": "no vector of unimodular norm <= 14 found (or overflow)"
+ },
+ {
+  "label": "split torus C_60: eigen-orders {4,12}",
+  "rank": 24,
+  "t_sign": 1,
+  "bound": 10,
+  "min_norm": 9.999999999999496,
+  "n_pairs_at_bound": 360,
+  "nodes": 3871,
+  "hist_q_abs_s": {
+   "(10, 5.0)": 288,
+   "(10, 15.0)": 72
+  },
+  "min_gamma_over_theta": 1.444444444444387,
+  "s_integrality": 1.972644270153978e-12
+ },
+ {
+  "label": "split torus C_60: eigen-orders {4,12}",
+  "rank": 24,
+  "t_sign": -1,
+  "bound": 10,
+  "min_norm": 9.999999999999496,
+  "n_pairs_at_bound": 360,
+  "nodes": 39539,
+  "hist_q_abs_s": {
+   "(10, 5.0)": 288,
+   "(10, 15.0)": 72
+  },
+  "min_gamma_over_theta": 1.444444444444387,
+  "s_integrality": 1.972644270153978e-12
+ },
+ {
+  "label": "SL_2(5): degree-4 faithful",
+  "rank": 32,
+  "t_sign": 1,
+  "note": "no vector of unimodular norm <= 14 found (or overflow)"
+ },
+ {
+  "label": "SL_2(5): degree-4 faithful",
+  "rank": 32,
+  "t_sign": -1,
+  "note": "no vector of unimodular norm <= 14 found (or overflow)"
+ },
+ {
+  "label": "SL_2(3): Hurwitz 2 (rational char)",
+  "rank": 40,
+  "t_sign": 1,
+  "bound": 12,
+  "min_norm": 11.999999999999343,
+  "n_pairs_at_bound": 1368,
+  "nodes": 5533784,
+  "hist_q_abs_s": {
+   "(12, 0.0)": 480,
+   "(12, 6.0)": 24,
+   "(12, 12.0)": 192,
+   "(12, 18.0)": 456,
+   "(12, 24.0)": 96,
+   "(12, 30.0)": 120
+  },
+  "min_gamma_over_theta": 1.4399999999995603,
+  "s_integrality": 2.589928271845565e-12
+ },
+ {
+  "label": "SL_2(3): Hurwitz 2 (rational char)",
+  "rank": 40,
+  "t_sign": -1,
+  "bound": 12,
+  "min_norm": 11.999999999999343,
+  "n_pairs_at_bound": 1368,
+  "nodes": 5533056,
+  "hist_q_abs_s": {
+   "(12, 0.0)": 480,
+   "(12, 6.0)": 24,
+   "(12, 12.0)": 192,
+   "(12, 18.0)": 456,
+   "(12, 24.0)": 96,
+   "(12, 30.0)": 120
+  },
+  "min_gamma_over_theta": 1.4399999999995603,
+  "s_integrality": 2.589928271845565e-12
+ },
+ {
+  "label": "split torus C_60: eigen-orders {4,20}",
+  "rank": 40,
+  "t_sign": 1,
+  "bound": 12,
+  "min_norm": 11.999999999999343,
+  "n_pairs_at_bound": 19800,
+  "nodes": 208642489,
+  "hist_q_abs_s": {
+   "(12, 0.0)": 2760,
+   "(12, 6.0)": 7680,
+   "(12, 12.0)": 6360,
+   "(12, 18.0)": 2160,
+   "(12, 24.0)": 480,
+   "(12, 30.0)": 360
+  },
+  "min_gamma_over_theta": 1.4399999999995603,
+  "s_integrality": 2.589928271845565e-12
+ },
+ {
+  "label": "split torus C_60: eigen-orders {4,20}",
+  "rank": 40,
+  "t_sign": -1,
+  "bound": 12,
+  "min_norm": 11.999999999999343,
+  "n_pairs_at_bound": 19800,
+  "nodes": 132570427,
+  "hist_q_abs_s": {
+   "(12, 0.0)": 2760,
+   "(12, 6.0)": 7680,
+   "(12, 12.0)": 6360,
+   "(12, 18.0)": 2160,
+   "(12, 24.0)": 480,
+   "(12, 30.0)": 360
+  },
+  "min_gamma_over_theta": 1.4399999999995603,
+  "s_integrality": 2.589928271845565e-12
+ }
+]

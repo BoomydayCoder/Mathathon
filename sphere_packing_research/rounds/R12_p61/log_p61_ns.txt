@@ -1,0 +1,31 @@
+[    2.0s] p=61 setup ok: kappa=-1, rounding residuals (np.float64(1.2789769243681803e-13), np.float64(1.0231815394945443e-12), np.float64(9.947598300641403e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    2.0s] loaded saved basis; float logdet(B)/(p-1) = 9.526974266 vs log D = 9.526974266
+[    3.4s] p=61: homomorphism SL_2(F_p) -> GL(Lambda) verified on random products
+[    4.7s] modularity check: rounding residual 8.61e-06, exact B X B == r E: True, float log|det X| = 1.827e-11
+[    4.8s] split torus C_60 (cyclic order 60): eigen-orders present with dims: {4: 8, 12: 16, 20: 32, 60: 64}
+[    4.8s] COMP p=61 split torus C_60: eigen-orders {4} dim   8  glue g=3^8*5^8  log R_U=+0.000000 R_U=1   [complement dim 112: log R=-13.9372]
+[    4.9s] COMP p=61 split torus C_60: eigen-orders {12} dim  16  glue g=3^8*5^16  log R_U=-2.301457 R_U=0.100113   [complement dim 104: log R=-19.6574]
+[    4.9s] COMP p=61 split torus C_60: eigen-orders {20} dim  32  glue g=3^32*5^8  log R_U=-5.734910 R_U=0.00323117   [complement dim 88: log R=-20.7375]
+[    4.9s] COMP p=61 split torus C_60: eigen-orders {60} dim  64  glue g=3^32*5^16  log R_U=-20.675646 R_U=1.04877e-09   [complement dim 56: log R=-18.2268]
+[    4.9s] COMP p=61 split torus C_60: eigen-orders {4,12} dim  24  glue g=5^24  log R_U=-0.000000 R_U=1   [complement dim 96: log R=-17.2047]
+[    4.9s] COMP p=61 split torus C_60: eigen-orders {4,20} dim  40  glue g=3^40  log R_U=+0.000000 R_U=1   [complement dim 80: log R=-11.5073]
+[    4.9s] COMP p=61 split torus C_60: eigen-orders {4,60} dim  72  glue g=3^40*5^24  log R_U=-45.791557 R_U=1.29712e-20   [complement dim 48: log R=-38.5890]
+[    4.9s] COMP p=61 split torus C_60: eigen-orders {12,20} dim  48  glue g=3^40*5^24  log R_U=-38.589046 R_U=1.74177e-17   [complement dim 72: log R=-45.7916]
+[    5.0s] COMP p=61 split torus C_60: eigen-orders {12,60} dim  80  glue g=3^40  log R_U=-11.507283 R_U=1.00566e-05   [complement dim 40: log R=+0.0000]
+[    5.0s] COMP p=61 split torus C_60: eigen-orders {20,60} dim  96  glue g=5^24  log R_U=-17.204729 R_U=3.3735e-08   [complement dim 24: log R=-0.0000]
+[    5.0s] COMP p=61 split torus C_60: eigen-orders {4,12,20} dim  56  glue g=3^32*5^16  log R_U=-18.226757 R_U=1.214e-08   [complement dim 64: log R=-20.6756]
+[    5.0s] COMP p=61 split torus C_60: eigen-orders {4,12,60} dim  88  glue g=3^32*5^8  log R_U=-20.737463 R_U=9.85903e-10   [complement dim 32: log R=-5.7349]
+[    5.0s] COMP p=61 split torus C_60: eigen-orders {4,20,60} dim 104  glue g=3^8*5^16  log R_U=-19.657417 R_U=2.9033e-09   [complement dim 16: log R=-2.3015]
+[    5.0s] COMP p=61 split torus C_60: eigen-orders {12,20,60} dim 112  glue g=3^8*5^8  log R_U=-13.937200 R_U=8.85423e-07   [complement dim 8: log R=+0.0000]
+[    5.1s] non-split torus C_62 (cyclic order 62): eigen-orders present with dims: {62: 120}
+[    5.1s] unipotent C_61 (cyclic order 61): eigen-orders present with dims: {61: 120}
+[    5.2s] SL_2(3): order 24, element orders {1: 1, 2: 1, 3: 8, 4: 6, 6: 8}
+[    5.3s]    operator relations (st)^2 = s^3 = t^3 = -1 verified exactly on Lambda
+[    5.3s] COMP p=61 SL_2(3): Hurwitz 2 (rational char) dim  40  glue g=2^16*3^40  log R_U=-11.090355 R_U=1.52588e-05   [complement dim 80: log R=-22.5976]
+[    5.3s] COMP p=61 SL_2(3): 2'+2'' (Q(omega))         dim  80  glue g=2^16*3^40  log R_U=-22.597638 R_U=1.53451e-10   [complement dim 40: log R=-11.0904]
+[    5.8s] SL_2(5): order 120, element orders {1: 1, 2: 1, 3: 20, 4: 30, 5: 24, 6: 20, 10: 24}
+[    5.8s]    operator relations (st)^2 = s^3 = t^5 = -1 verified exactly on Lambda
+[    5.8s] COMP p=61 SL_2(5): icosian 2a+2b (Q-irr dim 8) dim  16  glue g=2^8*3^16*5^8  log R_U=-3.760029 R_U=0.0232831   [complement dim 104: log R=-21.1160]
+[    5.8s] COMP p=61 SL_2(5): degree-4 faithful         dim  32  glue g=3^16*5^32  log R_U=-26.783623 R_U=2.33357e-12   [complement dim 88: log R=-41.7862]
+[    5.8s] COMP p=61 SL_2(5): degree-6 faithful         dim  72  glue g=2^8*5^40  log R_U=-33.143249 R_U=4.0371e-15   [complement dim 48: log R=-25.9407]
+[    5.8s] DONE p=61

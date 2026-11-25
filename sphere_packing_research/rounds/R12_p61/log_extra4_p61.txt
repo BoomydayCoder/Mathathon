@@ -1,0 +1,906 @@
+[    1.7s] p=61 setup ok: kappa=-1, rounding residuals (np.float64(1.2789769243681803e-13), np.float64(1.0231815394945443e-12), np.float64(9.947598300641403e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    1.7s] loaded saved basis; float logdet(B)/(p-1) = 9.526974266 vs log D = 9.526974266
+[    2.2s] split torus C_60 (cyclic order 60): eigen-orders present with dims: {4: 8, 12: 16, 20: 32, 60: 64}
+[    2.2s] COMP p=61 split torus C_60: eigen-orders {4} dim   8  glue g=3^8*5^8  log R_U=+0.000000 R_U=1   [complement dim 112: log R=-13.9372]
+[    2.2s] COMP p=61 split torus C_60: eigen-orders {12} dim  16  glue g=3^8*5^16  log R_U=-2.301457 R_U=0.100113   [complement dim 104: log R=-19.6574]
+[    2.2s] COMP p=61 split torus C_60: eigen-orders {20} dim  32  glue g=3^32*5^8  log R_U=-5.734910 R_U=0.00323117   [complement dim 88: log R=-20.7375]
+[    2.2s] COMP p=61 split torus C_60: eigen-orders {60} dim  64  glue g=3^32*5^16  log R_U=-20.675646 R_U=1.04877e-09   [complement dim 56: log R=-18.2268]
+[    2.2s] COMP p=61 split torus C_60: eigen-orders {4,12} dim  24  glue g=5^24  log R_U=-0.000000 R_U=1   [complement dim 96: log R=-17.2047]
+[    2.3s] COMP p=61 split torus C_60: eigen-orders {4,20} dim  40  glue g=3^40  log R_U=+0.000000 R_U=1   [complement dim 80: log R=-11.5073]
+[    2.3s] COMP p=61 split torus C_60: eigen-orders {4,60} dim  72  glue g=3^40*5^24  log R_U=-45.791557 R_U=1.29712e-20   [complement dim 48: log R=-38.5890]
+[    2.3s] COMP p=61 split torus C_60: eigen-orders {12,20} dim  48  glue g=3^40*5^24  log R_U=-38.589046 R_U=1.74177e-17   [complement dim 72: log R=-45.7916]
+[    2.3s] COMP p=61 split torus C_60: eigen-orders {12,60} dim  80  glue g=3^40  log R_U=-11.507283 R_U=1.00566e-05   [complement dim 40: log R=+0.0000]
+[    2.3s] COMP p=61 split torus C_60: eigen-orders {20,60} dim  96  glue g=5^24  log R_U=-17.204729 R_U=3.3735e-08   [complement dim 24: log R=-0.0000]
+[    2.3s] COMP p=61 split torus C_60: eigen-orders {4,12,20} dim  56  glue g=3^32*5^16  log R_U=-18.226757 R_U=1.214e-08   [complement dim 64: log R=-20.6756]
+[    2.3s] COMP p=61 split torus C_60: eigen-orders {4,12,60} dim  88  glue g=3^32*5^8  log R_U=-20.737463 R_U=9.85903e-10   [complement dim 32: log R=-5.7349]
+[    2.3s] COMP p=61 split torus C_60: eigen-orders {4,20,60} dim 104  glue g=3^8*5^16  log R_U=-19.657417 R_U=2.9033e-09   [complement dim 16: log R=-2.3015]
+[    2.3s] COMP p=61 split torus C_60: eigen-orders {12,20,60} dim 112  glue g=3^8*5^8  log R_U=-13.937200 R_U=8.85423e-07   [complement dim 8: log R=+0.0000]
+[    5.7s]    saturated basis rank 24: float logdet 152.950201 vs log(g D^{k/2}) = 152.950201 ok=True exact=True; diag(B) min 900 max 2400
+[    5.8s] norm-10 vectors in Fix(C_5): 360 pairs; |s| values [5, 15]
+[    6.7s] orbit 1: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[    7.6s] orbit 2: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[    8.4s] orbit 3: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[    9.3s] orbit 4: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   10.2s] orbit 5: 22692 vectors (mod +-), rep norm 10.000 |s| 15.000 Gamma/theta 1.4444
+[   10.8s] orbit 6: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   11.3s] orbit 7: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   11.8s] orbit 8: 22692 vectors (mod +-), rep norm 10.000 |s| 15.000 Gamma/theta 1.4444
+[   12.1s] orbit 9: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   12.4s] orbit 10: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   13.0s] orbit 11: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   13.6s] orbit 12: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   14.1s] orbit 13: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   14.6s] orbit 14: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   15.0s] orbit 15: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   15.7s] orbit 16: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   16.3s] orbit 17: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   16.9s] orbit 18: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   17.6s] orbit 19: 22692 vectors (mod +-), rep norm 10.000 |s| 15.000 Gamma/theta 1.4444
+[   18.1s] orbit 20: 22692 vectors (mod +-), rep norm 10.000 |s| 15.000 Gamma/theta 1.4444
+[   18.6s] orbit 21: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   19.2s] orbit 22: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   19.9s] orbit 23: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   20.9s] orbit 24: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   21.8s] orbit 25: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   22.9s] orbit 26: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   24.4s] orbit 27: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   25.7s] orbit 28: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[   26.6s] orbit 29: 22692 vectors (mod +-), rep norm 10.000 |s| 15.000 Gamma/theta 1.4444
+[   28.3s] orbit 30: 22692 vectors (mod +-), rep norm 10.000 |s| 15.000 Gamma/theta 1.4444
+[   28.4s] ip spectrum orbit 1 rep vs orbit 1: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   28.4s] ip spectrum orbit 1 rep vs orbit 2: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   28.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.4s] ip spectrum orbit 1 rep vs orbit 3: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   28.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.4s] ip spectrum orbit 1 rep vs orbit 4: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   28.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.4s] ip spectrum orbit 1 rep vs orbit 5: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   28.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.5s] ip spectrum orbit 1 rep vs orbit 6: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   28.5s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   28.5s] ip spectrum orbit 1 rep vs orbit 7: {0: 10520, 1: 10160, 2: 1940, 3: 70, 5: 2}
+[   28.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.5s] ip spectrum orbit 1 rep vs orbit 8: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   28.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.5s] ip spectrum orbit 1 rep vs orbit 9: {0: 10180, 1: 10435, 2: 1995, 3: 75, 4: 5, 5: 2}
+[   28.5s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   28.5s] ip spectrum orbit 1 rep vs orbit 10: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   28.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.6s] ip spectrum orbit 1 rep vs orbit 11: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   28.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.6s] ip spectrum orbit 1 rep vs orbit 12: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   28.6s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   28.6s] ip spectrum orbit 1 rep vs orbit 13: {0: 10400, 1: 10320, 2: 1900, 3: 70, 5: 2}
+[   28.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.6s] ip spectrum orbit 1 rep vs orbit 14: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   28.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.6s] ip spectrum orbit 1 rep vs orbit 15: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   28.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.6s] ip spectrum orbit 1 rep vs orbit 16: {0: 10432, 1: 10280, 2: 1900, 3: 80}
+[   28.6s] ip spectrum orbit 1 rep vs orbit 17: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   28.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.6s] ip spectrum orbit 1 rep vs orbit 18: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   28.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.6s] ip spectrum orbit 1 rep vs orbit 19: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   28.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.7s] ip spectrum orbit 1 rep vs orbit 20: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   28.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.7s] ip spectrum orbit 1 rep vs orbit 21: {0: 10165, 1: 10535, 2: 1855, 3: 135, 5: 2}
+[   28.7s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   28.7s] ip spectrum orbit 1 rep vs orbit 22: {0: 10672, 1: 10010, 2: 1900, 3: 110}
+[   28.7s] ip spectrum orbit 1 rep vs orbit 23: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   28.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.7s] ip spectrum orbit 1 rep vs orbit 24: {0: 10752, 1: 9970, 2: 1820, 3: 150}
+[   28.7s] ip spectrum orbit 1 rep vs orbit 25: {0: 10500, 1: 10170, 2: 1960, 3: 60, 5: 2}
+[   28.7s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   28.7s] ip spectrum orbit 1 rep vs orbit 26: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   28.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.7s] ip spectrum orbit 1 rep vs orbit 27: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   28.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.7s] ip spectrum orbit 1 rep vs orbit 28: {0: 9805, 1: 10980, 2: 1805, 3: 90, 4: 10, 5: 2}
+[   28.7s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   28.8s] ip spectrum orbit 1 rep vs orbit 29: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.8s] ip spectrum orbit 1 rep vs orbit 30: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.8s] ip spectrum orbit 2 rep vs orbit 2: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   28.8s] ip spectrum orbit 2 rep vs orbit 3: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.8s] ip spectrum orbit 2 rep vs orbit 4: {0: 10180, 1: 10435, 2: 1995, 3: 75, 4: 5, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   28.8s] ip spectrum orbit 2 rep vs orbit 5: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.8s] ip spectrum orbit 2 rep vs orbit 6: {0: 10400, 1: 10320, 2: 1900, 3: 70, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.8s] ip spectrum orbit 2 rep vs orbit 7: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   28.8s] ip spectrum orbit 2 rep vs orbit 8: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.8s] ip spectrum orbit 2 rep vs orbit 9: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.8s] ip spectrum orbit 2 rep vs orbit 10: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   28.8s] ip spectrum orbit 2 rep vs orbit 11: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.8s] ip spectrum orbit 2 rep vs orbit 12: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.8s] ip spectrum orbit 2 rep vs orbit 13: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.8s] ip spectrum orbit 2 rep vs orbit 14: {0: 9805, 1: 10980, 2: 1805, 3: 90, 4: 10, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   28.8s] ip spectrum orbit 2 rep vs orbit 15: {0: 10165, 1: 10535, 2: 1855, 3: 135, 5: 2}
+[   28.8s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   28.9s] ip spectrum orbit 2 rep vs orbit 16: {0: 10752, 1: 9970, 2: 1820, 3: 150}
+[   28.9s] ip spectrum orbit 2 rep vs orbit 17: {0: 10500, 1: 10170, 2: 1960, 3: 60, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   28.9s] ip spectrum orbit 2 rep vs orbit 18: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 2 rep vs orbit 19: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 2 rep vs orbit 20: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 2 rep vs orbit 21: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 2 rep vs orbit 22: {0: 10432, 1: 10280, 2: 1900, 3: 80}
+[   28.9s] ip spectrum orbit 2 rep vs orbit 23: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 2 rep vs orbit 24: {0: 10672, 1: 10010, 2: 1900, 3: 110}
+[   28.9s] ip spectrum orbit 2 rep vs orbit 25: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 2 rep vs orbit 26: {0: 10520, 1: 10160, 2: 1940, 3: 70, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 2 rep vs orbit 27: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 2 rep vs orbit 28: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 2 rep vs orbit 29: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 2 rep vs orbit 30: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 3 rep vs orbit 3: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   28.9s] ip spectrum orbit 3 rep vs orbit 4: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 3 rep vs orbit 5: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 3 rep vs orbit 6: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 3 rep vs orbit 7: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 3 rep vs orbit 8: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   28.9s] ip spectrum orbit 3 rep vs orbit 9: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   28.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.0s] ip spectrum orbit 3 rep vs orbit 10: {0: 10400, 1: 10320, 2: 1900, 3: 70, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.0s] ip spectrum orbit 3 rep vs orbit 11: {0: 10500, 1: 10170, 2: 1960, 3: 60, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.0s] ip spectrum orbit 3 rep vs orbit 12: {0: 10520, 1: 10160, 2: 1940, 3: 70, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.0s] ip spectrum orbit 3 rep vs orbit 13: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.0s] ip spectrum orbit 3 rep vs orbit 14: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.0s] ip spectrum orbit 3 rep vs orbit 15: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.0s] ip spectrum orbit 3 rep vs orbit 16: {0: 10672, 1: 10010, 2: 1900, 3: 110}
+[   29.0s] ip spectrum orbit 3 rep vs orbit 17: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.0s] ip spectrum orbit 3 rep vs orbit 18: {0: 9805, 1: 10980, 2: 1805, 3: 90, 4: 10, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.0s] ip spectrum orbit 3 rep vs orbit 19: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.0s] ip spectrum orbit 3 rep vs orbit 20: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.0s] ip spectrum orbit 3 rep vs orbit 21: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.0s] ip spectrum orbit 3 rep vs orbit 22: {0: 10752, 1: 9970, 2: 1820, 3: 150}
+[   29.0s] ip spectrum orbit 3 rep vs orbit 23: {0: 10180, 1: 10435, 2: 1995, 3: 75, 4: 5, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.0s] ip spectrum orbit 3 rep vs orbit 24: {0: 10432, 1: 10280, 2: 1900, 3: 80}
+[   29.0s] ip spectrum orbit 3 rep vs orbit 25: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.0s] ip spectrum orbit 3 rep vs orbit 26: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.0s] ip spectrum orbit 3 rep vs orbit 27: {0: 10165, 1: 10535, 2: 1855, 3: 135, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.0s] ip spectrum orbit 3 rep vs orbit 28: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.0s] ip spectrum orbit 3 rep vs orbit 29: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.0s] ip spectrum orbit 3 rep vs orbit 30: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.0s] ip spectrum orbit 4 rep vs orbit 4: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   29.0s] ip spectrum orbit 4 rep vs orbit 5: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   29.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.1s] ip spectrum orbit 4 rep vs orbit 6: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   29.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.1s] ip spectrum orbit 4 rep vs orbit 7: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   29.1s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.1s] ip spectrum orbit 4 rep vs orbit 8: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   29.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.1s] ip spectrum orbit 4 rep vs orbit 9: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   29.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.1s] ip spectrum orbit 4 rep vs orbit 10: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   29.1s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.1s] ip spectrum orbit 4 rep vs orbit 11: {0: 10520, 1: 10160, 2: 1940, 3: 70, 5: 2}
+[   29.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.1s] ip spectrum orbit 4 rep vs orbit 12: {0: 10672, 1: 10010, 2: 1900, 3: 110}
+[   29.1s] ip spectrum orbit 4 rep vs orbit 13: {0: 10432, 1: 10280, 2: 1900, 3: 80}
+[   29.1s] ip spectrum orbit 4 rep vs orbit 14: {0: 10165, 1: 10535, 2: 1855, 3: 135, 5: 2}
+[   29.1s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.1s] ip spectrum orbit 4 rep vs orbit 15: {0: 9805, 1: 10980, 2: 1805, 3: 90, 4: 10, 5: 2}
+[   29.1s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.1s] ip spectrum orbit 4 rep vs orbit 16: {0: 10500, 1: 10170, 2: 1960, 3: 60, 5: 2}
+[   29.1s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.1s] ip spectrum orbit 4 rep vs orbit 17: {0: 10752, 1: 9970, 2: 1820, 3: 150}
+[   29.1s] ip spectrum orbit 4 rep vs orbit 18: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   29.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.1s] ip spectrum orbit 4 rep vs orbit 19: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   29.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.1s] ip spectrum orbit 4 rep vs orbit 20: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   29.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.1s] ip spectrum orbit 4 rep vs orbit 21: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   29.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 4 rep vs orbit 22: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 4 rep vs orbit 23: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 4 rep vs orbit 24: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 4 rep vs orbit 25: {0: 10400, 1: 10320, 2: 1900, 3: 70, 5: 2}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 4 rep vs orbit 26: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 4 rep vs orbit 27: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 4 rep vs orbit 28: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 4 rep vs orbit 29: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 4 rep vs orbit 30: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 5 rep vs orbit 5: {0: 10531, 1: 9440, 2: 2520, 3: 160, 4: 40, 10: 1}
+[   29.2s] ip spectrum orbit 5 rep vs orbit 6: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 5 rep vs orbit 7: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 5 rep vs orbit 8: {0: 11732, 1: 9240, 2: 1720}
+[   29.2s] ip spectrum orbit 5 rep vs orbit 9: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 5 rep vs orbit 10: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 5 rep vs orbit 11: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.2s] ip spectrum orbit 5 rep vs orbit 12: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   29.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 13: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 14: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 15: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 16: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 17: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 18: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 19: {0: 9443, 1: 10760, 2: 2305, 3: 180, 5: 4}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.3s] ip spectrum orbit 5 rep vs orbit 20: {0: 9443, 1: 10760, 2: 2305, 3: 180, 5: 4}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.3s] ip spectrum orbit 5 rep vs orbit 21: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 22: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 23: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 24: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 25: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 26: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 27: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 28: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.3s] ip spectrum orbit 5 rep vs orbit 29: {0: 12332, 1: 8440, 2: 1920}
+[   29.3s] ip spectrum orbit 5 rep vs orbit 30: {0: 12632, 1: 8320, 2: 1600, 3: 120, 4: 20}
+[   29.3s] ip spectrum orbit 6 rep vs orbit 6: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   29.3s] ip spectrum orbit 6 rep vs orbit 7: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   29.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 8: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 9: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.4s] ip spectrum orbit 6 rep vs orbit 10: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 11: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 12: {0: 10180, 1: 10435, 2: 1995, 3: 75, 4: 5, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.4s] ip spectrum orbit 6 rep vs orbit 13: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 14: {0: 10672, 1: 10010, 2: 1900, 3: 110}
+[   29.4s] ip spectrum orbit 6 rep vs orbit 15: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 16: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 17: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 18: {0: 10520, 1: 10160, 2: 1940, 3: 70, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 19: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 20: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 21: {0: 10752, 1: 9970, 2: 1820, 3: 150}
+[   29.4s] ip spectrum orbit 6 rep vs orbit 22: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 23: {0: 10432, 1: 10280, 2: 1900, 3: 80}
+[   29.4s] ip spectrum orbit 6 rep vs orbit 24: {0: 9805, 1: 10980, 2: 1805, 3: 90, 4: 10, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.4s] ip spectrum orbit 6 rep vs orbit 25: {0: 10165, 1: 10535, 2: 1855, 3: 135, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.4s] ip spectrum orbit 6 rep vs orbit 26: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 27: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.4s] ip spectrum orbit 6 rep vs orbit 28: {0: 10500, 1: 10170, 2: 1960, 3: 60, 5: 2}
+[   29.4s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.5s] ip spectrum orbit 6 rep vs orbit 29: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.5s] ip spectrum orbit 6 rep vs orbit 30: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.5s] ip spectrum orbit 7 rep vs orbit 7: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   29.5s] ip spectrum orbit 7 rep vs orbit 8: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.5s] ip spectrum orbit 7 rep vs orbit 9: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.5s] ip spectrum orbit 7 rep vs orbit 10: {0: 10180, 1: 10435, 2: 1995, 3: 75, 4: 5, 5: 2}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.5s] ip spectrum orbit 7 rep vs orbit 11: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.5s] ip spectrum orbit 7 rep vs orbit 12: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.5s] ip spectrum orbit 7 rep vs orbit 13: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.5s] ip spectrum orbit 7 rep vs orbit 14: {0: 10752, 1: 9970, 2: 1820, 3: 150}
+[   29.5s] ip spectrum orbit 7 rep vs orbit 15: {0: 10500, 1: 10170, 2: 1960, 3: 60, 5: 2}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.5s] ip spectrum orbit 7 rep vs orbit 16: {0: 10165, 1: 10535, 2: 1855, 3: 135, 5: 2}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.5s] ip spectrum orbit 7 rep vs orbit 17: {0: 9805, 1: 10980, 2: 1805, 3: 90, 4: 10, 5: 2}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.5s] ip spectrum orbit 7 rep vs orbit 18: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.5s] ip spectrum orbit 7 rep vs orbit 19: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.5s] ip spectrum orbit 7 rep vs orbit 20: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   29.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 7 rep vs orbit 21: {0: 10432, 1: 10280, 2: 1900, 3: 80}
+[   29.6s] ip spectrum orbit 7 rep vs orbit 22: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 7 rep vs orbit 23: {0: 10672, 1: 10010, 2: 1900, 3: 110}
+[   29.6s] ip spectrum orbit 7 rep vs orbit 24: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 7 rep vs orbit 25: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 7 rep vs orbit 26: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 7 rep vs orbit 27: {0: 10400, 1: 10320, 2: 1900, 3: 70, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 7 rep vs orbit 28: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 7 rep vs orbit 29: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 7 rep vs orbit 30: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 8 rep vs orbit 8: {0: 10531, 1: 9440, 2: 2520, 3: 160, 4: 40, 10: 1}
+[   29.6s] ip spectrum orbit 8 rep vs orbit 9: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 8 rep vs orbit 10: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 8 rep vs orbit 11: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 8 rep vs orbit 12: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 8 rep vs orbit 13: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.6s] ip spectrum orbit 8 rep vs orbit 14: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   29.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.7s] ip spectrum orbit 8 rep vs orbit 15: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.7s] ip spectrum orbit 8 rep vs orbit 16: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.7s] ip spectrum orbit 8 rep vs orbit 17: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.7s] ip spectrum orbit 8 rep vs orbit 18: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.7s] ip spectrum orbit 8 rep vs orbit 19: {0: 12332, 1: 8440, 2: 1920}
+[   29.7s] ip spectrum orbit 8 rep vs orbit 20: {0: 12632, 1: 8320, 2: 1600, 3: 120, 4: 20}
+[   29.7s] ip spectrum orbit 8 rep vs orbit 21: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.7s] ip spectrum orbit 8 rep vs orbit 22: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.7s] ip spectrum orbit 8 rep vs orbit 23: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.7s] ip spectrum orbit 8 rep vs orbit 24: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.7s] ip spectrum orbit 8 rep vs orbit 25: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.7s] ip spectrum orbit 8 rep vs orbit 26: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.7s] ip spectrum orbit 8 rep vs orbit 27: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.7s] ip spectrum orbit 8 rep vs orbit 28: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.7s] ip spectrum orbit 8 rep vs orbit 29: {0: 9443, 1: 10760, 2: 2305, 3: 180, 5: 4}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.7s] ip spectrum orbit 8 rep vs orbit 30: {0: 9443, 1: 10760, 2: 2305, 3: 180, 5: 4}
+[   29.7s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.7s] ip spectrum orbit 9 rep vs orbit 9: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   29.8s] ip spectrum orbit 9 rep vs orbit 10: {0: 10432, 1: 10280, 2: 1900, 3: 80}
+[   29.8s] ip spectrum orbit 9 rep vs orbit 11: {0: 10400, 1: 10320, 2: 1900, 3: 70, 5: 2}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.8s] ip spectrum orbit 9 rep vs orbit 12: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.8s] ip spectrum orbit 9 rep vs orbit 13: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.8s] ip spectrum orbit 9 rep vs orbit 14: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.8s] ip spectrum orbit 9 rep vs orbit 15: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.8s] ip spectrum orbit 9 rep vs orbit 16: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.8s] ip spectrum orbit 9 rep vs orbit 17: {0: 10520, 1: 10160, 2: 1940, 3: 70, 5: 2}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.8s] ip spectrum orbit 9 rep vs orbit 18: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.8s] ip spectrum orbit 9 rep vs orbit 19: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.8s] ip spectrum orbit 9 rep vs orbit 20: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.8s] ip spectrum orbit 9 rep vs orbit 21: {0: 9805, 1: 10980, 2: 1805, 3: 90, 4: 10, 5: 2}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.8s] ip spectrum orbit 9 rep vs orbit 22: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.8s] ip spectrum orbit 9 rep vs orbit 23: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.8s] ip spectrum orbit 9 rep vs orbit 24: {0: 10500, 1: 10170, 2: 1960, 3: 60, 5: 2}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.8s] ip spectrum orbit 9 rep vs orbit 25: {0: 10752, 1: 9970, 2: 1820, 3: 150}
+[   29.8s] ip spectrum orbit 9 rep vs orbit 26: {0: 10672, 1: 10010, 2: 1900, 3: 110}
+[   29.8s] ip spectrum orbit 9 rep vs orbit 27: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   29.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.9s] ip spectrum orbit 9 rep vs orbit 28: {0: 10165, 1: 10535, 2: 1855, 3: 135, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.9s] ip spectrum orbit 9 rep vs orbit 29: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.9s] ip spectrum orbit 9 rep vs orbit 30: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.9s] ip spectrum orbit 10 rep vs orbit 10: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   29.9s] ip spectrum orbit 10 rep vs orbit 11: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.9s] ip spectrum orbit 10 rep vs orbit 12: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.9s] ip spectrum orbit 10 rep vs orbit 13: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.9s] ip spectrum orbit 10 rep vs orbit 14: {0: 10500, 1: 10170, 2: 1960, 3: 60, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.9s] ip spectrum orbit 10 rep vs orbit 15: {0: 10752, 1: 9970, 2: 1820, 3: 150}
+[   29.9s] ip spectrum orbit 10 rep vs orbit 16: {0: 9805, 1: 10980, 2: 1805, 3: 90, 4: 10, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.9s] ip spectrum orbit 10 rep vs orbit 17: {0: 10165, 1: 10535, 2: 1855, 3: 135, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   29.9s] ip spectrum orbit 10 rep vs orbit 18: {0: 10672, 1: 10010, 2: 1900, 3: 110}
+[   29.9s] ip spectrum orbit 10 rep vs orbit 19: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.9s] ip spectrum orbit 10 rep vs orbit 20: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.9s] ip spectrum orbit 10 rep vs orbit 21: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.9s] ip spectrum orbit 10 rep vs orbit 22: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   29.9s] ip spectrum orbit 10 rep vs orbit 23: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   29.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 10 rep vs orbit 24: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 10 rep vs orbit 25: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 10 rep vs orbit 26: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 10 rep vs orbit 27: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 10 rep vs orbit 28: {0: 10520, 1: 10160, 2: 1940, 3: 70, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 10 rep vs orbit 29: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 10 rep vs orbit 30: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 11 rep vs orbit 11: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   30.0s] ip spectrum orbit 11 rep vs orbit 12: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 11 rep vs orbit 13: {0: 10165, 1: 10535, 2: 1855, 3: 135, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.0s] ip spectrum orbit 11 rep vs orbit 14: {0: 10432, 1: 10280, 2: 1900, 3: 80}
+[   30.0s] ip spectrum orbit 11 rep vs orbit 15: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 11 rep vs orbit 16: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 11 rep vs orbit 17: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 11 rep vs orbit 18: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.0s] ip spectrum orbit 11 rep vs orbit 19: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 11 rep vs orbit 20: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 11 rep vs orbit 21: {0: 10672, 1: 10010, 2: 1900, 3: 110}
+[   30.0s] ip spectrum orbit 11 rep vs orbit 22: {0: 10180, 1: 10435, 2: 1995, 3: 75, 4: 5, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.0s] ip spectrum orbit 11 rep vs orbit 23: {0: 10752, 1: 9970, 2: 1820, 3: 150}
+[   30.0s] ip spectrum orbit 11 rep vs orbit 24: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 11 rep vs orbit 25: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.0s] ip spectrum orbit 11 rep vs orbit 26: {0: 9805, 1: 10980, 2: 1805, 3: 90, 4: 10, 5: 2}
+[   30.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.1s] ip spectrum orbit 11 rep vs orbit 27: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   30.1s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.1s] ip spectrum orbit 11 rep vs orbit 28: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   30.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.1s] ip spectrum orbit 11 rep vs orbit 29: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   30.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.1s] ip spectrum orbit 11 rep vs orbit 30: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   30.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.1s] ip spectrum orbit 12 rep vs orbit 12: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   30.1s] ip spectrum orbit 12 rep vs orbit 13: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   30.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.2s] ip spectrum orbit 12 rep vs orbit 14: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   30.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.2s] ip spectrum orbit 12 rep vs orbit 15: {0: 10400, 1: 10320, 2: 1900, 3: 70, 5: 2}
+[   30.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.2s] ip spectrum orbit 12 rep vs orbit 16: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   30.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.2s] ip spectrum orbit 12 rep vs orbit 17: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   30.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.2s] ip spectrum orbit 12 rep vs orbit 18: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   30.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.2s] ip spectrum orbit 12 rep vs orbit 19: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   30.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.2s] ip spectrum orbit 12 rep vs orbit 20: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   30.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.2s] ip spectrum orbit 12 rep vs orbit 21: {0: 10500, 1: 10170, 2: 1960, 3: 60, 5: 2}
+[   30.2s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.2s] ip spectrum orbit 12 rep vs orbit 22: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   30.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.2s] ip spectrum orbit 12 rep vs orbit 23: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   30.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.2s] ip spectrum orbit 12 rep vs orbit 24: {0: 10165, 1: 10535, 2: 1855, 3: 135, 5: 2}
+[   30.2s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.2s] ip spectrum orbit 12 rep vs orbit 25: {0: 9805, 1: 10980, 2: 1805, 3: 90, 4: 10, 5: 2}
+[   30.2s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.3s] ip spectrum orbit 12 rep vs orbit 26: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.3s] ip spectrum orbit 12 rep vs orbit 27: {0: 10432, 1: 10280, 2: 1900, 3: 80}
+[   30.3s] ip spectrum orbit 12 rep vs orbit 28: {0: 10752, 1: 9970, 2: 1820, 3: 150}
+[   30.3s] ip spectrum orbit 12 rep vs orbit 29: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.3s] ip spectrum orbit 12 rep vs orbit 30: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.3s] ip spectrum orbit 13 rep vs orbit 13: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   30.3s] ip spectrum orbit 13 rep vs orbit 14: {0: 10520, 1: 10160, 2: 1940, 3: 70, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.3s] ip spectrum orbit 13 rep vs orbit 15: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.3s] ip spectrum orbit 13 rep vs orbit 16: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.3s] ip spectrum orbit 13 rep vs orbit 17: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.3s] ip spectrum orbit 13 rep vs orbit 18: {0: 10500, 1: 10170, 2: 1960, 3: 60, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.3s] ip spectrum orbit 13 rep vs orbit 19: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.3s] ip spectrum orbit 13 rep vs orbit 20: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.3s] ip spectrum orbit 13 rep vs orbit 21: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.3s] ip spectrum orbit 13 rep vs orbit 22: {0: 9805, 1: 10980, 2: 1805, 3: 90, 4: 10, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.3s] ip spectrum orbit 13 rep vs orbit 23: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.3s] ip spectrum orbit 13 rep vs orbit 24: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.3s] ip spectrum orbit 13 rep vs orbit 25: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.3s] ip spectrum orbit 13 rep vs orbit 26: {0: 10180, 1: 10435, 2: 1995, 3: 75, 4: 5, 5: 2}
+[   30.3s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.3s] ip spectrum orbit 13 rep vs orbit 27: {0: 10752, 1: 9970, 2: 1820, 3: 150}
+[   30.4s] ip spectrum orbit 13 rep vs orbit 28: {0: 10672, 1: 10010, 2: 1900, 3: 110}
+[   30.4s] ip spectrum orbit 13 rep vs orbit 29: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.4s] ip spectrum orbit 13 rep vs orbit 30: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.4s] ip spectrum orbit 14 rep vs orbit 14: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   30.4s] ip spectrum orbit 14 rep vs orbit 15: {0: 10180, 1: 10435, 2: 1995, 3: 75, 4: 5, 5: 2}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.4s] ip spectrum orbit 14 rep vs orbit 16: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.4s] ip spectrum orbit 14 rep vs orbit 17: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.4s] ip spectrum orbit 14 rep vs orbit 18: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.4s] ip spectrum orbit 14 rep vs orbit 19: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.4s] ip spectrum orbit 14 rep vs orbit 20: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.4s] ip spectrum orbit 14 rep vs orbit 21: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.4s] ip spectrum orbit 14 rep vs orbit 22: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.4s] ip spectrum orbit 14 rep vs orbit 23: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.4s] ip spectrum orbit 14 rep vs orbit 24: {0: 10400, 1: 10320, 2: 1900, 3: 70, 5: 2}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.4s] ip spectrum orbit 14 rep vs orbit 25: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.4s] ip spectrum orbit 14 rep vs orbit 26: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.4s] ip spectrum orbit 14 rep vs orbit 27: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   30.4s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 14 rep vs orbit 28: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 14 rep vs orbit 29: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 14 rep vs orbit 30: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 15 rep vs orbit 15: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   30.5s] ip spectrum orbit 15 rep vs orbit 16: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.5s] ip spectrum orbit 15 rep vs orbit 17: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.5s] ip spectrum orbit 15 rep vs orbit 18: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 15 rep vs orbit 19: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 15 rep vs orbit 20: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 15 rep vs orbit 21: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 15 rep vs orbit 22: {0: 10520, 1: 10160, 2: 1940, 3: 70, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 15 rep vs orbit 23: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 15 rep vs orbit 24: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 15 rep vs orbit 25: {0: 10672, 1: 10010, 2: 1900, 3: 110}
+[   30.5s] ip spectrum orbit 15 rep vs orbit 26: {0: 10432, 1: 10280, 2: 1900, 3: 80}
+[   30.5s] ip spectrum orbit 15 rep vs orbit 27: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 15 rep vs orbit 28: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 15 rep vs orbit 29: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 15 rep vs orbit 30: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   30.5s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.5s] ip spectrum orbit 16 rep vs orbit 16: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   30.6s] ip spectrum orbit 16 rep vs orbit 17: {0: 10180, 1: 10435, 2: 1995, 3: 75, 4: 5, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.6s] ip spectrum orbit 16 rep vs orbit 18: {0: 10400, 1: 10320, 2: 1900, 3: 70, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 16 rep vs orbit 19: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 16 rep vs orbit 20: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 16 rep vs orbit 21: {0: 10520, 1: 10160, 2: 1940, 3: 70, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 16 rep vs orbit 22: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 16 rep vs orbit 23: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 16 rep vs orbit 24: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 16 rep vs orbit 25: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 16 rep vs orbit 26: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 16 rep vs orbit 27: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 16 rep vs orbit 28: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 16 rep vs orbit 29: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 16 rep vs orbit 30: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 17 rep vs orbit 17: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   30.6s] ip spectrum orbit 17 rep vs orbit 18: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 17 rep vs orbit 19: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 17 rep vs orbit 20: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 17 rep vs orbit 21: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 17 rep vs orbit 22: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.6s] ip spectrum orbit 17 rep vs orbit 23: {0: 10400, 1: 10320, 2: 1900, 3: 70, 5: 2}
+[   30.6s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.7s] ip spectrum orbit 17 rep vs orbit 24: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.7s] ip spectrum orbit 17 rep vs orbit 25: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.7s] ip spectrum orbit 17 rep vs orbit 26: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.7s] ip spectrum orbit 17 rep vs orbit 27: {0: 10672, 1: 10010, 2: 1900, 3: 110}
+[   30.7s] ip spectrum orbit 17 rep vs orbit 28: {0: 10432, 1: 10280, 2: 1900, 3: 80}
+[   30.7s] ip spectrum orbit 17 rep vs orbit 29: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.7s] ip spectrum orbit 17 rep vs orbit 30: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.7s] ip spectrum orbit 18 rep vs orbit 18: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   30.7s] ip spectrum orbit 18 rep vs orbit 19: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.7s] ip spectrum orbit 18 rep vs orbit 20: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.7s] ip spectrum orbit 18 rep vs orbit 21: {0: 9840, 1: 10905, 2: 1855, 3: 85, 4: 5, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.7s] ip spectrum orbit 18 rep vs orbit 22: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.7s] ip spectrum orbit 18 rep vs orbit 23: {0: 10165, 1: 10535, 2: 1855, 3: 135, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.7s] ip spectrum orbit 18 rep vs orbit 24: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.7s] ip spectrum orbit 18 rep vs orbit 25: {0: 10432, 1: 10280, 2: 1900, 3: 80}
+[   30.7s] ip spectrum orbit 18 rep vs orbit 26: {0: 10752, 1: 9970, 2: 1820, 3: 150}
+[   30.7s] ip spectrum orbit 18 rep vs orbit 27: {0: 10180, 1: 10435, 2: 1995, 3: 75, 4: 5, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.7s] ip spectrum orbit 18 rep vs orbit 28: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.7s] ip spectrum orbit 18 rep vs orbit 29: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   30.7s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.7s] ip spectrum orbit 18 rep vs orbit 30: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.8s] ip spectrum orbit 19 rep vs orbit 19: {0: 10531, 1: 9440, 2: 2520, 3: 160, 4: 40, 10: 1}
+[   30.8s] ip spectrum orbit 19 rep vs orbit 20: {0: 9443, 1: 10760, 2: 2305, 3: 180, 5: 4}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.8s] ip spectrum orbit 19 rep vs orbit 21: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.8s] ip spectrum orbit 19 rep vs orbit 22: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.8s] ip spectrum orbit 19 rep vs orbit 23: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.8s] ip spectrum orbit 19 rep vs orbit 24: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.8s] ip spectrum orbit 19 rep vs orbit 25: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.8s] ip spectrum orbit 19 rep vs orbit 26: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.8s] ip spectrum orbit 19 rep vs orbit 27: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.8s] ip spectrum orbit 19 rep vs orbit 28: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.8s] ip spectrum orbit 19 rep vs orbit 29: {0: 12632, 1: 8320, 2: 1600, 3: 120, 4: 20}
+[   30.8s] ip spectrum orbit 19 rep vs orbit 30: {0: 11732, 1: 9240, 2: 1720}
+[   30.8s] ip spectrum orbit 20 rep vs orbit 20: {0: 10531, 1: 9440, 2: 2520, 3: 160, 4: 40, 10: 1}
+[   30.8s] ip spectrum orbit 20 rep vs orbit 21: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.8s] ip spectrum orbit 20 rep vs orbit 22: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.8s] ip spectrum orbit 20 rep vs orbit 23: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.8s] ip spectrum orbit 20 rep vs orbit 24: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.8s] ip spectrum orbit 20 rep vs orbit 25: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   30.8s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.9s] ip spectrum orbit 20 rep vs orbit 26: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.9s] ip spectrum orbit 20 rep vs orbit 27: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.9s] ip spectrum orbit 20 rep vs orbit 28: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.9s] ip spectrum orbit 20 rep vs orbit 29: {0: 11732, 1: 9240, 2: 1720}
+[   30.9s] ip spectrum orbit 20 rep vs orbit 30: {0: 12332, 1: 8440, 2: 1920}
+[   30.9s] ip spectrum orbit 21 rep vs orbit 21: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   30.9s] ip spectrum orbit 21 rep vs orbit 22: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.9s] ip spectrum orbit 21 rep vs orbit 23: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.9s] ip spectrum orbit 21 rep vs orbit 24: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.9s] ip spectrum orbit 21 rep vs orbit 25: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.9s] ip spectrum orbit 21 rep vs orbit 26: {0: 10400, 1: 10320, 2: 1900, 3: 70, 5: 2}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.9s] ip spectrum orbit 21 rep vs orbit 27: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.9s] ip spectrum orbit 21 rep vs orbit 28: {0: 10180, 1: 10435, 2: 1995, 3: 75, 4: 5, 5: 2}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.9s] ip spectrum orbit 21 rep vs orbit 29: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.9s] ip spectrum orbit 21 rep vs orbit 30: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   30.9s] ip spectrum orbit 22 rep vs orbit 22: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   30.9s] ip spectrum orbit 22 rep vs orbit 23: {0: 10500, 1: 10170, 2: 1960, 3: 60, 5: 2}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   30.9s] ip spectrum orbit 22 rep vs orbit 24: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   30.9s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.0s] ip spectrum orbit 22 rep vs orbit 25: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   31.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.0s] ip spectrum orbit 22 rep vs orbit 26: {0: 10165, 1: 10535, 2: 1855, 3: 135, 5: 2}
+[   31.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   31.0s] ip spectrum orbit 22 rep vs orbit 27: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   31.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   31.0s] ip spectrum orbit 22 rep vs orbit 28: {0: 10400, 1: 10320, 2: 1900, 3: 70, 5: 2}
+[   31.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.0s] ip spectrum orbit 22 rep vs orbit 29: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   31.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.0s] ip spectrum orbit 22 rep vs orbit 30: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   31.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.0s] ip spectrum orbit 23 rep vs orbit 23: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   31.0s] ip spectrum orbit 23 rep vs orbit 24: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   31.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.0s] ip spectrum orbit 23 rep vs orbit 25: {0: 10520, 1: 10160, 2: 1940, 3: 70, 5: 2}
+[   31.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.0s] ip spectrum orbit 23 rep vs orbit 26: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   31.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   31.0s] ip spectrum orbit 23 rep vs orbit 27: {0: 9805, 1: 10980, 2: 1805, 3: 90, 4: 10, 5: 2}
+[   31.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   31.0s] ip spectrum orbit 23 rep vs orbit 28: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[   31.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.0s] ip spectrum orbit 23 rep vs orbit 29: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   31.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.0s] ip spectrum orbit 23 rep vs orbit 30: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   31.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.0s] ip spectrum orbit 24 rep vs orbit 24: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   31.1s] ip spectrum orbit 24 rep vs orbit 25: {0: 10180, 1: 10435, 2: 1995, 3: 75, 4: 5, 5: 2}
+[   31.1s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   31.1s] ip spectrum orbit 24 rep vs orbit 26: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[   31.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.1s] ip spectrum orbit 24 rep vs orbit 27: {0: 10520, 1: 10160, 2: 1940, 3: 70, 5: 2}
+[   31.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.1s] ip spectrum orbit 24 rep vs orbit 28: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   31.1s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   31.1s] ip spectrum orbit 24 rep vs orbit 29: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   31.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.1s] ip spectrum orbit 24 rep vs orbit 30: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   31.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.1s] ip spectrum orbit 25 rep vs orbit 25: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   31.1s] ip spectrum orbit 25 rep vs orbit 26: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   31.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.1s] ip spectrum orbit 25 rep vs orbit 27: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[   31.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.1s] ip spectrum orbit 25 rep vs orbit 28: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[   31.1s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   31.1s] ip spectrum orbit 25 rep vs orbit 29: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[   31.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.1s] ip spectrum orbit 25 rep vs orbit 30: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   31.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.1s] ip spectrum orbit 26 rep vs orbit 26: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   31.1s] ip spectrum orbit 26 rep vs orbit 27: {0: 10500, 1: 10170, 2: 1960, 3: 60, 5: 2}
+[   31.1s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   31.1s] ip spectrum orbit 26 rep vs orbit 28: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[   31.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.2s] ip spectrum orbit 26 rep vs orbit 29: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[   31.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.2s] ip spectrum orbit 26 rep vs orbit 30: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[   31.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.2s] ip spectrum orbit 27 rep vs orbit 27: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   31.2s] ip spectrum orbit 27 rep vs orbit 28: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[   31.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.2s] ip spectrum orbit 27 rep vs orbit 29: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   31.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.2s] ip spectrum orbit 27 rep vs orbit 30: {0: 9640, 1: 11020, 2: 1900, 3: 130, 5: 2}
+[   31.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.2s] ip spectrum orbit 28 rep vs orbit 28: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[   31.2s] ip spectrum orbit 28 rep vs orbit 29: {0: 9530, 1: 11100, 2: 1970, 3: 90, 5: 2}
+[   31.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.2s] ip spectrum orbit 28 rep vs orbit 30: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[   31.2s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[   31.2s] ip spectrum orbit 29 rep vs orbit 29: {0: 10531, 1: 9440, 2: 2520, 3: 160, 4: 40, 10: 1}
+[   31.2s] ip spectrum orbit 29 rep vs orbit 30: {0: 9443, 1: 10760, 2: 2305, 3: 180, 5: 4}
+[   31.2s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[   31.2s] ip spectrum orbit 30 rep vs orbit 30: {0: 10531, 1: 9440, 2: 2520, 3: 160, 4: 40, 10: 1}
+[   31.2s] BEST over pair differences: Gamma/theta 1.4444 norm 10.00 |s| 15.00
+[   31.2s] DONE extra4

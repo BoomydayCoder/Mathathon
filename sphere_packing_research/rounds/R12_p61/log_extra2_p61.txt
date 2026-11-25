@@ -1,0 +1,41 @@
+[    2.4s] p=61 setup ok: kappa=-1, rounding residuals (np.float64(1.2789769243681803e-13), np.float64(1.0231815394945443e-12), np.float64(9.947598300641403e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    2.4s] loaded saved basis; float logdet(B)/(p-1) = 9.526974266 vs log D = 9.526974266
+[    2.7s] modularity check: rounding residual 8.61e-06, exact B X B == r E: True, float log|det X| = 1.827e-11
+[    3.2s] SL_2(5): order 120, element orders {1: 1, 2: 1, 3: 20, 4: 30, 5: 24, 6: 20, 10: 24}
+[    3.2s] COMP p=61 SL_2(5): icosian 2a+2b (Q-irr dim 8) dim  16  glue g=2^8*3^16*5^8  log R_U=-3.760029 R_U=0.0232831   [complement dim 104: log R=-21.1160]
+[    3.2s] COMP p=61 SL_2(5): degree-4 faithful         dim  32  glue g=3^16*5^32  log R_U=-26.783623 R_U=2.33357e-12   [complement dim 88: log R=-41.7862]
+[    3.2s] COMP p=61 SL_2(5): degree-6 faithful         dim  72  glue g=2^8*5^40  log R_U=-33.143249 R_U=4.0371e-15   [complement dim 48: log R=-25.9407]
+[    3.4s] SL_2(3)<SL_2(5): order 24, element orders {1: 1, 2: 1, 3: 8, 4: 6, 6: 8}
+[    3.4s]    operator relations (st)^2 = s^3 = t^3 = -1 verified exactly on Lambda
+[    3.4s] COMP p=61 SL_2(3)<SL_2(5): Hurwitz 2 (rational char) dim  40  glue g=2^16*3^40  log R_U=-11.090355 R_U=1.52588e-05   [complement dim 80: log R=-22.5976]
+[    3.4s] COMP p=61 SL_2(3)<SL_2(5): 2'+2'' (Q(omega)) dim  80  glue g=2^16*3^40  log R_U=-22.597638 R_U=1.53451e-10   [complement dim 40: log R=-11.0904]
+[    3.4s] C_6<SL_2(3)<SL_2(5) (cyclic order 6): eigen-orders present with dims: {2: 40, 6: 80}
+[    3.5s] COMP p=61 C_6<SL_2(3)<SL_2(5): eigen-orders {2} dim  40  glue g=3^40  log R_U=+0.000000 R_U=1   [complement dim 80: log R=-11.5073]
+[    3.5s] COMP p=61 C_6<SL_2(3)<SL_2(5): eigen-orders {6} dim  80  glue g=3^40  log R_U=-11.507283 R_U=1.00566e-05   [complement dim 40: log R=+0.0000]
+[    3.5s] C_10<SL_2(5) (cyclic order 10): eigen-orders present with dims: {2: 24, 10: 96}
+[    3.5s] COMP p=61 C_10<SL_2(5): eigen-orders {2}     dim  24  glue g=5^24  log R_U=-0.000000 R_U=1   [complement dim 96: log R=-17.2047]
+[    3.5s] COMP p=61 C_10<SL_2(5): eigen-orders {10}    dim  96  glue g=5^24  log R_U=-17.204729 R_U=3.3735e-08   [complement dim 24: log R=-0.0000]
+[    3.5s] C_4<SL_2(5) (cyclic order 4): eigen-orders present with dims: {4: 120}
+[    3.6s] COMP p=61 SL_2(5)>SL_2(3): [icosian 2a+2b (Q-irr dim 8)] & [Hurwitz 2 (rational char)] dim  16  glue g=2^8*3^16*5^8  log R_U=-3.760029 R_U=0.0232831   [complement dim 104: log R=-21.1160]
+[    3.6s] COMP p=61 SL_2(5)>SL_2(3): [degree-4 faithful] & [2'+2'' (Q(omega))] dim  32  glue g=3^16*5^32  log R_U=-26.783623 R_U=2.33357e-12   [complement dim 88: log R=-41.7862]
+[    3.6s] COMP p=61 SL_2(5)>SL_2(3): [degree-6 faithful] & [Hurwitz 2 (rational char)] dim  24  glue g=2^16*3^24*5^8  log R_U=-11.706043 R_U=8.24385e-06   [complement dim 96: log R=-28.9108]
+[    3.6s] COMP p=61 SL_2(5)>SL_2(3): [degree-6 faithful] & [2'+2'' (Q(omega))] dim  48  glue g=2^16*3^24*5^32  log R_U=-44.977108 R_U=2.9288e-20   [complement dim 72: log R=-52.1796]
+[    3.6s] COMP p=61 SL_2(5)>C_6: [icosian 2a+2b (Q-irr dim 8)] & [(6,)] dim  16  glue g=2^8*3^16*5^8  log R_U=-3.760029 R_U=0.0232831   [complement dim 104: log R=-21.1160]
+[    3.6s] COMP p=61 SL_2(5)>C_6: [degree-4 faithful] & [(2,)] dim  16  glue g=3^16*5^16  log R_U=-11.090355 R_U=1.52588e-05   [complement dim 104: log R=-28.4463]
+[    3.6s] COMP p=61 SL_2(5)>C_6: [degree-4 faithful] & [(6,)] dim  16  glue g=3^16*5^16  log R_U=-11.090355 R_U=1.52588e-05   [complement dim 104: log R=-28.4463]
+[    3.6s] COMP p=61 SL_2(5)>C_6: [degree-6 faithful] & [(2,)] dim  24  glue g=3^24*5^16  log R_U=-13.491192 R_U=1.38309e-06   [complement dim 96: log R=-30.6959]
+[    3.7s] COMP p=61 SL_2(5)>C_6: [degree-6 faithful] & [(6,)] dim  48  glue g=2^8*3^24*5^24  log R_U=-26.556427 R_U=2.9288e-12   [complement dim 72: log R=-33.7589]
+[    3.7s] COMP p=61 SL_2(5)>C_10: [icosian 2a+2b (Q-irr dim 8)] & [(10,)] dim  16  glue g=2^8*3^16*5^8  log R_U=-3.760029 R_U=0.0232831   [complement dim 104: log R=-21.1160]
+[    3.7s] COMP p=61 SL_2(5)>C_10: [degree-4 faithful] & [(10,)] dim  32  glue g=3^16*5^32  log R_U=-26.783623 R_U=2.33357e-12   [complement dim 88: log R=-41.7862]
+[    3.7s] COMP p=61 SL_2(5)>C_10: [degree-6 faithful] & [(2,)] dim  24  glue g=5^24  log R_U=-0.000000 R_U=1   [complement dim 96: log R=-17.2047]
+[    3.7s] COMP p=61 SL_2(5)>C_10: [degree-6 faithful] & [(10,)] dim  48  glue g=2^8*5^40  log R_U=-25.940739 R_U=5.42101e-12   [complement dim 72: log R=-33.1432]
+[    3.7s] COMP p=61 SL_2(3)>C_6: [Hurwitz 2 (rational char)] & [(6,)] dim  40  glue g=2^16*3^40  log R_U=-11.090355 R_U=1.52588e-05   [complement dim 80: log R=-22.5976]
+[    3.7s] COMP p=61 SL_2(3)>C_6: [2'+2'' (Q(omega))] & [(2,)] dim  40  glue g=3^40  log R_U=+0.000000 R_U=1   [complement dim 80: log R=-11.5073]
+[    3.7s] COMP p=61 SL_2(3)>C_6: [2'+2'' (Q(omega))] & [(6,)] dim  40  glue g=2^16*3^40  log R_U=-11.090355 R_U=1.52588e-05   [complement dim 80: log R=-22.5976]
+[    3.8s] COMP p=61 SL_2(5)>SL_2(3)>C_6: [icosian 2a+2b (Q-irr dim 8)] & [Hurwitz 2 (rational char)] & [(6,)] dim  16  glue g=2^8*3^16*5^8  log R_U=-3.760029 R_U=0.0232831   [complement dim 104: log R=-21.1160]
+[    3.8s] COMP p=61 SL_2(5)>SL_2(3)>C_6: [degree-4 faithful] & [2'+2'' (Q(omega))] & [(2,)] dim  16  glue g=3^16*5^16  log R_U=-11.090355 R_U=1.52588e-05   [complement dim 104: log R=-28.4463]
+[    3.8s] COMP p=61 SL_2(5)>SL_2(3)>C_6: [degree-4 faithful] & [2'+2'' (Q(omega))] & [(6,)] dim  16  glue g=3^16*5^16  log R_U=-11.090355 R_U=1.52588e-05   [complement dim 104: log R=-28.4463]
+[    3.8s] COMP p=61 SL_2(5)>SL_2(3)>C_6: [degree-6 faithful] & [Hurwitz 2 (rational char)] & [(6,)] dim  24  glue g=2^16*3^24*5^8  log R_U=-11.706043 R_U=8.24385e-06   [complement dim 96: log R=-28.9108]
+[    3.8s] COMP p=61 SL_2(5)>SL_2(3)>C_6: [degree-6 faithful] & [2'+2'' (Q(omega))] & [(2,)] dim  24  glue g=3^24*5^16  log R_U=-13.491192 R_U=1.38309e-06   [complement dim 96: log R=-30.6959]
+[    3.8s] COMP p=61 SL_2(5)>SL_2(3)>C_6: [degree-6 faithful] & [2'+2'' (Q(omega))] & [(6,)] dim  24  glue g=2^16*3^24*5^16  log R_U=-24.581547 R_U=2.11043e-11   [complement dim 96: log R=-41.7863]
+[    3.8s] DONE extra2 61

@@ -1,0 +1,30 @@
+[    1.9s] p=61 setup ok: kappa=-1, rounding residuals (np.float64(1.2789769243681803e-13), np.float64(1.0231815394945443e-12), np.float64(9.947598300641403e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    1.9s] loaded saved basis; float logdet(B)/(p-1) = 9.526974266 vs log D = 9.526974266
+[    3.2s] split torus C_60 (cyclic order 60): eigen-orders present with dims: {4: 8, 12: 16, 20: 32, 60: 64}
+[    3.2s] COMP p=61 split torus C_60: eigen-orders {4} dim   8  glue g=3^8*5^8  log R_U=+0.000000 R_U=1   [complement dim 112: log R=-13.9372]
+[    3.2s] COMP p=61 split torus C_60: eigen-orders {12} dim  16  glue g=3^8*5^16  log R_U=-2.301457 R_U=0.100113   [complement dim 104: log R=-19.6574]
+[    3.2s] COMP p=61 split torus C_60: eigen-orders {20} dim  32  glue g=3^32*5^8  log R_U=-5.734910 R_U=0.00323117   [complement dim 88: log R=-20.7375]
+[    3.2s] COMP p=61 split torus C_60: eigen-orders {60} dim  64  glue g=3^32*5^16  log R_U=-20.675646 R_U=1.04877e-09   [complement dim 56: log R=-18.2268]
+[    3.3s] COMP p=61 split torus C_60: eigen-orders {4,12} dim  24  glue g=5^24  log R_U=-0.000000 R_U=1   [complement dim 96: log R=-17.2047]
+[    3.3s] COMP p=61 split torus C_60: eigen-orders {4,20} dim  40  glue g=3^40  log R_U=+0.000000 R_U=1   [complement dim 80: log R=-11.5073]
+[    3.3s] COMP p=61 split torus C_60: eigen-orders {4,60} dim  72  glue g=3^40*5^24  log R_U=-45.791557 R_U=1.29712e-20   [complement dim 48: log R=-38.5890]
+[    3.3s] COMP p=61 split torus C_60: eigen-orders {12,20} dim  48  glue g=3^40*5^24  log R_U=-38.589046 R_U=1.74177e-17   [complement dim 72: log R=-45.7916]
+[    3.3s] COMP p=61 split torus C_60: eigen-orders {12,60} dim  80  glue g=3^40  log R_U=-11.507283 R_U=1.00566e-05   [complement dim 40: log R=+0.0000]
+[    3.3s] COMP p=61 split torus C_60: eigen-orders {20,60} dim  96  glue g=5^24  log R_U=-17.204729 R_U=3.3735e-08   [complement dim 24: log R=-0.0000]
+[    3.3s] COMP p=61 split torus C_60: eigen-orders {4,12,20} dim  56  glue g=3^32*5^16  log R_U=-18.226757 R_U=1.214e-08   [complement dim 64: log R=-20.6756]
+[    3.3s] COMP p=61 split torus C_60: eigen-orders {4,12,60} dim  88  glue g=3^32*5^8  log R_U=-20.737463 R_U=9.85903e-10   [complement dim 32: log R=-5.7349]
+[    3.3s] COMP p=61 split torus C_60: eigen-orders {4,20,60} dim 104  glue g=3^8*5^16  log R_U=-19.657417 R_U=2.9033e-09   [complement dim 16: log R=-2.3015]
+[    3.3s] COMP p=61 split torus C_60: eigen-orders {12,20,60} dim 112  glue g=3^8*5^8  log R_U=-13.937200 R_U=8.85423e-07   [complement dim 8: log R=+0.0000]
+[    9.3s]    saturated basis rank 40: float logdet 234.483977 vs log(g D^{k/2}) = 234.483977 ok=True exact=True; diag(B) min 900 max 2250
+[    9.7s]    t=2.786 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 7.50e+06
+[   10.0s]    t=2.886 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 1.64e+07
+[   10.4s]    t=2.986 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 2.73e+07
+[   11.0s]    t=3.086 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 4.14e+07
+[   11.2s]    t=3.186 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 4.65e+07
+[   11.5s]    t=3.286 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 5.28e+07
+[   11.6s]    t=3.386 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 5.49e+07
+[   11.7s]    t=3.486 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 5.76e+07
+[   11.8s]    t=3.586 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 6.11e+07
+[   11.9s]    t=3.686 done: best so far Gamma/theta=1.44000, violator hits 0, complete=True, nodes 6.45e+07
+[   11.9s] p61 Fix(C_3) rank 40, t-points 64..74 rank 40: t-grid 10/74 complete=True minGamma=21.245902 theta=14.754098 ratio=1.440000 (b=9900,e=-76860) violator hits=0 border hits=0 nodes=6.45e+07
+[   11.9s] DONE extra5

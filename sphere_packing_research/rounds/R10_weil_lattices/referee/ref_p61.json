@@ -1,0 +1,67 @@
+{
+ "A_gram": {
+  "shape": [
+   120,
+   120
+  ],
+  "dtype": "int64",
+  "symmetric": true,
+  "posdef_exact_leading_minors": true,
+  "det": "178131689628822158288561426223956012971709029425181130992103882398077089726102125321351064490571661442671987729449583180356666699252735405470848465561290072455852047324656132554326151212945267562942609245097737302732099351487704552710056304931640625",
+  "D": 13725,
+  "det_is_D_pow_p-1": true,
+  "M=B^-1E_integral_exact(BM==E)": true,
+  "M^2==pI_exact": true,
+  "E B^-1 E == pB (follows)": true,
+  "(I+M)/2 integral (O_F acts)": true,
+  "B even diag": true,
+  "min diag B": 900
+ },
+ "B_gram": {
+  "shape": [
+   120,
+   120
+  ],
+  "dtype": "int64",
+  "symmetric": true,
+  "posdef_exact_leading_minors": true,
+  "det": "178131689628822158288561426223956012971709029425181130992103882398077089726102125321351064490571661442671987729449583180356666699252735405470848465561290072455852047324656132554326151212945267562942609245097737302732099351487704552710056304931640625",
+  "D": 13725,
+  "det_is_D_pow_p-1": true,
+  "M=B^-1E_integral_exact(BM==E)": true,
+  "M^2==pI_exact": true,
+  "E B^-1 E == pB (follows)": true,
+  "(I+M)/2 integral (O_F acts)": true,
+  "B even diag": true,
+  "min diag B": 900
+ },
+ "A_vs_B_same_det": true,
+ "A_gram_matches_embedding": [
+  7.73070496506989e-12,
+  4.0756731323199347e-11
+ ],
+ "A_G_structure_exact": {
+  "S isometry B,E": true,
+  "T isometry B,E": true,
+  "S^2=-I": true,
+  "(ST)^3=-I": true,
+  "(ST)^3=+I": false,
+  "T^p=I": true,
+  "M commutes with S,T": false
+ },
+ "A_G_integrality_defect": [
+  1.6072476682893466e-11,
+  1.793409865058493e-11,
+  1.6207035713478035e-12,
+  2.2297719226571644e-12
+ ],
+ "torus_word_defect": 1.647201488872681e-14,
+ "F_H_fixed_defect": 8.566098688732178e-13,
+ "detB_FH": "90945137716272125244140625",
+ "detB_FH_equals_r8D4": true,
+ "commutant_integral_defect": 2.758326900220709e-11,
+ "commutant_exact_ok": true,
+ "order_closed_defect": 4.320099833421409e-12,
+ "order_disc": "13845841",
+ "order_maximal_by_disc": true
+}

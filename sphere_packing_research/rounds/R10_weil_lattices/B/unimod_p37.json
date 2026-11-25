@@ -1,0 +1,22 @@
+{
+ "p": 37,
+ "eps_xy_sign": [
+  12,
+  2,
+  -4
+ ],
+ "Q_exact_integral": true,
+ "even": true,
+ "diag_min": 36,
+ "symmetric": true,
+ "logdet_float": 9.165646019937412e-11,
+ "det_exact": "1",
+ "lll_diag_min": 12,
+ "enum": {
+  "bound": 4.000001,
+  "pairs_found": 0,
+  "flag": 1,
+  "nodes": 6000000001,
+  "minval": null
+ }
+}

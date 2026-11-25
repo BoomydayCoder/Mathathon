@@ -1,0 +1,24 @@
+[    0.1s] p=61 relations: |S^2+I|=2.2e-16 |(ST)^3-I|=9.2e-16 |(ST)^3+I|=2.0e+00 |T^p-I|=4.3e-14 unitarity=2.2e-16
+[    3.2s] orbit size 15128 (|G|=226920, |G|/|H|=15128)
+[    3.3s] H-generator maps orbit sample into orbit: True
+[    5.9s] Gram B integer residual 6.37e-12; E integer residual 4.55e-11; max|B|=4320, diag min/max 900/4320
+[    6.2s] check E B^-1 E = p B: residual 8.44e-06
+[    6.2s] O_F acts ((1+sqrt p)/2 integral matrix): max frac = 4.92e-08; sqrt p integral: 9.84e-08
+[    6.7s] det B = 178131689628822158288561426223956012971709029425181130992103882398077089726102125321351064490571661442671987729449583180356666699252735405470848465561290072455852047324656132554326151212945267562942609245097737302732099351487704552710056304931640625
+[    6.7s] D = det^(1/(p-1)) = 13725.0000000000; theta_p = 14.754098
+[    6.7s] det B factorisation: {3: 120, 5: 120, 61: 60} cofactor 1
+[    6.7s] EXACT: det B = D^(p-1) with D = 13725
+[    6.7s] EXACT: b = x B x^T = 900, e = x E x^T = 0, N = p b^2 - e^2 = 49410000, threshold (p-1)^2 D = 49410000, violator: False; Gamma = N/(4pD) = 14.7540983607, theta = 14.7540983607, ratio 1.0000000000
+[    6.7s] embedding check: m_plus(w) = 450.00000000, m_minus(w) = 450.00000000, product/D = 14.7540983607; from (b,e): 450.00000000, 450.00000000
+[    8.3s] v0: B = 900, E = 0 (m_plus = m_minus = 450.0)
+[    8.3s] EXACT order test: det_B(Lambda^H) * 4^4 * 2^8 == p^4 * b0^8 : True   (i.e. det of Tr nrd form = (p/4)^4; valid since E(v0,v0) = 0)
+[    8.3s] EXACT calibration: det_B(Lambda^H) == r^8 D^4 : True
+[   35.8s] cond of chosen orbit basis: 21.99
+[   37.6s] w in terms of orbit vectors: residual 1.25e-14
+[   37.9s] path reconstruction check (g_i v0 = orbit vector): 0.00e+00
+[   38.5s] O.w inside Lambda: coordinates integral, max frac = 8.24e-09
+[   38.6s] EXACT: det_B of the rank-8 sublattice O.w = 90945137716272125244140625; predicted ((p/4) m+ m-)^4 = (N/16)^4 = 5960180545373610000000000000000/65536 -> equal: True
+[   38.6s] EXACT: r^8 D^4 = 90945137716272125244140625;  R_U >= r^8 D^4 / det_B(O.w) = 1.00000000  (>1 means unstable)
+[   38.6s] rank of O.w = 8, with w added: 8
+[   42.4s] equivariance check |delta(S w) - S delta(w)| = 2.02e-12
+[   42.4s] certificate written

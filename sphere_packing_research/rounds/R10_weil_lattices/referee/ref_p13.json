@@ -1,0 +1,67 @@
+{
+ "A_gram": {
+  "shape": [
+   24,
+   24
+  ],
+  "dtype": "int64",
+  "symmetric": true,
+  "posdef_exact_leading_minors": true,
+  "det": "6580067382037190942729361",
+  "D": 117,
+  "det_is_D_pow_p-1": true,
+  "M=B^-1E_integral_exact(BM==E)": true,
+  "M^2==pI_exact": true,
+  "E B^-1 E == pB (follows)": true,
+  "(I+M)/2 integral (O_F acts)": true,
+  "B even diag": true,
+  "min diag B": 36
+ },
+ "B_gram": {
+  "shape": [
+   24,
+   24
+  ],
+  "dtype": "int64",
+  "symmetric": true,
+  "posdef_exact_leading_minors": true,
+  "det": "6580067382037190942729361",
+  "D": 117,
+  "det_is_D_pow_p-1": true,
+  "M=B^-1E_integral_exact(BM==E)": true,
+  "M^2==pI_exact": true,
+  "E B^-1 E == pB (follows)": true,
+  "(I+M)/2 integral (O_F acts)": true,
+  "B even diag": true,
+  "min diag B": 36
+ },
+ "A_vs_B_same_det": true,
+ "A_gram_matches_embedding": [
+  3.552713678800501e-14,
+  1.2878587085651816e-13
+ ],
+ "A_G_structure_exact": {
+  "S isometry B,E": true,
+  "T isometry B,E": true,
+  "S^2=-I": true,
+  "(ST)^3=-I": true,
+  "(ST)^3=+I": false,
+  "T^p=I": true,
+  "M commutes with S,T": false
+ },
+ "A_G_integrality_defect": [
+  8.215650382226158e-15,
+  1.1102230246251565e-14,
+  4.872838244018851e-15,
+  5.329070518200751e-15
+ ],
+ "torus_word_defect": 1.1837099516544406e-15,
+ "F_H_fixed_defect": 3.4542034091043054e-15,
+ "detB_FH": "1229457398481",
+ "detB_FH_equals_r8D4": true,
+ "commutant_integral_defect": 4.5075054799781356e-14,
+ "commutant_exact_ok": true,
+ "order_closed_defect": 4.263256414560601e-14,
+ "order_disc": "28561",
+ "order_maximal_by_disc": true
+}

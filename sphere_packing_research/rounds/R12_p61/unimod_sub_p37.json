@@ -1,0 +1,100 @@
+[
+ {
+  "label": "split torus C_36: eigen-orders {4}",
+  "rank": 8,
+  "t_sign": 1,
+  "note": "no vector of unimodular norm <= 14 found (or overflow)"
+ },
+ {
+  "label": "split torus C_36: eigen-orders {4}",
+  "rank": 8,
+  "t_sign": -1,
+  "note": "no vector of unimodular norm <= 14 found (or overflow)"
+ },
+ {
+  "label": "split torus C_36: eigen-orders {12}",
+  "rank": 16,
+  "t_sign": 1,
+  "bound": 12,
+  "min_norm": 11.999999999999961,
+  "n_pairs_at_bound": 360,
+  "nodes": 3930,
+  "hist_q_abs_s": {
+   "(12, 0.0)": 288,
+   "(12, 30.0)": 72
+  },
+  "min_gamma_over_theta": 1.3333333333332815,
+  "s_integrality": 1.3500311979441904e-13
+ },
+ {
+  "label": "split torus C_36: eigen-orders {12}",
+  "rank": 16,
+  "t_sign": -1,
+  "bound": 12,
+  "min_norm": 11.999999999999961,
+  "n_pairs_at_bound": 360,
+  "nodes": 3905,
+  "hist_q_abs_s": {
+   "(12, 0.0)": 288,
+   "(12, 30.0)": 72
+  },
+  "min_gamma_over_theta": 1.3333333333332815,
+  "s_integrality": 1.3500311979441904e-13
+ },
+ {
+  "label": "SL_2(3): Hurwitz 2 (rational char)",
+  "rank": 24,
+  "t_sign": 1,
+  "bound": 8,
+  "min_norm": 5.999999999999975,
+  "n_pairs_at_bound": 24,
+  "nodes": 1719,
+  "hist_q_abs_s": {
+   "(6, 9.0)": 24
+  },
+  "min_gamma_over_theta": 0.7777777777777645,
+  "s_integrality": 8.348877145181177e-14
+ },
+ {
+  "label": "SL_2(3): Hurwitz 2 (rational char)",
+  "rank": 24,
+  "t_sign": -1,
+  "bound": 8,
+  "min_norm": 5.999999999999975,
+  "n_pairs_at_bound": 24,
+  "nodes": 5726,
+  "hist_q_abs_s": {
+   "(6, 9.0)": 24
+  },
+  "min_gamma_over_theta": 0.7777777777777645,
+  "s_integrality": 8.348877145181177e-14
+ },
+ {
+  "label": "split torus C_36: eigen-orders {4,12}",
+  "rank": 24,
+  "t_sign": 1,
+  "bound": 8,
+  "min_norm": 5.999999999999975,
+  "n_pairs_at_bound": 72,
+  "nodes": 19179,
+  "hist_q_abs_s": {
+   "(6, 9.0)": 72
+  },
+  "min_gamma_over_theta": 0.7777777777777645,
+  "s_integrality": 8.348877145181177e-14
+ },
+ {
+  "label": "split torus C_36: eigen-orders {4,12}",
+  "rank": 24,
+  "t_sign": -1,
+  "bound": 8,
+  "min_norm": 5.999999999999975,
+  "n_pairs_at_bound": 72,
+  "nodes": 17903,
+  "hist_q_abs_s": {
+   "(6, 9.0)": 72
+  },
+  "min_gamma_over_theta": 0.7777777777777645,
+  "s_integrality": 8.348877145181177e-14
+ }
+]

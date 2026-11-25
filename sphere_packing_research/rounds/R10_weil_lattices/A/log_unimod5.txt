@@ -1,0 +1,1 @@
+[    0.0s] p=5: det-1 member at t=log(eps)=0.4812: det=1.000000; vectors (pairs) with norm <= 2.0: 120 (flag 0, nodes 368); min norm 1.9999999999999991; count at min: 120

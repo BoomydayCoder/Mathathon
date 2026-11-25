@@ -1,24 +1,26 @@
 [    0.0s] p=17 relations: |S^2+I|=4.8e-16 |(ST)^3-I|=2.5e-15 |(ST)^3+I|=2.0e+00 |T^p-I|=1.6e-14 unitarity=2.9e-16
 [    0.0s] orbit size 1632 (|G|=4896, |G|/|H|=1632)
 [    0.0s] H-generator maps orbit sample into orbit: True
-[    1.1s] rank of orbit sample = 32 (expected 32); R diag at rank-1: 2.760e+00, next: 2.190e-14
-[    1.1s] all orbit vectors in the 32-dim span: residual 8.27e-15
-[    1.1s] Gram of M integer residual 6.39e-14
-[    1.2s] det G_M has 45 digits; adjugate verified exactly
-[    1.2s] HNF round 1: generators used 128, index so far 48140, prime steps [2, 2, 5, 29, 83], orbit vectors not yet integral: 0
-[    1.2s] Gram B integer residual 2.73e-12; E integer residual 1.02e-11; max|B|=54, diag min/max 36/54
-[    1.2s] check E B^-1 E = p B: residual 1.62e-11
-[    1.2s] O_F acts ((1+sqrt p)/2 integral matrix): max frac = 2.44e-12; sqrt p integral: 4.88e-12
+[    1.0s] rank of orbit sample = 32 (expected 32); R diag at rank-1: 2.760e+00, next: 2.190e-14
+[    1.0s] all orbit vectors in the 32-dim span: residual 8.27e-15
+[    1.0s] Gram of M integer residual 6.39e-14
+[    1.1s] det G_M has 45 digits; adjugate verified exactly
+[    1.2s] cond(Br) = 7.638e+01
+[    1.2s] HNF round 1: generators used 128, index so far 48140, prime steps [2, 2, 5, 29, 83], orbit vectors not yet integral: 0; max|Ccur|=1.000e+00, Gram diag min/max 36.000/54.000, Gram int resid 1.12e-13, frac of gens max 2.89e-14, frac hist [1632    0    0    0    0]
+[    1.2s] Gram B integer residual 1.21e-13; E integer residual 3.08e-13; max|B|=54, diag min/max 36/54
+[    1.2s] check E B^-1 E = p B: residual 1.34e-11
+[    1.2s] O_F acts ((1+sqrt p)/2 integral matrix): max frac = 2.03e-13; sqrt p integral: 4.05e-13
 [    1.2s] det B = 90170170959203891606593835341723521
 [    1.2s] D = det^(1/(p-1)) = 153.0000000000; theta_p = 3.764706
 [    1.2s] det B factorisation: {3: 32, 17: 16} cofactor 1
 [    1.2s] EXACT check det(B) * index^2 == det(G_M): True
-[    1.3s] check: orbit vectors integral in basis, max frac = 4.16e-12
-[    1.3s] check: S*basis integral, max frac = 2.97e-12, |det|=1.000000
-[    1.3s] check: T*basis integral, max frac = 3.45e-12, |det|=1.000000
-[    1.3s] fixed lattice of H (order 3): rank 8, saturated True
-[    1.3s] v0: m_plus=18.000000 m_minus=18.000000 B=36 Gamma(v0)=2.117647
-[    1.3s] order test: det(Tr nrd form on Lambda^H) = 326.25390625; maximal iff = (p/4)^4 = 326.25390625; ratio = 1.00000000
-[    1.3s] calibration H-line: det_B(Lambda^H) = 3595305184641; r^8 D^4 = 35912501231615.976562; R_U = 9.98872123
-[    1.4s] [p=17 H-fixed (order 3)] rank 8: grid 43/43 t-values in [-2.0947,2.0947], bound Q_t<= 48.0600, vectors enumerated 96, nodes 1568, flags 0, min Gamma = 2.11764706 (theta=3.76470588, ratio 0.562500), violators (distinct found) 6
-[    1.5s] done
+[    1.2s] check: orbit vectors integral in basis, max frac = 1.87e-13
+[    1.2s] check: S*basis integral, max frac = 9.15e-14, |det|=1.000000
+[    1.2s] check: T*basis integral, max frac = 1.02e-13, |det|=1.000000
+[    1.2s] fixed lattice of H (order 3): rank 8, saturated True
+[    1.2s] v0: m_plus=18.000000 m_minus=18.000000 B=36 Gamma(v0)=2.117647
+[    1.2s] order test: det(Tr nrd form on Lambda^H) = 326.25390625; maximal iff = (p/4)^4 = 326.25390625; ratio = 1.00000000
+[    1.2s] calibration H-line: det_B(Lambda^H) = 3595305184641; r^8 D^4 = 35912501231615.976562; R_U = 9.98872123
+[    1.3s] [p=17 H-fixed (order 3)] rank 8: grid 43/43 t-values in [-2.0947,2.0947], bound Q_t<= 48.0600, vectors enumerated 96, nodes 1634, flags 0, min Gamma = 2.11764706 (theta=3.76470588, ratio 0.562500), violators (distinct found) 6
+[    1.3s] done
+exit 0

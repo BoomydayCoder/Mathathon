@@ -1,0 +1,112 @@
+{
+ "A_gram": {
+  "shape": [
+   56,
+   56
+  ],
+  "dtype": "int64",
+  "symmetric": true,
+  "posdef_exact_leading_minors": true,
+  "det": "18734158142789987420831676389030161904415521754591320577854761908477211572216969705726961",
+  "D": 1421,
+  "det_is_D_pow_p-1": true,
+  "M=B^-1E_integral_exact(BM==E)": true,
+  "M^2==pI_exact": true,
+  "E B^-1 E == pB (follows)": true,
+  "(I+M)/2 integral (O_F acts)": true,
+  "B even diag": true,
+  "min diag B": 196
+ },
+ "B_gram": {
+  "shape": [
+   56,
+   56
+  ],
+  "dtype": "int64",
+  "symmetric": true,
+  "posdef_exact_leading_minors": true,
+  "det": "18734158142789987420831676389030161904415521754591320577854761908477211572216969705726961",
+  "D": 1421,
+  "det_is_D_pow_p-1": true,
+  "M=B^-1E_integral_exact(BM==E)": true,
+  "M^2==pI_exact": true,
+  "E B^-1 E == pB (follows)": true,
+  "(I+M)/2 integral (O_F acts)": true,
+  "B even diag": true,
+  "min diag B": 196
+ },
+ "A_vs_B_same_det": true,
+ "viol_A/violator_p29.json": {
+  "b": 224,
+  "e": 812,
+  "N": 795760,
+  "THR": 1114064,
+  "violator": true,
+  "Gamma": 4.827586206896551,
+  "theta": 6.758620689655173,
+  "ratio": "5/7",
+  "m_plus": 187.39230729988304,
+  "m_minus": 36.60769270011694,
+  "RU_lower": 3.8415999999999992
+ },
+ "viol_B/violator_p29.json": {
+  "b": 294,
+  "e": 1218,
+  "N": 1023120,
+  "THR": 1114064,
+  "violator": true,
+  "Gamma": 6.206896551724137,
+  "theta": 6.758620689655173,
+  "ratio": "45/49",
+  "m_plus": 260.0884609498246,
+  "m_minus": 33.911539050175406,
+  "RU_lower": 1.4058347203170243
+ },
+ "viol_B/p29_ns5_minvec.json": {
+  "b": 280,
+  "e": 0,
+  "N": 2273600,
+  "THR": 1114064,
+  "violator": false,
+  "Gamma": 13.793103448275861,
+  "theta": 6.758620689655173,
+  "ratio": "100/49",
+  "m_plus": 140.0,
+  "m_minus": 140.0,
+  "RU_lower": 0.05764800999999999
+ },
+ "A_gram_matches_embedding": [
+  5.684341886080801e-13,
+  2.8421709430404007e-12
+ ],
+ "A_G_structure_exact": {
+  "S isometry B,E": true,
+  "T isometry B,E": true,
+  "S^2=-I": true,
+  "(ST)^3=-I": true,
+  "(ST)^3=+I": false,
+  "T^p=I": true,
+  "M commutes with S,T": false
+ },
+ "A_G_integrality_defect": [
+  1.3322676295501878e-13,
+  1.412203687323199e-13,
+  8.456430000691739e-14,
+  5.939693181744587e-14
+ ],
+ "torus_word_defect": 1.933695295364516e-14,
+ "F_H_fixed_defect": 3.8789228727693866e-14,
+ "detB_FH": "23505020366197964881",
+ "detB_FH_equals_r8D4": true,
+ "commutant_integral_defect": 1.2789769243681803e-13,
+ "commutant_exact_ok": true,
+ "order_closed_defect": 2.2737367544323206e-13,
+ "order_disc": "707281",
+ "order_maximal_by_disc": true,
+ "referee_Ow_A/violator_p29.json": {
+  "det": "6118549658006550625",
+  "formula": "6118549658006550625",
+  "equal": true,
+  "RU_lower": 3.8416
+ }
+}

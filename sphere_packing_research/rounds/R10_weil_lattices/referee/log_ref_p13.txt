@@ -1,0 +1,25 @@
+[   0.0s] A gram {"shape": [24, 24], "dtype": "int64", "symmetric": true, "posdef_exact_leading_minors": true, "det": "6580067382037190942729361", "D": 117, "det_is_D_pow_p-1": true, "M=B^-1E_integral_exact(BM==E)": true, "M^2==pI_exact": true, "E B^-1 E == pB (follows)": true, "(I+M)/2 integral (O_F acts)": true, "B even diag": true, "min diag B": 36}
+[   0.0s] B gram {"shape": [24, 24], "dtype": "int64", "symmetric": true, "posdef_exact_leading_minors": true, "det": "6580067382037190942729361", "D": 117, "det_is_D_pow_p-1": true, "M=B^-1E_integral_exact(BM==E)": true, "M^2==pI_exact": true, "E B^-1 E == pB (follows)": true, "(I+M)/2 integral (O_F acts)": true, "B even diag": true, "min diag B": 36}
+[   0.0s] A vs B same det: True
+[   0.0s] BasC shape (24, 6, 6)
+[   0.0s] kappa 1 |S^2+I| 1.8466561215282335e-16 |(ST)^3-I| 7.11431226040132e-16 |(ST)^3+I| 2.000000000000001
+[   0.0s] kappa -1 |S^2+I| 1.8466561215282335e-16 |(ST)^3-I| 2.000000000000001 |(ST)^3+I| 7.11431226040132e-16
+[   0.0s] rank of saved basis (real emb): 24 smallest sv 0.3245618495115393
+[   0.0s] max|B_num - B_saved|, max|E_num - E_saved| = [3.552713678800501e-14, 1.2878587085651816e-13]
+[   0.0s] S,T images of basis: integrality defect 8.215650382226158e-15 1.1102230246251565e-14  residual (in span) 4.872838244018851e-15 5.329070518200751e-15
+[   0.1s] exact integer checks of S,T on saved basis: {"S isometry B,E": true, "T isometry B,E": true, "S^2=-I": true, "(ST)^3=-I": true, "(ST)^3=+I": false, "T^p=I": true, "M commutes with S,T": false}
+[   0.1s] torus word T^a S T^(1/a) S T^a S equals +-monomial d(a): defect 1.1837099516544406e-15  (a=3 of order 3)
+[   0.1s] F_H rows fixed by d(a): defect 3.4542034091043054e-15  rank F_H 8
+[   0.1s] det_B(F_H) = 1229457398481  r^8 D^4 = 1229457398481  equal: True
+[   0.1s] border vector in F_H lattice: coeffs (-1, -1, -1, 1, 0, 0, 1, -1) b 198 e 702
+[   0.2s] orbit sample rank 24 max coord 10
+[   0.3s] commutant elements X_j: integrality defect 4.5075054799781356e-14  exact (X_j commute with S,T; X_j(g v)=g u_j on sample): True
+[   0.3s] rank of span{X_j}: 8
+[   0.3s] sqrt(p)=M in Z-span{X_j}: (residual, integrality) (14.198085332296476, 0.2591054164335938)
+[   0.4s] Z-span{X_j} closed under multiplication: max defect 4.263256414560601e-14
+[   0.4s] trace form integrality defect 2.842170943040401e-14
+[   0.4s] disc of order (det Tr_{F/Q} trd(x_i xbar_j)) = 28561  p^4 = 28561  MAXIMAL (disc == p^4): True
+[   0.4s]   random w: det_B(O w) == (N/16)^4 : True  Gamma/theta = 734.1111111111111
+[   0.4s]   random w: det_B(O w) == (N/16)^4 : True  Gamma/theta = 2681.3333333333335
+[   0.4s]   random w: det_B(O w) == (N/16)^4 : True  Gamma/theta = 3852.0
+[   0.4s] done

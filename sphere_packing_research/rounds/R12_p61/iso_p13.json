@@ -1,0 +1,78 @@
+[
+ {
+  "p": 13,
+  "label": "split torus C_12: eigen-orders {4}",
+  "dimU": 8,
+  "N": 12,
+  "glue_index": "6561",
+  "glue_factor": {
+   "3": 8
+  },
+  "glue_rest": "1",
+  "logR": 0.0,
+  "R": 1.0,
+  "logR_complement": -2.301456579614248,
+  "R_complement": 0.10011291503906243,
+  "delta_rank": 1.0,
+  "subgroup": "split torus C_12",
+  "orders": [
+   4
+  ]
+ },
+ {
+  "p": 13,
+  "label": "split torus C_12: eigen-orders {12}",
+  "dimU": 16,
+  "N": 12,
+  "glue_index": "6561",
+  "glue_factor": {
+   "3": 8
+  },
+  "glue_rest": "1",
+  "logR": -2.301456579614248,
+  "R": 0.10011291503906243,
+  "logR_complement": 0.0,
+  "R_complement": 1.0,
+  "delta_rank": 2.0,
+  "subgroup": "split torus C_12",
+  "orders": [
+   12
+  ]
+ },
+ {
+  "p": 13,
+  "label": "SL_2(3): Hurwitz 2 (rational char)",
+  "dimU": 8,
+  "N": 12,
+  "glue_index": "6561",
+  "glue_factor": {
+   "3": 8
+  },
+  "glue_rest": "1",
+  "logR": 0.0,
+  "R": 1.0,
+  "logR_complement": -2.301456579614248,
+  "R_complement": 0.10011291503906243,
+  "delta_rank": 1.0,
+  "subgroup": "SL_2(3)",
+  "component": "Hurwitz 2 (rational char)"
+ },
+ {
+  "p": 13,
+  "label": "SL_2(3): 2'+2'' (Q(omega))",
+  "dimU": 16,
+  "N": 12,
+  "glue_index": "6561",
+  "glue_factor": {
+   "3": 8
+  },
+  "glue_rest": "1",
+  "logR": -2.301456579614248,
+  "R": 0.10011291503906243,
+  "logR_complement": 0.0,
+  "R_complement": 1.0,
+  "delta_rank": 2.0,
+  "subgroup": "SL_2(3)",
+  "component": "2'+2'' (Q(omega))"
+ }
+]

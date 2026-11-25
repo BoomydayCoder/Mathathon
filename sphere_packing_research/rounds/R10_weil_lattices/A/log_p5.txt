@@ -1,0 +1,28 @@
+[    0.0s] p=5 relations: |S^2+I|=2.7e-16 |(ST)^3-I|=1.0e-15 |(ST)^3+I|=2.0e+00 |T^p-I|=1.0e-15 unitarity=1.1e-16
+[    0.0s] orbit size 120 (|G|=120, |G|/|H|=120)
+[    0.0s] H-generator maps orbit sample into orbit: True
+[    0.0s] rank of orbit sample = 8 (expected 8); R diag at rank-1: 1.581e+00, next: 0.000e+00
+[    0.0s] all orbit vectors in the 8-dim span: residual 8.88e-16
+[    0.0s] Gram of M integer residual 1.78e-15
+[    0.0s] det G_M has 5 digits; adjugate verified exactly
+[    0.0s] cond(Br) = 5.676e+00
+[    0.0s] HNF round 1: generators used 32, index so far 5, prime steps [5], orbit vectors not yet integral: 0; max|Ccur|=1.000e+00, Gram diag min/max 4.000/4.000, Gram int resid 2.66e-15, frac of gens max 1.67e-15, frac hist [120   0   0   0   0]
+[    0.0s] Gram B integer residual 2.22e-15; E integer residual 6.45e-15; max|B|=4, diag min/max 4/4
+[    0.0s] check E B^-1 E = p B: residual 3.55e-15
+[    0.0s] O_F acts ((1+sqrt p)/2 integral matrix): max frac = 5.55e-16; sqrt p integral: 1.11e-15
+[    0.0s] det B = 625
+[    0.0s] D = det^(1/(p-1)) = 5.0000000000; theta_p = 0.800000
+[    0.0s] det B factorisation: {5: 4} cofactor 1
+[    0.0s] EXACT check det(B) * index^2 == det(G_M): True
+[    0.0s] check: orbit vectors integral in basis, max frac = 1.55e-15
+[    0.0s] check: S*basis integral, max frac = 8.88e-16, |det|=1.000000
+[    0.0s] check: T*basis integral, max frac = 1.22e-15, |det|=1.000000
+[    0.0s] fixed lattice of H (order 1): rank 8, saturated True
+[    0.0s] v0: m_plus=2.000000 m_minus=2.000000 B=4 Gamma(v0)=0.800000
+[    0.0s] order test: det(Tr nrd form on Lambda^H) = 2.44140625; maximal iff = (p/4)^4 = 2.44140625; ratio = 1.00000000
+[    0.0s] calibration H-line: det_B(Lambda^H) = 625; r^8 D^4 = 625.000000; R_U = 1.00000000
+[    0.1s] [p=5 H-fixed (order 1)] rank 8: grid 11/11 t-values in [-0.4812,0.4812], bound Q_t<= 4.0050, vectors enumerated 60, nodes 1342, flags 0, min Gamma = 0.80000000 (theta=0.80000000, ratio 1.000000), violators (distinct found) 0
+[    0.2s] [p=5 FULL lattice] rank 8: grid 11/11 t-values in [-0.4812,0.4812], bound Q_t<= 4.0050, vectors enumerated 60, nodes 1342, flags 0, min Gamma = 0.80000000 (theta=0.80000000, ratio 1.000000), violators (distinct found) 0
+[    0.2s] vectors with B-norm < B(v0,v0)=4: 0 (flag 0, nodes 75)
+[    0.2s] done
+exit 0

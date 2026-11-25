@@ -60,3 +60,39 @@ theta_p D = 4 m^4 = m_+(v0) m_-(v0), i.e. v0 is a border vector. Units of reduce
 * p=61 full lattice (rank 120) is far out of reach of exhaustive search; no BKZ was implemented. p=61 remains OPEN in general.
 * Enumeration completeness relies on double-precision Fincke-Pohst (integer Gram data, 1e-9 slack), not interval arithmetic.
 * p=17 (p = 1 mod 8) not implemented.
+
+## Additions (late results)
+* Even unimodular member (EXACT): with eps = (x + y sqrt p)/2 of norm -1 (x^2 - p y^2 = -4), the form at t = log(eps) in det-1 scale is
+  Q = (y p B + x E)/(2 m p); it is an integral, even matrix for p = 5, 13, 29, 37(see unimod_p37.json), 61 and det Q = 1
+  (algebraically det Q = det(B) N(lambda)^(p-1), N(lambda) = 1/(m^2 p); also exact Bareiss for p <= 29).  So the family always contains an
+  even unimodular lattice of rank 2(p-1): E_8, Leech, rank 56, 72, 120. Line-stability would force its minimum >= (p-1)/sqrt(p)
+  (>= 6 for p=37, >= 8 for p=61).
+* Exact line test, p=61, split C_5-fixed lattice (rank 24): all 5964 vectors mod +-eps^Z with Gamma <= 4 theta were enumerated and the exact
+  R_U of the line through each was computed (saturation index by Smith form): max R_U = 1 (attained only on vectors of the lines with
+  (Gamma/theta, index) = (1,1), (3,9), (4,16)); every other line has R_U < 1.
+  Same for p=61 split C_3-fixed lattice (rank 40) but only up to Gamma <= 1.2 theta: the only such vectors are the 12 unit multiples of v0.
+  Same for p=61 split C_15 line up to 16 theta (all R_U = 1, as it must be).
+* p=37, split C_3-fixed lattice, the 100000 smallest of the 142620 vectors mod +-eps^Z with Gamma <= 4 theta: max exact R_U = (9/7)^4,
+  attained by 72 vectors with (Gamma/theta, index) = (7/9, 1) and 72 with (28/9, 16) (same lines); no line with larger R_U seen.
+* p=29 validation of the line machinery: minimal vector of the non-split order-5 line: Gamma = (100/49) theta, saturation index 16,
+  exact R_U = 14.75789056 = (49/25)^4 = value obtained independently from the determinant of the fixed lattice.
+* p=13 validation: C_3 line, all vectors up to 16 theta: R_U = 1 with indices (Gamma/theta)^2.
+
+## Files
+weil.py (construction, exact checks, searches), lat.c/lat.so (LLL + Fincke-Pohst), drive.py (per-p driver), verify.py (independent checks),
+extras.py (order action, exact line R_U, counts, twisted eigenlattices), gsieve.py (full-lattice heuristic), unimod.py.
+Data: B_p{5,13,29,37,61}.npy, E_p*.npy, Ared_p*.npy; certificates violator_p37_C3.json, violator_p29.json; results_p*.json, extras_p*.json,
+verify_p*.json, unimod_p*.json, gsieve_p*.json; logs log_*.txt.
+
+## p=37 unimodular member
+Q = (2*37*B + 12*E)/(2*9*37) is integral, even, det exactly 1 (Bareiss): an even unimodular lattice of rank 72 with SL_2(37) acting.
+The violator w has norm 6 in the equivalent member at t = -log(eps) (norm 222 at +log eps); line-stability would need every Q_t (det 1 scale)
+to have minimum >= 36/sqrt(37) = 5.918, and the violator gives Q_t(w) = 2 sqrt(Gamma) = 5.219 at t* = -1.951.
+Whether this even unimodular lattice has norm-4 vectors was probed by enumeration (see log_unimod_p37.txt; if the log is empty the
+enumeration did not finish in the time limit and the question is open).
+
+## Other processes
+The python processes named search_full.py seen on the machine belong to another builder; not touched.
+
+Result of the probe: enumeration of norm <= 4 vectors in the rank-72 even unimodular member stopped at the node limit (6e9 nodes, flag=1)
+without finding any vector: INCONCLUSIVE (min is 4 or 6; norm-6 vectors exist). End of work 08:59 UTC.

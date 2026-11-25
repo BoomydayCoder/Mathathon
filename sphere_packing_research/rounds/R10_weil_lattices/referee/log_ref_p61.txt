@@ -1,0 +1,25 @@
+[   5.3s] A gram {"shape": [120, 120], "dtype": "int64", "symmetric": true, "posdef_exact_leading_minors": true, "det": "178131689628822158288561426223956012971709029425181130992103882398077089726102125321351064490571661442671987729449583180356666699252735405470848465561290072455852047324656132554326151212945267562942609245097737302732099351487704552710056304931640625", "D": 13725, "det_is_D_pow_p-1": true, "M=B^-1E_integral_exact(BM==E)": true, "M^2==pI_exact": true, "E B^-1 E == pB (follows)": true, "(I+M)/2 integral (O_F acts)": true, "B even diag": true, "min diag B": 900}
+[   9.0s] B gram {"shape": [120, 120], "dtype": "int64", "symmetric": true, "posdef_exact_leading_minors": true, "det": "178131689628822158288561426223956012971709029425181130992103882398077089726102125321351064490571661442671987729449583180356666699252735405470848465561290072455852047324656132554326151212945267562942609245097737302732099351487704552710056304931640625", "D": 13725, "det_is_D_pow_p-1": true, "M=B^-1E_integral_exact(BM==E)": true, "M^2==pI_exact": true, "E B^-1 E == pB (follows)": true, "(I+M)/2 integral (O_F acts)": true, "B even diag": true, "min diag B": 900}
+[   9.0s] A vs B same det: True
+[   9.0s] BasC shape (120, 30, 30)
+[   9.6s] kappa 1 |S^2+I| 2.231410371933743e-16 |(ST)^3-I| 2.6916967021654888e-15 |(ST)^3+I| 2.0000000000000027
+[  10.0s] kappa -1 |S^2+I| 2.231410371933743e-16 |(ST)^3-I| 2.0000000000000027 |(ST)^3+I| 2.6916967021654888e-15
+[  17.2s] rank of saved basis (real emb): 120 smallest sv 0.016285563697474543
+[  17.3s] max|B_num - B_saved|, max|E_num - E_saved| = [7.73070496506989e-12, 4.0756731323199347e-11]
+[  17.5s] S,T images of basis: integrality defect 1.6072476682893466e-11 1.793409865058493e-11  residual (in span) 1.6207035713478035e-12 2.2297719226571644e-12
+[  22.2s] exact integer checks of S,T on saved basis: {"S isometry B,E": true, "T isometry B,E": true, "S^2=-I": true, "(ST)^3=-I": true, "(ST)^3=+I": false, "T^p=I": true, "M commutes with S,T": false}
+[  22.2s] torus word T^a S T^(1/a) S T^a S equals +-monomial d(a): defect 1.647201488872681e-14  (a=16 of order 15)
+[  22.2s] F_H rows fixed by d(a): defect 8.566098688732178e-13  rank F_H 8
+[  22.2s] det_B(F_H) = 90945137716272125244140625  r^8 D^4 = 90945137716272125244140625  equal: True
+[  23.1s] border vector in F_H lattice: coeffs (-1, 0, -1, 0, 0, 0, 0, 0) b 900 e 0
+[  24.1s] orbit sample rank 120 max coord 121
+[  32.3s] commutant elements X_j: integrality defect 2.758326900220709e-11  exact (X_j commute with S,T; X_j(g v)=g u_j on sample): True
+[  32.3s] rank of span{X_j}: 8
+[  32.3s] sqrt(p)=M in Z-span{X_j}: (residual, integrality) (1540.000075591071, 2.6397320494537056e-05)
+[  37.0s] Z-span{X_j} closed under multiplication: max defect 4.320099833421409e-12
+[  38.2s] trace form integrality defect 1.0673062433852465e-10
+[  38.2s] disc of order (det Tr_{F/Q} trd(x_i xbar_j)) = 13845841  p^4 = 13845841  MAXIMAL (disc == p^4): True
+[  38.3s]   random w: det_B(O w) == (N/16)^4 : True  Gamma/theta = 436146.2266666667
+[  38.3s]   random w: det_B(O w) == (N/16)^4 : True  Gamma/theta = 475582.68
+[  38.3s]   random w: det_B(O w) == (N/16)^4 : True  Gamma/theta = 426224.97777777776
+[  38.3s] done

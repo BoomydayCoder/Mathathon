@@ -1,0 +1,14 @@
+[    0.0s] p=13 setup ok: kappa=-1, rounding residuals (np.float64(7.105427357601002e-15), np.float64(3.552713678800501e-14), np.float64(8.881784197001252e-15)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    0.0s] loaded saved basis; float logdet(B)/(p-1) = 4.762173935 vs log D = 4.762173935
+[    0.0s] modularity check: rounding residual 3.02e-13, exact B X B == r E: True, float log|det X| = 1.998e-15
+[    0.0s] SL_2(3): order 24, element orders {1: 1, 2: 1, 3: 8, 4: 6, 6: 8}
+[    0.0s]    operator relations (st)^2 = s^3 = t^3 = -1 verified exactly on Lambda
+[    0.0s] COMP p=13 SL_2(3): Hurwitz 2 (rational char) dim   8  glue g=3^8  log R_U=+0.000000 R_U=1   [complement dim 16: log R=-2.3015]
+[    0.0s] COMP p=13 SL_2(3): 2'+2'' (Q(omega))         dim  16  glue g=3^8  log R_U=-2.301457 R_U=0.100113   [complement dim 8: log R=+0.0000]
+[    0.0s] C_6<SL_2(3) (cyclic order 6): eigen-orders present with dims: {2: 8, 6: 16}
+[    0.0s] COMP p=13 C_6<SL_2(3): eigen-orders {2}      dim   8  glue g=3^8  log R_U=+0.000000 R_U=1   [complement dim 16: log R=-2.3015]
+[    0.0s] COMP p=13 C_6<SL_2(3): eigen-orders {6}      dim  16  glue g=3^8  log R_U=-2.301457 R_U=0.100113   [complement dim 8: log R=+0.0000]
+[    0.0s] COMP p=13 SL_2(3)>C_6: [Hurwitz 2 (rational char)] & [(6,)] dim   8  glue g=3^8  log R_U=+0.000000 R_U=1   [complement dim 16: log R=-2.3015]
+[    0.1s] COMP p=13 SL_2(3)>C_6: [2'+2'' (Q(omega))] & [(2,)] dim   8  glue g=3^8  log R_U=+0.000000 R_U=1   [complement dim 16: log R=-2.3015]
+[    0.1s] COMP p=13 SL_2(3)>C_6: [2'+2'' (Q(omega))] & [(6,)] dim   8  glue g=3^8  log R_U=+0.000000 R_U=1   [complement dim 16: log R=-2.3015]
+[    0.1s] DONE extra2 13

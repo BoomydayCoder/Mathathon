@@ -1,0 +1,13 @@
+[    2.4s] p=37 t=-2.292 beta=30 tours=6: |b1|^2_Qt=302.444 (2sqrt(theta D)=324.000), min Gamma over 1632 candidates = 6.810811 (theta 8.756757) N=3020976 THR=3884112 violator=True
+[    7.4s] p=37 t=-2.292 beta=40 tours=4: |b1|^2_Qt=302.444 (2sqrt(theta D)=324.000), min Gamma over 1632 candidates = 6.810811 (theta 8.756757) N=3020976 THR=3884112 violator=True
+[    9.3s] p=37 t=-1.992 beta=30 tours=6: |b1|^2_Qt=285.973 (2sqrt(theta D)=324.000), min Gamma over 1632 candidates = 6.810811 (theta 8.756757) N=3020976 THR=3884112 violator=True
+[   10.8s] p=37 t=-1.992 beta=40 tours=3: |b1|^2_Qt=285.973 (2sqrt(theta D)=324.000), min Gamma over 1632 candidates = 6.810811 (theta 8.756757) N=3020976 THR=3884112 violator=True
+[   12.8s] p=37 t=-1.692 beta=30 tours=6: |b1|^2_Qt=295.433 (2sqrt(theta D)=324.000), min Gamma over 1632 candidates = 6.810811 (theta 8.756757) N=3020976 THR=3884112 violator=True
+[   38.9s] p=37 t=-1.692 beta=40 tours=6: |b1|^2_Qt=295.433 (2sqrt(theta D)=324.000), min Gamma over 1632 candidates = 6.810811 (theta 8.756757) N=3020976 THR=3884112 violator=True
+[   40.2s] p=37 t=-1.392 beta=30 tours=6: |b1|^2_Qt=346.076 (2sqrt(theta D)=324.000), min Gamma over 1632 candidates = 9.081081 (theta 8.756757) N=4027968 THR=3884112 violator=False
+[   89.3s] p=37 t=-1.392 beta=40 tours=6: |b1|^2_Qt=331.682 (2sqrt(theta D)=324.000), min Gamma over 1632 candidates = 6.810811 (theta 8.756757) N=3020976 THR=3884112 violator=True
+[   90.6s] p=37 t=-1.092 beta=30 tours=6: |b1|^2_Qt=371.363 (2sqrt(theta D)=324.000), min Gamma over 1632 candidates = 10.702703 (theta 8.756757) N=4747248 THR=3884112 violator=False
+[  148.7s] p=37 t=-1.092 beta=40 tours=6: |b1|^2_Qt=371.363 (2sqrt(theta D)=324.000), min Gamma over 1632 candidates = 10.702703 (theta 8.756757) N=4747248 THR=3884112 violator=False
+[  149.2s] p=37 t=-0.792 beta=30 tours=6: |b1|^2_Qt=358.353 (2sqrt(theta D)=324.000), min Gamma over 1632 candidates = 10.702703 (theta 8.756757) N=4747248 THR=3884112 violator=False
+[  174.8s] p=37 t=-0.792 beta=40 tours=6: |b1|^2_Qt=358.353 (2sqrt(theta D)=324.000), min Gamma over 1632 candidates = 10.702703 (theta 8.756757) N=4747248 THR=3884112 violator=False
+[  174.8s] search finished best Gamma 6.8108108108108105

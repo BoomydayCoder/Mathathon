@@ -1,0 +1,32 @@
+[   0.1s] A gram {"shape": [72, 72], "dtype": "int64", "symmetric": true, "posdef_exact_leading_minors": true, "det": "144784725155879361652064583418488215418133639854844145325702472587856822891691624324513660102084574287346137597114449558643121", "D": 2997, "det_is_D_pow_p-1": true, "M=B^-1E_integral_exact(BM==E)": true, "M^2==pI_exact": true, "E B^-1 E == pB (follows)": true, "(I+M)/2 integral (O_F acts)": true, "B even diag": true, "min diag B": 324}
+[   0.2s] B gram {"shape": [72, 72], "dtype": "int64", "symmetric": true, "posdef_exact_leading_minors": true, "det": "144784725155879361652064583418488215418133639854844145325702472587856822891691624324513660102084574287346137597114449558643121", "D": 2997, "det_is_D_pow_p-1": true, "M=B^-1E_integral_exact(BM==E)": true, "M^2==pI_exact": true, "E B^-1 E == pB (follows)": true, "(I+M)/2 integral (O_F acts)": true, "B even diag": true, "min diag B": 324}
+[   0.2s] A vs B same det: True
+[   0.2s] violator A/violator_p37.json {"b": 1026, "e": 5994, "N": 3020976, "THR": 3884112, "violator": true, "Gamma": 6.810810810810803, "theta": 8.756756756756756, "ratio": "7/9", "m_plus": 1005.7037649541558, "m_minus": 20.296235045844185, "RU_lower": 2.732611411911704}
+[   0.2s]   builder Ow_rows: det_B = 1270893532472362625841  r^8 D^4 = 3472858170158755180401  R_U>= 2.7326114119117033
+[   0.2s] violator B/violator_p37_C3.json {"b": 1026, "e": 5994, "N": 3020976, "THR": 3884112, "violator": true, "Gamma": 6.810810810810803, "theta": 8.756756756756756, "ratio": "7/9", "m_plus": 1005.7037649541558, "m_minus": 20.296235045844185, "RU_lower": 2.732611411911704}
+[   0.2s] BasC shape (72, 18, 18)
+[   0.2s] kappa 1 |S^2+I| 2.3341572952599575e-16 |(ST)^3-I| 1.625872759030836e-15 |(ST)^3+I| 2.0000000000000018
+[   0.2s] kappa -1 |S^2+I| 2.3341572952599575e-16 |(ST)^3-I| 2.0000000000000018 |(ST)^3+I| 1.625872759030836e-15
+[   1.7s] rank of saved basis (real emb): 72 smallest sv 0.07310942109314315
+[   1.8s] max|B_num - B_saved|, max|E_num - E_saved| = [2.0463630789890885e-12, 6.366462912410498e-12]
+[   1.9s] S,T images of basis: integrality defect 3.9834802123550617e-13 3.979039320256561e-13  residual (in span) 1.4289958105706546e-13 1.8141044222375058e-13
+[   2.5s] exact integer checks of S,T on saved basis: {"S isometry B,E": true, "T isometry B,E": true, "S^2=-I": true, "(ST)^3=-I": true, "(ST)^3=+I": false, "T^p=I": true, "M^T (eta) commutes with S,T": true}
+[   2.5s] torus word T^a S T^(1/a) S T^a S equals +-monomial d(a): defect 1.1290166445623422e-14  (a=16 of order 9)
+[   2.5s] F_H rows fixed by d(a): defect 7.158140888836537e-14  rank F_H 8
+[   2.5s] det_B(F_H) = 3472858170158755180401  r^8 D^4 = 3472858170158755180401  equal: True
+[   2.7s] border vector in F_H lattice: coeffs (-1, -1, -1, 1, 0, 0, 0, 0) b 324 e 0
+[   3.2s] orbit sample rank 72 max coord 27
+[   8.8s] commutant elements X_j: integrality defect 4.725109192804666e-13  exact (X_j commute with S,T; X_j(g v)=g u_j on sample): True
+[   8.8s] rank of span{X_j}: 8
+[   8.9s] sqrt(p)=M^T in Z-span{X_j}: (residual, integrality) (2.5579538487363607e-13, 2.4313884239290928e-14)  (1+sqrt p)/2: (1.7053025658242404e-13, 7.549516567451064e-15)
+[   9.5s] Z-span{X_j} closed under multiplication: max defect 3.694822225952521e-13
+[   9.5s] trace form integrality defect 1.1510792319313623e-12
+[   9.5s] disc of order (det Tr_{F/Q} trd(x_i xbar_j)) = 1874161  p^4 = 1874161  MAXIMAL (disc == p^4): True
+[   9.5s] REFEREE O.w: det_B(O w) = 1270893532472362625841  ((p/4)m+m-)^4 = (N/16)^4 = 1270893532472362625841  equal: True  r^8D^4 = 3472858170158755180401  R_U >= 2.7326114119117033
+[   9.5s]   rank of Delta*(O w) = 8 (8 => Delta-line)
+[   9.5s]   referee O.w rows: gcd of sampled 8x8 minors = 1 (1 => O.w = Lambda cap U, R_U exact)
+[   9.5s]   builder Ow_rows in Z-span of referee O.w: residual 3.552713678800501e-14 integrality 3.199686686117782e-15 |det| of transition 1
+[   9.5s]   random w: det_B(O w) == (N/16)^4 : True  Gamma/theta = 118230.27160493827
+[   9.5s]   random w: det_B(O w) == (N/16)^4 : True  Gamma/theta = 110325.44444444444
+[   9.5s]   random w: det_B(O w) == (N/16)^4 : True  Gamma/theta = 54501.864197530864
+[   9.5s] done

@@ -1,0 +1,63 @@
+[    1.8s] p=61 setup ok: kappa=-1, rounding residuals (np.float64(1.2789769243681803e-13), np.float64(1.0231815394945443e-12), np.float64(9.947598300641403e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    1.8s] loaded saved basis; float logdet(B)/(p-1) = 9.526974266 vs log D = 9.526974266
+[    2.4s] split torus C_60 (cyclic order 60): eigen-orders present with dims: {4: 8, 12: 16, 20: 32, 60: 64}
+[    2.4s] COMP p=61 split torus C_60: eigen-orders {4} dim   8  glue g=3^8*5^8  log R_U=+0.000000 R_U=1   [complement dim 112: log R=-13.9372]
+[    2.4s] COMP p=61 split torus C_60: eigen-orders {12} dim  16  glue g=3^8*5^16  log R_U=-2.301457 R_U=0.100113   [complement dim 104: log R=-19.6574]
+[    2.4s] COMP p=61 split torus C_60: eigen-orders {20} dim  32  glue g=3^32*5^8  log R_U=-5.734910 R_U=0.00323117   [complement dim 88: log R=-20.7375]
+[    2.4s] COMP p=61 split torus C_60: eigen-orders {60} dim  64  glue g=3^32*5^16  log R_U=-20.675646 R_U=1.04877e-09   [complement dim 56: log R=-18.2268]
+[    2.4s] COMP p=61 split torus C_60: eigen-orders {4,12} dim  24  glue g=5^24  log R_U=-0.000000 R_U=1   [complement dim 96: log R=-17.2047]
+[    2.4s] COMP p=61 split torus C_60: eigen-orders {4,20} dim  40  glue g=3^40  log R_U=+0.000000 R_U=1   [complement dim 80: log R=-11.5073]
+[    2.5s] COMP p=61 split torus C_60: eigen-orders {4,60} dim  72  glue g=3^40*5^24  log R_U=-45.791557 R_U=1.29712e-20   [complement dim 48: log R=-38.5890]
+[    2.5s] COMP p=61 split torus C_60: eigen-orders {12,20} dim  48  glue g=3^40*5^24  log R_U=-38.589046 R_U=1.74177e-17   [complement dim 72: log R=-45.7916]
+[    2.5s] COMP p=61 split torus C_60: eigen-orders {12,60} dim  80  glue g=3^40  log R_U=-11.507283 R_U=1.00566e-05   [complement dim 40: log R=+0.0000]
+[    2.5s] COMP p=61 split torus C_60: eigen-orders {20,60} dim  96  glue g=5^24  log R_U=-17.204729 R_U=3.3735e-08   [complement dim 24: log R=-0.0000]
+[    2.5s] COMP p=61 split torus C_60: eigen-orders {4,12,20} dim  56  glue g=3^32*5^16  log R_U=-18.226757 R_U=1.214e-08   [complement dim 64: log R=-20.6756]
+[    2.5s] COMP p=61 split torus C_60: eigen-orders {4,12,60} dim  88  glue g=3^32*5^8  log R_U=-20.737463 R_U=9.85903e-10   [complement dim 32: log R=-5.7349]
+[    2.5s] COMP p=61 split torus C_60: eigen-orders {4,20,60} dim 104  glue g=3^8*5^16  log R_U=-19.657417 R_U=2.9033e-09   [complement dim 16: log R=-2.3015]
+[    2.5s] COMP p=61 split torus C_60: eigen-orders {12,20,60} dim 112  glue g=3^8*5^8  log R_U=-13.937200 R_U=8.85423e-07   [complement dim 8: log R=+0.0000]
+[    5.8s]    saturated basis rank 24: float logdet 152.950201 vs log(g D^{k/2}) = 152.950201 ok=True exact=True; diag(B) min 900 max 2400
+[    6.0s] norm-10 vectors in Fix(C_5): 360 pairs; |s| values [5, 15]
+[    6.4s] orbit 1: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[    6.8s] orbit 2: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[    7.3s] orbit 3: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[    7.9s] orbit 4: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[    8.5s] orbit 5: 22692 vectors (mod +-), rep norm 10.000 |s| 15.000 Gamma/theta 1.4444
+[    9.0s] orbit 6: 22692 vectors (mod +-), rep norm 10.000 |s| 5.000 Gamma/theta 1.6667
+[    9.0s] ip spectrum orbit 1 rep vs orbit 1: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[    9.0s] ip spectrum orbit 1 rep vs orbit 2: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[    9.0s] ip spectrum orbit 1 rep vs orbit 3: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[    9.0s] ip spectrum orbit 1 rep vs orbit 4: {0: 9655, 1: 11090, 2: 1885, 3: 60, 5: 2}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[    9.0s] ip spectrum orbit 1 rep vs orbit 5: {0: 10775, 1: 10060, 2: 1765, 3: 90, 5: 2}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[    9.0s] ip spectrum orbit 1 rep vs orbit 6: {0: 9930, 1: 11005, 2: 1650, 3: 105, 5: 2}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[    9.0s] ip spectrum orbit 2 rep vs orbit 2: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[    9.0s] ip spectrum orbit 2 rep vs orbit 3: {0: 9483, 1: 11375, 2: 1745, 3: 85, 5: 4}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[    9.0s] ip spectrum orbit 2 rep vs orbit 4: {0: 10180, 1: 10435, 2: 1995, 3: 75, 4: 5, 5: 2}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [15], min Gamma/theta 1.4444
+[    9.0s] ip spectrum orbit 2 rep vs orbit 5: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[    9.0s] ip spectrum orbit 2 rep vs orbit 6: {0: 10400, 1: 10320, 2: 1900, 3: 70, 5: 2}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[    9.0s] ip spectrum orbit 3 rep vs orbit 3: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[    9.0s] ip spectrum orbit 3 rep vs orbit 4: {0: 9755, 1: 10965, 2: 1905, 3: 65, 5: 2}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[    9.0s] ip spectrum orbit 3 rep vs orbit 5: {0: 10045, 1: 11000, 2: 1575, 3: 70, 5: 2}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[    9.0s] ip spectrum orbit 3 rep vs orbit 6: {0: 9830, 1: 11005, 2: 1830, 3: 25, 5: 2}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[    9.0s] ip spectrum orbit 4 rep vs orbit 4: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[    9.0s] ip spectrum orbit 4 rep vs orbit 5: {0: 10075, 1: 10960, 2: 1585, 3: 70, 5: 2}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[    9.0s] ip spectrum orbit 4 rep vs orbit 6: {0: 9720, 1: 11235, 2: 1660, 3: 75, 5: 2}
+[    9.0s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[    9.0s] ip spectrum orbit 5 rep vs orbit 5: {0: 10531, 1: 9440, 2: 2520, 3: 160, 4: 40, 10: 1}
+[    9.1s] ip spectrum orbit 5 rep vs orbit 6: {0: 10135, 1: 10380, 2: 2040, 3: 130, 4: 5, 5: 2}
+[    9.1s]    |ip|=5: differences have norm 10.000, |s| values [5], min Gamma/theta 1.6667
+[    9.1s] ip spectrum orbit 6 rep vs orbit 6: {0: 10371, 1: 10220, 2: 2000, 3: 100, 10: 1}
+[    9.1s] BEST over pair differences: Gamma/theta 1.4444 norm 10.00 |s| 15.00
+[    9.1s] DONE extra4

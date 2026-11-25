@@ -1,0 +1,10 @@
+[    0.0s] p=37 relations: |S^2+I|=2.3e-16 |(ST)^3-I|=9.3e-16 |(ST)^3+I|=2.0e+00 |T^p-I|=2.0e-14 unitarity=2.2e-16
+[    0.4s] orbit size 5624 (|G|=50616, |G|/|H|=5624)
+[    0.4s] H-generator maps orbit sample into orbit: True
+[    0.4s] Gram B integer residual 1.93e-12; E integer residual 1.16e-11; max|B|=972, diag min/max 324/972
+[    0.4s] check E B^-1 E = p B: residual 1.76e-08
+[    0.4s] O_F acts ((1+sqrt p)/2 integral matrix): max frac = 2.38e-10; sqrt p integral: 4.76e-10
+[    0.5s] det B = 144784725155879361652064583418488215418133639854844145325702472587856822891691624324513660102084574287346137597114449558643121
+[    0.5s] D = det^(1/(p-1)) = 2997.0000000000; theta_p = 8.756757
+[    0.5s] det B factorisation: {3: 144, 37: 36} cofactor 1
+[    0.7s] C_3 fixed lattice p=37: rank 24, saturated True; EXACT calibration det_B == (n/rk)^rk * D^(rk/2): True
