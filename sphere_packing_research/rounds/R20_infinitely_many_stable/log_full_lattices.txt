@@ -1,0 +1,6 @@
+p=29 L1 rank=56 even=True det(G)=1 det(E)=p^28*1 p^(n/2)=28  [0s]
+p=29 L0 rank=56 even=True det(G)=1 det(E)=p^28*1 p^(n/2)=28  [0s]
+p=37 L1 rank=72 even=True det(G)=1 det(E)=p^36*1 p^(n/2)=36  [1s]
+p=37 L0 rank=72 even=True det(G)=1 det(E)=p^36*1 p^(n/2)=36  [1s]
+p=61 L1 rank=120 even=True det(G)=1 det(E)=p^60*1 p^(n/2)=60  [5s]
+p=61 L0 rank=120 even=True det(G)=1 det(E)=p^60*1 p^(n/2)=60  [11s]

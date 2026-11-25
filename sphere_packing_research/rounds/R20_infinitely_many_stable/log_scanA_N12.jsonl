@@ -1,0 +1,29 @@
+{"p": 13, "N": 12, "rank": 24, "k": 1, "thr": 9, "roots_pairs_by_abs_s": {}, "n_roots": 0, "norm4_pairs": 98280, "minN_short": 9, "root_viol": 0, "log_eps": 1.1947632172871094, "nt": 25, "fail": 0, "hits": 26208, "best": [9, 4, -4, 0.6], "seen": {"9": 26208}, "time": 5.3}
+{"p": 37, "N": 12, "rank": 24, "k": 3, "thr": 9, "roots_pairs_by_abs_s": {"3": 72}, "n_roots": 144, "norm4_pairs": 96552, "minN_short": 7, "root_viol": 72, "log_eps": 2.4917798526449118, "nt": 51, "fail": 0, "hits": 744, "best": [7, 2, -3, 0.1], "seen": {"7": 720, "9": 24}, "time": 3.2}
+{"p": 61, "N": 12, "rank": 24, "k": 5, "thr": 9, "roots_pairs_by_abs_s": {"3": 72, "1": 288}, "n_roots": 720, "norm4_pairs": 89640, "minN_short": 12, "root_viol": 0, "log_eps": 3.6642184608864374, "nt": 75, "fail": 0, "hits": 24, "best": [9, 30, -117, 3.7], "seen": {"9": 24}, "time": 3.8}
+{"p": 157, "N": 12, "rank": 24, "k": 13, "thr": 9, "roots_pairs_by_abs_s": {"1": 72}, "n_roots": 144, "norm4_pairs": 96552, "minN_short": 39, "root_viol": 0, "log_eps": 5.361314206462789, "nt": 109, "fail": 0, "hits": 24, "best": [9, 102, -639, 5.4], "seen": {"9": 24}, "time": 4.5}
+{"p": 277, "N": 12, "rank": 24, "k": 23, "thr": 9, "roots_pairs_by_abs_s": {}, "n_roots": 0, "norm4_pairs": 98280, "minN_short": 108, "root_viol": 0, "log_eps": 7.868254411981305, "nt": 159, "fail": 0, "hits": 24, "best": [9, 942, -7839, 7.9], "seen": {"9": 24}, "time": 5.4}
+p=397 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+{"p": 421, "N": 12, "rank": 24, "k": 35, "thr": 9, "roots_pairs_by_abs_s": {}, "n_roots": 0, "norm4_pairs": 98280, "minN_short": 225, "root_viol": 0, "log_eps": 13.005692473105606, "nt": 261, "fail": 0, "hits": 24, "best": [9, 130110, -1334817, 13.0], "seen": {"9": 24}, "time": 6.6}
+p=541 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=613 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=661 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=733 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=757 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=877 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=997 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=1093 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=1213 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=1237 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=1381 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=1453 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=1621 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=1933 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=2341 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=2557 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=2797 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=2917 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=3061 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=3253 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=3517 N=12 FAILED: LinAlgError('Matrix is not positive definite')
+p=3733 N=12 FAILED: LinAlgError('Matrix is not positive definite')

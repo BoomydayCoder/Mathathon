@@ -1,0 +1,4 @@
+p=5: rank 8, Gram(2deg) integral, det = p^4 * 1 (expected p^4), even diag: True
+   maps of degree <= 3 (pairs +-): deg 2 N(q_F)=1: 60, deg 3 N(q_F)=1: 120   [threshold N >= 1, genus 2]
+p=13: rank 24, Gram(2deg) integral, det = p^12 * 1 (expected p^12), even diag: True
+   maps of degree <= 7 (pairs +-): deg 6 N(q_F)=9: 6552, deg 7 N(q_F)=9: 13104   [threshold N >= 9, genus 6]

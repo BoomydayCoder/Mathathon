@@ -1,0 +1,8 @@
+{"p": 61, "N": 20, "rank": 40, "k": 3, "thr": 25, "roots_pairs_by_abs_s": {}, "n_roots": 0, "norm4_pairs": 19800, "minN_short": 36, "root_viol": 0, "log_eps": 3.6642184608864374, "nt": 75, "fail": 0, "hits": 24, "best": [25, 50, -195, 3.7], "seen": {"25": 24}, "time": 31.5}
+p=421 N=20 FAILED: LinAlgError('Matrix is not positive definite')
+p=541 N=20 FAILED: LinAlgError('Matrix is not positive definite')
+p=661 N=20 FAILED: LinAlgError('Matrix is not positive definite')
+p=1381 N=20 FAILED: LinAlgError('Matrix is not positive definite')
+p=1621 N=20 FAILED: LinAlgError('Matrix is not positive definite')
+p=2341 N=20 FAILED: LinAlgError('Matrix is not positive definite')
+p=3061 N=20 FAILED: LinAlgError('Matrix is not positive definite')

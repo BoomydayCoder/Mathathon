@@ -1,0 +1,2 @@
+{"p": 1093, "N": 28, "rank": 56, "k": 39, "thr": 49, "lll_time": 58.8, "roots_pairs_by_abs_s": {}, "n_roots": 0, "norm4_pairs": 0, "minN_short": null, "root_viol": 0, "log_eps": 3.4974245728471316, "nt": 71, "fail": 0, "hits": 24, "best": [49, 14, -231, 3.5], "seen": {"49": 24}, "time": 119.1}
+p=397 N=36 FAILED: RuntimeError('enumeration node limit')

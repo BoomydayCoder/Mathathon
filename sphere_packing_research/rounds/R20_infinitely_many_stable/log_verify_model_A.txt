@@ -1,0 +1,25 @@
+p=37 N=12 k=3 m'=3 rank=24: integral Gram, even=True  [0.0s]
+   det = 1, |(G^-1E)^2 - p| = 2.4e-08
+   vectors of norm <= 4 (flag 0): norm 2 |s|=3 N(nu)=7: 72 pairs, norm 4 |s|=0 N(nu)=37: 19800 pairs, norm 4 |s|=2 N(nu)=36: 35208 pairs, norm 4 |s|=4 N(nu)=33: 26856 pairs, norm 4 |s|=6 N(nu)=28: 11736 pairs, norm 4 |s|=8 N(nu)=21: 2592 pairs, norm 4 |s|=10 N(nu)=12: 360 pairs
+   threshold m'^2 = 9 ; min N(nu) among them = 7 ; violators = 72   [5.8s]
+   t-circle (log eps = 2.492, exhaustive): 732 vectors below bound, min N(nu) = (7, 2, 3, -0.9917798526449104) (threshold 9), N-values seen: {7: 720, 9: 12}  [2.6s]
+p=61 N=12 k=5 m'=3 rank=24: integral Gram, even=True  [0.0s]
+   det = 1, |(G^-1E)^2 - p| = 1.0e-05
+   vectors of norm <= 4 (flag 0): norm 2 |s|=1 N(nu)=15: 288 pairs, norm 2 |s|=3 N(nu)=13: 72 pairs, norm 4 |s|=0 N(nu)=61: 16920 pairs, norm 4 |s|=2 N(nu)=60: 28872 pairs, norm 4 |s|=4 N(nu)=57: 23112 pairs, norm 4 |s|=6 N(nu)=52: 13752 pairs, norm 4 |s|=8 N(nu)=45: 4608 pairs, norm 4 |s|=10 N(nu)=36: 2304 pairs, norm 4 |s|=14 N(nu)=12: 72 pairs
+   threshold m'^2 = 9 ; min N(nu) among them = 12 ; violators = 0   [5.2s]
+   t-circle (log eps = 3.664, INCOMPLETE 1 failures): 12 vectors below bound, min N(nu) = (9, 30, 117, -3.6642184608864374) (threshold 9), N-values seen: {9: 12}  [8.3s]
+p=157 N=12 k=13 m'=3 rank=24: integral Gram, even=True  [0.0s]
+   det = 1, |(G^-1E)^2 - p| = 1.8e-01
+   vectors of norm <= 4 (flag 0): norm 2 |s|=1 N(nu)=39: 72 pairs, norm 4 |s|=0 N(nu)=157: 10872 pairs, norm 4 |s|=2 N(nu)=156: 20952 pairs, norm 4 |s|=4 N(nu)=153: 15768 pairs, norm 4 |s|=6 N(nu)=148: 15840 pairs, norm 4 |s|=8 N(nu)=141: 16128 pairs, norm 4 |s|=10 N(nu)=132: 7848 pairs, norm 4 |s|=12 N(nu)=121: 5040 pairs, norm 4 |s|=14 N(nu)=108: 1800 pairs, norm 4 |s|=16 N(nu)=93: 1152 pairs, norm 4 |s|=18 N(nu)=76: 864 pairs, norm 4 |s|=20 N(nu)=57: 288 pairs
+   threshold m'^2 = 9 ; min N(nu) among them = 39 ; violators = 0   [5.7s]
+   t-circle (log eps = 5.361, INCOMPLETE 73 failures): 0 vectors below bound, min N(nu) = None (threshold 9), N-values seen: {}  [8.1s]
+p=277 N=12 k=23 m'=3 rank=24: integral Gram, even=True  [0.0s]
+   det = 1, |(G^-1E)^2 - p| = 3.7e+03
+   vectors of norm <= 4 (flag 0): norm 4 |s|=0 N(nu)=277: 4536 pairs, norm 4 |s|=2 N(nu)=276: 20448 pairs, norm 4 |s|=4 N(nu)=273: 17856 pairs, norm 4 |s|=6 N(nu)=268: 5976 pairs, norm 4 |s|=8 N(nu)=261: 16344 pairs, norm 4 |s|=10 N(nu)=252: 10440 pairs, norm 4 |s|=12 N(nu)=241: 3312 pairs, norm 4 |s|=14 N(nu)=228: 9792 pairs, norm 4 |s|=16 N(nu)=213: 4320 pairs, norm 4 |s|=18 N(nu)=196: 576 pairs, norm 4 |s|=20 N(nu)=177: 3456 pairs, norm 4 |s|=22 N(nu)=156: 864 pairs, norm 4 |s|=24 N(nu)=133: 288 pairs, norm 4 |s|=26 N(nu)=108: 72 pairs
+   threshold m'^2 = 9 ; min N(nu) among them = 108 ; violators = 0   [6.8s]
+   t-circle (log eps = 7.868, INCOMPLETE 158 failures): 0 vectors below bound, min N(nu) = None (threshold 9), N-values seen: {}  [0.3s]
+p=61 N=20 k=3 m'=5 rank=40: integral Gram, even=True  [0.1s]
+   det = 1, |(G^-1E)^2 - p| = 2.2e-03
+   vectors of norm <= 4 (flag 0): norm 4 |s|=0 N(nu)=61: 2760 pairs, norm 4 |s|=2 N(nu)=60: 7680 pairs, norm 4 |s|=4 N(nu)=57: 6360 pairs, norm 4 |s|=6 N(nu)=52: 2160 pairs, norm 4 |s|=8 N(nu)=45: 480 pairs, norm 4 |s|=10 N(nu)=36: 360 pairs
+   threshold m'^2 = 25 ; min N(nu) among them = 36 ; violators = 0   [19.4s]
+   t-circle (log eps = 3.664, INCOMPLETE 23 failures): 12 vectors below bound, min N(nu) = (25, 50, 195, -3.6642184608864374) (threshold 25), N-values seen: {25: 12}  [47.8s]
