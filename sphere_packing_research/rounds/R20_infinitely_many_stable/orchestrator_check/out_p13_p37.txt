@@ -1,0 +1,6 @@
+p=13 N=12 rank=24 even=True detG=1 detE=p^12.0 eta integral=True eta^2=p:True  [0s]
+   LLL diag: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4] [3s]
+   roots (pairs): 0 ; (|s|, N(nu')) -> pairs: {} ; threshold (N/4)^2 = 9  [4s]
+p=37 N=12 rank=24 even=True detG=1 detE=p^12.0 eta integral=True eta^2=p:True  [0s]
+   LLL diag: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4] [6s]
+   roots (pairs): 72 ; (|s|, N(nu')) -> pairs: {(3, Fraction(7, 1)): 72} ; threshold (N/4)^2 = 9  [6s]
