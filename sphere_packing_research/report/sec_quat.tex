@@ -19,7 +19,16 @@ V_n\ \ge\ (1-o(1))\,\frac{w}{4e\,\delta}\,n^2\;=\;(1-o(1))\,\frac{w\,D_k}{2e},
 \end{theorem}
 자명군($w=2$, $\delta=1$)이면 Rezvyakova 의 $\tfrac1{2e}=0.184$ 가 재현되고, Eisenstein 정수($w=6,\delta=2$; $2\mid n$)는 $\tfrac3{4e}$, 원분체 $\Q(\zeta_m)$ 는 $\tfrac{w}{4e\varphi(m)}$ ($w=m$ 또는 $2m$)을 준다. 선행 상수의 이득은 Rezvyakova 대비 $w/(2\delta)$: Hurwitz 3배, icosian 7.5배 --- 이는 \S\ref{sec:sym} 의 이득 공식 $g=|G|/(2\dim_\Q A)$ 그 자체이고, 1차 모멘트 수준의 Vance 의 이득($6n/e$ 대 $2n/e$)과 같은 비율이다.
 
-\paragraph{인용 입력.} (L1) Gargava, \emph{Lattice packings through division algebras} (arXiv:2107.04844), Theorem 16: order 위의 가군 격자 $g\mathcal O^k$ ($k\ge2$)에 대한 Siegel 평균값 정리 --- 블랙박스로 사용(진술은 원문과 대조했으나 증명은 재검증하지 않음; 개정자는 $D_\R=\mathbb K^s$, $s\ge2$ 인 경우 원 증명의 ``추이성'' 문구가 열린 조밀 궤도로 바뀌어야 한다는 점을 지적). (L2) Klartag (arXiv:2504.05042) 의 Lemma 2.1, A.1 과 \S2--4 의 증명들. (L3) 표준 확률해석과 GOE 꼬리 한계.
+\paragraph{인용 입력.} (L1) Gargava, \emph{Lattice packings through division algebras} (arXiv:2107.04844), Theorem 16: order 위의 가군 격자 $g\mathcal O^k$ ($k\ge2$)에 대한 Siegel 평균값 정리 --- 블랙박스로 사용. 6회차 개정자는 $D_\R=\mathbb K^s$, $s\ge2$ 인 경우 원 증명의 ``추이성'' 문구가 열린 조밀 궤도로 바뀌어야 한다는 점을 지적했고, \textbf{17회차에서 원 논문(arXiv v3)의 해당 증명을 읽고 이 단서를 점검·보수했다}(아래 ``인용 입력 (L1) 의 점검''). (L2) Klartag (arXiv:2504.05042) 의 Lemma 2.1, A.1 과 \S2--4 의 증명들. (L3) 표준 확률해석과 GOE 꼬리 한계.
+
+\paragraph{인용 입력 (L1) 의 점검 (17회차).} 점검 에이전트가 arXiv:2107.04844v3 의 \TeX\ 원본에서 \S1.1--1.3 (정의 1부터 보조정리 19까지, 정리 16 과 그 증명 전체)과 부록 A.1, C 를 읽었다(\texttt{rounds/R17\_gargava\_check/notes.md}). 확인된 것:
+\begin{itemize}
+\item \emph{정확한 진술.} $G=\{a\in M_k(D_\R):N(a)=1\}$, $\Gamma=\{a\in M_k(\mathcal O):N(a)=1\}$ 이고 $N$ 은 \emph{전체} 노름(왼쪽 곱셈의 실행렬식)이다 --- 각 실 자리에서의 축소 노름이 1 이라는 조건이 아니다. $D_\R=\HH\times\HH$ 이면 $G=\{(g_1,g_2):\mathrm{Nrd}(g_1)\mathrm{Nrd}(g_2)=1\}$ 이고 $\Gamma=GL_k(\mathcal O)$ 는 $\mathcal O^k$ 의 안정자 전체다. 이는 14·15회차가 쓰는 족 $\{N=1\}$ 과 같다.
+\item \emph{결함.} 증명은 보조정리 18 (Siegel 변환의 적분가능성과 균등한 우함수), 보조정리 19 ($\int\Phi_f=C\int f$), 그리고 팽창 $f_\varepsilon$ 과 Riemann 합에 의한 $C=1$ 의 결정으로 이루어진다. 보조정리 19 의 증명에 있는 ``$G$ 가 $D_\R^k\setminus\{0\}$ 에 추이적으로 작용한다'' 는 한 문장이 $s\ge2$ 에서 거짓이다($\HH\times\HH$ 에서는 궤도가 네 개).
+\item \emph{보수.} (R1) 0 아닌 격자벡터는 모든 실 자리에서 성분이 0 이 아니다($D$ 가 나눗셈대수이므로) --- 즉 $g\mathcal O^k\setminus0\subset\Omega:=\prod_v(\mathbb K_v^k\setminus0)$; (R2) $k\ge2$ 이면 $G$ 는 $\Omega$ 위에서 추이적이고 안정자가 유니모듈러이므로 $\Omega$ 위의 불변 Radon 측도는 상수배를 빼고 유일하며, $\Omega$ 의 여집합은 Lebesgue 영집합이다. 따라서 보조정리 19 의 결론은 그대로 성립하고, 나머지 단계($C=1$ 의 결정, 보조정리 18)는 추이성을 쓰지 않는다.
+\item \emph{남은 의존.} 유한 공부피(명제 14)와 적분가능성(보조정리 18)은 원 논문이 증명 없이 인용하는 Weil 의 환원 이론(1958년 강의록의 정리 2, 보조정리 10.2)에 기대며, $s\ge2$ 에서는 그 정리의 콤팩트성 조건이 실제 내용을 갖는다 --- 이 고전적 결과는 열람하지 못했다. 출판본(Math.\ Z.)과의 대조도 하지 않았다.
+\end{itemize}
+심사: R17REFEREE
 
 \subsection{증명의 구조}
 \begin{enumerate}

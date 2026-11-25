@@ -1,53 +1,40 @@
 [
  {
-  "p": 661,
-  "r": 165,
-  "eps": 1789539.0000005588,
+  "p": 733,
+  "r": 183,
+  "eps": 27.036986370680886,
   "unit": [
-   1789539,
-   69605,
+   27,
+   1,
    -4
   ],
-  "theta": 164.75037821482601,
+  "theta": 182.75034106412005,
   "subs": [
    {
-    "m": 165,
+    "m": 183,
     "rank": 8,
-    "integrality": 9.313225746154785e-09,
-    "logR_assuming_D=r^2p": 0.0,
-    "min_gamma_over_theta": 0.9999999999999969,
-    "at_t": 0.0025313972517508887,
+    "integrality": 1.1175870895385742e-08,
+    "logR_assuming_D=r^2p": -1.3862943611199086,
+    "min_gamma_over_theta": 0.9999999999999988,
+    "at_t": 0.0027942058247689694,
     "count": 12,
-    "enum_fail": 31,
-    "unimodular_logdet": -0.0005884747187803185,
-    "roots": 240,
-    "short": "norm 2 |s|=3: 96 pairs, norm 2 |s|=25: 24 pairs, norm 4 |s|=0: 72 pairs, norm 4 |s|=6: 192 pairs, norm 4 |s|=12: 24 pairs, norm 4 |s|=16: 96 pairs, norm 4 |s|=22: 288 pairs, norm 4 |s|=28: 288 pairs, norm 4 |s|=34: 96 pairs, norm 4 |s|=50: 24 pairs"
+    "enum_fail": 0,
+    "unimodular_logdet": 1.3862943611198784,
+    "roots": 112,
+    "short": "norm 2 |s|=1: 32 pairs, norm 2 |s|=27: 24 pairs, norm 4 |s|=0: 72 pairs, norm 4 |s|=2: 192 pairs, norm 4 |s|=4: 24 pairs, norm 4 |s|=24: 32 pairs, norm 4 |s|=26: 96 pairs, norm 4 |s|=28: 96 pairs, norm 4 |s|=30: 32 pairs, norm 4 |s|=54: 24 pairs"
    },
    {
-    "m": 55,
+    "m": 61,
     "rank": 24,
-    "integrality": 3.026798367500305e-09,
-    "logR_assuming_D=r^2p": 1.1368683772161603e-13,
-    "min_gamma_over_theta": 0.9999999999999966,
-    "at_t": 0.0025313972517508887,
+    "integrality": 5.587935447692871e-09,
+    "logR_assuming_D=r^2p": -1.3862943611198943,
+    "min_gamma_over_theta": 0.9999999999999977,
+    "at_t": 0.0027942058247689694,
     "count": 12,
-    "enum_fail": 58,
-    "unimodular_logdet": 0.005360237531270684,
-    "roots": 144,
-    "short": "norm 2 |s|=21: 71 pairs, norm 2 |s|=22: 1 pairs, norm 4 |s|=0: 4100 pairs, norm 4 |s|=1: 341 pairs, norm 4 |s|=2: 11673 pairs, norm 4 |s|=3: 327 pairs, norm 4 |s|=4: 8236 pairs, norm 4 |s|=5: 365 pairs, norm 4 |s|=6: 8017 pairs, norm 4 |s|=7: 334 pairs, norm 4 |s|=8: 9149 pairs, norm 4 |s|=9: 282 pairs, norm 4 |s|=10: 5567 pairs, norm 4 |s|=11: 204 pairs, norm 4 |s|=12: 6371 pairs, norm 4 |s|=13: 241 pairs, norm 4 |s|=14: 4646 pairs, norm 4 |s|=15: 250 pairs, norm 4 |s|=16: 3778 pairs, norm 4 |s|=17: 260 pairs, norm 4 |s|=18: 5423 pairs, norm 4 |s|=19: 342 pairs, norm 4 |s|=20: 8086 pairs, norm 4 |s|=21: 367 pairs, norm 4 |s|=22: 3586 pairs, norm 4 |s|=23: 148 pairs, norm 4 |s|=24: 2801 pairs, norm 4 |s|=25: 72 pairs, norm 4 |s|=26: 1982 pairs, norm 4 |s|=27: 40 pairs, norm 4 |s|=28: 1051 pairs, norm 4 |s|=29: 120 pairs, norm 4 |s|=30: 2676 pairs, norm 4 |s|=31: 192 pairs, norm 4 |s|=32: 1908 pairs, norm 4 |s|=33: 99 pairs, norm 4 |s|=34: 824 pairs, norm 4 |s|=35: 36 pairs, norm 4 |s|=36: 271 pairs, norm 4 |s|=37: 19 pairs, norm 4 |s|=38: 316 pairs, norm 4 |s|=39: 56 pairs, norm 4 |s|=40: 771 pairs, norm 4 |s|=41: 80 pairs, norm 4 |s|=42: 471 pairs, norm 4 |s|=43: 35 pairs, norm 4 |s|=44: 543 pairs, norm 4 |s|=45: 24 pairs, norm 4 |s|=46: 70 pairs, norm 4 |s|=47: 2 pairs"
-   },
-   {
-    "m": 33,
-    "rank": 40,
-    "integrality": 1.0477378964424133e-09,
-    "logR_assuming_D=r^2p": 0.0,
-    "min_gamma_over_theta": 0.9999999999999963,
-    "at_t": 0.0025313972517508887,
-    "count": 12,
-    "enum_fail": 70,
-    "unimodular_logdet": 0.006825577834671748,
+    "enum_fail": 0,
+    "unimodular_logdet": 1.3862943611204592,
     "roots": 0,
-    "short": "norm 4 |s|=0: 1349 pairs, norm 4 |s|=1: 373 pairs, norm 4 |s|=2: 2065 pairs, norm 4 |s|=3: 336 pairs, norm 4 |s|=4: 1415 pairs, norm 4 |s|=5: 297 pairs, norm 4 |s|=6: 3368 pairs, norm 4 |s|=7: 628 pairs, norm 4 |s|=8: 3220 pairs, norm 4 |s|=9: 386 pairs, norm 4 |s|=10: 3 pairs, norm 4 |s|=11: 4 pairs, norm 4 |s|=12: 432 pairs, norm 4 |s|=13: 103 pairs, norm 4 |s|=14: 2017 pairs, norm 4 |s|=15: 364 pairs, norm 4 |s|=16: 975 pairs, norm 4 |s|=17: 198 pairs, norm 4 |s|=18: 601 pairs, norm 4 |s|=19: 117 pairs, norm 4 |s|=20: 446 pairs, norm 4 |s|=21: 23 pairs, norm 4 |s|=22: 613 pairs, norm 4 |s|=23: 105 pairs, norm 4 |s|=24: 2 pairs, norm 4 |s|=28: 309 pairs, norm 4 |s|=29: 50 pairs, norm 4 |s|=30: 1 pairs"
+    "short": "norm 4 |s|=0: 3384 pairs, norm 4 |s|=2: 3840 pairs, norm 4 |s|=4: 2784 pairs, norm 4 |s|=6: 4320 pairs, norm 4 |s|=8: 5568 pairs, norm 4 |s|=10: 3360 pairs, norm 4 |s|=12: 3888 pairs, norm 4 |s|=14: 4296 pairs, norm 4 |s|=16: 4704 pairs, norm 4 |s|=18: 1944 pairs, norm 4 |s|=20: 3456 pairs, norm 4 |s|=22: 1728 pairs, norm 4 |s|=24: 864 pairs, norm 4 |s|=26: 1920 pairs, norm 4 |s|=28: 576 pairs, norm 4 |s|=30: 288 pairs, norm 4 |s|=32: 1176 pairs, norm 4 |s|=34: 288 pairs, norm 4 |s|=40: 576 pairs, norm 4 |s|=44: 96 pairs, norm 4 |s|=50: 72 pairs"
    }
   ]
  }

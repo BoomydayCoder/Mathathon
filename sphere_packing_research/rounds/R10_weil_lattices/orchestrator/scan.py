@@ -60,8 +60,14 @@ def scan(p, ranks=(8, 24, 40), nsamp=300, tstep=0.1, seed=0, verbose=True):
         ON = np.einsum('ij,naj->nai', N, O)
         Yp, Ym = P.realify(ON, p)
         keep = np.where((np.abs(Yp).sum(1) + np.abs(Ym).sum(1)) > 1e-7)[0]
+        # O_F-closure of the generators (added after round 13's verification and the p = 733 run, where even 300
+        # plain samples generated only an index-2, non-O_F-stable sublattice): the fixed lattice is stable under
+        # omega = (1 + sqrt p)/2, which acts as (1 + sqrt p)/2 on the '+' embeddings and (1 - sqrt p)/2 on the '-' ones.
+        sq = math.sqrt(p)
+        Ygen = np.concatenate([np.concatenate([Yp[keep], Ym[keep]], axis=1),
+                               np.concatenate([Yp[keep] * (1 + sq) / 2, Ym[keep] * (1 - sq) / 2], axis=1)], axis=0)
         try:
-            BasH, rH = P.lattice_basis_exact(np.concatenate([Yp[keep], Ym[keep]], axis=1))
+            BasH, rH = P.lattice_basis_exact(Ygen)
         except Exception as e:
             print('  C_%d: lattice_basis failed: %s' % (m, e)); continue
         dp = Yp.shape[1]

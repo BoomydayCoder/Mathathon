@@ -1,0 +1,10 @@
+p=733 r=183 (p+1)/2=367  eps=(27+1 sqrt p)/2, log eps=3.297, theta=182.7503, build 329.6s
+  C_183: rank 8 (expected 8), integrality 1.1e-08, log R_U (assuming D=r^2 p) = -1.386294
+     WARNING: rank / calibration / integrality check failed -- the generated lattice is probably NOT the full fixed lattice (too few samples or precision loss); results below are unreliable
+     exhaustive t-circle search: 12 vectors below bound, min Gamma/theta = 1.000000 at t=0.0027942058247689694, enum failures 0  [0.0s]
+     L = fixed/sqrt(183) at t*=-3.297: integral (3e-13), logdet 1.4e+00, even True, #roots = 112 ; vectors of norm<=4: norm 2 |s|=1: 32 pairs, norm 2 |s|=27: 24 pairs, norm 4 |s|=0: 72 pairs, norm 4 |s|=2: 192 pairs, norm 4 |s|=4: 24 pairs, norm 4 |s|=24: 32 pairs, norm 4 |s|=26: 96 pairs, norm 4 |s|=28: 96 pairs, norm 4 |s|=30: 32 pairs, norm 4 |s|=54: 24 pairs
+  C_61: rank 24 (expected 24), integrality 5.6e-09, log R_U (assuming D=r^2 p) = -1.386294
+     WARNING: rank / calibration / integrality check failed -- the generated lattice is probably NOT the full fixed lattice (too few samples or precision loss); results below are unreliable
+     exhaustive t-circle search: 12 vectors below bound, min Gamma/theta = 1.000000 at t=0.0027942058247689694, enum failures 0  [0.8s]
+     L = fixed/sqrt(61) at t*=-3.297: integral (4e-13), logdet 1.4e+00, even True, #roots = 0 ; vectors of norm<=4: norm 4 |s|=0: 3384 pairs, norm 4 |s|=2: 3840 pairs, norm 4 |s|=4: 2784 pairs, norm 4 |s|=6: 4320 pairs, norm 4 |s|=8: 5568 pairs, norm 4 |s|=10: 3360 pairs, norm 4 |s|=12: 3888 pairs, norm 4 |s|=14: 4296 pairs, norm 4 |s|=16: 4704 pairs, norm 4 |s|=18: 1944 pairs, norm 4 |s|=20: 3456 pairs, norm 4 |s|=22: 1728 pairs, norm 4 |s|=24: 864 pairs, norm 4 |s|=26: 1920 pairs, norm 4 |s|=28: 576 pairs, no
+  total 399.3s

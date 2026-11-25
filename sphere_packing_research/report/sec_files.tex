@@ -21,11 +21,14 @@
 \texttt{rounds/R10\_weil\_lattices/} & $SL_2(p)$ Weil 격자: \texttt{orchestrator/} (\texttt{proto.py}, \texttt{run37.py}, \texttt{sub37.py}, \texttt{certify.py}, \texttt{roots37.py}), 빌더 \texttt{A/}, \texttt{B/}, 교차검증 \texttt{referee/}\\
 \texttt{rounds/R11\_mordell\_weil/} & Mordell--Weil 재정식화 검증(T1), 반박 시도(T2)\\
 \texttt{rounds/R12\_p61/} & $p=61$ 의 체계적 시험(\texttt{notes.md}, 정수 기저)과 독립 검증 \texttt{verify/}\\
-\texttt{rounds/R10\_weil\_lattices/ orchestrator/scan.py} 등 & 13회차의 구조적 부분격자 스캔(\texttt{scan.py}, \texttt{rootsys.py}, 출력 \texttt{scan\_all\_output.txt})\\
+\texttt{rounds/R10\_weil\_lattices/ orchestrator/scan.py} 등 & 13회차의 구조적 부분격자 스캔(\texttt{scan.py}, \texttt{rootsys.py}; 출력 \texttt{scan\_all\_output.txt}, 수정 후 재실행 \texttt{log\_scan3\_p*.txt})\\
 \texttt{rounds/R13\_scan\_verify/} & 13회차 스캔의 독립 검증\\
-\texttt{rounds/R14\_leech\_tensor/} & Leech 텐서족에 대한 Klartag 형 정리의 시도(\texttt{proof.md}), 문헌 점검(\texttt{novelty\_check.md}), 심사 보고\\
+\texttt{rounds/R14\_leech\_tensor/} & 비자유 작용의 틀 정리와 Leech 텐서족 정리(\texttt{proof.md}; 부록 \ref{app:proof14}), 문헌 점검(\texttt{novelty\_check.md}), 심사 보고 \texttt{referee\_A.md}, \texttt{referee\_B.md}, 수치 검산 스크립트\\
+\texttt{rounds/R15\_rogers/} & $j$-틀 평균값 공식의 유도(\texttt{proof.md}; 부록 \ref{app:proof15})와 심사 보고 2건\\
+\texttt{rounds/R16\_quotient\_curve/} & 몫곡선 사전(명제 \ref{prop:quotient})의 심사 보고\\
+\texttt{rounds/R17\_gargava\_check/} & 인용한 Gargava 정리 16 의 $s\ge2$ 경우 증명 점검(\texttt{notes.md})과 심사 보고\\
 \bottomrule
 \end{longtable}
 \end{center}
-\paragraph{재현 예.} $p=37$ 의 불안정성: \texttt{cd rounds/R10\_weil\_lattices/orchestrator; python3 run37.py 37 9,3; python3 sub37.py 37 3; python3 sub37.py 37 9 40; python3 certify.py 37 9 3 "[...]"} (마지막 인자는 \texttt{sub37.py} 가 출력하는 위반 벡터의 좌표). 필요한 것은 Python 3, numpy/scipy, gcc(\texttt{fp\_enum.c} 컴파일)뿐이다.
+\paragraph{재현 예.} 구조적 부분격자 스캔: \texttt{cd rounds/R10\_weil\_lattices/orchestrator; python3 scan.py 37 61} ($p=37$ 은 수 초, $p=61$ 은 약 1분). $p=37$ 의 불안정성: \texttt{cd rounds/R10\_weil\_lattices/orchestrator; python3 run37.py 37 9,3; python3 sub37.py 37 3; python3 sub37.py 37 9 40; python3 certify.py 37 9 3 "[...]"} (마지막 인자는 \texttt{sub37.py} 가 출력하는 위반 벡터의 좌표). 필요한 것은 Python 3, numpy/scipy, gcc(\texttt{fp\_enum.c} 컴파일)뿐이다.
 \paragraph{검증 수준에 대한 주의.} 이 보고서의 [증명됨] 은 ``하위 에이전트가 쓴 증명을 반박 담당 에이전트가 검토해 오류를 찾지 못했다'' 는 뜻이며 사람의 동료 심사를 거치지 않았다. 계산 결과 중 정수 연산으로 확정된 것([증명됨(계산기)])과 부동소수점 계산([수치관찰])을 구분해 표기했다. 인용 문헌 중 원문을 직접 확인하지 못한 것은 다음과 같다: Gross (1990), Nebe (1998), Dummigan, Tiep 의 $SL_2(p)$ 격자 논문들(호스트 접근 불가), Zassenhaus/Passman 의 Frobenius complement 구조정리와 Suzuki 의 분류(교과서적 사실로 기억에 의존해 인용), Weil (1946). 이들에 의존하는 진술에는 본문에서 ``인용'' 또는 ``원문 미열람'' 이라고 표시했다. arXiv 논문(Klartag, Rezvyakova, AGZ, GGS, Gargava, Kim 등)은 본문 또는 초록을 직접 열람했으나 일부는 요약 도구를 거쳐 읽었다.

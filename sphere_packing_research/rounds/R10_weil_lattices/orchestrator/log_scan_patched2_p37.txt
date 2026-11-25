@@ -1,0 +1,8 @@
+p=37 r=9 (p+1)/2=19  eps=(12+2 sqrt p)/2, log eps=2.492, theta=8.7568, build 0.1s
+  C_9: rank 8 (expected 8), integrality 1.7e-12, log R_U (assuming D=r^2 p) = -0.000000
+     exhaustive t-circle search: 12 vectors below bound, min Gamma/theta = 1.000000 at t=0.008220147355090468, enum failures 0  [0.0s]
+     L = fixed/sqrt(9) at t*=-2.492: integral (3e-14), logdet -1.1e-14, even True, #roots = 240 ; vectors of norm<=4: norm 2 |s|=1: 24 pairs, norm 2 |s|=3: 96 pairs, norm 4 |s|=0: 72 pairs, norm 4 |s|=2: 312 pairs, norm 4 |s|=4: 288 pairs, norm 4 |s|=6: 192 pairs, norm 4 |s|=8: 96 pairs, norm 4 |s|=10: 96 pairs, norm 4 |s|=12: 24 pairs
+  C_3: rank 24 (expected 24), integrality 1.4e-12, log R_U (assuming D=r^2 p) = 0.000000
+     exhaustive t-circle search: 732 vectors below bound, min Gamma/theta = 0.777778 at t=-2.3917798526449117, enum failures 0  [1.4s]
+     L = fixed/sqrt(3) at t*=-2.492: integral (5e-14), logdet 3.5e-13, even True, #roots = 144 ; vectors of norm<=4: norm 2 |s|=3: 72 pairs, norm 4 |s|=0: 19800 pairs, norm 4 |s|=2: 35208 pairs, norm 4 |s|=4: 26856 pairs, norm 4 |s|=6: 11736 pairs, norm 4 |s|=8: 2592 pairs, norm 4 |s|=10: 360 pairs
+  total 6.4s

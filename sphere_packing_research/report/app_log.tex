@@ -570,6 +570,8 @@
   \(p=661\) (\(\log\varepsilon=14.4\)): Fix(\(C_{165}\))\(=\sqrt{165}E_8\), Fix(\(C_{55}\))\(=\sqrt{55}\times\)(근 144개 --- \(D_4^6\) 형으로 추정, \(|s'|\approx21\); 허용 \(\le25\)), Fix(\(C_{33}\)) 랭크 40 (근 없음); 모두 \(\log R_U=0\). \(t\)-원 탐색 불완전(열거 실패 31/58/70), \(s\) 값은 반올림 불안정(짝홀성이 어긋난 값이 섞임) ⇒ 참고용.
 \item
   지금까지의 \(L_{24}(p)\): Leech (\(p=13,277,421,541\)), \(D_4^6\) (\(37,157\), 아마 \(661\)), \(E_8^3\) (\(61\)), 근 720개 (\(397,613\)). \(p=733,757\) 은 시간 내 완료되면 추가.
+\item
+  \(p=733\) (\(\log\varepsilon=3.3\)): \textbf{300표본으로도 표본 부족 재발} --- Fix(\(C_{183}\)) 의 생성 격자가 \(\log R_U=-\log4\) (지수 2, 근 112개의 \(D_8\) 형)로 나와 스크립트가 경고를 출력. 검증자의 제안대로 생성원에 \(\omega=(1+\sqrt p)/2\) 배를 추가하는 \textbf{\(O_F\)-폐포} 수정을 \texttt{scan.py} 에 반영(\(p=37\) 에서 기존 결과 재현 확인)하고 \(p=733\) 을 재실행(\texttt{log\_scan4\_p733.txt}). SCAN733RESULT
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -642,7 +644,7 @@
 \item
   \textbf{증명의 핵심}: \(j\) 에 대한 귀납. 첫 행 \(y\) 로 합을 나누고 \(y\) 의 \(\Gamma_k\)-궤도별로 unfolding, 안정자 \(\mathsf H_y\) 의 올 위에서 먼저 적분. (h1\(^\ell\)) 에서 \(y=a\,e_1\delta\) (\(\delta\in GL_k(\mathcal O)\))이므로 \(\mathsf H_y\) 는 \(\mathsf G_{k-1}\ltimes\Delta_\mathbb R^{k-1}\) 과 켤레(유니모듈러, \(\Gamma_y\) 의 공부피 1). 올 위에서 원환 \((\Delta_\mathbb R/\mathcal O)^{k-1}\) 적분이 첫 열의 합을 Lebesgue 적분으로 바꾸고(꽉 찬 랭크 ⇒ 원환 사이의 전사 준동형 ⇒ Haar→Haar), 나머지는 랭크 \(k-1\) 의 귀납 가정. 올 적분 \(=f(yg)\), \(f(y)=\int F(y,Z)dZ\). \textbf{같은 unfolding 을 \(j=1\), 함수 \(f\) 에 적용한 식과 궤도별로 일치}하므로 (L1)\(_k\) 가 전체를 \(\int f=\int F\) 로 평가 --- 제타 값·기본영역 부피·원시벡터에 대한 추이성이 필요 없고 순환 논법이 아니다.
 \item
-  \textbf{부수 결과}: (i) 격자의 공간은 \(\Gamma_k\backslash\mathsf G_k\) 여야 한다(14회차 표기 정정). (ii) Lemma 4.1a: \(\Lambda_W\) 가 유리 불변 형식에 대해 unimodular 이면 14회차의 (h1)(오른쪽) ⟺ (h1\(^\ell\))(왼쪽) --- Leech 에서는 추가 가정 불필요; 일반 정리 E 에서는 (h1\(^\ell\)) 이 추가 가정.
+  \textbf{부수 결과}: (i) 격자의 공간은 \(\Gamma_k\backslash\mathsf G_k\) 여야 한다(14회차 표기 정정). (ii) Lemma 4.1a: \(\Lambda_W\) 가 유리 불변 형식에 대해 unimodular 이면 14회차의 (h1)(오른쪽) \(\iff\) (h1\(^\ell\))(왼쪽) --- Leech 에서는 추가 가정 불필요; 일반 정리 E 에서는 (h1\(^\ell\)) 이 추가 가정.
 \item
   \textbf{심사 A(워크플로)·B(독립)}: 둘 다 0--3절의 모든 보조정리를 손으로 재확인, 반박 실패. 고전적 경우 \(\Delta=\mathbb Q\), \(j=2\), \(k=3\) 에서 Rogers 공식 재현(궤도 \(a\,e_1\) 의 기여 \(\zeta(3)^{-1}a^{-3}\), 합 1). 수정 사항: (HR) 진술의 몫 표기·왼쪽 ideal 가정, 정리 R 은 (L1) 이 인용되는 바로 그 군의 족에 적용, Lemma 2.1 의 자유성 논증 직접 서술, Lemma 4.2a 는 (L1) 만 옮김(사원수 경우와 무관). 수치 검산 없음; 두 심사자 모두 Gargava 논문은 열지 않음.
 \end{itemize}
@@ -658,7 +660,7 @@
 
 \textbf{선택한 과제}: 13회차의 관찰 "Fix(\(C_m\))\(=\sqrt m\times\)(짝 unimodular 격자)" 를 11회차의 Mordell--Weil 사전 안에서 \textbf{증명}할 수 있는가? (결과를 얻었으면 구조를 설명하고 확장하라는 규칙에 따라.)
 
-\textbf{{[}증명됨{]} (기하 부분; \(W_p\leftrightarrow\mathrm{Hom}(\mathrm{Jac}\,C_p,E)\) 의 동일시는 11회차 T1 의 {[}증명 스케치{]} 에 의존)}
+\textbf{{[}증명됨{]} (기하 부분; \(W_p\leftrightarrow\mathrm{Hom}(\mathrm{Jac}\,C_p,E)\) 의 동일시는 11회차 T1 의 유도 --- AI 에이전트 1회 검증, 일부 문헌 사실에 의존 --- 에 기댄다)}
 
 \begin{itemize}
 \tightlist
@@ -672,7 +674,7 @@
   \begin{itemize}
   \tightlist
   \item
-    \(g_D=2\) (\(D:Y^2=X^5-X\), \(m=(p-1)/4\)): 조건은 \(N(q')\ge1\) --- \(O_F\) 의 0 아닌 원소면 자동 성립. \textbf{랭크 8 고정격자가 모든 \(p\) 에서 정확히 경계인 이유.}
+    \(g_D=2\) (\(D:Y^2=X^5-X\), \(m=(p-1)/4\)): 조건은 \(N(q')\ge1\) --- \(O_F\) 의 0 아닌 원소면 자동 성립. \textbf{랭크 8 고정격자가 어떤 \(p\) 에서도 위반을 만들지 않는 이유}(등호가 실제로 성립해 "정확히 경계" 라는 것은 수치 사실 --- 아래 마무리의 지적 (2)).
   \item
     \(g_D=6\) (\(D:Y^2=X^{13}-X\), \(m=(p-1)/12\)): 조건은 \(N(q')\ge9\); unimodular 원소의 노름 \(2\ell\), \(s\)-값 \(s'\) 인 벡터에서 \(N(q')=(p\ell^2-s'^2)/4\) 이므로 근의 조건이 \(s'^2\le p-36\) (13회차의 경험적 조건의 유도). \(p=37\) 은 \(N(q')=(37-9)/4=7<9\) 로 실패.
   \end{itemize}
@@ -691,7 +693,44 @@
 \item
   \textbf{지적과 수정}: (1) \(q'\in O_F\) (적분성)가 가정으로만 쓰였음 → T1 의 논증이 \(D\) 에 그대로 적용됨을 보충(\(\pi_D^2=p\), Weierstrass 점이 \(\mathbb F_p\)-유리점이라 \((1+\pi_D)/2\in\mathrm{End}\), \(D\) superspecial). (2) \textbf{"랭크 8 고정격자가 모든 \(p\) 에서 정확히 경계" 는 과장} --- 증명되는 것은 "위반을 만들지 않는다(\(N(q')\ge1\))" 뿐이고, 등호의 존재는 수치 사실. (3) 불변 부분격자 = 노름사상의 상 이라는 데 한 문장 필요(\(\mathrm{Norm}=\pi^*\pi_*\), Jacobian 의 분해; 스케치). (4) \(p=37\) 의 \(N(q')=7\) 은 명제의 귀결이 아니라 10회차 수치 결과를 사전으로 옮긴 것. 부수 진술은 "초특이" 에서 "superspecial" 로 강화 가능.
 \item
-  \textbf{지위}: 기하 부분 \href{AI\%20심사\%201회}{증명됨}. \(W_p\) 와의 연결, 어떤 \(N(q')\) 값이 실제로 나타나는지는 11회차 T1 {[}증명 스케치{]} 또는 수치에 의존.
+  \textbf{지위}: 기하 부분 \href{AI\%20심사\%201회}{증명됨}. \(W_p\) 와의 연결, 어떤 \(N(q')\) 값이 실제로 나타나는지는 11회차 T1 (AI 검증 1회) 또는 수치에 의존.
 \end{itemize}
 
 \textbf{다음 회차에서 할 일}: 14·15회차(진행 중)의 결과 수합 → Leech 텐서족 정리의 상태 확정.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{uxd68cuxcc28-0954r17end-utc-uxacbduxacfc-r17minuxbd84-uxc778uxc6a9-uxc785uxb825uxc758-uxc810uxac80-gargava-uxc815uxb9ac-16-uxc740-d_mathbb-rmathbb-htimesmathbb-h-uxc5d0uxc11c-uxc131uxb9bduxd558uxb294uxac00}{%
+\subsubsection*{\texorpdfstring{17회차 (09:54--R17END UTC, 경과 R17MIN분): 인용 입력의 점검 --- Gargava 정리 16 은 \(D_\mathbb R=\mathbb H\times\mathbb H\) 에서 성립하는가}{17회차 (09:54--R17END UTC, 경과 R17MIN분): 인용 입력의 점검 --- Gargava 정리 16 은 D\_\textbackslash mathbb R=\textbackslash mathbb H\textbackslash times\textbackslash mathbb H 에서 성립하는가}}\label{uxd68cuxcc28-0954r17end-utc-uxacbduxacfc-r17minuxbd84-uxc778uxc6a9-uxc785uxb825uxc758-uxc810uxac80-gargava-uxc815uxb9ac-16-uxc740-d_mathbb-rmathbb-htimesmathbb-h-uxc5d0uxc11c-uxc131uxb9bduxd558uxb294uxac00}}
+
+\textbf{선택한 과제}: 6·14·15회차의 정리들이 블랙박스로 쓰는 랭크 1 평균값 정리(Gargava, arXiv:2107.04844, 정리 16). 6회차 개정자가 "인쇄된 증명이 \(D_\mathbb R^k\setminus0\) 위의 추이성을 주장하는데 \(s\ge2\) 에서는 거짓" 이라고 기록했고 14·15회차의 심사자 넷이 모두 이것을 남은 약점으로 지적. 원 논문을 직접 읽어 점검·보수. (\texttt{rounds/R17\_gargava\_check/notes.md}; 원문은 \texttt{papers/} 아래에 내려받아 읽기만 함)
+
+\textbf{{[}문헌 --- 이번 회차에 원문(arXiv v3 의 TeX)을 직접 읽음{]}}
+
+\begin{itemize}
+\tightlist
+\item
+  읽은 범위: §1.1--1.3 (정의 1 \textasciitilde{} 보조정리 19; 정리 16 과 증명 전체), 부록 A.1, C. 읽지 않은 것: §2--3, 부록 B, 출판본(Math. Z.), 그리고 원 논문이 증명 없이 인용하는 Weil 의 1958년 강의록.
+\item
+  \textbf{정확한 진술}: \(G=\{a\in M_k(D_\mathbb R):N(a)=1\}\), \(\Gamma=\{a\in M_k(\mathcal O):N(a)=1\}\), \(N\) = \textbf{전체 노름}(왼쪽 곱셈의 실행렬식; 각 자리의 축소 노름 조건이 아님). \(D_\mathbb R=\mathbb H^2\) 이면 \(G=\{(g_1,g_2):\mathrm{Nrd}(g_1)\mathrm{Nrd}(g_2)=1\}=SL_k(\mathbb H)^2\times\{(t,1/t)\}\), \(\Gamma=GL_k(\mathcal O)=\mathrm{Stab}_G(\mathcal O^k)\). \(\mathcal O\) 는 임의의 order. 정리 16: \(k\ge2\), \(f\in C_c(D_\mathbb R^k)\) 에 대해 \(\int_{G/\Gamma}\sum_{v\in g\mathcal O^k\setminus0}f(v)\,dg=\int f\,dx\) (\(\mathcal O^k\) 의 공부피 1). ⇒ 14·15회차의 족 \(\{N=1\}\) 과 같고 15회차의 "정합적 족" 공리를 만족.
+\item
+  \textbf{증명의 구조}: 보조정리 18 (Siegel 변환의 적분가능성과 \(\varepsilon\) 에 균등한 우함수; Siegel 집합), 보조정리 19 (\(\int\Phi_f=C\int f\); unfolding), 팽창 \(f_\varepsilon\) + Riemann 합으로 \(C=1\).
+\end{itemize}
+
+\textbf{{[}증명됨{]} 결함의 위치와 보수 (점검 에이전트)}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{결함}: 보조정리 19 의 증명(TeX 993행, PDF 13쪽)의 문장 "\(G\) acts transitively on \(D_\mathbb R^k\setminus\{0\}\)" 는 \(s\ge2\) 에서 거짓(\(\mathbb H^2\): 궤도 \(\{0\}\), \((\mathbb H^k\setminus0)\times0\), \(0\times(\mathbb H^k\setminus0)\), \(\Omega=(\mathbb H^k\setminus0)^2\)).
+\item
+  \textbf{보수}: (R1) 0 아닌 \(w\in D^k\) 는 가역인 좌표를 가지므로 모든 실 자리에서 성분이 0 이 아니다: \(g\mathcal O^k\setminus0\subset\Omega\). (R2) \(k\ge2\) 이면 \(G\) (심지어 \(SL_k(\mathbb H)^2\))가 \(\Omega\) 위에서 추이적 --- \(GL_k(\mathbb K_v)\) 가 \(\mathbb K_v^k\setminus0\) 에 추이적이고 벡터의 안정자가 모든 양의 실행렬식을 가지므로 전체 노름을 1 로 보정 가능. 안정자는 유니모듈러, Lebesgue 측도는 \(G\)-불변, \(\Omega\) 의 여집합은 영집합 ⇒ 보조정리 19 의 결론 그대로. (R4, unfolding 없는 판) \(\nu(B)=\mathbb E\#(g\mathcal O^k\setminus0\cap B)\) 는 \(\Omega\) 에 실린 \(G\)-불변 Borel 측도이고 보조정리 18 에서 국소유한 ⇒ 불변 Radon 측도의 유일성으로 \(\nu=C\cdot\mathrm{Leb}\).
+\item
+  \textbf{\(s\ge2\) 가 문제 되는 다른 곳은 이상 없음}: \(C=1\) 의 결정(팽창·Riemann 합·우함수 수렴)은 추이성을 쓰지 않음; 보조정리 18 도 추이성을 쓰지 않음(지수 계산 재확인). 단 \(s\ge2\) 에서는 \((t,1/t)\) 방향이 비콤팩트라 Weil 의 환원 정리의 콤팩트성 조건(단위군)이 실제 내용을 가짐.
+\item
+  사소한 오류(무해): 명제 51 의 원뿔 \((0,1]U\) 의 Haar 측도, 보조정리 12 의 상수 표기 등.
+\end{itemize}
+
+\textbf{결론(점검 에이전트)}: 정리 16 은 \(D_\mathbb R=\mathbb H\times\mathbb H\) 의 모든 랭크 \(k\ge2\) 에서, \(G\) = 전체 노름 1 인 군·\(\Gamma=GL_k(\mathcal O)\) 로 읽어 \textbf{신뢰할 수 있다}; 6회차 Remark 4.1a(iv) 의 단서는 해소. \textbf{남은 의존}: Weil 의 환원 이론(1958 강의록 정리 2, 보조정리 10.2 --- 원 논문이 증명 없이 인용; 유한 공부피와 적분가능성이 여기에 기댐; 열람하지 못함), 출판본과의 대조 미실시, 20분 제한 아래 1회 통독.
+
+\textbf{심사}: R17REF
