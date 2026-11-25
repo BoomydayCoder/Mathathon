@@ -23,6 +23,7 @@ B1 & $D_\R\cong\mathbb K^s$ 인 나눗셈대수와 유한군 $G\subset D^\times$
 B2 & Hurwitz: $V_n\ge(\tfrac3{2e}-o(1))n^2$ ($4\mid n$); icosian: $V_n\ge(\tfrac{15}{4e}-o(1))n^2$ ($8\mid n$) & \tagPL\ (동일; 14회차 문헌 점검에서 선행 결과를 찾지 못함 --- 검색 범위 제한적) & \S\ref{sec:quat}\\
 B3 & 행렬 블록이 있는 일반 나눗셈대수로의 확장(개정본 \S7) & \tagC\ (미심사) & 부록 \ref{app:proof}\\
 B4 & Leech 텐서족 ($24\mid n$): $V_n\ge(\tfrac{91}{12e}-o(1))n^2\approx2.79\,n^2$ & \tagPL\ + \tagPC\ (인용: Gargava 정리 16 을 모든 랭크 $\ge2$ 에서 --- $\Delta_\R=\HH^2$ 경우의 인쇄된 증명에는 결함이 있어 17회차에서 보수; Weil 의 환원 이론은 미확인 ---, Klartag, Eichler 질량 공식; 5회차 계산; AI 심사만 거침, 사람의 검증 없음; 순수 점근 --- $n\gtrsim10^{14}$) & \S\ref{sec:leechthm}\\
+B5 & (h1) 없는 판(정리 E$'$): $\mathcal O$ 가 극대 order 이면 class number 가정 없이 같은 결론. 따라서 $SL_2(p)$ 족에서 남는 가정은 (BS) 뿐 & \tagPL\ (AI 심사만 거침 --- R19NREF; 사람의 검증 없음) & \S\ref{sec:leechthm}\\
 \midrule
 \multicolumn{4}{@{}l}{\textbf{C. $SL_2(p)$ Weil 격자 텐서족 (조사 범위에서 유일하게 남은 후보; 차수 개선은 세 가지 미증명 가정 하에서만)}}\\
 C1 & Leech 격자는 $\Delta_{13}=\HH\otimes\Q(\sqrt{13})$ 의 극대 order 위의 랭크 3 가군, $\mathrm{Aut}_\Delta=SL_2(13)$; 모든 $\Delta$-직선에서 $R_U\le1$, 등호는 정확히 1638개 직선; 평면은 $R_U\le0.1001$ & \tagPC\ + 인용($\gamma_8=2$, $E_8$ 의 유일성 등) & \S\ref{sec:leech}\\
@@ -31,7 +32,7 @@ C3 & Mordell--Weil 재정식화: $W_p$ 는 $\mathrm{Hom}(\mathrm{Jac}(y^2=x^p-x)
 C3$'$ & \textbf{$p=37$ 은 불안정}: 72차원 짝 unimodular Weil 격자의 $C_3$-고정격자는 $\sqrt3N(D_4^6)$ 이고 그 근에서 $N(\nu)=63<81$; 그 $\Delta$-직선에서 $R_U=(9/7)^4$ 정확히 & \tagPC\ (독립 구현 3개 + 교차검증; 정수 인증서) & \S\ref{sec:weilcomp}\\
 C3$''$ & $p=61$ (120차원): 모든 부분군류의 isotypic 성분에서 $R_U\le1$ (정수 연산), 랭크 $\le40$ 인 모든 구조적 부분격자에서 위반 벡터 없음(부동소수점 열거); $p=157,277,397$ 의 랭크 8·24 고정 부분격자도 통과($p=61$, $157$ 의 랭크 24, $277$ 은 독립 재현; $p=397$ 은 미검증; $p=613,733$ 도 통과했으나 저자의 계산뿐(미검증); $p=421,541,661,757$ 은 부분 탐색). 비주 ideal 류의 직선과 전체 격자는 미결정 & \tagPC\ ($R_U$) / \tagN\ (벡터 탐색) & \S\ref{sec:p61}\\
 C3$'''$ & 몫곡선 사전: $\mathrm{Fix}(C_m)\cong\sqrt m\cdot\mathrm{Hom}(\mathrm{Jac}(Y^2=X^{(p-1)/m+1}-X),E)$ (지수 1); 안정성 기준은 몫곡선에서 같은 꼴 $N(q'_F)\ge(g_D/2)^2$ (자기닮음); 랭크 8 고정격자는 어떤 $p$ 에서도 위반을 만들지 않음; 근의 조건 $s'^2\le p-36$ 의 유도 & \tagP\ (기하 부분; AI 심사 1회) --- $W_p$ 와의 연결은 C3 에 의존 & \S\ref{sec:p61}\\
-C4 & 조건부 명제: (H1) 무한히 많은 $p$ 에서 모든 $\Delta$-부분공간에 $R_U\le1$, (H2) 경계류의 접촉 기여 $o(D_k)$, (H3) 텐서족의 등변 Klartag 정리($k\ge Cr\log p$) $\Rightarrow V_n\gtrsim n^{5/2}/\sqrt{\log n}$ (희소 차원열). $k\approx r$ 에서는 호흡 모드 때문에 이득 없음 & \tagC\ ((H1) 미증명; (H2)·(H3) 은 고정된 자료·class number 1·$k\to\infty$ 에서만 정리 \ref{thm:E} 로 증명됨(인용 정리 전제, AI 심사만) --- 여기서 필요한 $p\to\infty$ 에 균등한 판과 class number $>1$ 인 경우($p=37,61$ 등)는 미증명) & \S\ref{sec:leech}\\
+C4 & 조건부 명제: (H1) 무한히 많은 $p$ 에서 모든 $\Delta$-부분공간에 $R_U\le1$, (H2) 경계류의 접촉 기여 $o(D_k)$, (H3) 텐서족의 등변 Klartag 정리($k\ge Cr\log p$) $\Rightarrow V_n\gtrsim n^{5/2}/\sqrt{\log n}$ (희소 차원열). $k\approx r$ 에서는 호흡 모드 때문에 이득 없음 & \tagC\ ((H1) 미증명; (H2)·(H3) 은 고정된 자료·class number 1·$k\to\infty$ 에서만 정리 \ref{thm:E} 로 증명됨(인용 정리 전제, AI 심사만) --- 여기서 필요한 $p\to\infty$ 에 균등한 판은 미증명; class number $>1$ 인 경우($p\ge37$)는 고정된 $p$ 에 대해 19회차의 정리 E$'$ 가 다룸(B5)) & \S\ref{sec:leech}\\
 \midrule
 \multicolumn{4}{@{}l}{\textbf{D. 모형과 장벽}}\\
 D1 & Poisson 모형에서 대각합-LP 최적 타원체의 부피는 정확히 $\chi^2_{2N}$ (평균 $n(n+1)$) & \tagM & \S\ref{sec:perceptron}\\
