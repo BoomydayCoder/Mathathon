@@ -1,0 +1,44 @@
+\section{명시적 상수를 갖는 사원수 대칭 Klartag 형 정리 (6회차)}\label{sec:quat}
+
+3회차 심사에서 ``Hurwitz 가군에서는 사영된 이차변동이 상수 $q(x)\equiv\tfrac14$'' 라는 관찰이 나왔고, 이를 이용해 자유 작용 대칭족에서 \emph{상수까지 추적한} Klartag 형 정리를 완전한 증명으로 썼다. 증명 전문(317줄)은 부록 \ref{app:proof} 에 수록했다. 두 명의 독립 심사자(해석·상수 담당, 대수·측도 담당)가 Klartag 원문과 한 줄씩 대조했고 판정은 둘 다 ``\emph{수학적 오류 없음, 사소한 수정만 필요}'' 였으며, 그 수정을 반영한 것이 개정본이다.
+
+\subsection{정리}
+$\mathbb K\in\{\R,\C,\HH\}$, $d=\dim_\R\mathbb K$. $D$ 를 $\Q$ 위 $\delta$ 차원 나눗셈대수로 $D_\R:=D\otimes\R\cong\mathbb K^s$ ($\delta=sd$) 인 것, $G\subset D^\times$ 를 $\Q$-span 이 $D$ 인 유한 부분군, $w=|G|$, $\mathcal O=\Z[G]$, $D_k=s\big(k+\tfrac{dk(k-1)}2\big)$ ($k\times k$ Hermite 행렬 $s$ 벌의 실차원)이라 하자.
+\begin{theorem}[틀 정리 C$'$]\label{thm:quatC}\tagPL\ (인용 입력 (L1)--(L3); 아래 참조)\
+$(D,G)$ 를 고정하고 $k\to\infty$, $n=k\delta$ 일 때
+\[
+V_n\ \ge\ (1-o(1))\,\frac{w}{4e\,\delta}\,n^2\;=\;(1-o(1))\,\frac{w\,D_k}{2e},
+\]
+그리고 이 값은 $G$-불변 격자 $\lambda g\mathcal O^k$ ($g\in GL_k(D_\R)$) 로 실현된다.
+\end{theorem}
+\begin{theorem}[Hurwitz 와 icosian]\label{thm:quatAB}\tagPL
+\begin{align*}
+&\text{(A) } 4\mid n:\quad V_n\ \ge\ \Big(\frac3{2e}-o(1)\Big)n^2\approx0.552\,n^2 &&(D=(\tfrac{-1,-1}{\Q}),\ G=2T,\ w=24,\ \delta=4),\\
+&\text{(B) } 8\mid n:\quad V_n\ \ge\ \Big(\frac{15}{4e}-o(1)\Big)n^2\approx1.380\,n^2 &&(D=(\tfrac{-1,-1}{\Q(\sqrt5)}),\ G=2I,\ w=120,\ \delta=8).
+\end{align*}
+\end{theorem}
+자명군($w=2$, $\delta=1$)이면 Rezvyakova 의 $\tfrac1{2e}=0.184$ 가 재현되고, Eisenstein 정수($w=6,\delta=2$; $2\mid n$)는 $\tfrac3{4e}$, 원분체 $\Q(\zeta_m)$ 는 $\tfrac{w}{4e\varphi(m)}$ ($w=m$ 또는 $2m$)을 준다. 선행 상수의 이득은 Rezvyakova 대비 $w/(2\delta)$: Hurwitz 3배, icosian 7.5배 --- 이는 \S\ref{sec:sym} 의 이득 공식 $g=|G|/(2\dim_\Q A)$ 그 자체이고, 1차 모멘트 수준의 Vance 의 이득($6n/e$ 대 $2n/e$)과 같은 비율이다.
+
+\paragraph{인용 입력.} (L1) Gargava, \emph{Lattice packings through division algebras} (arXiv:2107.04844), Theorem 16: order 위의 가군 격자 $g\mathcal O^k$ ($k\ge2$)에 대한 Siegel 평균값 정리 --- 블랙박스로 사용(진술은 원문과 대조했으나 증명은 재검증하지 않음; 개정자는 $D_\R=\mathbb K^s$, $s\ge2$ 인 경우 원 증명의 ``추이성'' 문구가 열린 조밀 궤도로 바뀌어야 한다는 점을 지적). (L2) Klartag (arXiv:2504.05042) 의 Lemma 2.1, A.1 과 \S2--4 의 증명들. (L3) 표준 확률해석과 GOE 꼬리 한계.
+
+\subsection{증명의 구조}
+\begin{enumerate}
+\item \textbf{불변 형식.} 열벡터 $D_\R^k$ 에 행렬은 왼쪽, 단위원은 오른쪽에서 작용(등거리, 0 이 아닌 벡터에 자유). $G$-불변 대칭 형식 전체 $\mathcal Q$ 는 Hermite 행렬 $H=(H_v)_{v\le s}$ 에 의한 $L_H$ 이고 $\dim\mathcal Q=D_k$. $\mathcal Q$ 로의 사영 $P$ 에 대해 $P(x\otimes x)=L_{xx^*/d}$, 따라서
+\[
+q(x):=\frac{|P(x\otimes x)|^2}{|x|^4}=\frac1d\sum_{v\le s}u_v^2\ \ge\ q_0=\frac1\delta\qquad(u_v=\text{자리 }v\text{ 에서의 질량 비율}).
+\]
+Hurwitz 에서는 $q\equiv\tfrac14$ (상수), icosian 에서는 $q=(u_1^2+u_2^2)/4$.
+\item \textbf{과정.} 핵심 단순화: Klartag 의 \emph{주변(ambient) Dyson 브라운 운동}을 $\Sym_n$ 위에 그대로 두고, 제약공간만 $F_A=\{B\in\mathcal Q:Bx\cdot x=0\ (\text{접촉점 }x)\}$ 로 줄인다. $\pi_A$ 는 $\Sym_n$ 에서 $F_A$ 로의 정사영. 그러면 Klartag 의 Lemma 2.2, Prop.\ 2.3, Cor.\ 2.4, Lemma 3.1 (Maurey/L\'evy), Cor.\ 3.2 (같은 상수 $C_0$), Lemma 3.3 (It\^o), Prop.\ 4.2 의 증명이 문자 그대로 적용되고(사용되는 성질 네 가지를 열거해 확인), $A_t\in\mathcal Q$ 가 유지된다.
+\item \textbf{궤도 계수.} 접촉집합은 $G$-불변이고 $P(x\otimes x)$ 는 궤도 위에서 상수이며 궤도는 모두 크기 $w$ 이므로 $\dim F_t\ge D_k-|\text{접촉점}|/w$.
+\item \textbf{접촉 확률.} $\pi_t=\pi_tP$ 이므로 마팅게일 $\langle A_t,x\otimes x\rangle$ 의 이차변동은 $\le t\,q(x)|x|^4$ --- 시간이 $q$ 배로 느려진다. Rezvyakova 의 적분 보조정리를 균등성까지 다시 증명하고, 방향 의존성은 새 \emph{각도 보조정리}($u\sim\mathrm{Dirichlet}$ 에 대해 $\E\exp(\tfrac{bs}2\sum(u_v-\tfrac1s)^2)\le(1-b/a)^{-bs}$)로 $1+O(\log^2n/k)$ 인자로 처리.
+\item \textbf{최적화.} $z=n^2q_0T/8$ 로 두면 $\E\log\det A_T\le2\rho-\tfrac{4D_k}{q_0n^2}z+\tfrac{8e^{-\rho}}{wq_0n^2}e^z(1+o(1))$, $\tfrac{4D_k}{q_0n^2}=2+O(1/k)$; $e^z=wq_0n^2e^\rho/4$ 에서 $\det(A_T)^{-1/2}\ge(1-o(1))\tfrac{wq_0n^2}{4e}$.
+\end{enumerate}
+
+\subsection{한계와 의미}
+\begin{itemize}
+\item \textbf{차수는 $n^2$ 그대로다.} 따라서 큰 $n$ 에서는 AGZ/GGS 의 $c\,n^2\log\log n$ (상수 $c$ 는 명시되지 않은 작은 값) 보다 약하다. 얻은 것은 명시적 선행 상수이다. 원분체 이득 $m/(2\varphi(m))\sim\tfrac{e^\gamma}2\log\log m$ 이 $7.5$ 를 넘으려면 $\log\log m>8$ 이므로, ``현실적인'' 모든 차원에서는 icosian 상수가 더 크다.
+\item 점근적 진술이며 $o(1)$ 은 비효과적이고 느리다(상대오차 $O((\log n)^{-1/4})$; 구적으로 $n=10^4,10^5,10^6$ 에서 극한값의 $1.19,1.045,1.02$ 배). $4\mid n$, $8\mid n$ 밖의 차원에 대해서는 아무것도 주장하지 않는다.
+\item \textbf{새로움에 대한 단서.} AGZ (arXiv:2606.05105) 는 원분체만 다루고 나눗셈대수는 인용(Gargava, Vance)만 한다는 것을 본문 검색으로 확인했으나, 이 명시적 상수 결과가 다른 문헌에 없는지는 확인하지 못했다.
+\item 일반적인 행렬 블록($D_\R\supset M_m(\mathbb K)$, $m>1$)의 경우를 위해 개정자가 \S7(Wishart 형 각도 보조정리)을 추가했으나 \emph{심사받지 않았다}.
+\item 8회차의 실험은 이 정리의 구조를 소차원에서 그대로 보여 준다: 등변 과정의 첫 $\mathcal Q$-perfect 형식의 부피가 $V\approx1.06\,(wD/2)$ (\S\ref{sec:equiv}).
+\end{itemize}

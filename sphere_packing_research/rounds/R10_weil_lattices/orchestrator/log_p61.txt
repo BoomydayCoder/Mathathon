@@ -1,0 +1,22 @@
+p 61 kappa -1 orbit 15128 time 4.3
+ structured initial basis: logdet 630.4567
+   (exact solve used; q has 6 digits)
+Traceback (most recent call last):
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R10_weil_lattices/orchestrator/run37.py", line 129, in <module>
+    analyze(p, subs, full_lll=(len(sys.argv) <= 3 or sys.argv[3] != 'nolll'), out='res_p%d.json' % p)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R10_weil_lattices/orchestrator/run37.py", line 44, in analyze
+    Bas, rank = P.lattice_basis(Xp, Xm, verbose=True, init=best[1])
+                ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R10_weil_lattices/orchestrator/proto.py", line 166, in lattice_basis
+    Bas = reduce(Bas)
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R10_weil_lattices/orchestrator/proto.py", line 127, in reduce
+    G2, U = V.lll_gram(G)
+            ~~~~~~~~~~^^^
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R2_voronoi_descent/voronoi.py", line 29, in lll_gram
+    L = np.linalg.cholesky(G)
+  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 887, in cholesky
+    r = gufunc(a, signature=signature)
+  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 147, in _raise_linalgerror_nonposdef
+    raise LinAlgError("Matrix is not positive definite")
+numpy.linalg.LinAlgError: Matrix is not positive definite

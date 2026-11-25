@@ -1,0 +1,26 @@
+n mode | reported: runs, med Vp, med Ve, freq best (perf->ext) | fresh seeds: same | pooled: runs, med Vp [CI95], med Ve [CI95], freq best perf -> ext
+9 descent | 66, 49.04, 51.68, 0.015->0.227 | 24, 49.58, 59.20, 0.042->0.167 | 90, 49.04 [47.58, 50.02], 53.09 [51.39, 57.46], 0.022->0.211 (+-0.043) | Vp/n^2 0.605 Ve/n^2 0.655 | fresh mean LP steps 0.33 | fresh checks ok True
+9 random  | 48, 45.98, 51.22, 0.000->0.292 | 26, 44.67, 52.95, 0.038->0.308 | 74, 45.45 [44.66, 47.13], 51.39 [49.57, 55.98], 0.014->0.297 (+-0.053) | Vp/n^2 0.561 Ve/n^2 0.634 | fresh mean LP steps 0.85 | fresh checks ok True
+10 descent | 28, 58.81, 65.46, 0.000->0.071 | 15, 57.06, 64.66, 0.000->0.000 | 43, 58.76 [57.09, 60.16], 65.28 [59.85, 68.6], 0.000->0.047 (+-0.032) | Vp/n^2 0.588 Ve/n^2 0.653 | fresh mean LP steps 0.80 | fresh checks ok True
+10 random  | 22, 52.99, 70.47, 0.045->0.136 | 25, 54.35, 63.01, 0.000->0.040 | 47, 54.25 [52.97, 55.65], 66.06 [62.3, 70.42], 0.021->0.085 (+-0.041) | Vp/n^2 0.542 Ve/n^2 0.661 | fresh mean LP steps 1.36 | fresh checks ok True
+sampler sensitivity table:
+  n=4 descent R2    runs 300 freq_best 0.767 +- 0.024 median 9.870 mean 9.626 distinct 2 bad 0
+  n=4 descent fixed runs 300 freq_best 0.737 +- 0.025 median 9.870 mean 9.595 distinct 2 bad 0
+  n=4 random  R2    runs 300 freq_best 0.513 +- 0.029 median 9.870 mean 9.363 distinct 2 bad 0
+  n=4 random  fixed runs 300 freq_best 0.550 +- 0.029 median 9.870 mean 9.401 distinct 2 bad 0
+  n=5 descent R2    runs 300 freq_best 0.967 +- 0.010 median 14.888 mean 14.819 distinct 3 bad 0
+  n=5 descent fixed runs 300 freq_best 0.980 +- 0.008 median 14.888 mean 14.848 distinct 3 bad 0
+  n=5 random  R2    runs 300 freq_best 0.873 +- 0.019 median 14.888 mean 14.560 distinct 3 bad 0
+  n=5 random  fixed runs 300 freq_best 0.900 +- 0.017 median 14.888 mean 14.629 distinct 3 bad 0
+  n=6 descent R2    runs 200 freq_best 0.910 +- 0.020 median 23.869 mean 23.562 distinct 5 bad 0
+  n=6 descent fixed runs 200 freq_best 0.905 +- 0.021 median 23.869 mean 23.518 distinct 5 bad 0
+  n=6 random  R2    runs 200 freq_best 0.745 +- 0.031 median 23.869 mean 22.786 distinct 6 bad 0
+  n=6 random  fixed runs 200 freq_best 0.800 +- 0.028 median 23.869 mean 23.102 distinct 5 bad 0
+  n=7 descent R2    runs 150 freq_best 0.913 +- 0.023 median 37.798 mean 36.784 distinct 4 bad 0
+  n=7 descent fixed runs 150 freq_best 0.880 +- 0.027 median 37.798 mean 36.396 distinct 8 bad 0
+  n=7 random  R2    runs 150 freq_best 0.740 +- 0.036 median 37.798 mean 34.609 distinct 12 bad 0
+  n=7 random  fixed runs 150 freq_best 0.747 +- 0.036 median 37.798 mean 34.737 distinct 10 bad 0
+  n=8 descent R2    runs  60 freq_best 0.617 +- 0.063 median 64.939 mean 54.056 distinct 14 bad 0
+  n=8 descent fixed runs  60 freq_best 0.600 +- 0.063 median 64.939 mean 53.306 distinct 18 bad 0
+  n=8 random  R2    runs  60 freq_best 0.450 +- 0.064 median 38.821 mean 48.374 distinct 23 bad 0
+  n=8 random  fixed runs  53 freq_best 0.415 +- 0.068 median 37.789 mean 47.722 distinct 20 bad 0

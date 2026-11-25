@@ -1,0 +1,21 @@
+eis k=1 n=2 D=1 w=6 mode=random runs=3 fails=0 t=0.0s Vperf med=3.6276 max=3.6276 | Vext med=3.6276 max=3.6276 orb_perf mean=1.0
+   Vperf set [3.6276] Vext set [3.6276] verify [[0, 3, 0.9999999999999998, 1.0000000000000002], [0, 3, 0.9999999999999998, 1.0000000000000002]] time/run 0.00
+gauss k=1 n=2 D=1 w=4 mode=random runs=3 fails=0 t=0.0s Vperf med=3.1416 max=3.1416 | Vext med=3.1416 max=3.1416 orb_perf mean=1.0
+   Vperf set [3.1416] Vext set [3.1416] verify [[0, 2, 0.9999999999999998, 1.0000000000000002], [0, 2, 0.9999999999999998, 1.0000000000000002]] time/run 0.00
+hur k=1 n=4 D=1 w=24 mode=random runs=3 fails=0 t=0.0s Vperf med=9.8696 max=9.8696 | Vext med=9.8696 max=9.8696 orb_perf mean=1.0
+   Vperf set [9.8696] Vext set [9.8696] verify [[0, 12, 0.9999999999999989, 1.0000000000000013], [0, 12, 0.9999999999999989, 1.0000000000000013]] time/run 0.00
+ico k=1 n=8 D=2 w=120 mode=random runs=5 fails=0 t=0.1s Vperf med=64.9394 max=64.9394 | Vext med=64.9394 max=64.9394 orb_perf mean=2.0
+   Vperf set [64.9394] Vext set [64.9394] verify [[0, 120, 0.9999999999999953, 1.0000000000000058], [0, 120, 0.9999999999999953, 1.0000000000000058]] time/run 0.06
+hur k=2 n=8 D=6 w=24 mode=random runs=10 fails=0 t=0.1s Vperf med=64.9394 max=64.9394 | Vext med=64.9394 max=64.9394 orb_perf mean=10.0
+   Vperf set [64.9394] Vext set [64.9394] verify [[0, 120, 0.9999999999999937, 1.0000000000000115], [0, 120, 0.9999999999999931, 1.00000000000001]] time/run 0.04
+eis k=3 n=6 D=9 w=6 mode=random runs=10 fails=0 t=0.2s Vperf med=23.8686 max=23.8686 | Vext med=23.8686 max=23.8686 orb_perf mean=11.7
+   Vperf set [21.2166, 23.8686] Vext set [21.2166, 23.8686] verify [[0, 36, 0.9999999999999818, 1.000000000000007], [0, 36, 0.9999999999999969, 1.0000000000000249]] time/run 0.02
+eis k=4 n=8 D=16 w=6 mode=random runs=10 fails=0 t=0.3s Vperf med=64.9394 max=64.9394 | Vext med=64.9394 max=64.9394 orb_perf mean=35.4
+   Vperf set [36.5284, 38.4826, 64.9394] Vext set [36.5284, 38.4826, 64.9394] verify [[0, 120, 0.9999999999999973, 1.0000000000000016], [0, 54, 0.999999999999996, 1.0000000000000029]] time/run 0.04
+eis k=6 n=12 D=36 w=6 mode=random runs=3 fails=0 t=7.1s Vperf med=103.1931 max=119.0582 | Vext med=103.1931 max=119.0582 orb_perf mean=50.7
+   Vperf set [96.8772, 103.1931, 119.0582] Vext set [101.2646, 103.1931, 119.0582] verify [[0, 174, 0.999999999999975, 1.000000000000039], [0, 168, 0.999999999999523, 1.0000000000001865]] time/run 2.47
+hur k=4 n=16 D=28 w=24 mode=random runs=2 fails=0 t=1.6s Vperf med=696.1603 max=963.9143 | Vext med=696.1603 max=963.9143 orb_perf mean=127.5
+   Vperf set [428.4063, 963.9143] Vext set [428.4063, 963.9143] verify [[0, 900, 0.9999999999999578, 1.0000000000000273], [0, 2160, 0.999999999999975, 1.0000000000000218]] time/run 2.03
+ico k=2 n=16 D=12 w=120 mode=random runs=2 fails=0 t=0.3s Vperf med=557.6757 max=616.9051 | Vext med=557.6757 max=616.9051 orb_perf mean=18.0
+   Vperf set [498.4463, 616.9051] Vext set [498.4463, 616.9051] verify [[0, 840, 0.9999999999999784, 1.0000000000000262], [0, 1320, 0.9999999999999836, 1.0000000000000149]] time/run 1.39
+done

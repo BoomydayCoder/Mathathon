@@ -1,0 +1,4 @@
+[    2.2s] p=61 setup ok: kappa=-1, rounding residuals (np.float64(1.2789769243681803e-13), np.float64(1.0231815394945443e-12), np.float64(9.947598300641403e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    2.2s] numeric Gram check: |G+ + G- - B| = 1.82e-12, |sqrt p (G+ - G-) - E| = 1.46e-11
+[    2.6s] exact det(B_saved) == (m^2 p)^(p-1): True
+[    7.5s] orbit of v0: size 15128 (expected |G|/|H| = 15128); coordinates in saved basis integral (residual 4.44e-08); Z-span of orbit == saved lattice: True

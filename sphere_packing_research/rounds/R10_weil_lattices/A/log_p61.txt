@@ -1,0 +1,29 @@
+[    0.3s] p=61 relations: |S^2+I|=2.2e-16 |(ST)^3-I|=9.2e-16 |(ST)^3+I|=2.0e+00 |T^p-I|=4.3e-14 unitarity=2.2e-16
+[    4.1s] orbit size 15128 (|G|=226920, |G|/|H|=15128)
+[    4.2s] H-generator maps orbit sample into orbit: True
+[   14.3s] rank of orbit sample = 120 (expected 120); R diag at rank-1: 8.622e+00, next: 1.866e-13
+[   15.9s] all orbit vectors in the 120-dim span: residual 3.96e-14
+[   15.9s] Gram of M integer residual 1.82e-12
+[   20.1s] det G_M has 323 digits; adjugate verified exactly
+[   22.7s] cond(Br) = 5.287e+03
+[   22.7s] HNF round 1: generators used 480, index so far 16466587481212631290010796822067386783, prime steps [3, 157, 577, 60590827735569923095927014030649], orbit vectors not yet integral: 0; max|Ccur|=1.177e+00, Gram diag min/max 900.000/4320.000, Gram int resid 6.37e-12, frac of gens max 2.12e-11, frac hist [15128     0     0     0     0]
+[   22.8s] Gram B integer residual 6.37e-12; E integer residual 4.55e-11; max|B|=4320, diag min/max 900/4320
+[   22.9s] check E B^-1 E = p B: residual 8.44e-06
+[   22.9s] O_F acts ((1+sqrt p)/2 integral matrix): max frac = 4.92e-08; sqrt p integral: 9.84e-08
+[   23.4s] det B = 178131689628822158288561426223956012971709029425181130992103882398077089726102125321351064490571661442671987729449583180356666699252735405470848465561290072455852047324656132554326151212945267562942609245097737302732099351487704552710056304931640625
+[   23.4s] D = det^(1/(p-1)) = 13725.0000000000; theta_p = 14.754098
+[   23.4s] det B factorisation: {3: 120, 5: 120, 61: 60} cofactor 1
+[   23.4s] EXACT check det(B) * index^2 == det(G_M): True
+[   24.8s] check: orbit vectors integral in basis, max frac = 9.74e-09
+[   24.8s] check: S*basis integral, max frac = 1.43e-08, |det|=1.000000
+[   24.8s] check: T*basis integral, max frac = 1.41e-08, |det|=1.000000
+[   25.8s] fixed lattice of H (order 15): rank 8, saturated True
+[   25.8s] v0: m_plus=450.000000 m_minus=450.000000 B=900 Gamma(v0)=14.754098
+[   25.8s] order test: det(Tr nrd form on Lambda^H) = 54085.31640538; maximal iff = (p/4)^4 = 54085.31640625; ratio = 1.00000000
+[   25.8s] calibration H-line: det_B(Lambda^H) = 90945137716272125244140625; r^8 D^4 = 90945137716272168481849344.000000; R_U = 1.00000000
+[   25.9s] [p=61 H-fixed (order 15)] rank 8: grid 75/75 t-values in [-3.6642,3.6642], bound Q_t<= 901.1252, vectors enumerated 12, nodes 768, flags 0, min Gamma = 14.75409836 (theta=14.75409836, ratio 1.000000), violators (distinct found) 0
+[   26.8s] C_3 fixed lattice: rank 40, saturated True, det_B = 684064812238663678898863379788780200443262616393805717021946294878865435757688828743994235992431640625, R_U = 1.00000000
+[   38.1s] [p=61 C_3-fixed] rank 40: grid 75/75 t-values in [-3.6642,3.6642], bound Q_t<= 901.1252, vectors enumerated 12, nodes 290856939, flags 0, min Gamma = 0.00000000 (theta=14.75409836, ratio 0.000000), violators (distinct found) 1
+[   39.5s] C_5 fixed lattice: rank 24, saturated True, det_B = 2663350608392836140764933045973354097668561735190451145172119140625, R_U = 1.00000000
+[   39.6s] [p=61 C_5-fixed] rank 24: grid 75/75 t-values in [-3.6642,3.6642], bound Q_t<= 901.1252, vectors enumerated 12, nodes 81311, flags 0, min Gamma = 0.00000000 (theta=14.75409836, ratio 0.000000), violators (distinct found) 1
+[   39.6s] done

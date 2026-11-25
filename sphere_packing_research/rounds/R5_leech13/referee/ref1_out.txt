@@ -1,0 +1,37 @@
+Golay weights {0: 1, 8: 759, 12: 2576, 16: 759, 24: 1} self-orthogonal: True
+my 196560 minimal vectors == their W.npy as sets: True
+inner products with a fixed minimal vector: {-4: 1, -2: 4600, -1: 47104, 0: 93150, 1: 47104, 2: 4600, 4: 1}
+HNF basis of generated lattice: det = 68719476736  == 2^36: True ; basis vectors in L: True
+Gram matrix of basis (unscaled): even, det = 1
+g: order 13, orthogonal, permutes the 196560 minimal vectors, tr g = -2.0 , sum g^j = 0
+s-distribution (own recount): {-4: 13104, -2: 45864, 0: 78624, 2: 45864, 4: 13104}
+values of w.g^j w (j=1..6): [-2, -1, 0, 1, 2]
+E s^2 = 4.0 E s^4 = 41.6
+i,j: i^2=j^2=-1, ij=-ji, commute with g, orthogonal, permute minimal vectors; omega=(-1+i+j+k)/2 permutes minimal vectors, omega^3=1
+O_0 = Z<1,i,j,omega> (x) Z[(1+eta)/2] maps L into L (checked on my HNF basis)
+rank of the 8 basis elements of O_0: 8
+classes x in (1/2)O_0/O_0 with xL in L: 4 [(0, 0, 0, 0, 0, 0, 0, 0), (0, 1, 1, 0, 1, 0, 1, 0), (1, 0, 1, 0, 1, 1, 0, 0), (1, 1, 0, 0, 0, 1, 1, 0)]
+orbits of <g,i,omega> on minimal vectors: 630 sizes: {312: 630} t=4.6
+ALL lines through minimal vectors (630 orbit reps, own exact saturation): (s, 13-s^2/4, det(O_0 w), index, det(L cap Delta w)) -> #minimal vectors
+    (-4, 9, 104976, 4, 6561) 13104  det==N^4: True
+    (-2, 12, 331776, 4, 20736) 45864  det==N^4: True
+    (0, 13, 456976, 4, 28561) 78624  det==N^4: True
+    (2, 12, 331776, 4, 20736) 45864  det==N^4: True
+    (4, 9, 104976, 4, 6561) 13104  det==N^4: True
+(s, #minimal vectors on the line Delta w, s-values on line) -> #minimal vectors: {(-4, 24, (-4,)): 13104, (-2, 24, (-2,)): 45864, (0, 24, (0,)): 78624, (2, 24, (2,)): 45864, (4, 24, (4,)): 13104} ; smallest squared distance (scaled) of a non-member to its line: 7.3846
+t=154.1
+norm 6 : total 16773120 ; {t: count}: {-18: 13104, -14: 275184, -10: 1257984, -6: 2830464, -2: 4009824, 2: 4009824, 6: 2830464, 10: 1257984, 14: 275184, 18: 13104}
+    {N(nu): count}: {9: 26208, 17: 550368, 23: 2515968, 27: 5660928, 29: 8019648}
+    design check: E t^2 = 36.0 (must be n^2 = 36); E t^4 = 3369.6 (must be 2.6 n^4 = 3369.6); all t = n mod 4: True
+norm 8 : total 398034000 ; {t: count}: {-24: 196560, -20: 2830464, -16: 11931192, -12: 28776384, -8: 50142456, -4: 67773888, 0: 74732112, 4: 67773888, 8: 50142456, 12: 28776384, 16: 11931192, 20: 2830464, 24: 196560}
+    {N(nu): count}: {16: 393120, 27: 5660928, 36: 23862384, 43: 57552768, 48: 100284912, 51: 135547776, 52: 74732112}
+    design check: E t^2 = 64.0 (must be n^2 = 64); E t^4 = 10649.6 (must be 2.6 n^4 = 10649.6); all t = n mod 4: True
+t=166.1
+norm-6 vector with t=18: norm 6 ; det(O_0 v) = 104976 index 4 det(L cap Delta v) = 6561
+   minimal vectors of L on this line: 0
+group <g,h2> (both commute with i,j,eta, permute minimal vectors): order 2184 ; (order,trace)->count: {(1, 24): 1, (2, -24): 1, (3, 0): 182, (4, 0): 182, (6, 0): 182, (7, -4): 468, (12, 0): 364, (13, -2): 168, (14, 4): 468, (26, 2): 168}
+order-3 elements: number of fixed minimal vectors -> #elements: {0: 182}
+fixed lattice of an order-3 element: rank 8 ; det = 6561 ; 3^8 = 6561
+   fixed space is the Delta-line of one of its vectors (rank of union = 8) ; t-values of the 8 spanning fixed vectors: [0, -30, -18, -12, -12, -6, 6, 0] norms: [72, 18, 18, 12, 12, 6, 6, 12]
+dim span(G) = 72 ; sum tr^2 = 17472.0 ; |G|/dim A = 30.333333333333332
+total time 191.7

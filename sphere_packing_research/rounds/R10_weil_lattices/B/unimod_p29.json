@@ -1,0 +1,15 @@
+{
+ "p": 29,
+ "eps_xy_sign": [
+  5,
+  1,
+  -4
+ ],
+ "Q_exact_integral": true,
+ "even": true,
+ "diag_min": 14,
+ "symmetric": true,
+ "logdet_float": 4.905409412003792e-12,
+ "det_exact": "1",
+ "lll_diag_min": 6
+}

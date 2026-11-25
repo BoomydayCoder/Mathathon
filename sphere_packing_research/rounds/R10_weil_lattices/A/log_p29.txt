@@ -1,0 +1,25 @@
+[    0.0s] p=29 relations: |S^2+I|=4.5e-16 |(ST)^3-I|=1.7e-15 |(ST)^3+I|=2.0e+00 |T^p-I|=2.4e-14 unitarity=2.2e-16
+[    0.1s] orbit size 3480 (|G|=24360, |G|/|H|=3480)
+[    0.1s] H-generator maps orbit sample into orbit: True
+[    1.3s] rank of orbit sample = 56 (expected 56); R diag at rank-1: 5.761e+00, next: 6.098e-14
+[    1.4s] all orbit vectors in the 56-dim span: residual 1.73e-14
+[    1.5s] Gram of M integer residual 4.55e-13
+[    1.6s] det G_M has 117 digits; adjugate verified exactly
+[    1.8s] cond(Br) = 2.478e+02
+[    1.8s] HNF round 1: generators used 224, index so far 120471482910921, prime steps [3, 40157160970307], orbit vectors not yet integral: 0; max|Ccur|=1.049e+00, Gram diag min/max 196.000/462.000, Gram int resid 5.20e-13, frac of gens max 2.89e-13, frac hist [3480    0    0    0    0]
+[    1.9s] Gram B integer residual 6.82e-13; E integer residual 3.30e-12; max|B|=462, diag min/max 196/462
+[    1.9s] check E B^-1 E = p B: residual 2.43e-09
+[    1.9s] O_F acts ((1+sqrt p)/2 integral matrix): max frac = 1.78e-11; sqrt p integral: 3.56e-11
+[    1.9s] det B = 18734158142789987420831676389030161904415521754591320577854761908477211572216969705726961
+[    1.9s] D = det^(1/(p-1)) = 1421.0000000000; theta_p = 6.758621
+[    1.9s] det B factorisation: {7: 56, 29: 28} cofactor 1
+[    1.9s] EXACT check det(B) * index^2 == det(G_M): True
+[    2.0s] check: orbit vectors integral in basis, max frac = 8.06e-12
+[    2.0s] check: S*basis integral, max frac = 8.70e-12, |det|=1.000000
+[    2.1s] check: T*basis integral, max frac = 7.12e-12, |det|=1.000000
+[    2.2s] fixed lattice of H (order 7): rank 8, saturated True
+[    2.2s] v0: m_plus=98.000000 m_minus=98.000000 B=196 Gamma(v0)=6.758621
+[    2.2s] order test: det(Tr nrd form on Lambda^H) = 2762.81640625; maximal iff = (p/4)^4 = 2762.81640625; ratio = 1.00000000
+[    2.2s] calibration H-line: det_B(Lambda^H) = 23505020366197964881; r^8 D^4 = 23505020366197964800.000000; R_U = 1.00000000
+[    2.2s] [p=29 H-fixed (order 7)] rank 8: grid 34/34 t-values in [-1.6472,1.6472], bound Q_t<= 196.2451, vectors enumerated 12, nodes 459, flags 0, min Gamma = 6.75862069 (theta=6.75862069, ratio 1.000000), violators (distinct found) 0
+[    2.2s] done

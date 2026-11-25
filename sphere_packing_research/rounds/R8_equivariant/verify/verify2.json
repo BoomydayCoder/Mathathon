@@ -1,0 +1,862 @@
+{
+ "zeta8_k4_idx10_det_square": true,
+ "polished": [
+  {
+   "file": "hur_k6_descent_s2.json",
+   "idx": 0,
+   "cluster_size": 804,
+   "cluster_spread": 4.6540263696215334e-05,
+   "next_value": 1.0001349786178082,
+   "rank": 66,
+   "D": 66,
+   "lstsq_resid": 2.314281806192753e-06,
+   "invariance_err": 9.992007221626409e-15,
+   "min_polished": 0.999997906412041,
+   "below_1m1e9": 408,
+   "pairs_polished": 408,
+   "pairs_stored": 792,
+   "V_polished": 1380.9636999939823,
+   "V_stored": 1380.9639679803824,
+   "V_relerr": 1.9405748907797005e-07,
+   "max_abs_diff_to_stored_A": 3.78869886176747e-05,
+   "l1_max_minvec": 117,
+   "ratio_best": 0.04265803622316983
+  },
+  {
+   "file": "hur_k6_descent_s2.json",
+   "idx": 1,
+   "cluster_size": 792,
+   "cluster_spread": 2.1991011678323957e-08,
+   "next_value": 1.0000646026545323,
+   "rank": 66,
+   "D": 66,
+   "lstsq_resid": 2.233768725545815e-13,
+   "invariance_err": 1.0880185641326534e-14,
+   "min_polished": 0.9999999999999645,
+   "below_1m1e9": 0,
+   "pairs_polished": 792,
+   "pairs_stored": 792,
+   "V_polished": 1573.4078131567087,
+   "V_stored": 1573.407813157058,
+   "V_relerr": 2.219335826225688e-13,
+   "max_abs_diff_to_stored_A": 4.911504536408984e-10,
+   "l1_max_minvec": 79,
+   "ratio_best": 0.0486026442894551
+  },
+  {
+   "file": "zeta13_k2_random_s1.json",
+   "idx": 0,
+   "cluster_size": 312,
+   "cluster_spread": 1.595355456629477e-07,
+   "next_value": 1.0000662994191858,
+   "rank": 24,
+   "D": 24,
+   "lstsq_resid": 1.4779288903810084e-12,
+   "invariance_err": 5.329070518200751e-15,
+   "min_polished": 1.0000000000000542,
+   "below_1m1e9": 0,
+   "pairs_polished": 312,
+   "pairs_stored": 312,
+   "V_polished": 833.8017725054108,
+   "V_stored": 833.8017725080693,
+   "V_relerr": 3.188449504420987e-12,
+   "max_abs_diff_to_stored_A": 4.796798513950762e-10,
+   "l1_max_minvec": 174,
+   "ratio_best": 0.025756177526341944
+  },
+  {
+   "file": "zeta13_k2_random_s1.json",
+   "idx": 1,
+   "cluster_size": 312,
+   "cluster_spread": 8.810321006080812e-08,
+   "next_value": 1.0005241197677441,
+   "rank": 24,
+   "D": 24,
+   "lstsq_resid": 1.5987211554602254e-13,
+   "invariance_err": 3.6637359812630166e-15,
+   "min_polished": 0.9999999999999027,
+   "below_1m1e9": 0,
+   "pairs_polished": 312,
+   "pairs_stored": 312,
+   "V_polished": 780.641531717585,
+   "V_stored": 780.6415317176321,
+   "V_relerr": 6.0285110237146e-14,
+   "max_abs_diff_to_stored_A": 4.932901309651072e-10,
+   "l1_max_minvec": 71,
+   "ratio_best": 0.024114055088822854
+  },
+  {
+   "file": "zeta13_k2_random_s1.json",
+   "idx": 2,
+   "cluster_size": 312,
+   "cluster_spread": 4.9114677835859766e-06,
+   "next_value": 1.000416281535962,
+   "rank": 24,
+   "D": 24,
+   "lstsq_resid": 9.549694368615746e-12,
+   "invariance_err": 1.6445178552260131e-15,
+   "min_polished": 1.0000000000001332,
+   "below_1m1e9": 0,
+   "pairs_polished": 312,
+   "pairs_stored": 312,
+   "V_polished": 804.1946703861134,
+   "V_stored": 804.1946704014231,
+   "V_relerr": 1.9037216247852484e-11,
+   "max_abs_diff_to_stored_A": 4.899676220304627e-10,
+   "l1_max_minvec": 411,
+   "ratio_best": 0.024841612694063167
+  }
+ ],
+ "best_forms": [
+  {
+   "key": "eis_k1",
+   "n": 2,
+   "q": 2,
+   "detZ": "3",
+   "det_stated": 2.9999999999999996,
+   "V": 3.6275987284684352,
+   "V_stated": 3.6275987284684352,
+   "min": 2,
+   "kissing": 6,
+   "kissing_stated": 6,
+   "invariant": true,
+   "ratio_best": 0.9999999999999998,
+   "H_reconstruct_err": 2.220446049250313e-16,
+   "H_hermitian": true,
+   "H_diag": [
+    2.0
+   ],
+   "H_offdiag_absmax": 0.0,
+   "ok": true
+  },
+  {
+   "key": "eis_k2",
+   "n": 4,
+   "q": 2,
+   "detZ": "4",
+   "det_stated": 4.000000000000008,
+   "V": 9.869604401089358,
+   "V_stated": 9.869604401089378,
+   "min": 2,
+   "kissing": 24,
+   "kissing_stated": 24,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "H_reconstruct_err": 2.3312505437189657e-07,
+   "H_hermitian": true,
+   "H_diag": [
+    2.0,
+    14.0
+   ],
+   "H_offdiag_absmax": 5.0,
+   "ok": true
+  },
+  {
+   "key": "eis_k3",
+   "n": 6,
+   "q": 2,
+   "detZ": "3",
+   "det_stated": 3.0000000000000036,
+   "V": 23.868642917252153,
+   "V_stated": 23.86864291725223,
+   "min": 2,
+   "kissing": 72,
+   "kissing_stated": 72,
+   "invariant": true,
+   "ratio_best": 0.9999999999999999,
+   "H_reconstruct_err": 3.9977529509016563e-07,
+   "H_hermitian": true,
+   "H_diag": [
+    4.0,
+    2.0,
+    6.0
+   ],
+   "H_offdiag_absmax": 2.309401,
+   "ok": true
+  },
+  {
+   "key": "eis_k4",
+   "n": 8,
+   "q": 2,
+   "detZ": "1",
+   "det_stated": 0.9999999999999973,
+   "V": 64.93939402266828,
+   "V_stated": 64.939394022669,
+   "min": 2,
+   "kissing": 240,
+   "kissing_stated": 240,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "H_reconstruct_err": 2.3312505437189657e-07,
+   "H_hermitian": true,
+   "H_diag": [
+    2.0,
+    8.0,
+    2.0,
+    6.0
+   ],
+   "H_offdiag_absmax": 4.041452,
+   "ok": true
+  },
+  {
+   "key": "eis_k5",
+   "n": 10,
+   "q": 4,
+   "detZ": "768",
+   "det_stated": 767.9999999999919,
+   "V": 94.22962527365688,
+   "V_stated": 94.22962527365908,
+   "min": 4,
+   "kissing": 336,
+   "kissing_stated": 336,
+   "invariant": true,
+   "ratio_best": 0.9999999999999999,
+   "H_reconstruct_err": 3.9977529509016563e-07,
+   "H_hermitian": true,
+   "H_diag": [
+    8.0,
+    12.0,
+    4.0,
+    8.0,
+    6.0
+   ],
+   "H_offdiag_absmax": 7.0,
+   "ok": true
+  },
+  {
+   "key": "eis_k6",
+   "n": 12,
+   "q": 4,
+   "detZ": "729",
+   "det_stated": 729.0000000000033,
+   "V": 202.56430745290362,
+   "V_stated": 202.56430745290274,
+   "min": 4,
+   "kissing": 756,
+   "kissing_stated": 756,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "H_reconstruct_err": 3.9977529509016563e-07,
+   "H_hermitian": true,
+   "H_diag": [
+    4.0,
+    6.0,
+    8.0,
+    4.0,
+    4.0,
+    4.0
+   ],
+   "H_offdiag_absmax": 4.0,
+   "ok": true
+  },
+  {
+   "key": "eis_k8",
+   "n": 16,
+   "q": 20,
+   "detZ": "701549779636225",
+   "det_stated": 701549779636219.0,
+   "V": 227.4516947673213,
+   "V_stated": 227.45169476732826,
+   "min": 20,
+   "kissing": 546,
+   "kissing_stated": 546,
+   "invariant": true,
+   "ratio_best": 0.235966728313761,
+   "H_reconstruct_err": 4.325494957768683e-07,
+   "H_hermitian": true,
+   "H_diag": [
+    36.0,
+    28.0,
+    30.0,
+    28.0,
+    20.0,
+    26.0,
+    38.0,
+    24.0
+   ],
+   "H_offdiag_absmax": 19.0,
+   "ok": true
+  },
+  {
+   "key": "gauss_k2",
+   "n": 4,
+   "q": 2,
+   "detZ": "4",
+   "det_stated": 4.000000000000019,
+   "V": 9.869604401089358,
+   "V_stated": 9.869604401089415,
+   "min": 2,
+   "kissing": 24,
+   "kissing_stated": 24,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "H_reconstruct_err": 0.0,
+   "H_hermitian": true,
+   "H_diag": [
+    6.0,
+    10.0
+   ],
+   "H_offdiag_absmax": 7.0,
+   "ok": true
+  },
+  {
+   "key": "gauss_k3",
+   "n": 6,
+   "q": 2,
+   "detZ": "4",
+   "det_stated": 4.000000000000054,
+   "V": 20.670851120199877,
+   "V_stated": 20.670851120200414,
+   "min": 2,
+   "kissing": 60,
+   "kissing_stated": 60,
+   "invariant": true,
+   "ratio_best": 0.8660254037844385,
+   "H_reconstruct_err": 0.0,
+   "H_hermitian": true,
+   "H_diag": [
+    2.0,
+    14.0,
+    10.0
+   ],
+   "H_offdiag_absmax": 10.0,
+   "ok": true
+  },
+  {
+   "key": "gauss_k4",
+   "n": 8,
+   "q": 2,
+   "detZ": "1",
+   "det_stated": 1.0000000000000284,
+   "V": 64.93939402266828,
+   "V_stated": 64.9393940226707,
+   "min": 2,
+   "kissing": 240,
+   "kissing_stated": 240,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "H_reconstruct_err": 0.0,
+   "H_hermitian": true,
+   "H_diag": [
+    12.0,
+    10.0,
+    6.0,
+    2.0
+   ],
+   "H_offdiag_absmax": 6.0,
+   "ok": true
+  },
+  {
+   "key": "gauss_k5",
+   "n": 10,
+   "q": 4,
+   "detZ": "1024",
+   "det_stated": 1023.9999999999991,
+   "V": 81.60524927607504,
+   "V_stated": 81.60524927607504,
+   "min": 4,
+   "kissing": 304,
+   "kissing_stated": 304,
+   "invariant": true,
+   "ratio_best": 0.8660254037844385,
+   "H_reconstruct_err": 0.0,
+   "H_hermitian": true,
+   "H_diag": [
+    8.0,
+    8.0,
+    4.0,
+    4.0,
+    4.0
+   ],
+   "H_offdiag_absmax": 2.0,
+   "ok": true
+  },
+  {
+   "key": "gauss_k6",
+   "n": 12,
+   "q": 4,
+   "detZ": "729",
+   "det_stated": 728.9999999999833,
+   "V": 202.56430745290362,
+   "V_stated": 202.56430745289933,
+   "min": 4,
+   "kissing": 756,
+   "kissing_stated": 756,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "H_reconstruct_err": 0.0,
+   "H_hermitian": true,
+   "H_diag": [
+    4.0,
+    16.0,
+    12.0,
+    10.0,
+    8.0,
+    4.0
+   ],
+   "H_offdiag_absmax": 7.0,
+   "ok": true
+  },
+  {
+   "key": "hur_k1",
+   "n": 4,
+   "q": 2,
+   "detZ": "4",
+   "det_stated": 3.999999999999999,
+   "V": 9.869604401089358,
+   "V_stated": 9.86960440108936,
+   "min": 2,
+   "kissing": 24,
+   "kissing_stated": 24,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "H_reconstruct_err": 0.0,
+   "H_hermitian": true,
+   "H_diag": [
+    2.0
+   ],
+   "H_offdiag_absmax": 0.0,
+   "ok": true
+  },
+  {
+   "key": "hur_k2",
+   "n": 8,
+   "q": 2,
+   "detZ": "1",
+   "det_stated": 1.0000000000000098,
+   "V": 64.93939402266828,
+   "V_stated": 64.9393940226686,
+   "min": 2,
+   "kissing": 240,
+   "kissing_stated": 240,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "H_reconstruct_err": 0.0,
+   "H_hermitian": true,
+   "H_diag": [
+    12.0,
+    2.0
+   ],
+   "H_offdiag_absmax": 4.0,
+   "ok": true
+  },
+  {
+   "key": "hur_k3",
+   "n": 12,
+   "q": 4,
+   "detZ": "1024",
+   "det_stated": 1023.9999999999973,
+   "V": 170.91363441338743,
+   "V_stated": 170.91363441338876,
+   "min": 4,
+   "kissing": 624,
+   "kissing_stated": 624,
+   "invariant": true,
+   "ratio_best": 0.84375,
+   "H_reconstruct_err": 0.0,
+   "H_hermitian": true,
+   "H_diag": [
+    6.0,
+    8.0,
+    4.0
+   ],
+   "H_offdiag_absmax": 3.0,
+   "ok": true
+  },
+  {
+   "key": "hur_k4",
+   "n": 16,
+   "q": 4,
+   "detZ": "256",
+   "det_stated": 255.99999999998698,
+   "V": 963.9142619500262,
+   "V_stated": 963.9142619500769,
+   "min": 4,
+   "kissing": 4320,
+   "kissing_stated": 4320,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "H_reconstruct_err": 0.0,
+   "H_hermitian": true,
+   "H_diag": [
+    4.0,
+    10.0,
+    8.0,
+    10.0
+   ],
+   "H_offdiag_absmax": 4.0,
+   "ok": true
+  },
+  {
+   "key": "hur_k5",
+   "n": 20,
+   "q": 4,
+   "detZ": "64",
+   "det_stated": 64.0000000000015,
+   "V": 3382.5608682719217,
+   "V_stated": 3382.560868271945,
+   "min": 4,
+   "kissing": 17400,
+   "kissing_stated": 17400,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "H_reconstruct_err": 0.0,
+   "H_hermitian": true,
+   "H_diag": [
+    4.0,
+    4.0,
+    4.0,
+    8.0,
+    4.0
+   ],
+   "H_offdiag_absmax": 3.0,
+   "ok": true
+  },
+  {
+   "key": "zeta5_k2",
+   "n": 8,
+   "q": 2,
+   "detZ": "1",
+   "det_stated": 1.0000000000000009,
+   "V": 64.93939402266828,
+   "V_stated": 64.93939402266923,
+   "min": 2,
+   "kissing": 240,
+   "kissing_stated": 240,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "ok": true
+  },
+  {
+   "key": "zeta5_k3",
+   "n": 12,
+   "q": 4,
+   "detZ": "1280",
+   "det_stated": 1279.9999999999864,
+   "V": 152.86980193195268,
+   "V_stated": 152.86980193195853,
+   "min": 4,
+   "kissing": 560,
+   "kissing_stated": 560,
+   "invariant": true,
+   "ratio_best": 0.7546729424061791,
+   "ok": true
+  },
+  {
+   "key": "zeta7_k2",
+   "n": 12,
+   "q": 4,
+   "detZ": "729",
+   "det_stated": 729.000000000011,
+   "V": 202.56430745290362,
+   "V_stated": 202.56430745290797,
+   "min": 4,
+   "kissing": 756,
+   "kissing_stated": 756,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "ok": true
+  },
+  {
+   "key": "zeta8_k2",
+   "n": 8,
+   "q": 2,
+   "detZ": "1",
+   "det_stated": 1.000000000000003,
+   "V": 64.93939402266828,
+   "V_stated": 64.93939402266906,
+   "min": 2,
+   "kissing": 240,
+   "kissing_stated": 240,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "ok": true
+  },
+  {
+   "key": "zeta8_k3",
+   "n": 12,
+   "q": 4,
+   "detZ": "1024",
+   "det_stated": 1024.0000000000036,
+   "V": 170.91363441338743,
+   "V_stated": 170.91363441338768,
+   "min": 4,
+   "kissing": 624,
+   "kissing_stated": 624,
+   "invariant": true,
+   "ratio_best": 0.84375,
+   "ok": true
+  },
+  {
+   "key": "zeta8_k4",
+   "n": 16,
+   "q": 4,
+   "detZ": "256",
+   "det_stated": 255.99999999998835,
+   "V": 963.9142619500262,
+   "V_stated": 963.9142619498748,
+   "min": 4,
+   "kissing": 4320,
+   "kissing_stated": 4320,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "ok": true
+  },
+  {
+   "key": "zeta12_k2",
+   "n": 8,
+   "q": 2,
+   "detZ": "1",
+   "det_stated": 0.9999999999999991,
+   "V": 64.93939402266828,
+   "V_stated": 64.93939402266982,
+   "min": 2,
+   "kissing": 240,
+   "kissing_stated": 240,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "ok": true
+  },
+  {
+   "key": "zeta12_k3",
+   "n": 12,
+   "q": 4,
+   "detZ": "729",
+   "det_stated": 729.000000000002,
+   "V": 202.56430745290362,
+   "V_stated": 202.56430745290345,
+   "min": 4,
+   "kissing": 756,
+   "kissing_stated": 756,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "ok": true
+  },
+  {
+   "key": "zeta12_k4",
+   "n": 16,
+   "q": 4,
+   "detZ": "256",
+   "det_stated": 255.99999999998812,
+   "V": 963.9142619500262,
+   "V_stated": 963.9142619500975,
+   "min": 4,
+   "kissing": 4320,
+   "kissing_stated": 4320,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "ok": true
+  },
+  {
+   "key": "ico_k1",
+   "n": 8,
+   "q": 2,
+   "detZ": "1",
+   "det_stated": 1.0,
+   "V": 64.93939402266828,
+   "V_stated": 64.93939402266831,
+   "min": 2,
+   "kissing": 240,
+   "kissing_stated": 240,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "ok": true
+  },
+  {
+   "key": "ico_k2",
+   "n": 16,
+   "q": 4,
+   "detZ": "256",
+   "det_stated": 256.0000000000004,
+   "V": 963.9142619500262,
+   "V_stated": 963.9142619500325,
+   "min": 4,
+   "kissing": 4320,
+   "kissing_stated": 4320,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "ok": true
+  },
+  {
+   "key": "ico_k3",
+   "n": 24,
+   "q": 4,
+   "detZ": "1",
+   "det_stated": 0.9999999999999836,
+   "V": 32372.88497692043,
+   "V_stated": 32372.884976920497,
+   "min": 4,
+   "kissing": 196560,
+   "kissing_stated": 196560,
+   "invariant": true,
+   "ratio_best": 1.0,
+   "ok": true
+  }
+ ],
+ "theta": [
+  {
+   "key": "zeta7_k2",
+   "n": 12,
+   "pairs_by_norm": {
+    "4": 378,
+    "6": 2016
+   },
+   "expected": [
+    378,
+    2016
+   ],
+   "ok": true
+  },
+  {
+   "key": "eis_k6",
+   "n": 12,
+   "pairs_by_norm": {
+    "4": 378,
+    "6": 2016
+   },
+   "expected": [
+    378,
+    2016
+   ],
+   "ok": true
+  },
+  {
+   "key": "gauss_k6",
+   "n": 12,
+   "pairs_by_norm": {
+    "4": 378,
+    "6": 2016
+   },
+   "expected": [
+    378,
+    2016
+   ],
+   "ok": true
+  },
+  {
+   "key": "zeta12_k3",
+   "n": 12,
+   "pairs_by_norm": {
+    "4": 378,
+    "6": 2016
+   },
+   "expected": [
+    378,
+    2016
+   ],
+   "ok": true
+  },
+  {
+   "key": "ico_k2",
+   "n": 16,
+   "pairs_by_norm": {
+    "4": 2160,
+    "6": 30720
+   },
+   "expected": [
+    2160,
+    30720
+   ],
+   "ok": true
+  },
+  {
+   "key": "hur_k4",
+   "n": 16,
+   "pairs_by_norm": {
+    "4": 2160,
+    "6": 30720
+   },
+   "expected": [
+    2160,
+    30720
+   ],
+   "ok": true
+  },
+  {
+   "key": "zeta8_k4",
+   "n": 16,
+   "pairs_by_norm": {
+    "4": 2160,
+    "6": 30720
+   },
+   "expected": [
+    2160,
+    30720
+   ],
+   "ok": true
+  },
+  {
+   "key": "zeta12_k4",
+   "n": 16,
+   "pairs_by_norm": {
+    "4": 2160,
+    "6": 30720
+   },
+   "expected": [
+    2160,
+    30720
+   ],
+   "ok": true
+  },
+  {
+   "key": "hur_k3",
+   "n": 12,
+   "pairs_by_norm": {
+    "4": 312,
+    "6": 1728
+   },
+   "expected": null,
+   "ok": true
+  },
+  {
+   "key": "zeta8_k3",
+   "n": 12,
+   "pairs_by_norm": {
+    "4": 312,
+    "6": 1728
+   },
+   "expected": null,
+   "ok": true
+  },
+  {
+   "key": "hur_k5",
+   "n": 20,
+   "pairs_by_norm": {
+    "4": 8700,
+    "6": 322560
+   },
+   "expected": null,
+   "ok": true
+  },
+  {
+   "key": "zeta5_k3",
+   "n": 12,
+   "pairs_by_norm": {
+    "4": 280,
+    "6": 1520
+   },
+   "expected": null,
+   "ok": true
+  },
+  {
+   "key": "gauss_k5",
+   "n": 10,
+   "pairs_by_norm": {
+    "4": 152,
+    "6": 288
+   },
+   "expected": null,
+   "ok": true
+  },
+  {
+   "key": "eis_k5",
+   "n": 10,
+   "pairs_by_norm": {
+    "4": 168,
+    "6": 384
+   },
+   "expected": null,
+   "ok": true
+  }
+ ]
+}

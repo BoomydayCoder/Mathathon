@@ -1,0 +1,14 @@
+p 37 kappa -1 orbit 5624 time 0.7
+ structured initial basis: logdet 312.5769
+   enlarged (index divides q=73) logdet now 303.9960
+   enlarged (index divides q=37) logdet now 296.7741
+   enlarged (index divides q=73) logdet now 288.1932
+ rank 72 (expected 72) integrality 2.41016095969826e-10 1.4179022400639951e-09
+ E B^-1 E - pB residual 1.9426806829869747e-09
+ logdet B = 288.193214, D = 2997.00000000, theta = 8.756757, critical Q-bound 2 sqrt(theta D) = 324.000000
+ subgroup C_9: rank of N_H(Lambda) = 8, logdet = 49.5993, log R_U(image of norm map) = 0.000000
+   exhaustive over t-grid: #vectors below bound (sum over t) = 12, min Gamma = 8.756756756756534 at t=0.008220147355090468  (theta = 8.756757)  [0.1s]
+ subgroup C_3: rank of N_H(Lambda) = 24, logdet = 122.4311, log R_U(image of norm map) = 0.000000
+   exhaustive over t-grid: #vectors below bound (sum over t) = 732, min Gamma = 6.810810810807054 at t=-2.3917798526449117  (theta = 8.756757)  [1.1s]
+ full lattice, LLL bases over t-grid: min Gamma among basis vectors = 8.756757 (theta 8.756757, ratio 1.0000) at t=-0.59 ; min Q_t/critical = 1.0000
+ total time 48.6

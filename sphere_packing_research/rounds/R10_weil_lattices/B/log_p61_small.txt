@@ -1,0 +1,14 @@
+[    2.5s] p=61 setup ok: kappa=-1, rounding residuals (np.float64(1.2789769243681803e-13), np.float64(1.0231815394945443e-12), np.float64(9.947598300641403e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    2.5s] closure iterations 3; det(B on Lambda_0) = ~1e248 ; D = 13725.0 (exact m^2 p: True)
+[   23.9s] LLL done; diag(B) min 900 max 5250 ; |E B^-1 E - pB| = 3.06e-06
+Traceback (most recent call last):
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R10_weil_lattices/B/drive.py", line 6, in <module>
+    Wl, out = run(p, [])
+              ~~~^^^^^^^
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R10_weil_lattices/B/weil.py", line 289, in run
+    PH = Wl.torus_perm(m); CH = Wl.fixed(PH)
+                                ~~~~~~~~^^^^
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R10_weil_lattices/B/weil.py", line 229, in fixed
+    assert ker[:k].all() and not ker[k:].any(), 'kernel vectors not leading'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: kernel vectors not leading

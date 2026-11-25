@@ -1,0 +1,20 @@
+M=45 pool=6 (n=2 mod 4 allowed, 2 and M excluded) | lcm=M sets: 44 | pass per-prime cuts: 8 | pass vertex cuts: 6 | pass all cuts: 6 | support-admissible (LP): 6 | M/phi(M)=1.8750 | timeout=False | 0.0s
+     ADMISSIBLE avoiding lcm: gain M/C=1.5000 (ratio to M/phi(M): 0.8000) margin=1.0753 N=[9, 45]
+     ADMISSIBLE avoiding lcm: gain M/C=1.2500 (ratio to M/phi(M): 0.6667) margin=0.7672 N=[5, 15, 45]
+     ADMISSIBLE avoiding lcm: gain M/C=1.0714 (ratio to M/phi(M): 0.5714) margin=0.3098 N=[5, 9, 15, 45]
+     ADMISSIBLE avoiding lcm: gain M/C=1.0465 (ratio to M/phi(M): 0.5581) margin=0.1667 N=[1, 5, 9, 15, 45]
+M=105 pool=8 (n=2 mod 4 allowed, 2 and M excluded) | lcm=M sets: 218 | pass per-prime cuts: 25 | pass vertex cuts: 19 | pass all cuts: 19 | support-admissible (LP): 19 | M/phi(M)=2.1875 | timeout=False | 0.0s
+     ADMISSIBLE avoiding lcm: gain M/C=1.8750 (ratio to M/phi(M): 0.8571) margin=2.0420 N=[15, 105]
+     ADMISSIBLE avoiding lcm: gain M/C=1.7500 (ratio to M/phi(M): 0.8000) margin=2.1506 N=[21, 105]
+     ADMISSIBLE avoiding lcm: gain M/C=1.5441 (ratio to M/phi(M): 0.7059) margin=1.6261 N=[15, 21, 105]
+     ADMISSIBLE avoiding lcm: gain M/C=1.5000 (ratio to M/phi(M): 0.6857) margin=1.2849 N=[3, 15, 21, 105]
+M=315 pool=12 (n=2 mod 4 allowed, 2 and M excluded) | lcm=M sets: 3748 | pass per-prime cuts: 162 | pass vertex cuts: 77 | pass all cuts: 75 | support-admissible (LP): 73 | M/phi(M)=2.1875 | timeout=False | 0.5s
+     ADMISSIBLE avoiding lcm: gain M/C=1.8750 (ratio to M/phi(M): 0.8571) margin=6.1260 N=[45, 315]
+     ADMISSIBLE avoiding lcm: gain M/C=1.7500 (ratio to M/phi(M): 0.8000) margin=6.4518 N=[63, 315]
+     ADMISSIBLE avoiding lcm: gain M/C=1.5441 (ratio to M/phi(M): 0.7059) margin=4.8782 N=[45, 63, 315]
+     ADMISSIBLE avoiding lcm: gain M/C=1.5000 (ratio to M/phi(M): 0.6857) margin=3.8547 N=[9, 45, 63, 315]
+M=60 pool=11 (n=2 mod 4 allowed, 2 and M excluded) | lcm=M sets: 1874 | pass per-prime cuts: 5 | pass vertex cuts: 4 | pass all cuts: 4 | support-admissible (LP): 4 | M/phi(M)=3.7500 | timeout=False | 0.0s
+     ADMISSIBLE avoiding lcm: gain M/C=3.0000 (ratio to M/phi(M): 0.8000) margin=0.7169 N=[12, 60]
+     ADMISSIBLE avoiding lcm: gain M/C=2.5000 (ratio to M/phi(M): 0.6667) margin=0.5754 N=[20, 60]
+     ADMISSIBLE avoiding lcm: gain M/C=2.1429 (ratio to M/phi(M): 0.5714) margin=0.2066 N=[12, 20, 60]
+     ADMISSIBLE avoiding lcm: gain M/C=2.0000 (ratio to M/phi(M): 0.5333) margin=0.7184 N=[4, 12, 20, 60]

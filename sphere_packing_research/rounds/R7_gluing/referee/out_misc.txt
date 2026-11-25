@@ -1,0 +1,28 @@
+q, x_hi, q*x_hi, x_lo, q^2*x_lo, check x_hi<2/q
+  2 0.5000 1.000 nan nan True
+  3 0.3909 1.173 0.26154 2.354 True
+  5 0.2723 1.362 0.10308 2.577 True
+  7 0.2092 1.465 0.05397 2.645 True
+ 11 0.1433 1.576 0.02222 2.688 True
+ 13 0.1239 1.610 0.01596 2.697 True
+ 17 0.0975 1.658 0.00936 2.706 True
+ 19 0.0882 1.675 0.00750 2.708 True
+ 23 0.0740 1.703 0.00513 2.711 True
+ 59 0.0305 1.797 0.00078 2.717 True
+sum x_hi {3,5,7} = 0.8725  {3,5,7,11} = 1.0157  {3,5,7,13} = 0.9963  {2,3,5} = 1.1632  {2,3,7} = 1.1001  {2,5,7} = 0.9816
+per-prime cut slacks [1, 3, 5, 7, 21, 35, 105] {3: 2.3433, 5: 5.2412, 7: 1.05} LP margin 0.0182
+per-prime cut slacks [1, 5, 7, 11, 35, 55, 77, 231, 385, 1155] {3: 0.0359, 5: 70.6111, 7: 0.9615, 11: 8.3384} LP margin 0.018
+per-prime cut slacks [1, 3, 5, 7, 15, 21, 35] {3: -6.9222, 5: -4.2712, 7: -2.8042} LP margin -3.6379
+per-prime cut slacks [4, 12, 20] {2: None, 3: -1.9907, 5: -1.5615} LP margin -0.9953
+per-prime cut slacks [1, 3, 4, 5, 12, 15, 20] {2: -5.19, 3: -2.3517, 5: -0.9338} LP margin -2.595
+y=11: theta=0.4156 gain cube-minus-top=1.7111 M/phi(M)=2.4062 min per-prime cut slack=-0.06172 at q=3
+y=47: theta=0.2774 gain cube-minus-top=1.3839 M/phi(M)=3.6048 min per-prime cut slack=-0.03553 at q=3
+y=200: theta=0.2078 gain cube-minus-top=1.2623 M/phi(M)=4.8126 min per-prime cut slack=-0.01750 at q=3
+y=1000: theta=0.1619 gain cube-minus-top=1.1932 M/phi(M)=6.1755 min per-prime cut slack=-0.00437 at q=3
+y=1500: theta=0.1529 gain cube-minus-top=1.1805 M/phi(M)=6.5415 min per-prime cut slack=-0.00168 at q=3
+y=2000: theta=0.1473 gain cube-minus-top=1.1728 M/phi(M)=6.7869 min per-prime cut slack=-0.00002 at q=3
+y=2500: theta=0.1432 gain cube-minus-top=1.1671 M/phi(M)=6.9839 min per-prime cut slack=+0.00095 at q=2477
+y=3000: theta=0.1399 gain cube-minus-top=1.1627 M/phi(M)=7.1464 min per-prime cut slack=+0.00082 at q=2999
+y=10000: theta=0.1218 gain cube-minus-top=1.1387 M/phi(M)=8.2122 min per-prime cut slack=+0.00031 at q=9973
+brute force M=1155 cube minus top per-prime slacks /M: {3: -0.06172, 5: -0.03307, 7: -0.01931, 11: -0.00796}
+closed form: {3: -0.06172, 5: -0.03307, 7: -0.01931, 11: -0.00796}

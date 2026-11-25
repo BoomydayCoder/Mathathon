@@ -1,0 +1,14 @@
+[    2.0s] p=61 setup ok: kappa=-1, rounding residuals (np.float64(1.2789769243681803e-13), np.float64(1.0231815394945443e-12), np.float64(9.947598300641403e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    2.0s] closure iterations 3; det(B on Lambda_0) = ~1e248 ; D = 13725.0 (exact m^2 p: True)
+[   23.0s] LLL done; diag(B) min 900 max 5250 ; |E B^-1 E - pB| = 3.06e-06
+[   23.0s] Lambda^H rank 8 det_B = 90945137716272125244140625 ; maximal-order value p^4 m^16 = 90945137716272125244140625 -> maximal: True ; ratio det/(p^4 m^16) = 1.0 ; borderline calibration det^m == m^(8m) det(Lambda): True
+[   25.8s] 31 group elements ready
+[   26.3s] t=-3.61 best Gamma/theta so far 9.00889, violator hits 0
+[   26.6s] t=-2.61 best Gamma/theta so far 6.70667, violator hits 0
+[   26.9s] t=-1.61 best Gamma/theta so far 3.41333, violator hits 0
+[   27.3s] t=-0.61 best Gamma/theta so far 3.04444, violator hits 0
+[   27.6s] t=0.39 best Gamma/theta so far 2.35111, violator hits 0
+[   28.0s] t=1.39 best Gamma/theta so far 2.35111, violator hits 0
+[   28.4s] t=2.39 best Gamma/theta so far 2.35111, violator hits 0
+[   28.7s] t=3.39 best Gamma/theta so far 2.35111, violator hits 0
+[   28.8s] GSIEVE RESULT {'p': 61, 't_done': 74, 't_points': 74, 'n_group_elements': 31, 'best_ratio': 2.351111111111111, 'b': 1380, 'e': 0, 'N_exact': 116168400, 'threshold_exact': 49410000, 'is_violator_exact': False, 'violator_hits': 0, 'D': 13725, 'theta': 14.754098360655737, 'Gamma': 34.68852459016394}

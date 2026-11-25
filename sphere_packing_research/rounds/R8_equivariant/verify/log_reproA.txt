@@ -1,0 +1,16 @@
+eis k=5 n=10 D=25 w=6 mode=random runs=12 fails=0 t=1.5s Vperf med=68.5306 max=83.7597 | Vext med=68.5306 max=83.7597 orb_perf mean=36.6
+REPRO {"name": "eis", "k": 5, "mode": "random", "seed": 1, "runs": 12, "reproduced": 12, "first_perfect_verified": 12, "max_V_relerr": 0.0, "time": 1.7804045677185059}
+gauss k=6 n=12 D=36 w=4 mode=random runs=4 fails=0 t=8.4s Vperf med=84.3340 max=140.2368 | Vext med=155.5752 max=202.5643 orb_perf mean=70.5
+REPRO {"name": "gauss", "k": 6, "mode": "random", "seed": 1, "runs": 4, "reproduced": 4, "first_perfect_verified": 4, "max_V_relerr": 0.0, "time": 8.951158285140991}
+hur k=3 n=12 D=15 w=24 mode=random runs=15 fails=0 t=1.1s Vperf med=170.9136 max=170.9136 | Vext med=170.9136 max=170.9136 orb_perf mean=21.6
+REPRO {"name": "hur", "k": 3, "mode": "random", "seed": 1, "runs": 15, "reproduced": 15, "first_perfect_verified": 15, "max_V_relerr": 0.0, "time": 1.4616975784301758}
+zeta7 k=2 n=12 D=12 w=14 mode=random runs=15 fails=0 t=0.9s Vperf med=116.0581 max=202.5643 | Vext med=116.0581 max=202.5643 orb_perf mean=28.1
+REPRO {"name": "zeta7", "k": 2, "mode": "random", "seed": 1, "runs": 15, "reproduced": 15, "first_perfect_verified": 15, "max_V_relerr": 0.0, "time": 1.866966962814331}
+zeta12 k=3 n=12 D=18 w=12 mode=random runs=8 fails=0 t=0.5s Vperf med=120.7908 max=170.9136 | Vext med=120.7908 max=170.9136 orb_perf mean=33.5
+REPRO {"name": "zeta12", "k": 3, "mode": "random", "seed": 1, "runs": 8, "reproduced": 8, "first_perfect_verified": 8, "max_V_relerr": 0.0, "time": 0.8470022678375244}
+hur k=4 n=16 D=28 w=24 mode=random runs=6 fails=0 t=1.1s Vperf med=386.6284 max=963.9143 | Vext med=386.6284 max=963.9143 orb_perf mean=83.2
+REPRO {"name": "hur", "k": 4, "mode": "random", "seed": 1, "runs": 6, "reproduced": 6, "first_perfect_verified": 6, "max_V_relerr": 0.0, "time": 2.8223581314086914}
+ico k=2 n=16 D=12 w=120 mode=random runs=10 fails=0 t=1.1s Vperf med=624.6646 max=963.9143 | Vext med=624.6646 max=963.9143 orb_perf mean=24.2
+REPRO {"name": "ico", "k": 2, "mode": "random", "seed": 1, "runs": 10, "reproduced": 10, "first_perfect_verified": 10, "max_V_relerr": 0.0, "time": 1.5304670333862305}
+zeta8 k=4 n=16 D=32 w=8 mode=random runs=3 fails=0 t=1.5s Vperf med=138.7031 max=191.6256 | Vext med=225.8081 max=963.9143 orb_perf mean=47.0
+REPRO {"name": "zeta8", "k": 4, "mode": "random", "seed": 1, "runs": 3, "reproduced": 3, "first_perfect_verified": 3, "max_V_relerr": 0.0, "time": 1.537013053894043}

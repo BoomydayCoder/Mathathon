@@ -1,0 +1,4 @@
+M=45: admissible sets: referee LP (no prefilter) 7, R7 pipeline 7, same family: True, max |margin diff| = 2.30e-15; sets with C<phi(M): 0; sets avoiding M: 0; best gain set (45,)
+M=105: admissible sets: referee LP (no prefilter) 20, R7 pipeline 20, same family: True, max |margin diff| = 1.27e-14; sets with C<phi(M): 0; sets avoiding M: 0; best gain set (105,)
+M=315: admissible sets: referee LP (no prefilter) 74, R7 pipeline 74, same family: True, max |margin diff| = 4.68e-14; sets with C<phi(M): 0; sets avoiding M: 0; best gain set (315,)
+M=60: admissible sets: referee LP (no prefilter) 5, R7 pipeline 5, same family: True, max |margin diff| = 1.22e-15; sets with C<phi(M): 0; sets avoiding M: 0; best gain set (60,)

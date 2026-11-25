@@ -1,0 +1,15 @@
+{
+ "p": 13,
+ "n": 24,
+ "m": 3,
+ "detB": "6580067382037190942729361",
+ "D": 117.0,
+ "D_exact": 117,
+ "theta": 2.769230769230769,
+ "eps": 3.302775637731995,
+ "kappa": -1,
+ "rank_H": 8,
+ "det_BH": "1229457398481",
+ "order_maximal": true,
+ "calibration_H_borderline": true
+}

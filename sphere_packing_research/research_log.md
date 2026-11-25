@@ -1,0 +1,229 @@
+# 연구 로그: 고차원 구 채우기(sphere packing) 하한 개선 시도
+
+- **문제**: $\delta_n$ = $\mathbb{R}^n$ 격자 구 채우기 최대 밀도. 알려진 하한 $\delta_n \ge c\,n^2 2^{-n}$ (Klartag 2025, arXiv:2504.05042) 및 그 후속($\log\log n$ 인자 추가)을 개선하거나, 개선의 장애물을 정확히 규명한다.
+- **시작 시각**: 2026-11-25 06:24:15 UTC (epoch 1795587855). **종료 조건**: 5시간 경과(11:24:15 UTC) 또는 30회차 완료.
+- **표기**: $V$ := (covolume 1 격자에 대해 원점 외 격자점이 없는 열린 공의 부피) $= 2^n\delta$. Minkowski–Hlawka: $V\ge 2\zeta(n)$; Rogers/Ball: $V\gtrsim n$; Venkatesh: $V\gtrsim n\log\log n$ (희소 차원열); Klartag: $V\ge cn^2$. 상한: Minkowski $V\le 2^n$, KL $V\le 2^{0.401n}$, (업로드된 OpenAI 논문) $V\le 2^{(1-0.6044+o(1))n}$.
+- **분류 규칙**: [증명됨] / [조건부] / [추측] / [수치관찰] / [휴리스틱] / [실패] 로 태그한다.
+
+---
+
+## 0회차 (준비, 06:24–06:50 UTC): 두 논문 정독 및 초기 분석
+
+### 읽은 내용 요약
+1. **Klartag (하한)**: 랜덤 격자 $L$ (covol $=\mathrm{Vol}(B^n)$)과 반지름 $\approx 1-1/n$ 공에서 출발, 대칭행렬 공간에서 Dyson 브라운 운동 $dA_t=\pi_t(dW_t)$ 로 타원체 $\mathcal E_t=\{A_tx\cdot x<1\}$ 를 진화. 격자점에 닿으면 그 점을 경계에 고정(선형제약 $A x\cdot x=1$), 제약공간 $F_t$ 의 차원 $N_t$ 가 0이 되면 정지. Itô 공식: $\mathbb E\log\det A_T\le n\log a_0-\tfrac12\int_0^T\mathbb E[\|A_t\|^{-2}N_t]dt$. 접촉점 기대개수는 Siegel 평균 + 반사원리로 $\lesssim e^{n^2t/8}/n^2$ 적분 유계 ⇒ $T=16\log n/n^2$ 에서 $\det A_T\le C/n^4$, 즉 부피 $\gtrsim n^2$.
+   - 핵심 수: 대칭행렬 공간 차원 $n(n+1)/2$ = 타원체 자유도 = 흡수할 수 있는 접촉점 쌍의 수. "쓸어 담은 부피 ≈ 만난 격자점 수(Poisson)" ⇒ $V\sim n^2$.
+2. **OpenAI "Ten Advances" Ch.1–2 (상한)**: Cohn–Elkies LP 의 지수적 증가율이 정확히 $\sqrt{e/(2\pi)}$, 즉 $\Delta_d\le 2^{-(0.6044+o(1))d}$ (KL 지수 0.5990 개선). LP 방법 자체의 한계도 같은 지수.
+
+### 초기 관찰 (검증 전, 본 세션에서 검토할 것)
+- **[휴리스틱 H1] Klartag 과정 = Ryshkov 다면체 위 "끈끈한(sticky)" 브라운 운동.** $L$-free 행렬 집합 $\mathcal R_L=\{A\succ0: Ax\cdot x\ge1\ \forall x\in L\setminus0\}$ 는 Ryshkov 다면체, 꼭짓점 = perfect form. Klartag 과정은 면(face)을 따라 차원이 줄어들며 꼭짓점(perfect form)에서 멈춘다. 따라서 "명시적 구성" 관점의 고전적 대응물은 Voronoi 이론(perfect/eutactic form)이다.
+- **[휴리스틱 H2] 대칭 격자족의 이득 공식.** 유한군 $G$ 가 $\mathbb Q$-기약 표현 $W$ ($\mathbb QG$ 의 단순성분 $A=M_r(\Delta)$) 의 $k$ 겹 $W^k$ 에 작용, $n=k\dim_{\mathbb Q}W$. $G$-불변 이차형식 공간 차원 $D\approx k^2\dim\Delta/2$, 일반 궤도 크기 $|G|$ ⇒ Klartag×G 휴리스틱 $V\sim D|G|\sim n^2\cdot|G|/\dim_{\mathbb Q}A$. 또한 $|G|/\dim_{\mathbb Q}A=\sum_{g\in G}\rho(g)^2$, $\rho=\chi_W/\chi_W(1)$ (검증 필요). 순환군 $\mu_m$: $m/\varphi(m)\sim e^\gamma\log\log m$ ⇒ "$n^2\log\log n$" 과 일치할 것으로 추정.
+- **[휴리스틱 H3]** 고정점 없는(fpf) 작용만 쓰면 이득은 $O(\log\log)$ 로 보임(Frobenius complement 구조). 더 큰 이득은 non-fpf 군(Heisenberg, $SL_2(p)$ Weil, Clifford 군 등)이 필요하나, 고정 부분격자 $\Lambda\cap U^k$ 가 짧은 벡터를 만들지 않으려면 "초안정성" $\mathrm{covol}(W_\mathbb Z\cap U)^{2/\dim U}\dim U\gtrsim \mathrm{covol}(W_\mathbb Z)^{2/\dim W}\dim W$ (모든 $\Delta$-부분공간 $U$) 가 필요해 보임. $r\ge2$ 이면 $\Delta$ 의 root discriminant $\gtrsim 2\pi e/c_0$ 가 필요조건으로 보임.
+- **[휴리스틱 H4] 구멍 확률 관점.** $P_V:=\Pr_{\rm Haar}(L\cap B_V=\{0\})$ 의 지지 끝점이 $2^n\delta_n$. Poisson 휴리스틱 $P_V\approx e^{-V/2}$ 과 "최적 격자의 근방 측도 $\ge e^{-Cn^2\log n}$" 를 비교하면 $V\sim n^2\log n$ 이 자연스러운 장벽으로 보임.
+
+### 다음 회차 계획
+- **1회차**: 문헌 조사 — 최신 $\log\log n$ 결과의 정확한 출처/정리/방법, 대칭 격자(Venkatesh, Vance, Gargava, Gargava–Viazovska), random perfect lattice 수치연구(Andreanov–Scardicchio, Kallus), 구멍확률/Poisson 통계.
+- **2회차**: 소차원 수치실험 — Klartag 과정 시뮬레이션($n\le 10$ 내외), 알려진 최밀 격자의 $V_n$ 과 $n^2$ 비교표, 접촉점(키싱 수) 패턴.
+- **3회차**: H2–H3 의 엄밀화 — 대칭 Klartag 정리의 정확한 서술·증명 골격, non-fpf 장애물/가능성 판정.
+
+---
+
+## 1회차 (06:48–07:11 UTC, 경과 47분): 문헌 조사 — 최신 결과와 알려진 장벽
+
+**선택한 과제**: "log log n 이 붙은 최신 결과"의 정확한 내용·방법과, 대칭 격자족/perfect form/Poisson 통계에 대해 알려진 사실 확정. (에이전트 4개 병렬; 노트: `rounds/R1_lit_*/notes.md`, 논문: `papers/`)
+
+**확정된 사실 [문헌]**
+- **현재 최선의 하한**: Gargava–Gröbner–Simkin (arXiv:2610.12619, 2026-10): 모든 큰 $d$ 에 대해 $V_d\ge c\,d^2\log\log d$. 그 직전 Abuya–Gargava–Zhao (arXiv:2606.05105, 2026-06): 희소 차원열 $N=\varphi(m)r$, $r=\lceil(\log\varphi(m))^4\rceil$ 에서 같은 한계. 둘 다 "Klartag 과정을 원분체 대칭($\mu_m$)-불변 이차형식 공간 $\bigoplus \mathrm{Herm}_r(\mathbb C)$ 안에서 실행": **궤도(크기 $m$) 하나가 선형제약 1개만 소모** ⇒ 부피 ≈ (궤도 크기)×(불변형식 차원) $= m\cdot Nr/2 = N^2\,m/\varphi(m)$. 랭크 $r$ 을 키워야 하는 이유: 고정 $r$ 이면 접촉 수가 $V^{1+1/r}$ 로 늘어 $(mNr)^{r/(r+1)}$ 밖에 못 얻음 (AGZ Remark 4.3).
+- **상수**: Rezvyakova (arXiv:2608.22590): Klartag 정리의 상수 $c=\tfrac1{2e}-o(1)$, 즉 $V_n\ge(1-o(1))N/e$, $N=n(n+1)/2$.
+- **Poisson 근사의 한계**: Klartag (arXiv:2605.10479): 부피 $\le cn$ 인 집합에서만 Haar-랜덤 격자 ≈ Poisson (TV 거리 $\le Ce^{-c'n}$); 부피 $\ge n$ 에서는 일반적으로 거짓. Schmidt/Kim: 구멍확률 $P_V=e^{-V/2}+O(e^{-cn})$ 은 $V<Cn$ 에서만. $Cn\le V\le cn^2$ 구간에서 $P_V$ 에 대해 알려진 것은 $e^{-(1+o(1))n^2\log n}\le P_V\le e^{-cn}$ 뿐.
+- **장벽에 관한 유일한 명시적 진술**: Venkatesh 의 추측 $V_N\le N^2(\log N)^{O(1)}$ ("격자의 자유도가 $N^2$").
+- **대칭 방법의 한계 [문헌]**: Gargava(2021): 나눗셈대수의 유한부분군 $G_0$ 로는 $|G_0|/\dim_\mathbb Q D\le 3m/\varphi(m)$ 이라 $O(d\log\log d)$ 를 넘지 못함.
+- **물리 문헌의 소차원 데이터**: Kallus–Marcotte–Torquato(2013): 순차 LP 로 얻은 isostatic extreme 격자의 전형적 밀도 $2^d\langle\phi\rangle\approx0.0567\,d^{3.01}$ ($d=15..24$); Andreanov–Scardicchio(2012): 랜덤 perfect 격자 $V_{typ}/d^2\in[0.65,0.94]$ ($d=8..19$; "$2^{-0.84d}$" 는 구분 불가능한 두 fit 중 하나일 뿐). 9차원 perfect form 2,237,251,040 개 완전 분류(Dutour Sikirić–van Woerden 2025): 60.5%가 최소 접촉수 45쌍.
+- 찾지 못한 것: $n^2\log n$ 이상의 결과, Klartag 과정의 수치 시뮬레이션, 명시적(비확률적) 구성, $N^2\mathrm{polylog}$ 상계의 증명.
+
+**다음 할 일**: (a) 소차원 시뮬레이션으로 Klartag 과정의 실제 상수 확인(2회차). (b) 대칭 이득 공식과 비자유 작용 분석(3회차).
+
+---
+
+## 2회차 (06:48–07:19 UTC, 경과 55분): 소차원 수치실험 ($n=2..10$)
+
+**선택한 과제**: 사용자가 제안한 "작은 $n$ 에서 실제로 해 보기". (i) Klartag 과정을 동결될 때까지 실행, (ii) Ryshkov 다면체 위 sticky walk + 탐욕 LP 하강으로 extreme form 표본 추출. 각각 독립 검증 에이전트가 재현·검산. (코드/데이터: `rounds/R2_klartag_sim/`, `rounds/R2_voronoi_descent/`)
+
+**[수치관찰] (검증자가 독립 열거 코드로 전부 재확인; 버그 없음)**
+- 검산: $n=2$ 항상 육각격자, $n=3$ 항상 FCC, $n=4$ 는 $D_4/A_4$ 만, $n=5$ 는 알려진 perfect form 3개만, $n=8$ 에서 $E_8$(120쌍) 재현. 저장된 최종 form 3403+1878 개 모두 격자점 없음·perfect; 어떤 $V$ 도 알려진 최적값 초과 없음.
+- **Klartag 과정의 최종 부피는 $V_{final}\approx N=n(n+1)/2$**: $\mathbb E[V_{final}]/N=1.21,0.99,0.93,0.97,1.08,1.26,1.24,1.01,1.03$ ($n=2..10$). 경로 전체에서 $V(t)/k(t)\approx1$ ($k$=독립 접촉쌍 수; $k\ge36$ 에서 0.96–1.02). 즉 "쓸어 담은 부피 = 접촉쌍 수" 가 상수 1로 성립 ⇒ 실제 상수는 $c\approx1/2$ (증명된 값은 $1/(2e)$).
+- 과정이 최밀 격자에서 끝날 확률: $n=2..8$: 1, 1, 0.47, 0.85, 0.67, 0.79, 0.33; $n=9,10$: 0/100, 0/50. 즉 $n\le8$ 에서는 root 격자가 지배하는 "작은 차원 효과"이고 $n\ge9$ 부터 $n^2$ 법칙으로 떨어진다(평균/최선 = 0.69, 0.61, 0.60).
+- 탐욕 하강 후 extreme form: 중앙값 $V\approx(0.63..0.70)n^2$ ($n=9,10$), 접촉쌍 평균 $\approx2N$, 최선 격자는 $3.0$–$3.3N$. $V$ 와 접촉쌍 수의 Spearman 상관 0.88–0.95.
+- **구조**: 발견된 모든 extreme form 은 작은 분모의 유리 형식($qA$ 정수, $q\in\{2,4,..,14\}$; root 격자만 $q=2$, 대부분 $q=4$: 최소 노름 4인 정수격자, 최소벡터 내적 $\in\{0,\pm1,\pm2\}$).
+- $n\le10$ 데이터로는 다항/지수 성장 구분 불가(검증자: fit 지수는 의미 없음).
+
+**해석 [휴리스틱]**: 작은 $n$ 의 "규칙성"(root 격자, laminated 격자)은 점근 영역($V\sim n^2$)과 다른 체제다. 알려진 최밀 격자는 $n\le 72$ 에서 $V/n^2$ 가 지수적으로 큼($n=24$: 56, $n=48$: 2832). 따라서 소차원 패턴의 외삽으로 점근 하한을 얻기는 어렵고, 점근 영역의 구조는 "접촉쌍 수 ↔ 부피" 회계로 봐야 한다.
+
+**실패/주의**: Goldstein–Mayer 격자($p=100003$)는 $n\ge8$ 에서 Haar 의 거친 근사(검증자 지적). $n\ge11$ 미수행.
+
+---
+
+## 3회차 (06:48–07:41 UTC, 경과 77분): 대칭 격자족 이론 (증명 에이전트 3 + 반박 에이전트)
+
+**선택한 과제**: 0회차의 H2–H3 를 엄밀화. (노트: `rounds/R3_G_klartag/notes.md`, `rounds/R3_non_free/notes.md`; 반박 보고는 뒤 회차에 반영)
+
+**[증명됨] (노트에 증명 수록, 수치 검산)**
+- **이득 항등식**: $W$ 가 $\mathbb Q$-기약, $A=\mathbb Q G\text{-span}=M_r(\Delta)$ 이면 $\sum_{g\in G}\rho(g)^2=|G|/\dim_\mathbb QA$, $\rho=\chi_W/\chi_W(1)$. 불변형식 차원 $D=\frac1{|G|}\sum_g\frac{\chi(g)^2+\chi(g^2)}2\approx k^2\dim_\mathbb Q\Delta/2$. **Klartag 대비 이득은 $g=|G|/(2\dim_\mathbb QA)$** (0회차 H2 의 인자 2 수정). 고정점 없는 작용이면 $\rho(g)=\mu(o(g))/\varphi(o(g))$ 이므로 $|G|/\dim A=\sum_{C\le G\text{ 순환, 제곱인수 없는 위수}}1/\varphi(|C|)$.
+- **고정점 없는 군의 상한**: Frobenius complement 의 구조정리(Zassenhaus)로 $g\le 24\,c/\varphi(c)=O(\log\log|G|)$; 순환군이 $e^\gamma\log\log m$ 달성. ⇒ **자유 작용에 기반한 Venkatesh/AGZ 형 논증은 $\log\log$ 를 넘을 수 없다.** (상수는 $SL_2(5)\times C_N$ 이 4배.)
+- **AGZ 구조의 독립 재유도**: 사영된 이차변동 $q(x)=\frac12\sum_\sigma u_\sigma^2$, $\mathbb E q=(k+1)/(n+2)$; 접촉 수 $\sim V^{1+1/k}$; 희소 벡터 때문에 $k>0.407\log(\cdot)$ 필요. (AGZ 논문과 일치함을 1회차 문헌으로 확인.)
+- **비자유 작용의 평균값 공식**: $k>r$ 일 때 $\mathbb E\#(\Lambda\cap B)=V+\sum_{U\subsetneq W}T_U$, $T_U=\mathrm{Vol}_{fn}(R)/c_U^k\approx V^f\mathrm{poly}(n)\,R_U^{k/2}$, $R_U=(1/f)^{\dim U}c_W^{2\dim U/\dim W}/c_U^2$. **텐서 안정성**($R_U<1\ \forall U$)이 필요충분(지수 스케일).
+- **No-go 정리들**: (1) $\Delta=\mathbb Q$, $r\ge2$ 이면 항상 실패($\gamma_r/r\le2/\pi<1$) — Weyl 군, $S_n$, 실 Clifford 군/Barnes–Wall 전부 배제. (2) 직선 조건 ⇒ $\mathrm{rd}_\Delta\ge rd/\gamma_{rd}\to2\pi e/1.744$. (3) 소수 위수 $q$ 원소가 $W|_{\langle g\rangle}=a\cdot\mathbf1+b\cdot\mathbb Q(\zeta_q)$ 이면 $(a+b(q-1))\,h\!\big(\tfrac a{a+b(q-1)}\big)\le2\min(a,b)\log q$; $q=2$ 면 $a=b$ 이고 정확히 경계($R_U=1$). (4) $f\tau_U^2<0.5735$ 면 어떤 $L$ 로도 지수적 손실.
+- 반례/정정: "자유 작용 ⇒ $A$ 가 나눗셈대수"는 거짓($SL_2(5)\times C_7$: $A=M_2(K)$).
+
+**[미해결 후보]**: $SL_2(p)$, $p\equiv1\ (4)$, 충실한 Weil 표현(차수 $(p-1)/2$, $\Delta$=$\mathbb Q(\sqrt p)$ 위 정부호 사원수대수, $r=(p-1)/4$, $\dim_\mathbb QW=2(p-1)$; $p=5$: $E_8$, $p=13$: Leech). 유도한 모든 필요조건을 통과. 이득 $g\sim p$ ⇒ (성립한다면) $V\sim n^{2.5}$ — Venkatesh 추측과 충돌하므로 큰 $p$ 에서 장애물이 있을 것으로 예상. → 5회차에서 검토.
+
+**[실패] 로 판정된 후보들**: $PSL_2(p)$ ($p\equiv3$ mod 4) Craig 격자: 직선에서 $f\tau^2\to1/2$; Heisenberg/표준격자 $O_K^p$: $1/p$; Barnes–Wall; $A_2\otimes L$ 등.
+
+### 3회차 중 본인(오케스트레이터) 유도 — 4·5회차의 출발점
+- **[휴리스틱→4회차] 퍼셉트론 모형.** Poisson 가정에서 "부피 $v$ 인 공을 $\|B_0\|_{HS}=b$ 만큼 변형한 타원체가 격자점을 피할 조건"은 $\langle\theta,g_i\rangle\ge-\sigma_i$ ($\theta=\sqrt2B_0\in\mathbb R^{N-1}$, $g_i$ 가우스, $\sigma_i$ 는 강도 $\frac v4e^{\sigma/2}d\sigma$ 의 Poisson 과정) 꼴의 **랜덤 선형계획/음의 마진 퍼셉트론** 문제. Gordon 비교로 볼록 부분의 임계값 $v^*=(2/e)N$, 그때 $\|\theta\|^2=8$, 활성 제약 $N$ 개, 타원체 부피 $V=e\,v^*=2N\approx n^2$. 즉 (모형에서) 대각합-LP 최적 상수는 1, Klartag 과정은 $1/2$, 증명된 값은 $1/(2e)$. 비볼록 영역(큰 변형 $\rho$)에서는 1차 모멘트 상계 $V\lesssim N\log\rho$; 존재성은 2차 모멘트가 필요 — 음의 퍼셉트론(Montanari–Zhong–Zhou)의 "존재 임계 vs 알고리즘 임계 사이 $\log|\kappa|$ 간극"과 같은 구조. ⇒ "알고리즘적(온라인) 방법은 $\Theta(n^2)$, 비구성적 존재는 $n^2\log n$ 까지"라는 작업가설.
+- **[증명 스케치→5회차] Leech/$\mathbb Q(\sqrt{13})$.** 위수 13 자기동형 $g$, $\eta=\sum(j/13)g^j$ ($\eta^2=13$). 최소벡터 $w$ 의 $s(w)=\tfrac12w\cdot\eta w$ 는 순환 Gram 행렬의 PSD 조건만으로 $s\in\{0,\pm2,\pm4\}$ ($\pm6$ 불가능: 직접 열거로 확인), 11-design 모멘트로 개수 $a(0)=78624$, $a(\pm2)=45864$, $a(\pm4)=13104$. Hermite 노름 $N(\nu(w))=13-s^2/4\in\{13,12,9\}$ 이고 단위원 논법으로 모든 $w\ne0$ 에 $N(\nu)\ge9=r^2$. ⇒ Leech 는 $\Delta_{13}$ 위에서 **정확히 경계 안정**($R_U=1$)일 것으로 예상.
+
+### 3회차 마무리 (07:41 UTC, 경과 77분): 반박 에이전트 3명의 판정
+- **확인됨**: 이득 항등식, 불변형식 차원 공식, $q(x)$ 공식, 낮은 랭크 항을 포함한 평균값 공식과 $T_U$ 점근식, 직선/판별식 기준, 엔트로피 부등식(창: $q=3$: $a/b\in[0.708,1.284]$ 등), Heisenberg $p\le7$ 배제, $SL_2(5)\times C_7$ 반례, $g\le([G:C]/\chi(1))\,c/\varphi(c)$, Lemma N, Corollary N', Prop U, 구면 사영 항등식.
+- **[반증/정정]**
+  1. "$\Delta=\mathbb Q$ 이면 군 자체가 배제된다"는 **텐서형 격자 $W_\mathbb Z\otimes L$ 에만** 성립. 비극대 order 위의 불변 격자(예: $D_8$ 에 대한 $\{(x,y)\in L_1^2:y\equiv\phi(x)\bmod 2L_1\}$)는 모든 직선에서 경계 이상. 단 이는 자유 $\mu_4/\mu_6$ 족의 부분족이라 이득은 같음. 모든 불변 격자에 유효한 강건한 no-go 는 소수 위수 원소의 엔트로피 기준.
+  2. "희소 벡터 때문에 $k=2$ 에서 방법이 깨진다"는 **인공물**: 반사원리 상계를 감금 반지름 밖까지 합산한 탓. 정지시간을 쓰면 모든 $k$ 에서 무해. 또한 **대각합 없는(trace-free) 잡음**을 쓰면 $V^{1+1/k}$ 손실 자체가 사라질 것으로 보임 [조건부] ⇒ Venkatesh 의 랭크 2 가군에서도 $n^2m/\varphi(m)$ 이 가능할 수 있음.
+  3. 경계 항은 $V\sim n^a$ 에서 $T_U\sim n^{af-(1-f)/2}$ 로 **다항식적으로 클 수 있음** ($V=n^2$ 에서 $O(1)$ 이려면 $f\le1/5$).
+  4. "모형 R(상수 1/2)"은 $n\le10$ 자료로는 지지되지 않음: 실제 격자에서는 접촉이 일반 위치에 있지 않다($n=9,10$ 에서 정확히 $N$ 쌍으로 동결되는 경우 0%). ⇒ [휴리스틱]으로 강등. Poisson 모형의 "sticky 장벽"도 격자로 이전되지 않음(격자에서는 $c_T\le$ 키싱수/2 뿐).
+  5. GGS 접착 데이터의 "두 꼭대기" 예는 불가(소수 절단 보조정리: 각 소수 $p\mid M$ 은 $\varphi$-질량의 $>60\%$ 를 나눠야 함). "균형 잡힌 부채꼴" 은 미배제 → 7회차.
+- **새로 증명된 것(심사 중 추가)**: 접촉벡터가 $\mathbb R^n$ 을 생성하면 단조 팽창 방향은 없다($B\le0$, $Bx_i\cdot x_i=0\Rightarrow B=0$). Hurwitz 가군에서는 $q(x)\equiv1/4$ (상수) ⇒ Klartag 증명이 거의 그대로 적용될 것 → 6회차에서 완전 증명 시도.
+
+---
+
+## 4회차 (07:23–07:57 UTC, 경과 93분): 퍼셉트론 모형 — 이론과 수치
+
+**선택한 과제**: 3회차 중 떠올린 "Klartag 과정 = 랜덤 선형계획/음의 퍼셉트론" 모형의 검증. (노트: `rounds/R4_perceptron_theory/notes.md`, `rounds/R4_perceptron_numerics/`)
+
+**[모형에서 증명] / [수치관찰]**
+- 모형 재유도(상수 포함) 확인: 제약 $\langle\theta,g_i\rangle\ge-\sigma_i$, 강도 $\frac v4e^{\sigma/2}$, $\mathrm{Var}(u^TB_0u)=2b^2/(n(n+2))$, $V=ve^{\rho^2/8}$.
+- **모형 정리 A (Gordon/CGMT)**: $K_v\neq\emptyset\iff v<(2/e)N$; 임계에서 $\rho^2=8$, 활성 제약 $N$, $V=2N=n(n+1)$. 구면 위에서는 단측: $V\le\rho^2N/4$.
+- 수치: 가우스 모형 LP $N=100$: $v^*/N=0.733\pm0.023$ (예측 0.7358), $\rho^2=8.26\pm0.23$, $V/N=2.03\pm0.03$. **실제 Poisson 점집합 ($\mathbb R^n$, $n=10..22$)의 대각합-LP: $V_{LP}/N=1.98,1.99,1.95,2.09$** (예측 2).
+- **세 상수**: 증명된 $1/(2e)$ (비사영 시계) → Klartag 과정 $1/2$ (사영된 시계; 휴리스틱) → LP 꼭짓점 $1$.
+- **비볼록 영역**: 쌍 공식 $P(\theta,\theta'\in K_v)=\exp(-V\Phi(\delta/4))$ [모형에서 증명]; Montanari–Zhong–Zhou(arXiv:2110.15824): 존재 임계/LP 임계 $=\log|\kappa|$, 우리 변수로 $\kappa=-\rho/2$ ⇒ **$V_{exist}(\rho)=(2+o(1))N\log\rho$** [조건부: 2차 모멘트 스케치]. $\rho^2\sim16\log N$ 에서 $\approx N\log\log N$, $\rho=n^a$ 에서 $\Theta(n^2\log n)$.
+- 정정: 단순 2차 모멘트는 $vV\ll\rho^2$ 일 때만 작동; "거리 $O(1)$ 에서 탈상관"은 약한 의미로만 참.
+- 모형의 한계: 정확한 Poisson 모형에서는 $\sup V=\infty$(바늘) ⇒ 절단 필요.
+
+**막힌 지점(정확한 명제)**: (LP-1) 사영된 시계를 격자점에 대해 정당화하는 보조정리; (EX-1) 부피 $\sim n^2\log n$ 타원체 쌍에 대한 구멍확률의 준-독립성; (EX-2) $P_V\le e^{-cV}$ — 이것 하나가 Venkatesh 추측을 증명함(Corollary N'). 현재 기술(Poisson 근사는 부피 $\le cn$)로는 셋 다 도달 불가.
+
+### 4회차 마무리 (07:57 UTC, 경과 93분): 심사 2명의 판정 — 상수는 전부 확인, 해석은 대폭 수정
+- **확인됨(독립 재유도·독립 코드)**: 강도 $\frac v4e^{\sigma/2}$, $\mathrm{Var}(u^TB_0u)=2\|B_0\|^2/(n(n+2))$, AO 항등식 $S(r)=4ve^{r^2/8}$(분산 $192V$), Gordon 균형 $4ve^{r^2/8}=r^2N$, $v^*=(2/e)N$, 쌍 공식, MZZ 점근식(논문 본문 대조), Klartag sticky 과정 시뮬레이터의 정확성.
+- **[모형에서 증명됨, 신규 — 심사자 발견] 정확한 $\chi^2$ 법칙**: 정확한 Poisson 모형(모든 $n$)과 가우스 모형(모든 $N$)에서 대각합-LP 최적 타원체의 부피는 **정확히 $V_{LP}\sim\chi^2_{2N}$** ($V/2\sim\mathrm{Gamma}(N,1)$; $\mathbb EV=2N$, 표준편차 $2\sqrt N$). 증명 5줄: KKT ⇒ 유일한 $N$-부분집합이 결정하는 스케일 공변 정지집합, Mecke 공식. (KS 검정 $p=0.31$–$0.65$.) ⇒ "$V_{LP}\approx2N$" 은 Gordon 도 가우스 근사도 필요 없는 정확한 정리이고, 표의 산포는 잡음이 아니라 이 법칙이다. Gordon 은 $V=v^*\cdot e^{\rho^2/8}$ 의 분해($v^*=(2/e)N$, $\rho^2\to8$)에만 필요.
+- **[증명됨] 격자에서의 대각합-LP = 쌍대 형식의 Voronoi 환원**: $L=g\mathbb Z^n$ 의 대각합-LP 최적점은 쌍대 Gram 행렬 $(g^Tg)^{-1}$ 을 Voronoi 영역에 포함하는 **perfect form**. 따라서 $V_{LP}(L)\le V_n$ 이고, $n\le8$ 에서는 $V_n<2N$ 이므로 Poisson 예측은 저차원 격자에 성립할 수 없다(Poisson LP 최적값은 $n=4$ 에서 96%, $n=6$ 에서 100% 가 실제 격자 최댓값을 초과).
+- **[증명됨]** 고정된 격자에서는 $\sup_{\text{빈 타원체}}V=V_n<\infty$, Poisson 과정에서는 a.s. $\infty$(바늘). ⇒ 큰 이심률 영역(C4, $n^2\log n$ 예측)의 Poisson 모형 진술은 격자로 직접 이전되지 않는다.
+- **[정정]** (i) 활성 제약의 offset 분포는 $N(4,2.83^2)$ 가 아니라 $r^2/2+rZ-\mathrm{Exp}(2)$ (평균 2, 표준편차 3.46). (ii) $V=ve^{\rho^2/8}$ 는 2차 근사일 뿐: $n\le26$ 에서 $\log(V/v)=1.07$–$1.23$, $v_{LP}/N=0.62$–$0.69$ — "$n=10$ 에서 이미 수렴" 은 두 15% 오차의 상쇄. (iii) 임계 $\|B_0\|^2=4(n+2)/n$. (iv) 절단 $\sigma\le11$ 은 정확하지 않다(위반 기대 수 $0.002N$). (v) "가우스 모형은 $\rho\ll n^{1/4}$ 에서 유효" 는 불충분(작용소 노름 조건 필요). (vi) **"알고리즘적 방법은 $\Theta(N)$ 을 못 넘는다" 는 근거 없음**(MZZ 는 한 LP 알고리즘에 대해서만 증명) ⇒ 추측에서 **사변**으로 강등. (vii) "$V_n\ge cn^2\log n$" 은 절단 의존적 휴리스틱이지 모형이 지지하는 추측이 아니다. C4 상계 $V\le CN\log\rho$ 도 그물 논법으로는 증명 안 됨($N\log(CN\rho^2)$ 뿐).
+- **심사자가 제시한 1차 모멘트 재정식화**: Poisson 에서 $P(V_{LP}\le w)\le\mathbb E\#\{$인증된 $N$-쌍 부분집합, 부피 $\le w\}=(w/2)^N/N!$ 이고 이는 $w<(2/e)N$ 에서 $<1$ — 즉 **모형에서는 순수 1차 모멘트만으로 Rezvyakova 상수의 2배($n^2/e$)**. 격자에서 빠진 보조정리: Haar-랜덤 격자에서 "공통 타원체 위의 eutaxy-인증 $N$-벡터쌍" 의 기대 개수 상계 ($N\gg n$ 이라 Rogers 공식 밖).
+- **다음 할 일 → 9회차**: 실제 랜덤 격자에서 대각합-LP 를 계산해 $V_{LP}(L)/N$ 을 측정(두 심사자 모두 "결정적 시험" 으로 지목).
+
+---
+
+## 5회차 (07:23–07:59 UTC, 경과 95분): $SL_2(p)$ 텐서족 — Leech/$\mathbb Q(\sqrt{13})$ 의 정확한 계산
+
+**[증명됨(계산기, 정수 연산)]** (`rounds/R5_leech13/notes.md`)
+- 확장 Golay 부호로 Leech 격자 구성, $M_{24}$ 생성원+부호변환+Conway $\xi_T$ 로 위수 13 자기동형 $g$ 획득 (고정점 없음, $\mathrm{tr}=-2$).
+- **최소벡터 196560개 전수 분류**: $s=-4,-2,0,2,4$ 에 대해 $13104,45864,78624,45864,13104$; $s=\pm6$ 은 0개 — 0회차 예측과 정확히 일치.
+- $C(g)=\langle g\rangle\times SL_2(3)$ (위수 312); Leech 는 $\Delta=\mathbb H\otimes\mathbb Q(\sqrt{13})$ 의 **극대 order** 위의 랭크 3 가군; $\Delta$-선형 자기동형군의 위수는 정확히 **2184**, 원소 위수 분포가 $SL_2(13)$ 과 일치; 위수 3 원소는 대각합 0, 고정격자 $\sqrt3E_8$ ($\det=3^8$).
+- **정리(Leech 는 $\Delta_{13}$ 위에서 정확히 경계 안정)**: 모든 $\Delta$-직선 $U$ 에 대해 $\det(\Lambda_{24}\cap U)\ge3^8$ ($R_U\le1$), 등호는 정확히 1638개 직선; 모든 $\Delta$-평면에 대해 $R_U\le0.1001$.
+- 이득: $\sum_g\rho(g)^2=2184/72=30.33$, $g=15.17$ — icosian(7.5)의 2배. 이득의 대부분은 위수 7, 14 원소(비분리 토러스; 고정점 없음) 936개에서 나옴.
+
+**본인 추가 유도 [증명됨]**: unimodular $G$-격자에서 고정점을 갖는 소수 위수 원소는 "정칙표현의 배수 + $\mathbb Z[C_q]$-자유"일 때만 허용되고 그때 정확히 $R_U=1$ (Unimodular 강직성 보조정리). ⇒ $SL_2(p)$ Weil 격자는 $(p+1)/2$ 가 소수일 때만 소수 위수 원소 시험을 통과 ($p=5,13,37,61,73,157,\dots$; $p=17,29,41$ 은 비분리 토러스의 위수 3 원소 때문에 실패).
+
+**다음 할 일**: 5회차 이론 에이전트/심사 결과 반영; 일반 $p$ 에서 $N(\nu(w))\ge((p-1)/4)^2$ (직선 조건)이 $\min(W_p)\ge\sqrt p$ 급 성장을 요구함을 정리.
+
+### 5회차 마무리 (07:59 UTC, 경과 95분): 이론 에이전트 + 심사 2명
+- **심사 판정**: R5 의 모든 주장이 독립 코드(자체 Golay 부호, 자체 HNF, 정수 연산)로 재현됨. "Leech 는 $\Delta_{13}$ 위에서 정확히 경계 안정" 은 **계산기 보조 정리로 확정**. 추가로 (a) 직선마다 최소벡터 24개(630개 궤도 대표 전수), (b) **경계 직선이 정확히 $1638=3\times546$ 개**임을 class number 없이 증명(Hermite 상수 $\gamma_8=2$, $E_8$ 의 유일성, 7-design): 세 종류 = $s=+4$ 최소벡터 직선 546, $s=-4$ 직선 546, $\sqrt3E_8$ 형 546(그중 91개가 위수 3 원소의 고정격자), (c) 노름 6·8 벡터 전체의 $N(\nu)$ 분포(최소 9, 16), (d) class number 1 ($O^1=SL_2(3)$ 정확히; Eichler mass $1/12$).
+- **일반 $p$ [증명됨]** (`rounds/R5_sl2p_theory/notes.md`): Lemma A′(unimodular 강직성; 본인 유도와 독립적으로 일치), Cor. A″($(p+1)/2$ 합성수 ⇒ 불안정: $R_U\ge9.99$ ($p=17$), $11.8$ ($29$), $12.5$ ($41$)), Lemma B(분리 토러스의 홀수 위수 부분군의 고정격자는 정확히 $R=1$), $(p+1)/2$ 소수일 때 고정공간 분류, 직선 기준 $N(\nu(w))\ge r^2$. **심사자 강화**: unimodular 가 아니어도 $R_U(L)R_U(L^\#)=((m/a)^aq^{-c})^2\ge1$ — 즉 쌍대가 같은 족에 있는 모든 $G$-격자에 Cor. A″ 성립.
+- **[정정]** (i) $\Delta=(-1,-1)_F$ 는 $p\equiv5\pmod8$ 에서만 참($p\equiv1\pmod 8$ 에서는 2 위에서 분기하는 다른 대수). (ii) "최소노름만으로는 결코 충분치 않다" 는 과장(특정 두 부등식이 부족하다는 것만 증명). (iii) "텐서 불안정" 은 **방법(1차 모멘트/Klartag 형 논증)의 장애**이지 그 족에 조밀한 격자가 없다는 증명이 아니다(결정론적 모순은 $R_U>4^{\dim U}$ 필요). (iv) "$\approx15\times$ Klartag ($2.79n^2$, $n=24k$)" 은 **정리가 아니라 휴리스틱**: 1638개 경계 직선 각각이 $V=cn^2$ 에서 $\approx1.18c^{1/3}n^{1/3}$ 개의 격자점을 공 안에 가지며, 순수 1차 모멘트 논증은 이 족에서 $V\sim n$ 에서 멈춘다. Klartag 형 과정에서는 이 점들이 접촉 궤도 $\sim n^{1/3}$ 개/직선을 추가할 뿐($D_k\sim n^2/144$ 에 비해 무시 가능)일 것으로 보이나 [휴리스틱] 증명 없음.
+- **미해결로 남은 것**: $p=37,61,73,157,\dots$ ($(p+1)/2$ 소수). 일반적(generic) 격자에 대한 Siegel 형 기대 위반 벡터 수(단위군 궤도당): $1.6\times10^5$ ($p=37$), $246$ ($61$), $2.3$ ($73$), $2\times10^{-26}$ ($157$). → **10회차에서 $p=37,61$ 을 직접 계산**.
+
+---
+
+## 6회차 (07:31–08:08 UTC, 경과 104분): Hurwitz/icosian 가군 격자에 대한 명시적 상수의 Klartag 형 정리 — 완전 증명 + 심사 2 + 개정
+
+**선택한 과제**: 3회차 심사에서 나온 관찰($q(x)\equiv1/4$)을 이용해 자유 작용 대칭족에서 상수까지 추적한 엄밀한 정리를 쓴다. (`rounds/R6_quaternionic/proof_revised.md`, 317줄)
+
+**[증명됨 — 인용 입력에 조건부]** (입력: (L1) Gargava arXiv:2107.04844 Thm 16 의 평균값 정리, (L2) Klartag 의 보조정리들, (L3) 표준 확률해석)
+- **정리 C′ (틀)**: $D$ 가 $\mathbb Q$-나눗셈대수, $D_\mathbb R\cong K^s$ ($K\in\{\mathbb R,\mathbb C,\mathbb H\}$), $G\subset D^\times$ 유한군으로 $\mathbb Q$-span 이 $D$, $w=|G|$, $\delta=\dim_\mathbb QD$ 이면 $k\to\infty$ 에서
+  $$V_{k\delta}\ \ge\ (1-o(1))\,\frac{w}{4e\,\delta}\,n^2\;=\;(1-o(1))\,\frac{w\,D_k}{2e}.$$
+- **정리 A (Hurwitz, $4\mid n$)**: $V_n\ge(\tfrac3{2e}-o(1))n^2\approx0.552\,n^2$. **정리 B (icosian, $8\mid n$)**: $V_n\ge(\tfrac{15}{4e}-o(1))n^2\approx1.380\,n^2$. (자명군: Rezvyakova 의 $\tfrac1{2e}=0.184$ 재현. Eisenstein, $2\mid n$: $\tfrac3{4e}$.)
+- 핵심 단계: (1) 불변 형식 = Hermite 행렬 $L_H$, $P(x\otimes x)=L_{xx^*/d}$, $q(x)=\frac1d\sum_vu_v^2\ge q_0=1/\delta$ (Hurwitz 에서는 상수 $1/4$); (2) **주변(ambient) Dyson 운동을 유지**하고 제약공간만 $F_A\subset\mathcal Q$ 로 줄이면 Klartag §2, Lemma 3.1/3.3, Prop 4.2 가 그대로 적용; (3) 자유 궤도 ⇒ $\dim F_t\ge D_k-|\text{접촉}|/w$; (4) Rezvyakova 적분 보조정리 + **각도 보조정리**(Dirichlet 분포; icosian 의 방향 의존성 처리); (5) 최적화 $e^z=wq_0n^2e^\rho/4$.
+- **심사 2명**: "수학적 오류 없음, 상수 $3/(2e)$, $15/(4e)$ 확인(독립 재유도 + 구적: $n=10^4,10^5,10^6$ 에서 극한값 대비 1.19, 1.045, 1.02 배), 사소한 수정만 필요". Klartag 의 [V] 단계들을 원문과 한 줄씩 대조.
+- **한계(정직하게)**: (i) $o(1)$ 은 비효과적이고 느리다($(\log n)^{-1/4}$). (ii) $4\mid n$, $8\mid n$ 부분열에서만. (iii) **차수는 $n^2$ 그대로** — $n^2\log\log n$ (AGZ/GGS) 보다 점근적으로 약하다. 다만 원분체 이득 $m/(2\varphi(m))$ 이 $7.5$ 를 넘으려면 $\log\log m>8$ 이므로, 현실적인 모든 차원에서 icosian 상수가 더 크다. (iv) Gargava Thm 16 의 증명 내부는 재검증하지 않음(개정자가 $D_\mathbb R=K^s$, $s\ge2$ 에서 "추이성" 표현의 문구상 문제를 지적: 열린 조밀 궤도로 대체하면 될 것으로 보이나 미검증). (v) 새로움: AGZ/GGS 와의 관계(그들의 틀이 비가환 $D$ 를 이미 포함하는지)는 확인하지 못함.
+- 개정자가 일반 행렬 블록($D_\mathbb R\supset M_m(K)$) 경우를 위한 §7(Wishart 형 각도 보조정리)을 추가했으나 **미심사** ⇒ [조건부].
+
+---
+
+## 7회차 (07:32–08:00 UTC, 경과 96분): GGS 원분 접착 틀 안에서 $M/C>M/\varphi(M)$ 이 가능한가
+
+**결과**: 개선 없음, 완전한 no-go 도 없음. (`rounds/R7_gluing/notes.md`, `referee/`)
+- **[증명됨]** 재정식화: $M/C=1/\mu_M(\mathcal N)$ ($\mu_M(n)=\varphi(n)/M$ 은 약수 격자 위의 곱측도) $=\sum_g\rho(g)^2$ (Parseval). admissibility 의 지지집합 부분은 정확히 LP(협력게임의 core); 절단·분할·꼭짓점 조건; **소수별 창** $x_q<x_{hi}(q)<2/q$.
+- **[증명됨] 정리 A (부분 no-go, 홀수 $M$)**: $M/C>M/\varphi(M)$ ⇒ $M\notin\mathcal N$ 이고 $\sum_{q\mid M}x_{hi}(q)>1$. 따라서 홀수 소인수 3개 이하, 또는 4개인데 $\{3,5,7,11\}$ 이 아니면 불가능. **정리 B**: $M/C\le\frac M{\varphi(M)}\prod_p(p-1)^{x_{hi}(p)}$ (약함).
+- **[수치관찰]** 전수 LP 탐색: 약수 24개 이하의 모든 시험 모듈러스(홀수 13개 + 심사자의 짝수 34개)에서 $M/C>M/\varphi(M)$ 인 admissible 집합 **0개**; lcm 을 피하는 집합은 소수별 절단조차 통과 못 함.
+- **[심사 정정]** 정리 A 는 홀수 $M$ 에만; "모든 점근족이 선행 차수에서 실패" 는 과장(큐브−꼭대기 족은 선행 차수에서 정확히 경계); "비순환 아벨군은 도움이 안 된다" 는 근거 없음(미해결로 표기).
+- **[추측]** 모든 admissible 데이터에 $M/C\le K\cdot M/\varphi(M)$. **막힌 지점**: admissibility 부등식은 모두 "엔트로피 ≤ 경계 가중치" 꼴이라 $\mathcal N$ 이 가벼울수록 쉬워진다 — 상계는 피복조건과 소수별 창의 결합에서만 나오며, 점근 영역($\sum1/q\sim\log\log y$)에서는 닫히지 않는다.
+
+---
+
+## 8회차 (07:38–08:16 UTC, 경과 112분): 등변(equivariant) Klartag/Voronoi 탐색 — 대칭 과정은 어떤 격자를 찾는가
+
+(사용자 제안 "작은 $n$ 에서 실례를 직접 찾고 규칙성을 본다" 의 대칭판. `rounds/R8_equivariant/`, 1152회 실행, 검증자가 전부 재검증)
+- **[수치관찰, 검증됨] 기록 격자들이 그대로 나온다**: $E_8$ (Hurwitz $k=2$, icosian $k=1$, $\mathbb Z[\zeta_5]$ $k=2$: 100%), $K_{12}$ ($\mathbb Z[\zeta_7]$ $k=2$: 33%), $BW_{16}$ (icosian $k=2$: 42–67%, Hurwitz $k=4$: 12–40%), $\Lambda_{20}$ (Hurwitz $k=5$: 2/10), **Leech (icosian $k=3$, 자유도 $D=30$ 뿐: 11/24 실행)**. 검증자가 정수 연산으로 확인(짝 unimodular, 최소 4, 196560개 ⇒ Leech).
+- **[수치관찰] 스케일링 법칙**: 첫 $\mathcal Q$-perfect 형식에서 $V_{perf}\approx1.06\times(wD/2)$ (17개 (족,$k$) 점, $wD/2=50..1800$, 로그-로그 기울기 0.94). 즉 비대칭의 "$V\approx N$" 이 **"$V\approx$ (궤도 크기/2)×(불변형식 차원)"** 으로 일반화 — 6회차 정리의 상수 구조 $wD_k/(2e)$ 와 같은 형태(상수 $1$ vs $1/e$).
+- 각 차원에서 족의 순위는 $wD/2$ 순(예: $n=24$: icosian > Hurwitz > $\mathbb Z[\zeta_{13}]$).
+- 발견된 모든 $\mathcal Q$-perfect 형식은 유리 형식(분모 $q=2$: root 격자, $q=4$: $\Lambda_{10},K_{12},BW_{16},\Lambda_{20}$, Leech). 최선 형식의 정수 Gram 행렬: `best_forms.json`.
+- **한계**: 알려진 최선값을 넘는 $V$ 는 없음(max $V/V_{best}=1.000000$). 소차원 기록 격자들은 극도로 퇴화된 꼭짓점(Leech: 1638 궤도 vs $D=30$)이며 점근 영역($V\sim wD$)과는 다른 체제.
+- 버그 1건(탐욕 LP 하강이 약한 eutactic 비극단 형식에서 멈춤; 7/1152) — 보고된 수치를 보수적으로만 만든다.
+
+---
+
+## 9회차 (07:55–08:21 UTC, 경과 117분): 실제 랜덤 격자에서의 대각합-LP — Poisson 예측 $V_{LP}=2N$ 의 시험
+
+(`rounds/R9_trace_lp_lattices/`; 432개 격자의 LP 를 쌍대 인증서로 검증)
+- **[증명됨]** 대각합-LP 최적점 = $Q^{-1}$ 을 Voronoi 영역에 갖는 perfect form (LP 쌍대성). 검증: $A_6,D_6,E_6,E_7,E_8,D_4,A_{10}$ 에서 LP 가 자기 자신을 반환.
+- **[수치관찰] 실제 격자는 $n\le28$ 에서 Poisson 모형과 다르다.** (a) $n=6,7,8$: LP 꼭짓점이 대부분 $E_6$ (43/48), $E_7$ (23/24), $E_8$ (38/48). (b) $n=9$–$13$: 꼭짓점이 단순(정확히 $N$ 쌍)인 경우 0/172, $V_{LP}/N=1.16$–$1.27$, $v_{LP}/N=0.42$–$0.48$. (c) $n\ge14$: 꼭짓점이 단순해지지만 $V_{LP}/N$ 은 $1.20$ ($n=14$), $1.28$ ($16$), $1.35$ ($18$), $1.44$ ($20$), $1.55$ ($22$–$24$).
+- **[검증자 정정]** $p=100003$ Goldstein–Mayer 족은 $n\ge14$ 부터 입도(granularity) 문제가 있고 $n=28$ 행($1.44$)은 인공물. 큰 소수($p=10^{12}+39$)로 다시 하면 $V_{LP}/N=1.28$ ($n=16$), $1.44$ ($20$), $1.55$ ($24$), **$1.75\pm0.05$ ($n=28$)** — 여전히 증가 중. ⇒ "$V_{LP}(L)/N\to2$ ($n\to\infty$)" 는 **기각되지 않았고 결정되지도 않았다** [추측].
+- 같은 격자에서 Klartag 형 sticky walk: $V_K/N=1.10,1.26,1.02$–$1.05,1.06$ ($n=6,8,10,12$); LP 가 대체로 13–20% 더 크다.
+- **교훈**: 격자의 접촉벡터는 $n$ 개 기저의 정수결합이고 kissing 배치를 이루므로 Mecke/Gamma 논법이 실패 — 저차원에서는 root 격자의 뚱뚱한(비단체) Voronoi 영역이 지배한다. 상수 개선($1/(2e)\to$ LP 의 $1$)에 필요한 보조정리(4회차 LP-1)는 여전히 미해결.
+- **다음 할 일**: (10회차) 유일하게 남은 "차수 개선" 후보인 $SL_2(p)$ 텐서족의 $p=37,61$ 을 직접 계산으로 시험; (11회차) 그 후보의 Mordell–Weil 재정식화 검증과 조건부 주장에 대한 반박 시도.
+
+---
+
+## 11회차 (08:26–08:46 UTC, 경과 142분): $SL_2(p)$ 후보의 Mordell–Weil 재정식화 검증(T1) + 조건부 주장에 대한 반박 시도(T2)
+
+**선택한 과제**: 9회차까지 살아남은 유일한 차수 개선 후보를 (a) 대수기하의 언어로 재정식화하고 (b) "성립하면 $n^{2.5}$" 라는 조건부 주장 자체를 공격한다. (`rounds/R11_mordell_weil/T1,T2/notes.md`)
+
+**T1 — Mordell–Weil 재정식화 [증명됨; 일부 문헌은 접근 불가라 기억에 의존]** (출발점은 본인 유도, T1 이 한 줄씩 검증·정정)
+- (M1) $C_p:\ y^2=x^p-x$ ($g=(p-1)/2$) 위에 $SL_2(p)$ 가 $x\mapsto\frac{ax+b}{cx+d}$, $y\mapsto y/(cx+d)^{(p+1)/2}$ 로 충실하게 작용($-1$ = 초타원 대합), $H^1=\psi+\psi'$ (위수 $p$ 원소의 Lefschetz 수 $2-3=-1$; 비분리 토러스 생성원의 대각합 2 로 이산계열 표현 배제).
+- (M2) $\mathrm{Jac}(C_p)$ 는 superspecial(Cartier 작용소가 $x^idx/y$ 를 죽임), Frobenius $\pi$ 는 $\pi^2=p$ ($\#C_p(\mathbb F_p)=\#C_p(\mathbb F_{p^2})=p+1$) 이고 $G$ 와 가환 ⇒ **$\eta=\pm\pi$: $F=\mathbb Q(\sqrt p)$-구조는 Frobenius 가 준다.** $M_p:=\mathrm{Hom}(\mathrm{Jac}\,C_p,E)$ 는 랭크 $2(p-1)$ 의 $G$-격자이고 $\mathrm{End}_G(M_p)$ 는 극대 order.
+- (M3) **짝 unimodular Weil 격자 $W_p$ ($E_8$, Leech, …) 는 $M_p$ 에 뒤틀린 형식 $\mathrm{Tr}_{F/\mathbb Q}(\tfrac\varepsilon{\sqrt p}\beta)$ 를 준 것**; $G$-불변 형식의 원 $Q_t=e^tm_++e^{-t}m_-$ (주기 $2\log\varepsilon$) 위에서 unimodular 점과 Mordell–Weil 점($2\deg=\sqrt p\,Q$)은 정반대(거리 $\log\varepsilon$).
+- (M4) **직선 안정성 $\iff N_{F/\mathbb Q}(q_F(\phi))\ge r^2=((p-1)/4)^2$ ($\forall\phi\ne0$)**, $q_F$ 는 $\mathrm{Tr}\,q_F=\deg$ 인 $O_F$-값 이차형식. 특히 모든 비상수 사상 $C_p\to E$ 의 차수가 $\ge(p-1)/2=g$ 여야 한다. 초등적 한계(Castelnuovo–Severi)는 $\deg\ge(p+3)/4$ 뿐. 랭크 $j$: $N(\mathrm{Mdet}\,H_U)\ge(r/j)^{2j}$.
+- (M5) $p\equiv5\pmod 8$: $x\mapsto x^{(p-1)/4}$ 로 $C_p\to D:Y^2=X^5-X$ (차수 $(p-1)/4$), $D\to E$ (차수 2) ⇒ 차수 정확히 $(p-1)/2$ 인 사상 = 경계 벡터. [정정] $3\mid p+1$ 이면 차수 $(p+1)/3<(p-1)/2$ 인 Galois 타원 몫이 있다($p=17,29,41$ — 모두 $(p+1)/2$ 합성수, 5회차와 일치). (M6) 차수 $d$ 사상 ↔ $R^*(e_1+\dots+e_4)\equiv\sum_{P\in\mathbb P^1(\mathbb F_p)}P\pmod2$ 인 차수 $d$ 유리함수 $R$.
+- (M7) [휴리스틱] generic 격자의 기대 위반 벡터 수(단위군 궤도당) $=h\,\omega_h^2c^{h/2}\log\varepsilon$: $1.15\times10^4$ ($p=13$), $1.58\times10^5$ ($37$), $246$ ($61$), $2.3$ ($73$), $1.8\times10^{-26}$ ($157$); $G$-궤도 수로는 $5.3,\ 3.1,\ 10^{-3},\ 6\times10^{-6},\dots$ ⇒ **$p=37$ 은 불안정이 예상되고 $p\ge61$ 은 구조적 짧은 벡터가 없는 한 안정이 예상됨.** (단 $p=13$ 에서 이미 과대예측: 실제 위반 0.) 랭크 2 이상의 부분공간은 휴리스틱상 무관.
+- **Venkatesh 의 추측**의 출처: AGZ (arXiv:2606.05105) 서론에 "On various occasions, Venkatesh has conjectured $\Delta_N^{lat}\le N^2(\log N)^{O(1)}2^{-N}$" 로 인용(Venkatesh 본인의 문헌 인용은 없음).
+- 문헌 한계: Gross (JAMS 1990), Nebe (J. Algebra 1998), Dummigan, Watkins 는 네트워크 정책상 열람 불가 — "Gross 가 이 곡선과 $p=13$⇒Leech 를 명시했는지", $p=17,29,37,61$ 격자의 최소노름 문헌값은 확인 못 함.
+
+**T2 — 반박 시도 [치명적 장애 없음, 그러나 주장은 수정 필요]**
+- **[증명됨] 텐서족에서 전형적 사영 분산은 $q=q_0(1+\tfrac{r-1/2}{k})$** (Monte Carlo 확인; 초과분 $r/k=n/(2D_k)$ 는 정확히 항등 방향(호흡 모드)의 기여). ⇒ 기존 회계로는 $V_{final}=V_0^{r/(k+r)}(|G|D_k/2e)^{k/(k+r)}$: **$k\approx r$ 에서는 이득이 없다($n^{2.0}$)**; $k=cr$ 이면 지수 $2+\tfrac{c-1}{2(c+1)}$; 완전한 이득 $p$ 는 $k\ge Cr\log n$ 에서만 ⇒ $n\sim Cp^2\log p$, $V\sim n^{2.5}/\sqrt{\log n}$ (여전히 $n^2\mathrm{polylog}$ 와 충돌). $k=r+1$ 판은 대각합 없는 잡음을 쓰는 새 변형(미증명)을 요구.
+- (A1) 평균값 공식 주항 상수는 정확히 1; $O$-가군 제타 $\prod_{i<2r}\zeta_F(2k-i)$ 는 $k\ge r+1$ 에서 수렴($\le1.17$). (A2) 강제되는 경계류(분리 토러스 고정공간, $SL_2(3)$-isotypic 성분)가 흡수하는 제약 궤도는 $O(p)$ 로 $D_k\sim p^2/4$ 에 비해 무시 가능; 단 경계 직선의 개수 상계는 추가 가정. (A5) 상계 쪽 장애는 발견 못 함(theta 급수의 Hilbert 모듈러 제약은 미검토).
+- **[신규 필요조건]** 부분군 $H$ 의 $\mathbb Q$-isotypic 성분도 $\Delta$-부분공간이다. $SL_2(3)$ 의 Hurwitz 성분: $R=2^{-e}\le1$ (항상 안전). **$p\equiv1\pmod5$ ($p=61,421,\dots$) 에서 $SL_2(5)$ 의 icosian 성분: $R=(625/256)^{2r/15}2^{-e}$ — $p=61$ 은 2-진 접착 지수 $e\ge3$ 이어야 안정** (미계산 → 12회차).
+- **수정된 조건부 주장**: (H1) 무한히 많은 $p$ 에서 모든 $\Delta$-부분공간에 $R_U\le1$, (H2) 사실상 경계인 부분공간들의 접촉 기여가 $o(D_k)$, (H3) $r\ge2$ 텐서족에 대한 등변 Klartag 논증($k\ge Cr\log n$) ⇒ $n=8rk\sim\tfrac C2p^2\log p$ 에서 $V_n\ge(1-o(1))\tfrac{p\,n^2}{2e}\ge c\,n^{5/2}/\sqrt{\log n}$.
+
+---
+
+## 10회차 (08:24–진행 중): $SL_2(p)$ Weil 격자의 직접 구성과 안정성 시험 ($p=5,13,17,29,37,61$)
+
+**선택한 과제**: 5회차·11회차의 "첫 미해결 사례 $p=37$" 을 계산으로 결정한다. 독립 구현 3개: 빌더 A, 빌더 B(하위 에이전트), 그리고 본인(오케스트레이터)의 프로토타입 `rounds/R10_weil_lattices/orchestrator/` (`proto.py`, `run37.py`, `sub37.py`, `certify.py`).
+
+**방법(본인 유도 → 세 구현이 검증)**: 홀함수 Weil 표현 $T=\mathrm{diag}(\zeta^{x^2})$, $S=\kappa(\zeta^{2xy}-\zeta^{-2xy})/\sqrt p$ ($\kappa=-1$ 에서 $S^2=(ST)^3=-I$)을 $\mathbb Q(\zeta_p)$ 의 모든 매장으로 Minkowski 매장. $v_0=\mathbf 1_{\mu_m}-\mathbf 1_{-\mu_m}$ ($m=(p-1)/4$; 분리 토러스 $C_m$ 의 고정벡터라서 $\mathbb Q[G]v_0\cong W$ 한 벌). $\Lambda=\mathbb Z[G]v_0$, $B=\mathrm{Tr}_{K/\mathbb Q}\langle\cdot,\cdot\rangle$ (정수값), $m_\pm$ = 매장을 $(a/p)=\pm1$ 로 나눈 노름. $D=\det_B(\Lambda)^{1/(p-1)}$, $\theta_p=(p-1)^2/(4p)$, $\Gamma(w)=m_+(w)m_-(w)/D$. **$\Gamma(w)<\theta_p$ ⇒ $\Delta w$ 직선에서 $R_U\ge(\theta_p/\Gamma)^4>1$.**
+
+**결과**
+- **검증** $p=5$: $D=5$, $\min\Gamma=0.8=\theta_5$; unimodular 점($t=\pm\log\varepsilon$)이 $E_8$. $p=13$: $D=117=r^2p$, **$\min\Gamma=36/13=\theta_{13}$ 정확히**(전수 열거; 세 류 각각 6552쌍 — 5회차의 13104+13104+26208/2 와 일치), unimodular 점이 Leech (최소 4). $C_3$-고정격자: $\log R_U=0.000000$, $\sqrt3E_8$ (노름 6: $N(\nu)=9$ 가 24쌍, $27$ 이 96쌍 — 5회차와 일치). 직접 인증: $O\cdot w$ 의 행렬식 $=((p/4)m_+m_-)^4$, $R_U=1.000000$.
+- **$p=17,29$ (예상대로 불안정)**: 빌더 B: $p=29$ 비분리 위수 5 원소의 고정격자가 $\Delta$-직선이고 $R_U=(49/25)^4=14.76$; 위수 3: $R_U=11.78$.
+- **[수치(부동소수점, 잔차 $\le2\times10^{-9}$), 독립 구현 2개 일치] $p=37$ 은 텐서 불안정.** $\Lambda$: 랭크 72, $D=2997=81\cdot37$; unimodular 점은 72차원 짝 unimodular 격자 $W_{37}$. 분리 토러스 $C_9$ 의 고정 직선은 정확히 경계($\log R_U=0$, $\min\Gamma=\theta$) — 보정 확인. 그러나 **$C_3$-고정 부분격자(랭크 24, 그 자체는 $R_U=1$)는 $\sqrt3\times$(근 144개를 갖는 unimodular 랭크 24 격자, 즉 뿌리계 $D_4^6$ 또는 $A_5^4D_4$ 의 Niemeier 격자)이고, 그 근에 해당하는 $W_{37}$ 의 노름 6 벡터 72쌍은 $s=\pm9$, $N(\nu)=\tfrac{37\cdot36}{16}-\tfrac{81}4=63<81=r^2$, $\Gamma=\tfrac79\theta$.** 직접 인증(`certify.py`): $O\cdot w\subset\Lambda$ (랭크 8) 의 행렬식이 예측식과 일치하고 **$R_U\ge r^8D^4/\det(O\cdot w)=2.7326=(9/7)^4$** — $O$ 의 극대성 가정 없이 성립. 이 불안정성은 같은 족의 모든 격자 $\Lambda I$ (모든 ideal 류)로 전이된다($\det$ 비가 불변). 즉 **$p=37$ 은 (b) 쪽: Weil 격자에 불균형한 짧은 벡터가 존재.** (11회차 휴리스틱의 예측 "위반 궤도 $\approx3/[O^\times:O_F^\times]$ 개" 와 부합: 발견된 것은 $703\times144=2|G|$ 개.)
+- **[수치] $p=61$ 은 지금까지의 모든 시험을 통과**(빌더 B): 분리 토러스 $C_{15}$ 직선(랭크 8), $C_5$-고정(랭크 24), $C_3$-고정(랭크 40) 부분격자에서 $t$-격자 전체에 대한 전수 열거 — 위반 없음, 각각 $\min\Gamma=\theta$ 정확히. 랭크 120 전체에 대한 LLL 수준 탐색에서도 $\theta$ 미만 없음(약한 증거). ⇒ **$p=61$ ($\dim W=120$, $r=15$, 이득 $g\approx63$) 이 첫 미해결 사례.**
+- 심사(교차검증) 진행 중 → 결과는 아래 마무리에 기록.
+
+**다음 할 일 → 12회차**: $p=61$ 에서 T2 의 필요조건($SL_2(5)$ icosian 성분의 $e\ge3$)과 모든 군론적 구조의 $\Delta$-부분공간(부분군의 isotypic 성분)에 대해 $R_U$ 를 체계적으로 계산.

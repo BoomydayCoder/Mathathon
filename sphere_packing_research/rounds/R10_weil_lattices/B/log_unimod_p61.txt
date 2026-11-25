@@ -1,0 +1,1 @@
+[    2.7s] UNIMOD-EXACT {'p': 61, 'eps_xy_sign': (39, 5, -4), 'Q_exact_integral': True, 'even': True, 'diag_min': 150, 'symmetric': True, 'logdet_float': -5.462645003007083e-07, 'lll_diag_min': 70}

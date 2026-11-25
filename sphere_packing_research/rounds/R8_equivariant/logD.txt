@@ -1,0 +1,2 @@
+hur k=5 n=20 D=45 w=24 mode=descent runs=7 fails=0 t=92.7s Vperf med=583.3546 max=643.7953 | Vext med=713.7512 max=3382.5609 orb_perf mean=56.0
+hur k=6 n=24 D=66 w=24 mode=descent runs=2 fails=0 t=128.0s Vperf med=922.3612 max=937.6563 | Vext med=1477.1859 max=1573.4078 orb_perf mean=66.0

@@ -1,0 +1,28 @@
+== (1) Hurwitz ==
+k=1: n=4, D_k=1.000000 (k(2k-1)=1), q in [0.250000000000,0.250000000000], max|P(x(x)x)-L_(xx*/4)|=4.44e-16
+k=2: n=8, D_k=6.000000 (k(2k-1)=6), q in [0.250000000000,0.250000000000], max|P(x(x)x)-L_(xx*/4)|=8.88e-16
+k=3: n=12, D_k=15.000000 (k(2k-1)=15), q in [0.250000000000,0.250000000000], max|P(x(x)x)-L_(xx*/4)|=8.88e-16
+== (2) icosians ==
+order of the generated group: 120
+k=1: n=8, D_k=2.000000 (2k(2k-1)=2), max|q-(u1^2+u2^2)/4|=1.67e-16
+k=2: n=16, D_k=12.000000 (2k(2k-1)=12), max|q-(u1^2+u2^2)/4|=5.55e-17
+== (3) angular lemma (Dirichlet), exact LHS for s=2 by quadrature ==
+k=50, z=3.0: E exp(z s sum eta^2) = 1.015265 <= bound 2.101192
+k=200, z=6.0: E exp(z s sum eta^2) = 1.007576 <= bound 2.077200
+k=1000, z=8.0: E exp(z s sum eta^2) = 1.002006 <= bound 1.293083
+k=10000, z=12.0: E exp(z s sum eta^2) = 1.000300 <= bound 1.059328
+s=3, a=100, z=3.0: MC 1.02027 <= bound 3.04578
+s=3, a=1000, z=5.0: MC 1.00335 <= bound 1.35190
+== (4) integral lemma: ratio LHS / ((8/n^2) e^{n^2 S/8}) ==
+n=1000: ratio = 2.2245   (n^3 S^2 = 12.2)
+n=100000: ratio = 1.0451   (n^3 S^2 = 0.339)
+n=10000000: ratio = 1.0173   (n^3 S^2 = 0.00665)
+n=1000000000: ratio = 1.0129   (n^3 S^2 = 0.00011)
+== constants ==
+Hurwitz k=10: w q n^2/(4e) / n^2 = 0.55182 = 3/(2e) = 0.55182;  w D_k/(2e)/n^2 = 0.52423
+Hurwitz k=100: w q n^2/(4e) / n^2 = 0.55182 = 3/(2e) = 0.55182;  w D_k/(2e)/n^2 = 0.54906
+Hurwitz k=1000: w q n^2/(4e) / n^2 = 0.55182 = 3/(2e) = 0.55182;  w D_k/(2e)/n^2 = 0.55154
+Hurwitz k=100000: w q n^2/(4e) / n^2 = 0.55182 = 3/(2e) = 0.55182;  w D_k/(2e)/n^2 = 0.55182
+icosians: w q0 n^2/(4e)/n^2 = 1.3795479043929089  15/(4e) = 1.3795479043929089
+== (2b) EXACT closure of <i, (1+i+j+k)/2, (tau + tau^{-1} i + j)/2> in H(Q(sqrt5)) ==
+exact order: 120 | -1 in G: True | all reduced norms 1: True | i,j,k in G: True | some element outside Q<1,i,j,k>: True

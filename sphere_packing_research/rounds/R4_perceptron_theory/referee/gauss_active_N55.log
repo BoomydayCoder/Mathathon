@@ -1,0 +1,14 @@
+seed 0 M=36432 v/N=1.3435 rho2=5.862 V/N=2.7957 act=55 max_act_sigma=9.83 cutoff_rel_to_vstar=13.80
+seed 1 M=36652 v/N=0.9901 rho2=7.659 V/N=2.5792 act=55 max_act_sigma=11.12 cutoff_rel_to_vstar=14.41
+seed 2 M=36926 v/N=0.9324 rho2=6.387 V/N=2.0717 act=55 max_act_sigma=8.93 cutoff_rel_to_vstar=14.53
+seed 3 M=36802 v/N=0.7315 rho2=7.433 V/N=1.8523 act=55 max_act_sigma=9.07 cutoff_rel_to_vstar=15.01
+seed 4 M=36697 v/N=0.7737 rho2=6.459 V/N=1.7347 act=55 max_act_sigma=6.66 cutoff_rel_to_vstar=14.90
+seed 5 M=36377 v/N=0.7108 rho2=5.914 V/N=1.4887 act=55 max_act_sigma=5.63 cutoff_rel_to_vstar=15.07
+seed 6 M=36511 v/N=0.5815 rho2=9.049 V/N=1.8020 act=55 max_act_sigma=11.29 cutoff_rel_to_vstar=15.47
+seed 7 M=36755 v/N=0.4226 rho2=9.497 V/N=1.3852 act=55 max_act_sigma=9.45 cutoff_rel_to_vstar=16.11
+seed 8 M=36468 v/N=0.6262 rho2=9.874 V/N=2.1515 act=55 max_act_sigma=9.70 cutoff_rel_to_vstar=15.32
+seed 9 M=36553 v/N=0.7877 rho2=6.547 V/N=1.7856 act=55 max_act_sigma=7.56 cutoff_rel_to_vstar=14.86
+seed 10 M=36482 v/N=0.4301 rho2=9.912 V/N=1.4846 act=55 max_act_sigma=12.25 cutoff_rel_to_vstar=16.07
+seed 11 M=36476 v/N=1.0893 rho2=6.710 V/N=2.5202 act=55 max_act_sigma=7.60 cutoff_rel_to_vstar=14.22
+N=55 srel=15.0 seeds=12: v/N 0.7849+-0.0779  rho2 7.609+-0.450  V/N 1.9710+-0.1331 (se)
+active offsets: mean 1.863 sd 3.549  (pred 2, 3.464; the reviewed notes say 4, 2.83); frac of active with sigma>11: 0.0061

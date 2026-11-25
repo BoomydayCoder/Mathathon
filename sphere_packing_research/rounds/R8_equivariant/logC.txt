@@ -1,0 +1,1 @@
+ico k=3 n=24 D=30 w=120 mode=descent runs=3 fails=0 t=51.1s Vperf med=2355.9407 max=32372.8850 | Vext med=32372.8850 max=32372.8850 orb_perf mean=582.7

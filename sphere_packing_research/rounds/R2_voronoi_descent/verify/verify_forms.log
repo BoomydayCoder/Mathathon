@@ -1,0 +1,33 @@
+runs_n10_descent_s1.json done 0.1
+runs_n10_descent_s2.json done 0.2
+runs_n10_random_s1.json done 0.3
+runs_n10_random_s2.json done 0.5
+runs_n2_descent_s1.json done 1.0
+runs_n2_random_s1.json done 1.2
+runs_n3_descent_s1.json done 1.9
+runs_n3_random_s1.json done 2.3
+runs_n4_descent_s1.json done 2.9
+runs_n4_random_s1.json done 3.5
+runs_n5_descent_s1.json done 4.5
+runs_n5_random_s1.json done 5.1
+runs_n6_descent_s1.json done 6.5
+runs_n6_random_s1.json done 7.2
+runs_n7_descent_s1.json done 9.1
+runs_n7_random_s1.json done 10.4
+runs_n8_descent_s1.json done 11.3
+runs_n8_random_s1.json done 11.6
+runs_n9_descent_s1.json done 11.9
+runs_n9_descent_s2.json done 12.1
+runs_n9_random_s1.json done 12.2
+runs_n9_random_s2.json done 12.4
+
+TOTAL records verified: 3403
+n=2: 300 forms | min of (exact min / q) deviation: min_int==q in 300/300 | min_float range [1.0000000000,1.0000000000] | max rat_err 0.00e+00 | pairs match 300/300 | q match 300/300 | max V relerr 0.00e+00 | perfect(rank=N) 300/300 | eutactic(eut>1e-9) 300/300 min eut 6.667e-01 | index==1 300/300 | maxcoord 1 | max V 3.62760 (best 3.62760) exceed: 0 | q values [(2, 300)]
+n=3: 300 forms | min of (exact min / q) deviation: min_int==q in 300/300 | min_float range [1.0000000000,1.0000000000] | max rat_err 0.00e+00 | pairs match 300/300 | q match 300/300 | max V relerr 1.50e-16 | perfect(rank=N) 300/300 | eutactic(eut>1e-9) 300/300 min eut 5.000e-01 | index==1 300/300 | maxcoord 1 | max V 5.92384 (best 5.92384) exceed: 0 | q values [(2, 300)]
+n=4: 499 forms | min of (exact min / q) deviation: min_int==q in 499/499 | min_float range [1.0000000000,1.0000000000] | max rat_err 0.00e+00 | pairs match 499/499 | q match 499/499 | max V relerr 3.60e-16 | perfect(rank=N) 499/499 | eutactic(eut>1e-9) 499/499 min eut 3.333e-01 | index==1 499/499 | maxcoord 2 | max V 9.86960 (best 9.86960) exceed: 0 | q values [(2, 499)]
+n=5: 619 forms | min of (exact min / q) deviation: min_int==q in 619/619 | min_float range [1.0000000000,1.0000000000] | max rat_err 0.00e+00 | pairs match 619/619 | q match 619/619 | max V relerr 8.35e-16 | perfect(rank=N) 619/619 | eutactic(eut>1e-9) 619/619 min eut 2.500e-01 | index==1 619/619 | maxcoord 2 | max V 14.88824 (best 14.88824) exceed: 0 | q values [(2, 608), (4, 11)]
+n=6: 636 forms | min of (exact min / q) deviation: min_int==q in 636/636 | min_float range [1.0000000000,1.0000000000] | max rat_err 0.00e+00 | pairs match 636/636 | q match 636/636 | max V relerr 1.64e-15 | perfect(rank=N) 636/636 | eutactic(eut>1e-9) 636/636 min eut 1.667e-01 | index==1 636/636 | maxcoord 3 | max V 23.86864 (best 23.86864) exceed: 0 | q values [(2, 611), (4, 25)]
+n=7: 700 forms | min of (exact min / q) deviation: min_int==q in 700/700 | min_float range [0.9999999998,1.0000000000] | max rat_err 2.00e-10 | pairs match 700/700 | q match 700/700 | max V relerr 3.01e-15 | perfect(rank=N) 700/700 | eutactic(eut>1e-9) 700/700 min eut 3.333e-02 | index==1 700/700 | maxcoord 3 | max V 37.79813 (best 37.79813) exceed: 0 | q values [(2, 585), (4, 107), (6, 8)]
+n=8: 185 forms | min of (exact min / q) deviation: min_int==q in 185/185 | min_float range [0.9999999996,1.0000000000] | max rat_err 2.00e-10 | pairs match 185/185 | q match 185/185 | max V relerr 2.63e-15 | perfect(rank=N) 185/185 | eutactic(eut>1e-9) 185/185 min eut 1.711e-03 | index==1 185/185 | maxcoord 5 | max V 64.93939 (best 64.93939) exceed: 0 | q values [(2, 100), (4, 68), (6, 17)]
+n=9: 114 forms | min of (exact min / q) deviation: min_int==q in 114/114 | min_float range [0.9999999996,1.0000000000] | max rat_err 2.00e-10 | pairs match 114/114 | q match 114/114 | max V relerr 4.00e-15 | perfect(rank=N) 114/114 | eutactic(eut>1e-9) 114/114 min eut 9.174e-04 | index==1 114/114 | maxcoord 6 | max V 74.63674 (best 74.63674) exceed: 0 | q values [(4, 81), (6, 21), (8, 11), (10, 1)]
+n=10: 50 forms | min of (exact min / q) deviation: min_int==q in 50/50 | min_float range [0.9999999996,1.0000000000] | max rat_err 6.00e-10 | pairs match 50/50 | q match 50/50 | max V relerr 3.05e-15 | perfect(rank=N) 50/50 | eutactic(eut>1e-9) 50/50 min eut 1.895e-03 | index==1 50/50 | maxcoord 3 | max V 94.22963 (best 94.22963) exceed: 0 | q values [(4, 22), (6, 14), (8, 9), (10, 2), (12, 2), (14, 1)]

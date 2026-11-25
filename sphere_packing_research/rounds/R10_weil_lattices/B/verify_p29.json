@@ -1,0 +1,25 @@
+{
+ "p": 29,
+ "max|Gp+Gm-B|": 1.7053025658242404e-13,
+ "max|sqrt(p)(Gp-Gm)-E|": 9.18333536299287e-13,
+ "detB_equals_(m^2 p)^(p-1)": true,
+ "orbit_size": 3480,
+ "expected_orbit_size_|G|/m": 3480,
+ "orbit_coords_integrality_residual": 1.681144112808397e-11,
+ "orbit_spans_saved_lattice": true,
+ "violator_p29.json": {
+  "file": "violator_p29.json",
+  "b": 294,
+  "e": 1218,
+  "N": 1023120,
+  "threshold": 1114064,
+  "exact_violator": true,
+  "m_plus_direct": 260.08846094982454,
+  "m_minus_direct": 33.91153905017532,
+  "Gamma_direct": 6.20689655172412,
+  "Gamma_exact": "1023120/164836",
+  "theta": 6.758620689655173,
+  "ratio": 0.9183673469387729,
+  "R_U_lower_bound": 1.4058347203170416
+ }
+}

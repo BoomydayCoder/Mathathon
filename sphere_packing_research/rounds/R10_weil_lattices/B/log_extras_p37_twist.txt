@@ -1,0 +1,19 @@
+[    0.5s] p=37 setup ok: kappa=-1, rounding residuals (np.float64(1.6342482922482304e-13), np.float64(3.410605131648481e-13), np.float64(5.684341886080802e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    0.5s] closure iterations 3; det(B on Lambda_0) = ~1e125 ; D = 2997.0 (exact m^2 p: True)
+[    2.1s] LLL done; diag(B) min 324 max 972 ; |E B^-1 E - pB| = 3.55e-09
+[    2.1s] Lambda^H rank 8 det_B = 3472858170158755180401 ; maximal-order value p^4 m^16 = 3472858170158755180401 -> maximal: True ; ratio det/(p^4 m^16) = 1.0 ; borderline calibration det^m == m^(8m) det(Lambda): True
+[    2.1s] delta_u matrices: delta_{v0}=1, commute with S,T (exact), preserve Lambda_0 (exact) for a Z-basis of Lambda^H  => O = End_G(Lambda_0) acts
+[    2.1s] units of O with nrd=1 (b=4m^2,e=0) mod +-: 12 ; elements of order 3 in O^x: 8
+[    2.3s] twist 0: kernel rank found 24, expected 24
+[    2.4s] p37 twisted eigenlattice ker(g3 - delta3) #0 rank 24: t-grid 50/50 complete=True minGamma=6.810811 theta=8.756757 ratio=0.777778 (b=1026,e=5994) violator hits=584 border hits=0 nodes=2.89e+05
+[    2.4s]    (density indicator (n/k)^k D^(k/2)/det = 1)
+[    2.6s] twist 1: kernel rank found 24, expected 24
+[    2.7s] p37 twisted eigenlattice ker(g3 - delta3) #1 rank 24: t-grid 50/50 complete=True minGamma=6.810811 theta=8.756757 ratio=0.777778 (b=1026,e=5994) violator hits=606 border hits=0 nodes=4.50e+05
+[    2.7s]    (density indicator (n/k)^k D^(k/2)/det = 1)
+[    2.9s] twist 2: kernel rank found 24, expected 24
+[    3.1s] p37 twisted eigenlattice ker(g3 - delta3) #2 rank 24: t-grid 50/50 complete=True minGamma=6.810811 theta=8.756757 ratio=0.777778 (b=1026,e=5994) violator hits=598 border hits=0 nodes=3.75e+05
+[    3.1s]    (density indicator (n/k)^k D^(k/2)/det = 1)
+[    3.3s] twist 3: kernel rank found 24, expected 24
+[    3.4s] p37 twisted eigenlattice ker(g3 - delta3) #3 rank 24: t-grid 50/50 complete=True minGamma=6.810811 theta=8.756757 ratio=0.777778 (b=1026,e=5994) violator hits=587 border hits=0 nodes=3.63e+05
+[    3.4s]    (density indicator (n/k)^k D^(k/2)/det = 1)
+[    3.4s] DONE

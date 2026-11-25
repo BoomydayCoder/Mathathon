@@ -1,0 +1,3 @@
+n=4 dt x1 (default): runs=220, frac D4=0.468 +- 0.034, mean V=9.3155, median freeze time=0.6321, mean freeze time=0.8254
+n=4 dt x0.25: runs=35, frac D4=0.514 +- 0.084, mean V=9.3635, median freeze time=0.5823, mean freeze time=0.6940
+n=4 dt x4: runs=80, frac D4=0.463 +- 0.056, mean V=9.3095, median freeze time=0.6786, mean freeze time=0.7909

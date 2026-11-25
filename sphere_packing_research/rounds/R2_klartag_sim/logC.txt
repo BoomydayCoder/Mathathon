@@ -1,0 +1,2 @@
+2 gm runs 100 time 21.2
+4 gm runs 35 time 27.2

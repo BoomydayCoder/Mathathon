@@ -1,0 +1,72 @@
+{
+ "p": 5,
+ "rank": 8,
+ "detB": "625",
+ "D": 4.999999999999999,
+ "theta": 0.8,
+ "detfac": {
+  "5": 4
+ },
+ "order_det_ratio": 1.0000000000000053,
+ "calib_RU_H": 0.9999999999999992,
+ "n_shorter_than_v0": 0,
+ "enum_flag_min": 0,
+ "H": {
+  "min_gamma": 0.8000000000000002,
+  "complete": true,
+  "n_enum": 60,
+  "n_viol": 0,
+  "rank": 8,
+  "cert": {
+   "p": 5,
+   "x": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "B_norm": 4,
+   "E_norm": 0,
+   "m_plus": 2.0,
+   "m_minus": 2.0,
+   "D": 4.999999999999999,
+   "Gamma": 0.8000000000000002,
+   "theta": 0.8,
+   "N_exact": 80,
+   "formula": "Gamma = (p*b^2 - e^2)/(4 p D), b = x B x^T, e = x E x^T, D = det(B)^(1/(p-1))"
+  }
+ },
+ "full": {
+  "min_gamma": 0.8000000000000002,
+  "complete": true,
+  "n_enum": 60,
+  "n_viol": 0,
+  "rank": 8,
+  "cert": {
+   "p": 5,
+   "x": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "B_norm": 4,
+   "E_norm": 0,
+   "m_plus": 2.0,
+   "m_minus": 2.0,
+   "D": 4.999999999999999,
+   "Gamma": 0.8000000000000002,
+   "theta": 0.8,
+   "N_exact": 80,
+   "formula": "Gamma = (p*b^2 - e^2)/(4 p D), b = x B x^T, e = x E x^T, D = det(B)^(1/(p-1))"
+  }
+ }
+}

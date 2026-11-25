@@ -1,0 +1,1 @@
+{"n": 8, "kind": "gm", "error": "LinAlgError(Matrix is not positive definite) in reenum; first batch (seed 108), run 20; batch aborted"}

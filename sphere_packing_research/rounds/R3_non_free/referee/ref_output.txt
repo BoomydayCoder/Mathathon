@@ -1,0 +1,41 @@
+(A) Prop 2: exact T_U vs asymptotic; and exact 'poly' factor in V = T^{1/f} (f tau^2)^{n/2} * P
+  D=4 dimU=2 k=50 n=200 f=0.500: exact/approx=0.99875; log10 P=1.10 (pred 1.10); log10 n^3=6.90
+  D=12 dimU=2 k=30 n=360 f=0.167: exact/approx=0.99730; log10 P=5.31 (pred 5.30); log10 n^3=7.67
+  D=40 dimU=2 k=45 n=1800 f=0.050: exact/approx=0.99815; log10 P=22.65 (pred 22.64); log10 n^3=9.77
+  D=200 dimU=8 k=60 n=12000 f=0.040: exact/approx=0.99965; log10 P=37.45 (pred 37.44); log10 n^3=12.24
+(B) borderline term T_U = f^{-1/2} pi^{(f-1)/2} V^f n^{-(1-f)/2}: growth for V=n, n^2
+  f=0.500, V=n^1: T_U ~ n^0.250
+  f=0.500, V=n^2: T_U ~ n^0.750
+  f=0.333, V=n^1: T_U ~ n^-0.000
+  f=0.333, V=n^2: T_U ~ n^0.333
+  f=0.250, V=n^1: T_U ~ n^-0.125
+  f=0.250, V=n^2: T_U ~ n^0.125
+(C) entropy windows, own bisection
+  q=2: a/b in [1.0000,1.0000]  rho in [0.0000,0.0000]  e/q=1.3591
+  q=3: a/b in [0.7084,1.2835]  rho in [-0.1077,0.0863]  e/q=0.9061
+  q=5: a/b in [0.4597,1.4970]  rho in [-0.1212,0.0904]  e/q=0.5437
+  q=7: a/b in [0.3424,1.5874]  rho in [-0.1037,0.0774]  e/q=0.3883
+  q=11: a/b in [0.2272,1.6723]  rho in [-0.0756,0.0576]  e/q=0.2471
+  q=101: a/b in [0.0267,1.8454]  rho in [-0.0097,0.0083]  e/q=0.0269
+  q=10007: a/b in [0.0003,1.9281]  rho in [-0.0001,0.0001]  e/q=0.0003
+  q=2 exact: only a=b: []
+(D) SL2(p), p=1 mod 4, nonsplit torus prime q | (p+1)/2, (a,b) ~ (N-1,N), N=(p+1)/(2q); split torus a=b
+  failures for p<2000: [(17, 3, 3)]
+(E) SL2(p), p=3 mod 4: (i) involution in degree (p-1)/2: Delta; (ii) unipotent (a,b)=(2,1)
+  p=7: (i) Delta=0.5232 (log2=0.6931);  (ii) Delta=0.3034 (1-log2=0.3069)
+  p=11: (i) Delta=0.5925 (log2=0.6931);  (ii) Delta=0.3055 (1-log2=0.3069)
+  p=19: (i) Delta=0.6375 (log2=0.6931);  (ii) Delta=0.3064 (1-log2=0.3069)
+  p=23: (i) Delta=0.6476 (log2=0.6931);  (ii) Delta=0.3065 (1-log2=0.3069)
+  p=47: (i) Delta=0.6714 (log2=0.6931);  (ii) Delta=0.3068 (1-log2=0.3069)
+  p=103: (i) Delta=0.6833 (log2=0.6931);  (ii) Delta=0.3068 (1-log2=0.3069)
+  p=1003: (i) Delta=0.6921 (log2=0.6931);  (ii) Delta=0.3069 (1-log2=0.3069)
+(F) Unramified example: Q-span vs K-span of G = mu_6 x| C_2 on E=Q(sqrt-3,sqrt5)
+  |G|= 12  dim_Q span(G) = 4   (M_2(K) would have dim 8);  sum rho^2 = 3.0  |mu_E|/[E:Q] = 1.5
+(G) D4 over Z[sqrt-2]: all K-lines super-stable? min over w of covol(w O_K) with saturation check
+  min covol(w O_K) = 2.8284271247461903  -> tau^2_min <=  2.0  (c_W=2, tau^2=c_U/sqrt(c_W)); O_K PID so every line lattice is w O_K, c_U=sqrt2|w|^2>=2sqrt2 => tau^2>=2 exactly
+(H) Blichfeldt check p=3,5,7,11 and group identity SL2(5)xC7
+  p=3: need gamma>= 3.464; Blichfeldt gamma_6 <= 1.836
+  p=5: need gamma>= 5.981; Blichfeldt gamma_20 <= 3.664
+  p=7: need gamma>= 8.299; Blichfeldt gamma_42 <= 6.402
+  p=11: need gamma>= 12.710; Blichfeldt gamma_110 <= 14.616
+  SL2(5)xC7: g = 15*7/6 = 17.5  = 840/(12*4) = 17.5

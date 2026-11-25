@@ -1,0 +1,15 @@
+# third-party papers downloaded for reading (not redistributed); see research_log.md for arXiv identifiers
+papers/
+# large regenerable binary data
+rounds/R5_leech13/A.npy
+rounds/R5_leech13/W.npy
+# build by-products
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/build*.log
+report/test_app*
+report/app_*_test.*
+**/__pycache__/
+*.pyc

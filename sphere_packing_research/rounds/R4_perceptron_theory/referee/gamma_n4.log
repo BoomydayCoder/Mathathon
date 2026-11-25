@@ -1,0 +1,2 @@
+n=4 N=10 samples=400 (not certified exact: 0)  mean V=20.058 (pred 2N=20)  se=0.300  var V=35.91 (pred 4N=40)  KS stat=0.0364 p=0.651
+   mean V/N=2.0058 ; fraction of samples above the true lattice maximum V_n: V_4=9.870: 0.963

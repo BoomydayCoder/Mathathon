@@ -1,0 +1,8 @@
+lpscan n=7 gm: 24/24 LPs in 0.4s  V_LP/N mean=1.328 pairs/N=2.198 Vbest/N=1.350
+lpscan n=9 gm: 24/24 LPs in 2.1s  V_LP/N mean=1.166 pairs/N=1.690 Vbest/N=1.659
+lpscan n=11 gm: 24/24 LPs in 1.3s  V_LP/N mean=1.162 pairs/N=1.463 Vbest/N=1.875
+lpscan n=13 gm: 24/24 LPs in 2.8s  V_LP/N mean=1.195 pairs/N=1.196 Vbest/N=2.629
+lpscan n=14 gm: 30/30 LPs in 5.6s  V_LP/N mean=1.183 pairs/N=1.013 Vbest/N=3.374
+lpscan n=22 gm: 9/9 LPs in 57.3s  V_LP/N mean=1.545 pairs/N=1.000 Vbest/N=35.273
+lpscan n=24 gm: 5/5 LPs in 54.4s  V_LP/N mean=1.540 pairs/N=1.000 Vbest/N=107.910
+P4 DONE

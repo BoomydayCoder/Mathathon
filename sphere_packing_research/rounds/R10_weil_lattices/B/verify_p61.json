@@ -1,0 +1,10 @@
+{
+ "p": 61,
+ "max|Gp+Gm-B|": 1.8189894035458565e-12,
+ "max|sqrt(p)(Gp-Gm)-E|": 1.4551915228366852e-11,
+ "detB_equals_(m^2 p)^(p-1)": true,
+ "orbit_size": 15128,
+ "expected_orbit_size_|G|/m": 15128,
+ "orbit_coords_integrality_residual": 4.44227907792083e-08,
+ "orbit_spans_saved_lattice": true
+}

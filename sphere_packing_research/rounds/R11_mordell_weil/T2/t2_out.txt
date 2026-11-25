@@ -1,0 +1,39 @@
+== A1: Solomon zeta of O^r: prod_{i=0}^{2r-1} zeta_F(2k-i), converges iff k>=r+1 ==
+p=13 r=3 k=4: zeta_(O^r)(k) = 1.1443
+p=13 r=3 k=5: zeta_(O^r)(k) = 1.0137
+p=13 r=3 k=6: zeta_(O^r)(k) = 1.0015
+p=37 r=9 k=10: zeta_(O^r)(k) = 1.1529
+p=37 r=9 k=11: zeta_(O^r)(k) = 1.0139
+p=37 r=9 k=18: zeta_(O^r)(k) = 1.0000
+p=61 r=15 k=16: zeta_(O^r)(k) = 1.1678
+p=61 r=15 k=17: zeta_(O^r)(k) = 1.0146
+p=61 r=15 k=30: zeta_(O^r)(k) = 1.0000
+p=157 r=39 k=40: zeta_(O^r)(k) = 1.1471
+p=157 r=39 k=41: zeta_(O^r)(k) = 1.0138
+p=157 r=39 k=78: zeta_(O^r)(k) = 1.0000
+uniform bound prod_{j>=3} zeta(j)^2 = 1.9463194034145457
+== A3: breathing mode. typical q/q0 = 1+(r-1/2)/k ; trace part = r/k = n/(2D) ==
+k=1r: V~p^4.000 (V0~|G|) -> n^2.000 ; V~p^3.500 (V0~n) -> n^1.750   [Klartag n^2 = p^4]
+k=1.5r: V~p^4.200 (V0~|G|) -> n^2.100 ; V~p^3.800 (V0~n) -> n^1.900   [Klartag n^2 = p^4]
+k=2r: V~p^4.333 (V0~|G|) -> n^2.167 ; V~p^4.000 (V0~n) -> n^2.000   [Klartag n^2 = p^4]
+k=3r: V~p^4.500 (V0~|G|) -> n^2.250 ; V~p^4.250 (V0~n) -> n^2.125   [Klartag n^2 = p^4]
+k=5r: V~p^4.667 (V0~|G|) -> n^2.333 ; V~p^4.500 (V0~n) -> n^2.250   [Klartag n^2 = p^4]
+k=10r: V~p^4.818 (V0~|G|) -> n^2.409 ; V~p^4.727 (V0~n) -> n^2.364   [Klartag n^2 = p^4]
+k=100r: V~p^4.980 (V0~|G|) -> n^2.490 ; V~p^4.970 (V0~n) -> n^2.485   [Klartag n^2 = p^4]
+== A2: borderline classes, f=1/3 and lines, at V=wD/2 (contact reach) ==
+p=13 r=3 k=4 n=96 D=56 |G|=2184: T_(f=1/3)=10.2 -> constraints C3-type 1.27, SL2(3)-type 0.42 (vs D); T_line=10.176; lines needed to fill D: 1.20e+04; V0max from SL2(3)-type=12621 vs |G|/2=1092; sum_U T_U(V)/V at V=|G|/4 (SL2(3)-type, p^3/24 subspaces): 0.35
+p=13 r=3 k=9 n=216 D=306 |G|=2184: T_(f=1/3)=13.7 -> constraints C3-type 1.71, SL2(3)-type 0.57 (vs D); T_line=13.678; lines needed to fill D: 4.89e+04; V0max from SL2(3)-type=28396 vs |G|/2=1092; sum_U T_U(V)/V at V=|G|/4 (SL2(3)-type, p^3/24 subspaces): 0.27
+p=37 r=9 k=10 n=720 D=380 |G|=50616: T_(f=1/3)=28.1 -> constraints C3-type 1.17, SL2(3)-type 1.17 (vs D); T_line=0.578; lines needed to fill D: 3.33e+07; V0max from SL2(3)-type=94654 vs |G|/2=25308; sum_U T_U(V)/V at V=|G|/4 (SL2(3)-type, p^3/24 subspaces): 0.51
+p=37 r=9 k=27 n=1944 D=2862 |G|=50616: T_(f=1/3)=39.5 -> constraints C3-type 1.65, SL2(3)-type 1.65 (vs D); T_line=0.465; lines needed to fill D: 3.11e+08; V0max from SL2(3)-type=255567 vs |G|/2=25308; sum_U T_U(V)/V at V=|G|/4 (SL2(3)-type, p^3/24 subspaces): 0.37
+p=61 r=15 k=16 n=1920 D=992 |G|=226920: T_(f=1/3)=45.9 -> constraints C3-type 1.15, SL2(3)-type 1.91 (vs D); T_line=0.229; lines needed to fill D: 9.81e+08; V0max from SL2(3)-type=252411 vs |G|/2=113460; sum_U T_U(V)/V at V=|G|/4 (SL2(3)-type, p^3/24 subspaces): 0.61
+p=61 r=15 k=45 n=5400 D=8010 |G|=226920: T_(f=1/3)=65.3 -> constraints C3-type 1.63, SL2(3)-type 2.72 (vs D); T_line=0.163; lines needed to fill D: 1.12e+10; V0max from SL2(3)-type=709907 vs |G|/2=113460; sum_U T_U(V)/V at V=|G|/4 (SL2(3)-type, p^3/24 subspaces): 0.43
+p=157 r=39 k=40 n=12480 D=6320 |G|=3869736: T_(f=1/3)=117.5 -> constraints C3-type 1.13, SL2(3)-type 4.89 (vs D); T_line=0.066; lines needed to fill D: 3.73e+11; V0max from SL2(3)-type=1640674 vs |G|/2=1934868; sum_U T_U(V)/V at V=|G|/4 (SL2(3)-type, p^3/24 subspaces): 0.84
+p=157 r=39 k=117 n=36504 D=54522 |G|=3869736: T_(f=1/3)=168.5 -> constraints C3-type 1.62, SL2(3)-type 7.02 (vs D); T_line=0.041; lines needed to fill D: 5.14e+12; V0max from SL2(3)-type=4798972 vs |G|/2=1934868; sum_U T_U(V)/V at V=|G|/4 (SL2(3)-type, p^3/24 subspaces): 0.59
+p=1009 r=252 k=253 n=510048 D=255530 |G|=1027242720: T_(f=1/3)=752.2 -> constraints C3-type 1.12, SL2(3)-type 31.34 (vs D); T_line=0.015; lines needed to fill D: 1.79e+16; V0max from SL2(3)-type=67053087 vs |G|/2=513621360; sum_U T_U(V)/V at V=|G|/4 (SL2(3)-type, p^3/24 subspaces): 1.57
+p=1009 r=252 k=756 n=1524096 D=2284632 |G|=1027242720: T_(f=1/3)=1083.9 -> constraints C3-type 1.61, SL2(3)-type 45.16 (vs D); T_line=0.009; lines needed to fill D: 2.73e+17; V0max from SL2(3)-type=200364166 vs |G|/2=513621360; sum_U T_U(V)/V at V=|G|/4 (SL2(3)-type, p^3/24 subspaces): 1.09
+== A6: isotypic components. R_i = (|disc_trd Gamma_i| / (e_i chi_i(1))^{a_i})^m * 2^{(free 2-exp) - e} ==
+SL2(3) psi_0 component: R = 2^-e, 0<=e<=4r/3 (borderline iff e=0)
+2I icosian component p=61: r=15 m=2.00: R(e=0) = (625/256)^m = 5.96; need 2-adic gluing e >= 2.58 (max 16.0)
+2I icosian component p=421: r=105 m=14.00: R(e=0) = (625/256)^m = 2.67e+05; need 2-adic gluing e >= 18.03 (max 112.0)
+2I icosian component p=541: r=135 m=18.00: R(e=0) = (625/256)^m = 9.5e+06; need 2-adic gluing e >= 23.18 (max 144.0)
+2I icosian component p=661: r=165 m=22.00: R(e=0) = (625/256)^m = 3.37e+08; need 2-adic gluing e >= 28.33 (max 176.0)

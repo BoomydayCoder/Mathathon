@@ -1,0 +1,11 @@
+[    0.0s] p=13 setup ok: kappa=-1, rounding residuals (np.float64(7.105427357601002e-15), np.float64(3.552713678800501e-14), np.float64(8.881784197001252e-15)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    0.0s] closure iterations 2; det(B on Lambda_0) = 6580067382037190942729361 ; D = 117.0 (exact m^2 p: True)
+[    0.2s] LLL done; diag(B) min 36 max 36 ; |E B^-1 E - pB| = 1.42e-12
+[    0.3s] Lambda^H rank 8 det_B = 1229457398481 ; maximal-order value p^4 m^16 = 1229457398481 -> maximal: True ; ratio det/(p^4 m^16) = 1.0 ; borderline calibration det^m == m^(8m) det(Lambda): True
+[    0.3s] CALIB C_3 line: rank 8 det_B=1229457398481 R_U=1.000000000 exactly borderline (R_U=1): True
+[    0.6s] p13 C_3 line exhaustive rank 8: t-grid 24/24 complete=True minGamma=2.769231 theta=2.769231 ratio=1.000000 (b=36,e=0) violator hits=0 border hits=108 nodes=5.09e+02
+[    1.7s] p13 full rank-24 exhaustive rank 24: t-grid 24/24 complete=True minGamma=2.769231 theta=2.769231 ratio=1.000000 (b=42,e=78) violator hits=0 border hits=20175 nodes=8.55e+06
+[    1.9s] UNIMOD {'label': 't=0', 't': 0.0, 'integrality_residual': 0.44529980377477096, 'even_diag': False, 'bound': 4.000001, 'pairs_found': 19656, 'minval': 3.3282011773513687, 'flag': 0}
+[    2.2s] UNIMOD {'label': 't=+log eps', 't': 1.1947632172871094, 'integrality_residual': 8.881784197001252e-16, 'even_diag': True, 'bound': 4.000001, 'pairs_found': 98280, 'minval': 3.9999999999996465, 'flag': 0}
+[    2.7s] UNIMOD {'label': 't=-log eps', 't': -1.1947632172871094, 'integrality_residual': 8.881784197001252e-16, 'even_diag': True, 'bound': 4.000001, 'pairs_found': 98280, 'minval': 3.9999999999995395, 'flag': 0}
+[    2.7s] DONE

@@ -1,0 +1,90 @@
+[
+ {
+  "name": "eis",
+  "k": 5,
+  "mode": "random",
+  "seed": 1,
+  "runs": 12,
+  "reproduced": 12,
+  "first_perfect_verified": 12,
+  "max_V_relerr": 0.0,
+  "time": 1.7804045677185059
+ },
+ {
+  "name": "gauss",
+  "k": 6,
+  "mode": "random",
+  "seed": 1,
+  "runs": 4,
+  "reproduced": 4,
+  "first_perfect_verified": 4,
+  "max_V_relerr": 0.0,
+  "time": 8.951158285140991
+ },
+ {
+  "name": "hur",
+  "k": 3,
+  "mode": "random",
+  "seed": 1,
+  "runs": 15,
+  "reproduced": 15,
+  "first_perfect_verified": 15,
+  "max_V_relerr": 0.0,
+  "time": 1.4616975784301758
+ },
+ {
+  "name": "zeta7",
+  "k": 2,
+  "mode": "random",
+  "seed": 1,
+  "runs": 15,
+  "reproduced": 15,
+  "first_perfect_verified": 15,
+  "max_V_relerr": 0.0,
+  "time": 1.866966962814331
+ },
+ {
+  "name": "zeta12",
+  "k": 3,
+  "mode": "random",
+  "seed": 1,
+  "runs": 8,
+  "reproduced": 8,
+  "first_perfect_verified": 8,
+  "max_V_relerr": 0.0,
+  "time": 0.8470022678375244
+ },
+ {
+  "name": "hur",
+  "k": 4,
+  "mode": "random",
+  "seed": 1,
+  "runs": 6,
+  "reproduced": 6,
+  "first_perfect_verified": 6,
+  "max_V_relerr": 0.0,
+  "time": 2.8223581314086914
+ },
+ {
+  "name": "ico",
+  "k": 2,
+  "mode": "random",
+  "seed": 1,
+  "runs": 10,
+  "reproduced": 10,
+  "first_perfect_verified": 10,
+  "max_V_relerr": 0.0,
+  "time": 1.5304670333862305
+ },
+ {
+  "name": "zeta8",
+  "k": 4,
+  "mode": "random",
+  "seed": 1,
+  "runs": 3,
+  "reproduced": 3,
+  "first_perfect_verified": 3,
+  "max_V_relerr": 0.0,
+  "time": 1.537013053894043
+ }
+]

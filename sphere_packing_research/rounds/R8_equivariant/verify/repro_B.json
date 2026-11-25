@@ -1,0 +1,35 @@
+[
+ {
+  "name": "ico",
+  "k": 3,
+  "mode": "random",
+  "seed": 2,
+  "runs": 3,
+  "reproduced": 3,
+  "first_perfect_verified": 3,
+  "max_V_relerr": 0.0,
+  "time": 30.530988931655884
+ },
+ {
+  "name": "hur",
+  "k": 5,
+  "mode": "random",
+  "seed": 1,
+  "runs": 1,
+  "reproduced": 1,
+  "first_perfect_verified": 1,
+  "max_V_relerr": 0.0,
+  "time": 1.0100347995758057
+ },
+ {
+  "name": "zeta13",
+  "k": 2,
+  "mode": "random",
+  "seed": 1,
+  "runs": 1,
+  "reproduced": 1,
+  "first_perfect_verified": 1,
+  "max_V_relerr": 0.0,
+  "time": 1.850475788116455
+ }
+]

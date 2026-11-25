@@ -1,0 +1,14 @@
+{
+ "count_C5": {
+  "rank": 24,
+  "distinct_vectors_mod_pm_and_eps": 12,
+  "table_N_count_ratio": [
+   [
+    49410000,
+    12,
+    1.0
+   ]
+  ],
+  "threshold": 49410000
+ }
+}

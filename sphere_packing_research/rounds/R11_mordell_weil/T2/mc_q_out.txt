@@ -1,0 +1,7 @@
+r=3 k=4: E q/q0 = 1.5866 (pred 1+(r-1/2)/k = 1.6250), std 0.1360, min 1.2624; trace part r/k = 0.7500; traceless mean-1 = -0.1634
+r=3 k=12: E q/q0 = 1.2018 (pred 1+(r-1/2)/k = 1.2083), std 0.0513, min 1.0601; trace part r/k = 0.2500; traceless mean-1 = -0.0482
+r=9 k=10: E q/q0 = 1.8454 (pred 1+(r-1/2)/k = 1.8500), std 0.0654, min 1.6490; trace part r/k = 0.9000; traceless mean-1 = -0.0546
+r=9 k=27: E q/q0 = 1.3142 (pred 1+(r-1/2)/k = 1.3148), std 0.0252, min 1.2443; trace part r/k = 0.3333; traceless mean-1 = -0.0191
+r=15 k=16: E q/q0 = 1.9074 (pred 1+(r-1/2)/k = 1.9062), std 0.0432, min 1.7893; trace part r/k = 0.9375; traceless mean-1 = -0.0301
+r=15 k=150: E q/q0 = 1.0969 (pred 1+(r-1/2)/k = 1.0967), std 0.0047, min 1.0831; trace part r/k = 0.1000; traceless mean-1 = -0.0031
+r=39 k=40: E q/q0 = 1.9613 (pred 1+(r-1/2)/k = 1.9625), std 0.0173, min 1.9199; trace part r/k = 0.9750; traceless mean-1 = -0.0137

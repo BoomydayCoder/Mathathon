@@ -1,0 +1,45 @@
+M=15 need_one=True #div=4 M/phi(M)=1.8750 cands=5 tested=5 LPs=1 timeout=False time=0.0s
+   gain M/C=1.0000  ratio to M/phi(M)=0.5333  C=15  t*=0.3592  N=[1, 3, 5, 15]
+M=21 need_one=True #div=4 M/phi(M)=1.7500 cands=5 tested=5 LPs=1 timeout=False time=0.0s
+   gain M/C=1.0000  ratio to M/phi(M)=0.5714  C=21  t*=0.5034  N=[1, 3, 7, 21]
+M=35 need_one=True #div=4 M/phi(M)=1.4583 cands=5 tested=5 LPs=1 timeout=False time=0.0s
+   gain M/C=1.0000  ratio to M/phi(M)=0.6857  C=35  t*=0.6424  N=[1, 5, 7, 35]
+M=45 need_one=True #div=6 M/phi(M)=1.8750 cands=22 tested=22 LPs=2 timeout=False time=0.0s
+   gain M/C=1.0465  ratio to M/phi(M)=0.5581  C=43  t*=0.1667  N=[1, 5, 9, 15, 45]
+   gain M/C=1.0000  ratio to M/phi(M)=0.5333  C=45  t*=0.7045  N=[1, 3, 5, 9, 15, 45]
+M=75 need_one=True #div=6 M/phi(M)=1.8750 cands=22 tested=22 LPs=3 timeout=False time=0.0s
+   gain M/C=1.0563  ratio to M/phi(M)=0.5634  C=71  t*=0.0401  N=[1, 3, 15, 25, 75]
+   gain M/C=1.0274  ratio to M/phi(M)=0.5479  C=73  t*=0.2885  N=[1, 5, 15, 25, 75]
+   gain M/C=1.0000  ratio to M/phi(M)=0.5333  C=75  t*=0.8310  N=[1, 3, 5, 15, 25, 75]
+M=105 need_one=True #div=8 M/phi(M)=2.1875 cands=109 tested=108 LPs=3 timeout=False time=0.0s
+   gain M/C=1.0825  ratio to M/phi(M)=0.4948  C=97  t*=0.0182  N=[1, 3, 5, 7, 21, 35, 105]
+   gain M/C=1.0396  ratio to M/phi(M)=0.4752  C=101  t*=0.1197  N=[1, 3, 7, 15, 21, 35, 105]
+   gain M/C=1.0194  ratio to M/phi(M)=0.4660  C=103  t*=0.3702  N=[1, 5, 7, 15, 21, 35, 105]
+M=135 need_one=True #div=8 M/phi(M)=1.8750 cands=92 tested=90 LPs=4 timeout=False time=0.0s
+   gain M/C=1.0630  ratio to M/phi(M)=0.5669  C=127  t*=0.0145  N=[1, 3, 5, 9, 27, 45, 135]
+   gain M/C=1.0465  ratio to M/phi(M)=0.5581  C=129  t*=0.3813  N=[1, 3, 5, 15, 27, 45, 135]
+   gain M/C=1.0305  ratio to M/phi(M)=0.5496  C=131  t*=0.1801  N=[1, 3, 9, 15, 27, 45, 135]
+M=165 need_one=True #div=8 M/phi(M)=2.0625 cands=109 tested=107 LPs=3 timeout=False time=0.0s
+   gain M/C=1.0645  ratio to M/phi(M)=0.5161  C=155  t*=0.4346  N=[1, 5, 11, 33, 55, 165]
+   gain M/C=1.0510  ratio to M/phi(M)=0.5096  C=157  t*=0.2689  N=[1, 3, 5, 11, 33, 55, 165]
+   gain M/C=1.0248  ratio to M/phi(M)=0.4969  C=161  t*=0.2287  N=[1, 3, 11, 15, 33, 55, 165]
+M=195 need_one=True #div=8 M/phi(M)=2.0312 cands=109 tested=105 LPs=3 timeout=False time=0.0s
+   gain M/C=1.0656  ratio to M/phi(M)=0.5246  C=183  t*=0.0205  N=[1, 3, 13, 39, 65, 195]
+   gain M/C=1.0541  ratio to M/phi(M)=0.5189  C=185  t*=0.5328  N=[1, 5, 13, 39, 65, 195]
+   gain M/C=1.0428  ratio to M/phi(M)=0.5134  C=187  t*=0.3480  N=[1, 3, 5, 13, 39, 65, 195]
+M=225 need_one=True #div=9 M/phi(M)=1.8750 cands=200 tested=192 LPs=3 timeout=False time=0.0s
+   gain M/C=1.0766  ratio to M/phi(M)=0.5742  C=209  t*=0.0245  N=[1, 5, 25, 45, 75, 225]
+   gain M/C=1.0563  ratio to M/phi(M)=0.5634  C=213  t*=0.1204  N=[1, 3, 9, 25, 45, 75, 225]
+   gain M/C=1.0465  ratio to M/phi(M)=0.5581  C=215  t*=0.5667  N=[1, 5, 9, 25, 45, 75, 225]
+M=315 need_one=True #div=12 M/phi(M)=2.1875 cands=1874 tested=1833 LPs=5 timeout=False time=0.2s
+   gain M/C=1.0976  ratio to M/phi(M)=0.5017  C=287  t*=0.1132  N=[1, 5, 7, 35, 45, 63, 105, 315]
+   gain M/C=1.0825  ratio to M/phi(M)=0.4948  C=291  t*=0.0547  N=[1, 3, 5, 7, 9, 15, 21, 35, 63, 105, 315]
+   gain M/C=1.0751  ratio to M/phi(M)=0.4915  C=293  t*=0.6574  N=[1, 5, 7, 9, 35, 45, 63, 105, 315]
+M=525 need_one=True #div=12 M/phi(M)=2.1875 cands=1874 tested=1815 LPs=5 timeout=False time=0.3s
+   gain M/C=1.1339  ratio to M/phi(M)=0.5184  C=463  t*=0.0029  N=[1, 5, 7, 25, 35, 105, 175, 525]
+   gain M/C=1.0825  ratio to M/phi(M)=0.4948  C=485  t*=0.0911  N=[1, 3, 5, 7, 15, 21, 25, 35, 105, 175, 525]
+   gain M/C=1.0736  ratio to M/phi(M)=0.4908  C=489  t*=0.3095  N=[1, 3, 7, 21, 25, 75, 105, 175, 525]
+M=1155 need_one=True #div=16 M/phi(M)=2.4062 cands=32297 tested=30166 LPs=3 timeout=False time=2.4s
+   gain M/C=1.1726  ratio to M/phi(M)=0.4873  C=985  t*=0.0180  N=[1, 5, 7, 11, 35, 55, 77, 231, 385, 1155]
+   gain M/C=1.1585  ratio to M/phi(M)=0.4814  C=997  t*=0.3095  N=[1, 5, 7, 11, 21, 35, 55, 77, 231, 385, 1155]
+   gain M/C=1.1562  ratio to M/phi(M)=0.4805  C=999  t*=0.0271  N=[1, 5, 11, 33, 35, 55, 77, 231, 385, 1155]

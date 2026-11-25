@@ -1,0 +1,25 @@
+stage1 n=6 gm: 24 LPs in 1.0s
+stage2 n=6 gm: done at 1.2s
+stage3 random n=6 gm: done at 5.0s
+stage3 descent n=6 gm: done at 8.4s
+stage1 n=6 gauss: 24 LPs in 0.8s
+stage2 n=6 gauss: done at 1.3s
+stage3 random n=6 gauss: done at 4.4s
+stage3 descent n=6 gauss: done at 6.0s
+stage1 n=8 gm: 24 LPs in 5.7s
+stage2 n=8 gm: done at 7.2s
+stage3 random n=8 gm: done at 18.7s
+stage3 descent n=8 gm: done at 28.4s
+stage1 n=8 gauss: 24 LPs in 3.3s
+stage2 n=8 gauss: done at 4.4s
+stage3 random n=8 gauss: done at 17.0s
+stage3 descent n=8 gauss: done at 28.2s
+stage1 n=12 gm: 20 LPs in 6.2s
+stage2 n=12 gm: done at 32.4s
+stage3 random n=12 gm: done at 78.8s
+stage3 descent n=12 gm: done at 111.6s
+stage1 n=12 gauss: 12 LPs in 3.6s
+stage2 n=12 gauss: done at 77.6s
+stage3 random n=12 gauss: done at 86.7s
+stage3 descent n=12 gauss: done at 95.1s
+P1 DONE

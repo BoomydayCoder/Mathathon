@@ -1,0 +1,6 @@
+{'N': 171, 'seed': 777, 'srel': 11.0, 'M': 15432, 'v_N': 0.7968, 'rho2': 6.008, 'V_N': 1.6885, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 825641} 12.9
+{'N': 171, 'seed': 778, 'srel': 11.0, 'M': 15304, 'v_N': 0.8108, 'rho2': 8.1488, 'V_N': 2.2454, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 824115} 12.3
+{'N': 171, 'seed': 779, 'srel': 11.0, 'M': 15356, 'v_N': 0.7925, 'rho2': 8.3255, 'V_N': 2.2438, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 822470} 13.5
+N=171 v_N mean=0.8000 sd=0.0096 se=0.0055 (pred 0.7358)
+N=171 rho2 mean=7.4941 sd=1.2900 se=0.7448 (pred 8)
+N=171 V_N mean=2.0592 sd=0.3210 se=0.1854 (pred 2)

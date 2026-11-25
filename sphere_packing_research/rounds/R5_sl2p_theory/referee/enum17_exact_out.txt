@@ -1,0 +1,11 @@
+p=17 mu=4: s -> (#sequences with sum=-mu/2, #PSD among them) [exact rational arithmetic], total tested 7720
+   s=-14 :    10 sequences,    0 PSD
+   s=-12 :    80 sequences,    0 PSD
+   s=-10 :   350 sequences,    0 PSD
+   s= -8 :  1040 sequences,    0 PSD
+   s= -6 :  2380 sequences,   14 PSD
+   s=  6 :  2380 sequences,   14 PSD
+   s=  8 :  1040 sequences,    0 PSD
+   s= 10 :   350 sequences,    0 PSD
+   s= 12 :    80 sequences,    0 PSD
+   s= 14 :    10 sequences,    0 PSD

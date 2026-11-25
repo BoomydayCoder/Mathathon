@@ -1,0 +1,45 @@
+\section{결과 요약표}\label{sec:summary}
+
+지위 표기: \tagP\ 완전한 증명(하위 에이전트 작성 + 독립 심사 통과), \tagPL\ 인용한 문헌 정리를 전제로 한 완전한 증명, \tagPC\ 정수 연산에 의한 계산기 보조 증명(독립 재계산 통과), \tagM\ Poisson/가우스 모형 안에서의 증명, \tagC\ 조건부, \tagJ\ 추측, \tagH\ 휴리스틱, \tagN\ 수치 관찰, \tagF\ 실패·반증. ``심사'' 는 해당 주장을 \emph{반박하도록} 지시받은 독립 에이전트의 검토를 뜻하며, 사람에 의한 동료 심사가 아니다 --- 아래의 [증명됨] 은 모두 그 수준의 검증임을 밝혀 둔다.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}p{0.6cm}p{11.2cm}p{2.6cm}p{1.2cm}@{}}
+\toprule
+\# & 진술 & 지위 & 위치\\
+\midrule
+\endhead
+\multicolumn{4}{@{}l}{\textbf{A. 대칭을 이용하는 방법의 통일과 한계}}\\
+A1 & 이득 항등식: Klartag 대비 이득 $g=|G|/(2\dim_\Q A)=\tfrac12\sum_{g}\rho(g)^2$; 불변형식 차원 $D\approx k^2\dim_\Q\Delta/2$ & \tagP & \S\ref{sec:sym}\\
+A2 & 고정점 없는 작용이면 $g\le 24\,c/\varphi(c)=O(\log\log|G|)$ --- 자유 작용 기반 논증(Venkatesh, AGZ 형)은 $\log\log$ 를 넘지 못한다 & \tagP\ (Zassenhaus 구조정리 인용) & \S\ref{sec:sym}\\
+A3 & 비자유 작용의 평균값 공식 $\E\#=cV+\sum_UT_U$, $T_U\approx V^f\mathrm{poly}(n)R_U^{k/2}$; ``텐서 안정성'' $R_U\le1$ 판정 기준 & \tagP\ (스케치 수준; 심사 통과) & \S\ref{sec:sym}\\
+A4 & No-go: $\Delta=\Q$ 인 텐서형 격자는 항상 불안정; 소수 위수 원소의 엔트로피 부등식; unimodular 강직성 보조정리($R_U\ge1$, 등호는 $a=b$ 이고 자유일 때뿐) & \tagP & \S\ref{sec:sym}\\
+A5 & GGS 원분 접착: $M/C=1/\mu_M(\mathcal N)$; 홀수 $M$ 에서 소인수 $\le3$ 개(또는 4개이고 $\{3,5,7,11\}$ 이 아님)이면 $M/C\le M/\varphi(M)$ & \tagP & \S\ref{sec:gluing}\\
+A6 & 약수 24개 이하의 모든 시험 모듈러스에서 $M/C>M/\varphi(M)$ 인 admissible 접착 데이터 없음; 일반적 상계는 미증명 & \tagN, \tagJ & \S\ref{sec:gluing}\\
+\midrule
+\multicolumn{4}{@{}l}{\textbf{B. 명시적 상수 (차수는 $n^2$)}}\\
+B1 & $D_\R\cong\mathbb K^s$ 인 나눗셈대수와 유한군 $G\subset D^\times$: $V_{k\delta}\ge(1-o(1))\tfrac{w}{4e\delta}n^2$ & \tagPL & \S\ref{sec:quat}\\
+B2 & Hurwitz: $V_n\ge(\tfrac3{2e}-o(1))n^2$ ($4\mid n$); icosian: $V_n\ge(\tfrac{15}{4e}-o(1))n^2$ ($8\mid n$) & \tagPL & \S\ref{sec:quat}\\
+B3 & 행렬 블록이 있는 일반 나눗셈대수로의 확장(개정본 \S7) & \tagC\ (미심사) & 부록 \ref{app:proof}\\
+\midrule
+\multicolumn{4}{@{}l}{\textbf{C. $SL_2(p)$ Weil 격자 텐서족 (유일하게 남은 차수 개선 후보)}}\\
+C1 & Leech 격자는 $\Delta_{13}=\HH\otimes\Q(\sqrt{13})$ 의 극대 order 위의 랭크 3 가군, $\mathrm{Aut}_\Delta=SL_2(13)$; 모든 $\Delta$-직선에서 $R_U\le1$, 등호는 정확히 1638개 직선; 평면은 $R_U\le0.1001$ & \tagPC & \S\ref{sec:leech}\\
+C2 & $(p+1)/2$ 가 합성수이면 unimodular Weil 격자는 텐서 불안정($p=17,29,41,\dots$); 소수이면 고정공간은 분리 토러스의 홀수 위수 부분군에서만 나오고 정확히 경계 & \tagP & \S\ref{sec:leech}\\
+C3 & $p=37,61,\dots$ 에 대한 직접 계산과 Mordell--Weil 재정식화 & \S\ref{sec:leech} 참조 & \S\ref{sec:leech}\\
+C4 & 양자택일 추측: 무한히 많은 $p$ 에서 경계 안정 $\Rightarrow$ (등변 Klartag 논증이 성립하면) $V_n\gtrsim n^{2+c}$; 아니면 Weil 격자에 ``불균형한 짧은 벡터'' 가 항상 존재 & \tagJ, \tagC & \S\ref{sec:leech}\\
+\midrule
+\multicolumn{4}{@{}l}{\textbf{D. 모형과 장벽}}\\
+D1 & Poisson 모형에서 대각합-LP 최적 타원체의 부피는 정확히 $\chi^2_{2N}$ (평균 $n(n+1)$); 가우스 모형의 임계값 $v^*=(2/e)N$ & \tagM & \S\ref{sec:perceptron}\\
+D2 & 격자의 대각합-LP 는 쌍대 형식의 Voronoi 환원(최적점은 perfect form) & \tagP & \S\ref{sec:perceptron}\\
+D3 & 실제 랜덤 격자: $V_{LP}/N=1.2$--$1.75$ ($n=14..28$, 증가 중; Poisson 예측 2), $n\le8$ 에서는 root 격자가 지배 & \tagN & \S\ref{sec:perceptron}\\
+D4 & $P_V\ge e^{-2n^2\log n-n^2}$ ($V\le V_n/2$); 따라서 Poisson 형 꼬리 $P_V\le e^{-cV}$ 이면 $V_n\le Cn^2\log n$ & \tagP & \S\ref{sec:perceptron}\\
+D5 & ``$V_n\asymp n^2\log n$'' (모형의 존재 임계), ``과정 기반 구성은 $\Theta(n^2)$ 을 못 넘는다'' & \tagH\ (심사에서 강등) & \S\ref{sec:perceptron}\\
+\midrule
+\multicolumn{4}{@{}l}{\textbf{E. 소차원의 직접 실험}}\\
+E1 & Klartag 과정을 동결까지: $\E V_{final}/N\in[0.93,1.26]$ ($n=2..10$); $n\le8$ 은 root 격자에 도달, $n\ge9$ 는 미도달 & \tagN & \S\ref{sec:numerics}\\
+E2 & 등변 과정: $E_8$, $K_{12}$, $BW_{16}$, $\Lambda_{20}$, Leech 도달; $V_{perf}\approx1.06\,(wD/2)$ & \tagN & \S\ref{sec:equiv}\\
+E3 & 알려진 최선 격자를 넘는 $V$ 는 어느 실험에서도 나오지 않음 & \tagN & \\
+\bottomrule
+\end{longtable}
+\end{center}

@@ -1,0 +1,14 @@
+{
+ "v0": {
+  "label": "v0",
+  "b": 36,
+  "e": 0,
+  "N": 16848,
+  "det_Ow": "1229457398481",
+  "det_formula_ok": true,
+  "saturation_index": 1,
+  "R_U_exact": "1229457398481/1229457398481",
+  "R_U": 1.0,
+  "lower_bound": 1.0
+ }
+}

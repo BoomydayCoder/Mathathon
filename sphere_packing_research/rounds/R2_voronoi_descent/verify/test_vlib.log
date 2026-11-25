@@ -1,0 +1,10 @@
+random-form BFS vs box brute force mismatches: 0
+D4 det 4.0 min 2.0 #min vectors 24 expected 24 V 9.8696
+D5 det 4.0 min 2.0 #min vectors 40 expected 40 V 14.8882
+D9 det 4.0 min 2.0 #min vectors 144 expected 144 V 37.3184
+D10 det 4.0 min 2.0 #min vectors 180 expected 180 V 40.8026
+A4 det 5.0 min 2.0 #min vectors 20 expected 20 V 8.8276
+A9 det 10.0 min 2.0 #min vectors 90 expected 90 V 23.6022
+E8 det 1.0 min 2.0 #min vectors 240 expected 240 V 64.9394
+E8 shells 2,4,6: [(2, 240), (4, 2160), (6, 6720)] expected 240, 2160, 6720
+E8 box brute force (min, count, boxsize): (1.0, 240, 30405375.0)

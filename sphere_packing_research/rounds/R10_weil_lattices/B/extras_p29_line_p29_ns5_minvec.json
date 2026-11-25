@@ -1,0 +1,38 @@
+{
+ "v0": {
+  "label": "v0",
+  "b": 196,
+  "e": 0,
+  "N": 1114064,
+  "det_Ow": "23505020366197964881",
+  "det_formula_ok": true,
+  "saturation_index": 1,
+  "R_U_exact": "23505020366197964881/23505020366197964881",
+  "R_U": 1.0,
+  "lower_bound": 1.0
+ },
+ "p29_ns5_minvec.json": {
+  "label": "p29_ns5_minvec.json",
+  "b": 280,
+  "e": 0,
+  "N": 2273600,
+  "det_Ow": "407733421608100000000",
+  "det_formula_ok": true,
+  "saturation_index": 16,
+  "R_U_exact": "6017285213746679009536/407733421608100000000",
+  "R_U": 14.75789056,
+  "lower_bound": 0.05764800999999999
+ },
+ "violator_p29.json": {
+  "label": "violator_p29.json",
+  "b": 294,
+  "e": 1218,
+  "N": 1023120,
+  "det_Ow": "16719618619817150625",
+  "det_formula_ok": true,
+  "saturation_index": 1,
+  "R_U_exact": "23505020366197964881/16719618619817150625",
+  "R_U": 1.405834720317025,
+  "lower_bound": 1.4058347203170243
+ }
+}

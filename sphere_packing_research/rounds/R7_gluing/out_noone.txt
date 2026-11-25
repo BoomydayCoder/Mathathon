@@ -1,0 +1,52 @@
+M=15 need_one=False #div=4 M/phi(M)=1.8750 cands=10 tested=7 LPs=2 timeout=False time=0.0s
+   gain M/C=1.8750  ratio to M/phi(M)=1.0000  C=8  t*=inf  N=[15]
+   gain M/C=1.5000  ratio to M/phi(M)=0.8000  C=10  t*=0.3584  N=[3, 15]
+   gain M/C=1.2500  ratio to M/phi(M)=0.6667  C=12  t*=0.2877  N=[5, 15]
+M=21 need_one=False #div=4 M/phi(M)=1.7500 cands=10 tested=7 LPs=2 timeout=False time=0.0s
+   gain M/C=1.7500  ratio to M/phi(M)=1.0000  C=12  t*=inf  N=[21]
+   gain M/C=1.5000  ratio to M/phi(M)=0.8571  C=14  t*=0.5105  N=[3, 21]
+   gain M/C=1.1667  ratio to M/phi(M)=0.6667  C=18  t*=0.4315  N=[7, 21]
+M=35 need_one=False #div=4 M/phi(M)=1.4583 cands=10 tested=7 LPs=2 timeout=False time=0.0s
+   gain M/C=1.4583  ratio to M/phi(M)=1.0000  C=24  t*=inf  N=[35]
+   gain M/C=1.2500  ratio to M/phi(M)=0.8571  C=28  t*=1.0210  N=[5, 35]
+   gain M/C=1.1667  ratio to M/phi(M)=0.8000  C=30  t*=1.0753  N=[7, 35]
+M=45 need_one=False #div=6 M/phi(M)=1.8750 cands=44 tested=32 LPs=2 timeout=False time=0.0s
+   gain M/C=1.8750  ratio to M/phi(M)=1.0000  C=24  t*=inf  N=[45]
+   gain M/C=1.5000  ratio to M/phi(M)=0.8000  C=30  t*=1.0753  N=[9, 45]
+   gain M/C=1.2500  ratio to M/phi(M)=0.6667  C=36  t*=0.7672  N=[5, 15, 45]
+M=75 need_one=False #div=6 M/phi(M)=1.8750 cands=44 tested=23 LPs=2 timeout=False time=0.0s
+   gain M/C=1.8750  ratio to M/phi(M)=1.0000  C=40  t*=inf  N=[75]
+   gain M/C=1.5625  ratio to M/phi(M)=0.8333  C=48  t*=1.0310  N=[15, 75]
+   gain M/C=1.5000  ratio to M/phi(M)=0.8000  C=50  t*=1.1196  N=[3, 15, 75]
+M=105 need_one=False #div=8 M/phi(M)=2.1875 cands=218 tested=111 LPs=2 timeout=False time=0.0s
+   gain M/C=2.1875  ratio to M/phi(M)=1.0000  C=48  t*=inf  N=[105]
+   gain M/C=1.8750  ratio to M/phi(M)=0.8571  C=56  t*=2.0420  N=[15, 105]
+   gain M/C=1.7500  ratio to M/phi(M)=0.8000  C=60  t*=2.1506  N=[21, 105]
+M=135 need_one=False #div=8 M/phi(M)=1.8750 cands=184 tested=124 LPs=2 timeout=False time=0.0s
+   gain M/C=1.8750  ratio to M/phi(M)=1.0000  C=72  t*=inf  N=[135]
+   gain M/C=1.5000  ratio to M/phi(M)=0.8000  C=90  t*=3.2259  N=[27, 135]
+   gain M/C=1.2981  ratio to M/phi(M)=0.6923  C=104  t*=0.9502  N=[15, 45, 135]
+M=165 need_one=False #div=8 M/phi(M)=2.0625 cands=218 tested=118 LPs=2 timeout=False time=0.0s
+   gain M/C=2.0625  ratio to M/phi(M)=1.0000  C=80  t*=inf  N=[165]
+   gain M/C=1.8750  ratio to M/phi(M)=0.9091  C=88  t*=2.8896  N=[15, 165]
+   gain M/C=1.6500  ratio to M/phi(M)=0.8000  C=100  t*=3.5843  N=[33, 165]
+M=195 need_one=False #div=8 M/phi(M)=2.0312 cands=218 tested=120 LPs=2 timeout=False time=0.0s
+   gain M/C=2.0312  ratio to M/phi(M)=1.0000  C=96  t*=inf  N=[195]
+   gain M/C=1.8750  ratio to M/phi(M)=0.9231  C=104  t*=3.2089  N=[15, 195]
+   gain M/C=1.6250  ratio to M/phi(M)=0.8000  C=120  t*=4.3012  N=[39, 195]
+M=225 need_one=False #div=9 M/phi(M)=1.8750 cands=400 tested=200 LPs=2 timeout=False time=0.0s
+   gain M/C=1.8750  ratio to M/phi(M)=1.0000  C=120  t*=inf  N=[225]
+   gain M/C=1.5625  ratio to M/phi(M)=0.8333  C=144  t*=3.0931  N=[45, 225]
+   gain M/C=1.5000  ratio to M/phi(M)=0.8000  C=150  t*=3.3587  N=[9, 45, 225]
+M=315 need_one=False #div=12 M/phi(M)=2.1875 cands=3748 tested=1884 LPs=2 timeout=False time=0.2s
+   gain M/C=2.1875  ratio to M/phi(M)=1.0000  C=144  t*=inf  N=[315]
+   gain M/C=1.8750  ratio to M/phi(M)=0.8571  C=168  t*=6.1260  N=[45, 315]
+   gain M/C=1.7500  ratio to M/phi(M)=0.8000  C=180  t*=6.4518  N=[63, 315]
+M=525 need_one=False #div=12 M/phi(M)=2.1875 cands=3748 tested=1893 LPs=2 timeout=False time=0.2s
+   gain M/C=2.1875  ratio to M/phi(M)=1.0000  C=240  t*=inf  N=[525]
+   gain M/C=1.8750  ratio to M/phi(M)=0.8571  C=280  t*=10.0000  N=[75, 525]
+   gain M/C=1.8229  ratio to M/phi(M)=0.8333  C=288  t*=6.1861  N=[105, 525]
+M=1155 need_one=False #div=16 M/phi(M)=2.4062 cands=64594 tested=30641 LPs=2 timeout=False time=2.4s
+   gain M/C=2.4062  ratio to M/phi(M)=1.0000  C=480  t*=inf  N=[1155]
+   gain M/C=2.1875  ratio to M/phi(M)=0.9091  C=528  t*=10.0000  N=[105, 1155]
+   gain M/C=2.0625  ratio to M/phi(M)=0.8571  C=560  t*=10.0000  N=[165, 1155]

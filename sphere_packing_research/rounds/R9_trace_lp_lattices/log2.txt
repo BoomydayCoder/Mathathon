@@ -1,0 +1,13 @@
+stage1 n=10 gm: 24 LPs in 11.2s
+stage2 n=10 gm: done at 24.9s
+stage3 random n=10 gm: done at 69.6s
+stage3 descent n=10 gm: done at 107.9s
+stage1 n=10 gauss: 20 LPs in 4.8s
+stage2 n=10 gauss: done at 15.8s
+stage3 random n=10 gauss: done at 57.0s
+stage3 descent n=10 gauss: done at 86.4s
+stage1 n=14 gm: 10 LPs in 6.0s
+stage2 n=14 gm: done at 184.6s
+stage3 random n=14 gm: done at 184.6s
+stage3 descent n=14 gm: done at 184.6s
+P2 DONE

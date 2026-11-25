@@ -1,0 +1,83 @@
+{
+ "basic": {
+  "p": 5,
+  "n": 8,
+  "m": 1,
+  "detB": "625",
+  "D": 5.0,
+  "D_exact": 5,
+  "theta": 0.8,
+  "eps": 1.618033988749895,
+  "kappa": -1,
+  "rank_H": 8,
+  "det_BH": "625",
+  "order_maximal": true,
+  "calibration_H_borderline": true
+ },
+ "calib_full": {
+  "label": "full",
+  "rank": 8,
+  "det": "625",
+  "R_U": 1.0,
+  "exactly_borderline": true
+ },
+ "full": {
+  "label": "p5 full exhaustive",
+  "rank": 8,
+  "t_points": 10,
+  "t_done": 10,
+  "complete": true,
+  "bound": 4.005001045758478,
+  "min_gamma": 0.8,
+  "theta": 0.8,
+  "ratio": 1.0,
+  "b": 4,
+  "e": 0,
+  "t_at_min": -0.4312118250596035,
+  "n_violator_hits": 0,
+  "n_border_hits": 140,
+  "nodes": 1240,
+  "w": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ "unimod": [
+  {
+   "label": "t=0",
+   "t": 0.0,
+   "integrality_residual": 0.4472135954999579,
+   "even_diag": true,
+   "bound": 2.000001,
+   "pairs_found": 60,
+   "minval": 1.788854381999831,
+   "flag": 0
+  },
+  {
+   "label": "t=+log eps",
+   "t": 0.48121182505960347,
+   "integrality_residual": 1.4895204919483638e-16,
+   "even_diag": true,
+   "bound": 2.000001,
+   "pairs_found": 120,
+   "minval": 1.9999999999999996,
+   "flag": 0
+  },
+  {
+   "label": "t=-log eps",
+   "t": -0.48121182505960347,
+   "integrality_residual": 1.4895204919483638e-16,
+   "even_diag": true,
+   "bound": 2.000001,
+   "pairs_found": 120,
+   "minval": 1.9999999999999971,
+   "flag": 0
+  }
+ ]
+}

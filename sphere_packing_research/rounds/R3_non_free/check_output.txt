@@ -1,0 +1,48 @@
+== (1) asymptotic form of the lower-rank term T_U = Vol_{fn}(R)/c_U^k ==
+  D=4 dimU=2 k=50 n=200 tau2=2.0 V=10000: exact T_U=28.2116 approx=28.2469 ratio=0.99875
+  D=6 dimU=2 k=40 n=240 tau2=3.0 V=1000: exact T_U=1.89949 approx=1.90301 ratio=0.99815
+  D=8 dimU=4 k=30 n=240 tau2=1.7 V=100: exact T_U=46300.6 approx=46348.9 ratio=0.99896
+  D=4 dimU=2 k=200 n=800 tau2=2.0 V=1e+06: exact T_U=199.673 approx=199.735 ratio=0.99969
+== (2) examples: tau_U^2 = c_U^{2/dimU}/c_W^{2/dimW} vs 1/f = dimW/dimU ==
+  Z^2 line (1,0): c_U=1 dimU=1 c_W=1 dimW=2  tau^2=1.00000  need>=2.000  ratio f*tau^2=0.5000  FAIL
+  A_2 line (min vector): c_U=1.4142 dimU=1 c_W=1.7321 dimW=2  tau^2=1.15470  need>=2.000  ratio f*tau^2=0.5774  FAIL
+  D_4/Q line (min vector): c_U=1.4142 dimU=1 c_W=2 dimW=4  tau^2=1.41421  need>=4.000  ratio f*tau^2=0.3536  FAIL
+  D_4/Q fixed plane of diag(1,1,-1,-1): c_U=2 dimU=2 c_W=2 dimW=4  tau^2=1.41421  need>=2.000  ratio f*tau^2=0.7071  FAIL
+     index [D4 : (D4 cap U)+(D4 cap U')] = 2.0  (max possible 2^a = 4)
+  E_8/Q line (min vector): c_U=1.4142 dimU=1 c_W=1 dimW=8  tau^2=2.00000  need>=8.000  ratio f*tau^2=0.2500  FAIL
+  D_4 over Z[sqrt-2] (r=2,d=2), K-line through w=(-1, -1, 0, 0): c_U=2.8284 dimU=2 c_W=2 dimW=4  tau^2=2.00000  need>=2.000  ratio f*tau^2=1.0000  PASS
+== (3) entropy inequality  m*h(a/m) <= 2*min(a,b)*log q ,  m=a+b(q-1) ==
+  q=2: allowed a/b in [1.0000, 1.0000]  (e/q=1.3591); normalized character (a-b)/m in [0.0000, 0.0000], free value -1/(q-1)=-1.0000
+  q=3: allowed a/b in [0.7085, 1.2835]  (e/q=0.9061); normalized character (a-b)/m in [-0.1076, 0.0863], free value -1/(q-1)=-0.5000
+  q=5: allowed a/b in [0.4600, 1.4970]  (e/q=0.5437); normalized character (a-b)/m in [-0.1211, 0.0904], free value -1/(q-1)=-0.2500
+  q=7: allowed a/b in [0.3425, 1.5870]  (e/q=0.3883); normalized character (a-b)/m in [-0.1037, 0.0774], free value -1/(q-1)=-0.1667
+  q=11: allowed a/b in [0.2275, 1.6720]  (e/q=0.2471); normalized character (a-b)/m in [-0.0755, 0.0576], free value -1/(q-1)=-0.1000
+== (4) Heisenberg p^{1+2} on O_K^p, K=Q(zeta_p): tau_line^2=1 (need p). Upper bound for ANY O_K-lattice of rank r=p ==
+  p=3: dim=6 rd_K=1.732 need tau^2>=3; Blichfeldt UB 1.59; KL-asympt UB 0.53; MH-level (random W_Z) 0.30
+  p=5: dim=20 rd_K=3.344 need tau^2>=5; Blichfeldt UB 3.06; KL-asympt UB 1.71; MH-level (random W_Z) 0.98
+  p=7: dim=42 rd_K=5.061 need tau^2>=7; Blichfeldt UB 5.40; KL-asympt UB 3.62; MH-level (random W_Z) 2.07
+  p=11: dim=110 rd_K=8.655 need tau^2>=11; Blichfeldt UB 12.65; KL-asympt UB 9.72; MH-level (random W_Z) 5.57
+  p=13: dim=156 rd_K=10.498 need tau^2>=13; Blichfeldt UB 17.59; KL-asympt UB 13.94; MH-level (random W_Z) 7.99
+  p=17: dim=272 rd_K=14.241 need tau^2>=17; Blichfeldt UB 30.13; KL-asympt UB 24.72; MH-level (random W_Z) 14.17
+  p=19: dim=342 rd_K=16.133 need tau^2>=19; Blichfeldt UB 37.75; KL-asympt UB 31.30; MH-level (random W_Z) 17.95
+  p=23: dim=506 rd_K=19.945 need tau^2>=23; Blichfeldt UB 55.71; KL-asympt UB 46.84; MH-level (random W_Z) 26.86
+  p=29: dim=812 rd_K=25.714 need tau^2>=29; Blichfeldt UB 89.48; KL-asympt UB 76.14; MH-level (random W_Z) 43.66
+  p=31: dim=930 rd_K=27.647 need tau^2>=31; Blichfeldt UB 102.57; KL-asympt UB 87.52; MH-level (random W_Z) 50.18
+  p=37: dim=1332 rd_K=33.469 need tau^2>=37; Blichfeldt UB 147.35; KL-asympt UB 126.45; MH-level (random W_Z) 72.50
+== (5) SL_2(p) Weil lattice = Craig A_{p-1}^{(m)}, m=(p+1)/4: min norm and f*tau^2 ==
+  p=7: Craig m=2, det=p^3, found min norm (+-1 vectors, wt<= 4) = 4 (theory >= 4); gamma=1.5119; tau_line^2<=2.0000 need r=3; f*tau^2=0.6667
+  p=11: Craig m=3, det=p^5, found min norm (+-1 vectors, wt<= 6) = 6 (theory >= 6); gamma=1.8091; tau_line^2<=3.0000 need r=5; f*tau^2=0.6000
+  p=19: Craig m=5, det=p^9, found min norm (+-1 vectors, wt<= 10) = 10 (theory >= 10); gamma=2.2942; tau_line^2<=5.0000 need r=9; f*tau^2=0.5556
+== (6) unramified base change: K=Q(sqrt(-15)), E=Q(sqrt(-3),sqrt(5)) (Hilbert class field), W_Z=O_E, r=2 ==
+  covol(O_E)=15.000000 (sqrt|d_E|=15), covol(O_K in E-trace form)=7.745967 (=2*sqrt(15)=7.745967)
+  O_E over O_K, U=K (subfield): c_U=7.746 dimU=2 c_W=15 dimW=4  tau^2=2.00000  need>=2.000  ratio f*tau^2=1.0000  PASS
+  lambda_1(O_E)^2 = 4.0000; for d=2: tau_line^2 = min h(w) = lambda_1^2/2 = 2.0000 (need r=2): borderline exactly
+== (7) g = |G|/dim_Q A = sum rho^2 : cyclic check and fpf examples ==
+  C_6 on Q(zeta_6): sum rho^2=3.000000  m/phi(m)=3.000000  e^gamma loglog m=1.0387
+  C_30 on Q(zeta_30): sum rho^2=3.750000  m/phi(m)=3.750000  e^gamma loglog m=2.1803
+  C_210 on Q(zeta_210): sum rho^2=4.375000  m/phi(m)=4.375000  e^gamma loglog m=2.9861
+  C_2310 on Q(zeta_2310): sum rho^2=4.812500  m/phi(m)=4.812500  e^gamma loglog m=3.6459
+  C_30030 on Q(zeta_30030): sum rho^2=5.213542  m/phi(m)=5.213542  e^gamma loglog m=4.1554
+  D_8 on Q^2: sum rho^2 = 2  |G|/dim A = 8/4 = 2.0
+  D_12 on Q^2: sum rho^2 = 3.0  |G|/dim A = 12/4 = 3.0
+  SL_2(5) on icosians (Q^8): sum rho^2 = 15.000000  |G|/dim_Q A = 120/8 = 15.0

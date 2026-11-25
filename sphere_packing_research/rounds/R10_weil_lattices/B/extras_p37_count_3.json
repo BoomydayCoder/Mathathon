@@ -1,0 +1,19 @@
+{
+ "count_C3": {
+  "rank": 24,
+  "distinct_vectors_mod_pm_and_eps": 84,
+  "table_N_count_ratio": [
+   [
+    3020976,
+    72,
+    0.7777777777777778
+   ],
+   [
+    3884112,
+    12,
+    1.0
+   ]
+  ],
+  "threshold": 3884112
+ }
+}

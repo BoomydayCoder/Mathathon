@@ -1,0 +1,4 @@
+6 gm runs 25 time 15.7
+5 gm runs 40 time 14.8
+4 gm runs 20 time 3.3
+4 gm runs 80 time 5.3

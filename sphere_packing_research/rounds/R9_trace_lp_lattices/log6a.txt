@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R9_trace_lp_lattices/lp_scan.py", line 21, in <module>
+    Q = gram_random(n, kind, rng, p=GMP)
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R9_trace_lp_lattices/tracelp.py", line 31, in gram_random
+    ksim.lll(M); ksim.lll(M)
+    ~~~~~~~~^^^
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R2_klartag_sim/sim.py", line 18, in lll
+    R = np.linalg.cholesky(G).T
+        ~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 887, in cholesky
+    r = gufunc(a, signature=signature)
+  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 147, in _raise_linalgerror_nonposdef
+    raise LinAlgError("Matrix is not positive definite")
+numpy.linalg.LinAlgError: Matrix is not positive definite
+Traceback (most recent call last):
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R9_trace_lp_lattices/lp_scan.py", line 21, in <module>
+    Q = gram_random(n, kind, rng, p=GMP)
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R9_trace_lp_lattices/tracelp.py", line 31, in gram_random
+    ksim.lll(M); ksim.lll(M)
+    ~~~~~~~~^^^
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R2_klartag_sim/sim.py", line 18, in lll
+    R = np.linalg.cholesky(G).T
+        ~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 887, in cholesky
+    r = gufunc(a, signature=signature)
+  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 147, in _raise_linalgerror_nonposdef
+    raise LinAlgError("Matrix is not positive definite")
+numpy.linalg.LinAlgError: Matrix is not positive definite
+P6a DONE

@@ -1,0 +1,7 @@
+[    0.7s] p=37 setup ok: kappa=-1, rounding residuals (np.float64(1.6342482922482304e-13), np.float64(3.410605131648481e-13), np.float64(5.684341886080802e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    0.7s] closure iterations 3; det(B on Lambda_0) = ~1e125 ; D = 2997.0 (exact m^2 p: True)
+[    2.5s] LLL done; diag(B) min 324 max 972 ; |E B^-1 E - pB| = 3.55e-09
+[    2.5s] Lambda^H rank 8 det_B = 3472858170158755180401 ; maximal-order value p^4 m^16 = 3472858170158755180401 -> maximal: True ; ratio det/(p^4 m^16) = 1.0 ; borderline calibration det^m == m^(8m) det(Lambda): True
+[    5.8s] p37 FULL lattice heuristic (LLL over t-grid + pair sums) rank 72: t-grid 50/50 complete=True minGamma=14.810811 theta=8.756757 ratio=1.691358 (b=972,e=-5328) violator hits=0 border hits=0 nodes=0.00e+00
+[    5.8s] CERT {'p': 37, 'label': 'full heuristic', 'b': 972, 'e': -5328, 'm_plus': 48.04109781852816, 'm_minus': 923.9589021814718, 'D': 2997.0, 'D_exact': 2997, 'Gamma': 14.81081081081081, 'theta': 8.756756756756756, 'N_exact': 6569424, 'threshold_exact': 3884112, 'is_violator_exact': False, 'lower_bound_R_U': 0.12219622989755444}
+[    5.8s] DONE

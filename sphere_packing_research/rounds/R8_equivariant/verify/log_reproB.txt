@@ -1,0 +1,6 @@
+ico k=3 n=24 D=30 w=120 mode=random runs=3 fails=0 t=20.4s Vperf med=1899.1651 max=32372.8850 | Vext med=32372.8850 max=32372.8850 orb_perf mean=570.3
+REPRO {"name": "ico", "k": 3, "mode": "random", "seed": 2, "runs": 3, "reproduced": 3, "first_perfect_verified": 3, "max_V_relerr": 0.0, "time": 30.530988931655884}
+hur k=5 n=20 D=45 w=24 mode=random runs=1 fails=0 t=0.7s Vperf med=694.6262 max=694.6262 | Vext med=694.6262 max=694.6262 orb_perf mean=87.0
+REPRO {"name": "hur", "k": 5, "mode": "random", "seed": 1, "runs": 1, "reproduced": 1, "first_perfect_verified": 1, "max_V_relerr": 0.0, "time": 1.0100347995758057}
+zeta13 k=2 n=24 D=24 w=26 mode=random runs=1 fails=0 t=1.4s Vperf med=361.3947 max=361.3947 | Vext med=833.8018 max=833.8018 orb_perf mean=24.0
+REPRO {"name": "zeta13", "k": 2, "mode": "random", "seed": 1, "runs": 1, "reproduced": 1, "first_perfect_verified": 1, "max_V_relerr": 0.0, "time": 1.850475788116455}

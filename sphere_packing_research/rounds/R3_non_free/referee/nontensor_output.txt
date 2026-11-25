@@ -1,0 +1,27 @@
+== (1) D_8, Lam_phi ==
+  rank 8  covol(Lam) = 4.123281813083612  expected 2^k c1^2 = 4.123281813083613
+  invariant under s,t: True True
+  line (1,0): slice index 2^4, tau^2 = 2.0000  (need >= 2; f*tau^2 = 1.0000)
+  line (0,1): slice index 2^4, tau^2 = 2.0000  (need >= 2; f*tau^2 = 1.0000)
+  line (1,1): slice index 2^2, tau^2 = 2.0000  (need >= 2; f*tau^2 = 1.0000)
+  line (1,-1): slice index 2^2, tau^2 = 2.0000  (need >= 2; f*tau^2 = 1.0000)
+  line (1,2): slice index 2^4, tau^2 = 10.0000  (need >= 2; f*tau^2 = 5.0000)
+  line (2,1): slice index 2^4, tau^2 = 10.0000  (need >= 2; f*tau^2 = 5.0000)
+  line (1,3): slice index 2^2, tau^2 = 10.0000  (need >= 2; f*tau^2 = 5.0000)
+  line (3,1): slice index 2^2, tau^2 = 10.0000  (need >= 2; f*tau^2 = 5.0000)
+  line (2,3): slice index 2^4, tau^2 = 26.0000  (need >= 2; f*tau^2 = 13.0000)
+== (2) D_12, Lam_C inside A_2 (x) L1 ==
+  rank 8  covol(Lam_C) = 20.874114178735823  expected 3^{k/2} (sqrt3)^k c1^2 = 20.87411417873579
+  invariant under w, conj: True True
+  line 1+0w (N=1): slice index 9, tau^2 = 2.0000 (need >= 2; f*tau^2 = 1.0000)
+  line 0+1w (N=1): slice index 9, tau^2 = 2.0000 (need >= 2; f*tau^2 = 1.0000)
+  line 1+1w (N=1): slice index 9, tau^2 = 2.0000 (need >= 2; f*tau^2 = 1.0000)
+  line 1+-1w (N=3): slice index 1, tau^2 = 2.0000 (need >= 2; f*tau^2 = 1.0000)
+  line 2+1w (N=3): slice index 1, tau^2 = 2.0000 (need >= 2; f*tau^2 = 1.0000)
+  line 1+2w (N=3): slice index 1, tau^2 = 2.0000 (need >= 2; f*tau^2 = 1.0000)
+  line 2+-1w (N=7): slice index 9, tau^2 = 14.0000 (need >= 2; f*tau^2 = 7.0000)
+  line 3+1w (N=7): slice index 9, tau^2 = 14.0000 (need >= 2; f*tau^2 = 7.0000)
+  line 1+3w (N=7): slice index 9, tau^2 = 14.0000 (need >= 2; f*tau^2 = 7.0000)
+  line 3+2w (N=7): slice index 9, tau^2 = 14.0000 (need >= 2; f*tau^2 = 7.0000)
+  line 4+1w (N=13): slice index 9, tau^2 = 26.0000 (need >= 2; f*tau^2 = 13.0000)
+  tensor-form comparison A_2 (x) L: f*tau^2 = gamma_2/2 = 0.5774 ; Z^2 (x) L: 0.5

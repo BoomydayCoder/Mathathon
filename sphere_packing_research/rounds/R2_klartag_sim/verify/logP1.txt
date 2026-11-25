@@ -1,0 +1,6 @@
+gm2 done 25 runs, time 8.2
+gm3 done 25 runs, time 5.6
+gm4 done 25 runs, time 6.3
+gm5 done 25 runs, time 11.1
+gm6 done 25 runs, time 17.8
+gm7 done 25 runs, time 20.1

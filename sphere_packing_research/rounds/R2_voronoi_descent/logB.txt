@@ -1,0 +1,2 @@
+n=8 mode=descent samples=136 fails=0 time=110.8s Vperf med=64.9394 max=64.9394 | Vext med=64.9394 max=64.9394 pairs_ext mean=92.8
+n=10 mode=descent samples=16 fails=0 time=101.7s Vperf med=58.8108 max=81.6052 | Vext med=62.8951 max=94.2296 pairs_ext mean=99.4

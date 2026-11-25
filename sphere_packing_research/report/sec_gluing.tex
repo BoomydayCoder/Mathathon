@@ -1,0 +1,20 @@
+\subsection{원분 접착(GGS) 틀 안에서의 이득 $M/C$: 단일 원분체를 넘을 수 있는가}\label{sec:gluing}
+
+Gargava--Gr\"obner--Simkin 은 지표 집합 $\mathcal N$ ($F=\prod_{n\in\mathcal N}\Phi_n$, order $A=\Z[X]/(F)$, $M=\mathrm{lcm}(\mathcal N)$, $C=\sum_{n\in\mathcal N}\varphi(n)$)에 대해 \emph{admissible} 이면 $V_d\gg d^2M/C$ 임을 보이고 $M/C\gg\log\log d$ 인 데이터를 구성했다. 3회차에서 ``꼭대기가 여러 개인 $\mathcal N$ 으로 $M/C\sim(\log\log d)^2$ 이 가능할지도 모른다'' 는 추측이 나왔고, 7회차에서 이를 검토했다. (논문의 정의: $A(S)=\tfrac{c_S}2\log\tfrac C{c_S}-\tfrac12W(S,S^c)-\sum_{n\in S}c_nv_n\le-\delta$ for all $\emptyset\ne S\subsetneq\mathcal N$, $\sum c_nv_n=0$, $w(m,n)=\log|\mathrm{Res}(\Phi_m,\Phi_n)|$.)
+
+\begin{proposition}[재정식화]\tagP
+\begin{enumerate}
+\item $\mu_M(n):=\varphi(n)/M$ 은 $M$ 의 약수 격자 위의 (소수별 곱) 확률측도이고 $\ M/C=1/\mu_M(\mathcal N)$.
+\item (Parseval) $M/C=\sum_{g\in\langle\tau\rangle}\rho(g)^2=1+\chi^2(\nu\,\|\,\mu_M)$, $\nu=\mu_M|_{\mathcal N}$. 즉 이득 항등식(명제 \ref{prop:gain})의 순환군 판.
+\item admissibility 의 지지집합 부분은 선형계획(협력게임의 core)이고, 필요조건으로 모든 절단에 대해 $W(S,S^c)\ge\tfrac C2H_2(c_S/C)+2\delta$, 모든 분할 $\mathcal P$ 에 대해 $W(\mathcal P)\ge\tfrac C2H(\nu_{\mathcal P})+|\mathcal P|\delta$.
+\item (소수별 창) 소수 $q\mid M$ 에 대해 $x_q:=\nu\{n:v_q(n)<v_q(M)\}$ 는 $H_2(x_q)<2(1-x_q)\tfrac{\log q}{q-1}$, 따라서 $x_q<x_{hi}(q)<2/q$ 를 만족한다 ($x_{hi}(3)=0.391$, $x_{hi}(5)=0.272$, $x_{hi}(7)=0.209$, $x_{hi}(11)=0.143$). 이는 명제 \ref{prop:nogo}(3) 을 $\tau^{M/q}$ 에 적용한 것과 같다.
+\end{enumerate}
+\end{proposition}
+\begin{theorem}[부분적 no-go]\label{thm:gluing}\tagP\
+$\mathcal N$ 이 모든 절단 조건을 만족하고 $M=\mathrm{lcm}(\mathcal N)$ 이 홀수라 하자. $M\in\mathcal N$ 이면 $M/C\le M/\varphi(M)$. $M\notin\mathcal N$ 이면 $1\le\sum_{q\mid M}x_q<\sum_{q\mid M}x_{hi}(q)<2\sum_{q\mid M}1/q$. 따라서 $\sum_{q\mid M}x_{hi}(q)\le1$ 인 모든 $M$ 에 대해 (예: 서로 다른 소인수가 3개 이하이거나, 4개인데 $\{3,5,7,11\}$ 이 아닌 경우) $M/C\le M/\varphi(M)$.
+\end{theorem}
+\begin{observation}[전수/무작위 탐색; 심사자가 독립 LP 구현으로 재현·확장]\tagN\
+홀수 $M\in\{15,21,\dots,1155\}$ 13개(최대 64594개 지표 집합)와, 심사자가 추가한 짝수 모듈러스 34개(약수 24개 이하; $n\equiv2\pmod4$, $n>2$ 허용)에 대해 admissibility LP 를 정확히 풀었다: \textbf{$M/C>M/\varphi(M)$ 인 admissible 데이터는 하나도 없다}; $M\notin\mathcal N$ 인 집합은 소수별 절단조차 통과하는 것이 0개. $M=15015$ (약수 32개)는 $2.6\times10^6$ 개 무작위 표본만.
+\end{observation}
+\begin{conjecture}\tagJ\ 모든 admissible 접착 데이터에 대해 $M/C\le K\cdot M/\varphi(M)$ (아마 $K=1$). 즉 원분 접착 방법은 $d^2\log\log d$ 에서 닫힌다.\end{conjecture}
+증명되지 않은 이유: admissibility 부등식은 모두 ``엔트로피 $\le$ 경계 가중치'' 꼴이라 $\mathcal N$ 이 가벼울수록 쉬워지고, 이득의 상계는 피복 조건($\mathrm{lcm}=M$)과 소수별 창의 결합에서만 나온다. 약한 일반 상계: $M/C\le\tfrac M{\varphi(M)}\prod_{p\mid M}(p-1)^{x_{hi}(p)}$ \tagP\ (최대 소수의 거듭제곱만큼의 초과를 허용하므로 $\log\log$ no-go 가 아니다). 점근 후보족 가운데 ``큐브에서 꼭대기 제거'' 는 선행 차수에서 정확히 경계이고 낮은 차수 항에서 실패한다(이득 $1.14$ 대 $M/\varphi(M)=8.2$); 나머지 족(두 층, 큰 소수 매달기 등)은 검증되지 않은 선행 차수 휴리스틱으로만 배제했다. 정리 \ref{thm:gluing} 은 홀수 $M$ 에만 적용되며(짝수 $M$ 에서는 $\{2,3,5\},\{2,3,7\},\{2,3,11\},\{2,3,13\}$ 이 계수 논법으로 배제되지 않고 수치 탐색에만 의존), 여러 성분의 합으로 이루어진 비순환 아벨 대칭이 도움이 되는지는 분석하지 못했다. \textbf{결론: 이 틀 안에서의 개선도, 이 틀이 $d^2\log\log d$ 에서 닫힌다는 증명도 얻지 못했다.}

@@ -1,0 +1,24 @@
+[    0.0s] p=13 relations: |S^2+I|=1.8e-16 |(ST)^3-I|=5.3e-16 |(ST)^3+I|=2.0e+00 |T^p-I|=3.8e-15 unitarity=2.2e-16
+[    0.0s] orbit size 728 (|G|=2184, |G|/|H|=728)
+[    0.0s] H-generator maps orbit sample into orbit: True
+[    0.0s] rank of orbit sample = 24 (expected 24); R diag at rank-1: 3.033e+00, next: 6.879e-15
+[    0.0s] all orbit vectors in the 24-dim span: residual 4.50e-15
+[    0.0s] Gram of M integer residual 7.11e-14
+[    0.0s] det G_M has 34 digits; adjugate verified exactly
+[    0.0s] cond(Br) = 3.079e+01
+[    0.0s] HNF round 1: generators used 96, index so far 29006, prime steps [2, 14503], orbit vectors not yet integral: 0; max|Ccur|=1.000e+00, Gram diag min/max 36.000/42.000, Gram int resid 5.68e-14, frac of gens max 1.13e-14, frac hist [728   0   0   0   0]
+[    0.0s] Gram B integer residual 4.26e-14; E integer residual 1.31e-13; max|B|=42, diag min/max 36/42
+[    0.0s] check E B^-1 E = p B: residual 1.85e-12
+[    0.0s] O_F acts ((1+sqrt p)/2 integral matrix): max frac = 1.27e-14; sqrt p integral: 2.55e-14
+[    0.1s] det B = 6580067382037190942729361
+[    0.1s] D = det^(1/(p-1)) = 117.0000000000; theta_p = 2.769231
+[    0.1s] det B factorisation: {3: 24, 13: 12} cofactor 1
+[    0.1s] EXACT check det(B) * index^2 == det(G_M): True
+[    0.1s] check: orbit vectors integral in basis, max frac = 4.52e-14
+[    0.1s] check: S*basis integral, max frac = 1.34e-14, |det|=1.000000
+[    0.1s] check: T*basis integral, max frac = 1.33e-14, |det|=1.000000
+[    0.1s] fixed lattice of H (order 3): rank 8, saturated True
+[    0.1s] v0: m_plus=18.000000 m_minus=18.000000 B=36 Gamma(v0)=2.769231
+[    0.1s] order test: det(Tr nrd form on Lambda^H) = 111.56640625; maximal iff = (p/4)^4 = 111.56640625; ratio = 1.00000000
+[    0.1s] calibration H-line: det_B(Lambda^H) = 1229457398481; r^8 D^4 = 1229457398481.001221; R_U = 1.00000000
+[    0.1s] [p=13 H-fixed (order 3)] rank 8: grid 25/25 t-values in [-1.1948,1.1948], bound Q_t<= 36.0450, vectors enumerated 12, nodes 561, flags 0, min Gamma = 2.76923077 (theta=2.76923077, ratio 1.000000), violators (distinct found) 0

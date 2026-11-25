@@ -1,0 +1,9 @@
+[    0.4s] p=29 setup ok: kappa=-1, rounding residuals (np.float64(7.815970093361102e-14), np.float64(1.7053025658242404e-13), np.float64(4.263256414560601e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    0.4s] closure iterations 3; det(B on Lambda_0) = ~1e88 ; D = 1421.0 (exact m^2 p: True)
+[    1.1s] LLL done; diag(B) min 196 max 462 ; |E B^-1 E - pB| = 8.35e-10
+[    1.1s] Lambda^H rank 8 det_B = 23505020366197964881 ; maximal-order value p^4 m^16 = 23505020366197964881 -> maximal: True ; ratio det/(p^4 m^16) = 1.0 ; borderline calibration det^m == m^(8m) det(Lambda): True
+[    1.1s] delta_u matrices: delta_{v0}=1, commute with S,T (exact), preserve Lambda_0 (exact) for a Z-basis of Lambda^H  => O = End_G(Lambda_0) acts
+[    1.1s] LINE {'label': 'v0', 'b': 196, 'e': 0, 'N': 1114064, 'det_Ow': '23505020366197964881', 'det_formula_ok': True, 'saturation_index': 1, 'R_U_exact': '23505020366197964881/23505020366197964881', 'R_U': 1.0, 'lower_bound': 1.0}
+[    1.1s] LINE {'label': 'p29_ns5_minvec.json', 'b': 280, 'e': 0, 'N': 2273600, 'det_Ow': '407733421608100000000', 'det_formula_ok': True, 'saturation_index': 16, 'R_U_exact': '6017285213746679009536/407733421608100000000', 'R_U': 14.75789056, 'lower_bound': 0.05764800999999999}
+[    1.1s] LINE {'label': 'violator_p29.json', 'b': 294, 'e': 1218, 'N': 1023120, 'det_Ow': '16719618619817150625', 'det_formula_ok': True, 'saturation_index': 1, 'R_U_exact': '23505020366197964881/16719618619817150625', 'R_U': 1.405834720317025, 'lower_bound': 1.4058347203170243}
+[    1.1s] DONE

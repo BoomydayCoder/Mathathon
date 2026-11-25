@@ -1,0 +1,5 @@
+[    0.1s] p=29 setup ok: kappa=-1, rounding residuals (np.float64(7.815970093361102e-14), np.float64(1.7053025658242404e-13), np.float64(4.263256414560601e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    0.1s] numeric Gram check: |G+ + G- - B| = 1.71e-13, |sqrt p (G+ - G-) - E| = 9.18e-13
+[    0.1s] exact det(B_saved) == (m^2 p)^(p-1): True
+[    0.5s] orbit of v0: size 3480 (expected |G|/|H| = 3480); coordinates in saved basis integral (residual 1.68e-11); Z-span of orbit == saved lattice: True
+[    0.5s] CERT CHECK {'file': 'violator_p29.json', 'b': 294, 'e': 1218, 'N': 1023120, 'threshold': 1114064, 'exact_violator': True, 'm_plus_direct': 260.08846094982454, 'm_minus_direct': 33.91153905017532, 'Gamma_direct': 6.20689655172412, 'Gamma_exact': '1023120/164836', 'theta': 6.758620689655173, 'ratio': 0.9183673469387729, 'R_U_lower_bound': 1.4058347203170416}

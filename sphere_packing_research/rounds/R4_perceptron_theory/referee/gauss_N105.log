@@ -1,0 +1,11 @@
+{'N': 105, 'seed': 777, 'srel': 11.0, 'M': 9483, 'v_N': 0.9075, 'rho2': 6.89, 'V_N': 2.1472, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 506504} 4.7
+{'N': 105, 'seed': 778, 'srel': 11.0, 'M': 9382, 'v_N': 0.7898, 'rho2': 7.4543, 'V_N': 2.0054, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 506470} 3.1
+{'N': 105, 'seed': 779, 'srel': 11.0, 'M': 9423, 'v_N': 0.586, 'rho2': 9.0826, 'V_N': 1.8239, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 506413} 4.3
+{'N': 105, 'seed': 780, 'srel': 11.0, 'M': 9412, 'v_N': 0.6632, 'rho2': 9.4442, 'V_N': 2.1595, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 2, 'M_beyond': 507760} 4.3
+{'N': 105, 'seed': 781, 'srel': 11.0, 'M': 9439, 'v_N': 0.7589, 'rho2': 7.4152, 'V_N': 1.9176, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 505468} 2.9
+{'N': 105, 'seed': 782, 'srel': 11.0, 'M': 9227, 'v_N': 0.9448, 'rho2': 6.7017, 'V_N': 2.1834, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 1, 'M_beyond': 505727} 2.8
+{'N': 105, 'seed': 783, 'srel': 11.0, 'M': 9374, 'v_N': 1.0014, 'rho2': 5.6409, 'V_N': 2.0269, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 506347} 2.7
+{'N': 105, 'seed': 784, 'srel': 11.0, 'M': 9416, 'v_N': 0.7457, 'rho2': 6.5426, 'V_N': 1.6894, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 506730} 2.9
+N=105 v_N mean=0.7997 sd=0.1426 se=0.0504 (pred 0.7358)
+N=105 rho2 mean=7.3964 sd=1.2868 se=0.4549 (pred 8)
+N=105 V_N mean=1.9942 sd=0.1755 se=0.0620 (pred 2)

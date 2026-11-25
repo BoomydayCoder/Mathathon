@@ -1,0 +1,13 @@
+[    0.5s] p=29 setup ok: kappa=-1, rounding residuals (np.float64(7.815970093361102e-14), np.float64(1.7053025658242404e-13), np.float64(4.263256414560601e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    0.5s] closure iterations 3; det(B on Lambda_0) = ~1e88 ; D = 1421.0 (exact m^2 p: True)
+[    2.0s] LLL done; diag(B) min 196 max 462 ; |E B^-1 E - pB| = 8.35e-10
+[    2.1s] Lambda^H rank 8 det_B = 23505020366197964881 ; maximal-order value p^4 m^16 = 23505020366197964881 -> maximal: True ; ratio det/(p^4 m^16) = 1.0 ; borderline calibration det^m == m^(8m) det(Lambda): True
+[    2.1s] CALIB C_7 split line: rank 8 det_B=23505020366197964881 R_U=1.000000000 exactly borderline (R_U=1): True
+[    2.2s] p29 C_7 split line exhaustive rank 8: t-grid 33/33 complete=True minGamma=6.758621 theta=6.758621 ratio=1.000000 (b=196,e=0) violator hits=0 border hits=144 nodes=4.42e+02
+[    2.2s] CALIB non-split order 5 fixed: rank 8 det_B=1592708678156640625 R_U=14.757890560 exactly borderline (R_U=1): False
+[    2.4s] p29 nonsplit C_5 fixed exhaustive rank 8: t-grid 33/33 complete=True minGamma=13.793103 theta=6.758621 ratio=2.040816 (b=280,e=0) violator hits=0 border hits=0 nodes=7.42e+02
+[    2.4s] CERT {'p': 29, 'label': 'nonsplit C_5 (S T^5)', 'b': 280, 'e': 0, 'm_plus': 140.0, 'm_minus': 140.0, 'D': 1421.0, 'D_exact': 1421, 'Gamma': 13.793103448275861, 'theta': 6.758620689655173, 'N_exact': 2273600, 'threshold_exact': 1114064, 'is_violator_exact': False, 'lower_bound_R_U': 0.05764801000000002}
+[    2.4s] CALIB non-split order 3 fixed: rank 16 det_B=~1e32 R_U=11.780090695 exactly borderline (R_U=1): None
+[    2.6s] p29 nonsplit C_3 fixed exhaustive rank 16: t-grid 33/33 complete=True minGamma=6.206897 theta=6.758621 ratio=0.918367 (b=294,e=1218) violator hits=985 border hits=0 nodes=1.35e+04
+[    2.6s] CERT {'p': 29, 'label': 'nonsplit C_3 ((ST)^2)', 'b': 294, 'e': 1218, 'm_plus': 260.0884609498246, 'm_minus': 33.911539050175406, 'D': 1421.0, 'D_exact': 1421, 'Gamma': 6.206896551724138, 'theta': 6.758620689655173, 'N_exact': 1023120, 'threshold_exact': 1114064, 'is_violator_exact': True, 'lower_bound_R_U': 1.4058347203170256}
+[    2.6s] DONE

@@ -1,0 +1,35 @@
+\section{등변 Klartag/Voronoi 탐색: 대칭 과정은 실제로 어떤 격자를 찾는가 (8회차)}\label{sec:equiv}
+
+사용자의 제안(``작은 $n$ 에서 실례를 직접 구성해 규칙성을 보자'')을 대칭 격자족에 적용했다. 고정된 가군 $\mathcal O^k$ ($\mathcal O$: Eisenstein, Gauss, Hurwitz 정수환, $\Z[\zeta_m]$, icosian 환) 위에서, $G$-불변 형식 공간 $\mathcal Q$ (차원 $D$) 안의 이산 Klartag 과정(자유 부분공간의 무작위 방향, 정확한 직선 탐색, 접촉 유지)을 $\mathcal Q$-perfect 형식까지 돌리고, 이어서 탐욕 LP 하강으로 $\mathcal Q$-extreme 형식에 도달한다. 총 1152회 실행, 실패 0; 독립 검증자가 모든 최종 형식을 정수 연산으로 재검증했고(격자점 없음, 최소벡터 수, 행렬식), 알려진 최선값을 넘는 $V$ 는 없었다($\max V/V_{best}=1.000000$).
+
+\begin{center}
+\small
+\begin{tabular}{@{}llrrrrll@{}}
+\toprule
+족 & $k$ & $n$ & $w$ & $D$ & $wD/2$ & 첫 perfect 형식의 $V$ 중앙값 & 도달한 기록 격자 (빈도)\\
+\midrule
+Eisenstein & 4 & 8 & 6 & 16 & 48 & 64.9 & $E_8$ (80--93\%)\\
+Hurwitz & 2 & 8 & 24 & 6 & 72 & 64.9 & $E_8$ (100\%)\\
+icosian & 1 & 8 & 120 & 2 & 120 & 64.9 & $E_8$ (100\%)\\
+$\Z[\zeta_7]$ & 2 & 12 & 14 & 12 & 84 & 133.4 & $K_{12}$ (33\%)\\
+Hurwitz & 3 & 12 & 24 & 15 & 180 & 170.9 & --- ($\Lambda_{12}$ 밀도의 형식; $K_{12}$ 0/80)\\
+Hurwitz & 4 & 16 & 24 & 28 & 336 & 335 & $BW_{16}$ (12--40\%)\\
+icosian & 2 & 16 & 120 & 12 & 720 & 632 & $BW_{16}$ (42--67\%)\\
+Hurwitz & 5 & 20 & 24 & 45 & 540 & 534 & $\Lambda_{20}$ (2/10, LP 하강 후)\\
+$\Z[\zeta_{13}]$ & 2 & 24 & 26 & 24 & 312 & 361 & --- (최대 834)\\
+Hurwitz & 6 & 24 & 24 & 66 & 792 & 922 & --- (최대 1573)\\
+\textbf{icosian} & \textbf{3} & \textbf{24} & 120 & \textbf{30} & 1800 & 1840 & \textbf{Leech (11/24)}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{observation}\tagN\ (검증자가 전 항목 재현)
+\begin{enumerate}
+\item \textbf{대칭 과정은 기록 격자를 그대로 찾는다.} 특히 icosian 랭크 3 가군에서는 자유도가 $D=30$ 개뿐인 탐색이 24차원 Leech 격자($V=32372.9$, 최소벡터 196560개; 짝 unimodular·최소노름 4 임을 정수 연산으로 확인)에 절반 가까운 빈도로 도달한다. 비대칭 탐색(2회차)은 $n=9,10$ 에서 이미 최밀 격자에 도달하지 못했다.
+\item \textbf{스케일링 법칙 $V_{perf}\approx1.06\cdot wD/2$.} 첫 $\mathcal Q$-perfect 형식의 부피 중앙값을 $wD/2$ 로 나눈 값은 $n\ge10$ 인 17개 (족,$k$) 점에서 $[0.88,1.59]$, 기하평균 $1.06$, 로그--로그 기울기 $0.94$ ($wD/2=50..1800$). 즉 비대칭의 ``$V\approx N$'' 이 ``$V\approx\tfrac w2\times D$'' (접촉 궤도 하나가 자유도 하나) 로 일반화되며, 이는 정리 \ref{thm:quatC} 의 $wD_k/(2e)$ 와 같은 구조다.
+\item 각 차원에서 족의 순위는 $wD/2$ 순이다 ($n=24$: icosian $>$ Hurwitz $>\Z[\zeta_{13}]$).
+\item 발견된 모든 $\mathcal Q$-perfect 형식은 유리 형식이고(기초적 증명), 기록 격자들의 분모는 $q=2$ (root 격자) 또는 $q=4$ ($\Lambda_{10},K_{12},BW_{16},\Lambda_{20}$, Leech).
+\item 기록 격자들은 극도로 퇴화된 꼭짓점이다(Leech: 접촉 궤도 1638개 대 $D=30$). 반면 가장 큰 사례의 ``일반적'' 동결 형식은 단순 꼭짓점이다(Hurwitz $k=6$: 정확히 $D=66$ 궤도).
+\end{enumerate}
+\end{observation}
+\paragraph{해석.} 소차원의 ``좋은 실례'' 는 대칭이 큰 족 안에서 찾으면 실제로 구성적으로 나온다 --- 그러나 그것들은 $V\gg wD$ 인 예외적 꼭짓점이고, 차원이 커지면 과정의 전형적 종착점은 $V\approx wD/2$ 로 내려앉는다. 따라서 점근 문제에서 대칭으로 얻을 수 있는 것은 이득 인자 $g=wD/n^2\approx|G|/(2\dim_\Q A)$ 이고, 이것이 얼마나 클 수 있는가가 \S\ref{sec:sym} 의 주제다. 최선 형식들의 정수 Gram 행렬은 \texttt{rounds/R8\_equivariant/best\_forms.json} 에 있다.

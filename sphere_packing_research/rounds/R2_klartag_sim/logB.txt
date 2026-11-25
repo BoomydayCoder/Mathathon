@@ -1,0 +1,23 @@
+6 gm runs 198 time 100.0
+Traceback (most recent call last):
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R2_klartag_sim/sim.py", line 214, in <module>
+    r = run_one(n, kind, rng)
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R2_klartag_sim/sim.py", line 186, in run_one
+    sim.step(); steps += 1
+    ~~~~~~~~^^
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R2_klartag_sim/sim.py", line 137, in step
+    self.reenum()
+    ~~~~~~~~~~~^^
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R2_klartag_sim/sim.py", line 113, in reenum
+    Lc = np.linalg.cholesky(self.A)
+  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 887, in cholesky
+    r = gufunc(a, signature=signature)
+  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 147, in _raise_linalgerror_nonposdef
+    raise LinAlgError("Matrix is not positive definite")
+numpy.linalg.LinAlgError: Matrix is not positive definite
+10 gm runs 50 time 31.5
+3 zn runs 83 time 8.2
+4 zn runs 63 time 10.1
+5 zn runs 55 time 15.1
+6 zn runs 46 time 22.4
+8 zn runs 41 time 31.5

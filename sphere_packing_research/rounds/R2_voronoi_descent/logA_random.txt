@@ -1,0 +1,5 @@
+n=4 mode=random samples=299 fails=0 time=6.1s Vperf med=9.8696 max=9.8696 | Vext med=9.8696 max=9.8696 pairs_ext mean=11.0
+n=5 mode=random samples=219 fails=0 time=10.1s Vperf med=14.8882 max=14.8882 | Vext med=14.8882 max=14.8882 pairs_ext mean=19.6
+n=6 mode=random samples=236 fails=0 time=15.1s Vperf med=23.8686 max=23.8686 | Vext med=23.8686 max=23.8686 pairs_ext mean=34.2
+n=7 mode=random samples=300 fails=0 time=23.4s Vperf med=37.7981 max=37.7981 | Vext med=37.7981 max=37.7981 pairs_ext mean=55.7
+n=9 mode=random samples=19 fails=0 time=40.3s Vperf med=46.8399 max=60.9406 | Vext med=51.0543 max=74.6367 pairs_ext mean=91.1

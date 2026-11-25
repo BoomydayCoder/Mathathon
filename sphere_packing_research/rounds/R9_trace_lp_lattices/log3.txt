@@ -1,0 +1,4 @@
+lpscan n=16 gm: 30/30 LPs in 28.7s  V_LP/N mean=1.278 pairs/N=1.001 Vbest/N=7.088
+lpscan n=18 gm: 20/20 LPs in 32.0s  V_LP/N mean=1.350 pairs/N=1.000 Vbest/N=9.088
+lpscan n=20 gm: 12/12 LPs in 25.8s  V_LP/N mean=1.447 pairs/N=1.000 Vbest/N=16.107
+P3 DONE

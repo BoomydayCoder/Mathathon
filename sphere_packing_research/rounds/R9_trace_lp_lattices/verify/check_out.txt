@@ -1,0 +1,40 @@
+records 432 with LP 432 records with error keys 0
+Q: max |det-1| = 1.75e-10, max asym = 0.00e+00, min eig = 0.00807
+lam1sq: max rel diff vs stored = 3.78e-12 ; V0 max rel diff = 5.29e-11
+--- LP: 432 forms
+   max |min-1| = 6.30e-11
+   pairs mismatches: 0  V max rel diff = 8.76e-11
+   max V/Vbest = 1.000000000  #forms with V/Vbest > 1-1e-6: 109
+   non-perfect (rank<N): 0  max asym 0.0e+00
+   v max rel diff = 1.41e-10, B0sq max abs diff = 7.68e-11, V via det(Q) rel diff 8.74e-11
+   DUAL CERTIFICATE: max rel residual = 0.00e+00 ; max |sum lam - Tr(Q^-1 A)|/obj = 5.11e-12 ; max |obj - stored lp_obj|/obj = 1.01e-11
+   records with dual residual > 1e-8: [] 0
+   eig_ratio max rel diff = 4.46e-11 ; rank_stored != N: 0
+   LP rounds: min 1 max 5 ; fallback>0: 18 ; enlarge>0: 18 ; ncons min 170 max 10981
+   dual npos: #(npos == N) = 432 ; #(npos < N) = 0 ; #(npos > N) = 0 ; min positive multiplier overall 2.08e-07
+--- K: 147 forms
+   max |min-1| = 1.38e-08
+   pairs mismatches: 3  V max rel diff = 2.59e-08
+   max V/Vbest = 1.000000000  #forms with V/Vbest > 1-1e-6: 56
+   non-perfect (rank<N): 1  max asym 0.0e+00
+   v max rel diff = 4.97e-12, B0sq max abs diff = 1.15e-11, V via det(Q) rel diff 3.62e-12
+--- Kd: 143 forms
+   max |min-1| = 3.37e-08
+   pairs mismatches: 1  V max rel diff = 2.76e-08
+   max V/Vbest = 1.000000005  #forms with V/Vbest > 1-1e-6: 78
+   non-perfect (rank<N): 0  max asym 0.0e+00
+   v max rel diff = 4.54e-12, B0sq max abs diff = 1.13e-11, V via det(Q) rel diff 3.62e-12
+--- extLP: 173 forms
+   max |min-1| = 1.20e-11
+   pairs mismatches: 0  V max rel diff = 1.11e-11
+   max V/Vbest = 1.000000000  #forms with V/Vbest > 1-1e-6: 89
+   non-perfect (rank<N): 0  max asym 0.0e+00
+   eutaxy margin: min -1.494e+00 ; #(<=1e-9): 1 ; #steps>=500: 1
+   non-eutactic: [('n14_gm.json', 0, -1.4938418056250469, 500)]
+--- extK: 147 forms
+   max |min-1| = 1.38e-08
+   pairs mismatches: 3  V max rel diff = 2.58e-08
+   max V/Vbest = 1.000000000  #forms with V/Vbest > 1-1e-6: 65
+   non-perfect (rank<N): 1  max asym 0.0e+00
+   eutaxy margin: min -7.007e-02 ; #(<=1e-9): 1 ; #steps>=500: 0
+   non-eutactic: [('n8_gm.json', 16, nan, 0), ('n10_gauss.json', 8, -0.07007342863516837, 0)]

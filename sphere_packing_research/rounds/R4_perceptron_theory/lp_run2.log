@@ -1,0 +1,3 @@
+{'model': 'G', 'd': 209, 'N': 210, 'seed': 1000, 'M': 18912, 'time': 31.7, 'v_over_N': np.float64(0.7628), 'rho2': 8.3139, 'V_over_N': np.float64(2.1565), 'act_over_N': 0.981, 'viol_beyond': 0, 'M_beyond': 65865}
+{'model': 'G', 'd': 209, 'N': 210, 'seed': 1001, 'M': 18948, 'time': 32.5, 'v_over_N': np.float64(0.6971), 'rho2': 8.6982, 'V_over_N': np.float64(2.0677), 'act_over_N': 1.0, 'viol_beyond': 0, 'M_beyond': 66003}
+{'model': 'G', 'd': 299, 'N': 300, 'seed': 1000, 'M': 27015, 'time': 114.1, 'v_over_N': np.float64(0.704), 'rho2': 8.3587, 'V_over_N': np.float64(2.0015), 'act_over_N': 1.0, 'viol_beyond': 0, 'M_beyond': 94038}

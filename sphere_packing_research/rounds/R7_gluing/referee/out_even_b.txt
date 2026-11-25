@@ -1,0 +1,7 @@
+M=210 pool=14 (n=2 mod 4 allowed, 2 and M excluded) | lcm=M sets: 15804 | pass per-prime cuts: 0 | pass vertex cuts: 0 | pass all cuts: 0 | support-admissible (LP): 0 | M/phi(M)=4.3750 | timeout=False | 0.0s
+M=180 pool=16 (n=2 mod 4 allowed, 2 and M excluded) | lcm=M sets: 61368 | pass per-prime cuts: 0 | pass vertex cuts: 0 | pass all cuts: 0 | support-admissible (LP): 0 | M/phi(M)=3.7500 | timeout=False | 0.0s
+M=252 pool=16 (n=2 mod 4 allowed, 2 and M excluded) | lcm=M sets: 61368 | pass per-prime cuts: 0 | pass vertex cuts: 0 | pass all cuts: 0 | support-admissible (LP): 0 | M/phi(M)=3.5000 | timeout=False | 0.0s
+M=300 pool=16 (n=2 mod 4 allowed, 2 and M excluded) | lcm=M sets: 61368 | pass per-prime cuts: 0 | pass vertex cuts: 0 | pass all cuts: 0 | support-admissible (LP): 0 | M/phi(M)=3.7500 | timeout=False | 0.0s
+M=270 pool=14 (n=2 mod 4 allowed, 2 and M excluded) | lcm=M sets: 14056 | pass per-prime cuts: 0 | pass vertex cuts: 0 | pass all cuts: 0 | support-admissible (LP): 0 | M/phi(M)=3.7500 | timeout=False | 0.0s
+M=1155 pool=15 (n=2 mod 4 allowed, 2 and M excluded) | lcm=M sets: 31826 | pass per-prime cuts: 0 | pass vertex cuts: 0 | pass all cuts: 0 | support-admissible (LP): 0 | M/phi(M)=2.4062 | timeout=False | 0.0s
+M=945 pool=15 (n=2 mod 4 allowed, 2 and M excluded) | lcm=M sets: 28296 | pass per-prime cuts: 0 | pass vertex cuts: 0 | pass all cuts: 0 | support-admissible (LP): 0 | M/phi(M)=2.1875 | timeout=False | 0.0s

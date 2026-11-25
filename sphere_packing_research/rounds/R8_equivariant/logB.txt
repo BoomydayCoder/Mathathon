@@ -1,0 +1,15 @@
+hur k=1 n=4 D=1 w=24 mode=random runs=40 fails=0 t=0.2s Vperf med=9.8696 max=9.8696 | Vext med=9.8696 max=9.8696 orb_perf mean=1.0
+hur k=2 n=8 D=6 w=24 mode=random runs=40 fails=0 t=0.9s Vperf med=64.9394 max=64.9394 | Vext med=64.9394 max=64.9394 orb_perf mean=10.0
+hur k=3 n=12 D=15 w=24 mode=random runs=40 fails=0 t=2.9s Vperf med=170.9136 max=170.9136 | Vext med=170.9136 max=170.9136 orb_perf mean=21.7
+hur k=4 n=16 D=28 w=24 mode=random runs=40 fails=0 t=63.5s Vperf med=335.1569 max=963.9143 | Vext med=419.6187 max=963.9143 orb_perf mean=70.3
+ico k=1 n=8 D=2 w=120 mode=random runs=20 fails=0 t=0.7s Vperf med=64.9394 max=64.9394 | Vext med=64.9394 max=64.9394 orb_perf mean=2.0
+ico k=2 n=16 D=12 w=120 mode=random runs=40 fails=0 t=19.5s Vperf med=632.4241 max=963.9143 | Vext med=632.4241 max=963.9143 orb_perf mean=25.1
+zeta5 k=2 n=8 D=8 w=10 mode=random runs=40 fails=0 t=1.9s Vperf med=64.9394 max=64.9394 | Vext med=64.9394 max=64.9394 orb_perf mean=24.0
+zeta5 k=3 n=12 D=18 w=10 mode=random runs=40 fails=0 t=5.1s Vperf med=110.9981 max=152.8698 | Vext med=110.9981 max=152.8698 orb_perf mean=37.4
+zeta7 k=2 n=12 D=12 w=14 mode=random runs=40 fails=0 t=5.0s Vperf med=133.3960 max=202.5643 | Vext med=133.3960 max=202.5643 orb_perf mean=33.4
+zeta12 k=4 n=16 D=32 w=12 mode=random runs=11 fails=0 t=30.7s Vperf med=190.3900 max=411.3060 | Vext med=290.0894 max=963.9143 orb_perf mean=50.9
+hur k=3 n=12 D=15 w=24 mode=descent runs=40 fails=0 t=2.3s Vperf med=170.9136 max=170.9136 | Vext med=170.9136 max=170.9136 orb_perf mean=24.1
+hur k=4 n=16 D=28 w=24 mode=descent runs=30 fails=0 t=19.8s Vperf med=469.9942 max=963.9143 | Vext med=616.9051 max=963.9143 orb_perf mean=88.3
+ico k=2 n=16 D=12 w=120 mode=descent runs=30 fails=0 t=7.9s Vperf med=963.9143 max=963.9143 | Vext med=963.9143 max=963.9143 orb_perf mean=30.1
+hur k=5 n=20 D=45 w=24 mode=random runs=3 fails=0 t=89.8s Vperf med=534.2045 max=694.6262 | Vext med=727.5623 max=3382.5609 orb_perf mean=63.3
+zeta13 k=2 n=24 D=24 w=26 mode=random runs=3 fails=0 t=26.1s Vperf med=361.3947 max=444.1345 | Vext med=804.1947 max=833.8018 orb_perf mean=24.3

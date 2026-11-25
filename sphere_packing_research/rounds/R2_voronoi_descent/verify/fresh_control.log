@@ -1,0 +1,4 @@
+9 descent runs 24 Vp median 49.582 mean 52.136 max 74.637 | Ve median 59.198 mean 57.910 max 74.637 | mean LP steps 0.33 | independent min/pairs check ok: True
+9 random runs 26 Vp median 44.675 mean 47.495 max 74.637 | Ve median 52.948 mean 57.745 max 74.637 | mean LP steps 0.85 | independent min/pairs check ok: True
+10 descent runs 15 Vp median 57.059 mean 58.636 max 73.567 | Ve median 64.658 mean 66.200 max 83.760 | mean LP steps 0.80 | independent min/pairs check ok: True
+10 random runs 25 Vp median 54.351 mean 56.163 max 69.032 | Ve median 63.006 mean 65.172 max 94.230 | mean LP steps 1.36 | independent min/pairs check ok: True

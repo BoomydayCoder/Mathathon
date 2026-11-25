@@ -1,0 +1,139 @@
+Golay weight distribution {0: 1, 12: 2576, 8: 759, 16: 759, 24: 1}
+minimal vectors: 196560 all in Leech, norm 32 (scaled) ; t=0.9
+xi candidate 0 automorphism: True
+xi candidate 1 automorphism: True
+xi candidate 2 automorphism: False
+all 5 generators are automorphisms (map the 196560 minimal vectors into the lattice, orthogonal); t=3.0
+found order-13 element at step 35
+g: exact order 13, orthogonal, automorphism; trace = -2.0 max denominator check: entries in (1/8)Z
+sum_{j=0}^{12} g^j = 0 (no eigenvalue 1): True
+counts by s: {-4: 13104, -2: 45864, 0: 78624, 2: 45864, 4: 13104}
+matches prediction: True
+number of orbit types (a1..a6): 126
+  a= (-2, 0, 1, -2, 1, 0)  s= -4  count= 312  count/312= 1.0
+  a= (-2, 0, 1, -2, 2, -1)  s= -4  count= 312  count/312= 1.0
+  a= (-2, 1, -2, 1, 0, 0)  s= -4  count= 312  count/312= 1.0
+  a= (-2, 1, -1, 0, 0, 0)  s= -4  count= 1872  count/312= 6.0
+  a= (-2, 1, 0, -1, 1, -1)  s= -4  count= 624  count/312= 2.0
+  a= (-2, 2, -2, 1, -1, 0)  s= -4  count= 312  count/312= 1.0
+  a= (-1, 0, -1, -1, 0, 1)  s= -4  count= 1248  count/312= 4.0
+  a= (-1, 0, -1, -1, 1, 0)  s= -4  count= 1248  count/312= 4.0
+  a= (-1, 0, 0, -2, 1, 0)  s= -4  count= 1872  count/312= 6.0
+  a= (-1, 1, -2, 0, -1, 1)  s= -4  count= 624  count/312= 2.0
+  a= (-1, 1, -1, -1, 0, 0)  s= -4  count= 1248  count/312= 4.0
+  a= (0, -1, -1, -2, 1, 1)  s= -4  count= 624  count/312= 2.0
+  a= (0, 0, -2, -1, 0, 1)  s= -4  count= 1872  count/312= 6.0
+  a= (1, -1, -2, -2, 0, 2)  s= -4  count= 312  count/312= 1.0
+  a= (1, 0, -2, -2, 0, 1)  s= -4  count= 312  count/312= 1.0
+  a= (-2, 0, 0, 0, 0, 0)  s= -2  count= 1248  count/312= 4.0
+  a= (-2, 0, 0, 0, 1, -1)  s= -2  count= 312  count/312= 1.0
+  a= (-2, 0, 1, -1, 0, 0)  s= -2  count= 936  count/312= 3.0
+  a= (-2, 1, -1, 1, -1, 0)  s= -2  count= 1248  count/312= 4.0
+  a= (-2, 1, 0, 0, -1, 0)  s= -2  count= 624  count/312= 2.0
+  a= (-1, -1, 0, -1, 1, 0)  s= -2  count= 936  count/312= 3.0
+  a= (-1, -1, 0, -1, 2, -1)  s= -2  count= 312  count/312= 1.0
+  a= (-1, 0, -2, 1, 0, 0)  s= -2  count= 936  count/312= 3.0
+  a= (-1, 0, -1, 0, -1, 1)  s= -2  count= 1872  count/312= 6.0
+  a= (-1, 0, -1, 0, 0, 0)  s= -2  count= 4992  count/312= 16.0
+  a= (-1, 0, 0, -1, 0, 0)  s= -2  count= 4992  count/312= 16.0
+  a= (-1, 0, 0, -1, 1, -1)  s= -2  count= 2808  count/312= 9.0
+  a= (-1, 0, 1, -2, 1, -1)  s= -2  count= 1248  count/312= 4.0
+  a= (-1, 1, -1, 0, -1, 0)  s= -2  count= 2808  count/312= 9.0
+  a= (-1, 1, -1, 0, 0, -1)  s= -2  count= 936  count/312= 3.0
+  a= (-1, 1, 0, -1, 0, -1)  s= -2  count= 1872  count/312= 6.0
+  a= (-1, 2, -1, 0, -1, -1)  s= -2  count= 312  count/312= 1.0
+  a= (0, -1, -2, 0, 0, 1)  s= -2  count= 624  count/312= 2.0
+  a= (0, -1, -1, -1, -1, 2)  s= -2  count= 312  count/312= 1.0
+  a= (0, -1, -1, -1, 0, 1)  s= -2  count= 2808  count/312= 9.0
+  a= (0, -1, -1, -1, 1, 0)  s= -2  count= 1872  count/312= 6.0
+  a= (0, -1, 0, -2, 0, 1)  s= -2  count= 312  count/312= 1.0
+  a= (0, 0, -2, 0, 0, 0)  s= -2  count= 1248  count/312= 4.0
+  a= (0, 0, -1, -1, -1, 1)  s= -2  count= 936  count/312= 3.0
+  a= (0, 0, -1, -1, 0, 0)  s= -2  count= 4992  count/312= 16.0
+  a= (0, 0, 0, -2, 0, 0)  s= -2  count= 1248  count/312= 4.0
+  a= (0, 0, 0, -2, 1, -1)  s= -2  count= 624  count/312= 2.0
+  a= (0, 1, -2, 0, -1, 0)  s= -2  count= 312  count/312= 1.0
+  a= (1, -1, -2, -1, 0, 1)  s= -2  count= 1248  count/312= 4.0
+  a= (1, 0, -1, -2, 0, 0)  s= -2  count= 936  count/312= 3.0
+  a= (-2, 0, 0, 1, -2, 1)  s= 0  count= 312  count/312= 1.0
+  a= (-1, -1, -1, 1, 0, 0)  s= 0  count= 312  count/312= 1.0
+  a= (-1, -1, -1, 1, 1, -1)  s= 0  count= 936  count/312= 3.0
+  a= (-1, -1, 0, 0, -1, 1)  s= 0  count= 1872  count/312= 6.0
+  a= (-1, -1, 0, 0, 0, 0)  s= 0  count= 3744  count/312= 12.0
+  a= (-1, -1, 0, 0, 1, -1)  s= 0  count= 2808  count/312= 9.0
+  a= (-1, -1, 1, -1, -1, 1)  s= 0  count= 936  count/312= 3.0
+  a= (-1, -1, 1, -1, 0, 0)  s= 0  count= 2808  count/312= 9.0
+  a= (-1, -1, 1, -1, 1, -1)  s= 0  count= 936  count/312= 3.0
+  a= (-1, 0, -1, 1, -1, 0)  s= 0  count= 1872  count/312= 6.0
+  a= (-1, 0, -1, 1, 0, -1)  s= 0  count= 2808  count/312= 9.0
+  a= (-1, 0, 0, 0, -1, 0)  s= 0  count= 6552  count/312= 21.0
+  a= (-1, 0, 0, 0, 0, -1)  s= 0  count= 3744  count/312= 12.0
+  a= (-1, 0, 1, -1, -1, 0)  s= 0  count= 312  count/312= 1.0
+  a= (-1, 0, 1, -1, 0, -1)  s= 0  count= 1872  count/312= 6.0
+  a= (-1, 1, -1, 1, -1, -1)  s= 0  count= 936  count/312= 3.0
+  a= (-1, 1, 0, 0, -1, -1)  s= 0  count= 312  count/312= 1.0
+  a= (0, -1, -1, 0, -1, 1)  s= 0  count= 312  count/312= 1.0
+  a= (0, -1, -1, 0, 0, 0)  s= 0  count= 6552  count/312= 21.0
+  a= (0, -1, -1, 0, 1, -1)  s= 0  count= 1872  count/312= 6.0
+  a= (0, -1, 0, -1, -1, 1)  s= 0  count= 2808  count/312= 9.0
+  a= (0, -1, 0, -1, 0, 0)  s= 0  count= 3744  count/312= 12.0
+  a= (0, -1, 0, -1, 1, -1)  s= 0  count= 312  count/312= 1.0
+  a= (0, 0, -1, 0, -1, 0)  s= 0  count= 3744  count/312= 12.0
+  a= (0, 0, -1, 0, 0, -1)  s= 0  count= 3744  count/312= 12.0
+  a= (0, 0, 0, -1, -1, 0)  s= 0  count= 3744  count/312= 12.0
+  a= (0, 0, 0, -1, 0, -1)  s= 0  count= 6552  count/312= 21.0
+  a= (0, 1, -1, 0, -1, -1)  s= 0  count= 2808  count/312= 9.0
+  a= (0, 1, 0, -1, -1, -1)  s= 0  count= 1872  count/312= 6.0
+  a= (0, 1, 1, -2, 0, -2)  s= 0  count= 312  count/312= 1.0
+  a= (1, -2, -2, 0, 1, 0)  s= 0  count= 312  count/312= 1.0
+  a= (1, -1, -1, -1, -1, 1)  s= 0  count= 936  count/312= 3.0
+  a= (1, -1, -1, -1, 0, 0)  s= 0  count= 1872  count/312= 6.0
+  a= (1, 0, -1, -1, -1, 0)  s= 0  count= 2808  count/312= 9.0
+  a= (1, 0, -1, -1, 0, -1)  s= 0  count= 312  count/312= 1.0
+  a= (1, 1, -1, -1, -1, -1)  s= 0  count= 936  count/312= 3.0
+  a= (-1, -2, 1, 0, 0, 0)  s= 2  count= 312  count/312= 1.0
+  a= (-1, -1, -1, 2, 0, -1)  s= 2  count= 312  count/312= 1.0
+  a= (-1, -1, 0, 1, -1, 0)  s= 2  count= 1872  count/312= 6.0
+  a= (-1, -1, 0, 1, 0, -1)  s= 2  count= 936  count/312= 3.0
+  a= (-1, -1, 1, 0, -2, 1)  s= 2  count= 1248  count/312= 4.0
+  a= (-1, -1, 1, 0, -1, 0)  s= 2  count= 2808  count/312= 9.0
+  a= (-1, -1, 2, -1, -1, 0)  s= 2  count= 312  count/312= 1.0
+  a= (-1, 0, 1, 0, -2, 0)  s= 2  count= 624  count/312= 2.0
+  a= (0, -2, -1, 1, 0, 0)  s= 2  count= 624  count/312= 2.0
+  a= (0, -2, -1, 1, 1, -1)  s= 2  count= 1248  count/312= 4.0
+  a= (0, -2, 0, 0, -1, 1)  s= 2  count= 936  count/312= 3.0
+  a= (0, -2, 0, 0, 0, 0)  s= 2  count= 1248  count/312= 4.0
+  a= (0, -1, -1, 1, 0, -1)  s= 2  count= 2808  count/312= 9.0
+  a= (0, -1, 0, 0, -1, 0)  s= 2  count= 4992  count/312= 16.0
+  a= (0, -1, 0, 0, 0, -1)  s= 2  count= 4992  count/312= 16.0
+  a= (0, -1, 0, 0, 1, -2)  s= 2  count= 936  count/312= 3.0
+  a= (0, -1, 1, -1, -1, 0)  s= 2  count= 936  count/312= 3.0
+  a= (0, 0, -1, 1, 0, -2)  s= 2  count= 312  count/312= 1.0
+  a= (0, 0, 0, 0, -2, 0)  s= 2  count= 1248  count/312= 4.0
+  a= (0, 0, 0, 0, -1, -1)  s= 2  count= 4992  count/312= 16.0
+  a= (0, 0, 0, 0, 0, -2)  s= 2  count= 1248  count/312= 4.0
+  a= (0, 0, 1, -1, -1, -1)  s= 2  count= 1872  count/312= 6.0
+  a= (0, 1, 0, 0, -2, -1)  s= 2  count= 936  count/312= 3.0
+  a= (1, -1, -1, 0, 0, -1)  s= 2  count= 1872  count/312= 6.0
+  a= (1, 0, -1, 0, -1, -1)  s= 2  count= 936  count/312= 3.0
+  a= (1, 0, 0, -1, -2, 0)  s= 2  count= 312  count/312= 1.0
+  a= (1, 0, 0, -1, -1, -1)  s= 2  count= 2808  count/312= 9.0
+  a= (1, 0, 0, -1, 0, -2)  s= 2  count= 624  count/312= 2.0
+  a= (1, 1, 0, -1, -1, -2)  s= 2  count= 1248  count/312= 4.0
+  a= (2, 0, -1, -1, -1, -1)  s= 2  count= 312  count/312= 1.0
+  a= (-1, -2, 1, 1, -1, 0)  s= 4  count= 624  count/312= 2.0
+  a= (-1, -2, 2, 0, -2, 1)  s= 4  count= 312  count/312= 1.0
+  a= (0, -2, -1, 2, 1, -2)  s= 4  count= 312  count/312= 1.0
+  a= (0, -2, 0, 1, 0, -1)  s= 4  count= 1872  count/312= 6.0
+  a= (0, -2, 0, 1, 1, -2)  s= 4  count= 312  count/312= 1.0
+  a= (0, -2, 1, 0, -2, 1)  s= 4  count= 312  count/312= 1.0
+  a= (0, -1, 0, 1, -1, -1)  s= 4  count= 1248  count/312= 4.0
+  a= (0, -1, 1, 0, -2, 0)  s= 4  count= 1872  count/312= 6.0
+  a= (0, -1, 1, 0, -1, -1)  s= 4  count= 1248  count/312= 4.0
+  a= (1, -1, -1, 1, 0, -2)  s= 4  count= 624  count/312= 2.0
+  a= (1, -1, 0, 0, -1, -1)  s= 4  count= 1248  count/312= 4.0
+  a= (1, 0, 0, 0, -1, -2)  s= 4  count= 1872  count/312= 6.0
+  a= (1, 0, 1, -1, -2, -1)  s= 4  count= 624  count/312= 2.0
+  a= (1, 1, 0, 0, -2, -2)  s= 4  count= 312  count/312= 1.0
+  a= (2, 1, 0, -1, -2, -2)  s= 4  count= 312  count/312= 1.0
+total time 3.9

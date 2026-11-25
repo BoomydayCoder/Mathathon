@@ -1,0 +1,8 @@
+[    2.3s] p=61 setup ok: kappa=-1, rounding residuals (np.float64(1.2789769243681803e-13), np.float64(1.0231815394945443e-12), np.float64(9.947598300641403e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    2.4s] closure iterations 3; det(B on Lambda_0) = ~1e248 ; D = 13725.0 (exact m^2 p: True)
+[   23.4s] LLL done; diag(B) min 900 max 5250 ; |E B^-1 E - pB| = 3.06e-06
+[   23.4s] Lambda^H rank 8 det_B = 90945137716272125244140625 ; maximal-order value p^4 m^16 = 90945137716272125244140625 -> maximal: True ; ratio det/(p^4 m^16) = 1.0 ; borderline calibration det^m == m^(8m) det(Lambda): True
+[   23.5s] delta_u matrices: delta_{v0}=1, commute with S,T (exact), preserve Lambda_0 (exact) for a Z-basis of Lambda^H  => O = End_G(Lambda_0) acts
+[   23.7s] lines: 300 distinct vectors mod +-eps^Z with Gamma <= 16.00 theta (enumeration complete=True); processing 300
+[   24.4s] LINES split C_15 (rank 8), all w with Gamma<=16.00 theta: max exact R_U = 1 = 1.000000 ; (Gamma/theta, saturation index, class): count = [((1.0, 1, 'R=1'), 12), ((4.0, 16, 'R=1'), 12), ((9.0, 81, 'R=1'), 72), ((12.0, 144, 'R=1'), 96), ((13.0, 169, 'R=1'), 96), ((16.0, 256, 'R=1'), 12)]
+[   24.4s] DONE

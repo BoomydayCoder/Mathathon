@@ -1,0 +1,7 @@
+ALL minimal vectors (via 630 C(g)-orbit representatives): (s, N(nu)=13-s^2/4, det(O_0 w), saturation index, det M_w) -> number of minimal vectors
+    (-4, 9, 104976, 4, 6561) 13104
+    (-2, 12, 331776, 4, 20736) 45864
+    (0, 13, 456976, 4, 28561) 78624
+    (2, 12, 331776, 4, 20736) 45864
+    (4, 9, 104976, 4, 6561) 13104
+total 196560 ; det M_w == N(nu)^4 for all: True ; time 0.7

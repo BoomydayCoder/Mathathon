@@ -1,0 +1,12 @@
+[    0.0s] p=5 setup ok: kappa=-1, rounding residuals (np.float64(3.3306690738754696e-16), np.float64(1.7763568394002505e-15), np.float64(6.661338147750939e-16)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    0.0s] closure iterations 1; det(B on Lambda_0) = 625 ; D = 5.0 (exact m^2 p: True)
+[    0.0s] LLL done; diag(B) min 4 max 4 ; |E B^-1 E - pB| = 7.11e-15
+[    0.0s] Lambda^H rank 8 det_B = 625 ; maximal-order value p^4 m^16 = 625 -> maximal: True ; ratio det/(p^4 m^16) = 1.0 ; borderline calibration det^m == m^(8m) det(Lambda): True
+[    0.0s] delta_u matrices: delta_{v0}=1, commute with S,T (exact), preserve Lambda_0 (exact) for a Z-basis of Lambda^H  => O = End_G(Lambda_0) acts
+[    0.0s] units of O with nrd=1 (b=4m^2,e=0) mod +-: 60 ; elements of order 3 in O^x: 20
+[    0.0s] twist 0: kernel rank found 0, expected 0
+Traceback (most recent call last):
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R10_weil_lattices/B/extras.py", line 115, in <module>
+    kk = len(C); Rlike = math.exp(kk * math.log(n / kk) + (kk / 2) * math.log(Wl.D) - ld)
+                                                ~~^~~~
+ZeroDivisionError: division by zero

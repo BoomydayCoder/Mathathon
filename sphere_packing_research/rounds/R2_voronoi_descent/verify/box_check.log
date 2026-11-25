@@ -1,0 +1,9 @@
+n=2: box-checked 20 forms (distinct classes first, top V 3.6275987284684357), all ok: True, min range [1.0000000000,1.0000000000], skipped (box too big): 0, t=0s
+n=3: box-checked 20 forms (distinct classes first, top V 5.923843917544488), all ok: True, min range [1.0000000000,1.0000000000], skipped (box too big): 0, t=0s
+n=4: box-checked 20 forms (distinct classes first, top V 9.869604401089358), all ok: True, min range [1.0000000000,1.0000000000], skipped (box too big): 0, t=0s
+n=5: box-checked 20 forms (distinct classes first, top V 14.888243625896283), all ok: True, min range [1.0000000000,1.0000000000], skipped (box too big): 0, t=0s
+n=6: box-checked 20 forms (distinct classes first, top V 23.868642917252153), all ok: True, min range [1.0000000000,1.0000000000], skipped (box too big): 0, t=0s
+n=7: box-checked 20 forms (distinct classes first, top V 37.79812776265124), all ok: True, min range [0.9999999998,1.0000000000], skipped (box too big): 0, t=0s
+n=8: box-checked 25 forms (distinct classes first, top V 64.93939402266825), all ok: True, min range [0.9999999996,1.0000000000], skipped (box too big): 0, t=0s
+n=9: box-checked 22 forms (distinct classes first, top V 74.6367364137836), all ok: True, min range [0.9999999998,1.0000000000], skipped (box too big): 0, t=1s
+n=10: box-checked 22 forms (distinct classes first, top V 94.22962527365684), all ok: True, min range [0.9999999998,1.0000000000], skipped (box too big): 0, t=7s

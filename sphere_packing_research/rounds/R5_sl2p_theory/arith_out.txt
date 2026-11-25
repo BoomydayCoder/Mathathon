@@ -1,0 +1,29 @@
+{'p': 5, 'eps': (1, 1), 'r': 1.0, 'need': 1.0, 'mu': 2, 'Nmin_compatible': None, 'n_dangerous_classes': 0, 'n_compatible': 0, 'smallest': [], 'unit_bound': 1.0, 'need_mu_unit': 2.0}
+{'p': 13, 'eps': (3, 1), 'r': 3.0, 'need': 9.0, 'mu': 4, 'Nmin_compatible': 4, 'n_dangerous_classes': 6, 'n_compatible': 2, 'smallest': [(4, [(4, -6), (4, 6)])], 'unit_bound': 4.0, 'need_mu_unit': 6.0}
+{'p': 17, 'eps': (8, 2), 'r': 4.0, 'need': 16.0, 'mu': 4, 'Nmin_compatible': 1, 'n_dangerous_classes': 16, 'n_compatible': 12, 'smallest': [(1, [(4, -8), (4, 8)]), (4, [(8, -16), (8, 16)]), (8, [(4, -6), (4, 6), (6, -11), (6, 11)]), (9, [(12, -24), (12, 24)]), (13, [(4, -4), (4, 4)])], 'unit_bound': 1.0, 'need_mu_unit': 16.0}
+{'p': 29, 'eps': (5, 1), 'r': 7.0, 'need': 49.0, 'mu': 6, 'Nmin_compatible': 9, 'n_dangerous_classes': 33, 'n_compatible': 16, 'smallest': [(9, [(6, -15), (6, 15)]), (16, [(8, -20), (8, 20)]), (23, [(6, -13), (6, 13)]), (25, [(10, -25), (10, 25)]), (35, [(6, -11), (6, 11), (8, -18), (8, 18)]), (36, [(12, -30), (12, 30)])], 'unit_bound': 9.0, 'need_mu_unit': 14.0}
+{'p': 37, 'eps': (12, 2), 'r': 9.0, 'need': 81.0, 'mu': 6, 'Nmin_compatible': 4, 'n_dangerous_classes': 73, 'n_compatible': 54, 'smallest': [(4, [(8, -24), (8, 24)]), (9, [(12, -36), (12, 36)]), (11, [(6, -17), (6, 17)]), (16, [(16, -48), (16, 48)]), (21, [(10, -29), (10, 29)]), (25, [(20, -60), (20, 60)])], 'unit_bound': 2.25, 'need_mu_unit': 36.0}
+{'p': 37, 'eps': (12, 2), 'r': 9.0, 'need': 81.0, 'mu': 8, 'Nmin_compatible': 4, 'n_dangerous_classes': 73, 'n_compatible': 40, 'smallest': [(4, [(8, -24), (8, 24)]), (9, [(12, -36), (12, 36)]), (16, [(16, -48), (16, 48)]), (21, [(10, -29), (10, 29)]), (25, [(20, -60), (20, 60)]), (27, [(8, -22), (8, 22)])], 'unit_bound': 4.0, 'need_mu_unit': 36.0}
+{'p': 41, 'eps': (64, 10), 'r': 10.0, 'need': 100.0, 'mu': 8, 'Nmin_compatible': 1, 'n_dangerous_classes': 137, 'n_compatible': 98, 'smallest': [(1, [(20, -64), (20, 64)]), (4, [(40, -128), (40, 128)]), (8, [(12, -38), (12, 38)]), (9, [(60, -192), (60, 192)]), (10, [(26, -83), (26, 83)]), (16, [(10, -31), (10, 31), (80, -256), (80, 256)])], 'unit_bound': 0.16, 'need_mu_unit': 200.0}
+{'p': 53, 'eps': (7, 1), 'r': 13.0, 'need': 169.0, 'mu': 10, 'Nmin_compatible': 25, 'n_dangerous_classes': 99, 'n_compatible': 38, 'smallest': [(25, [(10, -35), (10, 35)]), (36, [(12, -42), (12, 42)]), (49, [(14, -49), (14, 49)]), (59, [(10, -33), (10, 33)]), (64, [(16, -56), (16, 56)]), (77, [(12, -40), (12, 40)])], 'unit_bound': 25.0, 'need_mu_unit': 26.0}
+{'p': 61, 'eps': (39, 5), 'r': 15.0, 'need': 225.0, 'mu': 12, 'Nmin_compatible': 4, 'n_dangerous_classes': 215, 'n_compatible': 132, 'smallest': [(4, [(20, -78), (20, 78)]), (9, [(30, -117), (30, 117)]), (15, [(16, -62), (16, 62)]), (16, [(40, -156), (40, 156)]), (20, [(12, -46), (12, 46)]), (25, [(50, -195), (50, 195)])], 'unit_bound': 1.44, 'need_mu_unit': 150.0}
+{'p': 73, 'eps': (2136, 250), 'r': 18.0, 'need': 324.0, 'mu': 14, 'Nmin_compatible': 1, 'n_dangerous_classes': 590, 'n_compatible': 472, 'smallest': [(1, [(500, -2136), (500, 2136)]), (2, [(114, -487), (114, 487)]), (4, [(26, -111), (26, 111), (1000, -4272), (1000, 4272)]), (6, [(70, -299), (70, 299)]), (8, [(228, -974), (228, 974)]), (9, [(1500, -6408), (1500, 6408)])], 'unit_bound': 0.000784, 'need_mu_unit': 9000.0}
+
+p=5 eps=1.618  E#dangerous (mod units, Siegel-random) = 3.000e+01   (p+1)/2=3
+p=13 eps=3.303  E#dangerous (mod units, Siegel-random) = 1.153e+04   (p+1)/2=7
+p=17 eps=8.123  E#dangerous (mod units, Siegel-random) = 7.489e+04   (p+1)/2=9
+p=29 eps=5.193  E#dangerous (mod units, Siegel-random) = 2.096e+05   (p+1)/2=15
+p=37 eps=12.083  E#dangerous (mod units, Siegel-random) = 1.584e+05   (p+1)/2=19
+p=41 eps=64.016  E#dangerous (mod units, Siegel-random) = 1.319e+05   (p+1)/2=21
+p=53 eps=7.140  E#dangerous (mod units, Siegel-random) = 2.498e+03   (p+1)/2=27
+p=61 eps=39.026  E#dangerous (mod units, Siegel-random) = 2.461e+02   (p+1)/2=31
+p=73 eps=2136.000  E#dangerous (mod units, Siegel-random) = 2.343e+00   (p+1)/2=37
+p=89 eps=1000.001  E#dangerous (mod units, Siegel-random) = 3.424e-04   (p+1)/2=45
+p=97 eps=11208.000  E#dangerous (mod units, Siegel-random) = 3.346e-06   (p+1)/2=49
+p=101 eps=20.050  E#dangerous (mod units, Siegel-random) = 8.066e-08   (p+1)/2=51
+p=109 eps=261.004  E#dangerous (mod units, Siegel-random) = 6.636e-10   (p+1)/2=55
+p=113 eps=1552.001  E#dangerous (mod units, Siegel-random) = 5.213e-11   (p+1)/2=57
+p=137 eps=3488.000  E#dangerous (mod units, Siegel-random) = 6.205e-19   (p+1)/2=69
+p=149 eps=61.016  E#dangerous (mod units, Siegel-random) = 1.425e-23   (p+1)/2=75
+p=157 eps=213.005  E#dangerous (mod units, Siegel-random) = 1.804e-26   (p+1)/2=79
+p=193 eps=3528264.000  E#dangerous (mod units, Siegel-random) = 1.271e-40   (p+1)/2=97

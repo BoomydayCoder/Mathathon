@@ -1,0 +1,10 @@
+n6_gm.json: 24 recs, 120 forms, 0.2s
+n6_gauss.json: 24 recs, 120 forms, 0.2s
+n8_gm.json: 24 recs, 120 forms, 0.4s
+n8_gauss.json: 24 recs, 120 forms, 0.4s
+n10_gm.json: 24 recs, 120 forms, 1.0s
+n10_gauss.json: 20 recs, 95 forms, 0.7s
+n12_gm.json: 20 recs, 58 forms, 1.0s
+n12_gauss.json: 12 recs, 26 forms, 0.2s
+n14_gm.json: 10 recs, 13 forms, 0.1s
+total 4.366828680038452

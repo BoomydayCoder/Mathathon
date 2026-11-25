@@ -1,0 +1,12 @@
+M=105 pool=7 N avoiding M with lcm=M: cands=90 pass vertex+singleton-partition=0 pass all cuts=0 admissible(LP)=0  M/phi(M)=2.1875 time=0.0s
+M=225 pool=8 N avoiding M with lcm=M: cands=144 pass vertex+singleton-partition=0 pass all cuts=0 admissible(LP)=0  M/phi(M)=1.8750 time=0.0s
+M=315 pool=11 N avoiding M with lcm=M: cands=1700 pass vertex+singleton-partition=0 pass all cuts=0 admissible(LP)=0  M/phi(M)=2.1875 time=0.0s
+M=525 pool=11 N avoiding M with lcm=M: cands=1700 pass vertex+singleton-partition=3 pass all cuts=0 admissible(LP)=0  M/phi(M)=2.1875 time=0.0s
+M=945 pool=15 N avoiding M with lcm=M: cands=28296 pass vertex+singleton-partition=0 pass all cuts=0 admissible(LP)=0  M/phi(M)=2.1875 time=0.9s
+M=1155 pool=15 N avoiding M with lcm=M: cands=31826 pass vertex+singleton-partition=0 pass all cuts=0 admissible(LP)=0  M/phi(M)=2.4062 time=0.8s
+M=1365 pool=15 N avoiding M with lcm=M: cands=31826 pass vertex+singleton-partition=0 pass all cuts=0 admissible(LP)=0  M/phi(M)=2.3698 time=0.8s
+M=2145 pool=15 N avoiding M with lcm=M: cands=31826 pass vertex+singleton-partition=0 pass all cuts=0 admissible(LP)=0  M/phi(M)=2.2344 time=0.8s
+M=60 pool=7 N avoiding M with lcm=M: cands=90 pass vertex+singleton-partition=0 pass all cuts=0 admissible(LP)=0  M/phi(M)=3.7500 time=0.0s
+M=420 pool=15 N avoiding M with lcm=M: cands=31826 pass vertex+singleton-partition=0 pass all cuts=0 admissible(LP)=0  M/phi(M)=4.3750 time=0.7s
+M=120 pool=11 N avoiding M with lcm=M: cands=1700 pass vertex+singleton-partition=0 pass all cuts=0 admissible(LP)=0  M/phi(M)=3.7500 time=0.0s
+RANDOM M=15015: tried=2617395 pass quick=12 pass cuts=0 best admissible avoiding M: None  (M/phi(M)=2.6068)

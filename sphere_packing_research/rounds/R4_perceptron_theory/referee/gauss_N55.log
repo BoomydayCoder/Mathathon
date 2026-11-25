@@ -1,0 +1,19 @@
+{'N': 55, 'seed': 777, 'srel': 11.0, 'M': 4973, 'v_N': 1.0334, 'rho2': 4.7459, 'V_N': 1.8702, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 265685} 0.8
+{'N': 55, 'seed': 778, 'srel': 11.0, 'M': 4901, 'v_N': 0.7003, 'rho2': 8.1373, 'V_N': 1.9367, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 264408} 0.9
+{'N': 55, 'seed': 779, 'srel': 11.0, 'M': 4930, 'v_N': 0.575, 'rho2': 9.2674, 'V_N': 1.8315, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 265169} 0.7
+{'N': 55, 'seed': 780, 'srel': 11.0, 'M': 4922, 'v_N': 0.626, 'rho2': 8.9146, 'V_N': 1.9078, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 264790} 0.8
+{'N': 55, 'seed': 781, 'srel': 11.0, 'M': 4942, 'v_N': 0.7934, 'rho2': 4.3628, 'V_N': 1.3688, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 265599} 0.8
+{'N': 55, 'seed': 782, 'srel': 11.0, 'M': 4788, 'v_N': 0.6403, 'rho2': 8.2891, 'V_N': 1.8046, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 265180} 0.9
+{'N': 55, 'seed': 783, 'srel': 11.0, 'M': 4895, 'v_N': 0.7963, 'rho2': 6.1497, 'V_N': 1.7177, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 265763} 0.8
+{'N': 55, 'seed': 784, 'srel': 11.0, 'M': 4925, 'v_N': 0.6796, 'rho2': 9.0765, 'V_N': 2.1134, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 266303} 0.8
+{'N': 55, 'seed': 785, 'srel': 11.0, 'M': 4940, 'v_N': 0.9739, 'rho2': 4.8945, 'V_N': 1.7957, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 265745} 0.9
+{'N': 55, 'seed': 786, 'srel': 11.0, 'M': 4972, 'v_N': 0.802, 'rho2': 8.4885, 'V_N': 2.3174, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 265441} 0.9
+{'N': 55, 'seed': 787, 'srel': 11.0, 'M': 4838, 'v_N': 0.7417, 'rho2': 6.6112, 'V_N': 1.6949, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 265988} 0.9
+{'N': 55, 'seed': 788, 'srel': 11.0, 'M': 4891, 'v_N': 0.8264, 'rho2': 8.3034, 'V_N': 2.3331, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 265469} 0.8
+{'N': 55, 'seed': 789, 'srel': 11.0, 'M': 4839, 'v_N': 0.5667, 'rho2': 11.3168, 'V_N': 2.3318, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 265561} 0.7
+{'N': 55, 'seed': 790, 'srel': 11.0, 'M': 4993, 'v_N': 0.5178, 'rho2': 9.5939, 'V_N': 1.7178, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 1, 'M_beyond': 264667} 0.9
+{'N': 55, 'seed': 791, 'srel': 11.0, 'M': 5065, 'v_N': 0.956, 'rho2': 6.776, 'V_N': 2.23, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 265507} 1.1
+{'N': 55, 'seed': 792, 'srel': 11.0, 'M': 4968, 'v_N': 0.9995, 'rho2': 5.1061, 'V_N': 1.8923, 'act_N': 1.0, 'minslack': -0.0, 'viol_beyond': 0, 'M_beyond': 264936} 0.9
+N=55 v_N mean=0.7643 sd=0.1628 se=0.0407 (pred 0.7358)
+N=55 rho2 mean=7.5021 sd=2.0379 se=0.5095 (pred 8)
+N=55 V_N mean=1.9290 sd=0.2717 se=0.0679 (pred 2)

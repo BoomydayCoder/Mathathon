@@ -1,0 +1,4 @@
+fresh n=6 p=1000000007: 40 lattices in 0.9s | V_LP/N = 1.129+-0.005 (std 0.034) | v_LP/N = 0.437 | pairs/N = 1.700 | simple 0/40 | best known 38/40 | mean V0 = 1.71 | mean grid lam1^2 = 605.7 | max dual resid 4.5e-16 | max |min-1| 0.0e+00
+fresh n=8 p=1000000007: 48 lattices in 1.5s | V_LP/N = 1.550+-0.053 (std 0.365) | v_LP/N = 0.423 | pairs/N = 2.719 | simple 0/48 | best known 32/48 | mean V0 = 1.50 | mean grid lam1^2 = 126.4 | max dual resid 6.3e-16 | max |min-1| 2.2e-16
+fresh n=10 p=1000000007: 30 lattices in 1.2s | V_LP/N = 1.168+-0.023 (std 0.125) | v_LP/N = 0.478 | pairs/N = 1.619 | simple 0/30 | best known 0/30 | mean V0 = 1.98 | mean grid lam1^2 = 56.8 | max dual resid 6.3e-16 | max |min-1| 1.2e-15
+fresh n=12 p=1000000000039: 20 lattices in 2.1s | V_LP/N = 1.183+-0.042 (std 0.187) | v_LP/N = 0.496 | pairs/N = 1.360 | simple 0/20 | best known 0/20 | mean V0 = 2.13 | mean grid lam1^2 = 101.0 | max dual resid 8.2e-16 | max |min-1| 1.6e-15

@@ -1,0 +1,17 @@
+lpscan_n7_gm.json: 24 recs, 24 forms, 0.0s
+lpscan_n9_gm.json: 24 recs, 24 forms, 0.0s
+lpscan_n11_gm.json: 24 recs, 24 forms, 0.1s
+lpscan_n13_gm.json: 24 recs, 24 forms, 0.1s
+lpscan_n14_gm.json: 30 recs, 30 forms, 0.1s
+lpscan_n16_gm.json: 30 recs, 30 forms, 0.2s
+lpscan_n16_gauss.json: 14 recs, 14 forms, 0.1s
+lpscan_n16_gmP1e6.json: 14 recs, 14 forms, 0.1s
+lpscan_n18_gm.json: 20 recs, 20 forms, 0.2s
+lpscan_n20_gm.json: 12 recs, 12 forms, 0.2s
+lpscan_n20_gauss.json: 8 recs, 8 forms, 0.4s
+lpscan_n20_gmP1e6.json: 7 recs, 7 forms, 0.2s
+lpscan_n22_gm.json: 9 recs, 9 forms, 0.3s
+lpscan_n24_gm.json: 5 recs, 5 forms, 0.1s
+lpscan_n26_gm.json: 2 recs, 2 forms, 0.3s
+lpscan_n28_gm.json: 3 recs, 3 forms, 0.7s
+total 3.3589377403259277

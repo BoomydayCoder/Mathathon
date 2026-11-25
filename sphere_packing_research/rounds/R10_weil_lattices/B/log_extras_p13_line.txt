@@ -1,0 +1,7 @@
+[    0.0s] p=13 setup ok: kappa=-1, rounding residuals (np.float64(7.105427357601002e-15), np.float64(3.552713678800501e-14), np.float64(8.881784197001252e-15)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    0.0s] closure iterations 2; det(B on Lambda_0) = 6580067382037190942729361 ; D = 117.0 (exact m^2 p: True)
+[    0.3s] LLL done; diag(B) min 36 max 36 ; |E B^-1 E - pB| = 1.42e-12
+[    0.3s] Lambda^H rank 8 det_B = 1229457398481 ; maximal-order value p^4 m^16 = 1229457398481 -> maximal: True ; ratio det/(p^4 m^16) = 1.0 ; borderline calibration det^m == m^(8m) det(Lambda): True
+[    0.3s] delta_u matrices: delta_{v0}=1, commute with S,T (exact), preserve Lambda_0 (exact) for a Z-basis of Lambda^H  => O = End_G(Lambda_0) acts
+[    0.3s] LINE {'label': 'v0', 'b': 36, 'e': 0, 'N': 16848, 'det_Ow': '1229457398481', 'det_formula_ok': True, 'saturation_index': 1, 'R_U_exact': '1229457398481/1229457398481', 'R_U': 1.0, 'lower_bound': 1.0}
+[    0.3s] DONE

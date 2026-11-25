@@ -1,0 +1,7 @@
+B_LP_n10.jsonl: n=10 N=55 samples=30  mean V_LP/N=1.976  sample std=0.277  Gamma(N,1/2) prediction: mean 2, std 2/sqrt(N)=0.270
+B_LP_n14.jsonl: n=14 N=105 samples=20  mean V_LP/N=1.992  sample std=0.201  Gamma(N,1/2) prediction: mean 2, std 2/sqrt(N)=0.195
+B_LP_n18.jsonl: n=18 N=171 samples=12  mean V_LP/N=1.954  sample std=0.121  Gamma(N,1/2) prediction: mean 2, std 2/sqrt(N)=0.153
+B_LP_n22.jsonl: n=22 N=253 samples=8  mean V_LP/N=2.029  sample std=0.144  Gamma(N,1/2) prediction: mean 2, std 2/sqrt(N)=0.126
+B_LP_n26.jsonl: n=26 N=351 samples=1  mean V_LP/N=2.018  sample std=nan  Gamma(N,1/2) prediction: mean 2, std 2/sqrt(N)=0.107
+B_LP_n26b.jsonl: n=26 N=351 samples=1  mean V_LP/N=2.155  sample std=nan  Gamma(N,1/2) prediction: mean 2, std 2/sqrt(N)=0.107
+B_LP_n26c.jsonl: n=26 N=351 samples=2  mean V_LP/N=1.911  sample std=0.031  Gamma(N,1/2) prediction: mean 2, std 2/sqrt(N)=0.107

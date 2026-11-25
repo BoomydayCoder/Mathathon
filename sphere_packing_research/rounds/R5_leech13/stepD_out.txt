@@ -1,0 +1,10 @@
+(4) stabilizer of w1: 1  [|L2|,|L3|,triples with matching Hermitian data, 1/8-integral, automorphisms] = [5, 5, 1, 1, 1]
+    search: success=True stats=[5, 5, 1, 1, 1]
+    orbit of w1: 2184, |Aut_Delta| = 2184, candidates outside orbit: 10920
+total time 2.5
+|G| = 2184
+dim_Q End_G(W) = 576 - rank = 8
+dim_Q span(G) = 72
+(order, trace) -> count: {(1, 24.0): 1, (2, -24.0): 1, (3, 0.0): 182, (4, 0.0): 182, (6, 0.0): 182, (7, -4.0): 468, (12, 0.0): 364, (13, -2.0): 168, (14, 4.0): 468, (26, 2.0): 168}
+sum tr^2 = 17472.0  ; |G|/dim A = sum (tr/24)^2 = 30.333333333333332  ; gain |G|/(2 dim A) = 15.166666666666666
+Delta basis commutes with G: True ; dim span(e) = 8
