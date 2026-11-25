@@ -1,5 +1,5 @@
-log finalized, elapsed 247 min
+log finalized, elapsed 255 min
 0
-846:LaTeX Font Warning: Font shape `TU/NanumMyeongjo(0)/m/it' undefined
-987:LaTeX Font Warning: Font shape `TU/NanumGothicCoding(0)/m/it' undefined
+854:LaTeX Font Warning: Font shape `TU/NanumMyeongjo(0)/m/it' undefined
+995:LaTeX Font Warning: Font shape `TU/NanumGothicCoding(0)/m/it' undefined
 Pages:           120
