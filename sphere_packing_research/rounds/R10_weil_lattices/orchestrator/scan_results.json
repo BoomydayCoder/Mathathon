@@ -1,89 +1,53 @@
 [
  {
-  "p": 397,
-  "r": 99,
-  "eps": 3447.0002901073153,
+  "p": 661,
+  "r": 165,
+  "eps": 1789539.0000005588,
   "unit": [
-   3447,
-   173,
+   1789539,
+   69605,
    -4
   ],
-  "theta": 98.75062972292191,
+  "theta": 164.75037821482601,
   "subs": [
    {
-    "m": 99,
+    "m": 165,
     "rank": 8,
-    "integrality": 2.0954757928848267e-09,
-    "logR_assuming_D=r^2p": 1.4210854715202004e-14,
-    "min_gamma_over_theta": 0.9999999999999982,
-    "at_t": -0.04525965067915294,
+    "integrality": 9.313225746154785e-09,
+    "logR_assuming_D=r^2p": 0.0,
+    "min_gamma_over_theta": 0.9999999999999969,
+    "at_t": 0.0025313972517508887,
     "count": 12,
-    "enum_fail": 0,
-    "unimodular_logdet": 3.107665236257162e-10,
+    "enum_fail": 31,
+    "unimodular_logdet": -0.0005884747187803185,
     "roots": 240,
-    "short": "norm 2 |s|=3: 96 pairs, norm 2 |s|=19: 24 pairs, norm 4 |s|=0: 72 pairs, norm 4 |s|=6: 192 pairs, norm 4 |s|=10: 96 pairs, norm 4 |s|=12: 24 pairs, norm 4 |s|=16: 288 pairs, norm 4 |s|=22: 288 pairs, norm 4 |s|=28: 96 pairs, norm 4 |s|=38: 24 pairs"
+    "short": "norm 2 |s|=3: 96 pairs, norm 2 |s|=25: 24 pairs, norm 4 |s|=0: 72 pairs, norm 4 |s|=6: 192 pairs, norm 4 |s|=12: 24 pairs, norm 4 |s|=16: 96 pairs, norm 4 |s|=22: 288 pairs, norm 4 |s|=28: 288 pairs, norm 4 |s|=34: 96 pairs, norm 4 |s|=50: 24 pairs"
+   },
+   {
+    "m": 55,
+    "rank": 24,
+    "integrality": 3.026798367500305e-09,
+    "logR_assuming_D=r^2p": 1.1368683772161603e-13,
+    "min_gamma_over_theta": 0.9999999999999966,
+    "at_t": 0.0025313972517508887,
+    "count": 12,
+    "enum_fail": 58,
+    "unimodular_logdet": 0.005360237531270684,
+    "roots": 144,
+    "short": "norm 2 |s|=21: 71 pairs, norm 2 |s|=22: 1 pairs, norm 4 |s|=0: 4100 pairs, norm 4 |s|=1: 341 pairs, norm 4 |s|=2: 11673 pairs, norm 4 |s|=3: 327 pairs, norm 4 |s|=4: 8236 pairs, norm 4 |s|=5: 365 pairs, norm 4 |s|=6: 8017 pairs, norm 4 |s|=7: 334 pairs, norm 4 |s|=8: 9149 pairs, norm 4 |s|=9: 282 pairs, norm 4 |s|=10: 5567 pairs, norm 4 |s|=11: 204 pairs, norm 4 |s|=12: 6371 pairs, norm 4 |s|=13: 241 pairs, norm 4 |s|=14: 4646 pairs, norm 4 |s|=15: 250 pairs, norm 4 |s|=16: 3778 pairs, norm 4 |s|=17: 260 pairs, norm 4 |s|=18: 5423 pairs, norm 4 |s|=19: 342 pairs, norm 4 |s|=20: 8086 pairs, norm 4 |s|=21: 367 pairs, norm 4 |s|=22: 3586 pairs, norm 4 |s|=23: 148 pairs, norm 4 |s|=24: 2801 pairs, norm 4 |s|=25: 72 pairs, norm 4 |s|=26: 1982 pairs, norm 4 |s|=27: 40 pairs, norm 4 |s|=28: 1051 pairs, norm 4 |s|=29: 120 pairs, norm 4 |s|=30: 2676 pairs, norm 4 |s|=31: 192 pairs, norm 4 |s|=32: 1908 pairs, norm 4 |s|=33: 99 pairs, norm 4 |s|=34: 824 pairs, norm 4 |s|=35: 36 pairs, norm 4 |s|=36: 271 pairs, norm 4 |s|=37: 19 pairs, norm 4 |s|=38: 316 pairs, norm 4 |s|=39: 56 pairs, norm 4 |s|=40: 771 pairs, norm 4 |s|=41: 80 pairs, norm 4 |s|=42: 471 pairs, norm 4 |s|=43: 35 pairs, norm 4 |s|=44: 543 pairs, norm 4 |s|=45: 24 pairs, norm 4 |s|=46: 70 pairs, norm 4 |s|=47: 2 pairs"
    },
    {
     "m": 33,
-    "rank": 24,
-    "integrality": 3.4924596548080444e-10,
-    "logR_assuming_D=r^2p": 0.0,
-    "min_gamma_over_theta": 0.999999999999998,
-    "at_t": -0.04525965067915294,
-    "count": 12,
-    "enum_fail": 0,
-    "unimodular_logdet": 9.663851940899804e-09,
-    "roots": 720,
-    "short": "norm 2 |s|=1: 288 pairs, norm 2 |s|=5: 72 pairs, norm 4 |s|=0: 6264 pairs, norm 4 |s|=2: 16704 pairs, norm 4 |s|=4: 14616 pairs, norm 4 |s|=6: 9216 pairs, norm 4 |s|=8: 8928 pairs, norm 4 |s|=10: 7992 pairs, norm 4 |s|=12: 7920 pairs, norm 4 |s|=14: 4104 pairs, norm 4 |s|=16: 5184 pairs, norm 4 |s|=18: 4320 pairs, norm 4 |s|=20: 576 pairs, norm 4 |s|=22: 2304 pairs, norm 4 |s|=24: 1152 pairs, norm 4 |s|=30: 288 pairs, norm 4 |s|=34: 72 pairs"
-   }
-  ]
- },
- {
-  "p": 421,
-  "r": 105,
-  "eps": 444939.0000022475,
-  "unit": [
-   444939,
-   21685,
-   -4
-  ],
-  "theta": 104.75059382422803,
-  "subs": [
-   {
-    "m": 105,
-    "rank": 8,
-    "integrality": 1.3969838619232178e-09,
-    "logR_assuming_D=r^2p": 0.0,
-    "min_gamma_over_theta": 0.9999999999999986,
-    "at_t": -0.00569247310565224,
-    "count": 12,
-    "enum_fail": 2,
-    "unimodular_logdet": 5.5216323566753545e-06,
-    "roots": 240,
-    "short": "norm 2 |s|=7: 96 pairs, norm 2 |s|=15: 24 pairs, norm 4 |s|=0: 72 pairs, norm 4 |s|=6: 96 pairs, norm 4 |s|=8: 288 pairs, norm 4 |s|=14: 192 pairs, norm 4 |s|=22: 288 pairs, norm 4 |s|=28: 24 pairs, norm 4 |s|=30: 24 pairs, norm 4 |s|=36: 96 pairs"
-   },
-   {
-    "m": 35,
-    "rank": 24,
-    "integrality": 6.984919309616089e-10,
-    "logR_assuming_D=r^2p": 0.0,
-    "min_gamma_over_theta": 0.9999999999999973,
-    "at_t": -0.00569247310565224,
-    "count": 12,
-    "enum_fail": 33,
-    "unimodular_logdet": 0.00046571683718710233,
-    "roots": 0,
-    "short": "norm 4 |s|=0: 11160 pairs, norm 4 |s|=2: 7488 pairs, norm 4 |s|=4: 10944 pairs, norm 4 |s|=6: 16992 pairs, norm 4 |s|=8: 4320 pairs, norm 4 |s|=10: 14040 pairs, norm 4 |s|=12: 9504 pairs, norm 4 |s|=14: 2880 pairs, norm 4 |s|=16: 9216 pairs, norm 4 |s|=18: 864 pairs, norm 4 |s|=20: 3888 pairs, norm 4 |s|=22: 2952 pairs, norm 4 |s|=24: 792 pairs, norm 4 |s|=26: 2952 pairs, norm 4 |s|=28: 288 pairs"
-   },
-   {
-    "m": 21,
     "rank": 40,
-    "integrality": 1.280568540096283e-09,
-    "logR_assuming_D=r^2p": -1.7053025658242404e-13,
-    "min_gamma_over_theta": 0.9999999999998178,
-    "at_t": -0.00569247310565224,
+    "integrality": 1.0477378964424133e-09,
+    "logR_assuming_D=r^2p": 0.0,
+    "min_gamma_over_theta": 0.9999999999999963,
+    "at_t": 0.0025313972517508887,
     "count": 12,
-    "enum_fail": 93
+    "enum_fail": 70,
+    "unimodular_logdet": 0.006825577834671748,
+    "roots": 0,
+    "short": "norm 4 |s|=0: 1349 pairs, norm 4 |s|=1: 373 pairs, norm 4 |s|=2: 2065 pairs, norm 4 |s|=3: 336 pairs, norm 4 |s|=4: 1415 pairs, norm 4 |s|=5: 297 pairs, norm 4 |s|=6: 3368 pairs, norm 4 |s|=7: 628 pairs, norm 4 |s|=8: 3220 pairs, norm 4 |s|=9: 386 pairs, norm 4 |s|=10: 3 pairs, norm 4 |s|=11: 4 pairs, norm 4 |s|=12: 432 pairs, norm 4 |s|=13: 103 pairs, norm 4 |s|=14: 2017 pairs, norm 4 |s|=15: 364 pairs, norm 4 |s|=16: 975 pairs, norm 4 |s|=17: 198 pairs, norm 4 |s|=18: 601 pairs, norm 4 |s|=19: 117 pairs, norm 4 |s|=20: 446 pairs, norm 4 |s|=21: 23 pairs, norm 4 |s|=22: 613 pairs, norm 4 |s|=23: 105 pairs, norm 4 |s|=24: 2 pairs, norm 4 |s|=28: 309 pairs, norm 4 |s|=29: 50 pairs, norm 4 |s|=30: 1 pairs"
    }
   ]
  }

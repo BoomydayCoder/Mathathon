@@ -1,0 +1,11 @@
+[    2.1s] p=61 setup ok: kappa=-1, rounding residuals (np.float64(1.2789769243681803e-13), np.float64(1.0231815394945443e-12), np.float64(9.947598300641403e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    2.1s] loaded saved basis; float logdet(B)/(p-1) = 9.526974266 vs log D = 9.526974266
+[   2.1s] p=61 n=120 r=15 D=13725  tr(S)=0 tr(T)=-2 (expect 0, -2)
+[   2.1s] eta matrix rounding residual 6.14e-07
+[   2.3s] EXACT: M B == E: True  M^2 == p: True  M commutes with S,T: True
+[   2.4s] EXACT: B X == r M with X integral (=> Lambda^# = eta/(rp) Lambda given det(B)=D^(n/2)): True resid 1.6e-06
+[   2.5s] atom dims {4: 8, 12: 16, 20: 32, 60: 64}  sum of atoms == 60 I: True
+[   13.9s]    saturated basis rank 16: float logdet 110.755699 vs log(g D^{k/2}) = 110.755699 ok=True exact=True; diag(B) min 1800 max 1800
+[  13.9s] CERT split C_60 eigen-orders (12,)            dim  16  primitive(rank mod q=k for q in [3, 5, 61]): True  det=3^24*5^32*61^8  R_U = 6561/65536 = 0.100113   tester-g matches: True
+[   76.1s]    saturated basis rank 32: float logdet 200.462685 vs log(g D^{k/2}) = 200.462685 ok=True exact=True; diag(B) min 1080 max 2160
+[  76.1s] CERT split C_60 eigen-orders (20,)            dim  32  primitive(rank mod q=k for q in [3, 5, 61]): True  det=3^64*5^40*61^16  R_U = 59604644775390625/18446744073709551616 = 0.00323117   tester-g matches: True

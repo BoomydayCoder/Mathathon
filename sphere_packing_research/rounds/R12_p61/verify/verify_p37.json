@@ -1,0 +1,48 @@
+[
+ {
+  "label": "Fix(split C_3)",
+  "dim": 24,
+  "primitive": true,
+  "R": "1",
+  "Rfloat": 1.0,
+  "glue_match": true
+ },
+ {
+  "label": "p37 vec p37 SL_2(3): Hurwitz 2 (rational char)",
+  "b": 2970,
+  "e": 17982,
+  "ratio": "7/9",
+  "inFixC3": false
+ },
+ {
+  "label": "p37 vec p37 split torus C_36: eigen-orders {4,12}",
+  "b": 1026,
+  "e": 5994,
+  "ratio": "7/9",
+  "inFixC3": true
+ },
+ {
+  "label": "Fix(split C_9)",
+  "dim": 8,
+  "primitive": true,
+  "R": "1",
+  "Rfloat": 1.0,
+  "glue_match": true
+ },
+ {
+  "label": "SL_2(3) [b=1] Hurwitz comp",
+  "dim": 24,
+  "primitive": true,
+  "R": "1/256",
+  "Rfloat": 0.00390625,
+  "glue_match": true
+ },
+ {
+  "label": "SL_2(3) [b=2] Hurwitz comp",
+  "dim": 24,
+  "primitive": true,
+  "R": "1/256",
+  "Rfloat": 0.00390625,
+  "glue_match": true
+ }
+]

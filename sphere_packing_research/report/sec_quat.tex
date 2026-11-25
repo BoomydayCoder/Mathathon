@@ -1,6 +1,6 @@
 \section{명시적 상수를 갖는 사원수 대칭 Klartag 형 정리 (6회차)}\label{sec:quat}
 
-3회차 심사에서 ``Hurwitz 가군에서는 사영된 이차변동이 상수 $q(x)\equiv\tfrac14$'' 라는 관찰이 나왔고, 이를 이용해 자유 작용 대칭족에서 \emph{상수까지 추적한} Klartag 형 정리를 완전한 증명으로 썼다. 증명 전문(317줄)은 부록 \ref{app:proof} 에 수록했다. 두 명의 독립 심사자(해석·상수 담당, 대수·측도 담당)가 Klartag 원문과 한 줄씩 대조했고 판정은 둘 다 ``\emph{수학적 오류 없음, 사소한 수정만 필요}'' 였으며, 그 수정을 반영한 것이 개정본이다.
+3회차 심사에서 ``Hurwitz 가군에서는 사영된 이차변동이 상수 $q(x)\equiv\tfrac14$'' 라는 관찰이 나왔고, 이를 이용해 자유 작용 대칭족에서 \emph{상수까지 추적한} Klartag 형 정리를 완전한 증명으로 썼다. 증명 전문(317줄)은 부록 \ref{app:proof} 에 수록했다. AI 심사 에이전트 2개(해석·상수 담당, 대수·측도 담당)가 Klartag 원문과 한 줄씩 대조했고 판정은 둘 다 ``\emph{수학적 오류 없음, 사소한 수정만 필요}'' 였으며, 그 수정을 반영한 것이 개정본이다(사람의 검토는 없었다; 개정본 자체는 다시 심사받지 않았다).
 
 \subsection{정리}
 $\mathbb K\in\{\R,\C,\HH\}$, $d=\dim_\R\mathbb K$. $D$ 를 $\Q$ 위 $\delta$ 차원 나눗셈대수로 $D_\R:=D\otimes\R\cong\mathbb K^s$ ($\delta=sd$) 인 것, $G\subset D^\times$ 를 $\Q$-span 이 $D$ 인 유한 부분군, $w=|G|$, $\mathcal O=\Z[G]$, $D_k=s\big(k+\tfrac{dk(k-1)}2\big)$ ($k\times k$ Hermite 행렬 $s$ 벌의 실차원)이라 하자.
@@ -36,9 +36,9 @@ Hurwitz 에서는 $q\equiv\tfrac14$ (상수), icosian 에서는 $q=(u_1^2+u_2^2)
 
 \subsection{한계와 의미}
 \begin{itemize}
-\item \textbf{차수는 $n^2$ 그대로다.} 따라서 큰 $n$ 에서는 AGZ/GGS 의 $c\,n^2\log\log n$ (상수 $c$ 는 명시되지 않은 작은 값) 보다 약하다. 얻은 것은 명시적 선행 상수이다. 원분체 이득 $m/(2\varphi(m))\sim\tfrac{e^\gamma}2\log\log m$ 이 $7.5$ 를 넘으려면 $\log\log m>8$ 이므로, ``현실적인'' 모든 차원에서는 icosian 상수가 더 크다.
+\item \textbf{차수는 $n^2$ 그대로다.} 따라서 충분히 큰 $n$ 에서는 AGZ/GGS 의 $c\,n^2\log\log n$ 보다 약하다(두 논문 모두 ``어떤 보편상수 $c>0$'' 만 진술하고 값을 명시하지 않는다). 얻은 것은 명시적 선행 상수이다. 비교의 기준으로 정리 \ref{thm:quatC} 를 원분체 $\Q(\zeta_m)$ 에 적용하면 이득이 $m/(2\varphi(m))\lesssim\tfrac{e^\gamma}2\log\log m$ 이고 이것이 $7.5$ 를 넘으려면 $\log\log m>8$ 이어야 하므로, 이 틀 안에서는 천문학적으로 큰 차원 전까지 icosian 상수가 더 크다(AGZ/GGS 의 실제 상수와의 비교는 아니다).
 \item 점근적 진술이며 $o(1)$ 은 비효과적이고 느리다(상대오차 $O((\log n)^{-1/4})$; 구적으로 $n=10^4,10^5,10^6$ 에서 극한값의 $1.19,1.045,1.02$ 배). $4\mid n$, $8\mid n$ 밖의 차원에 대해서는 아무것도 주장하지 않는다.
-\item \textbf{새로움에 대한 단서.} AGZ (arXiv:2606.05105) 는 원분체만 다루고 나눗셈대수는 인용(Gargava, Vance)만 한다는 것을 본문 검색으로 확인했으나, 이 명시적 상수 결과가 다른 문헌에 없는지는 확인하지 못했다.
+\item \textbf{새로움에 대한 단서.} 14회차의 문헌 점검(arXiv 초록 검색; AGZ 2606.05105, GGS 2610.12619, Rezvyakova 2608.22590, Gargava 2107.04844 의 본문 확인)에서: AGZ 와 GGS 는 원분(가환) 경우만 다루고 상수를 명시하지 않으며, 명시적 상수는 Rezvyakova 의 $\tfrac1{2e}$ 가 유일하고, 나눗셈대수 쪽의 기존 결과(Gargava; Vance)는 1차 모멘트 수준($n$ 의 선형 차수)이다. 즉 $\tfrac1{2e}$ 보다 큰 명시적 상수나 사원수 가군에 Klartag 방법을 적용한 선행 결과는 \emph{찾지 못했다}. 다만 검색은 초록 문구 기반이고 일부 문헌(Gargava 의 학위논문, GGS 의 부록)은 열지 못했으므로 새로움을 단정하지는 않는다. 나눗셈대수 위 가군에 대한 Rogers 형 고차 모멘트 공식도 찾지 못했다(수체 경우만 존재).
 \item 일반적인 행렬 블록($D_\R\supset M_m(\mathbb K)$, $m>1$)의 경우를 위해 개정자가 \S7(Wishart 형 각도 보조정리)을 추가했으나 \emph{심사받지 않았다}.
 \item 8회차의 실험은 이 정리의 구조를 소차원에서 그대로 보여 준다: 등변 과정의 첫 $\mathcal Q$-perfect 형식의 부피가 $V\approx1.06\,(wD/2)$ (\S\ref{sec:equiv}).
 \end{itemize}

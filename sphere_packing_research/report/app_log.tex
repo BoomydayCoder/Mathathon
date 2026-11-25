@@ -443,14 +443,18 @@
   \textbf{명세 정정(빌더 보고)}: (i) \(E_8\)/Leech 는 \(\alpha=\beta\) (\(t=0\))가 아니라 \(t=\pm\log\varepsilon\) 에 있다(\(t=0\) 은 Mordell--Weil 점) --- 11회차 T1 과 일치. (ii) "직선 안정성 \(\iff\min_w\Gamma(w)\ge\theta\)" 는 주(principal) 직선에만: \(p=29\) 의 비분리 위수 5 고정직선은 \(R_U=(49/25)^4\) 인데 그 위의 \(\min\Gamma=(100/49)\theta\) (포화 지수 16). (iii) 부동소수점만으로는 \(\mathbb Z\)-기저를 못 얻는다(지수에 13자리 이상의 소인수) --- 정확한 HNF 필요.
 \item
   \textbf{빌더가 명시한 한계}: \(p=61\) 전체 격자(랭크 120)는 미결정 --- 위반 문턱이 가우스 휴리스틱의 약 1.04배라 BKZ-30 (\(|b_1|^2\approx1000\)--\(5500\) 대 문턱 900)으로는 닿지 않는다; 열거의 완전성은 배정밀도 Fincke--Pohst(여유 \(10^{-9}\))에 의존; 격자 구성의 첫 단계(Weil 행렬)는 부동소수점 후 반올림.
+\item
+  \textbf{교차검증 심사(09:02--09:13) 판정}: "\(p=37\) 불안정" \textbf{확정}. 심사자가 저장된 정수 자료만으로 자체 코드로 재유도: \(B\) 양의 정부호(선행 소행렬식 72개 전부 양), \(\det B=2997^{36}\), \(M=B^{-1}E\) 정수·\(M^2=37\); 자체 구성한 \(S_a,T_a\) 로 기저가 \(SL_2(37)\)-안정임을 확인(정수 행렬이 \(B,E\) 의 정확한 등거리, \(S^2=(ST)^3=-1\), \(T^{37}=1\)); \textbf{commutant 를 직접 구성}(정확히 가환하는 정수 행렬 8개, 판별식 \(37^4\) ⇒ 극대 order); 자체 \(O\cdot w\) 의 정확한 행렬식 \(=(N/16)^4\), 원시(primitive) 부분격자 ⇒ \textbf{그 \(\Delta\)-직선에서 정확히 \(R_U=(9/7)^4\)}. \(p=5,13\) 검증을 독립 열거로 재현(\(p=13\): 19656쌍 전부 문턱값과 일치, 위반 0). \(p=17\) (\(R_U\ge9.99\)), \(p=29\) (\(R_U=(7/5)^4\) 정확) 불안정 확인.
+\item
+  \textbf{심사 정정}: 빌더 A 의 "위반 쌍 143개" 는 오류(정확히 72쌍 + 경계 12쌍; B 가 옳음); A 의 \texttt{violator\_p17.json} 은 낡은 파일(불안정성 자체는 기저벡터 0 과 고정직선 행렬식으로 확인됨); "order 극대성 시험" 과 "토러스 직선 보정" 은 같은 행렬식 항등식이라 독립 확인 2건으로 세면 안 됨(독립 확인은 심사자의 판별식 계산); 단일 벡터 기준은 한 방향(\(\Gamma<\theta\) ⇒ 불안정)만 --- \(\min\Gamma\ge\theta\) 는 비주(non-principal) 직선·고랭크 부분공간을 배제하지 못함; 모든 진술은 \(G\)-격자 \(\Lambda_0=\mathbb Z[G]v_0\) (임의의 불변 형식)에 대한 것. \textbf{\(p=61\): 미결정}(세 구현이 일치하는 것은 "토러스 고정 부분격자 3개에 단일 벡터 위반 없음" 뿐; 전체 격자 탐색은 검출력이 없음).
 \end{itemize}
 
 \textbf{다음 할 일 → 12회차}: \(p=61\) 에서 T2 의 필요조건(\(SL_2(5)\) icosian 성분의 \(e\ge3\))과 모든 군론적 구조의 \(\Delta\)-부분공간(부분군의 isotypic 성분)에 대해 \(R_U\) 를 체계적으로 계산.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{uxd68cuxcc28-0849uxc9c4uxd589-uxc911-p61-uxc758-uxccb4uxacc4uxc801-uxc2dcuxd5d8-uxbaa8uxb4e0-uxbd80uxbd84uxad70uxc758-isotypic-uxc131uxbd84}{%
-\subsubsection*{\texorpdfstring{12회차 (08:49--진행 중): \(p=61\) 의 체계적 시험 --- 모든 부분군의 isotypic 성분}{12회차 (08:49--진행 중): p=61 의 체계적 시험 --- 모든 부분군의 isotypic 성분}}\label{uxd68cuxcc28-0849uxc9c4uxd589-uxc911-p61-uxc758-uxccb4uxacc4uxc801-uxc2dcuxd5d8-uxbaa8uxb4e0-uxbd80uxbd84uxad70uxc758-isotypic-uxc131uxbd84}}
+\hypertarget{uxd68cuxcc28-08490922-utc-uxacbduxacfc-178uxbd84-p61-uxc758-uxccb4uxacc4uxc801-uxc2dcuxd5d8-uxbaa8uxb4e0-uxbd80uxbd84uxad70uxc758-isotypic-uxc131uxbd84}{%
+\subsubsection*{\texorpdfstring{12회차 (08:49--09:22 UTC, 경과 178분): \(p=61\) 의 체계적 시험 --- 모든 부분군의 isotypic 성분}{12회차 (08:49--09:22 UTC, 경과 178분): p=61 의 체계적 시험 --- 모든 부분군의 isotypic 성분}}\label{uxd68cuxcc28-08490922-utc-uxacbduxacfc-178uxbd84-p61-uxc758-uxccb4uxacc4uxc801-uxc2dcuxd5d8-uxbaa8uxb4e0-uxbd80uxbd84uxad70uxc758-isotypic-uxc131uxbd84}}
 
 \textbf{선택한 과제}: 10회차에서 살아남은 \(p=61\) (\(\dim W=120\), \(r=15\)) 에 대해, 11회차 T2 가 제시한 필요조건을 포함한 모든 "군론적 구조" 의 \(\Delta\)-부분공간을 시험. (\texttt{rounds/R12\_p61/notes.md}; 빌더 B 의 정확한 정수 기저를 재검증해 사용)
 
@@ -470,10 +474,26 @@
   남은 것: 구조 밖의 "일반적" 직선(휴리스틱 기대 위반 궤도 수 \(\approx10^{-3}\)) --- 120차원에서 노름 \(\approx8\) 까지의 전수 탐색은 불가능.
 \end{itemize}
 
+\textbf{12회차 마무리 --- 독립 검증 에이전트의 판정: "주의사항과 함께 확인(CONFIRMED with caveats)"} (\texttt{rounds/R12\_p61/verify/}; 자체 코드 \texttt{v.py}, \texttt{v2.py}, \texttt{v3.py})
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{{[}증명됨(계산기, 정수 연산){]} 재현된 것}: \(\det_B\Lambda=13725^{60}\) 정확히(테스터는 부동소수로만 확인했음), \(\eta=EB^{-1}\) 정수·\(\eta^2=61\)·\(S,T\) 와 가환, \(\Lambda^\#=\frac{\eta}{rp}\Lambda\) 정확히 성립. 검증자는 접착 지수 공식을 쓰지 않고 각 성분의 기저가 (i) \(U\) 안에 정확히 놓이고 (ii) 원시적(Gram 행렬식을 나누는 모든 소수 \(q\) 에 대해 mod \(q\) 랭크 \(=k\))임을 확인한 뒤 Bareiss 로 정확한 행렬식을 계산: Fix(\(C_3\)), Fix(\(C_5\)), Fix(\(C_{15}\)) 에서 \(R_U=1\); icosian 성분 dim 16, \(R=5^8/2^{24}\) (두 공액류 모두); 차수 4 성분(dim 32) \(R=3^{16}/2^{64}\); Hurwitz 성분(dim 40) \(R=2^{-16}\) (서로 다른 \(SL_2(3)\) 3개); 분리 토러스 고유위수 \(\{12\}\): \(3^8/2^{16}\), \(\{20\}\): \(5^{24}/2^{64}\). \(p=13,37,61\) 에 걸친 16개 인증서가 모두 테스터의 접착 지수와 일치. \(p=37\) 의 저장된 위반 벡터 \((b,e)=(1026,5994)\), \((2970,17982)\) 는 둘 다 \(\Gamma/\theta=7/9\) 정확히.
+\item
+  \textbf{검증자가 재현하지 못한 것(주의사항)}: (a) 모든 \(\Gamma\) 탐색(배정밀도 Fincke--Pohst) --- 로그와 코드만 점검; (b) 고유위수 \(\{60\}\), \(\{12,20\}\) 과 그 여공간(시간 초과; 테스터의 HNF 루틴에 의존); (c) \(p=29\) 의 대조 시험(\(R_U=14.76\), \(11.78\))은 재실행하지 못함; (d) 저장된 격자가 \(\mathbb Z[G]v_0\) 와 같고 자기준동형 order 가 극대라는 것은 빌더 B 로부터 물려받음.
+\item
+  \textbf{수정/정정}: T2 (11회차)의 "icosian 성분 dim 32" 는 오류(dim 16). "isotypic 성분에서 \(R_U\le1\)" 은 필요조건일 뿐이라는 점(\(p=37\) 에서도 성립)을 보고서에 명시.
+\item
+  \textbf{{[}미해결{]} 정확히 남은 것}: 비주(non-principal) ideal 류 직선(\(p=61\) 은 class number \(>1\); 질량 \(11/12\)), 중복도 \(\ge2\) 인 성분 안의 연속 직선족, 랭크 72·80 성분, 전체 랭크 120 격자. \(W_{61}\) 의 최소노름도 미결정(찾은 최단 벡터는 노름 10: 30 궤도, \(1{,}361{,}520\) 개, \(|s|\in\{5,15\}\); SVP 탐색 아님).
+\item
+  \textbf{다음 회차에서 할 일}: (13회차) 다른 \(p\) 에서 같은 구조적 부분격자를 스캔해 \(p=37\) 의 메커니즘이 일반적인지 확인; (14회차) 유일하게 경계 직선이 완전히 분류된 Leech 족(\(p=13\))에서 텐서족 Klartag 형 정리를 실제로 증명 시도.
+\end{itemize}
+
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{uxd68cuxcc28-0856uxc9c4uxd589-uxc911-uxbcf8uxc778-uxc9c1uxc811-uxacc4uxc0b0-uxc871-uxc804uxccb4uxc5d0-uxb300uxd55c-uxad6cuxc870uxc801-uxbd80uxbd84uxaca9uxc790-uxc2a4uxce94-p61157277397dots}{%
-\subsubsection*{\texorpdfstring{13회차 (08:56--진행 중, 본인 직접 계산): 족 전체에 대한 구조적 부분격자 스캔 (\(p=61,157,277,397,\dots\))}{13회차 (08:56--진행 중, 본인 직접 계산): 족 전체에 대한 구조적 부분격자 스캔 (p=61,157,277,397,\textbackslash dots)}}\label{uxd68cuxcc28-0856uxc9c4uxd589-uxc911-uxbcf8uxc778-uxc9c1uxc811-uxacc4uxc0b0-uxc871-uxc804uxccb4uxc5d0-uxb300uxd55c-uxad6cuxc870uxc801-uxbd80uxbd84uxaca9uxc790-uxc2a4uxce94-p61157277397dots}}
+\hypertarget{uxd68cuxcc28-08560913-utc-uxacbduxacfc-169uxbd84-uxbcf8uxc778-uxc9c1uxc811-uxacc4uxc0b0-uxc871-uxc804uxccb4uxc5d0-uxb300uxd55c-uxad6cuxc870uxc801-uxbd80uxbd84uxaca9uxc790-uxc2a4uxce94-p61157277397dots}{%
+\subsubsection*{\texorpdfstring{13회차 (08:56--09:13 UTC, 경과 169분, 본인 직접 계산): 족 전체에 대한 구조적 부분격자 스캔 (\(p=61,157,277,397,\dots\))}{13회차 (08:56--09:13 UTC, 경과 169분, 본인 직접 계산): 족 전체에 대한 구조적 부분격자 스캔 (p=61,157,277,397,\textbackslash dots)}}\label{uxd68cuxcc28-08560913-utc-uxacbduxacfc-169uxbd84-uxbcf8uxc778-uxc9c1uxc811-uxacc4uxc0b0-uxc871-uxc804uxccb4uxc5d0-uxb300uxd55c-uxad6cuxc870uxc801-uxbd80uxbd84uxaca9uxc790-uxc2a4uxce94-p61157277397dots}}
 
 \textbf{선택한 과제}: \(p=37\) 을 무너뜨린 메커니즘(분리 토러스 \(C_m\)-고정 부분격자 \(=\sqrt m\times\) unimodular 격자의 근)이 다른 \(p\) 에서도 나타나는지. 고정 부분격자는 \textbf{전체 격자를 만들지 않고} 무작위 궤도 벡터의 노름사상 상으로 생성할 수 있다(랭크 8·24·40 만 계산). (\texttt{rounds/R10\_weil\_lattices/orchestrator/scan.py}, \texttt{rootsys.py}; 격자 기저는 정수 Gram 행렬 위의 정확한 유리수 연산(HNF + 정확한 LLL)으로 계산; \(D=r^2p\) 는 \(\log R_U=0\) 보정으로 확인.)
 
@@ -506,6 +526,8 @@
 61 & \(\sqrt{15}E_8\) & \(\sqrt5\,N(E_8^3)\): 근 720개, \(\|s\|\in\{1,3\}\) (허용 \(\le5\)) & \(C_3\)-고정(랭크 40) \(=\sqrt3\times\) \textbf{극단(extremal) 40차원 짝 unimodular 격자}(근 없음, 최소벡터 39600개) & 1 (위반 없음) \\
 157 & \(\sqrt{39}E_8\) & \(\sqrt{13}\,N(D_4^6)\): 근 144개, \(\|s\|=1\) (허용 \(\le11\)) & (\(C_3\): 랭크 104, 미시험) & 1 (위반 없음) \\
 277 & \(\sqrt{69}E_8\) & \(\sqrt{23}\times\) \textbf{Leech} (근 없음, 최소벡터 196560개) & (\(C_3\): 랭크 184, 미시험) & 1 (위반 없음) \\
+397 & \(\sqrt{99}E_8\) & \(\sqrt{33}\times\)(근 720개, \(\|s\|\in\{1,5\}\), 허용 \(\le19\)) & & 1 (위반 없음) \\
+421 & \(\sqrt{105}E_8\) & \(\sqrt{35}\times\) \textbf{Leech} (근 없음) & \(C_{21}\)-고정(랭크 40) & 1 (단, \(t\)-원 탐색 불완전: 열거 실패 33/261, 93/261) \\
 \end{longtable}
 
 \begin{itemize}
@@ -517,5 +539,159 @@
 \item
   ⇒ \(p=37\) 의 실패는 족 전체의 구조적 현상이 아니라 "작은 \(p\) 의 우연" 으로 보인다. \(p=61,157,277\) 은 계산 가능한 모든 구조적 부분격자에서 정확히 경계(위반 없음). {[}추측{]} \(p\ge61\) 인 족의 원소들은 직선 수준에서 경계 안정.
 \item
-  더 큰 \(p\) (\(397,421,\dots\))는 실행 중 --- 결과는 마무리에 추가.
+  \textbf{한계}: \(p=421\) 은 \(\log\varepsilon_p=13\) 이라 \(t\) 의 양 끝에서 배정밀도 열거가 일부 실패(불완전). \(p=541\) 은 같은 절차가 고정격자의 지수 2 부분격자(\(\sqrt{135}D_8\subset\sqrt{135}E_8\) 형)만 생성해 판정 보류(→ 아래 마무리: 표본 수 부족으로 판명). \(p\ge613\) 은 미실행. 랭크 \(>40\) 인 고정 부분격자(\(p=157\) 의 \(C_3\): 랭크 104 등)와 전체 격자는 시험 불가.
+\item
+  그림: \texttt{report/figs/fig\_tcircle.pdf} (\(t\)-원 위의 최소값 프로파일; \(p=13\): 세 점에서 문턱에 접함, \(p=37\): \(\sqrt{7/9}\) 까지 하강, \(p=61\) (\(C_5\)-고정): MW 점에서만 접함).
 \end{itemize}
+
+\textbf{13회차 마무리 --- 독립 검증 에이전트(09:21--09:36 UTC)의 판정} (\texttt{rounds/R13\_scan\_verify/vf.py}: 자체 Weil 표현·표본추출(다른 시드, 300표본)·노름사상·정확한 격자 루틴; 열거기와 정확한 LLL 은 재사용하되 출력은 정확히 재검증)
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{{[}수치관찰 → 독립 재현됨{]}} \(p=37\) (Fix(\(C_3\))\(=\sqrt3N(D_4^6)\), 근 144개 모두 \(|s|=3\), \(\min\Gamma/\theta=7/9\) 정확히), \(p=61\) (세 고정격자 모두: 행렬식 비 정확히 1, unimodular 원소 정수·짝·\(\det1\), \(O_F\)-안정; \(E_8\) / \(E_8^3\) (근 720개) / 근 없음·노름 4 벡터 39600개; \(t\)-원 탐색 실패 0, \(\min\Gamma/\theta=1\) 정확히), \(p=157\) 의 랭크 24 (\(\sqrt{13}N(D_4^6)\), 모든 \(|s|=1\)), \(p=277\) (\(\sqrt{69}E_8\), \(\sqrt{23}\times\)Leech: 근 0, 노름 4 벡터 196560개). 검증자가 계산한 모든 (노름, \(|s|\)) 표가 내 것과 동일. 정확/부동소수의 구분: 생성원의 Gram 행렬은 부동소수 계산 후 반올림(편차 \(10^{-11}\)--\(2\times10^{-6}\)), 그 뒤 격자 기저·행렬식 비·unimodular Gram·\(s\) 값·\(\Gamma/\theta\) 는 정확한 연산, 열거는 부동소수(단 노름 4 벡터 수가 theta 급수가 강제하는 값과 일치).
+\item
+  \textbf{{[}정정{]} \(p=541\) 의 이상 현상은 표본 부족이었다(반박됨)}: 160표본으로는 지수 2 부분격자(\(O_F\)-안정이 아님)만 생성되지만 300표본이면 행렬식 비 정확히 1: Fix(\(C_{135}\))\(=\sqrt{135}E_8\), Fix(\(C_{45}\))\(=\sqrt{45}\times\)\textbf{Leech}. (2 는 \(p\equiv5\bmod8\) 에서 inert 이므로 \(O_F\)-안정 격자가 지수 2 일 수 없다 --- 이 판정법을 미리 썼어야 했다.) 다만 \(p=541\) 의 \(t\)-원 탐색은 양 끝에서 열거 실패(랭크 8: 30/284, 랭크 24: 54/284)로 불완전.
+\item
+  \textbf{검증하지 못한 것}: \(p=397\), \(p=421\) (시간 부족; \(p=397\) 의 근 720개가 \(E_8^3\) 인지 성분 분석 안 됨), \(p=157\) 의 랭크 8, \(p=541\) 의 랭크 40, 빌더 B/12회차 정확 자료와의 대조.
+\item
+  \textbf{내 코드(\texttt{scan.py})에서 발견된 결함}: (1) 160표본이 고정격자 전체를 생성한다는 보장이 없고 \(\log R_U\ne0\) 에서 멈추지 않음; (2) 열거기의 절단 플래그를 확인하지 않음(이번 실행들에서는 발동하지 않음); (3) 열거 실패를 삼키고도 같은 형식의 "\(\min\Gamma/\theta\)" 줄을 출력(\(p=421,541\) 의 "위반 없음" 은 전수 탐색이 아님); (4) 큰 \(p\) 에서 부동소수 정밀도 저하(\(p=397\) 첫 실행). ⇒ 보고서에서 \(p=421,541\) 은 "부분 탐색" 으로 표기하고 \texttt{scan.py} 에 경고·표본 수 수정 반영.
+\end{itemize}
+
+\textbf{13회차 추가 스캔 (09:38--, 수정된 \texttt{scan.py}, 300표본; 저자의 계산, 독립 검증 없음)} (\texttt{rounds/R10\_weil\_lattices/orchestrator/log\_scan3\_p*.txt})
+
+\begin{itemize}
+\tightlist
+\item
+  \(p=541\): Fix(\(C_{135}\))\(=\sqrt{135}E_8\), Fix(\(C_{45}\))\(=\sqrt{45}\times\)Leech (근 0), Fix(\(C_{27}\)) 랭크 40 (근 240개), 모두 \(\log R_U=0\) --- 검증자의 결론과 일치. \(t\)-원 탐색은 불완전(열거 실패 28/52/75), 랭크 40 의 \(s\) 값은 정밀도 한계(\(\log\varepsilon=14.1\))로 신뢰 불가.
+\item
+  \(p=613\) (\(\log\varepsilon=11.5\)): Fix(\(C_{153}\))\(=\sqrt{153}E_8\), Fix(\(C_{51}\))\(=\sqrt{51}\times\)(근 720개, \(|s'|\in\{3,9\}\); 허용 \(|s'|\le24\)); \textbf{\(t\)-원 전수 탐색 성공(실패 0), \(\min\Gamma/\theta=1\)}.
+\item
+  \(p=661\) (\(\log\varepsilon=14.4\)): Fix(\(C_{165}\))\(=\sqrt{165}E_8\), Fix(\(C_{55}\))\(=\sqrt{55}\times\)(근 144개 --- \(D_4^6\) 형으로 추정, \(|s'|\approx21\); 허용 \(\le25\)), Fix(\(C_{33}\)) 랭크 40 (근 없음); 모두 \(\log R_U=0\). \(t\)-원 탐색 불완전(열거 실패 31/58/70), \(s\) 값은 반올림 불안정(짝홀성이 어긋난 값이 섞임) ⇒ 참고용.
+\item
+  지금까지의 \(L_{24}(p)\): Leech (\(p=13,277,421,541\)), \(D_4^6\) (\(37,157\), 아마 \(661\)), \(E_8^3\) (\(61\)), 근 720개 (\(397,613\)). \(p=733,757\) 은 시간 내 완료되면 추가.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{uxbcf4uxace0uxc11c-uxbe44uxd3c9-uxd68cuxcc28-09130945-utc-uxd68cuxcc28-uxbc88uxd638-uxc5c6uxc74c-uxcd08uxc548-uxbcf4uxace0uxc11cuxc5d0-uxb300uxd55c-uxbe44uxd3c9-uxc5d0uxc774uxc804uxd2b8-2uxac1cuxc758-uxc9c0uxc801-50uxac74-uxbc18uxc601}{%
+\subsubsection*{보고서 비평 회차 (09:13--09:45 UTC, 회차 번호 없음): 초안 보고서에 대한 비평 에이전트 2개의 지적 50건 반영}\label{uxbcf4uxace0uxc11c-uxbe44uxd3c9-uxd68cuxcc28-09130945-utc-uxd68cuxcc28-uxbc88uxd638-uxc5c6uxc74c-uxcd08uxc548-uxbcf4uxace0uxc11cuxc5d0-uxb300uxd55c-uxbe44uxd3c9-uxc5d0uxc774uxc804uxd2b8-2uxac1cuxc758-uxc9c0uxc801-50uxac74-uxbc18uxc601}}
+
+\begin{itemize}
+\tightlist
+\item
+  비평 에이전트 A(수학적 정확성)·B(독자 관점)가 초안 PDF 의 원본을 읽고 각각 25건을 지적. 주요 정정: (i) \(p=37\) 위반 쌍의 수(143→72), "직선 기준" 은 주(principal) 직선에서만 동치이고 일반적으로는 한 방향뿐임, (ii) "유일한 후보" → "조사 범위에서 살아남은 유일한 후보"(분류 정리 아님), (iii) 11회차 휴리스틱(기대 궤도 수)은 \(p=13\) 에서 이미 틀리는 모형이므로 안정성의 증거로 쓰지 않음, (iv) "수정된 양자택일" 을 추측이 아니라 세 가정 (H1)--(H3) 의 조건부 명제로 재서술, (v) 모든 {[}증명됨{]} 은 AI 에이전트 간 교차 검토일 뿐이라는 점을 초록·서론·요약표에 명시, (vi) 결론의 "\(p=73,157\) (\(p\equiv1\bmod8\))" 오류(157 은 \(5\bmod8\)) → "\(p=73,193\)", (vii) 자유 작용 한계의 상수 \(g\le120\prod_\ell\ell/(\ell-1)\), (viii) 등변 탐색과 비대칭 탐색의 공정한 비교, 실행 수 명시.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{uxd68cuxcc28-09170946-utc-uxacbduxacfc-202uxbd84-leech-uxd150uxc11cuxc871-lambda_24otimes_mathcal-ol-uxc5d0-uxb300uxd55c-klartag-uxd615-uxc815uxb9ac-uxc99duxba85-uxc2dcuxb3c4-uxbb38uxd5cc-uxc810uxac80-uxc2ecuxc0ac-2}{%
+\subsubsection*{\texorpdfstring{14회차 (09:17--09:46 UTC, 경과 202분): Leech 텐서족 \(\Lambda_{24}\otimes_{\mathcal O}L\) 에 대한 Klartag 형 정리 --- 증명 시도 + 문헌 점검 + 심사 2}{14회차 (09:17--09:46 UTC, 경과 202분): Leech 텐서족 \textbackslash Lambda\_\{24\}\textbackslash otimes\_\{\textbackslash mathcal O\}L 에 대한 Klartag 형 정리 --- 증명 시도 + 문헌 점검 + 심사 2}}\label{uxd68cuxcc28-09170946-utc-uxacbduxacfc-202uxbd84-leech-uxd150uxc11cuxc871-lambda_24otimes_mathcal-ol-uxc5d0-uxb300uxd55c-klartag-uxd615-uxc815uxb9ac-uxc99duxba85-uxc2dcuxb3c4-uxbb38uxd5cc-uxc810uxac80-uxc2ecuxc0ac-2}}
+
+\textbf{선택한 과제}: (G1) "\(r\ge2\) 텐서족에 대한 등변 Klartag 정리" 를, 경계 직선이 완전히 분류된 유일한 사례인 Leech 족(\(p=13\), \(r=3\), class number 1)에서 실제로 증명한다. 6회차 증명(자유 작용)이 템플릿. 넘어야 할 것: 낮은 랭크 항을 포함한 평균값 공식, 비자유 궤도, 경계 부분공간(\(R_U=1\))의 접촉 기여, 시작 공, 블록 각도 보조정리. (\texttt{rounds/R14\_leech\_tensor/proof.md}, 177줄, 영문; 보고서 부록에 전문 수록)
+
+\textbf{{[}조건부로 증명됨 --- 증명 에이전트의 보고; 유일한 미증명 가정은 (H-Rogers){]}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{정리 E (틀; 비자유 작용)}: \(G\) 유한군, \(W\) 기약 \(\mathbb Q[G]\)-가군, \(\Delta=\mathrm{End}_G(W)^{op}\), \(\Delta_\mathbb R=\mathbb K^s\), \(r=\dim_\Delta W\), \(\Lambda_W\) 불변 격자, \(\mathcal O\) 그 order. 가정: (h1) \(\mathcal O\) 의 오른쪽 ideal 이 모두 주 ideal; (BS) 모든 진 \(\Delta\)-부분공간에서 \(R_U\le1\) 이고 유한 개를 빼면 \(R_U\le\rho_0<1\); (H-Rogers)\(_j\) (\(2\le j\le r\)): \(\Delta\)-독립 \(j\)-틀의 Siegel--Rogers 평균값 공식. 그러면 자료를 고정하고 \(k\to\infty\) 일 때 \(V_n\ge(1-o(1))\frac{|G|n^2}{4e\dim_\mathbb QA}\) (\(\dim_\mathbb QW\mid n\)).
+\item
+  \textbf{정리 D (Leech)}: \(V_n\ge(\frac{91}{12e}-o(1))n^2\approx2.79n^2\) (\(24\mid n\)) --- (H-Rogers)\(_{2,3}\), 인용 입력 (L1)--(L3), 5회차의 계산기 보조 사실((BS): 직선 \(R_U\in\{1\}\cup(0,\frac{6561}{6562}]\), 평면 \(R_U\le3^8/2^{16}\); class number 1) 전제.
+\item
+  \textbf{새 보조정리}: (1) class number 1 이면 모든 유한생성 무비틀림 \(\mathcal O\)-가군이 자유 ⇒ 격자점을 열공간 \(U\) 별로 유일 분해; \textbf{평균값 공식} \(\mathbb E\sum_{x\ne0}\varphi=\kappa_n^{-1}\int\varphi+\sum_U\int\varphi\,d\mu_U\), \(\mu_U=\kappa_n^{-f}(c_W^f/c_U)^k\mathrm{vol}_{E_U}\), \(T_U(V)\le2f^{-1/2}(\pi n)^{-(1-f)/2}V^fR_U^{k/2}\) (3회차 휴리스틱 공식의 정확한 형태); 부분공간 수의 다항식적 상계(Minkowski) ⇒ \(\sum_UR_U^{k/2}\le|\mathcal E|+C\rho_0^{k/2}\). (2) 비자유 궤도 계수 \(N_t\ge D_k-|\text{접촉}|/w-|\text{고정점 있는 접촉}|\); 고정점 있는 격자점은 모두 \(W^g\) 위의 낮은 랭크 점. (3) \(E_U\) 위의 정확한 \(q=\frac{q_0}f(1+\mathrm{CV}_j^2)\) 와 껍질 적분 ⇒ \textbf{시간 적분된 접촉 기여 \(X_U\le C\,R_U^{k/2}n^{-\frac52(1-f)}\)}. (4) \(j\times k\) 블록 각도 보조정리 \(\mathbb Ee^{b\mathrm{CV}_j^2}\le(1-\kappa)^{-2bsj}\) (6회차의 미심사 §7 재증명). (5) 시작 공: 나쁜 사건 확률 \(\le e^{-\rho}+O(n^{-1/(2r)})\). (6) \(\theta=2-\frac1k\), 상수 \(\frac{wq_0}{4e}=\frac{2184}{288e}\).
+\item
+  \textbf{과제 진술을 넘어선 발견}: 고정된 자료·\(k\to\infty\) 에서는 \textbf{경계 부분공간(\(R_U=1\))이 해롭지 않다} --- Leech 의 경계 직선 하나의 기여는 \(O(n^{-5/3})\); 1638 이라는 수는 유한성만 쓰인다; "\(f\le\frac12\)" 제한도 불필요. (11회차의 가정 (H2) 에 대한 답.)
+\item
+  \textbf{수치 검산(증명 에이전트)}: \texttt{check\_angular.py} (\(k\,\mathbb E\,\mathrm{CV}_3^2=2.415\) --- 11회차 T2 의 예측 \(r-\frac12=2.5\) 와 부합; 각도 보조정리의 상계는 매우 느슨하나 성립), \texttt{check\_q.py} (\(\mathrm{Sym}_{24}\) 에서 사영을 직접 계산: \(\dim\mathcal Q=6\), \(q\) 공식 10자리 일치, 랭크 1 점에서 \(q/q_0=3\)).
+\item
+  \textbf{남은 것(증명 에이전트가 명시)}: (a) (H-Rogers)\(_{j\ge2}\) --- 나눗셈대수 위에서는 축자적 출처를 찾지 못함(Weil 의 Tamagawa 수 이론에서 나올 것으로 "기억"); unfolding 으로 상수 \(c_{j,k}\) 까지는 성립하고 정리는 \(1/c_{3,k}\) 배로 약화된 형태로 남는다(스케치). (b) Gargava 정리 16 의 \(\Delta_\mathbb R=\mathbb H^2\) 경우에 대한 6회차의 단서. (c) 5회차 입력(부동소수 랭크 8·72, class number 1 은 질량 공식 "기억")은 재검증하지 않음. (d) 순수 점근 진술(\(o(1)\) 비효과적; \(r\) 이나 \(G\) 가 \(k\) 와 함께 커지는 경우는 주장하지 않음).
+\end{itemize}
+
+\textbf{문헌 점검(별도 에이전트; \texttt{rounds/R14\_leech\_tensor/novelty\_check.md})}: {[}문헌{]} AGZ(2606.05105)·GGS(2610.12619)는 원분(가환) 경우만 다루고 상수를 명시하지 않음; 명시적 상수는 Rezvyakova 의 \(\frac1{2e}\) 가 유일; 나눗셈대수 쪽의 기존 결과(Gargava 2107.04844, Vance)는 선형 차수; Leech/\(SL_2(p)\) Weil 격자/Mordell--Weil 격자를 Klartag 방법과 연결한 문헌은 찾지 못함; 나눗셈대수 위 가군에 대한 Rogers 형 고차 모멘트 공식도 찾지 못함(수체 경우만: Kim, Hughes, GSV). 한계: 초록 문구 검색(106건 중 50건), Gargava 학위논문·GGS 부록 미열람, Nebe 카탈로그·Gross 논문 호스트 접근 불가 ⇒ \(p=37\) 격자의 최소노름 6 이 기존 문헌에 있는지 미확인. \textbf{새로움은 "찾지 못함" 수준이며 단정하지 않는다.}
+
+\textbf{심사 결과}: 두 AI 심사 에이전트(1: 해석·상수, 2: 대수·평균값 공식) 모두 \textbf{"수학적 오류 없음, 사소한 수정만 필요"} (\texttt{rounds/R14\_leech\_tensor/referee\_A.md}, \texttt{referee\_B.md}).
+
+\begin{itemize}
+\tightlist
+\item
+  손으로 다시 유도해 확인된 것: 설정·불변 형식(\(D_k=2(2k^2-k)\), \(q_0=\frac1{72}\)), \(X=B_UY\) 분해와 Jacobian, \(T_U(V)\) 상계(Stirling 비 수치 점검), 부분공간 계수·합의 수렴, 비자유 궤도 계수, 각도 보조정리(독립 Monte Carlo: \(\mathbb E\prod t^{-2b}=1.959\) 대 정확한 Gamma 공식 \(1.957\)), 껍질 적분과 지수 \(-\frac52(1-f)\), Markov 사건 셋, \(\theta=2-\frac1k\), 상수 \(\frac{2184}{288e}=2.78975\), Leech 의 (BS). 6회차에서 가져온 {[}V{]} 단계들은 자유성도 \(q\ge q_0\) 도 쓰지 않음을 심사자 1 이 R6 원문과 대조.
+\item
+  \textbf{공통 결론: 정리 D·E 는 (H-Rogers) 를 가정한 조건부 정리.} 주항(\(j=r=3\))이 그 가정에 의존하므로 무조건적으로 확립된 것은 없다. 심사자 2 는 (H-Rogers) 가 Gargava 정리 16 (랭크 \(k-j+1,\dots,k\))과 class number 1 에서 고전적인 Siegel--Rogers 원시 틀 unfolding 으로 상수 정확히 1 로 유도될 것이라는 스케치를 제시(\(p_{1,m}=1/\zeta_{\mathcal O}(m)\), \(p_{j,k}=\prod_{i<j}1/\zeta_{\mathcal O}(k-i)\), Hermite 정규형의 합이 그 역수) --- 15회차의 과제와 일치.
+\item
+  그 밖의 지적: (i) \(\{N=1\}\) 대 \(\prod_vSL_k(\mathbb K)\), 몫의 좌우(\(\Gamma_k\backslash\mathsf G_k\)), (h1) 의 왼쪽 판; (ii) \textbf{순수 점근 진술 --- 증명 그대로는 \(n\gtrsim10^{14}\) 에서야 비자명, 상대오차 \(\approx3/\log n\)}; (iii) 일반 보조정리 1.5 는 \(k\ge N_W^2+2\) (Leech: Remark 6.1 로 \(k\ge10\)); (iv) Remark 5.1 의 "강건한 형태" 는 스케치이고 \(c_{r,k}=o(\log n)\) 도 필요; (v) 정리 E 는 \(\Delta_\mathbb R=\mathbb K^s\) 인 경우만.
+\item
+  \textbf{입력의 개선(심사자 2)}: \(\dim\mathrm{End}_G(W)=8\) 은 5회차의 정수 지표표에서 \(\sum_g\mathrm{tr}(g)^2=17472=8\cdot2184\) 로 정확히 따름(부동소수 랭크 불필요) ⇒ \(\dim_\mathbb QA=72\); class number 1: \(\zeta_F(-1)=\frac16\) (\(B_{2,\chi_{13}}=4\)), Eichler 질량 \(\frac1{12}=1/[\mathcal O^\times:O_F^\times]\) (\(N(\varepsilon)=-1\), \(\mathcal O^1=SL_2(3)\)) --- 질량 공식 자체는 {[}문헌{]} 인용.
+\end{itemize}
+
+\textbf{14회차의 지위}: {[}조건부{]} (가정: (H-Rogers)\(_{2,3}\)) + \href{나머지\%20전부;\%20AI\%20심사\%202회}{증명됨·인용 정리 전제}. \textbf{다음 회차에서 할 일}: (H-Rogers) 를 (L1) 로부터 증명(15회차, 진행 중).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{uxd68cuxcc28-09330955-utc-uxacbduxacfc-211uxbd84-h-rogers-uxb098uxb217uxc148uxb300uxc218-order-uxc704-uxac00uxad70-uxaca9uxc790uxc758-j-uxd2c0-uxd3c9uxade0uxac12-uxacf5uxc2dduxc744-uxb7aduxd06c-1-uxc815uxb9acuxb85cuxbd80uxd130-uxc720uxb3c4-uxc2ecuxc0ac-2}{%
+\subsubsection*{\texorpdfstring{15회차 (09:33--09:55 UTC, 경과 211분): (H-Rogers) --- 나눗셈대수 order 위 가군 격자의 \(j\)-틀 평균값 공식을 랭크 1 정리로부터 유도 (+ 심사 2)}{15회차 (09:33--09:55 UTC, 경과 211분): (H-Rogers) --- 나눗셈대수 order 위 가군 격자의 j-틀 평균값 공식을 랭크 1 정리로부터 유도 (+ 심사 2)}}\label{uxd68cuxcc28-09330955-utc-uxacbduxacfc-211uxbd84-h-rogers-uxb098uxb217uxc148uxb300uxc218-order-uxc704-uxac00uxad70-uxaca9uxc790uxc758-j-uxd2c0-uxd3c9uxade0uxac12-uxacf5uxc2dduxc744-uxb7aduxd06c-1-uxc815uxb9acuxb85cuxbd80uxd130-uxc720uxb3c4-uxc2ecuxc0ac-2}}
+
+\textbf{선택한 과제}: 14회차 정리 D·E 의 유일한 미증명 가정 (H-Rogers)\(_j\): \(\mathbb E\sum_{Y\in\mathcal O^{j\times k},\,\mathrm{rk}_\Delta Y=j}F(Y\gamma)=\int F\) (\(2\le j<k\)). 문헌 검색(Weil 1946, Rogers, Kim, GSV, Hughes)에서 나눗셈대수 판의 축자적 출처를 찾지 못했으므로, Gargava 의 랭크 1 정리 (L1) 만으로 직접 증명을 시도. (\texttt{rounds/R15\_rogers/proof.md}, 영문, 보고서 부록에 전문 수록)
+
+\textbf{{[}증명됨·인용 정리 전제{]} 정리 R (증명 에이전트; AI 심사 2회 "오류 없음, 사소한 수정만")}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{진술}: \(\Delta\) 는 \(\mathbb Q\) 위 나눗셈대수, \(\Delta_\mathbb R=\prod_v\mathbb K_v\); \(\mathcal O\) 는 0 아닌 \textbf{왼쪽} ideal 이 모두 주 ideal 인 order; \((\mathsf G_m)\) 은 "정합적" 족((G1) \(GL_m(\Delta_\mathbb R)\) 의 닫힌 정규부분군이고 Lebesgue 측도 보존, (G2) \(e_1\) 의 안정자 \(=\mathsf G_{m-1}\ltimes\Delta_\mathbb R^{m-1}\); 예: \(\prod_vSL_m(\mathbb K_v)\), \(\{\det_\mathbb R=1\}\), \(\{|\det_\mathbb R|=1\}\) --- 실 자리가 없으면 뒤의 둘이 14회차의 \(\{N=1\}\)). 랭크 \(m=k,\dots,k-j+1\) (\(\ge2\))에서 \(\Gamma_m\) 이 격자이고 (L1) 이 성립하면, 모든 Borel \(F\ge0\) 에 대해 \(\Gamma_k\backslash\mathsf G_k\) 위의 평균이 \(\int F\) 와 같다(\([0,\infty]\) 에서의 항등식, \textbf{상수 정확히 1}, \(1\le j<k\)).
+\item
+  \textbf{증명의 핵심}: \(j\) 에 대한 귀납. 첫 행 \(y\) 로 합을 나누고 \(y\) 의 \(\Gamma_k\)-궤도별로 unfolding, 안정자 \(\mathsf H_y\) 의 올 위에서 먼저 적분. (h1\(^\ell\)) 에서 \(y=a\,e_1\delta\) (\(\delta\in GL_k(\mathcal O)\))이므로 \(\mathsf H_y\) 는 \(\mathsf G_{k-1}\ltimes\Delta_\mathbb R^{k-1}\) 과 켤레(유니모듈러, \(\Gamma_y\) 의 공부피 1). 올 위에서 원환 \((\Delta_\mathbb R/\mathcal O)^{k-1}\) 적분이 첫 열의 합을 Lebesgue 적분으로 바꾸고(꽉 찬 랭크 ⇒ 원환 사이의 전사 준동형 ⇒ Haar→Haar), 나머지는 랭크 \(k-1\) 의 귀납 가정. 올 적분 \(=f(yg)\), \(f(y)=\int F(y,Z)dZ\). \textbf{같은 unfolding 을 \(j=1\), 함수 \(f\) 에 적용한 식과 궤도별로 일치}하므로 (L1)\(_k\) 가 전체를 \(\int f=\int F\) 로 평가 --- 제타 값·기본영역 부피·원시벡터에 대한 추이성이 필요 없고 순환 논법이 아니다.
+\item
+  \textbf{부수 결과}: (i) 격자의 공간은 \(\Gamma_k\backslash\mathsf G_k\) 여야 한다(14회차 표기 정정). (ii) Lemma 4.1a: \(\Lambda_W\) 가 유리 불변 형식에 대해 unimodular 이면 14회차의 (h1)(오른쪽) ⟺ (h1\(^\ell\))(왼쪽) --- Leech 에서는 추가 가정 불필요; 일반 정리 E 에서는 (h1\(^\ell\)) 이 추가 가정.
+\item
+  \textbf{심사 A(워크플로)·B(독립)}: 둘 다 0--3절의 모든 보조정리를 손으로 재확인, 반박 실패. 고전적 경우 \(\Delta=\mathbb Q\), \(j=2\), \(k=3\) 에서 Rogers 공식 재현(궤도 \(a\,e_1\) 의 기여 \(\zeta(3)^{-1}a^{-3}\), 합 1). 수정 사항: (HR) 진술의 몫 표기·왼쪽 ideal 가정, 정리 R 은 (L1) 이 인용되는 바로 그 군의 족에 적용, Lemma 2.1 의 자유성 논증 직접 서술, Lemma 4.2a 는 (L1) 만 옮김(사원수 경우와 무관). 수치 검산 없음; 두 심사자 모두 Gargava 논문은 열지 않음.
+\end{itemize}
+
+\textbf{결과: 정리 D (Leech, \(V_n\ge(\frac{91}{12e}-o(1))n^2\), \(24\mid n\))는 이제 별도의 가정 없이 {[}증명됨·인용 정리 전제 + 계산기{]}}: 인용 = Gargava 정리 16 (랭크 \(k-2,k-1,k\), \(\Delta_\mathbb R=\mathbb H^2\)), Klartag 의 보조정리, Eichler 질량 공식; 계산기 = 5회차. AI 심사: 14회차 2 + 15회차 2. 사람의 검증 없음.
+
+\textbf{남은 약점(두 심사자 공통 지적)}: (L1) = Gargava 정리 16 자체가 블랙박스. 6회차 개정자는 "그 인쇄된 증명이 \(D_\mathbb R^k\setminus0\) 위의 추이성을 주장하는데 \(s\ge2\) 에서는 거짓(열린 조밀 궤도만 추이적)" 이라고 기록했고, 아무도 재검증하지 않았다. \textbf{다음 회차에서 할 일}: 17회차 --- 원 논문의 증명을 읽고 \(\Delta_\mathbb R=\mathbb H^2\) 에서의 성립 여부를 점검·보수.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{uxd68cuxcc28-09350942-utc-uxacbduxacfc-198uxbd84-uxbcf8uxc778-uxc720uxb3c4-uxbaabuxace1uxc120-uxc0acuxc804-uxace0uxc815-uxbd80uxbd84uxaca9uxc790uxc758-uxc815uxccb4uxc640-uxc548uxc815uxc131-uxae30uxc900uxc758-uxc790uxae30uxb2eeuxc74c}{%
+\subsubsection*{16회차 (09:35--09:42 UTC, 경과 198분, 본인 유도): 몫곡선 사전 --- 고정 부분격자의 정체와 안정성 기준의 자기닮음}\label{uxd68cuxcc28-09350942-utc-uxacbduxacfc-198uxbd84-uxbcf8uxc778-uxc720uxb3c4-uxbaabuxace1uxc120-uxc0acuxc804-uxace0uxc815-uxbd80uxbd84uxaca9uxc790uxc758-uxc815uxccb4uxc640-uxc548uxc815uxc131-uxae30uxc900uxc758-uxc790uxae30uxb2eeuxc74c}}
+
+\textbf{선택한 과제}: 13회차의 관찰 "Fix(\(C_m\))\(=\sqrt m\times\)(짝 unimodular 격자)" 를 11회차의 Mordell--Weil 사전 안에서 \textbf{증명}할 수 있는가? (결과를 얻었으면 구조를 설명하고 확장하라는 규칙에 따라.)
+
+\textbf{{[}증명됨{]} (기하 부분; \(W_p\leftrightarrow\mathrm{Hom}(\mathrm{Jac}\,C_p,E)\) 의 동일시는 11회차 T1 의 {[}증명 스케치{]} 에 의존)}
+
+\begin{itemize}
+\tightlist
+\item
+  토러스 원소 \(\mathrm{diag}(a,a^{-1})\) 은 \(C_p:y^2=x^p-x\) 에 \((x,y)\mapsto(a^2x,a^{(p+1)/2}y)\) 로 작용. 홀수 위수 \(m\mid p-1\) 의 부분군 \(C_m\) 에 대해 몫사상은 \(\pi:(x,y)\mapsto(X,Y)=(x^m,\ yx^{(m-1)/2})\), 몫곡선은 \(D_{p,m}:Y^2=X^{N+1}-X\), \(N=(p-1)/m\), 종수 \(g_D=(p-1)/(2m)\). (확인: \(Y\mapsto a^{(p+1)/2+m-1}Y=a^{(p-1)/2}Y=Y\); \(Y^2=x^{m-1}(x^p-x)=X^{N+1}-X\); \([k(x,y):k(X,Y)]\le m\).)
+\item
+  \textbf{\(\pi^*:\mathrm{Hom}(\mathrm{Jac}\,D_{p,m},E)\to\mathrm{Hom}(\mathrm{Jac}\,C_p,E)^{C_m}\) 은 전단사(지수 1)}: 불변인 \(\psi\) 에 대응하는 사상 \(\phi:C_p\to E\) 는 일반적으로 \(\phi\circ h=\phi+c_h\) (\(c\in\mathrm{Hom}(C_m,E)\))이지만, 토러스의 고정점 \(P_0=(0,0)\) 을 기준점으로 잡으면 \(c_h=\phi(hP_0)-\phi(P_0)=0\) 이라 \(\phi\) 가 \(\pi\) 를 통해 분해된다. \(\deg(\phi'\circ\pi)=m\deg\phi'\) 이고 \(\pi\) 가 \(\mathbb F_p\) 위에서 정의되어 Frobenius 와 가환 ⇒ \(q_F(\pi^*\phi')=m\,q_F'(\phi')\), 즉 모든 \(t\) 에서 \((\mathrm{Fix}(C_m),Q_t)\cong\sqrt m\,(\mathrm{Hom}(\mathrm{Jac}\,D_{p,m},E),Q_t')\).
+\item
+  \textbf{자기닮음}: Fix(\(C_m\)) 안에서의 안정성 조건 \(N_{F/\mathbb Q}(q_F)\ge((p-1)/4)^2=(g_{C_p}/2)^2\) 은 몫곡선 격자에서 같은 꼴 \(N(q_F')\ge(g_D/2)^2\) 이 된다.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(g_D=2\) (\(D:Y^2=X^5-X\), \(m=(p-1)/4\)): 조건은 \(N(q')\ge1\) --- \(O_F\) 의 0 아닌 원소면 자동 성립. \textbf{랭크 8 고정격자가 모든 \(p\) 에서 정확히 경계인 이유.}
+  \item
+    \(g_D=6\) (\(D:Y^2=X^{13}-X\), \(m=(p-1)/12\)): 조건은 \(N(q')\ge9\); unimodular 원소의 노름 \(2\ell\), \(s\)-값 \(s'\) 인 벡터에서 \(N(q')=(p\ell^2-s'^2)/4\) 이므로 근의 조건이 \(s'^2\le p-36\) (13회차의 경험적 조건의 유도). \(p=37\) 은 \(N(q')=(37-9)/4=7<9\) 로 실패.
+  \end{itemize}
+\item
+  따라서 13회차 표의 \(L_{24}(p)\) 는 "표수 \(p\) 에서 \(Y^2=X^{13}-X\) 의 (뒤틀린) Mordell--Weil 격자", \(p=61\) 의 랭크 40 격자는 \(Y^2=X^{21}-X\) 의 것. 부수적으로: \(N\mid p-1\), \((p-1)/N\) 홀수이면 \(Y^2=X^{N+1}-X\) 의 Jacobian 은 표수 \(p\) 에서 초특이(\(C_p\) 의 몫).
+\end{itemize}
+
+\textbf{{[}미해결{]}} (i) 몫곡선 격자가 왜 unimodular 점에서 정확히 짝 unimodular 인지(관찰: 접착 지수 \(g_U=m^{\mathrm{rank}}\))의 개념적 증명; (ii) \(L_{24}(p)\) 가 Leech 인지 Niemeier 인지의 법칙 --- \(p=13,277,421,541\): Leech; \(37,157\): \(D_4^6\); \(61\): \(E_8^3\); \(397\): 근 720개. 모두 \(p\equiv13\pmod{24}\) 이므로 단순한 합동 조건이 아니다(초특이 타원곡선의 quaternion ideal 류에 의존할 것으로 추정 {[}휴리스틱{]}). (iii) 처음 유도는 심사를 거치지 않은 상태였다 → 아래 마무리.
+
+\textbf{16회차 마무리 --- AI 심사 에이전트의 판정: "사소한 수정 후 옳음"} (\texttt{rounds/R16\_quotient\_curve/referee.md}; 손 계산만, 계산기 검산 없음)
+
+\begin{itemize}
+\tightlist
+\item
+  반박된 항목 없음. 확인된 것: 토러스 작용 공식, \(k(X,Y)\) 가 불변체 전체(\(\deg\pi=m\)), \(D\) 는 매끄럽고 종수 \((p-1)/(2m)\) (짝수), Riemann--Hurwitz 가 완전분기점 2개(\((0,0)\), \(\infty\))로 맞음; 고정점 논증에 의한 전단사성(격자 수준, 지수 1 --- 분기 고정점이 없으면 일반적으로 실패); \(q_F=m\,q_F'\), \(Q_t=m\,Q_t'\); 문턱의 산술과 \(N(q')=(p\ell^2-s'^2)/4\) (정규화 \(s'=s/m\) 일치; \(p=37\) 의 위반 근은 \(q'=(19-3\sqrt{37})/2\), 즉 \(Y^2=X^{13}-X\) 에서 \(E\) 로 가는 차수 19 사상).
+\item
+  \textbf{지적과 수정}: (1) \(q'\in O_F\) (적분성)가 가정으로만 쓰였음 → T1 의 논증이 \(D\) 에 그대로 적용됨을 보충(\(\pi_D^2=p\), Weierstrass 점이 \(\mathbb F_p\)-유리점이라 \((1+\pi_D)/2\in\mathrm{End}\), \(D\) superspecial). (2) \textbf{"랭크 8 고정격자가 모든 \(p\) 에서 정확히 경계" 는 과장} --- 증명되는 것은 "위반을 만들지 않는다(\(N(q')\ge1\))" 뿐이고, 등호의 존재는 수치 사실. (3) 불변 부분격자 = 노름사상의 상 이라는 데 한 문장 필요(\(\mathrm{Norm}=\pi^*\pi_*\), Jacobian 의 분해; 스케치). (4) \(p=37\) 의 \(N(q')=7\) 은 명제의 귀결이 아니라 10회차 수치 결과를 사전으로 옮긴 것. 부수 진술은 "초특이" 에서 "superspecial" 로 강화 가능.
+\item
+  \textbf{지위}: 기하 부분 \href{AI\%20심사\%201회}{증명됨}. \(W_p\) 와의 연결, 어떤 \(N(q')\) 값이 실제로 나타나는지는 11회차 T1 {[}증명 스케치{]} 또는 수치에 의존.
+\end{itemize}
+
+\textbf{다음 회차에서 할 일}: 14·15회차(진행 중)의 결과 수합 → Leech 텐서족 정리의 상태 확정.

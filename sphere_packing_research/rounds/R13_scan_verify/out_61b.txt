@@ -1,0 +1,15 @@
+p=61 K=300 seed=4242: relation residuals (S^2+I, (ST)^3+I on 3 embeddings) (2.231410371933743e-16, 8.617648093045562e-16), sampling 7.4s
+ C_5: float integrality of B 7.3e-12, of E 5.1e-11
+Traceback (most recent call last):
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R13_scan_verify/vf.py", line 195, in <module>
+    res = analyse(p, m, Bg[:K0, :K0], Eg[:K0, :K0], tag='[first %d samples]' % K0, do4=do4, tscan=(K0 == K))
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R13_scan_verify/vf.py", line 126, in analyse
+    G2, U = V.lll_gram(np.array(BM, dtype=float)); Uo = np.array(np.round(U), dtype=np.int64).astype(object)
+            ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R2_voronoi_descent/voronoi.py", line 29, in lll_gram
+    L = np.linalg.cholesky(G)
+  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 887, in cholesky
+    r = gufunc(a, signature=signature)
+  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 147, in _raise_linalgerror_nonposdef
+    raise LinAlgError("Matrix is not positive definite")
+numpy.linalg.LinAlgError: Matrix is not positive definite

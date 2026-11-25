@@ -25,7 +25,7 @@ V_{LP}=\det(A^*)^{-1/2}\kappa_n\ \sim\ \chi^2_{2N},\qquad\text{즉 }\ \tfrac12V_
 KKT 조건으로 최적점은 (i) $A_S\succ0$, (ii) $I\in\mathrm{cone}\{xx^T:x\in S\}$, (iii) $\mathcal E_{A_S}$ 가 비어 있음을 만족하는 유일한 $N$-부분집합 $S$ 로 결정된다. Mecke 공식으로 $\P(V\in dw)=\tfrac{2^{-N}}{N!}\int1[(i),(ii)]\,1[\Vol\in dw]\,e^{-\Vol/2}dx$ 이고 (i),(ii) 는 스케일 불변이므로 밀도는 $Cw^{N-1}e^{-w/2}$. (Miles, M\o ller--Zuyev 의 Gamma 형 정리와 같은 논법.)
 \end{proof}
 수치 확인: $n=4$: 400 표본, 평균 $20.06\pm0.30$ (예측 20), KS $p=0.65$; $n=6$: 평균 $40.9\pm0.7$ (42), $p=0.31$; 서로 독립인 세 구현에서 $n=10..26$: $V_{LP}/N=1.95$--$2.05$.
-\begin{theorem}[모형 정리 A; Gordon 비교, 증명은 스케치]\label{thm:modelA}\tagM\
+\begin{theorem}[모형 정리 A; Gordon 비교]\label{thm:modelA}\tagM\ (스케치: Gordon 비교의 균등 집중 단계는 작성되지 않음)\
 가우스 모형에서 $N\to\infty$ 일 때 $K_v\ne\emptyset$ (w.h.p.) $\iff v<(\tfrac2e+o(1))N$; 임계점에서 $\rho^2\to8$, 활성 제약 $N$ 개, $V=e\,v^*=2N$. 반지름 $\rho$ 의 구면 위에서는 한쪽 방향만: $V\le(1+o(1))\rho^2N/4$.
 \end{theorem}
 핵심 계산은 $\sum_i\E(\sigma_i+rZ)_-^2=4ve^{r^2/8}$ (분산 $192V$) 과 균형식 $4ve^{r^2/8}=r^2N$. 활성 제약의 offset 분포는 $\tfrac{r^2}2+rZ-\mathrm{Exp}(\text{평균 }2)$ (평균 2, 표준편차 $3.46$) \tagN. 유한 크기 보정이 크다: $n\le26$ 의 기하학적 Poisson 모형에서 $v_{LP}/N=0.62$--$0.69$ (극한 예측 $0.736$), $\log(V/v)=1.07$--$1.23$ (예측 1), 임계 $\|B_0\|^2=4(n+2)/n$.

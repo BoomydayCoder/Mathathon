@@ -2,32 +2,33 @@
 
 \subsection{실패했거나 강등된 접근 (이유와 함께)}
 \begin{enumerate}
-\item \textbf{고정점 없는 군으로 궤도를 키우기} (Venkatesh/AGZ 의 직접 확장). 실패 \tagP: Frobenius complement 의 구조정리 때문에 이득 $\tfrac12\sum\rho(g)^2\le24c/\varphi(c)=O(\log\log)$. 비가환군($SL_2(5)\times C_N$ 등)은 상수 4배만 준다.
+\item \textbf{고정점 없는 군으로 궤도를 키우기} (Venkatesh/AGZ 의 직접 확장). 실패 \tagP\ (Zassenhaus 의 구조정리 인용): 이득 지표 $g=\tfrac12\sum\rho(g)^2\le120\prod_{\ell\mid|G|}\tfrac{\ell}{\ell-1}=O(\log\log|G|)$. 비가환군($SL_2(5)\times C_N$ 등)은 원분 경우 대비 상수배만 준다.
 \item \textbf{$\Delta=\Q$ 인 큰 군} (Weyl 군, $S_n$, Clifford 군/Barnes--Wall, $Co_0$ 자체). 실패 \tagP: 텐서형 격자 $W_\Z\otimes L$ 은 $\gamma_r/r<1$ 때문에 항상 불안정(순수 텐서가 지수적으로 많음).
 \item \textbf{$PSL_2(p)$ ($p\equiv3\bmod4$), Heisenberg 군, $Sp_{2n}(p)$ ($n\ge2$), $SL_2(p)$ with $(p+1)/2$ 합성수}. 실패 \tagP/\tagH: 고정공간을 갖는 소수 위수 원소가 $a\ne b$ (unimodular 강직성) 또는 직선에서 $f\tau^2\to\tfrac12$.
-\item \textbf{$SL_2(37)$}. 실패 \tagN: \S\ref{sec:weilcomp} --- $C_3$-고정 부분격자가 근을 가진 Niemeier 격자의 $\sqrt3$ 배.
+\item \textbf{$SL_2(37)$}. 실패 \tagPC: \S\ref{sec:weilcomp} --- $C_3$-고정 부분격자가 근을 가진 Niemeier 격자 $N(D_4^6)$ 의 $\sqrt3$ 배이고, 그 근이 생성하는 직선에서 $R_U=(9/7)^4>1$ (정수 인증서).
 \item \textbf{GGS 원분 접착에서 꼭대기를 피하는 지표 집합}으로 $M/C>M/\varphi(M)$. 개선 없음 \tagN: 약수 24개 이하의 모든 시험 모듈러스에서 admissible 데이터 0개; 일반 no-go 는 미증명.
 \item \textbf{``Poisson 모형의 LP 값 $2N$ 이 격자에도 성립한다''}. 접근 가능한 차원에서는 거짓 \tagN: $n\le8$ 에서는 원리적으로 불가능, $n=14..28$ 에서 $V_{LP}/N=1.2$--$1.75$.
 \item \textbf{``모형이 $V_n\asymp n^2\log n$ 을 예측한다'', ``과정 기반 구성은 $\Theta(n^2)$ 을 넘지 못한다''}. 심사에서 휴리스틱/사변으로 강등(\S\ref{sec:perceptron}).
-\item \textbf{``Leech 텐서족이 $2.79\,n^2$ 을 준다''}. 정리가 아니라 휴리스틱으로 강등: $r\ge2$ 텐서족에 대한 등변 Klartag 정리가 없고, $k\approx r$ 에서는 호흡 모드 때문에 이득이 사라진다.
+\item \textbf{``Leech 텐서족이 $2.79\,n^2$ 을 준다''}. 11회차에서 휴리스틱으로 강등되었다가(등변 Klartag 정리의 부재), 14·15회차에서 고정된 자료·$k\to\infty$ 의 정리로 복원되었다(정리 \ref{thm:D}; 인용 정리 전제, AI 심사만 거침). $k\approx r$ 체제에서 호흡 모드 때문에 이득이 사라진다는 관찰은 그대로 유효하다.
 \item \textbf{소차원 규칙성에서 점근 공식 읽어내기}. 소차원의 좋은 격자(root, laminated, 큰 키싱 수)는 $V\gg n^2$ 인 예외적·퇴화 꼭짓점이고 점근 영역($V\sim wD$)과 다른 체제에 속한다. 얻은 구조적 교훈은 ``$V\approx$ 상수 $\times$ 독립 접촉 궤도 수 $\times$ 궤도 크기'' 라는 회계뿐이다.
 \end{enumerate}
 
 \subsection{정확히 어디서 막혔는가}
 \begin{description}
-\item[(G1) 텐서족에 대한 등변 Klartag 정리.] $A=M_r(\Delta)$, $r\ge2$ 일 때: 낮은 랭크 항을 포함한 평균값 공식(Steinitz 류 포함)의 완전한 증명, 비자유 궤도의 가중 계수, 그리고 $q=q_0(1+\tfrac{r-1/2}k)$ 의 호흡 모드 처리($k\ge Cr\log n$ 또는 대각합 없는 잡음). 이것이 있어야 Leech 족($p=13$)의 $2.79n^2$ 과 $p=61$ 의 조건부 상수가 정리가 된다.
+\item[(G1) 텐서족에 대한 등변 Klartag 정리 --- 고정된 자료에서는 해결, 남은 것은 균등성.] 14·15회차에서, 고정된 $(G,W,\Lambda_W)$ 와 $k\to\infty$ 에 대해서는 (h1)(class number 1)과 (BS) 아래 정리 \ref{thm:E} 로 해결되었다(인용 정리 전제, AI 심사만 거침). 남은 것: (a) $r$ 이 $k$ 와 함께 커지는 체제 --- 호흡 모드 $q=q_0(1+\tfrac{r-1/2}k)$ 의 처리($k\ge Cr\log p$ 에서의 균등한 오차항, 또는 대각합 없는 잡음); (b) class number $>1$ 인 order (자유가 아닌 $\Lambda_W\cap U$, Steinitz 류); (c) 효과적인 오차항(현재 증명은 $n\gtrsim10^{14}$ 에서야 비자명); (d) 인용한 Gargava 정리 16 의 $\Delta_\R=\HH^2$ 경우 증명 세부의 확인.
 \item[(G2) Weil 격자의 산술.] $p=61,73,157,\dots$ 에서 $N_{F/\Q}(q_F(\phi))\ge((p-1)/4)^2$ ($\forall\phi:C_p\to E$) 인가? 초등적으로는 $\deg\ge(p+3)/4$ 뿐. 유한 계산으로 결정 가능하지만 $p=61$ 은 120차원에서 노름 $\approx8$ 까지의 벡터를 $t$-원 전체에 대해 열거해야 한다.
 \item[(G3) 접착 틀의 상계.] 모든 admissible 데이터에 $M/C\le K\,M/\varphi(M)$.
 \item[(G4) LP 추측.] Haar-랜덤 격자에서 대각합-LP 꼭짓점의 부피 $(1+o(1))n^2$: ``한 타원체 위의 $N\gg n$ 개 격자벡터'' 의 기대 개수(Rogers 공식 밖).
 \item[(G5) 구멍 확률.] $V\sim n^2\log n$ 에서 $P_V\le e^{-cV}$ --- 이것 하나가 $V_n\le Cn^2\log n$ 을 준다(Lemma N 과 결합).
-\item[(G6) 문헌 확인.] Gross (1990), Nebe (1998) 원문 미열람; 정리 \ref{thm:quatAB} 의 새로움 미확인; Gargava 평균값 정리의 $s\ge2$ 경우 증명 세부.
+\item[(G6) 문헌 확인과 검증 수준.] Gross (1990), Nebe (1998), Dummigan, Tiep 의 원문 미열람(해당 호스트 접근 불가) --- 특히 $p=37$ 격자의 최소노름 6 이 이미 문헌에 기록되어 있는지 확인하지 못했다. 정리 \ref{thm:quatAB} 의 새로움: 14회차 문헌 점검(arXiv 초록 검색과 AGZ, GGS, Rezvyakova, Gargava 본문 확인)에서 $1/(2e)$ 보다 큰 명시적 상수나 사원수 가군에 Klartag 방법을 쓴 선행 결과를 찾지 못했으나, 검색 범위가 제한적이므로 새로움을 단정하지 않는다. Gargava 평균값 정리의 $s\ge2$ 경우 증명 세부 미확인. 이 보고서의 모든 증명은 AI 에이전트의 교차 검토만 거쳤다.
 \end{description}
 
 \subsection{다음 연구 과제 (우선순위 순)}
 \begin{enumerate}
 \item \textbf{$p=61$ 결정.} (i) 12회차의 체계적 시험을 정수 연산으로 재현, (ii) BKZ/체질 수준의 격자 축소로 $W_{61}$ 의 $t$-원 전체에서 $Q_t$-최소벡터 탐색, (iii) Hilbert 모듈러 theta 급수($\Q(\sqrt{61})$, 무게 30)로 위반 계수의 소멸 여부를 조사. 안정이면 (G1)과 결합해 $n=120k$ 에서 Rezvyakova 상수의 약 63배(조건부).
-\item \textbf{(G1) 증명.} 먼저 $p=13$ (Leech, $r=3$, class number 1, 경계 직선 1638개가 완전히 분류됨)에서. 대각합 없는 잡음 변형이 $k\approx r$ 에서도 작동하는지가 핵심 보조정리다.
-\item \textbf{$p=73,157$} ($p\equiv1\bmod8$ 은 Galois 타원 몫이 없어 경계 벡터조차 알려져 있지 않다) 과 일반 $p$ 에 대한 구조적 논증: $C_m$-고정 부분격자 $=\sqrt m\,\times$(종수 $(p-1)/(2m)$ 곡선 $Y^2=X^{(p-1)/m+1}-X$ 의 같은 유형의 격자)라는 재귀 구조로 ``근의 존재'' 를 판정할 수 있는가.
+\item \textbf{정리 \ref{thm:D}, \ref{thm:E} 의 사람에 의한 검증과 강화.} (i) 부록 \ref{app:proof14}, \ref{app:proof15} 의 증명을 논문 형태로 정돈해 전문가 검토를 받는다(특히 Gargava 정리 16 의 $s\ge2$ 경우와 군 $\{N=1\}$ 의 정의). (ii) 효과적인 오차항: 시작 공의 Markov 단계에서 점 대신 궤도를 세면 문턱 $n\gtrsim10^{14}$ 을 낮출 수 있다. (iii) class number $>1$ 로의 확장. (iv) $r$ 이 커지는 체제에서 대각합 없는 잡음 변형.
+\item \textbf{$p=73,193$} ($p\equiv1\bmod8$: 이 보고서의 구성($v_0$, $(-1,-1)_F$)이 적용되지 않고 경계 벡터의 후보조차 계산하지 못했다) 과 일반 $p$ 에 대한 구조적 논증: $C_m$-고정 부분격자 $=\sqrt m\,\times$(종수 $(p-1)/(2m)$ 곡선 $Y^2=X^{(p-1)/m+1}-X$ 의 같은 유형의 격자)라는 재귀 구조로 ``근의 존재'' 를 판정할 수 있는가.
 \item \textbf{사원수 정리의 정돈과 확장.} 정리 \ref{thm:quatAB} 를 논문 형태로 다듬고(Gargava 정리의 $s\ge2$ 세부 확인), 행렬 블록 경우(\S7)의 심사, 원분체와 결합해 $n^2\log\log n$ 의 명시적 상수 얻기.
-\item \textbf{상계 쪽.} (G5)의 약한 형태 --- 예: 대칭이 없는 격자족에 한정한 구멍 확률의 Poisson 형 꼬리 --- 는 Venkatesh 의 추측에 대한 첫 증거가 된다. 반대로 $SL_2(p)$ 족이 안정이면 그 추측의 반례 후보다.
+\item \textbf{상계 쪽.} (G5)의 약한 형태 --- 예: 대칭이 없는 격자족에 한정한 구멍 확률의 Poisson 형 꼬리 --- 는 (AGZ 가 전하는) Venkatesh 의 추측 $V_n\le n^2(\log n)^{O(1)}$ 에 대한 첫 증거가 된다. 반대로 $SL_2(p)$ 족이 무한히 많은 $p$ 에서 안정이고 (G1)이 $k\ge Cr\log p$ 에서 성립하면 그 추측의 반례가 된다(명제 \ref{conj:dichotomy}).
+\item \textbf{대각합 없는 잡음.} 호흡 모드(항등 방향)의 이차변동 $1/n$ 을 제거한 Klartag 과정의 변형이 $k\approx r$ 인 텐서족에서도 $V\sim|G|D_k/(2e)$ 를 주는지 --- (G1)의 독립된 부분 문제이며, 성립하면 필요한 차원이 $p^2\log p$ 에서 $p^2$ 로 줄어 조건부 지수가 $n^{5/2}/\sqrt{\log n}$ 에서 $n^{5/2}$ 로 좋아진다 \tagH.
 \end{enumerate}

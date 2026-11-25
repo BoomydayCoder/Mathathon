@@ -1,0 +1,5 @@
+dim Q = 6  expected 2k^2-k = 6 ; R_N symmetric for Hermitian N: True ; Tr R_N = d r Re tr N: True
+trial 0: q = 0.0456939728  formula = 0.0456939728  q0(s=1) = 0.027778  q/q0 = 1.6450
+trial 1: q = 0.0451311300  formula = 0.0451311300  q0(s=1) = 0.027778  q/q0 = 1.6247
+trial 2: q = 0.0562435914  formula = 0.0562435914  q0(s=1) = 0.027778  q/q0 = 2.0248
+trial 3: q = 0.0833333333  formula = 0.0833333333  q0(s=1) = 0.027778  q/q0 = 3.0000

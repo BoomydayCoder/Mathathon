@@ -1,0 +1,15 @@
+[    0.0s] p=13 setup ok: kappa=-1, rounding residuals (np.float64(7.105427357601002e-15), np.float64(3.552713678800501e-14), np.float64(8.881784197001252e-15)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    0.0s] loaded saved basis; float logdet(B)/(p-1) = 4.762173935 vs log D = 4.762173935
+[   0.0s] p=13 n=24 r=3 D=117  tr(S)=0 tr(T)=-2 (expect 0, -2)
+[   0.0s] det(B) == D^(n/2) mod three large primes: OK
+[   0.0s] EXACT det(B) == D^(n/2): True
+[   0.0s] eta matrix rounding residual 1.30e-13
+[   0.0s] EXACT: M B == E: True  M^2 == p: True  M commutes with S,T: True
+[   0.0s] EXACT: B X == r M with X integral (=> Lambda^# = eta/(rp) Lambda given det(B)=D^(n/2)): True resid 7.1e-14
+[    0.0s]    saturated basis rank 8: float logdet 27.837594 vs log(g D^{k/2}) = 27.837594 ok=True exact=True; diag(B) min 36 max 72
+[   0.0s] CERT Fix(split C_3)                           dim   8  primitive(rank mod q=k for q in [3, 13]): True  det=3^16*13^4  R_U = 1 = 1   tester-g matches: True
+[    0.0s]    saturated basis rank 8: float logdet 27.837594 vs log(g D^{k/2}) = 27.837594 ok=True exact=True; diag(B) min 36 max 72
+[   0.0s] CERT SL_2(3) [b=1] Hurwitz comp               dim   8  primitive(rank mod q=k for q in [3, 13]): True  det=3^16*13^4  R_U = 1 = 1   tester-g matches: True
+[    0.0s]    saturated basis rank 8: float logdet 27.837594 vs log(g D^{k/2}) = 27.837594 ok=True exact=True; diag(B) min 36 max 72
+[   0.0s] CERT SL_2(3) [b=2] Hurwitz comp               dim   8  primitive(rank mod q=k for q in [3, 13]): True  det=3^16*13^4  R_U = 1 = 1   tester-g matches: True
+[   0.0s] done

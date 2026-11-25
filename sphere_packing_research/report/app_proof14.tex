@@ -1,0 +1,230 @@
+\hypertarget{r14.-the-leech-tensor-family-lambda_24otimes_mathcal-ol-theorem-d-and-the-template-theorem-e-non-free-actions}{%
+\subsection*{\texorpdfstring{R14. The Leech tensor family \(\Lambda_{24}\otimes_{\mathcal O}L\): Theorem D and the template Theorem E (non-free actions)}{R14. The Leech tensor family \textbackslash Lambda\_\{24\}\textbackslash otimes\_\{\textbackslash mathcal O\}L: Theorem D and the template Theorem E (non-free actions)}}\label{r14.-the-leech-tensor-family-lambda_24otimes_mathcal-ol-theorem-d-and-the-template-theorem-e-non-free-actions}}
+
+\begin{quote}
+\textbf{STATUS BOX} (prover, written in one pass of about 30 minutes; NOT refereed; numerical checks: Monte Carlo test of Lemma 3.4 (\texttt{check\_angular.py} / \texttt{check\_angular.out}) and a brute-force check of Lemma 0.3/0.4 (\texttt{check\_q.py} / \texttt{check\_q.out}); see §7.7).
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Theorem E (template): PROVED CONDITIONALLY} on the explicit hypothesis \textbf{(H-Rogers)} (Siegel-Weil-Rogers mean value formula for \(\Delta\)-independent \(j\)-tuples, \(2\le j\le r\), of a random \(\mathcal O\)-lattice of rank \(k>r\)), on the hypothesis \textbf{(BS)} of the statement, and on the cited inputs (L1)-(L3) of round 6 (Gargava Thm 16 = the case \(j=1\); Klartag; standard stochastic calculus). I believe (H-Rogers) is a theorem (Weil\textquotesingle s Siegel formula for \(SL_k\) of a division algebra plus strong approximation), but I quote it FROM MEMORY and could not derive it from Gargava\textquotesingle s Theorem 16 in the time available: it is a HYPOTHESIS here.
+\item
+  \textbf{Theorem D (Leech, constant \(\frac{91}{12e}\), \(24\mid n\)): PROVED CONDITIONALLY} on (H-Rogers) for \(j=2,3\), on (L1)-(L3), and on the computer-assisted facts of round 5 (R5), including "class number of \(\mathcal O\) is one" (R5 takes this from the Eichler mass formula, from memory). (BS) is PROVED for Leech from R5 Theorem 3 (Section 6).
+\item
+  New relative to round 6, all tagged {[}P{]} below but un-refereed: Lemma 0.4 (\(q\) on lower-rank points), Lemma 1.1-1.5 (freeness, mean value formula with lower-rank terms, counting of subspaces, summability), Lemma 2.2 (non-free orbit counting), Lemma 3.4 (angular lemma for \(j\times k\) blocks, re-proved), Prop. 3.5 (shell integral on every \(E_U\)), Prop. 4.1 (good lattice with three bad events).
+\item
+  Finding beyond the task statement: with the exact \(q\) on \(E_U\) the time-integrated contact count of a borderline subspace of relative dimension \(f\) is \(O(n^{-5(1-f)/2})\); hence for FIXED data and \(k\to\infty\) the restriction "\(f\le\frac12\)" for the exceptional subspaces is not needed, and the exact number 1638 is not needed (only finiteness).
+\end{itemize}
+\end{quote}
+
+Tags: \textbf{{[}P{]}} proved here in full; \textbf{{[}V{]}} verbatim from \texttt{../R6\_quaternionic/proof\_revised.md} (cited as {[}R6{]}) or Klartag {[}K{]} (arXiv:2504.05042), with the properties used listed; \textbf{{[}L{]}} cited literature; \textbf{{[}H{]}} heuristic; \textbf{{[}GAP{]}/{[}HYP{]}} not proved. {[}G{]} = Gargava arXiv:2107.04844; {[}R5{]} = \texttt{../R5\_leech13/notes.md}.
+
+Normalisation as in {[}R6{]}: \(V(L)=\sup \mathrm{Vol}(B)/\mathrm{covol}(L)\) over open origin-centred \(L\)-free balls, \(\kappa_m=\mathrm{Vol}(B^m)\).
+
+\hypertarget{main-results}{%
+\subsubsection*{Main results}\label{main-results}}
+
+\textbf{Standing data (T).} \(G\) a finite group, \(W\) an irreducible \(\mathbb Q[G]\)-module (\(G\subset GL(W)\) faithful), \(\Delta:=\mathrm{End}_G(W)^{op}\) (a division algebra; \(W\) is a right \(\Delta\)-vector space of dimension \(r\)), with \(\Delta_{\mathbb R}\cong\mathbb K^s\), \(\mathbb K\in\{\mathbb R,\mathbb C,\mathbb H\}\), \(d=\dim_{\mathbb R}\mathbb K\). \(A:=\mathbb Q\)-span of \(G\) \(=\mathrm{End}_\Delta(W)\) (double centraliser theorem {[}L, classical{]}), \(\dim_{\mathbb Q}A=r^2sd\). \(\Lambda_W\subset W\) a \(G\)-invariant lattice with a \(G\)-invariant Euclidean structure on \(W_{\mathbb R}\); \(\mathcal O:=\{c\in\Delta:\Lambda_Wc\subseteq\Lambda_W\}\) (an order). \textbf{(h1)}: every nonzero right ideal of \(\mathcal O\) is principal. Put \(w=|G|\), \(N_W=\dim_{\mathbb Q}W=rsd\), \(n=kN_W\),
+\[q_0:=\frac1{\dim_{\mathbb Q}A}=\frac1{r^2sd},\qquad D_k:=s\Big(k+\frac{d\,k(k-1)}2\Big).\]
+For a \(\Delta\)-subspace \(0\ne U\subsetneq W\) of \(\Delta\)-dimension \(j\): \(f=f_U:=j/r\), \(c_U:=\mathrm{covol}(\Lambda_W\cap U)\) in \(U_{\mathbb R}\), \(c_W=\mathrm{covol}(\Lambda_W)\),
+\[R_U:=f^{-\dim_{\mathbb Q}U}\,\frac{c_W^{2f}}{c_U^{2}}=\Big(\frac{\dim W}{\dim U}\Big)^{\dim U}\frac{\det(\Lambda_W)^{f}}{\det(\Lambda_W\cap U)} .\]
+
+\textbf{(BS)} \(R_U\le1\) for all proper \(\Delta\)-subspaces \(U\neq0\), and there is \(\rho_0<1\) with \(R_U\le\rho_0\) for all but finitely many \(U\). (Exceptional set \(\mathcal E:=\{U:R_U>\rho_0\}\), finite.)
+
+\textbf{(H-Rogers)\(_{j}\) {[}HYP for \(j\ge2\); \(j=1\) is (L1){]}.} Let \(k>j\), \(\mathsf G_k=\{\gamma\in GL_k(\Delta_{\mathbb R}):N(\gamma)=1\}\) acting on row vectors \(\Delta_{\mathbb R}^{1\times k}\) from the right, \(\Gamma_k=\mathsf G_k\cap GL_k(\mathcal O)\), \(\gamma\Gamma_k\) distributed by the invariant probability measure on \(\mathsf G_k/\Gamma_k\) (i.e. the random lattice of {[}G, Thm 16{]} for the opposite algebra \((\Delta^{op},\mathcal O^{op})\), written with rows). Then for every Borel \(F:\Delta_{\mathbb R}^{j\times k}\to[0,\infty]\)
+\[\mathbb E\sum_{Y\in\mathcal O^{j\times k},\ \mathrm{rk}_\Delta Y=j}F(Y\gamma)=\int_{\Delta_{\mathbb R}^{j\times k}}F(y)\,dy,\qquad dy\ \text{normalised by}\ \mathrm{covol}(\mathcal O^{j\times k})=1 .\]
+
+\textbf{Theorem E (template) {[}P, conditional on (H-Rogers)\(_j\), \(2\le j\le r\), and (L1)-(L3){]}.} Assume (T), (h1), (BS). As \(k\to\infty\) (data fixed), \(n=kN_W\): there is an \(\mathcal O\)-lattice \(L=\mathcal O^{1\times k}\gamma'\), \(\gamma'\in GL_k(\Delta_{\mathbb R})\), such that \(\Lambda_W\otimes_{\mathcal O}L\), rescaled to covolume 1, has no nonzero point in the open ball of volume
+\[(1-o(1))\,\frac{w\,q_0\,n^2}{4e}=(1-o(1))\frac{|G|\,n^2}{4e\,\dim_{\mathbb Q}A}.\qquad\text{Hence }V_n\ge(1-o(1))\frac{|G|n^2}{4e\dim_{\mathbb Q}A}\ \ (N_W\mid n).\]
+(For \(r=1\) there are no proper subspaces, (BS) and (H-Rogers)\(_{\ge2}\) are empty, and this is {[}R6, Thm C′{]}.)
+
+\textbf{Theorem D (Leech tensor family) {[}P, conditional on (H-Rogers)\(_2\), (H-Rogers)\(_3\), (L1)-(L3), and the facts (R5-a,b) of Section 6{]}.} With \(\Lambda_W=\Lambda_{24}\), \(G=\mathrm{Aut}_\Delta(\Lambda_{24})\cong SL_2(13)\), \(w=2184\), \(\Delta=\mathbb H\otimes\mathbb Q(\sqrt{13})\), \(r=3\), \(s=2\), \(d=4\), \(\dim_{\mathbb Q}A=72\): as \(k\to\infty\), \(n=24k\), there is an \(\mathcal O\)-lattice \(L\) of rank \(k\) such that \(\Lambda_{24}\otimes_{\mathcal O}L\) (covolume 1) has no nonzero point in the open ball of volume \((1-o(1))\frac{2184}{288e}n^2=(1-o(1))\frac{91}{12e}n^2\). Hence \(V_n\ge(\frac{91}{12e}-o(1))n^2\) for \(24\mid n\). (\(\frac{91}{12e}=2.790\).)
+
+\textbf{Cited inputs.} (L1) {[}G, Thm 16{]} for \((\Delta^{op},\mathcal O^{op})\), \(k\ge2\) = (H-Rogers)\(_1\) (checked against the source in round 6, not in this round; proof not re-verified; caveat of {[}R6, Rem. 4.1a(iv){]} for \(s\ge2\) applies). (L2) Klartag {[}K{]} as used in {[}R6{]}. (L3) Itô, Lévy, DDS, reflection principle, GOE tail bound; Minkowski\textquotesingle s second theorem; Stirling\textquotesingle s formula with remainder. (H-Rogers)\(_{j\ge2}\): see Remark 1.3.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{setup}{%
+\subsubsection*{0. Setup}\label{setup}}
+
+\textbf{0.1 Coordinates {[}P{]}.} By Lemma 1.1 below and (h1), \(\Lambda_W\) is a free right \(\mathcal O\)-module; fix an \(\mathcal O\)-basis \(w_1,\dots,w_r\) (it is a \(\Delta\)-basis of \(W\)). So \(W=\Delta^r\) (columns), \(\Lambda_W=\mathcal O^r\), \(G\subset GL_r(\mathcal O)\) acting by left multiplication, \(\Delta\) by right multiplication; \(W_{\mathbb R}=\bigoplus_{v\le s}\mathbb K^r\).
+
+\textbf{Lemma 0.1 (the Euclidean structure is Hermitian) {[}P{]}.} There are \(M_v\in GL_r(\mathbb K)\) with \(|x|^2=\sum_v|M_vx_v|^2_{std}\) for \(x\in W_{\mathbb R}\); and \(u_g:=MgM^{-1}\) is unitary at every place, for \(g\in G\).
+\emph{Proof.} Let \(B_0\) be the \(G\)-average of \(\sum_v\mathrm{Re}(x_v^*y_v)\): \(B_0(x,y)=\sum_v\mathrm{Re}(x_v^*H^0_vy_v)\), \(H^0_v\) positive Hermitian, \(G\)-invariant. The given inner product is \(B_0(C\cdot,\cdot)\) with \(C\) \(B_0\)-symmetric positive and commuting with \(G\), hence with the \(\mathbb R\)-span of \(G\), which is \(A_{\mathbb R}=\mathrm{End}_{\Delta_{\mathbb R}}(W_{\mathbb R})=\prod_vM_r(\mathbb K)\); its commutant is \(\{R_c:c\in\Delta_{\mathbb R}\}\) (right multiplications). Since \(B_0(xc,y)=B_0(x,y\bar c)\), \(R_c\) is symmetric iff all \(c_v\in\mathbb R\), positive iff \(c_v>0\). So the form is \(\sum_v\mathrm{Re}(x_v^*H_vy_v)\) with \(H_v=c_vH_v^0=M_v^*M_v\). \(u_g\) is right \(\mathbb K\)-linear and norm preserving, hence unitary. \(\square\)
+
+\textbf{0.2 The ambient space and the family {[}P{]}.} \(E:=\Delta_{\mathbb R}^{r\times k}=\bigoplus_vM_{r\times k}(\mathbb K)\ni x=(x_v)\), \(\langle x,y\rangle=\sum_v\mathrm{Re\,tr}(x_v^*y_v)\), \(\dim_{\mathbb R}E=rskd=n\). For \(\gamma\in GL_k(\Delta_{\mathbb R})\) and \(L=\mathcal O^{1\times k}\gamma\) (a left \(\mathcal O\)-module of rows):
+\[\Lambda(L):=M\,\mathcal O^{r\times k}\gamma\ \subset E,\]
+which is the image of \(\Lambda_W\otimes_{\mathcal O}L\) under \((\sum_iw_ia_i)\otimes l\mapsto M(a_i)_i\cdot l\) (column times row), with the tensor product Euclidean structure of the two Hermitian forms. \(G\) acts on \(E\) by \(x\mapsto u_gx\) (orthogonal), and \(u_g\Lambda(L)=M(g\mathcal O^{r\times k})\gamma=\Lambda(L)\). \(\mathrm{covol}(M\mathcal O^{r\times k})=c_W^k\) (orthogonal sum of \(k\) columns). For a \(\Delta\)-subspace \(U\subseteq W\) of dimension \(j\): \(E_U:=\{x\in E:\text{all columns of }x\text{ in }MU_{\mathbb R}\}\), a subspace of real dimension \(jskd=f_Un\).
+
+\textbf{Lemma 0.2 (invariant forms) {[}P{]}.} \(\mathcal Q:=\{A\in\mathrm{Sym}(E):Au_g=u_gA\ \forall g\}=\{R_N:x\mapsto(x_vN_v)_v,\ N_v\in\mathrm{Herm}_k(\mathbb K)\}\); \(\dim\mathcal Q=D_k\); \(\mathrm{Id}\in\mathcal Q\); \(\langle R_N,R_{N'}\rangle=dr\sum_v\mathrm{Re\,tr}(N_vN'_v)\).
+\emph{Proof.} \(A\in\mathcal Q\) iff \(A\) is symmetric and commutes with left multiplication by the \(\mathbb R\)-span of \(\{u_g\}=M A_{\mathbb R}M^{-1}=\prod_vM_r(\mathbb K)\). \(M_{r\times k}(\mathbb K)=(\mathbb K^r)^k\) and \(\mathrm{End}_{M_r(\mathbb K)}((\mathbb K^r)^k)\) is right multiplication by \(M_k(\mathbb K)\); distinct places are non-isomorphic modules of the product. \(R_N\) is symmetric iff \(N=N^*\) (\(\langle xN,y\rangle=\langle x,yN^*\rangle\)). \(\mathrm{Tr}_{\mathbb R}R_N=dr\sum_v\mathrm{Re\,tr}N_v\) (\(r\) rows, each a copy of \(\mathbb K^{1\times k}\)). \(\square\)
+
+\textbf{Lemma 0.3 (projection and \(q\)) {[}P{]}.} Let \(P\) be the orthogonal projection of \(\mathrm{Sym}(E)\) onto \(\mathcal Q\). (a) \(P(B)=\frac1w\sum_gu_gBu_g^T\); \(P(u_gx\otimes u_gx)=P(x\otimes x)\). (b) \(P(x\otimes x)=R_K\), \(K_v=\frac1{dr}x_v^*x_v\). (c) With \(\lambda_{v,i}\ge0\) (\(i\le r\)) the eigenvalues of \(S_v:=x_vx_v^*\in\mathrm{Herm}_r(\mathbb K)\) (so \(\sum_{v,i}\lambda_{v,i}=|x|^2\)):
+\[q(x):=\frac{|P(x\otimes x)|^2}{|x|^4}=\frac1{dr}\frac{\sum_{v,i}\lambda_{v,i}^2}{(\sum_{v,i}\lambda_{v,i})^2}\in[q_0,\ rs\,q_0],\qquad \frac q{q_0}-1=\frac1{rs}\sum_{v,i}(t_{v,i}-1)^2,\ \ t_{v,i}:=\frac{rs\lambda_{v,i}}{|x|^2}.\]
+\emph{Proof.} (a) as {[}R6, Lemma 0.2(a){]} (average over a finite group of orthogonal maps). (b) \(\langle R_K,R_N\rangle=\sum_v\mathrm{Re\,tr}(x_v^*x_vN_v)=\langle x,R_Nx\rangle=\langle R_N,x\otimes x\rangle\). (c) \(|R_K|^2=\frac1{dr}\sum_v\mathrm{Re\,tr}((x_v^*x_v)^2)=\frac1{dr}\sum_v\mathrm{Re\,tr}(S_v^2)\); Cauchy-Schwarz on \(rs\) numbers; \(q_0=\frac1{dr\cdot rs}\). \(\square\) (Leech: \(rs=6\), \(q_0=\frac1{72}\), \(q\le\frac1{12}\); this is {[}R6, Lemma 7.1{]} transposed.)
+
+\textbf{Lemma 0.4 (\(q\) on lower-rank points) {[}P{]}.} Let \(U\) have \(\Delta\)-dimension \(j\), \(f=j/r\). Choose \(Q_v\in M_{r\times j}(\mathbb K)\) with orthonormal columns spanning \(M_vU_v\). Then \(y=(y_v)\mapsto(Q_vy_v)\) is an isometry \(E^{(j)}:=\bigoplus_vM_{j\times k}(\mathbb K)\to E_U\) and for \(x=Qy\)
+\[q(x)=\frac{q_0}{f}\big(1+\mathrm{CV}_j^2(y)\big),\qquad \mathrm{CV}_j^2(y):=\frac1{sj}\sum_{v,\,i\le j}(t_{v,i}-1)^2,\ \ t_{v,i}=\frac{sj\,\mu_{v,i}}{|y|^2},\]
+\(\mu_{v,i}\) the eigenvalues of \(y_vy_v^*\in\mathrm{Herm}_j(\mathbb K)\). In particular \(q\ge q_0/f=(r/j)q_0\) on \(E_U\).
+\emph{Proof.} \(|Q_vy_v|^2=\mathrm{Re\,tr}(y_v^*Q_v^*Q_vy_v)=|y_v|^2\); \(S_v=Q_v(y_vy_v^*)Q_v^*\), \(\mathrm{Re\,tr}S_v^2=\mathrm{Re\,tr}(y_vy_v^*)^2\); so \(q=\frac1{dr}\sum\mu^2/(\sum\mu)^2=\frac1{dr\,sj}(1+\mathrm{CV}_j^2)\) and \(\frac1{drsj}=q_0\frac rj\). \(\square\)
+
+\textbf{Lemma 0.5 (stabilisers) {[}P{]}.} If \(x=\lambda MX\gamma\in\lambda\Lambda(L)\), \(X\in\mathcal O^{r\times k}\), and \(u_gx=x\) with \(g\ne1\), then all columns of \(X\) lie in \(W^g=\ker(g-1)\), a proper \(\Delta\)-subspace of \(W\). (\(u_gx=\lambda M(gX)\gamma\); \(g\) is \(\Delta\)-linear and \(\ne1\).)
+
+\hypertarget{mean-value-formula-with-lower-rank-terms}{%
+\subsubsection*{1. Mean value formula with lower-rank terms}\label{mean-value-formula-with-lower-rank-terms}}
+
+\textbf{Lemma 1.1 (freeness) {[}P{]}.} Under (h1) every finitely generated torsion-free right \(\mathcal O\)-module \(N\) is free.
+\emph{Proof.} Induction on \(j=\dim_\Delta N_{\mathbb Q}\). Take a nonzero \(\Delta\)-linear \(\pi:N_{\mathbb Q}\to\Delta\). \(\pi(N)\) is a nonzero finitely generated right \(\mathcal O\)-submodule of \(\Delta\); for a suitable integer \(c>0\), \(c\pi(N)\) is a nonzero right ideal, \(=a\mathcal O\) by (h1), so \(\pi(N)=\pi(n_0)\mathcal O\) is free on \(\pi(n_0)\) (\(\Delta\) is a division algebra). Then \(N=n_0\mathcal O\oplus(N\cap\ker\pi)\) and \(N\cap\ker\pi\) is finitely generated (as \(\mathbb Z\)-module), torsion-free, of rank \(j-1\). \(\square\)
+
+\textbf{Lemma 1.2 (mean value formula) {[}P from (H-Rogers)\(_j\), \(1\le j\le r\){]}.} Let \(k>r\), \(\lambda:=(\kappa_n/c_W^k)^{1/n}\), \(\gamma\) random as in (H-Rogers), \(\Lambda:=\lambda\Lambda(\mathcal O^{1\times k}\gamma)\). Then \(\mathrm{covol}(\Lambda)=\kappa_n\) and for every Borel \(\varphi:E\to[0,\infty]\)
+\[\mathbb E\sum_{0\ne x\in\Lambda}\varphi(x)=\frac1{\kappa_n}\int_E\varphi\,d\mathrm{vol}+\sum_{0\ne U\subsetneq W}\int\varphi\,d\mu_U,\qquad \mu_U:=\kappa_n^{-f_U}\Big(\frac{c_W^{f_U}}{c_U}\Big)^{k}\mathrm{vol}_{E_U},\tag{MVF}\]
+the sum over all proper nonzero \(\Delta\)-subspaces. Moreover for each fixed \(U\): \(\ \mathbb E\sum_{x\in\Lambda\setminus0,\ \mathrm{col}(x)= U}\varphi(x)=\int\varphi\,d\mu_U\), where \(\mathrm{col}(\lambda MX\gamma):=X\Delta^k\); for lines \(U\) this uses only (L1).
+\emph{Proof.} For \(0\ne X\in\mathcal O^{r\times k}\) let \(U=X\Delta^k\subseteq\Delta^r\) (column space), \(j=\dim_\Delta U\). \(\mathcal O^r\cap U\) is a finitely generated torsion-free right \(\mathcal O\)-module spanning \(U\), hence free (Lemma 1.1): \(\mathcal O^r\cap U=B_U\mathcal O^j\), \(B_U\in\mathcal O^{r\times j}\). \(X\) has its columns in \(\mathcal O^r\cap U\), so \(X=B_UY\) with a unique \(Y\in\mathcal O^{j\times k}\), and \(\mathrm{rk}_\Delta Y=j\) (row rank = column rank over a division ring); conversely every such \(B_UY\) has column space \(U\). Hence \(\{X\ne0\}=\bigsqcup_U\{B_UY:\ Y\in\mathcal O^{j_U\times k},\mathrm{rk}\,Y=j_U\}\) (\(U=W\): \(B_W=\mathrm{Id}\)). Apply (H-Rogers)\(_j\) to \(F(y)=\varphi(\lambda MB_Uy)\): the \(U\)-part has mean \(\int F\,dy\). The linear map \(y\mapsto\lambda MB_Uy\) is a bijection \(\Delta_{\mathbb R}^{j\times k}\to E_U\) sending \(\mathcal O^{j\times k}\) (covolume 1 for \(dy\)) onto \(\lambda\,(M(\mathcal O^r\cap U))^k\), of Euclidean covolume \(\lambda^{fn}c_U^k\) in \(E_U\); so \(\int F\,dy=(\lambda^{fn}c_U^k)^{-1}\int_{E_U}\varphi\,d\mathrm{vol}\), and \(\lambda^{fn}=\kappa_n^fc_W^{-fk}\). For \(U=W\) this is \(\kappa_n^{-1}\int_E\varphi\). Right multiplication by \(\gamma\in\mathsf G_k\) preserves Lebesgue measure on \(\Delta_{\mathbb R}^{1\times k}\) ({[}R6, Lemma 4.2{]}, from (L1)), hence on \(E\); so \(\mathrm{covol}(\Lambda)=\lambda^nc_W^k=\kappa_n\). \(\square\)
+
+\textbf{Remark 1.3 (status of (H-Rogers)) {[}L from memory / HYP{]}.} \(j=1\): {[}G, Thm 16{]} (\(f\in C_c\); extended to Borel \(f\ge0\) as in {[}R6, Lemma 4.2{]}). \(j\ge2\): for \(\Delta=\mathbb Q\) this is Siegel (1945)/Rogers (1955); for number fields see Weil and Gargava-Serban-Viazovska (moments for number field lattices; arXiv number not re-checked). For division algebras I know no verbatim reference. Expected proof {[}H{]}: \(\mathsf G=SL_k(\Delta)\) acts transitively on rank-\(j\) matrices in \(\Delta^{j\times k}\) (\(j<k\)), with stabiliser \(SL_{k-j}(\Delta)\ltimes\Delta^{(k-j)\times j}\) of Tamagawa number 1 (Weil, \emph{Adeles and algebraic groups}, Ch. III, \(\tau(SL_m(D))=1\) -\/- quoted from memory, source not seen in this session), Weil\textquotesingle s integration formula on homogeneous spaces, and strong approximation for \(SL_k(\Delta)\), \(k\ge2\). Only the inequality "\(\le\)" (even with a factor \(1+o(1)\) as \(k\to\infty\)) is used below. A soft argument (invariance of the left side under \(\mathsf G_k\), transitivity on the open conull set of matrices of full rank at every place, uniqueness of invariant Radon measures on a homogeneous space) would give, IF the left side is locally finite, \(\mathbb E\sum=c_j\int\) with a constant \(c_j\), and presumably \(c_j\ge1\) by Fatou {[}H, not checked{]}; local finiteness and \(c_j\le1\) are the nontrivial parts (classically: Siegel/Rogers induction on \(j\) through the stabiliser \(\mathsf G_{k-1}\ltimes\Delta_{\mathbb R}^{k-1}\) of a vector, which needs (L1) in rank \(k-j+1\ge2\), or Tamagawa numbers). \textbf{This is the one missing lemma of this note.}
+
+\textbf{Lemma 1.4 (size of the lower-rank measures) {[}P{]}.} For proper \(U\) and \(V>0\), with \(T_U(V):=\mu_U(\{|x|\le V^{1/n}\})\):
+\[T_U(V)=V^f\frac{\kappa_{fn}}{\kappa_n^f}\Big(\frac{c_W^f}{c_U}\Big)^k\le 2f^{-1/2}(\pi n)^{-\frac{1-f}2}\,V^f\,R_U^{k/2}.\]
+\emph{Proof.} \(\Gamma(x+1)=\sqrt{2\pi x}(x/e)^xe^{\theta/(12x)}\), \(0<\theta<1\), gives \(\kappa_m=(2\pi e/m)^{m/2}(\pi m)^{-1/2}e^{-\theta_m/(6m)}\), so \(\kappa_{fn}\kappa_n^{-f}\le f^{-fn/2}f^{-1/2}(\pi n)^{(f-1)/2}e^{f/(6n)}\); and \(f^{-fn/2}(c_W^f/c_U)^k=R_U^{k/2}\) because \(fn=k\dim_{\mathbb Q}U\). \(\square\) (Borderline line of Leech: \(T_U(V)\approx\sqrt3\,\pi^{-1/3}V^{1/3}n^{-1/3}\).)
+
+\textbf{Lemma 1.5 (counting and summability) {[}P; uses Minkowski\textquotesingle s second theorem{]}.} (a) There is \(C_\Lambda\) with \(\#\{U:c_U\le X\}\le C_\Lambda(1+X)^{N_W^2}\) for all \(X>0\). (b) Under (BS), for \(k\ge N_W^2+2\): \(\ \sum_{U\notin\mathcal E}R_U^{k/2}\le C_1\rho_0^{k/2}\), with \(C_1\) independent of \(k\). Hence \(\Sigma_k:=\sum_{0\ne U\subsetneq W}R_U^{k/2}\le|\mathcal E|+C_1\rho_0^{k/2}\).
+\emph{Proof.} (a) Let \(\ell>0\) be the minimal length of \(\Lambda_W\), \(m=\dim_{\mathbb Q}U\). The successive minima of \(\Lambda_W\cap U\) satisfy \(\ell\le\lambda_1\le\dots\le\lambda_m\), \(\lambda_1\cdots\lambda_m\le2^mc_U/\kappa_m\); so \(U\) is spanned by \(m\) vectors of \(\Lambda_W\) of length \(\le C_mc_U\), and \(\#\{v\in\Lambda_W:|v|\le\varrho\}\le(1+2\varrho/\ell)^{N_W}\) (disjoint balls). (b) \(R_U=a_U/c_U^2\) with \(a_U\le a_{\max}\) (finitely many dimensions). The \(U\) with \(\rho_02^{-i-1}<R_U\le\rho_02^{-i}\) have \(c_U^2<a_{\max}2^{i+1}/\rho_0\), so there are at most \(C'2^{iN_W^2/2}\) of them; \(\sum_iC'2^{iN_W^2/2}(\rho_02^{-i})^{k/2}\le2C'\rho_0^{k/2}\). \(\square\)
+
+\hypertarget{the-process-and-non-free-orbit-counting}{%
+\subsubsection*{2. The process and non-free orbit counting}\label{the-process-and-non-free-orbit-counting}}
+
+Let \(\Lambda\) be a lattice of the family, covolume \(\kappa_n\), \(\mathcal Q\) as in Lemma 0.2, \(F_A,\pi_A\) as in {[}R6, (13\(_\mathcal Q\)){]}.
+
+\textbf{Proposition 2.1 {[}V = R6 Prop. 1.1, Lemma 2.1, Cor. 2.2, Lemma 2.3{]}.} These are stated in {[}R6{]} for an arbitrary lattice and an arbitrary linear subspace \(\mathcal Q\ni\mathrm{Id}\) of \(\mathrm{Sym}_n\) (Prop. 1.1), resp. for an arbitrary adapted projection \(\pi_t\) (Lemma 2.1-2.3): there is a process \(A_t=a_0\mathrm{Id}+\int_0^t\pi_s(dW_s)\in\mathcal Q\) with (A)-(E) of {[}K, Prop. 2.3{]}; \(\mathbb P(\|A_t-a_0\mathrm{Id}\|_{op}\ge C_0r)\le Ce^{-r^2/t}\) for \(r\ge\sqrt{tn}\); \(\mathbb E\log\det A_T\le n\log a_0-\frac12\int_0^T\mathbb E[\|A_t\|_{op}^{-2}N_t]dt\), \(N_t=\dim F_t\le D_k\).
+
+\textbf{Lemma 2.2 (orbit counting, non-free) {[}P{]}.} Let \(\Lambda^{nf}:=\{x\in\Lambda\setminus0:\exists g\ne1,\ u_gx=x\}\). A.s. for all \(t\), \(\partial E_t\cap\Lambda\) is \(G\)-invariant and
+\[N_t\ \ge\ D_k-\#\{G\text{-orbits in }\partial E_t\cap\Lambda\}\ \ge\ D_k-\frac{|\partial E_t\cap\Lambda|}{w}-|\partial E_t\cap\Lambda^{nf}| .\]
+\emph{Proof.} \(A_t\in\mathcal Q\) commutes with the orthogonal \(u_g\), so \(A_tu_gx\cdot u_gx=A_tx\cdot x\); \(u_g\Lambda=\Lambda\). \(F_t\) is the orthogonal complement in \(\mathcal Q\) of \(\mathrm{span}\{P(x\otimes x):x\in\partial E_t\cap\Lambda\}\) and \(P(x\otimes x)\) is constant on orbits (Lemma 0.3(a)). Orbits of points outside \(\Lambda^{nf}\) have exactly \(w\) elements; the other orbits are at most \(|\partial E_t\cap\Lambda^{nf}|\) in number. \(\square\)
+
+\textbf{Proposition 2.3 (volume) {[}P, as R6 Prop. 2.4{]}.} For \(T>0\), \(\rho\ge0\), \(1\le a_0\le1+\frac{3\rho}n\):
+\[\mathbb E\log\det A_T\le n\log a_0-\frac{D_kT}2+\frac1{2w}\int_0^T\mathbb E|\partial E_t\cap\Lambda|dt+\frac12\int_0^T\mathbb E|\partial E_t\cap\Lambda^{nf}|dt+C'D_k\Big(\frac\rho nT+n^{1/2}T^{3/2}+e^{-n}T\Big).\]
+\emph{Proof.} Identical to {[}R6, Prop. 2.4{]} (it uses only \(0\le N_t\le D_k\) and Cor. 2.2), with Lemma 2.2 in place of {[}R6, Lemma 1.3{]}. \(\square\)
+
+\hypertarget{contact-points}{%
+\subsubsection*{3. Contact points}\label{contact-points}}
+
+\textbf{Proposition 3.1 {[}V = R6 Prop. 3.1{]}.} For \(0\ne x\in\Lambda\): \(\mathbb P(x\in\partial E_T)\le2\mathbb P(Z\ge(q(x)T)^{-1/2}(a_0-|x|^{-2}))\). (Uses only \(\pi_t=\pi_tP\) and the definition of \(q\); this holds for every lattice point, free or not, of any rank.)
+
+Let \(\Phi\), \(\mathcal D_t\) be as in {[}R6, §3{]}, and for a subset \(\Lambda'\subseteq\Lambda\setminus0\): \(K_t(\Lambda'):=\sum_{x\in\Lambda'\cap\mathcal D_t}\Phi\big((q(x)t)^{-1/2}(a_0-|x|^{-2})\big)\).
+
+\textbf{Proposition 3.2 {[}V = K Prop. 4.2 / R6 Prop. 3.2{]}.} For every subset \(\Lambda'\subseteq\Lambda\setminus0\): \(\mathbb E|\partial E_t\cap\Lambda'|\le2K_t(\Lambda')+Ce^{-cn}\). (Klartag\textquotesingle s proof is a sum over the lattice points in \(\mathcal D_t\) of the bound of Prop. 3.1, plus \(\mathbb E[|\partial E_t\cap\Lambda|\mathbf 1_{\overline{E_t}\not\subseteq\mathcal D_t}]\le2^{n+1}Ce^{-n}\); restricting the sum to \(\Lambda'\) changes nothing.) We use \(\Lambda'=\Lambda\setminus0\) and \(\Lambda'=\Lambda^{nf}\).
+
+\textbf{Lemma 3.3 (integral lemma) {[}V = R6 Lemma 3.3, refereed there{]}.} For every \(\varepsilon>0\) there is \(\eta\) such that for all integers \(m\ge1/\eta\), \(S>0\), \(Y>1\) with \(m\sqrt S\ge1/\eta\), \(m^3S^2\le\eta\), \(Y\sqrt S\le\eta\): \(\int_0^S\frac{m\sqrt\sigma}2\int_0^Y\Phi(y)(1-y\sqrt\sigma)^{-\frac{m+2}2}dy\,d\sigma\le(1+\varepsilon)\frac8{m^2}e^{m^2S/8}\).
+
+\textbf{Lemma 3.4 (angular lemma for \(j\times k\) blocks) {[}P; re-proof of the un-refereed R6 Lemma 7.2{]}.} Let \(1\le j\le r\), \(\omega\) uniform on the unit sphere of \(E^{(j)}=\bigoplus_{v\le s}M_{j\times k}(\mathbb K)\), \(b\ge0\), \(\kappa:=\frac{d(j-1)+4b+2}{dk}<1\). Then
+\[\mathbb E\exp\big(b\,\mathrm{CV}_j^2(\omega)\big)\le(1-\kappa)^{-2bsj}.\]
+In particular it is \(1+o(1)\) for \(b=O(\log n)\), \(k\to\infty\). (Leech, \(j=3\): \((1-\frac{2b+5}{2k})^{-12b}\).)
+\emph{Proof.} \(t_{v,i}\in[0,sj]\), \(\sum t_{v,i}=sj\). As in {[}R6, Lemma 3.4{]}, \(\log t\le(t-1)-\frac{(t-1)^2}{2sj}\) on \((0,sj]\); summing, \(\sum_{v,i}\log t_{v,i}\le-\frac12\mathrm{CV}_j^2\), so \(e^{b\mathrm{CV}_j^2}\le\prod t_{v,i}^{-2b}=(sj)^{-B}\prod_v\Delta_v(\omega)^{-2b}\), \(B:=2bsj\), \(\Delta_v(y):=\prod_{i\le j}\mu_{v,i}\). Let \(y\) be standard Gaussian in \(E^{(j)}\), \(y=\varrho\omega\), \(\varrho^2\sim\chi^2_{N}\), \(N=sjdk\), independent of \(\omega\); \(\Delta_v(y)=\varrho^{2j}\Delta_v(\omega)\). Gram-Schmidt on the \(j\) rows of \(y_v\) (left \(\mathbb K\)-combinations): \(y_v=T_vQ_v\), \(T_v\) lower triangular with diagonal \(\varrho_{v,i}>0\), \(Q_vQ_v^*=\mathrm{Id}\), \(\varrho_{v,i}\) = distance of row \(i\) to the left \(\mathbb K\)-span of rows \(<i\) (real dimension \(d(i-1)\) a.s.), so \(\varrho_{v,i}^2\sim\chi^2_{\nu_i}\), \(\nu_i=d(k-i+1)\), all independent, and \(\Delta_v(y)=\prod_i\varrho_{v,i}^2\) (for \(\mathbb K=\mathbb H\) through the real representation, as in {[}R6, Lemma 7.2{]}). With \(\mathbb E(\chi^2_\nu)^{-\beta}=2^{-\beta}\Gamma(\frac\nu2-\beta)/\Gamma(\frac\nu2)\) (\(\beta<\frac\nu2\)) and \((a-\beta-1)^\beta\le\Gamma(a)/\Gamma(a-\beta)\le a^\beta\) (\(a-\beta>1\); from \(\log(t-1)<\psi(t)<\log t\)):
+\[\mathbb E_\omega\prod_v\Delta_v(\omega)^{-2b}=\frac{\Gamma(\frac N2)}{\Gamma(\frac N2-B)}\prod_{v,i}\frac{\Gamma(\frac{\nu_i}2-2b)}{\Gamma(\frac{\nu_i}2)}\le\Big(\frac N2\Big)^B\prod_{v,i}\Big(\frac{\nu_i}2-2b-1\Big)^{-2b}\le\Big(\frac N2\Big)^B\Big(\frac{dk}2(1-\kappa)\Big)^{-B}=(sj)^B(1-\kappa)^{-B},\]
+using \(\frac{\nu_i}2-2b-1\ge\frac{d(k-j+1)}2-2b-1=\frac{dk}2(1-\kappa)\). \(\square\)
+
+\textbf{Proposition 3.5 (shell integral on \(E_U\); for \(U=W\) it replaces R6 Prop. 3.5) {[}P{]}.} Let \(\rho\ge1\), \(\rho=o(\sqrt n)\), \(\alpha=(1-\frac\rho n)^{-2}\), \(R_t=\{\alpha^{-1}\le|x|^2<(\alpha-C_0\sqrt{tn})^{-1}\}\), \(\log n\le z\le3\log n\), \(T=\frac{8z}{q_0n^2}\). For a \(\Delta\)-subspace \(U\ne0\) of dimension \(j\) (\(U=W\) allowed), \(f=j/r\), \(m=fn=\dim E_U\):
+\[I_U:=\frac1{\kappa_m}\int_0^T\!\!\int_{R_t\cap E_U}\Phi\Big(\frac{\alpha-|x|^{-2}}{\sqrt{q(x)t}}\Big)d\mathrm{vol}_m(x)\,dt\ \le\ (1+o(1))\,e^{-f\rho}\,\frac{8}{f\,q_0n^2}\,e^{fz},\]
+with \(o(1)\) depending only on \((j,k)\) and the data (uniform in \(U\)).
+\emph{Proof.} By Lemma 0.4 work on \(E^{(j)}\) with \(q(\omega)=\frac{q_0}f(1+\mathrm{CV}_j^2(\omega))\in[\frac{q_0}f,rsq_0]\). Polar coordinates in dimension \(m\) and the substitution \(y=(q(\omega)t)^{-1/2}(\alpha-\varrho^{-2})\), exactly as in {[}R6, Prop. 3.5{]} / {[}K, Lemma 4.3{]}, give for the inner integral
+\(\int_{S^{m-1}}\frac{m\sqrt{q(\omega)t}}2\alpha^{-\frac{m+2}2}\int_0^{C_0\sqrt{n/q(\omega)}}\Phi(y)\big(1-\frac{y\sqrt{q(\omega)t}}\alpha\big)^{-\frac{m+2}2}dy\,d\sigma(\omega)\). Use \(\alpha\ge1\), integrate in \(t\), substitute \(\sigma=q(\omega)t\), and apply Lemma 3.3 with \(S=q(\omega)T\), \(Y=C_0\sqrt{n/q(\omega)}\): \(m\sqrt S\ge\sqrt{8fz}\to\infty\), \(m^3S^2\le64r^2s^2z^2/n\to0\), \(Y\sqrt S=C_0\sqrt{nT}\to0\), uniformly in \(\omega\). Hence
+\[I_U\le(1+o(1))\alpha^{-\frac{m+2}2}\frac8{m^2}\int\frac1{q(\omega)}e^{m^2q(\omega)T/8}d\sigma(\omega).\]
+Now \(\alpha^{-(m+2)/2}=(1-\frac\rho n)^{fn+2}\le e^{-f\rho}\), \(\frac1q\le\frac f{q_0}\), \(\frac{8f}{q_0m^2}=\frac8{fq_0n^2}\), and \(\frac{m^2qT}8=f^2\cdot\frac{n^2q_0T}8\cdot\frac1f(1+\mathrm{CV}_j^2)=fz(1+\mathrm{CV}_j^2)\). Lemma 3.4 with \(b=fz\) gives \(\mathbb Ee^{fz\mathrm{CV}_j^2}\le(1-\kappa)^{-2fzsj}=\exp(O(\log^2n/k))=1+o(1)\). \(\square\)
+
+\textbf{Corollary 3.6 (lower-rank terms are negligible) {[}P{]}.} Let \(z=\log\frac{wq_0n^2}4+\rho\), \(\rho=\log\log n\). For proper \(U\) put \(X_U:=\int_0^T\int_{R_t}\Phi(\cdot)\,d\mu_U\,dt=T_U(1)\,I_U\). Then, with \(C_*\) depending only on the data,
+\[X_U\le C_*\,R_U^{k/2}\,n^{-\frac52(1-f_U)},\qquad \sum_{0\ne U\subsetneq W}X_U\le C_*\,\Sigma_k\,n^{-\frac5{2r}}\ \xrightarrow[k\to\infty]{}0\quad\text{under (BS)} .\]
+\emph{Proof.} Lemma 1.4 (\(V=1\)) and Prop. 3.5: \(X_U\le2f^{-1/2}(\pi n)^{-\frac{1-f}2}R_U^{k/2}(1+o(1))\frac8{fq_0n^2}(\frac{wq_0n^2}4)^f\) since \(e^{f(z-\rho)}=(\frac{wq_0n^2}4)^f\); the exponent of \(n\) is \(-\frac{1-f}2-2+2f=-\frac52(1-f)\le-\frac5{2r}\). Then Lemma 1.5. \(\square\)
+(Leech: each borderline line contributes \(O(n^{-5/3})\) to the time-integrated count, i.e. \(\approx n^{1/3}\) contact points during a time \(T\asymp\log n/n^2\); planes are exponentially small. Remark on item (3) of the task: the crude bound \(q\le rsq_0=6q_0\) on a line gives \(e^{6f^2z}=e^{2z/3}\) instead of \(e^{z/3}\), i.e. \(O(n^{-1})\) per borderline line: also sufficient for Leech, but not for \(f\) close to 1.)
+
+\hypertarget{the-good-lattice-initial-ball-included}{%
+\subsubsection*{4. The good lattice (initial ball included)}\label{the-good-lattice-initial-ball-included}}
+
+\textbf{Proposition 4.1 {[}P from Lemma 1.2{]}.} Assume (BS). Let \(\rho=\log\log n\), \(a_0=\alpha\), \(z,T\) as above, \(p:=1-3e^{-\rho}\). For \(k\) large there is a lattice \(\Lambda=\lambda M\mathcal O^{r\times k}\gamma\) of the family, covolume \(\kappa_n\), with (i) \(a_0|x|^2>1\) for all \(0\ne x\in\Lambda\) (all ranks); (ii) \(\int_0^TK_t(\Lambda\setminus0)dt\le\frac1p\big[(1+o(1))e^{-\rho}\frac8{q_0n^2}e^z+o(1)\big]\); (iii) \(\int_0^TK_t(\Lambda^{nf})dt=o(1)\).
+\emph{Proof.} Take \(\Lambda\) random as in Lemma 1.2. \(\mathcal B_1:=\{\exists0\ne x\in\Lambda,|x|\le1-\frac\rho n\}\): by (MVF), Markov, Lemma 1.4 with \(V=(1-\frac\rho n)^n\le e^{-\rho}\le1\), and Lemma 1.5,
+\[\mathbb P(\mathcal B_1)\le e^{-\rho}+\sum_UT_U(e^{-\rho})\le e^{-\rho}+2\sqrt r\,(\pi n)^{-\frac1{2r}}\Sigma_k=e^{-\rho}+O(n^{-1/(2r)}).\]
+Let \(X(\Lambda):=\int_0^T\tilde K_t(\Lambda\setminus0)dt\) and \(X^{nf}(\Lambda):=\int_0^T\tilde K_t(\Lambda^{nf})dt\), where \(\tilde K_t\) sums over \(R_t\) instead of \(\mathcal D_t\). By Tonelli, (MVF), Prop. 3.5 (\(U=W\), \(T_W=1\)) and Cor. 3.6: \(\mathbb EX=I_W+\sum_UX_U\le(1+o(1))e^{-\rho}\frac8{q_0n^2}e^z+o(1)\). By Lemma 0.5, \(\Lambda^{nf}\subseteq\bigcup_{g\ne1}\{x:\mathrm{col}(x)\subseteq W^g\}\), so by the last statement of Lemma 1.2, \(\mathbb EX^{nf}\le\sum_{g\ne1}\sum_{0\ne U\subseteq W^g}X_U\le(w-1)\sum_{U\text{ proper}}X_U\le wC_*\Sigma_kn^{-5/(2r)}\). Put \(\mathcal B_2=\{X>\mathbb EX/p\}\), \(\mathcal B_3=\{X^{nf}>e^\rho\mathbb EX^{nf}\}\): \(\mathbb P(\mathcal B_1)+\mathbb P(\mathcal B_2)+\mathbb P(\mathcal B_3)\le1-e^{-\rho}+O(n^{-1/(2r)})<1\) for large \(n\) (\(e^{-\rho}=1/\log n\)). Outside \(\mathcal B_1\), \((\Lambda\setminus0)\cap R_t=(\Lambda\setminus0)\cap\mathcal D_t\), so \(\tilde K_t=K_t\); and \(e^\rho\mathbb EX^{nf}=O(\log n\cdot n^{-5/(2r)})\to0\). \(\square\)
+(Item (5) of the task: the initial ball of volume \(e^{-\rho}\) is free with probability \(\ge1-e^{-\rho}-O(n^{-1/(2r)})\), the borderline sublattices contributing \(|\mathcal E|\cdot O(n^{-(1-f)/2})\). For Leech only (L1) is needed for the lines; planes need (H-Rogers)\(_2\).)
+
+\hypertarget{conclusion-proof-of-theorem-e}{%
+\subsubsection*{5. Conclusion: proof of Theorem E}\label{conclusion-proof-of-theorem-e}}
+
+\(\rho=\log\log n\), \(a_0=(1-\frac\rho n)^{-2}\) (\(n\log a_0=2\rho+o(1)\)), \(z=\log\frac{wq_0n^2}4+\rho\), \(T=\frac{8z}{q_0n^2}=O(\log n/n^2)\). Take \(\Lambda\) from Prop. 4.1 and run the process (Prop. 2.1). By Prop. 2.3, Prop. 3.2 (twice) and Prop. 4.1, the error terms being \(o(1)\) as in {[}R6, §5{]}:
+\[\mathbb E\log\det A_T\le2\rho-\frac{D_kT}2+\frac1w\int_0^TK_t(\Lambda\setminus0)dt+\int_0^TK_t(\Lambda^{nf})dt+o(1)\le2\rho-\theta z+\frac{1+o(1)}{p}\cdot\frac{8e^{-\rho}e^z}{w\,q_0n^2}+o(1),\]
+\[\theta:=\frac{4D_k}{q_0n^2}=\frac{4s(k+\frac{dk(k-1)}2)}{sdk^2}=2+\frac{4-2d}{dk}\qquad(q_0n^2=\tfrac{(rsdk)^2}{r^2sd}=sdk^2).\]
+Since \(e^z=\frac{wq_0n^2}4e^\rho\), the third term is \(2+o(1)\); \(\theta z=2z+o(1)\). Hence \(\mathbb E\log\det A_T\le-2\log\frac{wq_0n^2}4+2+o(1)=-2\log\frac{wq_0n^2}{4e}+o(1)\). With positive probability \(\det A_T\le(1+o(1))(\frac{4e}{wq_0n^2})^2\); \(A_T\in\mathcal Q\) is positive definite and \(\Lambda\)-free, so \(\mathrm{Vol}(E_{A_T})/\mathrm{covol}(\Lambda)\ge(1-o(1))\frac{wq_0n^2}{4e}\). Finally \(\sqrt{A_T}\in\mathcal Q\) is \(R_{N}\) with \(N\in GL_k(\Delta_{\mathbb R})\) positive Hermitian, so \(\sqrt{A_T}\Lambda=\lambda M\mathcal O^{r\times k}\gamma N=\lambda\Lambda(L')\), \(L'=\mathcal O^{1\times k}\gamma N\): a member of the family with an empty ball of that relative volume. \(\blacksquare\)
+
+\textbf{Remark 5.1 (what exactly is missing; robust form) {[}proof sketch, un-refereed{]}.} By unfolding, (H-Rogers)\(_j\) always holds \emph{up to a constant}: for \(1\le j<k\) there is \(c_{j,k}\in(0,\infty]\) with \(\mathbb E\sum_{Y\in\mathcal O^{j\times k},\mathrm{rk}Y=j}F(Y\gamma)=c_{j,k}\int F\,dy\) for all Borel \(F\ge0\). (Sketch: the sum over a \(\Gamma_k\)-orbit \(Y_0\Gamma_k\) unfolds to \(\int_{\Gamma_{Y_0}\backslash\mathsf G_k}F(Y_0\gamma)d\gamma=\mathrm{vol}(\Gamma_{Y_0}\backslash\mathsf H_{Y_0})\int_{\mathsf H_{Y_0}\backslash\mathsf G_k}F(Y_0\gamma)d\dot\gamma\), the stabiliser \(\mathsf H_{Y_0}\cong\mathsf G_{k-j}\ltimes\Delta_{\mathbb R}^{(k-j)\times j}\) being unimodular; \(\mathsf G_k\supseteq\prod_vSL_k(\mathbb K)\) is transitive on the conull open set of matrices of rank \(j\) at every place, on which Lebesgue measure is the unique invariant Radon measure up to scalars; sum over the orbits.) By (L1), \(c_{1,k}=1\). If one only knows \(\sup_kc_{j,k}<\infty\) for \(j<r\), the proof of §4-§5 goes through verbatim with \(I_W\) replaced by \(c_{r,k}I_W\), \(z:=\log\frac{wq_0n^2}{4c_{r,k}}+\rho\), \(p:=1-(c_{r,k}+2)e^{-\rho}\), and yields
+\[V_n\ \ge\ (1-o(1))\,\frac{|G|\,n^2}{4e\,\dim_{\mathbb Q}A}\cdot\frac1{c_{r,k}}\qquad(\text{Leech: }\ (1-o(1))\tfrac{91}{12e}\,n^2/c_{3,k}).\]
+So the missing lemma is exactly: \textbf{\(c_{r,k}\le1+o(1)\) and \(\sup_kc_{j,k}<\infty\) (\(2\le j<r\))}; the Siegel-Weil formula asserts \(c_{j,k}=1\) for all \(j<k\).
+
+\textbf{Item (6), Leech numbers {[}P{]}.} \(d=4,s=2,r=3\): \(D_k=2(2k^2-k)\), \(q_0=\frac1{72}\), \(n=24k\): \(\theta=\frac{4\cdot2(2k^2-k)\cdot72}{576k^2}=2-\frac1k\to2\), \(\theta z-2z=-z/k\to0\); constant \(\frac{wq_0}{4e}=\frac{2184}{288e}=\frac{91}{12e}=2.7898\); equivalently \((1-o(1))\frac{wD_k}{2e}\).
+
+\hypertarget{proof-of-theorem-d-the-hypotheses-of-theorem-e-for-lambda_24}{%
+\subsubsection*{\texorpdfstring{6. Proof of Theorem D: the hypotheses of Theorem E for \(\Lambda_{24}\)}{6. Proof of Theorem D: the hypotheses of Theorem E for \textbackslash Lambda\_\{24\}}}\label{proof-of-theorem-d-the-hypotheses-of-theorem-e-for-lambda_24}}
+
+Inputs from round 5 (computer-assisted there; NOT re-verified here):
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{(R5-a)} \(g\) of order 13, \(\eta^2=13\), \(\Delta=\mathbb H\otimes\mathbb Q(\sqrt{13})\) acting on \(W=\Lambda_{24}\otimes\mathbb Q\), \(G=\mathrm{Aut}_\Delta(\Lambda_{24})\) of order 2184 (\(\cong SL_2(13)\)), \(\mathrm{End}_G(W)=\Delta\) (\(\dim8\)), \(\mathbb Q\)-span of \(G\) of dimension 72; \(\mathcal O=\{x\in\Delta:x\Lambda_{24}\subseteq\Lambda_{24}\}\) is a maximal order; \textbf{class number one} (R5: Eichler mass formula, from memory; left and right class numbers of a maximal quaternion order agree via \(x\mapsto\bar x\)).
+\item
+  \textbf{(R5-b)} {[}R5, Theorem 3{]}: \(\det(\Lambda_{24}\cap U)\ge3^8\) for every \(\Delta\)-line \(U\) and every \(\Delta\)-plane \(U\) (planes via \(\det(\Lambda\cap U)=\det(\Lambda\cap U^\perp)\), \(\Lambda_{24}\) unimodular).
+\end{itemize}
+
+Verification. (T): \(\mathrm{End}_G(W)\) is a division algebra, so \(W\) is indecomposable, hence irreducible (Maschke); \(\Delta_{\mathbb R}=\mathbb H^2\) (\(F\) real quadratic, \(\Delta\) totally definite); \(r=24/8=3\); \(\dim_{\mathbb Q}A=9\cdot8=72\) (double centraliser; agrees with the numerical rank in R5); the Euclidean structure of \(\Lambda_{24}\) is \(G\)-invariant (\(G\subset O(24)\)). (Left versus right action of \(\Delta\) on \(W\) is a convention: replace \(\Delta\) by \(\Delta^{op}\cong\Delta\).) (h1): class number one. Freeness of \(\Lambda_{24}\) over \(\mathcal O\): Lemma 1.1. (BS): \(c_W=1\) and \(\Lambda_{24}\cap U\) is an integral lattice, so \(\det(\Lambda_{24}\cap U)\in\mathbb Z\). Lines (\(f=\frac13\), \(\dim U=8\)): \(R_U=3^8/\det(\Lambda_{24}\cap U)\in\{1\}\cup(0,\frac{6561}{6562}]\). Planes (\(f=\frac23\), \(\dim U=16\)): \(R_U=(\frac32)^{16}/\det\le3^8/2^{16}<0.1002\). So (BS) holds with \(\rho_0=\frac{6561}{6562}\) and \(\mathcal E\) = the lines with \(\det=3^8\), finite by Lemma 1.5(a) (exactly 1638 by R5; the number is irrelevant for the theorem). Theorem E gives Theorem D. \(\blacksquare\)
+
+\textbf{Remark 6.1 (explicit Leech bookkeeping, using the finer statement of R5: \(\det(\Lambda_{24}\cap U)=N_U^4\), \(N_U\in\{9,12,13,16,\dots\}\)) {[}P given R5{]}.} Each line contains a vector of norm \(\le\gamma_8N_U^{1/2}=2N_U^{1/2}\) and \(\#\{v\in\Lambda_{24}:|v|\le\varrho\}\le(\varrho+1)^{24}\), so \(\#\{U\text{ line}:N_U\le X\}\le3^{24}X^6\); \(R_U^{k/2}=(9/N_U)^{2k}\) for lines and \(((3/2)^4/N_{U^\perp})^{2k}\) for planes. Hence for \(k\ge10\): \(\sum_{\text{lines},N_U\ge12}R_U^{k/2}\le2\cdot3^{36}(\tfrac34)^{2k-6}\), \(\sum_{\text{planes}}R_U^{k/2}\le C(\tfrac9{16})^{2k}\), and \(\Sigma_k\le1638+O((3/4)^{2k})\). Expected number of nonzero points in the ball of relative volume \(V\): \(V+1638\cdot\sqrt3\pi^{-1/3}(V/n)^{1/3}(1+o(1))+(\text{exp. small})\cdot\mathrm{poly}(V,n)\). The non-free points lie on the 91 fixed lines of the order-3 elements (R5), a subset of the 546 lines of type (3); the proof above does not use this (it uses only Lemma 0.5).
+
+\hypertarget{status-gaps-what-a-referee-should-check}{%
+\subsubsection*{7. Status, gaps, what a referee should check}\label{status-gaps-what-a-referee-should-check}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{{[}HYP{]} (H-Rogers)\(_j\), \(j=2,\dots,r\)} (Leech: \(j=2,3\); needs \(k\ge r+1\)): the only missing lemma. Used in Lemma 1.2 for the full-rank term (\(j=r\): the main term) and for intermediate ranks. Only "\(\le(1+o(1))\int\)" is needed. Not derived from {[}G, Thm 16{]}; Remark 1.3.
+\item
+  \textbf{{[}L{]}} (L1) {[}G, Thm 16{]} for \((\Delta^{op},\mathcal O^{op})\) with \(\Delta_{\mathbb R}=\mathbb H^2\): same caveat as {[}R6, Rem. 4.1a(iv){]}.
+\item
+  \textbf{{[}V{]} steps} (Prop. 2.1, 3.1, 3.2, Lemma 3.3): taken from {[}R6{]}, where they were refereed for \(\mathcal Q\) = invariant forms of a FREE action; I checked that their statements/proofs there do not use freeness (Prop. 1.1 of {[}R6{]} is stated for arbitrary \(\mathcal Q\ni\mathrm{Id}\); freeness enters {[}R6{]} only in Lemma 1.3, replaced here by Lemma 2.2). A referee should re-check this, and the restriction of {[}K, Prop. 4.2{]} to a subset \(\Lambda'\) (Prop. 3.2).
+\item
+  \textbf{{[}P{]} but un-refereed:} Lemma 0.1-0.5, 1.1, 1.2, 1.4, 1.5, 2.2, Prop. 2.3, Lemma 3.4, Prop. 3.5, Cor. 3.6, Prop. 4.1, §5, §6. Points deserving care: (a) the Jacobian in Lemma 1.2; (b) Lemma 3.4: the chi-square laws of the Gram-Schmidt radii for quaternionic rows and \(\Delta_v=\prod\varrho_i^2\); (c) uniformity in \(\omega\) and \(U\) of Lemma 3.3 in Prop. 3.5; (d) Lemma 1.5(a) constants (only polynomial growth is used).
+\item
+  \textbf{Inputs from round 5} (computer-assisted, floating-point ranks 8 and 72, class number one from memory): not re-verified.
+\item
+  \textbf{Asymptotic regime:} data fixed, \(k\to\infty\); \(o(1)\) not effective; the slowest terms are those of Lemma 3.3 (\((\log n)^{-1/4}\)), \(1/p-1=O(1/\log n)\), and for the lower-rank terms \(n^{-1/(2r)}\) (initial ball) and \(n^{-5/(2r)}\log n\). Nothing is claimed when \(r\) or \(G\) grows with \(k\) (there \(n/(2D_k)=r/k\) and the breathing-mode loss of \texttt{R11/T2} appears: the bound \(\exp(O(\log^2n/k))\) of Lemma 3.4 hides \(e^{z(r-\frac12)/k}\)).
+\item
+  \textbf{Numerical check (only one, \texttt{check\_angular.py}, 20000 samples, quaternionic blocks, \(s=2\)):} \(k\,\mathbb E\,\mathrm{CV}_3^2=2.415\) for \(k=50,200,800\) (prediction of \texttt{R11/T2}: \(\approx r-\frac12=2.5\)); \(\mathbb Ee^{b\mathrm{CV}_3^2}\) with \(b=2\log n\): \(2.02,\ 1.23,\ 1.06\) for \(k=50,200,800\), always below the bound of Lemma 3.4, which is very lossy (it equals \(\exp(\approx8b^2sj/(dk))\): \(787\) at \(k=800\)) and tends to 1 only when \(\log^2n/k\to0\); the true quantity is \(\approx e^{2.4b/k}\). So Lemma 3.4 is consistent with the Monte Carlo but the \(o(1)\) it produces is far from sharp; the theorem (pure \(k\to\infty\) statement) is unaffected. \textbf{Second check (\texttt{check\_q.py} / \texttt{check\_q.out}, one place, \(\mathbb K=\mathbb H\), \(r=3\), \(k=2\), \(E=\mathbb R^{24}\)):} \(\dim\mathcal Q=6=2k^2-k\), \(R_N\) symmetric for Hermitian \(N\), \(\mathrm{Tr}R_N=dr\,\mathrm{Re\,tr}N\), and \(|P(x\otimes x)|^2/|x|^4=\frac1{dr}\sum\lambda^2/(\sum\lambda)^2\) to 10 digits for random \(x\) (projection computed by brute force in \(\mathrm{Sym}_{24}\)); for a rank-one point \(q/q_0=3.0000=r/j\) (Lemma 0.4). Sanity check of the Jacobian of Lemma 1.2 by hand in the toy case \(\Delta=\mathbb Q\), \(\Lambda_W=\mathbb Z^2\): the line through a primitive \((a,b)\) contributes \(\kappa_k\varrho^k/(a^2+b^2)^{k/2}=\mathrm{vol}_{E_U}(B_\varrho)/c_U^k\), as (MVF) says. Not checked numerically: the constants of Lemma 1.5, Prop. 3.5.
+\item
+  The theorem does not improve the order of magnitude of known bounds (\(n^2\log\log n\)-type results exist with unspecified constants); the content is the explicit constant \(\frac{91}{12e}\) along \(24\mid n\), conditional as stated.
+\end{enumerate}
+
+\hypertarget{appendix-checklist-against-the-six-items-of-the-task}{%
+\subsubsection*{Appendix: checklist against the six items of the task}\label{appendix-checklist-against-the-six-items-of-the-task}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+item
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+where
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+status
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+(1) mean value formula with lower-rank terms; convergence and counting & Lemma 1.1 (freeness from class number one), Lemma 1.2 (MVF), Lemma 1.4 (size of \(T_U\)), Lemma 1.5 (polynomial count of subspaces, summability), Remark 6.1 (explicit Leech count \(\le3^{24}X^6\) lines with \(N_U\le X\)) & {[}P{]} given (H-Rogers)\(_j\); \(j=1\) is Gargava {[}L{]}; \(j=2,3\) \textbf{{[}HYP{]}} (Remark 1.3, Remark 5.1) \\
+(2) non-free orbits & Lemma 0.5, Lemma 2.2, Prop. 2.3; expectation bound in Prop. 4.1 via \(\Lambda^{nf}\subseteq\bigcup_{g\ne1}\Lambda_{W^g}\) & {[}P{]} \\
+(3) contacts of lower-rank points & Lemma 0.4 (exact \(q\) on \(E_U\)), Prop. 3.5 (shell integral on \(E_U\)), Cor. 3.6: \(X_U\le C_*R_U^{k/2}n^{-5(1-f)/2}\); Leech line: \(O(n^{-5/3})\) & {[}P{]} \\
+(4) angular lemma for \(r=3\) blocks & Lemma 3.4 (all \(j\le r\)), Monte Carlo \texttt{check\_angular.py} & {[}P{]}, lossy but sufficient \\
+(5) initial ball & Prop. 4.1, event \(\mathcal B_1\): \(\mathbb P\le e^{-\rho}+O(n^{-1/(2r)})\) & {[}P{]} given (MVF) \\
+(6) optimisation and constant & §5: \(\theta=2-\frac1k\), \(\frac{wq_0}{4e}=\frac{91}{12e}\) & {[}P{]} \\
+\end{longtable}
+
+Dependency of Theorem D: (H-Rogers)\(_{2}\), (H-Rogers)\(_3\) {[}HYP{]}; {[}G, Thm 16{]} for \(\Delta_{\mathbb R}=\mathbb H^2\) {[}L{]}; Klartag\textquotesingle s lemmas as in {[}R6{]} {[}V{]}; R5 Theorem 3 and the structure facts (computer-assisted), class number one of \(\mathcal O\) (mass formula, from memory).

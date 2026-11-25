@@ -1,0 +1,11 @@
+p=541 r=135 (p+1)/2=271  eps=(1396425+60037 sqrt p)/2, log eps=14.149, theta=134.7505, build 152.8s
+  C_135: rank 8 (expected 8), integrality 5.6e-09, log R_U (assuming D=r^2 p) = 0.000000
+     INCOMPLETE (not exhaustive) t-circle search: 12 vectors below bound, min Gamma/theta = 1.000000 at t=-0.0494259572329252, enum failures 28  [0.5s]
+     L = fixed/sqrt(135) at t*=-14.149: integral (2e-08), logdet 1.8e-04, even True, #roots = 240 ; vectors of norm<=4: norm 2 |s|=5: 96 pairs, norm 2 |s|=21: 24 pairs, norm 4 |s|=0: 72 pairs, norm 4 |s|=6: 96 pairs, norm 4 |s|=10: 192 pairs, norm 4 |s|=16: 288 pairs, norm 4 |s|=20: 24 pairs, norm 4 |s|=26: 288 pairs, norm 4 |s|=36: 96 pairs, norm 4 |s|=42: 24 pairs
+  C_45: rank 24 (expected 24), integrality 1.7e-09, log R_U (assuming D=r^2 p) = 0.000000
+     INCOMPLETE (not exhaustive) t-circle search: 12 vectors below bound, min Gamma/theta = 1.000000 at t=-0.0494259572329252, enum failures 52  [10.4s]
+     L = fixed/sqrt(45) at t*=-14.149: integral (9e-09), logdet 1.3e-03, even True, #roots = 0 ; vectors of norm<=4: norm 4 |s|=0: 6264 pairs, norm 4 |s|=2: 9000 pairs, norm 4 |s|=4: 8496 pairs, norm 4 |s|=6: 11520 pairs, norm 4 |s|=8: 9504 pairs, norm 4 |s|=10: 10656 pairs, norm 4 |s|=12: 12096 pairs, norm 4 |s|=14: 7704 pairs, norm 4 |s|=16: 4896 pairs, norm 4 |s|=18: 4896 pairs, norm 4 |s|=20: 2880 pairs, norm 4 |s|=22: 2304 pairs, norm 4 |s|=24: 4248 pairs, norm 4 |s|=26: 1440 pairs, norm 4 |s|=28: 1152 pair
+  C_27: rank 40 (expected 40), integrality 6.4e-10, log R_U (assuming D=r^2 p) = 0.000000
+     INCOMPLETE (not exhaustive) t-circle search: 12 vectors below bound, min Gamma/theta = 1.000000 at t=-0.0494259572329252, enum failures 75  [67.8s]
+     L = fixed/sqrt(27) at t*=-14.149: integral (6e-09), logdet -4.8e-03, even True, #roots = 240 ; vectors of norm<=4: norm 2 |s|=1: 120 pairs, norm 4 |s|=0: 6068 pairs, norm 4 |s|=1: 130 pairs, norm 4 |s|=2: 11705 pairs, norm 4 |s|=3: 138 pairs, norm 4 |s|=4: 8064 pairs, norm 4 |s|=5: 95 pairs, norm 4 |s|=6: 12317 pairs, norm 4 |s|=7: 151 pairs, norm 4 |s|=8: 6623 pairs, norm 4 |s|=9: 103 pairs, norm 4 |s|=10: 8392 pairs, norm 4 |s|=11: 118 pairs, norm 4 |s|=12: 7203 pairs, norm 4 |s|=13: 101 pairs, norm 4 |s|=14
+  total 277.8s

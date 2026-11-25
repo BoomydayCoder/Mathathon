@@ -52,6 +52,10 @@
 \newunicodechar{±}{\ensuremath{\pm}}
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \usepackage{calc}
+\usepackage{url}
+\usepackage{fvextra}
+\AtBeginDocument{\renewcommand{\figurename}{그림}\renewcommand{\contentsname}{차례}\renewcommand{\abstractname}{초록}}
+\newfontfamily\notesfont{DejaVu Sans Mono}[Scale=0.82]
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -76,3 +80,4 @@
 \newcommand{\tagF}{\textcolor{red!70!black}{\textbf{[실패/반증]}}}
 \newcommand{\tagM}{\textcolor{green!45!black}{\textbf{[모형에서 증명]}}}
 \newcommand{\tagPL}{\textcolor{green!45!black}{\textbf{[증명됨·인용 정리 전제]}}}
+\providecommand{\Hom}{\operatorname{Hom}}

@@ -13,3 +13,5 @@ report/test_app*
 report/app_*_test.*
 **/__pycache__/
 *.pyc
+report/notes_tmp/
+report/build_out.txt

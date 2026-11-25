@@ -5,7 +5,7 @@ $\R^n$ 의 격자 $L$ (covolume 1)에 대해
 \[
 V(L):=\Vol\{\text{원점 중심의, $L\setminus\{0\}$ 과 만나지 않는 가장 큰 열린 공}\},\qquad V_n:=\sup_L V(L)
 \]
-로 두면 격자 구 채우기 밀도는 $\delta(L)=V(L)/2^n$, $\delta_n=V_n/2^n$ 이다. 동치로, 고정된 격자 $L$ 과 양의 정부호 행렬 $A$ 에 대해 타원체 $\mathcal E_A=\{x: Ax\cdot x<1\}$ 가 $L$-free ($\mathcal E_A\cap L=\{0\}$) 이면 $V\ge \Vol(\mathcal E_A)/\covol(L)$ 이다. 이 보고서 전체에서 $N:=n(n+1)/2=\dim\Sym_n$ 이다.
+로 두면 격자 구 채우기 밀도는 $\delta(L)=V(L)/2^n$, $\delta_n=V_n/2^n$ 이다. 동치로, 고정된 격자 $L$ 과 양의 정부호 행렬 $A$ 에 대해 타원체 $\mathcal E_A=\{x: Ax\cdot x<1\}$ 가 $L$-free ($\mathcal E_A\cap L=\{0\}$) 이면 $V_n\ge \Vol(\mathcal E_A)/\covol(L)$ 이다. 이 보고서 전체에서 $N:=n(n+1)/2=\dim\Sym_n$ 이다.
 
 \subsection{알려진 결과 (2026년 11월 기준, 1회차 문헌 조사로 확정)}
 \begin{center}
@@ -15,7 +15,7 @@ V(L):=\Vol\{\text{원점 중심의, $L\setminus\{0\}$ 과 만나지 않는 가�
 결과 & $V_n$ 에 대한 한계 & 차원 & 방법 \\
 \midrule
 Minkowski--Hlawka & $\ge 2\zeta(n)$ & 모든 $n$ & 평균(Siegel) \\
-Rogers 1947, Ball 1992 & $\ge 2(n-1)\zeta(n)$ & 모든 $n$ & 평균 + successive minima \\
+Ball 1992 (선행: Rogers 1947 의 $cn$) & $\ge 2(n-1)\zeta(n)$ & 모든 $n$ & 평균 + successive minima \\
 Vance 2011 & $\ge (6/e)\,n$ & $4\mid n$ & Hurwitz 사원수 가군 \\
 Venkatesh 2013 & $\ge \tfrac12 n\log\log n$ & 희소 & 원분체 $\Z[\zeta_m]$ 가군, 궤도 크기 $m$ \\
 Gargava--Viazovska 2024 & $\ge n\log\log n$ & 희소 & 랜덤 ideal 격자 \\
@@ -27,7 +27,7 @@ Abuya--Gargava--Zhao 2026 & $\ge c\,n^2\log\log n$ & 희소 & Klartag $\times$ �
 \midrule
 Kabatiansky--Levenshtein 1978 & $\le 2^{0.401n}$ & & 구면 부호 \\
 OpenAI ``Ten Advances'' 2026 (Ch.\,1--2) & $\le 2^{(0.3956+o(1))n}$ & & Cohn--Elkies LP 의 정확한 지수 \\
-Venkatesh 의 추측 & $\le n^2(\log n)^{O(1)}$ ? & & ``격자의 자유도는 $n^2$'' \\
+Venkatesh 의 추측 (AGZ 서론의 전언; 본인의 문헌은 찾지 못함) & $\le n^2(\log n)^{O(1)}$ ? & & AGZ 가 든 동기: 격자의 자유도가 $n^2$ 규모 \\
 \bottomrule
 \end{tabular}}
 \end{center}
@@ -48,15 +48,21 @@ V\ \gtrsim\ \frac{(\text{궤도 크기 } w)\times(\text{불변 이차형식 공�
 \subsection{이 연구 세션이 한 일과 하지 못한 일 (정직한 요약)}
 \begin{itemize}
 \item \textbf{하지 못한 일.} $c\,n^2\log\log n\cdot 2^{-n}$ 의 \emph{차수}를 개선하는 정리는 얻지 못했다. 이는 오래된 미해결 문제이며, 5시간짜리 탐색의 현실적인 목표는 (i) 방법의 한계를 정확히 규명하고 (ii) 검증 가능한 부분 결과와 (iii) 구체적인 다음 공격 지점을 남기는 것이었다.
-\item \textbf{한 일.} \S\ref{sec:summary} 의 표에 [증명됨]/[조건부]/[추측]/[수치관찰] 로 구분해 정리했다. 요지는 다음 다섯 가지다.
+\item \textbf{한 일.} \S\ref{sec:summary} 의 표에 지위별로 구분해 정리했다. 요지는 다음 여섯 가지다.
  \begin{enumerate}
- \item \textbf{(통일과 한계)} 대칭을 이용하는 모든 알려진 논증을 하나의 이득 공식 $g=|G|/(2\dim_\Q A)=\tfrac12\sum_{g\in G}\rho(g)^2$ 로 통일하고, \emph{고정점 없는 작용}으로는 $\log\log$ 를 넘을 수 없음을 증명했다. 비자유 작용에 대해서는 ``텐서 안정성'' 이라는 판정 기준과 여러 no-go 정리를 얻었다 (\S\ref{sec:sym}).
- \item \textbf{(명시적 상수)} Hurwitz/icosian 가군 격자에 대해 Klartag 형 한계 $V_n\ge(\tfrac3{2e}-o(1))n^2$ ($4\mid n$), $(\tfrac{15}{4e}-o(1))n^2$ ($8\mid n$) 를 완전한 증명으로 쓰고 독립 심사를 거쳤다 --- Rezvyakova 상수 $\tfrac1{2e}$ 의 3배, 7.5배. 차수는 $n^2$ 그대로다 (\S\ref{sec:quat}).
- \item \textbf{(유일하게 남은 차수 개선 후보)} 자유 작용의 한계를 피하는 유일한 후보로 $SL_2(p)$ Weil 격자의 텐서족을 찾았고, $p=13$ (Leech 격자)에서 ``정확히 경계 안정'' 임을 계산기 보조 정리로 증명했다. 일반 $p$ 에서의 성립 여부는 곡선 $y^2=x^p-x$ 의 Mordell--Weil 격자의 산술 문제로 환원된다. 직접 계산 결과 \emph{$p=37$ 은 실패}(72차원 Weil 격자에 불균형한 짧은 벡터), \emph{$p=61$ 은 수행한 모든 구조적 시험을 통과}했다. 무한히 많은 $p$ 에서 성립한다면 (미증명의 해석적 정리와 결합해) $n^{2+c}$ 형의 하한을 주게 되어 기존 추측과 충돌하므로, 어느 쪽이든 흥미로운 양자택일이다 (\S\ref{sec:leech}).
- \item \textbf{(모형)} Klartag 과정을 랜덤 선형계획(음의 마진 퍼셉트론)으로 재해석하는 Poisson 모형을 세워 상수의 손실($\tfrac1{2e}\to\tfrac12\to1$)을 설명하고, 모형에서의 정확한 법칙 $V_{LP}\sim\chi^2_{2N}$ 을 얻었다. 그러나 실제 랜덤 격자에서는 $n\le28$ 까지 이 예측이 성립하지 않음도 실험으로 확인했다 (\S\ref{sec:perceptron}).
- \item \textbf{(소차원의 직접 구성)} $n\le12$ 의 비대칭 탐색과 $n\le24$ 의 대칭(등변) 탐색을 구현·검증했다. 대칭 과정은 $E_8,K_{12},BW_{16},\Lambda_{20}$, Leech 를 실제로 찾아내며, ``$V\approx$ (궤도 크기/2)$\times$(불변형식 차원)'' 이라는 스케일링 법칙이 관찰된다 (\S\ref{sec:numerics}, \S\ref{sec:equiv}).
+ \item \textbf{(이득 지표와 그 한계)} 알려진 대칭 논증의 이득을 하나의 지표 $g=|G|/(2\dim_\Q A)=\tfrac12\sum_{g\in G}\rho(g)^2$ 로 기술하고, $\Q$-기약 가군 위의 \emph{고정점 없는 작용}에서는 $g=O(\log\log|G|)$ 임을 증명했다. 이는 방법의 회계량에 대한 정리이지 ``어떤 논증도 $\log\log$ 를 넘을 수 없다'' 는 장벽 정리가 아니며, GGS 접착 틀에 대해서는 부분적 no-go 만 얻었다. 비자유 작용에 대해서는 ``텐서 안정성'' 이라는 판정 기준과 여러 no-go 를 얻었다 (\S\ref{sec:sym}).
+ \item \textbf{(명시적 상수)} Hurwitz/icosian 가군 격자에 대해 Klartag 형 한계 $V_n\ge(\tfrac3{2e}-o(1))n^2$ ($4\mid n$), $(\tfrac{15}{4e}-o(1))n^2$ ($8\mid n$) 의 증명을 쓰고 AI 심사를 거쳤다(Gargava 의 평균값 정리 전제; 새로움 미확인). Rezvyakova 상수 $\tfrac1{2e}$ 의 3배, 7.5배이지만 차수는 $n^2$ 그대로다 (\S\ref{sec:quat}).
+ \item \textbf{(비자유 작용의 틀 정리와 Leech 텐서족)} 고정점이 있는 작용에 대해, 고정된 격자 $\Lambda_W$ 가 class number 1 의 order 위에서 ``경계 안정''($R_U\le1$, 유한 개를 빼면 $R_U\le\rho_0<1$)이면 텐서족에서 $V_n\ge(1-o(1))\tfrac{|G|}{4e\dim_\Q A}n^2$ 임을 증명했다(14회차). 필요한 $j$-틀 평균값 공식은 Gargava 의 정리로부터 유도했다(15회차). Leech 격자의 $SL_2(13)$ 구조에 적용하면 $V_n\ge(\tfrac{91}{12e}-o(1))n^2\approx2.79\,n^2$ ($24\mid n$) --- Rezvyakova 상수의 15.2배, icosian 상수의 2.02배. 인용 정리와 계산기 보조 사실을 전제하고 AI 심사만 거쳤으며, 순수 점근 진술이고 차수는 $n^2$ 이다 (\S\ref{sec:leechthm}).
+ \item \textbf{(조사 범위에서 살아남은 유일한 후보)} 자유 작용의 한계를 피하는 후보로, 조사한 군들 가운데 $SL_2(p)$ Weil 격자의 텐서족만이 유도한 필요조건을 통과했다. $p=13$ (Leech 격자)에서 ``정확히 경계 안정'' 임을 계산기 보조로 증명했다. 일반 $p$ 의 직선 수준 필요조건은 곡선 $y^2=x^p-x$ (표수 $p$)의 Mordell--Weil 격자의 산술 조건으로 바뀐다. 직접 계산 결과 \emph{$p=37$ 은 실패}(72차원 Weil 격자에 불균형한 짧은 벡터; 정수 인증서), \emph{$p=61$ 은 수행한 모든 구조적 시험을 통과}했다(안정성의 증명은 아님). 토러스 부분군의 고정 부분격자는 몫곡선 $Y^2=X^{N+1}-X$ 의 격자와 일치하며(16회차), 이것이 계산에 나타난 $E_8$·Niemeier·Leech 격자와 $p=37$ 의 실패를 설명한다. 무한히 많은 $p$ 에서 안정이고 미증명의 해석적 정리가 성립한다면 $n^{5/2-o(1)}$ 형의 하한이 나와 AGZ 가 전하는 Venkatesh 의 추측 $V_n\le n^2(\log n)^{O(1)}$ 과 충돌한다 --- 세 가지 미증명 가정에 의존하는 조건부 진술이다 (\S\ref{sec:leech}).
+ \item \textbf{(모형)} Klartag 과정을 랜덤 선형계획(음의 마진 퍼셉트론)으로 재해석하는 Poisson 모형을 세워 상수의 손실($\tfrac1{2e}\to\tfrac12\to1$)을 설명하고, 모형에서의 정확한 법칙 $V_{LP}\sim\chi^2_{2N}$ 을 얻었다. 그러나 실제 랜덤 격자에서는 $n\le28$ 까지 $V_{LP}/N=1.2$--$1.75$ 로 모형값 2 에 못 미친다(증가 중; 점근 거동 미결정) (\S\ref{sec:perceptron}).
+ \item \textbf{(소차원의 직접 구성)} $n\le10$ 의 비대칭 탐색(9회차의 보조 실험은 $n\le12$)과 $n\le24$ 의 등변 탐색을 구현·검증했다. 등변 과정은 $E_8,K_{12},BW_{16},\Lambda_{20}$, Leech 를 재발견하며(새 기록은 없음), 첫 perfect 형식에서 ``$V\approx$ (궤도 크기/2)$\times$(불변형식 차원)'' 이라는 스케일링이 관찰된다 (\S\ref{sec:numerics}, \S\ref{sec:equiv}).
  \end{enumerate}
 \end{itemize}
 
+\subsection{검증 수준과 용어}
+이 보고서에서 ``저자/본인'' 은 회차를 조율한 AI 오케스트레이터를, ``심사자/검증자/빌더/테스터'' 는 모두 AI 하위 에이전트를 뜻한다. \textbf{사람은 어느 단계에도 관여하지 않았다.} 따라서 [증명됨] 은 ``AI 에이전트가 쓴 증명을, 반박하도록 지시받은 다른 AI 에이전트가 검토해 오류를 찾지 못했다'' 는 뜻이고, ``(스케치)'' 라고 덧붙인 것은 완전한 증명이 아니다. 1회차 문헌 조사, 6회차 개정본 \S7, 13회차의 추가 스캔($p\ge541$)은 그 심사조차 받지 않았다. 부록의 영문 증명(14·15회차)은 심사 지적을 반영하기 전의 원문이며, 본문의 진술이 우선한다. 열람하지 못한 문헌(Gross 1990, Nebe 1998, Passman 의 책 등)에 의존한 곳은 본문에 표시했다.
+
+\paragraph{자주 쓰는 표기.} $N=n(n+1)/2$; $V_n$ = 최적 격자의 정규화된 구멍 부피; $g$ (또는 $g(G,W)$) = 이득 지표(문맥상 군의 원소·곡선의 종수와 구별됨); $D_k$ = 불변 이차형식 공간의 차원; $\Delta=\mathrm{End}_G(W)$, $r$ = $W$ 의 $\Delta$-랭크; $R_U$ = 낮은 랭크 항의 판정량(\S\ref{sec:sym}); $\nu(w)\in O_F$ = Hermite 격자에서 $w$ 의 노름($O$-값 Hermite 형식 $h$ 에 대해 $\nu(w)=h(w,w)$, $F=\Q(\sqrt p)$); $s(w)=\tfrac12w\cdot\eta w$ ($\eta=\sqrt p$ 의 작용); $m_\pm(w)$ = $\eta=\pm\sqrt p$ 고유공간 성분의 제곱노름; Weil 격자 $\Lambda=\Z[G]v_0$ 에 대해 $D:=\det_B(\Lambda)^{1/(p-1)}=r^2p$, $\theta_p=(p-1)^2/(4p)$, $\Gamma(w)=m_+m_-/D$; $P_V=\P_{\rm Haar}(L\cap B_V=\{0\})$; ``호흡 모드'' = 항등 방향(전체 스케일)의 잡음.
+
 \subsection{연구 절차}
-요청받은 절차(로그 읽기 $\to$ 과제 선택 $\to$ 증명 시도/반례 탐색/계산 검증 $\to$ 막힌 지점 기록 $\to$ 로그 저장)를 회차 단위로 반복했다. 각 회차는 ``증명/계산 담당'' 하위 에이전트와, 그 결과를 \emph{반박하도록} 지시받은 독립 ``심사'' 에이전트의 쌍으로 구성했고, 심사를 통과하지 못한 주장은 강등하거나 폐기했다. 모든 수치는 실제 실행한 코드에서 나온 것이며 코드와 원자료는 저장소의 \texttt{sphere\_packing\_research/rounds/} 아래에 있다. 회차별 기록은 \texttt{research\_log.md} 에 있다.
+요청받은 절차(로그 읽기 $\to$ 과제 선택 $\to$ 증명 시도/반례 탐색/계산 검증 $\to$ 막힌 지점 기록 $\to$ 로그 저장)를 회차 단위로 반복했다. 대부분의 회차는 ``증명/계산 담당'' 하위 에이전트와, 그 결과를 \emph{반박하도록} 지시받은 독립 ``심사'' 에이전트의 쌍으로 구성했고(1회차 문헌 조사는 예외), 심사를 통과하지 못한 주장은 강등하거나 폐기했다. 보고서 초안 자체도 두 비평 에이전트의 검토를 받아 수정했다. 모든 수치는 실제 실행한 코드에서 나온 것이며 코드와 원자료는 저장소의 \texttt{sphere\_packing\_research/rounds/} 아래에 있다. 회차별 기록은 \texttt{research\_log.md} 에 있다.

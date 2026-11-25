@@ -34,7 +34,9 @@ def random_orbit_vectors(S, T, v0, nsamp, rng, steps=3, burn=25, wl=7):
         out.append(u * Tpow(int(rng.integers(0, p))))
     return np.array(out)
 
-def scan(p, ranks=(8, 24, 40), nsamp=160, tstep=0.1, seed=0, verbose=True):
+def scan(p, ranks=(8, 24, 40), nsamp=300, tstep=0.1, seed=0, verbose=True):
+    # nsamp raised from 160 to 300 after the round-13 verification: 160 samples generated only an index-2
+    # sublattice of the fixed lattice at p = 541 (see rounds/R13_scan_verify).
     t0 = time.time(); rng = np.random.default_rng(seed)
     h = (p - 1) // 2; n = 2 * (p - 1); r = (p - 1) // 4
     S, T = P.build(p, -1)
@@ -70,6 +72,8 @@ def scan(p, ranks=(8, 24, 40), nsamp=160, tstep=0.1, seed=0, verbose=True):
         logR = rH * math.log(n / rH) + (rH / 2) * math.log(D) - ld      # det(Lambda)^{rH/n} = D^{rH/2}
         info = {'m': m, 'rank': rH, 'integrality': integ, 'logR_assuming_D=r^2p': logR}
         print('  C_%d: rank %d (expected %d), integrality %.1e, log R_U (assuming D=r^2 p) = %.6f' % (m, rH, rk_expect, integ, logR), flush=True)
+        if rH != rk_expect or abs(logR) > 1e-6 or integ > 1e-6:
+            print('     WARNING: rank / calibration / integrality check failed -- the generated lattice is probably NOT the full fixed lattice (too few samples or precision loss); results below are unreliable', flush=True)
         # exhaustive violator search over the t-circle
         bound = 2 * math.sqrt(theta * D) * math.cosh(tstep / 2) * (1 + 1e-9)
         best = (1e99, None); cnt = 0; fail = 0; t1 = time.time()
@@ -79,13 +83,14 @@ def scan(p, ranks=(8, 24, 40), nsamp=160, tstep=0.1, seed=0, verbose=True):
                 Xs, vals, flag = V.short_vectors(Gt, bound, maxc=300000, maxnodes=300_000_000)
             except Exception as e:
                 fail += 1; continue
+            if flag == 2: fail += 1     # enumeration truncated by the cap: count as incomplete
             if len(Xs):
                 mp = np.einsum('ij,jk,ik->i', Xs, GpH, Xs); mm = np.einsum('ij,jk,ik->i', Xs, GmH, Xs)
                 gam = mp * mm / D; cnt += len(Xs)
                 if gam.min() < best[0]: best = (float(gam.min()), float(t))
         ratio = best[0] / theta if best[1] is not None else float('nan')
         info.update({'min_gamma_over_theta': ratio, 'at_t': best[1], 'count': cnt, 'enum_fail': fail})
-        print('     exhaustive t-circle search: %d vectors below bound, min Gamma/theta = %.6f at t=%s, enum failures %d  [%.1fs]' % (cnt, ratio, best[1], fail, time.time() - t1), flush=True)
+        print('     %s t-circle search: %d vectors below bound, min Gamma/theta = %.6f at t=%s, enum failures %d  [%.1fs]' % ('exhaustive' if fail == 0 else 'INCOMPLETE (not exhaustive)', cnt, ratio, best[1], fail, time.time() - t1), flush=True)
         # unimodular member: L = fixed lattice / sqrt(m) at t = +-log eps
         for tstar in (-L, L):
             Gu = (math.exp(tstar) * GpH + math.exp(-tstar) * GmH) / math.sqrt(D) / m

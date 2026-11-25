@@ -3,7 +3,7 @@
 사용자의 제안(``작은 $n$ 에서 기존 구성들을 직접 해 보고 규칙성을 찾자'')에 따라 2회차에서 두 가지를 구현했다. 모든 결과는 별도의 검증 에이전트가 처음부터 다시 짠 열거 코드로 재확인했다(저장된 최종 형식 $1878+3403$ 개 전부 $L$-free 이고 perfect; 알려진 최적값을 넘는 $V$ 는 없음).
 
 \subsection{Klartag 과정을 동결될 때까지 실행}
-격자는 Goldstein--Mayer 족($\{x\in\Z^n:x_n\equiv a\cdot x'\bmod p\}$, $p=100003$)과 $\Z^n$; $dA=\pi_F(dW)$ 를 Euler 스텝으로 이산화하되 각 선분 위에서 접촉 시각을 정확히 계산했다.
+격자는 Goldstein--Mayer 족($\{x\in\Z^n:x_n\equiv a\cdot x'\bmod p\}$, $p=100003$; $n\ge8$ 에서는 $p^{1/n}$ 이 작아 Haar 측도의 거친 근사일 뿐이다)과 $\Z^n$; $dA=\pi_F(dW)$ 를 Euler 스텝으로 이산화하되 각 선분 위에서 접촉 시각을 정확히 계산했다.
 
 \begin{center}
 \begin{tabular}{@{}rrrrrrrr@{}}
@@ -25,7 +25,7 @@ $n$ & 실행 수 & $\E V_{final}$ & $\E V_{final}/N$ & $\E V_{final}/n^2$ & 최�
 
 \begin{observation}\tagN
 \begin{enumerate}
-\item \textbf{$V_{final}\approx N=n(n+1)/2$.} 경로 전체에서 $V(t)/k(t)\approx1$ ($k$ = 독립 접촉쌍의 수; $k\ge36$ 에서 $0.96$--$1.02$). 즉 ``쓸어 담은 부피 $\approx$ 접촉쌍 수'' 가 상수 $\approx1$ 로 성립하고, 과정을 끝까지 돌리면 상수는 $c\approx\tfrac12$ 근처다 (증명된 값 $\tfrac1{2e}$).
+\item \textbf{$V_{final}\approx N=n(n+1)/2$.} 경로 전체에서 $V(t)/k(t)\approx1$ ($k$ = 독립 접촉쌍의 수; $k\ge36$ 에서 $0.96$--$1.02$). 즉 ``쓸어 담은 부피 $\approx$ 접촉쌍 수'' 가 상수 $\approx1$ 로 성립한다. $n\le10$ 의 $\E V_{final}/n^2\approx0.56$--$0.57$ 을 그대로 외삽하면 ``과정을 끝까지 돌릴 때의 상수는 $c\approx\tfrac12$'' (증명된 값은 $\tfrac1{2e}$)가 되지만, $n\le10$ 은 점근 영역이 아니므로 이 외삽은 3회차 심사에서 휴리스틱으로 강등되었다 \tagH\ (\S\ref{sec:perceptron} 의 모형은 오히려 $V\to n^2$, 실제 격자 실험은 $n\le28$ 에서 그보다 작은 값을 준다).
 \item \textbf{$n\le8$ 과 $n\ge9$ 는 다른 체제.} $n\le8$ 에서는 과정이 높은 확률로 root 격자($D_4,D_5,E_6,E_7,E_8$)에서 끝나지만, $n=9,10$ 에서는 한 번도 최밀 격자에 도달하지 못하고 $n^2$ 법칙으로 내려앉는다.
 \item 동결된 형식은 작은 차원에서 단순 꼭짓점이 아니다: 최종 접촉쌍 수의 평균은 $n=4,\dots,10$ 에서 10.9, 19.2, 33.6, 56.8, 71.4, 60.6, 76.1 (같은 순서로 $N=$ 10, 15, 21, 28, 36, 45, 55). (따라서 Poisson 모형의 ``일반 위치'' 가정은 작은 $n$ 의 실제 격자에서는 성립하지 않는다.)
 \item 동결 시간은 Klartag 의 $T=16\log n/n^2$ 규모(중앙값/$T$ = $1.1$--$1.4$, $n=6..10$)이고 $V(T)$ 가 최종 부피의 $82$--$95\%$.

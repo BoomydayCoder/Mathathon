@@ -1,0 +1,14 @@
+[    2.1s] p=61 setup ok: kappa=-1, rounding residuals (np.float64(1.2789769243681803e-13), np.float64(1.0231815394945443e-12), np.float64(9.947598300641403e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    2.1s] loaded saved basis; float logdet(B)/(p-1) = 9.526974266 vs log D = 9.526974266
+[   2.2s] p=61 n=120 r=15 D=13725  tr(S)=0 tr(T)=-2 (expect 0, -2)
+[   2.2s] eta matrix rounding residual 6.14e-07
+[   2.3s] EXACT: M B == E: True  M^2 == p: True  M commutes with S,T: True
+[   2.4s] EXACT: B X == r M with X integral (=> Lambda^# = eta/(rp) Lambda given det(B)=D^(n/2)): True resid 1.6e-06
+[   2.4s] O_F-stability: (I+M)/2 integral: True
+[   2.5s] e_ico + e_4 + e_6 == 1 exactly: True  dims 16 32 72
+[    2.9s]    saturated basis rank 48: float logdet 298.570076 vs log(g D^{k/2}) = 298.570076 ok=True exact=None; diag(B) min 1740 max 3990
+[   2.9s] CERT SL_2(5) ico+deg4 (complement of deg-6)   dim  48  primitive(rank mod q=k for q in [2, 3, 5, 61]): True  det=2^8*3^48*5^88*61^24  R_U = 390625/72057594037927936 = 5.42101e-12   tester-g matches: True
+[   2.9s]   => deg-6 comp: same glue; claimed g=2^8 5^40; R(72) = 4.037e-15 ; R(48) with that g = 5.421e-12
+[    3.9s]    saturated basis rank 40: float logdet 245.574332 vs log(g D^{k/2}) = 245.574332 ok=True exact=True; diag(B) min 1080 max 2520
+[   4.0s] CERT SL_2(3) inside SL_2(5): Hurwitz comp     dim  40  primitive(rank mod q=k for q in [2, 3, 5, 61]): True  det=2^16*3^80*5^40*61^20  R_U = 1/65536 = 1.52588e-05   tester-g matches: True
+[   4.0s] done

@@ -1,0 +1,27 @@
+[    1.9s] p=61 setup ok: kappa=-1, rounding residuals (np.float64(1.2789769243681803e-13), np.float64(1.0231815394945443e-12), np.float64(9.947598300641403e-14)), exact relations S^2=-1,(ST)^3=-1,T^p=1,isometry,eta^2=p,eta central verified
+[    1.9s] loaded saved basis; float logdet(B)/(p-1) = 9.526974266 vs log D = 9.526974266
+[   1.9s] p=61 n=120 r=15 D=13725  tr(S)=0 tr(T)=-2 (expect 0, -2)
+[   2.2s] det(B) == D^(n/2) mod three large primes: OK
+[   2.6s] EXACT det(B) == D^(n/2): True
+[   2.6s] eta matrix rounding residual 6.14e-07
+[   2.7s] EXACT: M B == E: True  M^2 == p: True  M commutes with S,T: True
+[   2.8s] EXACT: B X == r M with X integral (=> Lambda^# = eta/(rp) Lambda given det(B)=D^(n/2)): True resid 1.6e-06
+[    7.5s]    saturated basis rank 40: float logdet 234.483977 vs log(g D^{k/2}) = 234.483977 ok=True exact=True; diag(B) min 900 max 2250
+[   7.6s] CERT Fix(split C_3)                           dim  40  primitive(rank mod q=k for q in [3, 5, 61]): True  det=3^80*5^40*61^20  R_U = 1 = 1   tester-g matches: True
+[   11.0s]    saturated basis rank 24: float logdet 152.950201 vs log(g D^{k/2}) = 152.950201 ok=True exact=True; diag(B) min 900 max 2400
+[  11.0s] CERT Fix(split C_5)                           dim  24  primitive(rank mod q=k for q in [3, 5, 61]): True  det=3^24*5^48*61^12  R_U = 1 = 1   tester-g matches: True
+[   22.0s]    saturated basis rank 8: float logdet 59.772299 vs log(g D^{k/2}) = 59.772299 ok=True exact=True; diag(B) min 900 max 7200
+[  22.0s] CERT Fix(split C_15)                          dim   8  primitive(rank mod q=k for q in [3, 5, 61]): True  det=3^16*5^16*61^4  R_U = 1 = 1   tester-g matches: True
+[   22.6s]    saturated basis rank 40: float logdet 245.574332 vs log(g D^{k/2}) = 245.574332 ok=True exact=True; diag(B) min 1080 max 3060
+[  22.7s] CERT SL_2(3) [b=1] Hurwitz comp               dim  40  primitive(rank mod q=k for q in [2, 3, 5, 61]): True  det=2^16*3^80*5^40*61^20  R_U = 1/65536 = 1.52588e-05   tester-g matches: True
+[   23.2s]    saturated basis rank 40: float logdet 245.574332 vs log(g D^{k/2}) = 245.574332 ok=True exact=True; diag(B) min 1080 max 2430
+[  23.2s] CERT SL_2(3) [b=2] Hurwitz comp               dim  40  primitive(rank mod q=k for q in [2, 3, 5, 61]): True  det=2^16*3^80*5^40*61^20  R_U = 1/65536 = 1.52588e-05   tester-g matches: True
+[   23.7s]    saturated basis rank 16: float logdet 112.214271 vs log(g D^{k/2}) = 112.214271 ok=True exact=True; diag(B) min 2250 max 3240
+[  23.7s] CERT SL_2(5) [b=1] icosian comp               dim  16  primitive(rank mod q=k for q in [2, 3, 5, 61]): True  det=2^8*3^32*5^24*61^8  R_U = 390625/16777216 = 0.0232831   tester-g matches: True
+[   24.2s]    saturated basis rank 32: float logdet 221.511398 vs log(g D^{k/2}) = 221.511398 ok=True exact=True; diag(B) min 2700 max 3600
+[  24.3s] CERT SL_2(5) [b=1] degree-4 comp              dim  32  primitive(rank mod q=k for q in [3, 5, 61]): True  det=3^48*5^64*61^16  R_U = 43046721/18446744073709551616 = 2.33357e-12   tester-g matches: True
+[   24.8s]    saturated basis rank 16: float logdet 112.214271 vs log(g D^{k/2}) = 112.214271 ok=True exact=True; diag(B) min 2250 max 3240
+[  24.8s] CERT SL_2(5) [b=2] icosian comp               dim  16  primitive(rank mod q=k for q in [2, 3, 5, 61]): True  det=2^8*3^32*5^24*61^8  R_U = 390625/16777216 = 0.0232831   tester-g matches: True
+[   25.3s]    saturated basis rank 32: float logdet 221.511398 vs log(g D^{k/2}) = 221.511398 ok=True exact=True; diag(B) min 2700 max 3150
+[  25.3s] CERT SL_2(5) [b=2] degree-4 comp              dim  32  primitive(rank mod q=k for q in [3, 5, 61]): True  det=3^48*5^64*61^16  R_U = 43046721/18446744073709551616 = 2.33357e-12   tester-g matches: True
+[  25.3s] done

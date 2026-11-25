@@ -1,58 +1,58 @@
-\section{유일하게 남은 후보: $SL_2(p)$ Weil 격자의 텐서족}\label{sec:leech}
+\section{조사 범위에서 살아남은 유일한 후보: $SL_2(p)$ Weil 격자의 텐서족}\label{sec:leech}
 
-자유 작용의 한계(정리 \ref{thm:fpf})를 넘으려면 ``고정점을 가진 원소는 모두 정칙형(경계)이고, 고정점 없는 순환부분군이 아주 많은'' 군이 필요하다. 3회차에서 살아남은 유일한 후보를 5·10·11·12회차에서 조사했다. 결론을 먼저 적는다.
+자유 작용의 한계(정리 \ref{thm:fpf})를 넘으려면 ``고정점을 가진 원소는 모두 정칙형(경계)이고, 고정점 없는 순환부분군이 아주 많은'' 군이 필요하다. 조사한 군들 가운데 3회차의 필요조건을 모두 통과한 유일한 후보를 5·10·11·12·13회차에서 조사했다(다른 후보가 없다는 증명은 아니다 --- 아래 주의 참조). 결론을 먼저 적는다.
 
 \begin{center}\fbox{\begin{minipage}{0.93\textwidth}
-\textbf{현황.} $p=5$ ($E_8$): 안정. $p=13$ (Leech): 정확히 경계 \tagPC. $(p+1)/2$ 합성수($p=17,29,41,\dots$): 불안정 \tagP. \textbf{$p=37$: 불안정} --- 72차원 짝 unimodular Weil 격자에 $N(\nu)=63<81$ 인 노름 6 벡터가 존재(독립 구현 3개 일치, 정수 인증서) \tagPC. \textbf{$p=61$ (120차원)}: \S\ref{sec:p61} 참조. 성립하더라도 고정된 $p$ 는 상수 이득일 뿐이고, 차수 개선에는 무한히 많은 $p$ 와 아직 증명되지 않은 해석적 정리가 필요하다.
+\textbf{현황.} $p=5$ ($E_8$): 안정. $p=13$ (Leech): 정확히 경계 \tagPC. $(p+1)/2$ 합성수($p=17,29,41,\dots$): 불안정 \tagP. \textbf{$p=37$: 불안정} --- 72차원 짝 unimodular Weil 격자에 $N(\nu)=63<81$ 인 노름 6 벡터가 존재(독립 구현 3개 일치, 정수 인증서) \tagPC. \textbf{$p=61$ (120차원)}: \S\ref{sec:p61} 참조. 성립하더라도 고정된 $p$ 는 상수 이득일 뿐이고, 차수 개선에는 무한히 많은 $p$ 와 아직 증명되지 않은 해석적 정리가 필요하다. 여기서 ``불안정'' 은 1차 모멘트/Klartag 형 논증이 그 족에서 작동하지 않는다는 뜻이지, 그 족에 조밀한 격자가 없다는 증명이 아니다.
 \end{minipage}}\end{center}
 
 \subsection{후보족과 그것이 특별한 이유}
 $p\equiv1\pmod4$ 소수, $G=SL_2(p)$, $W$ = 차원 $2(p-1)$ 의 충실한 유리 표현($W\otimes\C=2(\psi+\psi')$, $\psi,\psi'$ 는 차수 $(p-1)/2$ 의 홀 Weil 지표, 지표체 $F=\Q(\sqrt p)$, Schur 지수 2). $\Delta=\mathrm{End}_G(W)$ 는 $F$ 위의 정부호 사원수대수(두 실자리에서만 분기; $p\equiv5\pmod 8$ 이면 $(-1,-1)_F$), $r=(p-1)/4$, 이득 $g=\tfrac{p(p^2-1)}{16r^2}\approx p$. 이득의 대부분은 \emph{비분리 토러스}의 $\sim p^2/2$ 개 순환부분군(위수 $\approx p/2$, 고정점 없음)에서 온다.
 
 \begin{remark}[왜 하필 $SL_2(p)$ 인가]
-보조정리 \ref{lem:unimod} 에 의해, 안정(또는 경계)인 unimodular 격자에서는 소수 위수 $q$ 의 모든 원소 $g$ 가 (i) 자유롭게 작용하거나 ($\chi_W(g)=-\chi_W(1)/(q-1)$) (ii) $\chi_W(g)=0$ 이어야 한다. (i)이 성립하는 소수에서는 Sylow 부분군이 순환 또는 일반화 사원수군이고, (ii)는 전형적으로 $\chi$ 가 $q$-결함 0 일 때($\chi(1)_q=|G|_q$) 성립한다. 따라서 이득 $\lesssim|G|/\chi(1)^2$ 가 크려면 ``자유 소수'' 부분이 $|G|$ 의 대부분을 차지해야 한다. 모든 Sylow 부분군이 순환/사원수인 비가해군은 본질적으로 $SL_2(p)$ 뿐이고(Suzuki), $SL_2(p)$ 는 주기적 코호몰로지를 가지면서도 고정점 없는 선형 표현을 갖지 않는 고전적 예다. Weil 지표는 $p-1$ 의 홀수 소인수에서 결함 0, $p$ 와 2 에서 자유이며, 비분리 토러스의 소수 $q\mid\tfrac{p+1}2$ 에서 자유일 조건이 정확히 ``$(p+1)/2$ 가 소수'' 다. 같은 논법으로 $Sp_{2n}(p)$ ($n\ge2$)의 Weil 격자, $SL_2(p^f)$ ($f\ge2$), $p\equiv3\pmod4$ 의 경우, Suzuki 군 등은 배제된다(고정공간이 큰 원소의 지표값이 0 이 아님) \tagH\ (분류 정리가 아니라 조사 수준의 논증).
+보조정리 \ref{lem:unimod} 에 의해, 안정(또는 경계)인 unimodular 격자에서는 소수 위수 $q$ 의 모든 원소 $g$ 가 (i) 자유롭게 작용하거나 ($\chi_W(g)=-\chi_W(1)/(q-1)$) (ii) $\chi_W(g)=0$ 이어야 한다. (i)이 성립하는 소수에서는 Sylow 부분군이 순환 또는 일반화 사원수군이고, (ii)는 전형적으로 $\chi$ 가 $q$-결함 0 일 때($\chi(1)_q=|G|_q$) 성립한다. 따라서 이득 $\lesssim|G|/\chi(1)^2$ 가 크려면 ``자유 소수'' 부분이 $|G|$ 의 대부분을 차지해야 한다. 모든 Sylow 부분군이 순환/사원수인 비가해군은 본질적으로 $SL_2(p)$ 뿐이고(Suzuki), $SL_2(p)$ 는 주기적 코호몰로지를 가지면서도 고정점 없는 선형 표현을 갖지 않는 고전적 예다. Weil 지표는 $p-1$ 의 홀수 소인수에서 결함 0, $p$ 와 2 에서 자유이며, 비분리 토러스의 소수 $q\mid\tfrac{p+1}2$ 에서 자유일 조건이 정확히 ``$(p+1)/2$ 가 소수'' 다. 같은 논법으로 $Sp_{2n}(p)$ ($n\ge2$)의 Weil 격자, $SL_2(p^f)$ ($f\ge2$), $p\equiv3\pmod4$ 의 경우, Suzuki 군 등은 배제된다(고정공간이 큰 원소의 지표값이 0 이 아님) \tagH\ (분류 정리가 아니라 조사 수준의 논증이며, Suzuki 의 분류 등 인용한 군론 사실의 원문은 열람하지 못했다).
 \end{remark}
 
 \subsection{$p=13$: Leech 격자는 정확히 경계 안정}
-\begin{theorem}\label{thm:leech}\tagPC\ (정수 연산; \texttt{rounds/R5\_leech13/}; 독립 심사자가 자체 코드로 재현)\
+\begin{theorem}\label{thm:leech}\tagPC\ + 인용(Hermite 상수 $\gamma_8=2$, $E_8$ 의 유일성, 극대 order 의 ideal 이 국소 주라는 사실) (정수 연산; \texttt{rounds/R5\_leech13/}; 독립 AI 심사 에이전트 2개가 자체 코드로 재현)\
 $g\in\mathrm{Aut}(\Lambda_{24})$ 를 위수 13의 자기동형, $\eta=\sum_{j=1}^{12}(\tfrac j{13})g^j$ 라 하자 ($\eta^2=13$).
 \begin{enumerate}
-\item 최소벡터 $w$ 에 대해 $s(w):=\tfrac12\,w\cdot\eta w\in\{0,\pm2,\pm4\}$ 이고 개수는 $78624,\ 45864\ (\times2),\ 13104\ (\times2)$; $s=\pm6$ 은 없다(순환 Gram 행렬의 양반정부호 조건을 유리수 연산으로 전수 확인 + 196560개 직접 계산).
-\item $C_{Co_0}(g)=\langle g\rangle\times SL_2(3)$. $\Delta=\Q\langle SL_2(3)\rangle\otimes\Q(\eta)$ 의 order $\{x:x\Lambda_{24}\subset\Lambda_{24}\}$ 는 \emph{극대}(Hurwitz$\otimes O_F$ 위 지수 4)이고 class number 1. $\Lambda_{24}$ 는 그 위의 랭크 3 Hermite 격자이며 $\Delta$-선형 자기동형군은 위수 정확히 $2184$ 로 $SL_2(13)$ 과 동형.
+\item 최소벡터 $w$ 에 대해 $s(w):=\tfrac12\,w\cdot\eta w\in\{0,\pm2,\pm4\}$ 이고 개수는 $78624,\ 45864\ (\times2),\ 13104\ (\times2)$; $s=\pm6$ 은 없다(196560개 최소벡터의 $s$ 를 정수 연산으로 직접 계산; 순환 Gram 행렬의 양반정부호 조건에 의한 독립 검산은 심사자가 유리수 연산으로 재확인).
+\item $C_{Co_0}(g)=\langle g\rangle\times SL_2(3)$. $\Delta=\Q\langle SL_2(3)\rangle\otimes\Q(\eta)$ 의 order $\{x:x\Lambda_{24}\subset\Lambda_{24}\}$ 는 \emph{극대}(Hurwitz$\otimes O_F$ 위 지수 4)이고 class number 1 (Eichler 질량 공식 $|\zeta_F(-1)|/2=1/12$ 와 $O^1=SL_2(3)$ 에서; 질량 공식은 인용). $\Lambda_{24}$ 는 그 위의 랭크 3 Hermite 격자이며 $\Delta$-선형 자기동형군은 위수 정확히 $2184$ 로 $SL_2(13)$ 과 동형.
 \item 모든 $w\ne0$ 에 대해 $N_{F/\Q}(\nu(w))=\tfrac{13|w|^4}{16}-\tfrac{s(w)^2}4\ge9=r^2$, 모든 $\Delta$-직선 $U$ 에 대해 $\det(\Lambda_{24}\cap U)\ge3^8$ ($R_U\le1$), 모든 $\Delta$-평면에 대해 $R_U\le3^8/2^{16}=0.1001$.
 \item 등호 $R_U=1$ 은 \textbf{정확히 $1638=3\times546$ 개 직선}에서 성립: $s=+4$ 최소벡터를 지나는 546개, $s=-4$ 의 546개, 그리고 $\sqrt3E_8$ 와 등거리인 546개(그중 91개가 위수 3 원소의 고정격자). (class number 를 쓰지 않는 증명: Hermite 상수 $\gamma_8=2$, $E_8$ 의 유일성, 7-design 성질.)
 \end{enumerate}
 \end{theorem}
-증명의 핵심: $N(\nu)\in\{1,3\}$ 이면 기본단위 $\varepsilon=\tfrac{3+\sqrt{13}}2$ 의 거듭제곱을 곱해 노름 2 벡터가 생기고, $N(\nu)=4$ 는 $s=\pm6$ 인 최소벡터를 요구하는데 없다; $5,6,7,8$ 은 $O_F$ 의 노름이 아니다. 이득은 $g=2184/(2\cdot72)=15.17$.
+증명의 핵심: 직선 $U$ 에 대해 $\Lambda_{24}\cap U=Iw$ ($I$ 는 왼쪽 ideal), $\det=N(\mathfrak a)^4$, $\mathfrak a=\nu(w)\,\mathrm{nrd}(I)$. $O_F$ 의 ideal 노름은 $1,3,4,9,\dots$ 뿐이다($2,5,7$ 은 inert 이므로 $2,5,6,7,8$ 은 불가능). $\gamma_8=2$ 와 최소노름 4 에서 $\det\ge2^8$ 이므로 $N(\mathfrak a)\ge4$ 이고, $N(\mathfrak a)=4$ 는 행렬식 $2^8$ 인 최소벡터 직선(즉 $s=\pm6$ 인 최소벡터)을 요구하는데 전수 계산에서 그런 것은 없다. 따라서 $N(\mathfrak a)\ge9$. 이득 지표는 $g=2184/(2\cdot72)=15.17$.
 
 \subsection{일반 $p$: 군론적 필요조건}
-\begin{proposition}\label{prop:sl2pnec}\tagP\ (5회차; 심사 통과)\ $W_p$ 가 극대 order 위의 짝 unimodular $G$-격자라 하자.
+\begin{proposition}\label{prop:sl2pnec}(1)--(3): \tagP\ (5회차 심사 통과); (4): \tagP\ (11회차 T2 의 유도, 별도 심사 없음; $p=61$ 의 값은 12회차에서 정수 계산); (5): \tagP\ (주 직선에 한함).\ $W_p$ 가 극대 order 위의 짝 unimodular $G$-격자라 하자.
 \begin{enumerate}
 \item (Cor.\ A$''$) $(p+1)/2$ 가 합성수이면 불안정: 비분리 토러스의 소수 위수 $q\mid\tfrac{p+1}2$ 원소($N=\tfrac{p+1}{2q}>1$)의 고정공간에서 $R_U\ge(\tfrac{Nq-1}{Nq-q})^{4(N-1)}$ ($p=17$: $9.99$; $29$: $11.8$; $41$: $12.5$). 심사자의 강화: unimodular 가 아니어도 $R_U(L)R_U(L^\#)>1$.
 \item (Lemma B) 분리 토러스의 홀수 위수 부분군 $H$ 의 고정격자는 $W_p^H=N_H(W_p)$, $\det=|H|^{\dim W^H}$, \emph{정확히} $R_U=1$.
 \item $(p+1)/2$ 가 소수이면($p=5,13,37,61,73,157,193,\dots$) 고정벡터를 갖는 부분군은 분리 토러스의 홀수 위수 부분군뿐이다.
-\item (11회차 T2) 부분군 $H$ 의 $\Q$-isotypic 성분도 $\Delta$-부분공간이다: $SL_2(3)$ 의 Hurwitz 성분은 $R=2^{-e}\le1$; $p\equiv1\pmod5$ 에서 $SL_2(5)$ 의 icosian 성분은 $R=(625/256)^{2r/15}2^{-e}$ ($e$ = 2-진 접착 지수; $p=61$ 은 $e\ge3$ 이어야 안정).
-\item (직선 기준) $R_U\le1\ (\forall\text{ 직선})\iff m_+(w)m_-(w)\ge\theta_p:=\tfrac{(p-1)^2}{4p}\ (\forall w\ne0)$ (주 직선의 경우; 일반적으로는 ideal 판), 여기서 $m_\pm$ 는 $\eta=\pm\sqrt p$ 고유공간 성분의 제곱노름. 동치로: $G$-불변 형식의 1-매개변수족 $Q_t=e^tm_++e^{-t}m_-$ (행렬식 1; $t$ 의 주기 $2\log\varepsilon$) 이 \emph{모든} $t$ 에서 최소값 $\ge(p-1)/\sqrt p$.
+\item (11회차 T2) 부분군 $H$ 의 $\Q$-isotypic 성분도 $\Delta$-부분공간이다: $SL_2(3)$ 의 Hurwitz 성분은 $R=2^{-e}\le1$; $p\equiv1\pmod5$ 에서 $SL_2(5)$ 의 icosian 성분은 $R=(625/256)^{m}2^{-e}$ ($e$ = 2-진 접착 지수, $m=\dim U/8$; $p=61$ 에서는 $\dim U=16$, $m=2$ 이고 $e\ge3$ 이어야 안정 --- 12회차에서 $e=8$ 로 계산됨).
+\item (직선 기준) \emph{주(principal)} 직선 $U=\Delta w$ ($\Lambda\cap U=Ow$)에 대해 $R_U\le1\iff m_+(w)m_-(w)\ge\theta_p:=\tfrac{(p-1)^2}{4p}$. 일반 직선에서는 $\Lambda\cap U=Iw$ 이고 $R_U\le1\iff N(\nu(w)\,\mathrm{nrd}\,I)\ge r^2$ 이므로, 벡터 조건 ``$m_+m_-\ge\theta_p$ ($\forall w\ne0$)'' 은 필요조건일 뿐이다(반대 방향 $\Gamma(w)<\theta_p\Rightarrow R_U>1$ 은 항상 성립). 극대 order 의 class number 가 1 보다 큰 $p=37,61$ (질량 $5/12$, $11/12$)에서는 비주 직선이 존재한다. 여기서 $m_\pm$ 는 $\eta=\pm\sqrt p$ 고유공간 성분의 제곱노름. 동치로: $G$-불변 형식의 1-매개변수족 $Q_t=e^tm_++e^{-t}m_-$ (행렬식 1; $t$ 의 주기 $2\log\varepsilon$) 이 \emph{모든} $t$ 에서 최소값 $\ge(p-1)/\sqrt p$ (벡터 조건의 다른 표현).
 \end{enumerate}
 \end{proposition}
 
 \subsection{Mordell--Weil 재정식화 (11회차)}
-\begin{theorem}\label{thm:MW}\tagP\ (본인 유도를 T1 에이전트가 검증·정정; Gross 1990 등의 원문은 열람하지 못함)\
-$C_p:\ y^2=x^p-x$ (종수 $g=(p-1)/2$)에 $SL_2(p)$ 가 $x\mapsto\tfrac{ax+b}{cx+d}$, $y\mapsto y/(cx+d)^{(p+1)/2}$ 로 충실하게 작용하고 $H^1(C_p)=\psi+\psi'$. $\mathrm{Jac}(C_p)$ 는 superspecial 이고 Frobenius $\pi$ 는 $\pi^2=p$ 를 만족하며 $W$ 위에서 $\eta=\pm\pi$. $E$ 를 초특이 타원곡선이라 하면
+\begin{theorem}\label{thm:MW}\tagPL\ (저자의 유도를 T1 에이전트가 한 차례 검증·정정; superspecial 성질 등 일부는 문헌 사실에 의존하며 Gross 1990, Dummigan 등의 원문은 열람하지 못함)\
+$k=\overline{\mathbb F}_p$ 위의 곡선 $C_p:\ y^2=x^p-x$ (종수 $(p-1)/2$)에 $SL_2(p)$ 가 $x\mapsto\tfrac{ax+b}{cx+d}$, $y\mapsto y/(cx+d)^{(p+1)/2}$ 로 충실하게 작용하고 $H^1(C_p)=\psi+\psi'$. $\mathrm{Jac}(C_p)$ 는 superspecial 이고 Frobenius $\pi$ 는 $\pi^2=p$ 를 만족하며 $W$ 위에서 $\eta=\pm\pi$. $E/k$ 를 초특이 타원곡선($\mathbb F_{p^2}$ 위에서 정의되고 Frobenius 가 $+p$ 인 것)이라 하면
 \[
 M_p:=\mathrm{Hom}(\mathrm{Jac}\,C_p,E)\quad(\text{랭크 }2(p-1),\ \text{형식 }2\deg)
 \]
-는 극대 order 를 갖는 $G$-격자이고, 짝 unimodular Weil 격자 $W_p$ 는 같은 $\Z[G]$-가군에 뒤틀린 형식 $\Tr_{F/\Q}(\tfrac{\varepsilon}{\sqrt p}\beta)$ 를 준 것이다. 형식의 원 $\{Q_t\}$ 위에서 unimodular 점과 Mordell--Weil 점($2\deg=\sqrt p\,Q$)은 정반대(거리 $\log\varepsilon$)에 있다. 직선 안정성은
+는 극대 order 를 갖는 $G$-격자이고(상수 타원곡선 $E$ 의 함수체 $k(C_p)$ 위의 Mordell--Weil 군에서 꼬임을 뺀 것이며 높이 쌍이 $2\deg$ 라서 Mordell--Weil 격자라 부른다), 짝 unimodular Weil 격자 $W_p$ 는 같은 $\Z[G]$-가군에 뒤틀린 형식 $\Tr_{F/\Q}(\tfrac{\varepsilon}{\sqrt p}\beta)$ 를 준 것이다. 형식의 원 $\{Q_t\}$ 위에서 unimodular 점과 Mordell--Weil 점($2\deg=\sqrt p\,Q$)은 정반대(거리 $\log\varepsilon$)에 있다. 직선 안정성은 다음을 함의하고(주 직선 $\Delta\phi$ 에 대해서는 동치),
 \[
-N_{F/\Q}\big(q_F(\phi)\big)\ \ge\ \Big(\frac{p-1}4\Big)^2\qquad(\forall\ \phi\ne0),\qquad q_F(\phi)=\tfrac12\big(\deg\phi+v(\phi)\sqrt p\big),\ \ v=\tfrac{\langle\phi\pi,\phi\rangle}{2p},
+N_{F/\Q}\big(q_F(\phi)\big)\ \ge\ \Big(\frac{p-1}4\Big)^2\qquad(\forall\ \phi\ne0),\qquad q_F(\phi)=\tfrac12\big(\deg\phi+v(\phi)\sqrt p\big),\ \ v=\tfrac{\langle\phi\pi,\phi\rangle}{2p}
 \]
-와 동치이고, 특히 \emph{모든 비상수 사상 $C_p\to E$ 의 차수가 $\ge(p-1)/2=g$} 일 것을 요구한다.
+($\langle\cdot,\cdot\rangle$ 는 $\langle\phi,\phi\rangle=2\deg\phi$ 인 쌍선형 형식), 특히 \emph{모든 비상수 사상 $C_p\to E$ 의 차수가 $\ge(p-1)/2$ (= 곡선의 종수)} 일 것을 요구한다.
 \end{theorem}
 \begin{itemize}
 \item 초등적 한계(Castelnuovo--Severi/gonality)는 $\deg\ge(p+3)/4$ 뿐 --- 필요한 것의 절반.
-\item $p\equiv5\pmod8$ 이면 $x\mapsto x^{(p-1)/4}$ 로 $C_p\to D:Y^2=X^5-X$, 이어서 $D\to E$ (차수 2): 차수 정확히 $(p-1)/2$ 의 사상 --- 이것이 분리 토러스 고정격자의 경계 벡터다($p=13$: $\sqrt3E_8\subset$ Leech). $p=13$ 에서는 차수 6 사상이 $6|G|$ 개 있고 그중 Galois 몫에서 오는 것은 $1/6$ 뿐이다.
+\item $p\equiv5\pmod8$ 이면 $x\mapsto x^{(p-1)/4}$ 로 $C_p\to D:Y^2=X^5-X$, 이어서 $D\to E$ (차수 2): 차수 정확히 $(p-1)/2$ 의 사상 --- 이것이 분리 토러스 고정격자의 경계 벡터다($p=13$: $\sqrt3E_8\subset$ Leech). $p=13$ 에서는 차수 6 사상이 $6|G|$ 개 있고 그중 Galois 몫에서 오는 것은 $1/6$ 뿐이다(정리 \ref{thm:leech} 의 개수에서 유도; 독립 재계산 없음). 무조건부로 증명 가능한 한계는 $N(q_F)\ge((p+3)/(4b\sqrt p))^2\sim p/(16b^2)$ ($\varepsilon=\tfrac{a+b\sqrt p}2$)인데 필요한 것은 $\sim p^2/16$ 이다.
 \item 차수 $d$ 사상은 ``$R^*(e_1+\dots+e_4)\equiv\sum_{P\in\mathbb P^1(\mathbb F_p)}P\pmod2$ 인 차수 $d$ 유리함수 $R$'' 과 대응한다.
-\item \tagH\ generic 격자에 대한 기대 위반 벡터 수(단위군 궤도당)는 $h\,\omega_h^2\theta_p^{h/2}\log\varepsilon$ ($h=p-1$): $1.2\times10^4$ ($p=13$), $1.6\times10^5$ ($37$), $246$ ($61$), $2.3$ ($73$), $2\times10^{-26}$ ($157$). $G$-궤도 수로는 약 $5,\ 3,\ 10^{-3},\ 6\times10^{-6}$. 즉 이 모형은 ``$p=37$ 은 불안정, $p\ge61$ 은 구조적 짧은 벡터가 없는 한 안정'' 을 예측한다(단 $p=13$ 에서는 과대예측: 실제 위반 0).
+\item \tagH\ generic 격자에 대한 기대 위반 벡터 수(단위군 궤도당)는 $h\,\omega_h^2\theta_p^{h/2}\log\varepsilon$ ($h=p-1$): $1.2\times10^4$ ($p=13$), $1.6\times10^5$ ($37$), $246$ ($61$), $2.3$ ($73$), $2\times10^{-26}$ ($157$). $G$-궤도 수(값$/|G|$; 벡터 단위)로는 약 $5$ ($p=13$), $3$ ($37$), $10^{-3}$ ($61$), $6\times10^{-6}$ ($73$)이고, 직선 단위로는 $2[O^\times:O_F^\times]\ge4$ 로 더 나눈다. \emph{신뢰도 주의}: 이 모형은 generic 격자를 가정하며 $p=13$ 에서 이미 틀린다(기대 5 궤도, 실제 0). 따라서 $p\ge61$ 의 작은 기대값을 안정성의 증거로 읽어서는 안 된다.
 \end{itemize}
 
 \subsection{직접 계산: $p=37$ 은 불안정 (10회차)}\label{sec:weilcomp}
@@ -60,28 +60,29 @@ N_{F/\Q}\big(q_F(\phi)\big)\ \ge\ \Big(\frac{p-1}4\Big)^2\qquad(\forall\ \phi\ne
 
 \begin{center}
 \small
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}rrrrlll@{}}
 \toprule
-$p$ & 랭크 & $D$ & $\theta_p$ & $\min\Gamma/\theta_p$ (찾은 값) & 판정 & 비고\\
+$p$ & 랭크 & $D$ & $\theta_p$ & 찾은 $\Gamma/\theta_p$ 의 최소 (전역 최소 아님) & 판정 & 비고\\
 \midrule
 5 & 8 & 5 & 0.8 & 1 (전수) & 안정 & unimodular 점 $=E_8$\\
 13 & 24 & 117 & 2.769 & 1 (전수; 세 류 각 6552쌍) & 정확히 경계 & unimodular 점 $=$ Leech\\
-17 & 32 & & 3.765 & $<1$ & 불안정 & 비분리 위수 3 원소 (예측대로)\\
-29 & 56 & & 6.759 & $45/49$; 고정 직선 $R_U=14.76$ & 불안정 & 비분리 위수 5, 3 원소 (예측대로)\\
-\textbf{37} & 72 & 2997 & 8.757 & $\mathbf{7/9}$ & \textbf{불안정} & $R_U\ge(9/7)^4=2.7326$\\
-\textbf{61} & 120 & & 14.754 & \S\ref{sec:p61} & \S\ref{sec:p61} & \\
+17 & 32 & 153 & 3.765 & $9/16$ & 불안정 & 비분리 위수 3 고정 직선, $R_U\ge(16/9)^4=9.99$\\
+29 & 56 & 1421 & 6.759 & $5/7$ (A), $45/49$ (B) & 불안정 & 비분리 위수 5, 3 의 고정공간에서 $R_U=14.76,\ 11.78$\\
+\textbf{37} & 72 & 2997 & 8.757 & $\mathbf{7/9}$ & \textbf{불안정} & 그 직선에서 $R_U=(9/7)^4=2.7326$\\
+\textbf{61} & 120 & 13725 & 14.754 & 1 (구조적 부분격자에서) & 미결정 & \S\ref{sec:p61}\\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{center}
 
-\begin{observation}[$p=37$]\label{obs:p37}\tagPC\ (독립 구현 3개 일치; 두 빌더는 정수 Gram 행렬 위에서 정확한 정수 연산으로 인증 --- 격자 구성의 첫 단계인 Weil 행렬만 부동소수점 후 반올림)\
+\begin{proposition}[$p=37$; 계산기 보조]\label{obs:p37}\tagPC\ (독립 구현 3개 일치; 두 빌더는 정수 Gram 행렬 위에서 정확한 정수 연산으로 인증 --- 격자 구성의 첫 단계인 Weil 행렬만 부동소수점 후 반올림)\
 (i) $\Lambda$ 는 랭크 72, $D=2997=81\cdot37$; $t=\pm\log\varepsilon$ ($\varepsilon=6+\sqrt{37}$) 에서 $Q_t/\sqrt D$ 는 정수 형식 --- 72차원 짝 unimodular $SL_2(37)$-격자 $W_{37}$. (ii) 분리 토러스 $C_9$ 의 고정 직선은 $\log R_U=0.000000$, $\min\Gamma=\theta$ (보정). (iii) $C_3$-고정 부분격자(랭크 24, 전체로는 $R_U=1$)는 $\sqrt3\,\times N(D_4^6)$: 근이 144개이고 뿌리계가 $D_4^6$ (24근·랭크 4 인 성분 6개)인 \emph{Niemeier 격자}의 $\sqrt3$ 배다(직접 계산; \texttt{roots37.py}). 그 근에 대응하는 $W_{37}$ 의 노름 6 벡터 72쌍은 모두 $s=\pm9$:
 \[
 N(\nu(w))=\frac{37\cdot6^2}{16}-\frac{9^2}4=63\ <\ 81=r^2 .
 \]
-(iv) 정수 인증서: $b=w^TBw=1026$, $e=w^TEw=5994$ ($E$ 는 $B(\cdot,\eta\,\cdot)$ 의 Gram 행렬)에 대해 $N=37b^2-e^2=3020976<D(p-1)^2=3884112$; commutant order 의 작용으로 만든 랭크 8 부분격자 $O\cdot w\subset\Lambda\cap\Delta w$ 는 포화이고 $\det_B(O\cdot w)=188811^4=(N/16)^4$ (정확), 따라서 \textbf{$R_U=(9/7)^4=6561/2401$ 정확히}. 이 불안정성은 같은 족의 모든 격자 $\Lambda I$ (모든 ideal 류)로 전이된다(행렬식 비가 불변). $C_3$-고정 부분격자에서의 전수 열거로 그 안의 $\min\Gamma/\theta=7/9$ 는 정확하지만, 전체 랭크 72 격자의 전역 최소가 $7/9$ 인지는 증명되지 않았다.
-\end{observation}
-따라서 $p=37$ 에서는 양자택일의 (b) 쪽이 성립한다: Weil 격자에 ``불균형한 짧은 벡터'' 가 있다. 구조적으로는 $p=13$ 의 $C_3$-고정격자 $\sqrt3E_8$ (근의 $s$ 값이 허용 범위 안)이 $p=37$ 에서는 $\sqrt3N(D_4^6)$ (근의 $s$ 값이 허용 범위 밖)로 바뀐 것이다. 일반적으로 분리 토러스 $C_m$ 의 고정격자는 $\sqrt m\times$(종수 $(p-1)/(2m)$ 인 몫곡선 $Y^2=X^{(p-1)/m+1}-X$ 의 같은 유형의 unimodular 격자)이고, 그 격자가 ``Leech 형''(근이 없거나 근의 $s$ 가 작음)인지 ``Niemeier 형''인지가 안정성을 가른다. 이는 11회차 휴리스틱(위반 궤도 약 3개 예상; 발견된 것은 $703\times144=2|G|$ 개 벡터)과도 부합한다.
+(iv) 정수 인증서: $b=w^TBw=1026$, $e=w^TEw=5994$ ($E$ 는 $B(\cdot,\eta\,\cdot)$ 의 Gram 행렬)에 대해 $N=37b^2-e^2=3020976<D(p-1)^2=3884112$; commutant order 의 작용으로 만든 랭크 8 부분격자 $O\cdot w\subset\Lambda\cap\Delta w$ 는 포화이고 $\det_B(O\cdot w)=188811^4=(N/16)^4$ (정확), 따라서 \textbf{$R_U=(9/7)^4=6561/2401$ 정확히}. 이 불안정성은 같은 족의 모든 격자 $\Lambda I$ (모든 ideal 류)로 전이된다(행렬식 비가 불변). $C_3$-고정 부분격자에서의 전수 열거로 그 안의 $\min\Gamma/\theta=7/9$ 는 정확하지만, 전체 랭크 72 격자의 전역 최소가 $7/9$ 인지는 증명되지 않았다. (v) 교차검증 심사자는 저장된 정수 자료만으로 자체 코드로 전 과정을 재유도했다: 기저의 $SL_2(37)$-안정성, commutant 의 직접 구성(판별식 $37^4$, 즉 극대 order), $O\cdot w$ 의 원시성과 정확한 행렬식. 이 진술은 $G$-격자 $\Lambda=\Z[G]v_0$ (임의의 불변 형식, 특히 72차원 짝 unimodular 형식)에 대한 것이다.
+\end{proposition}
+따라서 $p=37$ 에서는 양자택일의 (b) 쪽이 성립한다: Weil 격자에 ``불균형한 짧은 벡터'' 가 있다. 구조적으로는 $p=13$ 의 $C_3$-고정격자 $\sqrt3E_8$ (근의 $s$ 값이 허용 범위 안)이 $p=37$ 에서는 $\sqrt3N(D_4^6)$ (근의 $s$ 값이 허용 범위 밖)로 바뀐 것이다. 일반적으로 분리 토러스 $C_m$ 의 고정격자는 $\sqrt m\times$(종수 $(p-1)/(2m)$ 인 몫곡선 $Y^2=X^{(p-1)/m+1}-X$ 의 같은 유형의 unimodular 격자)이고, 그 격자가 ``Leech 형''(근이 없거나 근의 $s$ 가 작음)인지 ``Niemeier 형''인지가 안정성을 가른다. 발견된 위반($C_3$ 부분군 703개 각각에 144개 벡터, 합 $2|G|$ 개)은 구조적인 것이어서, 11회차의 generic 휴리스틱(위반 궤도 약 3개 예상)을 검증한 것은 아니다.
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.86\textwidth]{figs/fig_tcircle.pdf}
@@ -92,19 +93,63 @@ N(\nu(w))=\frac{37\cdot6^2}{16}-\frac{9^2}4=63\ <\ 81=r^2 .
 \input{sec_p61}
 
 \subsection{조건부 주장의 올바른 형태 (11회차 T2 의 반박 시도 반영)}
-\begin{proposition}[텐서족의 사영 분산]\tagP\ (Monte Carlo 확인)\
-텐서족 $W_\Z\otimes_OL$ ($W$ 의 $\Delta$-랭크 $r$, $L$ 의 랭크 $k$)에서 전형적인 점의 사영 이차변동은 $q=q_0\big(1+\tfrac{r-1/2}{k}+O(\tfrac1{rk})\big)$, $q_0=1/\dim_\Q A$. 초과분 $r/k=n/(2D_k)$ 는 정확히 항등 방향(호흡 모드)의 기여 $1/n$ 이다.
+\begin{proposition}[텐서족의 사영 분산]\tagP\ (11회차 T2; 별도 심사 없음)\
+텐서족 $W_\Z\otimes_OL$ ($W$ 의 $\Delta$-랭크 $r$, $L$ 의 랭크 $k$)에서 균등한 방향 $x$ 에 대해 $\E\,q(x)=q_0\big(1+\tfrac{r-1/2}{k}+O(\tfrac1{rk})\big)$, $q_0=1/\dim_\Q A$ 이고, 모든 $x$ 에서 항등 방향(호흡 모드)의 기여는 정확히 $1/n=q_0r/k$ 이다. \tagN: $q$ 는 이 평균 주위에 집중한다(표준편차 $\approx0.65\,q_0/r$; Monte Carlo 400표본).
 \end{proposition}
-따라서 기존 Klartag 회계를 그대로 쓰면 $V_{final}\approx V_0^{r/(k+r)}(|G|D_k/2e)^{k/(k+r)}$ 이고, \textbf{$k\approx r$ 에서는 지수 이득이 사라진다}($n^{2.0}$). $k=cr$ 이면 지수 $2+\tfrac{c-1}{2(c+1)}$, 완전한 이득은 $k\ge Cr\log n$ 에서만 나온다.
-\begin{conjecture}[수정된 양자택일]\label{conj:dichotomy}\tagJ\ / \tagC\
-$(p+1)/2$ 가 소수인 $p\equiv1\pmod4$ 에 대해 다음 중 하나가 무한히 자주 성립한다.
+따라서 기존 Klartag 회계를 그대로 쓰면 $V_{final}\approx V_0^{r/(k+r)}(|G|D_k/2e)^{k/(k+r)}$ 이고 \tagH, \textbf{$k\approx r$ 에서는 지수 이득이 사라진다}. $k=cr$ 이면 지수는 시작 부피가 $V_0\sim|G|$ 일 때 $2+\tfrac{c-1}{2(c+1)}$, $V_0\sim n$ 일 때 $2+\tfrac{c-2}{2(c+1)}$ 이다($k\approx r$: 각각 $n^{2.0}$, $n^{1.75}$; $V_0$ 는 경계류 때문에 $|G|/4$ 보다 작게 제한될 수 있다). 완전한 이득은 $k\ge Cr\log p$ (상수를 바꾸면 $k\ge C'r\log n$ 과 같다)에서만 나오며, $k\approx r$ 판에는 대각합 없는 잡음을 쓰는 새 변형이 필요하다. 고정된 $p$ 에서 $k\to\infty$ 이면 이 문제는 사라진다.
+\begin{proposition}[조건부 양자택일]\label{conj:dichotomy}\tagC\
+$\mathcal P$ 를 $(p+1)/2$ 가 소수인 $p\equiv1\pmod4$ 의 집합이라 하자($|\mathcal P|=\infty$ 는 미해결: $q$, $2q-1$ 동시 소수 문제). 각 $p\in\mathcal P$ 는 (a$_p$) 모든 $\Delta$-부분공간에서 $R_U\le1$ 이거나, (b$_p$) $R_U>1$ 인 $\Delta$-부분공간을 갖는다($p=37$ 은 (b$_p$)이고 위반은 주 직선에 있어 $N_{F/\Q}(q_F(\phi))<r^2$ 인 사상 $\phi:C_p\to E$ 가 존재한다). 다음 세 가정이 모두 성립한다고 하자:
 \begin{itemize}
-\item[(a)] $W_p$ 가 모든 $\Delta$-부분공간에서 $R_U\le1$ 이고 사실상 경계인 부분공간들의 접촉 기여가 $o(D_k)$. 이 경우, $r\ge2$ 인 텐서족에 대한 등변 Klartag 논증(낮은 랭크 항과 Steinitz 류를 포함한 평균값 공식, 가중 궤도 계수; $k\ge Cr\log n$ 영역)이 증명된다면 $n=8rk\sim\tfrac C2p^2\log p$ 에서
-\[
-V_n\ \ge\ (1-o(1))\,\frac{p\,n^2}{2e}\ \ge\ c\,\frac{n^{5/2}}{\sqrt{\log n}}\qquad(\text{희소한 차원열}),
-\]
-즉 AGZ 가 전하는 Venkatesh 의 추측 $V_n\le n^2(\log n)^{O(1)}$ 의 반례.
-\item[(b)] $W_p$ 는 텐서 불안정 --- $N_{F/\Q}(q_F(\phi))<((p-1)/4)^2$ 인 사상 $\phi:C_p\to E$ 가 존재($p=37$ 처럼).
+\item[(H1)] 무한히 많은 $p\in\mathcal P$ 에서 (a$_p$);
+\item[(H2)] 사실상 경계인 부분공간들의 접촉 기여가 $o(D_k)$ 이고 시작 부피 조건이 성립;
+\item[(H3)] $r\ge2$ 인 텐서족에 대한 등변 Klartag 정리(낮은 랭크 항과 Steinitz 류를 포함한 평균값 공식, 가중 궤도 계수)가 $k=\lceil Cr\log p\rceil$ 에서 성립.
 \end{itemize}
-\end{conjecture}
-어느 쪽이든 증명되면 새로운 결과다. (a)에는 무한히 많은 그런 소수의 존재($q,2q-1$ 동시 소수 문제)도 필요하다. 반박 담당 에이전트는 (a)$\Rightarrow$결론의 경로에서 치명적 구조 장애를 찾지 못했다(평균값 공식의 주항 상수는 정확히 1; $O$-가군 제타 $\prod_{i<2r}\zeta_F(2k-i)$ 는 $k\ge r+1$ 에서 수렴하고 $\le1.17$; 강제되는 경계류가 흡수하는 제약 궤도는 $O(p)\ll D_k$). 그러나 theta 급수의 Hilbert 모듈러 형식 제약 등은 검토하지 못했고, 해석적 정리 자체가 미증명이므로 이 경로 전체는 \emph{추측}이다.
+그러면 $n=8rk\sim\tfrac C2p^2\log p$ 인 희소한 차원열에서
+\[
+V_n\ \ge\ (1-o(1))\,\frac{p\,n^2}{2e}\ \ge\ c\,\frac{n^{5/2}}{\sqrt{\log n}},
+\]
+즉 AGZ 가 전하는 Venkatesh 의 추측 $V_n\le n^2(\log n)^{O(1)}$ 의 반례가 된다.
+\end{proposition}
+\emph{14·15회차 이후의 상태}: 고정된 $p$ 와 $k\to\infty$ 에 대해서는 (H2), (H3) 이 정리 \ref{thm:E} 로 해결된다((h1) 과 (BS) 아래; \S\ref{sec:leechthm}). 따라서 남은 가정은 (H1) 과, $p$ 와 $k$ 가 함께 커질 때($k=\lceil Cr\log p\rceil$)의 \emph{균등한} 판의 (H2)·(H3), 그리고 class number $>1$ 의 처리다. 아래의 논의는 11회차 시점의 것이다: (H1)--(H3) 은 그 시점에 모두 미증명이었다. 반박 담당 에이전트(11회차 T2)는 (H1)--(H3)$\Rightarrow$결론의 경로에서 치명적 구조 장애를 찾지 못했다(평균값 공식의 주항 상수는 정확히 1; $O$-가군 제타 $\prod_{i<2r}\zeta_F(2k-i)$ 는 $k\ge r+1$ 에서 수렴하고 $\le1.17$; 강제되는 경계류가 흡수하는 제약 궤도는 $O(p)\ll D_k$). 그러나 theta 급수의 Hilbert 모듈러 형식 제약 등은 검토하지 못했고, 해석적 정리 자체가 미증명이므로 이 경로 전체는 조건부 진술일 뿐이다. 어느 $p$ 에서 (a$_p$)/(b$_p$) 가 성립하는지 결정하는 것 자체가 Weil 격자에 대한 새로운 산술 문제다.
+
+\subsection{고정된 자료에 대한 틀 정리와 Leech 텐서족 (14·15회차)}\label{sec:leechthm}
+위의 (H2), (H3) 을 \emph{고정된} $(G,W,\Lambda_W)$ 와 $k\to\infty$ 에 대해 실제로 증명한 것이다. 증명 전문은 부록 \ref{app:proof14} (14회차; 처음에는 평균값 공식 (HR) 을 가정으로 두었다)와 부록 \ref{app:proof15} (15회차; (HR) 의 유도)에 있다(영문, 증명 에이전트 작성). 본문의 진술은 두 회차의 심사 지적(표기와 가정의 정정)을 반영한 것이며 부록의 원문은 고치지 않았다.
+
+\paragraph{설정.} $G$ 유한군, $W$ 기약 $\Q[G]$-가군, $\Delta=\mathrm{End}_G(W)^{op}$, $\Delta_\R\cong\mathbb K^s$, $d=\dim_\R\mathbb K$, $r=\dim_\Delta W$, $A=\Q G$ 의 상 $=\mathrm{End}_\Delta(W)$ ($\dim_\Q A=r^2sd$), $\Lambda_W\subset W$ 는 $G$-불변 격자, $\mathcal O=\{c\in\Delta:\Lambda_Wc\subseteq\Lambda_W\}$, $n=k\dim_\Q W$. 가정:
+\begin{itemize}
+\item[(h1)] $\mathcal O$ 의 0 아닌 오른쪽 ideal 은 모두 주 ideal (class number 1);
+\item[(BS)] 모든 진 $\Delta$-부분공간 $U\ne0$ 에서 $R_U\le1$ 이고, 유한 개를 제외하면 $R_U\le\rho_0<1$ (``경계 안정'');
+\item[(HR)] $2\le j\le r<k$ 에 대해 $\Delta$-독립인 $j$-틀의 평균값 공식: $\E\sum_{Y\in\mathcal O^{j\times k},\ \mathrm{rk}_\Delta Y=j}F(Y\gamma)=\int_{\Delta_\R^{j\times k}}F$ (Siegel--Rogers 형; $j=1$ 은 Gargava 의 정리 16 = (L1)). 14회차에서는 가정이었고, 15회차에서 (L1) 로부터 유도되었다(아래).
+\end{itemize}
+\begin{theorem}[틀 정리 E; 비자유 작용]\label{thm:E}\tagPL\ (인용: Gargava 의 정리 16 을 모든 랭크 $\ge2$ 에서, Klartag 의 보조정리들; (HR) 은 15회차에서 이들로부터 유도; AI 심사 14회차 2회·15회차 2회 통과, 사람의 검증 없음)\
+(h1)(왼쪽·오른쪽 ideal 모두), (BS) 와 \S\ref{sec:quat} 의 인용 입력 (L1)--(L3) 아래에서((L1) 은 모든 랭크 $\ge2$ 에서; (HR) 은 아래 15회차의 결과에 의해 (L1) 에서 따라온다), 자료를 고정하고 $k\to\infty$ 일 때 $\Lambda_W\otimes_{\mathcal O}L$ 꼴의 격자($L$ 은 랭크 $k$ 의 $\mathcal O$-격자)가 존재하여
+\[
+V_n\ \ge\ (1-o(1))\,\frac{|G|\,n^2}{4e\,\dim_\Q A}\qquad(\dim_\Q W\mid n).
+\]
+\end{theorem}
+\begin{theorem}[정리 D; Leech 텐서족]\label{thm:D}\tagPL\ + \tagPC\ (정리 \ref{thm:E} 의 인용 입력 + 5회차의 계산기 보조 사실 + Eichler 질량 공식(인용); AI 심사만 거침)\
+$\Lambda_W=\Lambda_{24}$, $G=SL_2(13)$ ($|G|=2184$, $\dim_\Q A=72$): 정리 \ref{thm:leech} 가 (h1), (BS) 를 주므로, 인용 입력 (L1)--(L3) 아래에서
+\[
+V_n\ \ge\ \Big(\frac{91}{12e}-o(1)\Big)n^2\approx2.79\,n^2\qquad(24\mid n),
+\]
+즉 Rezvyakova 상수의 $15.2$ 배, icosian 상수(정리 \ref{thm:quatAB})의 $2.02$ 배.
+\end{theorem}
+\paragraph{증명의 새 요소 (6회차 증명 대비).}
+\begin{enumerate}
+\item \textbf{낮은 랭크 항을 포함한 평균값 공식.} (h1) 에서 모든 유한생성 무비틀림 $\mathcal O$-가군이 자유이므로 격자점 $X\in\mathcal O^{r\times k}$ 는 열공간 $U$ 에 따라 $X=B_UY$ ($\mathrm{rk}\,Y=\dim_\Delta U$)로 유일하게 분해되고, (HR) 에서 $\E\sum_{x\ne0}\varphi(x)=\kappa_n^{-1}\!\int\varphi+\sum_U\int\varphi\,d\mu_U$, $\mu_U=\kappa_n^{-f}(c_W^f/c_U)^k\,\mathrm{vol}_{E_U}$. 반지름 $V^{1/n}$ 의 공에서 $T_U(V)\le2f^{-1/2}(\pi n)^{-(1-f)/2}V^fR_U^{k/2}$ --- \S\ref{sec:sym} 의 휴리스틱 공식의 정확한 형태. 부분공간의 수는 $c_U$ 에 대해 다항식적으로만 늘어나므로(Minkowski) (BS) 에서 $\sum_UR_U^{k/2}\le|\mathcal E|+C\rho_0^{k/2}$.
+\item \textbf{비자유 궤도.} $\dim F_t\ge D_k-|\partial E_t\cap\Lambda|/|G|-|\partial E_t\cap\Lambda^{nf}|$ 이고, 고정점을 갖는 격자점 $\Lambda^{nf}$ 는 모두 진부분공간 $W^g$ 위의 낮은 랭크 점이다.
+\item \textbf{낮은 랭크 점의 접촉.} $E_U$ 위에서는 $q(x)=\tfrac{q_0}f(1+\mathrm{CV}^2)$ 로 시간이 $1/f$ 배 빨리 흐르지만 차원이 $fn$ 이다. 껍질 적분을 $E_U$ 위에서 다시 하면 시간 적분된 접촉 수가 $X_U\le C\,R_U^{k/2}\,n^{-\frac52(1-f)}$. 따라서 \emph{경계 부분공간($R_U=1$)도 고정된 자료에서는 해롭지 않다}: Leech 의 경계 직선 하나의 기여는 $O(n^{-5/3})$ 이고, 1638 이라는 수는 유한하다는 것만 쓰인다. (\S\ref{sec:sym} 의 ``경계 경우'' 논의와 (H2) 에 대한 답.)
+\item \textbf{각도 보조정리의 $j\times k$ 블록 판}(Wishart 형; 6회차의 미심사 \S7 을 다시 증명)과 시작 공의 처리: 시작 공 안에 격자점이 있을 확률은 $e^{-\rho}+O(n^{-1/(2r)})$ 이하.
+\item 최적화는 6회차와 같고 상수는 $|G|q_0/(4e)$. $r$ 이 고정이고 $k\to\infty$ 이므로 호흡 모드의 손실 $e^{z(r-1/2)/k}$ 는 $1+o(1)$ 이다 --- $r$ 이 $k$ 와 함께 커지는 경우에 대해서는 아무것도 주장하지 않는다.
+\end{enumerate}
+\paragraph{심사 결과와 현재 지위.} AI 심사 에이전트 2개(해석 담당, 대수·평균값 공식 담당)가 증명 전문을 읽고 핵심 추정을 손으로 다시 유도했으며, 판정은 둘 다 ``\emph{수학적 오류 없음, 사소한 수정만 필요}'' 였다(보고 원문: 부록 \ref{app:notes}). 두 심사자가 확인한 것: 설정과 불변 형식($D_k=2(2k^2-k)$, $q_0=\tfrac1{72}$), 열공간별 분해와 Jacobian($\mu_U$), $T_U(V)$ 의 상계(Stirling 비를 수치로 점검), 부분공간의 계수와 합의 수렴, 비자유 궤도 계수, 각도 보조정리(독립 Monte Carlo 로 Gamma 항등식 확인), 껍질 적분과 지수 $-\tfrac52(1-f)$, 세 Markov 사건, 최적화와 상수 $\tfrac{2184}{288e}$, Leech 에 대한 (BS); 그리고 6회차에서 가져온 단계들이 작용의 자유성이나 $q\ge q_0$ 를 쓰지 않는다는 것. \textbf{공통 결론}: 정리 \ref{thm:E}, \ref{thm:D} 는 (HR) 을 가정한 \emph{조건부} 정리이다 --- 주항($j=r$)이 (HR) 에 의존하므로, (HR) 없이는 상수 $\tfrac{91}{12e}$ 에 관해 확립된 것이 없다. 그 밖의 지적: (i) 군 $\{N=1\}$ 과 $\prod_vSL_k(\mathbb K)$ 의 구분, 몫의 좌우($\Gamma_k\backslash\mathsf G_k$), (h1) 의 왼쪽 ideal 판(자동으로 따름)을 명시할 것; (ii) 순수 점근 진술이다 --- 증명을 그대로 따르면 Leech 족에서 $n\gtrsim10^{14}$ 이 되어야 비자명해지고 상대오차는 $\approx3/\log n$; (iii) 합의 수렴에 관한 일반 보조정리는 $k\ge(\dim W)^2+2$ 를 요구한다(Leech 는 별도 계산으로 $k\ge10$); (iv) 상수 $c_{j,k}$ 까지만 성립하는 ``강건한 형태'' 는 스케치이며 조건이 불완전하다; (v) 정리 \ref{thm:E} 는 $\Delta_\R$ 이 한 종류의 $\mathbb K$ 의 곱인 경우만 다룬다. 심사자 2 는 5회차 입력 두 가지를 더 단단히 했다: $\dim\mathrm{End}_G(W)=8$ 은 정수 지표표에서 $\sum_g\mathrm{tr}(g)^2=17472=8\cdot2184$ 로 정확히 따르고(부동소수 랭크 불필요), class number 1 은 $\zeta_F(-1)=\tfrac16$, Eichler 질량 $\tfrac1{12}=1/[\mathcal O^\times:O_F^\times]$ 로 다시 계산된다(질량 공식 자체는 인용).
+
+\paragraph{(HR) 의 증명 시도 (15회차).} 15회차에서 (HR) 을 (L1) 로부터 유도했다(부록 \ref{app:proof15} 의 ``Theorem R''). \emph{진술}: $\mathcal O$ 의 0 아닌 \emph{왼쪽} ideal 이 모두 주 ideal 이고, 군의 족 $(\mathsf G_m)_{m\ge1}$ 이 ``정합적'' (각 $\mathsf G_m$ 이 $GL_m(\Delta_\R)$ 의 닫힌 정규부분군으로 Lebesgue 측도를 보존하고, $e_1$ 의 안정자가 $\mathsf G_{m-1}\ltimes\Delta_\R^{m-1}$)이며, 랭크 $m=k,k-1,\dots,k-j+1$ (모두 $\ge2$)에서 $\Gamma_m=\mathsf G_m\cap GL_m(\mathcal O)$ 가 격자이고 (L1) 이 성립하면, 모든 Borel $F\ge0$ 에 대해
+\[
+\int_{\Gamma_k\backslash\mathsf G_k}\ \sum_{Y\in\mathcal O^{j\times k},\ \mathrm{rk}_\Delta Y=j}F(Y\gamma)\,d\mu(\gamma)=\int_{\Delta_\R^{j\times k}}F(y)\,dy\qquad(1\le j<k),
+\]
+상수는 정확히 1 이다. $\prod_vSL_m(\mathbb K_v)$, $\{\det_\R=1\}$, $\{|\det_\R|=1\}$ 은 정합적인 족이고, 실 자리가 없으면(사원수 경우) 뒤의 둘은 14회차의 $\{N=1\}$ 과 같다. \emph{증명의 요지}: $j$ 에 대한 귀납. 합을 첫 행 $y$ 로 나누고 $y$ 의 $\Gamma_k$-궤도별로 펼친(unfolding) 뒤, 안정자 $\mathsf H_y\cong\mathsf G_{k-1}\ltimes\Delta_\R^{k-1}$ 의 올 위에서 먼저 적분한다(왼쪽 ideal 이 주 ideal 이면 $y=a\,e_1\delta$, $\delta\in GL_k(\mathcal O)$). 올 위에서는 원환 $(\Delta_\R/\mathcal O)^{k-1}$ 에 대한 적분이 첫 열에 대한 합을 Lebesgue 적분으로 바꾸고(꽉 찬 랭크의 정수 행렬은 원환 사이의 전사 준동형을 주므로 Haar 측도를 Haar 측도로 보낸다), 나머지는 랭크 $k-1$ 의 귀납 가정이 처리한다. 그 결과 올 적분은 $f(yg)$, $f(y)=\int F(y,Z)\,dZ$ 가 되는데, 이는 같은 unfolding 을 $j=1$ 과 함수 $f$ 에 적용한 식과 궤도별로 일치하므로 (L1)$_k$ 가 전체를 $\int f=\int F$ 로 평가한다. 따라서 제타 값, 기본영역의 부피, 원시벡터에 대한 추이성이 전혀 필요 없고 순환 논법도 아니다. 또 격자의 공간은 $\Gamma_k\backslash\mathsf G_k$ 로 읽어야 하며(14회차 표기의 정정), 필요한 것은 왼쪽 ideal 의 주 ideal 성인데 $\Lambda_W$ 가 unimodular 이면(Leech) 14회차의 (h1) 에서 따라온다(Lemma 4.1a).
+
+\emph{심사}: 서로 독립인 AI 심사 에이전트 2개가 0--3절의 모든 보조정리를 손으로 다시 확인했고, 둘 다 ``\emph{오류를 찾지 못함, 사소한 수정만 필요}'' 로 판정했다(반박 시도: 안정자와 그 격자의 구조, 두 계산에서 같은 몫 측도 $\nu_i$ 가 쓰이는지, 원환 보조정리, Tonelli 와 가측성, 정합성 공리, 고전적인 경우 $\Delta=\Q$, $j=2$, $k=3$ 에서 Rogers 공식의 재현 --- 궤도 $a\,e_1$ 의 기여 $\zeta(3)^{-1}a^{-3}$ 의 합이 1). 지적된 수정: 14회차의 (HR) 진술은 $\Gamma_k\backslash\mathsf G_k$ 위에서 읽어야 하고 왼쪽 ideal 판의 (h1) 을 가정에 넣어야 한다; 정리 R 은 (L1) 이 인용되는 \emph{바로 그} 군의 족에 대해 쓰여야 한다; Lemma 2.1 의 자유성 논증을 직접 쓸 것; 실 자리가 있는 경우의 보조정리 4.2a 는 (L1) 만 옮긴다(사원수 경우와 무관). 수치 검산은 없었다. 두 심사자 모두 Gargava 의 논문 자체는 열지 않았다. 따라서 정리 \ref{thm:D} 는 (HR) 이라는 별도의 가정 없이, \textbf{인용한 정리들(Gargava 의 정리 16 을 랭크 $k-2,k-1,k$ 에서 --- 그 증명은 재검증하지 않았고 $\Delta_\R=\HH^2$ 경우의 증명 세부에 6회차의 단서가 있다 ---, Klartag 의 보조정리들, Eichler 의 질량 공식)과 5회차의 계산기 보조 사실에만 의존한다.} 일반적인 정리 \ref{thm:E} 에는 왼쪽 ideal 판의 (h1) 이 추가 가정으로 필요하다($\Lambda_W$ 가 unimodular 이거나 $\mathcal O$ 가 극대 order 이면 자동). 문헌에서는 나눗셈대수 위의 $j$-틀 공식의 축자적 출처를 찾지 못했으므로(Weil 1946, Gargava 의 학위논문이 후보이나 열람하지 못함) 이 유도가 새로운지는 알 수 없다 --- 고전적인 Siegel--Rogers 논법의 직접적 확장이다.
+
+\paragraph{$SL_2(p)$ 족에 대한 함의.} 정리 \ref{thm:E} 의 상수는 $|G|/(4e\dim_\Q A)=\tfrac{p(p+1)}{2e(p-1)}$ 이다. 따라서 (HR) 아래에서, 어떤 $p$ 에 대해 $W_p$ 가 (BS) 와 (h1) 을 만족하면 $V_n\ge(1-o(1))\tfrac{p(p+1)}{2e(p-1)}n^2$ ($2(p-1)\mid n$)가 \emph{정리}가 된다. 현재 (BS) 가 확인된 것은 $p=13$ 뿐이다. $p=61$ 은 (BS) 가 미결정이고 class number 가 1 보다 커서 (h1) 도 성립하지 않는다(자유가 아닌 가군 $\Lambda_W\cap U$ 와 Steinitz 류를 다루는 확장이 필요). 차수 개선(명제 \ref{conj:dichotomy})에는 여전히 $p\to\infty$ 에 대한 균등성($k\ge Cr\log p$)이 추가로 필요하다.

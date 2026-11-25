@@ -1,0 +1,10 @@
+p=61 K=300 seed=4242: relation residuals (S^2+I, (ST)^3+I on 3 embeddings) (2.231410371933743e-16, 8.617648093045562e-16), sampling 5.1s
+ C_5: float integrality of B 7.3e-12, of E 5.1e-11
+[first 300 samples] p=61 C_5 rank 24: rank-resid 2.6e-12, q digits 10, det_B(M)/(m^k (r^2 p)^(k/2)) = 1  [exact; =1 means log R_U=0]
+   Z[sqrt p]-stable: True ; O_K-stable: True (max frac part of omega-matrix 4.13e-14)
+   unimodular member (sign -1): EXACTLY integral, even True, det = 1
+   enum flag 0; #roots 720, #norm4 179280 ; s integral True ; min Gamma/theta over norm<=4: 4/3
+   (norm,|s|): pairs -> [((2, '1'), 288), ((2, '3'), 72), ((4, '0'), 16920), ((4, '2'), 28872), ((4, '4'), 23112), ((4, '6'), 13752), ((4, '8'), 4608), ((4, '10'), 2304), ((4, '14'), 72)]
+   root components (roots, rank): [(240, 8), (240, 8), (240, 8)]
+   t-circle scan (step 0.10, 75 grid pts incl. wrap): hits 12, failures 0, cap-hits 0, min Gamma/theta = 1 (exact)  [19.9s]
+total 26.1s

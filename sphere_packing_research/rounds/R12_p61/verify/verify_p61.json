@@ -1,0 +1,74 @@
+[
+ {
+  "label": "Fix(split C_3)",
+  "dim": 40,
+  "primitive": true,
+  "R": "1",
+  "Rfloat": 1.0,
+  "glue_match": true
+ },
+ {
+  "label": "Fix(split C_5)",
+  "dim": 24,
+  "primitive": true,
+  "R": "1",
+  "Rfloat": 1.0,
+  "glue_match": true
+ },
+ {
+  "label": "Fix(split C_15)",
+  "dim": 8,
+  "primitive": true,
+  "R": "1",
+  "Rfloat": 1.0,
+  "glue_match": true
+ },
+ {
+  "label": "SL_2(3) [b=1] Hurwitz comp",
+  "dim": 40,
+  "primitive": true,
+  "R": "1/65536",
+  "Rfloat": 1.52587890625e-05,
+  "glue_match": true
+ },
+ {
+  "label": "SL_2(3) [b=2] Hurwitz comp",
+  "dim": 40,
+  "primitive": true,
+  "R": "1/65536",
+  "Rfloat": 1.52587890625e-05,
+  "glue_match": true
+ },
+ {
+  "label": "SL_2(5) [b=1] icosian comp",
+  "dim": 16,
+  "primitive": true,
+  "R": "390625/16777216",
+  "Rfloat": 0.023283064365386963,
+  "glue_match": true
+ },
+ {
+  "label": "SL_2(5) [b=1] degree-4 comp",
+  "dim": 32,
+  "primitive": true,
+  "R": "43046721/18446744073709551616",
+  "Rfloat": 2.3335674213288693e-12,
+  "glue_match": true
+ },
+ {
+  "label": "SL_2(5) [b=2] icosian comp",
+  "dim": 16,
+  "primitive": true,
+  "R": "390625/16777216",
+  "Rfloat": 0.023283064365386963,
+  "glue_match": true
+ },
+ {
+  "label": "SL_2(5) [b=2] degree-4 comp",
+  "dim": 32,
+  "primitive": true,
+  "R": "43046721/18446744073709551616",
+  "Rfloat": 2.3335674213288693e-12,
+  "glue_match": true
+ }
+]

@@ -1,0 +1,23 @@
+p=277 K=300 seed=99: relation residuals (S^2+I, (ST)^3+I on 3 embeddings) (3.335960499951899e-16, 1.2212453270876722e-15), sampling 25.8s
+ C_69: float integrality of B 5.1e-09, of E 7.8e-08
+[first 300 samples] p=277 C_69 rank 8: rank-resid 7.5e-10, q digits 6, det_B(M)/(m^k (r^2 p)^(k/2)) = 1  [exact; =1 means log R_U=0]
+   Z[sqrt p]-stable: True ; O_K-stable: True (max frac part of omega-matrix 4.26e-14)
+   unimodular member (sign -1): EXACTLY integral, even True, det = 1
+   enum flag 0; #roots 240, #norm4 2160 ; s integral True ; min Gamma/theta over norm<=4: 49
+   (norm,|s|): pairs -> [((2, '7'), 96), ((2, '9'), 24), ((4, '0'), 72), ((4, '2'), 288), ((4, '12'), 96), ((4, '14'), 192), ((4, '16'), 288), ((4, '18'), 24), ((4, '28'), 24), ((4, '30'), 96)]
+   root components (roots, rank): [(240, 8)]
+   t-circle scan (step 0.10, 159 grid pts incl. wrap): hits 12, failures 0, cap-hits 0, min Gamma/theta = 1 (exact)  [0.3s]
+ C_23: float integrality of B 5.8e-10, of E 1.1e-08
+Traceback (most recent call last):
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R13_scan_verify/vf.py", line 195, in <module>
+    res = analyse(p, m, Bg[:K0, :K0], Eg[:K0, :K0], tag='[first %d samples]' % K0, do4=do4, tscan=(K0 == K))
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R13_scan_verify/vf.py", line 126, in analyse
+    G2, U = V.lll_gram(np.array(BM, dtype=float)); Uo = np.array(np.round(U), dtype=np.int64).astype(object)
+            ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Mathathon/sphere_packing_research/rounds/R2_voronoi_descent/voronoi.py", line 29, in lll_gram
+    L = np.linalg.cholesky(G)
+  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 887, in cholesky
+    r = gufunc(a, signature=signature)
+  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 147, in _raise_linalgerror_nonposdef
+    raise LinAlgError("Matrix is not positive definite")
+numpy.linalg.LinAlgError: Matrix is not positive definite

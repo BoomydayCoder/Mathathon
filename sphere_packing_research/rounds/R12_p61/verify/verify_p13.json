@@ -1,0 +1,26 @@
+[
+ {
+  "label": "Fix(split C_3)",
+  "dim": 8,
+  "primitive": true,
+  "R": "1",
+  "Rfloat": 1.0,
+  "glue_match": true
+ },
+ {
+  "label": "SL_2(3) [b=1] Hurwitz comp",
+  "dim": 8,
+  "primitive": true,
+  "R": "1",
+  "Rfloat": 1.0,
+  "glue_match": true
+ },
+ {
+  "label": "SL_2(3) [b=2] Hurwitz comp",
+  "dim": 8,
+  "primitive": true,
+  "R": "1",
+  "Rfloat": 1.0,
+  "glue_match": true
+ }
+]

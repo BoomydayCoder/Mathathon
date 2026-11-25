@@ -1,19 +1,22 @@
 $p=61$: $\dim W=120$, $r=15$, $|G|=226920$, 이득 $g=63.0$, $\theta_{61}=14.754$, $D=r^2p=13725$, $\varepsilon=\tfrac{39+5\sqrt{61}}2$. unimodular 점은 120차원 짝 unimodular $SL_2(61)$-격자 $W_{61}$ 이고, 직선 안정성은 노름 6 벡터가 없을 것, 노름 8 벡터는 $|s|\le8$ 일 것 등을 요구한다.
 
-\begin{observation}[10회차 빌더 B; 12회차의 체계적 시험; 정수 연산]\label{obs:p61}\tagPC/\tagN\
+\begin{observation}[10회차 빌더 B; 12회차의 체계적 시험]\label{obs:p61}항목 1--2: 정수 연산 \tagPC\ (12회차 검증 에이전트가 독립 재현); 항목 3: 배정밀도 Fincke--Pohst 열거 \tagN\ (검증 에이전트는 재현하지 못함); 항목 4: 대조 시험.\
 빌더 B 의 정확한 정수 기저(재검증: $S,T$ 가 정수 행렬로 작용, $S^2=(ST)^3=-1$, $T^p=1$ 이 $\Lambda$ 위에서 정확히 성립) 위에서:
 \begin{enumerate}
 \item \textbf{접착 공식.} $\Lambda^\#=\tfrac{\eta}{rp}\Lambda$ 이므로 $\eta$-안정 부분공간 $U$ ($\dim k$)에 대해 $R_U=(n/k)^k/g_U$, $g_U=[\Lambda:(\Lambda\cap U)+(\Lambda\cap U^\perp)]$ (접착 지수; 정수 HNF 로 정확히 계산).
 \item \textbf{모든 부분군류의 isotypic 성분에서 $R_U\le1$.} 분리 토러스 $C_{60}$ 의 원자 성분과 그 합: $\mathrm{Fix}(C_{15})$ ($\dim8$, $g=3^85^8$), $\mathrm{Fix}(C_5)$ ($\dim24$, $g=5^{24}$), $\mathrm{Fix}(C_3)$ ($\dim40$, $g=3^{40}$)에서 $R=1$, 나머지 $\le0.1$. $SL_2(3)$ 의 Hurwitz 성분($\dim40$): $R=2^{-16}$. \textbf{$SL_2(5)$ 의 icosian 성분}($\dim16$; 두 공액류 모두): $g=2^83^{16}5^8$, $R=5^8/2^{24}=0.023$ --- 11회차가 요구한 2-진 지수는 $e=8\ge3$. 차수 4, 6 성분: $R\le10^{-11}$. 비분리 토러스와 위수 61 원소에서는 $W|_H$ 가 isotypic.
-\item \textbf{전수 $\Gamma$ 탐색.} 랭크 $\le40$ 인 모든 성분($\mathrm{Fix}(C_{15})$, $\mathrm{Fix}(C_5)$, $\mathrm{Fix}(C_3)$, icosian, Hurwitz, 차수 4 성분 등)에서 $t$-원 전체에 대해 반지름 $2\sqrt{\theta D}\cosh(0.05)$ 이하의 벡터를 전부 열거: \textbf{위반 없음}. $\Gamma=\theta$ 인 경계 벡터는 $\mathrm{Fix}(C_{15})$ 직선의 것뿐.
+\item \textbf{구조적 부분격자 안의 전수 $\Gamma$ 탐색.} 랭크 $\le40$ 인 모든 성분($\mathrm{Fix}(C_{15})$, $\mathrm{Fix}(C_5)$, $\mathrm{Fix}(C_3)$, icosian, Hurwitz, 차수 4 성분 등)에서 $t$-원 전체에 대해 반지름 $2\sqrt{\theta D}\cosh(0.05)$ 이하의 벡터를 전부 열거: \textbf{위반 없음}. $\Gamma=\theta$ 인 경계 벡터는 $\mathrm{Fix}(C_{15})$ 직선의 것뿐.
 \item 검증: 같은 루틴이 $p=29$ 에서 $R_U=(49/25)^4=14.76$ (비분리 위수 5), $11.78$ (위수 3)을, $p=37$ 에서 성분 안의 위반 직선($\Gamma/\theta=7/9$; $\mathrm{Fix}(C_3)$ 와 $SL_2(3)$ 의 Hurwitz 성분 양쪽)을 검출한다. \emph{주의}: $p=37$ 에서도 isotypic 성분 자체는 모두 $R_U\le1$ 이다 --- 성분의 $R_U\le1$ 은 필요조건일 뿐이고, 결정적인 것은 벡터 탐색이다.
 \end{enumerate}
 \end{observation}
 
+\paragraph{12회차 검증 결과와 시험하지 못한 것.} 독립 검증 에이전트는 정수 기저를 다시 만들어 $\det_B\Lambda=13725^{60}$ (즉 $D=r^2p$), 점검한 부분격자 기저의 원시성, 항목 1--2 의 접착 지수를 정확한 정수 연산으로 재현했다(``주의사항과 함께 확인''); 항목 3 의 부동소수 열거는 시간 안에 재현하지 못했다. \emph{시험하지 못한 것}: (i) 비주(non-principal) ideal 류의 직선($p=61$ 의 극대 order 는 class number $>1$; 질량 $11/12$), (ii) 중복도가 2 이상인 성분 안의 연속적인 직선족 전체(열거는 벡터 조건만 본다), (iii) 랭크 72, 80 인 성분, (iv) 랭크 120 인 전체 격자. 또 unimodular 원소 $W_{61}$ 에서 찾은 가장 짧은 벡터는 노름 10 이다($G$-궤도 30개, 벡터 $1{,}361{,}520$ 개, $|s|\in\{5,15\}$; 안정성이 허용하는 범위는 $|s|\le25$). 노름 $\le8$ 인 벡터는 찾지 못했지만 이것은 최단벡터 탐색(SVP)의 결과가 아니므로 $\min W_{61}$ 은 미결정이다(짝 unimodular 120차원의 일반 상계는 12).
+
 \paragraph{족 전체의 구조적 부분격자 스캔 (13회차, 저자의 직접 계산).}
-분리 토러스 $C_m$ 의 고정 부분격자는 전체 격자 없이 무작위 궤도 벡터의 노름사상 상으로 생성할 수 있다(랭크 8, 24, 40; 정수 Gram 행렬 위의 정확한 유리수 HNF/LLL; $D=r^2p$ 는 $\log R_U=0$ 으로 보정). 고정 부분격자는 항상 $\sqrt m\times$(짝 unimodular 격자)이고 그 unimodular 격자를 식별했다:
+분리 토러스 $C_m$ 의 고정 부분격자는 전체 격자 없이 무작위 궤도 벡터의 노름사상 상으로 생성할 수 있다(랭크 8, 24, 40). 계산 방식: Weil 행렬은 배정밀도 부동소수로 만들고, 좌표를 유리수로 반올림한 뒤 HNF/LLL 은 정확한 유리수 연산으로 한다; Gram 행렬이 정수인지와 $\log R_U=0$ ($D=r^2p$ 가정의 보정)을 사후 점검한다. 따라서 전체 파이프라인이 정확한 연산인 것은 아니며, 생성된 격자가 고정 부분격자 전체인지는 $\log R_U=0$ 으로만 확인된다. 계산이 성공한 $p\in\{13,37,61,157,277,397,421,541,613,661\}$ 에서는 고정 부분격자가 $\sqrt m\times$(짝 unimodular 격자)였고 그 unimodular 격자를 식별했다($p=397$ 은 첫 실행에서 정밀도 손실로 실패해 지수 계산을 정확한 나머지 연산으로 바꾼 뒤 성공):
 \begin{center}
 \small
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}rllll@{}}
 \toprule
 $p$ & 랭크 8: $C_{(p-1)/4}$ & 랭크 24: $C_{(p-1)/12}$-고정 $=\sqrt m\,L_{24}(p)$ & 그 밖 & $\min\Gamma/\theta$\\
@@ -25,11 +28,44 @@ $p$ & 랭크 8: $C_{(p-1)/4}$ & 랭크 24: $C_{(p-1)/12}$-고정 $=\sqrt m\,L_{2
 277 & $\sqrt{69}E_8$ & $\sqrt{23}\,\times$ Leech (근 없음) & & 1\\
 397 & $\sqrt{99}E_8$ & $\sqrt{33}\,\times$ (근 720개; $|s|\in\{1,5\}$, 허용 $\le19$) & & 1\\
 421 & $\sqrt{105}E_8$ & $\sqrt{35}\,\times$ Leech (근 없음) & $\mathrm{Fix}(C_{21})$: 랭크 40 & 1 (부분 탐색)\\
+541 & $\sqrt{135}E_8$ & $\sqrt{45}\,\times$ Leech (근 없음) [검증자와 저자의 300표본 재계산] & $\mathrm{Fix}(C_{27})$: 랭크 40, 근 240개 & 1 (부분 탐색)\\
+613 & $\sqrt{153}E_8$ & $\sqrt{51}\,\times$ (근 720개; $|s'|\in\{3,9\}$, 허용 $\le24$) [300표본] & & 1 (전수)\\
+661 & $\sqrt{165}E_8$ & $\sqrt{55}\,\times$ (근 144개; $|s'|\approx21$, 허용 $\le25$) [300표본; $s$ 값은 정밀도 한계] & $\mathrm{Fix}(C_{33})$: 랭크 40, 근 없음 & 1 (부분 탐색)\\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{center}
-($p=421$ 은 $\log\varepsilon_p=13.0$ 이라 $t$ 의 양 끝에서 배정밀도 열거가 일부 실패해($261$개 $t$-점 중 랭크 24 에서 33개, 랭크 40 에서 93개) 탐색이 불완전하다. $p=541$ 에서는 같은 절차가 고정격자의 지수 2 부분격자만 생성해 판정을 보류했다.) ($N(\cdot)$ 는 해당 뿌리계의 Niemeier 격자; 뿌리계는 근의 내적 그래프의 연결성분으로 식별. $p=61$ 의 $\mathrm{Fix}(C_3)/\sqrt3$ 는 근이 없고 노름 4 벡터가 정확히 39600개 --- 40차원 극단 짝 unimodular 격자의 키싱 수. $p=277$ 의 $L_{24}$ 는 노름 4 벡터 196560개.) \tagN
+($p=421$ 은 $\log\varepsilon_p=13.0$ 이라 $t$ 의 양 끝에서 배정밀도 열거가 일부 실패해($261$개 $t$-점 중 랭크 24 에서 33개, 랭크 40 에서 93개) 탐색이 불완전하다. $p=541$ 행은 검증 에이전트의 300표본 계산이다: 저자의 160표본 실행은 고정격자의 지수 2 부분격자만 생성했는데 이는 표본 부족 탓이었다(\S\ref{sec:r13verify}). $p=421,541,661$ 의 ``위반 없음'' 은 열거가 성공한 $t$-점에 한한 것이고, $p\ge541$ 의 행($613$ 포함)은 수정된 스크립트로 한 저자의 계산으로 독립 검증을 거치지 않았다. $\log\varepsilon_p\ge14$ 인 $p=541,661$ 에서는 $s$ 값의 반올림이 불안정하다.) ($N(\cdot)$ 는 해당 뿌리계의 Niemeier 격자; 뿌리계는 근의 내적 그래프의 연결성분으로 식별. $p=61$ 의 $\mathrm{Fix}(C_3)/\sqrt3$ 는 근이 없고 노름 4 벡터가 정확히 39600개 --- 40차원 극단 짝 unimodular 격자의 키싱 수. $p=277$ 의 $L_{24}$ 는 노름 4 벡터 196560개.) \tagN
 
-\paragraph{해석.} $L_{24}(p)$ 는 ``표수 $p$ 에서 종수 6 곡선 $Y^2=X^{13}-X$ 가 주는 랭크 24 격자'' 이고 $p$ 에 따라 Leech 또는 Niemeier 격자가 된다. 그 근 $x$ 의 안정성 조건은 $s(x)^2\le p-36$ 이므로 $p=37$ 만 문턱이 극단적으로 좁다(허용 $|s|\le1$, 실제 3). 즉 \textbf{$p=37$ 의 실패는 족 전체의 구조적 현상이 아니라 작은 $p$ 의 우연으로 보이며, $p=61,157,277,397$ 은 계산한 구조적 부분격자($p=61$: 랭크 $\le40$ 전부; 그 밖: 랭크 8·24)에서 정확히 경계다.} 구조 밖의 ``일반적'' 위반 벡터는 휴리스틱상 기대 궤도 수가 $10^{-3}$ ($p=61$) 이하이지만, 120차원 이상에서 전수 탐색은 불가능하므로 $p\ge61$ 의 안정성은 \emph{미해결}이다.
-\begin{conjecture}\tagJ\ $(p+1)/2$ 가 소수인 $p\equiv1\pmod4$, $p\ge61$ 에 대해 $W_p$ 는 직선 수준에서 경계 안정이다: $N_{F/\Q}(q_F(\phi))\ge((p-1)/4)^2$ ($\forall\phi\ne0$), 등호는 분리 토러스의 고정 직선에서 온다.\end{conjecture}
-이 추측과 (G1)(\S\ref{sec:conclusion})이 성립하면, 고정된 $p$ 에 대해 $n=2(p-1)k$ ($k\to\infty$)에서 $V_n\ge(1-o(1))\tfrac{p(p+1)}{p-1}\tfrac{n^2}{2e}$ --- $p=61$: $\approx11.6\,n^2$ ($120\mid n$), $p=157$: $\approx29\,n^2$ ($312\mid n$) --- 이고, 무한히 많은 $p$ 에 대해 성립하면 추측 \ref{conj:dichotomy}(a)의 결론이 나온다.
+\paragraph{몫곡선 사전과 안정성 기준의 자기닮음 (16회차).}
+위 표의 구조는 정리 \ref{thm:MW} 의 사전 안에서 다음과 같이 설명된다.
+\begin{proposition}[몫곡선 사전]\label{prop:quotient}\tagP\ (기하 부분; 저자의 유도를 AI 심사 에이전트 1개가 검토: ``사소한 수정 후 옳음'', 수정 반영) --- 단 $W_p\leftrightarrow\Hom(\mathrm{Jac}\,C_p,E)$ 의 동일시와, 어떤 $N(q')$ 값이 실제로 나타나는지에 관한 진술은 정리 \ref{thm:MW} (\tagPL) 또는 수치 계산에 의존한다.\
+$m$ 을 $p-1$ 의 홀수 약수, $C_m$ 을 분리 토러스의 위수 $m$ 부분군이라 하자. 토러스 원소 $\mathrm{diag}(a,a^{-1})$ 은 $C_p:y^2=x^p-x$ 에 $(x,y)\mapsto(a^2x,\ a^{(p+1)/2}y)$ 로 작용하고,
+\[
+\pi:\ C_p\ \longrightarrow\ D_{p,m}:\ Y^2=X^{N+1}-X,\qquad N=\tfrac{p-1}m,\qquad (X,Y)=(x^m,\ y\,x^{(m-1)/2}),
+\]
+가 몫사상 $C_p\to C_p/C_m$ 이다($D_{p,m}$ 의 종수는 $g_D=\tfrac{p-1}{2m}$). 이때
+\begin{enumerate}
+\item $\pi^*:\psi'\mapsto\psi'\circ\pi_*$ ($\pi_*$ 는 Albanese 밀기; 전사이므로 $\pi^*$ 는 단사)는 $\Hom(\mathrm{Jac}\,D_{p,m},E)\to\Hom(\mathrm{Jac}\,C_p,E)^{C_m}$ 의 $O_F$-선형 \emph{전단사}이고(지수 1), $\deg(\phi'\circ\pi)=m\deg\phi'$; $\pi$ 가 $\mathbb F_p$ 위에서 정의되므로 Frobenius 와 가환이고 따라서 $q_F(\pi^*\phi')=m\,q'_F(\phi')$. 즉 모든 $t$ 에 대해 $(\mathrm{Fix}(C_m),Q_t)\cong\sqrt m\cdot(\Hom(\mathrm{Jac}\,D_{p,m},E),Q'_t)$. (여기서 $\mathrm{Fix}(C_m)$ 은 불변 부분격자 전체이다. 13회차 스캔이 생성하는 노름사상의 상 $\mathrm{Norm}_{C_m}(M_p)$ 이 그것과 같다는 것은 $\mathrm{Norm}=\pi^*\pi_*$ 와 $\mathrm{Jac}\,C_p\cong\mathrm{Jac}\,D\times K$ 의 분해(superspecial)에서 나온다 --- 심사자의 스케치이며, 계산에서는 $\log R_U=0$ 으로 확인된다.)
+\item (자기닮음) $\mathrm{Fix}(C_m)$ 안의 벡터에 대한 안정성 조건 $N_{F/\Q}(q_F)\ge(\tfrac{p-1}4)^2=(g_{C_p}/2)^2$ 은 몫곡선의 격자에서 \emph{같은 꼴}의 조건 $N_{F/\Q}(q'_F(\phi'))\ge(g_D/2)^2$ 이 된다.
+\item (적분성) $q'_F$ 는 $O_F$ 의 총양(totally positive) 원소를 값으로 갖는다: $D$ 와 그 Frobenius $\pi_D$ 가 $\mathbb F_p$ 위에서 정의되고 $\pi_D^2=p$ ($\pi_*\pi_C=\pi_D\pi_*$, $\pi_*$ 전사), Weierstrass 점 $0,\mu_N,\infty$ 가 $\mathbb F_p$-유리점($N\mid p-1$)이라 $(1+\pi_D)/2\in\mathrm{End}(\mathrm{Jac}\,D)$ 이므로, 11회차 T1 의 적분성 논증이 $D$ 에 그대로 적용된다(심사자의 보충; $D$ 는 superspecial 이고 $(\Hom(\mathrm{Jac}\,D,E),\langle\cdot,\cdot\rangle')$ 는 랭크 $4g_D$ 의 짝 unimodular 격자). 따라서 $N_{F/\Q}(q'_F(\phi'))$ 는 양의 정수다.
+\item $g_D=2$ ($m=\tfrac{p-1}4$, $D:Y^2=X^5-X$): 조건 $N(q')\ge1$ 은 (3) 에서 자동으로 성립한다 --- 즉 랭크 8 고정격자는 \emph{어떤 $p$ 에서도 위반을 만들지 않는다}. (그 위에서 등호 $N(q')=1$ 이 실제로 성립한다는 것, 즉 ``정확히 경계'' 라는 것은 계산한 모든 $p$ 에서의 수치 사실이다.) $g_D=6$ ($m=\tfrac{p-1}{12}$, $D:Y^2=X^{13}-X$): 조건은 $N(q')\ge9$; unimodular 원소의 노름 $2\ell$, $s$-값 $s'$ 인 벡터는 $N(q')=(p\ell^2-s'^2)/4$ 이므로 근($\ell=1$)의 조건이 $s'^2\le p-36$ 이다. $p=37$ 에서는 \S\ref{sec:weilcomp} 의 계산이 이 사전을 통해 $N(q')=7$ 인 원소 $q'=(19-3\sqrt{37})/2$ (차수 19 의 사상 $D_{37,3}\to E$)를 준다.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+$a^{2p}=a^2$ 이므로 작용이 곡선을 보존한다. $a$ 의 위수 $m$ 이 홀수이면 $m\mid\tfrac{p-1}2$ 이고 $Y=yx^{(m-1)/2}\mapsto a^{(p+1)/2+m-1}Y=a^{(p-1)/2}Y=Y$, $X=x^m\mapsto X$; $Y^2=x^{m-1}(x^p-x)=X^{N+1}-X$. $[k(x,y):k(X,Y)]\le m$ ($x^m=X$, $y=Y/x^{(m-1)/2}$) 이므로 $k(X,Y)$ 가 불변체 전체다. (1): $P_0=(0,0)$ 은 토러스의 고정점이다. $\psi\in\Hom(\mathrm{Jac}\,C_p,E)$ 가 $C_m$-불변이면 $P_0$ 을 기준점으로 한 사상 $\phi=\psi\circ\iota_{P_0}:C_p\to E$ 는 $\phi\circ h=\phi$ ($h\in C_m$)를 만족하므로(일반적으로는 $\phi\circ h=\phi+c_h$, $c\in\Hom(C_m,E)$ 인데 고정점에서 $c_h=\phi(hP_0)-\phi(P_0)=0$) $\pi$ 를 통해 분해된다. 차수의 곱셈성과 $\langle\phi_1,\phi_2\rangle=\deg(\phi_1+\phi_2)-\deg\phi_1-\deg\phi_2$ 에서 모든 쌍선형 형식이 $m$ 배가 된다. (2): $(\tfrac{p-1}4)^2/m^2=(g_D/2)^2$ (그리고 $g_D/2$ 는 몫곡선 격자의 $\Delta$-랭크다). (3): 본문의 논증. (4): 총양인 대수적 정수의 노름은 1 이상; 나머지는 \S\ref{sec:weilcomp} 의 공식 $N(\nu)=(p\cdot\text{노름}^2-4s^2)/16$ 에서 노름과 $s$ 를 $m$ 으로 나눈 것이다($p=37$, $m=3$: (노름 6, $s=9$) $\to$ (2, 3), $63/9=7<9$).
+\end{proof}
+따라서 표의 $L_{24}(p)$ 는 ``표수 $p$ 에서 종수 6 곡선 $Y^2=X^{13}-X$ 의 (뒤틀린) Mordell--Weil 격자'' 이고, $p=61$ 의 랭크 40 격자는 $Y^2=X^{21}-X$ 의 것이다. 부수적으로 $C_p$ 가 superspecial 이므로 그 몫인 $Y^2=X^{N+1}-X$ ($N\mid p-1$, $(p-1)/N$ 홀수)도 표수 $p$ 에서 superspecial 이다.
+
+\paragraph{해석.} $L_{24}(p)$ 는 계산에서 $p$ 에 따라 Leech 또는 Niemeier 격자가 된다(어떤 $p$ 에서 어느 쪽인지의 법칙은 찾지 못했다; 표의 일곱 소수는 모두 $p\equiv13\pmod{24}$ 이므로 단순한 합동 조건은 아니다). 근의 안정성 조건이 $s'^2\le p-36$ 이므로 $p=37$ 만 문턱이 극단적으로 좁다(허용 $|s'|\le1$, 실제 3). 따라서 $p=37$ 의 실패는 족 전체의 구조적 현상이 아니라 작은 $p$ 에서만 생기는 일일 가능성이 있다 \tagH. 확인된 사실은 \textbf{$p=61,157,277,397$ 이 계산한 구조적 부분격자($p=61$: 랭크 $\le40$ 전부; 그 밖: 랭크 8·24 뿐)에서 정확히 경계($\min\Gamma/\theta=1$)라는 것} 뿐이다 \tagN\ (13회차 스캔은 저자의 직접 계산이며, 그 독립 검증 결과는 \S\ref{sec:r13verify} 에 적는다). 구조 밖의 ``일반적'' 위반 벡터에 대해서는 아무것도 증명되지 않았고(11회차 휴리스틱의 기대 궤도 수 $10^{-3}$ 은 $p=13$ 에서 이미 틀리는 모형의 값이다), 120차원 이상에서 전수 탐색은 불가능하므로 $p\ge61$ 의 안정성은 \emph{미해결}이다.
+\begin{conjecture}\tagJ\ $(p+1)/2$ 가 소수인 $p\equiv5\pmod8$, $p\ge61$ 에 대해 $W_p$ 는 벡터 수준에서 경계 안정이다: $N_{F/\Q}(q_F(\phi))\ge((p-1)/4)^2$ ($\forall\phi\ne0$), 등호는 분리 토러스의 고정 직선에서 온다. ($p\equiv1\pmod8$ 인 $p=73,193,\dots$ 에 대해서는 계산을 하지 못했으므로 추측을 세우지 않는다. 근거는 $p=61$ 의 구조적 시험과 $p=157,277,397$ 의 랭크 8·24 시험뿐이므로 약한 추측이다.)\end{conjecture}
+이 추측에 더해 (i) 비주 직선을 포함한 \emph{모든} $\Delta$-부분공간에서 (BS), (ii) (h1) 을 대신할 class number $>1$ 판의 정리 \ref{thm:E} 가 성립하면 \tagC, 고정된 $p$ 에 대해 $n=2(p-1)k$ ($k\to\infty$)에서 $V_n\ge(1-o(1))\tfrac{p(p+1)}{p-1}\tfrac{n^2}{2e}$ --- $p=61$: $\approx11.6\,n^2$ ($120\mid n$), $p=157$: $\approx29\,n^2$ ($312\mid n$) --- 이고, 무한히 많은 $p$ 에 대해 성립하면 명제 \ref{conj:dichotomy} 의 결론이 나온다. 이 상수들은 현재 휴리스틱이다.
+
+\subsection{13회차 스캔의 독립 검증}\label{sec:r13verify}
+독립 검증 에이전트가 자체 코드(다른 시드의 300표본, 자체 Weil 표현과 노름사상, 정확한 격자 루틴; \texttt{rounds/R13\_scan\_verify/})로 스캔을 재현했다.
+\begin{itemize}
+\item \textbf{재현됨}: $p=37$ ($\sqrt3N(D_4^6)$, 근 144개 모두 $|s|=3$, $\min\Gamma/\theta=7/9$ 정확히), $p=61$ (세 고정격자 모두: 행렬식 비 정확히 1, unimodular 원소가 정수·짝·$\det1$; $E_8$, $E_8^3$, 근 없는 40차원 격자(노름 4 벡터 39600개); $t$-원 탐색 실패 0, $\min\Gamma/\theta=1$ 정확히), $p=157$ 의 랭크 24, $p=277$ (랭크 8·24; Leech: 근 0, 노름 4 벡터 196560개). 계산한 모든 (노름, $|s|$) 표가 저자의 것과 일치.
+\item \textbf{정정}: $p=541$ 의 이상 현상($\log R_U=-\log4$)은 표본 부족이었다. 300표본이면 행렬식 비가 정확히 1 이고 $\mathrm{Fix}(C_{135})=\sqrt{135}E_8$, $\mathrm{Fix}(C_{45})=\sqrt{45}\times$Leech. ($2$ 가 $\Q(\sqrt p)$ 에서 inert 이므로 $O_F$-안정 격자는 지수 2 일 수 없다.)
+\item \textbf{검증되지 않음}: $p=397,421$ (시간 부족; $p=397$ 의 근 720개의 뿌리계는 미식별), $p=157$ 의 랭크 8, $p=541$ 의 랭크 40. $p=421,541$ 의 $t$-원 탐색은 양 끝에서 열거가 실패해 전수 탐색이 아니다.
+\item \textbf{저자 코드의 결함}(검증자 지적): 표본 수 160 이 고정격자 전체를 생성한다는 보장이 없었고, 열거 실패를 경고 없이 넘겼으며, 열거기의 절단 플래그를 확인하지 않았다(해당 실행들에서는 발동하지 않음). 이후 \texttt{scan.py} 에 경고와 표본 수를 수정했다.
+\item 명제 \ref{prop:quotient} 의 심사(16회차; \texttt{rounds/R16\_quotient\_curve/referee.md}): 판정 ``사소한 수정 후 옳음''. 반박된 항목은 없고, 지적은 (i) $q'$ 의 적분성이 가정으로만 쓰였다는 것(논증 보충됨), (ii) ``랭크 8 고정격자가 항상 정확히 경계'' 는 과장이며 증명되는 것은 ``위반 없음'' 뿐이라는 것, (iii) 불변 부분격자와 노름사상의 상의 일치에 한 문장이 필요하다는 것, (iv) $p=37$ 의 $N(q')=7$ 은 명제의 귀결이 아니라 수치 결과라는 것 --- 모두 본문에 반영했다. 심사자는 손 계산만 했고 계산기 검산은 하지 않았다.
+\end{itemize}
