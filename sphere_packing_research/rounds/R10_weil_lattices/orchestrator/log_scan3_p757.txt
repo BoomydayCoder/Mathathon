@@ -1,0 +1,8 @@
+p=757 r=189 (p+1)/2=379  eps=(2738652+99538 sqrt p)/2, log eps=14.823, theta=188.7503, build 423.8s
+  C_189: rank 8 (expected 8), integrality 7.5e-09, log R_U (assuming D=r^2 p) = 0.000000
+     INCOMPLETE (not exhaustive) t-circle search: 12 vectors below bound, min Gamma/theta = 1.000000 at t=-0.02297638650417788, enum failures 41  [0.6s]
+     L = fixed/sqrt(189) at t*=-14.823: integral (1e-08), logdet 9.5e-04, even True, #roots = 240 ; vectors of norm<=4: norm 2 |s|=9: 24 pairs, norm 2 |s|=13: 96 pairs, norm 4 |s|=0: 72 pairs, norm 4 |s|=4: 288 pairs, norm 4 |s|=18: 24 pairs, norm 4 |s|=22: 288 pairs, norm 4 |s|=26: 192 pairs, norm 4 |s|=30: 96 pairs, norm 4 |s|=48: 90 pairs, norm 4 |s|=49: 6 pairs, norm 4 |s|=52: 22 pairs, norm 4 |s|=53: 2 pairs
+  C_63: rank 24 (expected 24), integrality 3.3e-09, log R_U (assuming D=r^2 p) = -0.000000
+     INCOMPLETE (not exhaustive) t-circle search: 12 vectors below bound, min Gamma/theta = 1.000000 at t=-0.02297638650417788, enum failures 64  [11.6s]
+     L = fixed/sqrt(63) at t*=-14.823: integral (1e-08), logdet -9.5e-05, even True, #roots = 0 ; vectors of norm<=4: norm 4 |s|=0: 9847 pairs, norm 4 |s|=1: 4418 pairs, norm 4 |s|=2: 2759 pairs, norm 4 |s|=3: 2643 pairs, norm 4 |s|=4: 8024 pairs, norm 4 |s|=5: 1992 pairs, norm 4 |s|=6: 5557 pairs, norm 4 |s|=7: 1818 pairs, norm 4 |s|=8: 2361 pairs, norm 4 |s|=9: 2426 pairs, norm 4 |s|=10: 10236 pairs, norm 4 |s|=11: 1366 pairs, norm 4 |s|=12: 1284 pairs, norm 4 |s|=13: 2597 pairs, norm 4 |s|=14: 7356 pairs, norm
+  total 704.3s

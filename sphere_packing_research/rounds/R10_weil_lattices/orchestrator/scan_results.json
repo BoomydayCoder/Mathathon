@@ -1,40 +1,40 @@
 [
  {
-  "p": 733,
-  "r": 183,
-  "eps": 27.036986370680886,
+  "p": 757,
+  "r": 189,
+  "eps": 2738652.000000365,
   "unit": [
-   27,
-   1,
+   2738652,
+   99538,
    -4
   ],
-  "theta": 182.75034106412005,
+  "theta": 188.75033025099074,
   "subs": [
    {
-    "m": 183,
+    "m": 189,
     "rank": 8,
-    "integrality": 1.1175870895385742e-08,
-    "logR_assuming_D=r^2p": -1.3862943611199086,
-    "min_gamma_over_theta": 0.9999999999999988,
-    "at_t": 0.0027942058247689694,
+    "integrality": 7.450580596923828e-09,
+    "logR_assuming_D=r^2p": 0.0,
+    "min_gamma_over_theta": 0.9999999999999997,
+    "at_t": -0.02297638650417788,
     "count": 12,
-    "enum_fail": 0,
-    "unimodular_logdet": 1.3862943611198784,
-    "roots": 112,
-    "short": "norm 2 |s|=1: 32 pairs, norm 2 |s|=27: 24 pairs, norm 4 |s|=0: 72 pairs, norm 4 |s|=2: 192 pairs, norm 4 |s|=4: 24 pairs, norm 4 |s|=24: 32 pairs, norm 4 |s|=26: 96 pairs, norm 4 |s|=28: 96 pairs, norm 4 |s|=30: 32 pairs, norm 4 |s|=54: 24 pairs"
+    "enum_fail": 41,
+    "unimodular_logdet": 0.0009504212062179107,
+    "roots": 240,
+    "short": "norm 2 |s|=9: 24 pairs, norm 2 |s|=13: 96 pairs, norm 4 |s|=0: 72 pairs, norm 4 |s|=4: 288 pairs, norm 4 |s|=18: 24 pairs, norm 4 |s|=22: 288 pairs, norm 4 |s|=26: 192 pairs, norm 4 |s|=30: 96 pairs, norm 4 |s|=48: 90 pairs, norm 4 |s|=49: 6 pairs, norm 4 |s|=52: 22 pairs, norm 4 |s|=53: 2 pairs"
    },
    {
-    "m": 61,
+    "m": 63,
     "rank": 24,
-    "integrality": 5.587935447692871e-09,
-    "logR_assuming_D=r^2p": -1.3862943611198943,
-    "min_gamma_over_theta": 0.9999999999999977,
-    "at_t": 0.0027942058247689694,
+    "integrality": 3.259629011154175e-09,
+    "logR_assuming_D=r^2p": -5.684341886080802e-14,
+    "min_gamma_over_theta": 0.9999999999999999,
+    "at_t": -0.02297638650417788,
     "count": 12,
-    "enum_fail": 0,
-    "unimodular_logdet": 1.3862943611204592,
+    "enum_fail": 64,
+    "unimodular_logdet": -9.495931963421356e-05,
     "roots": 0,
-    "short": "norm 4 |s|=0: 3384 pairs, norm 4 |s|=2: 3840 pairs, norm 4 |s|=4: 2784 pairs, norm 4 |s|=6: 4320 pairs, norm 4 |s|=8: 5568 pairs, norm 4 |s|=10: 3360 pairs, norm 4 |s|=12: 3888 pairs, norm 4 |s|=14: 4296 pairs, norm 4 |s|=16: 4704 pairs, norm 4 |s|=18: 1944 pairs, norm 4 |s|=20: 3456 pairs, norm 4 |s|=22: 1728 pairs, norm 4 |s|=24: 864 pairs, norm 4 |s|=26: 1920 pairs, norm 4 |s|=28: 576 pairs, norm 4 |s|=30: 288 pairs, norm 4 |s|=32: 1176 pairs, norm 4 |s|=34: 288 pairs, norm 4 |s|=40: 576 pairs, norm 4 |s|=44: 96 pairs, norm 4 |s|=50: 72 pairs"
+    "short": "norm 4 |s|=0: 9847 pairs, norm 4 |s|=1: 4418 pairs, norm 4 |s|=2: 2759 pairs, norm 4 |s|=3: 2643 pairs, norm 4 |s|=4: 8024 pairs, norm 4 |s|=5: 1992 pairs, norm 4 |s|=6: 5557 pairs, norm 4 |s|=7: 1818 pairs, norm 4 |s|=8: 2361 pairs, norm 4 |s|=9: 2426 pairs, norm 4 |s|=10: 10236 pairs, norm 4 |s|=11: 1366 pairs, norm 4 |s|=12: 1284 pairs, norm 4 |s|=13: 2597 pairs, norm 4 |s|=14: 7356 pairs, norm 4 |s|=15: 1839 pairs, norm 4 |s|=16: 5265 pairs, norm 4 |s|=17: 1037 pairs, norm 4 |s|=18: 1281 pairs, norm 4 |s|=19: 1513 pairs, norm 4 |s|=20: 5578 pairs, norm 4 |s|=21: 406 pairs, norm 4 |s|=22: 348 pairs, norm 4 |s|=23: 1236 pairs, norm 4 |s|=24: 3769 pairs, norm 4 |s|=25: 490 pairs, norm 4 |s|=26: 2355 pairs, norm 4 |s|=27: 761 pairs, norm 4 |s|=28: 1699 pairs, norm 4 |s|=29: 812 pairs, norm 4 |s|=30: 2565 pairs, norm 4 |s|=31: 74 pairs, norm 4 |s|=32: 307 pairs, norm 4 |s|=33: 452 pairs, norm 4 |s|=34: 1226 pairs, norm 4 |s|=35: 7 pairs, norm 4 |s|=38: 8 pairs, norm 4 |s|=39: 121 pairs, norm 4 |s|=40: 443 pairs, norm 4 |s|=41: 4 pairs"
    }
   ]
  }

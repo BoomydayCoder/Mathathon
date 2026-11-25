@@ -112,28 +112,40 @@ V_n\ \ge\ (1-o(1))\,\frac{p\,n^2}{2e}\ \ge\ c\,\frac{n^{5/2}}{\sqrt{\log n}},
 \end{proposition}
 \emph{14·15회차 이후의 상태}: 고정된 $p$ 와 $k\to\infty$ 에 대해서는 (H2), (H3) 이 정리 \ref{thm:E} 로 해결된다((h1) 과 (BS) 아래; \S\ref{sec:leechthm}). 따라서 남은 가정은 (H1) 과, $p$ 와 $k$ 가 함께 커질 때($k=\lceil Cr\log p\rceil$)의 \emph{균등한} 판의 (H2)·(H3), 그리고 class number $>1$ 의 처리다. 아래의 논의는 11회차 시점의 것이다: (H1)--(H3) 은 그 시점에 모두 미증명이었다. 반박 담당 에이전트(11회차 T2)는 (H1)--(H3)$\Rightarrow$결론의 경로에서 치명적 구조 장애를 찾지 못했다(평균값 공식의 주항 상수는 정확히 1; $O$-가군 제타 $\prod_{i<2r}\zeta_F(2k-i)$ 는 $k\ge r+1$ 에서 수렴하고 $\le1.17$; 강제되는 경계류가 흡수하는 제약 궤도는 $O(p)\ll D_k$). 그러나 theta 급수의 Hilbert 모듈러 형식 제약 등은 검토하지 못했고, 해석적 정리 자체가 미증명이므로 이 경로 전체는 조건부 진술일 뿐이다. 어느 $p$ 에서 (a$_p$)/(b$_p$) 가 성립하는지 결정하는 것 자체가 Weil 격자에 대한 새로운 산술 문제다.
 
-\subsection{고정된 자료에 대한 틀 정리와 Leech 텐서족 (14·15회차)}\label{sec:leechthm}
-위의 (H2), (H3) 을 \emph{고정된} $(G,W,\Lambda_W)$ 와 $k\to\infty$ 에 대해 실제로 증명한 것이다. 증명 전문은 부록 \ref{app:proof14} (14회차; 처음에는 평균값 공식 (HR) 을 가정으로 두었다)와 부록 \ref{app:proof15} (15회차; (HR) 의 유도)에 있다(영문, 증명 에이전트 작성). 본문의 진술은 두 회차의 심사 지적(표기와 가정의 정정)을 반영한 것이며 부록의 원문은 고치지 않았다.
+\subsection{고정된 자료에 대한 틀 정리와 Leech 텐서족 (14·15·18회차)}\label{sec:leechthm}
+위의 (H2), (H3) 을 \emph{고정된} $(G,W,\Lambda_W)$ 와 $k\to\infty$ 에 대해 실제로 증명한 것이다. 증명 전문은 부록 \ref{app:proof14} (14회차; 처음에는 평균값 공식 (HR) 을 가정으로 두었다)와 부록 \ref{app:proof15} (15회차; (HR) 의 유도)에 있다(영문, 증명 에이전트 작성). 아래의 진술은 두 증명의 결합을 점검한 18회차 심사자의 \emph{통합 진술}을 옮긴 것으로, 네 심사자의 지적(표기와 가정의 정정)이 반영되어 있다. 부록의 원문은 고치지 않았으므로 표기가 다른 곳(몫 공간, 왼쪽 ideal 가정, (L1) 이 쓰이는 랭크)에서는 본문이 우선한다.
 
-\paragraph{설정.} $G$ 유한군, $W$ 기약 $\Q[G]$-가군, $\Delta=\mathrm{End}_G(W)^{op}$, $\Delta_\R\cong\mathbb K^s$, $d=\dim_\R\mathbb K$, $r=\dim_\Delta W$, $A=\Q G$ 의 상 $=\mathrm{End}_\Delta(W)$ ($\dim_\Q A=r^2sd$), $\Lambda_W\subset W$ 는 $G$-불변 격자, $\mathcal O=\{c\in\Delta:\Lambda_Wc\subseteq\Lambda_W\}$, $n=k\dim_\Q W$. 가정:
+\paragraph{설정 (T).} $G$ 유한군, $W$ 기약 $\Q[G]$-가군($G\subset GL(W)$), $\Delta=\mathrm{End}_G(W)^{op}$ ($W$ 는 차원 $r$ 의 오른쪽 $\Delta$-공간), \emph{$\Delta_\R\cong\mathbb K^s$ (한 종류의 $\mathbb K\in\{\R,\C,\HH\}$)}, $d=\dim_\R\mathbb K$, $A=\Q G$ 의 상 $=\mathrm{End}_\Delta(W)$ ($\dim_\Q A=r^2sd$), $\Lambda_W\subset W$ 는 $G$-불변 격자($W_\R$ 에 $G$-불변 Euclid 구조), $\mathcal O=\{c\in\Delta:\Lambda_Wc\subseteq\Lambda_W\}$, $n=k\dim_\Q W$.
+
+\paragraph{가정.}
 \begin{itemize}
-\item[(h1)] $\mathcal O$ 의 0 아닌 오른쪽 ideal 은 모두 주 ideal (class number 1);
-\item[(BS)] 모든 진 $\Delta$-부분공간 $U\ne0$ 에서 $R_U\le1$ 이고, 유한 개를 제외하면 $R_U\le\rho_0<1$ (``경계 안정'');
-\item[(HR)] $2\le j\le r<k$ 에 대해 $\Delta$-독립인 $j$-틀의 평균값 공식: $\E\sum_{Y\in\mathcal O^{j\times k},\ \mathrm{rk}_\Delta Y=j}F(Y\gamma)=\int_{\Delta_\R^{j\times k}}F$ (Siegel--Rogers 형; $j=1$ 은 Gargava 의 정리 16 = (L1)). 14회차에서는 가정이었고, 15회차에서 (L1) 로부터 유도되었다(아래).
+\item[(h1)] $\mathcal O$ 의 0 아닌 오른쪽 ideal 과 왼쪽 ideal 이 모두 주 ideal (class number 1). $\Lambda_W$ 가 유리 불변 형식에 대해 unimodular 이거나 $\mathcal O$ 가 $\Delta$ 의 반자기동형(예: 사원수 켤레)으로 보존되면 한쪽만 가정하면 된다.
+\item[(BS)] 모든 진 $\Delta$-부분공간 $U\ne0$ 에서 $R_U\le1$ 이고, 유한 개를 제외하면 $R_U\le\rho_0<1$ (``경계 안정'').
 \end{itemize}
-\begin{theorem}[틀 정리 E; 비자유 작용]\label{thm:E}\tagPL\ (인용: Gargava 의 정리 16 을 모든 랭크 $\ge2$ 에서, Klartag 의 보조정리들; (HR) 은 15회차에서 이들로부터 유도; AI 심사 14회차 2회·15회차 2회 통과, 사람의 검증 없음)\
-(h1)(왼쪽·오른쪽 ideal 모두), (BS) 와 \S\ref{sec:quat} 의 인용 입력 (L1)--(L3) 아래에서((L1) 은 모든 랭크 $\ge2$ 에서; (HR) 은 아래 15회차의 결과에 의해 (L1) 에서 따라온다), 자료를 고정하고 $k\to\infty$ 일 때 $\Lambda_W\otimes_{\mathcal O}L$ 꼴의 격자($L$ 은 랭크 $k$ 의 $\mathcal O$-격자)가 존재하여
+\paragraph{인용 입력.} (L1)$_m$, 모든 $m\ge2$: $(\Delta^{op},\mathcal O^{op})$ 에 대한 Gargava 의 정리 16 과 명제 14 --- 군 $\mathsf G_m=\{\gamma\in GL_m(\Delta_\R):|\det_\R\gamma|=1\}$, $\Gamma_m=GL_m(\mathcal O)$, 몫 $\Gamma_m\backslash\mathsf G_m$ 위의 불변 확률측도에 대해, $\Gamma_m$ 은 격자이고 $\int\sum_{0\ne y\in\mathcal O^{1\times m}}f(y\gamma)\,d\mu_m=\int f$ ($\mathcal O^{1\times m}$ 의 공부피 1). 17회차에서 원문을 읽고 $s\ge2$ 의 결함을 보수했다(\S\ref{sec:quat}); 그것이 기대는 Weil 의 환원 이론은 확인하지 못했다. (L2) Klartag 의 보조정리들(6회차의 개작본). (L3) 표준 도구. --- (HR) ($j$-틀 평균값 공식)은 입력이 아니다: 15회차의 정리 R 이 (L1)$_m$ ($m=k-j+1,\dots,k$)과 (h1) 로부터 준다(아래).
+\begin{theorem}[틀 정리 E; 비자유 작용 --- 통합 진술]\label{thm:E}\tagPL\ (AI 심사: 14회차 2, 15회차 2, 결합 점검(18회차) 1; 사람의 검증 없음)\
+(T), (h1), (BS) 와 인용 입력 (L1)--(L3) 아래에서, 비효과적인 $k_0=k_0(\text{자료})$ 가 있어 $k\ge k_0$ 이면 어떤 $\gamma'\in GL_k(\Delta_\R)$ 에 대해 $G$-불변 격자 $\Lambda_W\otimes_{\mathcal O}L$ ($L=\mathcal O^{1\times k}\gamma'$)가 상대 부피 $(1-o(1))\tfrac{|G|n^2}{4e\dim_\Q A}$ 의 빈 열린 공을 갖는다($o(1)\to0$, 자료 고정, $k\to\infty$). 따라서
 \[
 V_n\ \ge\ (1-o(1))\,\frac{|G|\,n^2}{4e\,\dim_\Q A}\qquad(\dim_\Q W\mid n).
 \]
+($r=1$ 이면 (BS), (h1), 정리 R 이 필요 없고 \S\ref{sec:quat} 의 정리 \ref{thm:quatC} 가 된다.)
 \end{theorem}
-\begin{theorem}[정리 D; Leech 텐서족]\label{thm:D}\tagPL\ + \tagPC\ (정리 \ref{thm:E} 의 인용 입력 + 5회차의 계산기 보조 사실 + Eichler 질량 공식(인용); AI 심사만 거침)\
-$\Lambda_W=\Lambda_{24}$, $G=SL_2(13)$ ($|G|=2184$, $\dim_\Q A=72$): 정리 \ref{thm:leech} 가 (h1), (BS) 를 주므로, 인용 입력 (L1)--(L3) 아래에서
+\begin{theorem}[정리 D; Leech 텐서족 --- 통합 진술]\label{thm:D}\tagPL\ + \tagPC\ (AI 심사만 거침; 사람의 검증 없음)\
+$\Lambda_{24}$ 를 Leech 격자, $\Delta=\HH\otimes\Q(\sqrt{13})\subset\mathrm{End}(\Lambda_{24}\otimes\Q)$ 를 \S\ref{sec:leech} 의 대수, $\mathcal O$ 를 그 order, $G=\mathrm{Aut}_\Delta(\Lambda_{24})\cong SL_2(13)$ 이라 하자. 다음을 전제한다.
+\begin{itemize}
+\item[(R5-a)] [계산기 보조, 5회차] $\mathcal O$ 는 극대 order, $|G|=2184$ 이고 지표표가 5회차의 것과 같다(따라서 정확히 $\dim\mathrm{End}_G(W)=\tfrac{17472}{2184}=8$, $\dim_\Q A=72$, $r=3$, $s=2$, $d=4$), $\mathcal O^1=SL_2(3)$;
+\item[(R5-b)] [계산기 보조, 정리 \ref{thm:leech}] 모든 $\Delta$-직선 $U$ 에서 $\det(\Lambda_{24}\cap U)\ge3^8$ (unimodular 성에 의해 모든 $\Delta$-평면에서도);
+\item[(R5-c)] [인용] $\mathcal O$ 의 class number 는 1 (Eichler 질량 공식: 질량 $=\tfrac12|\zeta_F(-1)|=\tfrac1{12}=1/[\mathcal O^\times:O_F^\times]$);
+\item[(L1)--(L3)] 위의 인용 입력((L1) 은 $\Delta_\R=\HH^2$, 랭크 $k,k-1,k-2$ 에서 쓰인다).
+\end{itemize}
+그러면 비효과적인 $k_0$ 가 있어 $k\ge k_0$, $n=24k$ 일 때 $SL_2(13)$-불변 격자 $\Lambda_{24}\otimes_{\mathcal O}L$ 이 상대 부피 $(1-o(1))\tfrac{2184}{288e}n^2$ 의 빈 공을 갖는다. 따라서
 \[
-V_n\ \ge\ \Big(\frac{91}{12e}-o(1)\Big)n^2\approx2.79\,n^2\qquad(24\mid n),
+V_n\ \ge\ \Big(\frac{91}{12e}-o(1)\Big)n^2\approx2.79\,n^2\qquad(24\mid n,\ n\to\infty),
 \]
-즉 Rezvyakova 상수의 $15.2$ 배, icosian 상수(정리 \ref{thm:quatAB})의 $2.02$ 배.
+즉 Rezvyakova 상수의 $15.2$ 배, icosian 상수(정리 \ref{thm:quatAB})의 $2.02$ 배. ((BS) 는 (R5-b) 에서: 직선 $R_U=3^8/\det\in\{1\}\cup(0,\tfrac{6561}{6562}]$, 평면 $R_U\le3^8/2^{16}<0.1002$. 평균값 공식의 사슬은 $k\ge4$ 에서 성립하고, 1638 이라는 수는 쓰이지 않는다.)
 \end{theorem}
+\noindent(HR): $2\le j\le r<k$ 에 대해 $\Delta$-독립인 $j$-틀의 평균값 공식 $\E\sum_{Y\in\mathcal O^{j\times k},\ \mathrm{rk}_\Delta Y=j}F(Y\gamma)=\int_{\Delta_\R^{j\times k}}F$ (Siegel--Rogers 형; $j=1$ 이 (L1)). 14회차에서는 가정이었고, 15회차에서 (L1) 로부터 유도되었다.
+
 \paragraph{증명의 새 요소 (6회차 증명 대비).}
 \begin{enumerate}
 \item \textbf{낮은 랭크 항을 포함한 평균값 공식.} (h1) 에서 모든 유한생성 무비틀림 $\mathcal O$-가군이 자유이므로 격자점 $X\in\mathcal O^{r\times k}$ 는 열공간 $U$ 에 따라 $X=B_UY$ ($\mathrm{rk}\,Y=\dim_\Delta U$)로 유일하게 분해되고, (HR) 에서 $\E\sum_{x\ne0}\varphi(x)=\kappa_n^{-1}\!\int\varphi+\sum_U\int\varphi\,d\mu_U$, $\mu_U=\kappa_n^{-f}(c_W^f/c_U)^k\,\mathrm{vol}_{E_U}$. 반지름 $V^{1/n}$ 의 공에서 $T_U(V)\le2f^{-1/2}(\pi n)^{-(1-f)/2}V^fR_U^{k/2}$ --- \S\ref{sec:sym} 의 휴리스틱 공식의 정확한 형태. 부분공간의 수는 $c_U$ 에 대해 다항식적으로만 늘어나므로(Minkowski) (BS) 에서 $\sum_UR_U^{k/2}\le|\mathcal E|+C\rho_0^{k/2}$.
@@ -152,4 +164,6 @@ V_n\ \ge\ \Big(\frac{91}{12e}-o(1)\Big)n^2\approx2.79\,n^2\qquad(24\mid n),
 
 \emph{심사}: 서로 독립인 AI 심사 에이전트 2개가 0--3절의 모든 보조정리를 손으로 다시 확인했고, 둘 다 ``\emph{오류를 찾지 못함, 사소한 수정만 필요}'' 로 판정했다(반박 시도: 안정자와 그 격자의 구조, 두 계산에서 같은 몫 측도 $\nu_i$ 가 쓰이는지, 원환 보조정리, Tonelli 와 가측성, 정합성 공리, 고전적인 경우 $\Delta=\Q$, $j=2$, $k=3$ 에서 Rogers 공식의 재현 --- 궤도 $a\,e_1$ 의 기여 $\zeta(3)^{-1}a^{-3}$ 의 합이 1). 지적된 수정: 14회차의 (HR) 진술은 $\Gamma_k\backslash\mathsf G_k$ 위에서 읽어야 하고 왼쪽 ideal 판의 (h1) 을 가정에 넣어야 한다; 정리 R 은 (L1) 이 인용되는 \emph{바로 그} 군의 족에 대해 쓰여야 한다; Lemma 2.1 의 자유성 논증을 직접 쓸 것; 실 자리가 있는 경우의 보조정리 4.2a 는 (L1) 만 옮긴다(사원수 경우와 무관). 수치 검산은 없었다. 두 심사자 모두 Gargava 의 논문 자체는 열지 않았다. 따라서 정리 \ref{thm:D} 는 (HR) 이라는 별도의 가정 없이, \textbf{인용한 정리들(Gargava 의 정리 16 을 랭크 $k-2,k-1,k$ 에서 --- 그 증명은 재검증하지 않았고 $\Delta_\R=\HH^2$ 경우의 증명 세부에 6회차의 단서가 있다 ---, Klartag 의 보조정리들, Eichler 의 질량 공식)과 5회차의 계산기 보조 사실에만 의존한다.} 일반적인 정리 \ref{thm:E} 에는 왼쪽 ideal 판의 (h1) 이 추가 가정으로 필요하다($\Lambda_W$ 가 unimodular 이거나 $\mathcal O$ 가 극대 order 이면 자동). 문헌에서는 나눗셈대수 위의 $j$-틀 공식의 축자적 출처를 찾지 못했으므로(Weil 1946, Gargava 의 학위논문이 후보이나 열람하지 못함) 이 유도가 새로운지는 알 수 없다 --- 고전적인 Siegel--Rogers 논법의 직접적 확장이다.
 
-\paragraph{$SL_2(p)$ 족에 대한 함의.} 정리 \ref{thm:E} 의 상수는 $|G|/(4e\dim_\Q A)=\tfrac{p(p+1)}{2e(p-1)}$ 이다. 따라서 인용 입력 (L1)--(L3) 아래에서, 어떤 $p$ 에 대해 $W_p$ 가 (BS) 와 (h1)(왼쪽·오른쪽 ideal 모두)을 만족하면 $V_n\ge(1-o(1))\tfrac{p(p+1)}{2e(p-1)}n^2$ ($2(p-1)\mid n$)가 \emph{정리}가 된다. 현재 (BS) 가 확인된 것은 $p=13$ 뿐이다. $p=61$ 은 (BS) 가 미결정이고 class number 가 1 보다 커서 (h1) 도 성립하지 않는다(자유가 아닌 가군 $\Lambda_W\cap U$ 와 Steinitz 류를 다루는 확장이 필요). 차수 개선(명제 \ref{conj:dichotomy})에는 여전히 $p\to\infty$ 에 대한 균등성($k\ge Cr\log p$)이 추가로 필요하다.
+\paragraph{두 증명의 결합 점검 (18회차).} 14회차와 15회차의 증명은 서로 다른 에이전트가 썼고 각각 따로 심사되었으므로, 접점만을 보는 심사 에이전트 하나를 더 두었다(보고 원문: \texttt{rounds/R18\_integration/report.md}). 판정은 ``\emph{일관됨, 사소한 수정만 필요}'': (1) 14회차가 무작위 격자를 쓰는 모든 곳(평균값 공식, 세 Markov 사건, 마지막의 $\sqrt{A_T}$ 변환)이 하나의 군의 족 $\mathsf G_m=\{|\det_\R|=1\}$, $\Gamma_m=GL_m(\mathcal O)$, 몫 $\Gamma_m\backslash\mathsf G_m$ 과 양립하고, 이 족은 15회차의 의미에서 정합적이며 17회차가 원문에서 확인한 Gargava 의 군(전체 노름 1)과 전치를 통해 일치한다; (2) 14회차가 쓰는 (HR) 과 15회차의 정리 R 은 같은 항등식이다(같은 합, 같은 정규화, 같은 범위 $1\le j<k$, 상수 1); (3) 좌우: $\Lambda_W$ 는 오른쪽 가군, $L$ 은 행의 왼쪽 가군이라 양쪽 ideal 의 주 ideal 성이 모두 필요하지만, Leech 에서는 극대 사원수 order 가 켤레로 보존되므로 class number 1 하나로 충분하다; (4) 랭크에 off-by-one 이 없다($j=3$: 랭크 $k,k-1,k-2\ge2$, 즉 $k\ge4$); (5) 14회차는 정리 R 이상의 것(2차 모멘트, 중복도, 유계가 아닌 함수의 적분가능성)을 쓰지 않는다. 지적된 문제는 모두 진술 수준(몫의 표기, $N$ 의 정의, 가정 목록, ``$k\ge k_0$'' 의 명시)이며 위의 통합 진술에 반영했다. 실 자리가 있는 경우($\mathbb K=\R$)에는 Gargava 의 군이 랭크의 홀짝에 따라 달라 추가 논증(15회차 보조정리 4.2a; 심사 1회)이 필요하나 Leech 와 무관하다. 이 심사자는 14회차의 해석적 부분과 정리 R 의 내부 증명은 다시 확인하지 않았다. \textbf{전체 사슬에서 확인되지 않은 채 남은 것}: Gargava 의 정리 뒤의 Weil 환원 이론, Eichler 질량 공식, 5회차의 계산 실행, Klartag 의 논문 자체.
+
+\paragraph{$SL_2(p)$ 족에 대한 함의.} 정리 \ref{thm:E} 의 상수는 $|G|/(4e\dim_\Q A)=\tfrac{p(p+1)}{2e(p-1)}$ 이다. 따라서 인용 입력 (L1)--(L3) 아래에서, 어떤 $p$ 에 대해 $W_p$ 가 (BS) 와 (h1)(왼쪽·오른쪽 ideal 모두)을 만족하면 $V_n\ge(1-o(1))\tfrac{p(p+1)}{2e(p-1)}n^2$ ($2(p-1)\mid n$)가 \emph{정리}가 된다. 현재 (BS) 가 확인된 것은 $p=13$ 뿐이다. $p=61$ 은 (BS) 가 미결정이고 class number 가 1 보다 커서 (h1) 도 성립하지 않는다(자유가 아닌 가군 $\Lambda_W\cap U$ 와 Steinitz 류를 다루는 확장이 필요). 실제로 (h1) 은 이 족 안에서 $p=5,13$ 에서만 성립한다 \tagPC\ (Siegel 의 공식에 의한 계산 + Eichler 질량 공식 인용): $\zeta_F(-1)=\tfrac1{30},\tfrac16,\tfrac56,\tfrac{11}6,\tfrac{43}6,\tfrac{103}6$ ($p=5,13,37,61,157,277$)이므로 질량 $\tfrac12\zeta_F(-1)$ 은 $p\ge37$ 에서 $\tfrac5{12},\tfrac{11}{12},\tfrac{43}{12},\dots$ 이고, 이는 어떤 정수 $m$ 에 대해서도 $1/m$ 꼴이 아니므로 ideal 류가 둘 이상이다. 따라서 $p\ge37$ 의 어떤 원소에 대해서든 class number $>1$ 판의 정리 \ref{thm:E} 가 먼저 필요하다. 차수 개선(명제 \ref{conj:dichotomy})에는 여전히 $p\to\infty$ 에 대한 균등성($k\ge Cr\log p$)이 추가로 필요하다.
