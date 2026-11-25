@@ -20,8 +20,8 @@ Results (`out_p13_p37.txt`, `out_p61_p277_p661.txt`), rank-24 lattice `L_12(p)`,
 | 13 | yes | 0 | — (so the lattice is the Leech lattice, by Niemeier's classification) | Rounds 5, 10 |
 | 37 | yes | 72 | (3, 7): all 72 — **below the threshold 9** | Round 10 (the known violator, found there from the Weil representation) |
 | 61 | yes | 360 | (1, 15): 288; (3, 13): 72 | Round 13 (E_8^3 type, abs s in {1,3}) |
-
-(Further rows, if any, are in `out_p61_p277_p661.txt`.)
+| 277 | yes | 0 | — (Leech) | Round 13 |
+| 661 | yes | 72 | (21, 55): all 72 | `../proof.md` Section 6 (abs s = 21 exactly; Round 13 had only "about 21, precision limited") |
 
 What was checked by hand (reading `../proof.md`): the algebra of Theorems 4 and 5 *given* the model
 (ideal products, the identity `T_+- = 4 Tr_{K^+/F}(x_+)`, the AM-GM steps, the thresholds (A') and (A'')), and the
