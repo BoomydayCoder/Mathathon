@@ -37,3 +37,4 @@ add ../rounds/R16_quotient_curve/referee.md "16회차: 몫곡선 사전의 심�
 add ../rounds/R17_gargava_check/notes.md "17회차: Gargava 정리 16 의 점검 노트"
 add ../rounds/R17_gargava_check/referee.md "17회차: 심사 보고"
 add ../rounds/R18_integration/report.md "18회차: 14·15회차 결합 점검 보고 (통합 진술 포함)"
+add ../rounds/R19_classnumber/referee.md "19회차: 심사 보고"

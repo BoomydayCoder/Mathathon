@@ -8,7 +8,7 @@ pandoc -f markdown+tex_math_dollars+lists_without_preceding_blankline-smart -t l
 sed -i 's/\\section{/\\subsection*{/; s/\\subsection{/\\subsubsection*{/; s/\\subsubsection{/\\paragraph{/' app_proof.tex
 sed -i 's/\\section{/\\subsection*{/; s/\\subsection{/\\subsubsection*{/; s/\\subsubsection{/\\paragraph{/' app_log.tex
 # rounds 14/15: proofs written as markdown+LaTeX by sub-agents (included as appendices when present)
-for pair in "../rounds/R14_leech_tensor/proof.md:app_proof14.tex" "../rounds/R15_rogers/proof.md:app_proof15.tex"; do
+for pair in "../rounds/R14_leech_tensor/proof.md:app_proof14.tex" "../rounds/R15_rogers/proof.md:app_proof15.tex" "../rounds/R19_classnumber/proof.md:app_proof19.tex"; do
   src="${pair%%:*}"; dst="${pair##*:}"
   if [ -f "$src" ]; then
     pandoc -f markdown+tex_math_dollars+lists_without_preceding_blankline-smart -t latex --wrap=preserve "$src" -o "$dst"

@@ -5,7 +5,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-\noindent Klartag (2025) 의 격자 구 채우기 하한 $\delta_n\ge c\,n^2\,2^{-n}$ 과 그 후속 결과 $c\,n^2\log\log n\cdot 2^{-n}$ (Abuya--Gargava--Zhao, Gargava--Gr\"obner--Simkin, 2026) 의 개선을 목표로, ``과제 선택 $\to$ 증명 시도 $\to$ 반례·수치 검증 $\to$ 기록'' 의 절차를 19개 회차(0--18회차) 반복했다. \textbf{차수 $n^2\log\log n$ 을 개선하는 정리는 얻지 못했다.} 얻은 것은 다음과 같다.
+\noindent Klartag (2025) 의 격자 구 채우기 하한 $\delta_n\ge c\,n^2\,2^{-n}$ 과 그 후속 결과 $c\,n^2\log\log n\cdot 2^{-n}$ (Abuya--Gargava--Zhao, Gargava--Gr\"obner--Simkin, 2026) 의 개선을 목표로, ``과제 선택 $\to$ 증명 시도 $\to$ 반례·수치 검증 $\to$ 기록'' 의 절차를 20개 회차(0--19회차) 반복했다. \textbf{차수 $n^2\log\log n$ 을 개선하는 정리는 얻지 못했다.} 얻은 것은 다음과 같다.
 (1) 알려진 대칭 논증(Venkatesh, AGZ; GGS 의 순환군 판)의 이득을 하나의 지표 $g=|G|/(2\dim_\Q A)$ 로 기술하고, $\Q$-기약 가군 위의 고정점 없는 작용에서는 이 지표가 $O(\log\log|G|)$ 임을 증명했다(방법의 회계량에 대한 정리이며, 모든 논증에 대한 장벽 정리는 아니다).
 (2) Hurwitz/icosian 가군 격자에 대해 명시적 상수의 Klartag 형 한계 $V_n\ge(\tfrac{3}{2e}-o(1))n^2$ ($4\mid n$), $(\tfrac{15}{4e}-o(1))n^2$ ($8\mid n$) 의 증명을 썼고 AI 심사 에이전트 둘이 오류를 찾지 못했다. 단 Gargava (2021) 의 평균값 정리를 전제하며(그 증명은 17회차에서 원문으로 점검했고, icosian 의 경우에는 한 단계의 보수가 필요했다), 문헌 점검에서 선행 결과를 찾지 못했으나 새로움을 단정하지는 않는다; 차수는 $n^2$ 그대로여서 점근적으로는 $c\,n^2\log\log n$ 보다 약하고, 개선은 명시적 선행 상수(Rezvyakova 의 $\tfrac1{2e}$ 대비 3배·7.5배)에 한정된다.
 (3) 고정점이 있는(비자유) 작용에 대한 틀 정리 --- 고정된 격자 $\Lambda_W$ 가 class number 1 의 order 위에서 ``경계 안정'' 이면 텐서족 $\Lambda_W\otimes_{\mathcal O}L$ 에서 $V_n\ge(1-o(1))\tfrac{|G|}{4e\dim_\Q A}n^2$ --- 를 증명하고, Leech 격자의 $SL_2(13)$ 대칭에 적용해 $V_n\ge(\tfrac{91}{12e}-o(1))n^2\approx2.79\,n^2$ ($24\mid n$)을 얻었다(Rezvyakova 상수의 15.2배). 이를 위해 나눗셈대수 order 위 가군 격자의 $j$-틀 평균값 공식을 Gargava 의 정리로부터 유도했다. AI 심사 에이전트들이 오류를 찾지 못했으나, 인용한 정리들(특히 Gargava 의 정리 16 을 모든 랭크 $\ge2$ 에서 --- Leech 의 경우인 $\Delta_\R=\HH^2$ 에서는 그 인쇄된 증명의 한 단계가 성립하지 않아 17회차에서 원문을 읽고 보수했으며, 그 정리가 기대는 Weil 의 환원 이론은 확인하지 못했다)과 5회차의 계산기 보조 사실에 의존하고, 순수 점근 진술이며(증명 그대로는 $n\gtrsim10^{14}$ 에서야 비자명), 차수는 역시 $n^2$ 이다.
@@ -28,21 +28,26 @@
 \input{sec_conclusion}
 \appendix
 \section{사원수 대칭 Klartag 형 정리의 증명 전문 (6회차 개정본, 영문)}\label{app:proof}
-{\small
+{\small\sloppy
 \input{app_proof}
 }
 \section{비자유 작용의 틀 정리와 Leech 텐서족 정리의 증명 전문 (14회차, 영문)}\label{app:proof14}
 이 부록은 14회차 증명 에이전트가 쓴 노트를 그대로 수록한 것이다. 심사 결과와 그에 따른 지위는 \S\ref{sec:leechthm} 가 우선한다.
-{\small
+{\small\sloppy
 \input{app_proof14}
 }
 \section{나눗셈대수 order 위 가군 격자의 $j$-틀 평균값 공식 (15회차, 영문)}\label{app:proof15}
 이 부록은 15회차 증명 에이전트가 쓴 노트를 그대로 수록한 것이다. 심사 결과와 그에 따른 지위는 \S\ref{sec:leechthm} 가 우선한다.
-{\small
+{\small\sloppy
 \input{app_proof15}
 }
+\section{class number 가정의 제거: 임의의 가군 격자에 대한 평균값 공식과 정리 E$'$ (19회차, 영문)}\label{app:proof19}
+이 부록은 19회차 증명 에이전트가 쓴 노트를 그대로 수록한 것이다. 심사 결과와 그에 따른 지위는 \S\ref{sec:leechthm} 가 우선한다.
+{\small\sloppy
+\input{app_proof19}
+}
 \section{연구 로그 전문 (\texttt{research\_log.md})}\label{app:log}
-{\small
+{\small\sloppy
 \input{app_log}
 }
 \section{파일 색인과 재현 방법}\label{app:files}

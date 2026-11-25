@@ -781,3 +781,28 @@
 \textbf{{[}증명됨·인용 정리 전제 + 계산기{]} 정리 D 의 통합 진술}: (R5-a) \(\mathcal O\) 극대, \(|G|=2184\) 와 지표표, \(\mathcal O^1=SL_2(3)\) {[}계산기{]}; (R5-b) 모든 \(\Delta\)-직선에서 \(\det(\Lambda_{24}\cap U)\ge3^8\) {[}계산기{]}; (R5-c) class number 1 {[}Eichler 질량 공식 인용{]}; (L1)\(_m\) (\(m\ge2\); Gargava 정리 16 + 명제 14, \(\mathbb H^2\), 랭크 \(k,k-1,k-2\) 에서 사용) {[}인용, 17회차에서 보수{]}; (L2) Klartag; (L3) 표준 도구 ⇒ 비효과적인 \(k_0\) 가 있어 \(k\ge k_0\), \(n=24k\) 에서 \(\Lambda_{24}\otimes_{\mathcal O}L\) 이 상대 부피 \((1-o(1))\frac{91}{12e}n^2\) 의 빈 공을 가짐.
 
 \textbf{이 회차가 확인하지 않은 것}: 14회차의 해석적 부분(§2--3, §5), 정리 R 의 내부 증명(각각 앞선 심사에 의존). \textbf{사슬 전체에서 미확인으로 남은 것}: Weil 의 환원 이론, Eichler 질량 공식, 5회차의 계산 실행, Klartag 의 논문.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{uxd68cuxcc28-1015r19end-utc-uxacbduxacfc-r19minuxbd84-class-number-uxac00uxc815uxc758-uxc81cuxac70-uxc784uxc758uxc758-uxadf9uxb300-order-uxc5d0-uxb300uxd55c-j-uxd2c0-uxacf5uxc2dduxacfc-uxc815uxb9ac-e}{%
+\subsubsection*{\texorpdfstring{19회차 (10:15--R19END UTC, 경과 R19MIN분): class number 가정의 제거 --- 임의의 극대 order 에 대한 \(j\)-틀 공식과 정리 E′}{19회차 (10:15--R19END UTC, 경과 R19MIN분): class number 가정의 제거 --- 임의의 극대 order 에 대한 j-틀 공식과 정리 E′}}\label{uxd68cuxcc28-1015r19end-utc-uxacbduxacfc-r19minuxbd84-class-number-uxac00uxc815uxc758-uxc81cuxac70-uxc784uxc758uxc758-uxadf9uxb300-order-uxc5d0-uxb300uxd55c-j-uxd2c0-uxacf5uxc2dduxacfc-uxc815uxb9ac-e}}
+
+\textbf{선택한 과제}: 정리 E 는 (h1)(class number 1)을 가정하는데, \(SL_2(p)\) 족에서 (h1) 은 \(p=5,13\) 에서만 성립한다 --- \textbf{{[}증명됨(계산기) + 인용{]}} Siegel 의 공식으로 \(\zeta_F(-1)=\frac1{30},\frac16,\frac56,\frac{11}6,\frac{43}6,\frac{103}6,\frac{57}2,\dots\) (\(p=5,13,37,61,157,277,397,\dots\))이고 Eichler 질량 \(\frac12\zeta_F(-1)\) 이 \(p\ge37\) 에서 \(\frac5{12},\frac{11}{12},\frac{43}{12},\dots\) 로 \(1/m\) 꼴이 아니므로 ideal 류가 둘 이상. 따라서 \(p\ge37\) 의 어떤 원소에 대해서든 (h1) 없는 판이 먼저 필요하다. 회차를 시작하기 전에 귀납 논증의 뼈대(올의 평균값이 궤도와 무관하다는 Jacobian 상쇄 포함)를 직접 손으로 확인해 증명 에이전트에게 청사진으로 주었다. (\texttt{rounds/R19\_classnumber/proof.md})
+
+\textbf{{[}증명됨·인용 정리 전제 --- 증명 에이전트; 심사는 아래{]}} (\(\mathcal O\) 는 극대 order; hereditary 성질은 Reiner 의 책에서 인용{[}기억{]})
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{정리 A (통약 가능한 격자의 랭크 1 공식)}: \(m\ge2\), \(N\) 이 \(\mathcal O^{1\times m}\) 과 통약 가능한 격자(가군 구조 불필요), \(\Gamma'\) 가 \(GL_m(\mathcal O)\) 와 통약 가능하고 \(N\Gamma'=N\) ⇒ \(\mathbb E_{\Gamma'\backslash\mathsf G_m}\sum_{0\ne y\in N}f(y\gamma)=\mathrm{covol}(N)^{-1}\int f\). 증명: \(a\mathcal O^{1\times m}\subseteq N\subseteq a^{-1}\mathcal O^{1\times m}\), 법 \(a^2\) 의 합동 부분군이 모든 잉여류 \(c+a\mathcal O^{1\times m}\) 을 보존; 잉여류의 계수 측도 \(\nu_c\) 는 \(\mathsf G_m\)-불변이고 \(\le a^{Dm}\mathrm{Leb}\) ⇒ (열린 궤도 위 불변 Radon 측도의 유일성) \(\nu_c=C_c\mathrm{Leb}\); \textbf{Riemann 합 + Fatou ⇒ 모든 \(c\) 에 대해 \(C_c\ge a^{-Dm}\); 한편 \(\sum_cC_c=a^{Dm}\) ((L1)과 스케일링), 잉여류 수 \(a^{2Dm}\) ⇒ 모두 등호.} 새 우함수 추정 불필요, (L1) 은 블랙박스.
+\item
+  \textbf{정리 B (임의의 가군 격자의 \(j\)-틀)}: \(1\le j<k\), \(L_0\subset\Delta^{1\times k}\) 임의의 왼쪽 \(\mathcal O\)-격자, \(M\subset\Delta^{j\times1}\) 임의의 오른쪽 \(\mathcal O\)-격자, \(\Gamma=\mathrm{Stab}(L_0)\) ⇒ \(\mathbb E\sum_{Y\in ML_0,\,\mathrm{rk}Y=j}F(Y\gamma)=\mathrm{covol}(ML_0)^{-1}\int F\). 모든 쌍 \((M,L_0)\) 에 대한 동시 귀납: \(M=I_1e_1\oplus M_1\) (hereditary), 첫 행 \(y\in N_1=I_1L_0\); 궤도 \(y_i\Gamma\) 의 올에서 \(L_0g_i^{-1}=Je_1\oplus L_i''\), 안정자 \(=T_i\rtimes\mathrm{Stab}(L_i'')\) (\(T_i=\{n:L_i''n\subseteq J\}\)), 원환 사상 \(\Delta_\mathbb R^{k-1}/T_i\to\Delta_\mathbb R^{j-1}/(M_1J)\) 전사 ⇒ 올 평균 \(=\mathrm{covol}(M_1L_i)^{-1}\int\Psi(Zg_i)dZ=\mathrm{covol}(M_1L_0)^{-1}\int\Psi\) (\textbf{궤도와 무관}: \(\|g_i\|^{\pm(j-1)}\) 상쇄) ⇒ \(j=1\) 의 unfolding 과 비교, 정리 A.
+\item
+  \textbf{정리 E′}: (T), \(\mathcal O\) 극대, (BS), 입력 (L1)--(L3) ⇒ 정리 E 의 결론(\textbf{class number 가정 없음}). 14회차에서 (h1) 이 쓰인 곳은 좌표 \(\Lambda_W=\mathcal O^r\) 과 Lemma 1.1/1.2 뿐; 열공간이 \(U\) 인 점 \(=(\Lambda_W\cap U)\mathcal O^{1\times k}\) 의 랭크 \(j\) 원소 ⇒ 같은 \(\mu_U\), Lemma 1.4/1.5 불변.
+\item
+  \textbf{따름(조건부)}: \(p\equiv5\bmod8\), \((p+1)/2\) 소수, \(\mathcal O(W_p)\) 극대이고 \(W_p\) 가 \textbf{모든} \(\Delta\)-부분공간에서 (BS) ⇒ \(V_n\ge(1-o(1))\frac{p(p+1)}{2e(p-1)}n^2\) (\(2(p-1)\mid n\)). 즉 \(SL_2(p)\) 족에서 고정된 \(p\) 에 대해 남는 가정은 (BS) 하나(\(p=61\): \(\approx11.6n^2\); (BS) 는 미결정, \(p=37\) 은 거짓).
+\item
+  증명 에이전트가 명시한 한계: 14회차 §2--§5 는 다시 읽지 않고 키워드 검색만 함(자유성·(h1) 의 다른 사용처 없음); hereditary 는 기억에 의한 인용; \(W_p\) 의 order 가 극대라는 것은 확인하지 않음(10회차 빌더의 보고에 의존).
+\end{itemize}
+
+\textbf{심사}: R19REF
