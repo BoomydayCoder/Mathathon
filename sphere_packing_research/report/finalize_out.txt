@@ -1,5 +1,5 @@
-research_log.md assembled: 562 lines
+research_log.md assembled: 563 lines
 0
 860:LaTeX Font Warning: Font shape `TU/NanumMyeongjo(0)/m/it' undefined
-1033:LaTeX Font Warning: Font shape `TU/NanumGothicCoding(0)/m/it' undefined
-Pages:           143
+1006:LaTeX Font Warning: Font shape `TU/NanumGothicCoding(0)/m/it' undefined
+Pages:           145

@@ -88,7 +88,9 @@ def enum_short(G, bound):
 def qf(M, v):
     n = len(v); return sum(v[i] * int(M[i][j]) * v[j] for i in range(n) if v[i] for j in range(n) if v[j])
 
-for (p, N) in [(13, 12), (37, 12)]:
+# usage: chk.py [p ...]   (default: 13 37; the file out_p61_p277_p661.txt was produced with 61 277 661)
+PRIMES = [int(a) for a in sys.argv[1:]] or [13, 37]
+for (p, N) in [(p, 12) for p in PRIMES]:
     t0 = time.time()
     G, E, Bz, F = im.build(p, N, verbose=False)
     n = len(G)

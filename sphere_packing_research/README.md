@@ -27,7 +27,8 @@ Klartag (2025, arXiv:2504.05042)의 격자 구 채우기 하한 $\delta_n\ge c\,
 - **기록 종료 후의 추가 회차** (사용자의 추가 질문에 따른 것; 5시간 루프에 포함되지 않음)
   - 20회차 (11-25 18:25–19:55 UTC): "$(p+1)/2$ 가 소수인 $p$ 가 무한히 많으면 안정한 $p$ 도 무한히 많은가" 의 증명 시도.
     하위 에이전트 하나, 심사 없음, 오케스트레이터의 부분 점검.
-  - 21회차 (11-27): 가정 "$(p+1)/2$ 가 소수" 를 약화할 수 있는가. 오케스트레이터의 직접 유도와 GAP 계산, 심사 없음.
+  - 21회차 (11-27): 가정 "$(p+1)/2$ 가 소수" 를 약화할 수 있는가. 오케스트레이터의 직접 유도와 GAP 계산, 정식 심사 없음.
+  - 11-27: 두 회차를 세 문서에 반영한 뒤 비평 에이전트 하나가 원자료와 대조했고, 지적 19건을 반영해 개정했다.
 
 ## 결과 요약
 
@@ -49,10 +50,12 @@ Klartag (2025, arXiv:2504.05042)의 격자 구 채우기 하한 $\delta_n\ge c\,
    - $p=13$ (Leech): 정확히 경계 안정 [증명됨(계산기)]. $p=37$: **불안정** [증명됨(계산기; 정수 인증서)].
      $p=61$: 수행한 모든 구조적 시험을 통과했으나 미결정.
    - 표수 $p$ 의 곡선 $y^2=x^p-x$ 의 Mordell–Weil 격자와의 사전, 몫곡선 사전 [증명됨·인용 전제].
-   - (20회차, 미심사) $p\equiv5\bmod8$ 에서 $W_p$ 는 원분체 $\mathbb Q(\zeta_{4p})$ 의 명시적인 ideal 격자
-     $(\mathfrak P_1^{(m+1)/2}\mathfrak P_2^{-(m-1)/2},\ \mathrm{Tr}(x\bar x)/2p)$, $m=(p-1)/4$. 벡터 수준의 안정성 조건은
-     "그 ideal 의 모든 $x\ne0$ 에서 $T_+(x)T_-(x)\ge p(p-1)^2$" 과 동치이고, 지수 $p^{(p-3)/2}$ 인 부분격자 $\mathbb Z[\zeta_{4p}]$
-     위에서는 성립한다. 정확한 Gram 행렬로 랭크 24 부분격자를 $p<8900$ 의 85개 소수에서 전수 탐색: 위반은 $p=37$ 뿐.
+   - (20회차, 미심사) $p\equiv5\bmod8$ 에서 $W_p$ 의 족은 원분체 $\mathbb Q(\zeta_{4p})$ 의 명시적인 ideal 격자로 주어진다:
+     짝 unimodular 인 것은 $L_1=(\mathfrak P_1^{(m+1)/2}\mathfrak P_2^{-(m-1)/2},\ \mathrm{Tr}(x\bar x)/2p)$ 와
+     $L_0=(\mathfrak P_1^{-(3m-1)/2}\mathfrak P_2^{-(m-1)/2},\ \mathrm{Tr}(\varepsilon x\bar x/2\sqrt p))$ 둘($m=(p-1)/4$; 둘의 동형은 미증명).
+     벡터 수준의 안정성 조건은 $L_1$ 에서 "모든 $x\ne0$ 에서 $T_+(x)T_-(x)\ge p(p-1)^2$", $L_0$ 에서 "$T_+T_-\ge(p-1)^2$" 과
+     동치이고, 뒤의 것은 $L_0$ 의 지수 $p^{(p-3)/2}$ 인 부분격자 $\mathbb Z[\zeta_{4p}]$ 위에서 성립한다. 정확한 Gram 행렬로 랭크 24
+     부분격자를 $p<8900$ 의 85개 소수에서 전수 탐색: 위반은 $p=37$ 뿐.
 5. **모형과 소차원 실험** [모형에서 증명 / 수치관찰]. Poisson 모형에서 대각합-LP 최적 타원체의 부피 $\sim\chi^2_{2N}$;
    등변 Klartag 과정은 $E_8,K_{12},BW_{16},\Lambda_{20}$, Leech 를 재발견(새 기록 없음).
 
@@ -62,9 +65,10 @@ Klartag (2025, arXiv:2504.05042)의 격자 구 채우기 하한 $\delta_n\ge c\,
   (ii) $p$ 와 랭크가 함께 커질 때의 균등한 정리, (iii) 그런 소수가 무한히 많다는 것을 모두 요구하며 셋 다 미증명이다.
 - "안정한 $p$ 가 무한히 많다" (20회차): 증명도 반증도 되지 않았다. 증명된 하한은 필요한 값의 약 $1/p$ 이고, 비주 직선과
   고차원 부분공간에 대해서는 진전이 없다. $p\equiv1\bmod8$ 은 모형조차 없다.
-- 가정 "$(p+1)/2$ 가 소수" 의 약화 (21회차): 이 전략 안에서는 방법을 찾지 못했다. $(p+1)/2$ 가 합성수이면 표현을 어떻게
-  섞어도 이득이 $O(1)$ 로 떨어지고, GAP 지표표 라이브러리 2313개의 스캔에서 필요조건을 통과하며 icosian 값(7.5)을 넘는 것은
-  $SL_2(13)$ 뿐이었다(분류 정리는 아니다). 다만 그런 소수는 드물지 않다(2000 미만에 34개). 상수 개선만이라면 안정한 소수
+- 가정 "$(p+1)/2$ 가 소수" 의 약화 (21회차; unimodular 격자에 대한 필요조건): $SL_2$ 족 안에서는 불가능하다 —
+  $(p+1)/2$ 가 합성수이면(서로 다른 두 소수의 제곱으로 동시에 나누어지는 경우만 빼고) 어떤 충실한 유리 표현에서도 비분리
+  토러스가 이득을 주지 못하고, 홀 이산계열의 합에서는 이득이 약 2 이하다. 그 밖의 군에서는 방법을 찾지 못했다: GAP 지표표
+  라이브러리 2313개의 스캔에서 필요조건을 통과하며 icosian 값(7.5)을 넘는 것은 $SL_2(13)$ 뿐이었다(분류 정리는 아니다). 다만 그런 소수는 드물지 않다(2000 미만에 34개). 상수 개선만이라면 안정한 소수
   하나로 충분하다.
 
 ## 디렉터리
@@ -83,7 +87,7 @@ sphere_packing_research/
 └── rounds/                      회차별 코드·노트·심사 보고
     ├── R1_* … R19_classnumber/          시간 제한 루프
     ├── R20_infinitely_many_stable/      20회차 (proof.md, ideal_model.py, scan_exact.py, orchestrator_check/)
-    └── R21_weaker_conditions/           21회차 (notes.md, scan.g, scan3.g, sl2_family.py, composite_M*.py)
+    └── R21_weaker_conditions/           21회차 (notes.md, scan.g, scan3.g, scan4.g, sl2_family.py, composite_M*.py)
 ```
 
 `papers/` (내려받은 논문)는 저장소에 넣지 않았다.
@@ -103,13 +107,13 @@ cd rounds/R10_weil_lattices/orchestrator && python3 scan.py 37 61
 ```
 
 ```bash
-# 20회차: ideal 격자 모형의 독립 점검 (p = 13, 37 의 랭크 24 격자)
-cd rounds/R20_infinitely_many_stable && python3 orchestrator_check/chk.py
+# 20회차: ideal 격자 모형의 독립 점검 (랭크 24 격자의 근; 인자 없으면 p = 13, 37)
+cd rounds/R20_infinitely_many_stable && python3 orchestrator_check/chk.py 13 37 61
 ```
 
 ```bash
 # 21회차: SL_2(q) 족, 합성수 (p+1)/2, 지표표 스캔
-cd rounds/R21_weaker_conditions && python3 sl2_family.py && python3 composite_M.py && gap -q -b scan3.g
+cd rounds/R21_weaker_conditions && python3 sl2_family.py && python3 composite_M.py && gap -q -b scan4.g
 ```
 
 주의: `fp_enum.c` (R2, R8, R10/A)는 좌표 버퍼가 64개라 랭크 64 이하에서만 써야 한다. 더 큰 랭크에는
