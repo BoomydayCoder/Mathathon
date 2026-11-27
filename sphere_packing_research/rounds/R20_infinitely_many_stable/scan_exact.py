@@ -4,8 +4,10 @@ warm-started LLL (exact integer change of basis, high-precision evaluation of Q_
 import sys, math, time, json, collections
 from decimal import Decimal, getcontext
 import numpy as np
-sys.path.insert(0, '/home/user/Mathathon/sphere_packing_research/rounds/R20_infinitely_many_stable')
-sys.path.insert(0, '/home/user/Mathathon/sphere_packing_research/rounds/R10_weil_lattices/orchestrator')
+import os
+_HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _HERE)
+sys.path.insert(0, os.path.join(_HERE, '..', 'R10_weil_lattices', 'orchestrator'))
 import ideal_model as IM
 import proto as P
 V = IM.V

@@ -13,7 +13,9 @@ Also E = Gram of (x, sqrt(p) y); s(w) = w^T E w / 2;  N(nu(w)) = (p (w.w)^2 - 4 
 import sys, math, time, json, collections
 from fractions import Fraction
 import numpy as np
-sys.path.insert(0, '/home/user/Mathathon/sphere_packing_research/rounds/R2_voronoi_descent')
+import os
+_HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(_HERE, '..', 'R2_voronoi_descent'))
 import voronoi as V
 # R20: the round-2 enumerator has a fixed coordinate buffer int x[64]; for rank > 64 use a local copy with x[1024]
 import ctypes as _ct, os as _os
@@ -297,4 +299,4 @@ if __name__ == '__main__':
             analyze(p, N, out=out)
         except Exception as ex:
             print('p=%d N=%d FAILED: %r' % (p, N, ex), flush=True)
-    json.dump(out, open('/home/user/Mathathon/sphere_packing_research/rounds/R20_infinitely_many_stable/ideal_model_results_%s.json' % '_'.join(a.replace(':', 'x') for a in sys.argv[1:4]), 'w'), indent=1, default=str)
+    json.dump(out, open(os.path.join(_HERE, 'ideal_model_results_%s.json') % '_'.join(a.replace(':', 'x') for a in sys.argv[1:4]), 'w'), indent=1, default=str)

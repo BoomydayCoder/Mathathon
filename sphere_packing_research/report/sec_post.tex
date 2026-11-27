@@ -1,0 +1,168 @@
+\subsection{원분체 ideal 격자 모형: ``안정한 $p$ 가 무한히 많은가'' 의 증명 시도 (20회차; 기록 종료 후)}\label{sec:r20}
+5시간 기록을 닫은 뒤 사용자의 요청으로 다음 명제의 증명을 시도했다: \emph{$(p+1)/2$ 가 소수인 $p\equiv1\pmod4$ 가 무한히 많다고 가정하면, 그중 무한히 많은 $p$ 에서 $W_p$ 가 (BS) 를 만족한다.} 소수 가정은 명제 \ref{prop:sl2pnec}(1) 의 군론적 장애물만 없애 주므로, 실제 내용은 그런 $p$ 전부(또는 명시적인 무한 부분족)에서 (BS) 를 증명하는 것이다. 완전한 증명에는 (A) 모든 벡터 $w\ne0$ 에서 $N(\nu(w))\ge r^2$, (B) 비주 직선, (C) 차원 2 이상의 $\Delta$-부분공간, 세 가지가 필요하다. \textbf{결과: 증명도 반증도 되지 않았다.} (A) 는 환원과 부분 증명에 그쳤고, (B)·(C) 는 진전이 없으며, $p\equiv1\pmod8$ 은 모형조차 얻지 못했다. 이 절의 내용은 하위 에이전트 하나가 약 83분 동안 얻은 것으로(\texttt{rounds/R20\_infinitely\_many\_stable/proof.md}; 원문은 부록 \ref{app:notes}) \textbf{AI 심사를 거치지 않았다}; 저자는 아래에 적은 범위에서만 따로 점검했다.
+
+\paragraph{표기.} $p\equiv5\pmod8$, $m=r=(p-1)/4$ (홀수), $K=\Q(\zeta_p)\supset F=\Q(\sqrt p)$, $L=K(i)=\Q(\zeta_{4p})$, $\mathfrak P_1,\mathfrak P_2$ 는 $p$ 위의 $L$ 의 두 소 ideal ($\mathfrak P_1\mathfrak P_2=(1-\zeta_p)$, 복소켤레가 둘을 바꾼다), $\tilde\sigma$ 는 $\mathrm{Gal}(K/F)$ 의 생성원 $\sigma$ 를 $i$ 를 고정하도록 $L$ 로 확장한 것. $x\in L$ 에 대해
+\[
+T_\pm(x):=\sum_{\tau:\ \tau(\sqrt p)=\pm\sqrt p}|\tau(x)|^2\qquad(\text{각각 $L$ 의 매장 $p-1$ 개에 대한 합}).
+\]
+
+\begin{theorem}[원분체 ideal 격자 모형]\label{thm:ideal}\tagPL\ + \tagN\ (단일 에이전트, AI 심사 없음; 인용: $SL_2(p)$ 의 지표표, 표수 $p$ 의 단순가군 $\mathrm{Sym}^k$, 분기하지 않는 환 확대의 교차곱이 Azumaya 라는 사실, Stickelberger 의 정리; 저자가 $p=13,37,61,277,661$ 의 랭크 24 격자에서 독립 점검)\
+$p\equiv5\pmod8$ 이라 하자.
+\begin{enumerate}
+\item Borel 부분군 $B=U\rtimes T$ 의 $\Q$-생성은 이미 $A=M_r(\Delta)$ 전체이다. $\Q[B]$-가군으로서 $W\cong L$ 이며, 멱단원 $u$ 는 $\zeta_p$ 의 곱, 토러스 생성원 $d$ 는 $x\mapsto i\,\tilde\sigma(x)$ 로 작용한다. $i$ 의 곱은 $\xi\in\Delta$ ($\xi^2=-1$)이고, $G$-불변 형식은 정확히 $\Tr_{L/\Q}(\alpha x\bar y)$ ($\alpha\in F$)이다.
+\item $\xi$-안정이고 $p$ 밖에서 자명한 $G$-격자는 정확히 ideal $\mathfrak P_a^{(1-3m)/2+2mj}\,\mathfrak P_b^{(1-m)/2+2mj'}$ ($j,j'\in\Z$, $\{a,b\}=\{1,2\}$)들이다. 그 가운데 unimodular 인 것은 모두 짝이고, 등거리를 제외하면
+\[
+L_0=\Big(\mathfrak P_1^{-\frac{3m-1}2}\mathfrak P_2^{-\frac{m-1}2},\ \Tr_{L/\Q}\Big(\frac{\varepsilon\,x\bar x}{2\sqrt p}\Big)\Big),\qquad
+L_1=\Big(\mathfrak P_1^{\frac{m+1}2}\mathfrak P_2^{-\frac{m-1}2},\ \frac{\Tr_{L/\Q}(x\bar x)}{2p}\Big)
+\]
+둘이다($\varepsilon$ 은 $F$ 의 기본단위).
+\item 족 $\{\Lambda I\}$ 의 모든 격자에서 $R_U$ 의 값이 같으므로 (BS) 는 $L_1$ 에서 시험해도 된다. $L_1$ 에서 $m_\pm=T_\pm/(2p)$ 이고
+\[
+N(\nu(x))=\frac{T_+(x)\,T_-(x)}{16\,p}.
+\]
+\end{enumerate}
+\end{theorem}
+\noindent 증명의 뼈대: $p$ 밖의 소수에서는 $\Z_\ell[B]$ 의 상이 이미 극대 order 이므로 모든 $B$-격자가 $G$-격자다. $p$ 에서는 $\Z_p[i]$ 의 두 멱등원으로 쪼개면 각 성분이 $\Z_p[\zeta_p]$ 의 분수 ideal $(1-\zeta_p)^c$ 이고, $\psi$ 의 mod $p$ 환원이 단순가군 $\mathrm{Sym}^{2m-1}$ 이라는 사실에서 $c$ 가 mod $2m$ 으로 결정된다($U$-여불변량 위의 토러스 작용을 비교). \emph{약점}: ``10--13회차의 격자 $\Z[G]v_0$ 가 $L_0$ 이다'' 라는 동일시는 Weil 모형에서 $\xi$ 가 $\Z[G]v_0$ 를 보존한다는 것을 다시 유도하지 않았다($L_1$ 을 쓰는 데는 필요 없다); $L_0\cong L_1$ 은 증명되지 않았다($p=5,13$ 에서는 성립). \emph{수치 확인}: 공식에서 정확한 정수 Gram 행렬을 만들면 $p=5$ 는 $E_8$, $p=13$ 은 정리 \ref{thm:leech} 의 $s$-분포(39312/45864/13104 쌍)를 그대로 갖는 Leech 격자이고, $p=29,37,61$ 의 전체 격자(랭크 56, 72, 120)는 짝·$\det1$·$\det E=p^{n/2}$ 이다.
+
+\begin{proposition}[탑 구조]\tagP\ (정리 \ref{thm:ideal} 전제)\
+$k\mid m$, $N=(p-1)/k$, $M_N\subset K$ 를 차수 $N$ 의 부분체라 하면 분리 토러스의 부분군 $C_k$ 의 고정격자는
+$\mathrm{Fix}(C_k)=L_1\cap M_N(i)=\sqrt k\cdot L_N(p)$ 이고, $L_N(p)$ 는 $M_N(i)$ 에서 $m$ 을 $m'=N/4$ 로 바꾼 같은 구성(랭크 $2N$ 의 짝 unimodular 격자)이다. 안정성 조건은 $L_N(p)$ 위에서 $N(\nu')\ge m'^2$ 이 된다.
+\end{proposition}
+\noindent 이것은 명제 \ref{prop:sl2pnec}(2) (Lemma B), 13회차의 관찰(고정격자 $=\sqrt m\,\times$ 짝 unimodular 격자), 명제 \ref{prop:quotient} 의 자기닮음을 곡선을 쓰지 않고 다시 준다. $L_4(p)=E_8$, $L_{12}(p)$ 가 \S\ref{sec:p61} 의 $L_{24}(p)$ 다.
+
+\begin{theorem}[(A) 의 환원과 부분 증명]\label{thm:Apartial}\tagP\ (정리 \ref{thm:ideal} 전제; AI 심사 없음; 아래의 증명은 저자가 손으로 다시 확인)\
+$p\equiv5\pmod8$.
+\begin{enumerate}
+\item $L_1$ 에 대한 벡터 조건 (A) 는 다음과 동치다:
+\[
+\text{(A$'$)}\qquad T_+(x)\,T_-(x)\ \ge\ p\,(p-1)^2\qquad\big(\forall\ 0\ne x\in\mathfrak P_1^{\frac{m+1}2}\mathfrak P_2^{-\frac{m-1}2}\big).
+\]
+$L_0$ 에 대한 (A) 는 (A$''$): $N_{F/\Q}\big(\Tr_{L/F}(x\bar x)\big)\ge(p-1)^2$ ($\forall\ 0\ne x\in\mathfrak P_1^{-\frac{3m-1}2}\mathfrak P_2^{-\frac{m-1}2}$)와 동치다. (A$'$) 와 (A$''$) 는 모두 (BS) 의 필요조건이며, 서로 동치인지는 증명되지 않았다.
+\item (무조건부 하한) 모든 $w\ne0$ 에 대해 $N(\nu(w))\ge r^2\,p^{-1+1/r}$.
+\item ($L_0$ 의 유한 지수 부분격자) $\Z[\zeta_{4p}]\subset L_0$ (지수 $p^{(p-3)/2}$; Borel 부분격자) 위에서는 $N(\nu(x))\ge r^2$ 이고, 등호는 정확히 $x\in\mu_{4p}\cdot\varepsilon^{\Z}$ 에서 성립한다. 위반 벡터가 있다면 $|N_{L/\Q}(x)|<1$ 이다.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+$x=x_1+ix_2$ ($x_j\in K$), $x_+:=|x_1|^2+|x_2|^2\in K^+$ 라 두면 $i\mapsto\pm i$ 인 두 매장의 합에서 교차항이 사라져 $T_\pm=4\,\Tr_{K^+/F}(x_+)$ (두 실자리에서의 값)이다. $r$ 개 켤레에 대한 산술--기하 평균 부등식에서 $T_+T_-\ge16r^2\,N_{K^+/\Q}(x_+)^{1/r}$. $L_1$ 에서는 $x\bar x\in\mathfrak P_1\mathfrak P_2=(1-\zeta_p)$ 이므로 $x_+$ 는 $p$ 위의 $K^+$ 의 소 ideal 에 속하는 총양 원소이고 $N(x_+)\ge p$: 따라서 $T_+T_-\ge(p-1)^2p^{1/r}$, 즉 $N(\nu)\ge r^2p^{-1+1/r}$. $L_0$ 에서는 $N(\nu)=T_+T_-/16$ 이고, $x\in\Z[\zeta_{4p}]$ 이면 $x_+$ 가 0 아닌 총양 대수적 정수라 $N(x_+)\ge1$, 즉 $N(\nu)\ge r^2$. 등호이면 $x_+\in F$, $N(x_+)=1$ 이므로 $x_+=\varepsilon^{2j}$ 이고, $x'=\varepsilon^{-j}x$ 는 $\Tr_{K/\Q}|x_1'|^2+\Tr_{K/\Q}|x_2'|^2=p-1$ 을 만족한다. 0 아닌 $y\in\Z[\zeta_p]$ 는 $\Tr_{K/\Q}|y|^2\ge p-1$ 이고 등호는 단위근에서만 성립하므로(산술--기하 평균과 Kronecker 의 정리) $x_1',x_2'$ 중 하나는 0 이고 다른 하나는 $\pm\zeta_p^a$ 다. 마지막 주장은 $2(p-1)$ 개 매장 전체에 대한 산술--기하 평균 부등식이다.
+\end{proof}
+\noindent 필요한 값 $r^2$ 과 증명된 값 $r^2p^{-1+1/r}$ 사이에는 인수 $p^{1-1/r}$ 의 간격이 있다(다만 \S\ref{sec:leech} 의 11회차 한계 $((p+3)/(4b\sqrt p))^2$ 와 달리 기본단위에 의존하지 않는다). 점검: $p=13$ 에서 이 하한은 $1.63$ (참값 9, 경계), $p=37$ 에서 $3.27$ (참값은 63 이하로 81 미만) --- 어디서도 안정성을 증명하지 않으며, $p=37$ 에서는 그래야 한다.
+
+\begin{proposition}[초등적 형태]\label{prop:poly}\tagP\ (정리 \ref{thm:ideal} 과 정리 \ref{thm:MW} 의 정규화 전제; $p=5,13$ 에서 수치 확인)\
+$\iota\in\mathbb F_p$, $\iota^2=-1$. $\mathrm{Hom}(\mathrm{Jac}\,C_p,E)$ 는 다음 격자와 같다: $\mathbb F_p$ 로 번호 붙인 정수열의 쌍 $(c,c')$ (각각 상수를 더하는 것은 무시)로서, mod $p$ 로 보면 차수 $\le(3m-1)/2$ 인 다항식 $f,f'$ 의 값 표이고 $\deg(f-\iota f')\le(m-1)/2$ 인 것. $V$ 를 두 열의 중심화한 제곱합의 합, $S$ 를 Paley 행렬 $((\tfrac{j-l}p))$ 에 대한 이차형식 값이라 하면 $\deg=V/(2p)$, $N(q_F)=(V^2-S^2/p)/(16p^2)$ 이고
+\[
+\text{(A)}\iff V^2-S^2/p\ge p^2(p-1)^2,\qquad \text{``모든 비상수 사상 $C_p\to E$ 의 차수 $\ge(p-1)/2$''}\iff V\ge p(p-1).
+\]
+또 $(1-\zeta_p)^{-D}\Z[\zeta_{4p}]$ ($D\lesssim0.28\sqrt p$) 위에서는 $\deg\ge(p-1)/2$ 이다.
+\end{proposition}
+
+\begin{proposition}[(B)·(C) 는 Hermite 형 부등식으로 (A) 에서 나오지 않는다]\label{prop:hermite}\tagP\ (AI 심사 없음; (ii) 의 산술은 저자가 확인)\
+(i) (B) $\iff$ 모든 $w\ne0$ 에서 $N(\nu(w))\ge r^2\,[W_p\cap w\Delta:w\mathcal O]^{1/2}$. (ii) (C) 는 $j\le r/2$ 인 부분공간만 보면 된다. 모든 $w$ 에서 $N(\nu(w))\ge c$ 이면 차원 $j$ 의 $\Delta$-부분공간에서 $R_U\le\big(p\gamma_{8j}^2r^2/(16cj^2)\big)^{4j}$ 이고, $c=r^2$ (즉 (A) 그 자체)이면 이는 $\approx(p/72.9)^{4j}$ 이다.
+\end{proposition}
+\noindent 따라서 $p>73$ 에서는 (A) 가 성립해도 이 경로로 (B)·(C) 를 얻을 수 없다: 필요한 벡터 하한 $c\approx0.055\,p\,r^2$ 은 이 유형의 일반 격자의 최소 수준이다. 이것은 증명 방법의 한계이지 ``(A) 가 (C) 를 함의하지 않는다'' 의 증명은 아니다. 덧붙여 $W_p$ 의 ideal 류는 $[\mathfrak P^{(p-1)/4}]$ 이고 위수가 2 이하다 \tagPL\ (Stickelberger).
+
+\begin{observation}[20회차의 전수 탐색]\label{obs:r20scan}\tagN\ (격자와 모든 불변량은 정확한 정수 연산, 열거는 배정밀도; 에이전트의 계산이며 독립 재현 없음)\
+정리 \ref{thm:ideal} 의 공식으로 만든 정확한 Gram 행렬 위에서, $t$-원 한 주기 전체에 대해 $N(\nu')<m'^2$ 인 벡터를 전수 탐색했다(열거 실패 0).
+\begin{center}\small
+\begin{tabular}{@{}llp{8.6cm}l@{}}
+\toprule
+부분격자 $L_N(p)$ & 문턱값 & 탐색한 소수 & 위반\\
+\midrule
+$N=12$ (랭크 24) & 9 & 85개: $p\equiv13\pmod{24}$, $p<8900$ 이고 $(p+1)/2$ 가 소수인 57개 전부, 그리고 $p<3000$ 이고 $(p+1)/2$ 가 합성수인 28개 & $p=37$ 뿐\\
+$N=20$ (랭크 40) & 25 & 61, 421, 541, 661, 1381, 1621, 2341, 3061 & 없음\\
+$N=28$ (랭크 56) & 49 & 421, 757, 1093, 1933 & 없음\\
+$N=36$ (랭크 72) & 81 & 2341, 2557, 2917 & 없음\\
+\bottomrule
+\end{tabular}
+\end{center}
+위반이 없는 모든 경우에 최소값은 정확히 문턱값이고 $E_8$ 부분격자 $\mathrm{Fix}(C_{(p-1)/4})$ 의 강제된 12쌍에서만 나온다. \S\ref{sec:p61} 의 표에서 ``부분 탐색'' 이던 $p=421,541,661,757$ 이 전수 탐색이 되었고, $p=661$ 의 근 144개는 정확히 $|s|=21$ ($N(\nu')=55$)이다. $L_{12}(p)$ 의 근계($p<3750$, $(p+1)/2$ 소수): 근 없음(Leech) --- 13, 277, 421, 541, 733, 757, 1093, 1213, 1237, 1381, 1453, 1621, 2341, 2557, 2797, 3253, 3733; 근 144개 --- 37, 157, 661, 1933, 2917, 3517; 근 720개 --- 61, 397, 613, 877, 997, 3061. 문턱 9 에 대해 $N(\nu')=12$ 인 근접 사례가 $p=541$, 1237, 1381, 3733 에 있으므로, 부분격자 위에서 여유가 $p$ 와 함께 커지지는 않는다. 하지 못한 것: 작은 $p$ 의 랭크 72 이상, $N=44,52,60$, 전체 격자 $W_{29},W_{37},W_{61}$.
+\end{observation}
+
+\paragraph{정확히 어디서 막혔는가.} 쓸 수 있는 부등식(산술--기하 평균과 적분성, Craig 의 한계, Hermite, 단위 궤도, 이차잉여 부호의 제곱근 기법, 종수에 대한 Siegel--Weil 평균)은 모두 ideal 의 지수 $(m+1)/2$ 와 ``$(p+1)/2$ 가 소수'' 라는 조건을 구별하지 못한다. 그런데 (A$'$) 는 같은 꼴의 ideal 에 대해 $p=37$ 에서(그리고 10회차에 따르면 $(p+1)/2$ 가 합성수인 $p=29$ 에서) 거짓이다. 따라서 증명은 원소 $S$ (동치로 위수 $p+1$ 의 비분리 토러스)를 본질적으로 써야 하는데, Borel 부분군에서 나온 이 모형에서는 그것이 보이지 않는다. 가장 유망한 다음 단계: $q=(p+1)/2$ 가 소수이면 $W_p$ 는 $\Q(\zeta_{4q},\sqrt p)$ 위에서도 1차원이므로 두 번째 ideal 격자 구조가 있을 것이다(검증되지 않은 스케치) --- 두 구조를 함께 써야 한다. $p\equiv1\pmod8$ 에서는 $d^{2r}=+1$ 이 되어 이 모형이 성립하지 않고, 유리 벡터 하나가 $W$ 한 벌을 생성하지 못한다.
+
+\paragraph{저자의 독립 점검과 부수적 발견.} 저자는 에이전트의 격자 구성 함수만 가져와 자체 코드(정확한 유리수 LLL, 자체 열거, 모든 벡터의 정확한 재평가; \texttt{rounds/R20\_infinitely\_many\_stable/orchestrator\_check/})로 $L_{12}(p)$ 를 시험했다. $p=13$: 짝·$\det1$·$\eta^2=p$·근 없음(따라서 Leech). $p=37$: 근 72쌍이 모두 $|s|=3$, $N(\nu')=7<9$ --- 명제 \ref{obs:p37} 의 위반(Weil 표현의 궤도에서 얻은 것)이 전혀 다른 구성에서 재현된다. $p=61$: 근 360쌍, $|s|\in\{1,3\}$. $p=277$: 근 없음. $p=661$: 근 72쌍이 모두 $|s|=21$. 점검하지 않은 것: 정리 \ref{thm:ideal} 의 증명 자체, 명제 \ref{prop:poly}, $t$-원 전수 탐색. \emph{기존 코드의 결함}: 2회차의 열거기 \texttt{fp\_enum.c} (8회차와 10회차 빌더 A 에도 복사됨)는 좌표 버퍼가 \texttt{int x[64]} 여서 랭크가 64 를 넘는 호출에서 스택을 넘긴다. 이 보고서의 ``위반 없음'' 결론은 모두 랭크 40 이하이거나 버퍼가 200 인 다른 열거기(10회차 빌더 B, 12회차)로 얻은 것이고, $p=37$ 의 위반은 정수 인증서로 확인된 것이므로 영향이 없다고 판단한다(빌더 A 가 랭크 72 에서 이 열거기를 호출했는지는 추적하지 않았다). \emph{신규성}: 확인하지 못했다. G.\ Nebe, ``Some cyclo-quaternionic lattices'' (J.\ Algebra 199, 1998)가 랭크 $2(p-1)$ 의 $SL_2(p)$-격자를 다루므로 정리 \ref{thm:ideal} 과 겹칠 가능성이 높다(원문 미열람). Leech 격자가 $\Q(\zeta_{52})$ 의 ideal 격자라는 알려진 사실과는 일치한다.
+
+\subsection{가정 ``$(p+1)/2$ 가 소수'' 는 약화될 수 있는가 (21회차; 기록 종료 후)}\label{sec:r21}
+사용자의 질문(``꼭 그런 강한 조건을 만족하는 소수가 있어야 하는가; 비슷한 전략을 더 약한 조건으로 만들 수 있는가'')에 대해 저자가 직접 수행한 탐색이다(손 유도, GAP 4.12 의 지표표 라이브러리, Python; \texttt{rounds/R21\_weaker\_conditions/}; 원문 노트는 부록 \ref{app:notes}). \textbf{하위 에이전트도 심사도 없었다.} 결론을 먼저 적는다: \emph{이 전략 안에서는 조건을 약하게 만드는 방법을 찾지 못했다.} $SL_2(q)$ 족 안에서는 약화가 불가능함을 보였고, 다른 군에서는 지표표 2313개를 훑어도 새 후보가 나오지 않았다(분류 정리는 아니다).
+
+\begin{lemma}[구조 보조정리]\label{lem:sylow}\tagP\ (저자의 유도; 심사 없음)\
+$V$ 를 유한군 $G$ 의 유리 표현($n=\dim V$, $\rho=\chi_V/n$)이라 하고, 모든 소수 위수 원소가 \emph{자유}(고유값 1 이 없음)이거나 \emph{정칙}($V|_{\langle x\rangle}$ 가 정칙표현의 배수)이라고 하자 --- 보조정리 \ref{lem:unimod} 에 의해 (BS) 의 필요조건이다.
+\begin{enumerate}
+\item $E\cong C_\ell\times C_\ell\le G$ 이면 $E$ 의 위수 $\ell$ 부분군 가운데 자유인 것은 많아야 하나이고, 하나가 자유이면 나머지 $\ell$ 개는 모두 정칙이다.
+\item 자유인 위수 $\ell$ 원소는 그것을 포함하는 모든 $\ell$-부분군의 중심에 속한다. 특히 각 Sylow $\ell$-부분군은 자유인 위수 $\ell$ 부분군을 많아야 하나 갖고, 그것은 중심에 있다.
+\item 모든 소수 위수 거듭제곱이 자유인 위수 $m$ 원소 $g$ 는 $\rho(g)=\mu(m)/\varphi(m)$ 이다(위수가 제곱인수를 가지면 0).
+\item ($\Lambda$ unimodular) $g$ 의 위수가 4 이고 $g^2$ 이 정칙 대합이면 $\chi_V(g)=0$ 이다.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(1) $m_0$ 을 자명 지표의 중복도, $m_i$ 를 핵이 정확히 $C_i$ 인 지표들의 중복도의 합($i=0,\dots,\ell$)이라 하면 $\dim\mathrm{Fix}(C_i)=m_0+m_i\in\{0,n/\ell\}$, $n=m_0+\sum_im_i$. $C_j$ 가 자유이면 $m_0=m_j=0$ 이고 나머지 $\ell$ 개의 $m_i\le n/\ell$ 의 합이 $n$ 이므로 모두 $n/\ell$ 이다. (2) $c$ 가 $\ell$-군 $P$ 의 중심에 있지 않으면 $x\in N_P(C_P(c))\setminus C_P(c)$ 를 잡는다(멱영군의 정규화 조건). $c^x\in C_P(c)$ 이고, $\ell$-원소가 $\langle c\rangle$ 를 정규화하면 중심화하므로 $c^x\notin\langle c\rangle$. 그러면 $\langle c,c^x\rangle\cong C_\ell^2$ 가 자유 부분군 둘을 가져 (1) 에 모순이다. 중심에 있는 두 자유 부분군은 가환이므로 (1) 에서 같다. (3) 고유값이 모두 원시 $m$ 제곱근이고 유리 표현이라 중복도가 같다. (4) $a=\dim\mathrm{Fix}(g)$, $b_2=\dim\ker(g+1)$, $a+b_2=n/2$. $U=\mathrm{Fix}(g)$ 의 접착 지수는 $|\det(1-g\,|\,U^\perp)|=2^{b_2+n/4}$ 이하이고, $R_U\le1$ 은 그것이 $(n/a)^a$ 이상일 것을, 순환군의 고정공간 조건은 $a\ge n/4$ 를 요구한다. $a\mapsto a\log(n/a)$ 가 오목하고 $a=n/4$ 에서 등호이므로 $a=n/4$ 만 가능하다. $a=0$ 이면 $\ker(g+1)$ (차원 $n/2$)의 접착이 $2^{n/4}<2^{n/2}$ 이어서 역시 위반이다.
+\end{proof}
+\noindent 이득은 $\tfrac12\sum_g\rho(g)^2$ 이므로(명제 \ref{prop:gain}), 고정점을 갖는 소수 위수 원소는 이득에 기여하지 않는다. (4) 를 일반화한 다음 주장은 위수 $6,15,\ell^2$ 에서 손으로 확인했으나 일반 증명은 없다 \tagH: \emph{(BS) 아래에서 정칙인 소수 위수 거듭제곱을 갖는 원소는 대각합이 0 이다.} 이를 받아들이면 이득은 완전히 자유로운 원소들만이 운반하고, 소수 $\ell$ 의 기여는 $\tfrac12[G:N_G(C_\ell)]/(\ell-1)$ 이다: \textbf{큰 이득은 서로 켤레인 자유 순환부분군이 아주 많은 군에서만 나온다.}
+
+\begin{proposition}[$SL_2(q)$ 족의 완전한 분석]\label{prop:sl2q}\tagP\ ($SL_2(q)$ 의 일반 지표표 인용; $q<2000$ 은 정확한 정수 연산으로 확인; 심사 없음)\
+$q$ 를 홀수 소수 거듭제곱이라 하자. $SL_2(q)$ 의 충실한 기약 유리 표현 가운데 모든 소수 위수 원소가 자유 또는 정칙인 것은 다음뿐이다.
+\begin{itemize}
+\item $q=p\equiv1\pmod4$ 이고 $(p+1)/2$ 가 소수일 때의 홀 Weil 표현 $W_p$ (지표 $2(\psi+\psi')$); 이득 $p(p+1)/(p-1)$.
+\item $q=p$ 가 메르센 소수($p+1$ 이 2 의 거듭제곱)일 때의 이산계열(위수 $p+1$ 의 $\theta$); 이득 $\approx2$.
+\item 작은 예외 $q=3,5,7$ ($SL_2(3)$, $SL_2(5)$ 는 고정점 없는 군).
+\end{itemize}
+주계열과 Steinberg 지표는 멱단원 또는 분리 토러스 원소에서, $q=p^f$ ($f>1$)는 멱단원에서 탈락한다.
+\end{proposition}
+\noindent 이유: $(\psi+\psi')|_{T'}$ 은 비분리 토러스 $T'=C_{p+1}$ 의 홀 지표 전부에서 위수 2 인 것 하나를 뺀 것의 두 배다. $M=(p+1)/2$ 의 소인수 $\ell$ 에 대해 위수 $\ell$ 원소의 고정공간은 $2(M/\ell-1)$ 차원인데 정칙이면 $2(M/\ell-1/\ell)$ 이어야 하므로 정칙이 아니고, 자유인 것은 $M=\ell$ 일 때뿐이다. ``정칙표현에서 지표 하나를 뺀 것'' 은 소수 위수의 군 위에서만 자유다. $q<2000$ 에서 이득이 2.5 이상인 35쌍 가운데 34쌍이 첫 유형($p=5$, 13, 37, 61, 73, 157, 193, 277, 313, 397, \dots)이고 나머지 하나는 $SL_2(3)$ 이다(\texttt{sl2\_family.py}).
+
+\begin{proposition}[$(p+1)/2$ 가 합성수이면 표현을 섞어도 이득이 사라진다]\label{prop:composite}\tagP\ + 계산 (저자; 심사 없음)\
+$p\equiv1\pmod4$, $M=(p+1)/2$, $V=\sum_\theta w_\theta X_\theta$ ($\theta$ 는 $T'$ 의 홀 지표, $X_{\theta_0}=\psi+\psi'$)라 하고, $T'$ 의 비중심 원소에서 $-\chi_V=\sum_\theta c_\theta\theta$, $S=\sum_\theta c_\theta$ 라 두자.
+\begin{enumerate}
+\item $T'$ 의 켤레 $p(p-1)/2$ 개가 운반하는 이득은 정확히
+\[
+G_{T'}=\frac{2pM}{p-1}\Big(\frac{\sum_\theta c_\theta^2}{S^2}-\frac1M\Big)\qquad(W_p:\ c\ \text{가 한 점에 집중},\ G_{T'}=p).
+\]
+\item $V|_{T'}$ 에서 $\lambda$ 의 중복도는 $S-c_\lambda$ 이다. $M$ 이 합성수이면 $\ell\mid M$ 에서 자유는 불가능하고, 정칙은 ``$c$ 를 $C_\ell$ 의 지표군으로 밀어낸 것이 균등하다'' 와 동치다. $c$ 는 Galois 류(지표의 위수)마다 상수다.
+\item $M=\ell_1\ell_2$ ($\ell_1<\ell_2$ 소수)이면 소수 위수 조건만으로 $G_{T'}\le\dfrac{2p(\ell_1-1)}{(p-1)(\ell_2-1)}\le2+o(1)$ 이고(허용 원뿔의 두 극단 반직선을 정확한 유리수 연산으로 열거; $p=29$, 41, 109, 173, 281, 409, 1009 에서 공식과 일치), 순환부분군 $C_M$ 의 두 필요조건(고정공간의 차원이 0 이거나 $n/M$ 이상; 접착 한계)을 더하면 균등한 $c$ 만 남아 $G_{T'}=0$ 이다(뒤의 것은 격자 탐색과 단조성 논증 \tagN).
+\end{enumerate}
+\end{proposition}
+\noindent 유도: $T'$ 위의 Parseval 등식에서 $\sum_{b\in T'}|\sum c_\theta\theta(b)|^2=(p+1)\sum c_\theta^2$, 여기서 $b=\pm1$ 의 항 $2S^2$ 을 빼고 켤레의 수를 곱한 뒤 $(\dim V)^2=((p-1)S/2)^2$ 으로 나눈다. 소인수가 더 많으면 소수 위수 조건만으로는 여지가 더 남지만($p=2729$, $M=3\cdot5\cdot7\cdot13$: 최대 17.5 --- $M$ 이 소수였다면 2731), 이는 순환부분군 조건을 넣기 전의 값이다. 주계열이나 Steinberg 지표를 섞으면 $T'$ 의 모든 지표가 $V|_{T'}$ 에 들어와 $G_{T'}=0$ 이 된다. 같은 표현 $W_p$ 를 그대로 쓰는 경우의 위반은 유계($R_U\le e^4$)지만 1차 모멘트 항이 $R_U^{k/2}$ 로 랭크 $k$ 에 지수적이고 방법은 $k\gg r$ 을 요구하므로 흡수할 수 없다. \textbf{따라서 ``$p$ 는 소수, $(p+1)/2$ 는 소수 둘 이하의 곱'' 꼴의 무조건부 결과(Chen 형)로는 가정을 대체할 수 없다.}
+
+\begin{observation}[GAP 지표표 라이브러리 스캔]\label{obs:gapscan}\ 계산(정확한 지표값) --- 저자; 독립 재현 없음.\
+중복을 뺀 2320개 표 가운데 2313개(류가 1200개를 넘는 7개 --- $2.O_8^+(7)$, $O_{12}^-(3)$, $U_6(4)$, $2_1.O_{12}^+(3)$ 과 큰 2-국소군 셋 --- 는 제외)에서, 충실한 기약 지표마다 Galois 켤레의 합 $\tau$ 를 만들어 (a) 소수 위수 류가 모두 자유 또는 정칙인지, (b) 모든 류가 위의 주장의 패턴을 따르는지, (c) 자유 류가 Sylow 중심인지를 시험했다(이득 $=|G|/(2c\chi(1)^2)$, $c$ 는 켤레의 수).
+\begin{itemize}
+\item (a) 를 통과하고 이득이 1 이상인 쌍은 181개이고 모두 (c) 를 만족한다(보조정리 \ref{lem:sylow}(2) 의 점검). 그중 117개가 (b) 도 통과한다.
+\item (b) 까지 통과하고 이득이 1.9 이상인 것은 25쌍이다:
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+군 (지표의 차수) & 이득 & 자유 소수 / 정칙 소수\\
+\midrule
+$SL_2(13)$ (6), $2.L_2(13).2$ (12) & 15.17 & 2, 7, 13 / 3\\
+$SL_2(5)$ (2) 와 그 확대 다섯($GL_2(5)$, $2.A_5.2$, $2.D_8.S_5$ 등) & 7.5 & 2, 3, 5 / (2)\\
+$N(2.HS,Q_8)$ 유형 (8) & 3.75 & 2, 3, 5 / 2\\
+$3\times SL_2(7)$ (6), $(SL_2(3)\times7{:}3).2$ (12) & 3.5 & 2, 3, 7 / 3\\
+$2.(13{:}6\times A_4).2$ (24) & 3.25 & 2, 3, 13 / 2, 3\\
+$SL_2(3)$, $2.S_4$ 유형 & 3 & 2, 3 / (2)\\
+$SL_2(7)$ (6) & 2.33 & 2, 7 / 3\\
+$SL_2(31)$ (30) & 2.07 & 2, 31 / 3, 5\\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{icosian 값 7.5 를 넘는 것은 $SL_2(13)$ 뿐이다.}
+\item (a) 만 통과하는 큰 이득의 후보는 모두 (b) 에서 탈락한다: $E_8$ 위의 $2^{1+4}_-.A_5$ 와 $4\circ2^{1+4}.A_5$ (이득 60), $2.2^4.2^4.S_3$ (24, 실수형), $2.U_4(2)N2$ (12), $2(L_2(7)\times4).2$ (9.3), 여러 2-군(8 이하).
+\item $2.L_2(17)$, $2.L_2(25)$, $2.L_2(29)$, $2.J_2$, $2.G_2(4)$, $6.Suz$, $2.Co_1$, $2.A_7$, $6.A_7$, $6.L_3(4)$, $6_1.U_4(3)$, $Sz(8)$, $Sz(32)$, $U_3(q)$, $S_4(q)$ 를 포함한 나머지는 (a) 에서 이미 탈락한다. ($2.L_2(37)$, $2.L_2(61)$ 은 라이브러리에 없으며 명제 \ref{prop:sl2q} 가 다룬다.)
+\end{itemize}
+\end{observation}
+
+\paragraph{이득이 컸던 후보가 탈락하는 또 하나의 이유: 가환자 대수의 크기.} $r\ge2$ 이면 직선 조건 때문에 $\Delta$ 의 판별식이 커야 한다(\S\ref{sec:sym} 의 no-go). 두 가지 구체적 계산 \tagP\ (표준 사실 또는 정리 \ref{thm:leech} 전제; 저자, 심사 없음):
+\begin{itemize}
+\item $E_8$ 위의 $2^{1+4}_-.A_5$ (이득 60): $\Delta$ 가 유리 사원수이고 order 가 Hurwitz order 이므로 직선 조건은 ``모든 $w$ 에서 $|w|^2\ge\sqrt2\,r$'' 이다. $r=2$ 에서 근 $w$ 는 $\det(\mathcal Ow)=4<16$, 즉 $R_U\ge4$.
+\item Leech 족에 가환자 order 의 위수 3 단위 $u$ 를 곱한 $SL_2(13)\times C_3$ (이득 $15.17\times\tfrac32$): 가환자가 $K'=\Q(\sqrt{13},\zeta_3)$ 로 줄고($r'=6$), $s=\pm4$ 인 최소벡터를 지나는 $K'$-직선에서 $\det(O_{K'}w)=\tfrac{1521}{16}\big(\tfrac{36}{13}\big)^2=729<6^4$, 즉 $R_U\ge16/9$. ($s=\pm2$ 에서는 정확히 경계, $s=0$ 에서는 여유.) \emph{대칭을 곱해 이득을 키우면 가환자가 줄어 안정성이 깨질 수 있다.}
+\end{itemize}
+
+\paragraph{세 가지 메커니즘 \tagH.} (I) \emph{``정칙 빼기 하나'' 형 토러스}: 순환 TI 부분군 $T$ 위에서 $\chi|_T$ = 정칙 $-$ 지표 하나. $|T/Z|$ 가 소수일 때만 자유이고 그때 $\chi(1)=|T/Z|-1$. 예: $SL_2(p)$ ($(p+1)/2$ 소수); $2^{1+2a}_-.C_q$ ($q=2^a+1$ 이 Fermat 소수; 이득 $q$ 이지만 가환자가 작아 탈락); $Sp_{2n}(p)$, $SU_n(p)$ 의 Weil 지표(다른 원소에서 탈락). 소수성은 메커니즘이 강제하고, 군이 자기 소수 $p$ 를 따로 가져오므로 소수 조건이 둘이 된다. (II) \emph{fpf 형 토러스}($\chi|_T$ 가 충실한 지표들만으로 이루어짐): Jordan 유계이고 이득은 $O(\log\log)$. (III) \emph{Clifford 퍼뜨리기} $G=E.H$ ($W|_E$ 기약): 이득은 $|H|$ 배가 되지만 $\mathrm{End}_G(W)\subseteq\mathrm{End}_E(W)$ 가 작다.
+
+\paragraph{그러면 무엇을 줄일 수 있는가.}
+\begin{itemize}
+\item \textbf{상수 개선에는 소수 하나면 된다.} $p=13$ 은 정리 \ref{thm:D} 로 끝났고, 예컨대 $p=61$ 하나의 안정성(유한한 문제)이 약 $11.6\,n^2$ 을 준다(조건부).
+\item \textbf{차수 개선}에는 이득이 무한히 커지는 안정한 자료가 무한히 필요하다. 출처가 $SL_2(p)$ 일 필요는 없으나 다른 출처는 찾지 못했다. 자유 소수가 서로소인 자료의 곱은 이득을 곱하지만($2g_1g_2$) 인수들이 여전히 필요하다.
+\item \textbf{조건은 드물지 않다.} $p\equiv1\pmod4$ 이고 $(p+1)/2$ 가 소수인 $p$ 는 2000 미만에 34개다. 무한히 많다는 것은 미해결이지만 Hardy--Littlewood 형의 표준 추측이 예측한다($x/\log^2x$ 규모). 조건이 ``강하다'' 는 것은 증명되지 않았다는 뜻이며, 실제 병목은 (BS) 의 증명이다.
+\item $p\equiv5\pmod8$ 이라는 제한은 지금까지의 계산과 \S\ref{sec:r20} 의 모형의 제한일 뿐이다. 필요조건은 $p\equiv1\pmod8$ ($73,193,313,\dots$)에서도 통과하며, 이 소수들은 아직 시험하지 못했다.
+\end{itemize}
+
+\paragraph{한계.} 분류 정리가 아니다. 스캔은 기약 충실 지표만 보았고(비등형 표현은 $SL_2(p)$ 에서만 분석), 라이브러리에 표가 있는 군에 한정되며, 시험 (b) 가 기대는 주장은 위수 4 에서만 증명되었다. 필요조건을 통과한 새 후보가 없었으므로 새 군에 대해 (BS) 자체를 시험한 것은 없다.

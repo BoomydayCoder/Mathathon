@@ -1,8 +1,8 @@
 # Independent check of the R20 ideal model: uses only build() from the agent's code (lattice construction),
 # then my own exact tests and my own (pure Python, exact rational) enumeration of short vectors.
-import sys, time
+import os, sys, time
 from fractions import Fraction
-sys.path.insert(0, '/home/user/Mathathon/sphere_packing_research/rounds/R20_infinitely_many_stable')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 import ideal_model as im
 
 def bareiss(M):
