@@ -1,0 +1,6 @@
+M=3*5: feasible points on the segment (c_theta0 in units of S/M, T'-gain/(p/(p-1))): []  count 0
+M=3*7: feasible points on the segment (c_theta0 in units of S/M, T'-gain/(p/(p-1))): []  count 0
+M=5*11: feasible points on the segment (c_theta0 in units of S/M, T'-gain/(p/(p-1))): [(1.0, 0.0)]  count 1
+M=3*29: feasible points on the segment (c_theta0 in units of S/M, T'-gain/(p/(p-1))): []  count 0
+M=7*11: feasible points on the segment (c_theta0 in units of S/M, T'-gain/(p/(p-1))): []  count 0
+M=11*13: feasible points on the segment (c_theta0 in units of S/M, T'-gain/(p/(p-1))): []  count 0

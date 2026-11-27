@@ -1,0 +1,6 @@
+Syntax warning: Unbound global variable in scan.g:28
+    fam := Set(List(PrimeResidues(Conductor(ValuesOfClassFunction(chi))), k ->\
+ List(ValuesOfClassFunction(chi), x -> GaloisCyc(x, k))));
+                                                                              \
+                            ^^^
+exit 0

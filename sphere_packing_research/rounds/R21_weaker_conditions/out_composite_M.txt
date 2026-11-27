@@ -1,0 +1,18 @@
+p=29  M=15=3*5 : max T'-gain over 2 extreme rays = 29/28 = 1.0357   [formula 2p(l1-1)/((p-1)(l2-1)) = 1.0357, equal: True]
+      total gain <= 1 (centre) + (p+1)/(p-1) (unipotent) + this = 3.107   versus  p(p+1)/(p-1) = 31.1 if M were prime
+p=41  M=21=3*7 : max T'-gain over 2 extreme rays = 41/60 = 0.6833   [formula 2p(l1-1)/((p-1)(l2-1)) = 0.6833, equal: True]
+      total gain <= 1 (centre) + (p+1)/(p-1) (unipotent) + this = 2.733   versus  p(p+1)/(p-1) = 43.0 if M were prime
+p=109  M=55=5*11 : max T'-gain over 2 extreme rays = 109/135 = 0.8074   [formula 2p(l1-1)/((p-1)(l2-1)) = 0.8074, equal: True]
+      total gain <= 1 (centre) + (p+1)/(p-1) (unipotent) + this = 2.826   versus  p(p+1)/(p-1) = 111.0 if M were prime
+p=173  M=87=3*29 : max T'-gain over 2 extreme rays = 173/1204 = 0.1437   [formula 2p(l1-1)/((p-1)(l2-1)) = 0.1437, equal: True]
+      total gain <= 1 (centre) + (p+1)/(p-1) (unipotent) + this = 2.155   versus  p(p+1)/(p-1) = 175.0 if M were prime
+p=281  M=141=3*47 : max T'-gain over 2 extreme rays = 281/3220 = 0.0873   [formula 2p(l1-1)/((p-1)(l2-1)) = 0.0873, equal: True]
+      total gain <= 1 (centre) + (p+1)/(p-1) (unipotent) + this = 2.094   versus  p(p+1)/(p-1) = 283.0 if M were prime
+p=389  M=195=3*5*13 : max T'-gain over 8 extreme rays = 4279/1552 = 2.7571
+      total gain <= 1 (centre) + (p+1)/(p-1) (unipotent) + this = 4.762   versus  p(p+1)/(p-1) = 391.0 if M were prime
+p=409  M=205=5*41 : max T'-gain over 2 extreme rays = 409/2040 = 0.2005   [formula 2p(l1-1)/((p-1)(l2-1)) = 0.2005, equal: True]
+      total gain <= 1 (centre) + (p+1)/(p-1) (unipotent) + this = 2.205   versus  p(p+1)/(p-1) = 411.0 if M were prime
+p=1009  M=505=5*101 : max T'-gain over 2 extreme rays = 1009/12600 = 0.0801   [formula 2p(l1-1)/((p-1)(l2-1)) = 0.0801, equal: True]
+      total gain <= 1 (centre) + (p+1)/(p-1) (unipotent) + this = 2.082   versus  p(p+1)/(p-1) = 1011.0 if M were prime
+p=2729  M=1365=3*5*7*13 : max T'-gain over 116 extreme rays = 1148909/65472 = 17.5481
+      total gain <= 1 (centre) + (p+1)/(p-1) (unipotent) + this = 19.549   versus  p(p+1)/(p-1) = 2731.0 if M were prime
